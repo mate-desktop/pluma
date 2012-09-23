@@ -86,8 +86,13 @@ pluma_help_display (GtkWindow   *parent,
 		link = g_strdup ("http://library.gnome.org/users/pluma/stable/");
 #endif
 
+        /*
 	ret = gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (parent)),
 	                    link, 
+			    GDK_CURRENT_TIME, 
+			    &error);*/
+	ret = gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (parent)),
+	                    "file://usr/local/share/doc/mate/atril/atril.html", 
 			    GDK_CURRENT_TIME, 
 			    &error);
 
