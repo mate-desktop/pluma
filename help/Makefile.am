@@ -16,3 +16,17 @@ DOC_LINGUAS = ar bg ca cs da de el es fi fr hu it ja ko oc pt_BR ru sv th uk zh_
 
 
 -include $(top_srcdir)/git.mk
+
+
+htmldir=$(datadir)/doc/mate/pluma/
+
+html_DATA = C/pluma.html \
+            C/figures/pluma_format_bold.png \
+            C/figures/pluma_format_strikethrough.png \
+            C/figures/pluma_recent_files_menu_icon.png \
+            C/figures/pluma_format_italic.png \
+            C/figures/pluma_format_underline.png \
+            C/figures/pluma_window.png
+
+
+EXTRA_DIST = $(html_DATA)
