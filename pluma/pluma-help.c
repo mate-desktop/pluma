@@ -74,20 +74,17 @@ pluma_help_display (GtkWindow   *parent,
 	}
 
 #ifndef G_OS_WIN32
-	if (link_id)
-		link = g_strdup_printf ("ghelp:%s?%s", name, link_id);
-	else
-		link = g_strdup_printf ("ghelp:%s", name);
-#else
-	if (link_id)
-		link = g_strdup_printf ("http://library.gnome.org/users/pluma/stable/%s",
-					link_id);
-	else
-		link = g_strdup ("http://library.gnome.org/users/pluma/stable/");
+#define APP_HELP "file:///usr/local/share/doc/mate/pluma/pluma.html"
 #endif
 
+
+        /*
 	ret = gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (parent)),
 	                    link, 
+			    GDK_CURRENT_TIME, 
+			    &error);*/
+	ret = gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (parent)),
+	                    APP_HELP, 
 			    GDK_CURRENT_TIME, 
 			    &error);
 
