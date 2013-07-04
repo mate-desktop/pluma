@@ -227,8 +227,8 @@ if PLATFORM_WIN32
 	$(mkinstalldirs) "$(DESTDIR)$(libdir)"
 	$(INSTALL_DATA) libpluma.a "$(DESTDIR)$(libdir)"
 else
-	rm -f $(DESTDIR)$(bindir)/mate-text-editor
-	ln -s pluma $(DESTDIR)$(bindir)/mate-text-editor
+	rm -f $(DESTDIR)$(bindir)/pluma
+	ln -s pluma $(DESTDIR)$(bindir)/pluma
 endif
 
 if !OS_WIN32
