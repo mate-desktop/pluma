@@ -370,9 +370,9 @@ if test "x$have_python" != "xno"; then
 		PYTHON_EXTRA_LIBS=
 	else
 		PY_PREFIX=`$PYTHON -c 'import sys ; print sys.prefix'`
-		PYTHON_LIB_LOC="-L$PY_EXEC_PREFIX/lib/python$PYTHON_VERSION/config"
+		PYTHON_LIB_LOC="-L$libdir/python$PYTHON_VERSION/config"
 		PYTHON_CFLAGS="-I$PY_PREFIX/include/python$PYTHON_VERSION"
-		PYTHON_MAKEFILE="$PY_EXEC_PREFIX/lib/python$PYTHON_VERSION/config/Makefile"
+		PYTHON_MAKEFILE="$libdir/python$PYTHON_VERSION/config/Makefile"
 		PYTHON_BASEMODLIBS=`sed -n -e 's/^BASEMODLIBS=\(.*\)/\1/p' $PYTHON_MAKEFILE`
 		PYTHON_OTHER_LIBS=`sed -n -e 's/^LIBS=\(.*\)/\1/p' $PYTHON_MAKEFILE`
 		PYTHON_EXTRA_LIBS="$PYTHON_BASEMODLIBS $PYTHON_OTHER_LIBS"
@@ -588,7 +588,7 @@ it from:
 
   http://pub.mate-desktop.org/release/1.${stable_version}/
 
-Or checkout the mate-${stable_version} branch of the pluma module from:
+Or checkout the 1.${stable_version} branch of the pluma module from:
 
   git://github.com/mate-desktop/mate-text-editor.git
 
