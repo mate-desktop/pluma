@@ -14,7 +14,9 @@ libtime_la_SOURCES = \
 	pluma-time-plugin.c
 
 libtime_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
-libtime_la_LIBADD  = $(PLUMA_LIBS)
+libtime_la_LIBADD  = \
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/time
 ui_DATA = \

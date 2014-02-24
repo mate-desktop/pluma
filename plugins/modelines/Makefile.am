@@ -20,7 +20,9 @@ libmodelines_la_SOURCES = \
 	modeline-parser.c
 
 libmodelines_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
-libmodelines_la_LIBADD  = $(PLUMA_LIBS)
+libmodelines_la_LIBADD  = \
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la
 
 plugin_in_files = modelines.pluma-plugin.desktop.in
 %.pluma-plugin: %.pluma-plugin.desktop.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache

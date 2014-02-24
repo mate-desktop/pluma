@@ -14,7 +14,9 @@ libchangecase_la_SOURCES = \
 	pluma-changecase-plugin.c
 
 libchangecase_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
-libchangecase_la_LIBADD = $(PLUMA_LIBS)
+libchangecase_la_LIBADD = \
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/changecase
 ui_DATA =

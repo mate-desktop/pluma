@@ -28,7 +28,9 @@ libtaglist_la_SOURCES = \
 	pluma-taglist-plugin.h
 
 libtaglist_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
-libtaglist_la_LIBADD  = $(PLUMA_LIBS)
+libtaglist_la_LIBADD  = \
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la
 
 plugin_in_files = taglist.pluma-plugin.desktop.in
 
