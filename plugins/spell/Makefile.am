@@ -32,7 +32,10 @@ libspell_la_SOURCES = \
 	$(BUILT_SOURCES)			
 
 libspell_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS) 
-libspell_la_LIBADD  = $(PLUMA_LIBS) $(ENCHANT_LIBS)
+libspell_la_LIBADD  = \
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la \
+    $(ENCHANT_LIBS)
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/spell
 ui_DATA = spell-checker.ui languages-dialog.ui

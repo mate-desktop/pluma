@@ -14,7 +14,9 @@ libdocinfo_la_SOURCES = \
 	pluma-docinfo-plugin.c
 
 libdocinfo_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
-libdocinfo_la_LIBADD  = $(PLUMA_LIBS)
+libdocinfo_la_LIBADD  = \
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/docinfo
 ui_DATA = docinfo.ui

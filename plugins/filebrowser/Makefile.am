@@ -38,7 +38,9 @@ libfilebrowser_la_SOURCES = \
 	$(NOINST_H_FILES)
 
 libfilebrowser_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
-libfilebrowser_la_LIBADD = $(PLUMA_LIBS)
+libfilebrowser_la_LIBADD = \
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la
 
 # UI files (if you use ui for your plugin, list those files here)
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/filebrowser

@@ -19,6 +19,8 @@ libcloader_la_SOURCES = \
 	$(NOINST_H_FILES)
 
 libcloader_la_LDFLAGS = $(LOADER_LIBTOOL_FLAGS)
-libcloader_la_LIBADD = $(PLUMA_LIBS)
+libcloader_la_LIBADD = \
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la
 
 -include $(top_srcdir)/git.mk

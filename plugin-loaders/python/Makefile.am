@@ -30,7 +30,8 @@ libpythonloader_la_SOURCES = \
 
 libpythonloader_la_LDFLAGS = $(LOADER_LIBTOOL_FLAGS)
 libpythonloader_la_LIBADD = \
-	$(PLUMA_LIBS) 			\
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la \
 	bindings/pluma.la
 
 -include $(top_srcdir)/git.mk

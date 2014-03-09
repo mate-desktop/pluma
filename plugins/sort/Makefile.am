@@ -14,7 +14,9 @@ libsort_la_SOURCES = \
 	pluma-sort-plugin.c
 
 libsort_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
-libsort_la_LIBADD  = $(PLUMA_LIBS)
+libsort_la_LIBADD  = \
+    $(PLUMA_LIBS) \
+    ../../pluma/libpluma.la
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/sort
 ui_DATA = sort.ui
