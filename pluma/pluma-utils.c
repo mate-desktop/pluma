@@ -771,7 +771,8 @@ pluma_utils_location_get_dirname_for_display (GFile *location)
 		}
 		else
 		{
-			res = mount_name;
+			path =	g_file_get_path ( location );
+			res = g_strdup_printf ("%s %s", mount_name, path);
 		}
 	}
 	else
