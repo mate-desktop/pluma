@@ -33,8 +33,10 @@
 #include <gmodule.h>
 
 #include <pluma/pluma-debug.h>
+#include <pluma/pluma-help.h>
 #include <pluma/pluma-prefs-manager.h>
 #include <pluma/pluma-statusbar.h>
+#include <pluma/pluma-utils.h>
 
 #include "pluma-spell-checker.h"
 #include "pluma-spell-checker-dialog.h"
@@ -57,6 +59,10 @@
 					       PLUMA_TYPE_SPELL_PLUGIN, \
 					       PlumaSpellPluginPrivate))
 
+/* GSettings keys */
+#define SPELL_SCHEMA		"org.mate.pluma.plugins.spell"
+#define AUTOCHECK_TYPE_KEY	"autocheck-type"
+
 PLUMA_PLUGIN_REGISTER_TYPE(PlumaSpellPlugin, pluma_spell_plugin)
 
 typedef struct
@@ -66,6 +72,7 @@ typedef struct
 	guint           message_cid;
 	gulong          tab_added_id;
 	gulong          tab_removed_id;
+	PlumaSpellPlugin *plugin;
 } WindowData;
 
 typedef struct
@@ -73,6 +80,11 @@ typedef struct
 	PlumaPlugin *plugin;
 	PlumaWindow *window;
 } ActionData;
+
+struct _PlumaSpellPluginPrivate
+{
+	GSettings *settings;
+};
 
 static void	spell_cb	(GtkAction *action, ActionData *action_data);
 static void	set_language_cb	(GtkAction *action, ActionData *action_data);
@@ -110,6 +122,26 @@ static const GtkToggleActionEntry toggle_action_entries[] =
 	}
 };
 
+typedef struct _SpellConfigureDialog SpellConfigureDialog;
+
+struct _SpellConfigureDialog
+{
+	GtkWidget *dialog;
+
+	GtkWidget *never;
+	GtkWidget *always;
+	GtkWidget *document;
+
+	PlumaSpellPlugin *plugin;
+};
+
+typedef enum
+{
+	AUTOCHECK_NEVER = 0,
+	AUTOCHECK_DOCUMENT,
+	AUTOCHECK_ALWAYS
+} PlumaSpellPluginAutocheckType;
+
 typedef struct _CheckRange CheckRange;
 
 struct _CheckRange
@@ -130,12 +162,20 @@ static void
 pluma_spell_plugin_init (PlumaSpellPlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaSpellPlugin initializing");
+
+	plugin->priv = PLUMA_SPELL_PLUGIN_GET_PRIVATE (plugin);
+
+	plugin->priv->settings = g_settings_new (SPELL_SCHEMA);
 }
 
 static void
 pluma_spell_plugin_finalize (GObject *object)
 {
+	PlumaSpellPlugin *plugin = PLUMA_SPELL_PLUGIN (object);
+
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaSpellPlugin finalizing");
+
+	g_object_unref (G_OBJECT (plugin->priv->settings));
 
 	G_OBJECT_CLASS (pluma_spell_plugin_parent_class)->finalize (object);
 }
@@ -161,23 +201,49 @@ static void
 set_language_from_metadata (PlumaSpellChecker *spell,
 			    PlumaDocument     *doc)
 {
-	const PlumaSpellCheckerLanguage *lang = NULL;
-	gchar *value = NULL;
+        const PlumaSpellCheckerLanguage *lang = NULL;
+        gchar *value = NULL;
 
-	value = pluma_document_get_metadata (doc, PLUMA_METADATA_ATTRIBUTE_SPELL_LANGUAGE);
+        value = pluma_document_get_metadata (doc, PLUMA_METADATA_ATTRIBUTE_SPELL_LANGUAGE);
 
-	if (value != NULL)
-	{
-		lang = pluma_spell_checker_language_from_key (value);
-		g_free (value);
-	}
+        if (value != NULL)
+        {
+                lang = pluma_spell_checker_language_from_key (value);
+                g_free (value);
+        }
 
-	if (lang != NULL)
-	{
-		g_signal_handlers_block_by_func (spell, set_spell_language_cb, doc);
-		pluma_spell_checker_set_language (spell, lang);
-		g_signal_handlers_unblock_by_func (spell, set_spell_language_cb, doc);
-	}
+        if (lang != NULL)
+        {
+                g_signal_handlers_block_by_func (spell, set_spell_language_cb, doc);
+                pluma_spell_checker_set_language (spell, lang);
+                g_signal_handlers_unblock_by_func (spell, set_spell_language_cb, doc);
+        }
+}
+
+static PlumaSpellPluginAutocheckType
+get_autocheck_type (PlumaSpellPlugin *plugin)
+{
+        PlumaSpellPluginAutocheckType autocheck_type;
+
+        autocheck_type = g_settings_get_enum (plugin->priv->settings,
+                                                AUTOCHECK_TYPE_KEY);
+
+        return autocheck_type;
+}
+
+static void
+set_autocheck_type (PlumaSpellPlugin *plugin,
+                    PlumaSpellPluginAutocheckType autocheck_type)
+{
+        if (!g_settings_is_writable (plugin->priv->settings,
+                                        AUTOCHECK_TYPE_KEY))
+        {
+                return;
+        }
+
+        g_settings_set_enum (plugin->priv->settings,
+                                AUTOCHECK_TYPE_KEY,
+                                autocheck_type);
 }
 
 static PlumaSpellChecker *
@@ -673,6 +739,156 @@ language_dialog_response (GtkDialog         *dlg,
 	gtk_widget_destroy (GTK_WIDGET (dlg));
 }
 
+static SpellConfigureDialog *
+get_configure_dialog (PlumaSpellPlugin *plugin)
+{
+        SpellConfigureDialog *dialog = NULL;
+        gchar *data_dir;
+        gchar *ui_file;
+        GtkWidget *content;
+        PlumaSpellPluginAutocheckType autocheck_type;
+        GtkWidget *error_widget;
+        gboolean ret;
+        gchar *root_objects[] = {
+                "spell_dialog_content",
+                NULL
+        };
+
+        pluma_debug (DEBUG_PLUGINS);
+
+        GtkWidget *dlg = gtk_dialog_new_with_buttons (_("Configure Spell Checker plugin..."),
+                                                        NULL,
+                                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                        GTK_STOCK_CANCEL,
+                                                        GTK_RESPONSE_CANCEL,
+                                                        GTK_STOCK_OK,
+                                                        GTK_RESPONSE_OK,
+                                                        GTK_STOCK_HELP,
+                                                        GTK_RESPONSE_HELP,
+                                                        NULL);
+
+        g_return_val_if_fail (dlg != NULL, NULL);
+
+        dialog = g_new0 (SpellConfigureDialog, 1);
+        dialog->dialog = dlg;
+
+
+        /* HIG defaults */
+        gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog->dialog)), 5);
+        gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
+                                        2); /* 2 * 5 + 2 = 12 */
+        gtk_container_set_border_width (GTK_CONTAINER (gtk_dialog_get_action_area (GTK_DIALOG (dialog->dialog))),
+                                        5);
+        gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog->dialog))), 6);
+
+        data_dir = pluma_plugin_get_data_dir (PLUMA_PLUGIN (plugin));
+        ui_file = g_build_filename (data_dir, "pluma-spell-setup-dialog.ui", NULL);
+        ret = pluma_utils_get_ui_objects (ui_file,
+                                          root_objects,
+                                          &error_widget,
+                                          "spell_dialog_content", &content,
+                                          "autocheck_never", &dialog->never,
+                                          "autocheck_document", &dialog->document,
+                                          "autocheck_always", &dialog->always,
+                                          NULL);
+
+        g_free (data_dir);
+        g_free (ui_file);
+
+        if (!ret)
+        {
+                gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
+                                    error_widget, TRUE, TRUE, 0);
+
+                gtk_container_set_border_width (GTK_CONTAINER (error_widget), 5);
+
+                gtk_widget_show (error_widget);
+
+                return dialog;
+        }
+
+        gtk_window_set_resizable (GTK_WINDOW (dialog->dialog), FALSE);
+
+        autocheck_type = get_autocheck_type (plugin);
+
+        if (autocheck_type == AUTOCHECK_ALWAYS)
+        {
+                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->always), TRUE);
+        }
+        else if (autocheck_type == AUTOCHECK_DOCUMENT)
+        {
+                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->document), TRUE);
+        }
+        else
+        {
+                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->never), TRUE);
+        }
+
+        gtk_widget_set_size_request (GTK_WIDGET (content), 15, 120);
+
+        gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
+                            content, FALSE, FALSE, 0);
+        g_object_unref (content);
+        gtk_container_set_border_width (GTK_CONTAINER (content), 5);
+
+        gtk_dialog_set_default_response (GTK_DIALOG (dialog->dialog),
+                                         GTK_RESPONSE_OK);
+
+        return dialog;
+}
+
+static void
+ok_button_pressed (SpellConfigureDialog *dialog)
+{
+	pluma_debug (DEBUG_PLUGINS);
+
+	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->always)))
+	{
+		set_autocheck_type (dialog->plugin, AUTOCHECK_ALWAYS);
+	}
+	else if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->document)))
+	{
+		set_autocheck_type (dialog->plugin, AUTOCHECK_DOCUMENT);
+	}
+	else
+	{
+		set_autocheck_type (dialog->plugin, AUTOCHECK_NEVER);
+	}
+}
+
+static void
+configure_dialog_response_cb (GtkWidget *widget,
+                              gint response,
+                              SpellConfigureDialog *dialog)
+{
+        switch (response)
+        {
+                case GTK_RESPONSE_HELP:
+                {
+                        pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_HELP");
+
+                        pluma_help_display (GTK_WINDOW (dialog),
+                                            NULL,
+                                            "pluma-spell-configure");
+                        break;
+                }
+                case GTK_RESPONSE_OK:
+                {
+                        pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_OK");
+
+                        ok_button_pressed (dialog);
+
+                        gtk_widget_destroy (dialog->dialog);
+                        break;
+                }
+                case GTK_RESPONSE_CANCEL:
+                {
+                        pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_CANCEL");
+                        gtk_widget_destroy (dialog->dialog);
+                }
+        }
+}
+
 static void
 set_language_cb (GtkAction   *action,
 		 ActionData *action_data)
@@ -849,6 +1065,7 @@ auto_spell_cb (GtkAction   *action,
 	
 	PlumaDocument *doc;
 	gboolean active;
+	WindowData *data;
 
 	pluma_debug (DEBUG_PLUGINS);
 
@@ -860,9 +1077,16 @@ auto_spell_cb (GtkAction   *action,
 	if (doc == NULL)
 		return;
 
-	pluma_document_set_metadata (doc,
+	data = g_object_get_data (G_OBJECT (window),
+					  WINDOW_DATA_KEY);
+
+	if (get_autocheck_type(data->plugin) == AUTOCHECK_DOCUMENT)
+	{
+
+		pluma_document_set_metadata (doc,
 				     PLUMA_METADATA_ATTRIBUTE_SPELL_ENABLED,
 				     active ? "1" : NULL, NULL);
+	}
 
 	set_auto_spell (window, doc, active);
 }
@@ -937,11 +1161,34 @@ set_auto_spell_from_metadata (PlumaWindow    *window,
 			      GtkActionGroup *action_group)
 {
 	gboolean active = FALSE;
-	gchar *active_str;
+	gchar *active_str = NULL;
 	PlumaDocument *active_doc;
+	PlumaSpellPluginAutocheckType autocheck_type;
+	WindowData *data;
 
-	active_str = pluma_document_get_metadata (doc,
+	data = g_object_get_data (G_OBJECT (window),
+					  WINDOW_DATA_KEY);
+
+	autocheck_type = get_autocheck_type(data->plugin);
+
+	switch (autocheck_type)
+	{
+		case AUTOCHECK_ALWAYS:
+		{
+			active = TRUE;
+			break;
+		}
+		case AUTOCHECK_DOCUMENT:
+		{
+			active_str = pluma_document_get_metadata (doc,
 						  PLUMA_METADATA_ATTRIBUTE_SPELL_ENABLED);
+			break;
+		}
+		case AUTOCHECK_NEVER:
+		default:
+			active = FALSE;
+			break;
+	}
 
 	if (active_str)
 	{
@@ -1003,6 +1250,7 @@ on_document_saved (PlumaDocument *doc,
 	PlumaAutomaticSpellChecker *autospell;
 	PlumaSpellChecker *spell;
 	const gchar *key;
+	WindowData *data;
 
 	if (error != NULL)
 	{
@@ -1022,12 +1270,26 @@ on_document_saved (PlumaDocument *doc,
 		key = NULL;
 	}
 
-	pluma_document_set_metadata (doc,
+	data = g_object_get_data (G_OBJECT (window),
+					  WINDOW_DATA_KEY);
+
+	if (get_autocheck_type(data->plugin) == AUTOCHECK_DOCUMENT)
+	{
+
+		pluma_document_set_metadata (doc,
 	                             PLUMA_METADATA_ATTRIBUTE_SPELL_ENABLED,
 	                             autospell != NULL ? "1" : NULL,
 	                             PLUMA_METADATA_ATTRIBUTE_SPELL_LANGUAGE,
 	                             key,
 	                             NULL);
+	}
+	else
+	{
+		pluma_document_set_metadata (doc,
+	                             PLUMA_METADATA_ATTRIBUTE_SPELL_LANGUAGE,
+	                             key,
+	                             NULL);
+	}
 }
 
 static void
@@ -1036,10 +1298,8 @@ tab_added_cb (PlumaWindow *window,
 	      gpointer     useless)
 {
 	PlumaDocument *doc;
-	PlumaView *view;
 
 	doc = pluma_tab_get_document (tab);
-	view = pluma_tab_get_view (tab);
 
 	g_signal_connect (doc, "loaded",
 			  G_CALLBACK (on_document_loaded),
@@ -1056,10 +1316,8 @@ tab_removed_cb (PlumaWindow *window,
 		gpointer     useless)
 {
 	PlumaDocument *doc;
-	PlumaView *view;
 
 	doc = pluma_tab_get_document (tab);
-	view = pluma_tab_get_view (tab);
 	
 	g_signal_handlers_disconnect_by_func (doc, on_document_loaded, window);
 	g_signal_handlers_disconnect_by_func (doc, on_document_saved, window);
@@ -1077,6 +1335,7 @@ impl_activate (PlumaPlugin *plugin,
 	pluma_debug (DEBUG_PLUGINS);
 
 	data = g_slice_new (WindowData);
+	data->plugin = PLUMA_SPELL_PLUGIN (plugin);
 	action_data = g_slice_new (ActionData);
 	action_data->plugin = plugin;
 	action_data->window = window;
@@ -1197,6 +1456,23 @@ impl_update_ui (PlumaPlugin *plugin,
 	update_ui_real (window, data);
 }
 
+static GtkWidget *
+impl_create_configure_dialog (PlumaPlugin *plugin)
+{
+        SpellConfigureDialog *dialog;
+
+        dialog = get_configure_dialog(PLUMA_SPELL_PLUGIN (plugin));
+
+        dialog->plugin = PLUMA_SPELL_PLUGIN (plugin);
+
+        g_signal_connect (dialog->dialog,
+                        "response",
+                        G_CALLBACK (configure_dialog_response_cb),
+                        dialog);
+
+        return GTK_WIDGET (dialog->dialog);
+}
+
 static void
 pluma_spell_plugin_class_init (PlumaSpellPluginClass *klass)
 {
@@ -1209,9 +1485,13 @@ pluma_spell_plugin_class_init (PlumaSpellPluginClass *klass)
 	plugin_class->deactivate = impl_deactivate;
 	plugin_class->update_ui = impl_update_ui;
 
+	plugin_class->create_configure_dialog = impl_create_configure_dialog;
+
 	if (spell_checker_id == 0)
 		spell_checker_id = g_quark_from_string ("PlumaSpellCheckerID");
 
 	if (check_range_id == 0)
 		check_range_id = g_quark_from_string ("CheckRangeID");
+
+	g_type_class_add_private (object_class, sizeof (PlumaSpellPluginPrivate));
 }
