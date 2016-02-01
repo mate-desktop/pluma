@@ -102,10 +102,6 @@ pluma_progress_message_area_get_property (GObject      *object,
 					  GValue       *value,
 					  GParamSpec   *pspec)
 {
-	PlumaProgressMessageArea *area;
-
-	area = PLUMA_PROGRESS_MESSAGE_AREA (object);
-
 	switch (prop_id)
 	{
 	default:
