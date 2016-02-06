@@ -1006,6 +1006,10 @@ pluma_print_preview_init (PlumaPrintPreview *preview)
 	priv->gtk_preview = NULL;
 
 #if GTK_CHECK_VERSION (3, 0, 0)
+    GtkStyleContext *context;
+
+    context = gtk_widget_get_style_context (GTK_WIDGET (preview));
+    gtk_style_context_add_class (context, "pluma-print-preview");
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (preview),
 	                                GTK_ORIENTATION_VERTICAL);
 #endif

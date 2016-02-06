@@ -3843,6 +3843,13 @@ pluma_window_init (PlumaWindow *window)
 	window->priv->window_group = gtk_window_group_new ();
 	gtk_window_group_add_window (window->priv->window_group, GTK_WINDOW (window));
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+    GtkStyleContext *context;
+
+    context = gtk_widget_get_style_context (GTK_WIDGET (window));
+    gtk_style_context_add_class (context, "pluma-window");
+#endif
+
 	main_box = gtk_vbox_new (FALSE, 0);
 	gtk_container_add (GTK_CONTAINER (window), main_box);
 	gtk_widget_show (main_box);
