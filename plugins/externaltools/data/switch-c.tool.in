@@ -1,5 +1,7 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 # Copyright © 2011 Perberos
+# Copyright © 2012-2016 MATE developers
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published by the
@@ -16,10 +18,15 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 import os
+import subprocess
 
 name = os.environ["PLUMA_CURRENT_DOCUMENT_NAME"]
+filename, ext = os.path.splitext(name)
 
 if name.endswith('.c'):
-	os.system("pluma %s.h" % ".".join(name.split('.')[:-1]))
+    filename = "%s.h" % filename
+    subprocess.Popen(["pluma", filename])
+
 if name.endswith('.h'):
-	os.system("pluma %s.c" % ".".join(name.split('.')[:-1]))
+    filename = "%s.c" % filename
+    subprocess.Popen(["pluma", filename])
