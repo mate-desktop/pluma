@@ -20,13 +20,19 @@
 import os
 import subprocess
 
-name = os.environ["PLUMA_CURRENT_DOCUMENT_NAME"]
-filename, ext = os.path.splitext(name)
+try:
+    name = os.environ["PLUMA_CURRENT_DOCUMENT_NAME"]
+except KeyError:
+    exit(1)
 
-if name.endswith('.c'):
-    filename = "%s.h" % filename
-    subprocess.Popen(["pluma", filename])
+f, ext = os.path.splitext(name)
+nxt = ''
 
-if name.endswith('.h'):
-    filename = "%s.c" % filename
-    subprocess.Popen(["pluma", filename])
+if ext == '.c':
+    nxt = '.h'
+
+if ext == '.h':
+    nxt = '.c'
+
+if nxt:
+    subprocess.call(['/usr/bin/pluma', f+nxt])
