@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:37+0300\n"
-"PO-Revision-Date: 2016-02-17 20:38+0000\n"
+"PO-Revision-Date: 2016-03-27 20:50+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -63,28 +63,28 @@ msgstr "Kurti atsargines kopijas"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "Ar pluma turėtų kurti atsargines failų kopijas jas saugant. Atsarginės failo kopijos priesagą galima nustatyti naudojant \"Atsarginės kopijos priesaga\" parinktį."
+msgstr "Ar pluma turėtų kurti atsargines failų kopijas juos įrašant. Atsarginės failo kopijos priesagą galima nustatyti naudojant \"Atsarginės kopijos priesaga\" parinktį."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
-msgstr "Automatinis saugojimas"
+msgstr "Automatinis įrašymas"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:11
 msgid ""
 "Whether pluma should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
-msgstr "Ar pluma turėtų periodiškai išsaugoti pakeistus failus. Periodą galima nustatyti \"Autosave Interval\" parinktyje."
+msgstr "Ar pluma turėtų periodiškai įrašyti pakeistus failus. Periodą galima nustatyti \"Automatinio įrašymo intervalas\" parinktyje."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:12
 msgid "Autosave Interval"
-msgstr "Automatinio išsaugojimo intervalas"
+msgstr "Automatinio įrašymo intervalas"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:13
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
-msgstr "Minučių skaičius, kurį pluma lauks, kad išsaugotų pakeistus failus. Galios tik tada, jei parinktis „Automatinis išsaugojimas“ yra įjungta."
+msgstr "Minučių skaičius, kurį pluma lauks, kad įrašytų pakeistus failus. Galios tik tada, jei parinktis „Automatinis įrašymas“ yra įjungta."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Writable VFS schemes"
@@ -202,13 +202,13 @@ msgstr "Nurodo kaip juda žymeklis, kai paspaudžiami klavišai HOME ir END. „
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Restore Previous Cursor Position"
-msgstr "Perkelti kursorių į ankstesnę poziciją"
+msgstr "Perkelti žymeklį į ankstesnę poziciją"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:39
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
-msgstr "Ar pluma įkėlus failą turėtų perkelti kursorių į buvusią poziciją."
+msgstr "Ar pluma įkėlus failą turėtų perkelti žymeklį į buvusią poziciją."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Enable Search Highlighting"
@@ -463,7 +463,7 @@ msgstr "Pluma tekstų redaktorius"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:145
 msgid "Log Out _without Saving"
-msgstr "Atsijungti _neišsaugant"
+msgstr "Atsijungti _neįrašant"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:149
 msgid "_Cancel Logout"
@@ -471,7 +471,7 @@ msgstr "_Neatsijungti"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:156
 msgid "Close _without Saving"
-msgstr "Užverti _neišsaugant"
+msgstr "Užverti _neįrašant"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
@@ -485,14 +485,14 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Jeigu neišsaugosite, pakeitimai, atlikti per paskutinę %ld sekundę, bus prarasti."
-msgstr[1] "Jeigu neišsaugosite, pakeitimai, atlikti per paskutines %ld sekundes, bus prarasti."
-msgstr[2] "Jeigu neišsaugosite, pakeitimai, atlikti per paskutines %ld sekundžių, bus prarasti."
+msgstr[0] "Jeigu neįrašysite, pakeitimai, atlikti per paskutinę %ld sekundę, bus prarasti."
+msgstr[1] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %ld sekundes, bus prarasti."
+msgstr[2] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %ld sekundžių, bus prarasti."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:425
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
-msgstr "Jeigu neišsaugosite, pakeitimai, atlikti per paskutinę minutę, bus prarasti."
+msgstr "Jeigu neįrašysite, pakeitimai, atlikti per paskutinę minutę, bus prarasti."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:431
 #, c-format
@@ -502,9 +502,9 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Jeigu neišsaugosite, pakeitimai padaryti per paskutinę minutę ir %ld sekundę bus prarasti."
-msgstr[1] "Jeigu neišsaugosite, pakeitimai padaryti per paskutinę minutę ir %ld sekundes bus prarasti."
-msgstr[2] "Jeigu neišsaugosite, pakeitimai padaryti per paskutinę minutę ir %ld sekundžių bus prarasti."
+msgstr[0] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę minutę ir %ld sekundę bus prarasti."
+msgstr[1] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę minutę ir %ld sekundes bus prarasti."
+msgstr[2] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę minutę ir %ld sekundžių bus prarasti."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:441
 #, c-format
@@ -514,14 +514,14 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Jeigu neišsaugosite, pakeitimai, atlikti per paskutinę %ld minutę, bus prarasti."
-msgstr[1] "Jeigu neišsaugosite, pakeitimai, atlikti per paskutines %ld minutes, bus prarasti."
-msgstr[2] "Jeigu neišsaugosite, pakeitimai, atlikti per paskutines %ld minučių, bus prarasti."
+msgstr[0] "Jeigu neįrašysite, pakeitimai, atlikti per paskutinę %ld minutę, bus prarasti."
+msgstr[1] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %ld minutes, bus prarasti."
+msgstr[2] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %ld minučių, bus prarasti."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:456
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
-msgstr "Jeigu neišsaugosite, pakeitimai, atlikti per paskutinę valandą, bus negrįžtamai prarasti."
+msgstr "Jeigu neįrašysite, pakeitimai, atlikti per paskutinę valandą, bus negrįžtamai prarasti."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:462
 #, c-format
@@ -531,9 +531,9 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Jeigu neišsaugosite, pakeitimai padaryti per paskutinę valandą ir %d minutę bus prarasti."
-msgstr[1] "Jeigu neišsaugosite, pakeitimai padaryti per paskutinę valandą ir %d minutes bus prarasti."
-msgstr[2] "Jeigu neišsaugosite, pakeitimai padaryti per paskutinę valandą ir %d minučių bus prarasti."
+msgstr[0] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę valandą ir %d minutę bus prarasti."
+msgstr[1] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę valandą ir %d minutes bus prarasti."
+msgstr[2] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę valandą ir %d minučių bus prarasti."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:477
 #, c-format
@@ -541,9 +541,9 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "Jeigu neišsaugosite, pakeitimai, atlikti per paskutines %d valandas, bus prarasti."
-msgstr[1] "Jeigu neišsaugosite, pakeitimai, atlikti per paskutines %d valandas, bus prarasti."
-msgstr[2] "Jeigu neišsaugosite, pakeitimai, atlikti per %d paskutinių valandų, bus prarasti."
+msgstr[0] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %d valandas, bus prarasti."
+msgstr[1] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %d valandas, bus prarasti."
+msgstr[2] "Jeigu neįrašysite, pakeitimai, atlikti per %d paskutinių valandų, bus prarasti."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:534
 #, c-format
@@ -558,7 +558,7 @@ msgstr "Ar įrašyti pakeitimus dokumente \"%s\" prieš užveriant?"
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:553
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:786
 msgid "Saving has been disabled by the system administrator."
-msgstr "Išsaugojimo galimybė išjungta sistemos administratoriaus."
+msgstr "Įrašymo galimybė išjungta sistemos administratoriaus."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:737
 #, c-format
@@ -574,21 +574,21 @@ msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "Yra %d dokumentas su neišsaugotais pakeitimais. Išsaugoti prieš uždarant?"
-msgstr[1] "Yra %d dokumentai su neišsaugotais pakeitimais. Išsaugoti prieš uždarant?"
-msgstr[2] "Yra %d dokumentų su neišsaugotais pakeitimais. Išsaugoti prieš uždarant?"
+msgstr[0] "Yra %d dokumentas su neįrašytais pakeitimais. Įrašyti prieš užveriant?"
+msgstr[1] "Yra %d dokumentai su neįrašytais pakeitimais. Įrašyti prieš užveriant?"
+msgstr[2] "Yra %d dokumentų su neįrašytais pakeitimais. Įrašyti prieš užveriant?"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:761
 msgid "Docum_ents with unsaved changes:"
-msgstr "Dokum_entai su neišsaugotais pakeitimais:"
+msgstr "Dokum_entai su neįrašytais pakeitimais:"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:763
 msgid "S_elect the documents you want to save:"
-msgstr "Pasi_rinkite norimus išsaugoti dokumentus:"
+msgstr "Pasi_rinkite norimus įrašyti dokumentus:"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:788
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "Jeigu neišsaugosite, visi Jūsų pakeitimai bus prarasti."
+msgstr "Jeigu neįrašysite, visi Jūsų pakeitimai bus prarasti."
 
 #: ../pluma/dialogs/pluma-encodings-dialog.c:321
 msgid "Character Encodings"
@@ -746,11 +746,11 @@ msgstr "Įjungti _automatinį atitraukimą"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
 msgid "File Saving"
-msgstr "Failų saugojimas"
+msgstr "Failų įrašymas"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
 msgid "Create a _backup copy of files before saving"
-msgstr "Prieš išsaugant sukurti atsarginę _failo kopiją"
+msgstr "Prieš įrašant, sukurti atsarginę _failo kopiją"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
 msgid "_Autosave files every"
@@ -914,16 +914,16 @@ msgstr "Failas „%s“ yra tik skaitymui."
 
 #: ../pluma/pluma-commands-file.c:581
 msgid "Do you want to try to replace it with the one you are saving?"
-msgstr "Ar norite ją pakeisti ta, kurią dabar norite išsaugoti?"
+msgstr "Ar norite ją pakeisti ta, kurią dabar norite įrašyti?"
 
 #: ../pluma/pluma-commands-file.c:650 ../pluma/pluma-commands-file.c:873
 #, c-format
 msgid "Saving file '%s'…"
-msgstr "Saugomas failas „%s“…"
+msgstr "Įrašomas failas „%s“…"
 
 #: ../pluma/pluma-commands-file.c:758
 msgid "Save As…"
-msgstr "Išsaugoti kaip…"
+msgstr "Įrašyti kaip…"
 
 #: ../pluma/pluma-commands-file.c:1087
 #, c-format
@@ -933,7 +933,7 @@ msgstr "Atkuriamas dokumentas „%s“…"
 #: ../pluma/pluma-commands-file.c:1132
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
-msgstr "Atkurti neišsaugotus pakeitimus dokumente „%s“?"
+msgstr "Atkurti neįrašytus pakeitimus dokumente „%s“?"
 
 #: ../pluma/pluma-commands-file.c:1141
 #, c-format
@@ -1037,7 +1037,7 @@ msgstr "„%s“ nerasta"
 #: ../pluma/pluma-document.c:1090 ../pluma/pluma-document.c:1110
 #, c-format
 msgid "Unsaved Document %d"
-msgstr "Neišsaugotas dokumentas %d"
+msgstr "Neįrašytas dokumentas %d"
 
 #: ../pluma/pluma-documents-panel.c:101 ../pluma/pluma-documents-panel.c:115
 #: ../pluma/pluma-window.c:2187 ../pluma/pluma-window.c:2192
@@ -1243,7 +1243,7 @@ msgstr "Failo vieta negali būti pasiekta, nes ji neprijungta."
 #: ../pluma/pluma-io-error-message-area.c:255
 #, c-format
 msgid "%s is a directory."
-msgstr "%s yra aplankas."
+msgstr "%s yra katalogas."
 
 #: ../pluma/pluma-io-error-message-area.c:262
 #, c-format
@@ -1365,7 +1365,7 @@ msgstr "Nepavyko atverti failo „%s“."
 #: ../pluma/pluma-io-error-message-area.c:723
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
-msgstr "Nepavyko išsaugoti failo %s naudojant %s simbolių koduotę."
+msgstr "Nepavyko įrašyti failo %s naudojant %s simbolių koduotę."
 
 #: ../pluma/pluma-io-error-message-area.c:726
 msgid ""
@@ -1387,12 +1387,12 @@ msgstr "pluma atvėrė šį failą neredaguojamu būdu. Ar vis tiek norite jį k
 #: ../pluma/pluma-io-error-message-area.c:896
 #: ../pluma/pluma-io-error-message-area.c:1003
 msgid "S_ave Anyway"
-msgstr "_Vis tiek išsaugoti"
+msgstr "_Vis tiek įrašyti"
 
 #: ../pluma/pluma-io-error-message-area.c:900
 #: ../pluma/pluma-io-error-message-area.c:1007
 msgid "D_on't Save"
-msgstr "_Nesaugoti"
+msgstr "_Neįrašyti"
 
 #. FIXME: review this message, it's not clear since for the user the
 #. "modification"
@@ -1407,24 +1407,24 @@ msgstr "Failas %s nuo jo perskaitymo buvo pakeistas."
 #: ../pluma/pluma-io-error-message-area.c:940
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr "Jeigu jį išsaugosite, visi išoriniai pakeitimai bus prarasti. Vis tiek išsaugoti?"
+msgstr "Jeigu jį įrašysite, visi išoriniai pakeitimai bus prarasti. Vis tiek įrašyti?"
 
 #: ../pluma/pluma-io-error-message-area.c:1028
 #, c-format
 msgid "Could not create a backup file while saving %s"
-msgstr "Saugant %s nepavyko sukurti atsarginės šio failo kopijos"
+msgstr "Įrašant %s nepavyko sukurti atsarginės šio failo kopijos"
 
 #: ../pluma/pluma-io-error-message-area.c:1031
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
-msgstr "Saugant %s nepavyko sukurti laikinojo failo"
+msgstr "Įrašant %s nepavyko sukurti laikinojo failo"
 
 #: ../pluma/pluma-io-error-message-area.c:1051
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "pluma nepavyko padaryti atsarginės seno failo kopijos prieš išsaugant naują. Galite nepaisyti šio perspėjimo ir vis tiek išsaugoti failą, bet jeigu saugant įvyks klaida, galite prarasti senojo failo kopiją. Vis tiek išsaugoti?"
+msgstr "pluma nepavyko padaryti atsarginės seno failo kopijos prieš įrašant naują. Galite nepaisyti šio perspėjimo ir vis tiek įrašyti failą, bet jeigu įrašant įvyks klaida, galite prarasti senojo failo kopiją. Vis tiek įrašyti?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: ../pluma/pluma-io-error-message-area.c:1115
@@ -1457,13 +1457,13 @@ msgstr "Neturite reikiamų teisių įrašyti šį failą. Patikrinkite, ar teisi
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
-msgstr "Išsaugoti failui nepakanka laisvos vietos diske. Atlaisvinkite šiek tiek vietos diske ir bandykite iš naujo."
+msgstr "Įrašyti failui nepakanka laisvos vietos diske. Atlaisvinkite šiek tiek vietos diske ir bandykite iš naujo."
 
 #: ../pluma/pluma-io-error-message-area.c:1149
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "Bandote išsaugoti failą tik skaitymui skirtame diske. Patikrinkite, ar teisingai nurodėte vietą, ir bandykite dar kartą."
+msgstr "Bandote įrašyti failą tik skaitymui skirtame diske. Patikrinkite, ar teisingai nurodėte vietą, ir bandykite dar kartą."
 
 #: ../pluma/pluma-io-error-message-area.c:1155
 msgid "A file with the same name already exists. Please use a different name."
@@ -1480,12 +1480,12 @@ msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "Diske, į kurį norite išsaugoti failą, yra apribojimai failų dydžiams. Pabandykite išsaugoti mažesnį failą, arba saugokite į diską, kuriame tokių apribojimų nėra."
+msgstr "Diske, į kurį norite įrašyti failą, yra apribojimai failų dydžiams. Pabandykite įrašyti mažesnį failą, arba įrašykite į diską, kuriame tokių apribojimų nėra."
 
 #: ../pluma/pluma-io-error-message-area.c:1183
 #, c-format
 msgid "Could not save the file %s."
-msgstr "Nepavyko išsaugoti failo %s."
+msgstr "Nepavyko įrašyti failo %s."
 
 #. FIXME: review this message, it's not clear since for the user the
 #. "modification"
@@ -1719,7 +1719,7 @@ msgstr[2] "Yra %d kortelių su klaidomis"
 #: ../pluma/pluma-style-scheme-manager.c:220
 #, c-format
 msgid "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "Nepavyko sukurti aplanko „%s“: g_mkdir_with_parents() pranešė klaidą: %s"
+msgstr "Nepavyko sukurti katalogo „%s“: g_mkdir_with_parents() pranešė klaidą: %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
@@ -1750,12 +1750,12 @@ msgstr "Įkeliama %s"
 #: ../pluma/pluma-tab.c:777
 #, c-format
 msgid "Saving %s to %s"
-msgstr "Saugoma %s į %s"
+msgstr "Įrašoma %s į %s"
 
 #: ../pluma/pluma-tab.c:784
 #, c-format
 msgid "Saving %s"
-msgstr "Saugoma %s"
+msgstr "Įrašoma %s"
 
 #. Read only
 #: ../pluma/pluma-tab.c:1662
@@ -1866,19 +1866,19 @@ msgstr "Išeiti iš viso ekrano veiksenos"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
-msgstr "Išsaugoti esamą failą"
+msgstr "Įrašyti esamą failą"
 
 #: ../pluma/pluma-ui.h:82
 msgid "Save _As..."
-msgstr "Išsaugoti k_aip..."
+msgstr "Įrašyti k_aip..."
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
-msgstr "Išsaugoti esamą failą kitu vardu"
+msgstr "Įrašyti esamą failą kitu vardu"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr "Atstatyti iki išsaugotos failo versijos"
+msgstr "Atstatyti iki įrašytos failo versijos"
 
 #: ../pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -1993,11 +1993,11 @@ msgstr "Didėjanti teksto paieška"
 #. Documents menu
 #: ../pluma/pluma-ui.h:127
 msgid "_Save All"
-msgstr "_Išsaugoti visus"
+msgstr "Įraš_yti visus"
 
 #: ../pluma/pluma-ui.h:128
 msgid "Save all open files"
-msgstr "Išsaugoti visus atvertus failus"
+msgstr "Įrašyti visus atvertus failus"
 
 #: ../pluma/pluma-ui.h:129
 msgid "_Close All"
@@ -2161,7 +2161,7 @@ msgstr "Atverti"
 
 #: ../pluma/pluma-window.c:1456
 msgid "Save"
-msgstr "Išsaugoti"
+msgstr "Įrašyti"
 
 #: ../pluma/pluma-window.c:1458
 msgid "Print"
@@ -2315,7 +2315,7 @@ msgstr "Nepavyko įvykdyti komandos: %s"
 
 #: ../plugins/externaltools/tools/functions.py:162
 msgid "You must be inside a word to run this command"
-msgstr "Norėdami paleisti šią komandą, turite perkelti kursorių į žodį"
+msgstr "Norėdami paleisti šią komandą, turite perkelti žymeklį į žodį"
 
 #: ../plugins/externaltools/tools/functions.py:267
 msgid "Running tool:"
@@ -2412,7 +2412,7 @@ msgstr "Perrašyti esamą pasirinkimą"
 
 #: ../plugins/externaltools/tools/tools.ui.h:13
 msgid "Insert at cursor position"
-msgstr "Įterpti kursoriaus pozicijoje"
+msgstr "Įterpti žymeklio pozicijoje"
 
 #: ../plugins/externaltools/tools/tools.ui.h:14
 msgid "All documents except untitled ones"
@@ -2457,7 +2457,7 @@ msgstr "Į_vestis:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:26
 msgid "_Save:"
-msgstr "Iš_saugoti:"
+msgstr "Į_rašyti:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:27
 msgid "_Shortcut Key:"
@@ -2469,7 +2469,7 @@ msgstr "Sukurti"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:2
 msgid "Run \"make\" in the document directory"
-msgstr "Paleisti „make“ dokumento aplanke"
+msgstr "Paleisti „make“ dokumento kataloge"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:1
 msgid "Open terminal here"
@@ -2521,7 +2521,7 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "Jei TEIGIAMA, failų naršyklės įskiepis rodys pirmo atverto dokumento aplanką, jei failų naršyklė dar nebuvo naudota. (Taigi, tai paprastai taikoma dokumento atvėrimui iš komandų eilutės arba atveriant jį su caja, ir t.t.)"
+msgstr "Jei TEIGIAMA, failų naršyklės įskiepis rodys pirmo atverto dokumento katalogą, jei failų naršyklė dar nebuvo naudota. (Taigi, tai paprastai taikoma dokumento atvėrimui iš komandų eilutės arba atveriant jį su caja, ir t.t.)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
@@ -2553,28 +2553,28 @@ msgstr "Atverti su medžio vaizdu"
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
-msgstr "Atverti medžio rodinį, vietoje žymelių rodinio, kai įkeliamas failų naršyklės įskiepis"
+msgstr "Atverti medžio rodinį, vietoje žymių rodinio, kai įkeliamas failų naršyklės įskiepis"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
-msgstr "Failų naršyklės šakninis aplankas"
+msgstr "Failų naršyklės šakninis katalogas"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:10
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "failų naršyklės šakninis aplankas naudojamas įkeliant failų naršyklės įskiepį ir esant onload/tree_view TEIGIAMOMS reikšmėms."
+msgstr "Failų naršyklės šakninis katalogas naudojamas įkeliant failų naršyklės įskiepį ir esant onload/tree_view TEIGIAMOMS reikšmėms."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
-msgstr "Failų naršyklės virtualus šakninis aplankas"
+msgstr "Failų naršyklės virtualus šakninis katalogas"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:12
 msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "failų naršyklės virtualus šakninis aplankas naudojamas įkeliant failų naršyklės įskiepį ir esant onload/tree_view TEIGIAMOMS reikšmėms. Virtualus šakninis aplankas visada turi būti žemiau tikrojo šakninio."
+msgstr "Failų naršyklės virtualus šakninis katalogas naudojamas įkeliant failų naršyklės įskiepį ir esant onload/tree_view TEIGIAMOMS reikšmėms. Virtualus šakninis katalogas visada turi būti žemiau tikrojo šakninio."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2602,7 +2602,7 @@ msgstr "Čia _atverti terminalą"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:546
 msgid "Open a terminal at the currently opened directory"
-msgstr "Atverti terminalą šiuo metu atvertame aplanke"
+msgstr "Atverti terminalą šiuo metu atvertame kataloge"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:688
 msgid "File Browser"
@@ -2610,7 +2610,7 @@ msgstr "Failų naršyklė"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:818
 msgid "An error occurred while creating a new directory"
-msgstr "Kuriant naują aplanką iškilo klaida"
+msgstr "Kuriant naują katalogą iškilo klaida"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:821
 msgid "An error occurred while creating a new file"
@@ -2618,23 +2618,23 @@ msgstr "Klaida kuriant naują failą"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:826
 msgid "An error occurred while renaming a file or directory"
-msgstr "Klaida pervadinant failą ar aplanką"
+msgstr "Klaida pervadinant failą ar katalogą"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:831
 msgid "An error occurred while deleting a file or directory"
-msgstr "Klaida trinant failą ar aplanką"
+msgstr "Klaida trinant failą ar katalogą"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:836
 msgid "An error occurred while opening a directory in the file manager"
-msgstr "Klaida, atveriant aplanką failų tvarkytuvėje"
+msgstr "Klaida, atveriant katalogą failų tvarkytuvėje"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:840
 msgid "An error occurred while setting a root directory"
-msgstr "Klaida nustatant šakninį aplanką"
+msgstr "Klaida nustatant šakninį katalogą"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:844
 msgid "An error occurred while loading a directory"
-msgstr "Klaida įkeliant aplanką"
+msgstr "Klaida įkeliant katalogą"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:847
 msgid "An error occurred"
@@ -2694,17 +2694,17 @@ msgstr "Naujas failas šiuo metu atfiltruojamas. Reikės pakoreguoti filtravimo 
 #. file browser pane.
 #: ../plugins/filebrowser/pluma-file-browser-store.c:3597
 msgid "directory"
-msgstr "aplankas"
+msgstr "katalogas"
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:3617
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
-msgstr "Naujas aplankas šiuo metu yra atfiltruojamas. Reikės pakoreguoti filtravimo nustatymus, kad aplankas taptų matomas"
+msgstr "Naujas katalogas šiuo metu yra atfiltruojamas. Reikės pakoreguoti filtravimo nustatymus, kad katalogas taptų matomas"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:724
 msgid "Bookmarks"
-msgstr "Žymelės"
+msgstr "Žymės"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:805
 msgid "_Filter"
@@ -3069,7 +3069,7 @@ msgstr "Nepavyko sukurti archyvo „%s“"
 #: ../plugins/snippets/snippets/Exporter.py:82
 #, python-format
 msgid "Target directory \"%s\" does not exist"
-msgstr "Paskirties katalogas „%s“ neegzistuoja"
+msgstr "Paskirties katalogo „%s“ nėra"
 
 #: ../plugins/snippets/snippets/Exporter.py:85
 #, python-format
@@ -3323,7 +3323,7 @@ msgstr "Ignoruoti _visus"
 
 #: ../plugins/spell/spell-checker.ui.h:10
 msgid "Change A_ll"
-msgstr "Išsaugoti v_isus"
+msgstr "Keisti v_isus"
 
 #: ../plugins/spell/spell-checker.ui.h:11
 msgid "User dictionary:"
@@ -4967,11 +4967,11 @@ msgstr "Žymeklio vietoje įterpia esamą datą ir laiką"
 
 #: ../plugins/trailsave/trailsave.pluma-plugin.desktop.in.h:1
 msgid "Save Without Trailing Spaces"
-msgstr "Išsaugoti be tarpų eilučių pabaigoje"
+msgstr "Įrašyti be tarpų eilučių pabaigoje"
 
 #: ../plugins/trailsave/trailsave.pluma-plugin.desktop.in.h:2
 msgid "Removes trailing spaces from lines before saving."
-msgstr "Prieš išsaugant, pašalina eilučių pabaigoje esančius tarpus."
+msgstr "Prieš įrašant, pašalina eilučių pabaigoje esančius tarpus."
 
 #: ../plugins/time/pluma-time-dialog.ui.h:1
 msgid "Insert Date and Time"

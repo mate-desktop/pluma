@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:37+0300\n"
-"PO-Revision-Date: 2016-02-19 11:41+0000\n"
+"PO-Revision-Date: 2016-03-31 06:24+0000\n"
 "Last-Translator: Микола Ткач <Stuartlittle1970@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/mate/MATE/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "Чи використовувати системний шрифт для області редагування. Якщо цей параметр вимкнено, то для області редагування буде використовуватися шрифт, визначений у параметрі \"Шрифт редактора\"."
+msgstr "Чи використовувати системний шрифт для ділянці редагування. Якщо цей параметр вимкнено, то для ділянки редагування буде використовуватися шрифт, визначений у параметрі \"Шрифт редактора\"."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -191,7 +191,7 @@ msgstr "Вказує позицію правої межі."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:36
 msgid "Smart Home End"
-msgstr "Розумні клавіші Home End"
+msgstr "Розумні клявіші Home End"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:37
 msgid ""
@@ -202,7 +202,7 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "Вказує спосіб переміщення вказівника при натисканні клавіш HOME та END. Вкажіть \"DISABLED\" для простого переміщення до початку та кінця рядка, \"AFTER\" для переміщення до початку/кінця рядка при першому натисканні та при другому натисканні до початку/кінця тексту, нехтуючи пробільні символи. Якщо вказано \"BEFORE\" - переміщення до початку/кінця тексту, при повторному натисканні - переміщення до початку/кінця рядка. Якщо вказано \"ALWAYS\" - вказівник завжди переміщується до початку/кінця тексту, на початку/кінця рядка."
+msgstr "Вказує спосіб переміщення вказівника при натисканні клявіш HOME та END. Вкажіть \"DISABLED\" для простого переміщення до початку та кінця рядка, \"AFTER\" для переміщення до початку/кінця рядка при першому натисканні та при другому натисканні до початку/кінця тексту, нехтуючи пробільні символи. Якщо вказано \"BEFORE\" - переміщення до початку/кінця тексту, при повторному натисканні - переміщення до початку/кінця рядка. Якщо вказано \"ALWAYS\" - вказівник завжди переміщується до початку/кінця тексту, на початку/кінця рядка."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Restore Previous Cursor Position"
@@ -425,13 +425,13 @@ msgstr "Перелік записів у текстовому полі \"зам�
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "Active plugins"
-msgstr "Активні модулі"
+msgstr "Активні втулки"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:84
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "Перелік активних модулів. Він містить \"Адресу\" активного модулю. Див. файл .pluma-plugin для отримання \"адреси\" даного модулю."
+msgstr "Перелік активних втулок. Він містить \"Адресу\" активної втулки. Див. файл .pluma-plugin для отримання \"адреси\" даної втулки."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -447,7 +447,7 @@ msgid ""
 "plugin system, which currently includes support for spell checking, "
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
-msgstr "<p> Pluma це маленький, але потужний текстовий редактор спеціяльно розроблений для MATE. Він має більшість функцій стандартних текстових редакторів та повністю підтримує міжнародний текст в Unicode. Додаткові можливості включають підсвітку синтаксису та автоматичне розпізнавання джерельного коду, друкування та редагування декількох документів у одному вікні. </p> <p> Pluma є розширюваним через систему втулок, які на данний час включають підтримку перевірки орфографії, порівняння файлів, перегляд CVS ChangeLog-ів, та регулювання рівню відступів. </p>"
+msgstr "<p> Pluma це маленький, але потужний текстовий редактор спеціяльно розроблений для MATE. Він має більшість функцій стандартних текстових редакторів та повністю підтримує міжнародний текст в Unicode. Додаткові можливости включають підсвітку синтаксису та автоматичне розпізнавання джерельного коду, друкування та редагування декількох документів у одному вікні. </p> <p> Pluma є розширюваним через систему втулок, які на данний час включають підтримку перевірки орфографії, порівняння файлів, перегляд CVS ChangeLog-ів, та регулювання рівню відступів. </p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
@@ -866,11 +866,11 @@ msgstr "Показати перелік можливих значень пара
 
 #: ../pluma/pluma.c:113
 msgid "Create a new top-level window in an existing instance of pluma"
-msgstr "Створити нове головне вікно у поточному екземплярі pluma"
+msgstr "Створити нове головне вікно у поточному примірнику pluma"
 
 #: ../pluma/pluma.c:116
 msgid "Create a new document in an existing instance of pluma"
-msgstr "Створити новий документ у поточному екземплярі pluma"
+msgstr "Створити новий документ у поточному примірнику pluma"
 
 #: ../pluma/pluma.c:119
 msgid "[FILE...]"
@@ -918,7 +918,7 @@ msgstr "Файл \"%s\" лише для читання."
 
 #: ../pluma/pluma-commands-file.c:581
 msgid "Do you want to try to replace it with the one you are saving?"
-msgstr "Спробувати замінити його файлом, що ви записуєте?"
+msgstr "Спробувати замінити його файлом, що Ви записуєте?"
 
 #: ../pluma/pluma-commands-file.c:650 ../pluma/pluma-commands-file.c:873
 #, c-format
@@ -1234,7 +1234,7 @@ msgstr "pluma не підтримує адреси %s."
 
 #: ../pluma/pluma-io-error-message-area.c:239
 msgid "pluma cannot handle this location."
-msgstr "pluma не може обробити цей запит."
+msgstr "pluma не може опрацювати цей запит."
 
 #: ../pluma/pluma-io-error-message-area.c:247
 msgid "The location of the file cannot be mounted."
@@ -1359,7 +1359,7 @@ msgstr "Не вдається відкрити файл \"%s\" використ�
 #: ../pluma/pluma-io-error-message-area.c:653
 #: ../pluma/pluma-io-error-message-area.c:728
 msgid "Select a different character encoding from the menu and try again."
-msgstr "Виберіть інше кодування символів з меню та спробуйте ще раз."
+msgstr "Виберіть иньше кодування символів з меню та спробуйте ще раз."
 
 #: ../pluma/pluma-io-error-message-area.c:663
 #, c-format
@@ -1375,12 +1375,12 @@ msgstr "Не вдається зберегти файл \"%s\" використ�
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
-msgstr "Документ містить один або більше символів, які не мають представлення у вказаному кодуванні символів."
+msgstr "Документ містить один або більше символів, які не мають надання у вказаному кодуванні символів."
 
 #: ../pluma/pluma-io-error-message-area.c:815
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
-msgstr "Файл \"%s\" вже відкритий у іншому вікні pluma."
+msgstr "Файл \"%s\" вже відкритий у иньшому вікні pluma."
 
 #: ../pluma/pluma-io-error-message-area.c:833
 msgid ""
@@ -1428,7 +1428,7 @@ msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "pluma не може створити резервну копію старого файлу до збереження нового. Ви можете проігнорувати це попередження та зберегти у будь-якому випадку, але якщо під час збереження виникне помилка, ви втратите стару копію файлу. Зберегти попри усе?"
+msgstr "pluma не може створити резервну копію старого файлу до збереження нового. Ви можете знехтувати це попередження та зберегти у будь-якому випадку, але якщо під час збереження виникне помилка, Ви втратите стару копію файлу. Зберегти попри усе?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: ../pluma/pluma-io-error-message-area.c:1115
@@ -1471,7 +1471,7 @@ msgstr "Ви намагаєтеся зберегти файл на диск до
 
 #: ../pluma/pluma-io-error-message-area.c:1155
 msgid "A file with the same name already exists. Please use a different name."
-msgstr "Файл з такою назвою вже існує. Вкажіть іншу назву."
+msgstr "Файл з такою назвою вже існує. Вкажіть иньшу назву."
 
 #: ../pluma/pluma-io-error-message-area.c:1160
 msgid ""
@@ -1878,7 +1878,7 @@ msgstr "Зберегти _як..."
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
-msgstr "Зберегти поточний файл з іншою назвою"
+msgstr "Зберегти поточний файл з иньшою назвою"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
@@ -2215,11 +2215,11 @@ msgstr "Змінити регістр виділеного тексту на н�
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:229
 msgid "_Invert Case"
-msgstr "_Інвертувати регістр"
+msgstr "_Спротилежнити регістр"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:230
 msgid "Invert the case of selected text"
-msgstr "Інвертувати регістр виділеного тексту"
+msgstr "Спротилежнити регістр виділеного тексту"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:232
 msgid "_Title Case"
@@ -2298,7 +2298,7 @@ msgstr "Керувати з_овнішніми знаряддями..."
 
 #: ../plugins/externaltools/tools/__init__.py:174
 msgid "Opens the External Tools Manager"
-msgstr "Відкрити менеджер зовнішніх знарядь"
+msgstr "Відкрити керівник зовнішніх знарядь"
 
 #: ../plugins/externaltools/tools/__init__.py:178
 msgid "External _Tools"
@@ -2351,15 +2351,15 @@ msgstr "Нове знаряддя"
 #: ../plugins/externaltools/tools/manager.py:759
 #, python-format
 msgid "This accelerator is already bound to %s"
-msgstr "Ця комбінація вже прив'язана до %s"
+msgstr "Це сполучення вже прив'язане до %s"
 
 #: ../plugins/externaltools/tools/manager.py:810
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr "Уведіть нову комбінацію клавіш, або натисніть Backspace, щоб очистити її"
+msgstr "Уведіть нове сполучення клявіш, або натисніть Backspace, щоб очистити його"
 
 #: ../plugins/externaltools/tools/manager.py:812
 msgid "Type a new accelerator"
-msgstr "Натисніть нову комбінацію клавіш"
+msgstr "Натисніть нове сполучення клявіш"
 
 #: ../plugins/externaltools/tools/outputpanel.py:105
 msgid "Stopped."
@@ -2396,7 +2396,7 @@ msgstr "Поточне слово"
 
 #: ../plugins/externaltools/tools/tools.ui.h:8
 msgid "Display in bottom pane"
-msgstr "Відображати у нижній частині вікна"
+msgstr "Відображати у долішній частині вікна"
 
 #: ../plugins/externaltools/tools/tools.ui.h:9
 msgid "Create new document"
@@ -2436,7 +2436,7 @@ msgstr "Лише документи без назв"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
-msgstr "Менеджер зовнішніх інструментів"
+msgstr "Керівник зовнішніми знаряддями"
 
 #: ../plugins/externaltools/tools/tools.ui.h:19
 msgid "_Tools:"
@@ -2465,7 +2465,7 @@ msgstr "З_берегти:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:27
 msgid "_Shortcut Key:"
-msgstr "_Комбінація клавіш:"
+msgstr "_Сполучення клявіш:"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
@@ -2525,7 +2525,7 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "При значенні TRUE модуль перегляду файлів буде показувати каталог першого відкритого документу, за умови що перегляд файлів ще не використовувався. (Тобто це зазвичай застосовується при відкриванні документу з командного рядка або проґрамою caja, тощо.)"
+msgstr "При значенні TRUE втулка перегляду файлів буде показувати каталог першого відкритого документу, за умови що перегляд файлів ще не використовувався. (Тобто це зазвичай застосовується при відкриванні документу з командного рядка або проґрамою caja, тощо.)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
@@ -2557,7 +2557,7 @@ msgstr "Відкрити у перегляді дерева"
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
-msgstr "При завантаженні модулю перегляду файлів, відкривати перегляд дерева, а не перегляд закладок"
+msgstr "При завантаженні втулки перегляду файлів, відкривати перегляд дерева, а не перегляд закладок"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
@@ -2567,7 +2567,7 @@ msgstr "Кореневий каталог перегляду файлів"
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "Кореневий каталог перегляду файлів, що використовується при завантаженні модулю перегляду файлів та onload/tree_view має значення TRUE."
+msgstr "Кореневий каталог перегляду файлів, що використовується при завантаженні втулки перегляду файлів та onload/tree_view має значення TRUE."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
@@ -2578,7 +2578,7 @@ msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "Віртуальний каталог перегляду файлів, що використовується при завантаженні модулю перегляду файлів коли onload/tree_view має значення TRUE. Віртуальний корінь завжди має бути нижче фактичного кореню."
+msgstr "Віртуальний каталог перегляду файлів, що використовується при завантаженні втулки перегляду файлів коли onload/tree_view має значення TRUE. Віртуальний корінь завжди має бути нижче фактичного кореню."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2630,7 +2630,7 @@ msgstr "Помилка при вилученні файлу чи каталог�
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:836
 msgid "An error occurred while opening a directory in the file manager"
-msgstr "Помилка при відкриванні каталогу у файловому менеджері"
+msgstr "Помилка при відкриванні каталогу у керівнику файлами"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:840
 msgid "An error occurred while setting a root directory"
@@ -2670,7 +2670,7 @@ msgstr "Ви справді бажаєте остаточно вилучити �
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1124
 msgid "If you delete an item, it is permanently lost."
-msgstr "Якщо ви вилучите файл, він буде остаточно втрачений."
+msgstr "Якщо Ви вилучите файл, він буде остаточно втрачений."
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:1667
 msgid "(Empty)"
@@ -2798,7 +2798,7 @@ msgstr "Пере_глянути теку"
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:858
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:876
 msgid "View folder in file manager"
-msgstr "Переглянути теку у файловому менеджері"
+msgstr "Переглянути теку у керівнику файлами"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:865
 msgid "Show _Hidden"
@@ -2954,11 +2954,11 @@ msgstr "Слово, яким активується фрагмент текст�
 
 #: ../plugins/snippets/snippets/snippets.ui.h:12
 msgid "Shortcut key with which the snippet is activated"
-msgstr "Комбінація клавіш, якою активується фрагмент тексту"
+msgstr "Сполучення клявіш, яким активується фрагмент тексту"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "S_hortcut key:"
-msgstr "_Комбінація клавіш:"
+msgstr "_Сполучення клявіш:"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:14
 msgid "_Drop targets:"
@@ -3059,11 +3059,11 @@ msgstr "Експорт фрагментів тексту"
 
 #: ../plugins/snippets/snippets/Manager.py:1062
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr "Уведіть нову комбінацію клавіш, або натисніть Backspace, щоб очистити її"
+msgstr "Уведіть нове сполучення клявіш, або натисніть Backspace, щоб очистити його"
 
 #: ../plugins/snippets/snippets/Manager.py:1064
 msgid "Type a new shortcut"
-msgstr "Натисніть нову комбінацію клавіш"
+msgstr "Натисніть нове сполучення клявіш"
 
 #: ../plugins/snippets/snippets/Exporter.py:65
 #, python-format
@@ -3073,12 +3073,12 @@ msgstr "Неможливо створити архів `%s`"
 #: ../plugins/snippets/snippets/Exporter.py:82
 #, python-format
 msgid "Target directory \"%s\" does not exist"
-msgstr "Цільовий каталог `%s` не існує"
+msgstr "Каталог призначення `%s` не існує"
 
 #: ../plugins/snippets/snippets/Exporter.py:85
 #, python-format
 msgid "Target directory \"%s\" is not a valid directory"
-msgstr "Цільовий каталог `%s` не є коректним каталогом"
+msgstr "Каталог призначення `%s` не є коректним каталогом"
 
 #: ../plugins/snippets/snippets/Importer.py:29
 #: ../plugins/snippets/snippets/Importer.py:83
@@ -3104,7 +3104,7 @@ msgstr "Неможливо розпакувати архів `%s`"
 #: ../plugins/snippets/snippets/Importer.py:70
 #, python-format
 msgid "The following files could not be imported: %s"
-msgstr "Не вдається імпортувати наступні файли: %s"
+msgstr "Не вдається імпортувати такі файли: %s"
 
 #: ../plugins/snippets/snippets/Importer.py:86
 #: ../plugins/snippets/snippets/Importer.py:99
@@ -3275,7 +3275,7 @@ msgstr "Автоматично перевіряти орфографію док�
 
 #: ../plugins/spell/pluma-spell-plugin.c:753
 msgid "Configure Spell Checker plugin..."
-msgstr "Налаштування модулю перевірки орфографії..."
+msgstr "Налаштування втулки перевірки орфографії..."
 
 #: ../plugins/spell/pluma-spell-plugin.c:962
 msgid "The document is empty."
@@ -3347,7 +3347,7 @@ msgstr "Мова"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:1
 msgid "_Configure Spell Checker plugin..."
-msgstr "_Налаштування модулю перевірки орфографії..."
+msgstr "_Налаштування втулки перевірки орфографії..."
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
 msgid "Autocheck spelling on document load..."
@@ -3456,7 +3456,7 @@ msgstr "Колір тла (застарілий)"
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:19
 msgid "Background texture tile (deprecated)"
-msgstr "Файл текстурної заливки тла (застарілий)"
+msgstr "Файл текстурного забарвлення тла (застарілий)"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:21
@@ -3649,7 +3649,7 @@ msgstr "Примусовий розрив рядка"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:76
 msgid "Form action handler"
-msgstr "Обробник дії форми"
+msgstr "Опрацьовник дії форми"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:77
 msgid "Form control group"
@@ -3681,7 +3681,7 @@ msgstr "Посилання вперед"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:84
 msgid "Frame render parts"
-msgstr "Частини візуалізації області"
+msgstr "Частини унаочнення області"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:85
 msgid "Frame source"
@@ -3905,7 +3905,7 @@ msgstr "Назва"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:146
 msgid "Named property value"
-msgstr "Значення властивості"
+msgstr "Значення властивости"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:147
 msgid "No frames"
@@ -4081,7 +4081,7 @@ msgstr "Зразок виводу проґрами, сценаріїв"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:193
 msgid "Scope covered by header cells"
-msgstr "Ділянка видимості, яка зайнята комірками заголовку"
+msgstr "Ділянка видимости, яка зайнята комірками заголовку"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:195
@@ -4094,7 +4094,7 @@ msgstr "Оператори сценарію"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:197
 msgid "Scrollbar"
-msgstr "Смуга прокрутки"
+msgstr "Смуга гортання"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:198
 msgid "Selectable option"
@@ -4152,7 +4152,7 @@ msgstr "Повідомлення запуску режиму призупине�
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:213
 msgid "Starting sequence number (deprecated)"
-msgstr "Перше число послідовності (застарілий)"
+msgstr "Перше число послідовности (застарілий)"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:215
@@ -4190,11 +4190,11 @@ msgstr "Назва таблиці"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:224
 msgid "Table column group properties"
-msgstr "Властивості групи стовпців таблиці"
+msgstr "Ціхи групи стовпців таблиці"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:225
 msgid "Table column properties"
-msgstr "Властивості стовпця таблиці"
+msgstr "Ціхи стовпця таблиці"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:226
 msgid "Table data cell"
@@ -4226,19 +4226,19 @@ msgstr "Таблиця"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:233
 msgid "Target - Blank"
-msgstr "Ціль - Blank"
+msgstr "Мета - Blank"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:234
 msgid "Target - Parent"
-msgstr "Ціль - Parent"
+msgstr "Мета - Parent"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:235
 msgid "Target - Self"
-msgstr "Ціль - Self"
+msgstr "Мета - Self"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:236
 msgid "Target - Top"
-msgstr "Ціль - Top"
+msgstr "Мета - Top"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:237
 msgid "Teletype or monospace text style"
@@ -4263,7 +4263,7 @@ msgstr "Підкреслений стиль тексту"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:243
 msgid "Unordered list"
-msgstr "Несортований перелік"
+msgstr "Невпорядкований перелік"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:244
 msgid "Use image map"
@@ -4321,7 +4321,7 @@ msgstr "Колір тла"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:259
 msgid "Background texture tile"
-msgstr "Файл текстурної заливки тла"
+msgstr "Файл текстурного забарвлення тла"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:260
 msgid "Base font"
@@ -4517,7 +4517,7 @@ msgstr "Корінь квадратний"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:308
 msgid "Starting sequence number"
-msgstr "Перше число послідовності"
+msgstr "Перше число послідовности"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:309
 msgid "Strike-through text style"
@@ -4793,7 +4793,7 @@ msgstr "Символ часткового d-на-dt"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:58
 msgid "Symbol equiv"
-msgstr "Символ еквівалентності"
+msgstr "Символ еквівалентности"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:59
 msgid "Symbol en-dash --"
@@ -4805,7 +4805,7 @@ msgstr "Символ em-dash ---"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:61
 msgid "Symbol infinity"
-msgstr "Нескінченість"
+msgstr "Нескінченність"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:62
 msgid "Symbol mathspace ,"
@@ -4959,7 +4959,7 @@ msgstr "Доступні формати"
 
 #: ../plugins/time/pluma-time-plugin.c:713
 msgid "Configure insert date/time plugin..."
-msgstr "Налаштовування модулю вставлення дати й часу..."
+msgstr "Налаштовування втулки вставлення дати й часу..."
 
 #: ../plugins/time/time.pluma-plugin.desktop.in.h:1
 msgid "Insert Date/Time"
@@ -4993,7 +4993,7 @@ msgstr "Використати _вибраний формат"
 #: ../plugins/time/pluma-time-dialog.ui.h:5
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "_Use custom format"
-msgstr "_Інший формат"
+msgstr "_Иньший формат"
 
 #. Translators: Use the more common date format in your locale
 #: ../plugins/time/pluma-time-dialog.ui.h:7
@@ -5011,11 +5011,11 @@ msgstr "01/11/2009 17:52:00"
 
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:1
 msgid "Configure date/time plugin"
-msgstr "Налаштування модулю вставлення дати й часу"
+msgstr "Налаштування втулки вставлення дати й часу"
 
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:2
 msgid "When inserting date/time..."
-msgstr "Налаштування модулю вставлення дати й часу..."
+msgstr "Налаштування втулки вставлення дати й часу..."
 
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:4
 msgid "_Prompt for a format"

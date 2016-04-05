@@ -3,13 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Allan Nordhøy <epost@anotheragency.no>, 2016
+# Kenneth Jenssen <kennethjenssen@yahoo.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-14 13:37+0300\n"
-"PO-Revision-Date: 2016-02-10 21:51+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-03-25 19:54+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/mate/MATE/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +34,7 @@ msgstr "Om systemets forvalgte skrift med fast bredde skal brukes ved redigering
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
 msgid "'Monospace 12'"
-msgstr ""
+msgstr "'Monospace 12'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:4
 msgid "Editor Font"
@@ -195,17 +197,17 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "Spesifiserer hvordan markøren beveger seg når HOME og END tastene brukes. Bruk «DISABLED» for alltid å gå til start/slutt av linjen, «AFTER» for å gå til start/slutt av linjen første gang tasten brukes og start/slutt av teksten andre gang tasten trykkes, «BEFORE» for å gå til start/slutt av teksten før start/slutt av linjen og «ALWAYS» for alltid å gå til start/slutt av teksten i stedet for start/alutt av linjen."
+msgstr "Spesifiserer hvordan pekeren beveger seg når HOME og END tastene brukes. Bruk «DISABLED» for alltid å gå til start/slutt av linjen, «AFTER» for å gå til start/slutt av linjen første gang tasten brukes og start/slutt av teksten andre gang tasten trykkes, «BEFORE» for å gå til start/slutt av teksten før start/slutt av linjen og «ALWAYS» for alltid å gå til start/slutt av teksten i stedet for start/alutt av linjen."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Restore Previous Cursor Position"
-msgstr "Gjenopprett forrige markørposisjon"
+msgstr "Gjenopprett forrige pekerposisjon"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:39
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
-msgstr "Om pluma skal gjenopprette tidligere markørposisjon når et dokument lastes."
+msgstr "Om pluma skal gjenopprette tidligere pekerposisjon når et dokument lastes."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Enable Search Highlighting"
@@ -328,7 +330,7 @@ msgstr "Hvis verdien er 0 vil ikke linjenummer settes inn ved utskrift av et dok
 #: ../data/org.mate.pluma.gschema.xml.in.h:64
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
-msgstr ""
+msgstr "'Monospace 9'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:65
 msgid "Body Font for Printing"
@@ -342,7 +344,7 @@ msgstr "Spesifiserer skriften som skal brukes for et dokuments kropp ved utskrif
 #: ../data/org.mate.pluma.gschema.xml.in.h:67
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
-msgstr ""
+msgstr "'Sans 11'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgid "Header Font for Printing"
@@ -357,7 +359,7 @@ msgstr "Spesifiserer skriften som skal brukes for topptekst ved utskrift av et d
 #: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
-msgstr ""
+msgstr "'Sans 8'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:71
 msgid "Line Number Font for Printing"
@@ -372,7 +374,7 @@ msgstr "Spesifiserer skriften som skal brukes for linjenummer ved utskrift. Denn
 #: ../data/org.mate.pluma.gschema.xml.in.h:73
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
+msgstr "['UTF-8', 'CURRENT', 'ISO-8859-15' , 'UTF-16]' "
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgid "Automatically Detected Encodings"
@@ -383,12 +385,12 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "Sortert liste med kodinger som brukes av pluma for automatisk gjenkjenning av kodinger for en fil. «CURRENT» er aktivt locale's koding. Kun gjenkjente kodinger vil brukes."
+msgstr "Sortert liste med kodinger som brukes av pluma for automatisk gjenkjenning av kodinger for en fil. «CURRENT» er aktiv regionaldata-koding. Kun gjenkjente kodinger vil brukes."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:76
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
-msgstr ""
+msgstr "[ 'ISO-8859-15' ]"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgid "Encodings shown in menu"
@@ -402,19 +404,19 @@ msgstr "Liste med kodinger som vises i menyen Tegnkoding i filvelger for åpning
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:79
 msgid "History for \"search for\" entries"
-msgstr ""
+msgstr "Historikk for \"søk etter\" oppføringer"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgid "List of entries in \"search for\" textbox."
-msgstr ""
+msgstr "Liste over oppføringer i \"søk etter\"-tekstboksen."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:81
 msgid "History for \"replace with\" entries"
-msgstr ""
+msgstr "Historikk for oppføringene \"erstatt med\""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:82
 msgid "List of entries in \"replace with\" textbox."
-msgstr ""
+msgstr "Liste over oppføringer i tekstboksen \"erstatt med\"."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "Active plugins"
@@ -428,7 +430,7 @@ msgstr "Liste over aktive tillegg. Denne inneholder «lokasjon» for de aktive t
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
-msgstr ""
+msgstr "En tekstbehandler for skrivebordsmiljøet MATE"
 
 #: ../data/pluma.appdata.xml.in.h:2
 msgid ""
@@ -440,11 +442,11 @@ msgid ""
 "plugin system, which currently includes support for spell checking, "
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
-msgstr ""
+msgstr "<p> Pluma er et lite, men funksjonsrikt tekstprogram designet spesifikt for skrivebordet MATE. Det har de fleste standardfunksjoner og støtter i fult omfang international tekst i Unicode. Avanserte funksjoner som syntaks-fremhevning og automatisk innrykk av kildekode, utskrivning og redigering av flere dokumenter i ett vindu. </p> <p> Pluma kan utvides via et system av programtillegg, som for øyeblikket gir støtte for stavekontroll, sammenligning av filer, visning af CVS-endringslogger og justering av innnrykksnivåer. </p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
-msgstr ""
+msgstr "Pluma"
 
 #: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:767
 msgid "Text Editor"
@@ -456,7 +458,7 @@ msgstr "Rediger tekstfiler"
 
 #: ../data/pluma.desktop.in.in.h:4
 msgid "Pluma Text Editor"
-msgstr ""
+msgstr "Pluma tekstredigering"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:145
 msgid "Log Out _without Saving"
@@ -643,7 +645,7 @@ msgstr "Kunne ikke fjerne fargeschema «%s»"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:1090
 msgid "Pluma Preferences"
-msgstr ""
+msgstr "Innstillinger for Pluma"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:1
 msgid "Preferences"
@@ -772,7 +774,7 @@ msgstr "Fargepalett"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "_Add..."
-msgstr "_Legg til..."
+msgstr "_Legg til …"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Font & Colors"
@@ -830,7 +832,7 @@ msgstr "_Brytningsmodus"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Parse escape sequences (e.g. \\n)"
-msgstr ""
+msgstr "_Tolk skiftesekvenser (f.eks. \\n)"
 
 #: ../pluma/pluma.c:104
 msgid "Show the application's version"
@@ -860,7 +862,7 @@ msgstr "Opprett et nytt dokument i en eksisterende instans av pluma"
 
 #: ../pluma/pluma.c:119
 msgid "[FILE...]"
-msgstr "[FIL...]"
+msgstr "[FIL…]"
 
 #: ../pluma/pluma.c:174
 #, c-format
@@ -993,11 +995,11 @@ msgstr "Fo_rkast"
 
 #: ../pluma/pluma-commands-help.c:86
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
-msgstr ""
+msgstr "pluma er en liten og lett tekst editor for MATE skrivebordet"
 
 #: ../pluma/pluma-commands-help.c:102
 msgid "translator-credits"
-msgstr "Kjartan Maraas <kmaraas@gnome.org>"
+msgstr "Kjartan Maraas <kmaraas@gnome.org>\nEspen Stefansen <libbe AT stefansen DOT net>\nAllan Nordhøy <epost@anotheragency.no>"
 
 #: ../pluma/pluma-commands-search.c:115
 #, c-format
@@ -1155,11 +1157,11 @@ msgstr "Automatisk gjenkjent"
 #: ../pluma/pluma-encodings-combo-box.c:303
 #, c-format
 msgid "Current Locale (%s)"
-msgstr "Aktivt locale (%s)"
+msgstr "Aktiv regionaldata(%s)"
 
 #: ../pluma/pluma-encodings-combo-box.c:353
 msgid "Add or Remove..."
-msgstr "Legg til eller fjern..."
+msgstr "Legg til eller fjern …"
 
 #: ../pluma/pluma-file-chooser-dialog.c:56
 msgid "All Text Files"
@@ -1551,7 +1553,7 @@ msgstr "Side %N av %Q"
 
 #: ../pluma/pluma-print-job.c:817
 msgid "Preparing..."
-msgstr "Forbereder..."
+msgstr "Forbereder …"
 
 #: ../pluma/pluma-print-preferences.ui.h:1
 msgid "Syntax Highlighting"
@@ -1814,7 +1816,7 @@ msgstr "Opprett et nytt dokument"
 
 #: ../pluma/pluma-ui.h:58
 msgid "_Open..."
-msgstr "_Åpne..."
+msgstr "_Åpne …"
 
 #: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1390
 msgid "Open a file"
@@ -1852,7 +1854,7 @@ msgstr "Lagre aktiv fil"
 
 #: ../pluma/pluma-ui.h:82
 msgid "Save _As..."
-msgstr "L_agre som..."
+msgstr "L_agre som …"
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
@@ -1872,7 +1874,7 @@ msgstr "Forhåndsvisning"
 
 #: ../pluma/pluma-ui.h:88
 msgid "_Print..."
-msgstr "S_kriv ut..."
+msgstr "S_kriv ut …"
 
 #: ../pluma/pluma-ui.h:89
 msgid "Print the current page"
@@ -1918,7 +1920,7 @@ msgstr "_Uthevingsmodus"
 #. Search menu
 #: ../pluma/pluma-ui.h:111
 msgid "_Find..."
-msgstr "_Finn..."
+msgstr "_Finn …"
 
 #: ../pluma/pluma-ui.h:112
 msgid "Search for text"
@@ -1942,7 +1944,7 @@ msgstr "Søk bakover etter samme tekst"
 
 #: ../pluma/pluma-ui.h:117
 msgid "_Replace..."
-msgstr "E_rstatt..."
+msgstr "E_rstatt …"
 
 #: ../pluma/pluma-ui.h:118
 msgid "Search for and replace text"
@@ -1958,7 +1960,7 @@ msgstr "Fjern utheving av treff på søk"
 
 #: ../pluma/pluma-ui.h:121
 msgid "Go to _Line..."
-msgstr "Gå til _linje..."
+msgstr "Gå til _linje …"
 
 #: ../pluma/pluma-ui.h:122
 msgid "Go to a specific line"
@@ -1966,7 +1968,7 @@ msgstr "Gå til en spesifikk linje"
 
 #: ../pluma/pluma-ui.h:123
 msgid "_Incremental Search..."
-msgstr "_Inkrementelt søk..."
+msgstr "_Inkrementelt søk …"
 
 #: ../pluma/pluma-ui.h:124
 msgid "Incrementally search for text"
@@ -2097,7 +2099,7 @@ msgstr "_Skill mellom små/store bokstaver"
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr ""
+msgstr "_Tolk skiftesekvenser (f.eks.\n)"
 
 #: ../pluma/pluma-view.c:1389
 msgid "String you want to search for"
@@ -2105,7 +2107,7 @@ msgstr "Streng du vil søke etter"
 
 #: ../pluma/pluma-view.c:1398
 msgid "Line you want to move the cursor to"
-msgstr "Linje du vil flytte markøren til"
+msgstr "Linje du vil flytte pekeren til"
 
 #: ../pluma/pluma-window.c:943
 #, c-format
@@ -2272,7 +2274,7 @@ msgstr "Kjør eksterne kommandoer og skallskript."
 
 #: ../plugins/externaltools/tools/__init__.py:172
 msgid "Manage _External Tools..."
-msgstr "Håndter _eksterne verktøy..."
+msgstr "Håndter _eksterne verktøy …"
 
 #: ../plugins/externaltools/tools/__init__.py:174
 msgid "Opens the External Tools Manager"
@@ -2394,7 +2396,7 @@ msgstr "Erstatt dette utvalget"
 
 #: ../plugins/externaltools/tools/tools.ui.h:13
 msgid "Insert at cursor position"
-msgstr "Set inn i markørposisjonen"
+msgstr "Sett inn i pekerposisjon"
 
 #: ../plugins/externaltools/tools/tools.ui.h:14
 msgid "All documents except untitled ones"
@@ -2479,11 +2481,11 @@ msgstr "Kjør en egendefinert kommando og lagre utdata i et nytt dokument"
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
-msgstr ""
+msgstr "Søk"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
-msgstr ""
+msgstr "Bytt til en fil .c og .h"
 
 #: ../plugins/filebrowser/filebrowser.pluma-plugin.desktop.in.h:1
 msgid "File Browser Pane"
@@ -2944,7 +2946,7 @@ msgstr "Mål for slipp:"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:130
 msgid "Manage _Snippets..."
-msgstr "Håndter _tekstblokker..."
+msgstr "Håndter _tekstblokker …"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:131
 msgid "Manage snippets"
@@ -2956,7 +2958,7 @@ msgstr "Arkiv med tekstblokker"
 
 #: ../plugins/snippets/snippets/Manager.py:71
 msgid "Add a new snippet..."
-msgstr "Legg til en ny tekstblokk..."
+msgstr "Legg til en ny tekstblokk …"
 
 #: ../plugins/snippets/snippets/Manager.py:121
 msgid "Global"
@@ -3104,7 +3106,7 @@ msgstr "Kjøring av Python-kommando (%s) feilet: %s"
 
 #: ../plugins/sort/pluma-sort-plugin.c:88
 msgid "S_ort..."
-msgstr "S_orter..."
+msgstr "S_orter …"
 
 #: ../plugins/sort/pluma-sort-plugin.c:90
 msgid "Sort the current document or selection"
@@ -3145,7 +3147,7 @@ msgstr "Du kan ikke angre en sorteringsoperasjon"
 
 #: ../plugins/spell/org.mate.pluma.plugins.spell.gschema.xml.in.h:1
 msgid "Autocheck Type"
-msgstr ""
+msgstr "Type stavekontroll"
 
 #. Translators: Displayed in the "Check Spelling" dialog if there are no
 #. suggestions for the current misspelled word
@@ -3159,7 +3161,7 @@ msgstr "(ingen foreslåtte ord)"
 
 #: ../plugins/spell/pluma-automatic-spell-checker.c:444
 msgid "_More..."
-msgstr "_Mer..."
+msgstr "_Mer …"
 
 #. Ignore all
 #: ../plugins/spell/pluma-automatic-spell-checker.c:503
@@ -3173,7 +3175,7 @@ msgstr "_Legg til"
 
 #: ../plugins/spell/pluma-automatic-spell-checker.c:557
 msgid "_Spelling Suggestions..."
-msgstr "_Forslag til staving..."
+msgstr "_Forslag til staving …"
 
 #: ../plugins/spell/pluma-spell-checker-dialog.c:270
 msgid "Check Spelling"
@@ -3229,7 +3231,7 @@ msgstr "Språk"
 
 #: ../plugins/spell/pluma-spell-plugin.c:92
 msgid "_Check Spelling..."
-msgstr "_Sjekk staving..."
+msgstr "_Sjekk staving …"
 
 #: ../plugins/spell/pluma-spell-plugin.c:94
 msgid "Check the current document for incorrect spelling"
@@ -3237,7 +3239,7 @@ msgstr "Sjekk aktivt dokument for ukorrekt staving"
 
 #: ../plugins/spell/pluma-spell-plugin.c:100
 msgid "Set _Language..."
-msgstr "Sett _språk..."
+msgstr "Sett _språk …"
 
 #: ../plugins/spell/pluma-spell-plugin.c:102
 msgid "Set the language of the current document"
@@ -3253,7 +3255,7 @@ msgstr "Automatisk stavekontroll av aktivt dokument"
 
 #: ../plugins/spell/pluma-spell-plugin.c:753
 msgid "Configure Spell Checker plugin..."
-msgstr ""
+msgstr "Sett opp programtillegg for stavekontroll …"
 
 #: ../plugins/spell/pluma-spell-plugin.c:962
 msgid "The document is empty."
@@ -3325,23 +3327,23 @@ msgstr "Språk"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:1
 msgid "_Configure Spell Checker plugin..."
-msgstr ""
+msgstr "_Sett opp programtillegg for stavekontroll …"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
 msgid "Autocheck spelling on document load..."
-msgstr ""
+msgstr "Automatisk kontroll av stavning ved dokumentinnlasting …"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
 msgid "_Never autocheck"
-msgstr ""
+msgstr "_Aldri kontroller automatisk"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
 msgid "_Remember autocheck by document"
-msgstr ""
+msgstr "_Husk automatisk kontroll for hvert dokument"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
 msgid "_Always autocheck"
-msgstr ""
+msgstr "A_lltid kontroller automatisk"
 
 #: ../plugins/spell/spell.pluma-plugin.desktop.in.h:1
 msgid "Spell Checker"
@@ -3447,7 +3449,7 @@ msgstr "Basis-URI"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:23
 msgid "Bold"
-msgstr "Uthevet"
+msgstr "Fet"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:25
@@ -4727,7 +4729,7 @@ msgstr "Etikett for referanse"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:47
 msgid "Reference ref"
-msgstr "Referansemarkør"
+msgstr "Referansepeker"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:48
 msgid "Symbol <<"
@@ -4913,23 +4915,23 @@ msgstr "XUL - Merker"
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:1
 msgid "Prompt type"
-msgstr ""
+msgstr "Forespørselstype"
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:2
 msgid "Selected format"
-msgstr ""
+msgstr "Valgt format"
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:3
 msgid "Custom format"
-msgstr ""
+msgstr "Brukerdefinert format"
 
 #: ../plugins/time/pluma-time-plugin.c:179
 msgid "In_sert Date and Time..."
-msgstr "_Sett inn dato/klokkeslett..."
+msgstr "_Sett inn dato/klokkeslett …"
 
 #: ../plugins/time/pluma-time-plugin.c:181
 msgid "Insert current date and time at the cursor position"
-msgstr "Sett inn dagens dato og klokkeslett i markørposisjonen"
+msgstr "Sett inn dagens dato og klokkeslett i pekerposisjonen"
 
 #: ../plugins/time/pluma-time-plugin.c:562
 msgid "Available formats"
@@ -4937,7 +4939,7 @@ msgstr "Tilgjengelige formater"
 
 #: ../plugins/time/pluma-time-plugin.c:713
 msgid "Configure insert date/time plugin..."
-msgstr "Konfigurer tillegg for innsetting av dato/klokkeslett..."
+msgstr "Konfigurer tillegg for innsetting av dato/klokkeslett …"
 
 #: ../plugins/time/time.pluma-plugin.desktop.in.h:1
 msgid "Insert Date/Time"
@@ -4945,15 +4947,15 @@ msgstr "Sett inn dato/klokkeslett"
 
 #: ../plugins/time/time.pluma-plugin.desktop.in.h:2
 msgid "Inserts current date and time at the cursor position."
-msgstr "Setter inn dagens dato og klokkeslett i markørposisjonen."
+msgstr "Setter inn dagens dato og klokkeslett i pekerposisjonen."
 
 #: ../plugins/trailsave/trailsave.pluma-plugin.desktop.in.h:1
 msgid "Save Without Trailing Spaces"
-msgstr ""
+msgstr "LAgre uten etterfølgende mellomrom"
 
 #: ../plugins/trailsave/trailsave.pluma-plugin.desktop.in.h:2
 msgid "Removes trailing spaces from lines before saving."
-msgstr ""
+msgstr "Fjerne etterfølgende mellomrom fra linjer før de lagres."
 
 #: ../plugins/time/pluma-time-dialog.ui.h:1
 msgid "Insert Date and Time"
@@ -4993,7 +4995,7 @@ msgstr "Konfigurer tillegg for dato/klokkeslett"
 
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:2
 msgid "When inserting date/time..."
-msgstr "Ved innsetting av dato/klokkeslett..."
+msgstr "Ved innsetting av dato/klokkeslett …"
 
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:4
 msgid "_Prompt for a format"
