@@ -16,7 +16,6 @@ DIST_SUBDIRS =		\
 SUBDIRS = 		\
 	changecase	\
 	docinfo		\
-	externaltools \
 	filebrowser	\
 	modelines	\
 	sort		\
@@ -25,7 +24,7 @@ SUBDIRS = 		\
 	trailsave
 
 if ENABLE_PYTHON
-SUBDIRS      += pythonconsole snippets quickopen
+SUBDIRS      += externaltools pythonconsole snippets quickopen
 endif
 
 if ENABLE_ENCHANT
