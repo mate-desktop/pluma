@@ -12,9 +12,7 @@ distuninstallcheck_listfiles = find . -type f -print
 EXTRA_DIST = 			\
 	autogen.sh		\
 	ChangeLog		\
-	HACKING			\
 	NEWS			\
-	NEWS.GNOME		\
 	README			\
 	xmldocs.make 		\
 	omf.make		\
