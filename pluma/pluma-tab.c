@@ -84,6 +84,8 @@ struct _PlumaTabPrivate
 	gint                    auto_save : 1;
 
 	gint                    ask_if_externally_modified : 1;
+	
+	guint			idle_scroll;
 };
 
 #if GTK_CHECK_VERSION (3, 0, 0)
@@ -240,6 +242,12 @@ pluma_tab_finalize (GObject *object)
 
 	if (tab->priv->auto_save_timeout > 0)
 		remove_auto_save_timeout (tab);
+
+	if (tab->priv->idle_scroll != 0)
+	{
+		g_source_remove (tab->priv->idle_scroll);
+		tab->priv->idle_scroll = 0;
+	}
 
 	G_OBJECT_CLASS (pluma_tab_parent_class)->finalize (object);
 }
@@ -570,6 +578,14 @@ load_cancelled (GtkWidget        *area,
 	g_object_ref (tab);
 	pluma_document_load_cancel (pluma_tab_get_document (tab));
 	g_object_unref (tab);	
+}
+
+static gboolean
+scroll_to_cursor (PlumaTab *tab)
+{
+	pluma_view_scroll_to_cursor (PLUMA_VIEW (tab->priv->view));
+	tab->priv->idle_scroll = 0;
+	return FALSE;
 }
 
 static void 
@@ -1000,8 +1016,14 @@ document_loaded (PlumaDocument *document,
 			gtk_widget_show (emsg);
 		}
 
-		/* Scroll to the cursor when the document is loaded */
-		pluma_view_scroll_to_cursor (PLUMA_VIEW (tab->priv->view));
+		/* Scroll to the cursor when the document is loaded, we need to do it in
+	 	* an idle as after the document is loaded the textview is still
+	 	* redrawing and relocating its internals.
+	 	*/
+		if (tab->priv->idle_scroll == 0)
+		{
+			tab->priv->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, tab);
+		}
 
 		all_documents = pluma_app_get_documents (pluma_app_get_default ());
 
