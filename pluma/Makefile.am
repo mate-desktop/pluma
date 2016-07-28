@@ -10,7 +10,6 @@ AM_CPPFLAGS =								\
 	-I$(srcdir)							\
 	-I$(srcdir)/smclient						\
 	$(PLUMA_CFLAGS)							\
-	$(MATE_DESKTOP_CFLAGS)						\
 	$(WARN_CFLAGS)							\
 	$(DISABLE_DEPRECATED_CFLAGS)					\
 	-DDATADIR=\""$(datadir)"\"					\
@@ -27,8 +26,7 @@ libpluma_la_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[[^_
 
 libpluma_la_LIBADD = \
 	dialogs/libdialogs.la		\
-	smclient/libeggsmclient.la	\
-	$(MATE_DESKTOP_LIBS)
+	smclient/libeggsmclient.la
 
 # PLUMA_LIBS must be the last to ensure correct order on some platforms
 libpluma_la_LIBADD += $(PLUMA_LIBS) -lICE
