@@ -691,7 +691,11 @@ pluma_view_set_font (PlumaView   *view,
 
 	g_return_if_fail (font_desc != NULL);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_override_font (GTK_WIDGET (view), font_desc);
+#else
 	gtk_widget_modify_font (GTK_WIDGET (view), font_desc);
+#endif
 
 	pango_font_description_free (font_desc);		
 }
