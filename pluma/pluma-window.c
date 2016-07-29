@@ -2915,6 +2915,16 @@ on_fullscreen_controls_leave_notify_event (GtkWidget        *widget,
 					   GdkEventCrossing *event,
 					   PlumaWindow      *window)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkDevice *device;
+	gint w, h;
+	gint x, y;
+
+	device = gdk_event_get_device ((GdkEvent *)event);
+
+	gtk_window_get_size (GTK_WINDOW (window->priv->fullscreen_controls), &w, &h);
+	gdk_device_get_position (device, NULL, &x, &y);
+#else
 	GdkDisplay *display;
 	GdkScreen *screen;
 	gint w, h;
@@ -2925,6 +2935,7 @@ on_fullscreen_controls_leave_notify_event (GtkWidget        *widget,
 
 	gtk_window_get_size (GTK_WINDOW (window->priv->fullscreen_controls), &w, &h);
 	gdk_display_get_pointer (display, &screen, &x, &y, NULL);
+#endif
 	
 	/* gtk seems to emit leave notify when clicking on tool items,
 	 * work around it by checking the coordinates
