@@ -659,7 +659,9 @@ plugin_manager_construct_tree (PlumaPluginManager *pm)
 				 GTK_TREE_MODEL (model));
 	g_object_unref (model);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (pm->priv->tree), TRUE);
+#endif
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (pm->priv->tree), FALSE);
 
 	/* first column */
