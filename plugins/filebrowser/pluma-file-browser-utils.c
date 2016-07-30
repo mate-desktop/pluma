@@ -94,7 +94,11 @@ pluma_file_browser_utils_pixbuf_from_icon (GIcon * icon,
 		return NULL;
 		
 	ret = gtk_icon_info_load_icon (info, NULL);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	g_object_unref (info);
+#else
 	gtk_icon_info_free (info);
+#endif
 	
 	return ret;
 }
