@@ -573,7 +573,12 @@ create_bar (PlumaPrintPreview *preview)
 			    toolbar,
 			    FALSE, FALSE, 0);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	priv->prev = gtk_tool_button_new (NULL, NULL);
+	gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (priv->prev), "go-previous");
+#else
 	priv->prev = gtk_tool_button_new_from_stock (GTK_STOCK_GO_BACK);
+#endif
 	gtk_tool_button_set_label (GTK_TOOL_BUTTON (priv->prev),
 				   "P_revious Page");
 	gtk_tool_button_set_use_underline (GTK_TOOL_BUTTON (priv->prev), TRUE);
@@ -585,7 +590,12 @@ create_bar (PlumaPrintPreview *preview)
 			  preview);
 	gtk_widget_show (GTK_WIDGET (priv->prev));
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	priv->next = gtk_tool_button_new (NULL, NULL);
+	gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (priv->next), "go-next");
+#else
 	priv->next = gtk_tool_button_new_from_stock (GTK_STOCK_GO_FORWARD);
+#endif
 	gtk_tool_button_set_label (GTK_TOOL_BUTTON (priv->next),
 				   "_Next Page");
 	gtk_tool_button_set_use_underline (GTK_TOOL_BUTTON (priv->next), TRUE);
@@ -649,8 +659,13 @@ create_bar (PlumaPrintPreview *preview)
 	i = gtk_separator_tool_item_new ();
 	gtk_widget_show (GTK_WIDGET (i));
 	gtk_toolbar_insert (GTK_TOOLBAR (toolbar), i, -1);
-	
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	priv->multi = gtk_tool_button_new (NULL, NULL);
+	gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (priv->multi), "dnd-multiple");
+#else	
 	priv->multi = gtk_tool_button_new_from_stock (GTK_STOCK_DND_MULTIPLE);
+#endif
 	gtk_tool_button_set_label (GTK_TOOL_BUTTON (priv->multi),
 				   "_Show Multiple Pages");
 	gtk_tool_button_set_use_underline (GTK_TOOL_BUTTON (priv->multi), TRUE);
@@ -666,7 +681,12 @@ create_bar (PlumaPrintPreview *preview)
 	gtk_widget_show (GTK_WIDGET (i));
 	gtk_toolbar_insert (GTK_TOOLBAR (toolbar), i, -1);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	priv->zoom_one = gtk_tool_button_new (NULL, NULL);
+	gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (priv->zoom_one), "zoom-original");
+#else
 	priv->zoom_one = gtk_tool_button_new_from_stock (GTK_STOCK_ZOOM_100);
+#endif
 	gtk_tool_item_set_tooltip_text (priv->zoom_one, _("Zoom 1:1"));
 	gtk_toolbar_insert (GTK_TOOLBAR (toolbar), priv->zoom_one, -1);
 	g_signal_connect (priv->zoom_one,
@@ -675,7 +695,12 @@ create_bar (PlumaPrintPreview *preview)
 			  preview);
 	gtk_widget_show (GTK_WIDGET (priv->zoom_one));
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	priv->zoom_fit = gtk_tool_button_new (NULL, NULL);
+	gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (priv->zoom_fit), "zoom-fit-best");
+#else
 	priv->zoom_fit = gtk_tool_button_new_from_stock (GTK_STOCK_ZOOM_FIT);
+#endif
 	gtk_tool_item_set_tooltip_text (priv->zoom_fit,	_("Zoom to fit the whole page"));
 	gtk_toolbar_insert (GTK_TOOLBAR (toolbar), priv->zoom_fit, -1);
 	g_signal_connect (priv->zoom_fit,
@@ -684,7 +709,12 @@ create_bar (PlumaPrintPreview *preview)
 			  preview);
 	gtk_widget_show (GTK_WIDGET (priv->zoom_fit));
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	priv->zoom_in = gtk_tool_button_new (NULL, NULL);
+	gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (priv->zoom_in), "zoom-in");
+#else
 	priv->zoom_in = gtk_tool_button_new_from_stock (GTK_STOCK_ZOOM_IN);
+#endif
 	gtk_tool_item_set_tooltip_text (priv->zoom_in, _("Zoom the page in"));
 	gtk_toolbar_insert (GTK_TOOLBAR (toolbar), priv->zoom_in, -1);
 	g_signal_connect (priv->zoom_in,
@@ -693,7 +723,12 @@ create_bar (PlumaPrintPreview *preview)
 			  preview);
 	gtk_widget_show (GTK_WIDGET (priv->zoom_in));
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	priv->zoom_out = gtk_tool_button_new (NULL, NULL);
+	gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (priv->zoom_out), "zoom-out");
+#else
 	priv->zoom_out = gtk_tool_button_new_from_stock (GTK_STOCK_ZOOM_OUT);
+#endif
 	gtk_tool_item_set_tooltip_text (priv->zoom_out, _("Zoom the page out"));
 	gtk_toolbar_insert (GTK_TOOLBAR (toolbar), priv->zoom_out, -1);
 	g_signal_connect (priv->zoom_out,
