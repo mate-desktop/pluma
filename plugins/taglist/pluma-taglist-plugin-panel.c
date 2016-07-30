@@ -731,7 +731,9 @@ pluma_taglist_plugin_panel_init (PlumaTaglistPluginPanel *panel)
 				      panel->priv->tag_groups_combo,
 				      ATK_RELATION_CONTROLLED_BY);
 
+#if !GTK_CHECK_VERSION(3, 0, 0)
 	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (panel->priv->tags_list), FALSE);
+#endif
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (panel->priv->tags_list), FALSE);
 
 	g_object_set (panel->priv->tags_list, "has-tooltip", TRUE, NULL);
