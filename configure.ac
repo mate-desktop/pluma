@@ -173,8 +173,6 @@ case "$with_gtk" in
 esac
 AC_SUBST(GTK_API_VERSION)
 
-AM_CONDITIONAL([WITH_GTK3],[test "$with_gtk" = "3.0"])
-
 PKG_CHECK_MODULES(GMODULE,gmodule-2.0,[GMODULE_ADD="gmodule-2.0"],[GMODULE_ADD=""])
 PKG_CHECK_MODULES(PLUMA, [
 	libxml-2.0 >= 2.5.0

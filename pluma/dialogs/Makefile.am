@@ -21,17 +21,11 @@ libdialogs_la_SOURCES = 			\
 	pluma-search-dialog.h			\
 	pluma-search-dialog.c
 
-if WITH_GTK3
 ui_DATA =					\
 	pluma-encodings-dialog.ui		\
 	pluma-preferences-dialog.ui		\
-	pluma-search-dialog-gtk3.ui
-else
-ui_DATA =					\
-	pluma-encodings-dialog.ui		\
-	pluma-preferences-dialog.ui		\
+	pluma-search-dialog-gtk3.ui     \
 	pluma-search-dialog.ui
-endif
 
 EXTRA_DIST = $(ui_DATA)
 
