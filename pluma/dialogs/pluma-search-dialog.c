@@ -60,7 +60,11 @@ struct _PlumaSearchDialogPrivate
 {
 	gboolean   show_replace;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GtkWidget *grid;
+#else
 	GtkWidget *table;
+#endif
 	GtkWidget *search_label;
 	GtkWidget *search_entry;
 	GtkWidget *search_text_entry;
@@ -297,7 +301,9 @@ show_replace_widgets (PlumaSearchDialog *dlg,
 		gtk_widget_show (dlg->priv->replace_all_button);
 		gtk_widget_show (dlg->priv->replace_button);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 		gtk_table_set_row_spacings (GTK_TABLE (dlg->priv->table), 12);
+#endif
 
 		gtk_window_set_title (GTK_WINDOW (dlg), _("Replace"));
 	}
@@ -308,7 +314,9 @@ show_replace_widgets (PlumaSearchDialog *dlg,
 		gtk_widget_hide (dlg->priv->replace_all_button);
 		gtk_widget_hide (dlg->priv->replace_button);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 		gtk_table_set_row_spacings (GTK_TABLE (dlg->priv->table), 0);
+#endif
 
 		gtk_window_set_title (GTK_WINDOW (dlg), _("Find"));
 	}
@@ -346,12 +354,20 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dlg))),
 			     6);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	file = pluma_dirs_get_ui_file ("pluma-search-dialog-gtk3.ui");
+#else
 	file = pluma_dirs_get_ui_file ("pluma-search-dialog.ui");
+#endif
 	ret = pluma_utils_get_ui_objects (file,
 					  root_objects,
 					  &error_widget,
 					  "search_dialog_content", &content,
+#if GTK_CHECK_VERSION (3, 0, 0)
+					  "grid", &dlg->priv->grid,
+#else
 					  "table", &dlg->priv->table,
+#endif
 					  "search_label", &dlg->priv->search_label,
 					  "replace_with_label", &dlg->priv->replace_label,
 					  "match_case_checkbutton", &dlg->priv->match_case_checkbutton,
@@ -384,14 +400,24 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 			(PLUMA_HISTORY_ENTRY (dlg->priv->search_entry),
 			 (PlumaHistoryEntryEscapeFunc) pluma_utils_escape_search_text);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_hexpand (GTK_WIDGET (dlg->priv->search_entry), TRUE);
+#endif
 	dlg->priv->search_text_entry = pluma_history_entry_get_entry
 			(PLUMA_HISTORY_ENTRY (dlg->priv->search_entry));
 	gtk_entry_set_activates_default (GTK_ENTRY (dlg->priv->search_text_entry),
 					 TRUE);
 	gtk_widget_show (dlg->priv->search_entry);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_grid_attach_next_to (GTK_GRID (dlg->priv->grid),
+				 dlg->priv->search_entry,
+				 dlg->priv->search_label,
+				 GTK_POS_RIGHT, 1, 1);
+#else
 	gtk_table_attach_defaults (GTK_TABLE (dlg->priv->table),
 				   dlg->priv->search_entry,
 				   1, 2, 0, 1);
+#endif
 
 	dlg->priv->replace_entry = pluma_history_entry_new ("history-replace-with",
 							    TRUE);
@@ -399,14 +425,24 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 			(PLUMA_HISTORY_ENTRY (dlg->priv->replace_entry),
 			 (PlumaHistoryEntryEscapeFunc) pluma_utils_escape_search_text);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_hexpand (GTK_WIDGET (dlg->priv->replace_entry), TRUE);
+#endif
 	dlg->priv->replace_text_entry = pluma_history_entry_get_entry
 			(PLUMA_HISTORY_ENTRY (dlg->priv->replace_entry));
 	gtk_entry_set_activates_default (GTK_ENTRY (dlg->priv->replace_text_entry),
 					 TRUE);
 	gtk_widget_show (dlg->priv->replace_entry);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_grid_attach_next_to (GTK_GRID (dlg->priv->grid),
+				 dlg->priv->replace_entry,
+				 dlg->priv->replace_label,
+				 GTK_POS_RIGHT, 1, 1);
+#else
 	gtk_table_attach_defaults (GTK_TABLE (dlg->priv->table),
 				   dlg->priv->replace_entry,
 				   1, 2, 1, 2);
+#endif
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (dlg->priv->search_label),
 				       dlg->priv->search_entry);
