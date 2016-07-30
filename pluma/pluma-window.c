@@ -3861,15 +3861,23 @@ pluma_window_init (PlumaWindow *window)
 	create_statusbar (window, main_box);
 
 	/* Add the main area */
-	pluma_debug_message (DEBUG_WINDOW, "Add main area");		
+	pluma_debug_message (DEBUG_WINDOW, "Add main area");
+#if GTK_CHECK_VERSION(3, 0, 0)
+	window->priv->hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);
+#else
 	window->priv->hpaned = gtk_hpaned_new ();
+#endif
   	gtk_box_pack_start (GTK_BOX (main_box), 
   			    window->priv->hpaned, 
   			    TRUE, 
   			    TRUE, 
   			    0);
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+	window->priv->vpaned = gtk_paned_new (GTK_ORIENTATION_VERTICAL);
+#else
 	window->priv->vpaned = gtk_vpaned_new ();
+#endif
   	gtk_paned_pack2 (GTK_PANED (window->priv->hpaned), 
   			 window->priv->vpaned, 
   			 TRUE, 
