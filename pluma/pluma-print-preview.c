@@ -954,8 +954,10 @@ preview_layout_key_press (GtkWidget         *widget,
 		gtk_adjustment_set_value (hadj, x);
 		gtk_adjustment_set_value (vadj, y);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 		gtk_adjustment_value_changed (hadj);
 		gtk_adjustment_value_changed (vadj);
+#endif
 	}
 
 	return ret;
