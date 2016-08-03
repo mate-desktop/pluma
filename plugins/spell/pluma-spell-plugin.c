@@ -1041,7 +1041,12 @@ set_auto_spell (PlumaWindow   *window,
 			g_return_if_fail (active_view != NULL);
 
 			autospell = pluma_automatic_spell_checker_new (doc, spell);
-			pluma_automatic_spell_checker_attach_view (autospell, active_view);
+			
+			if (doc == pluma_window_get_active_document (window))
+			{
+				pluma_automatic_spell_checker_attach_view (autospell, active_view);
+			}
+			
 			pluma_automatic_spell_checker_recheck_all (autospell);
 		}
 	}
@@ -1292,8 +1297,24 @@ tab_added_cb (PlumaWindow *window,
 	      gpointer     useless)
 {
 	PlumaDocument *doc;
+	gchar *uri;
+	WindowData *data;
 
 	doc = pluma_tab_get_document (tab);
+	
+	g_object_get(G_OBJECT(doc), "uri", &uri, NULL);
+
+	if (!uri)
+	{
+		
+		data = g_object_get_data (G_OBJECT (window),
+					  WINDOW_DATA_KEY);
+
+		set_auto_spell_from_metadata (window, doc, data->action_group);
+
+		g_free(uri);
+
+	}
 
 	g_signal_connect (doc, "loaded",
 			  G_CALLBACK (on_document_loaded),
