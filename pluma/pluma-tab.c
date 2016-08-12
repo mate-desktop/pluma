@@ -84,7 +84,7 @@ struct _PlumaTabPrivate
 	gint                    auto_save : 1;
 
 	gint                    ask_if_externally_modified : 1;
-	
+
 	guint			idle_scroll;
 };
 
@@ -1017,9 +1017,9 @@ document_loaded (PlumaDocument *document,
 		}
 
 		/* Scroll to the cursor when the document is loaded, we need to do it in
-	 	* an idle as after the document is loaded the textview is still
-	 	* redrawing and relocating its internals.
-	 	*/
+		 * an idle as after the document is loaded the textview is still
+		 * redrawing and relocating its internals.
+		 */
 		if (tab->priv->idle_scroll == 0)
 		{
 			tab->priv->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, tab);
