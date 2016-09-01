@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Pilar Embid Giner <embid_mar@gva.es>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 13:37+0300\n"
-"PO-Revision-Date: 2015-12-14 10:38+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2016-08-01 10:33+0300\n"
+"PO-Revision-Date: 2016-07-22 11:52+0000\n"
+"Last-Translator: Jose Alfredo Murcia Andrés <joamuran@gmail.com>\n"
 "Language-Team: Catalan (Valencian) (http://www.transifex.com/mate/MATE/language/ca@valencia/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,12 +28,12 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "Si s'ha d'utilitzar el tipus de lletra predeterminat del sistema en el text d'edició en comptes d'un tipus de lletra específic per al pluma. Si s'inhabilita, s'utilitzarà el tipus de lletra especificat a l'opció «Tipus de lletra de l'editor» en comptes del tipus de lletra del sistema."
+msgstr "Si s'ha d'utilitzar el tipus de lletra predeterminat del sistema en el text d'edició en comptes d'un tipus de lletra específic per al Pluma. Si s'inhabilita, s'utilitzarà el tipus de lletra especificat a l'opció «Tipus de lletra de l'editor» en comptes del tipus de lletra del sistema."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
 msgid "'Monospace 12'"
-msgstr ""
+msgstr "'Monospace 12'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:4
 msgid "Editor Font"
@@ -50,7 +51,7 @@ msgstr "Esquema d'estil"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:7
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
-msgstr "L'identificador de l'esquema d'estil del GtkSourceView que s'empra per acolorir el text."
+msgstr "L'identificador de l'esquema d'estil del GtkSourceView que s'utilitza per a acolorir el text."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:8
 msgid "Create Backup Copies"
@@ -60,28 +61,28 @@ msgstr "Crea còpies de seguretat"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "Si pluma hauria de crear còpies de seguretat per als fitxers que alça. Podeu establir l'extensió del fitxer de còpia de seguretat a l'opció «Extensió de les còpies de seguretat»."
+msgstr "Si el Pluma ha de crear còpies de seguretat per als fitxers que guarda. Podeu establir l'extensió del fitxer de còpia de seguretat a l'opció «Extensió de les còpies de seguretat»."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
-msgstr "Alça automàticament"
+msgstr "Guarda automàticament"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:11
 msgid ""
 "Whether pluma should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
-msgstr "Si el pluma hauria d'alçar automàticament els fitxers modificats després d'un interval de temps. Podeu establir l'interval de temps a l'opció «Interval de desament automàtic»."
+msgstr "Si el Pluma ha de guardar automàticament els fitxers modificats després d'un interval de temps. Podeu establir l'interval de temps a l'opció «Interval per a guardar automàticament»."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:12
 msgid "Autosave Interval"
-msgstr "Interval d'alçat automàtic"
+msgstr "Interval per a guardar automàticament"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:13
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
-msgstr "El nombre de minuts que han de passar perquè el pluma alce automàticament els fitxers modificats. Només afectarà si l'opció «Alça automàticament» està habilitada."
+msgstr "El nombre de minuts que han de passar perquè el Pluma guarde automàticament els fitxers modificats. Només afectarà si l'opció «Guarda automàticament» està habilitada."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Writable VFS schemes"
@@ -101,7 +102,7 @@ msgstr "Nombre màxim d'accions per desfer"
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "El nombre màxim d'accions que el pluma podrà desfer o refer. Utilitzeu «-1» per a un nombre il·limitat d'accions."
+msgstr "El nombre màxim d'accions que el Pluma podrà desfer o refer. Utilitzeu «-1» per a un nombre il·limitat d'accions."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Line Wrapping Mode"
@@ -114,7 +115,7 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Especifica com ajustar les línies llargues en l'àrea d'edició. Utilitzeu «GTK_WRAP_NONE» per no ajustar, «GTK_WRAP_WORD» per ajustar als límits de les paraules i «GTK_WRAP_CHAR» per ajustar als límits de caràcters individuals. Teniu en compte que els valors són sensibles a majúscules i minúscules, així doncs assegureu-vos que apareixen exactament com es mencionen ací."
+msgstr "Especifica com ajustar les línies llargues en l'àrea d'edició. Utilitzeu «GTK_WRAP_NONE» per a no ajustar, «GTK_WRAP_WORD» per a ajustar als límits de les paraules i «GTK_WRAP_CHAR» per a ajustar als límits de caràcters individuals. Tingueu en compte que els valors són sensibles a majúscules i minúscules, així doncs assegureu-vos que apareixen exactament com es mencionen ací."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Tab Size"
@@ -124,7 +125,7 @@ msgstr "Mida de la pestanya"
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
-msgstr "Especifica el número d'espais que s'haurien de mostrar en comptes de caràcters de tabulació."
+msgstr "Especifica el nombre d'espais que s'han de mostrar en comptes de caràcters de tabulació."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Insert spaces"
@@ -132,7 +133,7 @@ msgstr "Insereix espais"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:23
 msgid "Whether pluma should insert spaces instead of tabs."
-msgstr "Si el pluma hauria d'inserir espais en comptes de tabuladors."
+msgstr "Si el Pluma ha d'inserir espais en comptes de tabuladors."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Automatic indent"
@@ -140,7 +141,7 @@ msgstr "Sagna automàticament"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:25
 msgid "Whether pluma should enable automatic indentation."
-msgstr "Si el pluma hauria d'habilitar el sagnat automàtic."
+msgstr "Si el Pluma ha d'habilitar el sagnat automàtic."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:26
 msgid "Display Line Numbers"
@@ -148,7 +149,7 @@ msgstr "Mostra els números de línia"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:27
 msgid "Whether pluma should display line numbers in the editing area."
-msgstr "Si el pluma hauria de mostrar números de línies en l'àrea d'edició."
+msgstr "Si el Pluma ha de mostrar números de línies en l'àrea d'edició."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:28
 msgid "Highlight Current Line"
@@ -156,7 +157,7 @@ msgstr "Ressalta la línia actual"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:29
 msgid "Whether pluma should highlight the current line."
-msgstr "Si el pluma hauria de ressaltar la línia actual."
+msgstr "Si el Pluma ha de ressaltar la línia actual."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:30
 msgid "Highlight Matching Bracket"
@@ -164,7 +165,7 @@ msgstr "Ressalta el claudàtor concordant"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:31
 msgid "Whether pluma should highlight the bracket matching the selected one."
-msgstr "Si el pluma hauria de ressaltar el claudàtor que coincideix amb el seleccionat."
+msgstr "Si el Pluma ha de ressaltar el claudàtor que coincideix amb el seleccionat."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:32
 msgid "Display Right Margin"
@@ -172,7 +173,7 @@ msgstr "Mostra el marge dret"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:33
 msgid "Whether pluma should display the right margin in the editing area."
-msgstr "Si el pluma hauria de mostrar el marge dret en l'àrea d'edició."
+msgstr "Si el Pluma ha de mostrar el marge dret en l'àrea d'edició."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:34
 msgid "Right Margin Position"
@@ -195,7 +196,7 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "Especifica la manera com es mou el cursor quan es premen les tecles d'inici i de final. Empreu «DISABLED» (inhabilitat) per moure'l sempre al principi o al final de les línies. Empreu «AFTER» (després) per moure'l a l'inici o al final de la línia la primera vegada que es prema la tecla, i al principi o al final del text la segona vegada que es prema. Empreu «BEFORE» (abans) per moure el cursor al principi o al final del text abans de moure'l al principi o al final de la línia. Empreu «ALWAYS» (sempre) per moure el cursor sempre al principi o al final del text en lloc d'al principi o al final de la línia."
+msgstr "Especifica la manera com es mou el cursor quan es premen les tecles d'inici i de final. Utilitzeu «DISABLED» (inhabilitat) per a moure'l sempre al principi o al final de les línies. Utilitzeu «AFTER» (després) per a moure'l a l'inici o al final de la línia la primera vegada que es prema la tecla, i al principi o al final del text la segona vegada que es prema. Utilitzeu «BEFORE» (abans) per a moure el cursor al principi o al final del text abans de moure'l al principi o al final de la línia. Utilitzeue «ALWAYS» (sempre) per a moure el cursor sempre al principi o al final del text en lloc d'al principi o al final de la línia."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Restore Previous Cursor Position"
@@ -205,7 +206,7 @@ msgstr "Restableix la posició prèvia del cursor"
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
-msgstr "Si el pluma hauria de restablir la posició prèvia del cursor quan es carregui un fitxer."
+msgstr "Si el Pluma ha de restablir la posició prèvia del cursor quan es carregue un fitxer."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Enable Search Highlighting"
@@ -214,7 +215,7 @@ msgstr "Habilita el ressaltat de la cerca"
 #: ../data/org.mate.pluma.gschema.xml.in.h:41
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
-msgstr "Si el pluma hauria de ressaltar totes les coincidències del text cercat."
+msgstr "Si el Pluma ha de ressaltar totes les coincidències del text buscat."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Syntax Highlighting"
@@ -222,7 +223,7 @@ msgstr "Habilita el ressaltat de la sintaxi"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:43
 msgid "Whether pluma should enable syntax highlighting."
-msgstr "Si el pluma hauria d'habilitar el ressaltat de la sintaxi."
+msgstr "Si el Pluma ha d'habilitar el ressaltat de la sintaxi."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:44
 msgid "Toolbar is Visible"
@@ -230,7 +231,7 @@ msgstr "La barra d'eines és visible"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:45
 msgid "Whether the toolbar should be visible in editing windows."
-msgstr "Si la barra d'eines hauria de ser visible en les finestres d'edició."
+msgstr "Si la barra d'eines ha de ser visible en les finestres d'edició."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:46
 msgid "Toolbar Buttons Style"
@@ -244,7 +245,7 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "L'estil dels botons de la barra d'eines. Els valors possibles són «PLUMA_TOOLBAR_SYSTEM» per utilitzar l'estil predeterminat del sistema, «PLUMA_TOOLBAR_ICONS» per mostrar només icones, «PLUMA_TOOLBAR_ICONS_AND_TEXT» per mostrar icones i text i «PLUMA_TOOLBAR_ICONS_BOTH_HORIZ» per mostrar el text prioritari al costat de les icones. Recordeu que els valors són sensibles a majúscules i minúscules, així doncs assegureu-vos que apareixen exactament com es mencionen ací."
+msgstr "L'estil dels botons de la barra d'eines. Els valors possibles són «PLUMA_TOOLBAR_SYSTEM» per a utilitzar l'estil predeterminat del sistema, «PLUMA_TOOLBAR_ICONS» per a mostrar només icones, «PLUMA_TOOLBAR_ICONS_AND_TEXT» per a mostrar icones i text i «PLUMA_TOOLBAR_ICONS_BOTH_HORIZ» per a mostrar el text prioritari al costat de les icones. Recordeu que els valors són sensibles a majúscules i minúscules, així doncs assegureu-vos que apareixen exactament com es mencionen ací."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:48
 msgid "Status Bar is Visible"
@@ -253,7 +254,7 @@ msgstr "La barra d'estat és visible"
 #: ../data/org.mate.pluma.gschema.xml.in.h:49
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
-msgstr "Si la barra d'estat a la part inferior de les finestres d'edició hauria de ser visible."
+msgstr "Si la barra d'estat a la part inferior de les finestres d'edició ha de ser visible."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Side Pane is Visible"
@@ -262,7 +263,7 @@ msgstr "El quadre del costat és visible"
 #: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
-msgstr "Si hauria de ser visible el quadre lateral de l'esquerra de la finestra d'edició."
+msgstr "Si ha de ser visible el quadre lateral de l'esquerra de la finestra d'edició."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:52
 msgid "Bottom Panel is Visible"
@@ -271,7 +272,7 @@ msgstr "El quadre inferior és visible"
 #: ../data/org.mate.pluma.gschema.xml.in.h:53
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
-msgstr "Si el quadre inferior de la finestra d'edició hauria de ser visible."
+msgstr "Si el quadre inferior de la finestra d'edició ha de ser visible."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:54
 msgid "Maximum Recent Files"
@@ -281,7 +282,7 @@ msgstr "Màxim de fitxers recents"
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
-msgstr "Especifica el número màxim de fitxers recentment oberts que es mostraran en el submenú «Fitxers recents»."
+msgstr "Especifica el nombre màxim de fitxers recentment oberts que es mostraran en el submenú «Fitxers recents»."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:56
 msgid "Print Syntax Highlighting"
@@ -290,7 +291,7 @@ msgstr "Imprimeix el ressaltat de sintaxi"
 #: ../data/org.mate.pluma.gschema.xml.in.h:57
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
-msgstr "Si el pluma hauria d'imprimir el ressaltat de sintaxi quan s'imprimeixen els documents."
+msgstr "Si el Pluma ha d'imprimir el ressaltat de sintaxi quan s'imprimeixen els documents."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:58
 msgid "Print Header"
@@ -299,11 +300,11 @@ msgstr "Imprimeix la capçalera"
 #: ../data/org.mate.pluma.gschema.xml.in.h:59
 msgid ""
 "Whether pluma should include a document header when printing documents."
-msgstr "Si el pluma hauria d'incloure una capçalera del document en imprimir documents."
+msgstr "Si el Pluma ha d'incloure una capçalera del document en imprimir documents."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Printing Line Wrapping Mode"
-msgstr "Mode d'ajustament de línia en la impressió"
+msgstr "Mode d'ajust de línia en la impressió"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
@@ -312,7 +313,7 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Especifica com ajustar les línies llargues per imprimir. Utilitzeu «GTK_WRAP_NONE» per no ajustar, «GTK_WRAP_WORD» per ajustar als límits de les paraules i «GTK_WRAP_CHAR» per ajustar als límits de caràcters individuals. Recordeu que els valors són sensibles a majúscules i minúscules, assegureu-vos que apareixen exactament com es mencionen ací."
+msgstr "Especifica com ajustar les línies llargues en la impressió. Utilitzeu «GTK_WRAP_NONE» per a no ajustar, «GTK_WRAP_WORD» per a ajustar als límits de les paraules i «GTK_WRAP_CHAR» per a ajustar als límits de caràcters individuals. Recordeu que els valors són sensibles a majúscules i minúscules, assegureu-vos que apareixen exactament com es mencionen ací."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Print Line Numbers"
@@ -323,30 +324,30 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "No s'inserirà cap número de línia si el valor és 0 quan s'imprimisca un document. D'altra manera, el pluma imprimirà els números de línia cada tants números de línia."
+msgstr "No s'inserirà cap número de línia si el valor és 0 quan s'imprimisca un document. D'altra manera, el Pluma imprimirà els números de línia cada tants números de línia."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:64
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
-msgstr ""
+msgstr "'Monospace 9'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:65
 msgid "Body Font for Printing"
-msgstr "Tipus de lletra del cos per imprimir"
+msgstr "Tipus de lletra del cos per a imprimir"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
-msgstr "Especifica el tipus de lletra a utilitzar pel cos d'un document en imprimir documents."
+msgstr "Especifica el tipus de lletra que s'utilitza en el cos d'un document en imprimir documents."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:67
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
-msgstr ""
+msgstr "'Sans 11'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgid "Header Font for Printing"
-msgstr "Tipus de lletra de les capçaleres per imprimir"
+msgstr "Tipus de lletra de les capçaleres per a imprimir"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:69
 msgid ""
@@ -357,11 +358,11 @@ msgstr "Especifica el tipus de lletra per a les capçaleres de les pàgines en i
 #: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
-msgstr ""
+msgstr "'Sans 8'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:71
 msgid "Line Number Font for Printing"
-msgstr "Tipus de lletra dels números de línia per imprimir"
+msgstr "Tipus de lletra dels números de línia per a imprimir"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:72
 msgid ""
@@ -372,7 +373,7 @@ msgstr "Especifica el tipus de lletra dels números de línia en imprimir. Nomé
 #: ../data/org.mate.pluma.gschema.xml.in.h:73
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
+msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgid "Automatically Detected Encodings"
@@ -383,12 +384,12 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "Llista ordenada de codificacions utilitzades pel pluma per detectar automàticament la codificació d'un fitxer. «CURRENT» (actual) indica la codificació de la localització actual. Només s'utilitzen les codificacions reconegudes."
+msgstr "Llista ordenada de codificacions utilitzades pel Pluma per a detectar automàticament la codificació d'un fitxer. «CURRENT» (actual) indica la codificació de la localització actual. Només s'utilitzen les codificacions reconegudes."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:76
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
-msgstr ""
+msgstr "[ 'ISO-8859-15' ]"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgid "Encodings shown in menu"
@@ -398,23 +399,23 @@ msgstr "Codificacions mostrades al menú"
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
-msgstr "Llista de les codificacions mostrades al menú de codificació de caràcters al diàleg obri/alça de fitxer. Només s'utilitzen codificacions reconegudes."
+msgstr "Llista de les codificacions mostrades al menú de codificació de caràcters al diàleg obri/guarda el fitxer. Només s'utilitzen codificacions reconegudes."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:79
 msgid "History for \"search for\" entries"
-msgstr ""
+msgstr "Historial de les entrades «busca per»"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgid "List of entries in \"search for\" textbox."
-msgstr ""
+msgstr "Llista de les entrades al quadre de text «busca per»."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:81
 msgid "History for \"replace with\" entries"
-msgstr ""
+msgstr "Historial de les entrades «reemplaça per»"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:82
 msgid "List of entries in \"replace with\" textbox."
-msgstr ""
+msgstr "Llista de les entrades al quadre de text «reemplaça per»."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "Active plugins"
@@ -424,11 +425,11 @@ msgstr "Activa els connectors"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "Llista de connectors actius. Conté la «Location» dels connectors actius. Vegeu el fitxer .pluma-plugin per obtindre la «Location» d'un connector determinat."
+msgstr "Llista de connectors actius. Conté la «Location» dels connectors actius. Vegeu el fitxer .pluma-plugin per a obtindre la «Location» d'un connector determinat."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
-msgstr ""
+msgstr "Un editor de text per a l'entorn d'escriptori MATE"
 
 #: ../data/pluma.appdata.xml.in.h:2
 msgid ""
@@ -440,11 +441,11 @@ msgid ""
 "plugin system, which currently includes support for spell checking, "
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
-msgstr ""
+msgstr "<p> El Pluma és un xicotet editor de text però potent que dissenyat específicament per a l'escriptori MATE. Té la majoria de les funcions estàndard d'un editor de text i és totalment compatible amb el text internacional d'Unicode. Les característiques avançades inclouen el ressaltat de la sintaxi i el sagnat automàtic del codi font, la impressió i l'edició de diversos documents en una mateixa finestra. </p> <p> El Pluma es pot ampliar a través d'un sistema de connectors, que actualment inclou suport per a la verificació ortogràfica, la comparació de fitxers, la visualització del registre de canvis al CVS, i l'ajust dels nivells de sagnat. </p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
-msgstr ""
+msgstr "Pluma"
 
 #: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:767
 msgid "Text Editor"
@@ -456,11 +457,11 @@ msgstr "Editeu fitxers de text"
 
 #: ../data/pluma.desktop.in.in.h:4
 msgid "Pluma Text Editor"
-msgstr ""
+msgstr "Editor de text Pluma"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:145
 msgid "Log Out _without Saving"
-msgstr "Ix se_nse alçar"
+msgstr "Ix se_nse guardar"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:149
 msgid "_Cancel Logout"
@@ -468,7 +469,7 @@ msgstr "_Cancel·la l'eixida"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:156
 msgid "Close _without Saving"
-msgstr "_Tanca sense alçar"
+msgstr "_Tanca sense guardar"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
@@ -482,13 +483,13 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Si no ho alceu, es perdran permanentment els canvis fets en el darrer segon."
-msgstr[1] "Si no ho alceu, es perdran permanentment els canvis fets en els darrers %ld segons."
+msgstr[0] "Si no ho guardeu, es perdran permanentment els canvis fets en l'últim segon."
+msgstr[1] "Si no ho guardeu, es perdran permanentment els canvis fets en els últims %ld segons."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:425
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
-msgstr "Si no ho alceu, es perdran permanentment els cavis fets en el darrer minut."
+msgstr "Si no ho guardeu, es perdran permanentment els cavis fets en l'últim minut."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:431
 #, c-format
@@ -498,8 +499,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Si no ho alceu, es perdran permanentment els canvis fets en el darrer minut i %ld segon."
-msgstr[1] "Si no ho alceu, es perdran permanentment els canvis fets en el darrer minut i %ld segons."
+msgstr[0] "Si no ho guardeu, es perdran permanentment els canvis fets en l'últim minut i %ld segon."
+msgstr[1] "Si no ho guardeu, es perdran permanentment els canvis fets en l'últim minut i %ld segons."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:441
 #, c-format
@@ -509,13 +510,13 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Si no ho alceu, es perdran permanentment els canvis fets el darrer minut."
-msgstr[1] "Si no ho alceu, es perdran permanentment els canvis fets els darrers %ld minuts."
+msgstr[0] "Si no ho guardeu, es perdran permanentment els canvis fets l'últim minut."
+msgstr[1] "Si no ho guardeu, es perdran permanentment els canvis fets els últims %ld minuts."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:456
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
-msgstr "Si no ho alceu, es perdran per sempre els canvis fets la darrera hora."
+msgstr "Si no ho guardeu, es perdran per sempre els canvis fets l'última hora."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:462
 #, c-format
@@ -525,8 +526,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Si no ho alceu, es perdran permanentment els canvis fets la darrera hora i %d minut."
-msgstr[1] "Si no ho alceu, es perdran permanentment els canvis fets la darrera hora i %d minuts."
+msgstr[0] "Si no ho guardeu, es perdran permanentment els canvis fets l'última hora i %d minut."
+msgstr[1] "Si no ho guardeu, es perdran permanentment els canvis fets l'última hora i %d minuts."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:477
 #, c-format
@@ -534,51 +535,51 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "Si no ho alceu, es perdran per sempre els canvis fets la darrera hora."
-msgstr[1] "Si no ho alceu, es perdran per sempre els canvis fets les darreres %d hores."
+msgstr[0] "Si no ho guardeu, es perdran per sempre els canvis fets l'última hora."
+msgstr[1] "Si no ho guardeu, es perdran per sempre els canvis fets les últimes %d hores."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:534
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:535
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "Es perdran permanentment els canvis fets al document «%s»."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:539
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
-msgstr "Voleu alçar els canvis del document «%s» abans de tancar?"
+msgstr "Voleu guardar els canvis del document «%s» abans de tancar?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:553
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:786
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:554
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:788
 msgid "Saving has been disabled by the system administrator."
-msgstr "L'administrador del sistema ha inhabilitat l'alçar."
+msgstr "L'administrador del sistema ha inhabilitat el guardar."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:737
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:739
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] "Es perdran permanentment els canvis fets a %d document."
 msgstr[1] "Es perdran permanentment els canvis fets a %d documents."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:743
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:745
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "Hi ha %d document amb canvis sense alçar. Voleu alçar els canvis abans de tancar?"
-msgstr[1] "Hi ha %d documents amb canvis sense alçar. Voleu alçar els canvis abans de tancar?"
-
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:761
-msgid "Docum_ents with unsaved changes:"
-msgstr "Docum_ents amb canvis per alçar:"
+msgstr[0] "Hi ha %d document amb canvis sense guardar. Voleu guardar els canvis abans de tancar?"
+msgstr[1] "Hi ha %d documents amb canvis sense guardar. Voleu guardar els canvis abans de tancar?"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:763
-msgid "S_elect the documents you want to save:"
-msgstr "S_eleccioneu els documents que voleu alçar:"
+msgid "Docum_ents with unsaved changes:"
+msgstr "Docum_ents amb canvis per guardar:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:788
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
+msgid "S_elect the documents you want to save:"
+msgstr "S_eleccioneu els documents que voleu guardar:"
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:790
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "Si no ho alceu es perdran permanentment tots els canvis."
+msgstr "Si no ho guardeu es perdran permanentment tots els canvis."
 
 #: ../pluma/dialogs/pluma-encodings-dialog.c:321
 msgid "Character Encodings"
@@ -608,12 +609,12 @@ msgstr "Codificacio_ns mostrades al menú:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:574
 msgid "Click on this button to select the font to be used by the editor"
-msgstr "Feu clic en este botó per seleccionar el tipus de lletra a utilitzar per l'editor"
+msgstr "Feu clic en aquest botó per a seleccionar el tipus de lletra que utilitzarà l'editor"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:584
 #, c-format
 msgid "_Use the system fixed width font (%s)"
-msgstr "_Empra el tipus de lletra d'amplada fixa del sistema (%s)"
+msgstr "_Utilitza el tipus de lletra d'amplària fixa del sistema (%s)"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:787
 msgid "The selected color scheme cannot be installed."
@@ -643,7 +644,7 @@ msgstr "No s'ha pogut suprimir l'esquema de colors «%s»."
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:1090
 msgid "Pluma Preferences"
-msgstr ""
+msgstr "Preferències del Pluma"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:1
 msgid "Preferences"
@@ -652,7 +653,7 @@ msgstr "Preferències"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2
 #: ../pluma/pluma-print-preferences.ui.h:9
 msgid "Text Wrapping"
-msgstr "Ajustament del text"
+msgstr "Ajust del text"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../plugins/docinfo/docinfo.ui.h:4
@@ -666,19 +667,19 @@ msgstr "    "
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
 #: ../pluma/pluma-print-preferences.ui.h:10
 msgid "Enable text _wrapping"
-msgstr "Habilita l'_ajustament de text"
+msgstr "Habilita l'_ajust del text"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
 #: ../pluma/pluma-print-preferences.ui.h:11
 msgid "Do not _split words over two lines"
-msgstr "No _separis les paraules en dues línies"
+msgstr "No _separes les paraules en dues línies"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
 #: ../pluma/pluma-print-preferences.ui.h:3
 msgid "Line Numbers"
 msgstr "Números de línia"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:2029
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:2039
 msgid "_Display line numbers"
 msgstr "Mostra els _números de línia"
 
@@ -720,7 +721,7 @@ msgstr "Tabulació"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
 msgid "_Tab width:"
-msgstr "_Amplada de la tabulació:"
+msgstr "_Amplària de la tabulació:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
 msgid "Insert _spaces instead of tabs"
@@ -736,15 +737,15 @@ msgstr "Habilita el _sagnat automàtic"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
 msgid "File Saving"
-msgstr "Alçat de fitxers"
+msgstr "Guarda fitxers"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
 msgid "Create a _backup copy of files before saving"
-msgstr "Crea una _còpia de seguretat dels fitxers abans d'alçar-los"
+msgstr "Crea una _còpia de seguretat dels fitxers abans de guardar-los"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
 msgid "_Autosave files every"
-msgstr "Al_ça els fitxers automàticament cada"
+msgstr "Gu_arda els fitxers automàticament cada"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
 msgid "_minutes"
@@ -764,7 +765,7 @@ msgstr "Tipus de lletra de l'_editor: "
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
 msgid "Pick the editor font"
-msgstr "Escolliu el tipus de lletra de l'editor"
+msgstr "Trieu el tipus de lletra de l'editor"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
 msgid "Color Scheme"
@@ -822,7 +823,7 @@ msgstr "Només coincid_eix la paraula sencera"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Search _backwards"
-msgstr "Cerca cap en_rere"
+msgstr "Cerca cap ar_rere"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "_Wrap around"
@@ -830,7 +831,7 @@ msgstr "Continua des de l'_inici"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Parse escape sequences (e.g. \\n)"
-msgstr ""
+msgstr "_Analitza les seqüències d'escapada (p. ex. \\n)"
 
 #: ../pluma/pluma.c:104
 msgid "Show the application's version"
@@ -840,7 +841,7 @@ msgstr "Mostra la versió de l'aplicació"
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
-msgstr "Estableix la codificació de caràcters a emprar per obrir els fitxers llistats en la línia d'ordes"
+msgstr "Estableix la codificació de caràcters que s'ha d'utilitzar per a obrir els fitxers llistats en la línia d'ordres"
 
 #: ../pluma/pluma.c:107
 msgid "ENCODING"
@@ -852,11 +853,11 @@ msgstr "Mostra una llista dels valors possibles per a la codificació"
 
 #: ../pluma/pluma.c:113
 msgid "Create a new top-level window in an existing instance of pluma"
-msgstr "Crea una finestra nova en una instància existent del pluma"
+msgstr "Crea una finestra nova en una instància existent del Pluma"
 
 #: ../pluma/pluma.c:116
 msgid "Create a new document in an existing instance of pluma"
-msgstr "Crea un nou document en una instància existent del pluma"
+msgstr "Crea un document nou en una instància existent del Pluma"
 
 #: ../pluma/pluma.c:119
 msgid "[FILE...]"
@@ -877,7 +878,7 @@ msgstr "- Editeu fitxers de text"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\nExecuteu «%s --help» per veure la llista completa d'opcions disponibles per a la línia d'ordes.\n"
+msgstr "%s\nExecuteu «%s --help» per a veure la llista completa d'opcions disponibles per a la línia d'ordres.\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -903,7 +904,7 @@ msgstr "El fitxer «%s» és de només de lectura."
 
 #: ../pluma/pluma-commands-file.c:581
 msgid "Do you want to try to replace it with the one you are saving?"
-msgstr "Voleu intentar reemplaçar-lo pel que esteu desant?"
+msgstr "Voleu intentar reemplaçar-lo pel que esteu guardant?"
 
 #: ../pluma/pluma-commands-file.c:650 ../pluma/pluma-commands-file.c:873
 #, c-format
@@ -912,7 +913,7 @@ msgstr "S'està desant el fitxer «%s»…"
 
 #: ../pluma/pluma-commands-file.c:758
 msgid "Save As…"
-msgstr "Anomena i alça…"
+msgstr "Anomena i guarda…"
 
 #: ../pluma/pluma-commands-file.c:1087
 #, c-format
@@ -922,7 +923,7 @@ msgstr "S'està recuperant el document «%s»…"
 #: ../pluma/pluma-commands-file.c:1132
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
-msgstr "Voleu recuperar els canvis no alçats al document «%s»?"
+msgstr "Voleu recuperar els canvis no guardats al document «%s»?"
 
 #: ../pluma/pluma-commands-file.c:1141
 #, c-format
@@ -991,11 +992,11 @@ msgstr[1] "Es perdran per sempre els canvis fets al document les darreres %d hor
 msgid "_Revert"
 msgstr "_Recupera"
 
-#: ../pluma/pluma-commands-help.c:86
+#: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
-msgstr ""
+msgstr "El Pluma és un editor de text xicotet i lleuger per a l'escriptori MATE"
 
-#: ../pluma/pluma-commands-help.c:102
+#: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
 msgstr "Quico Llach <quico@softcatala.org>\nJordi Mallach <jordi@sindominio.net>\nJordi Mas <jmas@softcatala.org>\nAleix Badia i Bosch <abadia@ica.es>\nJosep Puigdemont <josep.puigdemont@gmail.com>"
 
@@ -1020,14 +1021,14 @@ msgstr "No s'ha trobat «%s»"
 #: ../pluma/pluma-document.c:1090 ../pluma/pluma-document.c:1110
 #, c-format
 msgid "Unsaved Document %d"
-msgstr "Document sense alçar %d"
+msgstr "Document sense guardar %d"
 
 #: ../pluma/pluma-documents-panel.c:101 ../pluma/pluma-documents-panel.c:115
 #: ../pluma/pluma-window.c:2187 ../pluma/pluma-window.c:2192
 msgid "Read-Only"
 msgstr "Només de lectura"
 
-#: ../pluma/pluma-documents-panel.c:796 ../pluma/pluma-window.c:3570
+#: ../pluma/pluma-documents-panel.c:796 ../pluma/pluma-window.c:3577
 msgid "Documents"
 msgstr "Documents"
 
@@ -1189,306 +1190,306 @@ msgstr "Windows"
 msgid "There was an error displaying the help."
 msgstr "S'ha produït un error en mostrar l'ajuda."
 
-#: ../pluma/pluma-io-error-message-area.c:195
-#: ../pluma/pluma-io-error-message-area.c:497
+#: ../pluma/pluma-io-error-message-area.c:196
+#: ../pluma/pluma-io-error-message-area.c:498
 msgid "_Retry"
 msgstr "_Intenta de nou"
 
-#: ../pluma/pluma-io-error-message-area.c:216
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "Could not find the file %s."
 msgstr "No s'ha pogut trobar el fitxer %s."
 
-#: ../pluma/pluma-io-error-message-area.c:218
-#: ../pluma/pluma-io-error-message-area.c:257
-#: ../pluma/pluma-io-error-message-area.c:264
+#: ../pluma/pluma-io-error-message-area.c:219
+#: ../pluma/pluma-io-error-message-area.c:258
+#: ../pluma/pluma-io-error-message-area.c:265
 msgid "Please check that you typed the location correctly and try again."
 msgstr "Comproveu que la ubicació estiga ben escrita i torneu-ho a intentar."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:233
+#: ../pluma/pluma-io-error-message-area.c:234
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "El pluma no pot gestionar ubicacions %s."
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:240
 msgid "pluma cannot handle this location."
 msgstr "El pluma no pot gestionar esta ubicació."
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "The location of the file cannot be mounted."
 msgstr "No s'ha pogut muntar la ubicació del fitxer."
 
-#: ../pluma/pluma-io-error-message-area.c:251
+#: ../pluma/pluma-io-error-message-area.c:252
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "No es pot accedir a la ubicació del fitxer perquè no està muntat."
 
-#: ../pluma/pluma-io-error-message-area.c:255
+#: ../pluma/pluma-io-error-message-area.c:256
 #, c-format
 msgid "%s is a directory."
 msgstr "%s és un directori."
 
-#: ../pluma/pluma-io-error-message-area.c:262
+#: ../pluma/pluma-io-error-message-area.c:263
 #, c-format
 msgid "%s is not a valid location."
 msgstr "%s no és una ubicació vàlida."
 
-#: ../pluma/pluma-io-error-message-area.c:292
+#: ../pluma/pluma-io-error-message-area.c:293
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr "No s'ha pogut trobar l'ordinador %s. Comproveu que els paràmetres del servidor intermediari siguen correctes i torneu-ho a intentar."
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:306
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr "El nom de l'ordinador no és vàlid. Comproveu que hàgeu escrit la ubicació correctament i torneu-ho a intentar."
 
-#: ../pluma/pluma-io-error-message-area.c:313
+#: ../pluma/pluma-io-error-message-area.c:314
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s no és un fitxer normal."
 
-#: ../pluma/pluma-io-error-message-area.c:318
+#: ../pluma/pluma-io-error-message-area.c:319
 msgid "Connection timed out. Please try again."
 msgstr "La connexió ha expirat, torneu-ho a intentar."
 
-#: ../pluma/pluma-io-error-message-area.c:341
+#: ../pluma/pluma-io-error-message-area.c:342
 msgid "The file is too big."
 msgstr "El fitxer és massa gran."
 
-#: ../pluma/pluma-io-error-message-area.c:382
+#: ../pluma/pluma-io-error-message-area.c:383
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "S'ha produït un error inesperat: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:418
+#: ../pluma/pluma-io-error-message-area.c:419
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "El pluma no ha pogut trobar el fitxer. Potser s'ha suprimit fa poc."
 
-#: ../pluma/pluma-io-error-message-area.c:428
+#: ../pluma/pluma-io-error-message-area.c:429
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "No s'ha pogut recuperar el fitxer %s."
 
-#: ../pluma/pluma-io-error-message-area.c:454
+#: ../pluma/pluma-io-error-message-area.c:455
 msgid "Ch_aracter Encoding:"
 msgstr "Codificació de c_aràcter:"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:506
-#: ../pluma/pluma-io-error-message-area.c:792
+#: ../pluma/pluma-io-error-message-area.c:507
+#: ../pluma/pluma-io-error-message-area.c:794
 msgid "Edit Any_way"
 msgstr "Edita de _totes maneres"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:511
-#: ../pluma/pluma-io-error-message-area.c:797
+#: ../pluma/pluma-io-error-message-area.c:512
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid "D_on't Edit"
 msgstr "_No l'editis"
 
-#: ../pluma/pluma-io-error-message-area.c:618
+#: ../pluma/pluma-io-error-message-area.c:620
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr "El nombre d'enllaços a seguir és limitat i el fitxer actual no s'ha pogut trobar dins d'este límit."
 
-#: ../pluma/pluma-io-error-message-area.c:622
+#: ../pluma/pluma-io-error-message-area.c:624
 msgid "You do not have the permissions necessary to open the file."
 msgstr "No teniu el permís necessari per poder obrir este fitxer."
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:630
 msgid "pluma has not been able to detect the character encoding."
 msgstr "El pluma no ha pogut detectar la codificació de caràcters."
 
-#: ../pluma/pluma-io-error-message-area.c:630
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:632
+#: ../pluma/pluma-io-error-message-area.c:654
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Comproveu que no estigueu intentant obrir un fitxer binari."
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:633
 msgid "Select a character encoding from the menu and try again."
 msgstr "Seleccioneu una codificació de caràcters del menú i torneu-ho a intentar."
 
-#: ../pluma/pluma-io-error-message-area.c:637
+#: ../pluma/pluma-io-error-message-area.c:639
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "S'ha produït un error en obrir el fitxer %s."
 
-#: ../pluma/pluma-io-error-message-area.c:639
+#: ../pluma/pluma-io-error-message-area.c:641
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
 msgstr "El fitxer que heu obert conté alguns caràcters no vàlids. Si l'editeu podríeu acabar amb un document no usable."
 
-#: ../pluma/pluma-io-error-message-area.c:642
+#: ../pluma/pluma-io-error-message-area.c:644
 msgid "You can also choose another character encoding and try again."
 msgstr "Podeu seleccionar una altra codificació de caràcters i tornar-ho a intentar."
 
-#: ../pluma/pluma-io-error-message-area.c:649
+#: ../pluma/pluma-io-error-message-area.c:651
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr "No s'ha pogut obrir el fitxer %s amb la codificació de caràcters %s."
 
-#: ../pluma/pluma-io-error-message-area.c:653
-#: ../pluma/pluma-io-error-message-area.c:728
+#: ../pluma/pluma-io-error-message-area.c:655
+#: ../pluma/pluma-io-error-message-area.c:730
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Seleccioneu una codificació de caràcters diferent del menú i torneu-ho a intentar."
 
-#: ../pluma/pluma-io-error-message-area.c:663
+#: ../pluma/pluma-io-error-message-area.c:665
 #, c-format
 msgid "Could not open the file %s."
 msgstr "No s'ha pogut obrir el fitxer %s."
 
-#: ../pluma/pluma-io-error-message-area.c:723
+#: ../pluma/pluma-io-error-message-area.c:725
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
-msgstr "No s'ha pogut alçar el fitxer %s amb la codificació de caràcters %s."
+msgstr "No s'ha pogut guardar el fitxer %s amb la codificació de caràcters %s."
 
-#: ../pluma/pluma-io-error-message-area.c:726
+#: ../pluma/pluma-io-error-message-area.c:728
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr "El document conté un o més caràcters que no es poden codificar amb la codificació de caràcters especificada."
 
-#: ../pluma/pluma-io-error-message-area.c:815
+#: ../pluma/pluma-io-error-message-area.c:818
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "Este fitxer (%s) ja està obert en una altra finestra del pluma."
 
-#: ../pluma/pluma-io-error-message-area.c:833
+#: ../pluma/pluma-io-error-message-area.c:836
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr "el pluma ha obert esta instància del fitxer d'una manera que no és editable. Voleu editar-lo de totes maneres?"
 
-#: ../pluma/pluma-io-error-message-area.c:896
-#: ../pluma/pluma-io-error-message-area.c:1003
+#: ../pluma/pluma-io-error-message-area.c:899
+#: ../pluma/pluma-io-error-message-area.c:1007
 msgid "S_ave Anyway"
 msgstr "Al_ça igualment"
 
-#: ../pluma/pluma-io-error-message-area.c:900
-#: ../pluma/pluma-io-error-message-area.c:1007
+#: ../pluma/pluma-io-error-message-area.c:903
+#: ../pluma/pluma-io-error-message-area.c:1011
 msgid "D_on't Save"
-msgstr "_No alces"
+msgstr "_No guardes"
 
 #. FIXME: review this message, it's not clear since for the user the
 #. "modification"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:921
+#: ../pluma/pluma-io-error-message-area.c:925
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "El fitxer %s s'ha modificat des que s'ha llegit."
 
-#: ../pluma/pluma-io-error-message-area.c:940
+#: ../pluma/pluma-io-error-message-area.c:944
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr "Si l'alceu, tots els canvis externs fets es poden perdre. Voleu alçar-lo igualment?"
+msgstr "Si el guardeu, tots els canvis externs fets es poden perdre. Voleu guardar-lo igualment?"
 
-#: ../pluma/pluma-io-error-message-area.c:1028
+#: ../pluma/pluma-io-error-message-area.c:1033
 #, c-format
 msgid "Could not create a backup file while saving %s"
-msgstr "No s'ha pogut crear una còpia de seguretat en alçar el fitxer %s"
+msgstr "No s'ha pogut crear una còpia de seguretat en guardar el fitxer %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:1036
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
-msgstr "No s'ha pogut crear una còpia de seguretat temporal en alçar el fitxer %s"
+msgstr "No s'ha pogut crear una còpia de seguretat temporal en guardar el fitxer %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1051
+#: ../pluma/pluma-io-error-message-area.c:1056
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "El pluma no ha pogut fer una còpia de seguretat de la còpia antiga abans de alçar el fitxer. Podeu oblidar este avís i alçar el fitxer, però si es produeix un error en alçar, podríeu perdre la còpia antiga del fitxer. Voleu alçar igualment?"
+msgstr "El pluma no ha pogut fer una còpia de seguretat de la còpia antiga abans de guardar el fitxer. Podeu oblidar aquest avís i guardar el fitxer, però si es produeix un error en guardar, podríeu perdre la còpia antiga del fitxer. Voleu guardar-lo igualment?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1115
+#: ../pluma/pluma-io-error-message-area.c:1120
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr "el pluma no pot gestionar ubicacions %s en mode d'escriptura. Comproveu que hàgeu escrit correctament la ubicació i torneu-ho a intentar."
 
-#: ../pluma/pluma-io-error-message-area.c:1123
+#: ../pluma/pluma-io-error-message-area.c:1128
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr "el pluma no pot gestionar esta ubicació en mode d'escriptura. Comproveu que hàgeu escrit correctament la ubicació i torneu-ho a intentar."
 
-#: ../pluma/pluma-io-error-message-area.c:1132
+#: ../pluma/pluma-io-error-message-area.c:1137
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr "%s no és una ubicació vàlida. Comproveu que l'hàgeu escrit correctament i torneu-ho a intentar."
 
-#: ../pluma/pluma-io-error-message-area.c:1138
+#: ../pluma/pluma-io-error-message-area.c:1143
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "No teniu el permís necessari per poder alçar este fitxer. Comproveu que la ubicació estiga ben escrita i torneu-ho a intentar."
-
-#: ../pluma/pluma-io-error-message-area.c:1144
-msgid ""
-"There is not enough disk space to save the file. Please free some disk space"
-" and try again."
-msgstr "No hi ha suficient espai al disc per alçar el fitxer. Allibereu espai de disc i torneu-ho a intentar."
+msgstr "No teniu el permís necessari per a poder guardar aquest fitxer. Comproveu que la ubicació estiga ben escrita i torneu-ho a provar."
 
 #: ../pluma/pluma-io-error-message-area.c:1149
 msgid ""
+"There is not enough disk space to save the file. Please free some disk space"
+" and try again."
+msgstr "No hi ha suficient espai al disc per a guardar el fitxer. Allibereu espai de disc i torneu-ho a provar."
+
+#: ../pluma/pluma-io-error-message-area.c:1154
+msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "Esteu intentant alçar el fitxer en un disc de només lectura. Comproveu que la ubicació estiga ben escrita i torneu-ho a intentar."
+msgstr "Esteu intentant guardar el fitxer en un disc de només lectura. Comproveu que la ubicació estiga ben escrita i torneu-ho a provar."
 
-#: ../pluma/pluma-io-error-message-area.c:1155
+#: ../pluma/pluma-io-error-message-area.c:1160
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Ja existeix un fitxer amb este mateix nom, utilitzeu-ne un altre."
 
-#: ../pluma/pluma-io-error-message-area.c:1160
+#: ../pluma/pluma-io-error-message-area.c:1165
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
-msgstr "El disc on esteu intentant alçar el fitxer té una limitació quan a la longitud dels noms dels fitxers, utilitzeu un nom més curt."
+msgstr "El disc on esteu intentant guardar el fitxer té una limitació quan a la longitud dels noms dels fitxers, utilitzeu un nom més curt."
 
-#: ../pluma/pluma-io-error-message-area.c:1167
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "El disc on esteu intentant alçar el fitxer té una limitació en la mida dels fitxers. Intenteu alçar un fitxer més petit o alçar-ho en un disc que no tinga esta limitació."
+msgstr "El disc on esteu intentant guardar el fitxer té una limitació en la mida dels fitxers. Intenteu guardar un fitxer més xicotet o guardar-lo en un disc que no tinga aquesta limitació."
 
-#: ../pluma/pluma-io-error-message-area.c:1183
+#: ../pluma/pluma-io-error-message-area.c:1188
 #, c-format
 msgid "Could not save the file %s."
-msgstr "No s'ha pogut alçar el fitxer %s."
+msgstr "No s'ha pogut guardar el fitxer %s."
 
 #. FIXME: review this message, it's not clear since for the user the
 #. "modification"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1227
+#: ../pluma/pluma-io-error-message-area.c:1232
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "El fitxer %s ha canviat al disc."
 
-#: ../pluma/pluma-io-error-message-area.c:1232
+#: ../pluma/pluma-io-error-message-area.c:1237
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Voleu descartar els canvis i carregar de nou el fitxer?"
 
-#: ../pluma/pluma-io-error-message-area.c:1234
+#: ../pluma/pluma-io-error-message-area.c:1239
 msgid "Do you want to reload the file?"
 msgstr "Voleu carregar de nou el fitxer?"
 
-#: ../pluma/pluma-io-error-message-area.c:1239
+#: ../pluma/pluma-io-error-message-area.c:1244
 msgid "_Reload"
 msgstr "Carrega de _nou"
 
@@ -1528,15 +1529,15 @@ msgstr "Activa's _tots"
 msgid "_Deactivate All"
 msgstr "_Desactiva'ls tots"
 
-#: ../pluma/pluma-plugin-manager.c:809
+#: ../pluma/pluma-plugin-manager.c:811
 msgid "Active _Plugins:"
 msgstr "_Connectors actius:"
 
-#: ../pluma/pluma-plugin-manager.c:842
+#: ../pluma/pluma-plugin-manager.c:844
 msgid "_About Plugin"
 msgstr "_Quant al connector"
 
-#: ../pluma/pluma-plugin-manager.c:846
+#: ../pluma/pluma-plugin-manager.c:848
 msgid "C_onfigure Plugin"
 msgstr "_Configura el connector"
 
@@ -1757,7 +1758,7 @@ msgstr "S'ha produït un error en recuperar el document %s"
 #: ../pluma/pluma-tab.c:1719
 #, c-format
 msgid "Error saving file %s"
-msgstr "S'ha produït un error en alçar el fitxer %s"
+msgstr "S'ha produït un error en guardar el fitxer %s"
 
 #: ../pluma/pluma-tab.c:1740
 msgid "Unicode (UTF-8)"
@@ -1848,19 +1849,19 @@ msgstr "Ix del mode de pantalla completa"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
-msgstr "Alça el fitxer"
+msgstr "Guarda el fitxer"
 
 #: ../pluma/pluma-ui.h:82
 msgid "Save _As..."
-msgstr "_Anomena i alça..."
+msgstr "_Anomena i guarda..."
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
-msgstr "Alça el fitxer amb un altre nom"
+msgstr "Guarda el fitxer amb un altre nom"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr "Recupera la versió alçada del fitxer"
+msgstr "Recupera la versió guardada del fitxer"
 
 #: ../pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -1979,7 +1980,7 @@ msgstr "Al_ça-ho tot"
 
 #: ../pluma/pluma-ui.h:128
 msgid "Save all open files"
-msgstr "Alça tots els fitxers oberts"
+msgstr "Guarda tots els fitxers oberts"
 
 #: ../pluma/pluma-ui.h:129
 msgid "_Close All"
@@ -2078,32 +2079,32 @@ msgid "/ on %s"
 msgstr "/ a %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1245
+#: ../pluma/pluma-view.c:1261
 msgid "_Wrap Around"
 msgstr "Cont_inua des de l'inici"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1255
+#: ../pluma/pluma-view.c:1271
 msgid "Match _Entire Word Only"
 msgstr "Coincidència només amb la paraula s_encera"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1265
+#: ../pluma/pluma-view.c:1281
 msgid "_Match Case"
 msgstr "Coi_ncidència de majúscules i minúscules"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1275
+#: ../pluma/pluma-view.c:1291
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr ""
+msgstr "_Analitza les seqüències d'escapada (p. ex. \n)"
 
-#: ../pluma/pluma-view.c:1389
+#: ../pluma/pluma-view.c:1405
 msgid "String you want to search for"
 msgstr "Cadena que vulgueu cercar"
 
-#: ../pluma/pluma-view.c:1398
+#: ../pluma/pluma-view.c:1414
 msgid "Line you want to move the cursor to"
 msgstr "Línia on vulgueu moure el cursor"
 
@@ -2143,7 +2144,7 @@ msgstr "Obri"
 
 #: ../pluma/pluma-window.c:1456
 msgid "Save"
-msgstr "Alça"
+msgstr "Guarda"
 
 #: ../pluma/pluma-window.c:1458
 msgid "Print"
@@ -2479,11 +2480,11 @@ msgstr "Executeu una orde personalitzada i poseu-ne l'eixida a un document nou"
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
-msgstr ""
+msgstr "Busca"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
-msgstr ""
+msgstr "Passa a un fitxer .c i .h"
 
 #: ../plugins/filebrowser/filebrowser.pluma-plugin.desktop.in.h:1
 msgid "File Browser Pane"
@@ -2821,17 +2822,17 @@ msgstr "Vés a la següent ubicació"
 msgid "_Match Filename"
 msgstr "Coi_ncidència del nom de fitxer"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2168
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2165
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "No hi ha cap objecte de muntatge per al volum muntat: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2248
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2245
 #, c-format
 msgid "Could not open media: %s"
 msgstr "No s'ha pogut obrir el suport: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2295
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2292
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "No s'ha pogut muntar el volum: %s"
@@ -3145,7 +3146,7 @@ msgstr "No es pot desfer una operació d'ordenació"
 
 #: ../plugins/spell/org.mate.pluma.plugins.spell.gschema.xml.in.h:1
 msgid "Autocheck Type"
-msgstr ""
+msgstr "Tipus de comprovació automàtica"
 
 #. Translators: Displayed in the "Check Spelling" dialog if there are no
 #. suggestions for the current misspelled word
@@ -3253,7 +3254,7 @@ msgstr "Comprova l'ortografia del document actual automàticament"
 
 #: ../plugins/spell/pluma-spell-plugin.c:753
 msgid "Configure Spell Checker plugin..."
-msgstr ""
+msgstr "Configura el connector de revisió ortogràfica..."
 
 #: ../plugins/spell/pluma-spell-plugin.c:962
 msgid "The document is empty."
@@ -3325,23 +3326,23 @@ msgstr "Llengua"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:1
 msgid "_Configure Spell Checker plugin..."
-msgstr ""
+msgstr "_Configura el connector de revisió ortogràfica..."
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
 msgid "Autocheck spelling on document load..."
-msgstr ""
+msgstr "Revisió ortogràfica en carregar el document..."
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
 msgid "_Never autocheck"
-msgstr ""
+msgstr "_No comproves mai automàticament"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
 msgid "_Remember autocheck by document"
-msgstr ""
+msgstr "_Recorda la comprovació automàtica segons el document"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
 msgid "_Always autocheck"
-msgstr ""
+msgstr "_Comprova sempre automàticament"
 
 #: ../plugins/spell/spell.pluma-plugin.desktop.in.h:1
 msgid "Spell Checker"
@@ -3353,7 +3354,7 @@ msgstr "Comprova l'ortografia del document actual."
 
 #: ../plugins/taglist/pluma-taglist-plugin.c:98
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:725
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:741
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:743
 msgid "Tags"
 msgstr "Marcadors"
 
@@ -3735,7 +3736,7 @@ msgstr "Encapçalament 6"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:103
 msgid "Height"
-msgstr "Alçada"
+msgstr "Alçària"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:104
 msgid "Horizontal rule"
@@ -3843,7 +3844,7 @@ msgstr "Citació llarga"
 #. Supported in XHTML 1.0 Frameset DTD only.
 #: ../plugins/taglist/HTML.tags.xml.in.h:133
 msgid "Margin pixel height"
-msgstr "Alçada del píxel del marge"
+msgstr "Alçària de píxel del marge"
 
 #. Supported in XHTML 1.0 Frameset DTD only.
 #: ../plugins/taglist/HTML.tags.xml.in.h:135
@@ -4913,15 +4914,15 @@ msgstr "XUL - Marcadors"
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:1
 msgid "Prompt type"
-msgstr ""
+msgstr "Tipus d'indicador"
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:2
 msgid "Selected format"
-msgstr ""
+msgstr "Format seleccionat"
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:3
 msgid "Custom format"
-msgstr ""
+msgstr "Format personalitzat"
 
 #: ../plugins/time/pluma-time-plugin.c:179
 msgid "In_sert Date and Time..."
@@ -4949,11 +4950,11 @@ msgstr "Insereix la data i hora actual a la posició del cursor."
 
 #: ../plugins/trailsave/trailsave.pluma-plugin.desktop.in.h:1
 msgid "Save Without Trailing Spaces"
-msgstr ""
+msgstr "Guarda sense espais al final de les línies"
 
 #: ../plugins/trailsave/trailsave.pluma-plugin.desktop.in.h:2
 msgid "Removes trailing spaces from lines before saving."
-msgstr ""
+msgstr "Suprimiu els espais al final de les línies abans de guardar-lo."
 
 #: ../plugins/time/pluma-time-dialog.ui.h:1
 msgid "Insert Date and Time"
