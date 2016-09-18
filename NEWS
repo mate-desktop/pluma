@@ -1,43 +1,22 @@
-pluma 1.15.2
+pluma 1.16.0
 ============
 
+  * Use GtkAboutDialog instead of MateAboutDialog
+  * Drop dependency on libmate-desktop and --without-matedesktop
+    build option
+  * GTK+3: fix lots of deprecations
+  * Some more fixes and cleanups
   * Translations update
-  * GTK+-3.0 print-preview: avoid deprecated GtkStock icons for the toolbar
-  * po: add missing pluma-search-dialog-gtk3.ui
-  * search-dialog UI: install both UI files to avoid distcheck failure in po folder
-  * GTK+-3 print-preview: don't use deprecated gtk_adjustment_value_changed()
-  * GTK+-3 print-preview: avoid deprecated gtk_layout_get_{h/v}adjustment
-  * GTK+-3 search-dialog: add pluma-search-dialog-gtk3.ui
-  * GTK+-3 search-dialog: port GtkTable to GtkGrid
-  * GTK+-3 pluma-window: use gdk_device_get_position
-  * GTK+-3.20 pluma-document: avoid deprecated gtk_text_iter_begins_tag
-  * GTK+-3 close button: style context fix
-  * GTK+-3: Port PlumaCloseButton to the new GtkStyleContext
-  * GTK+-3: Port PlumaStatusComboBox to the new GtkStyleContext
-  * fix indent a bit
-  * When 'Always autocheck' option is selected turn on Autocheck for new documents
-  * tab: restore the cursor and scroll in an idle.
-  * update copyright
-  * GTK+-3 taglist-plugin-panel: avoid deprecated gtk_tree_view_set_rules_hint
-  * GTK+-3 pluma-window: avoid deprecated gtk_[h|v]paned_new
-  * GTK+-3: avoid deprecated gtk_icon_info_free ()
-  * GTK+-3: do not use deprecated gtk_widget_modify_font
-  * GTK+-3 plugin-manager: avoid deprecated gtk_tree_view_set_rules_hint
-  * GTK+-3 status-combobox: do not use deprecated GtkArrow
 
-pluma 1.15.1
+pluma 1.14.1
 ============
 
-  * Get rid of dependency on libmate-desktop and drop
-    --without-matedesktop build option
-  * Some fixes and cleanups
+  * Enable spell checking for new documents when Always Autocheck
+    option is selected in Spell Check plugin
+  * Fix restoring cursor position when loading a document
+  * Install externaltools plugin only with Python support enabled
   * Translations update
-
-pluma 1.15.0
-============
-
-  * plugins: Fix to install externaltools plugin only with Python
-  * Translations update
+  * Make distcheck use currently selected GTK+ version
 
 pluma 1.14.0
 ============
