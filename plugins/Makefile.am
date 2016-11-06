@@ -23,9 +23,8 @@ SUBDIRS = 		\
 	time		\
 	trailsave
 
-if ENABLE_PYTHON
-SUBDIRS      += externaltools pythonconsole snippets quickopen
-endif
+# python plugins are disabled for now
+#SUBDIRS      += externaltools pythonconsole snippets quickopen
 
 if ENABLE_ENCHANT
 SUBDIRS      += spell

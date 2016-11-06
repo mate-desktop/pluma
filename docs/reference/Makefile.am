@@ -96,16 +96,6 @@ GTKDOC_LIBS=	\
 	$(top_builddir)/pluma/libpluma.la	\
 	$(PLUMA_LIBS)
 
-if ENABLE_PYTHON
-GTKDOC_CFLAGS += \
-        $(NO_STRICT_ALIASING_CFLAGS)    \
-        $(PYGTK_CFLAGS)                 \
-        $(PYTHON_CFLAGS)                \
-        $(AM_CFLAGS)
-GTKDOC_LIBS += \
-	$(top_builddir)/plugin-loaders/python/bindings/pluma.la
-endif
-
 # This includes the standard gtk-doc make rules, copied by gtkdocize.
 include $(top_srcdir)/gtk-doc.make
 

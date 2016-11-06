@@ -15,9 +15,6 @@ one document at the same time.
 pluma supports most standard editing features, plus several not found in your
 average text editor (plugins being the most notable of these).
 
-pluma plugins may also be written in the python scripting language: to enable
-python support you need the pygtk and mate-python-desktop bindings.
-
 Although new features are always under development, currently pluma has:
 
     * Complete support for UTF-8 text
@@ -27,7 +24,7 @@ Although new features are always under development, currently pluma has:
     * Printing and Print Previewing Support
     * File Revert
     * A complete preferences interface
-    * Configurable Plugin system, with optional python support
+    * Configurable Plugin system
 
 
 Some of the plugins, packaged and installed with pluma include, among others:
@@ -36,10 +33,8 @@ Some of the plugins, packaged and installed with pluma include, among others:
     * Spell checker
     * Change case of selected text
     * File Browser
-    * Automatic snippet expansion
     * Sort
     * Insert Date/Time
-    * External Tools
     * Tag list
 
 Other external plugins are also available.
@@ -61,8 +56,6 @@ Installation
 ============
 
 pluma requires GTK+-2.16.x, GtkSourceView 2.4.x and MateConf libraries.
-PyGobject 2.12.x, PyGtk 2.12.x and PyGtkSourceView 2.4.x are required to
-enable python plugins support.
 
 Simple install procedure:
 

@@ -55,8 +55,7 @@ struct _PlumaPluginInfo
 	gchar             *version;
 
 	/* A plugin is unavailable if it is not possible to activate it
-	   due to an error loading the plugin module (e.g. for Python plugins
-	   when the interpreter has not been correctly initializated) */
+	   due to an error loading the plugin module */
 	gint               available : 1;
 };
 
