@@ -42,10 +42,6 @@
 					    PLUMA_TYPE_STATUSBAR,\
 					    PlumaStatusbarPrivate))
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
-
 struct _PlumaStatusbarPrivate
 {
 	GtkWidget     *overwrite_mode_label;
@@ -114,10 +110,8 @@ pluma_statusbar_init (PlumaStatusbar *statusbar)
 
 	statusbar->priv = PLUMA_STATUSBAR_GET_PRIVATE (statusbar);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_margin_top (GTK_WIDGET (statusbar), 0);
 	gtk_widget_set_margin_bottom (GTK_WIDGET (statusbar), 0);
-#endif
 
 	statusbar->priv->overwrite_mode_label = gtk_label_new (NULL);
 	gtk_label_set_width_chars (GTK_LABEL (statusbar->priv->overwrite_mode_label),
@@ -139,7 +133,7 @@ pluma_statusbar_init (PlumaStatusbar *statusbar)
 	gtk_frame_set_shadow_type (GTK_FRAME (statusbar->priv->state_frame),
 							   GTK_SHADOW_IN);
 
-	hbox = gtk_hbox_new (FALSE, 0);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_container_add (GTK_CONTAINER (statusbar->priv->state_frame), hbox);
 
 	statusbar->priv->load_image = gtk_image_new_from_stock (GTK_STOCK_OPEN, GTK_ICON_SIZE_MENU);
@@ -165,20 +159,11 @@ pluma_statusbar_init (PlumaStatusbar *statusbar)
 	statusbar->priv->error_frame = gtk_frame_new (NULL);
 	gtk_frame_set_shadow_type (GTK_FRAME (statusbar->priv->error_frame), GTK_SHADOW_IN);
 
-#if GTK_CHECK_VERSION (3, 10, 0)
 	error_image = gtk_image_new_from_icon_name ("dialog-error", GTK_ICON_SIZE_MENU);
-#else
-	error_image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_ERROR, GTK_ICON_SIZE_MENU);
-#endif
-#if GTK_CHECK_VERSION (3, 14, 0)
 	gtk_widget_set_margin_start (error_image, 4);
 	gtk_widget_set_margin_end (error_image, 4);
 	gtk_widget_set_margin_top (error_image, 0);
 	gtk_widget_set_margin_bottom (error_image, 0);
-#else
-	gtk_misc_set_padding (GTK_MISC (error_image), 4, 0);
-	gtk_widget_show (error_image);
-#endif
 
 	statusbar->priv->error_event_box = gtk_event_box_new ();
 	gtk_event_box_set_visible_window  (GTK_EVENT_BOX (statusbar->priv->error_event_box),

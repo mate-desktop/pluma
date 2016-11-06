@@ -33,7 +33,7 @@
 #define __PLUMA_LANGUAGES_MANAGER_H__
 
 #include <glib-object.h>
-#include <gtksourceview/gtksourcelanguagemanager.h>
+#include <gtksourceview/gtksource.h>
 
 G_BEGIN_DECLS
 

@@ -69,11 +69,7 @@ struct _PlumaTaglistPluginPanelPrivate
 	gchar *data_dir;
 };
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 PLUMA_PLUGIN_DEFINE_TYPE (PlumaTaglistPluginPanel, pluma_taglist_plugin_panel, GTK_TYPE_BOX)
-#else
-PLUMA_PLUGIN_DEFINE_TYPE (PlumaTaglistPluginPanel, pluma_taglist_plugin_panel, GTK_TYPE_VBOX)
-#endif
 
 enum
 {
@@ -581,14 +577,9 @@ tags_list_query_tooltip_cb (GtkWidget               *widget,
 }
 
 static gboolean
-#if GTK_CHECK_VERSION (3, 0, 0)
 draw_event_cb (GtkWidget      *panel,
                cairo_t        *cr,
-#else
-expose_event_cb (GtkWidget      *panel,
-                 GdkEventExpose *event,
-#endif
-                 gpointer        user_data)
+               gpointer        user_data)
 {
 	PlumaTaglistPluginPanel *ppanel = PLUMA_TAGLIST_PLUGIN_PANEL (panel);
 
@@ -601,13 +592,8 @@ expose_event_cb (GtkWidget      *panel,
 	/* And populate combo box */
 	populate_tag_groups_combo (PLUMA_TAGLIST_PLUGIN_PANEL (panel));
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	/* We need to manage only the first draw -> disconnect */
 	g_signal_handlers_disconnect_by_func (panel, draw_event_cb, NULL);
-#else
-	/* We need to manage only the first expose event -> disconnect */
-	g_signal_handlers_disconnect_by_func (panel, expose_event_cb, NULL);
-#endif
 
 	return FALSE;
 }
@@ -645,17 +631,12 @@ add_preview_widget (PlumaTaglistPluginPanel *panel)
 
 	gtk_label_set_line_wrap	(GTK_LABEL (panel->priv->preview), TRUE);
 	gtk_label_set_use_markup (GTK_LABEL (panel->priv->preview), TRUE);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (panel->priv->preview, GTK_ALIGN_START);
 	gtk_widget_set_valign (panel->priv->preview, GTK_ALIGN_START);
 	gtk_widget_set_margin_start (panel->priv->preview, 6);
 	gtk_widget_set_margin_end (panel->priv->preview, 6);
 	gtk_widget_set_margin_top (panel->priv->preview, 6);
 	gtk_widget_set_margin_bottom (panel->priv->preview, 6);
-#else
-	gtk_misc_set_alignment (GTK_MISC (panel->priv->preview), 0, 0);
-	gtk_misc_set_padding (GTK_MISC (panel->priv->preview), 6, 6);
-#endif
 	gtk_label_set_selectable (GTK_LABEL (panel->priv->preview), TRUE);
 	gtk_label_set_selectable (GTK_LABEL (panel->priv->preview), TRUE);
 	gtk_label_set_ellipsize  (GTK_LABEL (panel->priv->preview),
@@ -688,10 +669,8 @@ pluma_taglist_plugin_panel_init (PlumaTaglistPluginPanel *panel)
 	panel->priv = PLUMA_TAGLIST_PLUGIN_PANEL_GET_PRIVATE (panel);
 	panel->priv->data_dir = NULL;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (panel),
 									GTK_ORIENTATION_VERTICAL);
-#endif
 
 	/* Build the window content */
 	panel->priv->tag_groups_combo = gtk_combo_box_text_new ();
@@ -731,9 +710,6 @@ pluma_taglist_plugin_panel_init (PlumaTaglistPluginPanel *panel)
 				      panel->priv->tag_groups_combo,
 				      ATK_RELATION_CONTROLLED_BY);
 
-#if !GTK_CHECK_VERSION(3, 0, 0)
-	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (panel->priv->tags_list), FALSE);
-#endif
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (panel->priv->tags_list), FALSE);
 
 	g_object_set (panel->priv->tags_list, "has-tooltip", TRUE, NULL);
@@ -786,13 +762,8 @@ pluma_taglist_plugin_panel_init (PlumaTaglistPluginPanel *panel)
 			  G_CALLBACK (selected_group_changed),
 			  panel);
 	g_signal_connect (panel,
-#if GTK_CHECK_VERSION (3, 0, 0)
 			  "draw",
 			  G_CALLBACK (draw_event_cb),
-#else
-			  "expose-event",
-			  G_CALLBACK (expose_event_cb),
-#endif
 			  NULL);
 }
 

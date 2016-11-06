@@ -85,11 +85,6 @@ struct _PlumaCloseConfirmationDialogPrivate
 			 (priv->unsaved_documents->next == NULL)) ? \
 			  SINGLE_DOC_MODE : MULTIPLE_DOCS_MODE)
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#endif
-
 G_DEFINE_TYPE(PlumaCloseConfirmationDialog, pluma_close_confirmation_dialog, GTK_TYPE_DIALOG)
 
 static void 	 set_unsaved_document 		(PlumaCloseConfirmationDialog *dlg,
@@ -502,19 +497,10 @@ build_single_doc_dialog (PlumaCloseConfirmationDialog *dlg)
 	doc = PLUMA_DOCUMENT (dlg->priv->unsaved_documents->data);
 
 	/* Image */
-#if GTK_CHECK_VERSION (3, 10, 0)
 	image = gtk_image_new_from_icon_name ("dialog-warning",
 					  GTK_ICON_SIZE_DIALOG);
-#else
-	image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_WARNING, 
-					  GTK_ICON_SIZE_DIALOG);
-#endif
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (image, GTK_ALIGN_START);
 	gtk_widget_set_valign (image, GTK_ALIGN_END);
-#else
-	gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
-#endif
 
 	/* Primary label */
 	primary_label = gtk_label_new (NULL);
@@ -565,12 +551,12 @@ build_single_doc_dialog (PlumaCloseConfirmationDialog *dlg)
 	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
 	gtk_widget_set_can_focus (GTK_WIDGET (secondary_label), FALSE);
 
-	hbox = gtk_hbox_new (FALSE, 12);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
 	gtk_container_set_border_width (GTK_CONTAINER (hbox), 5);
 
 	gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
 
-	vbox = gtk_vbox_new (FALSE, 12);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
 	
 	gtk_box_pack_start (GTK_BOX (hbox), vbox, FALSE, FALSE, 0);
 
@@ -699,28 +685,19 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 
 	priv = dlg->priv;
 
-	hbox = gtk_hbox_new (FALSE, 12);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
 	gtk_container_set_border_width (GTK_CONTAINER (hbox), 5);
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))),
 			    hbox, TRUE, TRUE, 0);
 
 	/* Image */
-#if GTK_CHECK_VERSION (3, 10, 0)
 	image = gtk_image_new_from_icon_name ("dialog-warning",
 					  GTK_ICON_SIZE_DIALOG);
-#else
-	image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_WARNING, 
-					  GTK_ICON_SIZE_DIALOG);
-#endif
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (image, GTK_ALIGN_START);
-#else
-	gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
-#endif
 	gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
 
-	vbox = gtk_vbox_new (FALSE, 12);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
 	gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
 
 	/* Primary label */
@@ -756,7 +733,7 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 	g_free (markup_str);
 	gtk_box_pack_start (GTK_BOX (vbox), primary_label, FALSE, FALSE, 0);
 	
-	vbox2 = gtk_vbox_new (FALSE, 8);
+	vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 8);
 	gtk_box_pack_start (GTK_BOX (vbox), vbox2, FALSE, FALSE, 0);
 
 	if (priv->disable_save_to_disk)

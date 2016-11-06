@@ -56,10 +56,6 @@
 
 #define PLUMA_VIEW_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_VIEW, PlumaViewPrivate))
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#endif
-
 typedef enum
 {
 	GOTO_LINE,
@@ -135,13 +131,8 @@ static gboolean reset_searched_text		(PlumaView        *view);
 static void	hide_search_window 		(PlumaView        *view,
 						 gboolean          cancel);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static gboolean	pluma_view_draw		 	(GtkWidget        *widget,
 						 cairo_t          *cr);
-#else
-static gint	pluma_view_expose	 	(GtkWidget        *widget,
-						 GdkEventExpose   *event);
-#endif
 static void 	search_highlight_updated_cb	(PlumaDocument    *doc,
 						 GtkTextIter      *start,
 						 GtkTextIter      *end,
@@ -151,11 +142,7 @@ static void	pluma_view_delete_from_cursor 	(GtkTextView     *text_view,
 						 GtkDeleteType    type,
 						 gint             count);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 G_DEFINE_TYPE(PlumaView, pluma_view, GTK_SOURCE_TYPE_VIEW)
-#else
-G_DEFINE_TYPE(PlumaView, pluma_view, GTK_TYPE_SOURCE_VIEW)
-#endif
 
 /* Signals */
 enum
@@ -199,11 +186,7 @@ pluma_view_class_init (PlumaViewClass *klass)
 	object_class->finalize = pluma_view_finalize;
 
 	widget_class->focus_out_event = pluma_view_focus_out;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	widget_class->draw = pluma_view_draw;
-#else
-	widget_class->expose_event = pluma_view_expose;
-#endif
 	
 	/*
 	 * Override the gtk_text_view_drag_motion and drag_drop
@@ -691,11 +674,7 @@ pluma_view_set_font (PlumaView   *view,
 
 	g_return_if_fail (font_desc != NULL);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_override_font (GTK_WIDGET (view), font_desc);
-#else
-	gtk_widget_modify_font (GTK_WIDGET (view), font_desc);
-#endif
 
 	pango_font_description_free (font_desc);		
 }
@@ -767,43 +746,15 @@ static void
 set_entry_state (GtkWidget             *entry,
                  PlumaSearchEntryState  state)
 {
-#if GTK_CHECK_VERSION (3, 0 ,0)
 	GtkStyleContext *context = gtk_widget_get_style_context (GTK_WIDGET (entry));
-#endif
 
 	if (state == PLUMA_SEARCH_ENTRY_NOT_FOUND)
 	{
-#if GTK_CHECK_VERSION (3, 0 ,0)
 		gtk_style_context_add_class (context, GTK_STYLE_CLASS_ERROR);
-#else
-		GdkColor red;
-		GdkColor white;
-
-		/* FIXME: a11y and theme */
-
-		gdk_color_parse ("#FF6666", &red);
-		gdk_color_parse ("white", &white);
-
-		gtk_widget_modify_base (entry,
-				        GTK_STATE_NORMAL,
-				        &red);
-		gtk_widget_modify_text (entry,
-				        GTK_STATE_NORMAL,
-				        &white);
-#endif
 	}
 	else /* reset */
 	{
-#if GTK_CHECK_VERSION (3, 0 ,0)
 		gtk_style_context_remove_class (context, GTK_STYLE_CLASS_ERROR);
-#else
-		gtk_widget_modify_base (entry,
-				        GTK_STATE_NORMAL,
-				        NULL);
-		gtk_widget_modify_text (entry,
-				        GTK_STATE_NORMAL,
-				        NULL);
-#endif
 	}
 }
 
@@ -986,16 +937,8 @@ hide_search_window (PlumaView *view, gboolean cancel)
 static gboolean
 search_entry_flush_timeout (PlumaView *view)
 {
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GDK_THREADS_ENTER ();
-#endif
-
   	view->priv->typeselect_flush_timeout = 0;
 	hide_search_window (view, FALSE);
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GDK_THREADS_LEAVE ();
-#endif
 
 	return FALSE;
 }
@@ -1209,15 +1152,7 @@ real_search_enable_popdown (gpointer data)
 {
 	PlumaView *view = (PlumaView *)data;
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GDK_THREADS_ENTER ();
-#endif
-
 	view->priv->disable_popdown = FALSE;
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GDK_THREADS_LEAVE ();
-#endif
 
 	return FALSE;
 }
@@ -1529,7 +1464,7 @@ ensure_search_window (PlumaView *view)
 	gtk_widget_show (frame);
 	gtk_container_add (GTK_CONTAINER (view->priv->search_window), frame);
 
-	vbox = gtk_vbox_new (FALSE, 0);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	gtk_widget_show (vbox);
 	gtk_container_add (GTK_CONTAINER (frame), vbox);
 	gtk_container_set_border_width (GTK_CONTAINER (vbox), 3);
@@ -1868,31 +1803,19 @@ start_interactive_goto_line (PlumaView *view)
 	return start_interactive_search_real (view);
 }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static gboolean
 pluma_view_draw (GtkWidget      *widget,
                  cairo_t        *cr)
-#else
-static gint
-pluma_view_expose (GtkWidget      *widget,
-                   GdkEventExpose *event)
-#endif
 {
 	GtkTextView *text_view;
 	PlumaDocument *doc;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GdkWindow *window;
-#endif
 	
 	text_view = GTK_TEXT_VIEW (widget);
 	
 	doc = PLUMA_DOCUMENT (gtk_text_view_get_buffer (text_view));
-#if GTK_CHECK_VERSION (3, 0, 0)
 	window = gtk_text_view_get_window (text_view, GTK_TEXT_WINDOW_TEXT);
 	if (gtk_cairo_should_draw_window (cr, window) &&
-#else
-	if ((event->window == gtk_text_view_get_window (text_view, GTK_TEXT_WINDOW_TEXT)) &&
-#endif
 	    pluma_document_get_enable_search_highlighting (doc))
 	{
 		GdkRectangle visible_rect;
@@ -1911,11 +1834,7 @@ pluma_view_expose (GtkWidget      *widget,
 					       &iter2);
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	return GTK_WIDGET_CLASS (pluma_view_parent_class)->draw (widget, cr);
-#else
-	return (* GTK_WIDGET_CLASS (pluma_view_parent_class)->expose_event)(widget, event);
-#endif
 }
 
 static GdkAtom

@@ -25,7 +25,6 @@
 G_DEFINE_TYPE (PlumaCloseButton, pluma_close_button, GTK_TYPE_BUTTON)
 
 static void
-#if GTK_CHECK_VERSION (3, 0, 0)
 pluma_close_button_class_init (PlumaCloseButtonClass *klass)
 {
 }
@@ -72,67 +71,13 @@ pluma_close_button_init (PlumaCloseButton *button)
 		g_error_free (error);
 	}
 }
-#else
-pluma_close_button_style_set (GtkWidget *button,
-			      GtkStyle *previous_style)
-{
-	gint h, w;
-
-	gtk_icon_size_lookup_for_settings (gtk_widget_get_settings (button),
-					   GTK_ICON_SIZE_MENU, &w, &h);
-
-	gtk_widget_set_size_request (button, w + 2, h + 2);
-
-	GTK_WIDGET_CLASS (pluma_close_button_parent_class)->style_set (button, previous_style);
-}
-#endif
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-static void
-pluma_close_button_class_init (PlumaCloseButtonClass *klass)
-{
-	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
-
-	widget_class->style_set = pluma_close_button_style_set;
-}
-
-static void
-pluma_close_button_init (PlumaCloseButton *button)
-{
-	GtkRcStyle *rcstyle;
-	GtkWidget *image;
-
-	/* make it as small as possible */
-	rcstyle = gtk_rc_style_new ();
-	rcstyle->xthickness = rcstyle->ythickness = 0;
-	gtk_widget_modify_style (GTK_WIDGET (button), rcstyle);
-	g_object_unref (rcstyle);
-
-	image = gtk_image_new_from_stock (GTK_STOCK_CLOSE,
-					  GTK_ICON_SIZE_MENU);
-	gtk_widget_show (image);
-
-	gtk_container_add (GTK_CONTAINER (button), image);
-}
-#endif
 
 GtkWidget *
 pluma_close_button_new ()
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	return GTK_WIDGET (g_object_new (PLUMA_TYPE_CLOSE_BUTTON,
 	                                 "relief", GTK_RELIEF_NONE,
 	                                 "focus-on-click", FALSE,
 	                                 NULL));
-#else
-	PlumaCloseButton *button;
-
-	button = g_object_new (PLUMA_TYPE_CLOSE_BUTTON,
-			       "relief", GTK_RELIEF_NONE,
-			       "focus-on-click", FALSE,
-			       NULL);
-
-	return GTK_WIDGET (button);
-#endif
 }
 

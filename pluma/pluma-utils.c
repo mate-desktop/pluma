@@ -134,11 +134,7 @@ pluma_utils_menu_position_under_widget (GtkMenu  *menu,
 	widget = GTK_WIDGET (user_data);
 	widget_get_origin (widget, x, y);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_get_preferred_size (GTK_WIDGET (menu), NULL, &requisition);
-#else
-	gtk_widget_size_request (GTK_WIDGET (menu), &requisition);
-#endif
 
 	gtk_widget_get_allocation (widget, &allocation);
 
@@ -193,11 +189,7 @@ pluma_utils_menu_position_under_tree_view (GtkMenu  *menu,
 		if (gtk_widget_get_direction (GTK_WIDGET (tree)) == GTK_TEXT_DIR_RTL)
 		{
 			GtkRequisition requisition;
-#if GTK_CHECK_VERSION (3, 0, 0)
 			gtk_widget_get_preferred_size (GTK_WIDGET (menu), NULL, &requisition);
-#else
-			gtk_widget_size_request (GTK_WIDGET (menu), &requisition);
-#endif
 			*x += rect.width - requisition.width;
 		}
 	}
@@ -1105,14 +1097,10 @@ handle_builder_error (const gchar *message, ...)
 	g_free (msg_plain);
 	g_free (msg);
 
-#if GTK_CHECK_VERSION (3, 14, 0)
 	gtk_widget_set_margin_start (label, 5);
 	gtk_widget_set_margin_end (label, 5);
 	gtk_widget_set_margin_top (label, 5);
 	gtk_widget_set_margin_bottom (label, 5);
-#else
-	gtk_misc_set_padding (GTK_MISC (label), 5, 5);
-#endif
 
 	return label;
 }

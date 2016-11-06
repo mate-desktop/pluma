@@ -34,7 +34,7 @@
 #include <gtk/gtk.h>
 
 #include <pluma/pluma-document.h>
-#include <gtksourceview/gtksourceview.h>
+#include <gtksourceview/gtksource.h>
 
 G_BEGIN_DECLS
 

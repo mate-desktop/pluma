@@ -25,7 +25,7 @@
 #ifndef __PLUMA_STYLE_SCHEME_MANAGER_H__
 #define __PLUMA_STYLE_SCHEME_MANAGER_H__
 
-#include <gtksourceview/gtksourcestyleschememanager.h>
+#include <gtksourceview/gtksource.h>
 
 G_BEGIN_DECLS
 

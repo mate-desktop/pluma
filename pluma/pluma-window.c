@@ -39,9 +39,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
-#if GTK_CHECK_VERSION (3, 0, 0)
 #include <gtksourceview/gtksource.h>
-#endif
 
 #include "pluma-ui.h"
 #include "pluma-window.h"
@@ -70,10 +68,6 @@
 #define PLUMA_WINDOW_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object),\
 					 PLUMA_TYPE_WINDOW,                    \
 					 PlumaWindowPrivate))
-
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#endif
 
 /* Signals */
 enum
@@ -1557,10 +1551,8 @@ create_menu_bar_and_toolbar (PlumaWindow *window,
 			    0);
 
 	window->priv->toolbar = gtk_ui_manager_get_widget (manager, "/ToolBar");
-#if GTK_CHECK_VERSION(3, 0, 0)
 	gtk_style_context_add_class (gtk_widget_get_style_context (window->priv->toolbar),
 		GTK_STYLE_CLASS_PRIMARY_TOOLBAR);
-#endif
 	gtk_box_pack_start (GTK_BOX (main_box),
 			    window->priv->toolbar,
 			    FALSE,
@@ -2915,7 +2907,6 @@ on_fullscreen_controls_leave_notify_event (GtkWidget        *widget,
 					   GdkEventCrossing *event,
 					   PlumaWindow      *window)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GdkDevice *device;
 	gint w, h;
 	gint x, y;
@@ -2924,18 +2915,6 @@ on_fullscreen_controls_leave_notify_event (GtkWidget        *widget,
 
 	gtk_window_get_size (GTK_WINDOW (window->priv->fullscreen_controls), &w, &h);
 	gdk_device_get_position (device, NULL, &x, &y);
-#else
-	GdkDisplay *display;
-	GdkScreen *screen;
-	gint w, h;
-	gint x, y;
-
-	display = gdk_display_get_default ();
-	screen = gtk_window_get_screen (GTK_WINDOW (window));
-
-	gtk_window_get_size (GTK_WINDOW (window->priv->fullscreen_controls), &w, &h);
-	gdk_display_get_pointer (display, &screen, &x, &y, NULL);
-#endif
 	
 	/* gtk seems to emit leave notify when clicking on tool items,
 	 * work around it by checking the coordinates
@@ -3854,14 +3833,12 @@ pluma_window_init (PlumaWindow *window)
 	window->priv->window_group = gtk_window_group_new ();
 	gtk_window_group_add_window (window->priv->window_group, GTK_WINDOW (window));
 
-#if GTK_CHECK_VERSION(3, 0, 0)
-    GtkStyleContext *context;
+	GtkStyleContext *context;
 
-    context = gtk_widget_get_style_context (GTK_WIDGET (window));
-    gtk_style_context_add_class (context, "pluma-window");
-#endif
+	context = gtk_widget_get_style_context (GTK_WIDGET (window));
+	gtk_style_context_add_class (context, "pluma-window");
 
-	main_box = gtk_vbox_new (FALSE, 0);
+	main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	gtk_container_add (GTK_CONTAINER (window), main_box);
 	gtk_widget_show (main_box);
 
@@ -3873,22 +3850,14 @@ pluma_window_init (PlumaWindow *window)
 
 	/* Add the main area */
 	pluma_debug_message (DEBUG_WINDOW, "Add main area");
-#if GTK_CHECK_VERSION(3, 0, 0)
 	window->priv->hpaned = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);
-#else
-	window->priv->hpaned = gtk_hpaned_new ();
-#endif
   	gtk_box_pack_start (GTK_BOX (main_box), 
   			    window->priv->hpaned, 
   			    TRUE, 
   			    TRUE, 
   			    0);
 
-#if GTK_CHECK_VERSION(3, 0, 0)
 	window->priv->vpaned = gtk_paned_new (GTK_ORIENTATION_VERTICAL);
-#else
-	window->priv->vpaned = gtk_vpaned_new ();
-#endif
   	gtk_paned_pack2 (GTK_PANED (window->priv->hpaned), 
   			 window->priv->vpaned, 
   			 TRUE, 

@@ -39,9 +39,7 @@
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#if GTK_CHECK_VERSION (3, 0, 0)
 #include <gtksourceview/gtksource.h>
-#endif
 
 #include "pluma-file-chooser-dialog.h"
 #include "pluma-encodings-combo-box.h"
@@ -54,10 +52,6 @@
 
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
-
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
 
 struct _PlumaFileChooserDialogPrivate
 {
@@ -216,7 +210,7 @@ create_newline_combo (PlumaFileChooserDialog *dialog)
 static void
 create_extra_widget (PlumaFileChooserDialog *dialog)
 {
-	dialog->priv->extra_widget = gtk_hbox_new (FALSE, 6);
+	dialog->priv->extra_widget = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 
 	gtk_widget_show (dialog->priv->extra_widget);
 
@@ -309,11 +303,7 @@ all_text_files_filter (const GtkFileFilterInfo *filter_info,
 			GtkSourceLanguage *lang;
 
 			lang = gtk_source_language_manager_get_language (lm, *languages);
-#if GTK_CHECK_VERSION (3, 0, 0)
 			g_return_val_if_fail (GTK_SOURCE_IS_LANGUAGE (lang), FALSE);
-#else
-			g_return_val_if_fail (GTK_IS_SOURCE_LANGUAGE (lang), FALSE);
-#endif
 			++languages;
 
 			mime_types = gtk_source_language_get_mime_types (lang);
@@ -392,9 +382,6 @@ pluma_file_chooser_dialog_new_valist (const gchar          *title,
 
 	result = g_object_new (PLUMA_TYPE_FILE_CHOOSER_DIALOG,
 			       "title", title,
-#if !GTK_CHECK_VERSION (3, 0, 0)
-			       "file-system-backend", NULL,
-#endif
 			       "local-only", FALSE,
 			       "action", action,
 			       "select-multiple", action == GTK_FILE_CHOOSER_ACTION_OPEN,
@@ -421,9 +408,7 @@ pluma_file_chooser_dialog_new_valist (const gchar          *title,
 	gtk_file_filter_set_name (filter, ALL_FILES);
 	gtk_file_filter_add_pattern (filter, "*");
 	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_file_chooser_set_action (GTK_FILE_CHOOSER (result), action);
-#endif
 
 	if (active_filter != 1)
 	{

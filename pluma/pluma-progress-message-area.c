@@ -48,11 +48,6 @@ enum {
 
 #define PLUMA_PROGRESS_MESSAGE_AREA_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_PROGRESS_MESSAGE_AREA, PlumaProgressMessageAreaPrivate))
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#endif
-
 struct _PlumaProgressMessageAreaPrivate
 {
 	GtkWidget *image;
@@ -139,22 +134,18 @@ pluma_progress_message_area_init (PlumaProgressMessageArea *area)
 	
 	area->priv = PLUMA_PROGRESS_MESSAGE_AREA_GET_PRIVATE (area);
 	
-	vbox = gtk_vbox_new (FALSE, 6);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_widget_show (vbox);
 
-	hbox = gtk_hbox_new (FALSE, 4);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
 	gtk_widget_show (hbox);
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
 	area->priv->image = gtk_image_new_from_icon_name (GTK_STOCK_MISSING_IMAGE, 
 							  GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_widget_show (area->priv->image);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (area->priv->image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (area->priv->image, GTK_ALIGN_CENTER);
-#else
-	gtk_misc_set_alignment (GTK_MISC (area->priv->image), 0.5, 0.5);
-#endif
 	gtk_box_pack_start (GTK_BOX (hbox), area->priv->image, FALSE, FALSE, 4);
 	
 	area->priv->label = gtk_label_new ("");

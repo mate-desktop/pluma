@@ -31,10 +31,6 @@
 
 #define PLUMA_TAB_LABEL_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_TAB_LABEL, PlumaTabLabelPrivate))
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
-
 /* Signals */
 enum
 {
@@ -63,11 +59,7 @@ struct _PlumaTabLabelPrivate
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 G_DEFINE_TYPE (PlumaTabLabel, pluma_tab_label, GTK_TYPE_BOX)
-#else
-G_DEFINE_TYPE (PlumaTabLabel, pluma_tab_label, GTK_TYPE_HBOX)
-#endif
 
 static void
 pluma_tab_label_finalize (GObject *object)
@@ -269,16 +261,15 @@ pluma_tab_label_init (PlumaTabLabel *tab_label)
 
 	tab_label->priv->close_button_sensitive = TRUE;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (tab_label),
 	                                GTK_ORIENTATION_HORIZONTAL);
-#endif
+
 	ebox = gtk_event_box_new ();
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (ebox), FALSE);
 	gtk_box_pack_start (GTK_BOX (tab_label), ebox, TRUE, TRUE, 0);
 	tab_label->priv->ebox = ebox;
 
-	hbox = gtk_hbox_new (FALSE, 4);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
 	gtk_container_add (GTK_CONTAINER (ebox), hbox);
 
 	close_button = pluma_close_button_new ();
@@ -306,14 +297,10 @@ pluma_tab_label_init (PlumaTabLabel *tab_label)
 #else
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 #endif
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_margin_start (label, 0);
 	gtk_widget_set_margin_end (label, 0);
 	gtk_widget_set_margin_top (label, 0);
 	gtk_widget_set_margin_bottom (label, 0);
-#else
-	gtk_misc_set_padding (GTK_MISC (label), 0, 0);
-#endif
 	gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
 	tab_label->priv->label = label;
 

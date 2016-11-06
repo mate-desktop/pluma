@@ -35,7 +35,7 @@
 
 #include <gio/gio.h>
 #include <gtk/gtk.h>
-#include <gtksourceview/gtksourcebuffer.h>
+#include <gtksourceview/gtksource.h>
 
 #include <pluma/pluma-encodings.h>
 

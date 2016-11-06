@@ -26,10 +26,6 @@
 
 #define PLUMA_STATUS_COMBO_BOX_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_STATUS_COMBO_BOX, PlumaStatusComboBoxPrivate))
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#endif
-
 struct _PlumaStatusComboBoxPrivate
 {
 	GtkWidget *frame;
@@ -106,7 +102,6 @@ pluma_status_combo_box_set_property (GObject      *object,
 	}
 }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void
 pluma_status_combo_box_constructed (GObject *object)
 {
@@ -137,7 +132,6 @@ pluma_status_combo_box_constructed (GObject *object)
 	                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (css);
 }
-#endif
 
 static void
 pluma_status_combo_box_changed (PlumaStatusComboBox *combo,
@@ -162,9 +156,7 @@ pluma_status_combo_box_class_init (PlumaStatusComboBoxClass *klass)
 	object_class->finalize = pluma_status_combo_box_finalize;
 	object_class->get_property = pluma_status_combo_box_get_property;
 	object_class->set_property = pluma_status_combo_box_set_property;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	object_class->constructed = pluma_status_combo_box_constructed;
-#endif
 	
 	klass->changed = pluma_status_combo_box_changed;
 
@@ -183,19 +175,6 @@ pluma_status_combo_box_class_init (PlumaStatusComboBoxClass *klass)
 					 		      "The label",
 					 		      NULL,
 					 		      G_PARAM_READWRITE));
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	/* Set up a style for the button to decrease spacing. */
-	gtk_rc_parse_string (
-		"style \"pluma-status-combo-button-style\"\n"
-		"{\n"
-		"  GtkWidget::focus-padding = 0\n"
-		"  GtkWidget::focus-line-width = 0\n"
-		"  xthickness = 0\n"
-		"  ythickness = 0\n"
-		"}\n"
-		"widget \"*.pluma-status-combo-button\" style \"pluma-status-combo-button-style\"");
-#endif
 
 	g_type_class_add_private (object_class, sizeof(PlumaStatusComboBoxPrivate));
 }
@@ -219,11 +198,7 @@ menu_position_func (GtkMenu		*menu,
 	
 	*push_in = FALSE;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_get_preferred_size (gtk_widget_get_toplevel (GTK_WIDGET (menu)), NULL, &request);
-#else
-	gtk_widget_size_request (gtk_widget_get_toplevel (GTK_WIDGET (menu)), &request);
-#endif
 	
 	/* get the origin... */
 	gdk_window_get_origin (gtk_widget_get_window (GTK_WIDGET (combo)), x, y);
@@ -248,11 +223,7 @@ button_press_event (GtkWidget           *widget,
 	GtkAllocation allocation;
 	gint max_height;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_get_preferred_size (combo->priv->menu, NULL, &request);
-#else
-	gtk_widget_size_request (combo->priv->menu, &request);
-#endif
 	gtk_widget_get_allocation (GTK_WIDGET (combo), &allocation);
 
 	/* do something relative to our own height here, maybe we can do better */
@@ -284,7 +255,6 @@ button_press_event (GtkWidget           *widget,
 static void
 set_shadow_type (PlumaStatusComboBox *combo)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkStyleContext *context;
 	GtkShadowType shadow_type;
 	GtkWidget *statusbar;
@@ -294,16 +264,6 @@ set_shadow_type (PlumaStatusComboBox *combo)
 	context = gtk_widget_get_style_context (statusbar);
 
 	gtk_style_context_get_style (context, "shadow-type", &shadow_type, NULL);
-#else
-	GtkShadowType shadow_type;
-	GtkWidget *statusbar;
-
-	/* This is a hack needed to use the shadow type of a statusbar */
-	statusbar = gtk_statusbar_new ();
-	gtk_widget_ensure_style (statusbar);
-
-	gtk_widget_style_get (statusbar, "shadow-type", &shadow_type, NULL);
-#endif
 	gtk_frame_set_shadow_type (GTK_FRAME (combo->priv->frame), shadow_type);
 
 	gtk_widget_destroy (statusbar);
@@ -326,7 +286,7 @@ pluma_status_combo_box_init (PlumaStatusComboBox *self)
 
 	set_shadow_type (self);
 
-	self->priv->hbox = gtk_hbox_new (FALSE, 3);
+	self->priv->hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 3);
 	gtk_widget_show (self->priv->hbox);
 	
 	gtk_container_add (GTK_CONTAINER (self), self->priv->frame);
@@ -349,26 +309,14 @@ pluma_status_combo_box_init (PlumaStatusComboBox *self)
 	gtk_widget_show (self->priv->item);
 	
 	gtk_label_set_single_line_mode (GTK_LABEL (self->priv->item), TRUE);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (self->priv->item, GTK_ALIGN_START);
-#else
-	gtk_misc_set_alignment (GTK_MISC (self->priv->item), 0, 0.5);
-#endif
 	
 	gtk_box_pack_start (GTK_BOX (self->priv->hbox), self->priv->item, TRUE, TRUE, 0);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	self->priv->arrow = gtk_image_new_from_icon_name ("pan-down-symbolic", GTK_ICON_SIZE_BUTTON);
-#else
-	self->priv->arrow = gtk_arrow_new (GTK_ARROW_DOWN, GTK_SHADOW_NONE);
-#endif
 	gtk_widget_show (self->priv->arrow);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (self->priv->arrow, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (self->priv->arrow, GTK_ALIGN_CENTER);
-#else
-	gtk_misc_set_alignment (GTK_MISC (self->priv->arrow), 0.5, 0.5);
-#endif
 	
 	gtk_box_pack_start (GTK_BOX (self->priv->hbox), self->priv->arrow, FALSE, TRUE, 0);
 	

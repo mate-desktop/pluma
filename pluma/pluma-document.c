@@ -39,11 +39,6 @@
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#if GTK_CHECK_VERSION (3, 0, 0)
-#include <gtksourceview/gtksource.h>
-#else
-#include <gtksourceview/gtksourceiter.h>
-#endif
 
 #include "pluma-prefs-manager-app.h"
 #include "pluma-document.h"
@@ -178,11 +173,7 @@ enum {
 
 static guint document_signals[LAST_SIGNAL] = { 0 };
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 G_DEFINE_TYPE(PlumaDocument, pluma_document, GTK_SOURCE_TYPE_BUFFER)
-#else
-G_DEFINE_TYPE(PlumaDocument, pluma_document, GTK_TYPE_SOURCE_BUFFER)
-#endif
 
 GQuark
 pluma_document_error_quark (void)
@@ -1895,11 +1886,7 @@ pluma_document_search_forward (PlumaDocument     *doc,
 			       GtkTextIter       *match_end)
 {
 	GtkTextIter iter;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkTextSearchFlags search_flags;
-#else
-	GtkSourceSearchFlags search_flags;
-#endif
 	gboolean found = FALSE;
 	GtkTextIter m_start;
 	GtkTextIter m_end;
@@ -1923,28 +1910,16 @@ pluma_document_search_forward (PlumaDocument     *doc,
 	else
 		iter = *start;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	search_flags = GTK_TEXT_SEARCH_VISIBLE_ONLY | GTK_TEXT_SEARCH_TEXT_ONLY;
-#else
-	search_flags = GTK_SOURCE_SEARCH_VISIBLE_ONLY | GTK_SOURCE_SEARCH_TEXT_ONLY;
-#endif
 
 	if (!PLUMA_SEARCH_IS_CASE_SENSITIVE (doc->priv->search_flags))
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		search_flags = search_flags | GTK_TEXT_SEARCH_CASE_INSENSITIVE;
-#else
-		search_flags = search_flags | GTK_SOURCE_SEARCH_CASE_INSENSITIVE;
-#endif
 	}
 		
 	while (!found)
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		found = gtk_text_iter_forward_search (&iter,
-#else
-		found = gtk_source_iter_forward_search (&iter,
-#endif
 							doc->priv->search_text, 
 							search_flags,
                         	                	&m_start, 
@@ -1988,11 +1963,7 @@ pluma_document_search_backward (PlumaDocument     *doc,
 				GtkTextIter       *match_end)
 {
 	GtkTextIter iter;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkTextSearchFlags search_flags;
-#else
-	GtkSourceSearchFlags search_flags;
-#endif
 	gboolean found = FALSE;
 	GtkTextIter m_start;
 	GtkTextIter m_end;
@@ -2016,28 +1987,16 @@ pluma_document_search_backward (PlumaDocument     *doc,
 	else
 		iter = *end;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	search_flags = GTK_TEXT_SEARCH_VISIBLE_ONLY | GTK_TEXT_SEARCH_TEXT_ONLY;
-#else
-	search_flags = GTK_SOURCE_SEARCH_VISIBLE_ONLY | GTK_SOURCE_SEARCH_TEXT_ONLY;
-#endif
 
 	if (!PLUMA_SEARCH_IS_CASE_SENSITIVE (doc->priv->search_flags))
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		search_flags = search_flags | GTK_TEXT_SEARCH_CASE_INSENSITIVE;
-#else
-		search_flags = search_flags | GTK_SOURCE_SEARCH_CASE_INSENSITIVE;
-#endif
 	}
 
 	while (!found)
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		found = gtk_text_iter_backward_search (&iter,
-#else
-		found = gtk_source_iter_backward_search (&iter,
-#endif
 							 doc->priv->search_text, 
 							 search_flags,
                         	                	 &m_start, 
@@ -2075,11 +2034,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 	GtkTextIter iter;
 	GtkTextIter m_start;
 	GtkTextIter m_end;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkTextSearchFlags search_flags = 0;
-#else
-	GtkSourceSearchFlags search_flags = 0;
-#endif
 	gboolean found = TRUE;
 	gint cont = 0;
 	gchar *search_text;
@@ -2104,19 +2059,11 @@ pluma_document_replace_all (PlumaDocument       *doc,
 
 	gtk_text_buffer_get_start_iter (buffer, &iter);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	search_flags = GTK_TEXT_SEARCH_VISIBLE_ONLY | GTK_TEXT_SEARCH_TEXT_ONLY;
-#else
-	search_flags = GTK_SOURCE_SEARCH_VISIBLE_ONLY | GTK_SOURCE_SEARCH_TEXT_ONLY;
-#endif
 
 	if (!PLUMA_SEARCH_IS_CASE_SENSITIVE (flags))
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		search_flags = search_flags | GTK_TEXT_SEARCH_CASE_INSENSITIVE;
-#else
-		search_flags = search_flags | GTK_SOURCE_SEARCH_CASE_INSENSITIVE;
-#endif
 	}
 
 	replace_text_len = strlen (replace_text);
@@ -2139,11 +2086,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 
 	do
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		found = gtk_text_iter_forward_search (&iter,
-#else
-		found = gtk_source_iter_forward_search (&iter,
-#endif
 							search_text, 
 							search_flags,
                         	                	&m_start, 
@@ -2246,15 +2189,9 @@ _pluma_document_get_seconds_since_last_save_or_load (PlumaDocument *doc)
 static void
 get_search_match_colors (PlumaDocument *doc,
 			 gboolean      *foreground_set,
-#if GTK_CHECK_VERSION (3, 14, 0)
 			 GdkRGBA       *foreground,
 			 gboolean      *background_set,
 			 GdkRGBA       *background)
-#else
-			 GdkColor      *foreground,
-			 gboolean      *background_set,
-			 GdkColor      *background)
-#endif
 {
 	GtkSourceStyleScheme *style_scheme;
 	GtkSourceStyle *style;
@@ -2279,7 +2216,6 @@ get_search_match_colors (PlumaDocument *doc,
 
 	if (*foreground_set)
 	{
-#if GTK_CHECK_VERSION (3, 14, 0)
 		if (fg == NULL ||
 		    !gdk_rgba_parse (foreground, fg))
 		{
@@ -2293,21 +2229,6 @@ get_search_match_colors (PlumaDocument *doc,
 		    !gdk_rgba_parse (background, bg))
 		{
 			*background_set = FALSE;
-#else
-		if (fg == NULL ||
-		    !gdk_color_parse (fg, foreground))
-		{
-			*foreground_set = FALSE;
-		}
-	}
-
-	if (*background_set)
-	{
-		if (bg == NULL ||
-		    !gdk_color_parse (bg, background))
-		{
-			*background_set = FALSE;
-#endif
 		}
 	}	
 
@@ -2321,11 +2242,7 @@ get_search_match_colors (PlumaDocument *doc,
 			     "Falling back to hard-coded colors "
 			     "for the \"found\" text tag.");
 
-#if GTK_CHECK_VERSION (3, 14, 0)
 	gdk_rgba_parse (background, "#FFFF78");
-#else
-	gdk_color_parse ("#FFFF78", background);
-#endif
 	*background_set = TRUE;
 	*foreground_set = FALSE;
 
@@ -2337,13 +2254,8 @@ sync_found_tag (PlumaDocument *doc,
 		GParamSpec    *pspec,
 		gpointer       data)
 {
-#if GTK_CHECK_VERSION (3, 14, 0)
 	GdkRGBA fg;
 	GdkRGBA bg;
-#else
-	GdkColor fg;
-	GdkColor bg;
-#endif
 	gboolean fg_set;
 	gboolean bg_set;
 
@@ -2356,17 +2268,10 @@ sync_found_tag (PlumaDocument *doc,
 				 &bg_set, &bg);
 
 	g_object_set (doc->priv->found_tag,
-#if GTK_CHECK_VERSION (3, 14, 0)
 		      "foreground-rgba", fg_set ? &fg : NULL,
 		      NULL);
 	g_object_set (doc->priv->found_tag,
 		      "background-rgba", bg_set ? &bg : NULL,
-#else
-		      "foreground-gdk", fg_set ? &fg : NULL,
-		      NULL);
-	g_object_set (doc->priv->found_tag,
-		      "background-gdk", bg_set ? &bg : NULL,
-#endif
 		      NULL);
 }
 
@@ -2390,11 +2295,7 @@ search_region (PlumaDocument *doc,
 	GtkTextIter iter;
 	GtkTextIter m_start;
 	GtkTextIter m_end;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkTextSearchFlags search_flags = 0;
-#else
-	GtkSourceSearchFlags search_flags = 0;
-#endif
 	gboolean found = TRUE;
 
 	GtkTextBuffer *buffer;	
@@ -2458,19 +2359,11 @@ search_region (PlumaDocument *doc,
 
 	iter = *start;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	search_flags = GTK_TEXT_SEARCH_VISIBLE_ONLY | GTK_TEXT_SEARCH_TEXT_ONLY;
-#else
-	search_flags = GTK_SOURCE_SEARCH_VISIBLE_ONLY | GTK_SOURCE_SEARCH_TEXT_ONLY;
-#endif
 
 	if (!PLUMA_SEARCH_IS_CASE_SENSITIVE (doc->priv->search_flags))
 	{
-#if GTK_CHECK_VERSION (3, 0, 0)
 		search_flags = search_flags | GTK_TEXT_SEARCH_CASE_INSENSITIVE;
-#else
-		search_flags = search_flags | GTK_SOURCE_SEARCH_CASE_INSENSITIVE;
-#endif
 	}
 	
 	do
@@ -2478,11 +2371,7 @@ search_region (PlumaDocument *doc,
 		if ((end != NULL) && gtk_text_iter_is_end (end))
 			end = NULL;
 			
-#if GTK_CHECK_VERSION (3, 0, 0)
 		found = gtk_text_iter_forward_search (&iter,
-#else
-		found = gtk_source_iter_forward_search (&iter,
-#endif
 							doc->priv->search_text, 
 							search_flags,
                         	                	&m_start, 

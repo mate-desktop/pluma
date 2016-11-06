@@ -48,21 +48,14 @@ typedef struct _PlumaPrintPreviewClass   PlumaPrintPreviewClass;
 
 struct _PlumaPrintPreview
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkBox parent;
-#else
-	GtkVBox parent;
-#endif
+
 	PlumaPrintPreviewPrivate *priv;
 };
 
 struct _PlumaPrintPreviewClass
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkBoxClass parent_class;
-#else
-	GtkVBoxClass parent_class;
-#endif
 
 	void (* close)		(PlumaPrintPreview          *preview);
 };

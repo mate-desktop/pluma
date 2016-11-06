@@ -24,7 +24,6 @@ libdialogs_la_SOURCES = 			\
 ui_DATA =					\
 	pluma-encodings-dialog.ui		\
 	pluma-preferences-dialog.ui		\
-	pluma-search-dialog-gtk3.ui     \
 	pluma-search-dialog.ui
 
 EXTRA_DIST = $(ui_DATA)

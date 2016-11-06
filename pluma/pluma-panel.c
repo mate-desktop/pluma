@@ -43,11 +43,6 @@
 
 #define PLUMA_PANEL_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_PANEL, PlumaPanelPrivate))
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
-#endif
-
 struct _PlumaPanelPrivate 
 {
 	GtkOrientation orientation;
@@ -90,11 +85,7 @@ static GObject	*pluma_panel_constructor	(GType type,
 						 GObjectConstructParam *construct_properties);
 
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 G_DEFINE_TYPE(PlumaPanel, pluma_panel, GTK_TYPE_BOX)
-#else
-G_DEFINE_TYPE(PlumaPanel, pluma_panel, GTK_TYPE_VBOX)
-#endif
 
 static void
 pluma_panel_finalize (GObject *obj)
@@ -195,13 +186,8 @@ pluma_panel_class_init (PlumaPanelClass *klass)
 
 	g_object_class_install_property (object_class,
 					 PROP_ORIENTATION,
-#if GTK_CHECK_VERSION (3, 0, 0)
 					 g_param_spec_enum ("panel-orientation",
 							    "Panel Orientation",
-#else
-					 g_param_spec_enum ("orientation",
-							    "Orientation",
-#endif
 							    "The panel's orientation",
 							    GTK_TYPE_ORIENTATION,
 							    GTK_ORIENTATION_VERTICAL,
@@ -281,26 +267,6 @@ set_gtk_image_from_gtk_image (GtkImage *image,
 	case GTK_IMAGE_EMPTY:
 		gtk_image_clear (image);
 		break;
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	case GTK_IMAGE_PIXMAP:
-		{
-			GdkPixmap *pm;
-			GdkBitmap *bm;
-
-			gtk_image_get_pixmap (source, &pm, &bm);
-			gtk_image_set_from_pixmap (image, pm, bm);
-		}
-		break;
-	case GTK_IMAGE_IMAGE:
-		{
-			GdkImage *i;
-			GdkBitmap *bm;
-
-			gtk_image_get_image (source, &i, &bm);
-			gtk_image_set_from_image (image, i, bm);
-		}
-		break;
-#endif
 	case GTK_IMAGE_PIXBUF:
 		{
 			GdkPixbuf *pb;
@@ -416,10 +382,8 @@ pluma_panel_init (PlumaPanel *panel)
 {
 	panel->priv = PLUMA_PANEL_GET_PRIVATE (panel);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (panel),
 									GTK_ORIENTATION_VERTICAL);
-#endif
 }
 
 static void
@@ -473,7 +437,7 @@ build_horizontal_panel (PlumaPanel *panel)
 	GtkWidget *sidebar;
 	GtkWidget *close_button;
 
-	box = gtk_hbox_new(FALSE, 0);
+	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 
 	gtk_box_pack_start (GTK_BOX (box), 
 			    panel->priv->notebook, 
@@ -482,7 +446,7 @@ build_horizontal_panel (PlumaPanel *panel)
 			    0);
 
 	/* Toolbar, close button and first separator */
-	sidebar = gtk_vbox_new(FALSE, 6);
+	sidebar = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_container_set_border_width (GTK_CONTAINER (sidebar), 4);
 
 	gtk_box_pack_start (GTK_BOX (box),
@@ -517,12 +481,12 @@ build_vertical_panel (PlumaPanel *panel)
 	GtkWidget *dummy_label;
 
 	/* Create title hbox */
-	title_hbox = gtk_hbox_new (FALSE, 6);
+	title_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 	gtk_container_set_border_width (GTK_CONTAINER (title_hbox), 5);
 					
 	gtk_box_pack_start (GTK_BOX (panel), title_hbox, FALSE, FALSE, 0);
 	
-	icon_name_hbox = gtk_hbox_new (FALSE, 0);
+	icon_name_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start (GTK_BOX (title_hbox), 
 			    icon_name_hbox, 
 			    TRUE, 
@@ -635,13 +599,13 @@ build_tab_label (PlumaPanel  *panel,
 
 	/* set hbox spacing and label padding (see below) so that there's an
 	 * equal amount of space around the label */
-	hbox = gtk_hbox_new (FALSE, 4);
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
 
 	label_ebox = gtk_event_box_new ();
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (label_ebox), FALSE);
 	gtk_box_pack_start (GTK_BOX (hbox), label_ebox, TRUE, TRUE, 0);
 
-	label_hbox = gtk_hbox_new (FALSE, 4);
+	label_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
 	gtk_container_add (GTK_CONTAINER (label_ebox), label_hbox);
 
 	/* setup icon */
@@ -654,14 +618,10 @@ build_tab_label (PlumaPanel  *panel,
 #else
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 #endif
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_margin_start (label, 0);
 	gtk_widget_set_margin_end (label, 0);
 	gtk_widget_set_margin_top (label, 0);
 	gtk_widget_set_margin_bottom (label, 0);
-#else
-	gtk_misc_set_padding (GTK_MISC (label), 0, 0);
-#endif
 	gtk_box_pack_start (GTK_BOX (label_hbox), label, TRUE, TRUE, 0);
 
 	gtk_widget_set_tooltip_text (label_ebox, name);

@@ -70,11 +70,7 @@ struct _PlumaPluginManagerPrivate
 	GtkWidget	*popup_menu;
 };
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 G_DEFINE_TYPE(PlumaPluginManager, pluma_plugin_manager, GTK_TYPE_BOX)
-#else
-G_DEFINE_TYPE(PlumaPluginManager, pluma_plugin_manager, GTK_TYPE_VBOX)
-#endif
 
 static PlumaPluginInfo *plugin_manager_get_selected_plugin (PlumaPluginManager *pm); 
 static void plugin_manager_toggle_active (PlumaPluginManager *pm, GtkTreeIter *iter, GtkTreeModel *model);
@@ -659,9 +655,6 @@ plugin_manager_construct_tree (PlumaPluginManager *pm)
 				 GTK_TREE_MODEL (model));
 	g_object_unref (model);
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (pm->priv->tree), TRUE);
-#endif
 	gtk_tree_view_set_headers_visible (GTK_TREE_VIEW (pm->priv->tree), FALSE);
 
 	/* first column */
@@ -796,10 +789,8 @@ pluma_plugin_manager_init (PlumaPluginManager *pm)
 
 	pm->priv = PLUMA_PLUGIN_MANAGER_GET_PRIVATE (pm);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (pm),
 	                                GTK_ORIENTATION_VERTICAL);
-#endif
 
 	/*
 	 * Always we create the manager, firstly we rescan the plugins directory
@@ -832,11 +823,7 @@ pluma_plugin_manager_init (PlumaPluginManager *pm)
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), pm->priv->tree);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	hbuttonbox = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
-#else
-	hbuttonbox = gtk_hbutton_box_new ();
-#endif
 	gtk_box_pack_start (GTK_BOX (pm), hbuttonbox, FALSE, FALSE, 0);
 	gtk_button_box_set_layout (GTK_BUTTON_BOX (hbuttonbox), GTK_BUTTONBOX_END);
 	gtk_box_set_spacing (GTK_BOX (hbuttonbox), 8);

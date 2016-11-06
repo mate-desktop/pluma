@@ -58,11 +58,7 @@ typedef struct _PlumaTaglistPluginPanel PlumaTaglistPluginPanel;
 
 struct _PlumaTaglistPluginPanel 
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkBox vbox;
-#else
-	GtkVBox vbox;
-#endif
 
 	/*< private > */
 	PlumaTaglistPluginPanelPrivate *priv;
@@ -75,11 +71,7 @@ typedef struct _PlumaTaglistPluginPanelClass PlumaTaglistPluginPanelClass;
 
 struct _PlumaTaglistPluginPanelClass 
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GtkBoxClass parent_class;
-#else
-	GtkVBoxClass parent_class;
-#endif
 };
 
 /*

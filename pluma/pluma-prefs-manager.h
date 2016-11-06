@@ -32,7 +32,7 @@
 
 #include <gtk/gtk.h>
 #include <glib.h>
-#include <gtksourceview/gtksourceview.h>
+#include <gtksourceview/gtksource.h>
 #include "pluma-app.h"
 
 #define PLUMA_SCHEMA	"org.mate.pluma"

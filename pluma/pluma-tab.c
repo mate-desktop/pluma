@@ -49,10 +49,6 @@
 
 #define PLUMA_TAB_KEY "PLUMA_TAB_KEY"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gdk_cursor_unref(cursor) g_object_unref (cursor)
-#endif
-
 struct _PlumaTabPrivate
 {
 	PlumaTabState	        state;
@@ -88,11 +84,7 @@ struct _PlumaTabPrivate
 	guint			idle_scroll;
 };
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 G_DEFINE_TYPE(PlumaTab, pluma_tab, GTK_TYPE_BOX)
-#else
-G_DEFINE_TYPE(PlumaTab, pluma_tab, GTK_TYPE_VBOX)
-#endif
 
 enum
 {
@@ -346,7 +338,7 @@ set_cursor_according_to_state (GtkTextView   *view,
 		if (left_window != NULL)
 			gdk_window_set_cursor (left_window, cursor);
 
-		gdk_cursor_unref (cursor);
+		g_object_unref (cursor);
 	}
 	else
 	{
@@ -359,7 +351,7 @@ set_cursor_according_to_state (GtkTextView   *view,
 		if (left_window != NULL)
 			gdk_window_set_cursor (left_window, NULL);
 
-		gdk_cursor_unref (cursor);
+		g_object_unref (cursor);
 	}
 }
 
@@ -1512,10 +1504,8 @@ pluma_tab_init (PlumaTab *tab)
 
 	tab->priv->ask_if_externally_modified = TRUE;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (tab),
 	                                GTK_ORIENTATION_VERTICAL);
-#endif
 	
 	/* Create the scrolled window */
 	sw = gtk_scrolled_window_new (NULL, NULL);
@@ -1869,11 +1859,7 @@ get_icon (GtkIconTheme *theme,
 		return get_stock_icon (theme, GTK_STOCK_FILE, size);
 	
 	pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	g_object_unref (icon_info);
-#else
-	gtk_icon_info_free (icon_info);
-#endif
 	
 	if (pixbuf == NULL)
 		return get_stock_icon (theme, GTK_STOCK_FILE, size);
@@ -1898,14 +1884,7 @@ _pluma_tab_get_icon (PlumaTab *tab)
 	theme = gtk_icon_theme_get_for_screen (screen);
 	g_return_val_if_fail (theme != NULL, NULL);
 
-#if GTK_CHECK_VERSION (3, 10, 0)
 	gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, NULL, &icon_size);
-#else
-	gtk_icon_size_lookup_for_settings (gtk_widget_get_settings (GTK_WIDGET (tab)),
-					   GTK_ICON_SIZE_MENU, 
-					   NULL,
-					   &icon_size);
-#endif
 
 	switch (tab->priv->state)
 	{

@@ -55,8 +55,7 @@ MAINTAINERCLEANFILES = 		\
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-gtk-doc \
-	--disable-tests \
-	--with-gtk=$(GTK_API_VERSION)
+	--disable-tests
 
 # Build ChangeLog from GIT  history
 ChangeLog:
