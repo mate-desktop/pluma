@@ -1,6 +1,33 @@
 # List of source files that should *not* be translated.
 # Please keep this file sorted alphabetically.
 data/pluma.desktop.in
+plugins/externaltools/externaltools.pluma-plugin.desktop.in
+plugins/externaltools/tools/__init__.py
+plugins/externaltools/tools/capture.py
+plugins/externaltools/tools/functions.py
+plugins/externaltools/tools/manager.py
+plugins/externaltools/tools/outputpanel.py
+[type: gettext/glade]plugins/externaltools/tools/tools.ui
+plugins/externaltools/data/build.desktop.in
+plugins/externaltools/data/open-terminal-here.desktop.in
+plugins/externaltools/data/remove-trailing-spaces.desktop.in
+plugins/externaltools/data/run-command.desktop.in
+plugins/externaltools/data/search-recursive.desktop.in
+plugins/externaltools/data/switch-c.desktop.in
+plugins/pythonconsole/pythonconsole.pluma-plugin.desktop.in
+plugins/pythonconsole/pythonconsole/__init__.py
+[type: gettext/glade]plugins/pythonconsole/pythonconsole/config.ui
+plugins/quickopen/quickopen/popup.py
+plugins/quickopen/quickopen/windowhelper.py
+plugins/quickopen/quickopen.pluma-plugin.desktop.in
+plugins/snippets/snippets.pluma-plugin.desktop.in
+[type: gettext/glade]plugins/snippets/snippets/snippets.ui
+plugins/snippets/snippets/Document.py
+plugins/snippets/snippets/WindowHelper.py
+plugins/snippets/snippets/Manager.py
+plugins/snippets/snippets/Exporter.py
+plugins/snippets/snippets/Importer.py
+plugins/snippets/snippets/Placeholder.py
 pluma/pluma-document-output-stream.c
 pluma/smclient/eggdesktopfile.c
 pluma/smclient/eggsmclient.c
