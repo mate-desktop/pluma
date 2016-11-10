@@ -1,12 +1,8 @@
 DIST_SUBDIRS =		\
 	changecase 	\
 	docinfo 	\
-	externaltools	\
 	filebrowser 	\
 	modelines	\
-	pythonconsole	\
-	quickopen	\
-	snippets	\
 	sort 		\
 	spell 		\
 	taglist 	\
