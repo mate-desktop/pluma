@@ -345,7 +345,9 @@ do_replace (PlumaSearchDialog *dialog,
 	gchar *unescaped_replace_text;
 	gchar *selected_text = NULL;
 	gboolean match_case;
+    gboolean match_regex;
 	gboolean parse_escapes;
+    gboolean need_refind;
 
 	doc = pluma_window_get_active_document (window);
 	if (doc == NULL)
@@ -375,20 +377,40 @@ do_replace (PlumaSearchDialog *dialog,
 			   NULL);
 
 	match_case = pluma_search_dialog_get_match_case (dialog);
+    match_regex = pluma_search_dialog_get_match_regex(dialog);
 
-	if ((selected_text == NULL) ||
-	    (match_case && (strcmp (selected_text, unescaped_search_text) != 0)) || 
-	    (!match_case && !g_utf8_caselessnmatch (selected_text,
-						    unescaped_search_text, 
-						    strlen (selected_text), 
-						    strlen (unescaped_search_text)) != 0))
-	{
-		do_find (dialog, window);
-		g_free (unescaped_search_text);
-		g_free (selected_text);	
+    if (selected_text != NULL)
+    {
+        if(!match_regex)
+        {
+            need_refind = (match_case && (strcmp (selected_text,
+                                                  unescaped_search_text) != 0)) ||
+                    (!match_case && !g_utf8_caselessnmatch (selected_text,
+                                                            unescaped_search_text,
+                                                            strlen (selected_text),
+                                                            strlen (unescaped_search_text)) != 0);
+        }
+        else
+        {
+            need_refind = !g_regex_match_simple(unescaped_search_text
+                                               ,selected_text,
+                                               match_case ? 0 : GTK_TEXT_SEARCH_CASE_INSENSITIVE ,
+                                               0);
+        }
+    }
+    else
+    {
+        need_refind = TRUE;
+    }
 
-		return;
-	}
+    if (need_refind)
+    {
+        do_find (dialog, window);
+        g_free (unescaped_search_text);
+        g_free (selected_text);
+
+        return;
+    }
 
 	unescaped_replace_text = pluma_utils_unescape_search_text (replace_entry_text);	
 	replace_selected_text (GTK_TEXT_BUFFER (doc), unescaped_replace_text);
