@@ -2009,12 +2009,12 @@ pluma_document_search_backward (PlumaDocument     *doc,
     {
         if(!PLUMA_SEARCH_IS_MATCH_REGEX(doc->priv->search_flags))
         {
-        found = gtk_text_iter_backward_search (&iter,
-                             doc->priv->search_text,
-                             search_flags,
-                                                 &m_start,
-                                                 &m_end,
-                                                     start);
+            found = gtk_text_iter_backward_search (&iter,
+                                                   doc->priv->search_text,
+                                                   search_flags,
+                                                   &m_start,
+                                                   &m_end,
+                                                   start);
         }
         else{
             found = pluma_gtk_text_iter_regex_search (&iter,
@@ -2109,12 +2109,23 @@ pluma_document_replace_all (PlumaDocument       *doc,
 
 	do
 	{
-		found = gtk_text_iter_forward_search (&iter,
-							search_text, 
-							search_flags,
-                        	                	&m_start, 
-                        	                	&m_end,
-                                	               	NULL);
+        if(!PLUMA_SEARCH_IS_MATCH_REGEX(flags))
+        {
+            found = gtk_text_iter_forward_search (&iter,
+                                                  search_text,
+                                                  search_flags,
+                                                  &m_start,
+                                                  &m_end,
+                                                  NULL);
+        }else{
+            found = pluma_gtk_text_iter_regex_search (&iter,
+                                                      search_text,
+                                                      search_flags,
+                                                      &m_start,
+                                                      &m_end,
+                                                      NULL,
+                                                      TRUE);
+        }
 
 		if (found && PLUMA_SEARCH_IS_ENTIRE_WORD (flags))
 		{
@@ -2143,7 +2154,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 						replace_text_len);
 
 			iter = m_start;
-		}		
+        }
 
 	} while (found);
 

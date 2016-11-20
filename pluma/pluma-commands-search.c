@@ -431,6 +431,7 @@ do_replace_all (PlumaSearchDialog *dialog,
 	const gchar *search_entry_text;
 	const gchar *replace_entry_text;
 	gboolean match_case;
+    gboolean match_regex;
 	gboolean entire_word;
 	gboolean parse_escapes;
 	guint flags = 0;
@@ -460,9 +461,11 @@ do_replace_all (PlumaSearchDialog *dialog,
 	g_return_if_fail ((replace_entry_text) != NULL);
 
 	match_case = pluma_search_dialog_get_match_case (dialog);
+    match_regex = pluma_search_dialog_get_match_regex(dialog);
 	entire_word = pluma_search_dialog_get_entire_word (dialog);
 
 	PLUMA_SEARCH_SET_CASE_SENSITIVE (flags, match_case);
+    PLUMA_SEARCH_SET_MATCH_REGEX (flags, match_regex);
 	PLUMA_SEARCH_SET_ENTIRE_WORD (flags, entire_word);
 
 	count = pluma_document_replace_all (doc, 
