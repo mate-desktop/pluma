@@ -69,7 +69,8 @@ typedef enum
 	PLUMA_SEARCH_DONT_SET_FLAGS	= 1 << 0, 
 	PLUMA_SEARCH_ENTIRE_WORD	= 1 << 1,
 	PLUMA_SEARCH_CASE_SENSITIVE	= 1 << 2,
-	PLUMA_SEARCH_PARSE_ESCAPES	= 1 << 3
+    PLUMA_SEARCH_PARSE_ESCAPES	= 1 << 3,
+    PLUMA_SEARCH_MATCH_REGEX	= 1 << 4,
 
 } PlumaSearchFlags;
 
@@ -316,6 +317,11 @@ void		_pluma_document_search_region   (PlumaDocument       *doc,
 #define PLUMA_SEARCH_IS_PARSE_ESCAPES(sflags) ((sflags &  PLUMA_SEARCH_PARSE_ESCAPES) != 0)
 #define PLUMA_SEARCH_SET_PARSE_ESCAPES(sflags,state) ((state == TRUE) ? \
 (sflags |= PLUMA_SEARCH_PARSE_ESCAPES) : (sflags &= ~PLUMA_SEARCH_PARSE_ESCAPES))
+
+#define PLUMA_SEARCH_IS_MATCH_REGEX(sflags) ((sflags &  PLUMA_SEARCH_MATCH_REGEX) != 0)
+#define PLUMA_SEARCH_SET_MATCH_REGEX(sflags,state) ((state == TRUE) ? \
+(sflags |= PLUMA_SEARCH_MATCH_REGEX) : (sflags &= ~PLUMA_SEARCH_MATCH_REGEX))
+
 
 typedef GMountOperation *(*PlumaMountOperationFactory)(PlumaDocument *doc, 
 						       gpointer       userdata);

@@ -227,6 +227,7 @@ do_find (PlumaSearchDialog *dialog,
 	gchar *search_text;
 	const gchar *entry_text;
 	gboolean match_case;
+    gboolean match_regex;
 	gboolean entire_word;
 	gboolean wrap_around;
 	gboolean search_backwards;
@@ -244,6 +245,7 @@ do_find (PlumaSearchDialog *dialog,
 	doc = PLUMA_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (active_view)));
 
 	match_case = pluma_search_dialog_get_match_case (dialog);
+    match_regex = pluma_search_dialog_get_match_regex(dialog);
 	entire_word = pluma_search_dialog_get_entire_word (dialog);
 	search_backwards = pluma_search_dialog_get_backwards (dialog);
 	wrap_around = pluma_search_dialog_get_wrap_around (dialog);
@@ -257,6 +259,7 @@ do_find (PlumaSearchDialog *dialog,
 
 	PLUMA_SEARCH_SET_CASE_SENSITIVE (flags, match_case);
 	PLUMA_SEARCH_SET_ENTIRE_WORD (flags, entire_word);
+    PLUMA_SEARCH_SET_MATCH_REGEX (flags, match_regex);
 
 	search_text = pluma_document_get_search_text (doc, &old_flags);
 

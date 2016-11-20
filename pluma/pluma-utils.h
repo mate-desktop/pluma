@@ -151,6 +151,15 @@ gboolean	 pluma_utils_decode_uri 		(const gchar *uri,
 /* Turns data from a drop into a list of well formatted uris */
 gchar 	       **pluma_utils_drop_get_uris		(GtkSelectionData *selection_data);
 
+/* Provides regexp forward search */
+gboolean
+pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
+                              const gchar       *str,
+                              GtkTextSearchFlags flags,
+                              GtkTextIter       *match_start,
+                              GtkTextIter       *match_end,
+                              const GtkTextIter *limit, gboolean forward_search);
+
 G_END_DECLS
 
 #endif /* __PLUMA_UTILS_H__ */

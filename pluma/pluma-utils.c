@@ -1571,3 +1571,98 @@ pluma_utils_decode_uri (const gchar  *uri,
 	
 	return TRUE;
 }
+
+gboolean
+pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
+                                          const gchar       *str,
+                                          GtkTextSearchFlags flags,
+                                          GtkTextIter       *match_start,
+                                          GtkTextIter       *match_end,
+                                          const GtkTextIter *limit,
+                                          gboolean forward_search)
+{
+    GRegex *regex;
+    GRegexCompileFlags compile_flags;
+    GMatchInfo *match_info;
+    gchar *text;
+    GtkTextIter *begin_iter;
+    GtkTextIter *end_iter;
+    gchar **all_matches;
+    gchar *match_string;
+    gboolean found;
+
+    compile_flags = 0;
+    if ((flags & GTK_TEXT_SEARCH_CASE_INSENSITIVE) != 0)
+        compile_flags |= G_REGEX_CASELESS;
+
+    regex = g_regex_new (str,compile_flags,0,NULL);
+    if (regex == NULL)
+        return FALSE;
+
+    begin_iter=gtk_text_iter_copy(iter);
+    if (limit == NULL)
+    {
+        end_iter=gtk_text_iter_copy(begin_iter);
+        if(forward_search)
+        {
+            gtk_text_buffer_get_end_iter(gtk_text_iter_get_buffer(begin_iter),
+                                         end_iter);
+        }
+        else
+        {
+            gtk_text_buffer_get_start_iter(gtk_text_iter_get_buffer(begin_iter),
+                                         end_iter);
+        }
+    }
+    else
+    {
+        end_iter=gtk_text_iter_copy(limit);
+    }
+
+    if ((flags & GTK_TEXT_SEARCH_TEXT_ONLY) != 0)
+    {
+        if ((flags & GTK_TEXT_SEARCH_VISIBLE_ONLY) != 0)
+            text=gtk_text_iter_get_visible_text(begin_iter,end_iter);
+        else
+            text=gtk_text_iter_get_text(begin_iter,end_iter);
+    }
+    else
+    {
+        if ((flags & GTK_TEXT_SEARCH_VISIBLE_ONLY) != 0)
+            text=gtk_text_iter_get_visible_slice(begin_iter,end_iter);
+        else
+            text=gtk_text_iter_get_slice(begin_iter,end_iter);
+    }
+
+    found = g_regex_match_all(regex,text,0,&match_info);
+    if (found)
+    {
+        all_matches=g_match_info_fetch_all(match_info);
+        if(forward_search)
+        {
+            match_string=all_matches[0];
+            gtk_text_iter_forward_search(begin_iter
+                                         ,match_string
+                                         ,flags
+                                         ,match_start
+                                         ,match_end
+                                         ,limit);
+        }
+        else
+        {
+            match_string=all_matches[g_strv_length(all_matches)-1];
+            gtk_text_iter_backward_search(begin_iter
+                                          ,match_string
+                                          ,flags
+                                          ,match_start
+                                          ,match_end
+                                          ,limit);
+        }
+    }
+
+    gtk_text_iter_free(begin_iter);
+    gtk_text_iter_free(end_iter);
+    g_match_info_free (match_info);
+    g_regex_unref (regex);
+    return found;
+}
