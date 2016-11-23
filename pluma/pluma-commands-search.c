@@ -227,7 +227,7 @@ do_find (PlumaSearchDialog *dialog,
 	gchar *search_text;
 	const gchar *entry_text;
 	gboolean match_case;
-    gboolean match_regex;
+        gboolean match_regex;
 	gboolean entire_word;
 	gboolean wrap_around;
 	gboolean search_backwards;
@@ -245,7 +245,7 @@ do_find (PlumaSearchDialog *dialog,
 	doc = PLUMA_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (active_view)));
 
 	match_case = pluma_search_dialog_get_match_case (dialog);
-    match_regex = pluma_search_dialog_get_match_regex(dialog);
+        match_regex = pluma_search_dialog_get_match_regex(dialog);
 	entire_word = pluma_search_dialog_get_entire_word (dialog);
 	search_backwards = pluma_search_dialog_get_backwards (dialog);
 	wrap_around = pluma_search_dialog_get_wrap_around (dialog);
@@ -259,7 +259,7 @@ do_find (PlumaSearchDialog *dialog,
 
 	PLUMA_SEARCH_SET_CASE_SENSITIVE (flags, match_case);
 	PLUMA_SEARCH_SET_ENTIRE_WORD (flags, entire_word);
-    PLUMA_SEARCH_SET_MATCH_REGEX (flags, match_regex);
+        PLUMA_SEARCH_SET_MATCH_REGEX (flags, match_regex);
 
 	search_text = pluma_document_get_search_text (doc, &old_flags);
 
@@ -345,9 +345,9 @@ do_replace (PlumaSearchDialog *dialog,
 	gchar *unescaped_replace_text;
 	gchar *selected_text = NULL;
 	gboolean match_case;
-    gboolean match_regex;
+        gboolean match_regex;
 	gboolean parse_escapes;
-    gboolean need_refind;
+        gboolean need_refind;
 
 	doc = pluma_window_get_active_document (window);
 	if (doc == NULL)
@@ -377,40 +377,39 @@ do_replace (PlumaSearchDialog *dialog,
 			   NULL);
 
 	match_case = pluma_search_dialog_get_match_case (dialog);
-    match_regex = pluma_search_dialog_get_match_regex(dialog);
+        match_regex = pluma_search_dialog_get_match_regex(dialog);
 
-    if (selected_text != NULL)
-    {
-        if(!match_regex)
+        if (selected_text != NULL)
         {
-            need_refind = (match_case && (strcmp (selected_text,
-                                                  unescaped_search_text) != 0)) ||
-                    (!match_case && !g_utf8_caselessnmatch (selected_text,
-                                                            unescaped_search_text,
-                                                            strlen (selected_text),
-                                                            strlen (unescaped_search_text)) != 0);
-        }
-        else
-        {
-            need_refind = !g_regex_match_simple(unescaped_search_text
-                                               ,selected_text,
-                                               match_case ? 0 : GTK_TEXT_SEARCH_CASE_INSENSITIVE ,
-                                               0);
-        }
-    }
-    else
-    {
-        need_refind = TRUE;
-    }
+		if(!match_regex)
+		{
+		need_refind = (match_case && (strcmp (selected_text,unescaped_search_text) != 0))
+			       || (!match_case && !g_utf8_caselessnmatch (selected_text,
+                                                                          unescaped_search_text,
+                                                                          strlen (selected_text),
+                                                                          strlen (unescaped_search_text)) != 0);
+		}
+		else
+		{
+		need_refind = !g_regex_match_simple(unescaped_search_text,
+						    selected_text,
+						    match_case ? 0 : GTK_TEXT_SEARCH_CASE_INSENSITIVE ,
+						    0);
+		}
+	}
+	else
+	{
+		need_refind = TRUE;
+	}
 
-    if (need_refind)
-    {
-        do_find (dialog, window);
-        g_free (unescaped_search_text);
-        g_free (selected_text);
+	if (need_refind)
+	{
+		do_find (dialog, window);
+		g_free (unescaped_search_text);
+		g_free (selected_text);
 
-        return;
-    }
+		return;
+	}
 
 	unescaped_replace_text = pluma_utils_unescape_search_text (replace_entry_text);	
 	replace_selected_text (GTK_TEXT_BUFFER (doc), unescaped_replace_text);
@@ -431,7 +430,7 @@ do_replace_all (PlumaSearchDialog *dialog,
 	const gchar *search_entry_text;
 	const gchar *replace_entry_text;
 	gboolean match_case;
-    gboolean match_regex;
+	gboolean match_regex;
 	gboolean entire_word;
 	gboolean parse_escapes;
 	guint flags = 0;
@@ -465,7 +464,7 @@ do_replace_all (PlumaSearchDialog *dialog,
 	entire_word = pluma_search_dialog_get_entire_word (dialog);
 
 	PLUMA_SEARCH_SET_CASE_SENSITIVE (flags, match_case);
-    PLUMA_SEARCH_SET_MATCH_REGEX (flags, match_regex);
+	PLUMA_SEARCH_SET_MATCH_REGEX (flags, match_regex);
 	PLUMA_SEARCH_SET_ENTIRE_WORD (flags, entire_word);
 
 	count = pluma_document_replace_all (doc, 
