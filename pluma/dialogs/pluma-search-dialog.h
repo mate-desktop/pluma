@@ -112,7 +112,7 @@ void		 pluma_search_dialog_set_match_case	(PlumaSearchDialog *dialog,
 gboolean	 pluma_search_dialog_get_match_case	(PlumaSearchDialog *dialog);
 
 void		 pluma_search_dialog_set_match_regex (PlumaSearchDialog *dialog,
-                             gboolean           match_case);
+						      gboolean           match_case);
 gboolean	 pluma_search_dialog_get_match_regex (PlumaSearchDialog *dialog);
 
 void		 pluma_search_dialog_set_entire_word	(PlumaSearchDialog *dialog,
