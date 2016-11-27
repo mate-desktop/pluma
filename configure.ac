@@ -39,7 +39,6 @@ LT_INIT(disable-static)
 
 GTK_DOC_CHECK([1.0],[--flavour=no-tmpl])
 
-AC_CHECK_FUNC(sigaction)
 AC_CHECK_LIB(m, floor)
 
 dnl make sure we keep ACLOCAL_FLAGS around for maintainer builds to work
