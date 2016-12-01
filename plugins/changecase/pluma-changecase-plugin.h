@@ -25,7 +25,8 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <pluma/pluma-plugin.h>
+#include <libpeas/peas-extension-base.h>
+#include <libpeas/peas-object-module.h>
 
 G_BEGIN_DECLS
 
@@ -39,6 +40,9 @@ G_BEGIN_DECLS
 #define PLUMA_IS_CHANGECASE_PLUGIN_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), PLUMA_TYPE_CHANGECASE_PLUGIN))
 #define PLUMA_CHANGECASE_PLUGIN_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), PLUMA_TYPE_CHANGECASE_PLUGIN, PlumaChangecasePluginClass))
 
+/* Private structure type */
+typedef struct _PlumaChangecasePluginPrivate	PlumaChangecasePluginPrivate;
+
 /*
  * Main object structure
  */
@@ -46,7 +50,10 @@ typedef struct _PlumaChangecasePlugin		PlumaChangecasePlugin;
 
 struct _PlumaChangecasePlugin
 {
-	PlumaPlugin parent_instance;
+	PeasExtensionBase parent_instance;
+
+	/*< private >*/
+	PlumaChangecasePluginPrivate *priv;
 };
 
 /*
@@ -56,7 +63,7 @@ typedef struct _PlumaChangecasePluginClass	PlumaChangecasePluginClass;
 
 struct _PlumaChangecasePluginClass
 {
-	PlumaPluginClass parent_class;
+	PeasExtensionBaseClass parent_class;
 };
 
 /*
@@ -65,7 +72,7 @@ struct _PlumaChangecasePluginClass
 GType	pluma_changecase_plugin_get_type		(void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
-G_MODULE_EXPORT GType register_pluma_plugin (GTypeModule *module);
+G_MODULE_EXPORT void peas_register_types (PeasObjectModule *module);
 
 G_END_DECLS
 

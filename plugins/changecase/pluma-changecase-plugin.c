@@ -28,12 +28,36 @@
 
 #include <glib/gi18n-lib.h>
 #include <gmodule.h>
+#include <libpeas/peas-activatable.h>
 
+#include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 
-#define WINDOW_DATA_KEY "PlumaChangecasePluginWindowData"
+#define PLUMA_CHANGECASE_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
+					            PLUMA_TYPE_CHANGECASE_PLUGIN, \
+					            PlumaChangecasePluginPrivate))
 
-PLUMA_PLUGIN_REGISTER_TYPE(PlumaChangecasePlugin, pluma_changecase_plugin)
+static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaChangecasePlugin,
+                                pluma_changecase_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init))
+
+struct _PlumaChangecasePluginPrivate
+{
+	GtkWidget        *window;
+
+	GtkActionGroup   *action_group;
+	guint             ui_id;
+};
+
+enum {
+	PROP_0,
+	PROP_OBJECT
+};
 
 typedef enum {
 	TO_UPPER_CASE,
@@ -250,44 +274,88 @@ const gchar submenu[] =
 "  </menubar>"
 "</ui>";
 
+
 static void
 pluma_changecase_plugin_init (PlumaChangecasePlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaChangecasePlugin initializing");
+
+	plugin->priv = PLUMA_CHANGECASE_PLUGIN_GET_PRIVATE (plugin);
 }
 
 static void
-pluma_changecase_plugin_finalize (GObject *object)
+pluma_changecase_plugin_dispose (GObject *object)
 {
-	G_OBJECT_CLASS (pluma_changecase_plugin_parent_class)->finalize (object);
+	PlumaChangecasePlugin *plugin = PLUMA_CHANGECASE_PLUGIN (object);
 
-	pluma_debug_message (DEBUG_PLUGINS, "PlumaChangecasePlugin finalizing");
+	pluma_debug_message (DEBUG_PLUGINS, "PlumaChangecasePlugin disposing");
+
+	if (plugin->priv->window != NULL)
+	{
+		g_object_unref (plugin->priv->window);
+		plugin->priv->window = NULL;
+	}
+
+	if (plugin->priv->action_group != NULL)
+	{
+		g_object_unref (plugin->priv->action_group);
+		plugin->priv->action_group = NULL;
+	}
+
+	G_OBJECT_CLASS (pluma_changecase_plugin_parent_class)->dispose (object);
 }
 
-typedef struct
-{
-	GtkActionGroup *action_group;
-	guint           ui_id;
-} WindowData;
-
 static void
-free_window_data (WindowData *data)
+pluma_changecase_plugin_set_property (GObject      *object,
+                                      guint         prop_id,
+                                      const GValue *value,
+                                      GParamSpec   *pspec)
 {
-	g_return_if_fail (data != NULL);
+	PlumaChangecasePlugin *plugin = PLUMA_CHANGECASE_PLUGIN (object);
 
-	g_slice_free (WindowData, data);
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
 }
 
 static void
-update_ui_real (PlumaWindow  *window,
-		WindowData   *data)
+pluma_changecase_plugin_get_property (GObject    *object,
+                                      guint       prop_id,
+                                      GValue     *value,
+                                      GParamSpec *pspec)
 {
+	PlumaChangecasePlugin *plugin = PLUMA_CHANGECASE_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			g_value_set_object (value, plugin->priv->window);
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
+}
+
+static void
+update_ui (PlumaChangecasePluginPrivate *data)
+{
+	PlumaWindow *window;
 	GtkTextView *view;
 	GtkAction *action;
 	gboolean sensitive = FALSE;
 
 	pluma_debug (DEBUG_PLUGINS);
 
+	window = PLUMA_WINDOW (data->window);
 	view = GTK_TEXT_VIEW (pluma_window_get_active_view (window));
 
 	if (view != NULL)
@@ -305,16 +373,17 @@ update_ui_real (PlumaWindow  *window,
 }
 
 static void
-impl_activate (PlumaPlugin *plugin,
-	       PlumaWindow *window)
+pluma_changecase_plugin_activate (PeasActivatable *activatable)
 {
+	PlumaChangecasePluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
 	GError *error = NULL;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = g_slice_new (WindowData);
+	data = PLUMA_CHANGECASE_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
 	manager = pluma_window_get_ui_manager (window);
 
@@ -335,61 +404,72 @@ impl_activate (PlumaPlugin *plugin,
 	if (data->ui_id == 0)
 	{
 		g_warning ("%s", error->message);
-		free_window_data (data);
 		return;
 	}
 
-	g_object_set_data_full (G_OBJECT (window), 
-				WINDOW_DATA_KEY, 
-				data,
-				(GDestroyNotify) free_window_data);
-
-	update_ui_real (window, data);
+	update_ui (data);
 }
 
 static void
-impl_deactivate	(PlumaPlugin *plugin,
-		 PlumaWindow *window)
+pluma_changecase_plugin_deactivate (PeasActivatable *activatable)
 {
+	PlumaChangecasePluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
 
 	pluma_debug (DEBUG_PLUGINS);
+
+	data = PLUMA_CHANGECASE_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
 	manager = pluma_window_get_ui_manager (window);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
-
 	gtk_ui_manager_remove_ui (manager, data->ui_id);
 	gtk_ui_manager_remove_action_group (manager, data->action_group);
-
-	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);	
 }
 
 static void
-impl_update_ui (PlumaPlugin *plugin,
-		PlumaWindow *window)
+pluma_changecase_plugin_update_state (PeasActivatable *activatable)
 {
-	WindowData *data;
-
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
-
-	update_ui_real (window, data);
+	update_ui (PLUMA_CHANGECASE_PLUGIN (activatable)->priv);
 }
 
 static void
 pluma_changecase_plugin_class_init (PlumaChangecasePluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	PlumaPluginClass *plugin_class = PLUMA_PLUGIN_CLASS (klass);
 
-	object_class->finalize = pluma_changecase_plugin_finalize;
+	object_class->dispose = pluma_changecase_plugin_dispose;
+	object_class->set_property = pluma_changecase_plugin_set_property;
+	object_class->get_property = pluma_changecase_plugin_get_property;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
-	plugin_class->update_ui = impl_update_ui;
+	g_object_class_override_property (object_class, PROP_OBJECT, "object");
+
+	g_type_class_add_private (klass, sizeof (PlumaChangecasePluginPrivate));
+}
+
+static void
+pluma_changecase_plugin_class_finalize (PlumaChangecasePluginClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
+}
+
+static void
+peas_activatable_iface_init (PeasActivatableInterface *iface)
+{
+	iface->activate = pluma_changecase_plugin_activate;
+	iface->deactivate = pluma_changecase_plugin_deactivate;
+	iface->update_state = pluma_changecase_plugin_update_state;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	pluma_changecase_plugin_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_CHANGECASE_PLUGIN);
 }
