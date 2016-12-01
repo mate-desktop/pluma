@@ -160,6 +160,8 @@ PKG_CHECK_MODULES(PLUMA, [
 	gio-2.0 >= 2.26.0
 	gtk+-3.0 >= $GTK_REQUIRED
 	gtksourceview-3.0 >= $GTKSOURCEVIEW_REQUIRED
+	libpeas-1.0 >= 1.2.0
+	libpeas-gtk-1.0 >= 1.2.0
 ])
 
 PKG_CHECK_MODULES(X11, [x11])

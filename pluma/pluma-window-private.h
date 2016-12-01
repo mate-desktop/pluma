@@ -31,6 +31,8 @@
 #ifndef __PLUMA_WINDOW_PRIVATE_H__
 #define __PLUMA_WINDOW_PRIVATE_H__
 
+#include <libpeas/peas-extension-set.h>
+
 #include "pluma/pluma-window.h"
 #include "pluma-prefs-manager.h"
 #include "pluma-message-bus.h"
@@ -53,6 +55,7 @@ struct _PlumaWindowPrivate
 	GtkWidget      *language_combo;
 
 	PlumaMessageBus *message_bus;
+	PeasExtensionSet *extensions;
 
 	/* Widgets for fullscreen mode */
 	GtkWidget      *fullscreen_controls;

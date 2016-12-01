@@ -40,6 +40,8 @@
 #include <gio/gio.h>
 #include <gtk/gtk.h>
 #include <gtksourceview/gtksource.h>
+#include <libpeas/peas-activatable.h>
+#include <libpeas/peas-extension-set.h>
 
 #include "pluma-ui.h"
 #include "pluma-window.h"
@@ -175,7 +177,7 @@ pluma_window_dispose (GObject *object)
 	/* First of all, force collection so that plugins
 	 * really drop some of the references.
 	 */
-	pluma_plugins_engine_garbage_collect (pluma_plugins_engine_get_default ());
+	peas_engine_garbage_collect (PEAS_ENGINE (pluma_plugins_engine_get_default ()));
 
 	/* save the panes position and make sure to deactivate plugins
 	 * for this window, but only once */
@@ -183,8 +185,12 @@ pluma_window_dispose (GObject *object)
 	{
 		save_panes_state (window);
 
-		pluma_plugins_engine_deactivate_plugins (pluma_plugins_engine_get_default (),
-					                  window);
+		/* Note that unreffing the extensions will automatically remove
+		   all extensions which in turn will deactivate the extension */
+		g_object_unref (window->priv->extensions);
+
+		peas_engine_garbage_collect (PEAS_ENGINE (pluma_plugins_engine_get_default ()));
+
 		window->priv->dispose_has_run = TRUE;
 	}
 
@@ -232,7 +238,7 @@ pluma_window_dispose (GObject *object)
 	/* Now that there have broken some reference loops,
 	 * force collection again.
 	 */
-	pluma_plugins_engine_garbage_collect (pluma_plugins_engine_get_default ());
+	peas_engine_garbage_collect (PEAS_ENGINE (pluma_plugins_engine_get_default ()));
 
 	G_OBJECT_CLASS (pluma_window_parent_class)->dispose (object);
 }
@@ -322,7 +328,7 @@ static void
 pluma_window_tab_removed (PlumaWindow *window,
 			  PlumaTab    *tab) 
 {
-	pluma_plugins_engine_garbage_collect (pluma_plugins_engine_get_default ());
+	peas_engine_garbage_collect (PEAS_ENGINE (pluma_plugins_engine_get_default ()));
 }
 
 static void
@@ -824,8 +830,7 @@ set_sensitivity_according_to_tab (PlumaWindow *window,
 
 	update_next_prev_doc_sensitivity (window, tab);
 
-	pluma_plugins_engine_update_plugins_ui (pluma_plugins_engine_get_default (),
-						 window);
+	peas_extension_set_call (window->priv->extensions, "update_state", window);
 }
 
 static void
@@ -2685,8 +2690,7 @@ sync_name (PlumaTab    *tab,
 	g_free (escaped_name);
 	g_free (tip);
 
-	pluma_plugins_engine_update_plugins_ui (pluma_plugins_engine_get_default (),
-						 window);
+	peas_extension_set_call (window->priv->extensions, "update_state", window);
 }
 
 static PlumaWindow *
@@ -3077,8 +3081,7 @@ selection_changed (PlumaDocument *doc,
 				  editable &&
 				  gtk_text_buffer_get_has_selection (GTK_TEXT_BUFFER (doc)));
 
-	pluma_plugins_engine_update_plugins_ui (pluma_plugins_engine_get_default (),
-						 window);
+	peas_extension_set_call (window->priv->extensions, "update_state", window);
 }
 
 static void
@@ -3087,8 +3090,7 @@ sync_languages_menu (PlumaDocument *doc,
 		     PlumaWindow   *window)
 {
 	update_languages_menu (window);
-	pluma_plugins_engine_update_plugins_ui (pluma_plugins_engine_get_default (),
-						 window);
+	peas_extension_set_call (window->priv->extensions, "update_state", window);
 }
 
 static void
@@ -3100,8 +3102,7 @@ readonly_changed (PlumaDocument *doc,
 
 	sync_name (window->priv->active_tab, NULL, window);
 
-	pluma_plugins_engine_update_plugins_ui (pluma_plugins_engine_get_default (),
-						 window);
+	peas_extension_set_call (window->priv->extensions, "update_state", window);
 }
 
 static void
@@ -3109,8 +3110,7 @@ editable_changed (PlumaView  *view,
                   GParamSpec  *arg1,
                   PlumaWindow *window)
 {
-	pluma_plugins_engine_update_plugins_ui (pluma_plugins_engine_get_default (),
-						 window);
+	peas_extension_set_call (window->priv->extensions, "update_state", window);
 }
 
 static void
@@ -3322,8 +3322,7 @@ notebook_tab_removed (PlumaNotebook *notebook,
 
 	if (window->priv->num_tabs == 0)
 	{
-		pluma_plugins_engine_update_plugins_ui (pluma_plugins_engine_get_default (),
-							 window);
+		peas_extension_set_call (window->priv->extensions, "update_state", window);
 	}
 
 	update_window_state (window);
@@ -3812,6 +3811,30 @@ add_notebook (PlumaWindow *window,
 }
 
 static void
+on_extension_added (PeasExtensionSet *extensions,
+		    PeasPluginInfo   *info,
+		    PeasExtension    *exten,
+		    PlumaWindow      *window)
+{
+	peas_extension_call (exten, "activate", window);
+}
+
+static void
+on_extension_removed (PeasExtensionSet *extensions,
+		      PeasPluginInfo   *info,
+		      PeasExtension    *exten,
+		      PlumaWindow      *window)
+{
+	peas_extension_call (exten, "deactivate", window);
+
+	/* Ensure update of ui manager, because we suspect it does something
+	 * with expected static strings in the type module (when unloaded the
+	 * strings don't exist anymore, and ui manager updates in an idle
+	 * func) */
+	gtk_ui_manager_ensure_update (window->priv->manager);
+}
+
+static void
 pluma_window_init (PlumaWindow *window)
 {
 	GtkWidget *main_box;
@@ -3936,8 +3959,19 @@ pluma_window_init (PlumaWindow *window)
 
 	pluma_debug_message (DEBUG_WINDOW, "Update plugins ui");
 	
-	pluma_plugins_engine_activate_plugins (pluma_plugins_engine_get_default (),
-					        window);
+	window->priv->extensions = peas_extension_set_new (PEAS_ENGINE (pluma_plugins_engine_get_default ()),
+	                                                   PEAS_TYPE_ACTIVATABLE, "object", window, NULL);
+
+	peas_extension_set_call (window->priv->extensions, "activate");
+
+	g_signal_connect (window->priv->extensions,
+	                  "extension-added",
+	                  G_CALLBACK (on_extension_added),
+	                  window);
+	g_signal_connect (window->priv->extensions,
+	                  "extension-removed",
+	                  G_CALLBACK (on_extension_removed),
+	                  window);
 
 	/* set visibility of panes.
 	 * This needs to be done after plugins activatation */

@@ -52,11 +52,6 @@ NOINST_H_FILES =			\
 	pluma-history-entry.h		\
 	pluma-io-error-message-area.h	\
 	pluma-language-manager.h	\
-	pluma-object-module.h		\
-	pluma-plugin-info.h		\
-	pluma-plugin-info-priv.h	\
-	pluma-plugin-loader.h		\
-	pluma-plugin-manager.h		\
 	pluma-plugins-engine.h		\
 	pluma-prefs-manager-private.h	\
 	pluma-print-job.h		\
@@ -83,7 +78,6 @@ INST_H_FILES =				\
 	pluma-message.h			\
 	pluma-notebook.h		\
 	pluma-panel.h			\
-	pluma-plugin.h			\
 	pluma-prefs-manager-app.h	\
 	pluma-prefs-manager.h		\
 	pluma-progress-message-area.h	\
@@ -133,13 +127,8 @@ libpluma_c_files = 			\
 	pluma-message-bus.c		\
 	pluma-message-type.c		\
 	pluma-message.c			\
-	pluma-object-module.c		\
 	pluma-notebook.c		\
 	pluma-panel.c			\
-	pluma-plugin-info.c		\
-	pluma-plugin.c			\
-	pluma-plugin-loader.c		\
-	pluma-plugin-manager.c		\
 	pluma-plugins-engine.c		\
 	pluma-prefs-manager-app.c	\
 	pluma-prefs-manager.c		\

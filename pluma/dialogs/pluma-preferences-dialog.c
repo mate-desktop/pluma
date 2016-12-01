@@ -39,6 +39,7 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <gtksourceview/gtksource.h>
+#include <libpeas-gtk/peas-gtk-plugin-manager.h>
 
 #include <pluma/pluma-prefs-manager.h>
 
@@ -47,7 +48,6 @@
 #include "pluma-debug.h"
 #include "pluma-document.h"
 #include "pluma-style-scheme-manager.h"
-#include "pluma-plugin-manager.h"
 #include "pluma-help.h"
 #include "pluma-dirs.h"
 
@@ -1047,7 +1047,7 @@ setup_plugins_page (PlumaPreferencesDialog *dlg)
 
 	pluma_debug (DEBUG_PREFS);
 
-	page_content = pluma_plugin_manager_new ();
+	page_content = peas_gtk_plugin_manager_new (NULL);
 	g_return_if_fail (page_content != NULL);
 
 	gtk_box_pack_start (GTK_BOX (dlg->priv->plugin_manager_place_holder),

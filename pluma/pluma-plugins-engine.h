@@ -32,9 +32,7 @@
 #define __PLUMA_PLUGINS_ENGINE_H__
 
 #include <glib.h>
-#include "pluma-window.h"
-#include "pluma-plugin-info.h"
-#include "pluma-plugin.h"
+#include <libpeas/peas-engine.h>
 
 G_BEGIN_DECLS
 
@@ -50,7 +48,7 @@ typedef struct _PlumaPluginsEnginePrivate	PlumaPluginsEnginePrivate;
 
 struct _PlumaPluginsEngine
 {
-	GObject parent;
+	PeasEngine parent;
 	PlumaPluginsEnginePrivate *priv;
 };
 
@@ -58,49 +56,12 @@ typedef struct _PlumaPluginsEngineClass		PlumaPluginsEngineClass;
 
 struct _PlumaPluginsEngineClass
 {
-	GObjectClass parent_class;
-
-	void	 (* activate_plugin)		(PlumaPluginsEngine *engine,
-						 PlumaPluginInfo    *info);
-
-	void	 (* deactivate_plugin)		(PlumaPluginsEngine *engine,
-						 PlumaPluginInfo    *info);
+	PeasEngineClass parent_class;
 };
 
 GType			 pluma_plugins_engine_get_type		(void) G_GNUC_CONST;
 
 PlumaPluginsEngine	*pluma_plugins_engine_get_default	(void);
-
-void		 pluma_plugins_engine_garbage_collect	(PlumaPluginsEngine *engine);
-
-const GList	*pluma_plugins_engine_get_plugin_list 	(PlumaPluginsEngine *engine);
-
-PlumaPluginInfo	*pluma_plugins_engine_get_plugin_info	(PlumaPluginsEngine *engine,
-							 const gchar        *name);
-
-/* plugin load and unloading (overall, for all windows) */
-gboolean 	 pluma_plugins_engine_activate_plugin 	(PlumaPluginsEngine *engine,
-							 PlumaPluginInfo    *info);
-gboolean 	 pluma_plugins_engine_deactivate_plugin	(PlumaPluginsEngine *engine,
-							 PlumaPluginInfo    *info);
-
-void	 	 pluma_plugins_engine_configure_plugin	(PlumaPluginsEngine *engine,
-							 PlumaPluginInfo    *info,
-							 GtkWindow          *parent);
-
-/* plugin activation/deactivation per window, private to PlumaWindow */
-void 		 pluma_plugins_engine_activate_plugins   (PlumaPluginsEngine *engine,
-							  PlumaWindow        *window);
-void 		 pluma_plugins_engine_deactivate_plugins (PlumaPluginsEngine *engine,
-							  PlumaWindow        *window);
-void		 pluma_plugins_engine_update_plugins_ui  (PlumaPluginsEngine *engine,
-							  PlumaWindow        *window);
-
-/* private for GSettings notification */
-void		 pluma_plugins_engine_active_plugins_changed
-							(PlumaPluginsEngine *engine);
-
-void		 pluma_plugins_engine_rescan_plugins	(PlumaPluginsEngine *engine);
 
 G_END_DECLS
 
