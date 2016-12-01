@@ -398,7 +398,7 @@ pluma_message_type_set_valist (PlumaMessageType *message_type,
  * Instantiate a new message from the message type with specific values
  * for the message arguments.
  *
- * Return value: the newly created message
+ * Return value: (transfer full): the newly created message
  *
  */
 PlumaMessage *
@@ -423,7 +423,7 @@ pluma_message_type_instantiate_valist (PlumaMessageType *message_type,
  * Instantiate a new message from the message type with specific values
  * for the message arguments.
  *
- * Return value: the newly created message
+ * Return value: (transfer full): the newly created message
  *
  */
 PlumaMessage *
@@ -509,7 +509,7 @@ foreach_gtype (const gchar  *key,
 /**
  * pluma_message_type_foreach:
  * @message_type: the #PlumaMessageType
- * @func: the callback function
+ * @func: (scope call): the callback function
  * @user_data: user data supplied to the callback function
  *
  * Calls @func for each argument in the message type.

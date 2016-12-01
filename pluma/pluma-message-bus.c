@@ -523,7 +523,7 @@ pluma_message_bus_init (PlumaMessageBus *self)
  *
  * Get the default application #PlumaMessageBus.
  *
- * Return value: the default #PlumaMessageBus
+ * Return value: (transfer none): the default #PlumaMessageBus
  *
  */
 PlumaMessageBus *
@@ -794,7 +794,7 @@ foreach_type (const gchar      *key,
 /**
  * pluma_message_bus_foreach:
  * @bus: the #PlumaMessagebus
- * @func: the callback function
+ * @func: (scope call): the callback function
  * @userdata: the user data to supply to the callback function
  *
  * Calls @func for each message type registered on the bus
@@ -872,7 +872,7 @@ pluma_message_bus_disconnect (PlumaMessageBus *bus,
  * @bus: a #PlumaMessageBus
  * @object_path: the object path
  * @method: the method
- * @callback: the connected callback
+ * @callback: (scope call): the connected callback
  * @userdata: the userdata with which the callback was connected
  *
  * Disconnects a previously connected message callback by matching the 
@@ -915,7 +915,7 @@ pluma_message_bus_block (PlumaMessageBus *bus,
  * @bus: a #PlumaMessageBus
  * @object_path: the object path
  * @method: the method
- * @callback: the callback to block
+ * @callback: (scope call): the callback to block
  * @userdata: the userdata with which the callback was connected
  *
  * Blocks evoking the callback that matches provided @callback and @userdata.
@@ -956,7 +956,7 @@ pluma_message_bus_unblock (PlumaMessageBus *bus,
  * @bus: a #PlumaMessageBus
  * @object_path: the object path
  * @method: the method
- * @callback: the callback to block
+ * @callback: (scope call): the callback to block
  * @userdata: the userdata with which the callback was connected
  *
  * Unblocks the callback that matches provided @callback and @userdata.
@@ -1131,7 +1131,7 @@ pluma_message_bus_send (PlumaMessageBus *bus,
  * specifies key (string) value pairs used to construct the message 
  * arguments. To send a message asynchronously use pluma_message_bus_send().
  *
- * Return value: the constructed #PlumaMessage. The caller owns a reference
+ * Return value: (transfer full): the constructed #PlumaMessage. The caller owns a reference
  *               to the #PlumaMessage and should call g_object_unref() when
  *               it is no longer needed
  */

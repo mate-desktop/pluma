@@ -3954,7 +3954,7 @@ pluma_window_init (PlumaWindow *window)
  *
  * Gets the active #PlumaView.
  *
- * Returns: the active #PlumaView
+ * Returns: (transfer none): the active #PlumaView
  */
 PlumaView *
 pluma_window_get_active_view (PlumaWindow *window)
@@ -3977,7 +3977,7 @@ pluma_window_get_active_view (PlumaWindow *window)
  *
  * Gets the active #PlumaDocument.
  * 
- * Returns: the active #PlumaDocument
+ * Returns: (transfer none): the active #PlumaDocument
  */
 PlumaDocument *
 pluma_window_get_active_document (PlumaWindow *window)
@@ -4009,7 +4009,7 @@ _pluma_window_get_notebook (PlumaWindow *window)
  * Creates a new #PlumaTab and adds the new tab to the #PlumaNotebook.
  * In case @jump_to is %TRUE the #PlumaNotebook switches to that new #PlumaTab.
  *
- * Returns: a new #PlumaTab
+ * Returns: (transfer none): a new #PlumaTab
  */
 PlumaTab *
 pluma_window_create_tab (PlumaWindow *window,
@@ -4049,7 +4049,7 @@ pluma_window_create_tab (PlumaWindow *window,
  * Whether @create is %TRUE, creates a new empty document if location does 
  * not refer to an existing file
  *
- * Returns: a new #PlumaTab
+ * Returns: (transfer none): a new #PlumaTab
  */
 PlumaTab *
 pluma_window_create_tab_from_uri (PlumaWindow         *window,
@@ -4093,7 +4093,7 @@ pluma_window_create_tab_from_uri (PlumaWindow         *window,
  *
  * Gets the active #PlumaTab in the @window.
  *
- * Returns: the active #PlumaTab in the @window.
+ * Returns: (transfer none): the active #PlumaTab in the @window.
  */
 PlumaTab *
 pluma_window_get_active_tab (PlumaWindow *window)
@@ -4303,7 +4303,7 @@ pluma_window_set_active_tab (PlumaWindow *window,
  *
  * Gets the #GtkWindowGroup in which @window resides.
  *
- * Returns: the #GtkWindowGroup
+ * Returns: (transfer none): the #GtkWindowGroup
  */
 GtkWindowGroup *
 pluma_window_get_group (PlumaWindow *window)
@@ -4327,7 +4327,7 @@ _pluma_window_is_removing_tabs (PlumaWindow *window)
  *
  * Gets the #GtkUIManager associated with the @window.
  *
- * Returns: the #GtkUIManager of the @window.
+ * Returns: (transfer none): the #GtkUIManager of the @window.
  */
 GtkUIManager *
 pluma_window_get_ui_manager (PlumaWindow *window)
@@ -4343,7 +4343,7 @@ pluma_window_get_ui_manager (PlumaWindow *window)
  *
  * Gets the side #PlumaPanel of the @window.
  *
- * Returns: the side #PlumaPanel.
+ * Returns: (transfer none): the side #PlumaPanel.
  */
 PlumaPanel *
 pluma_window_get_side_panel (PlumaWindow *window)
@@ -4359,7 +4359,7 @@ pluma_window_get_side_panel (PlumaWindow *window)
  *
  * Gets the bottom #PlumaPanel of the @window.
  *
- * Returns: the bottom #PlumaPanel.
+ * Returns: (transfer none): the bottom #PlumaPanel.
  */
 PlumaPanel *
 pluma_window_get_bottom_panel (PlumaWindow *window)
@@ -4375,7 +4375,7 @@ pluma_window_get_bottom_panel (PlumaWindow *window)
  *
  * Gets the #PlumaStatusbar of the @window.
  *
- * Returns: the #PlumaStatusbar of the @window.
+ * Returns: (transfer none): the #PlumaStatusbar of the @window.
  */
 GtkWidget *
 pluma_window_get_statusbar (PlumaWindow *window)
@@ -4587,7 +4587,7 @@ _pluma_window_is_fullscreen (PlumaWindow *window)
  *
  * Gets the #PlumaTab that matches with the given @location.
  *
- * Returns: the #PlumaTab that matches with the given @location.
+ * Returns: (transfer none): the #PlumaTab that matches with the given @location.
  */
 PlumaTab *
 pluma_window_get_tab_from_location (PlumaWindow *window,
@@ -4656,7 +4656,7 @@ pluma_window_get_message_bus (PlumaWindow *window)
  *
  * Gets the #PlumaTab that matches @uri.
  *
- * Returns: the #PlumaTab associated with @uri.
+ * Returns: (transfer none): the #PlumaTab associated with @uri.
  *
  * Deprecated: 2.24: Use pluma_window_get_tab_from_location() instead.
  */

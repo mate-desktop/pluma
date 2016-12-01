@@ -1039,6 +1039,13 @@ set_uri (PlumaDocument *doc,
 	}
 }
 
+
+/**
+ * pluma_document_get_location:
+ * @doc: a #PlumaDocument
+ *
+ * Returns: (allow-none) (transfer full): a new #GFile
+ */
 GFile *
 pluma_document_get_location (PlumaDocument *doc)
 {
@@ -1777,7 +1784,7 @@ compute_num_of_lines (const gchar *text)
 }
 
 /**
- * pluma_document_set_search_text"
+ * pluma_document_set_search_text:
  * @doc:
  * @text: (allow-none):
  * @flags:
@@ -1876,7 +1883,7 @@ pluma_document_get_can_search_again (PlumaDocument *doc)
  * @start: (allow-none):
  * @end: (allow-none):
  * @match_start: (allow-none):
- * @match_end: (allow=none):
+ * @match_end: (allow-none):
  **/
 gboolean
 pluma_document_search_forward (PlumaDocument     *doc,
@@ -1953,7 +1960,7 @@ pluma_document_search_forward (PlumaDocument     *doc,
  * @start: (allow-none):
  * @end: (allow-none):
  * @match_start: (allow-none):
- * @match_end: (allow=none):
+ * @match_end: (allow-none):
  **/
 gboolean
 pluma_document_search_backward (PlumaDocument     *doc,
@@ -2156,6 +2163,12 @@ pluma_document_set_language (PlumaDocument     *doc,
 	set_language (doc, lang, TRUE);
 }
 
+/**
+ * pluma_document_get_language:
+ * @doc:
+ *
+ * Return value: (transfer none):
+ */
 GtkSourceLanguage *
 pluma_document_get_language (PlumaDocument *doc)
 {

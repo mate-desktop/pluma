@@ -367,8 +367,8 @@ pluma_message_set_value (PlumaMessage *message,
 /**
  * pluma_message_set_valuesv:
  * @message: the #PlumaMessage
- * @keys: (array-length=n_values): keys to set values for
- * @values: (array-length=n_values): values to set
+ * @keys: (array length=n_values): keys to set values for
+ * @values: (array length=n_values): values to set
  * @n_values: number of arguments to set values for
  *
  * Set message argument values.
