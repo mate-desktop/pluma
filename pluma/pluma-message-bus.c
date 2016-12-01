@@ -88,9 +88,6 @@
  *                         NULL);
  * </programlisting>
  * </example>
- *
- * Since: 2.25.3
- *
  */
  
 #define PLUMA_MESSAGE_BUS_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_MESSAGE_BUS, PlumaMessageBusPrivate))
