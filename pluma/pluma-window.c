@@ -4648,31 +4648,3 @@ pluma_window_get_message_bus (PlumaWindow *window)
 	
 	return window->priv->message_bus;
 }
-
-/**
- * pluma_window_get_tab_from_uri:
- * @window: a #PlumaWindow
- * @uri: the uri to get the #PlumaTab
- *
- * Gets the #PlumaTab that matches @uri.
- *
- * Returns: (transfer none): the #PlumaTab associated with @uri.
- *
- * Deprecated: 2.24: Use pluma_window_get_tab_from_location() instead.
- */
-PlumaTab *
-pluma_window_get_tab_from_uri (PlumaWindow *window,
-			       const gchar *uri)
-{
-	GFile *f;
-	PlumaTab *tab;
-
-	g_return_val_if_fail (PLUMA_IS_WINDOW (window), NULL);
-	g_return_val_if_fail (uri != NULL, NULL);
-
-	f = g_file_new_for_uri (uri);
-	tab = pluma_window_get_tab_from_location (window, f);
-	g_object_unref (f);
-
-	return tab;
-}
