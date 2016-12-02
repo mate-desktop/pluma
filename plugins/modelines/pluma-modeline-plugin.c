@@ -25,20 +25,23 @@
 
 #include <glib/gi18n-lib.h>
 #include <gmodule.h>
+#include <libpeas/peas-activatable.h>
 #include "pluma-modeline-plugin.h"
 #include "modeline-parser.h"
 
+#include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 #include <pluma/pluma-utils.h>
 
-#define WINDOW_DATA_KEY "PlumaModelinePluginWindowData"
 #define DOCUMENT_DATA_KEY "PlumaModelinePluginDocumentData"
 
-typedef struct
+struct _PlumaModelinePluginPrivate
 {
+	GtkWidget *window;
+
 	gulong tab_added_handler_id;
 	gulong tab_removed_handler_id;
-} WindowData;
+};
 
 typedef struct
 {
@@ -46,18 +49,19 @@ typedef struct
 	gulong document_saved_handler_id;
 } DocumentData;
 
-static void	pluma_modeline_plugin_activate (PlumaPlugin *plugin, PlumaWindow *window);
-static void	pluma_modeline_plugin_deactivate (PlumaPlugin *plugin, PlumaWindow *window);
-static GObject	*pluma_modeline_plugin_constructor (GType type, guint n_construct_properties, GObjectConstructParam *construct_param);
-static void	pluma_modeline_plugin_finalize (GObject *object);
+enum {
+	PROP_0,
+	PROP_OBJECT
+};
 
-PLUMA_PLUGIN_REGISTER_TYPE(PlumaModelinePlugin, pluma_modeline_plugin)
+static void peas_activatable_iface_init (PeasActivatableInterface *iface);
 
-static void
-window_data_free (WindowData *wdata)
-{
-	g_slice_free (WindowData, wdata);
-}
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaModelinePlugin,
+                                pluma_modeline_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init))
 
 static void
 document_data_free (DocumentData *ddata)
@@ -66,43 +70,27 @@ document_data_free (DocumentData *ddata)
 }
 
 static void
-pluma_modeline_plugin_class_init (PlumaModelinePluginClass *klass)
+pluma_modeline_plugin_constructed (GObject *object)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	PlumaPluginClass *plugin_class = PLUMA_PLUGIN_CLASS (klass);
-
-	object_class->constructor = pluma_modeline_plugin_constructor;
-	object_class->finalize = pluma_modeline_plugin_finalize;
-
-	plugin_class->activate = pluma_modeline_plugin_activate;
-	plugin_class->deactivate = pluma_modeline_plugin_deactivate;
-}
-
-static GObject *
-pluma_modeline_plugin_constructor (GType                  type,
-				   guint                  n_construct_properties,
-				   GObjectConstructParam *construct_param)
-{
-	GObject *object;
 	gchar *data_dir;
 
-	object = G_OBJECT_CLASS (pluma_modeline_plugin_parent_class)->constructor (type,
-										   n_construct_properties,
-										   construct_param);
-
-	data_dir = pluma_plugin_get_data_dir (PLUMA_PLUGIN (object));
+	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (object));
 
 	modeline_parser_init (data_dir);
 
 	g_free (data_dir);
 
-	return object;
+	G_OBJECT_CLASS (pluma_modeline_plugin_parent_class)->constructed (object);
 }
 
 static void
 pluma_modeline_plugin_init (PlumaModelinePlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaModelinePlugin initializing");
+
+	plugin->priv = G_TYPE_INSTANCE_GET_PRIVATE (plugin,
+	                                            PLUMA_TYPE_MODELINE_PLUGIN,
+	                                            PlumaModelinePluginPrivate);
 }
 
 static void
@@ -113,6 +101,62 @@ pluma_modeline_plugin_finalize (GObject *object)
 	modeline_parser_shutdown ();
 
 	G_OBJECT_CLASS (pluma_modeline_plugin_parent_class)->finalize (object);
+}
+
+static void
+pluma_modeline_plugin_dispose (GObject *object)
+{
+	PlumaModelinePlugin *plugin = PLUMA_MODELINE_PLUGIN (object);
+
+	pluma_debug_message (DEBUG_PLUGINS, "PlumaModelinePlugin disposing");
+
+	if (plugin->priv->window != NULL)
+	{
+		g_object_unref (plugin->priv->window);
+		plugin->priv->window = NULL;
+	}
+
+	G_OBJECT_CLASS (pluma_modeline_plugin_parent_class)->dispose (object);
+}
+
+static void
+pluma_modeline_plugin_set_property (GObject      *object,
+                                    guint         prop_id,
+                                    const GValue *value,
+                                    GParamSpec   *pspec)
+{
+	PlumaModelinePlugin *plugin = PLUMA_MODELINE_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
+}
+
+static void
+pluma_modeline_plugin_get_property (GObject    *object,
+                                    guint       prop_id,
+                                    GValue     *value,
+                                    GParamSpec *pspec)
+{
+	PlumaModelinePlugin *plugin = PLUMA_MODELINE_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			g_value_set_object (value, plugin->priv->window);
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
 }
 
 static void
@@ -186,14 +230,17 @@ on_window_tab_removed (PlumaWindow *window,
 }
 
 static void
-pluma_modeline_plugin_activate (PlumaPlugin *plugin,
-				PlumaWindow *window)
+pluma_modeline_plugin_activate (PeasActivatable *activatable)
 {
-	WindowData *wdata;
+	PlumaModelinePluginPrivate *data;
+	PlumaWindow *window;
 	GList *views;
 	GList *l;
 
 	pluma_debug (DEBUG_PLUGINS);
+
+	data = PLUMA_MODELINE_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
 	views = pluma_window_get_views (window);
 	for (l = views; l != NULL; l = l->next)
@@ -203,36 +250,30 @@ pluma_modeline_plugin_activate (PlumaPlugin *plugin,
 	}
 	g_list_free (views);
 
-	wdata = g_slice_new (WindowData);
-
-	wdata->tab_added_handler_id =
+	data->tab_added_handler_id =
 		g_signal_connect (window, "tab-added",
 				  G_CALLBACK (on_window_tab_added), NULL);
 
-	wdata->tab_removed_handler_id =
+	data->tab_removed_handler_id =
 		g_signal_connect (window, "tab-removed",
 				  G_CALLBACK (on_window_tab_removed), NULL);
-
-	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY,
-				wdata, (GDestroyNotify) window_data_free);
 }
 
 static void
-pluma_modeline_plugin_deactivate (PlumaPlugin *plugin,
-				  PlumaWindow *window)
+pluma_modeline_plugin_deactivate (PeasActivatable *activatable)
 {
-	WindowData *wdata;
+	PlumaModelinePluginPrivate *data;
+	PlumaWindow *window;
 	GList *views;
 	GList *l;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	wdata = g_object_steal_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	data = PLUMA_MODELINE_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
-	g_signal_handler_disconnect (window, wdata->tab_added_handler_id);
-	g_signal_handler_disconnect (window, wdata->tab_removed_handler_id);
-
-	window_data_free (wdata);
+	g_signal_handler_disconnect (window, data->tab_added_handler_id);
+	g_signal_handler_disconnect (window, data->tab_removed_handler_id);
 
 	views = pluma_window_get_views (window);
 
@@ -246,3 +287,41 @@ pluma_modeline_plugin_deactivate (PlumaPlugin *plugin,
 	g_list_free (views);
 }
 
+static void
+pluma_modeline_plugin_class_init (PlumaModelinePluginClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	object_class->constructed = pluma_modeline_plugin_constructed;
+	object_class->finalize = pluma_modeline_plugin_finalize;
+	object_class->dispose = pluma_modeline_plugin_dispose;
+	object_class->set_property = pluma_modeline_plugin_set_property;
+	object_class->get_property = pluma_modeline_plugin_get_property;
+
+	g_object_class_override_property (object_class, PROP_OBJECT, "object");
+
+	g_type_class_add_private (klass, sizeof (PlumaModelinePluginPrivate));
+}
+
+static void
+pluma_modeline_plugin_class_finalize (PlumaModelinePluginClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
+}
+
+static void
+peas_activatable_iface_init (PeasActivatableInterface *iface)
+{
+	iface->activate = pluma_modeline_plugin_activate;
+	iface->deactivate = pluma_modeline_plugin_deactivate;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	pluma_modeline_plugin_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_MODELINE_PLUGIN);
+}
