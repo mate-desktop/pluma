@@ -28,9 +28,11 @@
 #include <pluma/pluma-utils.h>
 #include <pluma/pluma-app.h>
 #include <glib/gi18n-lib.h>
+#include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 #include <gio/gio.h>
 #include <string.h>
+#include <libpeas/peas-activatable.h>
 
 #include "pluma-file-browser-enum-types.h"
 #include "pluma-file-browser-plugin.h"
@@ -38,8 +40,6 @@
 #include "pluma-file-browser-error.h"
 #include "pluma-file-browser-widget.h"
 #include "pluma-file-browser-messages.h"
-
-#define WINDOW_DATA_KEY	        	"PlumaFileBrowserPluginWindowData"
 
 #define FILE_BROWSER_SCHEMA 		"org.mate.pluma.plugins.filebrowser"
 #define FILE_BROWSER_ONLOAD_SCHEMA 	"org.mate.pluma.plugins.filebrowser.on-load"
@@ -54,11 +54,8 @@
 
 struct _PlumaFileBrowserPluginPrivate
 {
-	gpointer *dummy;
-};
+	GtkWidget               *window;
 
-typedef struct _PlumaFileBrowserPluginData
-{
 	PlumaFileBrowserWidget * tree_widget;
 	gulong                   merge_id;
 	GtkActionGroup         * action_group;
@@ -71,7 +68,12 @@ typedef struct _PlumaFileBrowserPluginData
 	GSettings *onload_settings;
 	GSettings *caja_settings;
 	GSettings *terminal_settings;
-} PlumaFileBrowserPluginData;
+};
+
+enum {
+	PROP_0,
+	PROP_OBJECT
+};
 
 static void on_uri_activated_cb          (PlumaFileBrowserWidget * widget,
                                           gchar const *uri,
@@ -79,67 +81,114 @@ static void on_uri_activated_cb          (PlumaFileBrowserWidget * widget,
 static void on_error_cb                  (PlumaFileBrowserWidget * widget,
                                           guint code,
                                           gchar const *message,
-                                          PlumaWindow * window);
+                                          PlumaFileBrowserPluginPrivate * data);
 static void on_model_set_cb              (PlumaFileBrowserView * widget,
                                           GParamSpec *arg1,
-                                          PlumaWindow * window);
+                                          PlumaFileBrowserPluginPrivate * data);
 static void on_virtual_root_changed_cb   (PlumaFileBrowserStore * model,
                                           GParamSpec * param,
-                                          PlumaWindow * window);
+                                          PlumaFileBrowserPluginPrivate * data);
 static void on_filter_mode_changed_cb    (PlumaFileBrowserStore * model,
                                           GParamSpec * param,
-                                          PlumaWindow * window);
+                                          PlumaFileBrowserPluginPrivate * data);
 static void on_rename_cb		 (PlumaFileBrowserStore * model,
 					  const gchar * olduri,
 					  const gchar * newuri,
 					  PlumaWindow * window);
 static void on_filter_pattern_changed_cb (PlumaFileBrowserWidget * widget,
                                           GParamSpec * param,
-                                          PlumaWindow * window);
+                                          PlumaFileBrowserPluginPrivate * data);
 static void on_tab_added_cb              (PlumaWindow * window,
                                           PlumaTab * tab,
-                                          PlumaFileBrowserPluginData * data);
+                                          PlumaFileBrowserPluginPrivate * data);
 static gboolean on_confirm_delete_cb     (PlumaFileBrowserWidget * widget,
                                           PlumaFileBrowserStore * store,
                                           GList * rows,
-                                          PlumaWindow * window);
+                                          PlumaFileBrowserPluginPrivate * data);
 static gboolean on_confirm_no_trash_cb   (PlumaFileBrowserWidget * widget,
                                           GList * files,
                                           PlumaWindow * window);
 
-PLUMA_PLUGIN_REGISTER_TYPE_WITH_CODE (PlumaFileBrowserPlugin, filetree_plugin, 	\
-	pluma_file_browser_enum_and_flag_register_type (type_module);		\
-	pluma_file_browser_store_register_type         (type_module);		\
-	pluma_file_bookmarks_store_register_type       (type_module);		\
-	pluma_file_browser_view_register_type	       (type_module);		\
-	pluma_file_browser_widget_register_type	       (type_module);		\
+static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaFileBrowserPlugin,
+                                pluma_file_browser_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init)    \
+                                                                                               \
+                                pluma_file_browser_enum_and_flag_register_type (type_module);  \
+                                _pluma_file_browser_store_register_type        (type_module);  \
+                                _pluma_file_bookmarks_store_register_type      (type_module);  \
+                                _pluma_file_browser_view_register_type         (type_module);  \
+                                _pluma_file_browser_widget_register_type       (type_module);  \
 )
 
-
 static void
-filetree_plugin_init (PlumaFileBrowserPlugin * plugin)
+pluma_file_browser_plugin_init (PlumaFileBrowserPlugin * plugin)
 {
 	plugin->priv = PLUMA_FILE_BROWSER_PLUGIN_GET_PRIVATE (plugin);
 }
 
 static void
-filetree_plugin_finalize (GObject * object)
+pluma_file_browser_plugin_dispose (GObject * object)
 {
-	//PlumaFileBrowserPlugin * plugin = PLUMA_FILE_BROWSER_PLUGIN (object);
+	PlumaFileBrowserPlugin *plugin = PLUMA_FILE_BROWSER_PLUGIN (object);
 
-	G_OBJECT_CLASS (filetree_plugin_parent_class)->finalize (object);
+	if (plugin->priv->window != NULL)
+	{
+		g_object_unref (plugin->priv->window);
+		plugin->priv->window = NULL;
+	}
+
+	G_OBJECT_CLASS (pluma_file_browser_plugin_parent_class)->dispose (object);
 }
 
-static PlumaFileBrowserPluginData *
-get_plugin_data (PlumaWindow * window)
+static void
+pluma_file_browser_plugin_set_property (GObject      *object,
+                                        guint         prop_id,
+                                        const GValue *value,
+                                        GParamSpec   *pspec)
 {
-	return (PlumaFileBrowserPluginData *) (g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY));
+	PlumaFileBrowserPlugin *plugin = PLUMA_FILE_BROWSER_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
+}
+
+static void
+pluma_file_browser_plugin_get_property (GObject    *object,
+                                        guint       prop_id,
+                                        GValue     *value,
+                                        GParamSpec *pspec)
+{
+	PlumaFileBrowserPlugin *plugin = PLUMA_FILE_BROWSER_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			g_value_set_object (value, plugin->priv->window);
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
 }
 
 static void
 on_end_loading_cb (PlumaFileBrowserStore      * store,
                    GtkTreeIter                * iter,
-                   PlumaFileBrowserPluginData * data)
+                   PlumaFileBrowserPluginPrivate * data)
 {
 	/* Disconnect the signal */
 	g_signal_handler_disconnect (store, data->end_loading_handle);
@@ -148,7 +197,7 @@ on_end_loading_cb (PlumaFileBrowserStore      * store,
 }
 
 static void
-prepare_auto_root (PlumaFileBrowserPluginData *data)
+prepare_auto_root (PlumaFileBrowserPluginPrivate *data)
 {
 	PlumaFileBrowserStore *store;
 
@@ -168,7 +217,7 @@ prepare_auto_root (PlumaFileBrowserPluginData *data)
 }
 
 static void
-restore_default_location (PlumaFileBrowserPluginData *data)
+restore_default_location (PlumaFileBrowserPluginPrivate *data)
 {
 	gchar * root;
 	gchar * virtual_root;
@@ -214,7 +263,7 @@ restore_default_location (PlumaFileBrowserPluginData *data)
 }
 
 static void
-restore_filter (PlumaFileBrowserPluginData * data)
+restore_filter (PlumaFileBrowserPluginPrivate *data)
 {
 	gchar *filter_mode;
 	PlumaFileBrowserStoreFilterMode mode;
@@ -269,12 +318,12 @@ on_click_policy_changed (GSettings *settings,
 			 gchar *key,
 			 gpointer user_data)
 {
-	PlumaFileBrowserPluginData * data;
+	PlumaFileBrowserPluginPrivate * data;
 	gchar *click_policy;
 	PlumaFileBrowserViewClickPolicy policy = PLUMA_FILE_BROWSER_VIEW_CLICK_POLICY_DOUBLE;
 	PlumaFileBrowserView *view;
 
-	data = (PlumaFileBrowserPluginData *)(user_data);
+	data = (PlumaFileBrowserPluginPrivate *)(user_data);
 
 	click_policy = g_settings_get_string (settings, key);
 	policy = click_policy_from_string (click_policy);
@@ -289,10 +338,10 @@ on_enable_delete_changed (GSettings *settings,
 			  gchar *key,
 			  gpointer user_data)
 {
-	PlumaFileBrowserPluginData *data;
+	PlumaFileBrowserPluginPrivate *data;
 	gboolean enable = FALSE;
 
-	data = (PlumaFileBrowserPluginData *)(user_data);
+	data = (PlumaFileBrowserPluginPrivate *)(user_data);
 	enable = g_settings_get_boolean (settings, key);
 
 	g_object_set (G_OBJECT (data->tree_widget), "enable-delete", enable, NULL);
@@ -303,10 +352,10 @@ on_confirm_trash_changed (GSettings *settings,
 		 	  gchar *key,
 			  gpointer user_data)
 {
-	PlumaFileBrowserPluginData *data;
+	PlumaFileBrowserPluginPrivate *data;
 	gboolean enable = FALSE;
 
-	data = (PlumaFileBrowserPluginData *)(user_data);
+	data = (PlumaFileBrowserPluginPrivate *)(user_data);
 	enable = g_settings_get_boolean (settings, key);
 
 	data->confirm_trash = enable;
@@ -325,7 +374,7 @@ have_click_policy (void)
 }
 
 static void
-install_caja_prefs (PlumaFileBrowserPluginData *data)
+install_caja_prefs (PlumaFileBrowserPluginPrivate *data)
 {
 	gchar *pref;
 	gboolean prefb;
@@ -364,7 +413,7 @@ install_caja_prefs (PlumaFileBrowserPluginData *data)
 }
 
 static void
-set_root_from_doc (PlumaFileBrowserPluginData * data,
+set_root_from_doc (PlumaFileBrowserPluginPrivate * data,
                    PlumaDocument * doc)
 {
 	GFile *file;
@@ -397,17 +446,14 @@ set_root_from_doc (PlumaFileBrowserPluginData * data,
 
 static void
 on_action_set_active_root (GtkAction * action,
-                           PlumaWindow * window)
+                           PlumaFileBrowserPluginPrivate * data)
 {
-	PlumaFileBrowserPluginData *data;
-
-	data = get_plugin_data (window);
 	set_root_from_doc (data,
-	                   pluma_window_get_active_document (window));
+	                   pluma_window_get_active_document (PLUMA_WINDOW (data->window)));
 }
 
 static gchar *
-get_terminal (PlumaFileBrowserPluginData * data)
+get_terminal (PlumaFileBrowserPluginPrivate * data)
 {
 	gchar * terminal;
 
@@ -428,9 +474,8 @@ get_terminal (PlumaFileBrowserPluginData * data)
 
 static void
 on_action_open_terminal (GtkAction * action,
-                         PlumaWindow * window)
+                         PlumaFileBrowserPluginPrivate * data)
 {
-	PlumaFileBrowserPluginData * data;
 	gchar * terminal;
 	gchar * wd = NULL;
 	gchar * local;
@@ -439,8 +484,6 @@ on_action_open_terminal (GtkAction * action,
 
 	GtkTreeIter iter;
 	PlumaFileBrowserStore * store;
-
-	data = get_plugin_data (window);
 
 	/* Get the current directory */
 	if (!pluma_file_browser_widget_get_selected_directory (data->tree_widget, &iter))
@@ -481,16 +524,13 @@ on_action_open_terminal (GtkAction * action,
 
 static void
 on_selection_changed_cb (GtkTreeSelection *selection,
-			 PlumaWindow      *window)
+			 PlumaFileBrowserPluginPrivate *data)
 {
-	PlumaFileBrowserPluginData * data;
 	GtkTreeView * tree_view;
 	GtkTreeModel * model;
 	GtkTreeIter iter;
 	gboolean sensitive;
 	gchar * uri;
-
-	data = get_plugin_data (window);
 
 	tree_view = GTK_TREE_VIEW (pluma_file_browser_widget_get_browser_view (data->tree_widget));
 	model = gtk_tree_view_get_model (tree_view);
@@ -548,14 +588,12 @@ static GtkActionEntry extra_single_selection_actions[] = {
 };
 
 static void
-add_popup_ui (PlumaWindow * window)
+add_popup_ui (PlumaFileBrowserPluginPrivate *data)
 {
-	PlumaFileBrowserPluginData * data;
 	GtkUIManager * manager;
 	GtkActionGroup * action_group;
 	GError * error = NULL;
 
-	data = get_plugin_data (window);
 	manager = pluma_file_browser_widget_get_ui_manager (data->tree_widget);
 
 	action_group = gtk_action_group_new ("FileBrowserPluginExtra");
@@ -563,7 +601,7 @@ add_popup_ui (PlumaWindow * window)
 	gtk_action_group_add_actions (action_group,
 				      extra_actions,
 				      G_N_ELEMENTS (extra_actions),
-				      window);
+				      data);
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
 	data->action_group = action_group;
 
@@ -572,7 +610,7 @@ add_popup_ui (PlumaWindow * window)
 	gtk_action_group_add_actions (action_group,
 				      extra_single_selection_actions,
 				      G_N_ELEMENTS (extra_single_selection_actions),
-				      window);
+				      data);
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
 	data->single_selection_action_group = action_group;
 
@@ -588,12 +626,10 @@ add_popup_ui (PlumaWindow * window)
 }
 
 static void
-remove_popup_ui (PlumaWindow * window)
+remove_popup_ui (PlumaFileBrowserPluginPrivate *data)
 {
-	PlumaFileBrowserPluginData * data;
 	GtkUIManager * manager;
 
-	data = get_plugin_data (window);
 	manager = pluma_file_browser_widget_get_ui_manager (data->tree_widget);
 	gtk_ui_manager_remove_ui (manager, data->merge_id);
 
@@ -605,14 +641,14 @@ remove_popup_ui (PlumaWindow * window)
 }
 
 static void
-impl_updateui (PlumaPlugin * plugin, PlumaWindow * window)
+pluma_file_browser_plugin_update_state (PeasActivatable *activatable)
 {
-	PlumaFileBrowserPluginData * data;
+	PlumaFileBrowserPluginPrivate *data;
 	PlumaDocument * doc;
 
-	data = get_plugin_data (window);
+	data = PLUMA_FILE_BROWSER_PLUGIN (activatable)->priv;
 
-	doc = pluma_window_get_active_document (window);
+	doc = pluma_window_get_active_document (PLUMA_WINDOW (data->window));
 
 	gtk_action_set_sensitive (gtk_action_group_get_action (data->action_group,
 	                                                       "SetActiveRoot"),
@@ -621,10 +657,11 @@ impl_updateui (PlumaPlugin * plugin, PlumaWindow * window)
 }
 
 static void
-impl_activate (PlumaPlugin * plugin, PlumaWindow * window)
+pluma_file_browser_plugin_activate (PeasActivatable *activatable)
 {
+	PlumaFileBrowserPluginPrivate *data;
+	PlumaWindow *window;
 	PlumaPanel * panel;
-	PlumaFileBrowserPluginData * data;
 	GtkWidget * image;
 	GdkPixbuf * pixbuf;
 	PlumaFileBrowserStore * store;
@@ -632,9 +669,10 @@ impl_activate (PlumaPlugin * plugin, PlumaWindow * window)
 	GSettingsSchemaSource *schema_source;
 	GSettingsSchema *schema;
 
-	data = g_new0 (PlumaFileBrowserPluginData, 1);
+	data = PLUMA_FILE_BROWSER_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
-	data_dir = pluma_plugin_get_data_dir (plugin);
+	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (activatable));
 	data->tree_widget = PLUMA_FILE_BROWSER_WIDGET (pluma_file_browser_widget_new (data_dir));
 	g_free (data_dir);
 
@@ -647,17 +685,17 @@ impl_activate (PlumaPlugin * plugin, PlumaWindow * window)
 			  G_CALLBACK (on_uri_activated_cb), window);
 
 	g_signal_connect (data->tree_widget,
-			  "error", G_CALLBACK (on_error_cb), window);
+			  "error", G_CALLBACK (on_error_cb), data);
 
 	g_signal_connect (data->tree_widget,
 	                  "notify::filter-pattern",
 	                  G_CALLBACK (on_filter_pattern_changed_cb),
-	                  window);
+	                  data);
 
 	g_signal_connect (data->tree_widget,
 	                  "confirm-delete",
 	                  G_CALLBACK (on_confirm_delete_cb),
-	                  window);
+	                  data);
 
 	g_signal_connect (data->tree_widget,
 	                  "confirm-no-trash",
@@ -669,7 +707,7 @@ impl_activate (PlumaPlugin * plugin, PlumaWindow * window)
 			  (data->tree_widget))),
 			  "changed",
 			  G_CALLBACK (on_selection_changed_cb),
-			  window);
+			  data);
 
 	panel = pluma_window_get_side_panel (window);
 	pixbuf = pluma_file_browser_utils_pixbuf_from_theme("system-file-manager",
@@ -688,9 +726,8 @@ impl_activate (PlumaPlugin * plugin, PlumaWindow * window)
 	                      _("File Browser"),
 	                      image);
 	gtk_widget_show (GTK_WIDGET (data->tree_widget));
-	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, data);
 
-	add_popup_ui (window);
+	add_popup_ui (data);
 
 	/* Restore filter options */
 	restore_filter (data);
@@ -708,18 +745,18 @@ impl_activate (PlumaPlugin * plugin, PlumaWindow * window)
 	g_signal_connect (pluma_file_browser_widget_get_browser_view (data->tree_widget),
 	                  "notify::model",
 	                  G_CALLBACK (on_model_set_cb),
-	                  window);
+	                  data);
 
 	store = pluma_file_browser_widget_get_browser_store (data->tree_widget);
 	g_signal_connect (store,
 	                  "notify::virtual-root",
 	                  G_CALLBACK (on_virtual_root_changed_cb),
-	                  window);
+	                  data);
 
 	g_signal_connect (store,
 	                  "notify::filter-mode",
 	                  G_CALLBACK (on_filter_mode_changed_cb),
-	                  window);
+	                  data);
 
 	g_signal_connect (store,
 			  "rename",
@@ -734,16 +771,18 @@ impl_activate (PlumaPlugin * plugin, PlumaWindow * window)
 	/* Register messages on the bus */
 	pluma_file_browser_messages_register (window, data->tree_widget);
 
-	impl_updateui (plugin, window);
+	pluma_file_browser_plugin_update_state (activatable);
 }
 
 static void
-impl_deactivate (PlumaPlugin * plugin, PlumaWindow * window)
+pluma_file_browser_plugin_deactivate (PeasActivatable *activatable)
 {
-	PlumaFileBrowserPluginData * data;
+	PlumaFileBrowserPluginPrivate *data;
+	PlumaWindow *window;
 	PlumaPanel * panel;
 
-	data = get_plugin_data (window);
+	data = PLUMA_FILE_BROWSER_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
 	/* Unregister messages from the bus */
 	pluma_file_browser_messages_unregister (window);
@@ -760,29 +799,49 @@ impl_deactivate (PlumaPlugin * plugin, PlumaWindow * window)
 	if (data->caja_settings)
 		g_object_unref (data->caja_settings);
 
-	remove_popup_ui (window);
+	remove_popup_ui (data);
 
 	panel = pluma_window_get_side_panel (window);
 	pluma_panel_remove_item (panel, GTK_WIDGET (data->tree_widget));
-
-	g_free (data);
-	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }
 
 static void
-filetree_plugin_class_init (PlumaFileBrowserPluginClass * klass)
+pluma_file_browser_plugin_class_init (PlumaFileBrowserPluginClass * klass)
 {
 	GObjectClass  *object_class = G_OBJECT_CLASS (klass);
-	PlumaPluginClass * plugin_class = PLUMA_PLUGIN_CLASS (klass);
 
-	object_class->finalize = filetree_plugin_finalize;
+	object_class->dispose = pluma_file_browser_plugin_dispose;
+	object_class->set_property = pluma_file_browser_plugin_set_property;
+	object_class->get_property = pluma_file_browser_plugin_get_property;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
-	plugin_class->update_ui = impl_updateui;
+	g_object_class_override_property (object_class, PROP_OBJECT, "object");
 
 	g_type_class_add_private (object_class,
 				  sizeof (PlumaFileBrowserPluginPrivate));
+}
+
+static void
+pluma_file_browser_plugin_class_finalize (PlumaFileBrowserPluginClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
+}
+
+static void
+peas_activatable_iface_init (PeasActivatableInterface *iface)
+{
+	iface->activate = pluma_file_browser_plugin_activate;
+	iface->deactivate = pluma_file_browser_plugin_deactivate;
+	iface->update_state = pluma_file_browser_plugin_update_state;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	pluma_file_browser_plugin_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_FILE_BROWSER_PLUGIN);
 }
 
 /* Callbacks */
@@ -795,13 +854,10 @@ on_uri_activated_cb (PlumaFileBrowserWidget * tree_widget,
 
 static void
 on_error_cb (PlumaFileBrowserWidget * tree_widget,
-	     guint code, gchar const *message, PlumaWindow * window)
+	     guint code, gchar const *message, PlumaFileBrowserPluginPrivate * data)
 {
 	gchar * title;
 	GtkWidget * dlg;
-	PlumaFileBrowserPluginData * data;
-
-	data = get_plugin_data (window);
 
 	/* Do not show the error when the root has been set automatically */
 	if (data->auto_root && (code == PLUMA_FILE_BROWSER_ERROR_SET_ROOT ||
@@ -848,7 +904,7 @@ on_error_cb (PlumaFileBrowserWidget * tree_widget,
 		break;
 	}
 
-	dlg = gtk_message_dialog_new (GTK_WINDOW (window),
+	dlg = gtk_message_dialog_new (GTK_WINDOW (data->window),
 				      GTK_DIALOG_MODAL |
 				      GTK_DIALOG_DESTROY_WITH_PARENT,
 				      GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
@@ -863,9 +919,8 @@ on_error_cb (PlumaFileBrowserWidget * tree_widget,
 static void
 on_model_set_cb (PlumaFileBrowserView * widget,
                  GParamSpec *arg1,
-                 PlumaWindow * window)
+                 PlumaFileBrowserPluginPrivate * data)
 {
-	PlumaFileBrowserPluginData * data = get_plugin_data (window);
 	GtkTreeModel * model;
 
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (pluma_file_browser_widget_get_browser_view (data->tree_widget)));
@@ -881,9 +936,8 @@ on_model_set_cb (PlumaFileBrowserView * widget,
 static void
 on_filter_mode_changed_cb (PlumaFileBrowserStore * model,
                            GParamSpec * param,
-                           PlumaWindow * window)
+                           PlumaFileBrowserPluginPrivate * data)
 {
-	PlumaFileBrowserPluginData * data = get_plugin_data (window);
 	PlumaFileBrowserStoreFilterMode mode;
 
 	mode = pluma_file_browser_store_get_filter_mode (model);
@@ -967,9 +1021,8 @@ on_rename_cb (PlumaFileBrowserStore * store,
 static void
 on_filter_pattern_changed_cb (PlumaFileBrowserWidget * widget,
                               GParamSpec * param,
-                              PlumaWindow * window)
+                              PlumaFileBrowserPluginPrivate * data)
 {
-	PlumaFileBrowserPluginData * data = get_plugin_data (window);
 	gchar * pattern;
 
 	g_object_get (G_OBJECT (widget), "filter-pattern", &pattern, NULL);
@@ -985,9 +1038,8 @@ on_filter_pattern_changed_cb (PlumaFileBrowserWidget * widget,
 static void
 on_virtual_root_changed_cb (PlumaFileBrowserStore * store,
                             GParamSpec * param,
-                            PlumaWindow * window)
+                            PlumaFileBrowserPluginPrivate * data)
 {
-	PlumaFileBrowserPluginData * data = get_plugin_data (window);
 	gchar * root;
 	gchar * virtual_root;
 
@@ -1007,7 +1059,7 @@ on_virtual_root_changed_cb (PlumaFileBrowserStore * store,
 		g_settings_set_string (data->onload_settings, "virtual-root", virtual_root);
 	}
 
-	g_signal_handlers_disconnect_by_func (window,
+	g_signal_handlers_disconnect_by_func (PLUMA_WINDOW (data->window),
 	                                      G_CALLBACK (on_tab_added_cb),
 	                                      data);
 
@@ -1018,7 +1070,7 @@ on_virtual_root_changed_cb (PlumaFileBrowserStore * store,
 static void
 on_tab_added_cb (PlumaWindow * window,
                  PlumaTab * tab,
-                 PlumaFileBrowserPluginData * data)
+                 PlumaFileBrowserPluginPrivate *data)
 {
 	gboolean open;
 	gboolean load_default = TRUE;
@@ -1100,15 +1152,12 @@ static gboolean
 on_confirm_delete_cb (PlumaFileBrowserWidget *widget,
                       PlumaFileBrowserStore *store,
                       GList *paths,
-                      PlumaWindow *window)
+                      PlumaFileBrowserPluginPrivate *data)
 {
 	gchar *normal;
 	gchar *message;
 	gchar *secondary;
 	gboolean result;
-	PlumaFileBrowserPluginData *data;
-
-	data = get_plugin_data (window);
 
 	if (!data->confirm_trash)
 		return TRUE;
@@ -1123,7 +1172,7 @@ on_confirm_delete_cb (PlumaFileBrowserWidget *widget,
 
 	secondary = _("If you delete an item, it is permanently lost.");
 
-	result = pluma_file_browser_utils_confirmation_dialog (window,
+	result = pluma_file_browser_utils_confirmation_dialog (PLUMA_WINDOW (data->window),
 	                                                       GTK_MESSAGE_QUESTION,
 	                                                       message,
 	                                                       secondary,

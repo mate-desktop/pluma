@@ -32,7 +32,6 @@
 #include <gdk/gdkkeysyms.h>
 
 #include <pluma/pluma-utils.h>
-#include <pluma/pluma-plugin.h>
 
 #include "pluma-file-browser-utils.h"
 #include "pluma-file-browser-error.h"
@@ -236,7 +235,7 @@ static void on_action_filter_binary            (GtkAction * action,
 static void on_action_bookmark_open            (GtkAction * action,
 						PlumaFileBrowserWidget * obj);
 
-PLUMA_PLUGIN_DEFINE_TYPE (PlumaFileBrowserWidget, pluma_file_browser_widget,
+G_DEFINE_DYNAMIC_TYPE (PlumaFileBrowserWidget, pluma_file_browser_widget,
 	                  GTK_TYPE_BOX)
 
 static void
@@ -477,6 +476,12 @@ pluma_file_browser_widget_class_init (PlumaFileBrowserWidgetClass * klass)
 
 	g_type_class_add_private (object_class,
 				  sizeof (PlumaFileBrowserWidgetPrivate));
+}
+
+static void
+pluma_file_browser_widget_class_finalize (PlumaFileBrowserWidgetClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE */
 }
 
 static void
@@ -3150,6 +3155,12 @@ on_action_bookmark_open (GtkAction * action, PlumaFileBrowserWidget * obj)
 
 	if (gtk_tree_selection_get_selected (selection, NULL, &iter))
 		bookmark_open (obj, model, &iter);
+}
+
+void
+_pluma_file_browser_widget_register_type (GTypeModule *type_module)
+{
+	pluma_file_browser_widget_register_type (type_module);
 }
 
 // ex:ts=8:noet:

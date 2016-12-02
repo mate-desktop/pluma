@@ -66,7 +66,7 @@ struct _PlumaFileBrowserViewClass
 };
 
 GType pluma_file_browser_view_get_type			(void) G_GNUC_CONST;
-GType pluma_file_browser_view_register_type		(GTypeModule 			* module);
+void _pluma_file_browser_view_register_type		(GTypeModule 			* module);
 
 GtkWidget *pluma_file_browser_view_new			(void);
 void pluma_file_browser_view_set_model			(PlumaFileBrowserView 		* tree_view,

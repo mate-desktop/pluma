@@ -26,7 +26,6 @@
 #include <string.h>
 #include <glib/gi18n-lib.h>
 #include <gio/gio.h>
-#include <pluma/pluma-plugin.h>
 #include <pluma/pluma-utils.h>
 
 #include "pluma-file-browser-store.h"
@@ -197,13 +196,12 @@ static void model_check_dummy                               (PlumaFileBrowserSto
 static void next_files_async 				    (GFileEnumerator * enumerator,
 							     AsyncNode * async);
 
-PLUMA_PLUGIN_DEFINE_TYPE_WITH_CODE (PlumaFileBrowserStore, pluma_file_browser_store,
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaFileBrowserStore, pluma_file_browser_store,
 			G_TYPE_OBJECT,
-			PLUMA_PLUGIN_IMPLEMENT_INTERFACE (pluma_file_browser_store_tree_model,
-							  GTK_TYPE_TREE_MODEL,
+			0,
+			G_IMPLEMENT_INTERFACE_DYNAMIC (GTK_TYPE_TREE_MODEL,
 							  pluma_file_browser_store_iface_init)
-			PLUMA_PLUGIN_IMPLEMENT_INTERFACE (pluma_file_browser_store_drag_source,
-							  GTK_TYPE_TREE_DRAG_SOURCE,
+			G_IMPLEMENT_INTERFACE_DYNAMIC (GTK_TYPE_TREE_DRAG_SOURCE,
 							  pluma_file_browser_store_drag_source_init))
 
 /* Properties */
@@ -425,6 +423,12 @@ pluma_file_browser_store_class_init (PlumaFileBrowserStoreClass * klass)
 
 	g_type_class_add_private (object_class,
 				  sizeof (PlumaFileBrowserStorePrivate));
+}
+
+static void
+pluma_file_browser_store_class_finalize (PlumaFileBrowserStoreClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }
 
 static void
@@ -3620,6 +3624,12 @@ pluma_file_browser_store_new_directory (PlumaFileBrowserStore * model,
 
 	g_object_unref (file);
 	return result;
+}
+
+void
+_pluma_file_browser_store_register_type (GTypeModule *type_module)
+{
+	pluma_file_browser_store_register_type (type_module);
 }
 
 // ex:ts=8:noet:

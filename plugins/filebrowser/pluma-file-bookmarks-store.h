@@ -77,7 +77,7 @@ struct _PlumaFileBookmarksStoreClass
 };
 
 GType pluma_file_bookmarks_store_get_type               (void) G_GNUC_CONST;
-GType pluma_file_bookmarks_store_register_type          (GTypeModule * module);
+void _pluma_file_bookmarks_store_register_type          (GTypeModule * module);
 
 PlumaFileBookmarksStore *pluma_file_bookmarks_store_new (void);
 gchar *pluma_file_bookmarks_store_get_uri               (PlumaFileBookmarksStore * model,
