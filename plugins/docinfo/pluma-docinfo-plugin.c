@@ -31,14 +31,26 @@
 #include <glib/gi18n-lib.h>
 #include <pango/pango-break.h>
 #include <gmodule.h>
+#include <libpeas/peas-activatable.h>
 
+#include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 #include <pluma/pluma-utils.h>
 
-#define WINDOW_DATA_KEY "PlumaDocInfoWindowData"
 #define MENU_PATH "/MenuBar/ToolsMenu/ToolsOps_2"
 
-PLUMA_PLUGIN_REGISTER_TYPE(PlumaDocInfoPlugin, pluma_docinfo_plugin)
+#define PLUMA_DOCINFO_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
+					         PLUMA_TYPE_DOCINFO_PLUGIN, \
+					         PlumaDocInfoPluginPrivate))
+
+static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaDocInfoPlugin,
+                                pluma_docinfo_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init))
 
 typedef struct
 {
@@ -57,23 +69,28 @@ typedef struct
 	GtkWidget *selected_bytes_label;
 } DocInfoDialog;
 
-typedef struct
+struct _PlumaDocInfoPluginPrivate
 {
-	PlumaPlugin *plugin;
+	GtkWidget *window;
 
 	GtkActionGroup *ui_action_group;
 	guint ui_id;
 
 	DocInfoDialog *dialog;
-} WindowData;
+};
+
+enum {
+	PROP_0,
+	PROP_OBJECT
+};
 
 static void docinfo_dialog_response_cb (GtkDialog   *widget,
 					gint	    res_id,
-					PlumaWindow *window);
+					PlumaDocInfoPluginPrivate *data);
 
 static void
 docinfo_dialog_destroy_cb (GObject  *obj,
-			   WindowData *data)
+			   PlumaDocInfoPluginPrivate *data)
 {
 	pluma_debug (DEBUG_PLUGINS);
 
@@ -85,9 +102,10 @@ docinfo_dialog_destroy_cb (GObject  *obj,
 }
 
 static DocInfoDialog *
-get_docinfo_dialog (PlumaWindow *window,
-		    WindowData	*data)
+get_docinfo_dialog (PlumaDocInfoPlugin *plugin)
 {
+	PlumaDocInfoPluginPrivate *data;
+	PlumaWindow *window;
 	DocInfoDialog *dialog;
 	gchar *data_dir;
 	gchar *ui_file;
@@ -97,9 +115,12 @@ get_docinfo_dialog (PlumaWindow *window,
 
 	pluma_debug (DEBUG_PLUGINS);
 
+	data = plugin->priv;
+	window = PLUMA_WINDOW (data->window);
+
 	dialog = g_new (DocInfoDialog, 1);
 
-	data_dir = pluma_plugin_get_data_dir (data->plugin);
+	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	ui_file = g_build_filename (data_dir, "docinfo.ui", NULL);
 	ret = pluma_utils_get_ui_objects (ui_file,
 					  NULL,
@@ -149,7 +170,7 @@ get_docinfo_dialog (PlumaWindow *window,
 	g_signal_connect (dialog->dialog,
 			  "response",
 			  G_CALLBACK (docinfo_dialog_response_cb),
-			  window);
+			  data);
 
 	return dialog;
 }
@@ -338,16 +359,16 @@ selectioninfo_real (PlumaDocument *doc,
 
 static void
 docinfo_cb (GtkAction	*action,
-	    PlumaWindow *window)
+	    PlumaDocInfoPlugin *plugin)
 {
+	PlumaDocInfoPluginPrivate *data;
+	PlumaWindow *window;
 	PlumaDocument *doc;
-	WindowData *data;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window),
-						 WINDOW_DATA_KEY);
-
+	data = plugin->priv;
+	window = PLUMA_WINDOW (data->window);
 	doc = pluma_window_get_active_document (window);
 	g_return_if_fail (doc != NULL);
 
@@ -360,7 +381,7 @@ docinfo_cb (GtkAction	*action,
 	{
 		DocInfoDialog *dialog;
 
-		dialog = get_docinfo_dialog (window, data);
+		dialog = get_docinfo_dialog (plugin);
 		g_return_if_fail (dialog != NULL);
 		
 		data->dialog = dialog;
@@ -377,14 +398,13 @@ docinfo_cb (GtkAction	*action,
 static void
 docinfo_dialog_response_cb (GtkDialog	*widget,
 			    gint	res_id,
-			    PlumaWindow *window)
+			    PlumaDocInfoPluginPrivate *data)
 {
-	WindowData *data;
+	PlumaWindow *window;
 
 	pluma_debug (DEBUG_PLUGINS);
-	
-	data = (WindowData *) g_object_get_data (G_OBJECT (window),
-						 WINDOW_DATA_KEY);
+
+	window = PLUMA_WINDOW (data->window);
 
 	switch (res_id)
 	{
@@ -427,37 +447,19 @@ static const GtkActionEntry action_entries[] =
 };
 
 static void
-free_window_data (WindowData *data)
+update_ui (PlumaDocInfoPluginPrivate *data)
 {
-	g_return_if_fail (data != NULL);
-	
-	pluma_debug (DEBUG_PLUGINS);
-
-	g_object_unref (data->plugin);
-
-	g_object_unref (data->ui_action_group);
-	
-	if (data->dialog != NULL)
-	{
-		gtk_widget_destroy (data->dialog->dialog);
-	}
-	
-	g_free (data);
-}
-
-static void
-update_ui_real (PlumaWindow  *window,
-		WindowData   *data)
-{
+	PlumaWindow *window;
 	PlumaView *view;
 
 	pluma_debug (DEBUG_PLUGINS);
 
+	window = PLUMA_WINDOW (data->window);
 	view = pluma_window_get_active_view (window);
 
 	gtk_action_group_set_sensitive (data->ui_action_group,
 					(view != NULL));
-					
+
 	if (data->dialog != NULL)
 	{
 		gtk_dialog_set_response_sensitive (GTK_DIALOG (data->dialog->dialog),
@@ -470,28 +472,86 @@ static void
 pluma_docinfo_plugin_init (PlumaDocInfoPlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaDocInfoPlugin initializing");
+
+	plugin->priv = PLUMA_DOCINFO_PLUGIN_GET_PRIVATE (plugin);
 }
 
 static void
-pluma_docinfo_plugin_finalize (GObject *object)
+pluma_docinfo_plugin_dispose (GObject *object)
 {
-	pluma_debug_message (DEBUG_PLUGINS, "PlumaDocInfoPlugin finalizing");
+	PlumaDocInfoPlugin *plugin = PLUMA_DOCINFO_PLUGIN (object);
 
-	G_OBJECT_CLASS (pluma_docinfo_plugin_parent_class)->finalize (object);
+	pluma_debug_message (DEBUG_PLUGINS, "PlumaDocInfoPlugin disposing");
+
+	if (plugin->priv->window != NULL)
+	{
+		g_object_unref (plugin->priv->window);
+		plugin->priv->window = NULL;
+	}
+
+	if (plugin->priv->ui_action_group != NULL)
+	{
+		g_object_unref (plugin->priv->ui_action_group);
+		plugin->priv->ui_action_group = NULL;
+	}
+
+	G_OBJECT_CLASS (pluma_docinfo_plugin_parent_class)->dispose (object);
 }
 
 static void
-impl_activate (PlumaPlugin *plugin,
-	       PlumaWindow *window)
+pluma_docinfo_plugin_set_property (GObject      *object,
+                                   guint         prop_id,
+                                   const GValue *value,
+                                   GParamSpec   *pspec)
 {
+	PlumaDocInfoPlugin *plugin = PLUMA_DOCINFO_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
+}
+
+static void
+pluma_docinfo_plugin_get_property (GObject    *object,
+                                   guint       prop_id,
+                                   GValue     *value,
+                                   GParamSpec *pspec)
+{
+	PlumaDocInfoPlugin *plugin = PLUMA_DOCINFO_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			g_value_set_object (value, plugin->priv->window);
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
+}
+
+static void
+pluma_docinfo_plugin_activate (PeasActivatable *activatable)
+{
+	PlumaDocInfoPlugin *plugin;
+	PlumaDocInfoPluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
 	
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = g_new (WindowData, 1);
+	plugin = PLUMA_DOCINFO_PLUGIN (activatable);
+	data = plugin->priv;
+	window = PLUMA_WINDOW (data->window);
 
-	data->plugin = g_object_ref (plugin);
 	data->dialog = NULL;
 	data->ui_action_group = gtk_action_group_new ("PlumaDocInfoPluginActions");
 	
@@ -500,7 +560,7 @@ impl_activate (PlumaPlugin *plugin,
 	gtk_action_group_add_actions (data->ui_action_group,
 				      action_entries,
 				      G_N_ELEMENTS (action_entries),
-				      window);
+				      plugin);
 
 	manager = pluma_window_get_ui_manager (window);
 	gtk_ui_manager_insert_action_group (manager,
@@ -508,11 +568,6 @@ impl_activate (PlumaPlugin *plugin,
 					    -1);
 
 	data->ui_id = gtk_ui_manager_new_merge_id (manager);
-
-	g_object_set_data_full (G_OBJECT (window), 
-				WINDOW_DATA_KEY, 
-				data,
-				(GDestroyNotify) free_window_data);
 
 	gtk_ui_manager_add_ui (manager, 
 			       data->ui_id, 
@@ -522,60 +577,71 @@ impl_activate (PlumaPlugin *plugin,
 			       GTK_UI_MANAGER_MENUITEM, 
 			       FALSE);
 
-	update_ui_real (window,
-			data);
+	update_ui (data);
 }
 
 static void
-impl_deactivate	(PlumaPlugin *plugin,
-		 PlumaWindow *window)
+pluma_docinfo_plugin_deactivate (PeasActivatable *activatable)
 {
+	PlumaDocInfoPluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	manager = pluma_window_get_ui_manager (window);
+	data = PLUMA_DOCINFO_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window),
-						 WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
+	manager = pluma_window_get_ui_manager (window);
 
 	gtk_ui_manager_remove_ui (manager,
 				  data->ui_id);
 	gtk_ui_manager_remove_action_group (manager,
 					    data->ui_action_group);
-
-	g_object_set_data (G_OBJECT (window),
-			   WINDOW_DATA_KEY,
-			   NULL);
 }
 
 static void
-impl_update_ui (PlumaPlugin *plugin,
-		PlumaWindow *window)
+pluma_docinfo_plugin_update_state (PeasActivatable *activatable)
 {
-	WindowData *data;
-
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window),
-						 WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
-
-	update_ui_real (window,
-			data);
+	update_ui (PLUMA_DOCINFO_PLUGIN (activatable)->priv);
 }
 
 static void
 pluma_docinfo_plugin_class_init (PlumaDocInfoPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	PlumaPluginClass *plugin_class = PLUMA_PLUGIN_CLASS (klass);
 
-	object_class->finalize = pluma_docinfo_plugin_finalize;
+	object_class->dispose = pluma_docinfo_plugin_dispose;
+	object_class->set_property = pluma_docinfo_plugin_set_property;
+	object_class->get_property = pluma_docinfo_plugin_get_property;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
-	plugin_class->update_ui = impl_update_ui;
+	g_object_class_override_property (object_class, PROP_OBJECT, "object");
+
+	g_type_class_add_private (klass, sizeof (PlumaDocInfoPluginPrivate));
+}
+
+static void
+pluma_docinfo_plugin_class_finalize (PlumaDocInfoPluginClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
+}
+
+static void
+peas_activatable_iface_init (PeasActivatableInterface *iface)
+{
+	iface->activate = pluma_docinfo_plugin_activate;
+	iface->deactivate = pluma_docinfo_plugin_deactivate;
+	iface->update_state = pluma_docinfo_plugin_update_state;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	pluma_docinfo_plugin_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_DOCINFO_PLUGIN);
 }
