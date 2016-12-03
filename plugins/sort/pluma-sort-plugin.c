@@ -30,20 +30,30 @@
 #include <string.h>
 #include <glib/gi18n-lib.h>
 #include <gmodule.h>
+#include <libpeas/peas-activatable.h>
 
+#include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 #include <pluma/pluma-utils.h>
 #include <pluma/pluma-help.h>
 
 #define PLUMA_SORT_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_SORT_PLUGIN, PlumaSortPluginPrivate))
 
-/* Key in case the plugin ever needs any settings. */
-#define SORT_BASE_KEY "/apps/pluma/plugins/sort"
-
-#define WINDOW_DATA_KEY "PlumaSortPluginWindowData"
 #define MENU_PATH "/MenuBar/EditMenu/EditOps_6"
 
-PLUMA_PLUGIN_REGISTER_TYPE(PlumaSortPlugin, pluma_sort_plugin)
+static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaSortPlugin,
+                                pluma_sort_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init))
+
+enum {
+	PROP_0,
+	PROP_OBJECT
+};
 
 typedef struct
 {
@@ -58,17 +68,13 @@ typedef struct
 	GtkTextIter start, end; /* selection */
 } SortDialog;
 
-typedef struct
+struct _PlumaSortPluginPrivate
 {
+	GtkWidget *window;
+
 	GtkActionGroup *ui_action_group;
 	guint ui_id;
-} WindowData;
-
-typedef struct
-{
-	PlumaPlugin *plugin;
-	PlumaWindow *window;
-} ActionData;
+};
 
 typedef struct
 {
@@ -78,7 +84,7 @@ typedef struct
 	gint starting_column;
 } SortInfo;
 
-static void sort_cb (GtkAction *action, ActionData *action_data);
+static void sort_cb (GtkAction *action, PlumaSortPlugin *plugin);
 static void sort_real (SortDialog *dialog);
 
 static const GtkActionEntry action_entries[] =
@@ -150,8 +156,9 @@ get_current_selection (PlumaWindow *window, SortDialog *dialog)
 }
 
 static SortDialog *
-get_sort_dialog (ActionData *action_data)
+get_sort_dialog (PlumaSortPlugin *plugin)
 {
+	PlumaWindow *window;
 	SortDialog *dialog;
 	GtkWidget *error_widget;
 	gboolean ret;
@@ -160,9 +167,11 @@ get_sort_dialog (ActionData *action_data)
 
 	pluma_debug (DEBUG_PLUGINS);
 
+	window = PLUMA_WINDOW (plugin->priv->window);
+
 	dialog = g_slice_new (SortDialog);
 
-	data_dir = pluma_plugin_get_data_dir (action_data->plugin);
+	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	ui_file = g_build_filename (data_dir, "sort.ui", NULL);
 	g_free (data_dir);
 	ret = pluma_utils_get_ui_objects (ui_file,
@@ -181,7 +190,7 @@ get_sort_dialog (ActionData *action_data)
 		const gchar *err_message;
 
 		err_message = gtk_label_get_label (GTK_LABEL (error_widget));
-		pluma_warning (GTK_WINDOW (action_data->window),
+		pluma_warning (GTK_WINDOW (window),
 			       "%s", err_message);
 
 		g_slice_free (SortDialog, dialog);
@@ -203,35 +212,38 @@ get_sort_dialog (ActionData *action_data)
 			  G_CALLBACK (sort_dialog_response_handler),
 			  dialog);
 
-	get_current_selection (action_data->window, dialog);
+	get_current_selection (window, dialog);
 
 	return dialog;
 }
 
 static void
 sort_cb (GtkAction  *action,
-	 ActionData *action_data)
+	 PlumaSortPlugin *plugin)
 {
+	PlumaWindow *window;
 	PlumaDocument *doc;
 	GtkWindowGroup *wg;
 	SortDialog *dialog;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	doc = pluma_window_get_active_document (action_data->window);
+	window = PLUMA_WINDOW (plugin->priv->window);
+
+	doc = pluma_window_get_active_document (window);
 	g_return_if_fail (doc != NULL);
 
-	dialog = get_sort_dialog (action_data);
+	dialog = get_sort_dialog (plugin);
 	g_return_if_fail (dialog != NULL);
 
-	wg = pluma_window_get_group (action_data->window);
+	wg = pluma_window_get_group (window);
 	gtk_window_group_add_window (wg,
 				     GTK_WINDOW (dialog->dialog));
 
 	dialog->doc = doc;
 
 	gtk_window_set_transient_for (GTK_WINDOW (dialog->dialog),
-				      GTK_WINDOW (action_data->window));
+				      GTK_WINDOW (window));
 
 	gtk_window_set_modal (GTK_WINDOW (dialog->dialog),
 			      TRUE);
@@ -439,30 +451,54 @@ sort_real (SortDialog *dialog)
 }
 
 static void
-free_window_data (WindowData *data)
+pluma_sort_plugin_set_property (GObject      *object,
+                                guint         prop_id,
+                                const GValue *value,
+                                GParamSpec   *pspec)
 {
-	g_return_if_fail (data != NULL);
+	PlumaSortPlugin *plugin = PLUMA_SORT_PLUGIN (object);
 
-	g_object_unref (data->ui_action_group);
-	g_slice_free (WindowData, data);
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
 }
 
 static void
-free_action_data (ActionData *data)
+pluma_sort_plugin_get_property (GObject    *object,
+                                guint       prop_id,
+                                GValue     *value,
+                                GParamSpec *pspec)
 {
-	g_return_if_fail (data != NULL);
+	PlumaSortPlugin *plugin = PLUMA_SORT_PLUGIN (object);
 
-	g_slice_free (ActionData, data);
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			g_value_set_object (value, plugin->priv->window);
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
 }
 
 static void
-update_ui_real (PlumaWindow  *window,
-		WindowData   *data)
+update_ui (PlumaSortPluginPrivate *data)
 {
+	PlumaWindow *window;
 	PlumaView *view;
 
 	pluma_debug (DEBUG_PLUGINS);
 
+	window = PLUMA_WINDOW (data->window);
 	view = pluma_window_get_active_view (window);
 
 	gtk_action_group_set_sensitive (data->ui_action_group,
@@ -471,41 +507,34 @@ update_ui_real (PlumaWindow  *window,
 }
 
 static void
-impl_activate (PlumaPlugin *plugin,
-	       PlumaWindow *window)
+pluma_sort_plugin_activate (PeasActivatable *activatable)
 {
+	PlumaSortPlugin *plugin;
+	PlumaSortPluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
-	ActionData *action_data;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = g_slice_new (WindowData);
-	action_data = g_slice_new (ActionData);
-	action_data->window = window;
-	action_data->plugin = plugin;
+	plugin = PLUMA_SORT_PLUGIN (activatable);
+	data = plugin->priv;
+	window = PLUMA_WINDOW (data->window);
 
 	manager = pluma_window_get_ui_manager (window);
 
 	data->ui_action_group = gtk_action_group_new ("PlumaSortPluginActions");
 	gtk_action_group_set_translation_domain (data->ui_action_group,
 						 GETTEXT_PACKAGE);
-	gtk_action_group_add_actions_full (data->ui_action_group,
+	gtk_action_group_add_actions (data->ui_action_group,
 					   action_entries,
 					   G_N_ELEMENTS (action_entries),
-					   action_data,
-					   (GDestroyNotify) free_action_data);
+					   plugin);
 
 	gtk_ui_manager_insert_action_group (manager,
 					    data->ui_action_group,
 					    -1);
 
 	data->ui_id = gtk_ui_manager_new_merge_id (manager);
-
-	g_object_set_data_full (G_OBJECT (window),
-				WINDOW_DATA_KEY,
-				data,
-				(GDestroyNotify) free_window_data);
 
 	gtk_ui_manager_add_ui (manager,
 			       data->ui_id,
@@ -515,74 +544,101 @@ impl_activate (PlumaPlugin *plugin,
 			       GTK_UI_MANAGER_MENUITEM,
 			       FALSE);
 
-	update_ui_real (window,
-			data);
+	update_ui (data);
 }
 
 static void
-impl_deactivate	(PlumaPlugin *plugin,
-		 PlumaWindow *window)
+pluma_sort_plugin_deactivate (PeasActivatable *activatable)
 {
+	PlumaSortPluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	manager = pluma_window_get_ui_manager (window);
+	data = PLUMA_SORT_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window),
-						 WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
+	manager = pluma_window_get_ui_manager (window);
 
 	gtk_ui_manager_remove_ui (manager,
 				  data->ui_id);
 	gtk_ui_manager_remove_action_group (manager,
 					    data->ui_action_group);
-
-	g_object_set_data (G_OBJECT (window),
-			   WINDOW_DATA_KEY,
-			   NULL);
 }
 
 static void
-impl_update_ui (PlumaPlugin *plugin,
-		PlumaWindow *window)
+pluma_sort_plugin_update_state (PeasActivatable *activatable)
 {
-	WindowData *data;
-
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window),
-						 WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
-
-	update_ui_real (window,
-			data);
+	update_ui (PLUMA_SORT_PLUGIN (activatable)->priv);
 }
 
 static void
 pluma_sort_plugin_init (PlumaSortPlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaSortPlugin initializing");
+
+	plugin->priv = PLUMA_SORT_PLUGIN_GET_PRIVATE (plugin);
 }
 
 static void
-pluma_sort_plugin_finalize (GObject *object)
+pluma_sort_plugin_dispose (GObject *object)
 {
-	pluma_debug_message (DEBUG_PLUGINS, "PlumaSortPlugin finalizing");
+	PlumaSortPlugin *plugin = PLUMA_SORT_PLUGIN (object);
 
-	G_OBJECT_CLASS (pluma_sort_plugin_parent_class)->finalize (object);
+	pluma_debug_message (DEBUG_PLUGINS, "PlumaSortPlugin disposing");
+
+	if (plugin->priv->window != NULL)
+	{
+		g_object_unref (plugin->priv->window);
+		plugin->priv->window = NULL;
+	}
+
+	if (plugin->priv->ui_action_group)
+	{
+		g_object_unref (plugin->priv->ui_action_group);
+		plugin->priv->ui_action_group = NULL;
+	}
+
+	G_OBJECT_CLASS (pluma_sort_plugin_parent_class)->dispose (object);
 }
 
 static void
 pluma_sort_plugin_class_init (PlumaSortPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	PlumaPluginClass *plugin_class = PLUMA_PLUGIN_CLASS (klass);
 
-	object_class->finalize = pluma_sort_plugin_finalize;
+	object_class->dispose = pluma_sort_plugin_dispose;
+	object_class->set_property = pluma_sort_plugin_set_property;
+	object_class->get_property = pluma_sort_plugin_get_property;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
-	plugin_class->update_ui = impl_update_ui;
+	g_object_class_override_property (object_class, PROP_OBJECT, "object");
+
+	g_type_class_add_private (klass, sizeof (PlumaSortPluginPrivate));
+}
+
+static void
+pluma_sort_plugin_class_finalize (PlumaSortPluginClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
+}
+
+static void
+peas_activatable_iface_init (PeasActivatableInterface *iface)
+{
+	iface->activate = pluma_sort_plugin_activate;
+	iface->deactivate = pluma_sort_plugin_deactivate;
+	iface->update_state = pluma_sort_plugin_update_state;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	pluma_sort_plugin_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_SORT_PLUGIN);
 }
