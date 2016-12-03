@@ -31,7 +31,10 @@
 
 #include <glib/gi18n.h>
 #include <gmodule.h>
+#include <libpeas/peas-activatable.h>
+#include <libpeas-gtk/peas-gtk-configurable.h>
 
+#include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 #include <pluma/pluma-help.h>
 #include <pluma/pluma-prefs-manager.h>
@@ -46,7 +49,6 @@
 #define PLUMA_METADATA_ATTRIBUTE_SPELL_LANGUAGE "metadata::pluma-spell-language"
 #define PLUMA_METADATA_ATTRIBUTE_SPELL_ENABLED  "metadata::pluma-spell-enabled"
 
-#define WINDOW_DATA_KEY "PlumaSpellPluginWindowData"
 #define MENU_PATH "/MenuBar/ToolsMenu/ToolsOps_1"
 
 #define PLUMA_SPELL_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
@@ -57,32 +59,39 @@
 #define SPELL_SCHEMA		"org.mate.pluma.plugins.spell"
 #define AUTOCHECK_TYPE_KEY	"autocheck-type"
 
-PLUMA_PLUGIN_REGISTER_TYPE(PlumaSpellPlugin, pluma_spell_plugin)
+static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
 
-typedef struct
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaSpellPlugin,
+                                pluma_spell_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
+                                                               peas_gtk_configurable_iface_init))
+
+enum {
+	PROP_0,
+	PROP_OBJECT
+};
+
+struct _PlumaSpellPluginPrivate
 {
+	GtkWidget *window;
+
 	GtkActionGroup *action_group;
 	guint           ui_id;
 	guint           message_cid;
 	gulong          tab_added_id;
 	gulong          tab_removed_id;
-	PlumaSpellPlugin *plugin;
-} WindowData;
 
-typedef struct
-{
-	PlumaPlugin *plugin;
-	PlumaWindow *window;
-} ActionData;
-
-struct _PlumaSpellPluginPrivate
-{
 	GSettings *settings;
 };
 
-static void	spell_cb	(GtkAction *action, ActionData *action_data);
-static void	set_language_cb	(GtkAction *action, ActionData *action_data);
-static void	auto_spell_cb	(GtkAction *action, PlumaWindow *window);
+static void	spell_cb	(GtkAction *action, PlumaSpellPlugin *plugin);
+static void	set_language_cb	(GtkAction *action, PlumaSpellPlugin *plugin);
+static void	auto_spell_cb	(GtkAction *action, PlumaSpellPlugin *plugin);
 
 /* UI actions. */
 static const GtkActionEntry action_entries[] =
@@ -163,15 +172,27 @@ pluma_spell_plugin_init (PlumaSpellPlugin *plugin)
 }
 
 static void
-pluma_spell_plugin_finalize (GObject *object)
+pluma_spell_plugin_dispose (GObject *object)
 {
 	PlumaSpellPlugin *plugin = PLUMA_SPELL_PLUGIN (object);
 
-	pluma_debug_message (DEBUG_PLUGINS, "PlumaSpellPlugin finalizing");
+	pluma_debug_message (DEBUG_PLUGINS, "PlumaSpellPlugin disposing");
+
+	if (plugin->priv->window != NULL)
+	{
+		g_object_unref (plugin->priv->window);
+		plugin->priv->window = NULL;
+	}
+
+	if (plugin->priv->action_group)
+	{
+		g_object_unref (plugin->priv->action_group);
+		plugin->priv->action_group = NULL;
+	}
 
 	g_object_unref (G_OBJECT (plugin->priv->settings));
 
-	G_OBJECT_CLASS (pluma_spell_plugin_parent_class)->finalize (object);
+	G_OBJECT_CLASS (pluma_spell_plugin_parent_class)->dispose (object);
 }
 
 static void 
@@ -775,7 +796,7 @@ get_configure_dialog (PlumaSpellPlugin *plugin)
 					5);
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog->dialog))), 6);
 
-	data_dir = pluma_plugin_get_data_dir (PLUMA_PLUGIN (plugin));
+	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	ui_file = g_build_filename (data_dir, "pluma-spell-setup-dialog.ui", NULL);
 	ret = pluma_utils_get_ui_objects (ui_file,
 					  root_objects,
@@ -885,8 +906,9 @@ configure_dialog_response_cb (GtkWidget *widget,
 
 static void
 set_language_cb (GtkAction   *action,
-		 ActionData *action_data)
+		 PlumaSpellPlugin *plugin)
 {
+	PlumaWindow *window;
 	PlumaDocument *doc;
 	PlumaSpellChecker *spell;
 	const PlumaSpellCheckerLanguage *lang;
@@ -896,7 +918,8 @@ set_language_cb (GtkAction   *action,
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	doc = pluma_window_get_active_document (action_data->window);
+	window = PLUMA_WINDOW (plugin->priv->window);
+	doc = pluma_window_get_active_document (window);
 	g_return_if_fail (doc != NULL);
 
 	spell = get_spell_checker_from_document (doc);
@@ -904,13 +927,13 @@ set_language_cb (GtkAction   *action,
 
 	lang = pluma_spell_checker_get_language (spell);
 
-	data_dir = pluma_plugin_get_data_dir (action_data->plugin);
-	dlg = pluma_spell_language_dialog_new (GTK_WINDOW (action_data->window),
+	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
+	dlg = pluma_spell_language_dialog_new (GTK_WINDOW (window),
 					       lang,
 					       data_dir);
 	g_free (data_dir);
 
-	wg = pluma_window_get_group (action_data->window);
+	wg = pluma_window_get_group (window);
 
 	gtk_window_group_add_window (wg, GTK_WINDOW (dlg));
 
@@ -926,8 +949,10 @@ set_language_cb (GtkAction   *action,
 
 static void
 spell_cb (GtkAction   *action,
-	  ActionData *action_data)
+	  PlumaSpellPlugin *plugin)
 {
+	PlumaSpellPluginPrivate *data;
+	PlumaWindow *window;
 	PlumaView *view;
 	PlumaDocument *doc;
 	PlumaSpellChecker *spell;
@@ -938,7 +963,9 @@ spell_cb (GtkAction   *action,
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	view = pluma_window_get_active_view (action_data->window);
+	data = plugin->priv;
+	window = PLUMA_WINDOW (data->window);
+	view = pluma_window_get_active_view (window);
 	g_return_if_fail (view != NULL);
 
 	doc = PLUMA_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)));
@@ -949,14 +976,9 @@ spell_cb (GtkAction   *action,
 
 	if (gtk_text_buffer_get_char_count (GTK_TEXT_BUFFER (doc)) <= 0)
 	{
-		WindowData *data;
 		GtkWidget *statusbar;
 
-		data = (WindowData *) g_object_get_data (G_OBJECT (action_data->window),
-							 WINDOW_DATA_KEY);
-		g_return_if_fail (data != NULL);
-
-		statusbar = pluma_window_get_statusbar (action_data->window);
+		statusbar = pluma_window_get_statusbar (window);
 		pluma_statusbar_flash_message (PLUMA_STATUSBAR (statusbar),
 					       data->message_cid,
 					       _("The document is empty."));
@@ -979,14 +1001,9 @@ spell_cb (GtkAction   *action,
 	word = get_next_misspelled_word (view);
 	if (word == NULL)
 	{
-		WindowData *data;
 		GtkWidget *statusbar;
 
-		data = (WindowData *) g_object_get_data (G_OBJECT (action_data->window),
-							 WINDOW_DATA_KEY);
-		g_return_if_fail (data != NULL);
-
-		statusbar = pluma_window_get_statusbar (action_data->window);
+		statusbar = pluma_window_get_statusbar (window);
 		pluma_statusbar_flash_message (PLUMA_STATUSBAR (statusbar),
 					       data->message_cid,
 					       _("No misspelled words"));
@@ -994,12 +1011,13 @@ spell_cb (GtkAction   *action,
 		return;
 	}
 
-	data_dir = pluma_plugin_get_data_dir (action_data->plugin);
+	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	dlg = pluma_spell_checker_dialog_new_from_spell_checker (spell, data_dir);
 	g_free (data_dir);
+
 	gtk_window_set_modal (GTK_WINDOW (dlg), TRUE);
 	gtk_window_set_transient_for (GTK_WINDOW (dlg),
-				      GTK_WINDOW (action_data->window));
+				      GTK_WINDOW (window));
 
 	g_signal_connect (dlg, "ignore", G_CALLBACK (ignore_cb), view);
 	g_signal_connect (dlg, "ignore_all", G_CALLBACK (ignore_cb), view);
@@ -1059,14 +1077,15 @@ set_auto_spell (PlumaWindow   *window,
 
 static void
 auto_spell_cb (GtkAction   *action,
-	       PlumaWindow *window)
+	       PlumaSpellPlugin *plugin)
 {
-	
+	PlumaWindow *window;
 	PlumaDocument *doc;
 	gboolean active;
-	WindowData *data;
 
 	pluma_debug (DEBUG_PLUGINS);
+
+	window = PLUMA_WINDOW (plugin->priv->window);
 
 	active = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
 
@@ -1076,12 +1095,8 @@ auto_spell_cb (GtkAction   *action,
 	if (doc == NULL)
 		return;
 
-	data = g_object_get_data (G_OBJECT (window),
-					  WINDOW_DATA_KEY);
-
-	if (get_autocheck_type(data->plugin) == AUTOCHECK_DOCUMENT)
+	if (get_autocheck_type (plugin) == AUTOCHECK_DOCUMENT)
 	{
-
 		pluma_document_set_metadata (doc,
 				     PLUMA_METADATA_ATTRIBUTE_SPELL_ENABLED,
 				     active ? "1" : NULL, NULL);
@@ -1091,26 +1106,10 @@ auto_spell_cb (GtkAction   *action,
 }
 
 static void
-free_window_data (WindowData *data)
+update_ui (PlumaSpellPlugin *plugin)
 {
-	g_return_if_fail (data != NULL);
-
-	g_object_unref (data->action_group);
-	g_slice_free (WindowData, data);
-}
-
-static void
-free_action_data (gpointer data)
-{
-	g_return_if_fail (data != NULL);
-
-	g_slice_free (ActionData, data);
-}
-
-static void
-update_ui_real (PlumaWindow *window,
-		WindowData *data)
-{
+	PlumaSpellPluginPrivate *data;
+	PlumaWindow *window;
 	PlumaDocument *doc;
 	PlumaView *view;
 	gboolean autospell;
@@ -1118,6 +1117,8 @@ update_ui_real (PlumaWindow *window,
 
 	pluma_debug (DEBUG_PLUGINS);
 
+	data = plugin->priv;
+	window = PLUMA_WINDOW (data->window);
 	doc = pluma_window_get_active_document (window);
 	view = pluma_window_get_active_view (window);
 
@@ -1140,12 +1141,12 @@ update_ui_real (PlumaWindow *window,
 							      "AutoSpell");
 	
 			g_signal_handlers_block_by_func (action, auto_spell_cb,
-							 window);
+							 plugin);
 			set_auto_spell (window, doc, autospell);
 			gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
 						      autospell);
 			g_signal_handlers_unblock_by_func (action, auto_spell_cb,
-							   window);
+							   plugin);
 		}
 	}
 
@@ -1155,20 +1156,17 @@ update_ui_real (PlumaWindow *window,
 }
 
 static void
-set_auto_spell_from_metadata (PlumaWindow    *window,
+set_auto_spell_from_metadata (PlumaSpellPlugin *plugin,
 			      PlumaDocument  *doc,
 			      GtkActionGroup *action_group)
 {
 	gboolean active = FALSE;
 	gchar *active_str = NULL;
+	PlumaWindow *window;
 	PlumaDocument *active_doc;
 	PlumaSpellPluginAutocheckType autocheck_type;
-	WindowData *data;
 
-	data = g_object_get_data (G_OBJECT (window),
-					  WINDOW_DATA_KEY);
-
-	autocheck_type = get_autocheck_type(data->plugin);
+	autocheck_type = get_autocheck_type (plugin);
 
 	switch (autocheck_type)
 	{
@@ -1196,6 +1194,8 @@ set_auto_spell_from_metadata (PlumaWindow    *window,
 		g_free (active_str);
 	}
 
+	window = PLUMA_WINDOW (plugin->priv->window);
+
 	set_auto_spell (window, doc, active);
 
 	/* In case that the doc is the active one we mark the spell action */
@@ -1209,22 +1209,21 @@ set_auto_spell_from_metadata (PlumaWindow    *window,
 						      "AutoSpell");
 
 		g_signal_handlers_block_by_func (action, auto_spell_cb,
-						 window);
+						 plugin);
 		gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
 					      active);
 		g_signal_handlers_unblock_by_func (action, auto_spell_cb,
-						   window);
+						   plugin);
 	}
 }
 
 static void
 on_document_loaded (PlumaDocument *doc,
 		    const GError  *error,
-		    PlumaWindow   *window)
+		    PlumaSpellPlugin *plugin)
 {
 	if (error == NULL)
 	{
-		WindowData *data;
 		PlumaSpellChecker *spell;
 
 		spell = PLUMA_SPELL_CHECKER (g_object_get_qdata (G_OBJECT (doc),
@@ -1234,22 +1233,18 @@ on_document_loaded (PlumaDocument *doc,
 			set_language_from_metadata (spell, doc);
 		}
 
-		data = g_object_get_data (G_OBJECT (window),
-					  WINDOW_DATA_KEY);
-
-		set_auto_spell_from_metadata (window, doc, data->action_group);
+		set_auto_spell_from_metadata (plugin, doc, plugin->priv->action_group);
 	}
 }
 
 static void
 on_document_saved (PlumaDocument *doc,
 		   const GError  *error,
-		   PlumaWindow   *window)
+		   PlumaSpellPlugin *plugin)
 {
 	PlumaAutomaticSpellChecker *autospell;
 	PlumaSpellChecker *spell;
 	const gchar *key;
-	WindowData *data;
 
 	if (error != NULL)
 	{
@@ -1269,10 +1264,7 @@ on_document_saved (PlumaDocument *doc,
 		key = NULL;
 	}
 
-	data = g_object_get_data (G_OBJECT (window),
-					  WINDOW_DATA_KEY);
-
-	if (get_autocheck_type(data->plugin) == AUTOCHECK_DOCUMENT)
+	if (get_autocheck_type (plugin) == AUTOCHECK_DOCUMENT)
 	{
 
 		pluma_document_set_metadata (doc,
@@ -1294,11 +1286,10 @@ on_document_saved (PlumaDocument *doc,
 static void
 tab_added_cb (PlumaWindow *window,
 	      PlumaTab    *tab,
-	      gpointer     useless)
+	      PlumaSpellPlugin *plugin)
 {
 	PlumaDocument *doc;
 	gchar *uri;
-	WindowData *data;
 
 	doc = pluma_tab_get_document (tab);
 
@@ -1306,67 +1297,61 @@ tab_added_cb (PlumaWindow *window,
 
 	if (!uri)
 	{
-		data = g_object_get_data (G_OBJECT (window),
-					  WINDOW_DATA_KEY);
-
-		set_auto_spell_from_metadata (window, doc, data->action_group);
+		set_auto_spell_from_metadata (plugin, doc, plugin->priv->action_group);
 
 		g_free(uri);
 	}
 
 	g_signal_connect (doc, "loaded",
 			  G_CALLBACK (on_document_loaded),
-			  window);
+			  plugin);
 
 	g_signal_connect (doc, "saved",
 			  G_CALLBACK (on_document_saved),
-			  window);
+			  plugin);
 }
 
 static void
 tab_removed_cb (PlumaWindow *window,
 		PlumaTab    *tab,
-		gpointer     useless)
+		PlumaSpellPlugin *plugin)
 {
 	PlumaDocument *doc;
 
 	doc = pluma_tab_get_document (tab);
 	
-	g_signal_handlers_disconnect_by_func (doc, on_document_loaded, window);
-	g_signal_handlers_disconnect_by_func (doc, on_document_saved, window);
+	g_signal_handlers_disconnect_by_func (doc, on_document_loaded, plugin);
+	g_signal_handlers_disconnect_by_func (doc, on_document_saved, plugin);
 }
 
 static void
-impl_activate (PlumaPlugin *plugin,
-	       PlumaWindow *window)
+pluma_spell_plugin_activate (PeasActivatable *activatable)
 {
+	PlumaSpellPlugin *plugin;
+	PlumaSpellPluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
-	ActionData *action_data;
 	GList *docs, *l;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = g_slice_new (WindowData);
-	data->plugin = PLUMA_SPELL_PLUGIN (plugin);
-	action_data = g_slice_new (ActionData);
-	action_data->plugin = plugin;
-	action_data->window = window;
+	plugin = PLUMA_SPELL_PLUGIN (activatable);
+	data = plugin->priv;
+	window = PLUMA_WINDOW (data->window);
 
 	manager = pluma_window_get_ui_manager (window);
 
 	data->action_group = gtk_action_group_new ("PlumaSpellPluginActions");
 	gtk_action_group_set_translation_domain (data->action_group, 
 						 GETTEXT_PACKAGE);
-	gtk_action_group_add_actions_full (data->action_group,
+	gtk_action_group_add_actions (data->action_group,
 					   action_entries,
 					   G_N_ELEMENTS (action_entries),
-					   action_data,
-					   (GDestroyNotify) free_action_data);
+					   plugin);
 	gtk_action_group_add_toggle_actions (data->action_group, 
 					     toggle_action_entries,
 					     G_N_ELEMENTS (toggle_action_entries),
-					     window);
+					     plugin);
 
 	gtk_ui_manager_insert_action_group (manager, data->action_group, -1);
 
@@ -1375,11 +1360,6 @@ impl_activate (PlumaPlugin *plugin,
 	data->message_cid = gtk_statusbar_get_context_id
 			(GTK_STATUSBAR (pluma_window_get_statusbar (window)), 
 			 "spell_plugin_message");
-
-	g_object_set_data_full (G_OBJECT (window),
-				WINDOW_DATA_KEY, 
-				data,
-				(GDestroyNotify) free_window_data);
 
 	gtk_ui_manager_add_ui (manager,
 			       data->ui_id,
@@ -1405,78 +1385,110 @@ impl_activate (PlumaPlugin *plugin,
 			       GTK_UI_MANAGER_MENUITEM, 
 			       FALSE);
 
-	update_ui_real (window, data);
+	update_ui (plugin);
 
 	docs = pluma_window_get_documents (window);
 	for (l = docs; l != NULL; l = g_list_next (l))
 	{
 		PlumaDocument *doc = PLUMA_DOCUMENT (l->data);
 
-		set_auto_spell_from_metadata (window, doc,
+		set_auto_spell_from_metadata (plugin, doc,
 					      data->action_group);
 
 		g_signal_handlers_disconnect_by_func (doc,
 		                                      on_document_loaded,
-		                                      window);
+		                                      plugin);
 
 		g_signal_handlers_disconnect_by_func (doc,
 		                                      on_document_saved,
-		                                      window);
+		                                      plugin);
 	}
 
 	data->tab_added_id =
 		g_signal_connect (window, "tab-added",
-				  G_CALLBACK (tab_added_cb), NULL);
+				  G_CALLBACK (tab_added_cb), plugin);
 	data->tab_removed_id =
 		g_signal_connect (window, "tab-removed",
-				  G_CALLBACK (tab_removed_cb), NULL);
+				  G_CALLBACK (tab_removed_cb), plugin);
 }
 
 static void
-impl_deactivate	(PlumaPlugin *plugin,
-		 PlumaWindow *window)
+pluma_spell_plugin_deactivate (PeasActivatable *activatable)
 {
+	PlumaSpellPluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	manager = pluma_window_get_ui_manager (window);
+	data = PLUMA_SPELL_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
+	manager = pluma_window_get_ui_manager (window);
 
 	gtk_ui_manager_remove_ui (manager, data->ui_id);
 	gtk_ui_manager_remove_action_group (manager, data->action_group);
 
 	g_signal_handler_disconnect (window, data->tab_added_id);
 	g_signal_handler_disconnect (window, data->tab_removed_id);
-
-	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }
 
 static void
-impl_update_ui (PlumaPlugin *plugin,
-		PlumaWindow *window)
+pluma_spell_plugin_update_state (PeasActivatable *activatable)
 {
-	WindowData *data;
-
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
+	update_ui (PLUMA_SPELL_PLUGIN (activatable));
+}
 
-	update_ui_real (window, data);
+static void
+pluma_spell_plugin_set_property (GObject      *object,
+                                 guint         prop_id,
+                                 const GValue *value,
+                                 GParamSpec   *pspec)
+{
+	PlumaSpellPlugin *plugin = PLUMA_SPELL_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
+}
+
+static void
+pluma_spell_plugin_get_property (GObject    *object,
+                                 guint       prop_id,
+                                 GValue     *value,
+                                 GParamSpec *pspec)
+{
+	PlumaSpellPlugin *plugin = PLUMA_SPELL_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			g_value_set_object (value, plugin->priv->window);
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
 }
 
 static GtkWidget *
-impl_create_configure_dialog (PlumaPlugin *plugin)
+pluma_spell_plugin_create_configure_widget (PeasGtkConfigurable *configurable)
 {
 	SpellConfigureDialog *dialog;
 
-	dialog = get_configure_dialog(PLUMA_SPELL_PLUGIN (plugin));
+	dialog = get_configure_dialog (PLUMA_SPELL_PLUGIN (configurable));
 
-	dialog->plugin = PLUMA_SPELL_PLUGIN (plugin);
+	dialog->plugin = PLUMA_SPELL_PLUGIN (configurable);
 
 	g_signal_connect (dialog->dialog,
 			"response",
@@ -1490,15 +1502,12 @@ static void
 pluma_spell_plugin_class_init (PlumaSpellPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	PlumaPluginClass *plugin_class = PLUMA_PLUGIN_CLASS (klass);
 
-	object_class->finalize = pluma_spell_plugin_finalize;
+	object_class->dispose = pluma_spell_plugin_dispose;
+	object_class->set_property = pluma_spell_plugin_set_property;
+	object_class->get_property = pluma_spell_plugin_get_property;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
-	plugin_class->update_ui = impl_update_ui;
-
-	plugin_class->create_configure_dialog = impl_create_configure_dialog;
+	g_object_class_override_property (object_class, PROP_OBJECT, "object");
 
 	if (spell_checker_id == 0)
 		spell_checker_id = g_quark_from_string ("PlumaSpellCheckerID");
@@ -1507,4 +1516,38 @@ pluma_spell_plugin_class_init (PlumaSpellPluginClass *klass)
 		check_range_id = g_quark_from_string ("CheckRangeID");
 
 	g_type_class_add_private (object_class, sizeof (PlumaSpellPluginPrivate));
+}
+
+static void
+pluma_spell_plugin_class_finalize (PlumaSpellPluginClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
+}
+
+static void
+peas_activatable_iface_init (PeasActivatableInterface *iface)
+{
+	iface->activate = pluma_spell_plugin_activate;
+	iface->deactivate = pluma_spell_plugin_deactivate;
+	iface->update_state = pluma_spell_plugin_update_state;
+}
+
+static void
+peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface)
+{
+	iface->create_configure_widget = pluma_spell_plugin_create_configure_widget;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	pluma_spell_plugin_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_SPELL_PLUGIN);
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_GTK_TYPE_CONFIGURABLE,
+	                                            PLUMA_TYPE_SPELL_PLUGIN);
 }
