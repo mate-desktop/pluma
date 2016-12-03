@@ -36,7 +36,6 @@
 
 #include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
-#include <pluma/pluma-help.h>
 #include <pluma/pluma-prefs-manager.h>
 #include <pluma/pluma-statusbar.h>
 #include <pluma/pluma-utils.h>
@@ -129,13 +128,13 @@ typedef struct _SpellConfigureDialog SpellConfigureDialog;
 
 struct _SpellConfigureDialog
 {
-	GtkWidget *dialog;
+	GtkWidget *content;
 
 	GtkWidget *never;
 	GtkWidget *always;
 	GtkWidget *document;
 
-	PlumaSpellPlugin *plugin;
+	GSettings *settings;
 };
 
 typedef enum
@@ -247,16 +246,16 @@ get_autocheck_type (PlumaSpellPlugin *plugin)
 }
 
 static void
-set_autocheck_type (PlumaSpellPlugin *plugin,
+set_autocheck_type (GSettings *settings,
 		    PlumaSpellPluginAutocheckType autocheck_type)
 {
-	if (!g_settings_is_writable (plugin->priv->settings,
+	if (!g_settings_is_writable (settings,
 				     AUTOCHECK_TYPE_KEY))
 	{
 		return;
 	}
 
-	g_settings_set_enum (plugin->priv->settings,
+	g_settings_set_enum (settings,
 			     AUTOCHECK_TYPE_KEY,
 			     autocheck_type);
 }
@@ -760,7 +759,6 @@ get_configure_dialog (PlumaSpellPlugin *plugin)
 	SpellConfigureDialog *dialog = NULL;
 	gchar *data_dir;
 	gchar *ui_file;
-	GtkWidget *content;
 	PlumaSpellPluginAutocheckType autocheck_type;
 	GtkWidget *error_widget;
 	gboolean ret;
@@ -771,37 +769,15 @@ get_configure_dialog (PlumaSpellPlugin *plugin)
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	GtkWidget *dlg = gtk_dialog_new_with_buttons (_("Configure Spell Checker plugin..."),
-							NULL,
-							GTK_DIALOG_DESTROY_WITH_PARENT,
-							GTK_STOCK_CANCEL,
-							GTK_RESPONSE_CANCEL,
-							GTK_STOCK_OK,
-							GTK_RESPONSE_OK,
-							GTK_STOCK_HELP,
-							GTK_RESPONSE_HELP,
-							NULL);
-
-	g_return_val_if_fail (dlg != NULL, NULL);
-
-	dialog = g_new0 (SpellConfigureDialog, 1);
-	dialog->dialog = dlg;
-
-
-	/* HIG defaults */
-	gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog->dialog)), 5);
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
-					2); /* 2 * 5 + 2 = 12 */
-	gtk_container_set_border_width (GTK_CONTAINER (gtk_dialog_get_action_area (GTK_DIALOG (dialog->dialog))),
-					5);
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog->dialog))), 6);
+	dialog = g_slice_new (SpellConfigureDialog);
+	dialog->settings = g_object_ref (plugin->priv->settings);
 
 	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	ui_file = g_build_filename (data_dir, "pluma-spell-setup-dialog.ui", NULL);
 	ret = pluma_utils_get_ui_objects (ui_file,
 					  root_objects,
 					  &error_widget,
-					  "spell_dialog_content", &content,
+					  "spell_dialog_content", &dialog->content,
 					  "autocheck_never", &dialog->never,
 					  "autocheck_document", &dialog->document,
 					  "autocheck_always", &dialog->always,
@@ -812,17 +788,8 @@ get_configure_dialog (PlumaSpellPlugin *plugin)
 
 	if (!ret)
 	{
-		gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
-					error_widget, TRUE, TRUE, 0);
-
-		gtk_container_set_border_width (GTK_CONTAINER (error_widget), 5);
-
-		gtk_widget_show (error_widget);
-
-		return dialog;
+		return NULL;
 	}
-
-	gtk_window_set_resizable (GTK_WINDOW (dialog->dialog), FALSE);
 
 	autocheck_type = get_autocheck_type (plugin);
 
@@ -839,69 +806,39 @@ get_configure_dialog (PlumaSpellPlugin *plugin)
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->never), TRUE);
 	}
 
-	gtk_window_set_default_size (GTK_WIDGET (content), 15, 120);
-
-	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
-				content, FALSE, FALSE, 0);
-	g_object_unref (content);
-	gtk_container_set_border_width (GTK_CONTAINER (content), 5);
-
-	gtk_dialog_set_default_response (GTK_DIALOG (dialog->dialog),
-					 GTK_RESPONSE_OK);
-
 	return dialog;
 }
 
 static void
-ok_button_pressed (SpellConfigureDialog *dialog)
+configure_dialog_button_toggled (GtkToggleButton      *button,
+                                 SpellConfigureDialog *dialog)
 {
 	pluma_debug (DEBUG_PLUGINS);
 
 	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->always)))
 	{
-		set_autocheck_type (dialog->plugin, AUTOCHECK_ALWAYS);
+		set_autocheck_type (dialog->settings, AUTOCHECK_ALWAYS);
 	}
 	else if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->document)))
 	{
-		set_autocheck_type (dialog->plugin, AUTOCHECK_DOCUMENT);
+		set_autocheck_type (dialog->settings, AUTOCHECK_DOCUMENT);
 	}
 	else
 	{
-		set_autocheck_type (dialog->plugin, AUTOCHECK_NEVER);
+		set_autocheck_type (dialog->settings, AUTOCHECK_NEVER);
 	}
 }
 
 static void
-configure_dialog_response_cb (GtkWidget *widget,
-			      gint response,
-			      SpellConfigureDialog *dialog)
+configure_dialog_destroyed (GtkWidget *widget,
+                            gpointer   data)
 {
-	switch (response)
-	{
-		case GTK_RESPONSE_HELP:
-		{
-			pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_HELP");
+	SpellConfigureDialog *dialog = (SpellConfigureDialog *) data;
 
-			pluma_help_display (GTK_WINDOW (widget),
-					    NULL,
-					    "pluma-spell-checker-plugin");
-			break;
-                }
-		case GTK_RESPONSE_OK:
-		{
-			pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_OK");
+	pluma_debug (DEBUG_PLUGINS);
 
-			ok_button_pressed (dialog);
-
-			gtk_widget_destroy (dialog->dialog);
-			break;
-		}
-		case GTK_RESPONSE_CANCEL:
-		{
-			pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_CANCEL");
-			gtk_widget_destroy (dialog->dialog);
-		}
-	}
+	g_object_unref (dialog->settings);
+	g_slice_free (SpellConfigureDialog, data);
 }
 
 static void
@@ -1488,14 +1425,25 @@ pluma_spell_plugin_create_configure_widget (PeasGtkConfigurable *configurable)
 
 	dialog = get_configure_dialog (PLUMA_SPELL_PLUGIN (configurable));
 
-	dialog->plugin = PLUMA_SPELL_PLUGIN (configurable);
+	g_signal_connect (dialog->always,
+	                  "toggled",
+	                  G_CALLBACK (configure_dialog_button_toggled),
+	                  dialog);
+	g_signal_connect (dialog->document,
+	                  "toggled",
+	                  G_CALLBACK (configure_dialog_button_toggled),
+	                  dialog);
+	g_signal_connect (dialog->never,
+	                  "toggled",
+	                  G_CALLBACK (configure_dialog_button_toggled),
+	                  dialog);
 
-	g_signal_connect (dialog->dialog,
-			"response",
-			G_CALLBACK (configure_dialog_response_cb),
-			dialog);
+	g_signal_connect (dialog->content,
+	                  "destroy",
+	                  G_CALLBACK (configure_dialog_destroyed),
+	                  dialog);
 
-	return GTK_WIDGET (dialog->dialog);
+	return dialog->content;
 }
 
 static void
