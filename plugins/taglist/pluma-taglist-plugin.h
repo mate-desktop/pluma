@@ -32,7 +32,8 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <pluma/pluma-plugin.h>
+#include <libpeas/peas-extension-base.h>
+#include <libpeas/peas-object-module.h>
 
 G_BEGIN_DECLS
 
@@ -56,7 +57,7 @@ typedef struct _PlumaTaglistPlugin		PlumaTaglistPlugin;
 
 struct _PlumaTaglistPlugin
 {
-	PlumaPlugin parent_instance;
+	PeasExtensionBase parent_instance;
 
 	/*< private >*/
 	PlumaTaglistPluginPrivate *priv;
@@ -69,7 +70,7 @@ typedef struct _PlumaTaglistPluginClass	PlumaTaglistPluginClass;
 
 struct _PlumaTaglistPluginClass
 {
-	PlumaPluginClass parent_class;
+	PeasExtensionBaseClass parent_class;
 };
 
 /*
@@ -78,7 +79,7 @@ struct _PlumaTaglistPluginClass
 GType	pluma_taglist_plugin_get_type		(void) G_GNUC_CONST;
 
 /* All the plugins must implement this function */
-G_MODULE_EXPORT GType register_pluma_plugin (GTypeModule *module);
+G_MODULE_EXPORT void peas_register_types (PeasObjectModule *module);
 
 G_END_DECLS
 

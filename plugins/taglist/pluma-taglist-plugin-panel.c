@@ -39,7 +39,6 @@
 
 #include <pluma/pluma-utils.h>
 #include <pluma/pluma-debug.h>
-#include <pluma/pluma-plugin.h>
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
@@ -69,7 +68,7 @@ struct _PlumaTaglistPluginPanelPrivate
 	gchar *data_dir;
 };
 
-PLUMA_PLUGIN_DEFINE_TYPE (PlumaTaglistPluginPanel, pluma_taglist_plugin_panel, GTK_TYPE_BOX)
+G_DEFINE_DYNAMIC_TYPE (PlumaTaglistPluginPanel, pluma_taglist_plugin_panel, GTK_TYPE_BOX)
 
 enum
 {
@@ -158,6 +157,12 @@ pluma_taglist_plugin_panel_class_init (PlumaTaglistPluginPanelClass *klass)
 							 G_PARAM_CONSTRUCT_ONLY));
 
 	g_type_class_add_private (object_class, sizeof(PlumaTaglistPluginPanelPrivate));
+}
+
+static void
+pluma_taglist_plugin_panel_class_finalize (PlumaTaglistPluginPanelClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE */
 }
 
 static void
@@ -782,4 +787,10 @@ pluma_taglist_plugin_panel_new (PlumaWindow *window,
 	panel->priv->data_dir = g_strdup (data_dir);
 	
 	return GTK_WIDGET (panel);
+}
+
+void
+_pluma_taglist_plugin_panel_register_type (GTypeModule *type_module)
+{
+	pluma_taglist_plugin_panel_register_type (type_module);
 }
