@@ -40,7 +40,10 @@
 #include <glib.h>
 #include <gmodule.h>
 #include <gio/gio.h>
+#include <libpeas/peas-activatable.h>
+#include <libpeas-gtk/peas-gtk-configurable.h>
 
+#include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 #include <pluma/pluma-utils.h>
 
@@ -48,7 +51,6 @@
 					      PLUMA_TYPE_TIME_PLUGIN, \
 					      PlumaTimePluginPrivate))
 
-#define WINDOW_DATA_KEY "PlumaTimePluginWindowData"
 #define MENU_PATH "/MenuBar/EditMenu/EditOps_4"
 
 /* GSettings keys */
@@ -152,24 +154,32 @@ typedef enum
 
 struct _PlumaTimePluginPrivate
 {
+	GtkWidget *window;
+
 	GSettings *settings;
-};
 
-PLUMA_PLUGIN_REGISTER_TYPE(PlumaTimePlugin, pluma_time_plugin)
-
-typedef struct
-{
 	GtkActionGroup *action_group;
 	guint           ui_id;
-} WindowData;
+};
 
-typedef struct
-{
-	PlumaWindow     *window;
-	PlumaTimePlugin *plugin;
-} ActionData;
+enum {
+	PROP_0,
+	PROP_OBJECT
+};
 
-static void time_cb (GtkAction *action, ActionData *data);
+static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaTimePlugin,
+                                pluma_time_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
+                                                               peas_gtk_configurable_iface_init))
+
+static void time_cb (GtkAction *action, PlumaTimePlugin *plugin);
 
 static const GtkActionEntry action_entries[] =
 {
@@ -206,23 +216,37 @@ pluma_time_plugin_finalize (GObject *object)
 }
 
 static void
-free_window_data (WindowData *data)
+pluma_time_plugin_dispose (GObject *object)
 {
-	g_return_if_fail (data != NULL);
+	PlumaTimePlugin *plugin = PLUMA_TIME_PLUGIN (object);
 
-	g_object_unref (data->action_group);
-	g_free (data);
+	pluma_debug_message (DEBUG_PLUGINS, "PlumaTimePlugin disposing");
+
+	if (plugin->priv->window != NULL)
+	{
+		g_object_unref (plugin->priv->window);
+		plugin->priv->window = NULL;
+	}
+
+	if (plugin->priv->action_group)
+	{
+		g_object_unref (plugin->priv->action_group);
+		plugin->priv->action_group = NULL;
+	}
+
+	G_OBJECT_CLASS (pluma_time_plugin_parent_class)->dispose (object);
 }
 
 static void
-update_ui_real (PlumaWindow  *window,
-		WindowData   *data)
+update_ui (PlumaTimePluginPrivate *data)
 {
+	PlumaWindow *window;
 	PlumaView *view;
 	GtkAction *action;
 
 	pluma_debug (DEBUG_PLUGINS);
 
+	window = PLUMA_WINDOW (data->window);
 	view = pluma_window_get_active_view (window);
 
 	pluma_debug_message (DEBUG_PLUGINS, "View: %p", view);
@@ -235,40 +259,32 @@ update_ui_real (PlumaWindow  *window,
 }
 
 static void
-impl_activate (PlumaPlugin *plugin,
-	       PlumaWindow *window)
+pluma_time_plugin_activate (PeasActivatable *activatable)
 {
+	PlumaTimePlugin *plugin;
+	PlumaTimePluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
-	ActionData *action_data;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = g_new (WindowData, 1);
-	action_data = g_new (ActionData, 1);
-
-	action_data->plugin = PLUMA_TIME_PLUGIN (plugin);
-	action_data->window = window;
+	plugin = PLUMA_TIME_PLUGIN (activatable);
+	data = plugin->priv;
+	window = PLUMA_WINDOW (data->window);
 
 	manager = pluma_window_get_ui_manager (window);
 
 	data->action_group = gtk_action_group_new ("PlumaTimePluginActions");
 	gtk_action_group_set_translation_domain (data->action_group,
 						 GETTEXT_PACKAGE);
-	gtk_action_group_add_actions_full (data->action_group,
+	gtk_action_group_add_actions (data->action_group,
 				      	   action_entries,
 				      	   G_N_ELEMENTS (action_entries),
-				      	   action_data,
-				      	   (GDestroyNotify) g_free);
+				           plugin);
 
 	gtk_ui_manager_insert_action_group (manager, data->action_group, -1);
 
 	data->ui_id = gtk_ui_manager_new_merge_id (manager);
-
-	g_object_set_data_full (G_OBJECT (window),
-				WINDOW_DATA_KEY,
-				data,
-				(GDestroyNotify) free_window_data);
 
 	gtk_ui_manager_add_ui (manager,
 			       data->ui_id,
@@ -278,41 +294,33 @@ impl_activate (PlumaPlugin *plugin,
 			       GTK_UI_MANAGER_MENUITEM,
 			       FALSE);
 
-	update_ui_real (window, data);
+	update_ui (data);
 }
 
 static void
-impl_deactivate	(PlumaPlugin *plugin,
-		 PlumaWindow *window)
+pluma_time_plugin_deactivate (PeasActivatable *activatable)
 {
+	PlumaTimePluginPrivate *data;
+	PlumaWindow *window;
 	GtkUIManager *manager;
-	WindowData *data;
 
 	pluma_debug (DEBUG_PLUGINS);
+
+	data = PLUMA_TIME_PLUGIN (activatable)->priv;
+	window = PLUMA_WINDOW (data->window);
 
 	manager = pluma_window_get_ui_manager (window);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
-
 	gtk_ui_manager_remove_ui (manager, data->ui_id);
 	gtk_ui_manager_remove_action_group (manager, data->action_group);
-
-	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }
 
 static void
-impl_update_ui	(PlumaPlugin *plugin,
-		 PlumaWindow *window)
+pluma_time_plugin_update_state (PeasActivatable *activatable)
 {
-	WindowData   *data;
-
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
-
-	update_ui_real (window, data);
+	update_ui (PLUMA_TIME_PLUGIN (activatable)->priv);
 }
 
 /* whether we should prompt the user or use the specified format */
@@ -735,7 +743,7 @@ get_configure_dialog (PlumaTimePlugin *plugin)
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog->dialog))), 6);
 
 
-	data_dir = pluma_plugin_get_data_dir (PLUMA_PLUGIN (plugin));
+	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	ui_file = g_build_filename (data_dir, "pluma-time-setup-dialog.ui", NULL);
 	ret = pluma_utils_get_ui_objects (ui_file,
 					  root_objects,
@@ -894,7 +902,7 @@ get_choose_format_dialog (GtkWindow                 *parent,
 
 	dialog = g_new0 (ChooseFormatDialog, 1);
 
-	data_dir = pluma_plugin_get_data_dir (PLUMA_PLUGIN (plugin));
+	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	ui_file = g_build_filename (data_dir, "pluma-time-dialog.ui", NULL);
 	ret = pluma_utils_get_ui_objects (ui_file,
 					  NULL,
@@ -1067,28 +1075,30 @@ choose_format_dialog_response_cb (GtkWidget          *widget,
 
 static void
 time_cb (GtkAction  *action,
-	 ActionData *data)
+	 PlumaTimePlugin *plugin)
 {
+	PlumaWindow *window;
 	GtkTextBuffer *buffer;
 	gchar *the_time = NULL;
 	PlumaTimePluginPromptType prompt_type;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	buffer = GTK_TEXT_BUFFER (pluma_window_get_active_document (data->window));
+	window = PLUMA_WINDOW (plugin->priv->window);
+	buffer = GTK_TEXT_BUFFER (pluma_window_get_active_document (window));
 	g_return_if_fail (buffer != NULL);
 
-	prompt_type = get_prompt_type (data->plugin);
+	prompt_type = get_prompt_type (plugin);
 
         if (prompt_type == USE_CUSTOM_FORMAT)
         {
-		gchar *cf = get_custom_format (data->plugin);
+		gchar *cf = get_custom_format (plugin);
 	        the_time = get_time (cf);
 		g_free (cf);
 	}
         else if (prompt_type == USE_SELECTED_FORMAT)
         {
-		gchar *sf = get_selected_format (data->plugin);
+		gchar *sf = get_selected_format (plugin);
 	        the_time = get_time (sf);
 		g_free (sf);
 	}
@@ -1096,13 +1106,13 @@ time_cb (GtkAction  *action,
         {
 		ChooseFormatDialog *dialog;
 
-		dialog = get_choose_format_dialog (GTK_WINDOW (data->window),
+		dialog = get_choose_format_dialog (GTK_WINDOW (window),
 						   prompt_type,
-						   data->plugin);
+						   plugin);
 		if (dialog != NULL)
 		{
 			dialog->buffer = buffer;
-			dialog->plugin = data->plugin;
+			dialog->plugin = plugin;
 
 			g_signal_connect (dialog->dialog,
 					  "response",
@@ -1187,13 +1197,13 @@ configure_dialog_response_cb (GtkWidget           *widget,
 }
 
 static GtkWidget *
-impl_create_configure_dialog (PlumaPlugin *plugin)
+pluma_time_plugin_create_configure_widget (PeasGtkConfigurable *configurable)
 {
 	TimeConfigureDialog *dialog;
 
-	dialog = get_configure_dialog (PLUMA_TIME_PLUGIN (plugin));
+	dialog = get_configure_dialog (PLUMA_TIME_PLUGIN (configurable));
 
-	dialog->plugin = PLUMA_TIME_PLUGIN (plugin);
+	dialog->plugin = PLUMA_TIME_PLUGIN (configurable);
 
 	g_signal_connect (dialog->dialog,
 			  "response",
@@ -1204,18 +1214,90 @@ impl_create_configure_dialog (PlumaPlugin *plugin)
 }
 
 static void
+pluma_time_plugin_set_property (GObject      *object,
+                                guint         prop_id,
+                                const GValue *value,
+                                GParamSpec   *pspec)
+{
+	PlumaTimePlugin *plugin = PLUMA_TIME_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
+}
+
+static void
+pluma_time_plugin_get_property (GObject    *object,
+                                guint       prop_id,
+                                GValue     *value,
+                                GParamSpec *pspec)
+{
+	PlumaTimePlugin *plugin = PLUMA_TIME_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			g_value_set_object (value, plugin->priv->window);
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
+}
+
+static void
 pluma_time_plugin_class_init (PlumaTimePluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	PlumaPluginClass *plugin_class = PLUMA_PLUGIN_CLASS (klass);
 
 	object_class->finalize = pluma_time_plugin_finalize;
+	object_class->dispose = pluma_time_plugin_dispose;
+	object_class->set_property = pluma_time_plugin_set_property;
+	object_class->get_property = pluma_time_plugin_get_property;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
-	plugin_class->update_ui = impl_update_ui;
-
-	plugin_class->create_configure_dialog = impl_create_configure_dialog;
+	g_object_class_override_property (object_class, PROP_OBJECT, "object");
 
 	g_type_class_add_private (object_class, sizeof (PlumaTimePluginPrivate));
+}
+
+static void
+pluma_time_plugin_class_finalize (PlumaTimePluginClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
+}
+
+static void
+peas_activatable_iface_init (PeasActivatableInterface *iface)
+{
+	iface->activate = pluma_time_plugin_activate;
+	iface->deactivate = pluma_time_plugin_deactivate;
+	iface->update_state = pluma_time_plugin_update_state;
+}
+
+static void
+peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface)
+{
+	iface->create_configure_widget = pluma_time_plugin_create_configure_widget;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	pluma_time_plugin_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_TIME_PLUGIN);
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_GTK_TYPE_CONFIGURABLE,
+	                                            PLUMA_TYPE_TIME_PLUGIN);
 }
