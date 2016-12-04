@@ -108,7 +108,7 @@ typedef struct _TimeConfigureDialog TimeConfigureDialog;
 
 struct _TimeConfigureDialog
 {
-	GtkWidget *dialog;
+	GtkWidget *content;
 
 	GtkWidget *list;
 
@@ -120,8 +120,7 @@ struct _TimeConfigureDialog
 	GtkWidget *custom_entry;
 	GtkWidget *custom_format_example;
 
-	/* Info needed for the response handler */
-	PlumaTimePlugin *plugin;
+	GSettings *settings;
 };
 
 typedef struct _ChooseFormatDialog ChooseFormatDialog;
@@ -141,7 +140,8 @@ struct _ChooseFormatDialog
 
 	/* Info needed for the response handler */
 	GtkTextBuffer   *buffer;
-	PlumaTimePlugin *plugin;
+
+	GSettings *settings;
 };
 
 typedef enum
@@ -336,16 +336,16 @@ get_prompt_type (PlumaTimePlugin *plugin)
 }
 
 static void
-set_prompt_type (PlumaTimePlugin           *plugin,
+set_prompt_type (GSettings *settings,
 		 PlumaTimePluginPromptType  prompt_type)
 {
-	if (!g_settings_is_writable (plugin->priv->settings,
+	if (!g_settings_is_writable (settings,
 					   PROMPT_TYPE_KEY))
 	{
 		return;
 	}
 
-	g_settings_set_enum (plugin->priv->settings,
+	g_settings_set_enum (settings,
 				 PROMPT_TYPE_KEY,
 				 prompt_type);
 }
@@ -363,18 +363,18 @@ get_selected_format (PlumaTimePlugin *plugin)
 }
 
 static void
-set_selected_format (PlumaTimePlugin *plugin,
+set_selected_format (GSettings *settings,
 		     const gchar     *format)
 {
 	g_return_if_fail (format != NULL);
 
-	if (!g_settings_is_writable (plugin->priv->settings,
+	if (!g_settings_is_writable (settings,
 					   SELECTED_FORMAT_KEY))
 	{
 		return;
 	}
 
-	g_settings_set_string (plugin->priv->settings,
+	g_settings_set_string (settings,
 				 SELECTED_FORMAT_KEY,
 		       		 format);
 }
@@ -392,16 +392,16 @@ get_custom_format (PlumaTimePlugin *plugin)
 }
 
 static void
-set_custom_format (PlumaTimePlugin *plugin,
+set_custom_format (GSettings *settings,
 		   const gchar     *format)
 {
 	g_return_if_fail (format != NULL);
 
-	if (!g_settings_is_writable (plugin->priv->settings,
+	if (!g_settings_is_writable (settings,
 					   CUSTOM_FORMAT_KEY))
 		return;
 
-	g_settings_set_string (plugin->priv->settings,
+	g_settings_set_string (settings,
 				 CUSTOM_FORMAT_KEY,
 		       		 format);
 }
@@ -456,13 +456,24 @@ get_time (const gchar* format)
 }
 
 static void
-dialog_disposed (GObject *obj, gpointer dialog_pointer)
+configure_dialog_destroyed (GtkWidget *widget,
+                            gpointer   data)
+{
+	TimeConfigureDialog *dialog = (TimeConfigureDialog *) data;
+
+	pluma_debug (DEBUG_PLUGINS);
+
+	g_object_unref (dialog->settings);
+	g_slice_free (TimeConfigureDialog, data);
+}
+
+static void
+choose_format_dialog_destroyed (GtkWidget *widget,
+                                gpointer   data)
 {
 	pluma_debug (DEBUG_PLUGINS);
 
-	g_free (dialog_pointer);
-
-	pluma_debug_message (DEBUG_PLUGINS, "END");
+	g_slice_free (ChooseFormatDialog, data);
 }
 
 static GtkTreeModel *
@@ -648,6 +659,7 @@ configure_dialog_button_toggled (GtkToggleButton *button, TimeConfigureDialog *d
 		gtk_widget_set_sensitive (dialog->custom_entry, TRUE);
 		gtk_widget_set_sensitive (dialog->custom_format_example, TRUE);
 
+		set_prompt_type (dialog->settings, USE_CUSTOM_FORMAT);
 		return;
 	}
 
@@ -657,6 +669,7 @@ configure_dialog_button_toggled (GtkToggleButton *button, TimeConfigureDialog *d
 		gtk_widget_set_sensitive (dialog->custom_entry, FALSE);
 		gtk_widget_set_sensitive (dialog->custom_format_example, FALSE);
 
+		set_prompt_type (dialog->settings, USE_SELECTED_FORMAT);
 		return;
 	}
 
@@ -666,6 +679,7 @@ configure_dialog_button_toggled (GtkToggleButton *button, TimeConfigureDialog *d
 		gtk_widget_set_sensitive (dialog->custom_entry, FALSE);
 		gtk_widget_set_sensitive (dialog->custom_format_example, FALSE);
 
+		set_prompt_type (dialog->settings, PROMPT_SELECTED_FORMAT);
 		return;
 	}
 }
@@ -699,13 +713,23 @@ get_format_from_list (GtkWidget *listview)
 	g_return_val_if_reached (0);
 }
 
+static void
+configure_dialog_selection_changed (GtkTreeSelection *selection,
+                                    TimeConfigureDialog *dialog)
+{
+	gint sel_format;
+
+	sel_format = get_format_from_list (dialog->list);
+	set_selected_format (dialog->settings, formats[sel_format]);
+}
+
 static TimeConfigureDialog *
 get_configure_dialog (PlumaTimePlugin *plugin)
 {
 	TimeConfigureDialog *dialog = NULL;
+	GtkTreeSelection *selection;
 	gchar *data_dir;
 	gchar *ui_file;
-	GtkWidget *content;
 	GtkWidget *viewport;
 	PlumaTimePluginPromptType prompt_type;
 	gchar *sf, *cf;
@@ -718,37 +742,15 @@ get_configure_dialog (PlumaTimePlugin *plugin)
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	GtkWidget *dlg = gtk_dialog_new_with_buttons (_("Configure insert date/time plugin..."),
-						      NULL,
-						      GTK_DIALOG_DESTROY_WITH_PARENT,
-						      GTK_STOCK_CANCEL,
-						      GTK_RESPONSE_CANCEL,
-						      GTK_STOCK_OK,
-						      GTK_RESPONSE_OK,
-						      GTK_STOCK_HELP,
-						      GTK_RESPONSE_HELP,
-						      NULL);
-
-	g_return_val_if_fail (dlg != NULL, NULL);
-
-	dialog = g_new0 (TimeConfigureDialog, 1);
-	dialog->dialog = dlg;
-
-	/* HIG defaults */
-	gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog->dialog)), 5);
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
-			     2); /* 2 * 5 + 2 = 12 */
-	gtk_container_set_border_width (GTK_CONTAINER (gtk_dialog_get_action_area (GTK_DIALOG (dialog->dialog))),
-					5);
-	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog->dialog))), 6);
-
+	dialog = g_slice_new (TimeConfigureDialog);
+	dialog->settings = g_object_ref (plugin->priv->settings);
 
 	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	ui_file = g_build_filename (data_dir, "pluma-time-setup-dialog.ui", NULL);
 	ret = pluma_utils_get_ui_objects (ui_file,
 					  root_objects,
 					  &error_widget,
-					  "time_dialog_content", &content,
+					  "time_dialog_content", &dialog->content,
 					  "formats_viewport", &viewport,
 					  "formats_tree", &dialog->list,
 					  "always_prompt", &dialog->prompt,
@@ -763,17 +765,8 @@ get_configure_dialog (PlumaTimePlugin *plugin)
 
 	if (!ret)
 	{
-		gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
-		                    error_widget,
-		                    TRUE, TRUE, 0);
-		gtk_container_set_border_width (GTK_CONTAINER (error_widget), 5);
-
-		gtk_widget_show (error_widget);
-
-		return dialog;
+		return NULL;
 	}
-
-	gtk_window_set_resizable (GTK_WINDOW (dialog->dialog), FALSE);
 
 	sf = get_selected_format (plugin);
 	create_formats_list (dialog->list, sf, plugin);
@@ -781,9 +774,11 @@ get_configure_dialog (PlumaTimePlugin *plugin)
 
 	prompt_type = get_prompt_type (plugin);
 
-	cf = get_custom_format (plugin);
-     	gtk_entry_set_text (GTK_ENTRY(dialog->custom_entry), cf);
-       	g_free (cf);
+	g_settings_bind (dialog->settings,
+	                 CUSTOM_FORMAT_KEY,
+	                 dialog->custom_entry,
+	                 "text",
+	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 
         if (prompt_type == USE_CUSTOM_FORMAT)
         {
@@ -816,14 +811,6 @@ get_configure_dialog (PlumaTimePlugin *plugin)
 	/* setup a window of a sane size. */
 	gtk_widget_set_size_request (GTK_WIDGET (viewport), 10, 200);
 
-	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
-			    content, FALSE, FALSE, 0);
-	g_object_unref (content);
-	gtk_container_set_border_width (GTK_CONTAINER (content), 5);
-
-	gtk_dialog_set_default_response (GTK_DIALOG (dialog->dialog),
-					 GTK_RESPONSE_OK);
-
 	g_signal_connect (dialog->custom,
 			  "toggled",
 			  G_CALLBACK (configure_dialog_button_toggled),
@@ -836,14 +823,20 @@ get_configure_dialog (PlumaTimePlugin *plugin)
 			  "toggled",
 			  G_CALLBACK (configure_dialog_button_toggled),
 			  dialog);
-	g_signal_connect (dialog->dialog,
-			  "dispose",
-			  G_CALLBACK (dialog_disposed),
+	g_signal_connect (dialog->content,
+			  "destroy",
+			  G_CALLBACK (configure_dialog_destroyed),
 			  dialog);
 	g_signal_connect (dialog->custom_entry,
 			  "changed",
 			  G_CALLBACK (updated_custom_format_example),
 			  dialog->custom_format_example);
+
+	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (dialog->list));
+	g_signal_connect (selection,
+			  "changed",
+			  G_CALLBACK (configure_dialog_selection_changed),
+			  dialog);
 
 	return dialog;
 }
@@ -874,8 +867,8 @@ choose_format_dialog_row_activated (GtkTreeView        *list,
 	sel_format = get_format_from_list (dialog->list);
 	the_time = get_time (formats[sel_format]);
 
-	set_prompt_type (dialog->plugin, PROMPT_SELECTED_FORMAT);
-	set_selected_format (dialog->plugin, formats[sel_format]);
+	set_prompt_type (dialog->settings, PROMPT_SELECTED_FORMAT);
+	set_selected_format (dialog->settings, formats[sel_format]);
 
 	g_return_if_fail (the_time != NULL);
 
@@ -900,7 +893,8 @@ get_choose_format_dialog (GtkWindow                 *parent,
 	if (parent != NULL)
 		wg = gtk_window_get_group (parent);
 
-	dialog = g_new0 (ChooseFormatDialog, 1);
+	dialog = g_slice_new (ChooseFormatDialog);
+	dialog->settings = plugin->priv->settings;
 
 	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	ui_file = g_build_filename (data_dir, "pluma-time-dialog.ui", NULL);
@@ -999,8 +993,8 @@ get_choose_format_dialog (GtkWindow                 *parent,
 			  G_CALLBACK (choose_format_dialog_button_toggled),
 			  dialog);
 	g_signal_connect (dialog->dialog,
-			  "dispose",
-			  G_CALLBACK (dialog_disposed),
+			  "destroy",
+			  G_CALLBACK (choose_format_dialog_destroyed),
 			  dialog);
 	g_signal_connect (dialog->custom_entry,
 			  "changed",
@@ -1045,8 +1039,8 @@ choose_format_dialog_response_cb (GtkWidget          *widget,
 				sel_format = get_format_from_list (dialog->list);
 				the_time = get_time (formats[sel_format]);
 
-				set_prompt_type (dialog->plugin, PROMPT_SELECTED_FORMAT);
-				set_selected_format (dialog->plugin, formats[sel_format]);
+				set_prompt_type (dialog->settings, PROMPT_SELECTED_FORMAT);
+				set_selected_format (dialog->settings, formats[sel_format]);
 			}
 			else
 			{
@@ -1055,8 +1049,8 @@ choose_format_dialog_response_cb (GtkWidget          *widget,
 				format = gtk_entry_get_text (GTK_ENTRY (dialog->custom_entry));
 				the_time = get_time (format);
 
-				set_prompt_type (dialog->plugin, PROMPT_CUSTOM_FORMAT);
-				set_custom_format (dialog->plugin, format);
+				set_prompt_type (dialog->settings, PROMPT_CUSTOM_FORMAT);
+				set_custom_format (dialog->settings, format);
 			}
 
 			g_return_if_fail (the_time != NULL);
@@ -1112,7 +1106,7 @@ time_cb (GtkAction  *action,
 		if (dialog != NULL)
 		{
 			dialog->buffer = buffer;
-			dialog->plugin = plugin;
+			dialog->settings = plugin->priv->settings;
 
 			g_signal_connect (dialog->dialog,
 					  "response",
@@ -1132,70 +1126,6 @@ time_cb (GtkAction  *action,
 	g_free (the_time);
 }
 
-static void
-ok_button_pressed (TimeConfigureDialog *dialog)
-{
-	gint sel_format;
-	const gchar *custom_format;
-
-	pluma_debug (DEBUG_PLUGINS);
-
-	sel_format = get_format_from_list (dialog->list);
-
-	custom_format = gtk_entry_get_text (GTK_ENTRY (dialog->custom_entry));
-
-	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->custom)))
-	{
-		set_prompt_type (dialog->plugin, USE_CUSTOM_FORMAT);
-		set_custom_format (dialog->plugin, custom_format);
-	}
-	else if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->use_list)))
-	{
-		set_prompt_type (dialog->plugin, USE_SELECTED_FORMAT);
-		set_selected_format (dialog->plugin, formats [sel_format]);
-	}
-	else
-	{
-		/* Default to prompt the user with the list selected */
-		set_prompt_type (dialog->plugin, PROMPT_SELECTED_FORMAT);
-	}
-
-	pluma_debug_message (DEBUG_PLUGINS, "Sel: %d", sel_format);
-}
-
-static void
-configure_dialog_response_cb (GtkWidget           *widget,
-			      gint                 response,
-			      TimeConfigureDialog *dialog)
-{
-	switch (response)
-	{
-		case GTK_RESPONSE_HELP:
-		{
-			pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_HELP");
-
-			pluma_help_display (GTK_WINDOW (widget),
-					    NULL,
-					    "pluma-insert-date-time-plugin#pluma-date-time-configure");
-			break;
-		}
-		case GTK_RESPONSE_OK:
-		{
-			pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_OK");
-
-			ok_button_pressed (dialog);
-
-			gtk_widget_destroy (dialog->dialog);
-			break;
-		}
-		case GTK_RESPONSE_CANCEL:
-		{
-			pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_CANCEL");
-			gtk_widget_destroy (dialog->dialog);
-		}
-	}
-}
-
 static GtkWidget *
 pluma_time_plugin_create_configure_widget (PeasGtkConfigurable *configurable)
 {
@@ -1203,14 +1133,7 @@ pluma_time_plugin_create_configure_widget (PeasGtkConfigurable *configurable)
 
 	dialog = get_configure_dialog (PLUMA_TIME_PLUGIN (configurable));
 
-	dialog->plugin = PLUMA_TIME_PLUGIN (configurable);
-
-	g_signal_connect (dialog->dialog,
-			  "response",
-			  G_CALLBACK (configure_dialog_response_cb),
-			  dialog);
-
-	return GTK_WIDGET (dialog->dialog);
+	return dialog->content;
 }
 
 static void
