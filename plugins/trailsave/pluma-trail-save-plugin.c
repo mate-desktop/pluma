@@ -22,9 +22,35 @@
 #include <config.h>
 #endif
 
+#include <libpeas/peas-activatable.h>
+
+#include <pluma/pluma-window.h>
+#include <pluma/pluma-debug.h>
+
 #include "pluma-trail-save-plugin.h"
 
-PLUMA_PLUGIN_REGISTER_TYPE(PlumaTrailSavePlugin, pluma_trail_save_plugin)
+#define PLUMA_TRAIL_SAVE_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
+					            PLUMA_TYPE_TRAIL_SAVE_PLUGIN, \
+					            PlumaTrailSavePluginPrivate))
+
+static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaTrailSavePlugin,
+                                pluma_trail_save_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init))
+
+struct _PlumaTrailSavePluginPrivate
+{
+	GtkWidget *window;
+};
+
+enum {
+	PROP_0,
+	PROP_OBJECT
+};
 
 static void
 strip_trailing_spaces (GtkTextBuffer *text_buffer)
@@ -107,7 +133,7 @@ on_save (PlumaDocument         *document,
 	 const gchar           *uri,
 	 PlumaEncoding         *encoding,
 	 PlumaDocumentSaveFlags save_flags,
-	 PlumaPlugin           *plugin)
+	 PlumaTrailSavePlugin  *plugin)
 {
 	GtkTextBuffer *text_buffer = GTK_TEXT_BUFFER (document);
 
@@ -117,7 +143,7 @@ on_save (PlumaDocument         *document,
 static void
 on_tab_added (PlumaWindow *window,
 	      PlumaTab    *tab,
-	      PlumaPlugin *plugin)
+	      PlumaTrailSavePlugin *plugin)
 {
 	PlumaDocument *document;
 
@@ -128,7 +154,7 @@ on_tab_added (PlumaWindow *window,
 static void
 on_tab_removed (PlumaWindow *window,
 		PlumaTab    *tab,
-		PlumaPlugin *plugin)
+		PlumaTrailSavePlugin *plugin)
 {
 	PlumaDocument *document;
 
@@ -137,14 +163,18 @@ on_tab_removed (PlumaWindow *window,
 }
 
 static void
-impl_activate (PlumaPlugin *plugin,
-	       PlumaWindow *window)
+pluma_trail_save_plugin_activate (PeasActivatable *activatable)
 {
+	PlumaTrailSavePlugin *plugin;
+	PlumaWindow *window;
 	GList *documents;
 	GList *documents_iter;
 	PlumaDocument *document;
 
 	pluma_debug (DEBUG_PLUGINS);
+
+	plugin = PLUMA_TRAIL_SAVE_PLUGIN (activatable);
+	window = PLUMA_WINDOW (plugin->priv->window);
 
 	g_signal_connect (window, "tab_added", G_CALLBACK (on_tab_added), plugin);
 	g_signal_connect (window, "tab_removed", G_CALLBACK (on_tab_removed), plugin);
@@ -163,14 +193,18 @@ impl_activate (PlumaPlugin *plugin,
 }
 
 static void
-impl_deactivate (PlumaPlugin *plugin,
-		 PlumaWindow *window)
+pluma_trail_save_plugin_deactivate (PeasActivatable *activatable)
 {
+	PlumaTrailSavePlugin *plugin;
+	PlumaWindow *window;
 	GList *documents;
 	GList *documents_iter;
 	PlumaDocument *document;
 
 	pluma_debug (DEBUG_PLUGINS);
+
+	plugin = PLUMA_TRAIL_SAVE_PLUGIN (activatable);
+	window = PLUMA_WINDOW (plugin->priv->window);
 
 	g_signal_handlers_disconnect_by_data (window, plugin);
 
@@ -191,24 +225,99 @@ static void
 pluma_trail_save_plugin_init (PlumaTrailSavePlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaTrailSavePlugin initializing");
+
+	plugin->priv = PLUMA_TRAIL_SAVE_PLUGIN_GET_PRIVATE (plugin);
 }
 
 static void
-pluma_trail_save_plugin_finalize (GObject *object)
+pluma_trail_save_plugin_dispose (GObject *object)
 {
-	pluma_debug_message (DEBUG_PLUGINS, "PlumaTrailSavePlugin finalizing");
+	PlumaTrailSavePlugin *plugin = PLUMA_TRAIL_SAVE_PLUGIN (object);
 
-	G_OBJECT_CLASS (pluma_trail_save_plugin_parent_class)->finalize (object);
+	pluma_debug_message (DEBUG_PLUGINS, "PlumaTrailSavePlugin disposing");
+
+	if (plugin->priv->window != NULL)
+	{
+		g_object_unref (plugin->priv->window);
+		plugin->priv->window = NULL;
+	}
+
+	G_OBJECT_CLASS (pluma_trail_save_plugin_parent_class)->dispose (object);
+}
+
+static void
+pluma_trail_save_plugin_set_property (GObject      *object,
+                                      guint         prop_id,
+                                      const GValue *value,
+                                      GParamSpec   *pspec)
+{
+	PlumaTrailSavePlugin *plugin = PLUMA_TRAIL_SAVE_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
+}
+
+static void
+pluma_trail_save_plugin_get_property (GObject    *object,
+                                      guint       prop_id,
+                                      GValue     *value,
+                                      GParamSpec *pspec)
+{
+	PlumaTrailSavePlugin *plugin = PLUMA_TRAIL_SAVE_PLUGIN (object);
+
+	switch (prop_id)
+	{
+		case PROP_OBJECT:
+			g_value_set_object (value, plugin->priv->window);
+			break;
+
+		default:
+			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+			break;
+	}
 }
 
 static void
 pluma_trail_save_plugin_class_init (PlumaTrailSavePluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	PlumaPluginClass *plugin_class = PLUMA_PLUGIN_CLASS (klass);
 
-	object_class->finalize = pluma_trail_save_plugin_finalize;
+	object_class->dispose = pluma_trail_save_plugin_dispose;
+	object_class->set_property = pluma_trail_save_plugin_set_property;
+	object_class->get_property = pluma_trail_save_plugin_get_property;
 
-	plugin_class->activate = impl_activate;
-	plugin_class->deactivate = impl_deactivate;
+	g_object_class_override_property (object_class, PROP_OBJECT, "object");
+
+	g_type_class_add_private (object_class, sizeof (PlumaTrailSavePluginPrivate));
+}
+
+static void
+pluma_trail_save_plugin_class_finalize (PlumaTrailSavePluginClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
+}
+
+static void
+peas_activatable_iface_init (PeasActivatableInterface *iface)
+{
+	iface->activate = pluma_trail_save_plugin_activate;
+	iface->deactivate = pluma_trail_save_plugin_deactivate;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	pluma_trail_save_plugin_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_TRAIL_SAVE_PLUGIN);
 }
