@@ -224,10 +224,8 @@ AC_ARG_ENABLE([tests],
 AM_CONDITIONAL(ENABLE_TESTS, test x$enable_tests = xyes)
 
 PLUGIN_LIBTOOL_FLAGS="-module -avoid-version"
-LOADER_LIBTOOL_FLAGS="-module -avoid-version"
 
 AC_SUBST(PLUGIN_LIBTOOL_FLAGS)
-AC_SUBST(LOADER_LIBTOOL_FLAGS)
 
 PLUMA_PLUGINS_DATA_DIR="$datadir/pluma/plugins"
 AC_SUBST(PLUMA_PLUGINS_DATA_DIR)
@@ -251,8 +249,6 @@ pluma/smclient/Makefile
 pluma/Makefile
 help/Makefile
 pixmaps/Makefile
-plugin-loaders/Makefile
-plugin-loaders/c/Makefile
 plugins/Makefile
 plugins/changecase/Makefile
 plugins/docinfo/Makefile

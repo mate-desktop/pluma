@@ -46,8 +46,6 @@ IGNORE_HFILES=		\
 	pluma-documents-panel.h			\
 	pluma-io-error-message-area.h		\
 	pluma-languages-manager.h		\
-	pluma-object-module.h			\
-	pluma-plugin-manager.h			\
 	pluma-plugins-engine.h			\
 	pluma-prefs-manager-private.h		\
 	pluma-session.h				\
