@@ -21,11 +21,11 @@ ui_DATA = \
 	pluma-time-dialog.ui				\
 	pluma-time-setup-dialog.ui
 
-plugin_in_files = time.pluma-plugin.desktop.in
+plugin_in_files = time.plugin.desktop.in
 
-%.pluma-plugin: %.pluma-plugin.desktop.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
+%.plugin: %.plugin.desktop.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
 
-plugin_DATA = $(plugin_in_files:.pluma-plugin.desktop.in=.pluma-plugin)
+plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
 
 @INTLTOOL_XML_NOMERGE_RULE@
 time_gschema_in = org.mate.pluma.plugins.time.gschema.xml.in
