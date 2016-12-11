@@ -47,6 +47,7 @@ NOINST_H_FILES =			\
 	pluma-document-output-stream.h	\
 	pluma-document-saver.h		\
 	pluma-documents-panel.h		\
+	pluma-file-chooser-dialog.h	\
 	pluma-gio-document-loader.h	\
 	pluma-gio-document-saver.h	\
 	pluma-history-entry.h		\
@@ -71,7 +72,6 @@ INST_H_FILES =				\
 	pluma-document.h 		\
 	pluma-encodings.h		\
 	pluma-encodings-combo-box.h	\
-	pluma-file-chooser-dialog.h	\
 	pluma-help.h 			\
 	pluma-message-bus.h		\
 	pluma-message-type.h		\
