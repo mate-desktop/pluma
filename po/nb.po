@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-01 10:33+0300\n"
-"PO-Revision-Date: 2016-05-01 01:23+0000\n"
+"PO-Revision-Date: 2016-11-19 14:41+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/mate/MATE/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -426,7 +426,7 @@ msgstr "Aktive tillegg"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "Liste over aktive tillegg. Denne inneholder «lokasjon» for de aktive tilleggene. Se filen .pluma-plugin for å finne «lokasjon» for et gitt tillegg."
+msgstr "Liste over aktive tillegg. Denne inneholder «plassering» for de aktive tilleggene. Se filen .pluma-plugin for å finne «plassering» for et gitt tillegg."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -884,14 +884,14 @@ msgstr "%s\nKjør «%s --help» for å se en liste med tilgjengelige kommandolin
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
 msgid "Loading file '%s'…"
-msgstr "Laster fil «%s»..."
+msgstr "Laster fil «%s»…"
 
 #: ../pluma/pluma-commands-file.c:259
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "Laster %d fil..."
-msgstr[1] "Laster %d filer..."
+msgstr[0] "Laster %d fil…"
+msgstr[1] "Laster %d filer…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:465
@@ -910,16 +910,16 @@ msgstr "Vil du prøve å erstatte den med filen du lagrer?"
 #: ../pluma/pluma-commands-file.c:650 ../pluma/pluma-commands-file.c:873
 #, c-format
 msgid "Saving file '%s'…"
-msgstr "Lagrer fil «%s»..."
+msgstr "Lagrer fil «%s»…"
 
 #: ../pluma/pluma-commands-file.c:758
 msgid "Save As…"
-msgstr "Lagre som..."
+msgstr "Lagre som…"
 
 #: ../pluma/pluma-commands-file.c:1087
 #, c-format
 msgid "Reverting the document '%s'…"
-msgstr "Forkaster endringer i dokument «%s»..."
+msgstr "Forkaster endringer i dokumentet «%s»…"
 
 #: ../pluma/pluma-commands-file.c:1132
 #, c-format
@@ -1205,25 +1205,25 @@ msgstr "Kunne ikke finne filen %s."
 #: ../pluma/pluma-io-error-message-area.c:258
 #: ../pluma/pluma-io-error-message-area.c:265
 msgid "Please check that you typed the location correctly and try again."
-msgstr "Vennligst sjekk at du skrev inn lokasjonen korrekt og prøv igjen."
+msgstr "Sjekk at du skrev inn plasseringen rett og prøv igjen."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: ../pluma/pluma-io-error-message-area.c:234
 #, c-format
 msgid "pluma cannot handle %s locations."
-msgstr "pluma kan ikke håndtere %s-lokasjoner."
+msgstr "pluma kan ikke håndtere %s-plasseringer."
 
 #: ../pluma/pluma-io-error-message-area.c:240
 msgid "pluma cannot handle this location."
-msgstr "pluma kan ikke håndtere denne lokasjonen."
+msgstr "pluma kan ikke håndtere denne plasseringen."
 
 #: ../pluma/pluma-io-error-message-area.c:248
 msgid "The location of the file cannot be mounted."
-msgstr "Lokasjonen for filen kan ikke monteres."
+msgstr "Plasseringen for filen kan ikke monteres."
 
 #: ../pluma/pluma-io-error-message-area.c:252
 msgid "The location of the file cannot be accessed because it is not mounted."
-msgstr "Lokasjonen for filen kan ikke aksesseres fordi den ikke er montert."
+msgstr "Plasseringen for filen kan ikke nås fordi den ikke er montert."
 
 #: ../pluma/pluma-io-error-message-area.c:256
 #, c-format
@@ -1233,21 +1233,21 @@ msgstr "%s er en katalog."
 #: ../pluma/pluma-io-error-message-area.c:263
 #, c-format
 msgid "%s is not a valid location."
-msgstr "«%s» er ikke en gyldig lokasjon."
+msgstr "«%s» er ikke en gyldig plassering."
 
 #: ../pluma/pluma-io-error-message-area.c:293
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
-msgstr "Vert %s ble ikke funnet. Vennligst sjekk at dine mellomtjenings-innstillinger er riktige og prøv igjen."
+msgstr "Verten %s ble ikke funnet. Sjekk at dine mellomtjenings-innstillinger er riktige og prøv igjen."
 
 #: ../pluma/pluma-io-error-message-area.c:306
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
-msgstr "Vertsnavnet er ugyldig. Vennligst sjekk at du skrev inn lokasjonen korrekt og prøv igjen."
+msgstr "Vertsnavnet er ugyldig. Sjekk at du skrev inn plasseringen rett og prøv igjen."
 
 #: ../pluma/pluma-io-error-message-area.c:314
 #, c-format
@@ -1256,7 +1256,7 @@ msgstr "%s er ikke en vanlig fil."
 
 #: ../pluma/pluma-io-error-message-area.c:319
 msgid "Connection timed out. Please try again."
-msgstr "Tidsavbrudd for tilkobling. Vennligst prøv igjen."
+msgstr "Tidsavbrudd for tilkobling. Prøv igjen."
 
 #: ../pluma/pluma-io-error-message-area.c:342
 msgid "The file is too big."
@@ -1311,7 +1311,7 @@ msgstr "pluma har ikke klart å gjenkjenne tegnkodingen."
 #: ../pluma/pluma-io-error-message-area.c:632
 #: ../pluma/pluma-io-error-message-area.c:654
 msgid "Please check that you are not trying to open a binary file."
-msgstr "Vennligst sjekk om du prøver å åpne en binær fil."
+msgstr "Sjekk om du prøver å åpne en binær fil."
 
 #: ../pluma/pluma-io-error-message-area.c:633
 msgid "Select a character encoding from the menu and try again."
@@ -1417,55 +1417,55 @@ msgstr "pluma kunne ikke ta sikkerhetskopi av den gamle kopien av filen før lag
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
-msgstr "pluma kan ikke håndtere %s-lokasjoner i skrivemodus. Vennligst sjekk at du skrev inn lokasjonen korrekt og prøv igjen."
+msgstr "pluma kan ikke håndtere %s-plasseringer i skrivemodus. Sjekk at du skrev inn plasseringen rett og prøv igjen."
 
 #: ../pluma/pluma-io-error-message-area.c:1128
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
-msgstr "pluma kan ikke håndtere denne lokasjonen i skrivemodus. Vennligst sjekk at du skrev inn lokasjonen korrekt og prøv igjen."
+msgstr "pluma kan ikke håndtere denne plasseringen i skrivemodus. Sjekk at du skrev inn plasseringen rett og prøv igjen."
 
 #: ../pluma/pluma-io-error-message-area.c:1137
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
-msgstr "%s er ikke en gyldig lokasjon. Vennligst sjekk at du skrev inn lokasjonen korrekt og prøv igjen."
+msgstr "%s er ikke en gyldig plassering. Sjekk at du skrev inn plasseringen rett og prøv igjen."
 
 #: ../pluma/pluma-io-error-message-area.c:1143
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "Du har ikke nødvendige rettigheter til å lagre filen. Vennligst sjekk at du skrev inn lokasjonen korrekt og prøv igjen."
+msgstr "Du har ikke nødvendige rettigheter til å lagre filen. Sjekk at du skrev inn plasseringen rett og prøv igjen."
 
 #: ../pluma/pluma-io-error-message-area.c:1149
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
-msgstr "Det er ikke nok plass på disken til å lagre filen. Vennligst frigjør plass og prøv igjen."
+msgstr "Det er ikke nok plass på disken til å lagre filen. Frigjør plass og prøv igjen."
 
 #: ../pluma/pluma-io-error-message-area.c:1154
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "Du prøver å lagre filen på en skrivebeskyttet disk. Vennligst sjekk at du skrev inn lokasjonen korrekt og prøv igjen."
+msgstr "Du prøver å lagre filen på en skrivebeskyttet disk.Sjekk at du skrev inn plasseringen rett og prøv igjen."
 
 #: ../pluma/pluma-io-error-message-area.c:1160
 msgid "A file with the same name already exists. Please use a different name."
-msgstr "En fil med det samme navnet eksisterer allerede. Vennligst bruk et annet navn."
+msgstr "En fil med det samme navnet finnes allerede. Bruk et annet navn."
 
 #: ../pluma/pluma-io-error-message-area.c:1165
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
-msgstr "Disken du prøver å lagre filen på har en begrensning på lengde på filnavn. Vennligst bruk et kortere navn."
+msgstr "Disken du prøver å lagre filen på har en begrensning for filnavnslengde. Bruk et kortere navn."
 
 #: ../pluma/pluma-io-error-message-area.c:1172
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "Disken du prøver å lagre filen på har en begrensning på filstørrelse. Vennligst prøv å lagre en mindre fil eller lagre den på en disk som ikke har denne begrensningen."
+msgstr "Disken du prøver å lagre filen på har en begrensning for filstørrelse. Prøv å lagre en mindre fil eller lagre den på en disk som ikke har denne begrensningen."
 
 #: ../pluma/pluma-io-error-message-area.c:1188
 #, c-format
@@ -1829,7 +1829,7 @@ msgstr "Bruk_ervalg"
 
 #: ../pluma/pluma-ui.h:63
 msgid "Configure the application"
-msgstr "Konfigurer applikasjonen"
+msgstr "Sett opp programmet"
 
 #. Help menu
 #: ../pluma/pluma-ui.h:66
@@ -1842,7 +1842,7 @@ msgstr "Åpne pluma-håndbok"
 
 #: ../pluma/pluma-ui.h:69
 msgid "About this application"
-msgstr "Om denne applikasjonen"
+msgstr "Om dette programmet"
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
@@ -2061,7 +2061,7 @@ msgstr "Vis eller skjul bunnpanelet i dette vinduet"
 
 #: ../pluma/pluma-utils.c:1100
 msgid "Please check your installation."
-msgstr "Vennligst sjekk din installasjon."
+msgstr "Sjekk installasjonen din"
 
 #: ../pluma/pluma-utils.c:1177
 #, c-format
@@ -2497,7 +2497,7 @@ msgstr "Enkel filtilgang fra sidelinjen"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:1
 msgid "Set Location to First Document"
-msgstr "Sett lokasjonen til første dokument"
+msgstr "Sett plasseringen til første dokument"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:2
 msgid ""
@@ -2562,11 +2562,11 @@ msgstr "Virtuell rotkatalog som brukes når fillesertillegget og onload/tree_vie
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
-msgstr "Aktiver gjenoppretting av eksterne lokasjoner"
+msgstr "Aktiver gjenoppretting av eksterne plasseringer"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:14
 msgid "Sets whether to enable restoring of remote locations."
-msgstr "Bestemmer om gjenoppretting fra eksterne lokasjoner skal aktiveres."
+msgstr "Bestemmer om gjenoppretting fra eksterne plasseringer skal aktiveres."
 
 #: ../plugins/filebrowser/pluma-file-bookmarks-store.c:235
 msgid "File System"
@@ -2578,7 +2578,7 @@ msgstr "_Sett rot til aktivt dokument"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:539
 msgid "Set the root to the active document location"
-msgstr "Sett roten til lokasjonen for aktivt dokument"
+msgstr "Sett roten til plasseringen for aktivt dokument"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:544
 msgid "_Open terminal here"
@@ -2748,19 +2748,19 @@ msgstr "Endre navn på valgt fil eller mappe"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:849
 msgid "_Previous Location"
-msgstr "_Forrige lokasjon"
+msgstr "_Forrige plassering"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:851
 msgid "Go to the previous visited location"
-msgstr "Gå til forrige lokasjon"
+msgstr "Gå til forrige plassering"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:853
 msgid "_Next Location"
-msgstr "_Neste lokasjon"
+msgstr "_Neste plassering"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:854
 msgid "Go to the next visited location"
-msgstr "Gå til neste lokasjon"
+msgstr "Gå til neste plassering"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:855
 msgid "Re_fresh View"
@@ -2800,24 +2800,24 @@ msgstr "Vis binære filer"
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1010
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1031
 msgid "Previous location"
-msgstr "Forrige lokasjon"
+msgstr "Forrige plassering"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1003
 msgid "Go to previous location"
-msgstr "Gå til forrige lokasjon"
+msgstr "Gå til forrige plassering"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1005
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1026
 msgid "Go to a previously opened location"
-msgstr "Gå til en tidligere åpnet lokasjon"
+msgstr "Gå til en tidligere åpnet plassering"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
 msgid "Next location"
-msgstr "Neste lokasjon"
+msgstr "Neste plassering"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1024
 msgid "Go to next location"
-msgstr "Gå til neste lokasjon"
+msgstr "Gå til neste plassering"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1236
 msgid "_Match Filename"
@@ -3053,7 +3053,7 @@ msgstr "Arkivet «%s» kunne ikke opprettes"
 #: ../plugins/snippets/snippets/Exporter.py:82
 #, python-format
 msgid "Target directory \"%s\" does not exist"
-msgstr "Målkatalog «%s» eksisterer ikke"
+msgstr "Målmappa «%s» finnes ikke"
 
 #: ../plugins/snippets/snippets/Exporter.py:85
 #, python-format
@@ -3064,7 +3064,7 @@ msgstr "Målkatalog «%s» er ikke en gyldig katalog"
 #: ../plugins/snippets/snippets/Importer.py:83
 #, python-format
 msgid "File \"%s\" does not exist"
-msgstr "Fil «%s» eksisterer ikke"
+msgstr "Fila «%s» finnes ikke"
 
 #: ../plugins/snippets/snippets/Importer.py:32
 #, python-format
