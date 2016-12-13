@@ -98,7 +98,7 @@ static const GtkActionEntry action_entries[] =
 };
 
 static void
-sort_dialog_dispose (GObject *obj,
+sort_dialog_destroy (GObject *obj,
 		     gpointer  dialog_pointer)
 {
 	pluma_debug (DEBUG_PLUGINS);
@@ -203,8 +203,8 @@ get_sort_dialog (PlumaSortPlugin *plugin)
 					 GTK_RESPONSE_OK);
 
 	g_signal_connect (dialog->dialog,
-			  "dispose",
-			  G_CALLBACK (sort_dialog_dispose),
+			  "destroy",
+			  G_CALLBACK (sort_dialog_destroy),
 			  dialog);
 
 	g_signal_connect (dialog->dialog,
