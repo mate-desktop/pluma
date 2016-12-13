@@ -19,7 +19,6 @@
 import os
 import re
 import locale
-import platform
 
 class Singleton(object):
     _instance = None
@@ -39,22 +38,13 @@ class ToolLibrary(Singleton):
     def set_locations(self, datadir):
         self.locations = []
 
-        if platform.platform() != 'Windows':
-            for d in self.get_xdg_data_dirs():
-                self.locations.append(os.path.join(d, 'pluma', 'plugins', 'externaltools', 'tools'))
+        for d in self.get_xdg_data_dirs():
+            self.locations.append(os.path.join(d, 'pluma', 'plugins', 'externaltools', 'tools'))
 
         self.locations.append(datadir)
 
         # self.locations[0] is where we save the custom scripts
-        if platform.platform() == 'Windows':
-            toolsdir = os.path.expanduser('~/pluma/tools')
-        else:
-            userdir = os.getenv('MATE22_USER_DIR')
-            if userdir:
-                toolsdir = os.path.join(userdir, 'pluma/tools')
-            else:
-                toolsdir = os.path.expanduser('~/.config/pluma/tools')
-
+        toolsdir = os.path.expanduser('~/.config/pluma/tools')
         self.locations.insert(0, toolsdir);
 
         if not os.path.isdir(self.locations[0]):
@@ -78,11 +68,7 @@ class ToolLibrary(Singleton):
     # storage file.
     def import_old_xml_store(self):
         import xml.etree.ElementTree as et
-        userdir = os.getenv('MATE22_USER_DIR')
-        if userdir:
-            filename = os.path.join(userdir, 'pluma/pluma-tools.xml')
-        else:
-            filename = os.path.expanduser('~/.config/pluma/pluma-tools.xml')
+        filename = os.path.expanduser('~/.config/pluma/pluma-tools.xml')
 
         if not os.path.isfile(filename):
             return
