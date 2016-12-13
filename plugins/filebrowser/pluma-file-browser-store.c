@@ -26,7 +26,6 @@
 #include <string.h>
 #include <glib/gi18n-lib.h>
 #include <gio/gio.h>
-#include <pluma/pluma-utils.h>
 
 #include "pluma-file-browser-store.h"
 #include "pluma-file-browser-marshal.h"

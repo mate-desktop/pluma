@@ -31,7 +31,6 @@
 
 #include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
-#include <pluma/pluma-utils.h>
 
 #define DOCUMENT_DATA_KEY "PlumaModelinePluginDocumentData"
 
