@@ -66,6 +66,8 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 
 	engine->priv->plugin_settings = g_settings_new (PLUMA_SCHEMA);
 
+	peas_engine_enable_loader (PEAS_ENGINE (engine), "python");
+
 	/* This should be moved to libpeas */
 	if (!g_irepository_require (g_irepository_get_default (),
 	                            "Peas", "1.0", 0, &error))
