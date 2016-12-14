@@ -16,11 +16,9 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-__all__ = ('ExternalToolsPlugin', 'ExternalToolsWindowHelper',
-           'Manager', 'OutputPanel', 'Capture', 'UniqueById')
+__all__ = ('ExternalToolsPlugin', 'Manager', 'OutputPanel', 'Capture', 'UniqueById')
 
-import pluma
-import gtk
+from gi.repository import GObject, Gtk, Peas, Pluma
 from manager import Manager
 from library import ToolLibrary
 from outputpanel import OutputPanel
@@ -28,17 +26,16 @@ from capture import Capture
 from functions import *
 
 class ToolMenu(object):
-    ACTION_HANDLER_DATA_KEY = "ExternalToolActionHandlerData"
-    ACTION_ITEM_DATA_KEY = "ExternalToolActionItemData"
-
-    def __init__(self, library, window, menupath):
+    def __init__(self, library, window, panel, plugin, menupath):
         super(ToolMenu, self).__init__()
         self._library = library
         self._window = window
+        self._panel = panel
+        self._plugin = plugin
         self._menupath = menupath
 
         self._merge_id = 0
-        self._action_group = gtk.ActionGroup("ExternalToolsPluginToolActions")
+        self._action_group = Gtk.ActionGroup("ExternalToolsPluginToolActions")
         self._signals = []
 
         self.update()
@@ -53,17 +50,15 @@ class ToolMenu(object):
             self._merge_id = 0
 
         for action in self._action_group.list_actions():
-            handler = action.get_data(self.ACTION_HANDLER_DATA_KEY)
+            if action._tool_handler is not None:
+                action.disconnect(action._tool_handler)
 
-            if handler is not None:
-                action.disconnect(handler)
-
-            action.set_data(self.ACTION_ITEM_DATA_KEY, None)
-            action.set_data(self.ACTION_HANDLER_DATA_KEY, None)
+            action._tool_item = None
+            action._tool_handler = None
 
             self._action_group.remove_action(action)
         
-        accelmap = gtk.accel_map_get()
+        accelmap = Gtk.AccelMap.get()
 
         for s in self._signals:
             accelmap.disconnect(s)
@@ -75,43 +70,44 @@ class ToolMenu(object):
 
         for item in directory.subdirs:
             action_name = 'ExternalToolDirectory%X' % id(item)
-            action = gtk.Action(action_name, item.name.replace('_', '__'), None, None)
+            action = Gtk.Action(action_name, item.name.replace('_', '__'), None, None)
             self._action_group.add_action(action)
 
             manager.add_ui(self._merge_id, path,
                            action_name, action_name,
-                           gtk.UI_MANAGER_MENU, False)
+                           Gtk.UIManagerItemType.MENU, False)
                            
             self._insert_directory(item, path + '/' + action_name)
 
         for item in directory.tools:
             action_name = 'ExternalToolTool%X' % id(item)
-            action = gtk.Action(action_name, item.name.replace('_', '__'), item.comment, None)
-            handler = action.connect("activate", capture_menu_action, self._window, item)
+            action = Gtk.Action(action_name, item.name.replace('_', '__'), item.comment, None)
+            handler = action.connect("activate", capture_menu_action, self._window, self._panel, item)
 
-            action.set_data(self.ACTION_ITEM_DATA_KEY, item)
-            action.set_data(self.ACTION_HANDLER_DATA_KEY, handler)
+            # Attach the item and the handler to the action object
+            action._tool_item = item
+            action._tool_handler = handler
             
             # Make sure to replace accel
             accelpath = '<Actions>/ExternalToolsPluginToolActions/%s' % (action_name, )
             
             if item.shortcut:
-                key, mod = gtk.accelerator_parse(item.shortcut)
-                gtk.accel_map_change_entry(accelpath, key, mod, True)
+                key, mod = Gtk.accelerator_parse(item.shortcut)
+                Gtk.AccelMap.change_entry(accelpath, key, mod, True)
                 
-                self._signals.append(gtk.accel_map_get().connect('changed::%s' % (accelpath,), self.on_accelmap_changed, item))
+                self._signals.append(Gtk.AccelMap.get().connect('changed::%s' % (accelpath,), self.on_accelmap_changed, item))
                 
             self._action_group.add_action_with_accel(action, item.shortcut)
 
             manager.add_ui(self._merge_id, path,
                            action_name, action_name,
-                           gtk.UI_MANAGER_MENUITEM, False)
+                           Gtk.UIManagerItemType.MENUITEM, False)
 
     def on_accelmap_changed(self, accelmap, path, key, mod, tool):
-        tool.shortcut = gtk.accelerator_name(key, mod)
+        tool.shortcut = Gtk.accelerator_name(key, mod)
         tool.save()
         
-        self._window.get_data("ExternalToolsPluginWindowData").update_manager(tool)
+        self._plugin.update_manager(tool)
 
     def update(self):
         self.remove()
@@ -150,29 +146,36 @@ class ToolMenu(object):
         language = document.get_language()
 
         for action in self._action_group.list_actions():
-            item = action.get_data(self.ACTION_ITEM_DATA_KEY)
+            if action._tool_item is not None:
+                action.set_visible(states[action._tool_item.applicability] and
+                                   self.filter_language(language, action._tool_item))
 
-            if item is not None:
-                action.set_visible(states[item.applicability] and self.filter_language(language, item))
+class ExternalToolsPlugin(GObject.Object, Peas.Activatable):
+    __gtype_name__ = "ExternalToolsPlugin"
 
-class ExternalToolsWindowHelper(object):
-    def __init__(self, plugin, window):
-        super(ExternalToolsWindowHelper, self).__init__()
+    object = GObject.Property(type=GObject.Object)
 
-        self._window = window
-        self._plugin = plugin
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+        self._manager = None
+        self._manager_default_size = None
+
+    def do_activate(self):
         self._library = ToolLibrary()
+        self._library.set_locations(os.path.join(self.plugin_info.get_data_dir(), 'tools'))
 
+        window = self.object
         manager = window.get_ui_manager()
 
-        self._action_group = gtk.ActionGroup('ExternalToolsPluginActions')
+        self._action_group = Gtk.ActionGroup('ExternalToolsPluginActions')
         self._action_group.set_translation_domain('pluma')
         self._action_group.add_actions([('ExternalToolManager',
                                          None,
                                          _('Manage _External Tools...'),
                                          None,
                                          _("Opens the External Tools Manager"),
-                                         lambda action: plugin.open_dialog()),
+                                         lambda action: self.open_dialog()),
                                         ('ExternalTools',
                                         None,
                                         _('External _Tools'),
@@ -201,69 +204,47 @@ class ExternalToolsWindowHelper(object):
 
         self._merge_id = manager.add_ui_from_string(ui_string)
 
-        self.menu = ToolMenu(self._library, self._window,
+        # Create output console
+        self._output_buffer = OutputPanel(self.plugin_info.get_data_dir(), window)
+
+        self.menu = ToolMenu(self._library, window, self._output_buffer, self,
                              "/MenuBar/ToolsMenu/ToolsOps_4/ExternalToolsMenu/ExternalToolPlaceholder")
         manager.ensure_update()
 
-        # Create output console
-        self._output_buffer = OutputPanel(self._plugin.get_data_dir(), window)
         bottom = window.get_bottom_panel()
-        bottom.add_item(self._output_buffer.panel,
-                        _("Shell Output"),
-                        gtk.STOCK_EXECUTE)
+        bottom.add_item_with_stock_icon(self._output_buffer.panel,
+                                        _("Shell Output"),
+                                        Gtk.STOCK_EXECUTE)
 
-    def update_ui(self):
-        self.menu.filter(self._window.get_active_document())
-        self._window.get_ui_manager().ensure_update()
+    def do_deactivate(self):
+        window = self.object
+        manager = window.get_ui_manager()
 
-    def deactivate(self):
-        manager = self._window.get_ui_manager()
         self.menu.deactivate()
         manager.remove_ui(self._merge_id)
         manager.remove_action_group(self._action_group)
         manager.ensure_update()
 
-        bottom = self._window.get_bottom_panel()
+        bottom = window.get_bottom_panel()
         bottom.remove_item(self._output_buffer.panel)
 
-    def update_manager(self, tool):
-        self._plugin.update_manager(tool)
+    def do_update_state(self):
+        window = self.object
 
-class ExternalToolsPlugin(pluma.Plugin):
-    WINDOW_DATA_KEY = "ExternalToolsPluginWindowData"
-
-    def __init__(self):
-        super(ExternalToolsPlugin, self).__init__()
-        
-        self._manager = None
-        self._manager_default_size = None
-
-        ToolLibrary().set_locations(os.path.join(self.get_data_dir(), 'tools'))
-
-    def activate(self, window):
-        helper = ExternalToolsWindowHelper(self, window)
-        window.set_data(self.WINDOW_DATA_KEY, helper)
-
-    def deactivate(self, window):
-        window.get_data(self.WINDOW_DATA_KEY).deactivate()
-        window.set_data(self.WINDOW_DATA_KEY, None)
-
-    def update_ui(self, window):
-        window.get_data(self.WINDOW_DATA_KEY).update_ui()
-
-    def create_configure_dialog(self):
-        return self.open_dialog()
+        self.menu.filter(window.get_active_document())
+        window.get_ui_manager().ensure_update()
 
     def open_dialog(self):
         if not self._manager:
-            self._manager = Manager(self.get_data_dir())
+            self._manager = Manager(self.plugin_info.get_data_dir())
 
             if self._manager_default_size:
                 self._manager.dialog.set_default_size(*self._manager_default_size)
 
             self._manager.dialog.connect('destroy', self.on_manager_destroy)
+            self._manager.connect('tools-updated', self.on_manager_tools_updated)
 
-        window = pluma.app_get_default().get_active_window()
+        window = Pluma.App.get_default().get_active_window()
         self._manager.run(window)
 
         return self._manager.dialog
@@ -275,7 +256,10 @@ class ExternalToolsPlugin(pluma.Plugin):
         self._manager.tool_changed(tool, True)
 
     def on_manager_destroy(self, dialog):
-        self._manager_default_size = [dialog.allocation.width, dialog.allocation.height]
+        self._manager_default_size = self._manager.get_final_size()
         self._manager = None
+
+    def on_manager_tools_updated(self, manager):
+        self.menu.update()
 
 # ex:ts=4:et:

@@ -19,17 +19,13 @@
 
 __all__ = ('OutputPanel', 'UniqueById')
 
-import gtk, pluma
-import pango
-import gobject
 import os
 from weakref import WeakKeyDictionary
 from capture import *
-from gtk import gdk
 import re
-import gio
 import linkparsing
 import filelookup
+from gi.repository import GLib, Gdk, Gtk, Pango, Pluma
 
 class UniqueById:
     __shared_state = WeakKeyDictionary()
@@ -58,12 +54,12 @@ class OutputPanel(UniqueById):
         }
 
         self.window = window
-        self.ui = gtk.Builder()
+        self.ui = Gtk.Builder()
         self.ui.add_from_file(os.path.join(datadir, 'ui', 'outputpanel.ui'))
         self.ui.connect_signals(callbacks)
 
         self.panel = self["output-panel"]
-        self['view'].modify_font(pango.FontDescription('Monospace'))
+        self['view'].override_font(Pango.font_description_from_string('Monospace'))
 
         buffer = self['view'].get_buffer()
 
@@ -73,18 +69,18 @@ class OutputPanel(UniqueById):
         self.error_tag.set_property('foreground', 'red')
 
         self.italic_tag = buffer.create_tag('italic')
-        self.italic_tag.set_property('style', pango.STYLE_OBLIQUE)
+        self.italic_tag.set_property('style', Pango.Style.OBLIQUE)
 
         self.bold_tag = buffer.create_tag('bold')
-        self.bold_tag.set_property('weight', pango.WEIGHT_BOLD)
+        self.bold_tag.set_property('weight', Pango.Weight.BOLD)
 
         self.invalid_link_tag = buffer.create_tag('invalid_link')
 
         self.link_tag = buffer.create_tag('link')
-        self.link_tag.set_property('underline', pango.UNDERLINE_SINGLE)
+        self.link_tag.set_property('underline', Pango.Underline.SINGLE)
 
-        self.link_cursor = gdk.Cursor(gdk.HAND2)
-        self.normal_cursor = gdk.Cursor(gdk.XTERM)
+        self.link_cursor = Gdk.Cursor.new(Gdk.CursorType.HAND2)
+        self.normal_cursor = Gdk.Cursor.new(Gdk.CursorType.XTERM)
 
         self.process = None
 
@@ -108,7 +104,7 @@ class OutputPanel(UniqueById):
 
     def scroll_to_end(self):
         iter = self['view'].get_buffer().get_end_iter()
-        self['view'].scroll_to_iter(iter, 0.0)
+        self['view'].scroll_to_iter(iter, 0.0, False, 0.5, 0.5)
         return False  # don't requeue this handler
 
     def clear(self):
@@ -153,7 +149,7 @@ class OutputPanel(UniqueById):
             buffer.apply_tag(tag, start_iter, end_iter)
 
         buffer.delete_mark(insert)
-        gobject.idle_add(self.scroll_to_end)
+        GLib.idle_add(self.scroll_to_end)
 
     def show(self):
         panel = self.window.get_bottom_panel()
@@ -166,16 +162,16 @@ class OutputPanel(UniqueById):
         else:
             cursor = self.normal_cursor
 
-        view.get_window(gtk.TEXT_WINDOW_TEXT).set_cursor(cursor)
+        view.get_window(Gtk.TextWindowType.TEXT).set_cursor(cursor)
 
     def on_view_motion_notify_event(self, view, event):
-        if event.window == view.get_window(gtk.TEXT_WINDOW_TEXT):
+        if event.window == view.get_window(Gtk.TextWindowType.TEXT):
             self.update_cursor_style(view, int(event.x), int(event.y))
 
         return False
 
     def on_view_visibility_notify_event(self, view, event):
-        if event.window == view.get_window(gtk.TEXT_WINDOW_TEXT):
+        if event.window == view.get_window(Gtk.TextWindowType.TEXT):
             x, y, m = event.window.get_pointer()
             self.update_cursor_style(view, x, y)
 
@@ -192,9 +188,17 @@ class OutputPanel(UniqueById):
         """
 
         # get the offset within the buffer from the x,y coordinates
-        buff_x, buff_y = view.window_to_buffer_coords(gtk.TEXT_WINDOW_TEXT, 
+        buff_x, buff_y = view.window_to_buffer_coords(Gtk.TextWindowType.TEXT,
                                                         x, y)
-        iter_at_xy = view.get_iter_at_location(buff_x, buff_y)
+        # usual API breakage in GTK+3, nothing new...
+        # see https://bugzilla.gnome.org/768793
+        if Gtk.get_minor_version() >= 20:
+            (over_text, iter_at_xy) = view.get_iter_at_location(buff_x, buff_y)
+            if not over_text:
+                return None
+        else:
+            iter_at_xy = view.get_iter_at_location(buff_x, buff_y)
+
         offset = iter_at_xy.get_offset()
 
         # find the first link that contains the offset
@@ -206,8 +210,8 @@ class OutputPanel(UniqueById):
         return None
 
     def on_view_button_press_event(self, view, event):
-        if event.button != 1 or event.type != gdk.BUTTON_PRESS or \
-           event.window != view.get_window(gtk.TEXT_WINDOW_TEXT):
+        if event.button != 1 or event.type != Gdk.EventType.BUTTON_PRESS or \
+           event.window != view.get_window(Gtk.TextWindowType.TEXT):
             return False
 
         link = self.get_link_at_location(view, int(event.x), int(event.y))
@@ -217,8 +221,8 @@ class OutputPanel(UniqueById):
         gfile = self.file_lookup.lookup(link.path)
 
         if gfile:
-            pluma.commands.load_uri(self.window, gfile.get_uri(), None, 
+            Pluma.commands.load_uri(self.window, gfile.get_uri(), None,
                                     link.line_nr)
-            gobject.idle_add(self.idle_grab_focus)
+            GLib.idle_add(self.idle_grab_focus)
 
 # ex:ts=4:et:

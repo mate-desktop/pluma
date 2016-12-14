@@ -1,6 +1,7 @@
 DIST_SUBDIRS =		\
 	changecase 	\
 	docinfo 	\
+	externaltools	\
 	filebrowser 	\
 	modelines	\
 	sort 		\
@@ -12,6 +13,7 @@ DIST_SUBDIRS =		\
 SUBDIRS = 		\
 	changecase	\
 	docinfo		\
+	externaltools	\
 	filebrowser	\
 	modelines	\
 	sort		\
@@ -20,7 +22,7 @@ SUBDIRS = 		\
 	trailsave
 
 # python plugins are disabled for now
-#SUBDIRS      += externaltools pythonconsole snippets quickopen
+#SUBDIRS      += pythonconsole snippets quickopen
 
 if ENABLE_ENCHANT
 SUBDIRS      += spell

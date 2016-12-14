@@ -17,11 +17,7 @@
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
-import gtk
-from gtk import gdk
-import gio
-import pluma
-#import gtksourceview
+from gi.repository import Gio, Gdk, Gtk, GtkSource, Pluma
 from outputpanel import OutputPanel
 from capture import *
 
@@ -44,7 +40,7 @@ def current_word(document):
     return (start, piter)
 
 # ==== Capture related functions ====
-def run_external_tool(window, node):
+def run_external_tool(window, panel, node):
     # Configure capture environment
     try:
         cwd = os.getcwd()
@@ -87,13 +83,13 @@ def run_external_tool(window, node):
         capture.set_env(PLUMA_CURRENT_DOCUMENT_TYPE=document.get_mime_type())
         
         if uri is not None:
-            gfile = gio.File(uri)
+            gfile = Gio.file_new_for_uri(uri)
             scheme = gfile.get_uri_scheme()
             name = os.path.basename(uri)
             capture.set_env(PLUMA_CURRENT_DOCUMENT_URI    = uri,
                             PLUMA_CURRENT_DOCUMENT_NAME   = name,
                             PLUMA_CURRENT_DOCUMENT_SCHEME = scheme)
-            if pluma.utils.uri_has_file_scheme(uri):
+            if Pluma.utils_uri_has_file_scheme(uri):
                 path = gfile.get_path()
                 cwd = os.path.dirname(path)
                 capture.set_cwd(cwd)
@@ -103,9 +99,9 @@ def run_external_tool(window, node):
         documents_uri = [doc.get_uri()
                                  for doc in window.get_documents()
                                  if doc.get_uri() is not None]
-        documents_path = [gio.File(uri).get_path()
+        documents_path = [Gio.file_new_for_uri(uri).get_path()
                                  for uri in documents_uri
-                                 if pluma.utils.uri_has_file_scheme(uri)]
+                                 if Pluma.utils_uri_has_file_scheme(uri)]
         capture.set_env(PLUMA_DOCUMENTS_URI  = ' '.join(documents_uri),
                         PLUMA_DOCUMENTS_PATH = ' '.join(documents_path))
 
@@ -120,8 +116,7 @@ def run_external_tool(window, node):
     input_type = node.input
     output_type = node.output
 
-    # Get the panel
-    panel = window.get_data("ExternalToolsPluginWindowData")._output_buffer
+    # Clear the panel
     panel.clear()
 
     if output_type == 'output-panel':
@@ -167,7 +162,7 @@ def run_external_tool(window, node):
             if not end.ends_word():
                 end.forward_word_end()
 
-        input_text = document.get_text(start, end)
+        input_text = document.get_text(start, end, False)
         capture.set_input(input_text)
 
     # Assign the standard output to the chosen "file"
@@ -211,8 +206,9 @@ def run_external_tool(window, node):
         document.end_user_action()
 
 class MultipleDocumentsSaver:
-    def __init__(self, window, docs, node):
+    def __init__(self, window, panel, docs, node):
         self._window = window
+        self._panel = panel
         self._node = node
         self._error = False
 
@@ -224,7 +220,7 @@ class MultipleDocumentsSaver:
 
         for doc in docs:
             signals[doc] = doc.connect('saving', self.on_document_saving)
-            pluma.commands.save_document(window, doc)
+            Pluma.commands_save_document(window, doc)
             doc.disconnect(signals[doc])
     
     def on_document_saving(self, doc, size, total_size):
@@ -241,17 +237,17 @@ class MultipleDocumentsSaver:
         self._counter -= 1
         
         if self._counter == 0 and not self._error:
-            run_external_tool(self._window, self._node)
+            run_external_tool(self._window, self._panel, self._node)
 
-def capture_menu_action(action, window, node):
+def capture_menu_action(action, window, panel, node):
     if node.save_files == 'document' and window.get_active_document():
-        MultipleDocumentsSaver(window, [window.get_active_document()], node)
+        MultipleDocumentsSaver(window, panel, [window.get_active_document()], node)
         return
     elif node.save_files == 'all':
-        MultipleDocumentsSaver(window, window.get_documents(), node)
+        MultipleDocumentsSaver(window, panel, window.get_documents(), node)
         return
 
-    run_external_tool(window, node)
+    run_external_tool(window, panel, node)
 
 def capture_stderr_line_panel(capture, line, panel):
     if not panel.visible():
@@ -260,7 +256,7 @@ def capture_stderr_line_panel(capture, line, panel):
     panel.write(line, panel.error_tag)
 
 def capture_begin_execute_panel(capture, panel, view, label):
-    view.get_window(gtk.TEXT_WINDOW_TEXT).set_cursor(gdk.Cursor(gdk.WATCH))
+    view.get_window(Gtk.TextWindowType.TEXT).set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
 
     panel['stop'].set_sensitive(True)
     panel.clear()
@@ -276,15 +272,14 @@ def capture_end_execute_panel(capture, exit_code, panel, view, output_type):
         end = start.copy()
         end.forward_chars(300)
 
-        mtype = gio.content_type_guess(data=doc.get_text(start, end))
-        lmanager = pluma.get_language_manager()
-        
+        mtype, uncertain = Gio.content_type_guess(None, doc.get_text(start, end, False).encode('utf-8'))
+        lmanager = GtkSource.LanguageManager.get_default()
         language = lmanager.guess_language(doc.get_uri(), mtype)
         
         if language is not None:
             doc.set_language(language)
 
-    view.get_window(gtk.TEXT_WINDOW_TEXT).set_cursor(gdk.Cursor(gdk.XTERM))
+    view.get_window(Gtk.TextWindowType.TEXT).set_cursor(Gdk.Cursor.new(Gdk.CursorType.XTERM))
     view.set_cursor_visible(True)
     view.set_editable(True)
 

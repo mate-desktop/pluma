@@ -187,6 +187,8 @@ else
 	have_introspection=no
 fi
 
+AM_PATH_PYTHON([2.7])
+
 dnl ================================================================
 dnl GSettings related settings
 dnl ================================================================
@@ -252,6 +254,10 @@ pixmaps/Makefile
 plugins/Makefile
 plugins/changecase/Makefile
 plugins/docinfo/Makefile
+plugins/externaltools/data/Makefile
+plugins/externaltools/Makefile
+plugins/externaltools/scripts/Makefile
+plugins/externaltools/tools/Makefile
 plugins/filebrowser/Makefile
 plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml
 plugins/modelines/Makefile

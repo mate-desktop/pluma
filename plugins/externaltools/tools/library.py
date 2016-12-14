@@ -19,6 +19,7 @@
 import os
 import re
 import locale
+from gi.repository import GLib
 
 class Singleton(object):
     _instance = None
@@ -44,7 +45,7 @@ class ToolLibrary(Singleton):
         self.locations.append(datadir)
 
         # self.locations[0] is where we save the custom scripts
-        toolsdir = os.path.expanduser('~/.config/pluma/tools')
+        toolsdir = os.path.join(GLib.get_user_config_dir(), 'pluma/tools')
         self.locations.insert(0, toolsdir);
 
         if not os.path.isdir(self.locations[0]):
@@ -68,7 +69,7 @@ class ToolLibrary(Singleton):
     # storage file.
     def import_old_xml_store(self):
         import xml.etree.ElementTree as et
-        filename = os.path.expanduser('~/.config/pluma/pluma-tools.xml')
+        filename = os.path.join(GLib.get_user_config_dir(), 'pluma/pluma-tools.xml')
 
         if not os.path.isfile(filename):
             return

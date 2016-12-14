@@ -21,11 +21,10 @@ __all__ = ('Capture', )
 import os, sys, signal
 import locale
 import subprocess
-import gobject
 import fcntl
-import glib
+from gi.repository import GObject, GLib
 
-class Capture(gobject.GObject):
+class Capture(GObject.Object):
     CAPTURE_STDOUT = 0x01
     CAPTURE_STDERR = 0x02
     CAPTURE_BOTH   = 0x03
@@ -34,14 +33,14 @@ class Capture(gobject.GObject):
     WRITE_BUFFER_SIZE = 0x4000
 
     __gsignals__ = {
-        'stdout-line'  : (gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, (gobject.TYPE_STRING,)),
-        'stderr-line'  : (gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, (gobject.TYPE_STRING,)),
-        'begin-execute': (gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, tuple()),
-        'end-execute'  : (gobject.SIGNAL_RUN_LAST, gobject.TYPE_NONE, (gobject.TYPE_INT,))
+        'stdout-line'  : (GObject.SignalFlags.RUN_LAST, GObject.TYPE_NONE, (GObject.TYPE_STRING,)),
+        'stderr-line'  : (GObject.SignalFlags.RUN_LAST, GObject.TYPE_NONE, (GObject.TYPE_STRING,)),
+        'begin-execute': (GObject.SignalFlags.RUN_LAST, GObject.TYPE_NONE, tuple()),
+        'end-execute'  : (GObject.SignalFlags.RUN_LAST, GObject.TYPE_NONE, (GObject.TYPE_INT,))
     }
 
     def __init__(self, command, cwd = None, env = {}):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
         self.pipe = None
         self.env = env
         self.cwd = cwd
@@ -101,8 +100,8 @@ class Capture(gobject.GObject):
             flags = fcntl.fcntl(self.pipe.stdout.fileno(), fcntl.F_GETFL) | os.O_NONBLOCK
             fcntl.fcntl(self.pipe.stdout.fileno(), fcntl.F_SETFL, flags)
 
-            gobject.io_add_watch(self.pipe.stdout,
-                                 gobject.IO_IN | gobject.IO_HUP,
+            GLib.io_add_watch(self.pipe.stdout,
+                                 GObject.IO_IN | GObject.IO_HUP,
                                  self.on_output)
 
         if self.flags & self.CAPTURE_STDERR:
@@ -110,8 +109,8 @@ class Capture(gobject.GObject):
             flags = fcntl.fcntl(self.pipe.stderr.fileno(), fcntl.F_GETFL) | os.O_NONBLOCK
             fcntl.fcntl(self.pipe.stderr.fileno(), fcntl.F_SETFL, flags)
 
-            gobject.io_add_watch(self.pipe.stderr,
-                                 gobject.IO_IN | gobject.IO_HUP,
+            GLib.io_add_watch(self.pipe.stderr,
+                                 GObject.IO_IN | GObject.IO_HUP,
                                  self.on_output)
 
         # IO
@@ -120,10 +119,10 @@ class Capture(gobject.GObject):
             self.write_buffer = str(self.input_text)
 
             if self.idle_write_chunk():
-                self.idle_write_id = gobject.idle_add(self.idle_write_chunk)
+                self.idle_write_id = GLib.idle_add(self.idle_write_chunk)
 
         # Wait for the process to complete
-        gobject.child_watch_add(self.pipe.pid, self.on_child_end)
+        GLib.child_watch_add(self.pipe.pid, self.on_child_end)
 
     def idle_write_chunk(self):
         if not self.pipe:
@@ -153,7 +152,7 @@ class Capture(gobject.GObject):
             return False
 
     def on_output(self, source, condition):
-        if condition & (glib.IO_IN | glib.IO_PRI):
+        if condition & (GLib.IOCondition.IN | GLib.IOCondition.PRI):
             line = source.read()
 
             if len(line) > 0:
@@ -179,7 +178,7 @@ class Capture(gobject.GObject):
                     else:
                         self.emit('stderr-line', line)
 
-        if condition & ~(glib.IO_IN | glib.IO_PRI):
+        if condition & ~(GLib.IOCondition.IN | GLib.IOCondition.PRI):
             if self.read_buffer:
                 if source == self.pipe.stdout:
                     self.emit('stdout-line', self.read_buffer)
@@ -197,7 +196,7 @@ class Capture(gobject.GObject):
     def stop(self, error_code = -1):
         if self.pipe is not None:
             if self.idle_write_id:
-                gobject.source_remove(self.idle_write_id)
+                GLib.source_remove(self.idle_write_id)
                 self.idle_write_id = 0
 
             if not self.tried_killing:
@@ -209,6 +208,6 @@ class Capture(gobject.GObject):
     def on_child_end(self, pid, error_code):
         # In an idle, so it is emitted after all the std*-line signals
         # have been intercepted
-        gobject.idle_add(self.emit, 'end-execute', error_code)
+        GLib.idle_add(self.emit, 'end-execute', error_code)
 
 # ex:ts=4:et:
