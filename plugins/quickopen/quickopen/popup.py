@@ -17,39 +17,38 @@
 #  Foundation, Inc., 51 Franklin St, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-import gtk
-import gtk.gdk
-import gobject
 import os
-import gio
-import pango
-import glib
 import fnmatch
-import pluma
 import xml.sax.saxutils
+from gi.repository import GObject, Gio, GLib, Gdk, Gtk, Pango, Pluma
 from virtualdirs import VirtualDirectory
 
-class Popup(gtk.Dialog):
+class Popup(Gtk.Dialog):
+        __gtype_name__ = "QuickOpenPopup"
+
         def __init__(self, window, paths, handler):
-                gtk.Dialog.__init__(self,
+                Gtk.Dialog.__init__(self,
                                     title=_('Quick Open'),
                                     parent=window,
-                                    flags=gtk.DIALOG_DESTROY_WITH_PARENT | gtk.DIALOG_NO_SEPARATOR | gtk.DIALOG_MODAL)
+                                    flags=Gtk.DialogFlags.DESTROY_WITH_PARENT | Gtk.DialogFlags.MODAL,
+                                    buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL))
 
-                self.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
-                self._open_button = self.add_button(gtk.STOCK_OPEN, gtk.RESPONSE_ACCEPT)
+                self._open_button = self.add_button(Gtk.STOCK_OPEN, Gtk.ResponseType.ACCEPT)
 
                 self._handler = handler
                 self._build_ui()
 
+                self._size = (0, 0)
                 self._dirs = []
                 self._cache = {}
                 self._theme = None
                 self._cursor = None
                 self._shift_start = None
 
-                accel_group = gtk.AccelGroup()
-                accel_group.connect_group(gtk.keysyms.l, gtk.gdk.CONTROL_MASK, 0, self.on_focus_entry)
+                self._busy_cursor = Gdk.Cursor(Gdk.CursorType.WATCH)
+
+                accel_group = Gtk.AccelGroup()
+                accel_group.connect(Gdk.KEY_l, Gdk.ModifierType.CONTROL_MASK, 0, self.on_focus_entry)
 
                 self.add_accel_group(accel_group)
 
@@ -60,52 +59,55 @@ class Popup(gtk.Dialog):
                                 self._dirs.append(path)
                                 unique.append(path.get_uri())
 
+        def get_final_size(self):
+                return self._size
+
         def _build_ui(self):
                 vbox = self.get_content_area()
                 vbox.set_spacing(3)
 
-                self._entry = gtk.Entry()
+                self._entry = Gtk.Entry()
 
                 self._entry.connect('changed', self.on_changed)
                 self._entry.connect('key-press-event', self.on_key_press_event)
 
-                sw = gtk.ScrolledWindow(None, None)
-                sw.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
-                sw.set_shadow_type(gtk.SHADOW_OUT)
+                sw = Gtk.ScrolledWindow()
+                sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+                sw.set_shadow_type(Gtk.ShadowType.OUT)
 
-                tv = gtk.TreeView()
+                tv = Gtk.TreeView()
                 tv.set_headers_visible(False)
 
-                self._store = gtk.ListStore(gio.Icon, str, object, int)
+                self._store = Gtk.ListStore(Gio.Icon, str, GObject.Object, Gio.FileType)
                 tv.set_model(self._store)
 
                 self._treeview = tv
                 tv.connect('row-activated', self.on_row_activated)
 
-                renderer = gtk.CellRendererPixbuf()
-                column = gtk.TreeViewColumn()
+                renderer = Gtk.CellRendererPixbuf()
+                column = Gtk.TreeViewColumn()
                 column.pack_start(renderer, False)
-                column.set_attributes(renderer, gicon=0)
+                column.add_attribute(renderer, "gicon", 0)
 
-                renderer = gtk.CellRendererText()
+                renderer = Gtk.CellRendererText()
                 column.pack_start(renderer, True)
-                column.set_attributes(renderer, markup=1)
+                column.add_attribute(renderer, "markup", 1)
 
-                column.set_cell_data_func(renderer, self.on_cell_data_cb)
+                column.set_cell_data_func(renderer, self.on_cell_data_cb, None)
 
                 tv.append_column(column)
                 sw.add(tv)
                 
                 selection = tv.get_selection()
                 selection.connect('changed', self.on_selection_changed)
-                selection.set_mode(gtk.SELECTION_MULTIPLE)
+                selection.set_mode(Gtk.SelectionMode.MULTIPLE)
 
                 vbox.pack_start(self._entry, False, False, 0)
                 vbox.pack_start(sw, True, True, 0)
 
-                lbl = gtk.Label()
+                lbl = Gtk.Label()
                 lbl.set_alignment(0, 0.5)
-                lbl.set_ellipsize(pango.ELLIPSIZE_MIDDLE)
+                lbl.set_ellipsize(Pango.EllipsizeMode.MIDDLE)
                 self._info_label = lbl
 
                 vbox.pack_start(lbl, False, False, 0)
@@ -114,23 +116,23 @@ class Popup(gtk.Dialog):
                 self.on_selection_changed(tv.get_selection())
                 vbox.show_all()
 
-        def on_cell_data_cb(self, column, cell, model, piter):
+        def on_cell_data_cb(self, column, cell, model, piter, user_data):
                 path = model.get_path(piter)
                 
                 if self._cursor and path == self._cursor.get_path():
                         style = self._treeview.get_style()
-                        bg = style.bg[gtk.STATE_PRELIGHT]
+                        bg = style.bg[Gtk.StateType.PRELIGHT]
                         
                         cell.set_property('cell-background-gdk', bg)
-                        cell.set_property('style', pango.STYLE_ITALIC)
+                        cell.set_property('style', Pango.Style.ITALIC)
                 else:
                         cell.set_property('cell-background-set', False)
                         cell.set_property('style-set', False)
 
         def _icon_from_stock(self, stock):
-                theme = gtk.icon_theme_get_default()
-                size = gtk.icon_size_lookup(gtk.ICON_SIZE_MENU)
-                pixbuf = theme.load_icon(stock, size[0], gtk.ICON_LOOKUP_USE_BUILTIN)
+                theme = Gtk.icon_theme_get_default()
+                size = Gtk.icon_size_lookup(Gtk.IconSize.MENU)
+                pixbuf = theme.load_icon(stock, size[0], Gtk.IconLookupFlags.USE_BUILTIN)
 
                 return pixbuf
 
@@ -138,19 +140,25 @@ class Popup(gtk.Dialog):
                 entries = []
 
                 try:
-                        entries = gfile.enumerate_children("standard::*")
-                except glib.GError:
+                        ret = gfile.enumerate_children("standard::*", Gio.FileQueryInfoFlags.NONE, None)
+                except GLib.GError:
                         pass
+
+                if isinstance(ret, Gio.FileEnumerator):
+                        while True:
+                                entry = ret.next_file(None)
+
+                                if not entry:
+                                        break
+
+                                entries.append((gfile.get_child(entry.get_name()), entry))
+                else:
+                        entries = ret
 
                 children = []
 
                 for entry in entries:
-                        if isinstance(gfile, VirtualDirectory):
-                                child, entry = entry
-                        else:
-                                child = gfile.get_child(entry.get_name())
-
-                        children.append((child, entry.get_name(), entry.get_file_type(), entry.get_icon()))
+                        children.append((entry[0], entry[1].get_name(), entry[1].get_file_type(), entry[1].get_icon()))
 
                 return children
 
@@ -195,12 +203,12 @@ class Popup(gtk.Dialog):
                         lentry = entry[1].lower()
 
                         if not lpart or lpart in lentry or self._match_glob(lentry, lpart):
-                                if entry[2] == gio.FILE_TYPE_DIRECTORY:
+                                if entry[2] == Gio.FileType.DIRECTORY:
                                         if len(parts) > 1:
                                                 newdirs.append(entry[0])
                                         else:
                                                 found.append(entry)
-                                elif entry[2] == gio.FILE_TYPE_REGULAR and \
+                                elif entry[2] == Gio.FileType.REGULAR and \
                                      (not lpart or len(parts) == 1):
                                         found.append(entry)
 
@@ -244,7 +252,7 @@ class Popup(gtk.Dialog):
                 return os.sep.join(out)
 
         def _get_icon(self, f):
-                query = f.query_info(gio.FILE_ATTRIBUTE_STANDARD_ICON)
+                query = f.query_info(Gio.FILE_ATTRIBUTE_STANDARD_ICON, Gio.FileQueryInfoFlags.NONE, None)
 
                 if not query:
                         return None
@@ -296,8 +304,16 @@ class Popup(gtk.Dialog):
         def _show_virtuals(self):
                 for d in self._dirs:
                         if isinstance(d, VirtualDirectory):
-                                for entry in d.enumerate_children("standard::*"):
+                                for entry in d.enumerate_children("standard::*", 0, None):
                                         self._append_to_store((entry[1].get_icon(), xml.sax.saxutils.escape(entry[1].get_name()), entry[0], entry[1].get_file_type()))
+
+        def _set_busy(self, busy):
+                if busy:
+                        self.get_window().set_cursor(self._busy_cursor)
+                else:
+                        self.get_window().set_cursor(None)
+
+                Gdk.flush()
 
         def _remove_cursor(self):
                 if self._cursor:
@@ -307,7 +323,7 @@ class Popup(gtk.Dialog):
                         self._store.row_changed(path, self._store.get_iter(path))
 
         def do_search(self):
-                self.window.set_cursor(gtk.gdk.Cursor(gtk.gdk.WATCH))
+                self._set_busy(True)
                 self._remove_cursor()
 
                 text = self._entry.get_text().strip()
@@ -329,10 +345,11 @@ class Popup(gtk.Dialog):
                 if piter:
                         self._treeview.get_selection().select_path(self._store.get_path(piter))
 
-                self.window.set_cursor(None)
+                self.get_window().set_cursor(None)
+                self._set_busy(False)
 
         def do_show(self):
-                gtk.Window.do_show(self)
+                Gtk.Window.do_show(self)
 
                 self._entry.grab_focus()
                 self._entry.set_text("")
@@ -350,7 +367,7 @@ class Popup(gtk.Dialog):
                         model, rows = selection.get_selected_rows()
                         start = rows[0]
 
-                        self._shift_start = gtk.TreeRowReference(self._store, start)
+                        self._shift_start = Gtk.TreeRowReference(self._store, start)
                 else:
                         start = self._shift_start.get_path()
 
@@ -375,7 +392,7 @@ class Popup(gtk.Dialog):
                 self._remove_cursor()
 
                 if hasctrl or hasshift:
-                        self._cursor = gtk.TreeRowReference(self._store, path)
+                        self._cursor = Gtk.TreeRowReference(self._store, path)
                         
                         piter = self._store.get_iter(path)
                         self._store.row_changed(path, piter)
@@ -418,10 +435,10 @@ class Popup(gtk.Dialog):
                 uri = self._entry.get_text()
                 gfile = None
 
-                if pluma.utils.uri_is_valid(uri):
-                        gfile = gio.File(uri)
+                if Pluma.utils_is_valid_uri(uri):
+                        gfile = Gio.file_new_for_uri(uri)
                 elif os.path.isabs(uri):
-                        f = gio.File(uri)
+                        f = Gio.file_new_for_uri(uri)
 
                         if f.query_exists():
                                 gfile = f
@@ -436,7 +453,7 @@ class Popup(gtk.Dialog):
                         s = model.get_iter(row)
                         info = model.get(s, 2, 3)
 
-                        if info[1] != gio.FILE_TYPE_DIRECTORY:
+                        if info[1] != Gio.FileType.DIRECTORY:
                                 ret = ret and self._handler(info[0])
                         else:
                                 text = self._entry.get_text()
@@ -479,20 +496,20 @@ class Popup(gtk.Dialog):
 
         def on_key_press_event(self, widget, event):
                 move_mapping = {
-                        gtk.keysyms.Down: 1,
-                        gtk.keysyms.Up: -1,
-                        gtk.keysyms.Page_Down: 5,
-                        gtk.keysyms.Page_Up: -5
+                        Gdk.KEY_Down: 1,
+                        Gdk.KEY_Up: -1,
+                        Gdk.KEY_Page_Down: 5,
+                        Gdk.KEY_Page_Up: -5
                 }
                 
-                if event.keyval == gtk.keysyms.Escape:
+                if event.keyval == Gdk.KEY_Escape:
                         self.destroy()
                         return True
                 elif event.keyval in move_mapping:
-                        return self._move_selection(move_mapping[event.keyval], event.state & gtk.gdk.CONTROL_MASK, event.state & gtk.gdk.SHIFT_MASK)
-                elif event.keyval in [gtk.keysyms.Return, gtk.keysyms.KP_Enter, gtk.keysyms.Tab, gtk.keysyms.ISO_Left_Tab]:
+                        return self._move_selection(move_mapping[event.keyval], event.state & Gdk.ModifierType.CONTROL_MASK, event.state & Gdk.ModifierType.SHIFT_MASK)
+                elif event.keyval in [Gdk.KEY_Return, Gdk.KEY_KP_Enter, Gdk.KEY_Tab, Gdk.KEY_ISO_Left_Tab]:
                         return self._activate()
-                elif event.keyval == gtk.keysyms.space and event.state & gtk.gdk.CONTROL_MASK:
+                elif event.keyval == Gdk.KEY_space and event.state & Gdk.ModifierType.CONTROL_MASK:
                         self.toggle_cursor()
 
                 return False
@@ -501,8 +518,15 @@ class Popup(gtk.Dialog):
                 self._activate()
 
         def do_response(self, response):
-                if response != gtk.RESPONSE_ACCEPT or not self._activate():
+                if response != Gtk.ResponseType.ACCEPT or not self._activate():
                         self.destroy()
+
+        def do_configure_event(self, event):
+                if self.get_realized():
+                        alloc = self.get_allocation()
+                        self._size = (alloc.width, alloc.height)
+
+                return Gtk.Dialog.do_configure_event(self, event)
 
         def on_selection_changed(self, selection):
                 model, rows = selection.get_selected_rows()
@@ -528,7 +552,5 @@ class Popup(gtk.Dialog):
 
         def on_focus_entry(self, group, accel, keyval, modifier):
                 self._entry.grab_focus()
-
-gobject.type_register(Popup)
 
 # ex:ts=8:et:

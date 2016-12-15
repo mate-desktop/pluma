@@ -17,13 +17,9 @@
 #  Foundation, Inc., 51 Franklin St, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-import pluma
-import gtk
 from popup import Popup
 import os
-import pluma.commands
-import gio
-import glib
+from gi.repository import Gio, GLib, Gtk, Pluma
 from virtualdirs import RecentDocumentsDirectory
 from virtualdirs import CurrentDocumentsDirectory
 
@@ -64,9 +60,9 @@ class WindowHelper:
 
         def _install_menu(self):
                 manager = self._window.get_ui_manager()
-                self._action_group = gtk.ActionGroup("PlumaQuickOpenPluginActions")
+                self._action_group = Gtk.ActionGroup("PlumaQuickOpenPluginActions")
                 self._action_group.add_actions([
-                        ("QuickOpen", gtk.STOCK_OPEN, _("Quick open"),
+                        ("QuickOpen", Gtk.STOCK_OPEN, _("Quick open"),
                          '<Ctrl><Alt>O', _("Quickly open documents"),
                          self.on_quick_open_activate)
                 ])
@@ -97,7 +93,7 @@ class WindowHelper:
                                 uri = msg.get_value('uri')
 
                                 if uri:
-                                        gfile = gio.File(uri)
+                                        gfile = Gio.file_new_for_uri(uri)
 
                                         if gfile.is_native():
                                                 paths.append(gfile)
@@ -106,7 +102,7 @@ class WindowHelper:
                         pass
 
                 # Recent documents
-                paths.append(RecentDocumentsDirectory(screen=self._window.get_screen()))
+                paths.append(RecentDocumentsDirectory())
 
                 # Local bookmarks
                 for path in self._local_bookmarks():
@@ -116,16 +112,16 @@ class WindowHelper:
                 desktopdir = self._desktop_dir()
 
                 if desktopdir:
-                        paths.append(gio.File(desktopdir))
+                        paths.append(Gio.file_new_for_path(desktopdir))
 
                 # Home directory
-                paths.append(gio.File(os.path.expanduser('~')))
+                paths.append(Gio.file_new_for_path(os.path.expanduser('~')))
 
                 self._popup = Popup(self._window, paths, self.on_activated)
 
                 self._popup.set_default_size(*self._plugin.get_popup_size())
                 self._popup.set_transient_for(self._window)
-                self._popup.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+                self._popup.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
 
                 self._window.get_group().add_window(self._popup)
 
@@ -141,15 +137,15 @@ class WindowHelper:
 
                 for line in file(filename, 'r').xreadlines():
                         uri = line.strip().split(" ")[0]
-                        f = gio.File(uri)
+                        f = Gio.file_new_for_uri(uri)
 
                         if f.is_native():
                                 try:
-                                        info = f.query_info("standard::type")
+                                        info = f.query_info(Gio.FILE_ATTRIBUTE_STANDARD_TYPE, Gio.FileQueryInfoFlags.NONE, None)
 
-                                        if info and info.get_file_type() == gio.FILE_TYPE_DIRECTORY:
+                                        if info and info.get_file_type() == Gio.FileType.DIRECTORY:
                                                 paths.append(f)
-                                except glib.GError:
+                                except GLib.GError:
                                         pass
 
                 return paths
@@ -185,13 +181,11 @@ class WindowHelper:
                 self._popup.show()
 
         def on_popup_destroy(self, popup):
-                alloc = popup.get_allocation()
-                self._plugin.set_popup_size((alloc.width, alloc.height))
-
+                self._plugin.set_popup_size(popup.get_final_size())
                 self._popup = None
 
         def on_activated(self, gfile):
-                pluma.commands.load_uri(self._window, gfile.get_uri(), None, -1)
+                Pluma.commands_load_uri(self._window, gfile.get_uri(), None, -1)
                 return True
 
 # ex:ts=8:et:

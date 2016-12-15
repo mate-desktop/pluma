@@ -5,6 +5,7 @@ DIST_SUBDIRS =		\
 	filebrowser 	\
 	modelines	\
 	pythonconsole	\
+	quickopen	\
 	sort 		\
 	spell 		\
 	taglist 	\
@@ -18,13 +19,14 @@ SUBDIRS = 		\
 	filebrowser	\
 	modelines	\
 	pythonconsole	\
+	quickopen	\
 	sort		\
 	taglist		\
 	time		\
 	trailsave
 
 # python plugins are disabled for now
-#SUBDIRS      += snippets quickopen
+#SUBDIRS      += snippets
 
 if ENABLE_ENCHANT
 SUBDIRS      += spell
