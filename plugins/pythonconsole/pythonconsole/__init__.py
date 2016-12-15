@@ -24,38 +24,42 @@
 # Bits from pluma Python Console Plugin
 #     Copyrignt (C), 2005 Raphaël Slinckx
 
-import gtk
-import pluma
+from gi.repository import GObject, Gtk, Peas, Pluma
 
 from console import PythonConsole
 from config import PythonConsoleConfigDialog
 from config import PythonConsoleConfig
 
-PYTHON_ICON = 'mate-mime-text-x-python'
+PYTHON_ICON = 'text-x-python'
 
-class PythonConsolePlugin(pluma.Plugin):
+class PythonConsolePlugin(GObject.Object, Peas.Activatable):
+    __gtype_name__ = "PythonConsolePlugin"
+
+    object = GObject.Property(type=GObject.Object)
+
     def __init__(self):
-        pluma.Plugin.__init__(self)
+        GObject.Object.__init__(self)
         self.dlg = None
 
-    def activate(self, window):
-        console = PythonConsole(namespace = {'__builtins__' : __builtins__,
-                                             'pluma' : pluma,
+    def do_activate(self):
+        window = self.object
+
+        self._console = PythonConsole(namespace = {'__builtins__' : __builtins__,
+                                             'pluma' : Pluma,
                                              'window' : window})
-        console.eval('print "You can access the main window through ' \
+        self._console.eval('print "You can access the main window through ' \
                      '\'window\' :\\n%s" % window', False)
         bottom = window.get_bottom_panel()
-        image = gtk.Image()
-        image.set_from_icon_name(PYTHON_ICON, gtk.ICON_SIZE_MENU)
-        bottom.add_item(console, _('Python Console'), image)
-        window.set_data('PythonConsolePluginInfo', console)
+        image = Gtk.Image()
+        image.set_from_icon_name(PYTHON_ICON, Gtk.IconSize.MENU)
+        bottom.add_item(self._console, _('Python Console'), image)
 
-    def deactivate(self, window):
-        console = window.get_data("PythonConsolePluginInfo")
-        console.stop()
-        window.set_data("PythonConsolePluginInfo", None)
+    def do_deactivate(self):
+        window = self.object
+
+        self._console.stop()
         bottom = window.get_bottom_panel()
-        bottom.remove_item(console)
+        bottom.remove_item(self._console)
 
 def create_configure_dialog(self):
 

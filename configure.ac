@@ -261,6 +261,8 @@ plugins/externaltools/tools/Makefile
 plugins/filebrowser/Makefile
 plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml
 plugins/modelines/Makefile
+plugins/pythonconsole/Makefile
+plugins/pythonconsole/pythonconsole/Makefile
 plugins/sort/Makefile
 plugins/spell/Makefile
 plugins/spell/org.mate.pluma.plugins.spell.gschema.xml
