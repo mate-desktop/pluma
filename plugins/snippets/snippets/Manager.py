@@ -878,7 +878,7 @@ class Manager:
                 
                 if len(export_snippets) == 0 and show_dialogs:                        
                         message = _('There are no snippets selected to be exported')
-                        message_dialog(self.dlg, gtk.MESSAGE_INFORMATION, message)
+                        message_dialog(self.dlg, gtk.MESSAGE_INFO, message)
                         return False
                 
                 if not filename:
@@ -948,7 +948,7 @@ class Manager:
                         dlg.destroy()
                         
                         message = _('There are no snippets selected to be exported')
-                        message_dialog(self.dlg, gtk.MESSAGE_INFORMATION, message)
+                        message_dialog(self.dlg, gtk.MESSAGE_INFO, message)
                         return
                 
                 dlg.add_filter(self.file_filter(_('All supported archives'), ('*.gz','*.bz2','*.tar')))
