@@ -534,10 +534,10 @@ class Manager(GObject.Object):
     def clear_fields(self):
         self['accelerator'].set_text('')
 
-	buf = self['commands'].get_buffer()
-	buf.begin_not_undoable_action()
-	buf.set_text('')
-	buf.end_not_undoable_action()
+        buf = self['commands'].get_buffer()
+        buf.begin_not_undoable_action()
+        buf.set_text('')
+        buf.end_not_undoable_action()
 
         for nm in ('input', 'output', 'applicability', 'save-files'):
             self[nm].set_active(0)
@@ -569,9 +569,9 @@ class Manager(GObject.Object):
         buf = self['commands'].get_buffer()
         script = default(''.join(node.get_script()), '')
 
-	buf.begin_not_undoable_action()
-	buf.set_text(script)
-	buf.end_not_undoable_action()
+        buf.begin_not_undoable_action()
+        buf.set_text(script)
+        buf.end_not_undoable_action()
 
         self.script_hash = self.compute_hash(script)
         contenttype, uncertain = Gio.content_type_guess(None, script)
