@@ -11,6 +11,7 @@ AM_CPPFLAGS =								\
 	-I$(srcdir)/smclient						\
 	$(PLUMA_CFLAGS)							\
 	$(WARN_CFLAGS)							\
+	$(INTROSPECTION_CFLAGS)						\
 	$(DISABLE_DEPRECATED_CFLAGS)					\
 	-DDATADIR=\""$(datadir)"\"					\
 	-DLIBDIR=\""$(libdir)"\"
@@ -18,7 +19,7 @@ AM_CPPFLAGS =								\
 pluma_SOURCES = \
 	pluma.c
 
-pluma_LDADD = libpluma.la $(PLUMA_LIBS) $(EGG_SMCLIENT_LIBS)
+pluma_LDADD = libpluma.la $(PLUMA_LIBS) $(EGG_SMCLIENT_LIBS) $(INTROSPECTION_LIBS)
 
 pluma_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[[^_]].*"
 
@@ -46,16 +47,12 @@ NOINST_H_FILES =			\
 	pluma-document-output-stream.h	\
 	pluma-document-saver.h		\
 	pluma-documents-panel.h		\
+	pluma-file-chooser-dialog.h	\
 	pluma-gio-document-loader.h	\
 	pluma-gio-document-saver.h	\
 	pluma-history-entry.h		\
 	pluma-io-error-message-area.h	\
 	pluma-language-manager.h	\
-	pluma-object-module.h		\
-	pluma-plugin-info.h		\
-	pluma-plugin-info-priv.h	\
-	pluma-plugin-loader.h		\
-	pluma-plugin-manager.h		\
 	pluma-plugins-engine.h		\
 	pluma-prefs-manager-private.h	\
 	pluma-print-job.h		\
@@ -75,14 +72,12 @@ INST_H_FILES =				\
 	pluma-document.h 		\
 	pluma-encodings.h		\
 	pluma-encodings-combo-box.h	\
-	pluma-file-chooser-dialog.h	\
 	pluma-help.h 			\
 	pluma-message-bus.h		\
 	pluma-message-type.h		\
 	pluma-message.h			\
 	pluma-notebook.h		\
 	pluma-panel.h			\
-	pluma-plugin.h			\
 	pluma-prefs-manager-app.h	\
 	pluma-prefs-manager.h		\
 	pluma-progress-message-area.h	\
@@ -102,11 +97,7 @@ headerdir = $(prefix)/include/pluma
 header_DATA = 				\
 	$(INST_H_FILES)
 
-
-libpluma_la_SOURCES = 			\
-	$(BUILT_SOURCES)		\
-	$(BACON_FILES)			\
-	$(POSIXIO_FILES)		\
+libpluma_c_files = 			\
 	pluma-app.c			\
 	pluma-close-button.c		\
 	pluma-commands-documents.c	\
@@ -136,13 +127,8 @@ libpluma_la_SOURCES = 			\
 	pluma-message-bus.c		\
 	pluma-message-type.c		\
 	pluma-message.c			\
-	pluma-object-module.c		\
 	pluma-notebook.c		\
 	pluma-panel.c			\
-	pluma-plugin-info.c		\
-	pluma-plugin.c			\
-	pluma-plugin-loader.c		\
-	pluma-plugin-manager.c		\
 	pluma-plugins-engine.c		\
 	pluma-prefs-manager-app.c	\
 	pluma-prefs-manager.c		\
@@ -160,7 +146,13 @@ libpluma_la_SOURCES = 			\
 	pluma-utils.c 			\
 	pluma-view.c 			\
 	pluma-window.c			\
-	plumatextregion.c		\
+	plumatextregion.c
+
+libpluma_la_SOURCES = 			\
+	$(libpluma_c_files)		\
+	$(BUILT_SOURCES)		\
+	$(BACON_FILES)			\
+	$(POSIXIO_FILES)		\
 	$(NOINST_H_FILES)		\
 	$(INST_H_FILES)
 
@@ -194,6 +186,27 @@ EXTRA_DIST = 				\
 	pluma.rc
 
 CLEANFILES = $(BUILT_SOURCES)
+
+if HAVE_INTROSPECTION
+-include $(INTROSPECTION_MAKEFILE)
+INTROSPECTION_GIRS = Pluma-1.0.gir
+INTROSPECTION_SCANNER_ARGS = -I$(top_srcdir) --warn-all
+
+Pluma-1.0.gir: pluma
+Pluma_1_0_gir_INCLUDES = Gtk-3.0 GtkSource-3.0
+Pluma_1_0_gir_FILES = $(INST_H_FILES) $(libpluma_c_files) $(BUILT_SOURCES)
+Pluma_1_0_gir_VERSION = 1.0
+Pluma_1_0_gir_PROGRAM = $(builddir)/pluma
+Pluma_1_0_gir_NAMESPACE = Pluma
+
+girdir = $(datadir)/gir-1.0
+gir_DATA = $(INTROSPECTION_GIRS)
+
+typelibdir = $(libdir)/girepository-1.0
+typelib_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
+
+CLEANFILES += $(gir_DATA) $(typelib_DATA)
+endif
 
 dist-hook:
 	cd $(distdir); rm -f $(BUILT_SOURCES)

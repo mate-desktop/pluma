@@ -154,9 +154,6 @@ PlumaWindowState pluma_window_get_state 		(PlumaWindow         *window);
 PlumaTab        *pluma_window_get_tab_from_location	(PlumaWindow         *window,
 							 GFile               *location);
 
-PlumaTab        *pluma_window_get_tab_from_uri		(PlumaWindow         *window,
-							 const gchar         *uri);
-
 /* Message bus */
 PlumaMessageBus	*pluma_window_get_message_bus		(PlumaWindow         *window);
 

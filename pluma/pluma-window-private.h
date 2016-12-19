@@ -31,6 +31,8 @@
 #ifndef __PLUMA_WINDOW_PRIVATE_H__
 #define __PLUMA_WINDOW_PRIVATE_H__
 
+#include <libpeas/peas-extension-set.h>
+
 #include "pluma/pluma-window.h"
 #include "pluma-prefs-manager.h"
 #include "pluma-message-bus.h"
@@ -51,8 +53,9 @@ struct _PlumaWindowPrivate
 	
 	GtkWidget      *tab_width_combo;
 	GtkWidget      *language_combo;
-	
-	PlumaMessageBus *message_bus;	
+
+	PlumaMessageBus *message_bus;
+	PeasExtensionSet *extensions;
 
 	/* Widgets for fullscreen mode */
 	GtkWidget      *fullscreen_controls;
@@ -60,7 +63,7 @@ struct _PlumaWindowPrivate
 	gboolean        fullscreen_animation_enter;
 
 	/* statusbar and context ids for statusbar messages */
-	GtkWidget      *statusbar;	
+	GtkWidget      *statusbar;
 	guint           generic_message_cid;
 	guint           tip_message_cid;
 	guint 		tab_width_id;
@@ -93,7 +96,7 @@ struct _PlumaWindowPrivate
 	gint            num_tabs_with_error;
 
 	gint            width;
-	gint            height;	
+	gint            height;
 	GdkWindowState  window_state;
 
 	gint            side_panel_size;

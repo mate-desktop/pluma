@@ -42,6 +42,10 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
+#ifdef HAVE_INTROSPECTION
+#include <girepository.h>
+#endif
+
 #include "pluma-app.h"
 #include "pluma-commands.h"
 #include "pluma-debug.h"
@@ -519,10 +523,12 @@ main (int argc, char *argv[])
 	/* Setup command line options */
 	context = g_option_context_new (_("- Edit text files"));
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
-	g_option_context_add_group (context, gtk_get_option_group (FALSE));
+	g_option_context_add_group (context, gtk_get_option_group (TRUE));
 	g_option_context_add_group (context, egg_sm_client_get_option_group ());
 
-	gtk_init (&argc, &argv);
+#ifdef HAVE_INTROSPECTION
+	g_option_context_add_group (context, g_irepository_get_option_group ());
+#endif
 
 	if (!g_option_context_parse (context, &argc, &argv, &error))
 	{

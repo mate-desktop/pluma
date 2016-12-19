@@ -21,7 +21,6 @@
 
 #include <string.h>
 #include <gio/gio.h>
-#include <pluma/pluma-plugin.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 
@@ -86,7 +85,7 @@ static const GtkTargetEntry drag_source_targets[] = {
 	{ "text/uri-list", 0, 0 }
 };
 
-PLUMA_PLUGIN_DEFINE_TYPE (PlumaFileBrowserView, pluma_file_browser_view,
+G_DEFINE_DYNAMIC_TYPE (PlumaFileBrowserView, pluma_file_browser_view,
 	                  GTK_TYPE_TREE_VIEW)
 
 static void on_cell_edited 		(GtkCellRendererText 	* cell, 
@@ -912,6 +911,12 @@ pluma_file_browser_view_class_init (PlumaFileBrowserViewClass * klass)
 }
 
 static void
+pluma_file_browser_view_class_finalize (PlumaFileBrowserViewClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE */
+}
+
+static void
 cell_data_cb (GtkTreeViewColumn * tree_column, GtkCellRenderer * cell,
 	      GtkTreeModel * tree_model, GtkTreeIter * iter,
 	      PlumaFileBrowserView * obj)
@@ -1256,6 +1261,12 @@ on_row_inserted (PlumaFileBrowserStore * model,
 	}
 
 	gtk_tree_path_free (copy);
+}
+
+void
+_pluma_file_browser_view_register_type (GTypeModule *type_module)
+{
+	pluma_file_browser_view_register_type (type_module);
 }
 				 
 // ex:ts=8:noet:

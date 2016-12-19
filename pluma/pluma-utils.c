@@ -202,15 +202,13 @@ pluma_utils_menu_position_under_tree_view (GtkMenu  *menu,
 	}
 }
 
-/* FIXME: remove this with gtk 2.12, it has gdk_color_to_string */
-gchar * 
-pluma_gdk_color_to_string (GdkColor color)
-{
-	return g_strdup_printf ("#%04x%04x%04x",
-				color.red, 
-				color.green,
-				color.blue);
-}
+/**
+ * pluma_gtk_button_new_with_stock_icon:
+ * @label:
+ * @stock_id:
+ *
+ * Returns: (transfer full):
+ */
 
 GtkWidget *
 pluma_gtk_button_new_with_stock_icon (const gchar *label,
@@ -226,6 +224,15 @@ pluma_gtk_button_new_with_stock_icon (const gchar *label,
         return button;
 }
 
+/**
+ * pluma_dialog_add_button:
+ * @dialog:
+ * @text:
+ * @stock_id:
+ * @response_id:
+ *
+ * Returns: (transfer none):
+ */
 GtkWidget *
 pluma_dialog_add_button (GtkDialog   *dialog,
 			 const gchar *text,
@@ -1383,7 +1390,7 @@ pluma_utils_uri_for_display (const gchar *uri)
  *
  * Create a list of valid uri's from a uri-list drop.
  * 
- * Return value: a string array which will hold the uris or %NULL if there
+ * Return value: (transfer full): a string array which will hold the uris or %NULL if there
  *		 were no valid uris. g_strfreev should be used when the 
  *		 string array is no longer used
  */

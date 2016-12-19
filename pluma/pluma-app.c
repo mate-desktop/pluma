@@ -350,7 +350,7 @@ app_weak_notify (gpointer data,
  * Returns the #PlumaApp object. This object is a singleton and
  * represents the running pluma instance.
  *
- * Return value: the #PlumaApp pointer
+ * Return value: (transfer none): the #PlumaApp pointer
  */
 PlumaApp *
 pluma_app_get_default (void)
@@ -555,7 +555,7 @@ pluma_app_create_window_real (PlumaApp    *app,
  *
  * Create a new #PlumaWindow part of @app.
  *
- * Return value: the new #PlumaWindow
+ * Return value: (transfer none): the new #PlumaWindow
  */
 PlumaWindow *
 pluma_app_create_window (PlumaApp  *app,
@@ -592,7 +592,7 @@ _pluma_app_restore_window (PlumaApp    *app,
  *
  * Returns all the windows currently present in #PlumaApp.
  *
- * Return value: (transfer none): the list of #PlumaWindows objects.
+ * Return value: (element-type Pluma.Window) (transfer none): the list of #PlumaWindows objects.
  * The list should not be freed
  */
 const GList *
@@ -609,7 +609,7 @@ pluma_app_get_windows (PlumaApp *app)
  *
  * Retrives the #PlumaWindow currently active.
  *
- * Return value: the active #PlumaWindow
+ * Return value: (transfer none): the active #PlumaWindow
  */
 PlumaWindow *
 pluma_app_get_active_window (PlumaApp *app)

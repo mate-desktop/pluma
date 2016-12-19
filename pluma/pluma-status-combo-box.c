@@ -409,6 +409,12 @@ pluma_status_combo_box_remove_item (PlumaStatusComboBox *combo,
 			      GTK_WIDGET (item));
 }
 
+/**
+ * pluma_status_combo_box_get_items:
+ * @combo:
+ *
+ * Returns: (element-type Gtk.Widget) (transfer container):
+ */
 GList *
 pluma_status_combo_box_get_items (PlumaStatusComboBox *combo)
 {

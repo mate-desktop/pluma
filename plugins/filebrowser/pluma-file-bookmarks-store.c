@@ -23,7 +23,6 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <pluma/pluma-utils.h>
-#include <pluma/pluma-plugin.h>
 
 #include "pluma-file-bookmarks-store.h"
 #include "pluma-file-browser-utils.h"
@@ -56,7 +55,7 @@ static gboolean find_with_flags       (GtkTreeModel * model,
                                        guint flags,
                                        guint notflags);
 
-PLUMA_PLUGIN_DEFINE_TYPE(PlumaFileBookmarksStore, pluma_file_bookmarks_store, GTK_TYPE_TREE_STORE)
+G_DEFINE_DYNAMIC_TYPE (PlumaFileBookmarksStore, pluma_file_bookmarks_store, GTK_TYPE_TREE_STORE)
 
 static void
 pluma_file_bookmarks_store_dispose (GObject * object)
@@ -95,6 +94,12 @@ pluma_file_bookmarks_store_class_init (PlumaFileBookmarksStoreClass *klass)
 	object_class->finalize = pluma_file_bookmarks_store_finalize;
 
 	g_type_class_add_private (object_class, sizeof (PlumaFileBookmarksStorePrivate));
+}
+
+static void
+pluma_file_bookmarks_store_class_finalize (PlumaFileBookmarksStoreClass *klass)
+{
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE */
 }
 
 static void
@@ -874,6 +879,12 @@ on_bookmarks_file_changed (GFileMonitor * monitor,
 	default:
 		break;
 	}
+}
+
+void
+_pluma_file_bookmarks_store_register_type (GTypeModule *type_module)
+{
+	pluma_file_bookmarks_store_register_type (type_module);
 }
 
 // ex:ts=8:noet:

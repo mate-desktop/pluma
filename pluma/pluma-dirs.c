@@ -95,17 +95,17 @@ gchar* pluma_dirs_get_pluma_plugins_dir(void)
 	return plugin_dir;
 }
 
-gchar* pluma_dirs_get_pluma_plugin_loaders_dir(void)
+gchar* pluma_dirs_get_pluma_plugins_data_dir(void)
 {
-	gchar* lib_dir;
-	gchar* loader_dir;
+	gchar* data_dir;
+	gchar* plugin_data_dir;
 
-	lib_dir = pluma_dirs_get_pluma_lib_dir();
+	data_dir = pluma_dirs_get_pluma_data_dir();
 
-	loader_dir = g_build_filename(lib_dir, "plugin-loaders", NULL);
-	g_free(lib_dir);
+	plugin_data_dir = g_build_filename(data_dir, "plugins", NULL);
+	g_free(data_dir);
 
-	return loader_dir;
+	return plugin_data_dir;
 }
 
 gchar* pluma_dirs_get_ui_file(const gchar* file)

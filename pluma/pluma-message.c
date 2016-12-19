@@ -17,9 +17,6 @@
  * A message can be seen as a method call, or signal emission depending on
  * who is the sender and who is the receiver. There is no explicit distinction
  * between methods and signals.
- *
- * Since: 2.25.3
- *
  */
 #define PLUMA_MESSAGE_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_MESSAGE, PlumaMessagePrivate))
 
@@ -367,8 +364,8 @@ pluma_message_set_value (PlumaMessage *message,
 /**
  * pluma_message_set_valuesv:
  * @message: the #PlumaMessage
- * @keys: (array-length=n_values): keys to set values for
- * @values: (array-length=n_values): values to set
+ * @keys: (array length=n_values): keys to set values for
+ * @values: (array length=n_values): values to set
  * @n_values: number of arguments to set values for
  *
  * Set message argument values.

@@ -310,8 +310,6 @@ load_uri_list (PlumaWindow         *window,
  * @line_pos:
  *
  * Do nothing if uri does not exist
- *
- * Returns: (transfer container):
  */
 void
 pluma_commands_load_uri (PlumaWindow         *window,
@@ -343,7 +341,7 @@ pluma_commands_load_uri (PlumaWindow         *window,
  *
  * Ignore non-existing URIs
  *
- * Returns: (transfer container):
+ * Returns:
  */
 gint
 pluma_commands_load_uris (PlumaWindow         *window,

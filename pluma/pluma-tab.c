@@ -1619,7 +1619,7 @@ _pluma_tab_new_from_uri (const gchar         *uri,
  *
  * Gets the #PlumaView inside @tab.
  *
- * Returns: the #PlumaView inside @tab
+ * Returns: (transfer none): the #PlumaView inside @tab
  */
 PlumaView *
 pluma_tab_get_view (PlumaTab *tab)
@@ -1633,7 +1633,7 @@ pluma_tab_get_view (PlumaTab *tab)
  *
  * Gets the #PlumaDocument associated to @tab.
  *
- * Returns: the #PlumaDocument associated to @tab
+ * Returns: (transfer none): the #PlumaDocument associated to @tab
  */
 PlumaDocument *
 pluma_tab_get_document (PlumaTab *tab)
@@ -1958,7 +1958,7 @@ _pluma_tab_get_icon (PlumaTab *tab)
  *
  * Gets the #PlumaTab associated with @doc.
  *
- * Returns: the #PlumaTab associated with @doc
+ * Returns: (transfer none): the #PlumaTab associated with @doc
  */
 PlumaTab *
 pluma_tab_get_from_document (PlumaDocument *doc)

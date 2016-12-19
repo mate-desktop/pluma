@@ -77,7 +77,7 @@ struct _PlumaTaglistPluginPanelClass
 /*
  * Public methods
  */
-GType		 pluma_taglist_plugin_panel_register_type	(GTypeModule *module);
+void		 _pluma_taglist_plugin_panel_register_type	(GTypeModule *module);
 							
 GType 		 pluma_taglist_plugin_panel_get_type		(void) G_GNUC_CONST;
 

@@ -112,10 +112,6 @@ static void pluma_prefs_manager_auto_save_changed	(GSettings *settings,
 							 gchar       *key,
 							 gpointer     user_data);
 
-static void pluma_prefs_manager_active_plugins_changed	(GSettings *settings,
-							 gchar       *key,
-							 gpointer     user_data);
-
 static void pluma_prefs_manager_lockdown_changed	(GSettings *settings,
 							 gchar       *key,
 							 gpointer     user_data);
@@ -711,11 +707,6 @@ pluma_prefs_manager_app_init (void)
 		g_signal_connect (pluma_prefs_manager->settings,
 				"changed::" GPM_WRITABLE_VFS_SCHEMES,
 				G_CALLBACK (pluma_prefs_manager_auto_save_changed),
-				NULL);
-
-		g_signal_connect (pluma_prefs_manager->settings,
-				"changed::" GPM_ACTIVE_PLUGINS,
-				G_CALLBACK (pluma_prefs_manager_active_plugins_changed),
 				NULL);
 
 		g_signal_connect (pluma_prefs_manager->lockdown_settings,
@@ -1411,23 +1402,6 @@ pluma_prefs_manager_auto_save_changed (GSettings *settings,
 		}
 
 		g_list_free (docs);
-	}
-}
-
-static void
-pluma_prefs_manager_active_plugins_changed (GSettings *settings,
-					    gchar       *key,
-					    gpointer     user_data)
-{
-	pluma_debug (DEBUG_PREFS);
-
-	if (strcmp (key, GPM_ACTIVE_PLUGINS) == 0)
-	{
-		PlumaPluginsEngine *engine;
-
-		engine = pluma_plugins_engine_get_default ();
-
-		pluma_plugins_engine_active_plugins_changed (engine);
 	}
 }
 

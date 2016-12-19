@@ -4,7 +4,7 @@ AC_PREREQ(2.63.2)
 
 m4_define(pluma_major_version, 1)
 m4_define(pluma_minor_version, 17)
-m4_define(pluma_micro_version, 0)
+m4_define(pluma_micro_version, 2)
 m4_define(pluma_version, pluma_major_version.pluma_minor_version.pluma_micro_version)
 
 AC_INIT([pluma], [pluma_version],
@@ -39,7 +39,6 @@ LT_INIT(disable-static)
 
 GTK_DOC_CHECK([1.0],[--flavour=no-tmpl])
 
-AC_CHECK_FUNC(sigaction)
 AC_CHECK_LIB(m, floor)
 
 dnl make sure we keep ACLOCAL_FLAGS around for maintainer builds to work
@@ -161,6 +160,8 @@ PKG_CHECK_MODULES(PLUMA, [
 	gio-2.0 >= 2.26.0
 	gtk+-3.0 >= $GTK_REQUIRED
 	gtksourceview-3.0 >= $GTKSOURCEVIEW_REQUIRED
+	libpeas-1.0 >= 1.2.0
+	libpeas-gtk-1.0 >= 1.2.0
 ])
 
 PKG_CHECK_MODULES(X11, [x11])
@@ -175,6 +176,16 @@ PKG_CHECK_MODULES(EGG_SMCLIENT, [sm >= 1.0.0])
 
 AC_SUBST(EGG_SMCLIENT_CFLAGS)
 AC_SUBST(EGG_SMCLIENT_LIBS)
+
+# Introspection
+GOBJECT_INTROSPECTION_CHECK([0.9.3])
+
+if test "$found_introspection" = "yes"; then
+	have_introspection=yes
+	AC_DEFINE([HAVE_INTROSPECTION], [1], [Define to enable GObject Introspection])
+else
+	have_introspection=no
+fi
 
 dnl ================================================================
 dnl GSettings related settings
@@ -213,10 +224,8 @@ AC_ARG_ENABLE([tests],
 AM_CONDITIONAL(ENABLE_TESTS, test x$enable_tests = xyes)
 
 PLUGIN_LIBTOOL_FLAGS="-module -avoid-version"
-LOADER_LIBTOOL_FLAGS="-module -avoid-version"
 
 AC_SUBST(PLUGIN_LIBTOOL_FLAGS)
-AC_SUBST(LOADER_LIBTOOL_FLAGS)
 
 PLUMA_PLUGINS_DATA_DIR="$datadir/pluma/plugins"
 AC_SUBST(PLUMA_PLUGINS_DATA_DIR)
@@ -240,8 +249,6 @@ pluma/smclient/Makefile
 pluma/Makefile
 help/Makefile
 pixmaps/Makefile
-plugin-loaders/Makefile
-plugin-loaders/c/Makefile
 plugins/Makefile
 plugins/changecase/Makefile
 plugins/docinfo/Makefile
@@ -269,6 +276,7 @@ Configuration:
 	Compiler:		${CC}
 	Spell Plugin enabled:	$enable_enchant
 	Gvfs metadata enabled:	$enable_gvfs_metadata
+	GObject Introspection:	${have_introspection}
 	Tests enabled:		$enable_tests
 "
 
