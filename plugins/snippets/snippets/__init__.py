@@ -22,7 +22,6 @@ import shutil
 import gtk
 from gtk import gdk
 import pluma
-import platform
 
 from WindowHelper import WindowHelper
 from Library import Library
@@ -38,31 +37,22 @@ class SnippetsPlugin(pluma.Plugin):
                 library = Library()
                 library.set_accelerator_callback(self.accelerator_activated)
 
-                if platform.platform() == 'Windows':
-                        snippetsdir = os.path.expanduser('~/pluma/snippets')
-                else:
-                        userdir = os.getenv('MATE22_USER_DIR')
-                        if userdir:
-                                snippetsdir = os.path.join(userdir, 'pluma/snippets')
-                        else:
-                                snippetsdir = os.path.expanduser('~/.config/pluma/snippets')
-
+                snippetsdir = os.path.expanduser('~/.config/pluma/snippets')
                 library.set_dirs(snippetsdir, self.system_dirs())
 
         def system_dirs(self):
-        	if platform.platform() != 'Windows':
-		        if 'XDG_DATA_DIRS' in os.environ:
-		                datadirs = os.environ['XDG_DATA_DIRS']
-		        else:
-		                datadirs = '/usr/local/share' + os.pathsep + '/usr/share'
+                if 'XDG_DATA_DIRS' in os.environ:
+                        datadirs = os.environ['XDG_DATA_DIRS']
+                else:
+                        datadirs = '/usr/local/share' + os.pathsep + '/usr/share'
 
-		        dirs = []
+                dirs = []
 
-		        for d in datadirs.split(os.pathsep):
-		                d = os.path.join(d, 'pluma', 'plugins', 'snippets')
+                for d in datadirs.split(os.pathsep):
+                        d = os.path.join(d, 'pluma', 'plugins', 'snippets')
 
-		                if os.path.isdir(d):
-		                        dirs.append(d)
+                        if os.path.isdir(d):
+                                dirs.append(d)
 
                 dirs.append(self.get_data_dir())
                 return dirs
