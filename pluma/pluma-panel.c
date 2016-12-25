@@ -585,7 +585,7 @@ pluma_panel_constructor (GType type,
 GtkWidget *
 pluma_panel_new (GtkOrientation orientation)
 {
-	return GTK_WIDGET (g_object_new (PLUMA_TYPE_PANEL, "orientation", orientation, NULL));
+	return GTK_WIDGET (g_object_new (PLUMA_TYPE_PANEL, "panel-orientation", orientation, NULL));
 }
 
 static GtkWidget *
