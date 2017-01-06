@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-01 10:33+0300\n"
-"PO-Revision-Date: 2016-04-07 11:52+0000\n"
+"POT-Creation-Date: 2016-12-27 14:29+0300\n"
+"PO-Revision-Date: 2016-12-29 11:47+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/mate/MATE/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -452,7 +452,7 @@ msgstr "<p> 플루마는 특별히 마테 데스크톱을 위해서 만들어진
 msgid "Pluma"
 msgstr "플루마"
 
-#: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:767
+#: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:763
 msgid "Text Editor"
 msgstr "텍스트 편집기"
 
@@ -464,23 +464,23 @@ msgstr "텍스트 파일을 편집합니다"
 msgid "Pluma Text Editor"
 msgstr "플루마 문서 편집기"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:145
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "Log Out _without Saving"
 msgstr "저장하지 않고 로그아웃(_W)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:149
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:144
 msgid "_Cancel Logout"
 msgstr "로그아웃 취소(_C)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:156
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
 msgid "Close _without Saving"
 msgstr "저장하지 않고 닫기(_W)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:216
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:211
 msgid "Question"
 msgstr "물음"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:416
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:411
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -490,12 +490,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "저장하지 않으면, 최근 %ld초동안 편집한 사항을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:425
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr "저장하지 않으면, 최근 1분동안 편집한 사항을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:431
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -505,7 +505,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "저장하지 않으면, 최근 1분 %ld초동안 편집한 사항을 모두 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:441
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -515,12 +515,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "저장하지 않으면, 최근 %ld분동안 편집한 사항을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:456
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr "저장하지 않으면, 최근 1시간동안 편집한 사항을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:462
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -530,7 +530,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "저장하지 않으면, 최근 1시간 %d분동안 편집한 사항을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:477
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
@@ -538,28 +538,28 @@ msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] "저장하지 않으면, 최근 %d시간동안 편집한 사항을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:535
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "문서 \"%s\"의 바뀐 점을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "닫기 전에 문서 \"%s\"의 바뀐 사항을 저장하시겠습니까?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:554
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:788
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr "시스템 관리자가 저장을 하지 못하게 했습니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:739
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] "%d개 문서의 바뀐 점을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:745
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -567,15 +567,15 @@ msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] "바뀌었는데 저장하지 않은 문서가 %d개 있습니다. 닫기 전에 바뀐 사항을 저장하시겠습니까?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:763
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
 msgstr "저장하지 않은 내용이 있는 문서(_E):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
 msgid "S_elect the documents you want to save:"
 msgstr "저장하려는 문서를 선택하십시오(_E):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:790
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "저장하지 않으면, 바뀐 사항을 모두 잃게 됩니다."
 
@@ -605,42 +605,42 @@ msgstr "사용 가능한 인코딩(_V):"
 msgid "E_ncodings shown in menu:"
 msgstr "메뉴에 보여줄 인코딩(_N):"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:574
+#: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "단추를 눌러서 편집기에서 쓸 글꼴을 선택하십시오"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:584
+#: ../pluma/dialogs/pluma-preferences-dialog.c:582
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "시스템 고정폭 글꼴 (%s) 사용(_U)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:787
+#: ../pluma/dialogs/pluma-preferences-dialog.c:785
 msgid "The selected color scheme cannot be installed."
 msgstr "선택한 색상 모음을 설치할 수 없습니다."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:812
+#: ../pluma/dialogs/pluma-preferences-dialog.c:810
 msgid "Add Scheme"
 msgstr "색상 모음 추가"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:819
+#: ../pluma/dialogs/pluma-preferences-dialog.c:817
 msgid "A_dd Scheme"
 msgstr "색상 모음 추가(_D)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:827
+#: ../pluma/dialogs/pluma-preferences-dialog.c:825
 msgid "Color Scheme Files"
 msgstr "색상 모음 파일"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:834
-#: ../pluma/pluma-file-chooser-dialog.c:55
+#: ../pluma/dialogs/pluma-preferences-dialog.c:832
+#: ../pluma/pluma-file-chooser-dialog.c:53
 msgid "All Files"
 msgstr "모든 파일"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:879
+#: ../pluma/dialogs/pluma-preferences-dialog.c:877
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "색상 모음 파일 \"%s\"을(를) 지울 수 없습니다."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1090
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1088
 msgid "Pluma Preferences"
 msgstr "플루마 기본 설정"
 
@@ -656,7 +656,6 @@ msgstr "줄 바꿈"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../plugins/docinfo/docinfo.ui.h:4
 #: ../plugins/externaltools/tools/tools.ui.h:21
-#: ../plugins/snippets/snippets/snippets.ui.h:9
 #: ../plugins/time/pluma-time-dialog.ui.h:4
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:3
 msgid "    "
@@ -677,7 +676,7 @@ msgstr "단어를 여러 줄로 나누지 않기(_S)"
 msgid "Line Numbers"
 msgstr "줄 번호"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:2039
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1958
 msgid "_Display line numbers"
 msgstr "줄 번호 표시(_D)"
 
@@ -781,21 +780,21 @@ msgstr "글꼴 및 색"
 msgid "Plugins"
 msgstr "플러그인"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:302
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1462
+#: ../pluma/dialogs/pluma-search-dialog.c:300
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
 msgid "Replace"
 msgstr "바꾸기"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:313 ../pluma/pluma-window.c:1460
+#: ../pluma/dialogs/pluma-search-dialog.c:309 ../pluma/pluma-window.c:1459
 msgid "Find"
 msgstr "찾기"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.c:418
 msgid "Replace _All"
 msgstr "모두 바꾸기(_A)"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:418
-#: ../pluma/pluma-commands-file.c:589
+#: ../pluma/dialogs/pluma-search-dialog.c:419
+#: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
 msgstr "바꾸기(_R)"
 
@@ -831,47 +830,47 @@ msgstr "끝까지 가면 처음부터(_W)"
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "이스케이프 문자 해석(예 \\n)(_P)"
 
-#: ../pluma/pluma.c:104
+#: ../pluma/pluma.c:108
 msgid "Show the application's version"
 msgstr "프로그램 버전을 표시합니다"
 
-#: ../pluma/pluma.c:107
+#: ../pluma/pluma.c:111
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
 msgstr "명령행에서 지정한 파일을 여는데 사용할 문자 인코딩을 설정합니다"
 
-#: ../pluma/pluma.c:107
+#: ../pluma/pluma.c:111
 msgid "ENCODING"
 msgstr "<인코딩>"
 
-#: ../pluma/pluma.c:110
+#: ../pluma/pluma.c:114
 msgid "Display list of possible values for the encoding option"
 msgstr "인코딩 옵션에서 사용할 수 있는 값의 목록을 표시합니다"
 
-#: ../pluma/pluma.c:113
+#: ../pluma/pluma.c:117
 msgid "Create a new top-level window in an existing instance of pluma"
 msgstr "실행 중인 플루마 인스턴스에서 새로운 최상위 창을 만듭니다"
 
-#: ../pluma/pluma.c:116
+#: ../pluma/pluma.c:120
 msgid "Create a new document in an existing instance of pluma"
 msgstr "실행 중인 플루마 인스턴스에서 새로운 문서를 만듭니다"
 
-#: ../pluma/pluma.c:119
+#: ../pluma/pluma.c:123
 msgid "[FILE...]"
 msgstr "[파일...]"
 
-#: ../pluma/pluma.c:174
+#: ../pluma/pluma.c:178
 #, c-format
 msgid "%s: invalid encoding.\n"
 msgstr "%s: 잘못된 인코딩.\n"
 
 #. Setup command line options
-#: ../pluma/pluma.c:520
+#: ../pluma/pluma.c:524
 msgid "- Edit text files"
 msgstr "- 텍스트 파일을 편집합니다"
 
-#: ../pluma/pluma.c:529
+#: ../pluma/pluma.c:535
 #, c-format
 msgid ""
 "%s\n"
@@ -890,39 +889,39 @@ msgid_plural "Loading %d files…"
 msgstr[0] "%d개 파일을 읽어들이는 중입니다…"
 
 #. Translators: "Open Files" is the title of the file chooser window
-#: ../pluma/pluma-commands-file.c:465
+#: ../pluma/pluma-commands-file.c:463
 msgid "Open Files"
 msgstr "파일 열기"
 
-#: ../pluma/pluma-commands-file.c:576
+#: ../pluma/pluma-commands-file.c:574
 #, c-format
 msgid "The file \"%s\" is read-only."
 msgstr "\"%s\" 파일이 읽기 전용입니다."
 
-#: ../pluma/pluma-commands-file.c:581
+#: ../pluma/pluma-commands-file.c:579
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "저장하려는 파일로 바꾸시겠습니까?"
 
-#: ../pluma/pluma-commands-file.c:650 ../pluma/pluma-commands-file.c:873
+#: ../pluma/pluma-commands-file.c:648 ../pluma/pluma-commands-file.c:871
 #, c-format
 msgid "Saving file '%s'…"
 msgstr "'%s' 파일을 읽어들이는 중입니다…"
 
-#: ../pluma/pluma-commands-file.c:758
+#: ../pluma/pluma-commands-file.c:756
 msgid "Save As…"
 msgstr "다른 이름으로 저장…"
 
-#: ../pluma/pluma-commands-file.c:1087
+#: ../pluma/pluma-commands-file.c:1085
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr "'%s' 문서를 되돌리는 중입니다…"
 
-#: ../pluma/pluma-commands-file.c:1132
+#: ../pluma/pluma-commands-file.c:1130
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr "문서 '%s'의 저장하지 않은 바뀐 점을 되돌리시겠습니까?"
 
-#: ../pluma/pluma-commands-file.c:1141
+#: ../pluma/pluma-commands-file.c:1139
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently "
@@ -932,12 +931,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "최근 %ld초동안 문서에 바뀐 점을 잃어버립니다."
 
-#: ../pluma/pluma-commands-file.c:1150
+#: ../pluma/pluma-commands-file.c:1148
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "최근 1분동안 문서에 바뀐 점을 잃어버립니다."
 
-#: ../pluma/pluma-commands-file.c:1156
+#: ../pluma/pluma-commands-file.c:1154
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -947,7 +946,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "최근 %ld초동안 문서에 바뀐 점을 잃어버립니다."
 
-#: ../pluma/pluma-commands-file.c:1166
+#: ../pluma/pluma-commands-file.c:1164
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently "
@@ -957,12 +956,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "최근 %ld분동안 문서에 바뀐 점을 잃어버립니다."
 
-#: ../pluma/pluma-commands-file.c:1181
+#: ../pluma/pluma-commands-file.c:1179
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
 msgstr "최근 한시간동안 문서에 바뀐 점을 잃어버립니다."
 
-#: ../pluma/pluma-commands-file.c:1187
+#: ../pluma/pluma-commands-file.c:1185
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -972,7 +971,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "최근 1시간 %d분동안 문서에 바뀐 점을 잃어버립니다."
 
-#: ../pluma/pluma-commands-file.c:1202
+#: ../pluma/pluma-commands-file.c:1200
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -980,7 +979,7 @@ msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] "최근 %d시간동안 문서에 바뀐 점을 잃어버립니다."
 
-#: ../pluma/pluma-commands-file.c:1228
+#: ../pluma/pluma-commands-file.c:1226
 msgid "_Revert"
 msgstr "되돌리기(_R)"
 
@@ -992,34 +991,34 @@ msgstr "플루마는 마테 데스크톱을 위한 작고 가벼운 텍스트 �
 msgid "translator-credits"
 msgstr "남성현 <namsh@lgic.co.kr>\n황치덕 <hwang@mizi.co.kr>\n차영호 <ganadist@gmail.com>\n류창우 <cwryu@debian.org>\nMATE Desktop Environment Team <https://www.transifex.com/mate/teams/13566/ko/>"
 
-#: ../pluma/pluma-commands-search.c:115
+#: ../pluma/pluma-commands-search.c:112
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
 msgstr[0] "%d번 발견하고 바꿨습니다"
 
-#: ../pluma/pluma-commands-search.c:125
+#: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
 msgstr "한번 발견하고 바꿨습니다"
 
 #. Translators: %s is replaced by the text
 #. entered by the user in the search box
-#: ../pluma/pluma-commands-search.c:146
+#: ../pluma/pluma-commands-search.c:143
 #, c-format
 msgid "\"%s\" not found"
 msgstr "\"%s\"이(가) 없습니다"
 
-#: ../pluma/pluma-document.c:1090 ../pluma/pluma-document.c:1110
+#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "저장하지 않은 문서 %d"
 
-#: ../pluma/pluma-documents-panel.c:101 ../pluma/pluma-documents-panel.c:115
-#: ../pluma/pluma-window.c:2187 ../pluma/pluma-window.c:2192
+#: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
+#: ../pluma/pluma-window.c:2184 ../pluma/pluma-window.c:2189
 msgid "Read-Only"
 msgstr "읽기 전용"
 
-#: ../pluma/pluma-documents-panel.c:796 ../pluma/pluma-window.c:3577
+#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3566
 msgid "Documents"
 msgstr "문서"
 
@@ -1153,27 +1152,27 @@ msgstr "현재 로캘 (%s)"
 msgid "Add or Remove..."
 msgstr "추가 혹은 제거..."
 
-#: ../pluma/pluma-file-chooser-dialog.c:56
+#: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Text Files"
 msgstr "모든 텍스트 파일"
 
-#: ../pluma/pluma-file-chooser-dialog.c:88
+#: ../pluma/pluma-file-chooser-dialog.c:82
 msgid "C_haracter Encoding:"
 msgstr "문자 인코딩(_H):"
 
-#: ../pluma/pluma-file-chooser-dialog.c:157
+#: ../pluma/pluma-file-chooser-dialog.c:151
 msgid "L_ine Ending:"
 msgstr "줄 바꿈(_I):"
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:174
 msgid "Unix/Linux"
 msgstr "유닉스/리눅스"
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:180
 msgid "Mac OS Classic"
 msgstr "맥 OS 클래식"
 
-#: ../pluma/pluma-file-chooser-dialog.c:192
+#: ../pluma/pluma-file-chooser-dialog.c:186
 msgid "Windows"
 msgstr "윈도우"
 
@@ -1181,191 +1180,191 @@ msgstr "윈도우"
 msgid "There was an error displaying the help."
 msgstr "도움말을 표시하는데 오류가 발생했습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:196
-#: ../pluma/pluma-io-error-message-area.c:498
+#: ../pluma/pluma-io-error-message-area.c:187
+#: ../pluma/pluma-io-error-message-area.c:489
 msgid "_Retry"
 msgstr "다시 시도(_R)"
 
-#: ../pluma/pluma-io-error-message-area.c:217
+#: ../pluma/pluma-io-error-message-area.c:208
 #, c-format
 msgid "Could not find the file %s."
 msgstr "파일 %s을(를) 찾을 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:219
-#: ../pluma/pluma-io-error-message-area.c:258
-#: ../pluma/pluma-io-error-message-area.c:265
+#: ../pluma/pluma-io-error-message-area.c:210
+#: ../pluma/pluma-io-error-message-area.c:249
+#: ../pluma/pluma-io-error-message-area.c:256
 msgid "Please check that you typed the location correctly and try again."
 msgstr "입력한 위치가 올바른지 확인하고 다시 시도하십시오."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:234
+#: ../pluma/pluma-io-error-message-area.c:225
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "%s 위치를 처리할 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:240
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "pluma cannot handle this location."
 msgstr "이 위치를 처리할 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:248
+#: ../pluma/pluma-io-error-message-area.c:239
 msgid "The location of the file cannot be mounted."
 msgstr "파일의 위치를 마운트할 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:252
+#: ../pluma/pluma-io-error-message-area.c:243
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "파일에 접근할 수 없습니다. 마운트하지 않았습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:247
 #, c-format
 msgid "%s is a directory."
 msgstr "%s(은)는 디렉터리 입니다."
 
-#: ../pluma/pluma-io-error-message-area.c:263
+#: ../pluma/pluma-io-error-message-area.c:254
 #, c-format
 msgid "%s is not a valid location."
 msgstr "%s(은)는 올바른 위치가 아닙니다."
 
-#: ../pluma/pluma-io-error-message-area.c:293
+#: ../pluma/pluma-io-error-message-area.c:284
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr "호스트 %s을(를) 찾을 수 없습니다. 프록시 설정이 올바른지 확인하고 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:306
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr "호스트 이름이 올바르지 않습니다. 입력한 위치가 올바른지 확인하고 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:314
+#: ../pluma/pluma-io-error-message-area.c:305
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s(은)는 보통 파일이 아닙니다."
 
-#: ../pluma/pluma-io-error-message-area.c:319
+#: ../pluma/pluma-io-error-message-area.c:310
 msgid "Connection timed out. Please try again."
 msgstr "연결 제한시간이 지났습니다. 다시 시도합니다."
 
-#: ../pluma/pluma-io-error-message-area.c:342
+#: ../pluma/pluma-io-error-message-area.c:333
 msgid "The file is too big."
 msgstr "파일이 너무 큽니다."
 
-#: ../pluma/pluma-io-error-message-area.c:383
+#: ../pluma/pluma-io-error-message-area.c:374
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "예기치 않은 오류: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:419
+#: ../pluma/pluma-io-error-message-area.c:410
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "파일을 찾지 못했습니다. 최근에 지워졌을 것입니다."
 
-#: ../pluma/pluma-io-error-message-area.c:429
+#: ../pluma/pluma-io-error-message-area.c:420
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "파일 %s을(를) 되돌릴 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:455
+#: ../pluma/pluma-io-error-message-area.c:446
 msgid "Ch_aracter Encoding:"
 msgstr "문자 인코딩(_A):"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:507
-#: ../pluma/pluma-io-error-message-area.c:794
+#: ../pluma/pluma-io-error-message-area.c:498
+#: ../pluma/pluma-io-error-message-area.c:781
 msgid "Edit Any_way"
 msgstr "그래도 편집(_W)"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:512
-#: ../pluma/pluma-io-error-message-area.c:799
+#: ../pluma/pluma-io-error-message-area.c:503
+#: ../pluma/pluma-io-error-message-area.c:786
 msgid "D_on't Edit"
 msgstr "편집하지 않기(_O)"
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:607
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr "링크 따라가는 개수는 정해져 있습니다. 그 개수 제한 안에서 실제 파일을 찾을 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:624
+#: ../pluma/pluma-io-error-message-area.c:611
 msgid "You do not have the permissions necessary to open the file."
 msgstr "파일을 열 수 있는 권한이 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:630
+#: ../pluma/pluma-io-error-message-area.c:617
 msgid "pluma has not been able to detect the character encoding."
 msgstr "문자 인코딩을 알아낼 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:632
-#: ../pluma/pluma-io-error-message-area.c:654
+#: ../pluma/pluma-io-error-message-area.c:619
+#: ../pluma/pluma-io-error-message-area.c:641
 msgid "Please check that you are not trying to open a binary file."
 msgstr "이진 파일을 열려고 한 것인지 확인하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:633
+#: ../pluma/pluma-io-error-message-area.c:620
 msgid "Select a character encoding from the menu and try again."
 msgstr "메뉴에서 문자 인코딩을 선택해서 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:639
+#: ../pluma/pluma-io-error-message-area.c:626
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "%s 파일을 여는데 문제가 발생했습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:628
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
 msgstr "연 파일 안에 올바르지 않은 문자가 들어 있습니다. 이 파일을 계속 편집하면 문서를 망가뜨릴 수도 있습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:644
+#: ../pluma/pluma-io-error-message-area.c:631
 msgid "You can also choose another character encoding and try again."
 msgstr "다른 문자 인코딩을 선택해서 다시 시도해 볼 수도 있습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:651
+#: ../pluma/pluma-io-error-message-area.c:638
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr "%2$s 문자 인코딩으로 %1$s 파일을 열 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:655
-#: ../pluma/pluma-io-error-message-area.c:730
+#: ../pluma/pluma-io-error-message-area.c:642
+#: ../pluma/pluma-io-error-message-area.c:717
 msgid "Select a different character encoding from the menu and try again."
 msgstr "메뉴에서 다른 문자 인코딩을 선택한 후 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:665
+#: ../pluma/pluma-io-error-message-area.c:652
 #, c-format
 msgid "Could not open the file %s."
 msgstr "%s 파일을 열 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:725
+#: ../pluma/pluma-io-error-message-area.c:712
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr "%2$s 문자 인코딩으로 %1$s 파일을 저장할 수 없습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:728
+#: ../pluma/pluma-io-error-message-area.c:715
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr "지정한 문자 인코딩으로 인코드되지 않은 문자가 문서에 포함되어 있습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:818
+#: ../pluma/pluma-io-error-message-area.c:801
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "이 파일은 (%s) 다른 플루마 창에 열려있습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:836
+#: ../pluma/pluma-io-error-message-area.c:819
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr "편집할 수 없는 방법으로 파일을 열었습니다. 계속 편집하겠습니까?"
 
-#: ../pluma/pluma-io-error-message-area.c:899
-#: ../pluma/pluma-io-error-message-area.c:1007
+#: ../pluma/pluma-io-error-message-area.c:882
+#: ../pluma/pluma-io-error-message-area.c:986
 msgid "S_ave Anyway"
 msgstr "어쨋든 저장(_A)"
 
-#: ../pluma/pluma-io-error-message-area.c:903
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:886
+#: ../pluma/pluma-io-error-message-area.c:990
 msgid "D_on't Save"
 msgstr "저장하지 않음(_O)"
 
@@ -1374,27 +1373,27 @@ msgstr "저장하지 않음(_O)"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:925
+#: ../pluma/pluma-io-error-message-area.c:904
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "파일 %s(이)가 읽은 뒤에 고쳐졌습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:944
+#: ../pluma/pluma-io-error-message-area.c:923
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "저장하면, 외부에서 바꾼 것을 잃어버리게 됩니다. 계속 저장하겠습니까?"
 
-#: ../pluma/pluma-io-error-message-area.c:1033
+#: ../pluma/pluma-io-error-message-area.c:1008
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "%s(을)를 저장할 때 백업 파일을 만들 수 없습니다"
 
-#: ../pluma/pluma-io-error-message-area.c:1036
+#: ../pluma/pluma-io-error-message-area.c:1011
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "%s(을)를 저장할 때 임시 백업 파일을 만들 수 없습니다"
 
-#: ../pluma/pluma-io-error-message-area.c:1056
+#: ../pluma/pluma-io-error-message-area.c:1031
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
@@ -1402,62 +1401,62 @@ msgid ""
 msgstr "새로 저장하기 전에 파일의 이전판을 저장할 수 없습니다. 이 주의를 무시하고 저장할 수 있지만, 저장중 오류가 생기면 파일의 이전판을 잃어버리게 됩니다. 계속하겠습니까?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1120
+#: ../pluma/pluma-io-error-message-area.c:1095
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr "%s 위치를 쓰기 모드로 처리할 수 없습니다. 입력한 위치가 올바른지 확인하고 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:1128
+#: ../pluma/pluma-io-error-message-area.c:1103
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr "이 위치를 쓰기 모드로 처리할 수 없습니다. 입력한 위치가 올바른지 확인하고 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:1137
+#: ../pluma/pluma-io-error-message-area.c:1112
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr "%s(은)는 올바른 위치가 아닙니다. 입력한 위치가 올바른지 확인하고 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:1143
+#: ../pluma/pluma-io-error-message-area.c:1118
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
 msgstr "파일을 저장할 권한이 없습니다. 입력한 위치가 올바른지 확인하고 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:1149
+#: ../pluma/pluma-io-error-message-area.c:1124
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
 msgstr "파일을 저장하기 위한 디스크 공간이 부족합니다. 디스크 공간을 확보하고 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:1154
+#: ../pluma/pluma-io-error-message-area.c:1129
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr "읽기 전용 디스크에 파일을 저장하려 합니다. 입력한 위치가 올바른지 확인하고 다시 시도하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:1160
+#: ../pluma/pluma-io-error-message-area.c:1135
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "같은 이름의 파일이 이미 있습니다. 다른 이름을 쓰도록 하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:1165
+#: ../pluma/pluma-io-error-message-area.c:1140
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
 msgstr "파일을 저장하려는 디스크에 파일 이름 길이 제한이 걸려있습니다. 짧은 파일이름을 쓰도록 하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:1172
+#: ../pluma/pluma-io-error-message-area.c:1147
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr "파일을 저장하려는 디스크에 파일 크기 제한이 걸려있습니다. 파일 크기를 줄이던지 크기 제한이 풀려있는 디스크에 저장하십시오."
 
-#: ../pluma/pluma-io-error-message-area.c:1188
+#: ../pluma/pluma-io-error-message-area.c:1163
 #, c-format
 msgid "Could not save the file %s."
 msgstr "파일 %s을(를) 저장할 수 없습니다."
@@ -1467,81 +1466,41 @@ msgstr "파일 %s을(를) 저장할 수 없습니다."
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1232
+#: ../pluma/pluma-io-error-message-area.c:1207
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "%s 파일이 바뀌었습니다."
 
-#: ../pluma/pluma-io-error-message-area.c:1237
+#: ../pluma/pluma-io-error-message-area.c:1212
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "바뀐점을 버리고 파일을 다시 읽겠습니까?"
 
-#: ../pluma/pluma-io-error-message-area.c:1239
+#: ../pluma/pluma-io-error-message-area.c:1214
 msgid "Do you want to reload the file?"
 msgstr "파일을 다시 읽겠습니까?"
 
-#: ../pluma/pluma-io-error-message-area.c:1244
+#: ../pluma/pluma-io-error-message-area.c:1219
 msgid "_Reload"
 msgstr "다시 읽기(_R)"
 
-#: ../pluma/pluma-panel.c:372 ../pluma/pluma-panel.c:549
+#: ../pluma/pluma-panel.c:338 ../pluma/pluma-panel.c:513
 msgid "Empty"
 msgstr "비어있음"
 
-#: ../pluma/pluma-panel.c:439
+#: ../pluma/pluma-panel.c:403
 msgid "Hide panel"
 msgstr "패널 숨기기"
 
-#: ../pluma/pluma-plugin-manager.c:54
-msgid "Plugin"
-msgstr "플러그인"
-
-#: ../pluma/pluma-plugin-manager.c:55
-msgid "Enabled"
-msgstr "사용"
-
-#: ../pluma/pluma-plugin-manager.c:508
-msgid "_About"
-msgstr "정보(_A)"
-
-#: ../pluma/pluma-plugin-manager.c:516
-msgid "C_onfigure"
-msgstr "설정(_O)"
-
-#: ../pluma/pluma-plugin-manager.c:525
-msgid "A_ctivate"
-msgstr "활성(_C)"
-
-#: ../pluma/pluma-plugin-manager.c:536
-msgid "Ac_tivate All"
-msgstr "모두 활성(_T)"
-
-#: ../pluma/pluma-plugin-manager.c:541
-msgid "_Deactivate All"
-msgstr "모두 비활성(_D)"
-
-#: ../pluma/pluma-plugin-manager.c:811
-msgid "Active _Plugins:"
-msgstr "활성 플러그인(_P):"
-
-#: ../pluma/pluma-plugin-manager.c:844
-msgid "_About Plugin"
-msgstr "플러그인 정보(_A)"
-
-#: ../pluma/pluma-plugin-manager.c:848
-msgid "C_onfigure Plugin"
-msgstr "플러그인 설정(_O)"
-
-#: ../pluma/pluma-print-job.c:551
+#: ../pluma/pluma-print-job.c:547
 #, c-format
 msgid "File: %s"
 msgstr "파일: %s"
 
-#: ../pluma/pluma-print-job.c:560
+#: ../pluma/pluma-print-job.c:556
 msgid "Page %N of %Q"
 msgstr "%N페이지 / 전체 %Q"
 
-#: ../pluma/pluma-print-job.c:817
+#: ../pluma/pluma-print-job.c:813
 msgid "Preparing..."
 msgstr "준비하는 중..."
 
@@ -1557,14 +1516,10 @@ msgstr "구문 강조 인쇄(_X)"
 msgid "Print line nu_mbers"
 msgstr "줄 번호 인쇄(_M)"
 
-#. 'Number every' from 'Number every 3 lines' in the 'Text Editor' tab of the
-#. print preferences.
 #: ../pluma/pluma-print-preferences.ui.h:6
 msgid "_Number every"
 msgstr "다음 줄마다 줄 번호(_N):"
 
-#. 'lines' from 'Number every 3 lines' in the 'Text Editor' tab of the print
-#. preferences.
 #: ../pluma/pluma-print-preferences.ui.h:8
 msgid "lines"
 msgstr "줄"
@@ -1597,69 +1552,69 @@ msgstr "윗단 및 아래단(_A):"
 msgid "_Restore Default Fonts"
 msgstr "기본 글꼴로 되돌리기(_R)"
 
-#: ../pluma/pluma-print-preview.c:572
+#: ../pluma/pluma-print-preview.c:565
 msgid "Show the previous page"
 msgstr "이전 페이지 보기"
 
-#: ../pluma/pluma-print-preview.c:584
+#: ../pluma/pluma-print-preview.c:578
 msgid "Show the next page"
 msgstr "다음 페이지 보기"
 
-#: ../pluma/pluma-print-preview.c:600
+#: ../pluma/pluma-print-preview.c:594
 msgid "Current page (Alt+P)"
 msgstr "현재 페이지 (Alt+P)"
 
 #. Translators: the "of" from "1 of 19" in print preview.
-#: ../pluma/pluma-print-preview.c:623
+#: ../pluma/pluma-print-preview.c:617
 msgid "of"
 msgstr "/"
 
-#: ../pluma/pluma-print-preview.c:631
+#: ../pluma/pluma-print-preview.c:625
 msgid "Page total"
 msgstr "페이지 전체"
 
-#: ../pluma/pluma-print-preview.c:632
+#: ../pluma/pluma-print-preview.c:626
 msgid "The total number of pages in the document"
 msgstr "문서의 전체 페이지 수 "
 
-#: ../pluma/pluma-print-preview.c:649
+#: ../pluma/pluma-print-preview.c:644
 msgid "Show multiple pages"
 msgstr "여러 페이지를 봅니다"
 
-#: ../pluma/pluma-print-preview.c:662
+#: ../pluma/pluma-print-preview.c:658
 msgid "Zoom 1:1"
 msgstr "1:1로 확대"
 
-#: ../pluma/pluma-print-preview.c:671
+#: ../pluma/pluma-print-preview.c:668
 msgid "Zoom to fit the whole page"
 msgstr "전체 페이지에 맞게 크기 조정"
 
-#: ../pluma/pluma-print-preview.c:680
+#: ../pluma/pluma-print-preview.c:678
 msgid "Zoom the page in"
 msgstr "페이지 확대"
 
-#: ../pluma/pluma-print-preview.c:689
+#: ../pluma/pluma-print-preview.c:688
 msgid "Zoom the page out"
 msgstr "페이지 축소"
 
-#: ../pluma/pluma-print-preview.c:701
+#: ../pluma/pluma-print-preview.c:700
 msgid "_Close Preview"
 msgstr "미리보기 닫기(_C)"
 
-#: ../pluma/pluma-print-preview.c:704
+#: ../pluma/pluma-print-preview.c:703
 msgid "Close print preview"
 msgstr "인쇄 미리보기 닫기"
 
-#: ../pluma/pluma-print-preview.c:774
+#: ../pluma/pluma-print-preview.c:773
 #, c-format
 msgid "Page %d of %d"
 msgstr "%d페이지, 전체 %d"
 
-#: ../pluma/pluma-print-preview.c:958
+#: ../pluma/pluma-print-preview.c:954
 msgid "Page Preview"
 msgstr "인쇄 미리보기"
 
-#: ../pluma/pluma-print-preview.c:959
+#: ../pluma/pluma-print-preview.c:955
 msgid "The preview of a page in the document to be printed"
 msgstr "인쇄될 문서를 미리 봅니다"
 
@@ -1667,106 +1622,106 @@ msgstr "인쇄될 문서를 미리 봅니다"
 msgid "It is not possible to detect the encoding automatically"
 msgstr "인코딩을 자동으로 검사할 수 없습니다"
 
-#: ../pluma/pluma-statusbar.c:74 ../pluma/pluma-statusbar.c:80
+#: ../pluma/pluma-statusbar.c:70 ../pluma/pluma-statusbar.c:76
 msgid "OVR"
 msgstr "바꿈"
 
-#: ../pluma/pluma-statusbar.c:74 ../pluma/pluma-statusbar.c:80
+#: ../pluma/pluma-statusbar.c:70 ../pluma/pluma-statusbar.c:76
 msgid "INS"
 msgstr "삽입"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for
 #. "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: ../pluma/pluma-statusbar.c:266
+#: ../pluma/pluma-statusbar.c:251
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr " %d행, %d열"
 
-#: ../pluma/pluma-statusbar.c:367
+#: ../pluma/pluma-statusbar.c:352
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
 msgstr[0] "오류가 있는 %d개의 탭이 있습니다"
 
-#: ../pluma/pluma-style-scheme-manager.c:220
+#: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
 msgid "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
 msgstr "'%s' 디렉터리를 만들 수 없습니다: g_mkdir_with_parents() 실패: %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:664
+#: ../pluma/pluma-tab.c:672
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "%2$s에서 %1$s(을)를 되돌리는 중"
 
-#: ../pluma/pluma-tab.c:671
+#: ../pluma/pluma-tab.c:679
 #, c-format
 msgid "Reverting %s"
 msgstr "%s(을)를 되돌리는 중"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:687
+#: ../pluma/pluma-tab.c:695
 #, c-format
 msgid "Loading %s from %s"
 msgstr "%2$s에서 %1$s(을)를 읽어들이는 중"
 
-#: ../pluma/pluma-tab.c:694
+#: ../pluma/pluma-tab.c:702
 #, c-format
 msgid "Loading %s"
 msgstr "%s(을)를 읽어들이는 중"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:777
+#: ../pluma/pluma-tab.c:785
 #, c-format
 msgid "Saving %s to %s"
 msgstr "%s(을)를 %s(으)로 저장 중"
 
-#: ../pluma/pluma-tab.c:784
+#: ../pluma/pluma-tab.c:792
 #, c-format
 msgid "Saving %s"
 msgstr "%s 저장 중"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1662
+#: ../pluma/pluma-tab.c:1674
 msgid "RO"
 msgstr "RO"
 
-#: ../pluma/pluma-tab.c:1709
+#: ../pluma/pluma-tab.c:1721
 #, c-format
 msgid "Error opening file %s"
 msgstr "파일 %s을(를) 읽어들이는데 오류"
 
-#: ../pluma/pluma-tab.c:1714
+#: ../pluma/pluma-tab.c:1726
 #, c-format
 msgid "Error reverting file %s"
 msgstr "%s 파일을 되돌리는데 오류"
 
-#: ../pluma/pluma-tab.c:1719
+#: ../pluma/pluma-tab.c:1731
 #, c-format
 msgid "Error saving file %s"
 msgstr "%s 파일을 저장하는데 오류"
 
-#: ../pluma/pluma-tab.c:1740
+#: ../pluma/pluma-tab.c:1752
 msgid "Unicode (UTF-8)"
 msgstr "유니코드 (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1747
+#: ../pluma/pluma-tab.c:1759
 msgid "Name:"
 msgstr "이름:"
 
-#: ../pluma/pluma-tab.c:1748
+#: ../pluma/pluma-tab.c:1760
 msgid "MIME Type:"
 msgstr "MIME 종류:"
 
-#: ../pluma/pluma-tab.c:1749
+#: ../pluma/pluma-tab.c:1761
 msgid "Encoding:"
 msgstr "인코딩:"
 
-#: ../pluma/pluma-tab-label.c:285
+#: ../pluma/pluma-tab-label.c:276
 msgid "Close document"
 msgstr "문서 닫기"
 
@@ -1807,7 +1762,7 @@ msgstr "새 문서를 만듭니다"
 msgid "_Open..."
 msgstr "열기(_O)..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1390
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1389
 msgid "Open a file"
 msgstr "파일 열기"
 
@@ -2048,57 +2003,57 @@ msgstr "아래 창(_B)"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "현재 창의 아래 창의 보기 여부를 바꿉니다"
 
-#: ../pluma/pluma-utils.c:1100
+#: ../pluma/pluma-utils.c:1099
 msgid "Please check your installation."
 msgstr "설치가 올바른지 확인하십시오."
 
-#: ../pluma/pluma-utils.c:1177
+#: ../pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "%s UI 파일을 열 수 없습니다. 오류: %s"
 
-#: ../pluma/pluma-utils.c:1197
+#: ../pluma/pluma-utils.c:1192
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "'%s' 오브젝트를 (%s 파일) 찾을 수 없습니다."
 
 #. Translators: '/ on <remote-share>'
-#: ../pluma/pluma-utils.c:1357
+#: ../pluma/pluma-utils.c:1352
 #, c-format
 msgid "/ on %s"
 msgstr "%s의 /"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1261
+#: ../pluma/pluma-view.c:1196
 msgid "_Wrap Around"
 msgstr "끝까지 가면 처음부터(_W)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1271
+#: ../pluma/pluma-view.c:1206
 msgid "Match _Entire Word Only"
 msgstr "전체가 맞는 단어만(_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1281
+#: ../pluma/pluma-view.c:1216
 msgid "_Match Case"
 msgstr "대소문자 일치(_M)"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1291
+#: ../pluma/pluma-view.c:1226
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr "이스케이프 문자 해석(예 \n)"
 
-#: ../pluma/pluma-view.c:1405
+#: ../pluma/pluma-view.c:1340
 msgid "String you want to search for"
 msgstr "찾으려는 문자열"
 
-#: ../pluma/pluma-view.c:1414
+#: ../pluma/pluma-view.c:1349
 msgid "Line you want to move the cursor to"
 msgstr "커서를 옮기려는 줄 번호"
 
-#: ../pluma/pluma-window.c:943
+#: ../pluma/pluma-window.c:942
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s 강조 모드 사용"
@@ -2106,104 +2061,104 @@ msgstr "%s 강조 모드 사용"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1000 ../pluma/pluma-window.c:1892
-#: ../plugins/externaltools/tools/manager.py:121
-#: ../plugins/externaltools/tools/manager.py:419
-#: ../plugins/externaltools/tools/manager.py:529
-#: ../plugins/externaltools/tools/manager.py:844
+#: ../pluma/pluma-window.c:999 ../pluma/pluma-window.c:1889
+#: ../plugins/externaltools/tools/manager.py:138
+#: ../plugins/externaltools/tools/manager.py:445
+#: ../plugins/externaltools/tools/manager.py:556
+#: ../plugins/externaltools/tools/manager.py:873
 msgid "Plain Text"
 msgstr "일반 텍스트"
 
-#: ../pluma/pluma-window.c:1001
+#: ../pluma/pluma-window.c:1000
 msgid "Disable syntax highlighting"
 msgstr "구문 강조을 하지 않습니다"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1287
+#: ../pluma/pluma-window.c:1286
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s'을(를) 엽니다"
 
-#: ../pluma/pluma-window.c:1392
+#: ../pluma/pluma-window.c:1391
 msgid "Open a recently used file"
 msgstr "최근에 열었던 파일을 엽니다"
 
-#: ../pluma/pluma-window.c:1398
+#: ../pluma/pluma-window.c:1397
 msgid "Open"
 msgstr "열기"
 
-#: ../pluma/pluma-window.c:1456
+#: ../pluma/pluma-window.c:1455
 msgid "Save"
 msgstr "저장"
 
-#: ../pluma/pluma-window.c:1458
+#: ../pluma/pluma-window.c:1457
 msgid "Print"
 msgstr "인쇄"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1617
+#: ../pluma/pluma-window.c:1614
 #, c-format
 msgid "Activate '%s'"
 msgstr "%s 활성"
 
-#: ../pluma/pluma-window.c:1870
+#: ../pluma/pluma-window.c:1867
 msgid "Use Spaces"
 msgstr "공백 사용"
 
-#: ../pluma/pluma-window.c:1941
+#: ../pluma/pluma-window.c:1938
 msgid "Tab Width"
 msgstr "탭 너비"
 
-#: ../plugins/changecase/changecase.pluma-plugin.desktop.in.h:1
+#: ../plugins/changecase/changecase.plugin.desktop.in.h:1
 msgid "Change Case"
 msgstr "대소문자 바꾸기"
 
-#: ../plugins/changecase/changecase.pluma-plugin.desktop.in.h:2
+#: ../plugins/changecase/changecase.plugin.desktop.in.h:2
 msgid "Changes the case of selected text."
 msgstr "선택한 텍스트의 대소문자를 바꿉니다."
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:222
+#: ../plugins/changecase/pluma-changecase-plugin.c:246
 msgid "C_hange Case"
 msgstr "대소문자 바꾸기(_H)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:223
+#: ../plugins/changecase/pluma-changecase-plugin.c:247
 msgid "All _Upper Case"
 msgstr "모두 대문자(_U)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:224
+#: ../plugins/changecase/pluma-changecase-plugin.c:248
 msgid "Change selected text to upper case"
 msgstr "선택한 텍스트를 대문자로 바꿉니다"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:226
+#: ../plugins/changecase/pluma-changecase-plugin.c:250
 msgid "All _Lower Case"
 msgstr "모두 소문자(_L)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:227
+#: ../plugins/changecase/pluma-changecase-plugin.c:251
 msgid "Change selected text to lower case"
 msgstr "선택한 텍스트를 소문자로 바꿉니다"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:229
+#: ../plugins/changecase/pluma-changecase-plugin.c:253
 msgid "_Invert Case"
 msgstr "대소문자 뒤바꾸기(_I)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:230
+#: ../plugins/changecase/pluma-changecase-plugin.c:254
 msgid "Invert the case of selected text"
 msgstr "선택한 텍스트의 대소문자를 뒤바꿉니다"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:232
+#: ../plugins/changecase/pluma-changecase-plugin.c:256
 msgid "_Title Case"
 msgstr "제목 대소문자(_T)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:233
+#: ../plugins/changecase/pluma-changecase-plugin.c:257
 msgid "Capitalize the first letter of each selected word"
 msgstr "각 단어의 첫번째 글자만 대문자로 바꿉니다"
 
-#: ../plugins/docinfo/docinfo.pluma-plugin.desktop.in.h:1
+#: ../plugins/docinfo/docinfo.plugin.desktop.in.h:1
 #: ../plugins/docinfo/docinfo.ui.h:1
 msgid "Document Statistics"
 msgstr "문서 통계"
 
-#: ../plugins/docinfo/docinfo.pluma-plugin.desktop.in.h:2
+#: ../plugins/docinfo/docinfo.plugin.desktop.in.h:2
 msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
@@ -2245,92 +2200,92 @@ msgstr "문서"
 msgid "Selection"
 msgstr "선택한 부분"
 
-#: ../plugins/docinfo/pluma-docinfo-plugin.c:423
+#: ../plugins/docinfo/pluma-docinfo-plugin.c:443
 msgid "_Document Statistics"
 msgstr "문서 통계(_D)"
 
-#: ../plugins/docinfo/pluma-docinfo-plugin.c:425
+#: ../plugins/docinfo/pluma-docinfo-plugin.c:445
 msgid "Get statistical information on the current document"
 msgstr "현재 문서의 통계 정보를 가져옵니다"
 
-#: ../plugins/externaltools/externaltools.pluma-plugin.desktop.in.h:1
+#: ../plugins/externaltools/externaltools.plugin.desktop.in.h:1
 msgid "External Tools"
 msgstr "외부 도구"
 
-#: ../plugins/externaltools/externaltools.pluma-plugin.desktop.in.h:2
+#: ../plugins/externaltools/externaltools.plugin.desktop.in.h:2
 msgid "Execute external commands and shell scripts."
 msgstr "외부 명령과 셸 스크립트를 실행합니다."
 
-#: ../plugins/externaltools/tools/__init__.py:172
+#: ../plugins/externaltools/tools/__init__.py:175
 msgid "Manage _External Tools..."
 msgstr "외부 도구 관리(_E)..."
 
-#: ../plugins/externaltools/tools/__init__.py:174
+#: ../plugins/externaltools/tools/__init__.py:177
 msgid "Opens the External Tools Manager"
 msgstr "외부 도구 관리자 열기"
 
-#: ../plugins/externaltools/tools/__init__.py:178
+#: ../plugins/externaltools/tools/__init__.py:181
 msgid "External _Tools"
 msgstr "외부 도구(_T)"
 
-#: ../plugins/externaltools/tools/__init__.py:180
+#: ../plugins/externaltools/tools/__init__.py:183
 msgid "External tools"
 msgstr "외부 도구"
 
-#: ../plugins/externaltools/tools/__init__.py:212
+#: ../plugins/externaltools/tools/__init__.py:216
 msgid "Shell Output"
 msgstr "셸 출력"
 
-#: ../plugins/externaltools/tools/capture.py:93
+#: ../plugins/externaltools/tools/capture.py:92
 #, python-format
 msgid "Could not execute command: %s"
 msgstr "명령을 실행할 수 없습니다: %s"
 
-#: ../plugins/externaltools/tools/functions.py:162
+#: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
 msgstr "이 명령을 실행하려면 단어안에 있어야 합니다"
 
-#: ../plugins/externaltools/tools/functions.py:267
+#: ../plugins/externaltools/tools/functions.py:263
 msgid "Running tool:"
-msgstr "도구 실행 중:"
+msgstr "실행 중인 도구:"
 
-#: ../plugins/externaltools/tools/functions.py:292
+#: ../plugins/externaltools/tools/functions.py:287
 msgid "Done."
 msgstr "완료."
 
-#: ../plugins/externaltools/tools/functions.py:294
+#: ../plugins/externaltools/tools/functions.py:289
 msgid "Exited"
 msgstr "끝났음"
 
-#: ../plugins/externaltools/tools/manager.py:119
+#: ../plugins/externaltools/tools/manager.py:136
 msgid "All languages"
 msgstr "모든 언어"
 
-#: ../plugins/externaltools/tools/manager.py:518
-#: ../plugins/externaltools/tools/manager.py:522
-#: ../plugins/externaltools/tools/manager.py:842
+#: ../plugins/externaltools/tools/manager.py:545
+#: ../plugins/externaltools/tools/manager.py:549
+#: ../plugins/externaltools/tools/manager.py:871
 #: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "All Languages"
 msgstr "모든 언어"
 
-#: ../plugins/externaltools/tools/manager.py:628
+#: ../plugins/externaltools/tools/manager.py:655
 msgid "New tool"
 msgstr "새 도구"
 
-#: ../plugins/externaltools/tools/manager.py:759
+#: ../plugins/externaltools/tools/manager.py:786
 #, python-format
 msgid "This accelerator is already bound to %s"
 msgstr "이 단축키는 %s에 연결되어 있습니다"
 
-#: ../plugins/externaltools/tools/manager.py:810
+#: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
 msgstr "새 단축키를 누르십시오. 지우려면 백스페이스를 누르십시오"
 
-#: ../plugins/externaltools/tools/manager.py:812
+#: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
 msgstr "새 단축키를 누르십시오"
 
-#: ../plugins/externaltools/tools/outputpanel.py:105
+#: ../plugins/externaltools/tools/outputpanel.py:101
 msgid "Stopped."
 msgstr "정지됨."
 
@@ -2412,7 +2367,6 @@ msgid "_Tools:"
 msgstr "도구(_T):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
-#: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
 msgstr "편집(_E):"
 
@@ -2438,7 +2392,7 @@ msgstr "바로 가기 키(_S):"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
-msgstr "컴파일하기"
+msgstr "빌드하기"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:2
 msgid "Run \"make\" in the document directory"
@@ -2462,11 +2416,11 @@ msgstr "파일에 쓸데 없이 뒤에 붙은 공백을 지웁니다"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:1
 msgid "Run command"
-msgstr "명령 실행"
+msgstr "명령어 실행"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:2
 msgid "Execute a custom command and put its output in a new document"
-msgstr "사용자가 지정한 명령을 실행하고, 그 출력을 새 문서에 넣습니다"
+msgstr "사용자가 지정한 명령어를 실행하고, 그 출력을 새 문서에 넣습니다"
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
@@ -2476,11 +2430,11 @@ msgstr "검색"
 msgid "Switch onto a file .c and .h"
 msgstr ".c 파일과 .h 파일로 전환"
 
-#: ../plugins/filebrowser/filebrowser.pluma-plugin.desktop.in.h:1
+#: ../plugins/filebrowser/filebrowser.plugin.desktop.in.h:1
 msgid "File Browser Pane"
 msgstr "파일 찾아보기 창"
 
-#: ../plugins/filebrowser/filebrowser.pluma-plugin.desktop.in.h:2
+#: ../plugins/filebrowser/filebrowser.plugin.desktop.in.h:2
 msgid "Easy file access from the side pane"
 msgstr "가장자리 창에서 쉽게 파일에 접근합니다"
 
@@ -2557,95 +2511,95 @@ msgstr "원격 위치 저장 사용"
 msgid "Sets whether to enable restoring of remote locations."
 msgstr "원격 위치에도 저장할 수 있도록 합니다."
 
-#: ../plugins/filebrowser/pluma-file-bookmarks-store.c:235
+#: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
 msgid "File System"
 msgstr "파일 시스템"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:537
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
 msgid "_Set root to active document"
 msgstr "현재 문서의 상위 디렉터리 선택(_S)"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:539
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:579
 msgid "Set the root to the active document location"
 msgstr "현재 문서의 상위 디렉터리 위치를 선택합니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:544
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:584
 msgid "_Open terminal here"
 msgstr "터미널 열기(_O)"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:546
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:586
 msgid "Open a terminal at the currently opened directory"
 msgstr "현재 열린 디렉터리에서 터미널을 엽니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:688
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:726
 msgid "File Browser"
 msgstr "파일 브라우저"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:818
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:874
 msgid "An error occurred while creating a new directory"
 msgstr "새 디렉터리를 만드는데 오류가 생겼습니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:821
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:877
 msgid "An error occurred while creating a new file"
 msgstr "새 파일을 만드는데 오류가 생겼습니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:826
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:882
 msgid "An error occurred while renaming a file or directory"
 msgstr "파일이나 디렉터리의 이름을 바꾸는데 오류가 생겼습니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:831
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:887
 msgid "An error occurred while deleting a file or directory"
 msgstr "파일이나 디렉터리를 지우는데 오류가 생겼습니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:836
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "파일관리자에서 디렉터리를 여는데 오류가 생겼습니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:840
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
 msgid "An error occurred while setting a root directory"
 msgstr "최상위 디렉터리를 정하는데 오류가 생겼습니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:844
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:900
 msgid "An error occurred while loading a directory"
 msgstr "디렉터리를 읽는데 오류가 생겼습니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:847
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:903
 msgid "An error occurred"
 msgstr "오류가 생겼습니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1078
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1130
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
 msgstr "파일을 휴지통에 버릴 수 없습니다.\n그냥 지워버리겠습니까?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1082
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "파일 \"%s\"(을)를 휴지통에 버릴 수 없습니다."
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1085
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1137
 msgid "The selected files cannot be moved to the trash."
 msgstr "선택한 파일을 휴지통에 버릴 수 없습니다."
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1118
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "\"%s\"(을)를 완전히 지우시겠습니까?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1121
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1170
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "선택한 파일을 완전히 지우시겠습니까?."
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1124
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
 msgid "If you delete an item, it is permanently lost."
 msgstr "항목을 지우면, 완전히 없어집니다."
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:1667
+#: ../plugins/filebrowser/pluma-file-browser-store.c:1670
 msgid "(Empty)"
 msgstr "(비어있음)"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3305
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3308
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2653,11 +2607,11 @@ msgstr "이름을 바꾼 파일이 필터로 제외되었습니다. 이 파일�
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3544
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3547
 msgid "file"
 msgstr "파일"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3568
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3571
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2665,183 +2619,183 @@ msgstr "새 파일이 필터로 제외되었습니다. 이 파일을 보려면 �
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3597
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3600
 msgid "directory"
 msgstr "디렉터리"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3617
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3620
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr "새 디렉터리가 필터로 제외되었습니다. 이 디렉터리를 보려면 필터 설정을 바꿔야합니다."
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:724
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
 msgstr "책갈피"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:797
 msgid "_Filter"
 msgstr "필터(_F)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:810
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:802
 msgid "_Move to Trash"
 msgstr "휴지통에 버리기(_M)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:811
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:803
 msgid "Move selected file or folder to trash"
 msgstr "선택한 파일이나 폴더를 휴지통에 버립니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:813
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
 msgid "_Delete"
 msgstr "삭제(_D)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:814
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Delete selected file or folder"
 msgstr "선택한 파일이나 폴더를 지웁니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:821
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:813
 msgid "Open selected file"
 msgstr "선택한 파일을 엽니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:827
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:819
 msgid "Up"
 msgstr "위로"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:828
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:820
 msgid "Open the parent folder"
 msgstr "부모 폴더를 엽니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:833
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:825
 msgid "_New Folder"
 msgstr "새 폴더(_N)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:834
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:826
 msgid "Add new empty folder"
 msgstr "새 폴더를 만듭니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:836
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:828
 msgid "New F_ile"
 msgstr "새 파일(_I)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:837
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:829
 msgid "Add new empty file"
 msgstr "새 파일을 만듭니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:842
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:834
 msgid "_Rename"
 msgstr "이름 바꾸기(_R)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:843
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:835
 msgid "Rename selected file or folder"
 msgstr "선택한 파일이나 폴더의 이름을 바꿉니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:849
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:841
 msgid "_Previous Location"
 msgstr "이전 위치(_P)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:851
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Go to the previous visited location"
 msgstr "이전에 들렀던 위치로 갑니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:853
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "_Next Location"
 msgstr "다음 위치(_N)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:854
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
 msgstr "다음에 방문한 위치로 갑니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:855
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
 msgstr "다시 읽기(_F)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:856
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:848
 msgid "Refresh the view"
 msgstr "다시 읽기"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:857
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:875
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:849
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:867
 msgid "_View Folder"
 msgstr "폴더 보기(_V)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:858
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:876
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:850
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:868
 msgid "View folder in file manager"
 msgstr "파일 관리자에서 폴더를 봅니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:865
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:857
 msgid "Show _Hidden"
 msgstr "숨김 파일 보기(_H)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:866
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:858
 msgid "Show hidden files and folders"
 msgstr "숨겨진 파일이나 폴더를 봅니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:868
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:860
 msgid "Show _Binary"
 msgstr "이진 파일 보기(_B)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:869
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:861
 msgid "Show binary files"
 msgstr "이진 파일을 봅니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1001
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1010
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1031
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:993
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1023
 msgid "Previous location"
 msgstr "이전 위치"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1003
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:995
 msgid "Go to previous location"
 msgstr "이전 위치로 갑니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1005
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1026
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1018
 msgid "Go to a previously opened location"
 msgstr "이전에 열었던 위치로 갑니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1014
 msgid "Next location"
 msgstr "다음 위치"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1024
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1016
 msgid "Go to next location"
 msgstr "다음 위치로 갑니다"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1236
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1228
 msgid "_Match Filename"
 msgstr "파일 이름 일치(_M)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2165
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2140
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "마운트한 볼륨에 마운트 오브젝트가 없습니다: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2245
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2220
 #, c-format
 msgid "Could not open media: %s"
 msgstr "미디어를 열 수 없습니다: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2292
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2267
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "볼륨을 마운트할 수 없습니다: %s"
 
 #. ex:ts=8:noet:
-#: ../plugins/modelines/modelines.pluma-plugin.desktop.in.h:1
+#: ../plugins/modelines/modelines.plugin.desktop.in.h:1
 msgid "Modelines"
 msgstr "모드라인"
 
-#: ../plugins/modelines/modelines.pluma-plugin.desktop.in.h:2
+#: ../plugins/modelines/modelines.plugin.desktop.in.h:2
 msgid "Emacs, Kate and Vim-style modelines support for pluma."
 msgstr "Emacs, Kate 그리고 Vim 모양의 모드라인 지원을 지원합니다."
 
-#: ../plugins/pythonconsole/pythonconsole.pluma-plugin.desktop.in.h:1
-#: ../plugins/pythonconsole/pythonconsole/__init__.py:50
+#: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:1
+#: ../plugins/pythonconsole/pythonconsole/__init__.py:55
 msgid "Python Console"
 msgstr "파이썬 콘솔"
 
-#: ../plugins/pythonconsole/pythonconsole.pluma-plugin.desktop.in.h:2
+#: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:2
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "아래 패널에 파이썬 콘솔을 엽니다."
 
@@ -2855,258 +2809,36 @@ msgid "_Error color:"
 msgstr "오류 색(_E):"
 
 #. ex:ts=8:et:
-#: ../plugins/quickopen/quickopen/popup.py:35
-#: ../plugins/quickopen/quickopen.pluma-plugin.desktop.in.h:1
+#: ../plugins/quickopen/quickopen/popup.py:31
+#: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
 msgstr "빠르게 열기"
 
-#: ../plugins/quickopen/quickopen/windowhelper.py:69
+#: ../plugins/quickopen/quickopen/windowhelper.py:65
 msgid "Quick open"
 msgstr "빠르게 열기"
 
-#: ../plugins/quickopen/quickopen/windowhelper.py:70
+#: ../plugins/quickopen/quickopen/windowhelper.py:66
 msgid "Quickly open documents"
 msgstr "문서 빠르게 열기"
 
-#: ../plugins/quickopen/quickopen.pluma-plugin.desktop.in.h:2
+#: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
-msgstr "문서를 빠르게 엽니다"
+msgstr "파일을 빠르게 엽니다"
 
-#: ../plugins/snippets/snippets.pluma-plugin.desktop.in.h:1
-#: ../plugins/snippets/snippets/Document.py:58
-msgid "Snippets"
-msgstr "관용구"
-
-#: ../plugins/snippets/snippets.pluma-plugin.desktop.in.h:2
-msgid "Insert often-used pieces of text in a fast way"
-msgstr "자주 쓰는 문장을 빠르게 붙여넣습니다"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:1
-msgid "Snippets Manager"
-msgstr "관용구 관리자"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:2
-msgid "_Snippets:"
-msgstr "관용구(_S):"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:3
-msgid "Create new snippet"
-msgstr "새 관용구 만들기"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:800
-msgid "Import snippets"
-msgstr "관용구를 가져옵니다"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:5
-msgid "Export selected snippets"
-msgstr "선택한 관용구를 저장합니다"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:6
-#: ../plugins/snippets/snippets/Manager.py:412
-msgid "Delete selected snippet"
-msgstr "선택한 관용구를 지웁니다"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:8
-msgid "Activation"
-msgstr "활성화"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:10
-msgid "_Tab trigger:"
-msgstr "탭 트리거(_T):"
-
-#. self['hbox_tab_trigger'].set_spacing(0)
-#: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:689
-msgid "Single word the snippet is activated with after pressing Tab"
-msgstr "탭을 누른 다음에 관용구를 사용하게 되는 단어 한 개"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:12
-msgid "Shortcut key with which the snippet is activated"
-msgstr "관용구를 시작할 바로 가기 키"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:13
-msgid "S_hortcut key:"
-msgstr "바로 가기 키(_H):"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:14
-msgid "_Drop targets:"
-msgstr "예외 대상(_D):"
-
-#: ../plugins/snippets/snippets/WindowHelper.py:130
-msgid "Manage _Snippets..."
-msgstr "관용구 관리(_S)..."
-
-#: ../plugins/snippets/snippets/WindowHelper.py:131
-msgid "Manage snippets"
-msgstr "관용구 관리"
-
-#: ../plugins/snippets/snippets/Manager.py:46
-msgid "Snippets archive"
-msgstr "관용구 묶음"
-
-#: ../plugins/snippets/snippets/Manager.py:71
-msgid "Add a new snippet..."
-msgstr "관용구 추가..."
-
-#: ../plugins/snippets/snippets/Manager.py:121
-msgid "Global"
-msgstr "전체"
-
-#: ../plugins/snippets/snippets/Manager.py:409
-msgid "Revert selected snippet"
-msgstr "선택한 관용구를 되돌립니다"
-
-#. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:682
-msgid ""
-"This is not a valid Tab trigger. Triggers can either contain letters or a "
-"single (non-alphanumeric) character like: {, [, etc."
-msgstr "이것은 올바른 탭 트리거가 아닙니다. 트리거는 영문자나 숫자로만 된 글자로 이루어져야 합니다. {, [ 따위 문자는 포함될 수 없습니다."
-
-#: ../plugins/snippets/snippets/Manager.py:779
-#, python-format
-msgid "The following error occurred while importing: %s"
-msgstr "파일을 가져오는데 다음 오류가 생겼습니다: %s"
-
-#: ../plugins/snippets/snippets/Manager.py:786
-msgid "Import successfully completed"
-msgstr "가져오기를 성공적으로 완료했습니다"
-
-#: ../plugins/snippets/snippets/Manager.py:805
-#: ../plugins/snippets/snippets/Manager.py:891
-#: ../plugins/snippets/snippets/Manager.py:954
-msgid "All supported archives"
-msgstr "지원되는 모든 파일"
-
-#: ../plugins/snippets/snippets/Manager.py:806
-#: ../plugins/snippets/snippets/Manager.py:892
-#: ../plugins/snippets/snippets/Manager.py:955
-msgid "Gzip compressed archive"
-msgstr "GZIP 압축 파일"
-
-#: ../plugins/snippets/snippets/Manager.py:807
-#: ../plugins/snippets/snippets/Manager.py:893
-#: ../plugins/snippets/snippets/Manager.py:956
-msgid "Bzip2 compressed archive"
-msgstr "BZIP2 압축 파일"
-
-#: ../plugins/snippets/snippets/Manager.py:808
-msgid "Single snippets file"
-msgstr "관용구 파일"
-
-#: ../plugins/snippets/snippets/Manager.py:809
-#: ../plugins/snippets/snippets/Manager.py:895
-#: ../plugins/snippets/snippets/Manager.py:958
-msgid "All files"
-msgstr "모든 파일"
-
-#: ../plugins/snippets/snippets/Manager.py:821
-#, python-format
-msgid "The following error occurred while exporting: %s"
-msgstr "내보내는데 다음 오류가 생겼습니다: %s"
-
-#: ../plugins/snippets/snippets/Manager.py:825
-msgid "Export successfully completed"
-msgstr "내보내기를 성공적으로 완료했습니다"
-
-#. Ask if system snippets should also be exported
-#: ../plugins/snippets/snippets/Manager.py:865
-#: ../plugins/snippets/snippets/Manager.py:932
-msgid "Do you want to include selected <b>system</b> snippets in your export?"
-msgstr "선택한 <b>시스템</b> 관용구를 같이 내보내시겠습니까?"
-
-#: ../plugins/snippets/snippets/Manager.py:880
-#: ../plugins/snippets/snippets/Manager.py:950
-msgid "There are no snippets selected to be exported"
-msgstr "내보낼 관용구가 선택되지 않았습니다"
-
-#: ../plugins/snippets/snippets/Manager.py:885
-#: ../plugins/snippets/snippets/Manager.py:923
-msgid "Export snippets"
-msgstr "관용구 내보내기"
-
-#: ../plugins/snippets/snippets/Manager.py:1062
-msgid "Type a new shortcut, or press Backspace to clear"
-msgstr "새 바로 가기 키를 누르십시오. 지우려면 백스페이스를 누르십시오"
-
-#: ../plugins/snippets/snippets/Manager.py:1064
-msgid "Type a new shortcut"
-msgstr "새 바로 가기 키를 누르십시오"
-
-#: ../plugins/snippets/snippets/Exporter.py:65
-#, python-format
-msgid "The archive \"%s\" could not be created"
-msgstr "압축 파일 \"%s\"(을)를 만들 수 없습니다"
-
-#: ../plugins/snippets/snippets/Exporter.py:82
-#, python-format
-msgid "Target directory \"%s\" does not exist"
-msgstr "목표 디렉터리 \"%s\"(을)를 만들 수 없습니다"
-
-#: ../plugins/snippets/snippets/Exporter.py:85
-#, python-format
-msgid "Target directory \"%s\" is not a valid directory"
-msgstr "목표 디렉터리 \"%s\"(은)는 올바른 디렉터리가 아닙니다"
-
-#: ../plugins/snippets/snippets/Importer.py:29
-#: ../plugins/snippets/snippets/Importer.py:83
-#, python-format
-msgid "File \"%s\" does not exist"
-msgstr "파일 \"%s\"이(가) 없습니다"
-
-#: ../plugins/snippets/snippets/Importer.py:32
-#, python-format
-msgid "File \"%s\" is not a valid snippets file"
-msgstr "파일 \"%s\"(은)는 올바른 관용구 파일이 아닙니다"
-
-#: ../plugins/snippets/snippets/Importer.py:42
-#, python-format
-msgid "Imported file \"%s\" is not a valid snippets file"
-msgstr "가져온 파일 \"%s\"(은)는 올바른 관용구 파일이 아닙니다"
-
-#: ../plugins/snippets/snippets/Importer.py:52
-#, python-format
-msgid "The archive \"%s\" could not be extracted"
-msgstr "압축 파일 \"%s\"(을)를 풀어낼 수 없습니다"
-
-#: ../plugins/snippets/snippets/Importer.py:70
-#, python-format
-msgid "The following files could not be imported: %s"
-msgstr "다음 파일은 가져올 수 없습니다: %s"
-
-#: ../plugins/snippets/snippets/Importer.py:86
-#: ../plugins/snippets/snippets/Importer.py:99
-#, python-format
-msgid "File \"%s\" is not a valid snippets archive"
-msgstr "\"%s\" 파일은 올바른 관용구 모음이 아닙니다"
-
-#: ../plugins/snippets/snippets/Placeholder.py:594
-#, python-format
-msgid ""
-"Execution of the Python command (%s) exceeds the maximum time, execution "
-"aborted."
-msgstr "파이썬 명령의 (%s) 수행 제한 시간이 최대값을 넘겼습니다, 실행을 취소합니다."
-
-#: ../plugins/snippets/snippets/Placeholder.py:602
-#, python-format
-msgid "Execution of the Python command (%s) failed: %s"
-msgstr "파이썬 명령 (%s) 실행이 실패했습니다: %s"
-
-#: ../plugins/sort/pluma-sort-plugin.c:88
+#: ../plugins/sort/pluma-sort-plugin.c:94
 msgid "S_ort..."
 msgstr "정렬(_O)..."
 
-#: ../plugins/sort/pluma-sort-plugin.c:90
+#: ../plugins/sort/pluma-sort-plugin.c:96
 msgid "Sort the current document or selection"
 msgstr "현재 문서나 선택한 부분을 정렬합니다."
 
-#: ../plugins/sort/sort.pluma-plugin.desktop.in.h:1
-#: ../plugins/sort/sort.ui.h:1
+#: ../plugins/sort/sort.plugin.desktop.in.h:1 ../plugins/sort/sort.ui.h:1
 msgid "Sort"
 msgstr "정렬"
 
-#: ../plugins/sort/sort.pluma-plugin.desktop.in.h:2
+#: ../plugins/sort/sort.plugin.desktop.in.h:2
 msgid "Sorts a document or selected text."
 msgstr "문서나 선택한 텍스트를 정렬합니다."
 
@@ -3218,39 +2950,35 @@ msgstr "언어 선택"
 msgid "Languages"
 msgstr "언어"
 
-#: ../plugins/spell/pluma-spell-plugin.c:92
+#: ../plugins/spell/pluma-spell-plugin.c:100
 msgid "_Check Spelling..."
 msgstr "맞춤법 검사(_C)..."
 
-#: ../plugins/spell/pluma-spell-plugin.c:94
+#: ../plugins/spell/pluma-spell-plugin.c:102
 msgid "Check the current document for incorrect spelling"
 msgstr "현재 문서의 잘못된 맞춤법을 검사합니다"
 
-#: ../plugins/spell/pluma-spell-plugin.c:100
+#: ../plugins/spell/pluma-spell-plugin.c:108
 msgid "Set _Language..."
 msgstr "언어 설정(_L)..."
 
-#: ../plugins/spell/pluma-spell-plugin.c:102
+#: ../plugins/spell/pluma-spell-plugin.c:110
 msgid "Set the language of the current document"
 msgstr "현재 문서의 언어를 설정합니다"
 
-#: ../plugins/spell/pluma-spell-plugin.c:111
+#: ../plugins/spell/pluma-spell-plugin.c:119
 msgid "_Autocheck Spelling"
 msgstr "맞춤법 자동 검사(_A)"
 
-#: ../plugins/spell/pluma-spell-plugin.c:113
+#: ../plugins/spell/pluma-spell-plugin.c:121
 msgid "Automatically spell-check the current document"
 msgstr "현재 문서의 맞춤법을 자동으로 검사합니다"
 
-#: ../plugins/spell/pluma-spell-plugin.c:753
-msgid "Configure Spell Checker plugin..."
-msgstr "맞춤법 검사기 플러그인 설정..."
-
-#: ../plugins/spell/pluma-spell-plugin.c:962
+#: ../plugins/spell/pluma-spell-plugin.c:921
 msgid "The document is empty."
 msgstr "문서가 비어있습니다."
 
-#: ../plugins/spell/pluma-spell-plugin.c:992
+#: ../plugins/spell/pluma-spell-plugin.c:946
 msgid "No misspelled words"
 msgstr "모든 맞춤법이 올바릅니다"
 
@@ -3334,29 +3062,29 @@ msgstr "문서별 자동 검사 기억해두기(_R)"
 msgid "_Always autocheck"
 msgstr "자동 검사 항상 하기(_A)"
 
-#: ../plugins/spell/spell.pluma-plugin.desktop.in.h:1
+#: ../plugins/spell/spell.plugin.desktop.in.h:1
 msgid "Spell Checker"
 msgstr "맞춤법 검사"
 
-#: ../plugins/spell/spell.pluma-plugin.desktop.in.h:2
+#: ../plugins/spell/spell.plugin.desktop.in.h:2
 msgid "Checks the spelling of the current document."
 msgstr "현재 문서의 맞춤법을 검사합니다."
 
-#: ../plugins/taglist/pluma-taglist-plugin.c:98
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:725
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:743
+#: ../plugins/taglist/pluma-taglist-plugin.c:125
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:724
 msgid "Tags"
 msgstr "태그"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:622
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
 msgid "Select the group of tags you want to use"
 msgstr "쓸 태그 묶음을 선택하십시오"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:641
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:632
 msgid "_Preview"
 msgstr "미리 보기(_P)"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:722
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:706
 msgid "Available Tag Lists"
 msgstr "사용할 수 있는 태그 목록"
 
@@ -4824,11 +4552,11 @@ msgstr "끊어지지 않는 텍스트"
 msgid "Footnote"
 msgstr "꼬리말"
 
-#: ../plugins/taglist/taglist.pluma-plugin.desktop.in.h:1
+#: ../plugins/taglist/taglist.plugin.desktop.in.h:1
 msgid "Tag list"
 msgstr "태그 목록"
 
-#: ../plugins/taglist/taglist.pluma-plugin.desktop.in.h:2
+#: ../plugins/taglist/taglist.plugin.desktop.in.h:2
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
@@ -4914,35 +4642,31 @@ msgstr "선택한 형식"
 msgid "Custom format"
 msgstr "사용자 설정 형식"
 
-#: ../plugins/time/pluma-time-plugin.c:179
+#: ../plugins/time/pluma-time-plugin.c:189
 msgid "In_sert Date and Time..."
 msgstr "날짜 및 시간 입력(_S)..."
 
-#: ../plugins/time/pluma-time-plugin.c:181
+#: ../plugins/time/pluma-time-plugin.c:191
 msgid "Insert current date and time at the cursor position"
 msgstr "커서 위치에 현재의 날짜와 시간을 끼워넣습니다"
 
-#: ../plugins/time/pluma-time-plugin.c:562
+#: ../plugins/time/pluma-time-plugin.c:581
 msgid "Available formats"
 msgstr "사용할 수 있는 형식"
 
-#: ../plugins/time/pluma-time-plugin.c:713
-msgid "Configure insert date/time plugin..."
-msgstr "날짜/시간 넣기 플러그인 설정..."
-
-#: ../plugins/time/time.pluma-plugin.desktop.in.h:1
+#: ../plugins/time/time.plugin.desktop.in.h:1
 msgid "Insert Date/Time"
 msgstr "날짜/시간 넣기"
 
-#: ../plugins/time/time.pluma-plugin.desktop.in.h:2
+#: ../plugins/time/time.plugin.desktop.in.h:2
 msgid "Inserts current date and time at the cursor position."
 msgstr "커서 위치에 현재의 날짜와 시간을 끼워넣습니다."
 
-#: ../plugins/trailsave/trailsave.pluma-plugin.desktop.in.h:1
+#: ../plugins/trailsave/trailsave.plugin.desktop.in.h:1
 msgid "Save Without Trailing Spaces"
 msgstr "뒤 여백 없이 저장하기"
 
-#: ../plugins/trailsave/trailsave.pluma-plugin.desktop.in.h:2
+#: ../plugins/trailsave/trailsave.plugin.desktop.in.h:2
 msgid "Removes trailing spaces from lines before saving."
 msgstr "줄에 있는 마지막 여백을 지웁니다."
 
