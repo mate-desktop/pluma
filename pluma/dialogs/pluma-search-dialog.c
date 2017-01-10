@@ -68,6 +68,7 @@ struct _PlumaSearchDialogPrivate
 	GtkWidget *replace_entry;
 	GtkWidget *replace_text_entry;
 	GtkWidget *match_case_checkbutton;
+	GtkWidget *match_regex_checkbutton;
 	GtkWidget *entire_word_checkbutton;
 	GtkWidget *backwards_checkbutton;
 	GtkWidget *wrap_around_checkbutton;
@@ -352,6 +353,7 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 					  "search_label", &dlg->priv->search_label,
 					  "replace_with_label", &dlg->priv->replace_label,
 					  "match_case_checkbutton", &dlg->priv->match_case_checkbutton,
+					  "match_regex_checkbutton",&dlg->priv->match_regex_checkbutton,
 					  "entire_word_checkbutton", &dlg->priv->entire_word_checkbutton,
 					  "search_backwards_checkbutton", &dlg->priv->backwards_checkbutton,
 					  "wrap_around_checkbutton", &dlg->priv->wrap_around_checkbutton,
@@ -580,6 +582,24 @@ pluma_search_dialog_get_match_case (PlumaSearchDialog *dialog)
 	g_return_val_if_fail (PLUMA_IS_SEARCH_DIALOG (dialog), FALSE);
 
 	return gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->priv->match_case_checkbutton));
+}
+
+void
+pluma_search_dialog_set_match_regex (PlumaSearchDialog *dialog,
+                    gboolean           match_case)
+{
+	g_return_if_fail (PLUMA_IS_SEARCH_DIALOG (dialog));
+
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->priv->match_regex_checkbutton),
+                      match_case);
+}
+
+gboolean
+pluma_search_dialog_get_match_regex (PlumaSearchDialog *dialog)
+{
+	g_return_val_if_fail (PLUMA_IS_SEARCH_DIALOG (dialog), FALSE);
+
+	return gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->priv->match_regex_checkbutton));
 }
 
 void

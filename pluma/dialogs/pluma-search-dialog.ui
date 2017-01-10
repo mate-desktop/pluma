@@ -181,6 +181,22 @@ Author: Wolfgang Ulbrich
                   </packing>
                 </child>
                 <child>
+                  <object class="GtkCheckButton" id="match_regex_checkbutton">
+                    <property name="label" translatable="yes">Match _regular expression</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="halign">start</property>
+                    <property name="use_underline">True</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
                   <object class="GtkCheckButton" id="entire_word_checkbutton">
                     <property name="label" translatable="yes">Match _entire word only</property>
                     <property name="visible">True</property>
@@ -193,7 +209,7 @@ Author: Wolfgang Ulbrich
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">1</property>
+                    <property name="position">2</property>
                   </packing>
                 </child>
                 <child>
@@ -209,7 +225,7 @@ Author: Wolfgang Ulbrich
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">2</property>
+                    <property name="position">3</property>
                   </packing>
                 </child>
                 <child>
@@ -226,7 +242,7 @@ Author: Wolfgang Ulbrich
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">3</property>
+                    <property name="position">4</property>
                   </packing>
                 </child>
                 <child>
@@ -243,7 +259,7 @@ Author: Wolfgang Ulbrich
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="position">4</property>
+                    <property name="position">5</property>
                   </packing>
                 </child>
               </object>
@@ -268,5 +284,8 @@ Author: Wolfgang Ulbrich
       <action-widget response="0">replace_button</action-widget>
       <action-widget response="0">find_next_button</action-widget>
     </action-widgets>
+    <child>
+      <placeholder/>
+    </child>
   </object>
 </interface>
