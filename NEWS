@@ -1,5 +1,4 @@
-pluma 1.17.3
-============
+### pluma 1.17.3
 
   * Translations update
   * panel: use the correct property name for panel orientation
@@ -13,30 +12,26 @@ pluma 1.17.3
   * externaltools plugin: kill useless code
   * taglist plugin: don't look for taglist in non-existing legacy dirs
 
-pluma 1.17.2
-============
+### pluma 1.17.2
 
   * Fix build without X when introspection is enabled
   * Some code cleanups
 
-pluma 1.17.1
-============
+### pluma 1.17.1
 
   * Build: actually build GObject introspection data
   * Port plugin system and C plugins to libpeas
   * Some code and docs cleanups
   * Translations update
 
-pluma 1.17.0
-============
+### pluma 1.17.0
 
   * Drop Python bindings and --enable-python build option
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
     --with-gtk build option
   * Translations update
 
-pluma 1.16.0
-============
+### pluma 1.16.0
 
   * Use GtkAboutDialog instead of MateAboutDialog
   * Drop dependency on libmate-desktop and --without-matedesktop
@@ -45,8 +40,7 @@ pluma 1.16.0
   * Some more fixes and cleanups
   * Translations update
 
-pluma 1.14.1
-============
+### pluma 1.14.1
 
   * Enable spell checking for new documents when Always Autocheck
     option is selected in Spell Check plugin
@@ -55,8 +49,7 @@ pluma 1.14.1
   * Translations update
   * Make distcheck use currently selected GTK+ version
 
-pluma 1.14.0
-============
+### pluma 1.14.0
 
   * Drop MateConf migration script
   * Implement middle-click tab closing
@@ -68,21 +61,18 @@ pluma 1.14.0
   * Translations update
   * Add Changelog generation
 
-pluma 1.12.2
-============
+### pluma 1.12.2
 
   * Python console plugin: fix missing icon in plugin list
   * Fix possible use-after-free during incremental search
   * GTK+3: fix incremental search entry color when text isn't found
 
-pluma 1.12.1
-============
+### pluma 1.12.1
 
   * Add --without-matedesktop option to enable build without
     dependency on libmate-desktop
 
-pluma 1.12.0
-============
+### pluma 1.12.0
 
   * Add --enable-tests option to enable/disable running tests
     during the build
@@ -95,8 +85,7 @@ pluma 1.12.0
   * Some annotation fixes
   * Some minor fixes and cleanups
 
-pluma 1.10.2
-============
+### pluma 1.10.2
 
   * Window title: display full path to files on mounted drives
   * Close confirmation dialog: make text unfocusable
@@ -104,27 +93,23 @@ pluma 1.10.2
   * Time plugin: GTK+3 fix
   * Multiple help fixes
 
-pluma 1.10.1
-============
+### pluma 1.10.1
 
   * Fix gschema translations
   * GTK3 fixes
   * Fix man page formatting
   * Build system fixes
 
-pluma 1.10.0
-============
+### pluma 1.10.0
 
   * Use MateAboutDialog from libmate-desktop
 
-pluma 1.8.1
-===========
+### pluma 1.8.1
 
   * Fix go to line crash
   * Translations updates
 
-pluma 1.8.0
-===========
+### pluma 1.8.0
 
   * Add GTK3 support
   * Use yelp-tools instead of mate-doc-utils
@@ -133,8 +118,7 @@ pluma 1.8.0
     configuration. This means user will need to move the plugins directory
     from: $HOME/.config/pluma/ to $HOME/.local/share/pluma/.
 
-pluma 1.5.0
-===========
+### pluma 1.5.0
 
   * Migration to GSettings and drop mateconf
     (All code is migrated, except pythonconsole plugin. The plugin works,
