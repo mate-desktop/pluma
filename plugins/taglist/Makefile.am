@@ -14,8 +14,7 @@ taglist_DATA = $(taglist_in_files:.tags.xml.in=.tags.gz)
 AM_CPPFLAGS = 							\
 	-I$(top_srcdir) 					\
 	$(PLUMA_CFLAGS) 					\
-	$(WARN_CFLAGS)						\
-	$(DISABLE_DEPRECATED_CFLAGS)	
+	$(WARN_CFLAGS)
 
 plugin_LTLIBRARIES = libtaglist.la
 

@@ -11,7 +11,6 @@ AM_CPPFLAGS =								\
 	-I$(srcdir)/smclient						\
 	$(PLUMA_CFLAGS)							\
 	$(WARN_CFLAGS)							\
-	$(DISABLE_DEPRECATED_CFLAGS)					\
 	-DDATADIR=\""$(datadir)"\"					\
 	-DLIBDIR=\""$(libdir)"\"
 

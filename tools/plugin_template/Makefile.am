@@ -6,7 +6,6 @@ AM_CPPFLAGS = \
 	-I$(top_srcdir) 						\
 	$(PLUMA_CFLAGS) 						\
 	$(WARN_CFLAGS)							\
-	$(DISABLE_DEPRECATED_CFLAGS)					\
 	-DPLUMA_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
 
 plugin_LTLIBRARIES = lib##(PLUGIN_MODULE).la
