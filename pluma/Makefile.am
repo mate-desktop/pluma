@@ -12,7 +12,6 @@ AM_CPPFLAGS =								\
 	$(PLUMA_CFLAGS)							\
 	$(WARN_CFLAGS)							\
 	$(INTROSPECTION_CFLAGS)						\
-	$(DISABLE_DEPRECATED_CFLAGS)					\
 	-DDATADIR=\""$(datadir)"\"					\
 	-DLIBDIR=\""$(libdir)"\"
 

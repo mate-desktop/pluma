@@ -5,8 +5,7 @@ AM_CPPFLAGS = 							\
 	-I$(top_srcdir)						\
 	$(PLUMA_CFLAGS) 					\
 	$(ENCHANT_CFLAGS)					\
-	$(WARN_CFLAGS)						\
-	$(DISABLE_DEPRECATED_CFLAGS)	
+	$(WARN_CFLAGS)
 
 BUILT_SOURCES = 					\
 	pluma-spell-marshal.c				\

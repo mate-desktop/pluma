@@ -6,8 +6,7 @@ AM_CPPFLAGS = 							\
 	-I$(top_srcdir)/pluma 					\
 	-I$(top_builddir)/pluma					\
 	$(PLUMA_CFLAGS) 					\
-	$(WARN_CFLAGS)						\
-	$(DISABLE_DEPRECATED_CFLAGS)
+	$(WARN_CFLAGS)
 
 noinst_LTLIBRARIES = libdialogs.la
 

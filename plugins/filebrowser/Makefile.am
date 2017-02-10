@@ -5,8 +5,7 @@ plugindir = $(PLUMA_PLUGINS_LIBS_DIR)
 AM_CPPFLAGS = \
 	-I$(top_srcdir) 						\
 	$(PLUMA_CFLAGS) 						\
-	$(WARN_CFLAGS)							\
-	$(DISABLE_DEPRECATED_CFLAGS)
+	$(WARN_CFLAGS)
 
 BUILT_SOURCES = \
 	pluma-file-browser-enum-types.h		\

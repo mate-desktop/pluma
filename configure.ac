@@ -203,21 +203,6 @@ AC_PATH_PROG(GLIB_MKENUMS, glib-mkenums)
 
 MATE_COMPILE_WARNINGS(yes)
 
-AC_ARG_ENABLE(deprecations,
-              [AS_HELP_STRING([--enable-deprecations],
-                              [warn about deprecated usages [default=no]])],,
-              [enable_deprecations=no])
-
-if test "x$enable_deprecations" = "xyes"; then
-   DISABLE_DEPRECATED_CFLAGS="\
--DG_DISABLE_DEPRECATED \
--DGDK_DISABLE_DEPRECATED \
--DGTK_DISABLE_DEPRECATED \
--DGDK_PIXBUF_DISABLE_DEPRECATED \
--DMATE_DISABLE_DEPRECATED"
-   AC_SUBST(DISABLE_DEPRECATED_CFLAGS)
-fi
-
 AC_ARG_ENABLE([tests],
 	AS_HELP_STRING([--enable-tests], [Enable the tests]),
 	[enable_tests=$enableval],
