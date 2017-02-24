@@ -37,7 +37,6 @@ class WindowHelper:
                 self.window = window
 
                 self.insert_menu()
-                self.register_messages()
                 
                 self.accel_group = Library().get_accel_group(None)
                 
@@ -57,7 +56,6 @@ class WindowHelper:
                 
                 #self.window.remove_accel_group(accel)
                 self.remove_menu()
-                self.unregister_messages()
 
                 # Iterate over all the tabs and remove every controller
                 for view in self.window.get_views():
@@ -67,59 +65,6 @@ class WindowHelper:
                 
                 self.window = None
                 self.plugin = None
-        
-        def register_messages(self):
-                bus = self.window.get_message_bus()
-                
-                self.messages = {
-                        'activate': bus.register('/plugins/snippets', 'activate', ('view', 'iter'), trigger=str, view=pluma.View, iter=gtk.TextIter),
-                        'parse-and-activate': bus.register('/plugins/snippets', 'parse-and-activate', ('view', 'iter'), snippet=str, view=pluma.View, iter=gtk.TextIter)
-                }
-                
-                bus.connect('/plugins/snippets', 'activate', self.on_message_activate)
-                bus.connect('/plugins/snippets', 'parse-and-activate', self.on_message_parse_and_activate)
-        
-        def unregister_messages(self):
-                bus = self.window.get_message_bus()
-                
-                for name in self.messages:
-                        bus.unregister(self.messages[name])
-                
-                self.messages = {}
-        
-        def on_message_activate(self, bus, message):
-                if message.has_key('view'):
-                        view = message.view
-                else:
-                        view = self.window.get_active_view()
-                
-                if not self.has_controller(view):
-                        return
-                
-                if message.has_key('iter'):
-                        iter = message.iter
-                else:
-                        iter = view.get_buffer().get_iter_at_mark(view.get_buffer().get_insert())
-                
-                controller = view._snippet_controller
-                controller.run_snippet_trigger(message.trigger, (iter, iter))
-
-        def on_message_parse_and_activate(self, bus, message):
-                if message.has_key('view'):
-                        view = message.view
-                else:
-                        view = self.window.get_active_view()
-                
-                if not self.has_controller(view):
-                        return
-                
-                if message.has_key('iter'):
-                        iter = message.iter
-                else:
-                        iter = view.get_buffer().get_iter_at_mark(view.get_buffer().get_insert())
-                
-                controller = view._snippet_controller
-                controller.parse_and_run_snippet(message.snippet, iter)
 
         def insert_menu(self):
                 manager = self.window.get_ui_manager()
