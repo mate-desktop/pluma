@@ -20,12 +20,11 @@ import re
 import os
 import sys
 import signal
-import select
 import locale
 import subprocess
-from SubstitutionParser import SubstitutionParser
-import gobject
+from gi.repository import GObject, GLib, Gtk
 
+from SubstitutionParser import SubstitutionParser
 from Helper import *
 
 # These are places in a view where the cursor can go and do things
@@ -138,7 +137,7 @@ class Placeholder:
                         eiter = self.end_iter()
                         
                         if biter and eiter:
-                                return self.buf.get_text(self.begin_iter(), self.end_iter())
+                                return self.buf.get_text(self.begin_iter(), self.end_iter(), False)
                         else:
                                 return ''
                 else:
@@ -323,12 +322,12 @@ class PlaceholderExpand(Placeholder):
 
         def remove_timeout(self):
                 if self.timeout_id != None:
-                        gobject.source_remove(self.timeout_id)
+                        GLib.source_remove(self.timeout_id)
                         self.timeout_id = None
                 
         def install_timeout(self):
                 self.remove_timeout()
-                self.timeout_id = gobject.timeout_add(1000, self.timeout_cb)
+                self.timeout_id = GLib.timeout_add(1000, self.timeout_cb)
 
         def timeout_cb(self):
                 self.timeout_id = None
@@ -398,13 +397,13 @@ class PlaceholderShell(PlaceholderExpand):
                 if not self.shell:
                         return False
 
-                gobject.source_remove(self.watch_id)
+                GLib.source_remove(self.watch_id)
                 self.close_shell()
 
                 if self.remove_me:
                         PlaceholderExpand.remove(self)
 
-                message_dialog(None, gtk.MESSAGE_ERROR, 'Execution of the shell ' \
+                message_dialog(None, Gtk.MessageType.ERROR, 'Execution of the shell ' \
                                 'command (%s) exceeded the maximum time; ' \
                                 'execution aborted.' % self.command)
                 
@@ -424,7 +423,7 @@ class PlaceholderShell(PlaceholderExpand):
                         PlaceholderExpand.remove(self, True)
                 
         def process_cb(self, source, condition):
-                if condition & gobject.IO_IN:
+                if condition & GObject.IO_IN:
                         line = source.readline()
 
                         if len(line) > 0:
@@ -452,7 +451,7 @@ class PlaceholderShell(PlaceholderExpand):
                 self.remove_timeout()
 
                 if self.shell:
-                        gobject.source_remove(self.watch_id)
+                        GLib.source_remove(self.watch_id)
                         self.close_shell()
 
                 popen_args = {
@@ -465,8 +464,8 @@ class PlaceholderShell(PlaceholderExpand):
                 self.command = text
                 self.shell = subprocess.Popen(text, **popen_args)
                 self.shell_output = ''
-                self.watch_id = gobject.io_add_watch(self.shell.stdout, gobject.IO_IN | \
-                                gobject.IO_HUP, self.process_cb)
+                self.watch_id = GLib.io_add_watch(self.shell.stdout, GObject.IO_IN | \
+                                GObject.IO_HUP, self.process_cb)
                 self.install_timeout()
                 
                 return True
@@ -590,7 +589,7 @@ class PlaceholderEval(PlaceholderExpand):
                         except TimeoutError:
                                 self.remove_timeout()
 
-                                message_dialog(None, gtk.MESSAGE_ERROR, \
+                                message_dialog(None, Gtk.MessageType.ERROR, \
                                 _('Execution of the Python command (%s) exceeds the maximum ' \
                                 'time, execution aborted.') % self.command)
                                 
@@ -598,7 +597,7 @@ class PlaceholderEval(PlaceholderExpand):
                         except Exception, detail:
                                 self.remove_timeout()
                                 
-                                message_dialog(None, gtk.MESSAGE_ERROR, 
+                                message_dialog(None, Gtk.MessageType.ERROR,
                                 _('Execution of the Python command (%s) failed: %s') % 
                                 (self.command, detail))
 

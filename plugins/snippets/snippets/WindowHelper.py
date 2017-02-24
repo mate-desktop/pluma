@@ -19,9 +19,7 @@ import re
 import os
 import gettext
 
-import gtk
-from gtk import gdk
-import pluma
+from gi.repository import GObject, Gtk, Pluma
 
 from Document import Document
 from Library import Library
@@ -45,7 +43,7 @@ class WindowHelper:
                 
                 # Add controllers to all the current views
                 for view in self.window.get_views():
-                        if isinstance(view, pluma.View) and not self.has_controller(view):
+                        if isinstance(view, Pluma.View) and not self.has_controller(view):
                                 view._snippet_controller = Document(self, view)
                 
                 self.update()
@@ -54,12 +52,11 @@ class WindowHelper:
                 self.window.remove_accel_group(self.accel_group)
                 self.accel_group = None
                 
-                #self.window.remove_accel_group(accel)
                 self.remove_menu()
 
                 # Iterate over all the tabs and remove every controller
                 for view in self.window.get_views():
-                        if isinstance(view, pluma.View) and self.has_controller(view):
+                        if isinstance(view, Pluma.View) and self.has_controller(view):
                                 view._snippet_controller.stop()
                                 view._snippet_controller = None
                 
@@ -69,7 +66,7 @@ class WindowHelper:
         def insert_menu(self):
                 manager = self.window.get_ui_manager()
 
-                self.action_group = gtk.ActionGroup("PlumaSnippetPluginActions")
+                self.action_group = Gtk.ActionGroup("PlumaSnippetPluginActions")
                 self.action_group.set_translation_domain('pluma')
                 self.action_group.add_actions([('ManageSnippets', None,
                                 _('Manage _Snippets...'), \
@@ -79,7 +76,7 @@ class WindowHelper:
                 self.merge_id = manager.new_merge_id()
                 manager.insert_action_group(self.action_group, -1)
                 manager.add_ui(self.merge_id, '/MenuBar/ToolsMenu/ToolsOps_5', \
-                                'ManageSnippets', 'ManageSnippets', gtk.UI_MANAGER_MENUITEM, False)
+                                'ManageSnippets', 'ManageSnippets', Gtk.UIManagerItemType.MENUITEM, False)
 
         def remove_menu(self):
                 manager = self.window.get_ui_manager()
@@ -140,7 +137,7 @@ class WindowHelper:
                 # Create a new controller for this tab if it has a standard pluma view
                 view = tab.get_view()
                 
-                if isinstance(view, pluma.View) and not self.has_controller(view):
+                if isinstance(view, Pluma.View) and not self.has_controller(view):
                         view._snippet_controller = Document(self, view)
 
                 self.update()

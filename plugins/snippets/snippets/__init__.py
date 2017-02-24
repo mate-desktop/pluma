@@ -15,30 +15,22 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import sys
 import os
-import shutil
-
-import gtk
-from gtk import gdk
-import pluma
+from gi.repository import GObject, GLib, Gtk, Peas, Pluma
 
 from WindowHelper import WindowHelper
 from Library import Library
 from Manager import Manager
-from Snippet import Snippet
 
-class SnippetsPlugin(pluma.Plugin):
+class SnippetsPlugin(GObject.Object, Peas.Activatable):
+        __gtype_name__ = "SnippetsPlugin"
+
+        object = GObject.Property(type=GObject.Object)
+
         def __init__(self):
-                pluma.Plugin.__init__(self)
+                GObject.Object.__init__(self)
 
                 self.dlg = None
-
-                library = Library()
-                library.set_accelerator_callback(self.accelerator_activated)
-
-                snippetsdir = os.path.expanduser('~/.config/pluma/snippets')
-                library.set_dirs(snippetsdir, self.system_dirs())
 
         def system_dirs(self):
                 if 'XDG_DATA_DIRS' in os.environ:
@@ -54,28 +46,38 @@ class SnippetsPlugin(pluma.Plugin):
                         if os.path.isdir(d):
                                 dirs.append(d)
 
-                dirs.append(self.get_data_dir())
+                dirs.append(self.plugin_info.get_data_dir())
                 return dirs
 
-        def activate(self, window):
-                data = WindowHelper(self)
-                window._snippets_plugin_data = data
-                data.run(window)
+        def do_activate(self):
+                library = Library()
+                library.add_accelerator_callback(self.accelerator_activated)
 
-        def deactivate(self, window):
-                window._snippets_plugin_data.stop()
-                window._snippets_plugin_data = None
+                snippetsdir = os.path.join(GLib.get_user_config_dir(), '/pluma/snippets')
+                library.set_dirs(snippetsdir, self.system_dirs())
 
-        def update_ui(self, window):
-                window._snippets_plugin_data.update()
+                self._helper = WindowHelper(self)
+
+                window = self.object
+                self._helper.run(window)
+
+        def do_deactivate(self):
+                library = Library()
+                library.remove_accelerator_callback(self.accelerator_activated)
+
+                self._helper.stop()
+                self._helper = None
+
+        def do_update_state(self):
+                self._helper.update()
 
         def create_configure_dialog(self):
                 if not self.dlg:
-                        self.dlg = Manager(self.get_data_dir())
+                        self.dlg = Manager(self.plugin_info.get_data_dir())
                 else:
                         self.dlg.run()
 
-                window = pluma.app_get_default().get_active_window()
+                window = Pluma.App.get_default().get_active_window()
 
                 if window:
                         self.dlg.dlg.set_transient_for(window)
@@ -85,7 +87,7 @@ class SnippetsPlugin(pluma.Plugin):
         def accelerator_activated(self, group, obj, keyval, mod):
                 ret = False
 
-                if hasattr(obj, '_snippets_plugin_data'):
-                        ret = obj._snippets_plugin_data.accelerator_activated(keyval, mod)
+                if _self.helper:
+                        ret = self._helper.accelerator_activated(keyval, mod)
 
                 return ret

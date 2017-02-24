@@ -3,7 +3,7 @@ import tempfile
 import sys
 import shutil
 
-from snippets.Library import *
+from Library import *
 import xml.etree.ElementTree as et
 from Helper import *
 

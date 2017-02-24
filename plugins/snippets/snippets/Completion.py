@@ -1,15 +1,14 @@
-import gtksourceview2 as gsv
-import gobject
-import pluma
-import gtk
+from gi.repository import GObject, Gtk, GtkSource, Pluma
 
 from Library import Library
 from LanguageManager import get_language_manager
 from Snippet import Snippet
 
-class Proposal(gobject.GObject, gsv.CompletionProposal):
+class Proposal(GObject.Object, GtkSource.CompletionProposal):
+        __gtype_name__ = "PlumaSnippetsProposal"
+
         def __init__(self, snippet):
-                gobject.GObject.__init__(self)
+                GObject.Object.__init__(self)
                 self._snippet = Snippet(snippet)
         
         def snippet(self):
@@ -22,9 +21,11 @@ class Proposal(gobject.GObject, gsv.CompletionProposal):
         def do_get_info(self):
                 return self._snippet.data['text']
 
-class Provider(gobject.GObject, gsv.CompletionProvider):
+class Provider(GObject.Object, GtkSource.CompletionProvider):
+        __gtype_name__ = "PlumaSnippetsProvider"
+
         def __init__(self, name, language_id, handler):
-                gobject.GObject.__init__(self)
+                GObject.Object.__init__(self)
                 
                 self.name = name
                 self.info_widget = None
@@ -34,10 +35,10 @@ class Provider(gobject.GObject, gsv.CompletionProvider):
                 self.info_widget = None
                 self.mark = None
                 
-                theme = gtk.icon_theme_get_default()
-                w, h = gtk.icon_size_lookup(gtk.ICON_SIZE_MENU)
+                theme = Gtk.IconTheme.get_default()
+                f, w, h = Gtk.icon_size_lookup(Gtk.IconSize.MENU)
 
-                self.icon = theme.load_icon(gtk.STOCK_JUSTIFY_LEFT, w, 0)
+                self.icon = theme.load_icon(Gtk.STOCK_JUSTIFY_LEFT, w, 0)
         
         def __del__(self):
                 if self.mark:
@@ -53,7 +54,9 @@ class Provider(gobject.GObject, gsv.CompletionProvider):
                         self.mark.get_buffer().move_mark(self.mark, it)
         
         def get_word(self, context):
-                it = context.get_iter()
+                (valid_context, it) = context.get_iter()
+                if not valid_context:
+                        return None
                 
                 if it.starts_word() or it.starts_line() or not it.ends_word():
                         return None
@@ -68,9 +71,9 @@ class Provider(gobject.GObject, gsv.CompletionProvider):
         
         def do_get_start_iter(self, context, proposal):
                 if not self.mark or self.mark.get_deleted():
-                        return None
+                        return (False, None)
                 
-                return self.mark.get_buffer().get_iter_at_mark(self.mark)
+                return (True, self.mark.get_buffer().get_iter_at_mark(self.mark))
                 
         def do_match(self, context):
                 return True
@@ -102,13 +105,13 @@ class Provider(gobject.GObject, gsv.CompletionProvider):
         
         def do_get_info_widget(self, proposal):
                 if not self.info_widget:
-                        view = pluma.View(pluma.Document())
+                        view = Pluma.View.new_with_buffer(Pluma.Document())
                         manager = get_language_manager()
 
                         lang = manager.get_language('snippets')
                         view.get_buffer().set_language(lang)
                         
-                        sw = gtk.ScrolledWindow()
+                        sw = Gtk.ScrolledWindow()
                         sw.add(view)
                         
                         self.info_view = view
@@ -122,20 +125,19 @@ class Provider(gobject.GObject, gsv.CompletionProvider):
                 buf.set_text(proposal.get_info())
                 buf.move_mark(buf.get_insert(), buf.get_start_iter())
                 buf.move_mark(buf.get_selection_bound(), buf.get_start_iter())
-                self.info_view.scroll_to_iter(buf.get_start_iter(), False)
-
-                info.set_sizing(-1, -1, False, False)
-                info.process_resize()
+                self.info_view.scroll_to_iter(buf.get_start_iter(), 0.0, False, 0.5, 0.5)
         
         def do_get_icon(self):
                 return self.icon
 
         def do_get_activation(self):
-                return gsv.COMPLETION_ACTIVATION_USER_REQUESTED
+                return GtkSource.CompletionActivation.USER_REQUESTED
 
-class Defaults(gobject.GObject, gsv.CompletionProvider):
+class Defaults(GObject.Object, GtkSource.CompletionProvider):
+        __gtype_name__ = "PlumaSnippetsDefaultsProvider"
+
         def __init__(self, handler):
-                gobject.GObject.__init__(self)
+                GObject.Object.__init__(self)
 
                 self.handler = handler
                 self.proposals = []
@@ -144,7 +146,7 @@ class Defaults(gobject.GObject, gsv.CompletionProvider):
                 self.proposals = []
                 
                 for d in defaults:
-                        self.proposals.append(gsv.CompletionItem(d))
+                        self.proposals.append(GtkSource.CompletionItem.new(d, d, None, None))
                 
         def do_get_name(self):
                 return ""
@@ -156,10 +158,6 @@ class Defaults(gobject.GObject, gsv.CompletionProvider):
                 context.add_proposals(self, self.proposals, True)
 
         def do_get_activation(self):
-                return gsv.COMPLETION_ACTIVATION_NONE
-
-gobject.type_register(Proposal)
-gobject.type_register(Provider)
-gobject.type_register(Defaults)
+                return GtkSource.CompletionActivation.USER_REQUESTED
 
 # ex:ts=8:et:

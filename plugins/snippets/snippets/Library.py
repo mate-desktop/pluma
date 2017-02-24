@@ -21,7 +21,7 @@ import sys
 import tempfile
 import re
 
-import gtk
+from gi.repository import Gdk, Gtk
 
 import xml.etree.ElementTree as et
 from Helper import *
@@ -84,10 +84,10 @@ class SnippetData:
 
                                 # Normalize accelerator
                                 if child.tag == 'accelerator' and child.text != None:
-                                        keyval, mod = gtk.accelerator_parse(child.text)
+                                        keyval, mod = Gtk.accelerator_parse(child.text)
 
-                                        if gtk.accelerator_valid(keyval, mod):
-                                                child.text = gtk.accelerator_name(keyval, mod)
+                                        if Gtk.accelerator_valid(keyval, mod):
+                                                child.text = Gtk.accelerator_name(keyval, mod)
                                         else:
                                                 child.text = ''
 
@@ -113,7 +113,7 @@ class SnippetData:
                         return False
 
                 library = Library()
-                keyval, mod = gtk.accelerator_parse(self['accelerator'])
+                keyval, mod = Gtk.accelerator_parse(self['accelerator'])
                 
                 self.valid = library.valid_tab_trigger(self['tag']) and \
                                 (not self['accelerator'] or library.valid_accelerator(keyval, mod))
@@ -271,7 +271,7 @@ class LanguageContainer:
                 self.language = language
                 self.snippets = []
                 self.snippets_by_prop = {'tag': {}, 'accelerator': {}, 'drop-targets': {}}
-                self.accel_group = gtk.AccelGroup()
+                self.accel_group = Gtk.AccelGroup()
                 self._refs = 0
 
         def _add_prop(self, snippet, prop, value=0):
@@ -284,8 +284,8 @@ class LanguageContainer:
                 snippets_debug('Added ', prop ,' ', value, ' to ', str(self.language))
                 
                 if prop == 'accelerator':
-                        keyval, mod = gtk.accelerator_parse(value)
-                        self.accel_group.connect_group(keyval, mod, 0, \
+                        keyval, mod = Gtk.accelerator_parse(value)
+                        self.accel_group.connect(keyval, mod, 0, \
                                         Library().accelerator_activated)
                 
                 snippets = self.snippets_by_prop[prop]
@@ -309,7 +309,7 @@ class LanguageContainer:
                 snippets_debug('Removed ', prop, ' ', value, ' from ', str(self.language))
 
                 if prop == 'accelerator':
-                        keyval, mod = gtk.accelerator_parse(value)
+                        keyval, mod = Gtk.accelerator_parse(value)
                         self.accel_group.disconnect_key(keyval, mod)
 
                 snippets = self.snippets_by_prop[prop]
@@ -641,9 +641,9 @@ class Singleton(object):
 
 class Library(Singleton):        
         def __init_once__(self):
-                self._accelerator_activated_cb = None
+                self._accelerator_activated_cb = []
                 self.loaded = False
-                self.check_buffer = gtk.TextBuffer()
+                self.check_buffer = Gtk.TextBuffer()
 
         def set_dirs(self, userdir, systemdirs):
                 self.userdir = userdir
@@ -656,14 +656,20 @@ class Library(Singleton):
 
                 self.loaded = False
         
-        def set_accelerator_callback(self, cb):
-                self._accelerator_activated_cb = cb
+        def add_accelerator_callback(self, cb):
+                self._accelerator_activated_cb.append(cb)
+
+        def remove_accelerator_callback(self, cb):
+                self._accelerator_activated_cb.remove(cb)
         
         def accelerator_activated(self, group, obj, keyval, mod):
                 ret = False
 
-                if self._accelerator_activated_cb:
-                        ret = self._accelerator_activated_cb(group, obj, keyval, mod)
+                for cb in self._accelerator_activated_cb:
+                        ret = cb(group, obj, keyval, mod)
+
+                        if ret:
+                                break
 
                 return ret
 
@@ -921,10 +927,10 @@ class Library(Singleton):
                 self.loaded = True
 
         def valid_accelerator(self, keyval, mod):
-                mod &= gtk.accelerator_get_default_mod_mask()
+                mod &= Gtk.accelerator_get_default_mod_mask()
         
-                return (mod and (gdk.keyval_to_unicode(keyval) or \
-                                keyval in range(gtk.keysyms.F1, gtk.keysyms.F12 + 1)))
+                return (mod and (Gdk.keyval_to_unicode(keyval) or \
+                                keyval in range(Gdk.KEY_F1, Gdk.KEY_F12 + 1)))
         
         def valid_tab_trigger(self, trigger):
                 if not trigger:
@@ -936,7 +942,7 @@ class Library(Singleton):
                 self.check_buffer.set_text(trigger)
 
                 start, end = self.check_buffer.get_bounds()
-                text = self.check_buffer.get_text(start, end)
+                text = self.check_buffer.get_text(start, end, False)
                                 
                 s = start.copy()
                 e = end.copy()

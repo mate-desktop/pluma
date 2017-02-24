@@ -580,10 +580,11 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkComboBoxEntry" id="combo_drop_targets">
+                              <object class="GtkComboBox" id="combo_drop_targets">
                                 <property name="visible">True</property>
                                 <property name="add_tearoffs">False</property>
                                 <property name="has_frame">True</property>
+                                <property name="has_entry">True</property>
                                 <property name="focus_on_click">True</property>
                                 <property name="model">model1</property>
                                 <child>

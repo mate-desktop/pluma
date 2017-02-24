@@ -16,7 +16,7 @@
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
-import gio
+from gi.repository import Gio, Gtk
 
 from Placeholder import *
 from Parser import Parser, Token
@@ -42,12 +42,12 @@ class EvalUtilities:
                 return len(s.expandtabs(tablen))
 
         def _filename_to_uri(self, filename):
-                gfile = gio.File(filename)
+                gfile = Gio.file_new_for_path(filename)
 
                 return gfile.get_uri()
 
         def util_readfile(self, filename):
-                stream = gio.File(filename).read()
+                stream = Gio.file_new_for_path(filename).read()
                 
                 if not stream:
                         return ''
@@ -58,8 +58,8 @@ class EvalUtilities:
                 return res
 
         def util_filesize(self, filename):
-                gfile = gio.File(filename)
-                info = gfile.query_info(gio.FILE_ATTRIBUTE_STANDARD_SIZE)
+                gfile = Gio.file_new_for_path(filename)
+                info = gfile.query_info(Gio.FILE_ATTRIBUTE_STANDARD_SIZE)
                 
                 if not info:
                         return 0
@@ -111,8 +111,8 @@ class Snippet:
                 accel = self['accelerator']
 
                 if accel:
-                        keyval, mod = gtk.accelerator_parse(accel)
-                        accel = gtk.accelerator_get_label(keyval, mod)
+                        keyval, mod = Gtk.accelerator_parse(accel)
+                        accel = Gtk.accelerator_get_label(keyval, mod)
                 
                 return accel or ''
 

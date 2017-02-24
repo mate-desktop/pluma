@@ -3,7 +3,7 @@ import tempfile
 import sys
 import shutil
 
-from snippets.Library import *
+from Library import *
 
 class Importer:
         def __init__(self, filename):

@@ -250,6 +250,10 @@ plugins/pythonconsole/Makefile
 plugins/pythonconsole/pythonconsole/Makefile
 plugins/quickopen/Makefile
 plugins/quickopen/quickopen/Makefile
+plugins/snippets/data/lang/Makefile
+plugins/snippets/data/Makefile
+plugins/snippets/Makefile
+plugins/snippets/snippets/Makefile
 plugins/sort/Makefile
 plugins/spell/Makefile
 plugins/spell/org.mate.pluma.plugins.spell.gschema.xml

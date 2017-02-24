@@ -20,11 +20,10 @@ from xml.sax import saxutils
 from xml.etree.ElementTree import *
 import re
 
-import gtk
-from gtk import gdk
+from gi.repository import Gtk
 
 def message_dialog(par, typ, msg):
-        d = gtk.MessageDialog(par, gtk.DIALOG_MODAL, typ, gtk.BUTTONS_OK, msg)
+        d = Gtk.MessageDialog(par, Gtk.DialogFlags.MODAL, typ, Gtk.ButtonsType.OK, msg)
         d.set_property('use-markup', True)
 
         d.run()
@@ -61,8 +60,9 @@ def spaces_instead_of_tabs(view, text):
 def insert_with_indent(view, piter, text, indentfirst = True, context = None):
         text = spaces_instead_of_tabs(view, text)
         lines = text.split('\n')
+        buf = view.get_buffer()
 
-        view.get_buffer().set_data('PlumaSnippetsPluginContext', context)
+        buf._snippets_context = context
 
         if len(lines) == 1:
                 view.get_buffer().insert(piter, text)
@@ -77,12 +77,14 @@ def insert_with_indent(view, piter, text, indentfirst = True, context = None):
                         else:
                                 text += lines[i] + '\n'
                 
-                view.get_buffer().insert(piter, text[:-1])
+                buf.insert(piter, text[:-1])
 
-        view.get_buffer().set_data('PlumaSnippetsPluginContext', None)
+        buf._snippets_context = None
 
 def get_buffer_context(buf):
-        return buf.get_data('PlumaSnippetsPluginContext')
+        if hasattr(buf, "_snippets_context"):
+                return buf._snippets_context
+        return None
 
 def snippets_debug(*s):
         return
@@ -170,13 +172,15 @@ def buffer_line_boundary(buf):
         return (start, iter)
 
 def drop_get_uris(selection):
-        lines = re.split('\\s*[\\n\\r]+\\s*', selection.data.strip())
-        result = []
-        
-        for line in lines:
-                if not line.startswith('#'):
-                        result.append(line)
-        
-        return result
+        uris = []
+        if selection.targets_include_uri():
+                data = selection.get_data()
+                lines = re.split('\\s*[\\n\\r]+\\s*', data.strip())
+
+                for line in lines:
+                        if not line.startswith('#'):
+                                uris.append(line)
+
+        return uris
 
 # ex:ts=8:et:
