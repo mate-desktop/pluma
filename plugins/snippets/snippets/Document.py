@@ -727,6 +727,14 @@ class Document:
                                                 self.update_snippet_contents)
 
         def on_buffer_changed(self, buf):
+                for snippet in list(self.active_snippets):
+                        begin = snippet.begin_iter()
+                        end = snippet.end_iter()
+
+                        if begin.compare(end) >= 0:
+                                # Begin collapsed on end, just remove it
+                                self.deactivate_snippet(snippet)
+
                 current = self.current_placeholder()
 
                 if current:
