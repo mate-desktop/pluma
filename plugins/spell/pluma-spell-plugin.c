@@ -818,8 +818,6 @@ get_configure_dialog (PlumaSpellPlugin *plugin)
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->never), TRUE);
 	}
 
-	gtk_window_set_default_size (GTK_WIDGET (content), 15, 120);
-
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog->dialog))),
 				content, FALSE, FALSE, 0);
 	g_object_unref (content);
