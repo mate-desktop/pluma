@@ -2069,13 +2069,16 @@ static gboolean
 pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 {
 	if ((event->type == GDK_BUTTON_PRESS) && 
-	    (event->button == 3) &&
 	    (event->window == gtk_text_view_get_window (GTK_TEXT_VIEW (widget),
 						        GTK_TEXT_WINDOW_LEFT)))
 	{
-		show_line_numbers_menu (widget, event);
-
-		return TRUE;
+		if (event->button == 3)
+		{
+			show_line_numbers_menu (widget, event);
+			return TRUE;
+		}
+		else if (event->button == 2)
+			return TRUE;
 	}
 
 	return GTK_WIDGET_CLASS (pluma_view_parent_class)->button_press_event (widget, event);
