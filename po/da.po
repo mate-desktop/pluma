@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Allan Nordhøy <epost@anotheragency.no>, 2016
-# Joe Hansen <joedalton2@yahoo.dk>, 2013-2016
+# Joe Hansen <joedalton2@yahoo.dk>, 2013-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 14:29+0300\n"
-"PO-Revision-Date: 2016-12-28 09:33+0000\n"
+"POT-Creation-Date: 2017-02-28 16:12+0300\n"
+"PO-Revision-Date: 2017-02-28 18:21+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish (http://www.transifex.com/mate/MATE/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -659,6 +659,7 @@ msgstr "Tekstombrydning"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../plugins/docinfo/docinfo.ui.h:4
 #: ../plugins/externaltools/tools/tools.ui.h:21
+#: ../plugins/snippets/snippets/snippets.ui.h:9
 #: ../plugins/time/pluma-time-dialog.ui.h:4
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:3
 msgid "    "
@@ -783,20 +784,20 @@ msgstr "Skrifttyper og farver"
 msgid "Plugins"
 msgstr "Udvidelsesmoduler"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:300
+#: ../pluma/dialogs/pluma-search-dialog.c:301
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
 msgid "Replace"
 msgstr "Erstat"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:309 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
 msgid "Find"
 msgstr "Find"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:418
+#: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "Erstat _alle"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:419
+#: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
 msgstr "_Erstat"
@@ -818,18 +819,22 @@ msgid "_Match case"
 msgstr "_Forskel på små/store bogstaver"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+msgid "Match _regular expression"
+msgstr "Match _regulært udtryk"
+
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
 msgstr "Søg kun efter _hele ord"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Search _backwards"
 msgstr "Søg _bagud"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Wrap around"
 msgstr "_Begynd forfra ved slut"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "_Fortolk undvigesekvenser (f.eks. \\n)"
 
@@ -2378,6 +2383,7 @@ msgid "_Tools:"
 msgstr "_Værktøjer:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
+#: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
 msgstr "_Rediger:"
 
@@ -2836,6 +2842,230 @@ msgstr "Åbn dokumenter hurtigt"
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
 msgstr "Åbn filer hurtigt"
+
+#. Do the fancy completion dialog
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:1
+#: ../plugins/snippets/snippets/Document.py:53
+#: ../plugins/snippets/snippets/Document.py:193
+#: ../plugins/snippets/snippets/Document.py:614
+msgid "Snippets"
+msgstr "Tekststumper"
+
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:2
+msgid "Insert often-used pieces of text in a fast way"
+msgstr "Indsæt ofte brugte stumper af tekst hurtigt"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:1
+msgid "Snippets Manager"
+msgstr "Tekststumper"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:2
+msgid "_Snippets:"
+msgstr "_Tekststumper:"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:3
+msgid "Create new snippet"
+msgstr "Opret ny tekststump"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:4
+#: ../plugins/snippets/snippets/Manager.py:792
+msgid "Import snippets"
+msgstr "Importer tekststumper"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:5
+msgid "Export selected snippets"
+msgstr "Eksporter markerede tekststumper"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:6
+#: ../plugins/snippets/snippets/Manager.py:403
+msgid "Delete selected snippet"
+msgstr "Slet den markerede tekststump"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:8
+msgid "Activation"
+msgstr "Aktivering"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "_Tab trigger:"
+msgstr "_Tabulator-udløser:"
+
+#. self['hbox_tab_trigger'].set_spacing(0)
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+#: ../plugins/snippets/snippets/Manager.py:681
+msgid "Single word the snippet is activated with after pressing Tab"
+msgstr "Et enkelt ord hvormed tekststumpen aktiveres, når der trykkes tab"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:12
+msgid "Shortcut key with which the snippet is activated"
+msgstr "Genvejstasten hvormed tekststumpen aktiveres"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:13
+msgid "S_hortcut key:"
+msgstr "_Genvejstast:"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+msgid "_Drop targets:"
+msgstr "_Slip mål:"
+
+#: ../plugins/snippets/snippets/WindowHelper.py:72
+msgid "Manage _Snippets..."
+msgstr "Konfigurer _tekststumper …"
+
+#: ../plugins/snippets/snippets/WindowHelper.py:73
+msgid "Manage snippets"
+msgstr "Konfigurer tekststumper"
+
+#: ../plugins/snippets/snippets/Manager.py:41
+msgid "Snippets archive"
+msgstr "Tekststump-arkiv"
+
+#: ../plugins/snippets/snippets/Manager.py:66
+msgid "Add a new snippet..."
+msgstr "Tilføj en ny tekststump …"
+
+#: ../plugins/snippets/snippets/Manager.py:117
+msgid "Global"
+msgstr "Global"
+
+#: ../plugins/snippets/snippets/Manager.py:400
+msgid "Revert selected snippet"
+msgstr "Gendan den markerede tekststump"
+
+#. self['hbox_tab_trigger'].set_spacing(3)
+#: ../plugins/snippets/snippets/Manager.py:674
+msgid ""
+"This is not a valid Tab trigger. Triggers can either contain letters or a "
+"single (non-alphanumeric) character like: {, [, etc."
+msgstr "Dette er ikke en gyldig udløser. Udløsere kan enten indeholde bogstaver eller et enkelt tegn som ikke er alfanumerisk som f.eks. { eller [."
+
+#: ../plugins/snippets/snippets/Manager.py:771
+#, python-format
+msgid "The following error occurred while importing: %s"
+msgstr "Den følgende fejl opstod under import: %s"
+
+#: ../plugins/snippets/snippets/Manager.py:778
+msgid "Import successfully completed"
+msgstr "Import fuldført problemfrit"
+
+#: ../plugins/snippets/snippets/Manager.py:797
+#: ../plugins/snippets/snippets/Manager.py:883
+#: ../plugins/snippets/snippets/Manager.py:946
+msgid "All supported archives"
+msgstr "Alle understøttede arkiver"
+
+#: ../plugins/snippets/snippets/Manager.py:798
+#: ../plugins/snippets/snippets/Manager.py:884
+#: ../plugins/snippets/snippets/Manager.py:947
+msgid "Gzip compressed archive"
+msgstr "Gzip-komprimeret arkiv"
+
+#: ../plugins/snippets/snippets/Manager.py:799
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:948
+msgid "Bzip2 compressed archive"
+msgstr "Bzip2-komprimeret arkiv"
+
+#: ../plugins/snippets/snippets/Manager.py:800
+msgid "Single snippets file"
+msgstr "Enkelt tekststumpfil"
+
+#: ../plugins/snippets/snippets/Manager.py:801
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:950
+msgid "All files"
+msgstr "Alle filer"
+
+#: ../plugins/snippets/snippets/Manager.py:813
+#, python-format
+msgid "The following error occurred while exporting: %s"
+msgstr "Følgende fejl opstod under eksport: %s"
+
+#: ../plugins/snippets/snippets/Manager.py:817
+msgid "Export successfully completed"
+msgstr "Eksport fuldført problemfrit"
+
+#. Ask if system snippets should also be exported
+#: ../plugins/snippets/snippets/Manager.py:857
+#: ../plugins/snippets/snippets/Manager.py:924
+msgid "Do you want to include selected <b>system</b> snippets in your export?"
+msgstr "Ønsker du at inkludere markerede <b>system</b>-tekststumper i din eksport?"
+
+#: ../plugins/snippets/snippets/Manager.py:872
+#: ../plugins/snippets/snippets/Manager.py:942
+msgid "There are no snippets selected to be exported"
+msgstr "Ingen tekststumper er markeret til eksport"
+
+#: ../plugins/snippets/snippets/Manager.py:877
+#: ../plugins/snippets/snippets/Manager.py:915
+msgid "Export snippets"
+msgstr "Eksporter tekststumper"
+
+#: ../plugins/snippets/snippets/Manager.py:1055
+msgid "Type a new shortcut, or press Backspace to clear"
+msgstr "Indtast en ny genvej eller tryk på knappen »slet tilbage« for at rydde"
+
+#: ../plugins/snippets/snippets/Manager.py:1057
+msgid "Type a new shortcut"
+msgstr "Indtast en ny genvej"
+
+#: ../plugins/snippets/snippets/Exporter.py:65
+#, python-format
+msgid "The archive \"%s\" could not be created"
+msgstr "Arkivet »%s« kunne ikke oprettes"
+
+#: ../plugins/snippets/snippets/Exporter.py:82
+#, python-format
+msgid "Target directory \"%s\" does not exist"
+msgstr "Målmappen »%s« findes ikke"
+
+#: ../plugins/snippets/snippets/Exporter.py:85
+#, python-format
+msgid "Target directory \"%s\" is not a valid directory"
+msgstr "Målmappen »%s« er ikke en gyldig mappe"
+
+#: ../plugins/snippets/snippets/Importer.py:29
+#: ../plugins/snippets/snippets/Importer.py:83
+#, python-format
+msgid "File \"%s\" does not exist"
+msgstr "Filen »%s« findes ikke"
+
+#: ../plugins/snippets/snippets/Importer.py:32
+#, python-format
+msgid "File \"%s\" is not a valid snippets file"
+msgstr "Filen »%s« er ikke en gyldig tekststump-fil"
+
+#: ../plugins/snippets/snippets/Importer.py:42
+#, python-format
+msgid "Imported file \"%s\" is not a valid snippets file"
+msgstr "Den importerede fil »%s« er ikke en gyldig tekststump-fil"
+
+#: ../plugins/snippets/snippets/Importer.py:52
+#, python-format
+msgid "The archive \"%s\" could not be extracted"
+msgstr "Arkivet »%s« kunne ikke pakkes ud"
+
+#: ../plugins/snippets/snippets/Importer.py:70
+#, python-format
+msgid "The following files could not be imported: %s"
+msgstr "De følgende filer kunne ikke importeres: %s"
+
+#: ../plugins/snippets/snippets/Importer.py:86
+#: ../plugins/snippets/snippets/Importer.py:99
+#, python-format
+msgid "File \"%s\" is not a valid snippets archive"
+msgstr "Filen »%s« er ikke et gyldigt tekststump-arkiv"
+
+#: ../plugins/snippets/snippets/Placeholder.py:593
+#, python-format
+msgid ""
+"Execution of the Python command (%s) exceeds the maximum time, execution "
+"aborted."
+msgstr "Eksekvering af python-kommandoen (%s) overskred tidsgrænsen - eksekvering afbrudt."
+
+#: ../plugins/snippets/snippets/Placeholder.py:601
+#, python-format
+msgid "Execution of the Python command (%s) failed: %s"
+msgstr "Eksekvering af python-kommandoen (%s) mislykkedes: %s"
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
 msgid "S_ort..."

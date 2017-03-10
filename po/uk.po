@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Микола Ткач <Stuartlittle1970@gmail.com>, 2013
-# Микола Ткач <Stuartlittle1970@gmail.com>, 2013
+# Микола Ткач <znadibnyk@gmail.com>, 2013
+# Микола Ткач <znadibnyk@gmail.com>, 2013
 # zubr139, 2013
 # zubr139, 2012
 # zubr139, 2012-2013
-# Микола Ткач <Stuartlittle1970@gmail.com>, 2013-2017
+# Микола Ткач <znadibnyk@gmail.com>, 2013-2017
+# Микола Ткач <znadibnyk@gmail.com>, 2017
 # Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 14:29+0300\n"
-"PO-Revision-Date: 2017-01-03 14:34+0000\n"
-"Last-Translator: Микола Ткач <Stuartlittle1970@gmail.com>\n"
+"POT-Creation-Date: 2017-02-28 16:12+0300\n"
+"PO-Revision-Date: 2017-03-02 05:29+0000\n"
+"Last-Translator: Микола Ткач <znadibnyk@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/mate/MATE/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -671,6 +672,7 @@ msgstr "Перенесення тексту"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../plugins/docinfo/docinfo.ui.h:4
 #: ../plugins/externaltools/tools/tools.ui.h:21
+#: ../plugins/snippets/snippets/snippets.ui.h:9
 #: ../plugins/time/pluma-time-dialog.ui.h:4
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:3
 msgid "    "
@@ -795,20 +797,20 @@ msgstr "Шрифти та кольори"
 msgid "Plugins"
 msgstr "Втулки"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:300
+#: ../pluma/dialogs/pluma-search-dialog.c:301
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
 msgid "Replace"
 msgstr "Замінити"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:309 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
 msgid "Find"
 msgstr "Знайти"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:418
+#: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "Замінити _усе"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:419
+#: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
 msgstr "За_мінити"
@@ -830,18 +832,22 @@ msgid "_Match case"
 msgstr "Збігається _регістр"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+msgid "Match _regular expression"
+msgstr "За регуляр _ним виразом"
+
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
 msgstr "Збігається _ціле слово"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Search _backwards"
 msgstr "_Шукати назад"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Wrap around"
 msgstr "_Досягнувши кінця, починати спочатку"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "_Розпізнавати послідовність виходу (наприклад, \\n)"
 
@@ -2398,6 +2404,7 @@ msgid "_Tools:"
 msgstr "_Знаряддя:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
+#: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
 msgstr "_Змінити:"
 
@@ -2856,6 +2863,230 @@ msgstr "Швидко відкрити документи"
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
 msgstr "Швидке відкриття файлів"
+
+#. Do the fancy completion dialog
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:1
+#: ../plugins/snippets/snippets/Document.py:53
+#: ../plugins/snippets/snippets/Document.py:193
+#: ../plugins/snippets/snippets/Document.py:614
+msgid "Snippets"
+msgstr "Фрагменти тексту"
+
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:2
+msgid "Insert often-used pieces of text in a fast way"
+msgstr "Хутко вставляє часто вживані фрагменти тексту"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:1
+msgid "Snippets Manager"
+msgstr "Оглядач фрагментів"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:2
+msgid "_Snippets:"
+msgstr "_Фрагменти:"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:3
+msgid "Create new snippet"
+msgstr "Створити новий фрагмент тексту"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:4
+#: ../plugins/snippets/snippets/Manager.py:792
+msgid "Import snippets"
+msgstr "Імпортувати фрагменти"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:5
+msgid "Export selected snippets"
+msgstr "Експортувати виділені фрагменти"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:6
+#: ../plugins/snippets/snippets/Manager.py:403
+msgid "Delete selected snippet"
+msgstr "Вилучити виділений фрагмент тексту"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:8
+msgid "Activation"
+msgstr "Активація"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "_Tab trigger:"
+msgstr "_Перемикач:"
+
+#. self['hbox_tab_trigger'].set_spacing(0)
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+#: ../plugins/snippets/snippets/Manager.py:681
+msgid "Single word the snippet is activated with after pressing Tab"
+msgstr "Слово, яке використовується для вставки фрагменту тексту. Фрагмент вставляється, якщо після слова натиснути Tab."
+
+#: ../plugins/snippets/snippets/snippets.ui.h:12
+msgid "Shortcut key with which the snippet is activated"
+msgstr "Швидка клявіша для вставки фрагменту тексту"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:13
+msgid "S_hortcut key:"
+msgstr "С_корочення клявішів:"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+msgid "_Drop targets:"
+msgstr "_Області призначення:"
+
+#: ../plugins/snippets/snippets/WindowHelper.py:72
+msgid "Manage _Snippets..."
+msgstr "Керування _фрагментами..."
+
+#: ../plugins/snippets/snippets/WindowHelper.py:73
+msgid "Manage snippets"
+msgstr "Керування фрагментами"
+
+#: ../plugins/snippets/snippets/Manager.py:41
+msgid "Snippets archive"
+msgstr "Архів фрагментів"
+
+#: ../plugins/snippets/snippets/Manager.py:66
+msgid "Add a new snippet..."
+msgstr "Додати новий фрагмент..."
+
+#: ../plugins/snippets/snippets/Manager.py:117
+msgid "Global"
+msgstr "Глобальні"
+
+#: ../plugins/snippets/snippets/Manager.py:400
+msgid "Revert selected snippet"
+msgstr "Скасувати виділений фрагмент тексту"
+
+#. self['hbox_tab_trigger'].set_spacing(3)
+#: ../plugins/snippets/snippets/Manager.py:674
+msgid ""
+"This is not a valid Tab trigger. Triggers can either contain letters or a "
+"single (non-alphanumeric) character like: {, [, etc."
+msgstr "Це невірний перемикач. Перемикачі можуть містити або літери, або один (не абетково-цифровий) символ, такий як {, [, тощо."
+
+#: ../plugins/snippets/snippets/Manager.py:771
+#, python-format
+msgid "The following error occurred while importing: %s"
+msgstr "При імпорті сталася така помилка: %s"
+
+#: ../plugins/snippets/snippets/Manager.py:778
+msgid "Import successfully completed"
+msgstr "Імпорт успішно закінчено"
+
+#: ../plugins/snippets/snippets/Manager.py:797
+#: ../plugins/snippets/snippets/Manager.py:883
+#: ../plugins/snippets/snippets/Manager.py:946
+msgid "All supported archives"
+msgstr "Усі підтримувані архіви"
+
+#: ../plugins/snippets/snippets/Manager.py:798
+#: ../plugins/snippets/snippets/Manager.py:884
+#: ../plugins/snippets/snippets/Manager.py:947
+msgid "Gzip compressed archive"
+msgstr "Архіви Gzip"
+
+#: ../plugins/snippets/snippets/Manager.py:799
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:948
+msgid "Bzip2 compressed archive"
+msgstr "Архіви Bzip2"
+
+#: ../plugins/snippets/snippets/Manager.py:800
+msgid "Single snippets file"
+msgstr "Одинарні файли фрагментів"
+
+#: ../plugins/snippets/snippets/Manager.py:801
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:950
+msgid "All files"
+msgstr "Усі файли"
+
+#: ../plugins/snippets/snippets/Manager.py:813
+#, python-format
+msgid "The following error occurred while exporting: %s"
+msgstr "При експорті сталася така помилка: %s"
+
+#: ../plugins/snippets/snippets/Manager.py:817
+msgid "Export successfully completed"
+msgstr "Експорт успішно закінчено"
+
+#. Ask if system snippets should also be exported
+#: ../plugins/snippets/snippets/Manager.py:857
+#: ../plugins/snippets/snippets/Manager.py:924
+msgid "Do you want to include selected <b>system</b> snippets in your export?"
+msgstr "Включити виділені <b>системні</b> фрагменти тексту у експортований архів?"
+
+#: ../plugins/snippets/snippets/Manager.py:872
+#: ../plugins/snippets/snippets/Manager.py:942
+msgid "There are no snippets selected to be exported"
+msgstr "Не вибрано фрагментів для експорту "
+
+#: ../plugins/snippets/snippets/Manager.py:877
+#: ../plugins/snippets/snippets/Manager.py:915
+msgid "Export snippets"
+msgstr "Експортувати фрагменти"
+
+#: ../plugins/snippets/snippets/Manager.py:1055
+msgid "Type a new shortcut, or press Backspace to clear"
+msgstr "Уведіть нове скорочення клявішів, або натисніть Backspace для очищення"
+
+#: ../plugins/snippets/snippets/Manager.py:1057
+msgid "Type a new shortcut"
+msgstr "Уведіть нове скорочення"
+
+#: ../plugins/snippets/snippets/Exporter.py:65
+#, python-format
+msgid "The archive \"%s\" could not be created"
+msgstr "Не вдалося створити архів «%s»"
+
+#: ../plugins/snippets/snippets/Exporter.py:82
+#, python-format
+msgid "Target directory \"%s\" does not exist"
+msgstr "Теки мети «%s» не існує"
+
+#: ../plugins/snippets/snippets/Exporter.py:85
+#, python-format
+msgid "Target directory \"%s\" is not a valid directory"
+msgstr "Тека мети «%s» не коректна"
+
+#: ../plugins/snippets/snippets/Importer.py:29
+#: ../plugins/snippets/snippets/Importer.py:83
+#, python-format
+msgid "File \"%s\" does not exist"
+msgstr "Файлу «%s» не існує"
+
+#: ../plugins/snippets/snippets/Importer.py:32
+#, python-format
+msgid "File \"%s\" is not a valid snippets file"
+msgstr "Файл «%s» не містить фрагментів тексту"
+
+#: ../plugins/snippets/snippets/Importer.py:42
+#, python-format
+msgid "Imported file \"%s\" is not a valid snippets file"
+msgstr "Імпортований файл «%s» не містить коректних фрагментів "
+
+#: ../plugins/snippets/snippets/Importer.py:52
+#, python-format
+msgid "The archive \"%s\" could not be extracted"
+msgstr "Не вдалося видобути вміст архіву «%s»"
+
+#: ../plugins/snippets/snippets/Importer.py:70
+#, python-format
+msgid "The following files could not be imported: %s"
+msgstr "Такі файли не вдалося імпортувати: %s"
+
+#: ../plugins/snippets/snippets/Importer.py:86
+#: ../plugins/snippets/snippets/Importer.py:99
+#, python-format
+msgid "File \"%s\" is not a valid snippets archive"
+msgstr "Файл «%s» не є коректним архівом фрагментів тексту"
+
+#: ../plugins/snippets/snippets/Placeholder.py:593
+#, python-format
+msgid ""
+"Execution of the Python command (%s) exceeds the maximum time, execution "
+"aborted."
+msgstr "Час виконання команди Python (%s) перевищив припустиму норму, виконання перервано."
+
+#: ../plugins/snippets/snippets/Placeholder.py:601
+#, python-format
+msgid "Execution of the Python command (%s) failed: %s"
+msgstr "Не вдалося виконати команду Python (%s): %s"
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
 msgid "S_ort..."

@@ -6,13 +6,13 @@
 # Georgi Georgiev <georgiev_1994@abv.bg>, 2015
 # Kiril Kirilov <cybercop_montana@abv.bg>, 2014
 # Замфир Йончев <zamfir.yonchev@gmail.com>, 2016
-# Любомир Василев, 2016
+# Любомир Василев, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 14:29+0300\n"
-"PO-Revision-Date: 2016-12-29 15:55+0000\n"
+"POT-Creation-Date: 2017-02-28 16:12+0300\n"
+"PO-Revision-Date: 2017-03-01 14:36+0000\n"
 "Last-Translator: Любомир Василев\n"
 "Language-Team: Bulgarian (http://www.transifex.com/mate/MATE/language/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -661,6 +661,7 @@ msgstr "Режим с пренасяне"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../plugins/docinfo/docinfo.ui.h:4
 #: ../plugins/externaltools/tools/tools.ui.h:21
+#: ../plugins/snippets/snippets/snippets.ui.h:9
 #: ../plugins/time/pluma-time-dialog.ui.h:4
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:3
 msgid "    "
@@ -785,20 +786,20 @@ msgstr "Шрифт и цветове"
 msgid "Plugins"
 msgstr "Приставки"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:300
+#: ../pluma/dialogs/pluma-search-dialog.c:301
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
 msgid "Replace"
 msgstr "Замяна"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:309 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
 msgid "Find"
 msgstr "Търсене"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:418
+#: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "Замяна на _всички"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:419
+#: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
 msgstr "_Замяна"
@@ -820,18 +821,22 @@ msgid "_Match case"
 msgstr "Зачитане на главни/_малки"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+msgid "Match _regular expression"
+msgstr "Ако отговаря на _регулярен израз"
+
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
 msgstr "Ако съвпада само с _цяла дума"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Search _backwards"
 msgstr "Търсене наза_д"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Wrap around"
 msgstr "_След края — от началото"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "_Разбор на изходните последователности (например \\n)"
 
@@ -2380,6 +2385,7 @@ msgid "_Tools:"
 msgstr "Инс_трументи:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
+#: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
 msgstr "_Редактиране:"
 
@@ -2838,6 +2844,230 @@ msgstr "Бързо отваряне на документ"
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
 msgstr "Бързо отваряне на файлове"
+
+#. Do the fancy completion dialog
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:1
+#: ../plugins/snippets/snippets/Document.py:53
+#: ../plugins/snippets/snippets/Document.py:193
+#: ../plugins/snippets/snippets/Document.py:614
+msgid "Snippets"
+msgstr "Изрезки"
+
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:2
+msgid "Insert often-used pieces of text in a fast way"
+msgstr "Вмъкване на често използвани отрязъци текст, по бърз начин"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:1
+msgid "Snippets Manager"
+msgstr "Управление на изрезки"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:2
+msgid "_Snippets:"
+msgstr "_Изрезки:"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:3
+msgid "Create new snippet"
+msgstr "Създаване на нова изрезка"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:4
+#: ../plugins/snippets/snippets/Manager.py:792
+msgid "Import snippets"
+msgstr "Внасяне на на изрезки"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:5
+msgid "Export selected snippets"
+msgstr "Изнасяне на избраните изрезки"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:6
+#: ../plugins/snippets/snippets/Manager.py:403
+msgid "Delete selected snippet"
+msgstr "Изтриване на избраната изрезка"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:8
+msgid "Activation"
+msgstr "Задействане"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "_Tab trigger:"
+msgstr "_Спусък за табулатора:"
+
+#. self['hbox_tab_trigger'].set_spacing(0)
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+#: ../plugins/snippets/snippets/Manager.py:681
+msgid "Single word the snippet is activated with after pressing Tab"
+msgstr "Дума, с която изрезката се поставя след натискане на табулатор"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:12
+msgid "Shortcut key with which the snippet is activated"
+msgstr "Бърз клавиш, с който се поставя изрезката"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:13
+msgid "S_hortcut key:"
+msgstr "Б_ърз клавиш:"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+msgid "_Drop targets:"
+msgstr "_Цели на влачене:"
+
+#: ../plugins/snippets/snippets/WindowHelper.py:72
+msgid "Manage _Snippets..."
+msgstr "Управление на _изрезки…"
+
+#: ../plugins/snippets/snippets/WindowHelper.py:73
+msgid "Manage snippets"
+msgstr "Управление на изрезки"
+
+#: ../plugins/snippets/snippets/Manager.py:41
+msgid "Snippets archive"
+msgstr "Архив с изрезки"
+
+#: ../plugins/snippets/snippets/Manager.py:66
+msgid "Add a new snippet..."
+msgstr "Добавяне на нова изрезка…"
+
+#: ../plugins/snippets/snippets/Manager.py:117
+msgid "Global"
+msgstr "Глобално"
+
+#: ../plugins/snippets/snippets/Manager.py:400
+msgid "Revert selected snippet"
+msgstr "Възстановяване на избраната изрезка"
+
+#. self['hbox_tab_trigger'].set_spacing(3)
+#: ../plugins/snippets/snippets/Manager.py:674
+msgid ""
+"This is not a valid Tab trigger. Triggers can either contain letters or a "
+"single (non-alphanumeric) character like: {, [, etc."
+msgstr "Това не е валиден спусък за табулатора. Валидните спусъци съдържат букви или единичен знак, който не е буква или цифра — например „{“, „[“ и т.н."
+
+#: ../plugins/snippets/snippets/Manager.py:771
+#, python-format
+msgid "The following error occurred while importing: %s"
+msgstr "Възникна следната грешка при внасяне: %s"
+
+#: ../plugins/snippets/snippets/Manager.py:778
+msgid "Import successfully completed"
+msgstr "Внасянето завърши успешно"
+
+#: ../plugins/snippets/snippets/Manager.py:797
+#: ../plugins/snippets/snippets/Manager.py:883
+#: ../plugins/snippets/snippets/Manager.py:946
+msgid "All supported archives"
+msgstr "Всички поддържани архиви"
+
+#: ../plugins/snippets/snippets/Manager.py:798
+#: ../plugins/snippets/snippets/Manager.py:884
+#: ../plugins/snippets/snippets/Manager.py:947
+msgid "Gzip compressed archive"
+msgstr "Архив, компресиран с gzip"
+
+#: ../plugins/snippets/snippets/Manager.py:799
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:948
+msgid "Bzip2 compressed archive"
+msgstr "Архив, компресиран с bzip2"
+
+#: ../plugins/snippets/snippets/Manager.py:800
+msgid "Single snippets file"
+msgstr "Единичен файл с изрезки"
+
+#: ../plugins/snippets/snippets/Manager.py:801
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:950
+msgid "All files"
+msgstr "Всички файлове"
+
+#: ../plugins/snippets/snippets/Manager.py:813
+#, python-format
+msgid "The following error occurred while exporting: %s"
+msgstr "Възникна следната грешка при изнасяне: %s"
+
+#: ../plugins/snippets/snippets/Manager.py:817
+msgid "Export successfully completed"
+msgstr "Изнасянето завърши успешно"
+
+#. Ask if system snippets should also be exported
+#: ../plugins/snippets/snippets/Manager.py:857
+#: ../plugins/snippets/snippets/Manager.py:924
+msgid "Do you want to include selected <b>system</b> snippets in your export?"
+msgstr "Искате ли да изнесете и избраните <b>системни</b> изрезки?"
+
+#: ../plugins/snippets/snippets/Manager.py:872
+#: ../plugins/snippets/snippets/Manager.py:942
+msgid "There are no snippets selected to be exported"
+msgstr "Не са избрани изрезки за изнасяне"
+
+#: ../plugins/snippets/snippets/Manager.py:877
+#: ../plugins/snippets/snippets/Manager.py:915
+msgid "Export snippets"
+msgstr "Изнасяне на изрезки"
+
+#: ../plugins/snippets/snippets/Manager.py:1055
+msgid "Type a new shortcut, or press Backspace to clear"
+msgstr "Въведете нов бърз клавиш или натиснете „Backspace“ за изчистване"
+
+#: ../plugins/snippets/snippets/Manager.py:1057
+msgid "Type a new shortcut"
+msgstr "Въведете нов бърз клавиш"
+
+#: ../plugins/snippets/snippets/Exporter.py:65
+#, python-format
+msgid "The archive \"%s\" could not be created"
+msgstr "Архивът „%s“ не може да бъде създаден"
+
+#: ../plugins/snippets/snippets/Exporter.py:82
+#, python-format
+msgid "Target directory \"%s\" does not exist"
+msgstr "Целевата папка „%s“ не съществува"
+
+#: ../plugins/snippets/snippets/Exporter.py:85
+#, python-format
+msgid "Target directory \"%s\" is not a valid directory"
+msgstr "Целевата папка „%s“ е невалидна папка"
+
+#: ../plugins/snippets/snippets/Importer.py:29
+#: ../plugins/snippets/snippets/Importer.py:83
+#, python-format
+msgid "File \"%s\" does not exist"
+msgstr "Файлът „%s“ не съществува"
+
+#: ../plugins/snippets/snippets/Importer.py:32
+#, python-format
+msgid "File \"%s\" is not a valid snippets file"
+msgstr "„%s“ не е валиден файл с изрезки"
+
+#: ../plugins/snippets/snippets/Importer.py:42
+#, python-format
+msgid "Imported file \"%s\" is not a valid snippets file"
+msgstr "Внесеният файл „%s“ не е валиден файл с изрезки"
+
+#: ../plugins/snippets/snippets/Importer.py:52
+#, python-format
+msgid "The archive \"%s\" could not be extracted"
+msgstr "Архивът „%s“ не може да бъде разархивиран"
+
+#: ../plugins/snippets/snippets/Importer.py:70
+#, python-format
+msgid "The following files could not be imported: %s"
+msgstr "Следните файлове не могат да бъдат внесени: %s"
+
+#: ../plugins/snippets/snippets/Importer.py:86
+#: ../plugins/snippets/snippets/Importer.py:99
+#, python-format
+msgid "File \"%s\" is not a valid snippets archive"
+msgstr "Файлът „%s“ не е валиден архив с изрезки"
+
+#: ../plugins/snippets/snippets/Placeholder.py:593
+#, python-format
+msgid ""
+"Execution of the Python command (%s) exceeds the maximum time, execution "
+"aborted."
+msgstr "Изпълнението на командата на Питон (%s) надвиши максималното разрешено време. Изпълнението ѝ беше преустановено."
+
+#: ../plugins/snippets/snippets/Placeholder.py:601
+#, python-format
+msgid "Execution of the Python command (%s) failed: %s"
+msgstr "Изпълнението на командата на Питон (%s) е неуспешно: %s"
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
 msgid "S_ort..."

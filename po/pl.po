@@ -5,21 +5,22 @@
 # Translators:
 # Beniamin Pawlus <kupwzywcu@o2.pl>, 2015
 # Dominik Adrian Grzywak, 2016
+# Lukasz Kaminski <elpikej@gmail.com>, 2017
 # Marcin Kralka <marcink96@gmail.com>, 2013
 # Piotr Strębski <strebski@o2.pl>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 14:29+0300\n"
-"PO-Revision-Date: 2016-12-31 15:03+0000\n"
-"Last-Translator: Dominik Adrian Grzywak\n"
+"POT-Creation-Date: 2017-02-28 16:12+0300\n"
+"PO-Revision-Date: 2017-02-28 13:12+0000\n"
+"Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Polish (http://www.transifex.com/mate/MATE/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:1
 msgid "Use Default Font"
@@ -489,6 +490,7 @@ msgid_plural ""
 msgstr[0] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej %ld sekundy zostaną bezpowrotnie utracone."
 msgstr[1] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld sekund zostaną bezpowrotnie utracone."
 msgstr[2] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld sekund zostaną bezpowrotnie utracone."
+msgstr[3] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld sekund zostaną bezpowrotnie utracone."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 msgid ""
@@ -506,6 +508,7 @@ msgid_plural ""
 msgstr[0] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej minuty i %ld sekundy zostaną bezpowrotnie utracone."
 msgstr[1] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej minuty i %ld sekund zostaną bezpowrotnie utracone."
 msgstr[2] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej minuty i %ld sekund zostaną bezpowrotnie utracone."
+msgstr[3] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej minuty i %ld sekund zostaną bezpowrotnie utracone."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
 #, c-format
@@ -518,6 +521,7 @@ msgid_plural ""
 msgstr[0] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej %ld minuty zostaną bezpowrotnie utracone."
 msgstr[1] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld minut zostaną bezpowrotnie utracone."
 msgstr[2] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld minut zostaną bezpowrotnie utracone."
+msgstr[3] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld minut zostaną bezpowrotnie utracone."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
 msgid ""
@@ -535,6 +539,7 @@ msgid_plural ""
 msgstr[0] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej godziny i %d minuty zostaną bezpowrotnie utracone."
 msgstr[1] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej godziny i %d minut zostaną bezpowrotnie utracone."
 msgstr[2] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej godziny i %d minut zostaną bezpowrotnie utracone."
+msgstr[3] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej godziny i %d minut zostaną bezpowrotnie utracone."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
 #, c-format
@@ -545,6 +550,7 @@ msgid_plural ""
 msgstr[0] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej godziny zostaną bezpowrotnie utracone."
 msgstr[1] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %d godzin zostaną bezpowrotnie utracone."
 msgstr[2] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %d godzin zostaną bezpowrotnie utracone."
+msgstr[3] "Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %d godzin zostaną bezpowrotnie utracone."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
@@ -568,6 +574,7 @@ msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] "Zostaną bezpowrotnie utracone zmiany dokonane w %d dokumencie."
 msgstr[1] "Zostaną bezpowrotnie utracone zmiany dokonane w %d dokumentach."
 msgstr[2] "Zostaną bezpowrotnie utracone zmiany dokonane w %d dokumentach."
+msgstr[3] "Zostaną bezpowrotnie utracone zmiany dokonane w %d dokumentach."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
@@ -578,6 +585,7 @@ msgid_plural ""
 msgstr[0] "Jest %d dokument z niezapisanymi zmianami. Zapisać zmiany przed zamknięciem?"
 msgstr[1] "Są %d dokumenty z niezapisanymi zmianami. Zapisać zmiany przed zamknięciem?"
 msgstr[2] "Jest %d dokumentów z niezapisanymi zmianami. Zapisać zmiany przed zamknięciem?"
+msgstr[3] "Jest %d dokumentów z niezapisanymi zmianami. Zapisać zmiany przed zamknięciem?"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
@@ -668,6 +676,7 @@ msgstr "Zawijanie tekstu"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../plugins/docinfo/docinfo.ui.h:4
 #: ../plugins/externaltools/tools/tools.ui.h:21
+#: ../plugins/snippets/snippets/snippets.ui.h:9
 #: ../plugins/time/pluma-time-dialog.ui.h:4
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:3
 msgid "    "
@@ -792,20 +801,20 @@ msgstr "Czcionki i kolory"
 msgid "Plugins"
 msgstr "Wtyczki"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:300
+#: ../pluma/dialogs/pluma-search-dialog.c:301
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
 msgid "Replace"
 msgstr "Zmień"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:309 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
 msgid "Find"
 msgstr "Znajdź"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:418
+#: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "Zmień _wszystkie"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:419
+#: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
 msgstr "Z_mień"
@@ -827,18 +836,22 @@ msgid "_Match case"
 msgstr "_Rozróżnianie małych i wielkich liter"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+msgid "Match _regular expression"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
 msgstr "Tylko _całe wyrazy"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Search _backwards"
 msgstr "Wyszukiwanie _wstecz"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Wrap around"
 msgstr "_Automatyczny powrót do początku"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "_Analizuj sekwencje ucieczki (np. \\n)"
 
@@ -901,6 +914,7 @@ msgid_plural "Loading %d files…"
 msgstr[0] "Wczytywanie %d pliku…"
 msgstr[1] "Wczytywanie %d plików…"
 msgstr[2] "Wczytywanie %d plików…"
+msgstr[3] "Wczytywanie %d plików…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
@@ -946,6 +960,7 @@ msgid_plural ""
 msgstr[0] "Zmiany naniesione w ciągu ostatniej %ld sekundy zostaną bezpowrotnie utracone."
 msgstr[1] "Zmiany naniesione w ciągu ostatnich %ld sekund zostaną bezpowrotnie utracone."
 msgstr[2] "Zmiany naniesione w ciągu ostatnich %ld sekund zostaną bezpowrotnie utracone."
+msgstr[3] "Zmiany naniesione w ciągu ostatnich %ld sekund zostaną bezpowrotnie utracone."
 
 #: ../pluma/pluma-commands-file.c:1148
 msgid ""
@@ -963,6 +978,7 @@ msgid_plural ""
 msgstr[0] "Zmiany naniesione w ciągu ostatniej minuty i %ld sekundy zostaną bezpowrotnie utracone."
 msgstr[1] "Zmiany naniesione w ciągu ostatniej minuty i %ld sekund zostaną bezpowrotnie utracone."
 msgstr[2] "Zmiany naniesione w ciągu ostatniej minuty i %ld sekund zostaną bezpowrotnie utracone."
+msgstr[3] "Zmiany naniesione w ciągu ostatniej minuty i %ld sekund zostaną bezpowrotnie utracone."
 
 #: ../pluma/pluma-commands-file.c:1164
 #, c-format
@@ -975,6 +991,7 @@ msgid_plural ""
 msgstr[0] "Zmiany naniesione w ciągu ostatniej %ld minuty zostaną bezpowrotnie utracone."
 msgstr[1] "Zmiany naniesione w ciągu ostatnich %ld minut zostaną bezpowrotnie utracone."
 msgstr[2] "Zmiany naniesione w ciągu ostatnich %ld minut zostaną bezpowrotnie utracone."
+msgstr[3] "Zmiany naniesione w ciągu ostatnich %ld minut zostaną bezpowrotnie utracone."
 
 #: ../pluma/pluma-commands-file.c:1179
 msgid ""
@@ -992,6 +1009,7 @@ msgid_plural ""
 msgstr[0] "Zmiany naniesione w ciągu ostatniej godziny i %d minuty zostaną bezpowrotnie utracone."
 msgstr[1] "Zmiany naniesione w ciągu ostatniej godziny i %d minut zostaną bezpowrotnie utracone."
 msgstr[2] "Zmiany naniesione w ciągu ostatniej godziny i %d minut zostaną bezpowrotnie utracone."
+msgstr[3] "Zmiany naniesione w ciągu ostatniej godziny i %d minut zostaną bezpowrotnie utracone."
 
 #: ../pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1002,6 +1020,7 @@ msgid_plural ""
 msgstr[0] "Zmiany naniesione w ciągu ostatniej godziny zostaną bezpowrotnie utracone."
 msgstr[1] "Zmiany naniesione w ciągu ostatnich %d godzin zostaną bezpowrotnie utracone."
 msgstr[2] "Zmiany naniesione w ciągu ostatnich %d godzin zostaną bezpowrotnie utracone."
+msgstr[3] "Zmiany naniesione w ciągu ostatnich %d godzin zostaną bezpowrotnie utracone."
 
 #: ../pluma/pluma-commands-file.c:1226
 msgid "_Revert"
@@ -1022,6 +1041,7 @@ msgid_plural "Found and replaced %d occurrences"
 msgstr[0] "Odnaleziono i zmieniono %d wystąpienie"
 msgstr[1] "Odnaleziono i zmieniono %d wystąpienia"
 msgstr[2] "Odnaleziono i zmieniono %d wystąpień"
+msgstr[3] "Odnaleziono i zmieniono %d wystąpień"
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1671,6 +1691,7 @@ msgid_plural "There are %d tabs with errors"
 msgstr[0] "Jedna z otwartych kart zawiera błędy"
 msgstr[1] "%d otwarte karty zawierają błędy"
 msgstr[2] "%d otwartych kart zawiera błędy"
+msgstr[3] "%d otwartych kart zawiera błędy"
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -2395,12 +2416,13 @@ msgid "_Tools:"
 msgstr "_Narzędzia:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
+#: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
 msgstr "_Edycja:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
-msgstr ""
+msgstr "Stosow_alność:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Output:"
@@ -2830,11 +2852,11 @@ msgstr "Interaktywna konsola języka Python dostępna w panelu dolnym"
 #. ex:et:ts=4:
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
 msgid "C_ommand color:"
-msgstr ""
+msgstr "K_olor polecenia:"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "_Error color:"
-msgstr ""
+msgstr "Kolor _błędu:"
 
 #. ex:ts=8:et:
 #: ../plugins/quickopen/quickopen/popup.py:31
@@ -2853,6 +2875,230 @@ msgstr "Szybko otwiera dokumenty"
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
 msgstr "Szybko otwiera pliki"
+
+#. Do the fancy completion dialog
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:1
+#: ../plugins/snippets/snippets/Document.py:53
+#: ../plugins/snippets/snippets/Document.py:193
+#: ../plugins/snippets/snippets/Document.py:614
+msgid "Snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:2
+msgid "Insert often-used pieces of text in a fast way"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:1
+msgid "Snippets Manager"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:2
+msgid "_Snippets:"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:3
+msgid "Create new snippet"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:4
+#: ../plugins/snippets/snippets/Manager.py:792
+msgid "Import snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:5
+msgid "Export selected snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:6
+#: ../plugins/snippets/snippets/Manager.py:403
+msgid "Delete selected snippet"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:8
+msgid "Activation"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "_Tab trigger:"
+msgstr ""
+
+#. self['hbox_tab_trigger'].set_spacing(0)
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+#: ../plugins/snippets/snippets/Manager.py:681
+msgid "Single word the snippet is activated with after pressing Tab"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:12
+msgid "Shortcut key with which the snippet is activated"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:13
+msgid "S_hortcut key:"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+msgid "_Drop targets:"
+msgstr ""
+
+#: ../plugins/snippets/snippets/WindowHelper.py:72
+msgid "Manage _Snippets..."
+msgstr ""
+
+#: ../plugins/snippets/snippets/WindowHelper.py:73
+msgid "Manage snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:41
+msgid "Snippets archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:66
+msgid "Add a new snippet..."
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:117
+msgid "Global"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:400
+msgid "Revert selected snippet"
+msgstr ""
+
+#. self['hbox_tab_trigger'].set_spacing(3)
+#: ../plugins/snippets/snippets/Manager.py:674
+msgid ""
+"This is not a valid Tab trigger. Triggers can either contain letters or a "
+"single (non-alphanumeric) character like: {, [, etc."
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:771
+#, python-format
+msgid "The following error occurred while importing: %s"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:778
+msgid "Import successfully completed"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:797
+#: ../plugins/snippets/snippets/Manager.py:883
+#: ../plugins/snippets/snippets/Manager.py:946
+msgid "All supported archives"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:798
+#: ../plugins/snippets/snippets/Manager.py:884
+#: ../plugins/snippets/snippets/Manager.py:947
+msgid "Gzip compressed archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:799
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:948
+msgid "Bzip2 compressed archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:800
+msgid "Single snippets file"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:801
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:950
+msgid "All files"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:813
+#, python-format
+msgid "The following error occurred while exporting: %s"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:817
+msgid "Export successfully completed"
+msgstr ""
+
+#. Ask if system snippets should also be exported
+#: ../plugins/snippets/snippets/Manager.py:857
+#: ../plugins/snippets/snippets/Manager.py:924
+msgid "Do you want to include selected <b>system</b> snippets in your export?"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:872
+#: ../plugins/snippets/snippets/Manager.py:942
+msgid "There are no snippets selected to be exported"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:877
+#: ../plugins/snippets/snippets/Manager.py:915
+msgid "Export snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:1055
+msgid "Type a new shortcut, or press Backspace to clear"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:1057
+msgid "Type a new shortcut"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Exporter.py:65
+#, python-format
+msgid "The archive \"%s\" could not be created"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Exporter.py:82
+#, python-format
+msgid "Target directory \"%s\" does not exist"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Exporter.py:85
+#, python-format
+msgid "Target directory \"%s\" is not a valid directory"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:29
+#: ../plugins/snippets/snippets/Importer.py:83
+#, python-format
+msgid "File \"%s\" does not exist"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:32
+#, python-format
+msgid "File \"%s\" is not a valid snippets file"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:42
+#, python-format
+msgid "Imported file \"%s\" is not a valid snippets file"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:52
+#, python-format
+msgid "The archive \"%s\" could not be extracted"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:70
+#, python-format
+msgid "The following files could not be imported: %s"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:86
+#: ../plugins/snippets/snippets/Importer.py:99
+#, python-format
+msgid "File \"%s\" is not a valid snippets archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Placeholder.py:593
+#, python-format
+msgid ""
+"Execution of the Python command (%s) exceeds the maximum time, execution "
+"aborted."
+msgstr ""
+
+#: ../plugins/snippets/snippets/Placeholder.py:601
+#, python-format
+msgid "Execution of the Python command (%s) failed: %s"
+msgstr ""
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
 msgid "S_ort..."

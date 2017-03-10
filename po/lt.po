@@ -5,13 +5,13 @@
 # Translators:
 # Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2014
 # brennus <jonas.ska@gmail.com>, 2014
-# Moo, 2015-2016
+# Moo, 2015-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 14:29+0300\n"
-"PO-Revision-Date: 2016-12-27 12:21+0000\n"
+"POT-Creation-Date: 2017-02-28 16:12+0300\n"
+"PO-Revision-Date: 2017-02-28 18:01+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -667,6 +667,7 @@ msgstr "Teksto laužymas"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../plugins/docinfo/docinfo.ui.h:4
 #: ../plugins/externaltools/tools/tools.ui.h:21
+#: ../plugins/snippets/snippets/snippets.ui.h:9
 #: ../plugins/time/pluma-time-dialog.ui.h:4
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:3
 msgid "    "
@@ -791,20 +792,20 @@ msgstr "Šriftai ir spalvos"
 msgid "Plugins"
 msgstr "Įskiepiai"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:300
+#: ../pluma/dialogs/pluma-search-dialog.c:301
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
 msgid "Replace"
 msgstr "Pakeisti"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:309 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
 msgid "Find"
 msgstr "Ieškoti"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:418
+#: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "Pakeisti _visus"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:419
+#: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
 msgstr "_Pakeisti"
@@ -826,18 +827,22 @@ msgid "_Match case"
 msgstr "Skirti raidžių _dydį"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+msgid "Match _regular expression"
+msgstr "Atitinka _reguliarųjį reiškinį"
+
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
 msgstr "Tenkina tik _visas žodis"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Search _backwards"
 msgstr "Search _backwards"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Wrap around"
 msgstr "_Priėjus pabaigą, ieškoti nuo pradžios"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "_Analizuoti kaitos sekas (pvz. \\n)"
 
@@ -2394,6 +2399,7 @@ msgid "_Tools:"
 msgstr "Įr_ankiai:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
+#: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
 msgstr "_Taisyti:"
 
@@ -2852,6 +2858,230 @@ msgstr "Greitai atverti dokumentus"
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
 msgstr "Greitai atverti failus"
+
+#. Do the fancy completion dialog
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:1
+#: ../plugins/snippets/snippets/Document.py:53
+#: ../plugins/snippets/snippets/Document.py:193
+#: ../plugins/snippets/snippets/Document.py:614
+msgid "Snippets"
+msgstr "Iškarpos"
+
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:2
+msgid "Insert often-used pieces of text in a fast way"
+msgstr "Greitai įterpti dažnai naudojamus teksto fragmentus"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:1
+msgid "Snippets Manager"
+msgstr "Iškarpų tvarkytuvė"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:2
+msgid "_Snippets:"
+msgstr "_Iškarpos:"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:3
+msgid "Create new snippet"
+msgstr "Sukurti naują iškarpą"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:4
+#: ../plugins/snippets/snippets/Manager.py:792
+msgid "Import snippets"
+msgstr "Importuoti iškarpas"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:5
+msgid "Export selected snippets"
+msgstr "Eksportuoti pasirinktas iškarpas"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:6
+#: ../plugins/snippets/snippets/Manager.py:403
+msgid "Delete selected snippet"
+msgstr "Ištrinti pasirinktą iškarpą"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:8
+msgid "Activation"
+msgstr "Aktyvavimas"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "_Tab trigger:"
+msgstr "Aktyvavimas _tabuliacija:"
+
+#. self['hbox_tab_trigger'].set_spacing(0)
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+#: ../plugins/snippets/snippets/Manager.py:681
+msgid "Single word the snippet is activated with after pressing Tab"
+msgstr "Vienas žodis, kuriuo, paspaudus Tab klavišą, bus aktyvuojama iškarpa"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:12
+msgid "Shortcut key with which the snippet is activated"
+msgstr "Spartusis klavišas, kuriuo aktyvuojama iškarpa"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:13
+msgid "S_hortcut key:"
+msgstr "Spartusis _klavišas:"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+msgid "_Drop targets:"
+msgstr "_Numetimo zonos:"
+
+#: ../plugins/snippets/snippets/WindowHelper.py:72
+msgid "Manage _Snippets..."
+msgstr "Tvarkyti _iškarpas..."
+
+#: ../plugins/snippets/snippets/WindowHelper.py:73
+msgid "Manage snippets"
+msgstr "Tvarkyti iškarpas"
+
+#: ../plugins/snippets/snippets/Manager.py:41
+msgid "Snippets archive"
+msgstr "Iškarpų archyvas"
+
+#: ../plugins/snippets/snippets/Manager.py:66
+msgid "Add a new snippet..."
+msgstr "Pridėti naują iškarpą..."
+
+#: ../plugins/snippets/snippets/Manager.py:117
+msgid "Global"
+msgstr "Visuotinė"
+
+#: ../plugins/snippets/snippets/Manager.py:400
+msgid "Revert selected snippet"
+msgstr "Sugrąžinti pasirinktą iškarpą"
+
+#. self['hbox_tab_trigger'].set_spacing(3)
+#: ../plugins/snippets/snippets/Manager.py:674
+msgid ""
+"This is not a valid Tab trigger. Triggers can either contain letters or a "
+"single (non-alphanumeric) character like: {, [, etc."
+msgstr "Tai nėra tinkamas tabuliacijos perjungiklis. Perjungikliuose gali būti raidės arba vienas netekstinis simbolis, toks kaip {, [, ir t.t."
+
+#: ../plugins/snippets/snippets/Manager.py:771
+#, python-format
+msgid "The following error occurred while importing: %s"
+msgstr "Importuojant, įvyko ši klaida: %s"
+
+#: ../plugins/snippets/snippets/Manager.py:778
+msgid "Import successfully completed"
+msgstr "Importavimas sėkmingai užbaigtas"
+
+#: ../plugins/snippets/snippets/Manager.py:797
+#: ../plugins/snippets/snippets/Manager.py:883
+#: ../plugins/snippets/snippets/Manager.py:946
+msgid "All supported archives"
+msgstr "Visi palaikomi archyvai"
+
+#: ../plugins/snippets/snippets/Manager.py:798
+#: ../plugins/snippets/snippets/Manager.py:884
+#: ../plugins/snippets/snippets/Manager.py:947
+msgid "Gzip compressed archive"
+msgstr "Gzip suglaudintas archyvas"
+
+#: ../plugins/snippets/snippets/Manager.py:799
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:948
+msgid "Bzip2 compressed archive"
+msgstr "Bzip2 suglaudintas archyvas"
+
+#: ../plugins/snippets/snippets/Manager.py:800
+msgid "Single snippets file"
+msgstr "Pavienis iškarpų failas"
+
+#: ../plugins/snippets/snippets/Manager.py:801
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:950
+msgid "All files"
+msgstr "Visi failai"
+
+#: ../plugins/snippets/snippets/Manager.py:813
+#, python-format
+msgid "The following error occurred while exporting: %s"
+msgstr "Eksportuojant, įvyko ši klaida: %s"
+
+#: ../plugins/snippets/snippets/Manager.py:817
+msgid "Export successfully completed"
+msgstr "Eksportavimas sėkmingai užbaigtas"
+
+#. Ask if system snippets should also be exported
+#: ../plugins/snippets/snippets/Manager.py:857
+#: ../plugins/snippets/snippets/Manager.py:924
+msgid "Do you want to include selected <b>system</b> snippets in your export?"
+msgstr "Ar norite į savo eksportavimą įtraukti pasirinktas <b>sistemos</b> iškarpas?"
+
+#: ../plugins/snippets/snippets/Manager.py:872
+#: ../plugins/snippets/snippets/Manager.py:942
+msgid "There are no snippets selected to be exported"
+msgstr "Nepasirinkta jokių iškarpų, kurias eksportuoti"
+
+#: ../plugins/snippets/snippets/Manager.py:877
+#: ../plugins/snippets/snippets/Manager.py:915
+msgid "Export snippets"
+msgstr "Eksportuoti iškarpas"
+
+#: ../plugins/snippets/snippets/Manager.py:1055
+msgid "Type a new shortcut, or press Backspace to clear"
+msgstr "Įveskite naują spartųjį klavišą arba paspauskite Backspace, norėdami išvalyti"
+
+#: ../plugins/snippets/snippets/Manager.py:1057
+msgid "Type a new shortcut"
+msgstr "Įveskite naują spartųjį klavišą"
+
+#: ../plugins/snippets/snippets/Exporter.py:65
+#, python-format
+msgid "The archive \"%s\" could not be created"
+msgstr "Nepavyko sukurti archyvo „%s“"
+
+#: ../plugins/snippets/snippets/Exporter.py:82
+#, python-format
+msgid "Target directory \"%s\" does not exist"
+msgstr "Paskirties katalogo „%s“ nėra"
+
+#: ../plugins/snippets/snippets/Exporter.py:85
+#, python-format
+msgid "Target directory \"%s\" is not a valid directory"
+msgstr "Paskirties katalogas „%s“ nėra tinkamas"
+
+#: ../plugins/snippets/snippets/Importer.py:29
+#: ../plugins/snippets/snippets/Importer.py:83
+#, python-format
+msgid "File \"%s\" does not exist"
+msgstr "Failo \"%s\" nėra"
+
+#: ../plugins/snippets/snippets/Importer.py:32
+#, python-format
+msgid "File \"%s\" is not a valid snippets file"
+msgstr "Failas „%s“ nėra tinkamas iškarpų failas"
+
+#: ../plugins/snippets/snippets/Importer.py:42
+#, python-format
+msgid "Imported file \"%s\" is not a valid snippets file"
+msgstr "Importuotas failas „%s“ nėra tinkamas iškarpų failas"
+
+#: ../plugins/snippets/snippets/Importer.py:52
+#, python-format
+msgid "The archive \"%s\" could not be extracted"
+msgstr "Nepavyko išskleisti archyvo „%s“"
+
+#: ../plugins/snippets/snippets/Importer.py:70
+#, python-format
+msgid "The following files could not be imported: %s"
+msgstr "Šių failų nepavyko importuoti: %s"
+
+#: ../plugins/snippets/snippets/Importer.py:86
+#: ../plugins/snippets/snippets/Importer.py:99
+#, python-format
+msgid "File \"%s\" is not a valid snippets archive"
+msgstr "Failas „%s“ nėra tinkamas iškarpų archyvas"
+
+#: ../plugins/snippets/snippets/Placeholder.py:593
+#, python-format
+msgid ""
+"Execution of the Python command (%s) exceeds the maximum time, execution "
+"aborted."
+msgstr "Python komanda (%s) vykdoma per ilgai, jos vykdymas nutrauktas."
+
+#: ../plugins/snippets/snippets/Placeholder.py:601
+#, python-format
+msgid "Execution of the Python command (%s) failed: %s"
+msgstr "Python komandos (%s) vykdymas nepavyko: %s"
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
 msgid "S_ort..."

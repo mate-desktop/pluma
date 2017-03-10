@@ -7,13 +7,13 @@
 # Falu <info@falu.me>, 2015
 # István Szőllősi <szollosi.istv4n@gmail.com>, 2014
 # kami911 <kami911@gmail.com>, 2015
-# Rezső Páder <rezso@rezso.net>, 2013,2015
+# Rezső Páder <rezso@rezso.net>, 2013,2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 14:29+0300\n"
-"PO-Revision-Date: 2016-12-27 11:29+0000\n"
+"POT-Creation-Date: 2017-02-28 16:12+0300\n"
+"PO-Revision-Date: 2017-02-28 13:12+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Hungarian (http://www.transifex.com/mate/MATE/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -662,6 +662,7 @@ msgstr "Szöveg tördelése"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../plugins/docinfo/docinfo.ui.h:4
 #: ../plugins/externaltools/tools/tools.ui.h:21
+#: ../plugins/snippets/snippets/snippets.ui.h:9
 #: ../plugins/time/pluma-time-dialog.ui.h:4
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:3
 msgid "    "
@@ -786,20 +787,20 @@ msgstr "Betűk és színek"
 msgid "Plugins"
 msgstr "Bővítmények"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:300
+#: ../pluma/dialogs/pluma-search-dialog.c:301
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
 msgid "Replace"
 msgstr "Csere"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:309 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
 msgid "Find"
 msgstr "Keresés"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:418
+#: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "Öss_zes cseréje"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:419
+#: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
 msgstr "_Csere"
@@ -821,18 +822,22 @@ msgid "_Match case"
 msgstr "Kis- és _nagybetű"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+msgid "Match _regular expression"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
 msgstr "Csak _teljes szóra"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Search _backwards"
 msgstr "Keresés _visszafelé"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Wrap around"
 msgstr "Kö_rbe"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "Esca_pe szekvenciák feldolgozása (pl. \\n)"
 
@@ -2224,121 +2229,121 @@ msgstr "Statisztikai adatok az aktuális dokumentumról"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:1
 msgid "External Tools"
-msgstr ""
+msgstr "Külső eszközök"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:2
 msgid "Execute external commands and shell scripts."
-msgstr ""
+msgstr "Külső parancsok és parancsfájlok végrehajtása"
 
 #: ../plugins/externaltools/tools/__init__.py:175
 msgid "Manage _External Tools..."
-msgstr ""
+msgstr "_Külső eszközök kezelése…"
 
 #: ../plugins/externaltools/tools/__init__.py:177
 msgid "Opens the External Tools Manager"
-msgstr ""
+msgstr "Megnyitja a külső eszközök kezelése ablakot"
 
 #: ../plugins/externaltools/tools/__init__.py:181
 msgid "External _Tools"
-msgstr ""
+msgstr "Külső _eszközök"
 
 #: ../plugins/externaltools/tools/__init__.py:183
 msgid "External tools"
-msgstr ""
+msgstr "Külső eszközök"
 
 #: ../plugins/externaltools/tools/__init__.py:216
 msgid "Shell Output"
-msgstr ""
+msgstr "Parancsértelmező kimenet"
 
 #: ../plugins/externaltools/tools/capture.py:92
 #, python-format
 msgid "Could not execute command: %s"
-msgstr ""
+msgstr "A parancs nem hajtható végre: %s"
 
 #: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
-msgstr ""
+msgstr " A kurzornak egy szó belsejében kell lennie a parancs futtatásához"
 
 #: ../plugins/externaltools/tools/functions.py:263
 msgid "Running tool:"
-msgstr ""
+msgstr "Eszköz futtatása:"
 
 #: ../plugins/externaltools/tools/functions.py:287
 msgid "Done."
-msgstr ""
+msgstr "Kész."
 
 #: ../plugins/externaltools/tools/functions.py:289
 msgid "Exited"
-msgstr ""
+msgstr "Kilépett"
 
 #: ../plugins/externaltools/tools/manager.py:136
 msgid "All languages"
-msgstr ""
+msgstr "Minden nyelv"
 
 #: ../plugins/externaltools/tools/manager.py:545
 #: ../plugins/externaltools/tools/manager.py:549
 #: ../plugins/externaltools/tools/manager.py:871
 #: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "All Languages"
-msgstr ""
+msgstr "Minden nyelv"
 
 #: ../plugins/externaltools/tools/manager.py:655
 msgid "New tool"
-msgstr ""
+msgstr "Új eszköz"
 
 #: ../plugins/externaltools/tools/manager.py:786
 #, python-format
 msgid "This accelerator is already bound to %s"
-msgstr ""
+msgstr "Ez a gyorsbillentyű már hozzá van rendelve a következőhöz: %s"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr ""
+msgstr "Üsse le az új gyorsbillentyűt vagy nyomjon Backspace-t a törléshez"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
-msgstr ""
+msgstr "Üsse le az új gyorsbillentyűt"
 
 #: ../plugins/externaltools/tools/outputpanel.py:101
 msgid "Stopped."
-msgstr ""
+msgstr "Leállítva."
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
 msgid "Nothing"
-msgstr ""
+msgstr "Semmi"
 
 #: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "Current document"
-msgstr ""
+msgstr "Jelenlegi dokumentum"
 
 #: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
-msgstr ""
+msgstr "Összes dokumentum"
 
 #: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Current selection"
-msgstr ""
+msgstr "Jelenlegi kijelölés"
 
 #: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Current selection (default to document)"
-msgstr ""
+msgstr "Jelenlegi kijelölés (alapértelmezett a dokumentumra)"
 
 #: ../plugins/externaltools/tools/tools.ui.h:6
 msgid "Current line"
-msgstr ""
+msgstr "Jelenlegi sor"
 
 #: ../plugins/externaltools/tools/tools.ui.h:7
 msgid "Current word"
-msgstr ""
+msgstr "Jelenlegi szó"
 
 #: ../plugins/externaltools/tools/tools.ui.h:8
 msgid "Display in bottom pane"
-msgstr ""
+msgstr "Megjelenítés az alsó ablaktáblán"
 
 #: ../plugins/externaltools/tools/tools.ui.h:9
 msgid "Create new document"
-msgstr ""
+msgstr "Új dokumentum létrehozása"
 
 #: ../plugins/externaltools/tools/tools.ui.h:10
 msgid "Append to current document"
@@ -2381,6 +2386,7 @@ msgid "_Tools:"
 msgstr ""
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
+#: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
 msgstr ""
 
@@ -2422,11 +2428,11 @@ msgstr ""
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:1
 msgid "Remove trailing spaces"
-msgstr ""
+msgstr "Befejező szóközök eltávolítása"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:2
 msgid "Remove useless trailing spaces in your file"
-msgstr ""
+msgstr "Fölösleges befejező szóközök eltávolítása a fájlból"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:1
 msgid "Run command"
@@ -2838,6 +2844,230 @@ msgstr ""
 
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
+msgstr ""
+
+#. Do the fancy completion dialog
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:1
+#: ../plugins/snippets/snippets/Document.py:53
+#: ../plugins/snippets/snippets/Document.py:193
+#: ../plugins/snippets/snippets/Document.py:614
+msgid "Snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:2
+msgid "Insert often-used pieces of text in a fast way"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:1
+msgid "Snippets Manager"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:2
+msgid "_Snippets:"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:3
+msgid "Create new snippet"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:4
+#: ../plugins/snippets/snippets/Manager.py:792
+msgid "Import snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:5
+msgid "Export selected snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:6
+#: ../plugins/snippets/snippets/Manager.py:403
+msgid "Delete selected snippet"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:8
+msgid "Activation"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "_Tab trigger:"
+msgstr ""
+
+#. self['hbox_tab_trigger'].set_spacing(0)
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+#: ../plugins/snippets/snippets/Manager.py:681
+msgid "Single word the snippet is activated with after pressing Tab"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:12
+msgid "Shortcut key with which the snippet is activated"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:13
+msgid "S_hortcut key:"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+msgid "_Drop targets:"
+msgstr ""
+
+#: ../plugins/snippets/snippets/WindowHelper.py:72
+msgid "Manage _Snippets..."
+msgstr ""
+
+#: ../plugins/snippets/snippets/WindowHelper.py:73
+msgid "Manage snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:41
+msgid "Snippets archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:66
+msgid "Add a new snippet..."
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:117
+msgid "Global"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:400
+msgid "Revert selected snippet"
+msgstr ""
+
+#. self['hbox_tab_trigger'].set_spacing(3)
+#: ../plugins/snippets/snippets/Manager.py:674
+msgid ""
+"This is not a valid Tab trigger. Triggers can either contain letters or a "
+"single (non-alphanumeric) character like: {, [, etc."
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:771
+#, python-format
+msgid "The following error occurred while importing: %s"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:778
+msgid "Import successfully completed"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:797
+#: ../plugins/snippets/snippets/Manager.py:883
+#: ../plugins/snippets/snippets/Manager.py:946
+msgid "All supported archives"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:798
+#: ../plugins/snippets/snippets/Manager.py:884
+#: ../plugins/snippets/snippets/Manager.py:947
+msgid "Gzip compressed archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:799
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:948
+msgid "Bzip2 compressed archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:800
+msgid "Single snippets file"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:801
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:950
+msgid "All files"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:813
+#, python-format
+msgid "The following error occurred while exporting: %s"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:817
+msgid "Export successfully completed"
+msgstr ""
+
+#. Ask if system snippets should also be exported
+#: ../plugins/snippets/snippets/Manager.py:857
+#: ../plugins/snippets/snippets/Manager.py:924
+msgid "Do you want to include selected <b>system</b> snippets in your export?"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:872
+#: ../plugins/snippets/snippets/Manager.py:942
+msgid "There are no snippets selected to be exported"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:877
+#: ../plugins/snippets/snippets/Manager.py:915
+msgid "Export snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:1055
+msgid "Type a new shortcut, or press Backspace to clear"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:1057
+msgid "Type a new shortcut"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Exporter.py:65
+#, python-format
+msgid "The archive \"%s\" could not be created"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Exporter.py:82
+#, python-format
+msgid "Target directory \"%s\" does not exist"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Exporter.py:85
+#, python-format
+msgid "Target directory \"%s\" is not a valid directory"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:29
+#: ../plugins/snippets/snippets/Importer.py:83
+#, python-format
+msgid "File \"%s\" does not exist"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:32
+#, python-format
+msgid "File \"%s\" is not a valid snippets file"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:42
+#, python-format
+msgid "Imported file \"%s\" is not a valid snippets file"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:52
+#, python-format
+msgid "The archive \"%s\" could not be extracted"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:70
+#, python-format
+msgid "The following files could not be imported: %s"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:86
+#: ../plugins/snippets/snippets/Importer.py:99
+#, python-format
+msgid "File \"%s\" is not a valid snippets archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Placeholder.py:593
+#, python-format
+msgid ""
+"Execution of the Python command (%s) exceeds the maximum time, execution "
+"aborted."
+msgstr ""
+
+#: ../plugins/snippets/snippets/Placeholder.py:601
+#, python-format
+msgid "Execution of the Python command (%s) failed: %s"
 msgstr ""
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
@@ -4678,7 +4908,7 @@ msgstr "Aktuális idő és dátum beszúrása a kurzorpozícióba"
 
 #: ../plugins/trailsave/trailsave.plugin.desktop.in.h:1
 msgid "Save Without Trailing Spaces"
-msgstr "Mentés a befejező szóközök eltávolítása nélkül"
+msgstr "Mentés a befejező szóközök eltávolításával"
 
 #: ../plugins/trailsave/trailsave.plugin.desktop.in.h:2
 msgid "Removes trailing spaces from lines before saving."

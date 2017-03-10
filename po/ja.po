@@ -6,13 +6,14 @@
 # ABE Tsunehiko, 2013-2014
 # Ikuru K <kanumaiku@gmail.com>, 2015
 # semicolon <mail@semicln.com>, 2016
+# Mika Kobayashi, 2017
 # Yuki Shira <shirayuking@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 14:29+0300\n"
-"PO-Revision-Date: 2016-12-27 11:29+0000\n"
+"POT-Creation-Date: 2017-02-28 16:12+0300\n"
+"PO-Revision-Date: 2017-02-28 13:12+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Japanese (http://www.transifex.com/mate/MATE/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -654,6 +655,7 @@ msgstr "テキストの折り返し"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../plugins/docinfo/docinfo.ui.h:4
 #: ../plugins/externaltools/tools/tools.ui.h:21
+#: ../plugins/snippets/snippets/snippets.ui.h:9
 #: ../plugins/time/pluma-time-dialog.ui.h:4
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:3
 msgid "    "
@@ -778,20 +780,20 @@ msgstr "フォントと色"
 msgid "Plugins"
 msgstr "プラグイン"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:300
+#: ../pluma/dialogs/pluma-search-dialog.c:301
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
 msgid "Replace"
 msgstr "置換"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:309 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
 msgid "Find"
 msgstr "検索"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:418
+#: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "すべて置換(_A)"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:419
+#: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
 msgstr "置換(_R)"
@@ -813,18 +815,22 @@ msgid "_Match case"
 msgstr "大/小文字を区別する(_M)"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+msgid "Match _regular expression"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
 msgstr "単語全体にマッチさせる(_E)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Search _backwards"
 msgstr "先頭に向かって検索する(_B)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Wrap around"
 msgstr "折り返しも対象にする(_W)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "エスケープシーケンス(\\nなど)を解釈する(_P)"
 
@@ -2208,36 +2214,36 @@ msgstr "このドキュメントから統計情報を取得"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:1
 msgid "External Tools"
-msgstr ""
+msgstr "外部ツール"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:2
 msgid "Execute external commands and shell scripts."
-msgstr ""
+msgstr "外部コマンドやシェルスクリプトを実行する"
 
 #: ../plugins/externaltools/tools/__init__.py:175
 msgid "Manage _External Tools..."
-msgstr ""
+msgstr "外部ツールを管理 (_E)"
 
 #: ../plugins/externaltools/tools/__init__.py:177
 msgid "Opens the External Tools Manager"
-msgstr ""
+msgstr "外部ツールマネージャを開く"
 
 #: ../plugins/externaltools/tools/__init__.py:181
 msgid "External _Tools"
-msgstr ""
+msgstr "外部ツール (_T)"
 
 #: ../plugins/externaltools/tools/__init__.py:183
 msgid "External tools"
-msgstr ""
+msgstr "外部ツール"
 
 #: ../plugins/externaltools/tools/__init__.py:216
 msgid "Shell Output"
-msgstr ""
+msgstr "シェルの出力"
 
 #: ../plugins/externaltools/tools/capture.py:92
 #, python-format
 msgid "Could not execute command: %s"
-msgstr ""
+msgstr "コマンドの実行失敗: %s"
 
 #: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
@@ -2245,64 +2251,64 @@ msgstr ""
 
 #: ../plugins/externaltools/tools/functions.py:263
 msgid "Running tool:"
-msgstr ""
+msgstr "実行ツール:"
 
 #: ../plugins/externaltools/tools/functions.py:287
 msgid "Done."
-msgstr ""
+msgstr "完了"
 
 #: ../plugins/externaltools/tools/functions.py:289
 msgid "Exited"
-msgstr ""
+msgstr "終了"
 
 #: ../plugins/externaltools/tools/manager.py:136
 msgid "All languages"
-msgstr ""
+msgstr "すべての言語"
 
 #: ../plugins/externaltools/tools/manager.py:545
 #: ../plugins/externaltools/tools/manager.py:549
 #: ../plugins/externaltools/tools/manager.py:871
 #: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "All Languages"
-msgstr ""
+msgstr "すべての言語"
 
 #: ../plugins/externaltools/tools/manager.py:655
 msgid "New tool"
-msgstr ""
+msgstr "新規のツール"
 
 #: ../plugins/externaltools/tools/manager.py:786
 #, python-format
 msgid "This accelerator is already bound to %s"
-msgstr ""
+msgstr "このアクセラレータはすでに %s に割り当てられています"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr ""
+msgstr "新たなアクセラレータを入力するか、バックスペースキーでクリアしてください"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
-msgstr ""
+msgstr "新たなアクセラレータを入力"
 
 #: ../plugins/externaltools/tools/outputpanel.py:101
 msgid "Stopped."
-msgstr ""
+msgstr "停止"
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
 msgid "Nothing"
-msgstr ""
+msgstr "なし"
 
 #: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "Current document"
-msgstr ""
+msgstr "現在の文書"
 
 #: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
-msgstr ""
+msgstr "すべての文書"
 
 #: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Current selection"
-msgstr ""
+msgstr "現在の選択"
 
 #: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Current selection (default to document)"
@@ -2310,63 +2316,64 @@ msgstr ""
 
 #: ../plugins/externaltools/tools/tools.ui.h:6
 msgid "Current line"
-msgstr ""
+msgstr "現在の行"
 
 #: ../plugins/externaltools/tools/tools.ui.h:7
 msgid "Current word"
-msgstr ""
+msgstr "現在の単語"
 
 #: ../plugins/externaltools/tools/tools.ui.h:8
 msgid "Display in bottom pane"
-msgstr ""
+msgstr "ボトムペインを表示"
 
 #: ../plugins/externaltools/tools/tools.ui.h:9
 msgid "Create new document"
-msgstr ""
+msgstr "新規文書の作成"
 
 #: ../plugins/externaltools/tools/tools.ui.h:10
 msgid "Append to current document"
-msgstr ""
+msgstr "現在の文書に追加"
 
 #: ../plugins/externaltools/tools/tools.ui.h:11
 msgid "Replace current document"
-msgstr ""
+msgstr "現在の文書を置換"
 
 #: ../plugins/externaltools/tools/tools.ui.h:12
 msgid "Replace current selection"
-msgstr ""
+msgstr "現在の選択部分を置換"
 
 #: ../plugins/externaltools/tools/tools.ui.h:13
 msgid "Insert at cursor position"
-msgstr ""
+msgstr "カーソルの箇所に挿入"
 
 #: ../plugins/externaltools/tools/tools.ui.h:14
 msgid "All documents except untitled ones"
-msgstr ""
+msgstr "名称のない文書以外のすべての文書"
 
 #: ../plugins/externaltools/tools/tools.ui.h:15
 msgid "Local files only"
-msgstr ""
+msgstr "ローカルファイルのみ"
 
 #: ../plugins/externaltools/tools/tools.ui.h:16
 msgid "Remote files only"
-msgstr ""
+msgstr "リモートファイルのみ"
 
 #: ../plugins/externaltools/tools/tools.ui.h:17
 msgid "Untitled documents only"
-msgstr ""
+msgstr "名称のない文書のみ"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
-msgstr ""
+msgstr "外部ツールマネージャ"
 
 #: ../plugins/externaltools/tools/tools.ui.h:19
 msgid "_Tools:"
-msgstr ""
+msgstr "ツール (_T):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
+#: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
-msgstr ""
+msgstr "編集 (_E):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
@@ -2374,55 +2381,55 @@ msgstr ""
 
 #: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Output:"
-msgstr ""
+msgstr "出力 (_O):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "_Input:"
-msgstr ""
+msgstr "入力 (_I):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:26
 msgid "_Save:"
-msgstr ""
+msgstr "保存 (_S):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:27
 msgid "_Shortcut Key:"
-msgstr ""
+msgstr "ショートカットキー (_S):"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
-msgstr ""
+msgstr "ビルド"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:2
 msgid "Run \"make\" in the document directory"
-msgstr ""
+msgstr "文書のあるディレクトリで \"make\" を実行"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:1
 msgid "Open terminal here"
-msgstr ""
+msgstr "ここでターミナルを開く"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:2
 msgid "Open a terminal in the document location"
-msgstr ""
+msgstr "文書の所在地でターミナルを開く"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:1
 msgid "Remove trailing spaces"
-msgstr ""
+msgstr "末尾に残っている空白文字の除去"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:2
 msgid "Remove useless trailing spaces in your file"
-msgstr ""
+msgstr "ファイルの末尾に残っているムダな空白文字を除去します"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:1
 msgid "Run command"
-msgstr ""
+msgstr "コマンドの実行"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:2
 msgid "Execute a custom command and put its output in a new document"
-msgstr ""
+msgstr "カスタムコマンドを実行し、新規文書に出力します"
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
-msgstr ""
+msgstr "検索"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
@@ -2791,37 +2798,261 @@ msgstr "Emacs や Kate、Vim スタイルなモードラインの機能を pluma
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:1
 #: ../plugins/pythonconsole/pythonconsole/__init__.py:55
 msgid "Python Console"
-msgstr ""
+msgstr "Python コンソール"
 
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:2
 msgid "Interactive Python console standing in the bottom panel"
-msgstr ""
+msgstr "対話形式の Python コンソールをボトムパネルに起動"
 
 #. ex:et:ts=4:
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
 msgid "C_ommand color:"
-msgstr ""
+msgstr "コマンドの色 (_o):"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "_Error color:"
-msgstr ""
+msgstr "エラーの色 (_E):"
 
 #. ex:ts=8:et:
 #: ../plugins/quickopen/quickopen/popup.py:31
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
-msgstr ""
+msgstr "クイックオープン"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:65
 msgid "Quick open"
-msgstr ""
+msgstr "クイックオープン"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:66
 msgid "Quickly open documents"
-msgstr ""
+msgstr "文書を簡単に開く"
 
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
+msgstr "ファイルを簡単に開く"
+
+#. Do the fancy completion dialog
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:1
+#: ../plugins/snippets/snippets/Document.py:53
+#: ../plugins/snippets/snippets/Document.py:193
+#: ../plugins/snippets/snippets/Document.py:614
+msgid "Snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets.plugin.desktop.in.h:2
+msgid "Insert often-used pieces of text in a fast way"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:1
+msgid "Snippets Manager"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:2
+msgid "_Snippets:"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:3
+msgid "Create new snippet"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:4
+#: ../plugins/snippets/snippets/Manager.py:792
+msgid "Import snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:5
+msgid "Export selected snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:6
+#: ../plugins/snippets/snippets/Manager.py:403
+msgid "Delete selected snippet"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:8
+msgid "Activation"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "_Tab trigger:"
+msgstr ""
+
+#. self['hbox_tab_trigger'].set_spacing(0)
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+#: ../plugins/snippets/snippets/Manager.py:681
+msgid "Single word the snippet is activated with after pressing Tab"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:12
+msgid "Shortcut key with which the snippet is activated"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:13
+msgid "S_hortcut key:"
+msgstr ""
+
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+msgid "_Drop targets:"
+msgstr ""
+
+#: ../plugins/snippets/snippets/WindowHelper.py:72
+msgid "Manage _Snippets..."
+msgstr ""
+
+#: ../plugins/snippets/snippets/WindowHelper.py:73
+msgid "Manage snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:41
+msgid "Snippets archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:66
+msgid "Add a new snippet..."
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:117
+msgid "Global"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:400
+msgid "Revert selected snippet"
+msgstr ""
+
+#. self['hbox_tab_trigger'].set_spacing(3)
+#: ../plugins/snippets/snippets/Manager.py:674
+msgid ""
+"This is not a valid Tab trigger. Triggers can either contain letters or a "
+"single (non-alphanumeric) character like: {, [, etc."
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:771
+#, python-format
+msgid "The following error occurred while importing: %s"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:778
+msgid "Import successfully completed"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:797
+#: ../plugins/snippets/snippets/Manager.py:883
+#: ../plugins/snippets/snippets/Manager.py:946
+msgid "All supported archives"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:798
+#: ../plugins/snippets/snippets/Manager.py:884
+#: ../plugins/snippets/snippets/Manager.py:947
+msgid "Gzip compressed archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:799
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:948
+msgid "Bzip2 compressed archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:800
+msgid "Single snippets file"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:801
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:950
+msgid "All files"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:813
+#, python-format
+msgid "The following error occurred while exporting: %s"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:817
+msgid "Export successfully completed"
+msgstr ""
+
+#. Ask if system snippets should also be exported
+#: ../plugins/snippets/snippets/Manager.py:857
+#: ../plugins/snippets/snippets/Manager.py:924
+msgid "Do you want to include selected <b>system</b> snippets in your export?"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:872
+#: ../plugins/snippets/snippets/Manager.py:942
+msgid "There are no snippets selected to be exported"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:877
+#: ../plugins/snippets/snippets/Manager.py:915
+msgid "Export snippets"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:1055
+msgid "Type a new shortcut, or press Backspace to clear"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Manager.py:1057
+msgid "Type a new shortcut"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Exporter.py:65
+#, python-format
+msgid "The archive \"%s\" could not be created"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Exporter.py:82
+#, python-format
+msgid "Target directory \"%s\" does not exist"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Exporter.py:85
+#, python-format
+msgid "Target directory \"%s\" is not a valid directory"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:29
+#: ../plugins/snippets/snippets/Importer.py:83
+#, python-format
+msgid "File \"%s\" does not exist"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:32
+#, python-format
+msgid "File \"%s\" is not a valid snippets file"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:42
+#, python-format
+msgid "Imported file \"%s\" is not a valid snippets file"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:52
+#, python-format
+msgid "The archive \"%s\" could not be extracted"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:70
+#, python-format
+msgid "The following files could not be imported: %s"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Importer.py:86
+#: ../plugins/snippets/snippets/Importer.py:99
+#, python-format
+msgid "File \"%s\" is not a valid snippets archive"
+msgstr ""
+
+#: ../plugins/snippets/snippets/Placeholder.py:593
+#, python-format
+msgid ""
+"Execution of the Python command (%s) exceeds the maximum time, execution "
+"aborted."
+msgstr ""
+
+#: ../plugins/snippets/snippets/Placeholder.py:601
+#, python-format
+msgid "Execution of the Python command (%s) failed: %s"
 msgstr ""
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
