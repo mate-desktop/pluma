@@ -1,47 +1,22 @@
-### pluma 1.17.4
+### pluma 1.18.0
 
-  * sync with transifex
-  * Fix: the tab closes unexpectedly with middle click under line numbers
-  * remove unneeded +x attribute from sources
-  * snippets plugin: fix snippet parts staying after Ctrl-Z
-  * snippets plugin: port to gi and libpeas
-  * snippets plugin: stop exposing functions on Pluma message bus
-  * we don't need a build breakage on the first deprecated item, thanks
-  * Update pluma NEWS to use consistent, project wide, markdown-like formatting.
-  * Fixed wrong behaviour of search on zero length results
-  * Fixed wrong formatting
-
-### pluma 1.17.3
-
-  * Translations update
-  * panel: use the correct property name for panel orientation
-  * snippets plugin: MESSAGE_INFORMATION doesn't exist, use MESSAGE_INFO
-  * snippets plugin: kill useless code
-  * externaltools plugin: fix indent a bit
-  * quickopen plugin: port to gi and libpeas
-  * pythonconsole plugin: port to gi and libpeas
-  * externaltools plugin: port to gi and libpeas
-  * plugins engine: enable python plugin loader from libpeas
-  * externaltools plugin: kill useless code
-  * taglist plugin: don't look for taglist in non-existing legacy dirs
-
-### pluma 1.17.2
-
-  * Fix build without X when introspection is enabled
-  * Some code cleanups
-
-### pluma 1.17.1
-
-  * Build: actually build GObject introspection data
-  * Port plugin system and C plugins to libpeas
-  * Some code and docs cleanups
-  * Translations update
-
-### pluma 1.17.0
-
-  * Drop Python bindings and --enable-python build option
+  * NEWS: use consistent, project wide, markdown-like formatting
+    to make generating release announcements easier
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
     --with-gtk build option
+  * Build: actually build GObject introspection data
+  * Build: remove --enable-deprecations option - it actually
+    disabled all deprecated stuff
+  * Add ability to search/replace text using regular expressions
+  * Drop Python bindings and --enable-python build option
+  * Port plugin system and both C and Python plugins to libpeas
+  * Snippets plugin: stop exposing functions on Pluma message bus
+    (doesn't work with GObject introspection)
+  * Snippets plugin: fix snippet parts staying after Ctrl-Z
+  * Fix unexpected closing of the first tab with middle-click
+    under the line numbers column
+  * Fix some runtime warnings in plugins
+  * Some more fixes and cleanups in code and docs
   * Translations update
 
 ### pluma 1.16.0
