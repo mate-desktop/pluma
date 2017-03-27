@@ -79,7 +79,8 @@ has_option (ModelineOptions *options,
 void
 modeline_parser_init (const gchar *data_dir)
 {
-	modelines_data_dir = g_strdup (data_dir);
+	if (modelines_data_dir == NULL)
+		modelines_data_dir = g_strdup (data_dir);
 }
 
 void
@@ -99,6 +100,7 @@ modeline_parser_shutdown ()
 	kate_languages = NULL;
 
 	g_free (modelines_data_dir);
+	modelines_data_dir = NULL;
 }
 
 static GHashTable *
