@@ -518,6 +518,8 @@ main (int argc, char *argv[])
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
+	gdk_set_allowed_backends ("x11");
+
 	startup_timestamp = get_startup_timestamp();
 
 	/* Setup command line options */
