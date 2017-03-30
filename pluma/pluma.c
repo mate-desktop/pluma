@@ -514,6 +514,10 @@ main (int argc, char *argv[])
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_set_allowed_backends ("x11");
+#endif
+
 	startup_timestamp = get_startup_timestamp();
 
 	/* Setup command line options */
