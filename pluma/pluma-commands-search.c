@@ -785,7 +785,7 @@ _pluma_cmd_search_goto_line (GtkAction   *action,
 
 
 	/* goto line is builtin in PlumaView, just activate
-	 * the corrisponding binding.
+	 * the corresponding binding.
 	 */
 	gtk_bindings_activate (G_OBJECT (active_view),
 			       GDK_KEY_i,
@@ -809,7 +809,7 @@ _pluma_cmd_search_incremental_search (GtkAction   *action,
 	gtk_widget_grab_focus (GTK_WIDGET (active_view));
 	
 	/* incremental search is builtin in PlumaView, just activate
-	 * the corrisponding binding.
+	 * the corresponding binding.
 	 */
 	gtk_bindings_activate (G_OBJECT (active_view),
 			       GDK_KEY_k,
