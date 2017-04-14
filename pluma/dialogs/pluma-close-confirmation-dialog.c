@@ -527,6 +527,9 @@ build_single_doc_dialog (PlumaCloseConfirmationDialog *dlg)
 #endif
 	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
 	gtk_widget_set_can_focus (GTK_WIDGET (primary_label), FALSE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_label_set_max_width_chars (GTK_LABEL (primary_label), 72);
+#endif
 
 	doc_name = pluma_document_get_short_name_for_display (doc);
 
@@ -564,6 +567,9 @@ build_single_doc_dialog (PlumaCloseConfirmationDialog *dlg)
 #endif
 	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
 	gtk_widget_set_can_focus (GTK_WIDGET (secondary_label), FALSE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_label_set_max_width_chars (GTK_LABEL (secondary_label), 72);
+#endif
 
 	hbox = gtk_hbox_new (FALSE, 12);
 	gtk_container_set_border_width (GTK_CONTAINER (hbox), 5);
@@ -733,6 +739,9 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 	gtk_misc_set_alignment (GTK_MISC (primary_label), 0.0, 0.5);
 #endif
 	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_label_set_max_width_chars (GTK_LABEL (primary_label), 72);
+#endif
 
 	if (priv->disable_save_to_disk)
 		str = g_strdup_printf (
@@ -766,6 +775,9 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 
 	gtk_box_pack_start (GTK_BOX (vbox2), select_label, FALSE, FALSE, 0);
 	gtk_label_set_line_wrap (GTK_LABEL (select_label), TRUE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_label_set_max_width_chars (GTK_LABEL (select_label), 72);
+#endif
 #if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (select_label), 0.0);
 #else
@@ -798,6 +810,9 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 	gtk_misc_set_alignment (GTK_MISC (secondary_label), 0.0, 0.5);
 #endif
 	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_label_set_max_width_chars (GTK_LABEL (secondary_label), 72);
+#endif
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (select_label), treeview);
 
