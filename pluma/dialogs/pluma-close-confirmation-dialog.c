@@ -712,6 +712,7 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 	gtk_misc_set_alignment (GTK_MISC (primary_label), 0.0, 0.5);
 #endif
 	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+	gtk_widget_set_can_focus (GTK_WIDGET (primary_label), FALSE);
 	gtk_label_set_max_width_chars (GTK_LABEL (primary_label), 72);
 
 	if (priv->disable_save_to_disk)
@@ -752,6 +753,8 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 #else
 	gtk_misc_set_alignment (GTK_MISC (select_label), 0.0, 0.5);
 #endif
+	gtk_label_set_selectable (GTK_LABEL (select_label), TRUE);
+	gtk_widget_set_can_focus (GTK_WIDGET (select_label), FALSE);
 
 	scrolledwindow = gtk_scrolled_window_new (NULL, NULL);
 	gtk_box_pack_start (GTK_BOX (vbox2), scrolledwindow, TRUE, TRUE, 0);
@@ -779,6 +782,7 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 	gtk_misc_set_alignment (GTK_MISC (secondary_label), 0.0, 0.5);
 #endif
 	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
+	gtk_widget_set_can_focus (GTK_WIDGET (secondary_label), FALSE);
 	gtk_label_set_max_width_chars (GTK_LABEL (secondary_label), 72);
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (select_label), treeview);
