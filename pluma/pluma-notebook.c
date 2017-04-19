@@ -591,6 +591,9 @@ button_press_cb (PlumaNotebook  *notebook,
 		 GdkEventButton *event,
 		 gpointer        data)
 {
+	static gboolean newfile = FALSE;
+	static gint tab1click = -1;
+
 	gint tab_clicked;
 
 	if (notebook->priv->drag_in_progress)
@@ -599,7 +602,7 @@ button_press_cb (PlumaNotebook  *notebook,
 	tab_clicked = find_tab_num_at_pos (notebook,
 					   event->x_root,
 					   event->y_root);
-					   
+
 	if ((event->button == 1) && 
 	    (event->type == GDK_BUTTON_PRESS) && 
 	    (tab_clicked >= 0))
@@ -630,6 +633,23 @@ button_press_cb (PlumaNotebook  *notebook,
 			/* Switch to the page the mouse is over, but don't consume the event */
 			gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), 
 						       tab_clicked);
+		}
+	}
+
+	if (event->button == 1)
+	{
+		if (event->type == GDK_BUTTON_PRESS)
+		{
+			tab1click = gtk_notebook_get_current_page (notebook);
+			newfile = (tab_clicked == -1);
+		}
+		else if (event->type == GDK_2BUTTON_PRESS)
+		{
+			if ((tab1click != gtk_notebook_get_current_page (notebook)) ||
+			    (tab_clicked >= 0) || ((tab_clicked == -1) && (!newfile)))
+				return TRUE;
+
+			newfile = FALSE;
 		}
 	}
 
