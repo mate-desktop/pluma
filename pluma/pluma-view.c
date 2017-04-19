@@ -2000,6 +2000,10 @@ pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 			return TRUE;
 	}
 
+	if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 1) &&
+	    (event->window == gtk_text_view_get_window (GTK_TEXT_VIEW (widget), GTK_TEXT_WINDOW_TEXT)))
+		return TRUE;
+
 	return GTK_WIDGET_CLASS (pluma_view_parent_class)->button_press_event (widget, event);
 }
 

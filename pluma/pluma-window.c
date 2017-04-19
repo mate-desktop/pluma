@@ -3419,16 +3419,21 @@ notebook_button_press_event (GtkNotebook    *notebook,
 			     GdkEventButton *event,
 			     PlumaWindow    *window)
 {
-	if (GDK_BUTTON_PRESS == event->type && 3 == event->button)
+	if (event->type == GDK_BUTTON_PRESS)
 	{
-		return show_notebook_popup_menu (notebook, window, event);
+		if (event->button == 3) 
+			return show_notebook_popup_menu (notebook, window, event);
+
+		else if (event->button == 2)
+		{
+			PlumaTab *tab;
+			tab = pluma_window_get_active_tab (window);
+			notebook_tab_close_request (PLUMA_NOTEBOOK (notebook), tab, GTK_WINDOW (window));
+		}
 	}
-	else if (GDK_BUTTON_PRESS == event->type && 2 == event->button)
+	else if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 1))
 	{
-		PlumaTab *tab;
-		tab = pluma_window_get_active_tab (window);
-		notebook_tab_close_request (PLUMA_NOTEBOOK (notebook), tab, GTK_WINDOW (window));
-		return FALSE;
+		pluma_window_create_tab (window, TRUE);
 	}
 
 	return FALSE;
