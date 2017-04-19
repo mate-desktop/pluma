@@ -62,8 +62,6 @@ GType		 pluma_statusbar_get_type		(void) G_GNUC_CONST;
 
 GtkWidget	*pluma_statusbar_new			(void);
 
-/* FIXME: status is not defined in any .h */
-#define PlumaStatus gint
 void		 pluma_statusbar_set_window_state	(PlumaStatusbar   *statusbar,
 							 PlumaWindowState  state,
 							 gint              num_of_errors);
