@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-28 16:12+0300\n"
-"PO-Revision-Date: 2017-02-28 18:01+0000\n"
+"PO-Revision-Date: 2017-03-16 10:15+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "Ar naudoti sistemos derintą šriftą vietoje skirto vien tik pluma. Jeigu ši parinktis išjungta, tai vietoje sistemos naudojamo šrifto bus naudojamas šriftas, pasirinktas „Redaktoriaus šriftas“ parinktyje."
+msgstr "Ar naudoti sistemos derintą šriftą vietoje skirto vien tik pluma. Jeigu šis parametras išjungta, tai vietoje sistemos naudojamo šrifto bus naudojamas šriftas, pasirinktas „Redaktoriaus šriftas“ parametre."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -45,7 +45,7 @@ msgstr "Redaktoriaus šriftas"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "Redagavimo vietoje naudojamas savas šriftas. Jis galios tik tada, jei parinktis „Naudoti numatytąjį šriftą“ yra išjungta."
+msgstr "Redagavimo vietoje naudojamas savas šriftas. Jis galios tik tada, jei parametras „Naudoti numatytąjį šriftą“ yra išjungtas."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Style Scheme"
@@ -63,7 +63,7 @@ msgstr "Kurti atsargines kopijas"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "Ar pluma turėtų kurti atsargines failų kopijas juos įrašant. Atsarginės failo kopijos priesagą galima nustatyti naudojant \"Atsarginės kopijos priesaga\" parinktį."
+msgstr "Ar pluma turėtų kurti atsargines failų kopijas juos įrašant. Atsarginės failo kopijos priesagą galima nustatyti naudojant \"Atsarginės kopijos priesaga\" parametrą."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -74,7 +74,7 @@ msgid ""
 "Whether pluma should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
-msgstr "Ar pluma turėtų periodiškai įrašyti pakeistus failus. Periodą galima nustatyti \"Automatinio įrašymo intervalas\" parinktyje."
+msgstr "Ar pluma turėtų periodiškai įrašyti pakeistus failus. Periodą galima nustatyti \"Automatinio įrašymo intervalas\" parametre."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:12
 msgid "Autosave Interval"
@@ -84,7 +84,7 @@ msgstr "Automatinio įrašymo intervalas"
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
-msgstr "Minučių skaičius, kurį pluma lauks, kad įrašytų pakeistus failus. Galios tik tada, jei parinktis „Automatinis įrašymas“ yra įjungta."
+msgstr "Minučių skaičius, kurį pluma lauks, kad įrašytų pakeistus failus. Galios tik tada, jei parametras „Automatinis įrašymas“ yra įjungtas."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Writable VFS schemes"
@@ -355,7 +355,7 @@ msgstr "Antraštės šriftas spausdinimui"
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
-msgstr "Šriftas, kuriuo bus spausdinamos puslapių antraštes. Jis galios tik tada, jei parinktis \"Spausdinti antraštę\" yra įjungta."
+msgstr "Šriftas, kuriuo bus spausdinamos puslapių antraštes. Jis galios tik tada, jei parametras \"Spausdinti antraštę\" yra įjungtas."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgctxt "print-font-numbers-pango"
@@ -370,7 +370,7 @@ msgstr "Eilučių numerių šriftas spausdinimui"
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
-msgstr "Šriftas, kuriuo bus spausdinami eilučių numeriai. Jis galios tik tada, jei parinktis „Spausdinti eilučių numerius“ yra ne nulinė."
+msgstr "Šriftas, kuriuo bus spausdinami eilučių numeriai. Jis galios tik tada, jei parametras „Spausdinti eilučių numerius“ yra ne nulinis."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:73
 msgctxt "auto-detected"
@@ -862,7 +862,7 @@ msgstr "KODUOTĖ"
 
 #: ../pluma/pluma.c:114
 msgid "Display list of possible values for the encoding option"
-msgstr "Parodyti koduotės parinkties galimų reikšmių sąrašą"
+msgstr "Rodyti koduotės parametro galimų reikšmių sąrašą"
 
 #: ../pluma/pluma.c:117
 msgid "Create a new top-level window in an existing instance of pluma"
@@ -1428,7 +1428,7 @@ msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "pluma nepavyko padaryti atsarginės seno failo kopijos prieš įrašant naują. Galite nepaisyti šio perspėjimo ir vis tiek įrašyti failą, bet jeigu įrašant įvyks klaida, galite prarasti senojo failo kopiją. Vis tiek įrašyti?"
+msgstr "pluma nepavyko padaryti atsarginės seno failo kopijos prieš įrašant naują. Galite nepaisyti šio įspėjimo ir vis tiek įrašyti failą, bet jeigu įrašant įvyks klaida, galite prarasti senojo failo kopiją. Vis tiek įrašyti?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: ../pluma/pluma-io-error-message-area.c:1095
@@ -3974,11 +3974,11 @@ msgstr "OnUnload įvykis"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:177
 msgid "Option group"
-msgstr "Parinkčių grupė"
+msgstr "Parametrų grupė"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:178
 msgid "Option selector"
-msgstr "Parinkčių pasirinkimas"
+msgstr "Parametrų pasirinkimas"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:179
 msgid "Ordered list"
@@ -4052,7 +4052,7 @@ msgstr "Slankjuostė"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:198
 msgid "Selectable option"
-msgstr "Pasirenkama parinktis"
+msgstr "Pasirenkamas parametras"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:199
 msgid "Selected"
