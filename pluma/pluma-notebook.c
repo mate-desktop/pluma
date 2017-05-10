@@ -694,7 +694,10 @@ update_tabs_visibility (PlumaNotebook *nb,
 
 	show_tabs = (nb->priv->always_show_tabs || num > 1);
 
-	gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), show_tabs);
+	if (pluma_prefs_manager_get_side_pane_visible ())
+		gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), FALSE);
+	else
+		gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), show_tabs);
 }
 
 static void
