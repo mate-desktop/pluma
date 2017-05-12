@@ -397,7 +397,11 @@ drag_start (PlumaNotebook *notebook,
 	/* get a new cursor, if necessary */
 	/* FIXME multi-head */
 	if (cursor == NULL)
-		cursor = gdk_cursor_new (GDK_FLEUR);
+	{
+		GdkDisplay *display;
+		display = gtk_widget_get_display (GTK_WIDGET (notebook));
+		cursor = gdk_cursor_new_for_display (display, GDK_FLEUR);
+	}
 
 	/* grab the pointer */
 	gtk_grab_add (GTK_WIDGET (notebook));
