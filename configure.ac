@@ -49,8 +49,6 @@ TOOLBAR_STYLE="PLUMA_TOOLBAR_SYSTEM"
 AC_SUBST(TOOLBAR_STYLE)
 
 # GLib min/max required versions
-AC_DEFINE([GLIB_VERSION_MAX_ALLOWED], [GLIB_VERSION_2_36],
-	[Warn on use of APIs added after GLib 2.36])
 AC_DEFINE([GLIB_VERSION_MIN_REQUIRED], [GLIB_VERSION_2_36],
 	[Warn on use of APIs deprecated before GLib 2.36])
 
