@@ -157,7 +157,7 @@ PKG_CHECK_MODULES(PLUMA, [
 	glib-2.0 >= 2.36.0
 	$GMODULE_ADD
 	gthread-2.0 >= 2.13.0
-	gio-2.0 >= 2.26.0
+	gio-2.0 >= 2.37.0
 	gtk+-3.0 >= $GTK_REQUIRED
 	gtksourceview-3.0 >= $GTKSOURCEVIEW_REQUIRED
 	libpeas-1.0 >= 1.2.0

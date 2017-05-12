@@ -194,6 +194,8 @@ static void model_check_dummy                               (PlumaFileBrowserSto
 static void next_files_async 				    (GFileEnumerator * enumerator,
 							     AsyncNode * async);
 
+static void delete_files                                    (AsyncData              *data);
+
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaFileBrowserStore, pluma_file_browser_store,
 			G_TYPE_OBJECT,
 			0,
@@ -3276,78 +3278,100 @@ emit_no_trash (AsyncData * data)
 	return ret;
 }
 
-typedef struct {
-	PlumaFileBrowserStore * model;
-	GFile * file;
-} IdleDelete;
-
-static gboolean
-file_deleted (IdleDelete * data)
+static void
+delete_file_finished (GFile        *file,
+		      GAsyncResult *res,
+		      AsyncData    *data)
 {
-	FileBrowserNode * node;
-	node = model_find_node (data->model, NULL, data->file);
-
-	if (node != NULL)
-		model_remove_node (data->model, node, NULL, TRUE);
-	
-	return FALSE;
-}
-
-static gboolean
-delete_files (GIOSchedulerJob * job,
-	      GCancellable * cancellable,
-	      AsyncData * data)
-{
-	GFile * file;
 	GError * error = NULL;
-	gboolean ret;
-	gint code;
-	IdleDelete delete;
-	
-	/* Check if our job is done */
-	if (!data->iter)
-		return FALSE;
-	
-	/* Move a file to the trash */
-	file = G_FILE (data->iter->data);
+	gboolean ok;
 	
 	if (data->trash)
-		ret = g_file_trash (file, cancellable, &error);
+	{
+		ok = g_file_trash_finish (file, res, &error);
+	}
 	else
-		ret = g_file_delete (file, cancellable, &error);
+	{
+		ok = g_file_delete_finish (file, res, &error);
+	}
 
-	if (ret) {
-		delete.model = data->model;
-		delete.file = file;
+	if (ok)
+	{
+		/* Remove the file from the model */
+		FileBrowserNode *node = model_find_node (data->model, NULL, file);
 
-		/* Remove the file from the model in the main loop */
-		g_io_scheduler_job_send_to_mainloop (job, (GSourceFunc)file_deleted, &delete, NULL);
-	} else if (!ret && error) {
-		code = error->code;
+		if (node != NULL)
+		{
+			model_remove_node (data->model, node, NULL, TRUE);
+		}
+
+		/* Process the next file */
+		data->iter = data->iter->next;
+	}
+	else if (!ok && error != NULL)
+	{
+		gint code = error->code;
 		g_error_free (error);
 
 		if (data->trash && code == G_IO_ERROR_NOT_SUPPORTED) {
-			/* Trash is not supported on this system ... */
-			if (g_io_scheduler_job_send_to_mainloop (job, (GSourceFunc)emit_no_trash, data, NULL))
+			/* Trash is not supported on this system. Ask the user
+			 * if he wants to delete completely the files instead.
+			 */
+			if (emit_no_trash (data))
 			{
 				/* Changes this into a delete job */
 				data->trash = FALSE;
 				data->iter = data->files;
-
-				return TRUE;
 			}
-			
-			/* End the job */
-			return FALSE;
-		} else if (code == G_IO_ERROR_CANCELLED) {
-			/* Job has been cancelled, just let the job end */
-			return FALSE;
+			else
+			{
+				/* End the job */
+				async_data_free (data);
+				return;
+			}
+		}
+		else if (code == G_IO_ERROR_CANCELLED)
+		{
+			/* Job has been cancelled, end the job */
+			async_data_free (data);
+			return;
 		}
 	}
 	
-	/* Process the next item */
-	data->iter = data->iter->next;
-	return TRUE;
+	/* Continue the job */
+	delete_files (data);
+}
+
+static void
+delete_files (AsyncData *data)
+{
+	GFile *file;
+
+	/* Check if our job is done */
+	if (data->iter == NULL)
+	{
+		async_data_free (data);
+		return;
+	}
+
+	file = G_FILE (data->iter->data);
+
+	if (data->trash)
+	{
+		g_file_trash_async (file,
+				    G_PRIORITY_DEFAULT,
+				    data->cancellable,
+				    (GAsyncReadyCallback)delete_file_finished,
+				    data);
+	}
+	else
+	{
+		g_file_delete_async (file,
+				     G_PRIORITY_DEFAULT,
+				     data->cancellable,
+				     (GAsyncReadyCallback)delete_file_finished,
+				     data);
+	}
 }
 
 PlumaFileBrowserStoreResult
@@ -3400,11 +3424,7 @@ pluma_file_browser_store_delete_all (PlumaFileBrowserStore *model,
 	model->priv->async_handles =
 	    g_slist_prepend (model->priv->async_handles, data);
 
-	g_io_scheduler_push_job ((GIOSchedulerJobFunc)delete_files, 
-				 data,
-				 (GDestroyNotify)async_data_free, 
-				 G_PRIORITY_DEFAULT, 
-				 data->cancellable);
+	delete_files (data);
 	g_list_free (rows);
 	
 	return PLUMA_FILE_BROWSER_STORE_RESULT_OK;
