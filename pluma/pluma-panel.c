@@ -717,14 +717,14 @@ void
 pluma_panel_add_item_with_stock_icon (PlumaPanel  *panel, 
 				      GtkWidget   *item, 
 				      const gchar *name,
-				      const gchar *stock_id)
+				      const gchar *icon_name)
 {
 	GtkWidget *icon = NULL;
 
-	if (stock_id != NULL)
+	if (icon_name != NULL)
 	{
-		icon = gtk_image_new_from_stock (stock_id,
-						 GTK_ICON_SIZE_MENU);
+		icon = gtk_image_new_from_icon_name (icon_name,
+		                                     GTK_ICON_SIZE_MENU);
 	}
 
 	pluma_panel_add_item (panel, item, name, icon);
