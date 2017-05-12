@@ -141,7 +141,7 @@ pluma_progress_message_area_init (PlumaProgressMessageArea *area)
 	gtk_widget_show (hbox);
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
-	area->priv->image = gtk_image_new_from_icon_name (GTK_STOCK_MISSING_IMAGE, 
+	area->priv->image = gtk_image_new_from_icon_name ("image-missing", 
 							  GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_widget_show (area->priv->image);
 	gtk_widget_set_halign (area->priv->image, GTK_ALIGN_CENTER);
