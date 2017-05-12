@@ -303,11 +303,12 @@ set_click_policy_property (PlumaFileBrowserView            *obj,
 	GdkDisplay *display;
 	GdkWindow *win;
 
+	display = gtk_widget_get_display (GTK_WIDGET (obj));
+
 	obj->priv->click_policy = click_policy;
 
 	if (click_policy == PLUMA_FILE_BROWSER_VIEW_CLICK_POLICY_SINGLE) {
 		if (obj->priv->hand_cursor == NULL)
-			display = gtk_widget_get_display (GTK_WIDGET (obj));
 			obj->priv->hand_cursor = gdk_cursor_new_for_display (display, GDK_HAND2);
 	} else if (click_policy == PLUMA_FILE_BROWSER_VIEW_CLICK_POLICY_DOUBLE) {
 		if (obj->priv->hover_path != NULL) {
