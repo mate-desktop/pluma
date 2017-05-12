@@ -105,7 +105,7 @@ info_bar_add_stock_button_with_text (GtkInfoBar  *infobar,
 
 static void
 set_message_area_text_and_icon (GtkWidget   *message_area,
-				const gchar *icon_stock_id,
+				const gchar *icon_name,
 				const gchar *primary_text,
 				const gchar *secondary_text)
 {
@@ -119,7 +119,7 @@ set_message_area_text_and_icon (GtkWidget   *message_area,
 
 	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
 
-	image = gtk_image_new_from_stock (icon_stock_id, GTK_ICON_SIZE_DIALOG);
+	image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_DIALOG);
 	gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
 	gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (image, GTK_ALIGN_START);
@@ -177,7 +177,7 @@ create_io_loading_error_message_area (const gchar *primary_text,
 				       GTK_MESSAGE_ERROR);
 
 	set_message_area_text_and_icon (message_area,
-					"gtk-dialog-error",
+					"dialog-error",
 					primary_text,
 					secondary_text);
 
@@ -516,7 +516,7 @@ create_conversion_error_message_area (const gchar *primary_text,
 
 	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
 
-	image = gtk_image_new_from_stock ("gtk-dialog-error", GTK_ICON_SIZE_DIALOG);
+	image = gtk_image_new_from_icon_name ("dialog-error", GTK_ICON_SIZE_DIALOG);
 	gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
 	gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (image, GTK_ALIGN_START);
@@ -790,7 +790,7 @@ pluma_file_already_open_warning_message_area_new (const gchar *uri)
 
 	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
 
-	image = gtk_image_new_from_stock ("gtk-dialog-warning", GTK_ICON_SIZE_DIALOG);
+	image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
 	gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
 	gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (image, GTK_ALIGN_START);
@@ -890,7 +890,7 @@ pluma_externally_modified_saving_error_message_area_new (
 
 	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
 
-	image = gtk_image_new_from_stock ("gtk-dialog-warning", GTK_ICON_SIZE_DIALOG);
+	image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
 	gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
 	gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (image, GTK_ALIGN_START);
@@ -994,7 +994,7 @@ pluma_no_backup_saving_error_message_area_new (const gchar  *uri,
 
 	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
 
-	image = gtk_image_new_from_stock ("gtk-dialog-warning", GTK_ICON_SIZE_DIALOG);
+	image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
 	gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
 	gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (image, GTK_ALIGN_START);
