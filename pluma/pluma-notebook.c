@@ -640,12 +640,12 @@ button_press_cb (PlumaNotebook  *notebook,
 	{
 		if (event->type == GDK_BUTTON_PRESS)
 		{
-			tab1click = gtk_notebook_get_current_page (notebook);
+			tab1click = gtk_notebook_get_current_page (GTK_NOTEBOOK (notebook));
 			newfile = (tab_clicked == -1);
 		}
 		else if (event->type == GDK_2BUTTON_PRESS)
 		{
-			if ((tab1click != gtk_notebook_get_current_page (notebook)) ||
+			if ((tab1click != gtk_notebook_get_current_page (GTK_NOTEBOOK (notebook))) ||
 			    (tab_clicked >= 0) || ((tab_clicked == -1) && (!newfile)))
 				return TRUE;
 
