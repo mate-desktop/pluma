@@ -3569,7 +3569,7 @@ create_side_panel (PlumaWindow *window)
 	pluma_panel_add_item_with_stock_icon (PLUMA_PANEL (window->priv->side_panel),
 					      documents_panel,
 					      _("Documents"),
-					      GTK_STOCK_FILE);
+					      "text-x-generic");
 }
 
 static void

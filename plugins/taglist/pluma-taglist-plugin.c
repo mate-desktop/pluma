@@ -123,7 +123,7 @@ pluma_taglist_plugin_activate (PeasActivatable *activatable)
 	pluma_panel_add_item_with_stock_icon (side_panel, 
 					      priv->taglist_panel,
 					      _("Tags"), 
-					      GTK_STOCK_ADD);
+					      "list-add");
 }
 
 static void
