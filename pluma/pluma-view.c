@@ -1332,18 +1332,18 @@ customize_for_search_mode (PlumaView *view)
 {
 	if (view->priv->search_mode == SEARCH)
 	{
-		gtk_entry_set_icon_from_stock (GTK_ENTRY (view->priv->search_entry),
+		gtk_entry_set_icon_from_icon_name (GTK_ENTRY (view->priv->search_entry),
 					       GTK_ENTRY_ICON_PRIMARY,
-					       GTK_STOCK_FIND);
+					       "edit-find");
 		
 		gtk_widget_set_tooltip_text (view->priv->search_entry,
 					     _("String you want to search for"));
 	}
 	else
 	{
-		gtk_entry_set_icon_from_stock (GTK_ENTRY (view->priv->search_entry),
+		gtk_entry_set_icon_from_icon_name (GTK_ENTRY (view->priv->search_entry),
 					       GTK_ENTRY_ICON_PRIMARY,
-					       GTK_STOCK_JUMP_TO);
+					       "go-jump");
 		
 		gtk_widget_set_tooltip_text (view->priv->search_entry,
 					     _("Line you want to move the cursor to"));
