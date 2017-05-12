@@ -708,7 +708,7 @@ fill_combo_model (PlumaFileBrowserWidget * obj)
 	GtkTreeIter iter;
 	GdkPixbuf *icon;
 
-	icon = pluma_file_browser_utils_pixbuf_from_theme (GTK_STOCK_HOME, GTK_ICON_SIZE_MENU);
+	icon = pluma_file_browser_utils_pixbuf_from_theme ("go-home", GTK_ICON_SIZE_MENU);
 
 	gtk_tree_store_append (store, &iter, NULL);
 	gtk_tree_store_set (store, &iter,
