@@ -1810,12 +1810,12 @@ resize_icon (GdkPixbuf *pixbuf,
 
 static GdkPixbuf *
 get_stock_icon (GtkIconTheme *theme, 
-		const gchar  *stock,
+		const gchar  *icon_name,
 		gint          size)
 {
 	GdkPixbuf *pixbuf;
 	
-	pixbuf = gtk_icon_theme_load_icon (theme, stock, size, 0, NULL);
+	pixbuf = gtk_icon_theme_load_icon (theme, icon_name, size, 0, NULL);
 	if (pixbuf == NULL)
 		return NULL;
 		
@@ -1833,7 +1833,7 @@ get_icon (GtkIconTheme *theme,
 	GIcon *gicon;
 
 	if (location == NULL)
-		return get_stock_icon (theme, GTK_STOCK_FILE, size);
+		return get_stock_icon (theme, "text-x-generic", size);
 
 	/* FIXME: Doing a sync stat is bad, this should be fixed */
 	info = g_file_query_info (location, 
@@ -1842,27 +1842,27 @@ get_icon (GtkIconTheme *theme,
 	                          NULL, 
 	                          NULL);
 	if (info == NULL)
-		return get_stock_icon (theme, GTK_STOCK_FILE, size);
+		return get_stock_icon (theme, "text-x-generic", size);
 
 	gicon = g_file_info_get_icon (info);
 
 	if (gicon == NULL)
 	{
 		g_object_unref (info);
-		return get_stock_icon (theme, GTK_STOCK_FILE, size);
+		return get_stock_icon (theme, "text-x-generic", size);
 	}
 
 	icon_info = gtk_icon_theme_lookup_by_gicon (theme, gicon, size, 0);
 	g_object_unref (info);	
 	
 	if (icon_info == NULL)
-		return get_stock_icon (theme, GTK_STOCK_FILE, size);
+		return get_stock_icon (theme, "text-x-generic", size);
 	
 	pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
 	g_object_unref (icon_info);
 	
 	if (pixbuf == NULL)
-		return get_stock_icon (theme, GTK_STOCK_FILE, size);
+		return get_stock_icon (theme, "text-x-generic", size);
 		
 	return resize_icon (pixbuf, size);
 }
@@ -1890,32 +1890,32 @@ _pluma_tab_get_icon (PlumaTab *tab)
 	{
 		case PLUMA_TAB_STATE_LOADING:
 			pixbuf = get_stock_icon (theme, 
-						 GTK_STOCK_OPEN, 
+						 "document-open", 
 						 icon_size);
 			break;
 
 		case PLUMA_TAB_STATE_REVERTING:
 			pixbuf = get_stock_icon (theme, 
-						 GTK_STOCK_REVERT_TO_SAVED, 
+						 "document-revert", 
 						 icon_size);						 
 			break;
 
 		case PLUMA_TAB_STATE_SAVING:
 			pixbuf = get_stock_icon (theme, 
-						 GTK_STOCK_SAVE, 
+						 "document-save", 
 						 icon_size);
 			break;
 
 		case PLUMA_TAB_STATE_PRINTING:
 			pixbuf = get_stock_icon (theme, 
-						 GTK_STOCK_PRINT, 
+						 "document-print", 
 						 icon_size);
 			break;
 
 		case PLUMA_TAB_STATE_PRINT_PREVIEWING:
 		case PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW:		
 			pixbuf = get_stock_icon (theme, 
-						 GTK_STOCK_PRINT_PREVIEW, 
+						 "gtk-print-preview", 
 						 icon_size);
 			break;
 
@@ -1924,13 +1924,13 @@ _pluma_tab_get_icon (PlumaTab *tab)
 		case PLUMA_TAB_STATE_SAVING_ERROR:
 		case PLUMA_TAB_STATE_GENERIC_ERROR:
 			pixbuf = get_stock_icon (theme, 
-						 GTK_STOCK_DIALOG_ERROR, 
+						 "dialog-error", 
 						 icon_size);
 			break;
 
 		case PLUMA_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION:
 			pixbuf = get_stock_icon (theme,
-						 GTK_STOCK_DIALOG_WARNING,
+						 "dialog-warning",
 						 icon_size);
 			break;
 
