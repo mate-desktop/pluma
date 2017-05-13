@@ -275,24 +275,6 @@ set_gtk_image_from_gtk_image (GtkImage *image,
 			gtk_image_set_from_pixbuf (image, pb);
 		}
 		break;
-	case GTK_IMAGE_STOCK:
-		{
-			gchar *s_id;
-			GtkIconSize s;
-
-			gtk_image_get_stock (source, &s_id, &s);
-			gtk_image_set_from_stock (image, s_id, s);
-		}
-		break;
-	case GTK_IMAGE_ICON_SET:
-		{
-			GtkIconSet *is;
-			GtkIconSize s;
-
-			gtk_image_get_icon_set (source, &is, &s);
-			gtk_image_set_from_icon_set (image, is, s);
-		}
-		break;
 	case GTK_IMAGE_ANIMATION:
 		{
 			GdkPixbufAnimation *a;
