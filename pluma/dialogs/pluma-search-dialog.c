@@ -529,11 +529,11 @@ pluma_search_dialog_set_search_text (PlumaSearchDialog *dialog,
 
 	gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 					   PLUMA_SEARCH_DIALOG_FIND_RESPONSE,
-					   (text != '\0'));
+					   (*text != '\0'));
 					   
 	gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 					   PLUMA_SEARCH_DIALOG_REPLACE_ALL_RESPONSE,
-					   (text != '\0'));					   
+					   (*text != '\0'));
 }
 
 /*
