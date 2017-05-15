@@ -81,6 +81,7 @@ static void move_current_tab_to_another_notebook  (PlumaNotebook  *src,
 
 /* Local variables */
 static GdkCursor *cursor = NULL;
+static gboolean leftdown = FALSE;
 
 /* Signals */
 enum
@@ -389,6 +390,8 @@ static void
 drag_start (PlumaNotebook *notebook,
 	    guint32        time)
 {
+	if (!leftdown) return;
+
 	notebook->priv->drag_in_progress = TRUE;
 
 	/* get a new cursor, if necessary */
@@ -552,6 +555,8 @@ button_release_cb (PlumaNotebook  *notebook,
 		   GdkEventButton *event,
 		   gpointer        data)
 {
+	if (event->button == 1) leftdown = FALSE;
+
 	if (notebook->priv->drag_in_progress)
 	{
 		gint cur_page_num;
@@ -607,6 +612,8 @@ button_press_cb (PlumaNotebook  *notebook,
 	    (event->type == GDK_BUTTON_PRESS) && 
 	    (tab_clicked >= 0))
 	{
+		leftdown = TRUE;
+
 		notebook->priv->x_start = event->x_root;
 		notebook->priv->y_start = event->y_root;
 		
@@ -630,6 +637,11 @@ button_press_cb (PlumaNotebook  *notebook,
 		}
 		else
 		{
+			if (leftdown) {
+				leftdown = FALSE;
+				return TRUE;
+			}
+
 			/* Switch to the page the mouse is over, but don't consume the event */
 			gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), 
 						       tab_clicked);
