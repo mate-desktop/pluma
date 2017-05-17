@@ -3527,6 +3527,8 @@ side_panel_visibility_changed (GtkWidget   *side_panel,
 
 	visible = gtk_widget_get_visible (side_panel);
 
+	gtk_notebook_set_show_tabs (GTK_NOTEBOOK (window->priv->notebook), !visible);
+
 	if (pluma_prefs_manager_side_pane_visible_can_set ())
 		pluma_prefs_manager_set_side_pane_visible (visible);
 
