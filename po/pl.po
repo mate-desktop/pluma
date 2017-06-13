@@ -7,6 +7,7 @@
 # Dominik Adrian Grzywak, 2016
 # Lukasz Kaminski <elpikej@gmail.com>, 2017
 # Marcin Kralka <marcink96@gmail.com>, 2013
+# Piotr Drąg <piotrdrag@gmail.com>, 2017
 # Piotr Strębski <strebski@gmail.com>, 2017
 # Piotr Strębski <strebski@gmail.com>, 2015
 msgid ""
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-28 16:12+0300\n"
-"PO-Revision-Date: 2017-05-09 10:45+0000\n"
-"Last-Translator: Piotr Strębski <strebski@gmail.com>\n"
+"PO-Revision-Date: 2017-05-21 18:50+0000\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/mate/MATE/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -378,7 +379,7 @@ msgstr "Określa czcionkę stosowaną do numerów wierszy na wydruku. Opcja jest
 #: ../data/org.mate.pluma.gschema.xml.in.h:73
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-2', 'WINDOWS-1250', 'UTF-16' ]"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgid "Automatically Detected Encodings"
@@ -394,7 +395,7 @@ msgstr "Uporządkowana lista kodowań używana przez program pluma podczas autom
 #: ../data/org.mate.pluma.gschema.xml.in.h:76
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
-msgstr "[ 'ISO-8859-15' ]"
+msgstr "[ 'ISO-8859-2' ]"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgid "Encodings shown in menu"
@@ -462,7 +463,7 @@ msgstr "Edytor plików tekstowych"
 
 #: ../data/pluma.desktop.in.in.h:4
 msgid "Pluma Text Editor"
-msgstr "Pluma Edytor Tekstu"
+msgstr "Edytor tekstu Pluma"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "Log Out _without Saving"
@@ -838,7 +839,7 @@ msgstr "_Rozróżnianie małych i wielkich liter"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
 msgid "Match _regular expression"
-msgstr ""
+msgstr "_Dopasowywanie jako wyrażenie regularne"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
@@ -854,7 +855,7 @@ msgstr "_Automatyczny powrót do początku"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "_Parse escape sequences (e.g. \\n)"
-msgstr "_Analizuj sekwencje ucieczki (np. \\n)"
+msgstr "_Przetwarzanie sekwencji ucieczki (np. \\n)"
 
 #: ../pluma/pluma.c:108
 msgid "Show the application's version"
@@ -1033,7 +1034,7 @@ msgstr "Pluma to niewielki i lekki edytor tekstu dla środowiska MATE"
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "Aviary.pl <matepl@aviary.pl>, 2008, 2009, 2010"
+msgstr "Tłumacze środowiska MATE, 2013-2014, 2016-2017\n\nZbigniew Chyla, 1999-2003\nArtur Flinta, 2003-2005\nStanisław Małolepszy, 2006-2007\nWadim Dziedzic, 2007\nTomasz Dominikowski, 2008-2009\nPiotr Zaryk, 2008\nPiotr Drąg, 2009-2010\nAviary.pl, 2006-2010"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
@@ -1133,7 +1134,7 @@ msgstr "Rumuńskie"
 
 #: ../pluma/pluma-encodings.c:195
 msgid "Armenian"
-msgstr "Armeńskie"
+msgstr "Ormiańskie"
 
 #: ../pluma/pluma-encodings.c:197 ../pluma/pluma-encodings.c:199
 #: ../pluma/pluma-encodings.c:213
@@ -1958,7 +1959,7 @@ msgstr "Przejdź do _wiersza..."
 
 #: ../pluma/pluma-ui.h:122
 msgid "Go to a specific line"
-msgstr "Przechodzi do wiersza o określonym numerze"
+msgstr "Przechodzi do wiersza o podanym numerze"
 
 #: ../pluma/pluma-ui.h:123
 msgid "_Incremental Search..."
@@ -2093,7 +2094,7 @@ msgstr "_Rozróżnianie małych i wielkich liter"
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr "_Analizuj sekwencje ucieczki (np. \n)"
+msgstr "_Przetwarzanie sekwencji ucieczki (np. \n)"
 
 #: ../pluma/pluma-view.c:1340
 msgid "String you want to search for"
@@ -2268,11 +2269,11 @@ msgstr "Wykonuje zewnętrzne polecenia i skrypty powłoki."
 
 #: ../plugins/externaltools/tools/__init__.py:175
 msgid "Manage _External Tools..."
-msgstr "Zarządzaj _Narzędziami zewnętrznymi..."
+msgstr "Zarządzaj _narzędziami zewnętrznymi..."
 
 #: ../plugins/externaltools/tools/__init__.py:177
 msgid "Opens the External Tools Manager"
-msgstr "Otwiera Menedżer Narzędzi zewnętrznych"
+msgstr "Otwiera menedżera narzędzi zewnętrznych"
 
 #: ../plugins/externaltools/tools/__init__.py:181
 msgid "External _Tools"
@@ -2439,7 +2440,7 @@ msgstr "_Zapisanie:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:27
 msgid "_Shortcut Key:"
-msgstr "_Klawisz Skrótu:"
+msgstr "_Klawisz skrótu:"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
