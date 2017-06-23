@@ -71,6 +71,9 @@
 					 PLUMA_TYPE_WINDOW,                    \
 					 PlumaWindowPrivate))
 
+/* Local variables */
+static gboolean cansave = TRUE;
+
 /* Signals */
 enum
 {
@@ -692,7 +695,8 @@ set_sensitivity_according_to_tab (PlumaWindow *window,
 				   (state == PLUMA_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION) ||
 				   (state == PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW)) &&
 				  !pluma_document_get_readonly (doc) &&
-				  !(lockdown & PLUMA_LOCKDOWN_SAVE_TO_DISK));
+				  !(lockdown & PLUMA_LOCKDOWN_SAVE_TO_DISK) &&
+				   (cansave));
 
 	action = gtk_action_group_get_action (window->priv->action_group,
 					      "FileSaveAs");
@@ -2116,6 +2120,7 @@ set_title (PlumaWindow *window)
 	gchar *dirname = NULL;
 	gchar *title = NULL;
 	gint len;
+	GtkAction *action;
 
 	if (window->priv->active_tab == NULL)
 	{
@@ -2174,7 +2179,10 @@ set_title (PlumaWindow *window)
 		g_free (name);
 		
 		name = tmp_name;
-	}		
+		cansave = TRUE;
+	}
+	else
+		cansave = FALSE;
 
 	if (pluma_document_get_readonly (doc)) 
 	{
@@ -2198,6 +2206,10 @@ set_title (PlumaWindow *window)
 			title = g_strdup_printf ("%s - Pluma",
 						 name);
 	}
+
+	action = gtk_action_group_get_action (window->priv->action_group,
+					      "FileSave");
+	gtk_action_set_sensitive (action, cansave);
 
 	gtk_window_set_title (GTK_WINDOW (window), title);
 
