@@ -690,13 +690,19 @@ set_sensitivity_according_to_tab (PlumaWindow *window,
 
 	action = gtk_action_group_get_action (window->priv->action_group,
 					      "FileSave");
+
+	if (state == PLUMA_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION) {
+		gtk_text_buffer_set_modified (GTK_TEXT_BUFFER (doc), TRUE);
+	}
+
 	gtk_action_set_sensitive (action,
 				  (state_normal ||
 				   (state == PLUMA_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION) ||
 				   (state == PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW)) &&
 				  !pluma_document_get_readonly (doc) &&
 				  !(lockdown & PLUMA_LOCKDOWN_SAVE_TO_DISK) &&
-				   (cansave));
+				   (cansave) &&
+				   (editable));
 
 	action = gtk_action_group_get_action (window->priv->action_group,
 					      "FileSaveAs");
