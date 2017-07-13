@@ -36,6 +36,7 @@
 #include <unistd.h>
 
 #include <glib/gi18n.h>
+#include <gdk/gdkx.h>
 
 #include "pluma-app.h"
 #include "pluma-prefs-manager-app.h"
@@ -649,12 +650,12 @@ is_in_viewport (PlumaWindow  *window,
 	/* Check for screen and display match */
 	display = gdk_screen_get_display (screen);
 	cur_name = gdk_display_get_name (display);
-	cur_n = gdk_screen_get_number (screen);
+	cur_n = gdk_x11_screen_get_screen_number (screen);
 
 	s = gtk_window_get_screen (GTK_WINDOW (window));
 	display = gdk_screen_get_display (s);
 	name = gdk_display_get_name (display);
-	n = gdk_screen_get_number (s);
+	n = gdk_x11_screen_get_screen_number (s);
 
 	if (strcmp (cur_name, name) != 0 || cur_n != n)
 		return FALSE;

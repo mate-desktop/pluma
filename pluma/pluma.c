@@ -251,7 +251,6 @@ on_message_received (const char *message,
 	gint viewport_x;
 	gint viewport_y;
 	gchar *display_name;
-	gint screen_number;
 	gint i;
 	PlumaApp *app;
 	PlumaWindow *window;
@@ -268,7 +267,6 @@ on_message_received (const char *message,
 	params = g_strsplit (commands[0], "\t", 6);
 	startup_timestamp = atoi (params[0]);
 	display_name = params[1];
-	screen_number = atoi (params[2]);
 	workspace = atoi (params[3]);
 	viewport_x = atoi (params[4]);
 	viewport_y = atoi (params[5]);
@@ -281,7 +279,7 @@ on_message_received (const char *message,
 		goto out;
 	}
 
-	screen = gdk_display_get_screen (display, screen_number);
+	screen = gdk_display_get_default_screen (display);
 
 	g_strfreev (params);
 
@@ -424,7 +422,7 @@ send_bacon_message (void)
 	display = gdk_screen_get_display (screen);
 
 	display_name = gdk_display_get_name (display);
-	screen_number = gdk_screen_get_number (screen);
+	screen_number = gdk_x11_screen_get_screen_number (screen);
 
 	pluma_debug_message (DEBUG_APP, "Display: %s", display_name);
 	pluma_debug_message (DEBUG_APP, "Screen: %d", screen_number);
