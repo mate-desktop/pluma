@@ -676,8 +676,8 @@ is_in_viewport (PlumaWindow  *window,
 	x += vp_x;
 	y += vp_y;
 
-	sc_width = gdk_screen_get_width (screen);
-	sc_height = gdk_screen_get_height (screen);
+	gdk_window_get_geometry (gdk_screen_get_root_window (screen), NULL, NULL,
+				 &sc_width, &sc_height);
 
 	return x + width * .25 >= viewport_x &&
 	       x + width * .75 <= viewport_x + sc_width &&
