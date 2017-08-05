@@ -128,9 +128,12 @@ static const GtkActionEntry pluma_menu_entries[] =
 	  N_("Save all open files"), G_CALLBACK (_pluma_cmd_file_save_all) },
 	{ "FileCloseAll", GTK_STOCK_CLOSE, N_("_Close All"), "<shift><control>W",
 	  N_("Close all open files"), G_CALLBACK (_pluma_cmd_file_close_all) },
-	{ "DocumentsPreviousDocument", NULL, N_("_Previous Document"), "<alt><control>Page_Up",
+	/* Note Next and Previous actually handled in handle_keypress() due to
+	 * https://bugzilla.gnome.org/show_bug.cgi?id=123994, kept here so
+	 * that accelerator key is shown in menu */
+	{ "DocumentsPreviousDocument", NULL, N_("_Previous Document"), "<shift><control>Tab",
 	  N_("Activate previous document"), G_CALLBACK (_pluma_cmd_documents_previous_document) },
-	{ "DocumentsNextDocument", NULL, N_("_Next Document"), "<alt><control>Page_Down",
+	{ "DocumentsNextDocument", NULL, N_("_Next Document"), "<control>Tab",
 	  N_("Activate next document"), G_CALLBACK (_pluma_cmd_documents_next_document) },
 	{ "DocumentsMoveToNewWindow", NULL, N_("_Move to New Window"), NULL,
 	  N_("Move the current document to a new window"), G_CALLBACK (_pluma_cmd_documents_move_to_new_window) }
