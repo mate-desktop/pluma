@@ -324,6 +324,18 @@ pluma_window_key_press_event (GtkWidget   *widget,
 	if (!handled)
 		handled = GTK_WIDGET_CLASS (grand_parent_class)->key_press_event (widget, event);
 
+    if (event->keyval == GDK_KEY_ISO_Left_Tab && event->state == (GDK_CONTROL_MASK | GDK_SHIFT_MASK))
+    {
+        _pluma_cmd_documents_previous_document(NULL, window);
+        handled = TRUE;
+    }
+
+    if (event->keyval == GDK_KEY_Tab && event->state == GDK_CONTROL_MASK)
+    {
+        _pluma_cmd_documents_next_document(NULL, window);
+        handled = TRUE;
+    }
+	
 	return handled;
 }
 
