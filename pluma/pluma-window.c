@@ -310,16 +310,10 @@ pluma_window_key_press_event (GtkWidget   *widget,
 	gboolean handled = FALSE;
 
 	if (event->keyval == GDK_KEY_ISO_Left_Tab && event->state & GDK_CONTROL_MASK)
-	{
 		_pluma_cmd_documents_previous_document(NULL, PLUMA_WINDOW (widget));
-		handled = TRUE;
-	}
 
 	if (event->keyval == GDK_KEY_Tab && event->state & GDK_CONTROL_MASK)
-	{
 		_pluma_cmd_documents_next_document(NULL, PLUMA_WINDOW (widget));
-		handled = TRUE;
-	}
 
 	if (grand_parent_class == NULL)
 		grand_parent_class = g_type_class_peek_parent (pluma_window_parent_class);
