@@ -313,7 +313,14 @@ pluma_window_key_press_event (GtkWidget   *widget,
 	    ((PLUMA_IS_NOTEBOOK (gtk_window_get_focus (window))) ||
 	    (PLUMA_IS_VIEW (gtk_window_get_focus (window)))))
 	{
-		_pluma_cmd_documents_previous_document(NULL, PLUMA_WINDOW (widget));
+		GtkNotebook *notebook;
+		notebook = GTK_NOTEBOOK (_pluma_window_get_notebook (PLUMA_WINDOW(widget)));
+
+		if (gtk_notebook_get_current_page (notebook) != 0)
+		{
+			_pluma_cmd_documents_previous_document(NULL, PLUMA_WINDOW (widget));
+		}
+		handled=TRUE;
 	}
 
 	if ((event->keyval == GDK_KEY_Tab && event->state & GDK_CONTROL_MASK) &&
@@ -321,14 +328,13 @@ pluma_window_key_press_event (GtkWidget   *widget,
 	    (PLUMA_IS_VIEW (gtk_window_get_focus (window)))))
 	{
 		GtkNotebook *notebook;
-
 		notebook = GTK_NOTEBOOK (_pluma_window_get_notebook (PLUMA_WINDOW(widget)));
 
 		if (gtk_notebook_get_current_page (notebook) != (gtk_notebook_get_n_pages (notebook) - 1))
 		{
 			_pluma_cmd_documents_next_document(NULL, PLUMA_WINDOW (widget));
-			handled=TRUE;
 		}
+		handled=TRUE;
 	}
 
 	if (grand_parent_class == NULL)
