@@ -48,6 +48,7 @@
 #include "pluma-tab-label.h"
 #include "pluma-marshal.h"
 #include "pluma-window.h"
+#include "pluma-prefs-manager.h"
 
 #define AFTER_ALL_TABS -1
 #define NOT_IN_APP_WINDOWS -2
@@ -721,8 +722,9 @@ static void
 update_tabs_visibility (PlumaNotebook *nb, 
 			gboolean       before_inserting)
 {
-	gboolean show_tabs;
-	guint num;
+	gboolean   show_tabs;
+	guint      num;
+	GSettings *settings;
 
 	num = gtk_notebook_get_n_pages (GTK_NOTEBOOK (nb));
 
@@ -730,10 +732,17 @@ update_tabs_visibility (PlumaNotebook *nb,
 
 	show_tabs = (nb->priv->always_show_tabs || num > 1);
 
-	if (pluma_prefs_manager_get_side_pane_visible ())
-		gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), FALSE);
-	else
+	settings = g_settings_new ("org.mate.pluma");
+
+	if (g_settings_get_boolean (settings, "show-tabs-with-side-pane"))
 		gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), show_tabs);
+	else
+	{
+		if (pluma_prefs_manager_get_side_pane_visible ())
+			gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), FALSE);
+		else
+			gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), show_tabs);
+	}
 }
 
 static void
