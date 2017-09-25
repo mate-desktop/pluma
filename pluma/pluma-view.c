@@ -56,6 +56,8 @@
 
 #define PLUMA_VIEW_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_VIEW, PlumaViewPrivate))
 
+static gboolean middledown = FALSE;
+
 typedef enum
 {
 	GOTO_LINE,
@@ -121,7 +123,10 @@ static gboolean pluma_view_drag_drop		(GtkWidget        *widget,
 	      					 gint              x,
 	      					 gint              y,
 	      					 guint             timestamp);
+
 static gboolean	pluma_view_button_press_event	(GtkWidget        *widget,
+						 GdkEventButton   *event);
+static gboolean	pluma_view_button_release_event	(GtkWidget        *widget,
 						 GdkEventButton   *event);
 
 static gboolean start_interactive_search	(PlumaView        *view);
@@ -206,6 +211,7 @@ pluma_view_class_init (PlumaViewClass *klass)
 	widget_class->drag_data_received = pluma_view_drag_data_received;
 	widget_class->drag_drop = pluma_view_drag_drop;
 	widget_class->button_press_event = pluma_view_button_press_event;
+	widget_class->button_release_event = pluma_view_button_release_event;
 	klass->start_interactive_search = start_interactive_search;
 	klass->start_interactive_goto_line = start_interactive_goto_line;
 	klass->reset_searched_text = reset_searched_text;	
@@ -1987,6 +1993,16 @@ show_line_numbers_menu (GtkWidget      *view,
 static gboolean
 pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 {
+	if ((event->button == 3) && (middledown))
+	{
+		middledown = FALSE;
+		return TRUE;
+	}
+	else if (event->button == 2)
+	{
+		middledown = TRUE;
+	}
+
 	if ((event->type == GDK_BUTTON_PRESS) && 
 	    (event->window == gtk_text_view_get_window (GTK_TEXT_VIEW (widget),
 						        GTK_TEXT_WINDOW_LEFT)))
@@ -2005,6 +2021,17 @@ pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 		return TRUE;
 
 	return GTK_WIDGET_CLASS (pluma_view_parent_class)->button_press_event (widget, event);
+}
+
+static gboolean
+pluma_view_button_release_event (GtkWidget *widget, GdkEventButton *event)
+{
+	if (event->button == 2)
+	{
+		middledown = FALSE;
+	}
+
+	return GTK_WIDGET_CLASS (pluma_view_parent_class)->button_release_event (widget, event);
 }
 
 static void 	
