@@ -2624,19 +2624,20 @@ _pluma_tab_can_close (PlumaTab *tab)
 
 	ts = pluma_tab_get_state (tab);
 
+	doc = pluma_tab_get_document (tab);
+
 	/* if we are loading or reverting, the tab can be closed */
-	if ((ts == PLUMA_TAB_STATE_LOADING)       ||
-	    (ts == PLUMA_TAB_STATE_LOADING_ERROR) ||
-	    (ts == PLUMA_TAB_STATE_REVERTING)     ||
-	    (ts == PLUMA_TAB_STATE_REVERTING_ERROR)) /* CHECK: I'm not sure this is the right behavior for REVERTING ERROR */
+	if ((ts == PLUMA_TAB_STATE_LOADING)         ||
+	    (ts == PLUMA_TAB_STATE_LOADING_ERROR)   ||
+	    (ts == PLUMA_TAB_STATE_REVERTING)       ||
+	    (ts == PLUMA_TAB_STATE_REVERTING_ERROR) || /* CHECK: I'm not sure this is the right behavior for REVERTING ERROR */
+	    (!gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc))))
 		return TRUE;
 
 	/* Do not close tab with saving errors */
 	if (ts == PLUMA_TAB_STATE_SAVING_ERROR)
 		return FALSE;
 		
-	doc = pluma_tab_get_document (tab);
-
 	/* TODO: we need to save the file also if it has been externally
 	   modified - Paolo (Oct 10, 2005) */
 
