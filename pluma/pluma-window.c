@@ -309,6 +309,45 @@ pluma_window_key_press_event (GtkWidget   *widget,
 	GtkWindow *window = GTK_WINDOW (widget);
 	gboolean handled = FALSE;
 
+	if (event->state & GDK_CONTROL_MASK)
+	{
+		GSettings *settings;
+		gchar     *font;
+		gchar     *tempsize;
+		gint       nsize;
+
+		settings = g_settings_new ("org.mate.pluma");
+		font = g_settings_get_string (settings, "editor-font");
+		tempsize = g_strdup (font);
+
+		g_strreverse (tempsize);
+		g_strcanon (tempsize, "1234567890", '\0');
+		g_strreverse (tempsize);
+
+		gchar tempfont [strlen (font)];
+		strcpy (tempfont, font);
+		tempfont [strlen (font) - strlen (tempsize)] = 0;
+
+		sscanf (tempsize, "%d", &nsize);
+
+		if (event->keyval == GDK_KEY_plus)
+		{
+			nsize = nsize + 1;
+			sprintf (tempsize, "%d", nsize);
+
+			if (!g_settings_get_boolean (settings, "use-default-font") && (nsize < 73))
+				g_settings_set_string (settings, "editor-font", g_strconcat (tempfont, tempsize, NULL));
+		}
+		else if (event->keyval == GDK_KEY_minus)
+		{
+			nsize = nsize - 1;
+			sprintf (tempsize, "%d", nsize);
+
+			if (!g_settings_get_boolean (settings, "use-default-font") && (nsize > 5))
+				g_settings_set_string (settings, "editor-font", g_strconcat (tempfont, tempsize, NULL));
+		}
+	}
+
 	if (grand_parent_class == NULL)
 		grand_parent_class = g_type_class_peek_parent (pluma_window_parent_class);
 
