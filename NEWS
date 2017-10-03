@@ -1,24 +1,39 @@
+### pluma 1.19.2
+
+  * sync with transifex
+  * don't request to save documents with no changes
+  * add gsettings key to hide/show(default) tabs with the side pane
+  * Hide tabs if we are using the sidebar
+  * gtk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+  * avoid deprecated gdk_screen_get_width/height
+  * avoid deprecated gdk_screen_make_display_name
+  * pluma-help: don't use deprecated gtk_show_uri
+  * filebrowser: don't use deprecated gtk_show_uri
+  * avoid deprecated gdk_display_get_screen and gdk_screen_get_number
+  * enable the abbility to save the document if it was changed externally
+  * disable the abbility to save the document if it has no changes
+
 ### pluma 1.19.1
 
-    print-preferences UI: fix some basic deprecations
-    encoding-dialog UI: fix some basic deprecations
-    preferences-dialog UI: fix some basic deprecations
-    pluma-panel: remove  deprecated GtkImage types
-    plumal-panel: remove some GtkStock deprecations
-    search-dialogs: fix a -Wpointer-compare warning
-    tag-list-plugin: avoid deprecated GtkStock
-    file-browser-widget: fix one stock deprecation
-    configure: drop GLIB_VERSION_MAX_ALLOWED
-    File browser: don't use GIOScheduler (deprecated)
-    file-browser-view: silent some build warnings
-    pluma-view: avoid GtkStock deprecations
-    pluma-tab: replace some GtkStock icons
-    pluma-notebook: don't use deprecated gdk_cursor_new
-    progress-message-area: fix one GtkStock deprecation
-    io-error-message-dialog: fix some GtkStock deprecation warnings
-    Restore Polish translation credits from GNOME
-    Fix: pluma closes tabs unexpectedly with middle click
-    pluma-notebook.c: fix a build warning
+  * print-preferences UI: fix some basic deprecations
+  * encoding-dialog UI: fix some basic deprecations
+  * preferences-dialog UI: fix some basic deprecations
+  * pluma-panel: remove  deprecated GtkImage types
+  * plumal-panel: remove some GtkStock deprecations
+  * search-dialogs: fix a -Wpointer-compare warning
+  * tag-list-plugin: avoid deprecated GtkStock
+  * file-browser-widget: fix one stock deprecation
+  * configure: drop GLIB_VERSION_MAX_ALLOWED
+  * File browser: don't use GIOScheduler (deprecated)
+  * file-browser-view: silent some build warnings
+  * pluma-view: avoid GtkStock deprecations
+  * pluma-tab: replace some GtkStock icons
+  * pluma-notebook: don't use deprecated gdk_cursor_new
+  * progress-message-area: fix one GtkStock deprecation
+  * io-error-message-dialog: fix some GtkStock deprecation warnings
+  * Restore Polish translation credits from GNOME
+  * Fix: pluma closes tabs unexpectedly with middle click
+  * pluma-notebook.c: fix a build warning
 
 ### pluma 1.19.0
 
