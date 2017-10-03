@@ -4,6 +4,7 @@
 # 
 # Translators:
 # ABE Tsunehiko, 2013-2014
+# あわしろいくや <ikunya@gmail.com>, 2017
 # Ikuru K <kanumaiku@gmail.com>, 2015
 # semicolon <mail@semicln.com>, 2016
 # Mika Kobayashi, 2017
@@ -13,8 +14,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-28 16:12+0300\n"
-"PO-Revision-Date: 2017-02-28 13:12+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2017-09-19 11:04+0000\n"
+"Last-Translator: あわしろいくや <ikunya@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/mate/MATE/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +33,7 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "pluma で指定したフォントの代わりにシステムのデフォルト・フォントを編集で使用するかどうかを指定します。このオプションを無効にした場合は、システム・フォントではなく \"エディタのフォント\" オプションで指定したフォントが使用されます。"
+msgstr "pluma で指定したフォントの代わりにシステムのデフォルトフォントを編集で使用するかどうかを指定します。このオプションを無効にした場合は、システムフォントではなく \"エディターのフォント\" オプションで指定したフォントが使用されます。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -41,7 +42,7 @@ msgstr "'Monospace 12'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:4
 msgid "Editor Font"
-msgstr "エディタのフォント"
+msgstr "エディターのフォント"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:5
 msgid ""
@@ -65,7 +66,7 @@ msgstr "パックアップコピーの作成"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "ファイルを保存する時にバックアップ・コピーを作成するかどうかを指定します。\"バックアップ・コピーの拡張子\" オプションでバックアップ・ファイルの拡張子を設定することができます。"
+msgstr "ファイルを保存する時にバックアップコピーを作成するかどうかを指定します。\"バックアップコピーの拡張子\" オプションでバックアップファイルの拡張子を設定することができます。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -106,7 +107,7 @@ msgstr "\"元に戻す\" の最大回数"
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "gEdit で \"元に戻す\" または \"やり直す\" ことができる動作の回数を最大値で指定します (無制限にする場合は \"-1\")。"
+msgstr "pluma で \"元に戻す\" または \"やり直す\" ことができる動作の回数を最大値で指定します (無制限にする場合は \"-1\")。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Line Wrapping Mode"
@@ -249,7 +250,7 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "ツールバー・ボタンのスタイルを指定します。可能な値はシステムのデフォルト・スタイルを使う \"PLUMA_TOOLBAR_SYSTEM\" とアイコンのみを表示する \"PLUMA_TOOLBAR_ICONS\"、アイコンとテキスト両方を表示する \"PLUMA_TOOLBAR_ICONS_AND_TEXT\"、そしてアイコンのそばに優先的なテキストを表示する \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" があります。値は大文字小文字を区別することに注意してください。そしてここで記述したとおりに表示されるか確認してください。"
+msgstr "ツールバーボタンのスタイルを指定します。可能な値はシステムのデフォルトスタイルを使う \"PLUMA_TOOLBAR_SYSTEM\" とアイコンのみを表示する \"PLUMA_TOOLBAR_ICONS\"、アイコンとテキスト両方を表示する \"PLUMA_TOOLBAR_ICONS_AND_TEXT\"、そしてアイコンのそばに優先的なテキストを表示する \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" があります。値は大文字小文字を区別することに注意してください。そしてここで記述したとおりに表示されるか確認してください。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:48
 msgid "Status Bar is Visible"
@@ -262,21 +263,21 @@ msgstr "編集ウィンドウの下側にステータスバーを表示するか
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Side Pane is Visible"
-msgstr "サイド・ペインの表示可否"
+msgstr "サイドペインの表示可否"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
-msgstr "編集ウィンドウの左側にサイド・ペインを表示するかどうかです。"
+msgstr "編集ウィンドウの左側にサイドペインを表示するかどうかです。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:52
 msgid "Bottom Panel is Visible"
-msgstr "ボトム・ペインの表示可否"
+msgstr "ボトムペインの表示可否"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:53
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
-msgstr "編集ウインドウの下側にボトム・ペインを表示するかどうかを指定します。"
+msgstr "編集ウインドウの下側にボトムペインを表示するかどうかを指定します。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:54
 msgid "Maximum Recent Files"
@@ -299,12 +300,12 @@ msgstr "ドキュメントを印刷する際に構文の強調表示も印刷す
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:58
 msgid "Print Header"
-msgstr "ヘッダの印刷"
+msgstr "ヘッダーの印刷"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:59
 msgid ""
 "Whether pluma should include a document header when printing documents."
-msgstr "ドキュメントを印刷する際にヘッダを含めるかどうかを指定します。"
+msgstr "ドキュメントを印刷する際にヘッダーを含めるかどうかを指定します。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Printing Line Wrapping Mode"
@@ -351,13 +352,13 @@ msgstr "Sans 11"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgid "Header Font for Printing"
-msgstr "印刷時のヘッダに使用するフォント"
+msgstr "印刷時のヘッダーに使用するフォント"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:69
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
-msgstr "ドキュメントを印刷する際のページ・ヘッダに使用するフォントを指定します。これは \"ヘッダの印刷\" オプションが有効の場合のみ効果があります。"
+msgstr "ドキュメントを印刷する際のページヘッダーに使用するフォントを指定します。これは \"ヘッダーの印刷\" オプションが有効の場合のみ効果があります。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgctxt "print-font-numbers-pango"
@@ -403,7 +404,7 @@ msgstr "メニューに表示するエンコーディング"
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
-msgstr "開く/保存のファイル選択ダイアログの文字エンコーディング・メニューの中に表示するエンコーディングのリストです。認識したエンコーディングのみ使用します。"
+msgstr "開く/保存のファイル選択ダイアログの文字エンコーディングメニューの中に表示するエンコーディングのリストです。認識したエンコーディングのみ使用します。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:79
 msgid "History for \"search for\" entries"
@@ -433,7 +434,7 @@ msgstr "利用可能なプラグインの一覧です。プラグインの \"場
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
-msgstr "MATEデスクトップ環境向けのテキストエディタ"
+msgstr "MATEデスクトップ環境向けのテキストエディター"
 
 #: ../data/pluma.appdata.xml.in.h:2
 msgid ""
@@ -445,7 +446,7 @@ msgid ""
 "plugin system, which currently includes support for spell checking, "
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
-msgstr "<p>PlumaはMATEデスクトップ向けに特別に設計された、小型ながら強力なテキストエディタです。標準的なテキストエディタとしての機能を備え、Unicodeで書かれた多言語の文書に対応しています。構文の強調やソースコードの自動インデント、単一ウィンドウで複数の文書を表示・編集できるなど高度な機能も含まれています。</p><p>Plumaはプラグインで拡張することもでき、現在スペルチェックやファイルの比較、CVS変更履歴の表示、インデント合わせなどがあります。</p>"
+msgstr "<p>PlumaはMATEデスクトップ向けに特別に設計された、小型ながら強力なテキストエディターです。標準的なテキストエディターとしての機能を備え、Unicodeで書かれた多言語の文書に対応しています。構文の強調やソースコードの自動インデント、単一ウィンドウで複数の文書を表示・編集できるなど高度な機能も含まれています。</p><p>Plumaはプラグインで拡張することもでき、現在スペルチェックやファイルの比較、CVS変更履歴の表示、インデント合わせなどがあります。</p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
@@ -453,7 +454,7 @@ msgstr "Pluma"
 
 #: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:763
 msgid "Text Editor"
-msgstr "テキストエディタ"
+msgstr "テキストエディター"
 
 #: ../data/pluma.desktop.in.in.h:3
 msgid "Edit text files"
@@ -461,7 +462,7 @@ msgstr "テキスト形式のファイルを編集します"
 
 #: ../data/pluma.desktop.in.in.h:4
 msgid "Pluma Text Editor"
-msgstr "Pluma テキストエディタ"
+msgstr "Pluma テキストエディター"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "Log Out _without Saving"
@@ -606,7 +607,7 @@ msgstr "メニューに表示するエンコーディング(_N):"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
-msgstr "エディタで使用するフォントを選択する場合は、このボタンをクリックしてください"
+msgstr "エディターで使用するフォントを選択する場合は、このボタンをクリックしてください"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:582
 #, c-format
@@ -750,7 +751,7 @@ msgstr "分ごと(_M)"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
 msgid "Editor"
-msgstr "エディタ"
+msgstr "エディター"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
 msgid "Font"
@@ -758,11 +759,11 @@ msgstr "フォント"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
 msgid "Editor _font: "
-msgstr "エディタのフォント(_F):"
+msgstr "エディターのフォント(_F):"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
 msgid "Pick the editor font"
-msgstr "エディタで使用するフォントの取得"
+msgstr "エディターで使用するフォントの取得"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
 msgid "Color Scheme"
@@ -816,7 +817,7 @@ msgstr "大/小文字を区別する(_M)"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
 msgid "Match _regular expression"
-msgstr ""
+msgstr "正規表現にマッチさせる(_R)"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
@@ -842,7 +843,7 @@ msgstr "バージョンを表示する"
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
-msgstr "オープンするファイルで使用する文字エンコーディングをセットする"
+msgstr "開くファイルで使用する文字エンコーディングをセットする"
 
 #: ../pluma/pluma.c:111
 msgid "ENCODING"
@@ -854,7 +855,7 @@ msgstr "利用可能なエンコーディングオプションの値一覧を表
 
 #: ../pluma/pluma.c:117
 msgid "Create a new top-level window in an existing instance of pluma"
-msgstr "既に実行中の pluma で新しいトップレベル・ウィンドウを作成する"
+msgstr "既に実行中の pluma で新しいトップレベルウィンドウを作成する"
 
 #: ../pluma/pluma.c:120
 msgid "Create a new document in an existing instance of pluma"
@@ -872,14 +873,14 @@ msgstr "%s: エンコーディングが間違っています。\n"
 #. Setup command line options
 #: ../pluma/pluma.c:524
 msgid "- Edit text files"
-msgstr "- テキスト・ファイルを編集する"
+msgstr "- テキストファイルを編集する"
 
 #: ../pluma/pluma.c:535
 #, c-format
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\n'%s --help' で利用可能なすべてのコマンドライン・オプションの一覧が表示されます\n"
+msgstr "%s\n'%s --help' で利用可能なすべてのコマンドラインオプションの一覧が表示されます\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -989,11 +990,11 @@ msgstr "戻す(_R)"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
-msgstr "Pluma は MATE デスクトップ用に作られた小型軽量のテキスト・エディタです。"
+msgstr "Pluma は MATE デスクトップ用に作られた小型軽量のテキストエディターです。"
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "相花 毅 <takeshi.aihana@gmail.com>\n佐藤 暁 <ss@gnome.gr.jp>\nKAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\nAkira TAGOH <tagoh@gnome.gr.jp>\nYukihiro Nakai <nakai@gnome.gr.jp>\nYuusuke Tahara <tahara@gnome.gr.jp>\nAkira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\nやまね ひでき <henrich@debian.or.jp>\n日本GNOMEユーザー会 http://www.gnome.gr.jp/"
+msgstr "相花 毅 <takeshi.aihana@gmail.com>\n佐藤 暁 <ss@gnome.gr.jp>\nKAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\nAkira TAGOH <tagoh@gnome.gr.jp>\nYukihiro Nakai <nakai@gnome.gr.jp>\nYuusuke Tahara <tahara@gnome.gr.jp>\nAkira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\nやまね ひでき <henrich@debian.or.jp>\n草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n松澤 二郎 <jmatsuzawa@gnome.org>\n日本GNOMEユーザー会 http://www.gnome.gr.jp/"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
@@ -1158,7 +1159,7 @@ msgstr "追加と削除..."
 
 #: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Text Files"
-msgstr "すべてのテキスト・ファイル"
+msgstr "すべてのテキストファイル"
 
 #: ../pluma/pluma-file-chooser-dialog.c:82
 msgid "C_haracter Encoding:"
@@ -1221,7 +1222,7 @@ msgstr "ファイルが格納されている場所がマウントされていな
 #: ../pluma/pluma-io-error-message-area.c:247
 #, c-format
 msgid "%s is a directory."
-msgstr "%s はフォルダです。"
+msgstr "%s はフォルダーです。"
 
 #: ../pluma/pluma-io-error-message-area.c:254
 #, c-format
@@ -1253,7 +1254,7 @@ msgstr "接続がタイムアウトしたので、もう一度実行してみて
 
 #: ../pluma/pluma-io-error-message-area.c:333
 msgid "The file is too big."
-msgstr "ファイル・サイズが大きすぎます。"
+msgstr "ファイルサイズが大きすぎます。"
 
 #: ../pluma/pluma-io-error-message-area.c:374
 #, c-format
@@ -1304,7 +1305,7 @@ msgstr "文字のエンコーディングを検出できませんでした。"
 #: ../pluma/pluma-io-error-message-area.c:619
 #: ../pluma/pluma-io-error-message-area.c:641
 msgid "Please check that you are not trying to open a binary file."
-msgstr "バイナリ・ファイルを開こうとしていないか確認してください。"
+msgstr "バイナリファイルを開こうとしていないか確認してください。"
 
 #: ../pluma/pluma-io-error-message-area.c:620
 msgid "Select a character encoding from the menu and try again."
@@ -1395,14 +1396,14 @@ msgstr "%s を保存する際にバックアップ・ファイルを作成でき
 #: ../pluma/pluma-io-error-message-area.c:1011
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
-msgstr "%s を保存する際に作業用のバックアップ・ファイルを作成できませんでした。"
+msgstr "%s を保存する際に作業用のバックアップファイルを作成できませんでした。"
 
 #: ../pluma/pluma-io-error-message-area.c:1031
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "pluma は新しいファイルを保存する前に古いファイルのバックアップ・ファイルを作成することはできません。この警告を無視してファイルを強制的に保存することは可能ですが、保存中にエラーが発生すると古いファイルの内容を失う可能性があります。とにかく保存しますか?"
+msgstr "pluma は新しいファイルを保存する前に古いファイルのバックアップファイルを作成することはできません。この警告を無視してファイルを強制的に保存することは可能ですが、保存中にエラーが発生すると古いファイルの内容を失う可能性があります。とにかく保存しますか?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: ../pluma/pluma-io-error-message-area.c:1095
@@ -1458,7 +1459,7 @@ msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "保存先のディスクにはファイル・サイズの制限があります。小さいファイルを保存するか、この制限のない泥空くに保存してください。"
+msgstr "保存先のディスクにはファイルサイズの制限があります。小さいファイルを保存するか、この制限のない泥空くに保存してください。"
 
 #: ../pluma/pluma-io-error-message-area.c:1163
 #, c-format
@@ -1530,11 +1531,11 @@ msgstr "行"
 
 #: ../pluma/pluma-print-preferences.ui.h:12
 msgid "Page header"
-msgstr "ページヘッダ"
+msgstr "ページヘッダー"
 
 #: ../pluma/pluma-print-preferences.ui.h:13
 msgid "Print page _headers"
-msgstr "ページのヘッダを印刷する(_H)"
+msgstr "ページのヘッダーを印刷する(_H)"
 
 #: ../pluma/pluma-print-preferences.ui.h:14
 msgid "Fonts"
@@ -1550,7 +1551,7 @@ msgstr "行番号(_L):"
 
 #: ../pluma/pluma-print-preferences.ui.h:17
 msgid "He_aders and footers:"
-msgstr "ヘッダとフッタ(_A):"
+msgstr "ヘッダーとフッター(_A):"
 
 #: ../pluma/pluma-print-preferences.ui.h:18
 msgid "_Restore Default Fonts"
@@ -1993,19 +1994,19 @@ msgstr "フルスクリーン表示で編集します"
 
 #: ../pluma/pluma-ui.h:169
 msgid "Side _Pane"
-msgstr "サイド・ペイン(_P)"
+msgstr "サイドペイン(_P)"
 
 #: ../pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
-msgstr "このウィンドウでサイド・ペインの表示/非表示を切り替えます"
+msgstr "このウィンドウでサイドペインの表示/非表示を切り替えます"
 
 #: ../pluma/pluma-ui.h:172
 msgid "_Bottom Pane"
-msgstr "ボトム・ペイン(_B)"
+msgstr "ボトムペイン(_B)"
 
 #: ../pluma/pluma-ui.h:173
 msgid "Show or hide the bottom pane in the current window"
-msgstr "このウィンドウでボトム・ペインの表示/非表示を切り替えます"
+msgstr "このウィンドウでボトムペインの表示/非表示を切り替えます"
 
 #: ../pluma/pluma-utils.c:1099
 msgid "Please check your installation."
@@ -2247,7 +2248,7 @@ msgstr "コマンドの実行失敗: %s"
 
 #: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
-msgstr ""
+msgstr "このコマンドを実行するために必要な語句を入力してください"
 
 #: ../plugins/externaltools/tools/functions.py:263
 msgid "Running tool:"
@@ -2279,15 +2280,15 @@ msgstr "新規のツール"
 #: ../plugins/externaltools/tools/manager.py:786
 #, python-format
 msgid "This accelerator is already bound to %s"
-msgstr "このアクセラレータはすでに %s に割り当てられています"
+msgstr "このアクセラレーターはすでに %s に割り当てられています"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr "新たなアクセラレータを入力するか、バックスペースキーでクリアしてください"
+msgstr "新たなアクセラレーターを入力するか、バックスペースキーでクリアしてください"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
-msgstr "新たなアクセラレータを入力"
+msgstr "新たなアクセラレーターを入力"
 
 #: ../plugins/externaltools/tools/outputpanel.py:101
 msgid "Stopped."
@@ -2312,7 +2313,7 @@ msgstr "現在の選択"
 
 #: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Current selection (default to document)"
-msgstr ""
+msgstr "現在の選択範囲 (デフォルトではドキュメントになります)"
 
 #: ../plugins/externaltools/tools/tools.ui.h:6
 msgid "Current line"
@@ -2377,7 +2378,7 @@ msgstr "編集 (_E):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
-msgstr ""
+msgstr "適用範囲(_A):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Output:"
@@ -2433,7 +2434,7 @@ msgstr "検索"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
-msgstr ""
+msgstr ".cと.hファイルの切り替え"
 
 #: ../plugins/filebrowser/filebrowser.plugin.desktop.in.h:1
 msgid "File Browser Pane"
@@ -2441,7 +2442,7 @@ msgstr "ファイル参照ペイン"
 
 #: ../plugins/filebrowser/filebrowser.plugin.desktop.in.h:2
 msgid "Easy file access from the side pane"
-msgstr "サイド・ペインから簡単にファイルにアクセスできます。"
+msgstr "サイドペインから簡単にファイルにアクセスできます。"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:1
 msgid "Set Location to First Document"
@@ -2453,11 +2454,11 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "TRUE にすると、初めて開いたドキュメントがあるフォルダで、ファイル参照プラグインがまだ使われたことがないディレクトリを表示します。(すなわち、この機能は一般的にコマンドラインからドキュメントを開く場合や Caja などからドキュメントを開く際に動作します。)"
+msgstr "TRUE にすると、初めて開いたドキュメントがあるフォルダーで、ファイル参照プラグインがまだ使われたことがないディレクトリを表示します。(すなわち、この機能は一般的にコマンドラインからドキュメントを開く場合や Caja などからドキュメントを開く際に動作します。)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
-msgstr "ファイル参照ペインのフィルタ (モード)"
+msgstr "ファイル参照ペインのフィルター (モード)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:4
 msgid ""
@@ -2465,17 +2466,17 @@ msgid ""
 "values are: none (filter nothing), hidden (filter hidden files), binary "
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
-msgstr "ファイル参照ペインでフィルタして表示しないファイルを指定します。指定可能な値: none (フィルタしない)、hidden (隠しファイルをフィルタする)、binary (バイナリ・ファイルをフィルタする)、hidden_and_binary (隠しファイルとバイナリの両方をフィルタする)"
+msgstr "ファイル参照ペインでフィルターして表示しないファイルを指定します。指定可能な値: none (フィルターしない)、hidden (隠しファイルをフィルターする)、binary (バイナリファイルをフィルターする)、hidden_and_binary (隠しファイルとバイナリの両方をフィルターする)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
-msgstr "ファイル参照ペインのフィルタ (パターン)"
+msgstr "ファイル参照ペインのフィルター (パターン)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:6
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top"
 " of the filter_mode."
-msgstr "ファイル参照ペインでフィルタするパターンです。これは filter_mode の先頭で機能します。"
+msgstr "ファイル参照ペインでフィルターするパターンです。これは filter_mode の先頭で機能します。"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:7
 msgid "Open With Tree View"
@@ -2489,24 +2490,24 @@ msgstr "ファイル参照プラグインを読み込んだ際に、ブックマ
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
-msgstr "ファイル参照ペインのルート・フォルダ"
+msgstr "ファイル参照ペインのルートフォルダー"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:10
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "ファイル参照プラグインを読み込んで onload/tree_view が TRUE の場合のファイル参照ブラウザのルート・フォルダ"
+msgstr "ファイル参照プラグインを読み込んで onload/tree_view が TRUE の場合のファイル参照ブラウザのルートフォルダー"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
-msgstr "ファイル参照ペインの仮想的なルート・フォルダ"
+msgstr "ファイル参照ペインの仮想的なルートフォルダー"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:12
 msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "ファイル参照プラグインを読み込んで onload/tree_view が TRUE の場合にファイル参照ブラウザが参照する仮想的なルート・フォルダを指定します。この仮想フォルダは必ず実際のルートよりも下層にあるフォルダを指定してください。"
+msgstr "ファイル参照プラグインを読み込んで onload/tree_view が TRUE の場合にファイル参照ブラウザが参照する仮想的なルートフォルダーを指定します。この仮想フォルダーは必ず実際のルートよりも下層にあるフォルダーを指定してください。"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2518,7 +2519,7 @@ msgstr "リモートの場所でのリストア機能を有効にするかどう
 
 #: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
 msgid "File System"
-msgstr "ファイル・システム"
+msgstr "ファイルシステム"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
 msgid "_Set root to active document"
@@ -2526,7 +2527,7 @@ msgstr "ドキュメントのルートにする(_S)"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:579
 msgid "Set the root to the active document location"
-msgstr "ドキュメントを格納しているルート・フォルダに指定します"
+msgstr "ドキュメントを格納しているルートフォルダーに指定します"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:584
 msgid "_Open terminal here"
@@ -2534,15 +2535,15 @@ msgstr "端末を開く(_O)"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:586
 msgid "Open a terminal at the currently opened directory"
-msgstr "このフォルダで端末を開きます"
+msgstr "このフォルダーで端末を開きます"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:726
 msgid "File Browser"
-msgstr "ファイル・ブラウザ"
+msgstr "ファイルブラウザー"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:874
 msgid "An error occurred while creating a new directory"
-msgstr "新しいフォルダを生成する際にエラーが発生しました"
+msgstr "新しいフォルダーを生成する際にエラーが発生しました"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:877
 msgid "An error occurred while creating a new file"
@@ -2550,23 +2551,23 @@ msgstr "新しいファイルを生成する際にエラーが発生しました
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:882
 msgid "An error occurred while renaming a file or directory"
-msgstr "ファイルまたはフォルダの名前を変更する際にエラーが発生しました"
+msgstr "ファイルまたはフォルダーの名前を変更する際にエラーが発生しました"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:887
 msgid "An error occurred while deleting a file or directory"
-msgstr "ファイルまたはフォルダを削除する際にエラーが発生しました"
+msgstr "ファイルまたはフォルダーを削除する際にエラーが発生しました"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while opening a directory in the file manager"
-msgstr "ファイル参照ペインの中でフォルダを開く際にエラーが発生しました"
+msgstr "ファイル参照ペインの中でフォルダーを開く際にエラーが発生しました"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
 msgid "An error occurred while setting a root directory"
-msgstr "ルート・フォルダを設定する際にエラーが発生しました"
+msgstr "ルートフォルダーを設定する際にエラーが発生しました"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:900
 msgid "An error occurred while loading a directory"
-msgstr "フォルダを読み込む際にエラーが発生しました"
+msgstr "フォルダーを読み込む際にエラーが発生しました"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:903
 msgid "An error occurred"
@@ -2608,7 +2609,7 @@ msgstr "(空)"
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "新しい名前のファイルはフィルタの機能により表示されていません。そのファイルを表示するにはフィルタの設定を調整してください。"
+msgstr "新しい名前のファイルはフィルターの機能により表示されていません。そのファイルを表示するにはフィルターの設定を調整してください。"
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -2620,19 +2621,19 @@ msgstr "ファイル"
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "新しいファイルはフィルタの機能により表示されていません。そのファイルを表示するにはフィルタの設定を変調整してください。"
+msgstr "新しいファイルはフィルターの機能により表示されていません。そのファイルを表示するにはフィルターの設定を変調整してください。"
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
 #: ../plugins/filebrowser/pluma-file-browser-store.c:3600
 msgid "directory"
-msgstr "フォルダ"
+msgstr "フォルダー"
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:3620
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
-msgstr "新しい名前のフォルダはフィルタの機能により表示されていません。そのフォルダを表示するにはフィルタの設定を調整してください。"
+msgstr "新しい名前のフォルダーはフィルターの機能により表示されていません。そのフォルダーを表示するにはフィルターの設定を調整してください。"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
@@ -2640,7 +2641,7 @@ msgstr "ブックマーク"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:797
 msgid "_Filter"
-msgstr "フィルタ(_F)"
+msgstr "フィルター(_F)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:802
 msgid "_Move to Trash"
@@ -2648,7 +2649,7 @@ msgstr "ゴミ箱へ移動(_M)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:803
 msgid "Move selected file or folder to trash"
-msgstr "選択したファイルやフォルダをゴミ箱へ移動します"
+msgstr "選択したファイルやフォルダーをゴミ箱へ移動します"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:805
 msgid "_Delete"
@@ -2656,7 +2657,7 @@ msgstr "削除(_D)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Delete selected file or folder"
-msgstr "選択したファイルやフォルダを削除します"
+msgstr "選択したファイルやフォルダーを削除します"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:813
 msgid "Open selected file"
@@ -2668,15 +2669,15 @@ msgstr "上へ"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:820
 msgid "Open the parent folder"
-msgstr "親フォルダを開きます"
+msgstr "親フォルダーを開きます"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:825
 msgid "_New Folder"
-msgstr "新しいフォルダ(_N)"
+msgstr "新しいフォルダー(_N)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:826
 msgid "Add new empty folder"
-msgstr "新しい空のフォルダを追加します"
+msgstr "新しい空のフォルダーを追加します"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:828
 msgid "New F_ile"
@@ -2692,7 +2693,7 @@ msgstr "名前の変更(_R)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:835
 msgid "Rename selected file or folder"
-msgstr "選択したファイルやフォルダの名前を変更します"
+msgstr "選択したファイルやフォルダーの名前を変更します"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:841
 msgid "_Previous Location"
@@ -2721,12 +2722,12 @@ msgstr "表示をリフレッシュします"
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:849
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:867
 msgid "_View Folder"
-msgstr "フォルダを開く(_V)"
+msgstr "フォルダーを開く(_V)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:850
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:868
 msgid "View folder in file manager"
-msgstr "指定したフォルダをファイル・マネージャで開きます"
+msgstr "指定したフォルダーをファイルマネージャで開きます"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:857
 msgid "Show _Hidden"
@@ -2734,7 +2735,7 @@ msgstr "隠しファイル(_H)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:858
 msgid "Show hidden files and folders"
-msgstr "隠しファイルやフォルダを表示します"
+msgstr "隠しファイルやフォルダーを表示します"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:860
 msgid "Show _Binary"
@@ -2742,7 +2743,7 @@ msgstr "バイナリ(_B)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:861
 msgid "Show binary files"
-msgstr "バイナリ・ファイルを表示します"
+msgstr "バイナリファイルを表示します"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:993
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
@@ -2769,7 +2770,7 @@ msgstr "次の場所へ進みます"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1228
 msgid "_Match Filename"
-msgstr "ファイル名のフィルタ(_M)"
+msgstr "ファイル名のフィルター(_M)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:2140
 #, c-format
@@ -2837,223 +2838,223 @@ msgstr "ファイルを簡単に開く"
 #: ../plugins/snippets/snippets/Document.py:193
 #: ../plugins/snippets/snippets/Document.py:614
 msgid "Snippets"
-msgstr ""
+msgstr "コードスニペット"
 
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:2
 msgid "Insert often-used pieces of text in a fast way"
-msgstr ""
+msgstr "よく使用する文字列をすばやく挿入します。"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:1
 msgid "Snippets Manager"
-msgstr ""
+msgstr "スニペットの管理"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:2
 msgid "_Snippets:"
-msgstr ""
+msgstr "スニペット(_S):"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:3
 msgid "Create new snippet"
-msgstr ""
+msgstr "新しいスニペットを生成します"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
 #: ../plugins/snippets/snippets/Manager.py:792
 msgid "Import snippets"
-msgstr ""
+msgstr "スニペットをインポートします"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:5
 msgid "Export selected snippets"
-msgstr ""
+msgstr "選択したスニペットを保存します"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
 #: ../plugins/snippets/snippets/Manager.py:403
 msgid "Delete selected snippet"
-msgstr ""
+msgstr "選択したスニペットを削除します"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:8
 msgid "Activation"
-msgstr ""
+msgstr "アクティベーション"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:10
 msgid "_Tab trigger:"
-msgstr ""
+msgstr "タブ(_T):"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: ../plugins/snippets/snippets/snippets.ui.h:11
 #: ../plugins/snippets/snippets/Manager.py:681
 msgid "Single word the snippet is activated with after pressing Tab"
-msgstr ""
+msgstr "スニペットを実行するために [Tab] キーを押下する前に入力する単語です"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:12
 msgid "Shortcut key with which the snippet is activated"
-msgstr ""
+msgstr "スニペットを実行するためのショートカットキーです"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "S_hortcut key:"
-msgstr ""
+msgstr "ショートカットキー(_H):"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:14
 msgid "_Drop targets:"
-msgstr ""
+msgstr "挿入する対象(_D):"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
-msgstr ""
+msgstr "スニペットの管理(_S)..."
 
 #: ../plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage snippets"
-msgstr ""
+msgstr "スニペットの管理"
 
 #: ../plugins/snippets/snippets/Manager.py:41
 msgid "Snippets archive"
-msgstr ""
+msgstr "スニペットのアーカイブ"
 
 #: ../plugins/snippets/snippets/Manager.py:66
 msgid "Add a new snippet..."
-msgstr ""
+msgstr "新しいスニペットの追加..."
 
 #: ../plugins/snippets/snippets/Manager.py:117
 msgid "Global"
-msgstr ""
+msgstr "全般"
 
 #: ../plugins/snippets/snippets/Manager.py:400
 msgid "Revert selected snippet"
-msgstr ""
+msgstr "選択したスニペットを戻します"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
 #: ../plugins/snippets/snippets/Manager.py:674
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
-msgstr ""
+msgstr "これは [Tab] のトリガーとしては妥当ではありません。トリガーとして妥当な形式は、英数字 (_、:、. を含む) からなる文字列か、あるいは一文字の非英数字(例: {、[ など) のいずれかです。"
 
 #: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
 msgid "The following error occurred while importing: %s"
-msgstr ""
+msgstr "インポートする際に次のエラーが発生しました: %s"
 
 #: ../plugins/snippets/snippets/Manager.py:778
 msgid "Import successfully completed"
-msgstr ""
+msgstr "インポートが完了しました"
 
 #: ../plugins/snippets/snippets/Manager.py:797
 #: ../plugins/snippets/snippets/Manager.py:883
 #: ../plugins/snippets/snippets/Manager.py:946
 msgid "All supported archives"
-msgstr ""
+msgstr "サポートしている全アーカイブ"
 
 #: ../plugins/snippets/snippets/Manager.py:798
 #: ../plugins/snippets/snippets/Manager.py:884
 #: ../plugins/snippets/snippets/Manager.py:947
 msgid "Gzip compressed archive"
-msgstr ""
+msgstr "Gzip 圧縮のアーカイブ"
 
 #: ../plugins/snippets/snippets/Manager.py:799
 #: ../plugins/snippets/snippets/Manager.py:885
 #: ../plugins/snippets/snippets/Manager.py:948
 msgid "Bzip2 compressed archive"
-msgstr ""
+msgstr "Bzip2 圧縮のアーカイブ"
 
 #: ../plugins/snippets/snippets/Manager.py:800
 msgid "Single snippets file"
-msgstr ""
+msgstr "単一のスニペットファイル"
 
 #: ../plugins/snippets/snippets/Manager.py:801
 #: ../plugins/snippets/snippets/Manager.py:887
 #: ../plugins/snippets/snippets/Manager.py:950
 msgid "All files"
-msgstr ""
+msgstr "すべてのファイル"
 
 #: ../plugins/snippets/snippets/Manager.py:813
 #, python-format
 msgid "The following error occurred while exporting: %s"
-msgstr ""
+msgstr "スニペットを保存する際にエラーが発生しました: %s"
 
 #: ../plugins/snippets/snippets/Manager.py:817
 msgid "Export successfully completed"
-msgstr ""
+msgstr "保存が完了しました"
 
 #. Ask if system snippets should also be exported
 #: ../plugins/snippets/snippets/Manager.py:857
 #: ../plugins/snippets/snippets/Manager.py:924
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
-msgstr ""
+msgstr "選択した<b>システム</b>スニペットも一緒に保存しますか?"
 
 #: ../plugins/snippets/snippets/Manager.py:872
 #: ../plugins/snippets/snippets/Manager.py:942
 msgid "There are no snippets selected to be exported"
-msgstr ""
+msgstr "保存するスニペットがありません"
 
 #: ../plugins/snippets/snippets/Manager.py:877
 #: ../plugins/snippets/snippets/Manager.py:915
 msgid "Export snippets"
-msgstr ""
+msgstr "スニペットの保存"
 
 #: ../plugins/snippets/snippets/Manager.py:1055
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr ""
+msgstr "(新しいショートカットを入力してください/[BS]キーでクリア)"
 
 #: ../plugins/snippets/snippets/Manager.py:1057
 msgid "Type a new shortcut"
-msgstr ""
+msgstr "(新しいショートカットを入力してください)"
 
 #: ../plugins/snippets/snippets/Exporter.py:65
 #, python-format
 msgid "The archive \"%s\" could not be created"
-msgstr ""
+msgstr "アーカイブ \"%s\" を作成できませんでした"
 
 #: ../plugins/snippets/snippets/Exporter.py:82
 #, python-format
 msgid "Target directory \"%s\" does not exist"
-msgstr ""
+msgstr "対象ディレクトリ \"%s\" が存在しません"
 
 #: ../plugins/snippets/snippets/Exporter.py:85
 #, python-format
 msgid "Target directory \"%s\" is not a valid directory"
-msgstr ""
+msgstr "対象ディレクトリ \"%s\" は妥当なディレクトリではありません"
 
 #: ../plugins/snippets/snippets/Importer.py:29
 #: ../plugins/snippets/snippets/Importer.py:83
 #, python-format
 msgid "File \"%s\" does not exist"
-msgstr ""
+msgstr "ファイル \"%s\" は存在しません"
 
 #: ../plugins/snippets/snippets/Importer.py:32
 #, python-format
 msgid "File \"%s\" is not a valid snippets file"
-msgstr ""
+msgstr "ファイル \"%s\" は妥当なスニペットファイルではありません"
 
 #: ../plugins/snippets/snippets/Importer.py:42
 #, python-format
 msgid "Imported file \"%s\" is not a valid snippets file"
-msgstr ""
+msgstr "インポートしたファイル \"%s\" は妥当なスニペットファイルではありません"
 
 #: ../plugins/snippets/snippets/Importer.py:52
 #, python-format
 msgid "The archive \"%s\" could not be extracted"
-msgstr ""
+msgstr "アーカイブ \"%s\" を解凍できませんでした"
 
 #: ../plugins/snippets/snippets/Importer.py:70
 #, python-format
 msgid "The following files could not be imported: %s"
-msgstr ""
+msgstr "次のファイルをインポートできませんでした: %s"
 
 #: ../plugins/snippets/snippets/Importer.py:86
 #: ../plugins/snippets/snippets/Importer.py:99
 #, python-format
 msgid "File \"%s\" is not a valid snippets archive"
-msgstr ""
+msgstr "ファイル \"%s\" は妥当なスニペットアーカイブではありません"
 
 #: ../plugins/snippets/snippets/Placeholder.py:593
 #, python-format
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
 "aborted."
-msgstr ""
+msgstr "Python コマンド (%s) の実行がタイムアウトしたので中止します"
 
 #: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
 msgid "Execution of the Python command (%s) failed: %s"
-msgstr ""
+msgstr "Python コマンド (%s) の実行に失敗しました: %s"
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
 msgid "S_ort..."
@@ -3129,7 +3130,7 @@ msgstr "スペルの提示(_S)..."
 
 #: ../plugins/spell/pluma-spell-checker-dialog.c:270
 msgid "Check Spelling"
-msgstr "スペル・チェック"
+msgstr "スペルチェック"
 
 #: ../plugins/spell/pluma-spell-checker-dialog.c:281
 msgid "Suggestions"
@@ -3143,7 +3144,7 @@ msgstr "(正しいつづり)"
 
 #: ../plugins/spell/pluma-spell-checker-dialog.c:709
 msgid "Completed spell checking"
-msgstr "スペル・チェック完了"
+msgstr "スペルチェック完了"
 
 #. Translators: the first %s is the language name, and
 #. * the second %s is the locale name. Example:
@@ -3181,7 +3182,7 @@ msgstr "言語"
 
 #: ../plugins/spell/pluma-spell-plugin.c:100
 msgid "_Check Spelling..."
-msgstr "スペル・チェック(_C)..."
+msgstr "スペルチェック(_C)..."
 
 #: ../plugins/spell/pluma-spell-plugin.c:102
 msgid "Check the current document for incorrect spelling"
@@ -3197,7 +3198,7 @@ msgstr "このドキュメントの言語を設定します"
 
 #: ../plugins/spell/pluma-spell-plugin.c:119
 msgid "_Autocheck Spelling"
-msgstr "自動スペル・チェック(_A)"
+msgstr "自動スペルチェック(_A)"
 
 #: ../plugins/spell/pluma-spell-plugin.c:121
 msgid "Automatically spell-check the current document"
@@ -3257,7 +3258,7 @@ msgstr "すべて変更(_L)"
 
 #: ../plugins/spell/spell-checker.ui.h:11
 msgid "User dictionary:"
-msgstr "ユーザ辞書:"
+msgstr "ユーザー辞書:"
 
 #: ../plugins/spell/spell-checker.ui.h:12
 msgid "Add w_ord"
@@ -3293,7 +3294,7 @@ msgstr "常に自動チェック(_A)"
 
 #: ../plugins/spell/spell.plugin.desktop.in.h:1
 msgid "Spell Checker"
-msgstr "スペル・チェッカ"
+msgstr "スペルチェッカー"
 
 #: ../plugins/spell/spell.plugin.desktop.in.h:2
 msgid "Checks the spelling of the current document."
@@ -3331,7 +3332,7 @@ msgstr "ABBR= (略語/頭文字を表す)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:4
 msgid "Accessibility key character"
-msgstr "<ACCESSKEY> (ショートカット・キーの割り当て)"
+msgstr "<ACCESSKEY> (ショートカットキーの割り当て)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:5
 msgid "Acronym"
@@ -3360,7 +3361,7 @@ msgstr "<A> (アンカー)"
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:12
 msgid "Applet class file code (deprecated)"
-msgstr "アプレットのクラス・ファイル (廃止)"
+msgstr "アプレットのクラスファイル (廃止)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:13
 msgid "Associated information"
@@ -3537,7 +3538,7 @@ msgstr "<BODY> (ドキュメントの本文)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:66
 msgid "Document head"
-msgstr "<HEAD> (ドキュメントのヘッダ)"
+msgstr "<HEAD> (ドキュメントのヘッダー)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:67
 msgid "Element ID"
@@ -4235,7 +4236,7 @@ msgstr "<ABOVE> (上の枠だけを表示する)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:256
 msgid "Applet class file code"
-msgstr "CODE= (アプレット・クラスのファイル)"
+msgstr "CODE= (アプレットクラスのファイル)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:257
 msgid "Array"
@@ -4583,43 +4584,43 @@ msgstr "ギリシア文字 τ"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:24
 msgid "Header 0 (chapter)"
-msgstr "ヘッダ 0 (chapter)"
+msgstr "ヘッダー 0 (chapter)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:25
 msgid "Header 0 (chapter*)"
-msgstr "ヘッダ 0 (chpter*)"
+msgstr "ヘッダー 0 (chpter*)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:26
 msgid "Header 1 (section)"
-msgstr "ヘッダ 1 (section)"
+msgstr "ヘッダー 1 (section)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:27
 msgid "Header 1 (section*)"
-msgstr "ヘッダ 1 (section*)"
+msgstr "ヘッダー 1 (section*)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:28
 msgid "Header 2 (subsection)"
-msgstr "ヘッダ 2 (subsection)"
+msgstr "ヘッダー 2 (subsection)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:29
 msgid "Header 2 (subsection*)"
-msgstr "ヘッダ 2 (subsection*)"
+msgstr "ヘッダー 2 (subsection*)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:30
 msgid "Header 3 (subsubsection)"
-msgstr "ヘッダ 3 (subsubsection)"
+msgstr "ヘッダー 3 (subsubsection)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:31
 msgid "Header 3 (subsubsection*)"
-msgstr "ヘッダ 3 (subsubsection*)"
+msgstr "ヘッダー 3 (subsubsection*)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:32
 msgid "Header 4 (paragraph)"
-msgstr "ヘッダ 4 (paragraph)"
+msgstr "ヘッダー 4 (paragraph)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:33
 msgid "Header appendix"
-msgstr "ヘッダの目次"
+msgstr "ヘッダーの目次"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:34
 msgid "List description"
