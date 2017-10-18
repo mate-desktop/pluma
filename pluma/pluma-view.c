@@ -56,7 +56,9 @@
 
 #define PLUMA_VIEW_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_VIEW, PlumaViewPrivate))
 
+/* Local variables */
 static gboolean middledown = FALSE;
+static gboolean rightdown = FALSE;
 
 typedef enum
 {
@@ -1993,14 +1995,19 @@ show_line_numbers_menu (GtkWidget      *view,
 static gboolean
 pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 {
-	if ((event->button == 3) && (middledown))
+	if (((event->button == 3) && (middledown)) || ((event->button == 2) && (rightdown)))
 	{
 		middledown = FALSE;
+		rightdown = FALSE;
 		return TRUE;
 	}
 	else if (event->button == 2)
 	{
 		middledown = TRUE;
+	}
+	else if (event->button == 3)
+	{
+		rightdown = TRUE;
 	}
 
 	if ((event->type == GDK_BUTTON_PRESS) && 
@@ -2023,9 +2030,9 @@ static gboolean
 pluma_view_button_release_event (GtkWidget *widget, GdkEventButton *event)
 {
 	if (event->button == 2)
-	{
 		middledown = FALSE;
-	}
+	else if (event->button == 3)
+		rightdown = FALSE;
 
 	return GTK_WIDGET_CLASS (pluma_view_parent_class)->button_release_event (widget, event);
 }
