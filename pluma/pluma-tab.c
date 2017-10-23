@@ -2619,6 +2619,7 @@ _pluma_tab_can_close (PlumaTab *tab)
 {
 	PlumaDocument *doc;
 	PlumaTabState  ts;
+	GSettings *settings;
 
 	g_return_val_if_fail (PLUMA_IS_TAB (tab), FALSE);
 
@@ -2626,12 +2627,15 @@ _pluma_tab_can_close (PlumaTab *tab)
 
 	doc = pluma_tab_get_document (tab);
 
+	settings = g_settings_new ("org.mate.pluma");
+
 	/* if we are loading or reverting, the tab can be closed */
 	if ((ts == PLUMA_TAB_STATE_LOADING)         ||
 	    (ts == PLUMA_TAB_STATE_LOADING_ERROR)   ||
 	    (ts == PLUMA_TAB_STATE_REVERTING)       ||
 	    (ts == PLUMA_TAB_STATE_REVERTING_ERROR) || /* CHECK: I'm not sure this is the right behavior for REVERTING ERROR */
-	    (!gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc))))
+	    (!gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc))) ||
+	    (!g_settings_get_boolean (settings, "show-save-confirmation")))
 		return TRUE;
 
 	/* Do not close tab with saving errors */

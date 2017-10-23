@@ -31,6 +31,11 @@
       <summary>Autosave Interval</summary>
       <description>Number of minutes after which pluma will automatically save modified files.  This will only take effect if the "Autosave" option is turned on.</description>
     </key>
+    <key name="show-save-confirmation" type="b">
+      <default>true</default>
+      <summary>Show save confirmation</summary>
+      <description>Show save confirmation if the files have changes.</description>
+    </key>
     <key name="writable-vfs-schemes" type="as">
       <default>[ 'dav', 'davs', 'ftp', 'sftp', 'smb', 'ssh' ]</default>
       <summary>Writable VFS schemes</summary>
@@ -126,6 +131,11 @@
       <summary>Side Pane is Visible</summary>
       <description>Whether the side pane at the left of editing windows should be visible.</description>
     </key>
+    <key name="show-tabs-with-side-pane" type="b">
+      <default>true</default>
+      <summary>Show tabs with side pane</summary>
+      <description>If false, pluma doesn't show tabs in the notebook with the side pane active.</description>
+    </key>
     <key name="bottom-panel-visible" type="b">
       <default>false</default>
       <summary>Bottom Panel is Visible</summary>
@@ -195,11 +205,6 @@
       <default>[ 'docinfo', 'modelines', 'filebrowser', 'spell', 'time' ]</default>
       <summary>Active plugins</summary>
       <description>List of active plugins. It contains the "Location" of the active plugins. See the .pluma-plugin file for obtaining the "Location" of a given plugin.</description>
-    </key>
-    <key name="show-tabs-with-side-pane" type="b">
-      <default>true</default>
-      <summary>Show tabs with side pane</summary>
-      <description>If false, pluma doesn't show tabs in the notebook with the side pane active.</description>
     </key>
   </schema>
 </schemalist>
