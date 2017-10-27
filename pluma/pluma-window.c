@@ -60,6 +60,7 @@
 #include "pluma-enum-types.h"
 #include "pluma-dirs.h"
 #include "pluma-status-combo-box.h"
+#include "dialogs/pluma-search-dialog.h"
 
 #define LANGUAGE_NONE (const gchar *)"LangNone"
 #define PLUMA_UIFILE "pluma-ui.xml"
@@ -72,7 +73,9 @@
 					 PlumaWindowPrivate))
 
 /* Local variables */
-static gboolean cansave = TRUE;
+static gboolean       cansave = TRUE;
+static GtkTextIter    selection_end = {0};
+static PlumaDocument *doc_selection = NULL;
 
 /* Signals */
 enum
@@ -3126,6 +3129,34 @@ can_redo (PlumaDocument *doc,
 	gtk_action_set_sensitive (action, sensitive);
 }
 
+static gboolean
+focus_in_window (PlumaWindow *window)
+{
+	if ((doc_selection == pluma_window_get_active_document (window))
+	    && (GTK_IS_TEXT_BUFFER (GTK_TEXT_BUFFER (doc_selection))))
+	{
+		gtk_text_buffer_move_mark_by_name (gtk_text_iter_get_buffer (&selection_end),
+						   "selection_bound", &selection_end);
+	}
+	return FALSE;
+}
+
+static gboolean
+focus_out_window (PlumaWindow *window)
+{
+	PlumaDocument *doc;
+
+	doc = pluma_window_get_active_document (window);
+
+	if (GTK_IS_TEXT_BUFFER (GTK_TEXT_BUFFER (doc)))
+	{
+		GtkTextMark *mark_selection_bound;
+		mark_selection_bound = gtk_text_buffer_get_selection_bound (GTK_TEXT_BUFFER (doc));
+		gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (doc), &selection_end, mark_selection_bound);
+	}
+	return FALSE;
+}
+
 static void
 selection_changed (PlumaDocument *doc,
 		   GParamSpec    *pspec,
@@ -3137,11 +3168,28 @@ selection_changed (PlumaDocument *doc,
 	PlumaTabState state;
 	gboolean state_normal;
 	gboolean editable;
+	gboolean pluma_search_focus;
+	gpointer data;
+
+	doc_selection = doc;
 
 	pluma_debug (DEBUG_WINDOW);
 
 	if (doc != pluma_window_get_active_document (window))
 		return;
+
+	data = g_object_get_data (G_OBJECT (window), "pluma-search-dialog-key");
+
+	PlumaSearchDialog *dialog = (PlumaSearchDialog *) data;
+
+	if (data == NULL)
+		pluma_search_focus = FALSE;
+	else
+		g_object_get ((G_OBJECT (GTK_DIALOG (dialog))),
+			      "has-toplevel-focus", &pluma_search_focus, NULL);
+
+	if (pluma_search_focus)
+		focus_out_window (window);
 
 	tab = pluma_tab_get_from_document (doc);
 	state = pluma_tab_get_state (tab);
@@ -3288,6 +3336,14 @@ notebook_tab_added (PlumaNotebook *notebook,
 			  "notify::editable",
 			  G_CALLBACK (editable_changed),
 			  window);
+	g_signal_connect (window,
+			  "focus-in-event",
+			  G_CALLBACK (focus_in_window),
+			  NULL);
+	g_signal_connect (window,
+			  "focus-out-event",
+			  G_CALLBACK (focus_out_window),
+			  NULL);
 
 	update_documents_list_menu (window);
 	
