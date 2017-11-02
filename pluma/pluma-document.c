@@ -1886,7 +1886,8 @@ pluma_document_search_forward (PlumaDocument     *doc,
 			       const GtkTextIter *start,
 			       const GtkTextIter *end,
 			       GtkTextIter       *match_start,
-			       GtkTextIter       *match_end)
+			       GtkTextIter       *match_end,
+			       gchar		**replace_text)
 {
 	GtkTextIter iter;
 	GtkTextSearchFlags search_flags;
@@ -1922,22 +1923,23 @@ pluma_document_search_forward (PlumaDocument     *doc,
 		
 	while (!found)
 	{
-        	if(!PLUMA_SEARCH_IS_MATCH_REGEX(doc->priv->search_flags))
+		if(!PLUMA_SEARCH_IS_MATCH_REGEX(doc->priv->search_flags))
 		{
-		found = gtk_text_iter_forward_search (&iter,
-						      doc->priv->search_text,
-						      search_flags,
-						      &m_start,
-						      &m_end,
-						      end);
-		}else{
-		found = pluma_gtk_text_iter_regex_search (&iter,
-							  doc->priv->search_text,
-							  search_flags,
-							  &m_start,
-							  &m_end,
-							  end,
-							  TRUE);
+			found = gtk_text_iter_forward_search (&iter,
+							      doc->priv->search_text,
+							      search_flags,
+							      &m_start,
+							      &m_end,
+							      end);
+		} else {
+			found = pluma_gtk_text_iter_regex_search (&iter,
+								  doc->priv->search_text,
+								  search_flags,
+								  &m_start,
+								  &m_end,
+								  end,
+								  TRUE,
+								  replace_text);
 		}
 	
 		if (found && PLUMA_SEARCH_IS_ENTIRE_WORD (doc->priv->search_flags))
@@ -1971,10 +1973,11 @@ pluma_document_search_forward (PlumaDocument     *doc,
  **/
 gboolean
 pluma_document_search_backward (PlumaDocument     *doc,
-                const GtkTextIter *start,
-                const GtkTextIter *end,
-                GtkTextIter       *match_start,
-                GtkTextIter       *match_end)
+		const GtkTextIter *start,
+		const GtkTextIter *end,
+		GtkTextIter       *match_start,
+		GtkTextIter       *match_end,
+		gchar            **replace_text)
 {
 	GtkTextIter iter;
 	GtkTextSearchFlags search_flags;
@@ -2027,7 +2030,8 @@ pluma_document_search_backward (PlumaDocument     *doc,
 								  &m_start,
 								  &m_end,
 								  end,
-								  FALSE);
+								  FALSE,
+								  replace_text);
 		}
 
 		if (found && PLUMA_SEARCH_IS_ENTIRE_WORD (doc->priv->search_flags))
@@ -2065,7 +2069,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 	gboolean found = TRUE;
 	gint cont = 0;
 	gchar *search_text;
-	gchar *replace_text;
+	gchar *replace_text = NULL;
 	gint replace_text_len;
 	GtkTextBuffer *buffer;
 	gboolean brackets_highlighting;
@@ -2082,7 +2086,11 @@ pluma_document_replace_all (PlumaDocument       *doc,
 	else
 		search_text = pluma_utils_unescape_search_text (find);
 
-	replace_text = pluma_utils_unescape_search_text (replace);
+	if(!PLUMA_SEARCH_IS_MATCH_REGEX(flags))
+	{
+		replace_text = pluma_utils_unescape_search_text (replace);
+		replace_text_len = strlen (replace_text);
+	}
 
 	gtk_text_buffer_get_start_iter (buffer, &iter);
 
@@ -2093,7 +2101,6 @@ pluma_document_replace_all (PlumaDocument       *doc,
 		search_flags = search_flags | GTK_TEXT_SEARCH_CASE_INSENSITIVE;
 	}
 
-	replace_text_len = strlen (replace_text);
 
 	/* disable cursor_moved emission until the end of the
 	 * replace_all so that we don't spend all the time
@@ -2113,23 +2120,28 @@ pluma_document_replace_all (PlumaDocument       *doc,
 
 	do
 	{
-        if(!PLUMA_SEARCH_IS_MATCH_REGEX(flags))
-        {
-            found = gtk_text_iter_forward_search (&iter,
-                                                  search_text,
-                                                  search_flags,
-                                                  &m_start,
-                                                  &m_end,
-                                                  NULL);
-        }else{
-            found = pluma_gtk_text_iter_regex_search (&iter,
-                                                      search_text,
-                                                      search_flags,
-                                                      &m_start,
-                                                      &m_end,
-                                                      NULL,
-                                                      TRUE);
-        }
+		if(!PLUMA_SEARCH_IS_MATCH_REGEX(flags))
+		{
+			found = gtk_text_iter_forward_search (&iter,
+							      search_text,
+							      search_flags,
+							      &m_start,
+							      &m_end,
+							      NULL);
+		} else {
+			if(replace_text != NULL)
+				g_free (replace_text);
+			replace_text = g_strdup (replace);
+			found = pluma_gtk_text_iter_regex_search (&iter,
+							          search_text,
+							          search_flags,
+							          &m_start,
+							          &m_end,
+							          NULL,
+							          TRUE,
+							          &replace_text);
+			replace_text_len = strlen (replace_text);
+		}
 
 		if (found && PLUMA_SEARCH_IS_ENTIRE_WORD (flags))
 		{
@@ -2175,7 +2187,8 @@ pluma_document_replace_all (PlumaDocument       *doc,
 	pluma_document_set_enable_search_highlighting (doc, search_highliting);
 
 	g_free (search_text);
-	g_free (replace_text);
+	if(replace_text != NULL)
+		g_free (replace_text);
 
 	return cont;
 }

@@ -1586,7 +1586,8 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 				  GtkTextIter       *match_start,
 				  GtkTextIter       *match_end,
 				  const GtkTextIter *limit,
-				  gboolean forward_search)
+				  gboolean forward_search,
+				  gchar            **replace_text)
 {
 	GRegex *regex;
 	GRegexCompileFlags compile_flags;
@@ -1636,66 +1637,58 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 		else
             text = gtk_text_iter_get_text (begin_iter, end_iter);
 	}
+	else if ((flags & GTK_TEXT_SEARCH_VISIBLE_ONLY) != 0)
+		text = gtk_text_iter_get_visible_slice (begin_iter, end_iter);
 	else
+		text = gtk_text_iter_get_slice (begin_iter, end_iter);
+
+	found = g_regex_match (regex, text, 0, &match_info);
+	if (!found)
+		goto free_resources;
+
+	if(replace_text != NULL)
 	{
-		if ((flags & GTK_TEXT_SEARCH_VISIBLE_ONLY) != 0)
-            text = gtk_text_iter_get_visible_slice (begin_iter, end_iter);
-		else
-            text = gtk_text_iter_get_slice (begin_iter, end_iter);
+		*replace_text = g_match_info_expand_references (match_info,
+								*replace_text,
+								NULL);
+	}
+	all_matches = g_match_info_fetch_all (match_info);
+
+	result_size = (gint) g_strv_length (all_matches);
+	non_null_result_number = (forward_search) ? 0 : (result_size -1);
+
+	non_null_result_found = FALSE;
+	while((non_null_result_number >= 0)
+	      && (non_null_result_number < result_size) )
+	{
+		non_null_result_found = g_utf8_strlen (all_matches [non_null_result_number], G_MAXSSIZE) != 0;
+		if (non_null_result_found)
+			break;
+
+		non_null_result_number += (forward_search) ? 1 : -1;
 	}
 
-    found = g_regex_match_all (regex,text,0,&match_info);
-	if (found)
+	if(!non_null_result_found) {
+		found = FALSE;
+		goto free_resources;
+	}
+
+	match_string = all_matches [non_null_result_number];
+	if (forward_search)
 	{
-        all_matches = g_match_info_fetch_all (match_info);
-        result_size = (gint) g_strv_length (all_matches);
-
-        if(forward_search){
-            non_null_result_number = 0;
-        } else {
-            non_null_result_number = result_size - 1 ;
-        }
-        non_null_result_found = FALSE;
-        while((non_null_result_number >= 0)
-              && (non_null_result_number < result_size) ) {
-
-            if(g_utf8_strlen (all_matches [non_null_result_number], G_MAXSSIZE) != 0) {
-                non_null_result_found = TRUE;
-                break;
-            } else {
-                if(forward_search) {
-                    non_null_result_number++;
-                } else {
-                    non_null_result_number--;
-                }
-            }
-
-        }
-
-        if(!non_null_result_found) {
-            found = FALSE;
-            goto free_resources;
-        }
-
-        match_string = all_matches [non_null_result_number];
-        if (forward_search)
-        {
-            gtk_text_iter_forward_search (begin_iter,
-						     match_string,
-						     flags,
-						     match_start,
-						     match_end,
-						     limit);
-		}
-		else
-        {
-            gtk_text_iter_backward_search (begin_iter,
-						      match_string,
-						      flags,
-						      match_start,
-						      match_end,
-						      limit);
-		}
+		gtk_text_iter_forward_search (begin_iter,
+					      match_string,
+					      flags,
+					      match_start,
+					      match_end,
+					      limit);
+	} else {
+		gtk_text_iter_backward_search (begin_iter,
+					       match_string,
+					       flags,
+					       match_start,
+					       match_end,
+					       limit);
 	}
 
 free_resources:

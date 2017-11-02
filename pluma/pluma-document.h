@@ -243,13 +243,15 @@ gboolean	 pluma_document_search_forward	(PlumaDocument       *doc,
 						 const GtkTextIter   *start,
 						 const GtkTextIter   *end,
 						 GtkTextIter         *match_start,
-						 GtkTextIter         *match_end);
-						 
+						 GtkTextIter         *match_end,
+						 gchar              **replace_text);
+
 gboolean	 pluma_document_search_backward	(PlumaDocument       *doc,
 						 const GtkTextIter   *start,
 						 const GtkTextIter   *end,
 						 GtkTextIter         *match_start,
-						 GtkTextIter         *match_end);
+						 GtkTextIter         *match_end,
+						 gchar              **replace_text);
 
 gint		 pluma_document_replace_all 	(PlumaDocument       *doc,
 				            	 const gchar         *find, 

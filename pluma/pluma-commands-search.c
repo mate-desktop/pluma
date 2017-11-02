@@ -144,6 +144,11 @@ text_not_found (PlumaWindow *window,
 	g_free (searched);
 }
 
+/* This is the string with last replace statement. The reason to use some kind of
+   global variable is to keep existing methods' signatures not changed (to minimize
+   code changes). This helper is used only for correct regex replacement. */
+static gchar *last_replace_text = NULL;
+
 static gboolean
 run_search (PlumaView   *view,
 	    gboolean     wrap_around,
@@ -167,7 +172,8 @@ run_search (PlumaView   *view,
 						       &start_iter,
 						       NULL,
 						       &match_start,
-						       &match_end);
+						       &match_end,
+						       &last_replace_text);
 	}
 	else
 	{
@@ -176,10 +182,11 @@ run_search (PlumaView   *view,
 						      NULL);
 
 		found = pluma_document_search_backward (doc,
-						        NULL,
-						        &start_iter,
-						        &match_start,
-						        &match_end);
+							NULL,
+							&start_iter,
+							&match_start,
+							&match_end,
+							&last_replace_text);
 	}
 
 	if (!found && wrap_around)
@@ -189,15 +196,17 @@ run_search (PlumaView   *view,
 							       NULL,
 							       NULL, /* FIXME: set the end_inter */
 							       &match_start,
-							       &match_end);
+							       &match_end,
+							       &last_replace_text);
 		else
 			found = pluma_document_search_backward (doc,
-							        NULL, /* FIXME: set the start_inter */
-							        NULL, 
-							        &match_start,
-							        &match_end);
+								NULL, /* FIXME: set the start_inter */
+								NULL,
+								&match_start,
+								&match_end,
+								&last_replace_text);
 	}
-	
+
 	if (found)
 	{
 		gtk_text_buffer_place_cursor (GTK_TEXT_BUFFER (doc),
@@ -271,7 +280,9 @@ do_find (PlumaSearchDialog *dialog,
 	}
 
 	g_free (search_text);
-	
+	if(match_regex)
+		last_replace_text = g_strdup(pluma_search_dialog_get_replace_text (dialog));
+
 	found = run_search (active_view,
 			    wrap_around,
 			    search_backwards);
@@ -404,6 +415,7 @@ do_replace (PlumaSearchDialog *dialog,
 
 	if (need_refind)
 	{
+		last_replace_text = g_strdup(replace_entry_text);
 		do_find (dialog, window);
 		g_free (unescaped_search_text);
 		g_free (selected_text);
@@ -411,13 +423,17 @@ do_replace (PlumaSearchDialog *dialog,
 		return;
 	}
 
-	unescaped_replace_text = pluma_utils_unescape_search_text (replace_entry_text);	
+	if(!match_regex)
+		unescaped_replace_text = pluma_utils_unescape_search_text (replace_entry_text);
+	else
+		unescaped_replace_text = g_strdup(last_replace_text);
+
 	replace_selected_text (GTK_TEXT_BUFFER (doc), unescaped_replace_text);
 
 	g_free (unescaped_search_text);
 	g_free (selected_text);
 	g_free (unescaped_replace_text);
-	
+
 	do_find (dialog, window);
 }
 

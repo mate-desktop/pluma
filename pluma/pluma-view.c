@@ -802,7 +802,8 @@ run_search (PlumaView        *view,
 							       &start_iter,
 							       NULL,
 							       &match_start,
-							       &match_end);
+							       &match_end,
+							       NULL);
 		}						       
 		else if (!typing)
 		{
@@ -816,7 +817,8 @@ run_search (PlumaView        *view,
 							        NULL,
 							        &start_iter,
 							        &match_start,
-							        &match_end);
+							        &match_end,
+								NULL);
 		} 
 		else
 		{
@@ -832,13 +834,15 @@ run_search (PlumaView        *view,
 								       NULL,
 								       NULL, /* FIXME: set the end_inter */
 								       &match_start,
-								       &match_end);
+								       &match_end,
+								       NULL);
 			else
 				found = pluma_document_search_backward (doc,
 								        NULL, /* FIXME: set the start_inter */
 								        NULL, 
 								        &match_start,
-								        &match_end);
+								        &match_end,
+									NULL);
 		}
 	}
 	else
