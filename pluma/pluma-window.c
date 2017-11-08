@@ -330,7 +330,7 @@ pluma_window_key_press_event (GtkWidget   *widget,
 
 		sscanf (tempsize, "%d", &nsize);
 
-		if (event->keyval == GDK_KEY_plus)
+		if ((event->keyval == GDK_KEY_plus) || (event->keyval == GDK_KEY_KP_Add))
 		{
 			nsize = nsize + 1;
 			sprintf (tempsize, "%d", nsize);
@@ -338,7 +338,7 @@ pluma_window_key_press_event (GtkWidget   *widget,
 			if (!g_settings_get_boolean (settings, "use-default-font") && (nsize < 73))
 				g_settings_set_string (settings, "editor-font", g_strconcat (tempfont, tempsize, NULL));
 		}
-		else if (event->keyval == GDK_KEY_minus)
+		else if ((event->keyval == GDK_KEY_minus) || (event->keyval == GDK_KEY_KP_Subtract))
 		{
 			nsize = nsize - 1;
 			sprintf (tempsize, "%d", nsize);
