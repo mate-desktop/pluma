@@ -635,30 +635,11 @@ is_in_viewport (PlumaWindow  *window,
 		gint          viewport_x,
 		gint          viewport_y)
 {
-	GdkScreen *s;
-	GdkDisplay *display;
 	GdkWindow *gdkwindow;
-	const gchar *cur_name;
-	const gchar *name;
-	gint cur_n;
-	gint n;
 	gint ws;
 	gint sc_width, sc_height;
 	gint x, y, width, height;
 	gint vp_x, vp_y;
-
-	/* Check for screen and display match */
-	display = gdk_screen_get_display (screen);
-	cur_name = gdk_display_get_name (display);
-	cur_n = gdk_x11_screen_get_screen_number (screen);
-
-	s = gtk_window_get_screen (GTK_WINDOW (window));
-	display = gdk_screen_get_display (s);
-	name = gdk_display_get_name (display);
-	n = gdk_x11_screen_get_screen_number (s);
-
-	if (strcmp (cur_name, name) != 0 || cur_n != n)
-		return FALSE;
 
 	/* Check for workspace match */
 	ws = pluma_utils_get_window_workspace (GTK_WINDOW (window));
