@@ -57,8 +57,7 @@
 #define PLUMA_VIEW_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_VIEW, PlumaViewPrivate))
 
 /* Local variables */
-static gboolean middledown = FALSE;
-static gboolean rightdown = FALSE;
+static gboolean middle_or_right_down = FALSE;
 
 typedef enum
 {
@@ -130,6 +129,8 @@ static gboolean	pluma_view_button_press_event	(GtkWidget        *widget,
 						 GdkEventButton   *event);
 static gboolean	pluma_view_button_release_event	(GtkWidget        *widget,
 						 GdkEventButton   *event);
+static void	pluma_view_populate_popup	(GtkTextView      *text_view,
+						 GtkWidget        *widget);
 
 static gboolean start_interactive_search	(PlumaView        *view);
 static gboolean start_interactive_goto_line	(PlumaView        *view);
@@ -214,6 +215,7 @@ pluma_view_class_init (PlumaViewClass *klass)
 	widget_class->drag_drop = pluma_view_drag_drop;
 	widget_class->button_press_event = pluma_view_button_press_event;
 	widget_class->button_release_event = pluma_view_button_release_event;
+	text_view_class->populate_popup = pluma_view_populate_popup;
 	klass->start_interactive_search = start_interactive_search;
 	klass->start_interactive_goto_line = start_interactive_goto_line;
 	klass->reset_searched_text = reset_searched_text;	
@@ -1995,19 +1997,15 @@ show_line_numbers_menu (GtkWidget      *view,
 static gboolean
 pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 {
-	if (((event->button == 3) && (middledown)) || ((event->button == 2) && (rightdown)))
+	if ((event->button == 2) || (event->button == 3))
 	{
-		middledown = FALSE;
-		rightdown = FALSE;
-		return TRUE;
-	}
-	else if (event->button == 2)
-	{
-		middledown = TRUE;
-	}
-	else if (event->button == 3)
-	{
-		rightdown = TRUE;
+		if (middle_or_right_down)
+		{
+			middle_or_right_down = FALSE;
+			return TRUE;
+		}
+		else
+			middle_or_right_down = TRUE;
 	}
 
 	if ((event->type == GDK_BUTTON_PRESS) && 
@@ -2030,11 +2028,15 @@ static gboolean
 pluma_view_button_release_event (GtkWidget *widget, GdkEventButton *event)
 {
 	if (event->button == 2)
-		middledown = FALSE;
-	else if (event->button == 3)
-		rightdown = FALSE;
+		middle_or_right_down = FALSE;
 
 	return GTK_WIDGET_CLASS (pluma_view_parent_class)->button_release_event (widget, event);
+}
+
+static void
+pluma_view_populate_popup (GtkTextView *text_view, GtkWidget *widget)
+{
+	middle_or_right_down = FALSE;
 }
 
 static void 	
