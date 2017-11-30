@@ -280,8 +280,10 @@ do_find (PlumaSearchDialog *dialog,
 	}
 
 	g_free (search_text);
-	if(match_regex)
+	if(match_regex){
+		g_free(last_replace_text);
 		last_replace_text = g_strdup(pluma_search_dialog_get_replace_text (dialog));
+	}
 
 	found = run_search (active_view,
 			    wrap_around,
@@ -415,6 +417,7 @@ do_replace (PlumaSearchDialog *dialog,
 
 	if (need_refind)
 	{
+		g_free (last_replace_text);
 		last_replace_text = g_strdup(replace_entry_text);
 		do_find (dialog, window);
 		g_free (unescaped_search_text);
