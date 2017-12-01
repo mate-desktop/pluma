@@ -1646,7 +1646,7 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 	if (!found)
 		goto free_resources;
 
-	if(replace_text != NULL)
+	if((replace_text != NULL) && (*replace_text != NULL))
 	{
 		*replace_text = g_match_info_expand_references (match_info,
 								*replace_text,

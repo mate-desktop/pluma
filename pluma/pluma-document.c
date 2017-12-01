@@ -116,6 +116,7 @@ struct _PlumaDocumentPrivate
 
 	guint        search_flags;
 	gchar       *search_text;
+	gchar       *last_replace_text;
 	gint	     num_of_lines_search_text;
 
 	PlumaDocumentNewlineType newline_type;
@@ -301,6 +302,7 @@ pluma_document_finalize (GObject *object)
 	g_free (doc->priv->uri);
 	g_free (doc->priv->content_type);
 	g_free (doc->priv->search_text);
+	g_free (doc->priv->last_replace_text);
 
 	if (doc->priv->to_search_region != NULL)
 	{
@@ -1864,6 +1866,35 @@ pluma_document_get_search_text (PlumaDocument *doc,
 	return pluma_utils_escape_search_text (doc->priv->search_text);
 }
 
+/**
+ * pluma_document_set_last_replace_text:
+ * @doc:
+ * @text: (allow-none):
+ **/
+void
+pluma_document_set_last_replace_text (PlumaDocument *doc,
+				      const gchar   *text)
+{
+	g_return_if_fail (PLUMA_IS_DOCUMENT (doc));
+
+	g_free(doc->priv->last_replace_text);
+
+	pluma_debug_message (DEBUG_SEARCH, "last_replace_text = %s", text == NULL ? "NULL" : text);
+	doc->priv->last_replace_text = g_strdup(text);
+}
+
+/**
+ * pluma_document_get_last_replace_text:
+ * @doc:
+ */
+gchar *
+pluma_document_get_last_replace_text (PlumaDocument *doc)
+{
+	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), NULL);
+
+	return doc->priv->last_replace_text;
+}
+
 gboolean
 pluma_document_get_can_search_again (PlumaDocument *doc)
 {
@@ -1886,8 +1917,7 @@ pluma_document_search_forward (PlumaDocument     *doc,
 			       const GtkTextIter *start,
 			       const GtkTextIter *end,
 			       GtkTextIter       *match_start,
-			       GtkTextIter       *match_end,
-			       gchar		**replace_text)
+			       GtkTextIter       *match_end)
 {
 	GtkTextIter iter;
 	GtkTextSearchFlags search_flags;
@@ -1939,7 +1969,7 @@ pluma_document_search_forward (PlumaDocument     *doc,
 								  &m_end,
 								  end,
 								  TRUE,
-								  replace_text);
+								  &doc->priv->last_replace_text);
 		}
 	
 		if (found && PLUMA_SEARCH_IS_ENTIRE_WORD (doc->priv->search_flags))
@@ -1976,8 +2006,7 @@ pluma_document_search_backward (PlumaDocument     *doc,
 		const GtkTextIter *start,
 		const GtkTextIter *end,
 		GtkTextIter       *match_start,
-		GtkTextIter       *match_end,
-		gchar            **replace_text)
+		GtkTextIter       *match_end)
 {
 	GtkTextIter iter;
 	GtkTextSearchFlags search_flags;
@@ -2031,7 +2060,7 @@ pluma_document_search_backward (PlumaDocument     *doc,
 								  &m_end,
 								  end,
 								  FALSE,
-								  replace_text);
+								  &doc->priv->last_replace_text);
 		}
 
 		if (found && PLUMA_SEARCH_IS_ENTIRE_WORD (doc->priv->search_flags))
