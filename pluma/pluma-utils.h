@@ -156,7 +156,9 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 				  GtkTextSearchFlags flags,
 				  GtkTextIter       *match_start,
 				  GtkTextIter       *match_end,
-				  const GtkTextIter *limit, gboolean forward_search);
+				  const GtkTextIter *limit,
+				  gboolean forward_search,
+				  gchar            **replace_text);
 
 G_END_DECLS
 

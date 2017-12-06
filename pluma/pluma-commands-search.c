@@ -176,10 +176,10 @@ run_search (PlumaView   *view,
 						      NULL);
 
 		found = pluma_document_search_backward (doc,
-						        NULL,
-						        &start_iter,
-						        &match_start,
-						        &match_end);
+							NULL,
+							&start_iter,
+							&match_start,
+							&match_end);
 	}
 
 	if (!found && wrap_around)
@@ -192,12 +192,12 @@ run_search (PlumaView   *view,
 							       &match_end);
 		else
 			found = pluma_document_search_backward (doc,
-							        NULL, /* FIXME: set the start_inter */
-							        NULL, 
-							        &match_start,
-							        &match_end);
+								NULL, /* FIXME: set the start_inter */
+								NULL,
+								&match_start,
+								&match_end);
 	}
-	
+
 	if (found)
 	{
 		gtk_text_buffer_place_cursor (GTK_TEXT_BUFFER (doc),
@@ -271,7 +271,11 @@ do_find (PlumaSearchDialog *dialog,
 	}
 
 	g_free (search_text);
-	
+	if (match_regex)
+	{
+		pluma_document_set_last_replace_text (doc, pluma_search_dialog_get_replace_text (dialog));
+	}
+
 	found = run_search (active_view,
 			    wrap_around,
 			    search_backwards);
@@ -404,6 +408,7 @@ do_replace (PlumaSearchDialog *dialog,
 
 	if (need_refind)
 	{
+		pluma_document_set_last_replace_text (doc, replace_entry_text);
 		do_find (dialog, window);
 		g_free (unescaped_search_text);
 		g_free (selected_text);
@@ -411,13 +416,17 @@ do_replace (PlumaSearchDialog *dialog,
 		return;
 	}
 
-	unescaped_replace_text = pluma_utils_unescape_search_text (replace_entry_text);	
+	if(!match_regex)
+		unescaped_replace_text = pluma_utils_unescape_search_text (replace_entry_text);
+	else
+		unescaped_replace_text = g_strdup (pluma_document_get_last_replace_text (doc));
+
 	replace_selected_text (GTK_TEXT_BUFFER (doc), unescaped_replace_text);
 
 	g_free (unescaped_search_text);
 	g_free (selected_text);
 	g_free (unescaped_replace_text);
-	
+
 	do_find (dialog, window);
 }
 
