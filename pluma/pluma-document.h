@@ -232,9 +232,16 @@ gboolean	 pluma_document_goto_line_offset(PlumaDocument *doc,
 void		 pluma_document_set_search_text	(PlumaDocument       *doc,
 						 const gchar         *text,
 						 guint                flags);
-						 
+
 gchar		*pluma_document_get_search_text	(PlumaDocument       *doc,
 						 guint               *flags);
+
+gchar		*pluma_document_get_last_replace_text
+						(PlumaDocument       *doc);
+
+void		 pluma_document_set_last_replace_text
+						(PlumaDocument       *doc,
+						 const gchar         *text);
 
 gboolean	 pluma_document_get_can_search_again
 						(PlumaDocument       *doc);
@@ -244,7 +251,7 @@ gboolean	 pluma_document_search_forward	(PlumaDocument       *doc,
 						 const GtkTextIter   *end,
 						 GtkTextIter         *match_start,
 						 GtkTextIter         *match_end);
-						 
+
 gboolean	 pluma_document_search_backward	(PlumaDocument       *doc,
 						 const GtkTextIter   *start,
 						 const GtkTextIter   *end,
