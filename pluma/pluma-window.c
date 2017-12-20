@@ -1089,7 +1089,7 @@ _pluma_recent_add (PlumaWindow *window,
 		   const gchar *mime)
 {
 	GtkRecentManager *recent_manager;
-	GtkRecentData *recent_data;
+	GtkRecentData recent_data;
 
 	static gchar *groups[2] = {
 		"pluma",
@@ -1098,23 +1098,19 @@ _pluma_recent_add (PlumaWindow *window,
 
 	recent_manager =  gtk_recent_manager_get_default ();
 
-	recent_data = g_slice_new (GtkRecentData);
-
-	recent_data->display_name = NULL;
-	recent_data->description = NULL;
-	recent_data->mime_type = (gchar *) mime;
-	recent_data->app_name = (gchar *) g_get_application_name ();
-	recent_data->app_exec = g_strjoin (" ", g_get_prgname (), "%u", NULL);
-	recent_data->groups = groups;
-	recent_data->is_private = FALSE;
+	recent_data.display_name = NULL;
+	recent_data.description = NULL;
+	recent_data.mime_type = (gchar *) mime;
+	recent_data.app_name = (gchar *) g_get_application_name ();
+	recent_data.app_exec = g_strjoin (" ", g_get_prgname (), "%u", NULL);
+	recent_data.groups = groups;
+	recent_data.is_private = FALSE;
 
 	gtk_recent_manager_add_full (recent_manager,
 				     uri,
-				     recent_data);
+				     &recent_data);
 
-	g_free (recent_data->app_exec);
-
-	g_slice_free (GtkRecentData, recent_data);
+	g_free (recent_data.app_exec);
 }
 
 void
