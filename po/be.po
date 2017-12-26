@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 16:12+0300\n"
-"PO-Revision-Date: 2017-09-19 11:04+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2017-11-29 11:17+0100\n"
+"PO-Revision-Date: 2017-11-29 10:17+0000\n"
+"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
 "Language-Team: Belarusian (http://www.transifex.com/mate/MATE/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,30 +86,38 @@ msgid ""
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
+msgid "Show save confirmation"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:15
+msgid "Show save confirmation if the files have changes."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:16
 msgid "Writable VFS schemes"
 msgstr "Схемы запісу VFS"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:15
+#: ../data/org.mate.pluma.gschema.xml.in.h:17
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
 msgstr "Спіс схем VFS, якія падтрымлівае Pluma у рэжыме запісу. Схема 'file' падтрымлівае запіс адразу."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:16
+#: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
 msgstr "Колькі разоў можна адрабляць дзеянні"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:17
+#: ../data/org.mate.pluma.gschema.xml.in.h:19
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
 msgstr "Найбольшая колькасць дзеянняў, якія pluma зможа запомніць для адкату. Выкарыстоўвайце \"-1\" для неабмежаванай колькасці дзеянняў."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:18
+#: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
 msgstr "Рэжым згортвання радкоў"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:19
+#: ../data/org.mate.pluma.gschema.xml.in.h:21
 msgid ""
 "Specifies how to wrap long lines in the editing area. Use \"GTK_WRAP_NONE\" "
 "for no wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -118,77 +126,77 @@ msgid ""
 "mentioned here."
 msgstr "Вызначае, як згортваць радкі ў прасторы рэдагавання. Выкарыстоўвайце \"GTK_WRAP_NONE\" для адключэння згортвання, \"GTK_WRAP_WORD\" для згортвання па словах ці \"GTK_WRAP_CHAR\" для згортвання па знаках. Заўвага: гэтыя значэнні чулыя да рэгістра, таму праверце, каб яны былі напісаныя так жа, як і тут."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:20
+#: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
 msgstr "Памер табуляцыі"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:21
+#: ../data/org.mate.pluma.gschema.xml.in.h:23
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr "Вызначае колькасць прагалаў, якія будуць паказвацца замест знакаў табуляцыі."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:22
+#: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Insert spaces"
 msgstr "Уставіць прагалы"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:23
+#: ../data/org.mate.pluma.gschema.xml.in.h:25
 msgid "Whether pluma should insert spaces instead of tabs."
 msgstr "Ці ўстаўляць прагалы замест знакаў табуляцыі."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:24
+#: ../data/org.mate.pluma.gschema.xml.in.h:26
 msgid "Automatic indent"
 msgstr "Аўтаводступы"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:25
+#: ../data/org.mate.pluma.gschema.xml.in.h:27
 msgid "Whether pluma should enable automatic indentation."
 msgstr "Ці мусіць Pluma задзейнічаць аўтаматычную падстаноўку водступаў."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:26
+#: ../data/org.mate.pluma.gschema.xml.in.h:28
 msgid "Display Line Numbers"
 msgstr "Паказваць нумары радкоў"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:27
+#: ../data/org.mate.pluma.gschema.xml.in.h:29
 msgid "Whether pluma should display line numbers in the editing area."
 msgstr "Ці паказваць нумары радкоў у прасторы рэдагавання."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:28
+#: ../data/org.mate.pluma.gschema.xml.in.h:30
 msgid "Highlight Current Line"
 msgstr "Падсвятляць дзейны радок"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:29
+#: ../data/org.mate.pluma.gschema.xml.in.h:31
 msgid "Whether pluma should highlight the current line."
 msgstr "Ці падсвятляць дзейны радок."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:30
+#: ../data/org.mate.pluma.gschema.xml.in.h:32
 msgid "Highlight Matching Bracket"
 msgstr "Падсвятляць адпаведныя дужкі"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:31
+#: ../data/org.mate.pluma.gschema.xml.in.h:33
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr "Ці мусіць Pluma падсвятляць дужку, якая адпавядае вылучанай."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:32
+#: ../data/org.mate.pluma.gschema.xml.in.h:34
 msgid "Display Right Margin"
 msgstr "Паказваць правае поле"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:33
+#: ../data/org.mate.pluma.gschema.xml.in.h:35
 msgid "Whether pluma should display the right margin in the editing area."
 msgstr "Ці паказваць правае поле ў прасторы рэдагавання."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:34
+#: ../data/org.mate.pluma.gschema.xml.in.h:36
 msgid "Right Margin Position"
 msgstr "Размяшчэнне правага поля"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:35
+#: ../data/org.mate.pluma.gschema.xml.in.h:37
 msgid "Specifies the position of the right margin."
 msgstr "Вызначае размяшчэнне правага поля."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:36
+#: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Smart Home End"
 msgstr "Разумныя Home і End"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:37
+#: ../data/org.mate.pluma.gschema.xml.in.h:39
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "\"DISABLED\" to always move at the start/end of the line, \"AFTER\" to move "
@@ -199,46 +207,46 @@ msgid ""
 "the text instead of the start/end of the line."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:38
+#: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
 msgstr "Аднавіць папярэдняе размяшчэнне курсора"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:39
+#: ../data/org.mate.pluma.gschema.xml.in.h:41
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
 msgstr "Ці аднаўляць папярэдняе размяшчэнне курсора, калі загружаецца файл."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:40
+#: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Search Highlighting"
 msgstr "Уключыць падсвятленне пошуку"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:41
+#: ../data/org.mate.pluma.gschema.xml.in.h:43
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
 msgstr "Ці падсвятляць усе вынікі пошуку."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:42
+#: ../data/org.mate.pluma.gschema.xml.in.h:44
 msgid "Enable Syntax Highlighting"
 msgstr "Уключыць падсвятленне сінтаксу"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:43
+#: ../data/org.mate.pluma.gschema.xml.in.h:45
 msgid "Whether pluma should enable syntax highlighting."
 msgstr "Ці ўключыць падсвятленне сінтаксу."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:44
+#: ../data/org.mate.pluma.gschema.xml.in.h:46
 msgid "Toolbar is Visible"
 msgstr "Панэль начыння бачная"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:45
+#: ../data/org.mate.pluma.gschema.xml.in.h:47
 msgid "Whether the toolbar should be visible in editing windows."
 msgstr "Ці бачная панэль начыння ў акне рэдагавання."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:46
+#: ../data/org.mate.pluma.gschema.xml.in.h:48
 msgid "Toolbar Buttons Style"
 msgstr "Стыль кнопак панэлі начыння"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:47
+#: ../data/org.mate.pluma.gschema.xml.in.h:49
 msgid ""
 "Style for the toolbar buttons. Possible values are \"PLUMA_TOOLBAR_SYSTEM\" "
 "to use the system's default style, \"PLUMA_TOOLBAR_ICONS\" to display icons "
@@ -248,66 +256,75 @@ msgid ""
 "as mentioned here."
 msgstr "Стыль для кнопак панэлі начыння. Магчымыя значэнні \"PLUMA_TOOLBAR_SYSTEM\" для выкарыстання стандартнага сістэмнага стылю, \"PLUMA_TOOLBAR_ICONS\" для паказу толькі значкоў, \"PLUMA_TOOLBAR_ICONS_AND_TEXT\" для паказу значкоў і тэксту і \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" для паказу тэксту пад значкамі. Заўвага: гэтыя значэнні чулыя да рэгістру, таму праверце, каб яны былі напісаныя так жа, як і тут."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:48
+#: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
 msgstr "Радок стану бачны"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:49
+#: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "Ці бачны радок стану ўнізе акна рэдагавання."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:50
+#: ../data/org.mate.pluma.gschema.xml.in.h:52
 msgid "Side Pane is Visible"
 msgstr "Бакавая панэль бачная"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:51
+#: ../data/org.mate.pluma.gschema.xml.in.h:53
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
 msgstr "Ці бачна бакавая панэль злева ад акна рэдагавання."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:52
+#: ../data/org.mate.pluma.gschema.xml.in.h:54
+msgid "Show tabs with side pane"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:55
+msgid ""
+"If false, pluma doesn't show tabs in the notebook with the side pane active."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:56
 msgid "Bottom Panel is Visible"
 msgstr "Ніжняя панэль бачная"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:53
+#: ../data/org.mate.pluma.gschema.xml.in.h:57
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
 msgstr "Ці бачная ніжняя панэль унізе акна рэдагавання."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:54
+#: ../data/org.mate.pluma.gschema.xml.in.h:58
 msgid "Maximum Recent Files"
 msgstr "Найбольшая колькасць ранейшых файлаў"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:55
+#: ../data/org.mate.pluma.gschema.xml.in.h:59
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
 msgstr "Вызначае найбольшую колькасць ранейшых файлаў, якія будуць паказвацца ў падменю \"Ранейшыя файлы\"."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:56
+#: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
 msgstr "Друкаваць падсвятленне сінтаксу"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:57
+#: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
 msgstr "Ці друкаваць з падсвятленнем сінтаксу."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:58
+#: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Print Header"
 msgstr "Друкаваць загаловак"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:59
+#: ../data/org.mate.pluma.gschema.xml.in.h:63
 msgid ""
 "Whether pluma should include a document header when printing documents."
 msgstr "Ці друкаваць загаловак дакумента."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:60
+#: ../data/org.mate.pluma.gschema.xml.in.h:64
 msgid "Printing Line Wrapping Mode"
 msgstr "Рэжым друку згортвання радкоў"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:61
+#: ../data/org.mate.pluma.gschema.xml.in.h:65
 msgid ""
 "Specifies how to wrap long lines for printing. Use \"GTK_WRAP_NONE\" for no "
 "wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -316,113 +333,113 @@ msgid ""
 "mentioned here."
 msgstr "Вызначае, як згортваць радкі для друку. Выкарыстоўвайце \"GTK_WRAP_NONE\" для адключэння згортвання, \"GTK_WRAP_WORD\" для згортвання па словах ці \"GTK_WRAP_CHAR\" для згортвання па знаках. Заўвага: гэтыя значэнні чулыя да рэгістру, таму праверце, каб яны былі напісаныя так жа, як і тут."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:62
+#: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
 msgstr "Друкаваць нумары радкоў"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:63
+#: ../data/org.mate.pluma.gschema.xml.in.h:67
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
 msgstr "Калі значэнне 0, нумараванне будзе адключана пры друку. Інакш Pluma будзе друкаваць нумары радкоў."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:64
+#: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
 msgstr "'Monospace 9'"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:65
+#: ../data/org.mate.pluma.gschema.xml.in.h:69
 msgid "Body Font for Printing"
 msgstr "Друкарскі шрыфт"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:66
+#: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
 msgstr "Вызначае друкарскі шрыфт цела дакументаў."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:67
+#: ../data/org.mate.pluma.gschema.xml.in.h:71
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
 msgstr "'Sans 11'"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:68
+#: ../data/org.mate.pluma.gschema.xml.in.h:72
 msgid "Header Font for Printing"
 msgstr "Друкарскі шрыфт загалоўка"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:69
+#: ../data/org.mate.pluma.gschema.xml.in.h:73
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
 msgstr "Вызначае друкарскі шрыфт для загалоўка. Гэта будзе мець эфект, толькі калі ўключаны параметр \"Друкаваць загаловак\"."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:70
+#: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
 msgstr "'Sans 8'"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:71
+#: ../data/org.mate.pluma.gschema.xml.in.h:75
 msgid "Line Number Font for Printing"
 msgstr "Друкарскі шрыфт нумаравання радкоў"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:72
+#: ../data/org.mate.pluma.gschema.xml.in.h:76
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
 msgstr "Вызначае друкарскі шрыфт нумаравання радкоў. Гэта будзе мець эфект, толькі калі параметр \"Паказваць нумары радкоў\" не роўны нулю."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:73
+#: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:74
+#: ../data/org.mate.pluma.gschema.xml.in.h:78
 msgid "Automatically Detected Encodings"
 msgstr "Аўтавызначэнне кадавання"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:75
+#: ../data/org.mate.pluma.gschema.xml.in.h:79
 msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
 msgstr "Упарадкаваны спіс кадаванняў, якія Pluma выкарыстоўвае для аўтавызначэння кадавання файла. \"CURRENT\" азначае кадаванне дзейнай лакалі. Выкарыстоўваюцца толькі тыя кадаванні, якія можна распазнаць."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:76
+#: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
 msgstr "[ 'ISO-8859-15' ]"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:77
+#: ../data/org.mate.pluma.gschema.xml.in.h:81
 msgid "Encodings shown in menu"
 msgstr "Кадаванні, бачныя ў меню"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:78
+#: ../data/org.mate.pluma.gschema.xml.in.h:82
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
 msgstr "Спіс кадаванняў, які паказваецца ў меню \"Кадаванне знакаў\" у акенцы адкрыцця/захавання файлаў. Выкарыстоўваюцца толькі пазнаныя кадаванні."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:79
+#: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
 msgstr "Гісторыя запісаў у \"Шукаць\""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:80
+#: ../data/org.mate.pluma.gschema.xml.in.h:84
 msgid "List of entries in \"search for\" textbox."
 msgstr "Спіс запісаў у тэкставым полі \"Шукаць\"."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:81
+#: ../data/org.mate.pluma.gschema.xml.in.h:85
 msgid "History for \"replace with\" entries"
 msgstr "Гісторыя запісаў у \"Замяніць на\""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:82
+#: ../data/org.mate.pluma.gschema.xml.in.h:86
 msgid "List of entries in \"replace with\" textbox."
 msgstr "Спіс запісаў у тэкставым полі \"Замяніць на\"."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:83
+#: ../data/org.mate.pluma.gschema.xml.in.h:87
 msgid "Active plugins"
 msgstr "Актыўныя плагіны"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:84
+#: ../data/org.mate.pluma.gschema.xml.in.h:88
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
@@ -549,22 +566,22 @@ msgstr[1] "Калі вы не захаваеце, змены за апошнія
 msgstr[2] "Калі вы не захаваеце, змены за апошнія %d гадзін будуць страчаны назаўсёды."
 msgstr[3] "Калі вы не захаваеце, змены за апошнія %d гадзін будуць страчаны назаўсёды."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "Змены ў дакуменце \"%s\" будуць назаўсёды страчаныя."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Захаваць змены ў дакуменце \"%s\" перад закрываннем?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
 msgid "Saving has been disabled by the system administrator."
 msgstr "Захоўванне забаронена сістэмным адміністратарам."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
@@ -573,7 +590,7 @@ msgstr[1] "Змены ў %d дакументах будуць назаўсёды
 msgstr[2] "Змены ў %d дакументах будуць назаўсёды страчаныя."
 msgstr[3] "Змены ў %d дакументах будуць назаўсёды страчаныя."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -584,15 +601,15 @@ msgstr[1] "Ёсць %d дакументы з незахаванымі змена
 msgstr[2] "Ёсць %d дакументаў з незахаванымі зменамі. Захаваць змены перад закрываннем?"
 msgstr[3] "Ёсць %d дакументаў з незахаванымі зменамі. Захаваць змены перад закрываннем?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
 msgid "Docum_ents with unsaved changes:"
 msgstr "_Дакументы з незахаванымі зменамі:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
 msgid "S_elect the documents you want to save:"
 msgstr "Вылучыце _дакументы, якія трэба захаваць:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "Калі не захаваць, усе змены страцяцца."
 
@@ -694,7 +711,7 @@ msgstr "Не па_дзяляць словы на два радкі"
 msgid "Line Numbers"
 msgstr "Нумары радкоў"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1958
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
 msgid "_Display line numbers"
 msgstr "Па_казваць нумары радкоў"
 
@@ -799,11 +816,11 @@ msgid "Plugins"
 msgstr "Плагіны"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
 msgid "Replace"
 msgstr "Замяніць"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
 msgid "Find"
 msgstr "Пошук"
 
@@ -1057,11 +1074,11 @@ msgid "Unsaved Document %d"
 msgstr "Незахаваны дакумент %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2184 ../pluma/pluma-window.c:2189
+#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
 msgid "Read-Only"
 msgstr "Толькі чытанне"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3566
+#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
 msgid "Documents"
 msgstr "Дакументы"
 
@@ -1219,7 +1236,7 @@ msgstr "Mac OS Classic"
 msgid "Windows"
 msgstr "Windows"
 
-#: ../pluma/pluma-help.c:81
+#: ../pluma/pluma-help.c:88
 msgid "There was an error displaying the help."
 msgstr "Узнікла памылка падчас спробы паказаць даведку."
 
@@ -1526,11 +1543,11 @@ msgstr "Жадаеце перачытаць файл?"
 msgid "_Reload"
 msgstr "_Перачытаць"
 
-#: ../pluma/pluma-panel.c:338 ../pluma/pluma-panel.c:513
+#: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
 msgstr "Пусты"
 
-#: ../pluma/pluma-panel.c:403
+#: ../pluma/pluma-panel.c:385
 msgid "Hide panel"
 msgstr "Схаваць панэль"
 
@@ -1584,12 +1601,12 @@ msgid "_Body:"
 msgstr "_Цела:"
 
 #: ../pluma/pluma-print-preferences.ui.h:16
-msgid "_Line numbers:"
-msgstr "Нумары _радкоў:"
-
-#: ../pluma/pluma-print-preferences.ui.h:17
 msgid "He_aders and footers:"
 msgstr "За_галоўкі і ніжнія палі:"
+
+#: ../pluma/pluma-print-preferences.ui.h:17
+msgid "_Line numbers:"
+msgstr "Нумары _радкоў:"
 
 #: ../pluma/pluma-print-preferences.ui.h:18
 msgid "_Restore Default Fonts"
@@ -1808,7 +1825,7 @@ msgstr "Стварыць новы дакумент"
 msgid "_Open..."
 msgstr "_Адкрыць..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1389
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
 msgid "Open a file"
 msgstr "Адкрыць файл"
 
@@ -2070,36 +2087,36 @@ msgid "/ on %s"
 msgstr "/ на %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1196
+#: ../pluma/pluma-view.c:1204
 msgid "_Wrap Around"
 msgstr "_Перанос наўкол"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1206
+#: ../pluma/pluma-view.c:1214
 msgid "Match _Entire Word Only"
 msgstr "Вынік супадае з пошукам _цалкам"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1216
+#: ../pluma/pluma-view.c:1224
 msgid "_Match Case"
 msgstr "Ад_розніваць вялікія/малыя літары"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1226
+#: ../pluma/pluma-view.c:1234
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr "_Пазнаваць кіравальныя камбінацыі (напр. \n)"
 
-#: ../pluma/pluma-view.c:1340
+#: ../pluma/pluma-view.c:1348
 msgid "String you want to search for"
 msgstr "Радок для пошуку:"
 
-#: ../pluma/pluma-view.c:1349
+#: ../pluma/pluma-view.c:1357
 msgid "Line you want to move the cursor to"
 msgstr "Радок, на які трэба перасунуць курсор"
 
-#: ../pluma/pluma-window.c:942
+#: ../pluma/pluma-window.c:991
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Выкарыстоўваць рэжым падсвятлення %s"
@@ -2107,7 +2124,7 @@ msgstr "Выкарыстоўваць рэжым падсвятлення %s"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:999 ../pluma/pluma-window.c:1889
+#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2115,43 +2132,43 @@ msgstr "Выкарыстоўваць рэжым падсвятлення %s"
 msgid "Plain Text"
 msgstr "Звычайны тэкст"
 
-#: ../pluma/pluma-window.c:1000
+#: ../pluma/pluma-window.c:1049
 msgid "Disable syntax highlighting"
 msgstr "Адключыць падсвятленне сінтаксісу"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1286
+#: ../pluma/pluma-window.c:1335
 #, c-format
 msgid "Open '%s'"
 msgstr "Адкрыць '%s'"
 
-#: ../pluma/pluma-window.c:1391
+#: ../pluma/pluma-window.c:1440
 msgid "Open a recently used file"
 msgstr "Адкрыць ранейшы файл"
 
-#: ../pluma/pluma-window.c:1397
+#: ../pluma/pluma-window.c:1446
 msgid "Open"
 msgstr "Адкрыць"
 
-#: ../pluma/pluma-window.c:1455
+#: ../pluma/pluma-window.c:1504
 msgid "Save"
 msgstr "Захаваць"
 
-#: ../pluma/pluma-window.c:1457
+#: ../pluma/pluma-window.c:1506
 msgid "Print"
 msgstr "Друкаваць"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1614
+#: ../pluma/pluma-window.c:1663
 #, c-format
 msgid "Activate '%s'"
 msgstr "Задзейнічаць '%s'"
 
-#: ../pluma/pluma-window.c:1867
+#: ../pluma/pluma-window.c:1916
 msgid "Use Spaces"
 msgstr "Выкарыстоўваць прагалы"
 
-#: ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1987
 msgid "Tab Width"
 msgstr "Шырыня табуляцыі"
 
@@ -2642,11 +2659,11 @@ msgstr "Сапраўды жадаеце назаўсёды выдаліць вы
 msgid "If you delete an item, it is permanently lost."
 msgstr "Калі вы выдаліце элемент, ён будзе страчаны назаўсёды."
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:1670
+#: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
 msgstr "(Пуста)"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3308
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3224
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2654,11 +2671,11 @@ msgstr ""
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3547
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3481
 msgid "file"
 msgstr "файл"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3571
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3505
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2666,11 +2683,11 @@ msgstr ""
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3600
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3534
 msgid "directory"
 msgstr "каталог"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3620
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3554
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"

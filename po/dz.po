@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 16:12+0300\n"
-"PO-Revision-Date: 2017-09-19 11:04+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2017-11-29 11:17+0100\n"
+"PO-Revision-Date: 2017-11-29 10:17+0000\n"
+"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
 "Language-Team: Dzongkha (http://www.transifex.com/mate/MATE/language/dz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,30 +84,38 @@ msgid ""
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
+msgid "Show save confirmation"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:15
+msgid "Show save confirmation if the files have changes."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:16
 msgid "Writable VFS schemes"
 msgstr "འབྲི་བཏུབ་པའི་ ཝི་ཨེཕ་ཨེསི་འཆར་ལས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:15
+#: ../data/org.mate.pluma.gschema.xml.in.h:17
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
 msgstr "འབྲི་ནིའི་ཐབས་ལམ་ནང་ ཝི་ཨེཕ་ཨེསི་འཆར་ལས་ ཇི་ཨི་ཌིཊི་གི་རྒྱབ་སྐྱོར་གྱི་ཐོ་ཡིག  'ཡིག་སྣོད' ལས་འཆར་དེ་ སྔོན་སྒྲིག་ཐོ་ལས་འབྲི་བཏུབ།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:16
+#: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:17
+#: ../data/org.mate.pluma.gschema.xml.in.h:19
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
 msgstr "ཇི་ཨེ་ཌིཊི་གིས་ འབད་བཤོལ་དང་ ལོག་འབད་ཚུགས་པའི་ བྱ་བའི་མང་མཐའ། ཚད་མེད་བྱ་བའི་དོན་ལུ་ \"-1\" ལག་ལེན་འཐབ།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:18
+#: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
 msgstr "གྱལ་རིམ་ལོག་མཚམས་ཀྱི་ ཐབས་ལམ།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:19
+#: ../data/org.mate.pluma.gschema.xml.in.h:21
 msgid ""
 "Specifies how to wrap long lines in the editing area. Use \"GTK_WRAP_NONE\" "
 "for no wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -116,77 +124,77 @@ msgid ""
 "mentioned here."
 msgstr "ཞུན་དག་བརྐྱབ་ནིའི་་མངའ་ཁོངས་ནང་ ཐིཆ་མཉམིངམ་རེཔ་འབད་ཐངས་ གསལ་བཀོད་འབདཝ་ཨིན། ཐིག་སྤུར་ནི་མེད་པའི་སྐབས་ \"GTK_WRAP_NONE\" ཟེར་མི་འདི་ ལག་ལེན་འཐབ། མིང་ཚིག་གི་ མཐའ་མཚམས་ལོག་མཚམས་འི་དོན་ལུ་ \"GTK_WRAP_WORD\" དང་ ཡིག་འབྲུ་ངོ་རྐྱང་གི་མཐའ་མཚམས་ལུ་ ལོག་མཚམས་དོན་ལུ་ \"GTK_WRAP_CHAR\" ཟེར་མི་ལག་ལེན་འཐབ།  བེ་ལུསི་ཚུ་ གནད་དོན་ཉེན་ཅན་ཨིནམ་ལས་ གོང་ལུ་བཀོད་དོ་བཟུམ་སྦེ་རང་ ངེས་ཏིག་འབྱུང་དགོཔ་ སེམས་ཁར་དྲན།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:20
+#: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
 msgstr "མཆོང་ལྡེའི་ཚད།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:21
+#: ../data/org.mate.pluma.gschema.xml.in.h:23
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr "མཆོང་ལྡེའི་ཡིག་འབྲུའི་ཚབ་ལུ་ བཀྲམ་སྟོན་འབད་དགོ་པའི་ བར་སྟོང་གྱངས་ཁ་ གསལ་བཀོད་འབདཝ་ཨིན།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:22
+#: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Insert spaces"
 msgstr "བར་སྟོང་བཙུགས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:23
+#: ../data/org.mate.pluma.gschema.xml.in.h:25
 msgid "Whether pluma should insert spaces instead of tabs."
 msgstr "ཇི་ཨེ་ཌིཊི་གིས་ མཆོང་ལྡེའི་ཚབ་ལུ་ བར་སྟོང་བཙུགས་དགོ་ག"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:24
+#: ../data/org.mate.pluma.gschema.xml.in.h:26
 msgid "Automatic indent"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:25
+#: ../data/org.mate.pluma.gschema.xml.in.h:27
 msgid "Whether pluma should enable automatic indentation."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:26
+#: ../data/org.mate.pluma.gschema.xml.in.h:28
 msgid "Display Line Numbers"
 msgstr "གྱལ་རིམ་ཨང་གྲངས་ བཀྲམ་སྟོན་འབད།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:27
+#: ../data/org.mate.pluma.gschema.xml.in.h:29
 msgid "Whether pluma should display line numbers in the editing area."
 msgstr "ཇི་ཨེ་ཌིཊི་གིས་ ཞུན་དག་བརྐྱབ་ནིའི་མངའ་ཁོངས་ནང་ གྱལ་རིམ་ཨང་ བཀྲམ་སྟོན་འབད་དགོ་ག"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:28
+#: ../data/org.mate.pluma.gschema.xml.in.h:30
 msgid "Highlight Current Line"
 msgstr "ད་ལྟོའི་གྱལ་རིམ་ལུ་ གཙོ་དམིགས་འབད།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:29
+#: ../data/org.mate.pluma.gschema.xml.in.h:31
 msgid "Whether pluma should highlight the current line."
 msgstr "ཇི་ཨེ་ཌིཊི་གིས་ ད་ལྟོའི་གྱལ་རིམ་ལུ་ གཙོ་དམིགས་འབད་དགོ་ག"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:30
+#: ../data/org.mate.pluma.gschema.xml.in.h:32
 msgid "Highlight Matching Bracket"
 msgstr "མཐུན་སྒྲིག་ཡོད་པའི་གུག་ཤད་ལུ་ གཙོ་དམིགས་འབད།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:31
+#: ../data/org.mate.pluma.gschema.xml.in.h:33
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:32
+#: ../data/org.mate.pluma.gschema.xml.in.h:34
 msgid "Display Right Margin"
 msgstr "གཡས་ཀྱི་ས་སྟོང་ བཀྲམ་སྟོན་འབད།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:33
+#: ../data/org.mate.pluma.gschema.xml.in.h:35
 msgid "Whether pluma should display the right margin in the editing area."
 msgstr "ཇི་ཨེ་ཌིཊི་གིས་ ཞུན་དག་བརྐྱབ་ནིའི་མངའ་ཁོངས་ནང་ གཡས་ཀྱི་ས་སྟོང་ བཀྲམ་སྟོན་འབད་དགོ་ག"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:34
+#: ../data/org.mate.pluma.gschema.xml.in.h:36
 msgid "Right Margin Position"
 msgstr "གཡས་ཀྱི་ས་སྟོང་གནས་ས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:35
+#: ../data/org.mate.pluma.gschema.xml.in.h:37
 msgid "Specifies the position of the right margin."
 msgstr "གཡས་ཀྱི་ས་སྟོང་གནས་ས་ གསལ་བཀོད་འབདཝ་ཨིན།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:36
+#: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Smart Home End"
 msgstr "སི་མཊི་ ཧོམ་ ཨེནཌི་ "
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:37
+#: ../data/org.mate.pluma.gschema.xml.in.h:39
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "\"DISABLED\" to always move at the start/end of the line, \"AFTER\" to move "
@@ -197,46 +205,46 @@ msgid ""
 "the text instead of the start/end of the line."
 msgstr "ཧོམ་ དང་ ཨེནཌི་ ལྡེ་མིག་ཚུ་ གཡེབ་པའི་སྐབས་ འོད་རྟགས་དེ་ ག་དེ་སྦེ་ སྤོ་བཤུད་འབདཝ་ཨིན་ན་ གསལ་བཀོད་འབདཝ་ཨིན། གྲལ་ཐིག་གི་ འགོ/མཇུག་ལུ་ སྤོ་བཤུད་འབད་ནིའི་དོན་ལུ་ ཨ་རྟག་རང་ \"DISABLED\" ་ལག་ལེན་འཐབ། ལྡེ་མིག་ཚུ་འགོ་དང་པ་ གཡེབ་པའི་སྐབས་ གྲལ་ཐིག་གི་ འགོ་/མཇུག་ལུ་ སྤོ་བཤུད་འབད་ནིའི་དོན་ལུ་  དང་ ལྡེ་མིག་ཚུ་ཐེངས་གཉིས་པ་གཡེབ་པའི་སྐབས་ གྲལ་ཐིག་གི་ འགོ/མཇུག་ལུ་ སྤོ་བཤུད་འབད་དེ་ བར་སྟོང་དཀརཔོ་ཚུ་  སྣང་མེད་བཞག་ནིའི་དོན་ལུ་ \"AFTER\" ལག་ལེན་འཐབ།  གྲལ་ཐིག་གི་ འགོ་/མཇུག་ལུ་ སྤོ་བཤུད་མ་འབད་བའི་ཧེ་མ་  ཚིག་ཡིག་གི་ འགོ/མཇུག་ལུ་ སྤོ་བཤུད་འབད་ནིའི་དོན་ལུ་  \"BEFORE\" ལག་ལེན་འཐབ་ནི་དང་  ཨ་རྟག་རང་ གྲལ་ཐིག་གི་ འགོ/མཇུག་ལུ་མེན་པ་ ཚིག་ཡིག་གི་ འགོ/ མཇུག་ལུ་ སྤོ་བཤུད་འབད་ནིའི་དོན་ལུ་  \"ALWAYS\" ལག་ལེན་འཐབ། "
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:38
+#: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
 msgstr "ཧེ་མའི་འོད་རྟགས་གནས་ས་སླར་གསོ་འབད།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:39
+#: ../data/org.mate.pluma.gschema.xml.in.h:41
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
 msgstr "ཇི་ཨི་ཌིཊི་གིས་ ཡིག་སྣོད་ཅིག་མངོན་གསལ་འབད་བའི་སྐབས་ལུ་ ཧེ་མའི་འོད་རྟགས་གནས་ས་དེ་ སླར་གསོ་འབད་དགོ་ག་མིན་དགོ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:40
+#: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Search Highlighting"
 msgstr "འཚོལ་ཞིབ་གཙོ་དམིགས་ ལྕོགས་ཅན་བཟོ།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:41
+#: ../data/org.mate.pluma.gschema.xml.in.h:43
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
 msgstr "ཇི་ཨི་ཌིཊི་གིས་ འཚོལ་ཞིབ་འབད་ཡོད་པའི་ ཚིག་ཡིག་གི་འབྱུང་བ་ཆ་མཉམ་ གཙོ་དམིགས་འབད་དགོ་ག་མིན་དགོ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:42
+#: ../data/org.mate.pluma.gschema.xml.in.h:44
 msgid "Enable Syntax Highlighting"
 msgstr "ཚིག་སྦྱོར་གཙོ་དམིགས་འབད་ནི་ ལྕོགས་ཅན་བཟོ།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:43
+#: ../data/org.mate.pluma.gschema.xml.in.h:45
 msgid "Whether pluma should enable syntax highlighting."
 msgstr "ཇི་ཨེ་ཌིཊི་གིས་ ཚིག་སྦྱོར་གཙོ་དམིགས་ ལྕོགས་ཅན་བཟོ་དགོ་ག"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:44
+#: ../data/org.mate.pluma.gschema.xml.in.h:46
 msgid "Toolbar is Visible"
 msgstr "ལག་ཆས་ཕྲ་རིང་མཐོང་ཚུགས་པས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:45
+#: ../data/org.mate.pluma.gschema.xml.in.h:47
 msgid "Whether the toolbar should be visible in editing windows."
 msgstr "ཞུན་དག་སྒོ་སྒྲིག་ནང་ ལག་ཆས་ཕྲ་རིང་ མཐོང་ཚུགསཔ་སྦེ་ དགོཔ་ཨིན་ན། "
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:46
+#: ../data/org.mate.pluma.gschema.xml.in.h:48
 msgid "Toolbar Buttons Style"
 msgstr "ལག་ཆས་ཕྲ་རིང་ ཨེབ་རྟའི་བཟོ་རྣམ།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:47
+#: ../data/org.mate.pluma.gschema.xml.in.h:49
 msgid ""
 "Style for the toolbar buttons. Possible values are \"PLUMA_TOOLBAR_SYSTEM\" "
 "to use the system's default style, \"PLUMA_TOOLBAR_ICONS\" to display icons "
@@ -246,66 +254,75 @@ msgid ""
 "as mentioned here."
 msgstr "ལག་ཆས་ཕྲ་རིང་གི་བཟོ་རྣམ། རིམ་ལུགས་ཀྱི་སྔོན་སྒྲིག་བཟོ་རྣམ་ ལག་ལེན་གྱི་དོན་ལུ་ སྲིད་པའི་བེ་ལུསི་ཚུ་ \"PLUMA_TOOLBAR_SYSTEM\"ཨིན།  ངོས་དཔར་བཀྲམ་སྟོན་གྱི་དོན་ལུ་ \"PLUMA_TOOLBAR_ICONS\"ཨིན། ངོས་དཔར་དང་ ཚིག་ཡིག་གཉིས་ཆ་རང་ བཀྲམ་སྟོན་འབད་ནིའི་དོན་ལུ་ \"PLUMA_TOOLBAR_ICONS_AND_TEXT\"ཨིན། དེ་ལས་ ངོས་དཔར་གྱི་ཟུར་ཁར་ གཙོ་རིམ་ཅན་གྱི་ ཚིག་ཡིག་བཀྲམ་སྟོན་འབད་ནི་ལུ་ \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\"ཨིན། བེ་ལུསི་ཚུ་ གནད་དོན་ཉེན་ཅན་ཨིནམ་ལས་ གོང་ལུ་བཀོད་དོ་བཟུམ་སྦེ་རང་ ངེས་ཏིག་འབྱུང་བཅུག་དགོཔ་ སེམས་ཁར་དྲན།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:48
+#: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
 msgstr "གནས་ཚད་ཕྲ་རིང་ མཐོང་ཚུགས་པས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:49
+#: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "ཞུན་དག་བརྐྱབ་ནིའི་ སྒོ་སྒྲིག་ཚུ་གི་མཇུག་ལུ་ གནས་ཚད་ཕྲ་རིང་དེ་ མཐོང་ཚུགསཔ་སྦེ་ དགོཔ་ཨིན་ན།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:50
+#: ../data/org.mate.pluma.gschema.xml.in.h:52
 msgid "Side Pane is Visible"
 msgstr "ཟུར་ཁའི་པེན་མཐོང་ཚུགས་པས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:51
+#: ../data/org.mate.pluma.gschema.xml.in.h:53
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:52
+#: ../data/org.mate.pluma.gschema.xml.in.h:54
+msgid "Show tabs with side pane"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:55
+msgid ""
+"If false, pluma doesn't show tabs in the notebook with the side pane active."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:56
 msgid "Bottom Panel is Visible"
 msgstr "མཇུག་གི་པེ་ནཱལ་མཐོང་ཚུགས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:53
+#: ../data/org.mate.pluma.gschema.xml.in.h:57
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
 msgstr "ཞུན་དག་སྒོ་སྒྲིག་ཚུ་གི་མཇུག་ལུ་ མཇུག་གི་པེ་ནཱལ་དེ་ མཐོང་ཚུགསཔ་སྦེ་ དགོཔ་ཨིན་ན་མེན།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:54
+#: ../data/org.mate.pluma.gschema.xml.in.h:58
 msgid "Maximum Recent Files"
 msgstr "འཕྲལ་གྱི་ཡིག་སྣོད་ཚུ་གི་མང་མཐའ།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:55
+#: ../data/org.mate.pluma.gschema.xml.in.h:59
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
 msgstr "\"Recent Files\" ཡིག་སྣོད་ཡན་ལག་ནང་ བཀྲམ་སྟོན་གྱི་དོན་ལུ་ འཕྲལ་ཁམས་ཅིག་ཁར་ ཁ་ཕྱེ་ཡོད་པའི་ ཡིག་ཆའི་གྲངས་ཀྱི་མང་མཐའ་ གསལ་བཀོད་འབདཝ་ཨིན།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:56
+#: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
 msgstr "གཙོ་དམིགས་འབད་མི་ ཚིག་སྦྱོར་དཔར་སྐྲུན་འབད།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:57
+#: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
 msgstr "ཇི་ཨེ་ཌིཊི་གིས་ ཡིག་ཆ་དཔར་བསྐྲུན་སྐབས་ ཚིག་སྦྱོར་གཙོ་དམིགས་འབད་དེ་ དཔར་བསྐྲུན་འབད་དགོ་ག"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:58
+#: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Print Header"
 msgstr "མགོ་ཡིག་དཔར་སྐྲུན་འབད།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:59
+#: ../data/org.mate.pluma.gschema.xml.in.h:63
 msgid ""
 "Whether pluma should include a document header when printing documents."
 msgstr "ཇི་ཨེ་ཌིཊི་གིས་ ཡིག་ཆ་དཔར་བསྐྲུན་སྐབས་ ཡིག་ཆའི་མགོ་ཡིག་ གྲངས་སུ་བཙུགས་དགོ་ག"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:60
+#: ../data/org.mate.pluma.gschema.xml.in.h:64
 msgid "Printing Line Wrapping Mode"
 msgstr "གྱལ་རིམ་ལོག་མཚམས་ཐབས་ལམ་ དཔར་སྐྲུན་འབད་དོ།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:61
+#: ../data/org.mate.pluma.gschema.xml.in.h:65
 msgid ""
 "Specifies how to wrap long lines for printing. Use \"GTK_WRAP_NONE\" for no "
 "wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -314,113 +331,113 @@ msgid ""
 "mentioned here."
 msgstr "དཔར་བསྐྲུན་གྱི་དོན་ལུ་ གྱལ་རིམ་རིངམ་ཚུ་ སྤུར་ཐངས་གསལ་བཀོད་འབདཝ་ཨིན། སྤུར་ནི་མེད་པའི་སྐབས་ \"GTK_WRAP_NONE\"ཟེར་མི་འདི་ ལག་ལེན་འཐབ། མིང་ཚིག་གི་ མཐའ་མཚམས་སྤུར་ནིའི་དོན་ལུ་ \"GTK_WRAP_WORD\"དང་ ཡིག་འབྲུ་ངོ་རྐྱང་གི་ མཐའ་མཚམས་ལུ་ སྤུར་ནིའི་དོན་ལུ་ \"GTK_WRAP_CHAR\" ཟེར་མི་ལག་ལེན་འཐབ། དྲན་དགོཔ་འདི་ བེ་ལུསི་འདི་ཚུ་ གནད་དོན་ཉེན་ཅན་ཨིནམ་ལས་ གོང་ལུ་བཀོད་དོ་བཟུམ་སྦེ་རང་ ངེས་ཏིག་འབྱུང་དགོཔ་ སེམས་ཁར་དྲན།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:62
+#: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
 msgstr "གྱལ་རིམ་ཨང་དཔར་བསྐྲུན་འབད།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:63
+#: ../data/org.mate.pluma.gschema.xml.in.h:67
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
 msgstr "བེ་ལུ་འདི་ ༠ ཨིན་པ་ཅིན་ ཡིག་ཆ་དཔར་བསྐྲུན་འབདཝ་ད་ གྱལ་རིམ་ཨང་མི་བཙུགས་ དེ་མིན་ཇི་ཨེ་ཌིཊི་གིས་ དེ་བཟུམ་མའི་ གྱལ་རིམ་རེ་རེ་བཞིན་དུ་ལུ་ གྱལ་རིམ་ཨང་རེ་ དཔར་བསྐྲུན་འབད་འོང༌།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:64
+#: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:65
+#: ../data/org.mate.pluma.gschema.xml.in.h:69
 msgid "Body Font for Printing"
 msgstr "དཔར་བསྐྲུན་དོན་ལུ་ མ་གཟུགས་ཡིག་གཟུགས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:66
+#: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
 msgstr "ཡིག་ཆ་དཔར་སྐྲུན་སྐབས་ ཡིག་ཆའི་མ་གཟུགས་ཀྱི་དོན་ལུ་ ལག་ལེན་འཐབ་ནིའི་ ཡིག་གཟུགས་གསལ་བཀོད་འབདཝ་ཨིན།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:67
+#: ../data/org.mate.pluma.gschema.xml.in.h:71
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:68
+#: ../data/org.mate.pluma.gschema.xml.in.h:72
 msgid "Header Font for Printing"
 msgstr "དཔར་བསྐྲུན་དོན་ལུ་ མགོ་ཡིག་གི་ཡིག་གཟུགས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:69
+#: ../data/org.mate.pluma.gschema.xml.in.h:73
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
 msgstr "ཡིག་ཆ་དཔར་བསྐྲུན་སྐབས་ ཤོག་ལེབ་མགོ་ཡིག་དོན་ལུ་ ལག་ལེན་འཐབ་ནིའི་ ཡིག་གཟུགས་གསལ་བཀོད་འབདཝ་ཨིན། འདི་\"Print Header\" ཟེར་མི་གདམ་ཁ་འདི་ ཊརན་ཨཱོན་འབད་བ་ཅིན་རྐྱངམ་གཅིག་ ནུས་པ་འཐོབ་འོང་།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:70
+#: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:71
+#: ../data/org.mate.pluma.gschema.xml.in.h:75
 msgid "Line Number Font for Printing"
 msgstr "དཔར་བསྐྲུན་དོན་ལུ་ གྱལ་རིམ་ཨང་གི་ཡིག་གཟུགས།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:72
+#: ../data/org.mate.pluma.gschema.xml.in.h:76
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
 msgstr "དཔར་བསྐྲུན་གྱི་སྐབས་ལུ་ གྱལ་རིམ་ཨང་གི་དོན་ལུ་ ལག་ལེན་འཐབ་ནིའི་ ཡིག་གཟུགས་གསལ་བཀོད་འབདཝ་ཨིན། འདི་ \"Print Line Numbers\" ཟེར་མི་གདམ་ཁ་འདི་ ཀླད་ཀོར་མེན་པ་ཅིན་རྐྱངམ་གཅིག་ ནུས་པ་འཐོབ་འོང་།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:73
+#: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:74
+#: ../data/org.mate.pluma.gschema.xml.in.h:78
 msgid "Automatically Detected Encodings"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:75
+#: ../data/org.mate.pluma.gschema.xml.in.h:79
 msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:76
+#: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:77
+#: ../data/org.mate.pluma.gschema.xml.in.h:81
 msgid "Encodings shown in menu"
 msgstr "དཀར་ཆག་ནང་སྟོན་མི་ ཨིན་ཀོ་ཌིངསི།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:78
+#: ../data/org.mate.pluma.gschema.xml.in.h:82
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:79
+#: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:80
+#: ../data/org.mate.pluma.gschema.xml.in.h:84
 msgid "List of entries in \"search for\" textbox."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:81
+#: ../data/org.mate.pluma.gschema.xml.in.h:85
 msgid "History for \"replace with\" entries"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:82
+#: ../data/org.mate.pluma.gschema.xml.in.h:86
 msgid "List of entries in \"replace with\" textbox."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:83
+#: ../data/org.mate.pluma.gschema.xml.in.h:87
 msgid "Active plugins"
 msgstr "ཤུགས་ལྡན་པལག་ཨིནསི།"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:84
+#: ../data/org.mate.pluma.gschema.xml.in.h:88
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
@@ -532,28 +549,28 @@ msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "་ ཡིག་ཆ་\"%s\" ལུ་བསྒྱུར་བཅོས་འབད་མི་ཚུ་ རྟག་བརྟན་སྦེ་ བརླག་སྟོར་ཞུགས་འོང༌། "
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
 msgid "Saving has been disabled by the system administrator."
 msgstr "བསྲུང་བཞག་འབད་ནི་དེ་ རིམ་ལུགས་བདག་སྐྱོང་པ་གིས་ ལྕོགས་མིན་བཟོ་ནུག།"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -561,15 +578,15 @@ msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
 msgid "Docum_ents with unsaved changes:"
 msgstr "བསྒྱུར་བཅོས་ཚུ་ མ་བསྲུངས་པའི་ཡིག་ཆ་ཚུ།(_e)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
 msgid "S_elect the documents you want to save:"
 msgstr "ཁྱོད་ཀྱིས་སྲུང་བཞག་འབད་དགོ་མི་ ཡིག་ཆ་ཚུ་ སེལ་འཐུ་འབད། (_e)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "ཁྱོད་ཀྱིས་སྲུང་བཞག་མ་འབད་བ་ཅིན་ བསྒྱུར་ཆ་མཉམ་ར་ རྟག་བརྟན་སྦེ་ བརླག་སྟོར་ཞུགས་འོང་།"
 
@@ -671,7 +688,7 @@ msgstr "མིང་ཚིག་ཚུ་ གྱལ་རིམ་གཉིས�
 msgid "Line Numbers"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1958
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
 msgid "_Display line numbers"
 msgstr "གྱལ་རིམ་ཨང་ཨང་ བཀྲམ་སྟོན་འབད། (_D)"
 
@@ -776,11 +793,11 @@ msgid "Plugins"
 msgstr "པལག་ཨིནསི།"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
 msgid "Replace"
 msgstr "ཚབ་བཙུགས།"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
 msgid "Find"
 msgstr "འཚོལ།"
 
@@ -1013,11 +1030,11 @@ msgid "Unsaved Document %d"
 msgstr "སྲུང་བཞག་མ་འབད་བའི་ཡིག་ཆ་%d།"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2184 ../pluma/pluma-window.c:2189
+#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
 msgid "Read-Only"
 msgstr ""
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3566
+#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
 msgid "Documents"
 msgstr "ཡིག་ཆ་ཚུ།"
 
@@ -1175,7 +1192,7 @@ msgstr ""
 msgid "Windows"
 msgstr ""
 
-#: ../pluma/pluma-help.c:81
+#: ../pluma/pluma-help.c:88
 msgid "There was an error displaying the help."
 msgstr ""
 
@@ -1482,11 +1499,11 @@ msgstr "ཁྱོད་ཀྱིས་ཡིག་སྣོད་འདི་ �
 msgid "_Reload"
 msgstr "ཡང་བསྐྱར་མངོན་གསལ་(_R)"
 
-#: ../pluma/pluma-panel.c:338 ../pluma/pluma-panel.c:513
+#: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
 msgstr "སྟོངམ་བཏོན།"
 
-#: ../pluma/pluma-panel.c:403
+#: ../pluma/pluma-panel.c:385
 msgid "Hide panel"
 msgstr "པེ་ནཱལ་སྦ་གཞག"
 
@@ -1540,12 +1557,12 @@ msgid "_Body:"
 msgstr "མ་གཟུགས་: (_B)"
 
 #: ../pluma/pluma-print-preferences.ui.h:16
-msgid "_Line numbers:"
-msgstr "གྱལ་རིམ་ཨང༌ཚུ་:།(_L)"
-
-#: ../pluma/pluma-print-preferences.ui.h:17
 msgid "He_aders and footers:"
 msgstr "མགོ་ཡིག་དང་ མཇུག་ཡིག་: (_a)"
+
+#: ../pluma/pluma-print-preferences.ui.h:17
+msgid "_Line numbers:"
+msgstr "གྱལ་རིམ་ཨང༌ཚུ་:།(_L)"
 
 #: ../pluma/pluma-print-preferences.ui.h:18
 msgid "_Restore Default Fonts"
@@ -1761,7 +1778,7 @@ msgstr "ཡིག་ཆ་གསརཔ་ཅིག་ གསར་བསྐྲ�
 msgid "_Open..."
 msgstr "ཁ་ཕྱེ་་…(_O)"
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1389
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
 msgid "Open a file"
 msgstr "ཡིག་སྣོད་ཅིག་ཁ་ཕྱེ།"
 
@@ -2023,36 +2040,36 @@ msgid "/ on %s"
 msgstr ""
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1196
+#: ../pluma/pluma-view.c:1204
 msgid "_Wrap Around"
 msgstr "མཐའ་བསྐོར་ཏེ་ལོག (_W)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1206
+#: ../pluma/pluma-view.c:1214
 msgid "Match _Entire Word Only"
 msgstr "མིང་ཚིག་ཧྲིལ་བུ་རྐྱངམ་ མཐུན་སྒྲིག་འབད། (_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1216
+#: ../pluma/pluma-view.c:1224
 msgid "_Match Case"
 msgstr "ཡི་གུ་མཐུན་སྒྲིག་འབད། (_M)"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1226
+#: ../pluma/pluma-view.c:1234
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1340
+#: ../pluma/pluma-view.c:1348
 msgid "String you want to search for"
 msgstr "ཁྱོད་ཀྱིས་འཚོལ་ཞིབ་འབད་དགོ་མནོ་མི་ཡིག་རྒྱུན།"
 
-#: ../pluma/pluma-view.c:1349
+#: ../pluma/pluma-view.c:1357
 msgid "Line you want to move the cursor to"
 msgstr "ཁྱོད་ཀྱིས་འོད་རྟགས་སྤོ་བཤུད་འབད་དགོ་མནོ་སའི་གྲལ་ཐིག"
 
-#: ../pluma/pluma-window.c:942
+#: ../pluma/pluma-window.c:991
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "གཙོ་དམིགས་%s ཐབས་ལམ་ལག་ལེན་འཐབ།"
@@ -2060,7 +2077,7 @@ msgstr "གཙོ་དམིགས་%s ཐབས་ལམ་ལག་ལེན
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:999 ../pluma/pluma-window.c:1889
+#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2068,43 +2085,43 @@ msgstr "གཙོ་དམིགས་%s ཐབས་ལམ་ལག་ལེན
 msgid "Plain Text"
 msgstr ""
 
-#: ../pluma/pluma-window.c:1000
+#: ../pluma/pluma-window.c:1049
 msgid "Disable syntax highlighting"
 msgstr "ཚིག་སྦྱོར་གཙོ་དམིགས་འབད་ནི་ ལྕོགས་མེད་བཟོ། (_E)"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1286
+#: ../pluma/pluma-window.c:1335
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s'ཁ་ཕྱེ།"
 
-#: ../pluma/pluma-window.c:1391
+#: ../pluma/pluma-window.c:1440
 msgid "Open a recently used file"
 msgstr "འཕྲལ་ཁམས་ལག་ལེན་འཐབ་མི་ ཡིག་སྣོད་ཅིག་ཁ་ཕྱེ།"
 
-#: ../pluma/pluma-window.c:1397
+#: ../pluma/pluma-window.c:1446
 msgid "Open"
 msgstr "ཁ་ཕྱེ"
 
-#: ../pluma/pluma-window.c:1455
+#: ../pluma/pluma-window.c:1504
 msgid "Save"
 msgstr "སྲུངས"
 
-#: ../pluma/pluma-window.c:1457
+#: ../pluma/pluma-window.c:1506
 msgid "Print"
 msgstr ""
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1614
+#: ../pluma/pluma-window.c:1663
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' ཤུགས་ལྡན་བཟོ་"
 
-#: ../pluma/pluma-window.c:1867
+#: ../pluma/pluma-window.c:1916
 msgid "Use Spaces"
 msgstr ""
 
-#: ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1987
 msgid "Tab Width"
 msgstr ""
 
@@ -2595,11 +2612,11 @@ msgstr "ཁྱོད་ཀྱིས་ སེལ་འཐུ་འབད་ཡ�
 msgid "If you delete an item, it is permanently lost."
 msgstr "ཁྱོད་ཀྱིས་རྣམ་གྲངས་ཅིག་ བཏོན་གཏང་པ་ཅིན་  འདི་རྟག་བརྟན་སྦེ་ བརླག་སྟོར་ཞུགས་འོང་།"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:1670
+#: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
 msgstr "(སྟོངམ་)"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3308
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3224
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2607,11 +2624,11 @@ msgstr ""
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3547
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3481
 msgid "file"
 msgstr "ཡིག་སྣོད་"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3571
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3505
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2619,11 +2636,11 @@ msgstr "ཡིག་སྣོད་གསརཔ་དེ་ ད་ལྟོ་�
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3600
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3534
 msgid "directory"
 msgstr "སྣོད་ཐོ་"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3620
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3554
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"

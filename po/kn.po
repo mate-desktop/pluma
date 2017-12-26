@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 16:12+0300\n"
-"PO-Revision-Date: 2017-09-19 11:04+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2017-11-29 11:17+0100\n"
+"PO-Revision-Date: 2017-11-29 10:17+0000\n"
+"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
 "Language-Team: Kannada (http://www.transifex.com/mate/MATE/language/kn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,30 +85,38 @@ msgid ""
 msgstr "ಮಾರ್ಪಡಿಸಲಾದ ಕಡತಗಳನ್ನು pluma ಇಷ್ಟು ನಿಮಿಷಗಳ ನಂತರ ತಾನೆ ತಾನಾಗಿ ಉಳಿಸುತ್ತದೆ. \"ಸ್ವಯಂ ಉಳಿಸು\" ಆಯ್ಕೆಯನ್ನು ಆನ್ ಮಾಡಲಾಗಿದ್ದರೆ ಮಾತ್ರ ಇದು ಪರಿಣಾಮಕಾರಿಯಾಗುತ್ತದೆ."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
+msgid "Show save confirmation"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:15
+msgid "Show save confirmation if the files have changes."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:16
 msgid "Writable VFS schemes"
 msgstr "ಬರೆಯಬಹುದಾದ VFS ಸ್ಕೀಮ್‍ಗಳು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:15
+#: ../data/org.mate.pluma.gschema.xml.in.h:17
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
 msgstr "pluma ಬರೆಯಬಹುದಾದ ಕ್ರಮದಲ್ಲಿ ಬೆಂಬಲಿಸುವಂತಹ VFS ಸ್ಕೀಮ್‍ಗಳ ಪಟ್ಟಿ. ಪೂರ್ವನಿಯೋಜಿತವಾಗಿ 'ಕಡತ' ಸ್ಕೀಮ್ ಬರೆಯಬಹುದಾದ ಕ್ರಮದಲ್ಲಿರುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:16
+#: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
 msgstr "ಗರಿಷ್ಟ ಸಂಖ್ಯೆಯ 'ಹಿಂದಿನಂತೆ ಮಾಡು' ಕ್ರಿಯೆಗಳು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:17
+#: ../data/org.mate.pluma.gschema.xml.in.h:19
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
 msgstr "pluma‍ಗೆ ಸಾಧ್ಯವಿರುವ ಹಿಂದಿನಂತೆ ಮಾಡು ಅಥವ ಪುನಃ ಮಾಡು ಕಾರ್ಯಗಳ ಗರಿಷ್ಟ ಸಂಖ್ಯೆ. ಅಪರಿಮಿತ ಸಂಖ್ಯೆಯ ಕಾರ್ಯಗಳಿಗಾಗಿ  \"-1\" ಅನ್ನು ಬಳಸಿ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:18
+#: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
 msgstr "ಸಾಲು ಆವರಿಸುವ(ರ್ಯಾಪಿಂಗ್) ಕ್ರಮ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:19
+#: ../data/org.mate.pluma.gschema.xml.in.h:21
 msgid ""
 "Specifies how to wrap long lines in the editing area. Use \"GTK_WRAP_NONE\" "
 "for no wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -117,77 +125,77 @@ msgid ""
 "mentioned here."
 msgstr "ಉದ್ದದ ಸಾಲುಗಳನ್ನು ಸಂಪಾದಕೀಯ ಕ್ಷೇತ್ರದಲ್ಲಿ ಹೇಗೆ ಆವರಿಕೆ ಮಾಡುವುದು ಎಂದು ಸೂಚಿಸುತ್ತದೆ. ಯಾವುದೆ ಆವರಿಕೆ ಮಾಡದಿರಲು \"GTK_WRAP_NONE\" ಅನ್ನು, ಪದಗಳ ಮೇರೆಗಳಲ್ಲಿ ಆವರಿಕೆ ಮಾಡಲು \"GTK_WRAP_WORD\" ಅನ್ನು, ಹಾಗು ಪ್ರತ್ಯೇಕ ಅಕ್ಷರಗಳ ಮೇರೆಗಳಲ್ಲಿ ಆವರಿಕೆ ಮಾಡಲು \"GTK_WRAP_CHAR\" ಅನ್ನು ಬಳಸಬಹುದಾಗಿದೆ. ಈ ಮೌಲ್ಯಗಳು ಕೇಸ್ ಸಂವೇದಿಯಾಗಿದ್ದು, ಇಲ್ಲಿ ತೋರಿಸಿದಂತೆಯೆ ನಮೂದಿತಗೊಳ್ಳುವಂತೆ ಎಚ್ಚರಿಕೆವಹಿಸಿ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:20
+#: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
 msgstr "ಟ್ಯಾಬ್ ಗಾತ್ರ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:21
+#: ../data/org.mate.pluma.gschema.xml.in.h:23
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr "ಟ್ಯಾಬ್ ಅಕ್ಷರಗಳ ಬದಲು ತೋರಿಸಬೇಕಾದ ಗರಿಷ್ಟ ಸಂಖ್ಯೆಯ ಖಾಲಿಜಾಗಗಳನ್ನು ಸೂಚಿಸುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:22
+#: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Insert spaces"
 msgstr "ಜಾಗಗಳನ್ನು(spaces) ಸೇರಿಸು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:23
+#: ../data/org.mate.pluma.gschema.xml.in.h:25
 msgid "Whether pluma should insert spaces instead of tabs."
 msgstr "pluma ಟ್ಯಾಬುಗಳ ಬದಲಿಗೆ ಖಾಲಿಜಾಗಗಳನ್ನು ಸೇರಿಸಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:24
+#: ../data/org.mate.pluma.gschema.xml.in.h:26
 msgid "Automatic indent"
 msgstr "ಸ್ವಯಂಚಾಲಿತ ಇಂಡೆಂಟ್"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:25
+#: ../data/org.mate.pluma.gschema.xml.in.h:27
 msgid "Whether pluma should enable automatic indentation."
 msgstr "pluma ಸ್ವಯಂಚಾಲಿತ ಇಂಡೆಂಟೇಶನನ್ನು ಶಕ್ತಗೊಳಿಸಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:26
+#: ../data/org.mate.pluma.gschema.xml.in.h:28
 msgid "Display Line Numbers"
 msgstr "ಸಾಲಿನ ಸಂಖ್ಯೆಗಳನ್ನು ತೋರಿಸು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:27
+#: ../data/org.mate.pluma.gschema.xml.in.h:29
 msgid "Whether pluma should display line numbers in the editing area."
 msgstr "ಸಂಪಾದಿಸುವ ಜಾಗದಲ್ಲಿ ಸಾಲಿನ ಸಂಖ್ಯೆಗಳನ್ನ್ನು pluma ತೋರಿಸಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:28
+#: ../data/org.mate.pluma.gschema.xml.in.h:30
 msgid "Highlight Current Line"
 msgstr "ಪ್ರಸ್ತುತ ಸಾಲನ್ನು ಹೈಲೈಟ್ ಮಾಡು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:29
+#: ../data/org.mate.pluma.gschema.xml.in.h:31
 msgid "Whether pluma should highlight the current line."
 msgstr "pluma ಪ್ರಸ್ತುತ ಸಾಲನ್ನು ಹೈಲೈಟ್ ಮಾಡಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:30
+#: ../data/org.mate.pluma.gschema.xml.in.h:32
 msgid "Highlight Matching Bracket"
 msgstr "ಹೊಂದುವ ಆವರಣ ಚಿಹ್ನೆಯನ್ನು ಹೈಲೈಟ್ ಮಾಡು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:31
+#: ../data/org.mate.pluma.gschema.xml.in.h:33
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:32
+#: ../data/org.mate.pluma.gschema.xml.in.h:34
 msgid "Display Right Margin"
 msgstr "ಬಲ ಅಂಚನ್ನು ತೋರಿಸು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:33
+#: ../data/org.mate.pluma.gschema.xml.in.h:35
 msgid "Whether pluma should display the right margin in the editing area."
 msgstr "ಸಂಪಾದಿಸುವ ಜಾಗದಲ್ಲಿ ಬಲ ಅಂಚನ್ನು pluma ತೋರಿಸಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:34
+#: ../data/org.mate.pluma.gschema.xml.in.h:36
 msgid "Right Margin Position"
 msgstr "ಬಲಭಾಗದ ಅಂಚಿನ ಸ್ಥಳ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:35
+#: ../data/org.mate.pluma.gschema.xml.in.h:37
 msgid "Specifies the position of the right margin."
 msgstr "ಬಲಭಾಗದ ಅಂಚಿನ ಸ್ಥಳವನ್ನು ಸೂಚಿಸುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:36
+#: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Smart Home End"
 msgstr "ಸ್ಮಾರ್ಟ್ ಹೋಮ್ ತುದಿ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:37
+#: ../data/org.mate.pluma.gschema.xml.in.h:39
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "\"DISABLED\" to always move at the start/end of the line, \"AFTER\" to move "
@@ -198,46 +206,46 @@ msgid ""
 "the text instead of the start/end of the line."
 msgstr "HOME ಹಾಗು END ಕೀಲಿಗಳನ್ನು ಒತ್ತಿದಾಗ ತೆರೆಸೂಚಕವು ಹೇಗೆ ಚಲಿಸಬೇಕು ಎಂದು ಸೂಚಿಸುತ್ತದೆ. ಪ್ರತಿಬಾರಿಯೂ ಸಾಲಿನ ಆರಂಭಕ್ಕೆ/ತುದಿಗೆ ತೆರಳಲು \"ಅಶಕ್ತಗೊಂಡ\" ಅನ್ನು, ಪ್ರಥಮ ಬಾರಿ ಕೀಲಿಗಳನ್ನು ಒತ್ತಿದಾಗ ಸಾಲಿನ ಆರಂಭಕ್ಕೆ/ತುದಿಗೆ ತೆರಳಲು \"ನಂತರ\" ಅನ್ನು ಹಾಗು ಎರಡನೆ ಬಾರಿ ಒತ್ತಿದಾಗ ಖಾಲಿಜಾಗಗಳನ್ನು ಉಪೇಕ್ಷಿಸಿ ಸಾಲಿನ ಆರಂಭಕ್ಕೆ/ತುದಿಗೆ ತೆರಳಲು,ಸಾಲಿನ ಆರಂಭಕ್ಕೆ/ತುದಿಗೆ ತಲುಪುವ ಮೊದಲು ಪಠ್ಯದ ಆರಂಭಕ್ಕೆ/ತುದಿಗೆ ತೆರಳಲು \"ಮೊದಲು\" ಅನ್ನು ಹಾಗೂ ಪ್ರತಿಬಾರಿಯೂ ಸಾಲಿನ ಆರಂಭಕ್ಕೆ/ತುದಿಗೆ ತಲುಪುವ ಬದಲು ಪಠ್ಯದ ಆರಂಭಕ್ಕೆ/ತುದಿಗೆ ತೆರಳಲು \"ಪ್ರತಿಬಾರಿ\" ಅನ್ನು ಬಳಸಿ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:38
+#: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
 msgstr "ತೆರೆಸೂಚಕವನ್ನು ಹಿಂದಿನ ಸ್ಥಳಕ್ಕೆ ಮರಳಿಸು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:39
+#: ../data/org.mate.pluma.gschema.xml.in.h:41
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
 msgstr "ಒಂದು ಕಡತವನ್ನು ಲೋಡ್‌ ಮಾಡಿದಾಗ ತೆರೆಸೂಚಕವನ್ನು ಅದರ ಮುಂಚಿನ ಸ್ಥಳಕ್ಕೆ ಮರಳಿಸಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:40
+#: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Search Highlighting"
 msgstr "ಹುಡುಕು ಹೈಲೈಟಿಂಗನ್ನು ಶಕ್ತಗೊಳಿಸು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:41
+#: ../data/org.mate.pluma.gschema.xml.in.h:43
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
 msgstr "pluma ಹುಡುಕಲಾದ ಪಠ್ಯಗಳನ್ನು ಎಲ್ಲಾ ಜಾಗದಲ್ಲೂ ಹೈಲೈಟ್ ಮಾಡಲು ಬಯಸುತ್ತೀರೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:42
+#: ../data/org.mate.pluma.gschema.xml.in.h:44
 msgid "Enable Syntax Highlighting"
 msgstr "ವಾಕ್ಯ ಹೈಲೈಟಿಂಗನ್ನು ಶಕ್ತಗೊಳಿಸು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:43
+#: ../data/org.mate.pluma.gschema.xml.in.h:45
 msgid "Whether pluma should enable syntax highlighting."
 msgstr "pluma ವಾಕ್ಯ ಹೈಲೈಟಿಂಗ್‍ನ್ನು ಇಂಡೆಂಟೇಶನನ್ನು ಶಕ್ತಗೊಳಿಸಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:44
+#: ../data/org.mate.pluma.gschema.xml.in.h:46
 msgid "Toolbar is Visible"
 msgstr "ಉಪಕರಣ ಪಟ್ಟಿ ಗೋಚರಿಸುತ್ತಿದೆ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:45
+#: ../data/org.mate.pluma.gschema.xml.in.h:47
 msgid "Whether the toolbar should be visible in editing windows."
 msgstr "ಸಂಪಾದಿಸುವ ವಿಂಡೋದ ಉಪಕರಣ ಪಟ್ಟಿಯು ಕಾಣಿಸುತ್ತಿರಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:46
+#: ../data/org.mate.pluma.gschema.xml.in.h:48
 msgid "Toolbar Buttons Style"
 msgstr "ಉಪಕರಣ ಪಟ್ಟಿ ಗುಂಡಿಗಳ ಶೈಲಿ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:47
+#: ../data/org.mate.pluma.gschema.xml.in.h:49
 msgid ""
 "Style for the toolbar buttons. Possible values are \"PLUMA_TOOLBAR_SYSTEM\" "
 "to use the system's default style, \"PLUMA_TOOLBAR_ICONS\" to display icons "
@@ -247,66 +255,75 @@ msgid ""
 "as mentioned here."
 msgstr "ಉಪಕರಣಪಟ್ಟಿಯ ಗುಂಡಿಗಳಿಗಾಗಿನ ಶೈಲಿ. ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳೆಂದರೆ, ಗಣಕದ ಪೂರ್ವನಿಯೋಜಿತ ಶೈಲಿಯನ್ನು ಬಳಸಲು \"PLUMA_TOOLBAR_SYSTEM\" ಆಗಿರುತ್ತದೆ, ಕೇವಲ ಲಾಂಛನಗಳನ್ನು ಮಾತ್ರ ತೋರಿಸಲು \"PLUMA_TOOLBAR_ICONS\"ಆಗಿರುತ್ತದೆ,ಲಾಂಛನ ಹಾಗು ಪಠ್ಯವನ್ನು ತೋರಿಸಲು \"PLUMA_TOOLBAR_ICONS_AND_TEXT\" ಆಗಿರುತ್ತದೆ, ಹಾಗು ಲಾಂಛನಗಳ ಪಕ್ಕದಲ್ಲಿ ಆದ್ಯತೆಯ ಮೇರೆಗೆ ಪಠ್ಯವನ್ನು ಕಾಣಿಸಲು\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" ಆಗಿರುತ್ತದೆ. ಈ ಮೌಲ್ಯಗಳು ಕೇಸ್ ಸಂವೇದಿ ಎನ್ನುವುದನ್ನು ನೆನಪಿಡಿ, ಆದ್ದರಿಂದ ಇಲ್ಲಿ ತೋರಿಸಿದಂತೆಯೆ ಕಾಣಿಸಿಕೊಳ್ಳುವುದು ಅನಿವಾರ್ಯವಾಗುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:48
+#: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
 msgstr "ಸ್ಥಿತಿ ಪಟ್ಟಿಕೆಯು ಗೋಚರಿಸುತ್ತಿದೆ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:49
+#: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "ಸಂಪಾದಿಸುವ ವಿಂಡೋದ ಕೆಳಭಾಗದಲ್ಲಿನ ಕೆಳಫಲಕವು ಕಾಣಿಸುತ್ತಿರಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:50
+#: ../data/org.mate.pluma.gschema.xml.in.h:52
 msgid "Side Pane is Visible"
 msgstr "ಬಲ ಫಲಕವು ಗೋಚರಿಸುತ್ತಿದೆ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:51
+#: ../data/org.mate.pluma.gschema.xml.in.h:53
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
 msgstr "ಸಂಪಾದಿಸುವ ವಿಂಡೋಗಳ ಎಡಭಾಗದಲ್ಲಿನ ಬದಿ ಫಲಕವು ಕಾಣಿಸುತ್ತಿರಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:52
+#: ../data/org.mate.pluma.gschema.xml.in.h:54
+msgid "Show tabs with side pane"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:55
+msgid ""
+"If false, pluma doesn't show tabs in the notebook with the side pane active."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:56
 msgid "Bottom Panel is Visible"
 msgstr "ಕೆಳಗಿನ ಫಲಕವು ಗೋಚರಿಸುತ್ತದೆ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:53
+#: ../data/org.mate.pluma.gschema.xml.in.h:57
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
 msgstr "ಸಂಪಾದಿಸುವ ವಿಂಡೋದ ಕೆಳಭಾಗದಲ್ಲಿನ ಕೆಳಫಲಕವು ಕಾಣಿಸುತ್ತಿರಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:54
+#: ../data/org.mate.pluma.gschema.xml.in.h:58
 msgid "Maximum Recent Files"
 msgstr "ಗರಿಷ್ಟ ಇತ್ತೀಚಿನ ಕಡತಗಳು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:55
+#: ../data/org.mate.pluma.gschema.xml.in.h:59
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
 msgstr "ಉಪಪರಿವಿಡಿಯಲ್ಲಿನ \"ಇತ್ತೀಚಿನ ಕಡತಗಳು\"ನಲ್ಲಿ ತೋರಿಸಲಾಗುವ ಗರಿಷ್ಟ ಸಂಖ್ಯೆಯ ಇತ್ತೀಚಿನ ಕಡತಗಳನ್ನು ಸೂಚಿಸುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:56
+#: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
 msgstr "ವಾಕ್ಯ ಹೈಲೈಟಿಂಗನ್ನು ಮುದ್ರಿಸು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:57
+#: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
 msgstr "ದಸ್ತಾವೇಜುಗಳನ್ನು ಮುದ್ರಿಸುವಾಗ ಸಿಂಟಾಕ್ಸಿನ ಹೈಲೈಟಿಂಗ್ ಮುದ್ರಿಸಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:58
+#: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Print Header"
 msgstr "ಮುದ್ರಣ ಶೀರ್ಷಿಕೆ (Header)"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:59
+#: ../data/org.mate.pluma.gschema.xml.in.h:63
 msgid ""
 "Whether pluma should include a document header when printing documents."
 msgstr "ದಸ್ತಾವೇಜುಗಳನ್ನು ಮುದ್ರಿಸುವಾಗ pluma ದಸ್ತಾವೇಜು ಹೆಡರುಗಳನ್ನು ಹೊಂದಿರಬೇಕೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:60
+#: ../data/org.mate.pluma.gschema.xml.in.h:64
 msgid "Printing Line Wrapping Mode"
 msgstr "ಸಾಲು ಆವರಿಕೆ(ವ್ರಾಪಿಂಗ್) ಕ್ರಮ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:61
+#: ../data/org.mate.pluma.gschema.xml.in.h:65
 msgid ""
 "Specifies how to wrap long lines for printing. Use \"GTK_WRAP_NONE\" for no "
 "wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -315,113 +332,113 @@ msgid ""
 "mentioned here."
 msgstr "ಉದ್ದದ ಸಾಲುಗಳನ್ನು ಮುದ್ರಣಕ್ಕಾಗಿ ಆವರಿಕೆ ಮಾಡುವುದು ಹೇಗೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ. ಯಾವುದೆ ಆವರಿಕೆ ಮಾಡದಿರಲು \"GTK_WRAP_NONE\" ಅನ್ನು, ಪದಗಳ ಮೇರೆಗಳಲ್ಲಿ ಆವರಿಕೆ ಮಾಡಲು \"GTK_WRAP_WORD\" ಅನ್ನು, ಹಾಗು ಪ್ರತ್ಯೇಕ ಅಕ್ಷರಗಳ ಮೇರೆಗಳಲ್ಲಿ ಆವರಿಕೆ ಮಾಡಲು \"GTK_WRAP_CHAR\" ಅನ್ನು ಬಳಸಬಹುದಾಗಿದೆ. ಈ ಮೌಲ್ಯಗಳು ಕೇಸ್ ಸಂವೇದಿಯಾಗಿದ್ದು, ಇಲ್ಲಿ ತೋರಿಸಿದಂತೆಯೆ ನಮೂದಿತಗೊಳ್ಳುವಂತೆ ಎಚ್ಚರಿಕೆವಹಿಸಿ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:62
+#: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
 msgstr "ಸಾಲಿನ ಸಂಖ್ಯೆಗಳನ್ನು ಮುದ್ರಿಸು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:63
+#: ../data/org.mate.pluma.gschema.xml.in.h:67
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
 msgstr "ಈ ಮೌಲ್ಯವು ಸೊನ್ನೆಯಾದಲ್ಲಿ, ದಸ್ತಾವೇಜನ್ನು ಮುದ್ರಿಸುವಾಗ ಯಾವುದೆ ಸಾಲಿನ ಸಂಖ್ಯೆಯು ಮುದ್ರಿತಗೊಳ್ಳುವುದಿಲ್ಲ. ಇಲ್ಲದೇ ಇದ್ದರೆ, pluma ಅಂತಹ ಎಲ್ಲಾ ಸಾಲುಗಳು ಸಂಖ್ಯೆಯನ್ನು ಮುದ್ರಿಸುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:64
+#: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
 msgstr "'ಮೊನೊಸ್ಪೇಸ್ 9'"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:65
+#: ../data/org.mate.pluma.gschema.xml.in.h:69
 msgid "Body Font for Printing"
 msgstr "ಮುದ್ರಣಕ್ಕಾಗಿ ಮುಖ್ಯ ಭಾಗದ ಅಕ್ಷರಶೈಲಿ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:66
+#: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
 msgstr "ದಸ್ತಾವೇಜುಗಳನ್ನು ಮುದ್ರಿಸುವಾಗ ದಸ್ತಾವೇಜಿನ ಮುಖ್ಯಭಾಗದಲ್ಲಿ ಬಳಸಬೇಕಿರುವ ಅಕ್ಷರಶೈಲಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:67
+#: ../data/org.mate.pluma.gschema.xml.in.h:71
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
 msgstr "'ಸಾನ್ಸ್ 11'"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:68
+#: ../data/org.mate.pluma.gschema.xml.in.h:72
 msgid "Header Font for Printing"
 msgstr "ಮುದ್ರಣಕ್ಕಾಗಿ ಹೆಡರ್ ಅಕ್ಷರ ಶೈಲಿ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:69
+#: ../data/org.mate.pluma.gschema.xml.in.h:73
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
 msgstr "ಒಂದು ದಸ್ತಾವೇಜನ್ನು ಮುದ್ರಿಸುವಾಗ ಪುಟದ ಹೆಡರಿನಲ್ಲಿ ಬಳಸಬೇಕಿರುವ ಅಕ್ಷರಶೈಲಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. \"ಹೆಡರನ್ನು ಮುದ್ರಿಸು\" ಆಯ್ಕೆಯು ಆನ್ ಆಗಿದ್ದಲ್ಲಿ ಮಾತ್ರ ಇದು ಕೆಲಸಮಾಡುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:70
+#: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
 msgstr "'ಸಾನ್ಸ್ 8'"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:71
+#: ../data/org.mate.pluma.gschema.xml.in.h:75
 msgid "Line Number Font for Printing"
 msgstr "ಮುದ್ರಣಕ್ಕೆ ಸಾಲಿನ ಸಂಖ್ಯೆಯ ಅಕ್ಷರ ಶೈಲಿ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:72
+#: ../data/org.mate.pluma.gschema.xml.in.h:76
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
 msgstr "ಮುದ್ರಿಸುವಾಗ ಸಾಲಿನ ಸಂಖ್ಯೆಗಳಲ್ಲಿ ಬಳಸಬಹುದಾದ ಅಕ್ಷರಶೈಲಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ. \"ಸಾಲಿನ ಸಂಖ್ಯೆಗಳನ್ನು ಮುದ್ರಿಸು\" ಆಯ್ಕೆಯು ಸೊನ್ನೆಯಾಗಿಲ್ಲದೆ ಇದ್ದಲ್ಲಿ ಮಾತ್ರ ಇದು ಕೆಲಸ ಮಾಡುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:73
+#: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:74
+#: ../data/org.mate.pluma.gschema.xml.in.h:78
 msgid "Automatically Detected Encodings"
 msgstr "ಸ್ವಯಂ ಪತ್ತೆ ಹಚ್ಚಲಾದ ಎನ್ಕೋಡಿಂಗ್‍ಗಳು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:75
+#: ../data/org.mate.pluma.gschema.xml.in.h:79
 msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
 msgstr "ಒಂದು ಕಡತದ ಎನ್ಕೋಡಿಂಗನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪತ್ತೆಹಚ್ಚಲು pluma‍ನಿಂದ ಬಳಸಲಾದ ಎನ್ಕೋಡಿಂಗ್‍ಗಳ ಪಟ್ಟಿ. \"ಚಾಲ್ತಿಯ\"ಲ್ಲಿರುವುದು ಪ್ರಸ್ತುತ ಲೊಕ್ಯಾಲ್ ಎನ್ಕೋಡಿಂಗ್‍ಗಳನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಕೇವಲ ಮಾನ್ಯ ಎನ್ಕೋಡಿಂಗ್‍ಗಳನ್ನು ಮಾತ್ರ ಬಳಸಲಾಗಿದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:76
+#: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
 msgstr "[ 'ISO-8859-15' ]"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:77
+#: ../data/org.mate.pluma.gschema.xml.in.h:81
 msgid "Encodings shown in menu"
 msgstr "ಅಂಶಪಟ್ಟಿಯಲ್ಲಿ(menu) ತೋರಿಸಲಾದ ಎನ್ಕೋಡಿಂಗ್‍ಗಳು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:78
+#: ../data/org.mate.pluma.gschema.xml.in.h:82
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
 msgstr "ತೆರೆ/ಉಳಿಸು ಆಯ್ಕೆಗಾರನಲ್ಲಿರುವ ಕ್ಯಾರೆಕ್ಟರ್  ಎನ್‌ಕೋಡಿಂಗ್ ಪರಿವಿಡಿಯಲ್ಲಿನ ಎನ್ಕೋಡಿಂಗ್‍ಗಳ ಪಟ್ಟಿ. ಕೇವಲ ಮಾನ್ಯವಾದ ಎನ್ಕೋಡಿಂಗ್‍ಗಳನ್ನು ಮಾತ್ರ ಬಳಸಲಾಗುತ್ತದೆ."
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:79
+#: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:80
+#: ../data/org.mate.pluma.gschema.xml.in.h:84
 msgid "List of entries in \"search for\" textbox."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:81
+#: ../data/org.mate.pluma.gschema.xml.in.h:85
 msgid "History for \"replace with\" entries"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:82
+#: ../data/org.mate.pluma.gschema.xml.in.h:86
 msgid "List of entries in \"replace with\" textbox."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:83
+#: ../data/org.mate.pluma.gschema.xml.in.h:87
 msgid "Active plugins"
 msgstr "ಸಕ್ರಿಯ ಪ್ಲಗ್ಇನ್ನುಗಳು"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:84
+#: ../data/org.mate.pluma.gschema.xml.in.h:88
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
@@ -533,28 +550,28 @@ msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "\"%s\" ಎಂಬ ದಸ್ತಾವೇಜಿನ ಬದಲಾವಣೆಗಳು ಶಾಶ್ವತವಾಗಿ ಕಾಣೆಯಾಗುತ್ತವೆ."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "ಮುಚ್ಚುವ ಮೊದಲು ಬದಲಾವಣೆಗಳನ್ನು \"%s\" ಎಂಬ ದಸ್ತಾವೇಜಿಗೆ ಉಳಿಸಬೇಕೆ?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
 msgid "Saving has been disabled by the system administrator."
 msgstr "ಉಳಿಸುವುದನ್ನು ಗಣಕ ವ್ಯವಸ್ಥಾಪಕರು ಅಶಕ್ತಗೊಳಿಸಿದ್ದಾರೆ."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -562,15 +579,15 @@ msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
 msgid "Docum_ents with unsaved changes:"
 msgstr "ಉಳಿಸದೆ ಇರುವ ಬದಲಾವಣೆಗಳನ್ನು ಹೊಂದಿರುವ ದಸ್ತಾವೇಜುಗಳು(_e):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
 msgid "S_elect the documents you want to save:"
 msgstr "ನೀವು ಉಳಿಸಲು ಬಯಸುವ ದಸ್ತಾವೇಜುಗಳನ್ನು ಆರಿಸಿ(_e):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "ನೀವು ಬಳಸಲು ಇಚ್ಚಿಸದೆ ಹೋದರೆ, ನೀವು ಮಾಡಿದ ಎಲ್ಲಾ ಬದಲಾವಣೆಗಳು ಶಾಶ್ವತವಾಗಿ ಕಾಣೆಯಾಗುತ್ತವೆ."
 
@@ -672,7 +689,7 @@ msgstr "ಪದಗಳನ್ನು ಎರಡು ಸಾಲುಗಳಲ್ಲಿ ತ
 msgid "Line Numbers"
 msgstr "ಸಾಲಿನ ಸಂಖ್ಯೆಗಳು"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1958
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
 msgid "_Display line numbers"
 msgstr "ಸಾಲಿನ ಸಂಖ್ಯೆ ತೋರಿಸು(_D)"
 
@@ -777,11 +794,11 @@ msgid "Plugins"
 msgstr "ಪ್ಲಗ್ಇನ್‌ಗಳು"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
 msgid "Replace"
 msgstr "ಬದಲಾಯಿಸು"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
 msgid "Find"
 msgstr "ಹುಡುಕು"
 
@@ -1014,11 +1031,11 @@ msgid "Unsaved Document %d"
 msgstr "ಉಳಿಸದೆ ಇರುವ ದಸ್ತಾವೇಜು %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2184 ../pluma/pluma-window.c:2189
+#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
 msgid "Read-Only"
 msgstr "ಓದಲು-ಮಾತ್ರ"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3566
+#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
 msgid "Documents"
 msgstr "ದಸ್ತಾವೇಜುಗಳು"
 
@@ -1176,7 +1193,7 @@ msgstr ""
 msgid "Windows"
 msgstr "ವಿಂಡೋಗಳು"
 
-#: ../pluma/pluma-help.c:81
+#: ../pluma/pluma-help.c:88
 msgid "There was an error displaying the help."
 msgstr "ಸಹಾಯವನ್ನು ತೋರಿಸುವಾಗ ಒಂದು ದೋಷ ಆಗಿತ್ತು."
 
@@ -1483,11 +1500,11 @@ msgstr "ನೀವು ಕಡತವನ್ನು ಪುನಃ ಲೋಡ್ ಮಾ�
 msgid "_Reload"
 msgstr "ಪುನಃ ಲೋಡ್ ಮಾಡು(_R)"
 
-#: ../pluma/pluma-panel.c:338 ../pluma/pluma-panel.c:513
+#: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
 msgstr "ಖಾಲಿ"
 
-#: ../pluma/pluma-panel.c:403
+#: ../pluma/pluma-panel.c:385
 msgid "Hide panel"
 msgstr "ಫಲಕವನ್ನು ಅಡಗಿಸು"
 
@@ -1541,12 +1558,12 @@ msgid "_Body:"
 msgstr "ಮುಖ್ಯಭಾಗ(_Body):"
 
 #: ../pluma/pluma-print-preferences.ui.h:16
-msgid "_Line numbers:"
-msgstr "ಸಾಲಿನ ಸಂಖ್ಯೆಗಳು(_L):"
-
-#: ../pluma/pluma-print-preferences.ui.h:17
 msgid "He_aders and footers:"
 msgstr "ಹೆಡರ್ ಹಾಗೂ ಫೂಟರುಗಳು(_a):"
+
+#: ../pluma/pluma-print-preferences.ui.h:17
+msgid "_Line numbers:"
+msgstr "ಸಾಲಿನ ಸಂಖ್ಯೆಗಳು(_L):"
 
 #: ../pluma/pluma-print-preferences.ui.h:18
 msgid "_Restore Default Fonts"
@@ -1762,7 +1779,7 @@ msgstr "ಹೊಸ ದಸ್ತಾವೇಜನ್ನು ರಚಿಸು"
 msgid "_Open..."
 msgstr "ತೆಗೆ(_O)..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1389
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
 msgid "Open a file"
 msgstr "ಕಡತವನ್ನು ತೆಗೆ"
 
@@ -2024,36 +2041,36 @@ msgid "/ on %s"
 msgstr "/ %s ನಲ್ಲಿ"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1196
+#: ../pluma/pluma-view.c:1204
 msgid "_Wrap Around"
 msgstr "ಸುತ್ತ ಆವರಿಸು(_Wrap)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1206
+#: ../pluma/pluma-view.c:1214
 msgid "Match _Entire Word Only"
 msgstr "ಕೇವಲ ಸಂಪೂರ್ಣ ಪದವನ್ನು ಮಾತ್ರ ಹೊಂದಿಸು(_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1216
+#: ../pluma/pluma-view.c:1224
 msgid "_Match Case"
 msgstr "ಕೇಸನ್ನು ಹೊಂದಿಸು(_M)ೆ"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1226
+#: ../pluma/pluma-view.c:1234
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1340
+#: ../pluma/pluma-view.c:1348
 msgid "String you want to search for"
 msgstr "ನೀವು ಹುಡುಕಬೇಕಿರುವ ವಾಕ್ಯ"
 
-#: ../pluma/pluma-view.c:1349
+#: ../pluma/pluma-view.c:1357
 msgid "Line you want to move the cursor to"
 msgstr "ತೆರೆಸೂಚಕವನ್ನು ನೀವು ಜರುಗಿಸಬೇಕಿರುವ ಸಾಲು"
 
-#: ../pluma/pluma-window.c:942
+#: ../pluma/pluma-window.c:991
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s ಹೈಲೈಟ್ ವಿಧಾನ ಬಳಸು"
@@ -2061,7 +2078,7 @@ msgstr "%s ಹೈಲೈಟ್ ವಿಧಾನ ಬಳಸು"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:999 ../pluma/pluma-window.c:1889
+#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2069,43 +2086,43 @@ msgstr "%s ಹೈಲೈಟ್ ವಿಧಾನ ಬಳಸು"
 msgid "Plain Text"
 msgstr "ಸರಳ ಪಠ್ಯ"
 
-#: ../pluma/pluma-window.c:1000
+#: ../pluma/pluma-window.c:1049
 msgid "Disable syntax highlighting"
 msgstr "ವಾಕ್ಯರಚನೆಯ ಹೈಲೈಟಿಂಗನ್ನು ಅಶಕ್ತಗೊಳಿಸು"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1286
+#: ../pluma/pluma-window.c:1335
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' ಅನ್ನು ತೆಗೆ"
 
-#: ../pluma/pluma-window.c:1391
+#: ../pluma/pluma-window.c:1440
 msgid "Open a recently used file"
 msgstr "ಇತ್ತೀಚೆಗೆ ಬಳಸಲಾದ ಒಂದು ಕಡತವನ್ನು ತೆಗೆ"
 
-#: ../pluma/pluma-window.c:1397
+#: ../pluma/pluma-window.c:1446
 msgid "Open"
 msgstr "ತೆಗೆ"
 
-#: ../pluma/pluma-window.c:1455
+#: ../pluma/pluma-window.c:1504
 msgid "Save"
 msgstr "ಉಳಿಸು"
 
-#: ../pluma/pluma-window.c:1457
+#: ../pluma/pluma-window.c:1506
 msgid "Print"
 msgstr "ಮುದ್ರಿಸು"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1614
+#: ../pluma/pluma-window.c:1663
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' ವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು"
 
-#: ../pluma/pluma-window.c:1867
+#: ../pluma/pluma-window.c:1916
 msgid "Use Spaces"
 msgstr "ಜಾಗಗಳನ್ನು(spaces) ಬಳಸು"
 
-#: ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1987
 msgid "Tab Width"
 msgstr "ಟ್ಯಾಬ್‍ನ ಅಗಲ"
 
@@ -2596,11 +2613,11 @@ msgstr "ಆರಿಸಿದ ಕಡತಗಳನ್ನು ಶಾಶ್ವತವಾ�
 msgid "If you delete an item, it is permanently lost."
 msgstr "ನೀವು ಓಂದು ಅಂಶವನ್ನು ಅಳಿಸಿ ಹಾಕಿದರೆ, ಅದು ಶಾಶ್ವತವಾಗಿ ಕಾಣೆಯಾಗುತ್ತದೆ."
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:1670
+#: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
 msgstr "(ಖಾಲಿ)"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3308
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3224
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2608,11 +2625,11 @@ msgstr "ಹೆಸರನ್ನು ಬದಲಾಯಿಸಲಾದ ಕಡತವು 
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3547
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3481
 msgid "file"
 msgstr "ಕಡತ"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3571
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3505
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2620,11 +2637,11 @@ msgstr "ಹೊಸ ಕಡತವು ಪ್ರಸ್ತುತ ಶೋಧಿತಗೊ
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3600
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3534
 msgid "directory"
 msgstr "ಕಡತಕೋಶ"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3620
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3554
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"

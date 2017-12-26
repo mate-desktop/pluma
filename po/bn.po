@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-28 16:12+0300\n"
-"PO-Revision-Date: 2017-09-19 11:04+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2017-11-29 11:17+0100\n"
+"PO-Revision-Date: 2017-11-29 10:17+0000\n"
+"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
 "Language-Team: Bengali (http://www.transifex.com/mate/MATE/language/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,30 +84,38 @@ msgid ""
 msgstr "পরিবর্তিত ফাইল যত মিনিট পরে pluma-এর দ্বারা স্বয়ংক্রিয়ভাবে সংরক্ষিত হবে। এটি কার্যকর করার জন্য \"স্বয়ংক্রিয় সংরক্ষণ ব্যবস্থা\" অপশনটি সক্রিয় থাকতে হবে।"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
+msgid "Show save confirmation"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:15
+msgid "Show save confirmation if the files have changes."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:16
 msgid "Writable VFS schemes"
 msgstr "লেখনযোগ্য VFS স্কিম"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:15
+#: ../data/org.mate.pluma.gschema.xml.in.h:17
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
 msgstr "লেখার মোডে pluma দ্বারা সমর্থিত VFS স্কিম। ডিফল্টরূপে 'file' স্কিম লেখারযোগ্য।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:16
+#: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
 msgstr "পূর্বাবস্থায় ফিরিয়ে আনা কাজের সংখ্যা (সর্বোচ্চ)"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:17
+#: ../data/org.mate.pluma.gschema.xml.in.h:19
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
 msgstr "pluma-এর দ্বারা সর্বাধিক যে সংখ্যক কাজ বাতিল অথবা পুনরায় করা সম্ভব হবে। অসীমিত কাজ বাতিল করার উদ্দেশ্যে \"-1\" মান প্রয়োগ করুন।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:18
+#: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
 msgstr "লাইন বিভাজন মোড"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:19
+#: ../data/org.mate.pluma.gschema.xml.in.h:21
 msgid ""
 "Specifies how to wrap long lines in the editing area. Use \"GTK_WRAP_NONE\" "
 "for no wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -116,77 +124,77 @@ msgid ""
 "mentioned here."
 msgstr "সম্পাদন ক্ষেত্রের মধ্যে লম্বা লাইন কি পদ্ধতিতে বিভক্ত করা হবে তা নির্ধারণ করে। বিভাজন না করতে হলে Use \"GTK_WRAP_NONE\", শব্দের শেষে বিভাজন করতে \"GTK_WRAP_WORD\" এবং অক্ষরের প্রান্তে বিভাজন করতে \"GTK_WRAP_CHAR\" ব্যবহার করুন। উল্লেখ্য এই মানগুলো লিখতে অক্ষরের ছাঁদ অক্ষুন্ন রাখা আবশ্যক, এই কারণে উল্লিখিত বিবরণ অনুযায়ী মান লেখা উচিত।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:20
+#: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
 msgstr "ট্যাবের দৈঘ্য"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:21
+#: ../data/org.mate.pluma.gschema.xml.in.h:23
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr "ট্যাব অক্ষরের পরিবর্তে যে সংখ্যক শূণ্যস্থান ব্যবহৃত হবে তা উল্লেখ করে।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:22
+#: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Insert spaces"
 msgstr "শূণ্যস্থান সন্নিবেশ করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:23
+#: ../data/org.mate.pluma.gschema.xml.in.h:25
 msgid "Whether pluma should insert spaces instead of tabs."
 msgstr "ট্যাবের পরিবর্তে pluma-এর দ্বারা শূণ্যস্থান সন্নিবেশ করা হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:24
+#: ../data/org.mate.pluma.gschema.xml.in.h:26
 msgid "Automatic indent"
 msgstr "স্বয়ংক্রিয় ইন্ডেন্ট নির্ধারণ"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:25
+#: ../data/org.mate.pluma.gschema.xml.in.h:27
 msgid "Whether pluma should enable automatic indentation."
 msgstr "pluma দ্বারা স্বয়ংক্রিয় প্রান্ত নির্ধারণ ব্যবস্থা সক্রিয় করা হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:26
+#: ../data/org.mate.pluma.gschema.xml.in.h:28
 msgid "Display Line Numbers"
 msgstr "লাইন সংখ্যা প্রদর্শন করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:27
+#: ../data/org.mate.pluma.gschema.xml.in.h:29
 msgid "Whether pluma should display line numbers in the editing area."
 msgstr "সম্পাদনার স্থানে pluma-এর দ্বারা লাইন সংখ্যা প্রদর্শিত হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:28
+#: ../data/org.mate.pluma.gschema.xml.in.h:30
 msgid "Highlight Current Line"
 msgstr "বর্তমান লাইনটি উজ্জ্বল করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:29
+#: ../data/org.mate.pluma.gschema.xml.in.h:31
 msgid "Whether pluma should highlight the current line."
 msgstr "pluma-এর দ্বারা বর্তমান লাইন উজ্জ্বল করা হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:30
+#: ../data/org.mate.pluma.gschema.xml.in.h:32
 msgid "Highlight Matching Bracket"
 msgstr "অনুরূপ বন্ধনীচিহ্ন উজ্জ্বল করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:31
+#: ../data/org.mate.pluma.gschema.xml.in.h:33
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr "pluma দ্বারা বর্তমান লাইন উজ্জ্বল করা হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:32
+#: ../data/org.mate.pluma.gschema.xml.in.h:34
 msgid "Display Right Margin"
 msgstr "ডানপ্রান্তের রেখা প্রদর্শন করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:33
+#: ../data/org.mate.pluma.gschema.xml.in.h:35
 msgid "Whether pluma should display the right margin in the editing area."
 msgstr "সম্পাদন ক্ষেত্রে pluma-এর দ্বারা ডানদিকের প্রান্ত প্রদর্শিত হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:34
+#: ../data/org.mate.pluma.gschema.xml.in.h:36
 msgid "Right Margin Position"
 msgstr "ডান প্রান্তের অবস্থান"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:35
+#: ../data/org.mate.pluma.gschema.xml.in.h:37
 msgid "Specifies the position of the right margin."
 msgstr "ডান প্রান্তের অবস্থান নির্ধারণ করে।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:36
+#: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Smart Home End"
 msgstr "Home End-এর বিশেষ ব্যবহার"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:37
+#: ../data/org.mate.pluma.gschema.xml.in.h:39
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "\"DISABLED\" to always move at the start/end of the line, \"AFTER\" to move "
@@ -197,46 +205,46 @@ msgid ""
 "the text instead of the start/end of the line."
 msgstr "HOME ও END কীগুলো চাপা হলে কার্সারের চলাচল নির্ধারণ করতে প্রয়োগ করা হয়। লাইনের প্রারম্ভ/শেষে স্থাপন করার জন্য \"DISABLED\" নির্বাচন করুন, কীগুলো প্রথমবার চাপা হলে লাইনের প্রারম্ভ/শেষে ও দ্বিতীয়বার চাপা হলে লেখার প্রারম্ভ/শেষে স্থাপন করার জন্য \"AFTER\" নির্বাচন করুন, লাইনের প্রারম্ভ/শেষে স্থাপনার পূর্বে লেখার প্রারম্ভ/শেষে স্থাপনার জন্য \"BEFORE\" নির্বাচন করুন ও লাইনের প্রারম্ভ/শেষে স্থাপন করার পরিবর্তে সর্বদা লেখার প্রারম্ভ/শেষে স্থাপন করার জন্য \"ALWAYS\" প্রয়োগ করুন।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:38
+#: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
 msgstr "কার্সারের পূর্ববর্তী অবস্থায় পুনরায় স্থাপিত হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:39
+#: ../data/org.mate.pluma.gschema.xml.in.h:41
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
 msgstr "ফাইল লোড করা হলে pluma দ্বারা পূর্ববর্তী কার্সারের অবস্থায় অক্ষুন্ন রাখা হবে কি না।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:40
+#: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Search Highlighting"
 msgstr "অনুসন্ধানে টেক্সট ঔজ্জ্বল্যের বৈশিষ্ট্য সক্রিয় করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:41
+#: ../data/org.mate.pluma.gschema.xml.in.h:43
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
 msgstr "অনুসন্ধান করা টেক্সটের উপস্থিতি pluma দ্বারা উজ্জ্বল করা হবে কি না।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:42
+#: ../data/org.mate.pluma.gschema.xml.in.h:44
 msgid "Enable Syntax Highlighting"
 msgstr "সিন্টেক্সের বিভিন্ন অংশের পৃথক বিন্যাস"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:43
+#: ../data/org.mate.pluma.gschema.xml.in.h:45
 msgid "Whether pluma should enable syntax highlighting."
 msgstr "pluma-এর দ্বারা সিনট্যাক্সের বিভিন্ন অংশ পৃথকরূপে প্রদর্শিত হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:44
+#: ../data/org.mate.pluma.gschema.xml.in.h:46
 msgid "Toolbar is Visible"
 msgstr "টুল-বার প্রদর্শন করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:45
+#: ../data/org.mate.pluma.gschema.xml.in.h:47
 msgid "Whether the toolbar should be visible in editing windows."
 msgstr "সম্পাদন ক্ষেত্রের উইন্ডোর মধ্যে টুল-বার প্রদর্শিত হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:46
+#: ../data/org.mate.pluma.gschema.xml.in.h:48
 msgid "Toolbar Buttons Style"
 msgstr "টুল-বারে অবস্থিত বোতামের বিন্যাস"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:47
+#: ../data/org.mate.pluma.gschema.xml.in.h:49
 msgid ""
 "Style for the toolbar buttons. Possible values are \"PLUMA_TOOLBAR_SYSTEM\" "
 "to use the system's default style, \"PLUMA_TOOLBAR_ICONS\" to display icons "
@@ -246,66 +254,75 @@ msgid ""
 "as mentioned here."
 msgstr "টুল-বারের উপরে অবস্থিত বোতামের বিন্যাস। সম্ভাব্য মানগুলো হলো, সিস্টেমের ডিফল্ট বিন্যাস প্রয়োগ করার জন্য \"PLUMA_TOOLBAR_SYSTEM\", শুধুমাত্র আইকন প্রদর্শনের জন্য \"PLUMA_TOOLBAR_ICONS\", আইকন ও টেক্সট প্রদর্শনের জন্য \"PLUMA_TOOLBAR_ICONS_AND_TEXT\" এবং আইকনের পাশে গুরুত্বপূর্ণ টেক্সট প্রদর্শনের জন্য \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\"। উল্লেখ্য এই মানগুলি লিখতে অক্ষরের ছাঁদ অক্ষুন্ন রাখা আবশ্যক, এই কারণে উল্লিখিত বিবরণ অনুযায়ী মান লেখা উচিত।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:48
+#: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
 msgstr "স্ট্যাটাস-বার প্রদর্শন করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:49
+#: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "সম্পাদন ক্ষেত্রের উইন্ডোর নিচে স্ট্যাটাস-বার প্রদর্শিত হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:50
+#: ../data/org.mate.pluma.gschema.xml.in.h:52
 msgid "Side Pane is Visible"
 msgstr "পার্শ্ববর্তী পেন প্রদর্শন করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:51
+#: ../data/org.mate.pluma.gschema.xml.in.h:53
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
 msgstr "সম্পাদন ক্ষেত্রের বামদিকে পার্শ্ববর্তী প্যান প্রদর্শিত হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:52
+#: ../data/org.mate.pluma.gschema.xml.in.h:54
+msgid "Show tabs with side pane"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:55
+msgid ""
+"If false, pluma doesn't show tabs in the notebook with the side pane active."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:56
 msgid "Bottom Panel is Visible"
 msgstr "নিম্নস্থিত প্যানেল প্রদর্শন করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:53
+#: ../data/org.mate.pluma.gschema.xml.in.h:57
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
 msgstr "সম্পাদন ক্ষেত্রের উইন্ডোর নীচের অংশে প্যানেল প্রদর্শিত হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:54
+#: ../data/org.mate.pluma.gschema.xml.in.h:58
 msgid "Maximum Recent Files"
 msgstr "সম্প্রতি খোলা ফাইলের সর্বাধিক প্রদর্শিত সংখ্যা"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:55
+#: ../data/org.mate.pluma.gschema.xml.in.h:59
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
 msgstr "\"সম্প্রতি ব্যবহৃত ফাইল\" সাব-মেনুর মধ্যে সম্প্রতি ব্যবহৃত সর্বাধিক যে সংখ্যক ফাইল প্রদর্শিত হবে তা উল্লেখ করে।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:56
+#: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
 msgstr "সিনট্যাক্সের বিভিন্ন অংশ পৃথক বিন্যাসে মুদ্রণ করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:57
+#: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
 msgstr "নথি মুদ্রণ করার সময় pluma-এর দ্বারা সিন্টেক্সের পৃথক বিন্যাস মুদ্রণ করা হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:58
+#: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Print Header"
 msgstr "শীর্ষচরণ মুদ্রণ করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:59
+#: ../data/org.mate.pluma.gschema.xml.in.h:63
 msgid ""
 "Whether pluma should include a document header when printing documents."
 msgstr "নথিপত্র মুদ্রণ করার সময় pluma-এর দ্বারা নথির শীর্ষচরণ মুদ্রণ করা হবে কিনা।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:60
+#: ../data/org.mate.pluma.gschema.xml.in.h:64
 msgid "Printing Line Wrapping Mode"
 msgstr "লাইন বিভাজন মোডে মুদ্রণ করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:61
+#: ../data/org.mate.pluma.gschema.xml.in.h:65
 msgid ""
 "Specifies how to wrap long lines for printing. Use \"GTK_WRAP_NONE\" for no "
 "wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -314,113 +331,113 @@ msgid ""
 "mentioned here."
 msgstr "মুদ্রণ করার সময় লম্বা লাইন কি পদ্ধতিতে বিভক্ত করা হবে তা নির্ধারণ করে। বিভাজন না করতে হলে Use \"GTK_WRAP_NONE\", শব্দের শেষে বিভাজন করতে \"GTK_WRAP_WORD\" এবং অক্ষরের প্রান্তে বিভাজন করতে \"GTK_WRAP_CHAR\" ব্যবহার করুন। উল্লেখ্য এই মানগুলো লিখতে অক্ষরের ছাঁদ অক্ষুন্ন রাখা আবশ্যক, এই কারণে উল্লেখিত বিবরণ অনুযায়ী মান লেখা উচিত।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:62
+#: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
 msgstr "লাইন সংখ্যা মুদ্রণ করা হবে"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:63
+#: ../data/org.mate.pluma.gschema.xml.in.h:67
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
 msgstr "মান ০ হলে, মুদ্রণ করার সময় নথির মধ্যে কোনো লাইন সংখ্যা উল্লেখ করা হবে না। অন্যথা, প্রতিটি লাইনের জন্য pluma-এর দ্বারা সংখ্যা মুদ্রণ করা হবে।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:64
+#: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:65
+#: ../data/org.mate.pluma.gschema.xml.in.h:69
 msgid "Body Font for Printing"
 msgstr "মুদ্রণের সময় মূল অংশে ব্যবহৃত ফন্ট"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:66
+#: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
 msgstr "নথি পত্র মুদ্রণ করার সময় মূল অংশে ব্যবহৃত ফন্ট নির্ধারণ করে।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:67
+#: ../data/org.mate.pluma.gschema.xml.in.h:71
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:68
+#: ../data/org.mate.pluma.gschema.xml.in.h:72
 msgid "Header Font for Printing"
 msgstr "মুদ্রণের সময় ব্যবহৃত ফন্ট"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:69
+#: ../data/org.mate.pluma.gschema.xml.in.h:73
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
 msgstr "নথি মুদ্রণ করার সময় পৃষ্ঠার শীর্ষচরণ মুদ্রণ করতে ব্যবহৃত ফন্ট নির্ধারণ করে। এটি প্রয়োগ করার জন্য \"শীর্ষচরণ মুদ্রণ করা হবে\" অপশনটি সক্রিয় অবস্থায় থাকা আবশ্যক।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:70
+#: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:71
+#: ../data/org.mate.pluma.gschema.xml.in.h:75
 msgid "Line Number Font for Printing"
 msgstr "মুদ্রণের সময় লাইন সংখ্যার জন্য ব্যবহৃত ফন্ট"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:72
+#: ../data/org.mate.pluma.gschema.xml.in.h:76
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
 msgstr "লাইন সংখ্যা মুদ্রণ করতে ব্যবহৃত ফন্ট নির্ধারণ করে। এটি প্রয়োগ করার জন্য \"লাইন সংখ্যা মুদ্রণ করা হবে\" অপশনে শূণ্য ব্যতীত কোনো পৃথক মান ব্যবহার করা আবশ্যক।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:73
+#: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:74
+#: ../data/org.mate.pluma.gschema.xml.in.h:78
 msgid "Automatically Detected Encodings"
 msgstr "স্বয়ংক্রিয়ভাবে সনাক্ত করা এনকোডিং"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:75
+#: ../data/org.mate.pluma.gschema.xml.in.h:79
 msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
 msgstr "ফাইলের এনকোডিং স্বয়ংক্রিয়ভাবে উদ্ধার করতে pluma-এর দ্বারা ব্যবহৃত এনকোডিং-এর সুবিন্যস্ত তালিকা। বর্তমান লোক্যাল এনকোডিং \"CURRENT\"-এর দ্বারা চিহ্নিত হয়। শুধুমাত্র সুপরিচিত এনকোডিং প্রয়োগ করা হয়।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:76
+#: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:77
+#: ../data/org.mate.pluma.gschema.xml.in.h:81
 msgid "Encodings shown in menu"
 msgstr "মেনুর মধ্যে প্রদর্শিত এনকোডিং"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:78
+#: ../data/org.mate.pluma.gschema.xml.in.h:82
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
 msgstr "ফাইল খোলা/সংরক্ষণ বাক্সে ফাইলের জন্য ক্যারেক্টার এনকোডিং নির্বাচনের ক্ষেত্রে প্রদর্শিত এনকোডিং-এর তালিকা। শুধুমাত্র পরিচিত এনকোডিং ব্যবহৃত হবে।"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:79
+#: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:80
+#: ../data/org.mate.pluma.gschema.xml.in.h:84
 msgid "List of entries in \"search for\" textbox."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:81
+#: ../data/org.mate.pluma.gschema.xml.in.h:85
 msgid "History for \"replace with\" entries"
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:82
+#: ../data/org.mate.pluma.gschema.xml.in.h:86
 msgid "List of entries in \"replace with\" textbox."
 msgstr ""
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:83
+#: ../data/org.mate.pluma.gschema.xml.in.h:87
 msgid "Active plugins"
 msgstr "সক্রিয় প্লাগ-ইন"
 
-#: ../data/org.mate.pluma.gschema.xml.in.h:84
+#: ../data/org.mate.pluma.gschema.xml.in.h:88
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
@@ -537,29 +554,29 @@ msgid_plural ""
 msgstr[0] "সংরক্ষণ না করা হলে, শেষ %d ঘন্টার মধ্যে করা সমস্ত পরিবর্তন স্থায়ীরূপে মুছে যাবে।"
 msgstr[1] "সংরক্ষণ না করা হলে, গত %d ঘন্টার মধ্যে করা সমস্ত পরিবর্তন স্থায়ীরূপে মুছে যাবে।"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "\"%s\" ডকুমেন্টের মধ্যে করা সমস্ত পরিবর্তন স্থায়ীরূপে মুছে যাবে।"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr " বন্ধ করার পূর্বে \"%s\" ডকুমেন্টের মধ্যে করা পরিবর্তনগুলো কি সংরক্ষণ করা হবে?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
 msgid "Saving has been disabled by the system administrator."
 msgstr "সিস্টেম প্রশাসকের দ্বারা সংরক্ষণের বৈশিষ্ট্য নিষ্ক্রিয় করা হয়েছে।"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] "%d নথির মধ্যে করা সমস্ত পরিবর্তন স্থায়ীরূপে মুছে যাবে।"
 msgstr[1] "%d ডকুমেন্টের মধ্যে করা সমস্ত পরিবর্তন স্থায়ীরূপে মুছে যাবে।"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -568,15 +585,15 @@ msgid_plural ""
 msgstr[0] "%d-টি নথিতে কিছু পরিবর্তন করা হয়েছে এবং তা সংরক্ষণ করা হয়নি। বন্ধ করার পূর্বে কি নথিটি সংরক্ষণ করা হবে?"
 msgstr[1] "%d-টি ডকুমেন্টে কিছু পরিবর্তন করা হয়েছে এবং তা সংরক্ষণ করা হয়নি। বন্ধ করার পূর্বে কি ডকুমেন্টটি সংরক্ষণ করা হবে?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
 msgid "Docum_ents with unsaved changes:"
 msgstr "অসংরক্ষিত পরিবর্তনসহ নথি (_e):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
 msgid "S_elect the documents you want to save:"
 msgstr "যে নথিগুলো সংরক্ষণ করা হবে সেগুলো নির্বাচন করুন: (_e)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "সংরক্ষণ না করা হলে সমস্ত পরিবর্তন স্থায়ীরূপে মুছে যাবে।"
 
@@ -678,7 +695,7 @@ msgstr "কোনো শব্দ দুটি লাইনের মধ্য�
 msgid "Line Numbers"
 msgstr "লাইন সংখ্যা "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1958
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
 msgid "_Display line numbers"
 msgstr "লাইন সংখ্যা প্রদর্শন করা হবে (_D)"
 
@@ -783,11 +800,11 @@ msgid "Plugins"
 msgstr "প্লাগ-ইন"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1461
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
 msgid "Replace"
 msgstr "প্রতিস্থাপন"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1459
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
 msgid "Find"
 msgstr "অনুসন্ধান"
 
@@ -1027,11 +1044,11 @@ msgid "Unsaved Document %d"
 msgstr "অসংরক্ষিত নথি %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2184 ../pluma/pluma-window.c:2189
+#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
 msgid "Read-Only"
 msgstr "শুধুমাত্র পাঠযোগ্য"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3566
+#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
 msgid "Documents"
 msgstr "নথি"
 
@@ -1189,7 +1206,7 @@ msgstr "ম্যাক OS ক্ল্যাসিক"
 msgid "Windows"
 msgstr "উইন্ডোজ"
 
-#: ../pluma/pluma-help.c:81
+#: ../pluma/pluma-help.c:88
 msgid "There was an error displaying the help."
 msgstr "সহায়িকা প্রদর্শনে সমস্যা।"
 
@@ -1496,11 +1513,11 @@ msgstr "ফাইল কি পুনরায় লোড করা হবে?"
 msgid "_Reload"
 msgstr "পুনরায় লোড (_R)"
 
-#: ../pluma/pluma-panel.c:338 ../pluma/pluma-panel.c:513
+#: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
 msgstr "ফাঁকা"
 
-#: ../pluma/pluma-panel.c:403
+#: ../pluma/pluma-panel.c:385
 msgid "Hide panel"
 msgstr "প্যানেল আড়াল করা হবে"
 
@@ -1554,12 +1571,12 @@ msgid "_Body:"
 msgstr "মূল অংশ: (_B)"
 
 #: ../pluma/pluma-print-preferences.ui.h:16
-msgid "_Line numbers:"
-msgstr "লাইন সংখ্যা: (_L)"
-
-#: ../pluma/pluma-print-preferences.ui.h:17
 msgid "He_aders and footers:"
 msgstr "শীর্ষচরণ ও পাদচরণ: (_a)"
+
+#: ../pluma/pluma-print-preferences.ui.h:17
+msgid "_Line numbers:"
+msgstr "লাইন সংখ্যা: (_L)"
 
 #: ../pluma/pluma-print-preferences.ui.h:18
 msgid "_Restore Default Fonts"
@@ -1776,7 +1793,7 @@ msgstr "নতুন নথি নির্মাণ করুন"
 msgid "_Open..."
 msgstr "খুলুন (_O)..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1389
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
 msgid "Open a file"
 msgstr "একটি ফাইল খুলুন"
 
@@ -2038,36 +2055,36 @@ msgid "/ on %s"
 msgstr "/ %s-এর উপর"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1196
+#: ../pluma/pluma-view.c:1204
 msgid "_Wrap Around"
 msgstr "বিভাজন করা হবে (_W)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1206
+#: ../pluma/pluma-view.c:1214
 msgid "Match _Entire Word Only"
 msgstr "শুধুমাত্র সম্পূর্ণ শব্দ অনুসন্ধান করা হবে (_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1216
+#: ../pluma/pluma-view.c:1224
 msgid "_Match Case"
 msgstr "হরফের ছাঁদ মেলানো হবে (_M)"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1226
+#: ../pluma/pluma-view.c:1234
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1340
+#: ../pluma/pluma-view.c:1348
 msgid "String you want to search for"
 msgstr "অনুসন্ধানের উদ্দেশ্যে স্ট্রিং"
 
-#: ../pluma/pluma-view.c:1349
+#: ../pluma/pluma-view.c:1357
 msgid "Line you want to move the cursor to"
 msgstr "কার্সার স্থানান্তরণের জন্য চিহ্নিত স্ট্রিং সংখ্যা"
 
-#: ../pluma/pluma-window.c:942
+#: ../pluma/pluma-window.c:991
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s উজ্জ্বলতার মোড ব্যবহার করা হবে"
@@ -2075,7 +2092,7 @@ msgstr "%s উজ্জ্বলতার মোড ব্যবহার কর
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:999 ../pluma/pluma-window.c:1889
+#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2083,43 +2100,43 @@ msgstr "%s উজ্জ্বলতার মোড ব্যবহার কর
 msgid "Plain Text"
 msgstr "বিন্যাসবিহীন লেখা"
 
-#: ../pluma/pluma-window.c:1000
+#: ../pluma/pluma-window.c:1049
 msgid "Disable syntax highlighting"
 msgstr "সিনট্যাক্স হাইলাইটিং নিস্ক্রিয় করা হবে"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1286
+#: ../pluma/pluma-window.c:1335
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' খুলুন"
 
-#: ../pluma/pluma-window.c:1391
+#: ../pluma/pluma-window.c:1440
 msgid "Open a recently used file"
 msgstr "সম্প্রতি ব্যবহৃত কোনো ফাইল খুলুন"
 
-#: ../pluma/pluma-window.c:1397
+#: ../pluma/pluma-window.c:1446
 msgid "Open"
 msgstr "খুলুন"
 
-#: ../pluma/pluma-window.c:1455
+#: ../pluma/pluma-window.c:1504
 msgid "Save"
 msgstr "সংরক্ষণ"
 
-#: ../pluma/pluma-window.c:1457
+#: ../pluma/pluma-window.c:1506
 msgid "Print"
 msgstr "মুদ্রণ করুন"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1614
+#: ../pluma/pluma-window.c:1663
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' সক্রিয় করুন"
 
-#: ../pluma/pluma-window.c:1867
+#: ../pluma/pluma-window.c:1916
 msgid "Use Spaces"
 msgstr "শূণ্যস্থান প্রয়োগ করুন"
 
-#: ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1987
 msgid "Tab Width"
 msgstr "ট্যাবের দৈর্ঘ্য"
 
@@ -2610,11 +2627,11 @@ msgstr "আপনি কি নিশ্চিতরূপে নির্বা
 msgid "If you delete an item, it is permanently lost."
 msgstr "একটি বস্তু মুছে ফেলা হলে তা স্থায়ীভাবে হারিয়ে যাবে।"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:1670
+#: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
 msgstr "(ফাঁকা)"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3308
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3224
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2622,11 +2639,11 @@ msgstr "নাম পরিবর্তিত ফাইলটি বর্তম
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3547
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3481
 msgid "file"
 msgstr "ফাইল"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3571
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3505
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2634,11 +2651,11 @@ msgstr "নতুন ফাইল বর্তমানে পরিশোধক
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3600
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3534
 msgid "directory"
 msgstr "ডিরেক্টরি"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3620
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3554
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
