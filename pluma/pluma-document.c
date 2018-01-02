@@ -2099,7 +2099,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 	gint cont = 0;
 	gchar *search_text;
 	gchar *replace_text = NULL;
-	gint replace_text_len;
+	gint replace_text_len = 0;
 	GtkTextBuffer *buffer;
 	gboolean brackets_highlighting;
 	gboolean search_highliting;
