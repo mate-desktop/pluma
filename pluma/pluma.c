@@ -303,7 +303,7 @@ on_message_received (const char *message,
 
 			line_position = atoi (params[1]);
 
-			if (params[2] != '\0')
+			if (*params[2] != '\0')
 				encoding = pluma_encoding_get_from_charset (params[2]);
 
 			n_uris = atoi (params[3]);
