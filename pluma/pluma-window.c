@@ -269,15 +269,6 @@ pluma_window_window_state_event (GtkWidget           *widget,
 
 	window->priv->window_state = event->new_window_state;
 
-	if (event->changed_mask &
-	    (GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_FULLSCREEN))
-	{
-		gboolean show;
-
-		show = !(event->new_window_state &
-			(GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_FULLSCREEN));
-	}
-
 	return FALSE;
 }
 
@@ -3022,7 +3013,6 @@ fullscreen_controls_build (PlumaWindow *window)
 {
 	PlumaWindowPrivate *priv = window->priv;
 	GtkWidget *toolbar;
-	GtkWidget *toolbar_recent_menu;
 	GtkAction *action;
 
 	if (priv->fullscreen_controls != NULL)
@@ -3041,8 +3031,8 @@ fullscreen_controls_build (PlumaWindow *window)
 	action = gtk_action_group_get_action (priv->always_sensitive_action_group,
 					      "LeaveFullscreen");
 	g_object_set (action, "is-important", TRUE, NULL);
-	
-	toolbar_recent_menu = setup_toolbar_open_button (window, toolbar);
+
+	setup_toolbar_open_button (window, toolbar);
 
 	gtk_container_foreach (GTK_CONTAINER (toolbar),
 			       (GtkCallback)set_non_homogeneus,

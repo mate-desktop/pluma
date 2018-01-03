@@ -889,7 +889,6 @@ document_loaded (PlumaDocument *document,
 	GtkWidget *emsg;
 	GFile *location;
 	gchar *uri;
-	const PlumaEncoding *encoding;
 
 	g_return_if_fail ((tab->priv->state == PLUMA_TAB_STATE_LOADING) ||
 			  (tab->priv->state == PLUMA_TAB_STATE_REVERTING));
@@ -915,8 +914,6 @@ document_loaded (PlumaDocument *document,
 			pluma_tab_set_state (tab, PLUMA_TAB_STATE_LOADING_ERROR);
 		else
 			pluma_tab_set_state (tab, PLUMA_TAB_STATE_REVERTING_ERROR);
-
-		encoding = pluma_document_get_encoding (document);
 
 		if (error->domain == G_IO_ERROR &&
 		    error->code == G_IO_ERROR_CANCELLED)
@@ -1033,9 +1030,6 @@ document_loaded (PlumaDocument *document,
 			    	    g_file_equal (location, loc))
 			    	{
 			    		GtkWidget *w;
-			    		PlumaView *view;
-
-			    		view = pluma_tab_get_view (tab);
 
 			    		tab->priv->not_editable = TRUE;
 
@@ -2157,7 +2151,6 @@ _pluma_tab_save_as (PlumaTab                 *tab,
                     PlumaDocumentNewlineType  newline_type)
 {
 	PlumaDocument *doc;
-	PlumaDocumentSaveFlags save_flags;
 
 	g_return_if_fail (PLUMA_IS_TAB (tab));
 	g_return_if_fail ((tab->priv->state == PLUMA_TAB_STATE_NORMAL) ||
@@ -2182,11 +2175,6 @@ _pluma_tab_save_as (PlumaTab                 *tab,
 		 */
 
 		set_message_area (tab, NULL);
-		save_flags = tab->priv->save_flags | PLUMA_DOCUMENT_SAVE_IGNORE_MTIME;
-	}
-	else
-	{
-		save_flags = tab->priv->save_flags;
 	}
 
 	pluma_tab_set_state (tab, PLUMA_TAB_STATE_SAVING);

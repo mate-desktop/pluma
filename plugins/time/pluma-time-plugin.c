@@ -732,7 +732,7 @@ get_configure_dialog (PlumaTimePlugin *plugin)
 	gchar *ui_file;
 	GtkWidget *viewport;
 	PlumaTimePluginPromptType prompt_type;
-	gchar *sf, *cf;
+	gchar *sf;
 	GtkWidget *error_widget;
 	gboolean ret;
 	gchar *root_objects[] = {

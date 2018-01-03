@@ -616,7 +616,6 @@ pluma_message_bus_register (PlumaMessageBus *bus,
 			    ...)
 {
 	gchar *identifier;
-	gpointer data;
 	va_list var_args;
 	PlumaMessageType *message_type;
 
@@ -630,7 +629,7 @@ pluma_message_bus_register (PlumaMessageBus *bus,
 	}
 
 	identifier = pluma_message_type_identifier (object_path, method);
-	data = g_hash_table_lookup (bus->priv->types, identifier);
+	g_hash_table_lookup (bus->priv->types, identifier);
 	
 	va_start (var_args, num_optional);
 	message_type = pluma_message_type_new_valist (object_path, 
