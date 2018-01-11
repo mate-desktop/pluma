@@ -1031,8 +1031,6 @@ document_loaded (PlumaDocument *document,
 			    	{
 			    		GtkWidget *w;
 
-			    		pluma_tab_get_view (tab);
-
 			    		tab->priv->not_editable = TRUE;
 
 			    		w = pluma_file_already_open_warning_message_area_new (uri);
