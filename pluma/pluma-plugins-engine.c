@@ -60,13 +60,13 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 
 	pluma_debug (DEBUG_PLUGINS);
 
+	peas_engine_enable_loader (PEAS_ENGINE (engine), "python");
+
 	engine->priv = G_TYPE_INSTANCE_GET_PRIVATE (engine,
 	                                            PLUMA_TYPE_PLUGINS_ENGINE,
 	                                            PlumaPluginsEnginePrivate);
 
 	engine->priv->plugin_settings = g_settings_new (PLUMA_SCHEMA);
-
-	peas_engine_enable_loader (PEAS_ENGINE (engine), "python");
 
 	/* This should be moved to libpeas */
 	if (!g_irepository_require (g_irepository_get_default (),
