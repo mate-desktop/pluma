@@ -1418,11 +1418,13 @@ setup_toolbar_open_button (PlumaWindow *window,
 			  window);
 	
 	/* add the custom Open button to the toolbar */
-	open_button = gtk_menu_tool_button_new_from_stock (GTK_STOCK_OPEN);
+	open_button = gtk_menu_tool_button_new (gtk_image_new_from_icon_name ("document-open",
+									      GTK_ICON_SIZE_MENU),
+						_("Open a file"));
+
 	gtk_menu_tool_button_set_menu (GTK_MENU_TOOL_BUTTON (open_button),
 				       toolbar_recent_menu);
 
-	gtk_tool_item_set_tooltip_text (open_button, _("Open a file"));
 	gtk_menu_tool_button_set_arrow_tooltip_text (GTK_MENU_TOOL_BUTTON (open_button),
 						     _("Open a recently used file"));
 
@@ -3621,10 +3623,10 @@ create_side_panel (PlumaWindow *window)
 				window);
 
 	documents_panel = pluma_documents_panel_new (window);
-	pluma_panel_add_item_with_stock_icon (PLUMA_PANEL (window->priv->side_panel),
-					      documents_panel,
-					      _("Documents"),
-					      "text-x-generic");
+	pluma_panel_add_item_with_icon (PLUMA_PANEL (window->priv->side_panel),
+					documents_panel,
+					_("Documents"),
+					"text-x-generic");
 }
 
 static void

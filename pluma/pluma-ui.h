@@ -53,23 +53,23 @@ static const GtkActionEntry pluma_always_sensitive_menu_entries[] =
 	{ "Help", NULL, N_("_Help") },
 
 	/* File menu */
-	{ "FileNew", GTK_STOCK_NEW, NULL, "<control>N",
+	{ "FileNew", "document-new", N_("_New"), "<control>N",
 	  N_("Create a new document"), G_CALLBACK (_pluma_cmd_file_new) },
-	{ "FileOpen", GTK_STOCK_OPEN, N_("_Open..."), "<control>O",
+	{ "FileOpen", "document-open", N_("_Open..."), "<control>O",
 	  N_("Open a file"), G_CALLBACK (_pluma_cmd_file_open) },
 
 	/* Edit menu */
-	{ "EditPreferences", GTK_STOCK_PREFERENCES, N_("Pr_eferences"), NULL,
+	{ "EditPreferences", "preferences-desktop", N_("Pr_eferences"), NULL,
 	  N_("Configure the application"), G_CALLBACK (_pluma_cmd_edit_preferences) },
 
 	/* Help menu */
-	{"HelpContents", GTK_STOCK_HELP, N_("_Contents"), "F1",
+	{"HelpContents", "help-browser", N_("_Contents"), "F1",
 	 N_("Open the pluma manual"), G_CALLBACK (_pluma_cmd_help_contents) },
-	{ "HelpAbout", GTK_STOCK_ABOUT, NULL, NULL,
+	{ "HelpAbout", "help-about", N_("_About"), NULL,
 	 N_("About this application"), G_CALLBACK (_pluma_cmd_help_about) },
 	
 	/* Fullscreen toolbar */
-	{ "LeaveFullscreen", GTK_STOCK_LEAVE_FULLSCREEN, NULL,
+	{ "LeaveFullscreen", "view-restore", N_("_Leave Fullscreen"),
 	  NULL, N_("Leave fullscreen mode"),
 	  G_CALLBACK (_pluma_cmd_view_leave_fullscreen_mode) }
 };
@@ -77,56 +77,56 @@ static const GtkActionEntry pluma_always_sensitive_menu_entries[] =
 static const GtkActionEntry pluma_menu_entries[] =
 {
 	/* File menu */
-	{ "FileSave", GTK_STOCK_SAVE, NULL, "<control>S",
+	{ "FileSave", "document-save", N_("_Save"), "<control>S",
 	  N_("Save the current file"), G_CALLBACK (_pluma_cmd_file_save) },
-	{ "FileSaveAs", GTK_STOCK_SAVE_AS, N_("Save _As..."), "<shift><control>S",
+	{ "FileSaveAs", "document-save-as", N_("Save _As..."), "<shift><control>S",
 	  N_("Save the current file with a different name"), G_CALLBACK (_pluma_cmd_file_save_as) },
-	{ "FileRevert", GTK_STOCK_REVERT_TO_SAVED, NULL, NULL,
+	{ "FileRevert", "document-revert", N_("_Revert"), NULL,
 	  N_("Revert to a saved version of the file"), G_CALLBACK (_pluma_cmd_file_revert) },
-	{ "FilePrintPreview", GTK_STOCK_PRINT_PREVIEW, N_("Print Previe_w"),"<control><shift>P",
+	{ "FilePrintPreview", "document-print-preview", N_("Print Previe_w"),"<control><shift>P",
 	  N_("Print preview"), G_CALLBACK (_pluma_cmd_file_print_preview) },
-	 { "FilePrint", GTK_STOCK_PRINT, N_("_Print..."), "<control>P",
+	 { "FilePrint", "document-print", N_("_Print..."), "<control>P",
 	  N_("Print the current page"), G_CALLBACK (_pluma_cmd_file_print) },
 
 	/* Edit menu */
-	{ "EditUndo", GTK_STOCK_UNDO, NULL, "<control>Z",
+	{ "EditUndo", "edit-undo", N_("_Undo"), "<control>Z",
 	  N_("Undo the last action"), G_CALLBACK (_pluma_cmd_edit_undo) },
-	{ "EditRedo", GTK_STOCK_REDO, NULL, "<shift><control>Z",
+	{ "EditRedo", "edit-redo", N_("_Redo"), "<shift><control>Z",
 	  N_("Redo the last undone action"), G_CALLBACK (_pluma_cmd_edit_redo) },
-	{ "EditCut", GTK_STOCK_CUT, NULL, "<control>X",
+	{ "EditCut", "edit-cut", N_("Cu_t"), "<control>X",
 	  N_("Cut the selection"), G_CALLBACK (_pluma_cmd_edit_cut) },
-	{ "EditCopy", GTK_STOCK_COPY, NULL, "<control>C",
+	{ "EditCopy", "edit-copy", N_("_Copy"), "<control>C",
 	  N_("Copy the selection"), G_CALLBACK (_pluma_cmd_edit_copy) },
-	{ "EditPaste", GTK_STOCK_PASTE, NULL, "<control>V",
+	{ "EditPaste", "edit-paste", N_("_Paste"), "<control>V",
 	  N_("Paste the clipboard"), G_CALLBACK (_pluma_cmd_edit_paste) },
-	{ "EditDelete", GTK_STOCK_DELETE, NULL, NULL,
+	{ "EditDelete", "edit-delete", N_("_Delete"), NULL,
 	  N_("Delete the selected text"), G_CALLBACK (_pluma_cmd_edit_delete) },
-	{ "EditSelectAll", GTK_STOCK_SELECT_ALL, N_("Select _All"), "<control>A",
+	{ "EditSelectAll", "edit-select-all", N_("Select _All"), "<control>A",
 	  N_("Select the entire document"), G_CALLBACK (_pluma_cmd_edit_select_all) },
 
 	/* View menu */
 	{ "ViewHighlightMode", NULL, N_("_Highlight Mode") },
 
 	/* Search menu */
-	{ "SearchFind", GTK_STOCK_FIND, N_("_Find..."), "<control>F",
+	{ "SearchFind", "edit-find", N_("_Find..."), "<control>F",
 	  N_("Search for text"), G_CALLBACK (_pluma_cmd_search_find) },
 	{ "SearchFindNext", NULL, N_("Find Ne_xt"), "<control>G",
 	  N_("Search forwards for the same text"), G_CALLBACK (_pluma_cmd_search_find_next) },
 	{ "SearchFindPrevious", NULL, N_("Find Pre_vious"), "<shift><control>G",
 	  N_("Search backwards for the same text"), G_CALLBACK (_pluma_cmd_search_find_prev) },
-	{ "SearchReplace", GTK_STOCK_FIND_AND_REPLACE, N_("_Replace..."), "<control>H",
+	{ "SearchReplace", "edit-find-replace", N_("_Replace..."), "<control>H",
 	  N_("Search for and replace text"), G_CALLBACK (_pluma_cmd_search_replace) },
 	{ "SearchClearHighlight", NULL, N_("_Clear Highlight"), "<shift><control>K",
 	  N_("Clear highlighting of search matches"), G_CALLBACK (_pluma_cmd_search_clear_highlight) },
-	{ "SearchGoToLine", GTK_STOCK_JUMP_TO, N_("Go to _Line..."), "<control>I",
+	{ "SearchGoToLine", "go-jump", N_("Go to _Line..."), "<control>I",
 	  N_("Go to a specific line"), G_CALLBACK (_pluma_cmd_search_goto_line) },
-	{ "SearchIncrementalSearch", GTK_STOCK_FIND, N_("_Incremental Search..."), "<control>K",
+	{ "SearchIncrementalSearch", "edit-find", N_("_Incremental Search..."), "<control>K",
 	  N_("Incrementally search for text"), G_CALLBACK (_pluma_cmd_search_incremental_search) },
 
 	/* Documents menu */
-	{ "FileSaveAll", GTK_STOCK_SAVE, N_("_Save All"), "<shift><control>L",
+	{ "FileSaveAll", "document-save", N_("_Save All"), "<shift><control>L",
 	  N_("Save all open files"), G_CALLBACK (_pluma_cmd_file_save_all) },
-	{ "FileCloseAll", GTK_STOCK_CLOSE, N_("_Close All"), "<shift><control>W",
+	{ "FileCloseAll", "window-close", N_("_Close All"), "<shift><control>W",
 	  N_("Close all open files"), G_CALLBACK (_pluma_cmd_file_close_all) },
 	{ "DocumentsPreviousDocument", NULL, N_("_Previous Document"), "<alt><control>Page_Up",
 	  N_("Activate previous document"), G_CALLBACK (_pluma_cmd_documents_previous_document) },
@@ -139,14 +139,14 @@ static const GtkActionEntry pluma_menu_entries[] =
 /* separate group, needs to be sensitive on OS X even when there are no tabs */
 static const GtkActionEntry pluma_close_menu_entries[] =
 {
-	{ "FileClose", GTK_STOCK_CLOSE, NULL, "<control>W",
+	{ "FileClose", "window-close", N_("_Close"), "<control>W",
 	  N_("Close the current file"), G_CALLBACK (_pluma_cmd_file_close) }
 };
 
 /* separate group, should be sensitive even when there are no tabs */
 static const GtkActionEntry pluma_quit_menu_entries[] =
 {
-	{ "FileQuit", GTK_STOCK_QUIT, NULL, "<control>Q",
+	{ "FileQuit", "application-exit", N_("_Quit"), "<control>Q",
 	  N_("Quit the program"), G_CALLBACK (_pluma_cmd_file_quit) }
 };
 
@@ -158,7 +158,7 @@ static const GtkToggleActionEntry pluma_always_sensitive_toggle_menu_entries[] =
 	{ "ViewStatusbar", NULL, N_("_Statusbar"), NULL,
 	  N_("Show or hide the statusbar in the current window"),
 	  G_CALLBACK (_pluma_cmd_view_show_statusbar), TRUE },
-	{ "ViewFullscreen", GTK_STOCK_FULLSCREEN, NULL, "F11",
+	{ "ViewFullscreen", "view-fullscreen", N_("_Fullscreen"), "F11",
 	  N_("Edit text in fullscreen"),
 	  G_CALLBACK (_pluma_cmd_view_toggle_fullscreen_mode), FALSE }
 };

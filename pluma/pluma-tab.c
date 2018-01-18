@@ -680,7 +680,7 @@ show_loading_message_area (PlumaTab *tab)
 					       name_markup);
 		}
 		
-		area = pluma_progress_message_area_new (GTK_STOCK_REVERT_TO_SAVED,
+		area = pluma_progress_message_area_new ("document-revert",
 							msg,
 							TRUE);
 	}
@@ -703,7 +703,7 @@ show_loading_message_area (PlumaTab *tab)
 					       name_markup);
 		}
 
-		area = pluma_progress_message_area_new (GTK_STOCK_OPEN,
+		area = pluma_progress_message_area_new ("document-open",
 							msg,
 							TRUE);
 	}
@@ -792,7 +792,7 @@ show_saving_message_area (PlumaTab *tab)
 		msg = g_strdup_printf (_("Saving %s"), from_markup);
 	}
 
-	area = pluma_progress_message_area_new (GTK_STOCK_SAVE,
+	area = pluma_progress_message_area_new ("document-save",
 						msg,
 						FALSE);
 
@@ -2488,11 +2488,11 @@ show_printing_message_area (PlumaTab *tab, gboolean preview)
 	GtkWidget *area;
 
 	if (preview)
-		area = pluma_progress_message_area_new (GTK_STOCK_PRINT_PREVIEW,
+		area = pluma_progress_message_area_new ("document-print-preview",
 							"",
 							TRUE);
 	else
-		area = pluma_progress_message_area_new (GTK_STOCK_PRINT,
+		area = pluma_progress_message_area_new ("document-print",
 							"",
 							TRUE);
 

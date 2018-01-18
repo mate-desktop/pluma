@@ -76,12 +76,12 @@ struct _PlumaProgressMessageAreaClass
  */
 GType 		 pluma_progress_message_area_get_type 		(void) G_GNUC_CONST;
 
-GtkWidget	*pluma_progress_message_area_new      		(const gchar              *stock_id,
+GtkWidget	*pluma_progress_message_area_new      		(const gchar              *image_id,
 								 const gchar              *markup,
 								 gboolean                  has_cancel);
 
-void		 pluma_progress_message_area_set_stock_image	(PlumaProgressMessageArea *area,
-								 const gchar              *stock_id);
+void		 pluma_progress_message_area_set_image		(PlumaProgressMessageArea *area,
+								 const gchar              *image_id);
 
 void		 pluma_progress_message_area_set_markup		(PlumaProgressMessageArea *area,
 								 const gchar              *markup);

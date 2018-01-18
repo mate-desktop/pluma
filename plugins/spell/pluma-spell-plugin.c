@@ -96,7 +96,7 @@ static void	auto_spell_cb	(GtkAction *action, PlumaSpellPlugin *plugin);
 static const GtkActionEntry action_entries[] =
 {
 	{ "CheckSpell",
-	  GTK_STOCK_SPELL_CHECK,
+	  "tools-check-spelling",
 	  N_("_Check Spelling..."),
 	  "<shift>F7",
 	  N_("Check the current document for incorrect spelling"),

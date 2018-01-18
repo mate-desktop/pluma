@@ -136,9 +136,9 @@ pluma_statusbar_init (PlumaStatusbar *statusbar)
 	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_container_add (GTK_CONTAINER (statusbar->priv->state_frame), hbox);
 
-	statusbar->priv->load_image = gtk_image_new_from_stock (GTK_STOCK_OPEN, GTK_ICON_SIZE_MENU);
-	statusbar->priv->save_image = gtk_image_new_from_stock (GTK_STOCK_SAVE, GTK_ICON_SIZE_MENU);
-	statusbar->priv->print_image = gtk_image_new_from_stock (GTK_STOCK_PRINT, GTK_ICON_SIZE_MENU);
+	statusbar->priv->load_image = gtk_image_new_from_icon_name ("document-open", GTK_ICON_SIZE_MENU);
+	statusbar->priv->save_image = gtk_image_new_from_icon_name ("document-save", GTK_ICON_SIZE_MENU);
+	statusbar->priv->print_image = gtk_image_new_from_icon_name ("document-print", GTK_ICON_SIZE_MENU);
 
 	gtk_widget_show (hbox);
 

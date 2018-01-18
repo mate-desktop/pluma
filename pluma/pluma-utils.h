@@ -64,12 +64,12 @@ void		 pluma_utils_menu_position_under_tree_view
 							 gboolean *push_in,
 							 gpointer  user_data);
 
-GtkWidget	*pluma_gtk_button_new_with_stock_icon	(const gchar *label,
-							 const gchar *stock_id);
+GtkWidget	*pluma_gtk_button_new_with_icon		(const gchar *label,
+							 const gchar *icon_name);
 
 GtkWidget	*pluma_dialog_add_button		(GtkDialog   *dialog,
 							 const gchar *text,
-							 const gchar *stock_id, 
+							 const gchar *icon_name, 
 							 gint         response_id);
 
 gchar		*pluma_utils_escape_underscores		(const gchar *text,

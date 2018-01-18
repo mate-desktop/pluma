@@ -919,7 +919,7 @@ get_choose_format_dialog (GtkWindow                 *parent,
 		err_dialog = gtk_dialog_new_with_buttons (NULL,
 			parent,
 			GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-			GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+			"gtk-ok", GTK_RESPONSE_ACCEPT,
 			NULL);
 
 		if (wg != NULL)

@@ -203,23 +203,23 @@ pluma_utils_menu_position_under_tree_view (GtkMenu  *menu,
 }
 
 /**
- * pluma_gtk_button_new_with_stock_icon:
+ * pluma_gtk_button_new_with_icon:
  * @label:
- * @stock_id:
+ * @icon_name:
  *
  * Returns: (transfer full):
  */
 
 GtkWidget *
-pluma_gtk_button_new_with_stock_icon (const gchar *label,
-				      const gchar *stock_id)
+pluma_gtk_button_new_with_icon (const gchar *label,
+				const gchar *icon_name)
 {
 	GtkWidget *button;
 
 	button = gtk_button_new_with_mnemonic (label);
 	gtk_button_set_image (GTK_BUTTON (button),
-			      gtk_image_new_from_stock (stock_id,
-							GTK_ICON_SIZE_BUTTON));
+			      gtk_image_new_from_icon_name (icon_name,
+							    GTK_ICON_SIZE_BUTTON));
 
         return button;
 }
@@ -228,7 +228,7 @@ pluma_gtk_button_new_with_stock_icon (const gchar *label,
  * pluma_dialog_add_button:
  * @dialog:
  * @text:
- * @stock_id:
+ * @icon_name:
  * @response_id:
  *
  * Returns: (transfer none):
@@ -236,16 +236,16 @@ pluma_gtk_button_new_with_stock_icon (const gchar *label,
 GtkWidget *
 pluma_dialog_add_button (GtkDialog   *dialog,
 			 const gchar *text,
-			 const gchar *stock_id,
+			 const gchar *icon_name,
 			 gint         response_id)
 {
 	GtkWidget *button;
 
 	g_return_val_if_fail (GTK_IS_DIALOG (dialog), NULL);
 	g_return_val_if_fail (text != NULL, NULL);
-	g_return_val_if_fail (stock_id != NULL, NULL);
+	g_return_val_if_fail (icon_name != NULL, NULL);
 
-	button = pluma_gtk_button_new_with_stock_icon (text, stock_id);
+	button = pluma_gtk_button_new_with_icon (text, icon_name);
 	g_return_val_if_fail (button != NULL, NULL);
 
 	gtk_widget_set_can_default (button, TRUE);
