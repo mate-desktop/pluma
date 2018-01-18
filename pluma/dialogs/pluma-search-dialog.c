@@ -331,7 +331,7 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	gtk_window_set_destroy_with_parent (GTK_WINDOW (dlg), TRUE);
 
 	gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-				GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL,
+				"gtk-close", GTK_RESPONSE_CANCEL,
 				NULL);
 				
 	/* HIG defaults */
@@ -416,10 +416,15 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	gtk_label_set_mnemonic_widget (GTK_LABEL (dlg->priv->replace_label),
 				       dlg->priv->replace_entry);
 
-	dlg->priv->find_button = gtk_button_new_from_stock (GTK_STOCK_FIND);
+	dlg->priv->find_button = GTK_WIDGET (g_object_new (GTK_TYPE_BUTTON,
+							   "label", "gtk-find",
+							   "use-stock", TRUE,
+							   "use-underline", TRUE,
+							   NULL));
+
 	dlg->priv->replace_all_button = gtk_button_new_with_mnemonic (_("Replace _All"));
-	dlg->priv->replace_button = pluma_gtk_button_new_with_stock_icon (_("_Replace"),
-									  GTK_STOCK_FIND_AND_REPLACE);
+	dlg->priv->replace_button = pluma_gtk_button_new_with_icon (_("_Replace"),
+								    "edit-find-replace");
 
 	gtk_dialog_add_action_widget (GTK_DIALOG (dlg),
 				      dlg->priv->replace_all_button,

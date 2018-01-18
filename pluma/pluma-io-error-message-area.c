@@ -90,16 +90,16 @@ set_contents (GtkWidget *area,
 }
 
 static void
-info_bar_add_stock_button_with_text (GtkInfoBar  *infobar,
-				     const gchar *text,
-				     const gchar *stock_id,
-				     gint         response_id)
+info_bar_add_icon_button_with_text (GtkInfoBar  *infobar,
+				    const gchar *text,
+				    const gchar *icon_id,
+				    gint         response_id)
 {
 	GtkWidget *button;
 	GtkWidget *image;
 
 	button = gtk_info_bar_add_button (infobar, text, response_id);
-	image = gtk_image_new_from_stock (stock_id, GTK_ICON_SIZE_BUTTON);
+	image = gtk_image_new_from_icon_name (icon_id, GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_image (GTK_BUTTON (button), image);
 }
 
@@ -171,7 +171,7 @@ create_io_loading_error_message_area (const gchar *primary_text,
 	GtkWidget *message_area;
 
 	message_area = gtk_info_bar_new_with_buttons (
-					GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+					"gtk-cancel", GTK_RESPONSE_CANCEL,
 					NULL);
 	gtk_info_bar_set_message_type (GTK_INFO_BAR (message_area),
 				       GTK_MESSAGE_ERROR);
@@ -183,10 +183,10 @@ create_io_loading_error_message_area (const gchar *primary_text,
 
 	if (recoverable_error)
 	{
-		info_bar_add_stock_button_with_text (GTK_INFO_BAR (message_area),
-						     _("_Retry"),
-						     GTK_STOCK_REFRESH,
-						     GTK_RESPONSE_OK);
+		info_bar_add_icon_button_with_text (GTK_INFO_BAR (message_area),
+						    _("_Retry"),
+						    "view-refresh",
+						    GTK_RESPONSE_OK);
 	}
 
 	return message_area;
@@ -485,10 +485,10 @@ create_conversion_error_message_area (const gchar *primary_text,
 
 	message_area = gtk_info_bar_new ();
 
-	info_bar_add_stock_button_with_text (GTK_INFO_BAR (message_area),
-					     _("_Retry"),
-					     GTK_STOCK_REDO,
-					     GTK_RESPONSE_OK);
+	info_bar_add_icon_button_with_text (GTK_INFO_BAR (message_area),
+					    _("_Retry"),
+					    "edit-redo",
+					    GTK_RESPONSE_OK);
 
 	if (edit_anyway)
 	{
@@ -508,7 +508,7 @@ create_conversion_error_message_area (const gchar *primary_text,
 	else
 	{
 		gtk_info_bar_add_button (GTK_INFO_BAR (message_area),
-					 GTK_STOCK_CANCEL,
+					 "gtk-cancel",
 					 GTK_RESPONSE_CANCEL);
 		gtk_info_bar_set_message_type (GTK_INFO_BAR (message_area),
 					       GTK_MESSAGE_ERROR);
@@ -878,10 +878,10 @@ pluma_externally_modified_saving_error_message_area_new (
 
 	message_area = gtk_info_bar_new ();
 	
-	info_bar_add_stock_button_with_text (GTK_INFO_BAR (message_area),
-					     _("S_ave Anyway"),
-					     GTK_STOCK_SAVE,
-					     GTK_RESPONSE_YES);
+	info_bar_add_icon_button_with_text (GTK_INFO_BAR (message_area),
+					    _("S_ave Anyway"),
+					    "document-save",
+					    GTK_RESPONSE_YES);
 	gtk_info_bar_add_button (GTK_INFO_BAR (message_area),
 				 _("D_on't Save"),
 				 GTK_RESPONSE_CANCEL);
@@ -982,10 +982,10 @@ pluma_no_backup_saving_error_message_area_new (const gchar  *uri,
 
 	message_area = gtk_info_bar_new ();
 	
-	info_bar_add_stock_button_with_text (GTK_INFO_BAR (message_area),
-					     _("S_ave Anyway"),
-					     GTK_STOCK_SAVE,
-					     GTK_RESPONSE_YES);
+	info_bar_add_icon_button_with_text (GTK_INFO_BAR (message_area),
+					    _("S_ave Anyway"),
+					    "document-save",
+					    GTK_RESPONSE_YES);
 	gtk_info_bar_add_button (GTK_INFO_BAR (message_area),
 				 _("D_on't Save"),
 				 GTK_RESPONSE_CANCEL);
@@ -1215,12 +1215,12 @@ pluma_externally_modified_message_area_new (const gchar *uri,
 
 	message_area = gtk_info_bar_new ();
 	
-	info_bar_add_stock_button_with_text (GTK_INFO_BAR (message_area),
-					     _("_Reload"),
-					     GTK_STOCK_REFRESH,
-					     GTK_RESPONSE_OK);
+	info_bar_add_icon_button_with_text (GTK_INFO_BAR (message_area),
+					    _("_Reload"),
+					    "view-refresh",
+					    GTK_RESPONSE_OK);
 	gtk_info_bar_add_button (GTK_INFO_BAR (message_area),
-				 GTK_STOCK_CANCEL,
+				 "gtk-cancel",
 				 GTK_RESPONSE_CANCEL);
 	gtk_info_bar_set_message_type (GTK_INFO_BAR (message_area),
 				       GTK_MESSAGE_WARNING);

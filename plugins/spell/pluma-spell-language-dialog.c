@@ -130,11 +130,11 @@ create_dialog (PlumaSpellLanguageDialog *dlg,
 	};
 	
 	gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-				GTK_STOCK_CANCEL,
+				"gtk-cancel",
 				GTK_RESPONSE_CANCEL,
-				GTK_STOCK_OK,
+				"gtk-ok",
 				GTK_RESPONSE_OK,
-				GTK_STOCK_HELP,
+				"gtk-help",
 				GTK_RESPONSE_HELP,
 				NULL);
 

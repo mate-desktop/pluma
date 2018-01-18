@@ -63,7 +63,7 @@ pluma_progress_message_area_set_has_cancel_button (PlumaProgressMessageArea *are
 {
 	if (has_button)
 		gtk_info_bar_add_button (GTK_INFO_BAR (area),
-					 GTK_STOCK_CANCEL,
+					 "gtk-cancel",
 					 GTK_RESPONSE_CANCEL);
 
 	g_object_notify (G_OBJECT (area), "has-cancel-button");
@@ -172,21 +172,21 @@ pluma_progress_message_area_init (PlumaProgressMessageArea *area)
 }
 
 GtkWidget *
-pluma_progress_message_area_new (const gchar *stock_id,
+pluma_progress_message_area_new (const gchar *image_id,
 				 const gchar *markup,
 				 gboolean     has_cancel)
 {
 	PlumaProgressMessageArea *area;
 
-	g_return_val_if_fail (stock_id != NULL, NULL);
+	g_return_val_if_fail (image_id != NULL, NULL);
 	g_return_val_if_fail (markup != NULL, NULL);
 
 	area = PLUMA_PROGRESS_MESSAGE_AREA (g_object_new (PLUMA_TYPE_PROGRESS_MESSAGE_AREA,
 							  "has-cancel-button", has_cancel,
 							  NULL));
 
-	pluma_progress_message_area_set_stock_image (area,
-						     stock_id);
+	pluma_progress_message_area_set_image (area,
+					       image_id);
 
 	pluma_progress_message_area_set_markup (area,
 						markup);
@@ -195,15 +195,15 @@ pluma_progress_message_area_new (const gchar *stock_id,
 }
 
 void
-pluma_progress_message_area_set_stock_image (PlumaProgressMessageArea *area,
-					     const gchar              *stock_id)
+pluma_progress_message_area_set_image (PlumaProgressMessageArea *area,
+				       const gchar              *image_id)
 {
 	g_return_if_fail (PLUMA_IS_PROGRESS_MESSAGE_AREA (area));
-	g_return_if_fail (stock_id != NULL);
+	g_return_if_fail (image_id != NULL);
 	
-	gtk_image_set_from_stock (GTK_IMAGE (area->priv->image),
-				  stock_id,
-				  GTK_ICON_SIZE_SMALL_TOOLBAR);
+	gtk_image_set_from_icon_name (GTK_IMAGE (area->priv->image),
+				      image_id,
+				      GTK_ICON_SIZE_SMALL_TOOLBAR);
 }
 
 void

@@ -502,8 +502,8 @@ build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word)
 	/* Ignore all */
 	mi = gtk_image_menu_item_new_with_mnemonic (_("_Ignore All"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
-				       gtk_image_new_from_stock (GTK_STOCK_GOTO_BOTTOM, 
-					       			 GTK_ICON_SIZE_MENU));
+				       gtk_image_new_from_icon_name ("go-bottom", 
+					       			     GTK_ICON_SIZE_MENU));
 	
 	g_signal_connect (mi,
 			  "activate",
@@ -517,8 +517,8 @@ build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word)
 	/* + Add to Dictionary */
 	mi = gtk_image_menu_item_new_with_mnemonic (_("_Add"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
-				       gtk_image_new_from_stock (GTK_STOCK_ADD, 
-					       			 GTK_ICON_SIZE_MENU));
+				       gtk_image_new_from_icon_name ("list-add", 
+					       			     GTK_ICON_SIZE_MENU));
 
 	g_signal_connect (mi,
 			  "activate",
@@ -553,7 +553,7 @@ populate_popup (GtkTextView *textview, GtkMenu *menu, PlumaAutomaticSpellChecker
 	gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), mi);
 
 	/* then, on top of it, the suggestions menu. */
-	img = gtk_image_new_from_stock (GTK_STOCK_SPELL_CHECK, GTK_ICON_SIZE_MENU);
+	img = gtk_image_new_from_icon_name ("tools-check-spelling", GTK_ICON_SIZE_MENU);
 	mi = gtk_image_menu_item_new_with_mnemonic (_("_Spelling Suggestions..."));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi), img);
 

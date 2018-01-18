@@ -19,7 +19,7 @@ gboolean pluma_file_browser_utils_confirmation_dialog     (PlumaWindow * window,
                                                            GtkMessageType type,
                                                            gchar const *message,
 		                                           gchar const *secondary, 
-		                                           gchar const * button_stock, 
+		                                           gchar const * button_image, 
 		                                           gchar const * button_label);
 
 #endif /* __PLUMA_FILE_BROWSER_UTILS_H__ */

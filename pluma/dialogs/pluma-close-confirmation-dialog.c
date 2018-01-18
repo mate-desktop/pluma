@@ -142,7 +142,7 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 
 		pluma_dialog_add_button (GTK_DIALOG (dlg),
 					 _("_Cancel Logout"),
-					 GTK_STOCK_CANCEL,
+					 "process-stop",
 					 GTK_RESPONSE_CANCEL);
 	}
 	else
@@ -152,7 +152,7 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 				       GTK_RESPONSE_NO);
 
 		gtk_dialog_add_button (GTK_DIALOG (dlg),
-				       GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+				       "gtk-cancel", GTK_RESPONSE_CANCEL);
 	}
 	
 	if (dlg->priv->disable_save_to_disk)
@@ -162,7 +162,7 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 	}
 	else
 	{
-		const gchar *stock_id = GTK_STOCK_SAVE;
+		const gchar *icon_id = "gtk-save";
 		
 		if (GET_MODE (dlg->priv) == SINGLE_DOC_MODE)
 		{
@@ -172,11 +172,11 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 			
 			if (pluma_document_get_readonly (doc) || 
 			    pluma_document_is_untitled (doc))
-				stock_id = GTK_STOCK_SAVE_AS;
+				icon_id = "gtk-save-as";
 		}
 
 		gtk_dialog_add_button (GTK_DIALOG (dlg),
-				       stock_id, 
+				       icon_id, 
 				       GTK_RESPONSE_YES);
 
 		gtk_dialog_set_default_response	(GTK_DIALOG (dlg), 

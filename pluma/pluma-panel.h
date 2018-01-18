@@ -98,10 +98,10 @@ void		 pluma_panel_add_item			(PlumaPanel     *panel,
 						      	 const gchar    *name,
 							 GtkWidget      *image);
 
-void		 pluma_panel_add_item_with_stock_icon	(PlumaPanel     *panel,
-							 GtkWidget      *item,
-							 const gchar    *name,
-							 const gchar    *icon_name);
+void		 pluma_panel_add_item_with_icon	(PlumaPanel     *panel,
+						 GtkWidget      *item,
+						 const gchar    *name,
+						 const gchar    *icon_name);
 
 gboolean	 pluma_panel_remove_item	(PlumaPanel     *panel,
 					  	 GtkWidget      *item);

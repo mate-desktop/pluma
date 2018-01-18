@@ -90,7 +90,7 @@ static void sort_real (SortDialog *dialog);
 static const GtkActionEntry action_entries[] =
 {
 	{ "Sort",
-	  GTK_STOCK_SORT_ASCENDING,
+	  "view-sort-ascending",
 	  N_("S_ort..."),
 	  NULL,
 	  N_("Sort the current document or selection"),

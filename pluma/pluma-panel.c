@@ -687,19 +687,19 @@ pluma_panel_add_item (PlumaPanel  *panel,
 }
 
 /**
- * pluma_panel_add_item_with_stock_icon:
+ * pluma_panel_add_item_with_icon:
  * @panel: a #PlumaPanel
  * @item: the #GtkWidget to add to the @panel
  * @name: the name to be shown in the @panel
- * @stock_id: a stock id
+ * @icon_name: a icon name
  *
- * Same as pluma_panel_add_item() but using an image from stock.
+ * Same as pluma_panel_add_item() but using an image from icon name.
  */
 void
-pluma_panel_add_item_with_stock_icon (PlumaPanel  *panel, 
-				      GtkWidget   *item, 
-				      const gchar *name,
-				      const gchar *icon_name)
+pluma_panel_add_item_with_icon (PlumaPanel  *panel, 
+				GtkWidget   *item, 
+				const gchar *name,
+				const gchar *icon_name)
 {
 	GtkWidget *icon = NULL;
 
