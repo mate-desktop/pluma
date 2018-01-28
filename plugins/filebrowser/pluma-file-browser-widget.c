@@ -2473,11 +2473,7 @@ directory_open (PlumaFileBrowserWidget *obj,
 	if (FILE_IS_DIR (flags)) {
 		result = TRUE;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 		if (!gtk_show_uri_on_window (NULL, uri, GDK_CURRENT_TIME, &error)) {
-#else
-		if (!gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (obj)), uri, GDK_CURRENT_TIME, &error)) {
-#endif
 			g_signal_emit (obj, signals[ERROR], 0,
 				       PLUMA_FILE_BROWSER_ERROR_OPEN_DIRECTORY,
 				       error->message);

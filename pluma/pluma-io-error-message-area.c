@@ -133,11 +133,7 @@ set_message_area_text_and_icon (GtkWidget   *message_area,
 	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
 	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
 	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (primary_label), 0.0, 0.5);
-#endif
 	gtk_widget_set_can_focus (primary_label, TRUE);
 	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
 
@@ -152,11 +148,7 @@ set_message_area_text_and_icon (GtkWidget   *message_area,
 		gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
 		gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
 		gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 		gtk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
-#else
-		gtk_misc_set_alignment (GTK_MISC (secondary_label), 0.0, 0.5);
-#endif
 	}
 
 	gtk_widget_show_all (hbox_content);
@@ -530,11 +522,7 @@ create_conversion_error_message_area (const gchar *primary_text,
 	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
 	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
 	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (primary_label), 0.0, 0.5);
-#endif
 	gtk_widget_set_can_focus (primary_label, TRUE);
 	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
 
@@ -549,11 +537,7 @@ create_conversion_error_message_area (const gchar *primary_text,
 		gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
 		gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
 		gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 		gtk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
-#else
-		gtk_misc_set_alignment (GTK_MISC (secondary_label), 0.0, 0.5);
-#endif
 	}
 
 	create_combo_box (message_area, vbox);
@@ -808,11 +792,7 @@ pluma_file_already_open_warning_message_area_new (const gchar *uri)
 	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
 	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
 	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (primary_label), 0.0, 0.5);
-#endif
 	gtk_widget_set_can_focus (primary_label, TRUE);
 	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
 
@@ -827,11 +807,7 @@ pluma_file_already_open_warning_message_area_new (const gchar *uri)
 	gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
 	gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
 	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (secondary_label), 0.0, 0.5);
-#endif
 
 	gtk_widget_show_all (hbox_content);
 	set_contents (message_area, hbox_content);
@@ -912,11 +888,7 @@ pluma_externally_modified_saving_error_message_area_new (
 	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
 	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
 	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (primary_label), 0.0, 0.5);
-#endif
 	gtk_widget_set_can_focus (primary_label, TRUE);
 	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
 
@@ -930,11 +902,7 @@ pluma_externally_modified_saving_error_message_area_new (
 	gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
 	gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
 	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (secondary_label), 0.0, 0.5);
-#endif
 
 	gtk_widget_show_all (hbox_content);
 	set_contents (message_area, hbox_content);
@@ -1020,11 +988,7 @@ pluma_no_backup_saving_error_message_area_new (const gchar  *uri,
 	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
 	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
 	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (primary_label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (primary_label), 0.0, 0.5);
-#endif
 	gtk_widget_set_can_focus (primary_label, TRUE);
 	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
 
@@ -1040,11 +1004,7 @@ pluma_no_backup_saving_error_message_area_new (const gchar  *uri,
 	gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
 	gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
 	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (secondary_label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (secondary_label), 0.0, 0.5);
-#endif
 
 	gtk_widget_show_all (hbox_content);
 	set_contents (message_area, hbox_content);

@@ -2419,11 +2419,7 @@ search_region (PlumaDocument *doc,
 	gtk_text_iter_forward_lines (end, doc->priv->num_of_lines_search_text);
 
 	if (gtk_text_iter_has_tag (start, doc->priv->found_tag) &&
-#if GTK_CHECK_VERSION (3, 20, 0)
 	    !gtk_text_iter_starts_tag (start, doc->priv->found_tag))
-#else
-	    !gtk_text_iter_begins_tag (start, doc->priv->found_tag))
-#endif
 		gtk_text_iter_backward_to_tag_toggle (start, doc->priv->found_tag);
 
 	if (gtk_text_iter_has_tag (end, doc->priv->found_tag) &&

@@ -37,13 +37,6 @@ pluma_close_button_init (PlumaCloseButton *button)
 	GError *error = NULL;
 	const gchar button_style[] =
 		"* {\n"
-#if !GTK_CHECK_VERSION (3, 20, 0)
-		"	-GtkButton-default-border : 0;\n"
-		"	-GtkButton-default-outside-border : 0;\n"
-		"	-GtkButton-inner-border: 0;\n"
-		"	-GtkWidget-focus-line-width : 0;\n"
-		"	-GtkWidget-focus-padding : 0;\n"
-#endif
 		"	padding: 0;\n"
 		"}";
 

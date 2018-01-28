@@ -152,11 +152,7 @@ pluma_progress_message_area_init (PlumaProgressMessageArea *area)
 	gtk_widget_show (area->priv->label);
 	gtk_box_pack_start (GTK_BOX (hbox), area->priv->label, TRUE, TRUE, 0);
 	gtk_label_set_use_markup (GTK_LABEL (area->priv->label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (area->priv->label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (area->priv->label), 0.0, 0.5);
-#endif
 	gtk_label_set_ellipsize (GTK_LABEL (area->priv->label), 
 				 PANGO_ELLIPSIZE_END);
 
