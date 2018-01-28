@@ -63,17 +63,10 @@ pluma_help_display (GtkWindow   *parent,
 	else
 		link = g_strdup_printf ("help:%s", name);
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	ret = gtk_show_uri_on_window (parent,
 	                              link,
 	                              GDK_CURRENT_TIME,
 	                              &error);
-#else
-	ret = gtk_show_uri (gtk_widget_get_screen (GTK_WIDGET (parent)),
-	                    link,
-	                    GDK_CURRENT_TIME,
-	                    &error);
-#endif
 
 	g_free (link);
 

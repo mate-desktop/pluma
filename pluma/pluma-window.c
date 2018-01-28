@@ -2821,25 +2821,16 @@ static void
 fullscreen_controls_show (PlumaWindow *window)
 {
 	GdkScreen *screen;
-#if GTK_CHECK_VERSION (3, 22, 0)
 	GdkDisplay *display;
-#endif
 	GdkRectangle fs_rect;
 	gint w, h;
 
 	screen = gtk_window_get_screen (GTK_WINDOW (window));
-#if GTK_CHECK_VERSION (3, 22, 0)
 	display = gdk_screen_get_display (screen);
 
 	gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (display,
 								     gtk_widget_get_window (GTK_WIDGET (window))),
 				  &fs_rect);
-#else
-	gdk_screen_get_monitor_geometry (screen,
-					 gdk_screen_get_monitor_at_window (screen,
-									   gtk_widget_get_window (GTK_WIDGET (window))),
-					 &fs_rect);
-#endif
 
 	gtk_window_get_size (GTK_WINDOW (window->priv->fullscreen_controls), &w, &h);
 
@@ -2857,25 +2848,16 @@ run_fullscreen_animation (gpointer data)
 {
 	PlumaWindow *window = PLUMA_WINDOW (data);
 	GdkScreen *screen;
-#if GTK_CHECK_VERSION (3, 22, 0)
 	GdkDisplay *display;
-#endif
 	GdkRectangle fs_rect;
 	gint x, y;
 	
 	screen = gtk_window_get_screen (GTK_WINDOW (window));
-#if GTK_CHECK_VERSION (3, 22, 0)
 	display = gdk_screen_get_display (screen);
 
 	gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (display,
 								     gtk_widget_get_window (GTK_WIDGET (window))),
 				  &fs_rect);
-#else
-	gdk_screen_get_monitor_geometry (screen,
-					 gdk_screen_get_monitor_at_window (screen,
-									   gtk_widget_get_window (GTK_WIDGET (window))),
-					 &fs_rect);
-#endif
 					 
 	gtk_window_get_position (GTK_WINDOW (window->priv->fullscreen_controls),
 				 &x, &y);
@@ -2945,23 +2927,14 @@ show_hide_fullscreen_toolbar (PlumaWindow *window,
 	{
 		GdkRectangle fs_rect;
 		GdkScreen *screen;
-#if GTK_CHECK_VERSION (3, 22, 0)
 		GdkDisplay *display;
-#endif
 
 		screen = gtk_window_get_screen (GTK_WINDOW (window));
-#if GTK_CHECK_VERSION (3, 22, 0)
 		display = gdk_screen_get_display (screen);
 
 		gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (display,
 									     gtk_widget_get_window (GTK_WIDGET (window))),
 					  &fs_rect);
-#else
-		gdk_screen_get_monitor_geometry (screen,
-						 gdk_screen_get_monitor_at_window (screen,
-										   gtk_widget_get_window (GTK_WIDGET (window))),
-						 &fs_rect);
-#endif
 
 		if (show)
 			gtk_window_move (GTK_WINDOW (window->priv->fullscreen_controls),

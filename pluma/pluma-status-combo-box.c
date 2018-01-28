@@ -111,10 +111,6 @@ pluma_status_combo_box_constructed (GObject *object)
 	GError *error = NULL;
 	const gchar style[] =
 		"* {\n"
-#if !GTK_CHECK_VERSION (3, 20, 0)
-		"	-GtkWidget-focus-line-width: 0;\n"
-		"	-GtkWidget-focus-padding: 0;\n"
-#endif
 		"	padding: 0;\n"
 		"}";
 
@@ -297,11 +293,7 @@ pluma_status_combo_box_init (PlumaStatusComboBox *self)
 	gtk_widget_show (self->priv->label);
 	
 	gtk_label_set_single_line_mode (GTK_LABEL (self->priv->label), TRUE);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (self->priv->label), 0.0);
-#else
-	gtk_misc_set_alignment (GTK_MISC (self->priv->label), 0.0, 0.5);
-#endif
 	
 	gtk_box_pack_start (GTK_BOX (self->priv->hbox), self->priv->label, FALSE, TRUE, 0);
 	
