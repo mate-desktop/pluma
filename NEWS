@@ -1,15 +1,27 @@
+### pluma 1.20.0
+
+  * sync with transifex
+  * require GTK+ 3.22 and GLib 2.50
+  * put 'peas_engine_enable_loader' in the correct place
+  * update copyright year to 2018
+  * Fix: make the list of recently used files working again
+  * drop unused variables
+  * pluma-spell-checker-language.c: Fix build warning:
+  * pluma.c: Fix build warning:
+  * pluma-document.c: Fix build warning:
+
 ### pluma 1.19.3
 
-    sync with transifex
-    pluma-window: have GtkRecentData on stack instead of allocating it
-    WidthOfScreen and HeightOfScreen implementation
-    Fixes for regexp replacement with backreferences (e.g. "\0") (#259)
-    pluma-view.c: use one static variable instead two to do the same job
-    make sure pluma open in the same window of the workspace
+  * sync with transifex
+  * pluma-window: have GtkRecentData on stack instead of allocating it
+  * WidthOfScreen and HeightOfScreen implementation
+  * Fixes for regexp replacement with backreferences (e.g. "\0") (#259)
+  * pluma-view.c: use one static variable instead two to do the same job
+  * make sure pluma open in the same window of the workspace
     Fix: pluma closes tabs unexpectedly with [right+middle] click
     [ctrl] + [+] / [ctrl] + [-] using the numeric keypad
-    add gsettings key: Show save confirmation if the files have changes
-    Fix: wrong behavior holding down [middle + right] click
+  * add gsettings key: Show save confirmation if the files have changes
+  * Fix: wrong behavior holding down [middle + right] click
     [ctrl] + [+] / [ctrl] + [-] to increase/decrease font size
 
 ### pluma 1.19.2
