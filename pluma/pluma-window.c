@@ -36,6 +36,7 @@
 #include <sys/types.h>
 #include <string.h>
 
+#include <gdk/gdk.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
@@ -3491,6 +3492,23 @@ notebook_button_press_event (GtkNotebook    *notebook,
 }
 
 static gboolean
+notebook_scroll_event (GtkNotebook    *notebook,
+                       GdkEventScroll *event,
+                       PlumaWindow    *window)
+{
+	if (event->direction == GDK_SCROLL_UP || event->direction == GDK_SCROLL_LEFT)
+	{
+		gtk_notebook_prev_page (notebook);
+	}
+	else if (event->direction == GDK_SCROLL_DOWN || event->direction == GDK_SCROLL_RIGHT)
+	{
+		gtk_notebook_next_page (notebook);
+	}
+	
+	return FALSE;
+}
+
+static gboolean
 notebook_popup_menu (GtkNotebook *notebook,
 		     PlumaWindow *window)
 {
@@ -3856,6 +3874,10 @@ connect_notebook_signals (PlumaWindow *window,
 			  "popup-menu",
 			  G_CALLBACK (notebook_popup_menu),
 			  window);
+	g_signal_connect (notebook,
+			  "scroll-event",
+			  G_CALLBACK (notebook_scroll_event),
+			  window);
 }
 
 static void
@@ -3868,7 +3890,8 @@ add_notebook (PlumaWindow *window,
 	                 TRUE);
 
 	gtk_widget_show (notebook);
-
+	
+	gtk_widget_add_events (notebook, GDK_SCROLL_MASK);
 	connect_notebook_signals (window, notebook);
 }
 
