@@ -114,6 +114,16 @@ close_button_clicked_cb (GtkWidget     *widget,
 	g_signal_emit (tab_label, signals[CLOSE_CLICKED], 0, NULL);
 }
 
+static gboolean
+scroll_event_cb(GtkWidget      *widget,
+                GdkEventScroll *event,
+                PlumaTabLabel  *tab_label)
+{
+	g_signal_emit_by_name(tab_label, "scroll-event", &event);
+	
+	return FALSE;
+}
+
 static void
 sync_tip (PlumaTab *tab, PlumaTabLabel *tab_label)
 {
@@ -265,6 +275,7 @@ pluma_tab_label_init (PlumaTabLabel *tab_label)
 	                                GTK_ORIENTATION_HORIZONTAL);
 
 	ebox = gtk_event_box_new ();
+	gtk_widget_add_events (ebox, GDK_SCROLL_MASK);
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (ebox), FALSE);
 	gtk_box_pack_start (GTK_BOX (tab_label), ebox, TRUE, TRUE, 0);
 	tab_label->priv->ebox = ebox;
@@ -273,6 +284,7 @@ pluma_tab_label_init (PlumaTabLabel *tab_label)
 	gtk_container_add (GTK_CONTAINER (ebox), hbox);
 
 	close_button = pluma_close_button_new ();
+	gtk_widget_add_events (close_button, GDK_SCROLL_MASK);
 	gtk_widget_set_tooltip_text (close_button, _("Close document"));
 	gtk_box_pack_start (GTK_BOX (tab_label), close_button, FALSE, FALSE, 0);
 	tab_label->priv->close_button = close_button;
@@ -280,6 +292,16 @@ pluma_tab_label_init (PlumaTabLabel *tab_label)
 	g_signal_connect (close_button,
 			  "clicked",
 			  G_CALLBACK (close_button_clicked_cb),
+			  tab_label);
+			  
+	g_signal_connect (close_button,
+			  "scroll-event",
+			  G_CALLBACK (scroll_event_cb),
+			  tab_label);
+	
+	g_signal_connect (ebox,
+			  "scroll-event",
+			  G_CALLBACK (scroll_event_cb),
 			  tab_label);
 
 	spinner = gtk_spinner_new ();
