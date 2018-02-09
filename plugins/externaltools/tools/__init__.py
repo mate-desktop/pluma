@@ -212,9 +212,9 @@ class ExternalToolsPlugin(GObject.Object, Peas.Activatable):
         manager.ensure_update()
 
         bottom = window.get_bottom_panel()
-        bottom.add_item_with_stock_icon(self._output_buffer.panel,
-                                        _("Shell Output"),
-                                        Gtk.STOCK_EXECUTE)
+        bottom.add_item_with_icon(self._output_buffer.panel,
+                                  _("Shell Output"),
+                                  Gtk.STOCK_EXECUTE)
 
     def do_deactivate(self):
         window = self.object
