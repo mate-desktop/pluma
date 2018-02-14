@@ -119,11 +119,9 @@ scroll_event_cb(GtkWidget      *widget,
                 GdkEventScroll *event,
                 PlumaTabLabel  *tab_label)
 {
-	gboolean retval;
+	g_signal_emit_by_name(tab_label, "scroll-event", &event);
 	
-	g_signal_emit_by_name(tab_label, "scroll-event", &event, &retval);
-	
-	return retval;
+	return FALSE;
 }
 
 static void
