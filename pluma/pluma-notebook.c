@@ -843,9 +843,11 @@ tab_label_scroll_cb (PlumaTabLabel  *tab_label,
                      GdkEventScroll *event,
                      PlumaNotebook  *notebook)
 {
-	g_signal_emit_by_name (notebook, "scroll-event", &event);
+	gboolean retval;
 	
-	return FALSE;
+	g_signal_emit_by_name (notebook, "scroll-event", &event, &retval);
+	
+	return retval;
 }
 
 static GtkWidget *
