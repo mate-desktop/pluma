@@ -1140,9 +1140,7 @@ on_confirm_no_trash_cb (PlumaFileBrowserWidget * widget,
 	result = pluma_file_browser_utils_confirmation_dialog (window,
 	                                                       GTK_MESSAGE_QUESTION,
 	                                                       message,
-	                                                       secondary,
-	                                                       "gtk-delete",
-	                                                       NULL);
+	                                                       secondary);
 	g_free (secondary);
 
 	return result;
@@ -1175,9 +1173,7 @@ on_confirm_delete_cb (PlumaFileBrowserWidget *widget,
 	result = pluma_file_browser_utils_confirmation_dialog (PLUMA_WINDOW (data->window),
 	                                                       GTK_MESSAGE_QUESTION,
 	                                                       message,
-	                                                       secondary,
-	                                                       "gtk-delete",
-	                                                       NULL);
+	                                                       secondary);
 
 	g_free (message);
 

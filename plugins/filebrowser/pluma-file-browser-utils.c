@@ -22,6 +22,9 @@
 #include "pluma-file-browser-utils.h"
 #include <pluma/pluma-utils.h>
 
+#include <glib/gi18n.h>
+
+
 static GdkPixbuf *
 process_icon_pixbuf (GdkPixbuf * pixbuf,
 		     gchar const * name, 
@@ -148,9 +151,7 @@ gboolean
 pluma_file_browser_utils_confirmation_dialog (PlumaWindow * window,
                                               GtkMessageType type,
                                               gchar const *message,
-		                              gchar const *secondary, 
-		                              gchar const * button_image, 
-		                              gchar const * button_label)
+                                              gchar const *secondary)
 {
 	GtkWidget *dlg;
 	gint ret;
@@ -167,11 +168,8 @@ pluma_file_browser_utils_confirmation_dialog (PlumaWindow * window,
 		    (GTK_MESSAGE_DIALOG (dlg), "%s", secondary);
 
 	/* Add a cancel button */
-	button = GTK_WIDGET (g_object_new (GTK_TYPE_BUTTON,
-					   "label", "gtk-cancel",
-					   "use-stock", TRUE,
-					   "use-underline", TRUE,
-					   NULL));
+	button = gtk_button_new_with_mnemonic (_("_Cancel"));
+	gtk_button_set_image (GTK_BUTTON (button), gtk_image_new_from_icon_name ("process-stop", GTK_ICON_SIZE_BUTTON));
 
 	gtk_widget_show (button);
 
@@ -180,16 +178,9 @@ pluma_file_browser_utils_confirmation_dialog (PlumaWindow * window,
                                       button,
                                       GTK_RESPONSE_CANCEL);
 
-	/* Add custom button */
-	button = GTK_WIDGET (g_object_new (GTK_TYPE_BUTTON,
-					   "label", button_image,
-					   "use-stock", TRUE,
-					   "use-underline", TRUE,
-					   NULL));
-
-	if (button_label) {
-		gtk_button_set_label (GTK_BUTTON (button), button_label);
-	}
+	/* Add delete button */
+	button = gtk_button_new_with_mnemonic (_("_Delete"));
+	gtk_button_set_image (GTK_BUTTON (button), gtk_image_new_from_icon_name ("edit-delete", GTK_ICON_SIZE_BUTTON));
 	
 	gtk_widget_show (button);
 	gtk_widget_set_can_default (button, TRUE);
