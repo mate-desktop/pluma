@@ -416,11 +416,8 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	gtk_label_set_mnemonic_widget (GTK_LABEL (dlg->priv->replace_label),
 				       dlg->priv->replace_entry);
 
-	dlg->priv->find_button = GTK_WIDGET (g_object_new (GTK_TYPE_BUTTON,
-							   "label", "gtk-find",
-							   "use-stock", TRUE,
-							   "use-underline", TRUE,
-							   NULL));
+	dlg->priv->find_button = gtk_button_new_with_mnemonic (_("_Find"));
+	gtk_button_set_image (GTK_BUTTON (dlg->priv->find_button), gtk_image_new_from_icon_name ("edit-find", GTK_ICON_SIZE_BUTTON));
 
 	dlg->priv->replace_all_button = gtk_button_new_with_mnemonic (_("Replace _All"));
 	dlg->priv->replace_button = pluma_gtk_button_new_with_icon (_("_Replace"),
