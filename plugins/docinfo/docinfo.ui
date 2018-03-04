@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.20.2 -->
 <!--*- mode: xml -*-->
 <interface>
-  <requires lib="gtk+" version="3.0"/>
+  <requires lib="gtk+" version="3.22"/>
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -71,17 +71,16 @@
           </packing>
         </child>
         <child>
-          <object class="GtkVBox" id="docinfo_dialog_content">
+          <object class="GtkBox" id="docinfo_dialog_content">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">5</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkLabel" id="file_name_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xpad">0</property>
-                <property name="ypad">0</property>
                 <property name="label" translatable="yes">File Name</property>
                 <property name="use_markup">True</property>
                 <property name="xalign">0</property>
@@ -97,15 +96,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkHBox" id="hbox1">
+              <object class="GtkBox" id="hbox1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <child>
                   <object class="GtkLabel" id="label28">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xpad">0</property>
-                    <property name="ypad">0</property>
                     <property name="label" translatable="yes">    </property>
                     <property name="xalign">0.5</property>
                     <property name="yalign">0.5</property>
@@ -117,200 +114,146 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkTable" id="table1">
+                  <object class="GtkGrid" id="table1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="border_width">6</property>
-                    <property name="n_rows">6</property>
-                    <property name="n_columns">2</property>
-                    <property name="column_spacing">18</property>
                     <property name="row_spacing">6</property>
+                    <property name="column_spacing">18</property>
                     <child>
                       <object class="GtkLabel" id="label26">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label" translatable="yes">Bytes</property>
                         <property name="xalign">0</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
+                        <property name="left_attach">0</property>
                         <property name="top_attach">5</property>
-                        <property name="bottom_attach">6</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="bytes_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
                         <property name="top_attach">5</property>
-                        <property name="bottom_attach">6</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="label5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label" translatable="yes">Characters (no spaces)</property>
                         <property name="xalign">0</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
+                        <property name="left_attach">0</property>
                         <property name="top_attach">4</property>
-                        <property name="bottom_attach">5</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="chars_ns_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
                         <property name="top_attach">4</property>
-                        <property name="bottom_attach">5</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="label4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label" translatable="yes">Characters (with spaces)</property>
                         <property name="xalign">0</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
+                        <property name="left_attach">0</property>
                         <property name="top_attach">3</property>
-                        <property name="bottom_attach">4</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="chars_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
                         <property name="top_attach">3</property>
-                        <property name="bottom_attach">4</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="words_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
                         <property name="top_attach">2</property>
-                        <property name="bottom_attach">3</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="label2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label" translatable="yes">Words</property>
                         <property name="xalign">0</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
+                        <property name="left_attach">0</property>
                         <property name="top_attach">2</property>
-                        <property name="bottom_attach">3</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="label6">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label" translatable="yes">Lines</property>
                         <property name="xalign">0</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
+                        <property name="left_attach">0</property>
                         <property name="top_attach">1</property>
-                        <property name="bottom_attach">2</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="lines_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
                         <property name="top_attach">1</property>
-                        <property name="bottom_attach">2</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkLabel" id="label30">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label" translatable="yes">Document</property>
                         <property name="use_markup">True</property>
                         <property name="use_underline">True</property>
@@ -320,9 +263,7 @@
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
-                        <property name="x_options">GTK_FILL</property>
-                        <property name="y_options"/>
+                        <property name="top_attach">0</property>
                       </packing>
                     </child>
                     <child>
@@ -336,17 +277,16 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkVBox" id="selection_vbox">
+                  <object class="GtkBox" id="selection_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="border_width">6</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
                       <object class="GtkLabel" id="selection_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label" translatable="yes">Selection</property>
                         <property name="xalign">0</property>
                         <property name="yalign">0.5</property>
@@ -361,8 +301,6 @@
                       <object class="GtkLabel" id="selected_lines_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
@@ -377,8 +315,6 @@
                       <object class="GtkLabel" id="selected_words_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
@@ -393,8 +329,6 @@
                       <object class="GtkLabel" id="selected_chars_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
@@ -409,8 +343,6 @@
                       <object class="GtkLabel" id="selected_chars_ns_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
@@ -425,8 +357,6 @@
                       <object class="GtkLabel" id="selected_bytes_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xpad">0</property>
-                        <property name="ypad">0</property>
                         <property name="label">0</property>
                         <property name="xalign">1</property>
                         <property name="yalign">0.5</property>
