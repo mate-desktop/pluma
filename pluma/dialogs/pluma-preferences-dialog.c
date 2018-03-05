@@ -1014,6 +1014,9 @@ setup_font_colors_page_style_scheme_section (PlumaPreferencesDialog *dlg)
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_BROWSE);
 
 	def_id = populate_color_scheme_list (dlg, NULL);
+
+	gtk_button_set_image (GTK_BUTTON (dlg->priv->uninstall_scheme_button),
+			      gtk_image_new_from_icon_name ("list-remove", GTK_ICON_SIZE_BUTTON));
 	
 	/* Connect signals */
 	g_signal_connect (dlg->priv->schemes_treeview,
