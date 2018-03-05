@@ -366,6 +366,9 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 	g_object_unref (content);
 	gtk_container_set_border_width (GTK_CONTAINER (content), 5);			     
 
+	gtk_button_set_image (GTK_BUTTON (dlg->priv->add_button), gtk_image_new_from_icon_name ("list-add", GTK_ICON_SIZE_BUTTON));
+	gtk_button_set_image (GTK_BUTTON (dlg->priv->remove_button), gtk_image_new_from_icon_name ("list-remove", GTK_ICON_SIZE_BUTTON));
+
 	g_signal_connect (dlg->priv->add_button,
 			  "clicked",
 			  G_CALLBACK (add_button_clicked_callback),
