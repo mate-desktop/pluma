@@ -296,6 +296,9 @@ create_dialog (PlumaSpellCheckerDialog *dlg,
 
 	gtk_entry_set_activates_default (GTK_ENTRY (dlg->word_entry), TRUE);
 
+	gtk_button_set_image (GTK_BUTTON (dlg->close_button),
+			      gtk_image_new_from_icon_name ("window-close", GTK_ICON_SIZE_BUTTON));
+
 	/* Connect signals */
 	g_signal_connect (dlg->word_entry, "changed",
 			  G_CALLBACK (word_entry_changed_handler), dlg);
