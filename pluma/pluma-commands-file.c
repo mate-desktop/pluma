@@ -579,9 +579,10 @@ replace_read_only_file (GtkWindow *parent, GFile *file)
 						  _("Do you want to try to replace it "
 						    "with the one you are saving?"));
 
-	gtk_dialog_add_button (GTK_DIALOG (dialog),
-			       "gtk-cancel",
-			       GTK_RESPONSE_CANCEL);
+	pluma_dialog_add_button (GTK_DIALOG (dialog),
+				 _("_Cancel"),
+				 "process-stop",
+				 GTK_RESPONSE_CANCEL);
 
 	pluma_dialog_add_button (GTK_DIALOG (dialog),
 				 _("_Replace"),
@@ -1218,9 +1219,10 @@ revert_dialog (PlumaWindow   *window,
 
 	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 
-	gtk_dialog_add_button (GTK_DIALOG (dialog),
-			       "gtk-cancel",
-			       GTK_RESPONSE_CANCEL);
+	pluma_dialog_add_button (GTK_DIALOG (dialog),
+				 _("_Cancel"),
+				 "process-stop",
+				 GTK_RESPONSE_CANCEL);
 
 	pluma_dialog_add_button (GTK_DIALOG (dialog),
 				 _("_Revert"),

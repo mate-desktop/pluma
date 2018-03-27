@@ -151,8 +151,10 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 				       _("Close _without Saving"),
 				       GTK_RESPONSE_NO);
 
-		gtk_dialog_add_button (GTK_DIALOG (dlg),
-				       "gtk-cancel", GTK_RESPONSE_CANCEL);
+		pluma_dialog_add_button (GTK_DIALOG (dlg),
+					 _("_Cancel"),
+					 "process-stop",
+					 GTK_RESPONSE_CANCEL);
 	}
 	
 	if (dlg->priv->disable_save_to_disk)
@@ -162,7 +164,7 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 	}
 	else
 	{
-		const gchar *icon_id = "gtk-save";
+		const gchar *icon_id = "document-save";
 		
 		if (GET_MODE (dlg->priv) == SINGLE_DOC_MODE)
 		{
@@ -172,12 +174,19 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 			
 			if (pluma_document_get_readonly (doc) || 
 			    pluma_document_is_untitled (doc))
-				icon_id = "gtk-save-as";
+				icon_id = "document-save-as";
 		}
 
-		gtk_dialog_add_button (GTK_DIALOG (dlg),
-				       icon_id, 
-				       GTK_RESPONSE_YES);
+		if (g_strcmp0 (icon_id, "document-save") == 0)
+			pluma_dialog_add_button (GTK_DIALOG (dlg),
+						 _("_Save"),
+						 icon_id,
+						 GTK_RESPONSE_YES);
+		else
+			pluma_dialog_add_button (GTK_DIALOG (dlg),
+						 _("Save _As"),
+						 icon_id,
+						 GTK_RESPONSE_YES);
 
 		gtk_dialog_set_default_response	(GTK_DIALOG (dlg), 
 						 GTK_RESPONSE_YES);

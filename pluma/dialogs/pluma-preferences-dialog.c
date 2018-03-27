@@ -1081,12 +1081,8 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 
 	dlg->priv = PLUMA_PREFERENCES_DIALOG_GET_PRIVATE (dlg);
 
-	gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-				"gtk-close",
-				GTK_RESPONSE_CLOSE,
-				"gtk-help",
-				GTK_RESPONSE_HELP,
-				NULL);
+	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Close"), "window-close", GTK_RESPONSE_CLOSE);
+	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
 
 	gtk_window_set_title (GTK_WINDOW (dlg), _("Pluma Preferences"));
 	gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);

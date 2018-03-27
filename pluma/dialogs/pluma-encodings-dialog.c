@@ -309,14 +309,9 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 
 	dlg->priv = PLUMA_ENCODINGS_DIALOG_GET_PRIVATE (dlg);
 	
-	gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-				"gtk-cancel", 
-				GTK_RESPONSE_CANCEL,
-				"gtk-ok",
-				GTK_RESPONSE_OK,
-				"gtk-help",
-				GTK_RESPONSE_HELP,
-				NULL);
+	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
+	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_OK"), "gtk-ok", GTK_RESPONSE_OK);
+	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
 
 	gtk_window_set_title (GTK_WINDOW (dlg), _("Character Encodings"));
 	gtk_window_set_default_size (GTK_WINDOW (dlg), 650, 400);

@@ -330,9 +330,7 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
 	gtk_window_set_destroy_with_parent (GTK_WINDOW (dlg), TRUE);
 
-	gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-				"gtk-close", GTK_RESPONSE_CANCEL,
-				NULL);
+	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Close"), "window-close", GTK_RESPONSE_CANCEL);
 				
 	/* HIG defaults */
 	gtk_container_set_border_width (GTK_CONTAINER (dlg), 5);

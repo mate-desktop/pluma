@@ -129,14 +129,9 @@ create_dialog (PlumaSpellLanguageDialog *dlg,
 		NULL
 	};
 	
-	gtk_dialog_add_buttons (GTK_DIALOG (dlg),
-				"gtk-cancel",
-				GTK_RESPONSE_CANCEL,
-				"gtk-ok",
-				GTK_RESPONSE_OK,
-				"gtk-help",
-				GTK_RESPONSE_HELP,
-				NULL);
+	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
+	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_OK"), "gtk-ok", GTK_RESPONSE_OK);
+	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
 
 	gtk_window_set_title (GTK_WINDOW (dlg), _("Set language"));
 	gtk_window_set_modal (GTK_WINDOW (dlg), TRUE);
