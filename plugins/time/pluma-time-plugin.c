@@ -916,11 +916,11 @@ get_choose_format_dialog (GtkWindow                 *parent,
 	{
 		GtkWidget *err_dialog;
 
-		err_dialog = gtk_dialog_new_with_buttons (NULL,
-			parent,
-			GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-			"gtk-ok", GTK_RESPONSE_ACCEPT,
-			NULL);
+		err_dialog = gtk_dialog_new ();
+		gtk_window_set_transient_for (GTK_WINDOW (err_dialog), parent);
+		gtk_window_set_modal (GTK_WINDOW (err_dialog), TRUE);
+		gtk_window_set_destroy_with_parent (GTK_WINDOW (err_dialog), TRUE);
+		pluma_dialog_add_button (GTK_DIALOG (err_dialog), _("_OK"), "gtk-ok", GTK_RESPONSE_ACCEPT);
 
 		if (wg != NULL)
 			gtk_window_group_add_window (wg, GTK_WINDOW (err_dialog));
