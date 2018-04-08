@@ -793,6 +793,59 @@ add_scheme_chooser_response_cb (GtkDialog              *chooser,
 
 	set_buttons_sensisitivity_according_to_scheme (dlg, scheme_id);
 }
+
+static GtkWidget *
+scheme_file_chooser_dialog_new_valist (const gchar          *title,
+				       GtkWindow            *parent,
+				       GtkFileChooserAction  action,
+				       const gchar          *first_button_text,
+				       va_list               varargs)
+{
+	GtkWidget *result;
+	const char *button_text = first_button_text;
+	gint response_id;
+
+	result = g_object_new (GTK_TYPE_FILE_CHOOSER_DIALOG,
+			       "title", title,
+			       "action", action,
+			       NULL);
+
+	if (parent)
+		gtk_window_set_transient_for (GTK_WINDOW (result), parent);
+
+	while (button_text)
+		{
+			response_id = va_arg (varargs, gint);
+
+			if (g_strcmp0 (button_text, "process-stop") == 0)
+				pluma_dialog_add_button (GTK_DIALOG (result), _("_Cancel"), button_text, response_id);
+			else
+				gtk_dialog_add_button (GTK_DIALOG (result), button_text, response_id);
+
+			button_text = va_arg (varargs, const gchar *);
+		}
+
+	return result;
+}
+
+static GtkWidget *
+scheme_file_chooser_dialog_new (const gchar          *title,
+				GtkWindow            *parent,
+				GtkFileChooserAction  action,
+				const gchar          *first_button_text,
+				...)
+{
+	GtkWidget *result;
+	va_list varargs;
+
+	va_start (varargs, first_button_text);
+	result = scheme_file_chooser_dialog_new_valist (title, parent, action,
+							first_button_text,
+							varargs);
+	va_end (varargs);
+
+	return result;
+}
 			 
 static void
 install_scheme_clicked (GtkButton              *button,
@@ -807,11 +860,11 @@ install_scheme_clicked (GtkButton              *button,
 		return;
 	}
 
-	chooser = gtk_file_chooser_dialog_new (_("Add Scheme"),
-					       GTK_WINDOW (dlg),
-					       GTK_FILE_CHOOSER_ACTION_OPEN,
-					       "gtk-cancel", GTK_RESPONSE_CANCEL,
-					       NULL);
+	chooser = scheme_file_chooser_dialog_new (_("Add Scheme"),
+						  GTK_WINDOW (dlg),
+						  GTK_FILE_CHOOSER_ACTION_OPEN,
+						  "process-stop", GTK_RESPONSE_CANCEL,
+						  NULL);
 
 	pluma_dialog_add_button (GTK_DIALOG (chooser), 
 				 _("A_dd Scheme"),
