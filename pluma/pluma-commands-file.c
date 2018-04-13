@@ -464,8 +464,8 @@ _pluma_cmd_file_open (GtkAction   *action,
 						     GTK_WINDOW (window),
 						     GTK_FILE_CHOOSER_ACTION_OPEN,
 						     NULL,
-						     "gtk-cancel", GTK_RESPONSE_CANCEL,
-						     "gtk-open", GTK_RESPONSE_OK,
+						     "process-stop", GTK_RESPONSE_CANCEL,
+						     "document-open", GTK_RESPONSE_OK,
 						     NULL);
 
 	g_object_set_data (G_OBJECT (window),
@@ -758,8 +758,8 @@ file_save_as (PlumaTab    *tab,
 						     GTK_WINDOW (window),
 						     GTK_FILE_CHOOSER_ACTION_SAVE,
 						     NULL,
-						     "gtk-cancel", GTK_RESPONSE_CANCEL,
-						     "gtk-save", GTK_RESPONSE_OK,
+						     "process-stop", GTK_RESPONSE_CANCEL,
+						     "document-save", GTK_RESPONSE_OK,
 						     NULL);
 
 	gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (save_dialog),

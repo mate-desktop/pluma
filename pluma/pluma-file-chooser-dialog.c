@@ -47,6 +47,7 @@
 #include "pluma-prefs-manager-app.h"
 #include "pluma-debug.h"
 #include "pluma-enum-types.h"
+#include "pluma-utils.h"
 
 #define PLUMA_FILE_CHOOSER_DIALOG_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_FILE_CHOOSER_DIALOG, PlumaFileChooserDialogPrivate))
 
@@ -435,7 +436,15 @@ pluma_file_chooser_dialog_new_valist (const gchar          *title,
 	{
 		response_id = va_arg (varargs, gint);
 
-		gtk_dialog_add_button (GTK_DIALOG (result), button_text, response_id);
+		if (g_strcmp0 (button_text, "process-stop") == 0)
+			pluma_dialog_add_button (GTK_DIALOG (result), _("_Cancel"), button_text, response_id);
+		else if (g_strcmp0 (button_text, "document-open") == 0)
+			pluma_dialog_add_button (GTK_DIALOG (result), _("_Open"), button_text, response_id);
+		else if (g_strcmp0 (button_text, "document-save") == 0)
+			pluma_dialog_add_button (GTK_DIALOG (result), _("_Save"), button_text, response_id);
+		else
+			gtk_dialog_add_button (GTK_DIALOG (result), button_text, response_id);
+
 		if ((response_id == GTK_RESPONSE_OK) ||
 		    (response_id == GTK_RESPONSE_ACCEPT) ||
 		    (response_id == GTK_RESPONSE_YES) ||
@@ -453,7 +462,7 @@ pluma_file_chooser_dialog_new_valist (const gchar          *title,
  * @title: (allow-none): Title of the dialog, or %NULL
  * @parent: (allow-none): Transient parent of the dialog, or %NULL
  * @action: Open or save mode for the dialog
- * @first_button_text: (allow-none): stock ID or text to go in
+ * @first_button_text: (allow-none): icon name or text to go in
  * the first button, or %NULL
  * @...: (allow-none): response ID for the first button, then
  * additional (button, id) pairs, ending with %NULL
