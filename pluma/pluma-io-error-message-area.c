@@ -499,9 +499,11 @@ create_conversion_error_message_area (const gchar *primary_text,
 	}
 	else
 	{
-		gtk_info_bar_add_button (GTK_INFO_BAR (message_area),
-					 "gtk-cancel",
-					 GTK_RESPONSE_CANCEL);
+		gtk_button_set_image (GTK_BUTTON (gtk_info_bar_add_button (GTK_INFO_BAR (message_area),
+									   _("_Cancel"),
+									   GTK_RESPONSE_CANCEL)),
+				      gtk_image_new_from_icon_name ("process-stop", GTK_ICON_SIZE_BUTTON));
+
 		gtk_info_bar_set_message_type (GTK_INFO_BAR (message_area),
 					       GTK_MESSAGE_ERROR);
 	}
@@ -1179,9 +1181,12 @@ pluma_externally_modified_message_area_new (const gchar *uri,
 					    _("_Reload"),
 					    "view-refresh",
 					    GTK_RESPONSE_OK);
-	gtk_info_bar_add_button (GTK_INFO_BAR (message_area),
-				 "gtk-cancel",
-				 GTK_RESPONSE_CANCEL);
+
+	gtk_button_set_image (GTK_BUTTON (gtk_info_bar_add_button (GTK_INFO_BAR (message_area),
+								   _("_Cancel"),
+								   GTK_RESPONSE_CANCEL)),
+			      gtk_image_new_from_icon_name ("process-stop", GTK_ICON_SIZE_BUTTON));
+
 	gtk_info_bar_set_message_type (GTK_INFO_BAR (message_area),
 				       GTK_MESSAGE_WARNING);
 

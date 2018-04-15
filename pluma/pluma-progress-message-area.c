@@ -62,9 +62,10 @@ pluma_progress_message_area_set_has_cancel_button (PlumaProgressMessageArea *are
 						   gboolean                  has_button)
 {
 	if (has_button)
-		gtk_info_bar_add_button (GTK_INFO_BAR (area),
-					 "gtk-cancel",
-					 GTK_RESPONSE_CANCEL);
+		gtk_button_set_image (GTK_BUTTON (gtk_info_bar_add_button (GTK_INFO_BAR (area),
+									   _("_Cancel"),
+									   GTK_RESPONSE_CANCEL)),
+				      gtk_image_new_from_icon_name ("process-stop", GTK_ICON_SIZE_BUTTON));
 
 	g_object_notify (G_OBJECT (area), "has-cancel-button");
 }
