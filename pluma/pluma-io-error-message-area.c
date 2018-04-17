@@ -162,9 +162,13 @@ create_io_loading_error_message_area (const gchar *primary_text,
 {
 	GtkWidget *message_area;
 
-	message_area = gtk_info_bar_new_with_buttons (
-					"gtk-cancel", GTK_RESPONSE_CANCEL,
-					NULL);
+	message_area = gtk_info_bar_new ();
+
+	gtk_button_set_image (GTK_BUTTON (gtk_info_bar_add_button (GTK_INFO_BAR (message_area),
+								   _("_Cancel"),
+								   GTK_RESPONSE_CANCEL)),
+			      gtk_image_new_from_icon_name ("process-stop", GTK_ICON_SIZE_BUTTON));
+
 	gtk_info_bar_set_message_type (GTK_INFO_BAR (message_area),
 				       GTK_MESSAGE_ERROR);
 
