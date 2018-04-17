@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-18 17:08+0100\n"
+"POT-Creation-Date: 2018-04-17 17:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -484,11 +484,38 @@ msgstr ""
 msgid "Close _without Saving"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:211
+#. Add a cancel button
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
+#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
+#: ../pluma/pluma-file-chooser-dialog.c:440
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:171
+#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/spell/pluma-spell-language-dialog.c:132
+#: ../plugins/spell/languages-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:3
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+msgid "_Cancel"
+msgstr ""
+
+#. File menu
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+msgid "_Save"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+msgid "Save _As"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
 msgid "Question"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:411
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently lost."
@@ -498,12 +525,12 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -514,7 +541,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently lost."
@@ -524,11 +551,11 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 msgid "If you don't save, changes from the last hour will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -539,7 +566,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
@@ -548,29 +575,29 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:518
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:523
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:537
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:756
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:708
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:717
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:714
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
 msgid "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
@@ -578,60 +605,57 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:732
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:734
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:743
 msgid "S_elect the documents you want to save:"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:758
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:321
-msgid "Character Encodings"
+#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:133
+#: ../plugins/spell/languages-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-plugin.c:923
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+msgid "_OK"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:387
-#: ../pluma/dialogs/pluma-encodings-dialog.c:448
-msgid "_Description"
-msgstr ""
-
-#: ../pluma/dialogs/pluma-encodings-dialog.c:396
-#: ../pluma/dialogs/pluma-encodings-dialog.c:457
-msgid "_Encoding"
-msgstr ""
-
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:1
-msgid "Character encodings"
-msgstr ""
-
+#: ../pluma/dialogs/pluma-encodings-dialog.c:314
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
-#: ../plugins/sort/sort.ui.h:4 ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:134
+#: ../plugins/spell/languages-dialog.ui.h:2
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
 #: ../plugins/time/pluma-time-dialog.ui.h:2
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:2
 msgid "_Help"
 msgstr ""
 
-#. Add a cancel button
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
-#: ../plugins/filebrowser/pluma-file-browser-utils.c:171
-#: ../plugins/sort/sort.ui.h:2 ../plugins/spell/languages-dialog.ui.h:3
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
-#: ../plugins/time/pluma-time-dialog.ui.h:3
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
-msgid "_Cancel"
+#: ../pluma/dialogs/pluma-encodings-dialog.c:316
+msgid "Character Encodings"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
-#: ../plugins/spell/languages-dialog.ui.h:4
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
-msgid "_OK"
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
+msgid "_Description"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:391
+#: ../pluma/dialogs/pluma-encodings-dialog.c:452
+msgid "_Encoding"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:1
+msgid "Character encodings"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:5
@@ -666,42 +690,44 @@ msgstr ""
 msgid "The selected color scheme cannot be installed."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:810
+#: ../pluma/dialogs/pluma-preferences-dialog.c:863
 msgid "Add Scheme"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:817
+#: ../pluma/dialogs/pluma-preferences-dialog.c:870
 msgid "A_dd Scheme"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:825
+#: ../pluma/dialogs/pluma-preferences-dialog.c:878
 msgid "Color Scheme Files"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:832
-#: ../pluma/pluma-file-chooser-dialog.c:53
+#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:877
+#: ../pluma/dialogs/pluma-preferences-dialog.c:930
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1091
+#. ex:et:ts=4:
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
+#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Close"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
 msgid "Pluma Preferences"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:1
 msgid "Preferences"
-msgstr ""
-
-#. ex:et:ts=4:
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
-#: ../plugins/docinfo/docinfo.ui.h:2
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
-msgid "_Close"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
@@ -846,17 +872,17 @@ msgstr ""
 msgid "Find"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-search-dialog.c:419
+#: ../pluma/dialogs/pluma-search-dialog.c:417
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "_Find"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-search-dialog.c:422
+#: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-search-dialog.c:423
-#: ../pluma/pluma-commands-file.c:587
+#: ../pluma/dialogs/pluma-search-dialog.c:421
+#: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr ""
 
@@ -969,26 +995,26 @@ msgstr ""
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:648 ../pluma/pluma-commands-file.c:871
+#: ../pluma/pluma-commands-file.c:649 ../pluma/pluma-commands-file.c:872
 #, c-format
 msgid "Saving file '%s'…"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:756
+#: ../pluma/pluma-commands-file.c:757
 msgid "Save As…"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1085
+#: ../pluma/pluma-commands-file.c:1086
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1130
+#: ../pluma/pluma-commands-file.c:1131
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1139
+#: ../pluma/pluma-commands-file.c:1140
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -998,12 +1024,12 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1148
+#: ../pluma/pluma-commands-file.c:1149
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1154
+#: ../pluma/pluma-commands-file.c:1155
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -1014,7 +1040,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1164
+#: ../pluma/pluma-commands-file.c:1165
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -1024,11 +1050,11 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1179
+#: ../pluma/pluma-commands-file.c:1180
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1185
+#: ../pluma/pluma-commands-file.c:1186
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -1039,7 +1065,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1200
+#: ../pluma/pluma-commands-file.c:1201
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -1048,7 +1074,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1226 ../pluma/pluma-ui.h:84
+#: ../pluma/pluma-commands-file.c:1228 ../pluma/pluma-ui.h:84
 msgid "_Revert"
 msgstr ""
 
@@ -1222,28 +1248,33 @@ msgstr ""
 msgid "Add or Remove..."
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:54
+#: ../pluma/pluma-file-chooser-dialog.c:55
 msgid "All Text Files"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:82
+#: ../pluma/pluma-file-chooser-dialog.c:83
 msgid "C_haracter Encoding:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:147
+#: ../pluma/pluma-file-chooser-dialog.c:148
 msgid "L_ine Ending:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:166
+#: ../pluma/pluma-file-chooser-dialog.c:167
 msgid "Unix/Linux"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:172
+#: ../pluma/pluma-file-chooser-dialog.c:173
 msgid "Mac OS Classic"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:178
+#: ../pluma/pluma-file-chooser-dialog.c:179
 msgid "Windows"
+msgstr ""
+
+#: ../pluma/pluma-file-chooser-dialog.c:442
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+msgid "_Open"
 msgstr ""
 
 #: ../pluma/pluma-help.c:81
@@ -1867,11 +1898,6 @@ msgstr ""
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
-msgstr ""
-
-#. File menu
-#: ../pluma/pluma-ui.h:80
-msgid "_Save"
 msgstr ""
 
 #: ../pluma/pluma-ui.h:81
@@ -2766,10 +2792,6 @@ msgstr ""
 msgid "Delete selected file or folder"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
-msgid "_Open"
-msgstr ""
-
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:813
 msgid "Open selected file"
 msgstr ""
@@ -3214,7 +3236,7 @@ msgstr ""
 #. Translators: Displayed in the "Check Spelling" dialog if there are no suggestions
 #. * for the current misspelled word
 #: ../plugins/spell/pluma-automatic-spell-checker.c:420
-#: ../plugins/spell/pluma-spell-checker-dialog.c:455
+#: ../plugins/spell/pluma-spell-checker-dialog.c:458
 msgid "(no suggested words)"
 msgstr ""
 
@@ -3240,11 +3262,11 @@ msgid "Suggestions"
 msgstr ""
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word isn't misspelled
-#: ../plugins/spell/pluma-spell-checker-dialog.c:562
+#: ../plugins/spell/pluma-spell-checker-dialog.c:565
 msgid "(correct spelling)"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-checker-dialog.c:709
+#: ../plugins/spell/pluma-spell-checker-dialog.c:712
 msgid "Completed spell checking"
 msgstr ""
 
@@ -3276,12 +3298,12 @@ msgctxt "language"
 msgid "Default"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:141
+#: ../plugins/spell/pluma-spell-language-dialog.c:136
 #: ../plugins/spell/languages-dialog.ui.h:1
 msgid "Set language"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:195
+#: ../plugins/spell/pluma-spell-language-dialog.c:190
 msgid "Languages"
 msgstr ""
 
