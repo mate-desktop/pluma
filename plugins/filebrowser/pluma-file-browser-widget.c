@@ -984,6 +984,9 @@ create_toolbar (PlumaFileBrowserWidget * obj,
 
 	/* Previous directory menu tool item */
 	obj->priv->location_previous_menu = gtk_menu_new ();
+
+	gtk_menu_set_reserve_toggle_size (GTK_MENU (obj->priv->location_previous_menu), FALSE);
+
 	gtk_widget_show (obj->priv->location_previous_menu);
 
 	widget = GTK_WIDGET (gtk_menu_tool_button_new (gtk_image_new_from_icon_name ("go-previous",
@@ -1007,6 +1010,9 @@ create_toolbar (PlumaFileBrowserWidget * obj,
 
 	/* Next directory menu tool item */
 	obj->priv->location_next_menu = gtk_menu_new ();
+
+	gtk_menu_set_reserve_toggle_size (GTK_MENU (obj->priv->location_next_menu), FALSE);
+
 	gtk_widget_show (obj->priv->location_next_menu);
 
 	widget = GTK_WIDGET (gtk_menu_tool_button_new (gtk_image_new_from_icon_name ("go-next",
@@ -1532,7 +1538,6 @@ create_goto_menu_item (PlumaFileBrowserWidget * obj, GList * item,
 		       GdkPixbuf * icon)
 {
 	GtkWidget *result;
-	GtkWidget *image;
 	gchar *unescape;
 	GdkPixbuf *pixbuf = NULL;
 	Location *loc;
@@ -1547,14 +1552,8 @@ create_goto_menu_item (PlumaFileBrowserWidget * obj, GList * item,
 	}
 
 	if (pixbuf) {
-		image = gtk_image_new_from_pixbuf (pixbuf);
+		result = pluma_image_menu_item_new_from_pixbuf (pixbuf, unescape);
 		g_object_unref (pixbuf);
-
-		gtk_widget_show (image);
-
-		result = gtk_image_menu_item_new_with_label (unescape);
-		gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (result),
-					       image);
 	} else {
 		result = gtk_menu_item_new_with_label (unescape);
 	}
