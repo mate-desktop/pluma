@@ -1997,17 +1997,6 @@ show_line_numbers_menu (GtkWidget      *view,
 static gboolean
 pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 {
-	if ((event->button == 2) || (event->button == 3))
-	{
-		if (middle_or_right_down)
-		{
-			middle_or_right_down = FALSE;
-			return TRUE;
-		}
-		else
-			middle_or_right_down = TRUE;
-	}
-
 	if ((event->type == GDK_BUTTON_PRESS) && 
 	    (event->window == gtk_text_view_get_window (GTK_TEXT_VIEW (widget),
 						        GTK_TEXT_WINDOW_LEFT)))
@@ -2019,6 +2008,17 @@ pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 		}
 		else if (event->button == 2)
 			return TRUE;
+	}
+
+	if ((event->button == 2) || (event->button == 3))
+	{
+		if (middle_or_right_down)
+		{
+			middle_or_right_down = FALSE;
+			return TRUE;
+		}
+		else
+			middle_or_right_down = TRUE;
 	}
 
 	if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 1) &&
