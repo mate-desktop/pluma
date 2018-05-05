@@ -539,17 +539,17 @@ default_font_font_checkbutton_toggled (GtkToggleButton        *button,
 }
 
 static void
-editor_font_button_font_set (GtkFontButton          *font_button,
+editor_font_button_font_set (GtkFontChooser         *font_button,
 			     PlumaPreferencesDialog *dlg)
 {
 	const gchar *font_name;
 
 	pluma_debug (DEBUG_PREFS);
 
-	g_return_if_fail (font_button == GTK_FONT_BUTTON (dlg->priv->font_button));
+	g_return_if_fail (font_button == GTK_FONT_CHOOSER (dlg->priv->font_button));
 
 	/* FIXME: Can this fail? Gtk docs are a bit terse... 21-02-2004 pbor */
-	font_name = gtk_font_button_get_font_name (font_button);
+	font_name = gtk_font_chooser_get_font (font_button);
 	if (!font_name)
 	{
 		g_warning ("Could not get font name");
@@ -594,8 +594,8 @@ setup_font_colors_page_font_section (PlumaPreferencesDialog *dlg)
 	editor_font = pluma_prefs_manager_get_editor_font ();
 	if (editor_font != NULL)
 	{
-		gtk_font_button_set_font_name (GTK_FONT_BUTTON (dlg->priv->font_button),
-					       editor_font);
+		gtk_font_chooser_set_font (GTK_FONT_CHOOSER (dlg->priv->font_button),
+					   editor_font);
 		g_free (editor_font);
 	}
 

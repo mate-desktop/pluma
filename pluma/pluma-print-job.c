@@ -273,9 +273,8 @@ restore_button_clicked (GtkButton     *button,
 
 		font = pluma_prefs_manager_get_default_print_font_body ();
 
-		gtk_font_button_set_font_name (
-				GTK_FONT_BUTTON (job->priv->body_fontbutton),
-				font);
+		gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->body_fontbutton),
+					   font);
 
 		g_free (font);
 	}
@@ -286,9 +285,8 @@ restore_button_clicked (GtkButton     *button,
 
 		font = pluma_prefs_manager_get_default_print_font_header ();
 
-		gtk_font_button_set_font_name (
-				GTK_FONT_BUTTON (job->priv->headers_fontbutton),
-				font);
+		gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->headers_fontbutton),
+					   font);
 
 		g_free (font);
 	}
@@ -299,9 +297,8 @@ restore_button_clicked (GtkButton     *button,
 
 		font = pluma_prefs_manager_get_default_print_font_numbers ();
 
-		gtk_font_button_set_font_name (
-				GTK_FONT_BUTTON (job->priv->numbers_fontbutton),
-				font);
+		gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->numbers_fontbutton),
+					   font);
 
 		g_free (font);
 	}
@@ -418,18 +415,18 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 
 	/* Set initial values */
 	font = pluma_prefs_manager_get_print_font_body ();
-	gtk_font_button_set_font_name (GTK_FONT_BUTTON (job->priv->body_fontbutton),
-				       font);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->body_fontbutton),
+				   font);
 	g_free (font);
 
 	font = pluma_prefs_manager_get_print_font_header ();
-	gtk_font_button_set_font_name (GTK_FONT_BUTTON (job->priv->headers_fontbutton),
-				       font);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->headers_fontbutton),
+				   font);
 	g_free (font);
 
 	font = pluma_prefs_manager_get_print_font_numbers ();
-	gtk_font_button_set_font_name (GTK_FONT_BUTTON (job->priv->numbers_fontbutton),
-				       font);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->numbers_fontbutton),
+				   font);
 	g_free (font);
 
 	can_set = pluma_prefs_manager_print_font_body_can_set ();
@@ -499,9 +496,9 @@ custom_widget_apply_cb (GtkPrintOperation *operation,
 		}	
 	}
 
-	pluma_prefs_manager_set_print_font_body (gtk_font_button_get_font_name (GTK_FONT_BUTTON (job->priv->body_fontbutton)));
-	pluma_prefs_manager_set_print_font_header (gtk_font_button_get_font_name (GTK_FONT_BUTTON (job->priv->headers_fontbutton)));
-	pluma_prefs_manager_set_print_font_numbers (gtk_font_button_get_font_name (GTK_FONT_BUTTON (job->priv->numbers_fontbutton)));
+	pluma_prefs_manager_set_print_font_body (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->body_fontbutton)));
+	pluma_prefs_manager_set_print_font_header (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->headers_fontbutton)));
+	pluma_prefs_manager_set_print_font_numbers (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->numbers_fontbutton)));
 }
 
 static void
