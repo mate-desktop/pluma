@@ -646,6 +646,35 @@ pluma_view_scroll_to_cursor (PlumaView *view)
 				      0.0);
 }
 
+static void
+pluma_override_font (GtkWidget   *widget,
+		     const gchar *font)
+{
+	gchar          *css;
+	GtkCssProvider *provider;
+	gchar          *tempsize;
+
+	provider = gtk_css_provider_new ();
+	tempsize = g_strdup (font);
+
+	g_strreverse (tempsize);
+	g_strcanon (tempsize, "1234567890", '\0');
+	g_strreverse (tempsize);
+
+	gchar tempfont [strlen (font)];
+	strcpy (tempfont, font);
+	tempfont [strlen (font) - strlen (tempsize)] = 0;
+
+	css = g_strdup_printf ("textview { font-family: %s; font-size: %spt; }", tempfont, tempsize);
+	gtk_css_provider_load_from_data (provider, css, -1, NULL);
+	g_free (css);
+
+	gtk_style_context_add_provider (gtk_widget_get_style_context (widget),
+					GTK_STYLE_PROVIDER (provider),
+					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	g_object_unref (provider);
+}
+
 /* FIXME this is an issue for introspection */
 /**
  * pluma_view_set_font:
@@ -684,7 +713,7 @@ pluma_view_set_font (PlumaView   *view,
 
 	g_return_if_fail (font_desc != NULL);
 
-	gtk_widget_override_font (GTK_WIDGET (view), font_desc);
+	pluma_override_font (GTK_WIDGET (view), pango_font_description_to_string (font_desc));
 
 	pango_font_description_free (font_desc);		
 }
