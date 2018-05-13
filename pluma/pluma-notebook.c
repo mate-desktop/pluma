@@ -396,6 +396,14 @@ static void
 drag_start (PlumaNotebook *notebook,
 	    guint32        time)
 {
+	GdkSeat    *seat;
+	GdkDevice  *device;
+	GdkDisplay *display;
+
+	display = gtk_widget_get_display (GTK_WIDGET (notebook));
+	seat = gdk_display_get_default_seat (display);
+	device = gdk_seat_get_pointer (seat);
+
 	if (!leftdown) return;
 
 	notebook->priv->drag_in_progress = TRUE;
@@ -403,24 +411,22 @@ drag_start (PlumaNotebook *notebook,
 	/* get a new cursor, if necessary */
 	/* FIXME multi-head */
 	if (cursor == NULL)
-	{
-		GdkDisplay *display;
-		display = gtk_widget_get_display (GTK_WIDGET (notebook));
 		cursor = gdk_cursor_new_for_display (display, GDK_FLEUR);
-	}
 
 	/* grab the pointer */
 	gtk_grab_add (GTK_WIDGET (notebook));
 
 	/* FIXME multi-head */
-	if (!gdk_pointer_is_grabbed ())
+	if (!gdk_display_device_is_grabbed (display, device))
 	{
-		gdk_pointer_grab (gtk_widget_get_window (GTK_WIDGET (notebook)),
-				  FALSE,
-				  GDK_BUTTON1_MOTION_MASK | GDK_BUTTON_RELEASE_MASK,
-				  NULL, 
-				  cursor, 
-				  time);
+		gdk_seat_grab (seat,
+			       gtk_widget_get_window (GTK_WIDGET (notebook)),
+			       GDK_SEAT_CAPABILITY_POINTER,
+			       FALSE,
+			       cursor,
+			       NULL,
+			       NULL,
+			       NULL);
 	}
 }
 
@@ -524,8 +530,15 @@ move_current_tab_to_another_notebook (PlumaNotebook  *src,
 				      GdkEventMotion *event,
 				      gint            dest_position)
 {
-	PlumaTab *tab;
-	gint cur_page;
+	PlumaTab   *tab;
+	gint        cur_page;
+	GdkSeat    *seat;
+	GdkDevice  *device;
+	GdkDisplay *display;
+
+	display = gtk_widget_get_display (GTK_WIDGET (GTK_NOTEBOOK (src)));
+	seat = gdk_display_get_default_seat (display);
+	device = gdk_seat_get_pointer (seat);
 
 	/* This is getting tricky, the tab was dragged in a notebook
 	 * in another window of the same app, we move the tab
@@ -542,9 +555,9 @@ move_current_tab_to_another_notebook (PlumaNotebook  *src,
 	/* stop drag in origin window */
 	/* ungrab the pointer if it's grabbed */
 	drag_stop (src);
-	if (gdk_pointer_is_grabbed ())
+	if (gdk_display_device_is_grabbed (display, device))
 	{
-		gdk_pointer_ungrab (event->time);
+		gdk_seat_ungrab (seat);
 	}
 	gtk_grab_remove (GTK_WIDGET (src));
 
@@ -565,6 +578,14 @@ button_release_cb (PlumaNotebook  *notebook,
 		   GdkEventButton *event,
 		   gpointer        data)
 {
+	GdkSeat    *seat;
+	GdkDevice  *device;
+	GdkDisplay *display;
+
+	display = gtk_widget_get_display (GTK_WIDGET (GTK_NOTEBOOK (notebook)));
+	seat = gdk_display_get_default_seat (display);
+	device = gdk_seat_get_pointer (seat);
+
 	if (event->button == 1) leftdown = FALSE;
 
 	if (notebook->priv->drag_in_progress)
@@ -588,9 +609,9 @@ button_release_cb (PlumaNotebook  *notebook,
 		}
 
 		/* ungrab the pointer if it's grabbed */
-		if (gdk_pointer_is_grabbed ())
+		if (gdk_display_device_is_grabbed (display, device))
 		{
-			gdk_pointer_ungrab (event->time);
+			gdk_seat_ungrab (seat);
 		}
 		gtk_grab_remove (GTK_WIDGET (notebook));
 	}
