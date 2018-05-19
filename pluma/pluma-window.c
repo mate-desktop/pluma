@@ -3442,9 +3442,7 @@ show_notebook_popup_menu (GtkNotebook    *notebook,
 #endif
 	if (event != NULL)
 	{
-		gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
-				NULL, NULL,
-				event->button, event->time);
+		gtk_menu_popup_at_pointer (GTK_MENU (menu), NULL);
 	}
 	else
 	{
@@ -3456,9 +3454,11 @@ show_notebook_popup_menu (GtkNotebook    *notebook,
 
 		tab_label = gtk_notebook_get_tab_label (notebook, tab);
 
-		gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
-				pluma_utils_menu_position_under_widget, tab_label,
-				0, gtk_get_current_event_time ());
+		gtk_menu_popup_at_widget (GTK_MENU (menu),
+					  tab_label,
+					  GDK_GRAVITY_SOUTH_WEST,
+					  GDK_GRAVITY_NORTH_WEST,
+					  (const GdkEvent*) event);
 
 		gtk_menu_shell_select_first (GTK_MENU_SHELL (menu), FALSE);
 	}
