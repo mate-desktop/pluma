@@ -183,34 +183,6 @@ menu_deactivate (GtkMenu             *menu,
 }
 
 static void
-menu_position_func (GtkMenu		*menu,
-	            gint		*x,
-		    gint		*y,
-		    gboolean		*push_in,
-		    PlumaStatusComboBox *combo)
-{
-	GtkRequisition request;
-	GtkAllocation allocation;
-	
-	*push_in = FALSE;
-
-	gtk_widget_get_preferred_size (gtk_widget_get_toplevel (GTK_WIDGET (menu)), NULL, &request);
-	
-	/* get the origin... */
-	gdk_window_get_origin (gtk_widget_get_window (GTK_WIDGET (combo)), x, y);
-	gtk_widget_get_allocation (GTK_WIDGET (combo), &allocation);
-	
-	/* make the menu as wide as the widget */
-	if (request.width < allocation.width)
-	{
-		gtk_widget_set_size_request (GTK_WIDGET (menu), allocation.width, -1);
-	}
-	
-	/* position it above the widget */
-	*y -= request.height;
-}
-
-static void
 button_press_event (GtkWidget           *widget,
 		    GdkEventButton      *event,
 		    PlumaStatusComboBox *combo)
@@ -231,13 +203,11 @@ button_press_event (GtkWidget           *widget,
 		gtk_widget_set_size_request (gtk_widget_get_toplevel (combo->priv->menu), -1, max_height);
 	}
 	
-	gtk_menu_popup (GTK_MENU (combo->priv->menu), 
-			NULL, 
-			NULL, 
-			(GtkMenuPositionFunc)menu_position_func, 
-			combo, 
-			event->button, 
-			event->time);
+	gtk_menu_popup_at_widget (GTK_MENU (combo->priv->menu),
+				  gtk_widget_get_parent (widget),
+				  GDK_GRAVITY_NORTH_WEST,
+				  GDK_GRAVITY_SOUTH_WEST,
+				  (const GdkEvent*) event);
 
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (combo->priv->button), TRUE);
 

@@ -64,6 +64,9 @@ void		 pluma_utils_menu_position_under_tree_view
 							 gboolean *push_in,
 							 gpointer  user_data);
 
+void		 menu_popup_at_treeview_selection	(GtkWidget *menu,
+							 GtkWidget *treeview);
+
 GtkWidget	*pluma_gtk_button_new_with_icon		(const gchar *label,
 							 const gchar *icon_name);
 

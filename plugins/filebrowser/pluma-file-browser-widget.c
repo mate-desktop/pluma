@@ -1375,13 +1375,9 @@ popup_menu (PlumaFileBrowserWidget * obj, GdkEventButton * event, GtkTreeModel *
 			}
 		}
 
-		gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL,
-				event->button, event->time);
+		gtk_menu_popup_at_pointer (GTK_MENU (menu), NULL);
 	} else {
-		gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
-				pluma_utils_menu_position_under_tree_view,
-				obj->priv->treeview, 0,
-				gtk_get_current_event_time ());
+		menu_popup_at_treeview_selection (menu, GTK_WIDGET (obj->priv->treeview));
 		gtk_menu_shell_select_first (GTK_MENU_SHELL (menu), FALSE);
 	}
 
