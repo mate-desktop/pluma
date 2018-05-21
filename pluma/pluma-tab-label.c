@@ -114,16 +114,6 @@ close_button_clicked_cb (GtkWidget     *widget,
 	g_signal_emit (tab_label, signals[CLOSE_CLICKED], 0, NULL);
 }
 
-static gboolean
-scroll_event_cb(GtkWidget      *widget,
-                GdkEventScroll *event,
-                PlumaTabLabel  *tab_label)
-{
-	g_signal_emit_by_name(tab_label, "scroll-event", &event);
-	
-	return FALSE;
-}
-
 static void
 sync_tip (PlumaTab *tab, PlumaTabLabel *tab_label)
 {
@@ -294,16 +284,6 @@ pluma_tab_label_init (PlumaTabLabel *tab_label)
 			  G_CALLBACK (close_button_clicked_cb),
 			  tab_label);
 			  
-	g_signal_connect (close_button,
-			  "scroll-event",
-			  G_CALLBACK (scroll_event_cb),
-			  tab_label);
-	
-	g_signal_connect (ebox,
-			  "scroll-event",
-			  G_CALLBACK (scroll_event_cb),
-			  tab_label);
-
 	spinner = gtk_spinner_new ();
 	gtk_box_pack_start (GTK_BOX (hbox), spinner, FALSE, FALSE, 0);
 	tab_label->priv->spinner = spinner;

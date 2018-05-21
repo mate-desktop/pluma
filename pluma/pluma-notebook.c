@@ -838,16 +838,6 @@ close_button_clicked_cb (PlumaTabLabel *tab_label, PlumaNotebook *notebook)
 	g_signal_emit (notebook, signals[TAB_CLOSE_REQUEST], 0, tab);
 }
 
-static gboolean
-tab_label_scroll_cb (PlumaTabLabel  *tab_label,
-                     GdkEventScroll *event,
-                     PlumaNotebook  *notebook)
-{
-	g_signal_emit_by_name (notebook, "scroll-event", &event);
-	
-	return FALSE;
-}
-
 static GtkWidget *
 create_tab_label (PlumaNotebook *nb,
 		  PlumaTab      *tab)
@@ -859,10 +849,6 @@ create_tab_label (PlumaNotebook *nb,
 	g_signal_connect (tab_label,
 			  "close-clicked",
 			  G_CALLBACK (close_button_clicked_cb),
-			  nb);
-	g_signal_connect (tab_label,
-			  "scroll-event",
-			  G_CALLBACK (tab_label_scroll_cb),
 			  nb);
 
 	g_object_set_data (G_OBJECT (tab), "tab-label", tab_label);
