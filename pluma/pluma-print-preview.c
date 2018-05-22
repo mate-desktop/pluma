@@ -538,6 +538,14 @@ close_button_clicked (GtkWidget         *button,
 	gtk_widget_destroy (GTK_WIDGET (preview));
 }
 
+static gboolean
+ignore_mouse_buttons (GtkWidget         *widget,
+		      GdkEventKey       *event,
+		      PlumaPrintPreview *preview)
+{
+	return TRUE;
+}
+
 static void
 create_bar (PlumaPrintPreview *preview)
 {
@@ -705,6 +713,11 @@ create_bar (PlumaPrintPreview *preview)
 			  G_CALLBACK (close_button_clicked), preview);
 	gtk_widget_show (GTK_WIDGET (i));
 	gtk_toolbar_insert (GTK_TOOLBAR (toolbar), i, -1);
+
+	g_signal_connect (GTK_TOOLBAR (toolbar),
+			  "button-press-event",
+			  G_CALLBACK (ignore_mouse_buttons),
+			  preview);
 }
 
 static gint
@@ -970,6 +983,11 @@ create_preview_layout (PlumaPrintPreview *preview)
   	g_signal_connect (priv->layout,
 			  "query-tooltip",
 			  G_CALLBACK (preview_layout_query_tooltip),
+			  preview);
+
+  	g_signal_connect (priv->layout,
+			  "button-press-event",
+			  G_CALLBACK (ignore_mouse_buttons),
 			  preview);
 
 	priv->scrolled_window = gtk_scrolled_window_new (NULL, NULL);
