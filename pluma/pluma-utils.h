@@ -57,13 +57,6 @@ void		 pluma_utils_menu_position_under_widget (GtkMenu  *menu,
 							 gboolean *push_in,
 							 gpointer  user_data);
 
-void		 pluma_utils_menu_position_under_tree_view
-							(GtkMenu  *menu,
-							 gint     *x,
-							 gint     *y,
-							 gboolean *push_in,
-							 gpointer  user_data);
-
 void		 menu_popup_at_treeview_selection	(GtkWidget *menu,
 							 GtkWidget *treeview);
 

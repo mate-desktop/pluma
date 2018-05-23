@@ -153,56 +153,6 @@ pluma_utils_menu_position_under_widget (GtkMenu  *menu,
 }
 
 void
-pluma_utils_menu_position_under_tree_view (GtkMenu  *menu,
-					   gint     *x,
-					   gint     *y,
-					   gboolean *push_in,
-					   gpointer  user_data)
-{
-	GtkTreeView *tree = GTK_TREE_VIEW (user_data);
-	GtkTreeModel *model;
-	GtkTreeSelection *selection;
-	GtkTreeIter iter;
-	
-	model = gtk_tree_view_get_model (tree);
-	g_return_if_fail (model != NULL);
-
-	selection = gtk_tree_view_get_selection (tree);
-	g_return_if_fail (selection != NULL);
-
-	if (gtk_tree_selection_get_selected (selection, NULL, &iter))
-	{
-		GtkTreePath *path;
-		GdkRectangle rect;
-
-		widget_get_origin (GTK_WIDGET (tree), x, y);
-			
-		path = gtk_tree_model_get_path (model, &iter);
-		gtk_tree_view_get_cell_area (tree, path,
-					     gtk_tree_view_get_column (tree, 0), /* FIXME 0 for RTL ? */
-					     &rect);
-		gtk_tree_path_free (path);
-		
-		*x += rect.x;
-		*y += rect.y + rect.height;
-		
-		if (gtk_widget_get_direction (GTK_WIDGET (tree)) == GTK_TEXT_DIR_RTL)
-		{
-			GtkRequisition requisition;
-			gtk_widget_get_preferred_size (GTK_WIDGET (menu), NULL, &requisition);
-			*x += rect.width - requisition.width;
-		}
-	}
-	else
-	{
-		/* no selection -> regular "under widget" positioning */
-		pluma_utils_menu_position_under_widget (menu,
-							x, y, push_in,
-							tree);
-	}
-}
-
-void
 menu_popup_at_treeview_selection (GtkWidget *menu,
 				  GtkWidget *treeview)
 {
