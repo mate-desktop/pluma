@@ -3440,28 +3440,22 @@ show_notebook_popup_menu (GtkNotebook    *notebook,
 	g_return_val_if_fail (action != NULL, FALSE);
 	gtk_action_activate (action);
 #endif
-	if (event != NULL)
-	{
-		gtk_menu_popup_at_pointer (GTK_MENU (menu), NULL);
-	}
-	else
-	{
-		GtkWidget *tab;
-		GtkWidget *tab_label;
 
-		tab = GTK_WIDGET (pluma_window_get_active_tab (window));
-		g_return_val_if_fail (tab != NULL, FALSE);
+	GtkWidget *tab;
+	GtkWidget *tab_label;
 
-		tab_label = gtk_notebook_get_tab_label (notebook, tab);
+	tab = GTK_WIDGET (pluma_window_get_active_tab (window));
+	g_return_val_if_fail (tab != NULL, FALSE);
 
-		gtk_menu_popup_at_widget (GTK_MENU (menu),
-					  tab_label,
-					  GDK_GRAVITY_SOUTH_WEST,
-					  GDK_GRAVITY_NORTH_WEST,
-					  (const GdkEvent*) event);
+	tab_label = gtk_notebook_get_tab_label (notebook, tab);
 
-		gtk_menu_shell_select_first (GTK_MENU_SHELL (menu), FALSE);
-	}
+	gtk_menu_popup_at_widget (GTK_MENU (menu),
+	                          tab_label,
+	                          GDK_GRAVITY_SOUTH_WEST,
+	                          GDK_GRAVITY_NORTH_WEST,
+	                          (const GdkEvent*) event);
+
+	gtk_menu_shell_select_first (GTK_MENU_SHELL (menu), FALSE);
 
 	return TRUE;
 }
