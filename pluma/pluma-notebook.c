@@ -394,7 +394,7 @@ pluma_notebook_reorder_tab (PlumaNotebook *src,
 
 static void
 drag_start (PlumaNotebook *notebook,
-	    guint32        time)
+            GdkEvent      *event)
 {
 	GdkSeat    *seat;
 	GdkDevice  *device;
@@ -424,7 +424,7 @@ drag_start (PlumaNotebook *notebook,
 			       GDK_SEAT_CAPABILITY_POINTER,
 			       FALSE,
 			       cursor,
-			       NULL,
+			       event,
 			       NULL,
 			       NULL);
 	}
@@ -493,7 +493,7 @@ motion_notify_cb (PlumaNotebook  *notebook,
 					      event->x_root, 
 					      event->y_root))
 		{
-			drag_start (notebook, event->time);
+			drag_start (notebook, (GdkEvent *) event);
 			return TRUE;
 		}
 
@@ -570,7 +570,7 @@ move_current_tab_to_another_notebook (PlumaNotebook  *src,
 				  G_CALLBACK (motion_notify_cb),
 				  NULL);
 
-	drag_start (dest, event->time);
+	drag_start (dest, (GdkEvent *) event);
 }
 
 static gboolean
