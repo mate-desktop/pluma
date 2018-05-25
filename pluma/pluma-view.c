@@ -2025,12 +2025,9 @@ pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 						        GTK_TEXT_WINDOW_LEFT)))
 	{
 		if (event->button == 3)
-		{
 			show_line_numbers_menu (widget, event);
-			return TRUE;
-		}
-		else if (event->button == 2)
-			return TRUE;
+
+		return TRUE;
 	}
 
 	if ((event->button == 2) || (event->button == 3))
