@@ -84,6 +84,7 @@ static void move_current_tab_to_another_notebook  (PlumaNotebook  *src,
 static GdkCursor *cursor = NULL;
 static gboolean leftdown = FALSE;
 static gboolean drag_ready = FALSE;
+static gboolean newfile_ready = TRUE;
 
 /* Signals */
 enum
@@ -664,7 +665,11 @@ button_press_cb (PlumaNotebook  *notebook,
 		if (event->type == GDK_BUTTON_PRESS)
 		{
 			tab1click = gtk_notebook_get_current_page (GTK_NOTEBOOK (notebook));
-			newfile = (tab_clicked == -1);
+
+			if (newfile_ready)
+				newfile = (tab_clicked == -1);
+			else
+				newfile = FALSE;
 		}
 		else if (event->type == GDK_2BUTTON_PRESS)
 		{
@@ -685,6 +690,24 @@ grab_focus_cb (PlumaNotebook  *notebook,
 	       gpointer        data)
 {
 	drag_ready = TRUE;
+	return FALSE;
+}
+
+static gboolean
+focus_in_cb (PlumaNotebook  *notebook,
+	     GdkEventButton *event,
+	     gpointer        data)
+{
+	newfile_ready = FALSE;
+	return FALSE;
+}
+
+static gboolean
+focus_out_cb (PlumaNotebook  *notebook,
+	      GdkEventButton *event,
+	      gpointer        data)
+{
+	newfile_ready = TRUE;
 	return FALSE;
 }
 
@@ -787,6 +810,16 @@ pluma_notebook_init (PlumaNotebook *notebook)
 	g_signal_connect (notebook, 
 			  "grab-focus",
 			  (GCallback)grab_focus_cb,
+			  NULL);
+
+	g_signal_connect (notebook, 
+			  "focus-in-event",
+			  (GCallback)focus_in_cb,
+			  NULL);
+
+	g_signal_connect (notebook, 
+			  "focus-out-event",
+			  (GCallback)focus_out_cb,
 			  NULL);
 
 	gtk_widget_add_events (GTK_WIDGET (notebook), 
