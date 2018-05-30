@@ -83,6 +83,7 @@ static void move_current_tab_to_another_notebook  (PlumaNotebook  *src,
 /* Local variables */
 static GdkCursor *cursor = NULL;
 static gboolean leftdown = FALSE;
+static gboolean drag_ready = FALSE;
 
 /* Signals */
 enum
@@ -482,7 +483,11 @@ motion_notify_cb (PlumaNotebook  *notebook,
 					      event->x_root, 
 					      event->y_root))
 		{
-			drag_start (notebook, event->time);
+			if (drag_ready)
+				drag_start (notebook, event->time);
+			else
+				drag_stop (notebook);
+
 			return TRUE;
 		}
 
@@ -592,6 +597,7 @@ button_release_cb (PlumaNotebook  *notebook,
 
 	/* This must be called even if a drag isn't happening */
 	drag_stop (notebook);
+	drag_ready = FALSE;
 
 	return FALSE;
 }
@@ -670,6 +676,15 @@ button_press_cb (PlumaNotebook  *notebook,
 		}
 	}
 
+	return FALSE;
+}
+
+static gboolean
+grab_focus_cb (PlumaNotebook  *notebook,
+	       GdkEventButton *event,
+	       gpointer        data)
+{
+	drag_ready = TRUE;
 	return FALSE;
 }
 
@@ -763,10 +778,17 @@ pluma_notebook_init (PlumaNotebook *notebook)
 			  "button-press-event",
 			  (GCallback)button_press_cb, 
 			  NULL);
+
 	g_signal_connect (notebook, 
 			  "button-release-event",
 			  (GCallback)button_release_cb,
 			  NULL);
+
+	g_signal_connect (notebook, 
+			  "grab-focus",
+			  (GCallback)grab_focus_cb,
+			  NULL);
+
 	gtk_widget_add_events (GTK_WIDGET (notebook), 
 			       GDK_BUTTON1_MOTION_MASK);
 
