@@ -624,8 +624,6 @@ button_press_cb (PlumaNotebook  *notebook,
 	    (event->type == GDK_BUTTON_PRESS) && 
 	    (tab_clicked >= 0))
 	{
-		leftdown = TRUE;
-
 		notebook->priv->x_start = event->x_root;
 		notebook->priv->y_start = event->y_root;
 		
@@ -674,11 +672,13 @@ button_press_cb (PlumaNotebook  *notebook,
 		else if (event->type == GDK_2BUTTON_PRESS)
 		{
 			if ((tab1click != gtk_notebook_get_current_page (GTK_NOTEBOOK (notebook))) ||
-			    (tab_clicked >= 0) || ((tab_clicked == -1) && (!newfile)))
+			    (tab_clicked >= 0) || ((tab_clicked == -1) && (!newfile)) || (!leftdown))
 				return TRUE;
 
 			newfile = FALSE;
 		}
+
+	leftdown = TRUE;
 	}
 
 	return FALSE;
