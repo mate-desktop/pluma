@@ -1,21 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# corneliu.e <corneliueva@yahoo.com>, 2017
-# Daniel <danny3@tutanota.com>, 2015-2016
-# Daniel <danny3@tutanota.com>, 2016-2017
-# sorinn <nemes.sorin@gmail.com>, 2014
-# sidro <slacky2005@gmail.com>, 2014
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 12:20+0000\n"
-"Last-Translator: corneliu.e <corneliueva@yahoo.com>\n"
-"Language-Team: Romanian (http://www.transifex.com/mate/MATE/language/ro/)\n"
+"POT-Creation-Date: 2018-03-18 17:20+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Romanian (https://www.transifex.com/mate/teams/13566/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,7 +28,11 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "Specifică dacă să fie utilizat fontul implicit, cu lățime fixă, al sistemului pentru editarea textului în locul celui specific pentru pluma. Dacă această opțiune este dezactivată, atunci fontul specificat în opțiunea „Font editare” va fi utilizat în locul fontului de sistem."
+msgstr ""
+"Specifică dacă să fie utilizat fontul implicit, cu lățime fixă, al "
+"sistemului pentru editarea textului în locul celui specific pentru pluma. "
+"Dacă această opțiune este dezactivată, atunci fontul specificat în opțiunea "
+"„Font editare” va fi utilizat în locul fontului de sistem."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -47,7 +47,9 @@ msgstr "Font editor"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "Un font personalizat care va fi utilizat la editare. Această configurare va avea efect doar dacă opțiunea „Utilizează fontul implicit” este dezactivată."
+msgstr ""
+"Un font personalizat care va fi utilizat la editare. Această configurare va "
+"avea efect doar dacă opțiunea „Utilizează fontul implicit” este dezactivată."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Style Scheme"
@@ -55,7 +57,9 @@ msgstr "Schemă de stil"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:7
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
-msgstr "Identificatorul unei scheme de stil GtkSourceView utilizată pentru a colora textul."
+msgstr ""
+"Identificatorul unei scheme de stil GtkSourceView utilizată pentru a colora "
+"textul."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:8
 msgid "Create Backup Copies"
@@ -65,7 +69,10 @@ msgstr "Creează copii de siguranță"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "Specifică dacă pluma ar trebui să creeze copii de siguranță pentru fișierele pe care le salvează. Puteți defini extensia pentru fișierele de siguranță cu ajutorul opțiunii „Extensia copiei de siguranță”."
+msgstr ""
+"Specifică dacă pluma ar trebui să creeze copii de siguranță pentru fișierele"
+" pe care le salvează. Puteți defini extensia pentru fișierele de siguranță "
+"cu ajutorul opțiunii „Extensia copiei de siguranță”."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -76,7 +83,10 @@ msgid ""
 "Whether pluma should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
-msgstr "Specifică dacă pluma ar trebui să salveze automat fișierele modificate după un anumit interval de timp. Puteți stabili intervalul de timp cu ajutorul opțiunii „Interval de salvare automată”."
+msgstr ""
+"Specifică dacă pluma ar trebui să salveze automat fișierele modificate după "
+"un anumit interval de timp. Puteți stabili intervalul de timp cu ajutorul "
+"opțiunii „Interval de salvare automată”."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:12
 msgid "Autosave Interval"
@@ -86,7 +96,10 @@ msgstr "Interval de salvare automată"
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
-msgstr "Numărul de minute după care pluma va salva automat fișierele modificate. Această acțiune va avea efect doar dacă opțiunea „Salvează automat” este activată."
+msgstr ""
+"Numărul de minute după care pluma va salva automat fișierele modificate. "
+"Această acțiune va avea efect doar dacă opțiunea „Salvează automat” este "
+"activată."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Show save confirmation"
@@ -104,7 +117,9 @@ msgstr "Scheme VFS disponibile pentru scriere"
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
-msgstr "Lista schemelor VFS pe care pluma le suportă la scriere. Schema „file” este disponibilă implicit pentru scriere."
+msgstr ""
+"Lista schemelor VFS pe care pluma le suportă la scriere. Schema „file” este "
+"disponibilă implicit pentru scriere."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
@@ -114,7 +129,9 @@ msgstr "Numărul maxim al acțiunilor de anulare"
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "Numărul maxim de acțiuni pe care pluma le va putea anula sau reface. Utilizați „-1” pentru un număr nelimitat de acțiuni."
+msgstr ""
+"Numărul maxim de acțiuni pe care pluma le va putea anula sau reface. "
+"Utilizați „-1” pentru un număr nelimitat de acțiuni."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
@@ -127,7 +144,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Specifică felul în care vor fi rupte rândurile lungi la editare. Utilizați „GTK_WRAP_NONE” pentru ca rândurile să nu fie rupte, „GTK_WRAP_WORD” pentru rupere între cuvinte și „GTK_WRAP_CHAR” pentru rupere între caractere. Majusculele sunt semnificative, așa că vă rugăm să vă asigurați că apar exact așa cum sunt menționate aici."
+msgstr ""
+"Specifică felul în care vor fi rupte rândurile lungi la editare. Utilizați "
+"„GTK_WRAP_NONE” pentru ca rândurile să nu fie rupte, „GTK_WRAP_WORD” pentru "
+"rupere între cuvinte și „GTK_WRAP_CHAR” pentru rupere între caractere. "
+"Majusculele sunt semnificative, așa că vă rugăm să vă asigurați că apar "
+"exact așa cum sunt menționate aici."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
@@ -137,7 +159,9 @@ msgstr "Lungime tab"
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
-msgstr "Specifică numărul de spații care ar trebui să fie afișate în locul caracterelor tab."
+msgstr ""
+"Specifică numărul de spații care ar trebui să fie afișate în locul "
+"caracterelor tab."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Insert spaces"
@@ -161,7 +185,8 @@ msgstr "Afișează numerotarea rândurilor"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:29
 msgid "Whether pluma should display line numbers in the editing area."
-msgstr "Specifică dacă pluma ar trebui să numeroteze rândurile în zona de editare."
+msgstr ""
+"Specifică dacă pluma ar trebui să numeroteze rândurile în zona de editare."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:30
 msgid "Highlight Current Line"
@@ -177,7 +202,8 @@ msgstr "Evidențiază paranteza pereche"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:33
 msgid "Whether pluma should highlight the bracket matching the selected one."
-msgstr "Specifică dacă pluma ar trebui să evidențieze perechea parantezei selectate."
+msgstr ""
+"Specifică dacă pluma ar trebui să evidențieze perechea parantezei selectate."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:34
 msgid "Display Right Margin"
@@ -185,7 +211,9 @@ msgstr "Arată marginea dreaptă"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:35
 msgid "Whether pluma should display the right margin in the editing area."
-msgstr "Specifică dacă pluma ar trebui să afișeze marginea dreaptă în zona de editare."
+msgstr ""
+"Specifică dacă pluma ar trebui să afișeze marginea dreaptă în zona de "
+"editare."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:36
 msgid "Right Margin Position"
@@ -208,7 +236,15 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "Specifică unde sare cursorul când se apasă tastele HOME sau END. Utilizați „DISABLED” pentru a sări întotdeauna la începutul ori la sfârșitul rândului, „AFTER” pentru salt la începutul ori la sfârșitul rândului la prima apăsare și la începutul ori la sfârșitul textului (fără a lua în considerare spațiile goale) la a doua apăsare, „BEFORE” pentru salt la începutul ori la sfârșitul textului înainte de a sări la începutul ori la sfârșitul rândului și „ALWAYS” pentru a sări întotdeauna la sfârșitul ori începutul textului, în loc de sfârșitul ori începutul rândului."
+msgstr ""
+"Specifică unde sare cursorul când se apasă tastele HOME sau END. Utilizați "
+"„DISABLED” pentru a sări întotdeauna la începutul ori la sfârșitul rândului,"
+" „AFTER” pentru salt la începutul ori la sfârșitul rândului la prima apăsare"
+" și la începutul ori la sfârșitul textului (fără a lua în considerare "
+"spațiile goale) la a doua apăsare, „BEFORE” pentru salt la începutul ori la "
+"sfârșitul textului înainte de a sări la începutul ori la sfârșitul rândului "
+"și „ALWAYS” pentru a sări întotdeauna la sfârșitul ori începutul textului, "
+"în loc de sfârșitul ori începutul rândului."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
@@ -218,7 +254,9 @@ msgstr "Restaurează poziția precedentă a cursorului"
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
-msgstr "Specifică dacă pluma ar trebui să restaureze poziția precedentă a cursorului atunci când se încarcă un fișier."
+msgstr ""
+"Specifică dacă pluma ar trebui să restaureze poziția precedentă a cursorului"
+" atunci când se încarcă un fișier."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Search Highlighting"
@@ -227,7 +265,9 @@ msgstr "Activează evidențierea la căutare"
 #: ../data/org.mate.pluma.gschema.xml.in.h:43
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
-msgstr "Specifică dacă pluma ar trebui să evidențieze toate aparițiile textului căutat."
+msgstr ""
+"Specifică dacă pluma ar trebui să evidențieze toate aparițiile textului "
+"căutat."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:44
 msgid "Enable Syntax Highlighting"
@@ -243,7 +283,9 @@ msgstr "Bara de unelte este vizibilă"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:47
 msgid "Whether the toolbar should be visible in editing windows."
-msgstr "Specifică dacă bara de unelte ar trebui să fie vizibilă în ferestrele de editare."
+msgstr ""
+"Specifică dacă bara de unelte ar trebui să fie vizibilă în ferestrele de "
+"editare."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:48
 msgid "Toolbar Buttons Style"
@@ -257,7 +299,14 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "Stilul pentru butoanele din bara de unelte. Valorile posibile sunt: „PLUMA_TOOLBAR_SYSTEM” pentru stilul implicit al sistemului, „PLUMA_TOOLBAR_ICONS” pentru a afișa doar iconurile, „PLUMA_TOOLBAR_ICONS_AND_TEXT” pentru a afișa atât iconuri, cât și text, „PLUMA_TOOLBAR_ICONS_BOTH_HORIZ” pentru a afișa text prioritar lângă iconuri. Majusculele sunt semnificative, așa că e recomandat să fie utilizate exact așa cum au fost menționate aici."
+msgstr ""
+"Stilul pentru butoanele din bara de unelte. Valorile posibile sunt: "
+"„PLUMA_TOOLBAR_SYSTEM” pentru stilul implicit al sistemului, "
+"„PLUMA_TOOLBAR_ICONS” pentru a afișa doar iconurile, "
+"„PLUMA_TOOLBAR_ICONS_AND_TEXT” pentru a afișa atât iconuri, cât și text, "
+"„PLUMA_TOOLBAR_ICONS_BOTH_HORIZ” pentru a afișa text prioritar lângă "
+"iconuri. Majusculele sunt semnificative, așa că e recomandat să fie "
+"utilizate exact așa cum au fost menționate aici."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
@@ -266,7 +315,9 @@ msgstr "Bara de stare este vizibilă"
 #: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
-msgstr "Specifică dacă bara de stare de la baza ferestrei de editare ar trebui să fie vizibilă."
+msgstr ""
+"Specifică dacă bara de stare de la baza ferestrei de editare ar trebui să "
+"fie vizibilă."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:52
 msgid "Side Pane is Visible"
@@ -275,11 +326,13 @@ msgstr "Panoul lateral este vizibil"
 #: ../data/org.mate.pluma.gschema.xml.in.h:53
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
-msgstr "Specifică dacă panoul lateral din stânga ferestrei de editare ar trebui să fie vizibil."
+msgstr ""
+"Specifică dacă panoul lateral din stânga ferestrei de editare ar trebui să "
+"fie vizibil."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:54
 msgid "Show tabs with side pane"
-msgstr ""
+msgstr "Arată taburi cu panoul lateral"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:55
 msgid ""
@@ -293,7 +346,9 @@ msgstr "Panoul de jos este vizibil"
 #: ../data/org.mate.pluma.gschema.xml.in.h:57
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
-msgstr "Specifică dacă panoul de la baza ferestrei de editare ar trebui să fie vizibil."
+msgstr ""
+"Specifică dacă panoul de la baza ferestrei de editare ar trebui să fie "
+"vizibil."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:58
 msgid "Maximum Recent Files"
@@ -303,7 +358,9 @@ msgstr "Numărul maxim de fișiere recente"
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
-msgstr "Specifică numărul maxim de fișiere deschise recent care vor fi afișate în submeniul „Fișiere recente”."
+msgstr ""
+"Specifică numărul maxim de fișiere deschise recent care vor fi afișate în "
+"submeniul „Fișiere recente”."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
@@ -312,7 +369,9 @@ msgstr "Tipărește sintaxa evidențiată"
 #: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
-msgstr "Specifică dacă pluma ar trebui să tipărească evidențierea sintaxei pentru documente."
+msgstr ""
+"Specifică dacă pluma ar trebui să tipărească evidențierea sintaxei pentru "
+"documente."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Print Header"
@@ -321,7 +380,8 @@ msgstr "Tipărește antetul"
 #: ../data/org.mate.pluma.gschema.xml.in.h:63
 msgid ""
 "Whether pluma should include a document header when printing documents."
-msgstr "Specifică dacă pluma ar trebui să includă antetul la tipărirea documentelor."
+msgstr ""
+"Specifică dacă pluma ar trebui să includă antetul la tipărirea documentelor."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:64
 msgid "Printing Line Wrapping Mode"
@@ -334,7 +394,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Specifică felul în care vor fi rupte rândurile lungi la tipărire. Utilizați „GTK_WRAP_NONE” pentru ca rândurile să nu fie rupte, „GTK_WRAP_WORD” pentru rupere între cuvinte și „GTK_WRAP_CHAR“ pentru rupere între caractere. Valorile sunt sensibile la majuscule, așa că vă rugăm să vă asigurați că apar exact așa cum sunt menționate aici."
+msgstr ""
+"Specifică felul în care vor fi rupte rândurile lungi la tipărire. Utilizați "
+"„GTK_WRAP_NONE” pentru ca rândurile să nu fie rupte, „GTK_WRAP_WORD” pentru "
+"rupere între cuvinte și „GTK_WRAP_CHAR“ pentru rupere între caractere. "
+"Valorile sunt sensibile la majuscule, așa că vă rugăm să vă asigurați că "
+"apar exact așa cum sunt menționate aici."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
@@ -345,7 +410,10 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "Dacă această valoare este 0, atunci niciun număr de rând nu va fi inserat la tipărirea unui document. Pentru o valoare „n”, pluma va tipări numărul rândului la fiecare „n” număr de rânduri."
+msgstr ""
+"Dacă această valoare este 0, atunci niciun număr de rând nu va fi inserat la"
+" tipărirea unui document. Pentru o valoare „n”, pluma va tipări numărul "
+"rândului la fiecare „n” număr de rânduri."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
@@ -374,7 +442,10 @@ msgstr "Font utilizat la tipărirea antetului"
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
-msgstr "Specifică fontul utilizat pentru antetele paginilor la tipărirea documentului. Această opțiune are efect doar dacă opțiunea „Tipărește antetul” este activată."
+msgstr ""
+"Specifică fontul utilizat pentru antetele paginilor la tipărirea "
+"documentului. Această opțiune are efect doar dacă opțiunea „Tipărește "
+"antetul” este activată."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
@@ -389,7 +460,10 @@ msgstr "Font pentru numerotarea rândurilor la tipărire"
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
-msgstr "Specifică fontul utilizat pentru numerotarea rândurilor la tipărire. Această opțiune are efect doar dacă opțiunea „Numerotează rândurile la tipărire” este diferită de zero."
+msgstr ""
+"Specifică fontul utilizat pentru numerotarea rândurilor la tipărire. Această"
+" opțiune are efect doar dacă opțiunea „Numerotează rândurile la tipărire” "
+"este diferită de zero."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
@@ -405,7 +479,10 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "Lista de codificări utilizate de pluma pentru autodetecția codificării unui fișier. „CURRENT” este codificarea locală actuală. Sunt utilizate doar codificările recunoscute."
+msgstr ""
+"Lista de codificări utilizate de pluma pentru autodetecția codificării unui "
+"fișier. „CURRENT” este codificarea locală actuală. Sunt utilizate doar "
+"codificările recunoscute."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
@@ -420,7 +497,10 @@ msgstr "Codificări afișate în meniu"
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
-msgstr "Lista codificărilor afișate în meniul „Codare caracter” din fereastra de selectare Deschide/Salvează fișier. Sunt utilizate numai codificările recunoscute."
+msgstr ""
+"Lista codificărilor afișate în meniul „Codare caracter” din fereastra de "
+"selectare Deschide/Salvează fișier. Sunt utilizate numai codificările "
+"recunoscute."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
@@ -446,7 +526,9 @@ msgstr "Module active"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "Lista modulelor active. Conține „Locația” modulelor active. Pentru a obține „Locația” unui anumit modul, consultați fișierul de module .pluma-plugin."
+msgstr ""
+"Lista modulelor active. Conține „Locația” modulelor active. Pentru a obține "
+"„Locația” unui anumit modul, consultați fișierul de module .pluma-plugin."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -462,7 +544,16 @@ msgid ""
 "plugin system, which currently includes support for spell checking, "
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
-msgstr "<p> Pluma este un editor mic de text, dar puternic, proiectat specific pentru desktop-ul MATE. Are cele mai multe din funcțiile standard ale unui editor de text și suportă complet textul internațional în Unicode. Opțiunile avansate includ evidențierea sintaxei și indentarea automată a codului sursă, tipărirea și editarea a mai multor documente într-o fereastră. </p> <p> Pluma este extensibil printr-un sistem de module, care, în prezent, includ suport pentru verificarea ortografiei, compararea de fișiere, vizualizarea jurnalelor de modificări CVS, și ajustarea nivelelor de indentare. </p>"
+msgstr ""
+"<p> Pluma este un editor mic de text, dar puternic, proiectat specific "
+"pentru desktop-ul MATE. Are cele mai multe din funcțiile standard ale unui "
+"editor de text și suportă complet textul internațional în Unicode. Opțiunile"
+" avansate includ evidențierea sintaxei și indentarea automată a codului "
+"sursă, tipărirea și editarea a mai multor documente într-o fereastră. </p> "
+"<p> Pluma este extensibil printr-un sistem de module, care, în prezent, "
+"includ suport pentru verificarea ortografiei, compararea de fișiere, "
+"vizualizarea jurnalelor de modificări CVS, și ajustarea nivelelor de "
+"indentare. </p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
@@ -504,14 +595,15 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Dacă nu salvați, modificările din ultima secundă vor fi pierdute definitiv."
-msgstr[1] "Dacă nu salvați, modificările din ultimele %ld secunde vor fi pierdute definitiv."
-msgstr[2] "Dacă nu salvați, modificările din ultimele %ld de secunde vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
-msgstr "Dacă nu salvați, modificările din ultimul minut vor fi pierdute definitiv."
+msgstr ""
+"Dacă nu salvați, modificările din ultimul minut vor fi pierdute definitiv."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
 #, c-format
@@ -521,9 +613,9 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Dacă nu salvați, modificările din ultimul minut și o secundă vor fi pierdute definitiv."
-msgstr[1] "Dacă nu salvați, modificările din ultimul minut și %ld secunde vor fi pierdute definitiv."
-msgstr[2] "Dacă nu salvați, modificările din ultimul minut și %ld de secunde vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
 #, c-format
@@ -533,14 +625,15 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Dacă nu salvați, modificările din ultimul minut vor fi pierdute definitiv."
-msgstr[1] "Dacă nu salvați, modificările din ultimele %ld minute vor fi pierdute definitiv."
-msgstr[2] "Dacă nu salvați, modificările din ultimele %ld de minute vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
-msgstr "Dacă nu salvați, modificările din ultima oră vor fi pierdute definitiv."
+msgstr ""
+"Dacă nu salvați, modificările din ultima oră vor fi pierdute definitiv."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
 #, c-format
@@ -550,9 +643,9 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Dacă nu salvați, modificările din ultima oră și un minut vor fi pierdute definitiv."
-msgstr[1] "Dacă nu salvați, modificările din ultima oră și %d minute vor fi pierdute definitiv."
-msgstr[2] "Dacă nu salvați, modificările din ultima oră și %d de minute vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
 #, c-format
@@ -560,52 +653,54 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "Dacă nu salvați, modificările din ultima oră vor fi pierdute definitiv."
-msgstr[1] "Dacă nu salvați, modificările din ultimele %d ore vor fi pierdute definitiv."
-msgstr[2] "Dacă nu salvați, modificările din ultimele %d de ore vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:518
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
-msgstr "Modificările aduse documentului „%s” în ultima oră vor fi pierdute definitiv."
+msgstr ""
+"Modificările aduse documentului „%s” în ultima oră vor fi pierdute "
+"definitiv."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:523
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Salvați modificările aduse documentului „%s” înainte de a închide?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:537
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:756
 msgid "Saving has been disabled by the system administrator."
 msgstr "Salvarea a fost dezactivată de către administratorul de sistem."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:708
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "Modificările pentru un document vor fi pierdute definitiv."
-msgstr[1] "Modificările pentru %d documente vor fi pierdute definitiv."
-msgstr[2] "Modificările pentru %d de documente vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:714
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "Există un document cu modificări nesalvate. Salvați modificările înainte de închidere?"
-msgstr[1] "Există %d documente cu modificări nesalvate. Salvați modificările înainte de închidere?"
-msgstr[2] "Există %d de documente cu modificări nesalvate. Salvați modificările înainte de închidere?"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:732
 msgid "Docum_ents with unsaved changes:"
 msgstr "Docum_ente cu modificări nesalvate:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:734
 msgid "S_elect the documents you want to save:"
 msgstr "S_electați documentele pe care doriți să le salvați:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:758
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "Dacă nu salvați, toate modificările aduse vor fi pierdute definitiv."
 
@@ -621,7 +716,7 @@ msgstr "_Descriere"
 #: ../pluma/dialogs/pluma-encodings-dialog.c:393
 #: ../pluma/dialogs/pluma-encodings-dialog.c:454
 msgid "_Encoding"
-msgstr "Codificar_e"
+msgstr "Codar_e"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:1
 msgid "Character encodings"
@@ -629,15 +724,17 @@ msgstr "Codificări caractere"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
 msgid "A_vailable encodings:"
-msgstr "Codificări _disponibile:"
+msgstr "Codări _disponibile:"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
 msgid "E_ncodings shown in menu:"
-msgstr "Codificări afișate în me_niu:"
+msgstr "Codări afișate în me_niu:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
-msgstr "Apăsați pe acest buton pentru a selecta fontul care trebuie utilizat de către editor"
+msgstr ""
+"Apăsați pe acest buton pentru a selecta fontul care trebuie utilizat de "
+"către editor"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:582
 #, c-format
@@ -707,7 +804,7 @@ msgstr "Nu de_spărți cuvintele pe două rânduri"
 msgid "Line Numbers"
 msgstr "Numerotare rânduri"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "Afișează _numerotarea rândurilor"
 
@@ -721,7 +818,7 @@ msgstr "Evidențiază rându_l actual"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
 msgid "Right Margin"
-msgstr "Marginea dreaptă"
+msgstr "Margine dreaptă"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
 msgid "Display right _margin"
@@ -812,17 +909,17 @@ msgid "Plugins"
 msgstr "Module"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1497
 msgid "Replace"
 msgstr "Înlocuiește"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1495
 msgid "Find"
-msgstr "Caută"
+msgstr "Căutare"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
-msgstr "Înlocuiește t_ot"
+msgstr "Înlocuiește _toate"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
@@ -835,7 +932,7 @@ msgstr "Înlocuiește tot"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "_Search for: "
-msgstr "Cau_tă: "
+msgstr "_Caută după: "
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "Replace _with: "
@@ -867,13 +964,15 @@ msgstr "_Parcurge secventele escape (ex. \\n)"
 
 #: ../pluma/pluma.c:108
 msgid "Show the application's version"
-msgstr "Afișează versiunea aplicației"
+msgstr "Arată versiunea aplicației"
 
 #: ../pluma/pluma.c:111
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
-msgstr "Stabilește codificarea caracterelor utilizată la deschiderea fișierelor listate în linia de comandă"
+msgstr ""
+"Stabilește codificarea caracterelor utilizată la deschiderea fișierelor "
+"listate în linia de comandă"
 
 #: ../pluma/pluma.c:111
 msgid "ENCODING"
@@ -885,7 +984,8 @@ msgstr "Afișează o listă de valori posibile pentru opțiunea de codificare"
 
 #: ../pluma/pluma.c:117
 msgid "Create a new top-level window in an existing instance of pluma"
-msgstr "Creează o fereastră nouă de prim nivel într-o instanță pluma deja existentă"
+msgstr ""
+"Creează o fereastră nouă de prim nivel într-o instanță pluma deja existentă"
 
 #: ../pluma/pluma.c:120
 msgid "Create a new document in an existing instance of pluma"
@@ -910,7 +1010,9 @@ msgstr "- Editare fișiere text"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\nExecutați „%s --help” pentru a vedea lista tuturor opțiunilor disponibile pentru linia de comandă.\n"
+msgstr ""
+"%s\n"
+"Porniți „%s --help” pentru a vizualiza lista completă a opțiunilor din linia de comandă.\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -921,14 +1023,14 @@ msgstr "Se încarcă fișierul „%s”..."
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "Se încarcă %d fișier..."
-msgstr[1] "Se încarcă %d fișiere..."
-msgstr[2] "Se încarcă %d de fișiere..."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
 msgid "Open Files"
-msgstr "Deschide fișiere"
+msgstr "Fișiere deschise"
 
 #: ../pluma/pluma-commands-file.c:574
 #, c-format
@@ -946,7 +1048,7 @@ msgstr "Se salvează fișierul „%s”..."
 
 #: ../pluma/pluma-commands-file.c:756
 msgid "Save As…"
-msgstr "Salvează ca..."
+msgstr "Salvează ca…"
 
 #: ../pluma/pluma-commands-file.c:1085
 #, c-format
@@ -966,14 +1068,15 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Modificările aduse documentului în ultima %ld secundă vor fi pierdute definitiv."
-msgstr[1] "Modificările aduse documentului în ultimele %ld secunde vor fi pierdute definitiv."
-msgstr[2] "Modificările aduse documentului în ultimele %ld de secunde vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/pluma-commands-file.c:1148
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
-msgstr "Modificările aduse documentului în ultimul minut vor fi pierdute definitiv."
+msgstr ""
+"Modificările aduse documentului în ultimul minut vor fi pierdute definitiv."
 
 #: ../pluma/pluma-commands-file.c:1154
 #, c-format
@@ -983,9 +1086,9 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Modificările aduse documentului în ultimul minut și %ld secundă vor fi pierdute definitiv."
-msgstr[1] "Modificările aduse documentului în ultimul minut și %ld secunde vor fi pierdute definitiv."
-msgstr[2] "Modificările aduse documentului în ultimul minut și %ld de secunde vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/pluma-commands-file.c:1164
 #, c-format
@@ -995,14 +1098,15 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Modificările aduse documentului în ultimul %ld minut vor fi pierdute definitiv."
-msgstr[1] "Modificările aduse documentului în ultimele %ld minute vor fi pierdute definitiv."
-msgstr[2] "Modificările aduse documentului în ultimele %ld de minute vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/pluma-commands-file.c:1179
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
-msgstr "Modificările aduse documentului în ultima oră vor fi pierdute definitiv."
+msgstr ""
+"Modificările aduse documentului în ultima oră vor fi pierdute definitiv."
 
 #: ../pluma/pluma-commands-file.c:1185
 #, c-format
@@ -1012,9 +1116,9 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Modificările aduse documentului în ultima oră și %d minut vor fi pierdute definitiv."
-msgstr[1] "Modificările aduse documentului în ultima oră și %d minute vor fi pierdute definitiv."
-msgstr[2] "Modificările aduse documentului în ultima oră și %d de minute vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1022,13 +1126,13 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "Modificările aduse documentului în ultima %d oră vor fi pierdute definitiv."
-msgstr[1] "Modificările aduse documentului în ultimele %d ore vor fi pierdute definitiv."
-msgstr[2] "Modificările aduse documentului în ultimele %d de ore vor fi pierdute definitiv."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/pluma-commands-file.c:1226
 msgid "_Revert"
-msgstr "_Anulează"
+msgstr "Restaurea_ză"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
@@ -1036,15 +1140,15 @@ msgstr "Pluma este un editor de text mic și eficient pentru desktop-ul MATE"
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "Mișu Moldovan <dumol@go.ro>\nMugurel Tudor <mugurelu@go.ro>\nFelix Petrescu <wakax@yahoo.com>\nDaniel Alămiță <danny3@tutanota.com>\nDan Damian <dand@mate.ro>\nLucian Adrian Grijincu <lucian.grijincu@gmail.com>\n\nLaunchpad Contributions:\n  Adi Roiban https://launchpad.net/~adiroiban\n  Adrian Harabulă https://launchpad.net/~opensoft\n  Adrian Nita https://launchpad.net/~nitzadrian-deactivatedaccount\n  Cristian KLEIN https://launchpad.net/~cristiklein\n  Dan Damian https://launchpad.net/~dand\n  Doru Horișco https://launchpad.net/~doruhushhush\n  Ionuț Jula https://launchpad.net/~ionutjula\n  Lucian Adrian Grijincu https://launchpad.net/~lucian.grijincu\n  Mișu Moldovan https://launchpad.net/~dumol-mate\n  Horia https://launchpad.net/~hvd"
+msgstr "Daniel Alămiță <danny3@tutanota.com>"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "A fost găsită și înlocuită %d apariție."
-msgstr[1] "Au fost găsite și înlocuite %d apariții."
-msgstr[2] "Au fost găsite și înlocuite %d de apariții."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1057,17 +1161,17 @@ msgstr "A fost găsită și înlocuită o apariție."
 msgid "\"%s\" not found"
 msgstr "„%s” nu a fost găsit"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "Document nesalvat %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2224 ../pluma/pluma-window.c:2229
 msgid "Read-Only"
 msgstr "Doar citire"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3626
 msgid "Documents"
 msgstr "Documente"
 
@@ -1086,11 +1190,11 @@ msgstr "Vestică"
 #: ../pluma/pluma-encodings.c:153 ../pluma/pluma-encodings.c:227
 #: ../pluma/pluma-encodings.c:264
 msgid "Central European"
-msgstr "Central-europeană"
+msgstr "Central europeană"
 
 #: ../pluma/pluma-encodings.c:155
 msgid "South European"
-msgstr "Sud-europeană"
+msgstr "Sud europeană"
 
 #: ../pluma/pluma-encodings.c:157 ../pluma/pluma-encodings.c:171
 #: ../pluma/pluma-encodings.c:278
@@ -1101,16 +1205,16 @@ msgstr "Baltică"
 #: ../pluma/pluma-encodings.c:242 ../pluma/pluma-encodings.c:246
 #: ../pluma/pluma-encodings.c:248 ../pluma/pluma-encodings.c:266
 msgid "Cyrillic"
-msgstr "Chirilică"
+msgstr "Chirilic"
 
 #: ../pluma/pluma-encodings.c:161 ../pluma/pluma-encodings.c:235
 #: ../pluma/pluma-encodings.c:276
 msgid "Arabic"
-msgstr "Arabă"
+msgstr "Arabic"
 
 #: ../pluma/pluma-encodings.c:163 ../pluma/pluma-encodings.c:270
 msgid "Greek"
-msgstr "Greacă"
+msgstr "Grec"
 
 #: ../pluma/pluma-encodings.c:165
 msgid "Hebrew Visual"
@@ -1135,7 +1239,7 @@ msgstr "Română"
 
 #: ../pluma/pluma-encodings.c:195
 msgid "Armenian"
-msgstr "Armeană"
+msgstr "Armean"
 
 #: ../pluma/pluma-encodings.c:197 ../pluma/pluma-encodings.c:199
 #: ../pluma/pluma-encodings.c:213
@@ -1164,11 +1268,11 @@ msgstr "Chineză simplificată"
 
 #: ../pluma/pluma-encodings.c:222
 msgid "Georgian"
-msgstr "Georgiană"
+msgstr "Georgian"
 
 #: ../pluma/pluma-encodings.c:233 ../pluma/pluma-encodings.c:274
 msgid "Hebrew"
-msgstr "Ebraică"
+msgstr "Evreiesc"
 
 #: ../pluma/pluma-encodings.c:250
 msgid "Cyrillic/Ukrainian"
@@ -1181,11 +1285,11 @@ msgstr "Vietnameză"
 
 #: ../pluma/pluma-encodings.c:257
 msgid "Thai"
-msgstr "Thailandeză"
+msgstr "Tailandez"
 
 #: ../pluma/pluma-encodings.c:431
 msgid "Unknown"
-msgstr "Necunoscută"
+msgstr "Necunoscut"
 
 #: ../pluma/pluma-encodings-combo-box.c:272
 msgid "Automatically Detected"
@@ -1209,211 +1313,227 @@ msgstr "Toate fișierele text"
 msgid "C_haracter Encoding:"
 msgstr "Codare c_aracter:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:147
 msgid "L_ine Ending:"
 msgstr "Sfârș_it de rând:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:166
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:172
 msgid "Mac OS Classic"
 msgstr "SO Mac clasic"
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:178
 msgid "Windows"
-msgstr "Windows"
+msgstr "Ferestre"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr "A intervenit o eroare la afișarea ajutorului."
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
 msgstr "_Reîncearcă"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "Fișierul „%s” nu a putut fi găsit."
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
-msgstr "Vă rugăm verificați corectitudinea adresei introduse și încercați din nou."
+msgstr ""
+"Vă rugăm verificați corectitudinea adresei introduse și încercați din nou."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "pluma nu poate gestiona locații %s."
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "pluma nu poate gestiona această adresă."
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr "Locația fișierului nu a putut fi montată."
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "Locația fișierului nu poate fi accesată doarece nu este montată."
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "%s este un dosar."
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr "%s nu este o adresă validă."
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
-msgstr "Gazda %s nu a putut fi găsită. Vă rugăm verificați corectitudinea configurărilor de proxy și încercați din nou."
+msgstr ""
+"Gazda %s nu a putut fi găsită. Vă rugăm verificați corectitudinea "
+"configurărilor de proxy și încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
-msgstr "Numele gazdei nu este valid. Verificați corectitudinea adresei introduse și încercați din nou."
+msgstr ""
+"Numele gazdei nu este valid. Verificați corectitudinea adresei introduse și "
+"încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s nu este un fișier obișnuit."
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr "Limita de timp a conexiunii a expirat. Vă rugăm încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "Fișierul este prea mare."
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "Eroare neașteptată: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "pluma nu poate găsi fișierul. Probabil a fost șters recent."
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "Nu s-a putut restaura fișierul %s."
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr "Codare c_aracter:"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr "_Modifică oricum"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr "Nu _modifica"
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
-msgstr "Numărul legăturilor de urmat este limitat, iar fișierul nu a putut fi găsit în această limită."
+msgstr ""
+"Numărul legăturilor de urmat este limitat, iar fișierul nu a putut fi găsit "
+"în această limită."
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Nu aveți permisiunile necesare pentru a deschide fișierul."
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr "pluma nu a putut detecta codificarea caracterelor."
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Asigurați-vă că nu încercați să deschideți un fișier binar."
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr "Selectați o codificare a caracterelor din meniu și încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "A apărut o problemă la deschiderea fișierului %s."
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
-msgstr "Unele caractere din fișierul pe care l-ați deschis nu sunt valide. Dacă veți continua să editați acest fișier, documentul ar putea deveni inutilizabil."
+msgstr ""
+"Unele caractere din fișierul pe care l-ați deschis nu sunt valide. Dacă veți"
+" continua să editați acest fișier, documentul ar putea deveni inutilizabil."
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
-msgstr "De asemenea, puteți să alegeți altă codificare și să încercați din nou."
+msgstr ""
+"De asemenea, puteți să alegeți altă codificare și să încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
-msgstr "Nu s-a putut deschide fișierul %s utilizând codificarea de caractere %s."
+msgstr ""
+"Nu s-a putut deschide fișierul %s utilizând codificarea de caractere %s."
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
-msgstr "Selectați altă codificare a caracterelor din meniu și încercați din nou."
+msgstr ""
+"Selectați altă codificare a caracterelor din meniu și încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "Nu s-a putut deschide fișierul %s."
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr "Nu s-a putut salva fișierul %s utilizând codificarea de caractere %s."
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
-msgstr "Documentul conține unul sau mai multe caractere care nu pot fi codificate utilizând codificarea de caractere specificată."
+msgstr ""
+"Documentul conține unul sau mai multe caractere care nu pot fi codificate "
+"utilizând codificarea de caractere specificată."
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "Acest fișier (%s) este deja deschis în altă fereastră pluma."
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
-msgstr "pluma a deschis această instanță a fișierului într-un mod ne-editabil. Doriți să îl editați oricum?"
+msgstr ""
+"pluma a deschis această instanță a fișierului într-un mod ne-editabil. "
+"Doriți să îl editați oricum?"
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "S_alvează oricum"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "N_u salva"
 
@@ -1422,90 +1542,113 @@ msgstr "N_u salva"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Fișierul %s a fost modificat de la ultima salvare."
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr "Dacă îl salvați, toate modificările exterioare ar putea fi pierdute. Doriți să îl salvați oricum?"
+msgstr ""
+"Dacă îl salvați, toate modificările exterioare ar putea fi pierdute. Doriți "
+"să îl salvați oricum?"
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "Nu s-a putut crea o copie de siguranță la salvarea %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "Nu s-a putut crea o copie temporară de siguranță la salvarea %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "pluma nu a putut crea o copie de siguranță a variantei vechi a fișierului înainte de salvarea celei noi. Puteți ignora această avertizare și salva oricum fișierul, însă în eventualitatea producerii unei erori la salvare, ați putea pierde vechea copie a fișierului. Doriți să salvați oricum?"
+msgstr ""
+"pluma nu a putut crea o copie de siguranță a variantei vechi a fișierului "
+"înainte de salvarea celei noi. Puteți ignora această avertizare și salva "
+"oricum fișierul, însă în eventualitatea producerii unei erori la salvare, "
+"ați putea pierde vechea copie a fișierului. Doriți să salvați oricum?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
-msgstr "pluma nu poate opera cu adrese %s în modul de scriere. Verificați corectitudinea adresei introduse și încercați din nou."
+msgstr ""
+"pluma nu poate opera cu adrese %s în modul de scriere. Verificați "
+"corectitudinea adresei introduse și încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
-msgstr "pluma nu poate opera la această adresă în modul de scriere. Verificați corectitudinea adresei introduse și încercați din nou."
+msgstr ""
+"pluma nu poate opera la această adresă în modul de scriere. Verificați "
+"corectitudinea adresei introduse și încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
-msgstr "%s nu este o adresă validă. Verificați corectitudinea adresei introduse și încercați din nou."
+msgstr ""
+"%s nu este o adresă validă. Verificați corectitudinea adresei introduse și "
+"încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "Nu aveți permisiunile necesare pentru a salva fișierul. Verificați corectitudinea adresei introduse și încercați din nou."
+msgstr ""
+"Nu aveți permisiunile necesare pentru a salva fișierul. Verificați "
+"corectitudinea adresei introduse și încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
-msgstr "Nu este destul spațiu pe disc pentru a salva fișierul. Eliberați spațiu pe disc și încercați din nou."
+msgstr ""
+"Nu este destul spațiu pe disc pentru a salva fișierul. Eliberați spațiu pe "
+"disc și încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "Încercați să salvați fișierul pe un disc disponibil doar pentru citire. Verificați corectitudinea adresei introduse și încercați din nou."
+msgstr ""
+"Încercați să salvați fișierul pe un disc disponibil doar pentru citire. "
+"Verificați corectitudinea adresei introduse și încercați din nou."
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Un fișier cu același nume există deja. Utilizați un alt nume."
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
-msgstr "Discul pe care încercați să salvați fișierul are o limitare la dimensiunea maximă a numelor de fișiere. Folosiți un nume mai scurt."
+msgstr ""
+"Discul pe care încercați să salvați fișierul are o limitare la dimensiunea "
+"maximă a numelor de fișiere. Folosiți un nume mai scurt."
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "Discul pe care încercați să salvați fișierul are o limitare la dimensiunea maximă a fișierelor. Încercați să salvați un fișier mai mic sau să salvați pe un disc care nu are această limitare."
+msgstr ""
+"Discul pe care încercați să salvați fișierul are o limitare la dimensiunea "
+"maximă a fișierelor. Încercați să salvați un fișier mai mic sau să salvați "
+"pe un disc care nu are această limitare."
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "Fișierul %s nu a putut fi salvat."
@@ -1515,22 +1658,23 @@ msgstr "Fișierul %s nu a putut fi salvat."
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Fișierul %s a fost modificat pe disc."
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
-msgstr "Doriți să renunțați la modificările efectuate și să reîncărcați fișierul?"
+msgstr ""
+"Doriți să renunțați la modificările efectuate și să reîncărcați fișierul?"
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr "Doriți să reîncărcați fișierul?"
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
-msgstr "R_eîncarcă"
+msgstr "_Reîncarcă"
 
 #: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
@@ -1571,7 +1715,7 @@ msgstr "_Numerotează la fiecare"
 
 #: ../pluma/pluma-print-preferences.ui.h:8
 msgid "lines"
-msgstr "rânduri"
+msgstr "linii"
 
 #: ../pluma/pluma-print-preferences.ui.h:12
 msgid "Page header"
@@ -1691,9 +1835,9 @@ msgstr "  Rând %d, Col %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "Există %d tab cu erori"
-msgstr[1] "Există %d taburi cu erori"
-msgstr[2] "Există %d de taburi cu erori"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -1737,38 +1881,38 @@ msgid "Saving %s"
 msgstr "Se salvează „%s”"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "Doar citire"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "Eroare la deschiderea fișierului %s"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Eroare la restaurarea fișierului %s"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "Eroare la salvarea fișierului %s"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "Unicode (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
 msgstr "Nume:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "Tip MIME:"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "Codificare:"
 
@@ -1783,7 +1927,7 @@ msgstr "_Fișier"
 
 #: ../pluma/pluma-ui.h:48
 msgid "_Edit"
-msgstr "_Editare"
+msgstr "_Editeaza"
 
 #: ../pluma/pluma-ui.h:49
 msgid "_View"
@@ -1791,7 +1935,7 @@ msgstr "_Vizualizare"
 
 #: ../pluma/pluma-ui.h:50
 msgid "_Search"
-msgstr "_Căutare"
+msgstr "_Caută"
 
 #: ../pluma/pluma-ui.h:51
 msgid "_Tools"
@@ -1813,7 +1957,7 @@ msgstr "Creează un document nou"
 msgid "_Open..."
 msgstr "_Deschide..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1425
 msgid "Open a file"
 msgstr "Deschide un fișier"
 
@@ -1841,7 +1985,7 @@ msgstr "Despre această aplicație"
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
-msgstr "Părăsește modul pe tot ecranul"
+msgstr "Mărime normală"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
@@ -1857,7 +2001,7 @@ msgstr "Salvează fișierul actual cu un alt nume"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr "Revino la o versiune salvată a fișierului"
+msgstr "Restaurează la o versiune anterior salvată a fișierului"
 
 #: ../pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -1893,7 +2037,7 @@ msgstr "Copiază selecția"
 
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
-msgstr "Lipește textul din clipboard"
+msgstr "Lipește din clipboard"
 
 #: ../pluma/pluma-ui.h:103
 msgid "Delete the selected text"
@@ -1901,7 +2045,7 @@ msgstr "Șterge textul selectat"
 
 #: ../pluma/pluma-ui.h:104
 msgid "Select _All"
-msgstr "Selectează t_ot"
+msgstr "Selectează to_ate"
 
 #: ../pluma/pluma-ui.h:105
 msgid "Select the entire document"
@@ -1915,7 +2059,7 @@ msgstr "_Mod evidențiere"
 #. Search menu
 #: ../pluma/pluma-ui.h:111
 msgid "_Find..."
-msgstr "Cau_tă..."
+msgstr "_Căutare..."
 
 #: ../pluma/pluma-ui.h:112
 msgid "Search for text"
@@ -1923,7 +2067,7 @@ msgstr "Caută text"
 
 #: ../pluma/pluma-ui.h:113
 msgid "Find Ne_xt"
-msgstr "Caută _următorul"
+msgstr "Caută în co_ntinuare"
 
 #: ../pluma/pluma-ui.h:114
 msgid "Search forwards for the same text"
@@ -1931,7 +2075,7 @@ msgstr "Caută înainte după același text"
 
 #: ../pluma/pluma-ui.h:115
 msgid "Find Pre_vious"
-msgstr "Caută _precedentul"
+msgstr "Caută îna_poi"
 
 #: ../pluma/pluma-ui.h:116
 msgid "Search backwards for the same text"
@@ -1955,7 +2099,7 @@ msgstr "Elimină evidențierea rezultatelor căutării"
 
 #: ../pluma/pluma-ui.h:121
 msgid "Go to _Line..."
-msgstr "Du-te _la rândul..."
+msgstr "Mergi la _Linia..."
 
 #: ../pluma/pluma-ui.h:122
 msgid "Go to a specific line"
@@ -2028,7 +2172,7 @@ msgstr "Arată sau ascunde bara de unelte în fereastra actuală"
 
 #: ../pluma/pluma-ui.h:158
 msgid "_Statusbar"
-msgstr "Bara de _stare"
+msgstr "Bară de _stare"
 
 #: ../pluma/pluma-ui.h:159
 msgid "Show or hide the statusbar in the current window"
@@ -2040,7 +2184,7 @@ msgstr "Editare text pe tot ecranul"
 
 #: ../pluma/pluma-ui.h:169
 msgid "Side _Pane"
-msgstr "_Panou lateral"
+msgstr "_Vedere laterală"
 
 #: ../pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
@@ -2061,7 +2205,9 @@ msgstr "Verificați instalarea."
 #: ../pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
-msgstr "Nu s-a putut deschide fișierul %s din interfața pentru utilizator. Eroare: %s"
+msgstr ""
+"Nu s-a putut deschide fișierul %s din interfața pentru utilizator. Eroare: "
+"%s"
 
 #: ../pluma/pluma-utils.c:1192
 #, c-format
@@ -2075,36 +2221,36 @@ msgid "/ on %s"
 msgstr "/ la %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "Reia de la începu_t"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "Potrivir_e doar pentru întreg cuvântul"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "_Majuscule semnificative"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr "_Parcurge secventele escape (ex. \\n)"
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr "Șirul pe care doriți să-l căutați"
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr "Rândul la care doriți să mutați cursorul"
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:982
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Utilizează modul de evidențiere %s"
@@ -2112,7 +2258,7 @@ msgstr "Utilizează modul de evidențiere %s"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1039 ../pluma/pluma-window.c:1925
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2120,43 +2266,43 @@ msgstr "Utilizează modul de evidențiere %s"
 msgid "Plain Text"
 msgstr "Text simplu"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1040
 msgid "Disable syntax highlighting"
 msgstr "Dezactivează evidențierea sintaxei"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1322
 #, c-format
 msgid "Open '%s'"
 msgstr "Deschide „%s”"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1427
 msgid "Open a recently used file"
 msgstr "Deschide un fișier recent utilizat"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1433
 msgid "Open"
 msgstr "Deschide"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1491
 msgid "Save"
 msgstr "Salvează"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1493
 msgid "Print"
 msgstr "Tipărește"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1650
 #, c-format
 msgid "Activate '%s'"
 msgstr "Activează „%s”"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1903
 msgid "Use Spaces"
 msgstr "Folosește spații"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1974
 msgid "Tab Width"
 msgstr "Lățime tab"
 
@@ -2213,11 +2359,13 @@ msgstr "Statistici document"
 msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
-msgstr "Analizează documentul actual și raportează numărul de cuvinte, rânduri, caractere și caractere excluzând spațiile."
+msgstr ""
+"Analizează documentul actual și raportează numărul de cuvinte, rânduri, "
+"caractere și caractere excluzând spațiile."
 
 #: ../plugins/docinfo/docinfo.ui.h:2
 msgid "_Update"
-msgstr "_Actualizare"
+msgstr "Act_ualizează"
 
 #: ../plugins/docinfo/docinfo.ui.h:3
 msgid "File Name"
@@ -2294,7 +2442,8 @@ msgstr "Nu s-a putut executa comanda: %s"
 
 #: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
-msgstr "Trebuie să fiți în interiorul unui cuvânt pentru a executa această comandă"
+msgstr ""
+"Trebuie să fiți în interiorul unui cuvânt pentru a executa această comandă"
 
 #: ../plugins/externaltools/tools/functions.py:263
 msgid "Running tool:"
@@ -2330,7 +2479,8 @@ msgstr "Acest accelerator este deja asociat cu %s"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr "Introduceți un nou accelerator sau apăsați [Backspace] pentru ștergere"
+msgstr ""
+"Introduceți un nou accelerator sau apăsați [Backspace] pentru ștergere"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
@@ -2472,7 +2622,8 @@ msgstr "Execută o comandă"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:2
 msgid "Execute a custom command and put its output in a new document"
-msgstr "Execută o comandă specifică și copiază rezultatul într-un document nou"
+msgstr ""
+"Execută o comandă specifică și copiază rezultatul într-un document nou"
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
@@ -2500,7 +2651,11 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "Dacă este definit ca TRUE, modulul de navigare în fișiere va vizualiza dosarul primului document deschis, atâta timp cât navigatorul de fișiere n-a fost încă utilizat. (Aceasta se aplică, în general, la deschiderea unui document din linia de comandă sau cu Caja etc.)"
+msgstr ""
+"Dacă este definit ca TRUE, modulul de navigare în fișiere va vizualiza "
+"dosarul primului document deschis, atâta timp cât navigatorul de fișiere n-a"
+" fost încă utilizat. (Aceasta se aplică, în general, la deschiderea unui "
+"document din linia de comandă sau cu Caja etc.)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
@@ -2512,7 +2667,11 @@ msgid ""
 "values are: none (filter nothing), hidden (filter hidden files), binary "
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
-msgstr "Această valoare determină ce fișiere vor fi filtrate în navigatorul de fișiere. Valori valide sunt: „none” (nu filtrează nimic), „hidden” (filtrează fișierele ascunse), „binary” (filtrează fișierele binare) și „hidden_and_binary” (filtrează fișierele ascunse și binare)."
+msgstr ""
+"Această valoare determină ce fișiere vor fi filtrate în navigatorul de "
+"fișiere. Valori valide sunt: „none” (nu filtrează nimic), „hidden” "
+"(filtrează fișierele ascunse), „binary” (filtrează fișierele binare) și "
+"„hidden_and_binary” (filtrează fișierele ascunse și binare)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
@@ -2522,7 +2681,9 @@ msgstr "Model filtrare navigator fișiere"
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top"
 " of the filter_mode."
-msgstr "Modelul pentru filtrarea din navigatorul de fișiere. Acest filtru acționează peste filter_mode."
+msgstr ""
+"Modelul pentru filtrarea din navigatorul de fișiere. Acest filtru acționează"
+" peste filter_mode."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:7
 msgid "Open With Tree View"
@@ -2532,7 +2693,9 @@ msgstr "Deschide cu vizualizarea arbore"
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
-msgstr "Deschide vizualizarea arbore când este încărcat modulul de navigare în fișiere, în locul vizualizării favoritelor"
+msgstr ""
+"Deschide vizualizarea arbore când este încărcat modulul de navigare în "
+"fișiere, în locul vizualizării favoritelor"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
@@ -2542,7 +2705,10 @@ msgstr "Dosar rădăcină al navigatorului de fișiere"
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "Dosarul rădăcină al navigatorului de fișiere ce va fi utilizat la încărcarea modulului de navigare în fișiere când onload/tree_view este definit la TRUE."
+msgstr ""
+"Dosarul rădăcină al navigatorului de fișiere ce va fi utilizat la încărcarea"
+" modulului de navigare în fișiere când onload/tree_view este definit la "
+"TRUE."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
@@ -2553,7 +2719,11 @@ msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "Dosarul rădăcină virtual al navigatorului de fișiere ce va fi utilizat la încărcarea modulului de navigare în fișiere când onload/tree_view este definit la TRUE. Dosarul rădăcină virtual trebuie să fie tot timpul sub rădăcina actuală."
+msgstr ""
+"Dosarul rădăcină virtual al navigatorului de fișiere ce va fi utilizat la "
+"încărcarea modulului de navigare în fișiere când onload/tree_view este "
+"definit la TRUE. Dosarul rădăcină virtual trebuie să fie tot timpul sub "
+"rădăcina actuală."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2605,7 +2775,9 @@ msgstr "A intervenit o eroare la ștergerea unui fișier sau a unui dosar"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while opening a directory in the file manager"
-msgstr "A intervenit o eroare la deschiderea unui dosar în administratorul de fișiere"
+msgstr ""
+"A intervenit o eroare la deschiderea unui dosar în administratorul de "
+"fișiere"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
 msgid "An error occurred while setting a root directory"
@@ -2623,7 +2795,9 @@ msgstr "A intervenit o eroare"
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "Fișierul nu poate fi mutat la gunoi;\ndoriți să îl ștergeți definitiv?"
+msgstr ""
+"Fișierul nu poate fi mutat la gunoi;\n"
+"doriți să îl ștergeți definitiv?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
@@ -2637,7 +2811,7 @@ msgstr "Fișierele selectate nu pot fi mutate la gunoi."
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "Sigur doriți să ștergeți definitiv „%s”?"
+msgstr "Sigur doriți să ștergeți permanent „%s”?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1170
 msgid "Are you sure you want to permanently delete the selected files?"
@@ -2655,7 +2829,9 @@ msgstr "(Gol)"
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "În prezent, fișierul redenumit este exclus prin filtrare. Pentru a-l face vizibil, trebuie să modificați opțiunile de filtrare"
+msgstr ""
+"În prezent, fișierul redenumit este exclus prin filtrare. Pentru a-l face "
+"vizibil, trebuie să modificați opțiunile de filtrare"
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -2667,7 +2843,9 @@ msgstr "fișier"
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "În prezent, fișierul nou este exclus prin filtrare. Pentru a-l face vizibil, trebuie să modificați opțiunile de filtrare"
+msgstr ""
+"În prezent, fișierul nou este exclus prin filtrare. Pentru a-l face vizibil,"
+" trebuie să modificați opțiunile de filtrare"
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -2679,11 +2857,13 @@ msgstr "dosar"
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
-msgstr "În prezent, dosarul nou este exclus prin filtrare. Pentru a-l face vizibil, trebuie să modificați opțiunile de filtrare"
+msgstr ""
+"În prezent, dosarul nou este exclus prin filtrare. Pentru a-l face vizibil, "
+"trebuie să modificați opțiunile de filtrare"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
-msgstr "Favorite"
+msgstr "Semne de carte"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:797
 msgid "_Filter"
@@ -2747,7 +2927,7 @@ msgstr "Adresa _precedentă"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Go to the previous visited location"
-msgstr "Salt la adresa precedentă vizitată"
+msgstr "Du-te la locația precedentă"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "_Next Location"
@@ -2755,7 +2935,7 @@ msgstr "Adresa _următoare"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
-msgstr "Salt la adresa următoare vizitată"
+msgstr "Du-te la locația următoare"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
@@ -2840,7 +3020,8 @@ msgstr "Linii de mod (modelines)"
 
 #: ../plugins/modelines/modelines.plugin.desktop.in.h:2
 msgid "Emacs, Kate and Vim-style modelines support for pluma."
-msgstr "Suport pluma pentru linii de mod (modelines) în stilul Emacs, Kate și Vim."
+msgstr ""
+"Suport pluma pentru linii de mod (modelines) în stilul Emacs, Kate și Vim."
 
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:1
 #: ../plugins/pythonconsole/pythonconsole/__init__.py:55
@@ -2928,11 +3109,11 @@ msgstr "Declanșator _tab:"
 #: ../plugins/snippets/snippets/snippets.ui.h:11
 #: ../plugins/snippets/snippets/Manager.py:681
 msgid "Single word the snippet is activated with after pressing Tab"
-msgstr ""
+msgstr "Un singur cuvânt care activează fragmentul după ce se apasă tasta TAB"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:12
 msgid "Shortcut key with which the snippet is activated"
-msgstr ""
+msgstr "Combinația de taste cu care se activează fragmentul"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "S_hortcut key:"
@@ -2940,7 +3121,7 @@ msgstr "Tastă s_curtătură:"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:14
 msgid "_Drop targets:"
-msgstr ""
+msgstr "Aban_donează țintele:"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
@@ -2971,7 +3152,9 @@ msgstr "Refă fragmentul selectat"
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
-msgstr "Acesta nu este un declanșator valid de tab. Declanșatoarele pot conține litere sau un singur caracter non alfanumeric, cum ar fi: {, [ etc."
+msgstr ""
+"Acesta nu este un declanșator valid de tab. Declanșatoarele pot conține "
+"litere sau un singur caracter non alfanumeric, cum ar fi: {, [ etc."
 
 #: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
@@ -3037,7 +3220,9 @@ msgstr "Export fragmente de text"
 
 #: ../plugins/snippets/snippets/Manager.py:1055
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr "Introduceți o nouă combinație de taste sau apăsați [Backspace] pentru ștergere"
+msgstr ""
+"Introduceți o nouă combinație de taste sau apăsați [Backspace] pentru "
+"ștergere"
 
 #: ../plugins/snippets/snippets/Manager.py:1057
 msgid "Type a new shortcut"
@@ -3095,7 +3280,9 @@ msgstr "Fișierul „%s” nu este un fișier valid cu fragmente de text"
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
 "aborted."
-msgstr "Execuția comenzii Python (%s) a depășit timpul maxim; execuția a fost abandonată."
+msgstr ""
+"Execuția comenzii Python (%s) a depășit timpul maxim; execuția a fost "
+"abandonată."
 
 #: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
@@ -3161,16 +3348,16 @@ msgid "_More..."
 msgstr "_Mai mult..."
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "_Ignoră tot"
 
 #. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
 msgid "_Add"
-msgstr "Ada_ugă"
+msgstr "_Adaugă"
 
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "_Sugestii ortografice..."
 
@@ -3215,7 +3402,7 @@ msgstr "Necunoscut (%s)"
 #: ../plugins/spell/pluma-spell-checker-language.c:406
 msgctxt "language"
 msgid "Default"
-msgstr "Implicită"
+msgstr "Mod implicit"
 
 #: ../plugins/spell/pluma-spell-language-dialog.c:141
 #: ../plugins/spell/languages-dialog.ui.h:1
@@ -3796,7 +3983,7 @@ msgstr "Applet Java (depășit)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:121
 msgid "Label"
-msgstr "Etichetă"
+msgstr "Nume"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:122
 msgid "Language code"
@@ -4116,7 +4303,7 @@ msgstr "Spațiere în interiorul celulelor"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:210
 msgid "Span"
-msgstr "Delimitare"
+msgstr "Extinde"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:211
 msgid "Standby load message"
@@ -4290,7 +4477,7 @@ msgstr "Vector"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:258
 msgid "Background color"
-msgstr "Culoare fundal"
+msgstr "Culoarea fundalului"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:259
 msgid "Background texture tile"
@@ -4306,11 +4493,11 @@ msgstr "Culoare chenar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:262
 msgid "Border"
-msgstr "Chenar"
+msgstr "Contur"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:263
 msgid "Center"
-msgstr "Centru"
+msgstr "Centrată"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:264
 msgid "Checked (state)"
@@ -4386,7 +4573,7 @@ msgstr "Strat"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:282
 msgid "Link color"
-msgstr "Culoare legătură"
+msgstr "Culoare linkuri"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:283
 msgid "Listing"
@@ -4836,7 +5023,9 @@ msgstr "Listă etichete"
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
-msgstr "Furnizează o metodă ușoară de a insera într-un document etichete sau șiruri frecvent utilizate, fără a fi necesar să le tastați."
+msgstr ""
+"Furnizează o metodă ușoară de a insera într-un document etichete sau șiruri "
+"frecvent utilizate, fără a fi necesar să le tastați."
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:1
 msgid "XSLT - Elements"
@@ -4952,7 +5141,7 @@ msgstr "Inserare dată și oră"
 
 #: ../plugins/time/pluma-time-dialog.ui.h:2
 msgid "_Insert"
-msgstr "_Inserează"
+msgstr "_Introdu"
 
 #: ../plugins/time/pluma-time-dialog.ui.h:3
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:5

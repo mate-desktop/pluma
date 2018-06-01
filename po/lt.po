@@ -1,24 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2014,2017
-# brennus <jonas.ska@gmail.com>, 2014
-# Moo, 2015-2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 22:08+0000\n"
-"Last-Translator: Moo\n"
-"Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
+"POT-Creation-Date: 2018-03-18 17:20+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lt\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:1
 msgid "Use Default Font"
@@ -30,7 +28,10 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "Ar naudoti sistemos derintą šriftą vietoje skirto vien tik pluma. Jeigu šis parametras išjungta, tai vietoje sistemos naudojamo šrifto bus naudojamas šriftas, pasirinktas „Redaktoriaus šriftas“ parametre."
+msgstr ""
+"Ar naudoti sistemos derintą šriftą vietoje skirto vien tik pluma. Jeigu šis "
+"parametras išjungta, tai vietoje sistemos naudojamo šrifto bus naudojamas "
+"šriftas, pasirinktas „Redaktoriaus šriftas“ parametre."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -45,7 +46,9 @@ msgstr "Redaktoriaus šriftas"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "Redagavimo vietoje naudojamas savas šriftas. Jis galios tik tada, jei parametras „Naudoti numatytąjį šriftą“ yra išjungtas."
+msgstr ""
+"Redagavimo vietoje naudojamas savas šriftas. Jis galios tik tada, jei "
+"parametras „Naudoti numatytąjį šriftą“ yra išjungtas."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Style Scheme"
@@ -63,7 +66,10 @@ msgstr "Kurti atsargines kopijas"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "Ar pluma turėtų kurti atsargines failų kopijas juos įrašant. Atsarginės failo kopijos priesagą galima nustatyti naudojant \"Atsarginės kopijos priesaga\" parametrą."
+msgstr ""
+"Ar pluma turėtų kurti atsargines failų kopijas juos įrašant. Atsarginės "
+"failo kopijos priesagą galima nustatyti naudojant \"Atsarginės kopijos "
+"priesaga\" parametrą."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -74,7 +80,9 @@ msgid ""
 "Whether pluma should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
-msgstr "Ar pluma turėtų periodiškai įrašyti pakeistus failus. Periodą galima nustatyti \"Automatinio įrašymo intervalas\" parametre."
+msgstr ""
+"Ar pluma turėtų periodiškai įrašyti pakeistus failus. Periodą galima "
+"nustatyti \"Automatinio įrašymo intervalas\" parametre."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:12
 msgid "Autosave Interval"
@@ -84,7 +92,9 @@ msgstr "Automatinio įrašymo intervalas"
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
-msgstr "Minučių skaičius, kurį pluma lauks, kad įrašytų pakeistus failus. Galios tik tada, jei parametras „Automatinis įrašymas“ yra įjungtas."
+msgstr ""
+"Minučių skaičius, kurį pluma lauks, kad įrašytų pakeistus failus. Galios tik"
+" tada, jei parametras „Automatinis įrašymas“ yra įjungtas."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Show save confirmation"
@@ -102,7 +112,9 @@ msgstr "Rašomos VFS schemos"
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
-msgstr "VFS schemų, kuriose pluma gali rašyti, sąrašas. Schemoje „file“ rašymas numatytas iš karto."
+msgstr ""
+"VFS schemų, kuriose pluma gali rašyti, sąrašas. Schemoje „file“ rašymas "
+"numatytas iš karto."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
@@ -112,7 +124,9 @@ msgstr "Maksimalus atšaukiamų veiksmų skaičius"
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "Maksimalus veiksmų skaičius, kuriuos pluma galės atstatyti arba daryti iš naujo. Naudoti „-1“ neribotam veiksmų skaičiui."
+msgstr ""
+"Maksimalus veiksmų skaičius, kuriuos pluma galės atstatyti arba daryti iš "
+"naujo. Naudoti „-1“ neribotam veiksmų skaičiui."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
@@ -125,7 +139,13 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Nurodo kaip laužyti eiluters redagavimo vietoje. Naudokite \"GTK_WRAP_NONE\" jei nenorite, kad eilutės būtų laužomos,  \"GTK_WRAP_WORD\" eilučių laužymui žodžio pabaigoje ir \"GTK_WRAP_CHAR\" eilučių laužymui ties simboliu. Atsiminkite, kad šios reikšmės skiria didžiąsias ir mažąsias reikšmes, todėl pasistenkite, kad jos būtų įrašytos tiksliai tokios kokios yra čia."
+msgstr ""
+"Nurodo kaip laužyti eiluters redagavimo vietoje. Naudokite \"GTK_WRAP_NONE\""
+" jei nenorite, kad eilutės būtų laužomos,  \"GTK_WRAP_WORD\" eilučių "
+"laužymui žodžio pabaigoje ir \"GTK_WRAP_CHAR\" eilučių laužymui ties "
+"simboliu. Atsiminkite, kad šios reikšmės skiria didžiąsias ir mažąsias "
+"reikšmes, todėl pasistenkite, kad jos būtų įrašytos tiksliai tokios kokios "
+"yra čia."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
@@ -206,7 +226,14 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "Nurodo kaip juda žymeklis, kai paspaudžiami klavišai HOME ir END. „DISABLED“ – visada perkelti į eilutės pradžią / pabaigą, „AFTER“ – perkelti į eilutės pradžią / pabaigą, kai klavišiai paspaudžiami pirmą kartą ir į teksto pradžią / pabaigą nepaisant tuščių tarpų, kai klavišai paspaudžiami antrą kartą, „BEFORE“ – perkelti į teksto pradžią / pabaigą, prieš perkeliant į eilutės pradžią / pabaigą, ir „ALWAYS“ – užuot perkėlus į eilutės pradžią / pabaigą, visada perkelti į teksto pradžią / pabaigą."
+msgstr ""
+"Nurodo kaip juda žymeklis, kai paspaudžiami klavišai HOME ir END. „DISABLED“"
+" – visada perkelti į eilutės pradžią / pabaigą, „AFTER“ – perkelti į eilutės"
+" pradžią / pabaigą, kai klavišiai paspaudžiami pirmą kartą ir į teksto "
+"pradžią / pabaigą nepaisant tuščių tarpų, kai klavišai paspaudžiami antrą "
+"kartą, „BEFORE“ – perkelti į teksto pradžią / pabaigą, prieš perkeliant į "
+"eilutės pradžią / pabaigą, ir „ALWAYS“ – užuot perkėlus į eilutės pradžią / "
+"pabaigą, visada perkelti į teksto pradžią / pabaigą."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
@@ -255,11 +282,18 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "Įrankių juostos mygtukų stilius. Galimos reikšmės yra \"PLUMA_TOOLBAR_SYSTEM\" norint naudoti esamą sistemos stilių, \"PLUMA_TOOLBAR_ICONS\" norint matyti tik piktogramas,  \"PLUMA_TOOLBAR_ICONS_AND_TEXT\" norint matyti ir piktogramas ir tekstą, ir \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" norint matyti tekstą šalia piktogramų. Pastaba: vertėse raidžių dydžio skirtumai turi reikšmę, taigi įsitikinkite, kad jos atrodo tiksliai taip kaip čia paminėta."
+msgstr ""
+"Įrankių juostos mygtukų stilius. Galimos reikšmės yra "
+"\"PLUMA_TOOLBAR_SYSTEM\" norint naudoti esamą sistemos stilių, "
+"\"PLUMA_TOOLBAR_ICONS\" norint matyti tik piktogramas,  "
+"\"PLUMA_TOOLBAR_ICONS_AND_TEXT\" norint matyti ir piktogramas ir tekstą, ir "
+"\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" norint matyti tekstą šalia piktogramų. "
+"Pastaba: vertėse raidžių dydžio skirtumai turi reikšmę, taigi įsitikinkite, "
+"kad jos atrodo tiksliai taip kaip čia paminėta."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
-msgstr "Būsenos juosta yra matoma"
+msgstr "Būsenos juosta matoma"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
@@ -282,7 +316,8 @@ msgstr "Rodyti korteles su šoniniu polangiu"
 #: ../data/org.mate.pluma.gschema.xml.in.h:55
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
-msgstr "Jei neigiama, pluma nerodys korteles užrašinėje su aktyviu šoniniu polangiu."
+msgstr ""
+"Jei neigiama, pluma nerodys korteles užrašinėje su aktyviu šoniniu polangiu."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:56
 msgid "Bottom Panel is Visible"
@@ -301,7 +336,9 @@ msgstr "Maksimalus paskiausiai naudotų failų skaičius"
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
-msgstr "Nurodo maksimalų skaičių paskiausiai naudotų failų, kurie bus rodomi „Paskiausiai naudoti failai“ submeniu."
+msgstr ""
+"Nurodo maksimalų skaičių paskiausiai naudotų failų, kurie bus rodomi "
+"„Paskiausiai naudoti failai“ submeniu."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
@@ -310,7 +347,8 @@ msgstr "Spausdinti sintaksės paryškinimus"
 #: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
-msgstr "Ar pluma turėtų spausdinti sintaksės paryškinimus, spausdinant dokumentus."
+msgstr ""
+"Ar pluma turėtų spausdinti sintaksės paryškinimus, spausdinant dokumentus."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Print Header"
@@ -332,7 +370,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Nurodo kaip laužyti ilgas eilutes spausdinant. Naudokite „GTK_WRAP_NONE“ jei norite, kad eilutės nebūtų laužomos, „GTK_WRAP_WORD“ eilutės laužymui žodžio pabaigoje, ir „GTK_WRAP_CHAR“ eilutės laužymui ties simboliu. Atsiminkite, kad šios reikšmės skiria didžiąsias ir mažąsias raides, todėl pasistenkite, kad jos būtų įrašytos tiksliai taip, kaip parašyta čia."
+msgstr ""
+"Nurodo kaip laužyti ilgas eilutes spausdinant. Naudokite „GTK_WRAP_NONE“ jei"
+" norite, kad eilutės nebūtų laužomos, „GTK_WRAP_WORD“ eilutės laužymui "
+"žodžio pabaigoje, ir „GTK_WRAP_CHAR“ eilutės laužymui ties simboliu. "
+"Atsiminkite, kad šios reikšmės skiria didžiąsias ir mažąsias raides, todėl "
+"pasistenkite, kad jos būtų įrašytos tiksliai taip, kaip parašyta čia."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
@@ -343,7 +386,9 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "Jei ši reikšmė yra 0, tai spausdinant nebus įterptas nė vienas eilutės numeris. Kitu atveju pluma spaudins eilučių numerius kas tiek eilučių."
+msgstr ""
+"Jei ši reikšmė yra 0, tai spausdinant nebus įterptas nė vienas eilutės "
+"numeris. Kitu atveju pluma spaudins eilučių numerius kas tiek eilučių."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
@@ -372,7 +417,9 @@ msgstr "Antraštės šriftas spausdinimui"
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
-msgstr "Šriftas, kuriuo bus spausdinamos puslapių antraštes. Jis galios tik tada, jei parametras \"Spausdinti antraštę\" yra įjungtas."
+msgstr ""
+"Šriftas, kuriuo bus spausdinamos puslapių antraštes. Jis galios tik tada, "
+"jei parametras \"Spausdinti antraštę\" yra įjungtas."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
@@ -387,7 +434,9 @@ msgstr "Eilučių numerių šriftas spausdinimui"
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
-msgstr "Šriftas, kuriuo bus spausdinami eilučių numeriai. Jis galios tik tada, jei parametras „Spausdinti eilučių numerius“ yra ne nulinis."
+msgstr ""
+"Šriftas, kuriuo bus spausdinami eilučių numeriai. Jis galios tik tada, jei "
+"parametras „Spausdinti eilučių numerius“ yra ne nulinis."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
@@ -403,7 +452,10 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "Surikiuotas koduočių sąrašas, kurį pluma naudoja nustatydamas failo koduotę. „CURRENT“ yra dabartinės lokalės koduotė. Naudojamos tik atpažįstamos koduotės."
+msgstr ""
+"Surikiuotas koduočių sąrašas, kurį pluma naudoja nustatydamas failo koduotę."
+" „CURRENT“ yra dabartinės lokalės koduotė. Naudojamos tik atpažįstamos "
+"koduotės."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
@@ -418,7 +470,9 @@ msgstr "Koduotės rodomos meniu"
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
-msgstr "Sąrašas koduočių, rodomų failų pasirinkimo lango koduočių meniu. Naudojamos tik atpažįstamos koduotės."
+msgstr ""
+"Sąrašas koduočių, rodomų failų pasirinkimo lango koduočių meniu. Naudojamos "
+"tik atpažįstamos koduotės."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
@@ -444,7 +498,9 @@ msgstr "Aktyvūs įskiepiai"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "Aktyvių įskiepių sąrašas. Jame yra aktyvių įskiepių „Vietos“. Žr. .pluma-plugin failą norėdami rasti nurodyto įskiepio „vietą“."
+msgstr ""
+"Aktyvių įskiepių sąrašas. Jame yra aktyvių įskiepių „Vietos“. Žr. .pluma-"
+"plugin failą norėdami rasti nurodyto įskiepio „vietą“."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -460,7 +516,15 @@ msgid ""
 "plugin system, which currently includes support for spell checking, "
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
-msgstr "<p> Pluma yra mažas, tačiau galingas tekstų redaktorius, sukurtas specialiai MATE darbalaukiui. Jame yra dauguma standartinių tekstų redaktoriaus funkcijų ir pilnas tarptautinio Unikodo palaikymas. Iš išplėstinių funkcijų galima išskirti sintaksės paryškinimą ir automatines pradinio kodo įtraukas, spausdinimą ir kelių dokumentų viename lange redagavimą. </p> <p> Pluma yra praplečiama per įskiepių sistemą, į kurią šiuo metu įeina rašybos tikrinimas, failų palyginimas CVS Keitimų Žurnalų rodymas ir įtraukos lygių reguliavimas. </p>"
+msgstr ""
+"<p> Pluma yra mažas, tačiau galingas tekstų redaktorius, sukurtas specialiai"
+" MATE darbalaukiui. Jame yra dauguma standartinių tekstų redaktoriaus "
+"funkcijų ir pilnas tarptautinio Unikodo palaikymas. Iš išplėstinių funkcijų "
+"galima išskirti sintaksės paryškinimą ir automatines pradinio kodo įtraukas,"
+" spausdinimą ir kelių dokumentų viename lange redagavimą. </p> <p> Pluma yra"
+" praplečiama per įskiepių sistemą, į kurią šiuo metu įeina rašybos "
+"tikrinimas, failų palyginimas CVS Keitimų Žurnalų rodymas ir įtraukos lygių "
+"reguliavimas. </p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
@@ -502,14 +566,16 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Jeigu neįrašysite, pakeitimai, atlikti per paskutinę %ld sekundę, bus prarasti."
-msgstr[1] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %ld sekundes, bus prarasti."
-msgstr[2] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %ld sekundžių, bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
-msgstr "Jeigu neįrašysite, pakeitimai, atlikti per paskutinę minutę, bus prarasti."
+msgstr ""
+"Jeigu neįrašysite, pakeitimai, atlikti per paskutinę minutę, bus prarasti."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
 #, c-format
@@ -519,9 +585,10 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę minutę ir %ld sekundę bus prarasti."
-msgstr[1] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę minutę ir %ld sekundes bus prarasti."
-msgstr[2] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę minutę ir %ld sekundžių bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
 #, c-format
@@ -531,14 +598,17 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Jeigu neįrašysite, pakeitimai, atlikti per paskutinę %ld minutę, bus prarasti."
-msgstr[1] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %ld minutes, bus prarasti."
-msgstr[2] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %ld minučių, bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
-msgstr "Jeigu neįrašysite, pakeitimai, atlikti per paskutinę valandą, bus negrįžtamai prarasti."
+msgstr ""
+"Jeigu neįrašysite, pakeitimai, atlikti per paskutinę valandą, bus "
+"negrįžtamai prarasti."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
 #, c-format
@@ -548,9 +618,10 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę valandą ir %d minutę bus prarasti."
-msgstr[1] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę valandą ir %d minutes bus prarasti."
-msgstr[2] "Jeigu neįrašysite, pakeitimai padaryti per paskutinę valandą ir %d minučių bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
 #, c-format
@@ -558,52 +629,55 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %d valandas, bus prarasti."
-msgstr[1] "Jeigu neįrašysite, pakeitimai, atlikti per paskutines %d valandas, bus prarasti."
-msgstr[2] "Jeigu neįrašysite, pakeitimai, atlikti per %d paskutinių valandų, bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:518
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "Dokumento „%s“ pakeitimai bus negrįžtamai prarasti."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:523
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Ar įrašyti pakeitimus dokumente \"%s\" prieš užveriant?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:537
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:756
 msgid "Saving has been disabled by the system administrator."
 msgstr "Įrašymo galimybė išjungta sistemos administratoriaus."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:708
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "%d dokumento pakeitimai bus negrįžtamai prarasti."
-msgstr[1] "%d dokumentų pakeitimai bus negrįžtamai prarasti."
-msgstr[2] "%d dokumentų pakeitimai bus negrįžtamai prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:714
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "Yra %d dokumentas su neįrašytais pakeitimais. Įrašyti prieš užveriant?"
-msgstr[1] "Yra %d dokumentai su neįrašytais pakeitimais. Įrašyti prieš užveriant?"
-msgstr[2] "Yra %d dokumentų su neįrašytais pakeitimais. Įrašyti prieš užveriant?"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:732
 msgid "Docum_ents with unsaved changes:"
 msgstr "Dokum_entai su neįrašytais pakeitimais:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:734
 msgid "S_elect the documents you want to save:"
 msgstr "Pasi_rinkite norimus įrašyti dokumentus:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:758
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "Jeigu neįrašysite, visi Jūsų pakeitimai bus prarasti."
 
@@ -614,7 +688,7 @@ msgstr "Simbolių koduotės"
 #: ../pluma/dialogs/pluma-encodings-dialog.c:384
 #: ../pluma/dialogs/pluma-encodings-dialog.c:445
 msgid "_Description"
-msgstr "_Aprašymas"
+msgstr "_Aprašas"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.c:393
 #: ../pluma/dialogs/pluma-encodings-dialog.c:454
@@ -627,11 +701,11 @@ msgstr "Simbolių koduotės"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
 msgid "A_vailable encodings:"
-msgstr "E_samos koduotės"
+msgstr "Prieina_mos koduotės:"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
 msgid "E_ncodings shown in menu:"
-msgstr "K_oduotės matomos meniu:"
+msgstr "Koduotės, rodomos me_niu:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
@@ -705,7 +779,7 @@ msgstr "Ne_laužyti žodžių per dvi eilutes"
 msgid "Line Numbers"
 msgstr "Eilučių numeriai"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "_Rodyti eilučių numerius"
 
@@ -799,7 +873,7 @@ msgstr "Spalvų schema"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "_Add..."
-msgstr "_Pridėti..."
+msgstr "Pri_dėti..."
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Font & Colors"
@@ -810,22 +884,22 @@ msgid "Plugins"
 msgstr "Įskiepiai"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1497
 msgid "Replace"
 msgstr "Pakeisti"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1495
 msgid "Find"
-msgstr "Ieškoti"
+msgstr "Rasti"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
-msgstr "Pakeisti _visus"
+msgstr "P_akeisti visus"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
-msgstr "_Pakeisti"
+msgstr "Pa_keisti"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2
 msgid "Replace All"
@@ -833,7 +907,7 @@ msgstr "Pakeisti visus"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "_Search for: "
-msgstr "_Ieškoti ko: "
+msgstr "_Ko ieškoti: "
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "Replace _with: "
@@ -853,7 +927,7 @@ msgstr "Tenkina tik _visas žodis"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Search _backwards"
-msgstr "Search _backwards"
+msgstr "Ieškoti pradžios _link"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Wrap around"
@@ -871,7 +945,9 @@ msgstr "Rodyti programos versiją"
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
-msgstr "Nurodykite simbolių koduotę, naudojamą atveriant failus, nurodytus komandų eilutėje"
+msgstr ""
+"Nurodykite simbolių koduotę, naudojamą atveriant failus, nurodytus komandų "
+"eilutėje"
 
 #: ../pluma/pluma.c:111
 msgid "ENCODING"
@@ -908,7 +984,9 @@ msgstr "- Redaguoti tekstinius failus"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\nPaleiskite „%s --help“, jei norite pamatyti komandinės eilutės parametrus.\n"
+msgstr ""
+"%s\n"
+"Paleiskite „%s --help“, jei norite susipažinti su visais galimais komandinės eilutės parametrais.\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -919,14 +997,15 @@ msgstr "Įkeliamas failas „%s“…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "Įkeliama %d failas…"
-msgstr[1] "Įkeliama %d failai…"
-msgstr[2] "Įkeliama %d failų…"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
 msgid "Open Files"
-msgstr "Atverti failus"
+msgstr "Atverti failai"
 
 #: ../pluma/pluma-commands-file.c:574
 #, c-format
@@ -944,7 +1023,7 @@ msgstr "Įrašomas failas „%s“…"
 
 #: ../pluma/pluma-commands-file.c:756
 msgid "Save As…"
-msgstr "Įrašyti kaip…"
+msgstr "Įrašyti kaip..."
 
 #: ../pluma/pluma-commands-file.c:1085
 #, c-format
@@ -964,9 +1043,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Pakeitimai, atlikti per paskutinę %ld sekundę, bus prarasti."
-msgstr[1] "Pakeitimai, atlikti per paskutines %ld sekundes, bus prarasti."
-msgstr[2] "Pakeitimai, atlikti per paskutines %ld sekundžių, bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/pluma-commands-file.c:1148
 msgid ""
@@ -981,9 +1061,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Pakeitimai, atlikti per paskutinę minutę ir %ld sekundę, bus prarasti."
-msgstr[1] "Pakeitimai, atlikti per paskutinę minutę ir %ld sekundes, bus prarasti."
-msgstr[2] "Pakeitimai, atlikti per paskutinę minutę ir %ld sekundžių, bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/pluma-commands-file.c:1164
 #, c-format
@@ -993,9 +1074,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Pakeitimai, atlikti per paskutinę %ld minutę, bus prarasti."
-msgstr[1] "Pakeitimai, atlikti per paskutines %ld minutes, bus prarasti."
-msgstr[2] "Pakeitimai, atlikti per paskutines %ld minučių, bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/pluma-commands-file.c:1179
 msgid ""
@@ -1010,9 +1092,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Pakeitimai, atlikti per paskutinę valandą ir %d minutę, bus prarasti."
-msgstr[1] "Pakeitimai, atlikti per paskutinę valandą ir %d minutes, busprarasti."
-msgstr[2] "Pakeitimai, atlikti per paskutinę valandą ir %d minučių, bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1020,29 +1103,43 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "Pakeitimai, atlikti per paskutinę %d valandą, bus prarasti."
-msgstr[1] "Pakeitimai, atlikti per paskutines %d valandas, bus prarasti."
-msgstr[2] "Pakeitimai, atlikti per paskutines %d valandų, bus prarasti."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/pluma-commands-file.c:1226
 msgid "_Revert"
-msgstr "A_tstatyti"
+msgstr "Atsta_tyti"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
-msgstr "Pluma yra mažas ir supaprastintas tekstų redaktorius, skirtas MATE darbalaukiui"
+msgstr ""
+"Pluma yra mažas ir supaprastintas tekstų redaktorius, skirtas MATE "
+"darbalaukiui"
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "Paskutinysis vertėjas:\nŽygimantas Beručka <zygis@gnome.org>\n\nAnkstesnieji vertėjai:\nGediminas Paulauskas <menesis@chatsubo.lt>,\nVaidotas Zemlys <mpiktas@delfi.lt>"
+msgstr ""
+"Vertėjai:\n"
+"Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
+"Aurimas Černius <aurisc4@gmail.com>\n"
+"Rimas Kudelis <rq@akl.lt>\n"
+"Žygimantas Beručka <uid0@akl.lt>\n"
+"Justina Klingaitė <justina.klingaite@gmail.com>\n"
+"Gintautas Miliauskas <gintas@akl.lt>\n"
+"Tomas Kuliavas <tokul@users.sourceforge.net>\n"
+"Gediminas Paulauskas <menesis@chatsubo.lt>\n"
+"Moo"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "Rastas ir pakeista %d pasitaikymas"
-msgstr[1] "Rasti ir pakeisti %d pasitaikymai"
-msgstr[2] "Rasta ir pakeista %d pasitaikymų"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1055,17 +1152,17 @@ msgstr "Rastas ir pakeistas vienas pasitaikymas"
 msgid "\"%s\" not found"
 msgstr "„%s“ nerasta"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "Neįrašytas dokumentas %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2224 ../pluma/pluma-window.c:2229
 msgid "Read-Only"
 msgstr "Tik skaitymui"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3626
 msgid "Documents"
 msgstr "Dokumentai"
 
@@ -1183,7 +1280,7 @@ msgstr "Tajų"
 
 #: ../pluma/pluma-encodings.c:431
 msgid "Unknown"
-msgstr "Nežinomas"
+msgstr "Nežinoma"
 
 #: ../pluma/pluma-encodings-combo-box.c:272
 msgid "Automatically Detected"
@@ -1207,211 +1304,226 @@ msgstr "Visi tekstinės failai"
 msgid "C_haracter Encoding:"
 msgstr "_Simbolių koduotė:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:147
 msgid "L_ine Ending:"
 msgstr "_Eilučių pabaigos:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:166
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:172
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:178
 msgid "Windows"
-msgstr "Windows"
+msgstr "Langai"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr "Įvyko klaida rodant žinyną."
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
 msgstr "_Bandyti dar kartą"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "Nepavyko rasti failo „%s“."
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
-msgstr "Patikrinkite ar teisingai parašėte norimos vietos pavadinimą ir bandykite dar kartą."
+msgstr ""
+"Patikrinkite ar teisingai parašėte norimos vietos pavadinimą ir bandykite "
+"dar kartą."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "pluma negali priimti %s vietos."
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "pluma negali priimti šios vietos."
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr "Failo vieta negali būti prijungta."
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "Failo vieta negali būti pasiekta, nes ji neprijungta."
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "%s yra katalogas."
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr "„%s“ nėra tinkama vieta."
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
-msgstr "Kompiuteris %s nerastas. Patikrinkite ar jūsų įgaliotojo serverio nustatymai yra teisingi ir bandykite dar kartą."
+msgstr ""
+"Kompiuteris %s nerastas. Patikrinkite ar jūsų įgaliotojo serverio nustatymai"
+" yra teisingi ir bandykite dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
-msgstr "Netinkamas kompiuterio vardas. Patikrinkite ar teisingai įrašėte vietą ir bandykite dar kartą."
+msgstr ""
+"Netinkamas kompiuterio vardas. Patikrinkite ar teisingai įrašėte vietą ir "
+"bandykite dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s nėra paprastas failas."
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr "Ryšys nutrūko. Bandykite dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "Failas per didelis."
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "Netikėta klaida: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "pluma neranda failo. Galbūt jis buvo neseniai ištrintas."
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "Nepavyko atkurti failo „%s“."
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr "Simb_olių koduotė:"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr "_Vis tiek redaguoti"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr "_Neredaguoti"
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
-msgstr "Sekamų nuorodų skaičius ribotas, pats failas sekant nuorodomis nebuvo rastas."
+msgstr ""
+"Sekamų nuorodų skaičius ribotas, pats failas sekant nuorodomis nebuvo "
+"rastas."
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Neturite teisių, reikiamų atverti šiam failui."
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr "pluma nepavyko aptikti simbolių koduotės."
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Patikrinkite, ar nebandote atverti dvejetainio failo."
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr "Pasirinkite simbolių koduotę iš meniu ir bandykite dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "Klaida atveriant failą %s."
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
-msgstr "Atvertas failas turi netinkamų simbolių. Jei tęsite šio failo redagavimą, galite paversti dokumentą beverčiu."
+msgstr ""
+"Atvertas failas turi netinkamų simbolių. Jei tęsite šio failo redagavimą, "
+"galite paversti dokumentą beverčiu."
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
-msgstr "Taip pat galite pasirinkti kitą simbolių koduotę ir bandyti dar kartą."
+msgstr ""
+"Taip pat galite pasirinkti kitą simbolių koduotę ir bandyti dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr "Nepavyko atverti failo %s naudojant %s simbolių koduotę."
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
-msgstr "Pasirinkite meniu kitą simbolių koduotę iš meniu ir bandykite dar kartą."
+msgstr ""
+"Pasirinkite meniu kitą simbolių koduotę iš meniu ir bandykite dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "Nepavyko atverti failo „%s“."
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr "Nepavyko įrašyti failo %s naudojant %s simbolių koduotę."
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
-msgstr "Dokumente yra vienas ar daugiau simbolių, kurie negali būti perkoduoti naudojant nurodytą simbolių koduotę."
+msgstr ""
+"Dokumente yra vienas ar daugiau simbolių, kurie negali būti perkoduoti "
+"naudojant nurodytą simbolių koduotę."
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "Šis failas (%s) jau atvertas kitame pluma lange."
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
-msgstr "pluma atvėrė šį failą neredaguojamu būdu. Ar vis tiek norite jį keisti?"
+msgstr ""
+"pluma atvėrė šį failą neredaguojamu būdu. Ar vis tiek norite jį keisti?"
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "_Vis tiek įrašyti"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "_Neįrašyti"
 
@@ -1420,90 +1532,112 @@ msgstr "_Neįrašyti"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Failas %s nuo jo perskaitymo buvo pakeistas."
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr "Jeigu jį įrašysite, visi išoriniai pakeitimai bus prarasti. Vis tiek įrašyti?"
+msgstr ""
+"Jeigu jį įrašysite, visi išoriniai pakeitimai bus prarasti. Vis tiek "
+"įrašyti?"
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "Įrašant %s nepavyko sukurti atsarginės šio failo kopijos"
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "Įrašant %s nepavyko sukurti laikinojo failo"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "pluma nepavyko padaryti atsarginės seno failo kopijos prieš įrašant naują. Galite nepaisyti šio įspėjimo ir vis tiek įrašyti failą, bet jeigu įrašant įvyks klaida, galite prarasti senojo failo kopiją. Vis tiek įrašyti?"
+msgstr ""
+"pluma nepavyko padaryti atsarginės seno failo kopijos prieš įrašant naują. "
+"Galite nepaisyti šio įspėjimo ir vis tiek įrašyti failą, bet jeigu įrašant "
+"įvyks klaida, galite prarasti senojo failo kopiją. Vis tiek įrašyti?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
-msgstr "pluma negali apdoroti %s vietų rašymo veiksena. Patikrinkite, ar teisingai nurodėte vietą ir bandykite dar kartą."
+msgstr ""
+"pluma negali apdoroti %s vietų rašymo veiksena. Patikrinkite, ar teisingai "
+"nurodėte vietą ir bandykite dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
-msgstr "Pluma negali rašyti į šią vietą. Patikrinkite, ar teisingai nurodėte vietą, ir bandykite dar kartą."
+msgstr ""
+"Pluma negali rašyti į šią vietą. Patikrinkite, ar teisingai nurodėte vietą, "
+"ir bandykite dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
-msgstr "%s nėra tinkama vieta. Patikrinkite ar teisingai įrašėte vietą ir bandykite dar kartą."
+msgstr ""
+"%s nėra tinkama vieta. Patikrinkite ar teisingai įrašėte vietą ir bandykite "
+"dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "Neturite reikiamų teisių įrašyti šį failą. Patikrinkite, ar teisingai nurodėte vietą, ir bandykite dar kartą."
+msgstr ""
+"Neturite reikiamų teisių įrašyti šį failą. Patikrinkite, ar teisingai "
+"nurodėte vietą, ir bandykite dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
-msgstr "Įrašyti failui nepakanka laisvos vietos diske. Atlaisvinkite šiek tiek vietos diske ir bandykite iš naujo."
+msgstr ""
+"Įrašyti failui nepakanka laisvos vietos diske. Atlaisvinkite šiek tiek "
+"vietos diske ir bandykite iš naujo."
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "Bandote įrašyti failą tik skaitymui skirtame diske. Patikrinkite, ar teisingai nurodėte vietą, ir bandykite dar kartą."
+msgstr ""
+"Bandote įrašyti failą tik skaitymui skirtame diske. Patikrinkite, ar "
+"teisingai nurodėte vietą, ir bandykite dar kartą."
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Failas tokiu vardu jau yra. Pasirinkite kitą vardą."
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
-msgstr "Diske, į kurį norite įrašyti failą, taikomi apribojimai failo pavadinimo ilgiui. Naudokite trumpesnį pavadinimą."
+msgstr ""
+"Diske, į kurį norite įrašyti failą, taikomi apribojimai failo pavadinimo "
+"ilgiui. Naudokite trumpesnį pavadinimą."
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "Diske, į kurį norite įrašyti failą, yra apribojimai failų dydžiams. Pabandykite įrašyti mažesnį failą, arba įrašykite į diską, kuriame tokių apribojimų nėra."
+msgstr ""
+"Diske, į kurį norite įrašyti failą, yra apribojimai failų dydžiams. "
+"Pabandykite įrašyti mažesnį failą, arba įrašykite į diską, kuriame tokių "
+"apribojimų nėra."
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "Nepavyko įrašyti failo %s."
@@ -1513,22 +1647,22 @@ msgstr "Nepavyko įrašyti failo %s."
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Failas %s pakeistas diske."
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Ar norite atsisakyti padarytų pakeitimų ir atverti failą iš naujo?"
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr "Ar norite atverti failą iš naujo?"
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
-msgstr "_Atverti iš naujo"
+msgstr "Į_kelti iš naujo"
 
 #: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
@@ -1689,14 +1823,16 @@ msgstr " Eil %d, Stl %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "Yra %d kortelė su klaidomis"
-msgstr[1] "Yra %d kortelės su klaidomis"
-msgstr[2] "Yra %d kortelių su klaidomis"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
 msgid "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "Nepavyko sukurti katalogo „%s“: g_mkdir_with_parents() pranešė klaidą: %s"
+msgstr ""
+"Nepavyko sukurti katalogo „%s“: g_mkdir_with_parents() pranešė klaidą: %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
@@ -1735,38 +1871,38 @@ msgid "Saving %s"
 msgstr "Įrašoma %s"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "RO"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "Klaida, atveriant failą %s"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Klaida atstatant failą %s"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "Klaida įrašant failą %s"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "Unikodas (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
-msgstr "Vardas:"
+msgstr "Pavadinimas:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "MIME tipas:"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "Koduotė:"
 
@@ -1785,11 +1921,11 @@ msgstr "_Taisa"
 
 #: ../pluma/pluma-ui.h:49
 msgid "_View"
-msgstr "R_odymas"
+msgstr "_Rodymas"
 
 #: ../pluma/pluma-ui.h:50
 msgid "_Search"
-msgstr "_Paieška"
+msgstr "Pa_ieška"
 
 #: ../pluma/pluma-ui.h:51
 msgid "_Tools"
@@ -1811,7 +1947,7 @@ msgstr "Sukurti naują dokumentą"
 msgid "_Open..."
 msgstr "_Atverti..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1425
 msgid "Open a file"
 msgstr "Atverti failą"
 
@@ -1839,7 +1975,7 @@ msgstr "Apie šią programą"
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
-msgstr "Išeiti iš viso ekrano veiksenos"
+msgstr "Išjungti viso ekrano veikseną"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
@@ -1879,7 +2015,7 @@ msgstr "Atšaukti paskutinį veiksmą"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
-msgstr "Pakartoti paskutinį atšauktą veiksmą"
+msgstr "Atstatyti paskutinį neįvykdytą veiksmą"
 
 #: ../pluma/pluma-ui.h:97
 msgid "Cut the selection"
@@ -1891,7 +2027,7 @@ msgstr "Kopijuoti žymėjimą"
 
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
-msgstr "Įdėti krepšio turinį"
+msgstr "Įdėti iš iškarpinės"
 
 #: ../pluma/pluma-ui.h:103
 msgid "Delete the selected text"
@@ -1913,7 +2049,7 @@ msgstr "_Paryškinimo režimas"
 #. Search menu
 #: ../pluma/pluma-ui.h:111
 msgid "_Find..."
-msgstr "_Ieškoti..."
+msgstr "_Rasti..."
 
 #: ../pluma/pluma-ui.h:112
 msgid "Search for text"
@@ -1953,7 +2089,7 @@ msgstr "Išvalyti paieškos atitikmenų paryškinimus"
 
 #: ../pluma/pluma-ui.h:121
 msgid "Go to _Line..."
-msgstr "Eiti į _eilutę..."
+msgstr "Eiti į ei_lutę..."
 
 #: ../pluma/pluma-ui.h:122
 msgid "Go to a specific line"
@@ -1961,7 +2097,7 @@ msgstr "Eiti į nurodytą eilutę"
 
 #: ../pluma/pluma-ui.h:123
 msgid "_Incremental Search..."
-msgstr "_Didėjanti paieška..."
+msgstr "_Prieauginė paieška..."
 
 #: ../pluma/pluma-ui.h:124
 msgid "Incrementally search for text"
@@ -2073,36 +2209,38 @@ msgid "/ on %s"
 msgstr "%s: /"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "_Apvesti"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "Tenkina tik _visas žodis"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "Skirti raidžių _dydį"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr "_Analizuoti kaitos sekas (pvz. \n)"
+msgstr ""
+"_Analizuoti kaitos sekas (pvz. \n"
+")"
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr "Jūsų norimas rasti užrašas"
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr "Eilutė į kurią norite perkelti žymeklį"
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:982
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Naudoti %s paryškinimo režimą"
@@ -2110,7 +2248,7 @@ msgstr "Naudoti %s paryškinimo režimą"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1039 ../pluma/pluma-window.c:1925
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2118,43 +2256,43 @@ msgstr "Naudoti %s paryškinimo režimą"
 msgid "Plain Text"
 msgstr "Grynasis tekstas"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1040
 msgid "Disable syntax highlighting"
 msgstr "Išjungti sintaksės paryškinimą"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1322
 #, c-format
 msgid "Open '%s'"
 msgstr "Atverti „%s“"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1427
 msgid "Open a recently used file"
 msgstr "Atverti paskiausiai naudotą failą"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1433
 msgid "Open"
 msgstr "Atverti"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1491
 msgid "Save"
 msgstr "Įrašyti"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1493
 msgid "Print"
 msgstr "Spausdinti"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1650
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktyvuoti %s"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1903
 msgid "Use Spaces"
 msgstr "Naudoti tarpus"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1974
 msgid "Tab Width"
 msgstr "Tabuliacijos plotis"
 
@@ -2211,11 +2349,13 @@ msgstr "Dokumento statistika"
 msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
-msgstr "Analizuoja esamą dokumentą ir praneša žodžių, eilučių, simbolių, simbolių ir ne tarpo simbolių skaičių."
+msgstr ""
+"Analizuoja esamą dokumentą ir praneša žodžių, eilučių, simbolių, simbolių ir"
+" ne tarpo simbolių skaičių."
 
 #: ../plugins/docinfo/docinfo.ui.h:2
 msgid "_Update"
-msgstr "Atna_ujinti"
+msgstr "_Atnaujinti"
 
 #: ../plugins/docinfo/docinfo.ui.h:3
 msgid "File Name"
@@ -2328,7 +2468,9 @@ msgstr "Šis spartusis klavišas jau priskirtas %s"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr "Įrašykite naują spartųjį klavišą arba paspauskite Backspace, norėdami išvalyti"
+msgstr ""
+"Įrašykite naują spartųjį klavišą arba paspauskite Backspace, norėdami "
+"išvalyti"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
@@ -2498,7 +2640,11 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "Jei TEIGIAMA, failų naršyklės įskiepis rodys pirmo atverto dokumento katalogą, jei failų naršyklė dar nebuvo naudota. (Taigi, tai paprastai taikoma dokumento atvėrimui iš komandų eilutės arba atveriant jį su caja, ir t.t.)"
+msgstr ""
+"Jei TEIGIAMA, failų naršyklės įskiepis rodys pirmo atverto dokumento "
+"katalogą, jei failų naršyklė dar nebuvo naudota. (Taigi, tai paprastai "
+"taikoma dokumento atvėrimui iš komandų eilutės arba atveriant jį su caja, ir"
+" t.t.)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
@@ -2510,7 +2656,11 @@ msgid ""
 "values are: none (filter nothing), hidden (filter hidden files), binary "
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
-msgstr "Ši reikšmė nurodo kokie failai atfiltruojami failų naršyklėje. Tinkamos reikšmės yra: none (nieko nefiltruoti), hidden (filtruoti paslėptus failus), binary (filtruoti dvejetainius failus) ir hidden_and_binary (filtruoti ir paslėptus, ir dvejetainius failus)."
+msgstr ""
+"Ši reikšmė nurodo kokie failai atfiltruojami failų naršyklėje. Tinkamos "
+"reikšmės yra: none (nieko nefiltruoti), hidden (filtruoti paslėptus failus),"
+" binary (filtruoti dvejetainius failus) ir hidden_and_binary (filtruoti ir "
+"paslėptus, ir dvejetainius failus)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
@@ -2520,7 +2670,9 @@ msgstr "Failų naršyklės filtravimo šablonas"
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top"
 " of the filter_mode."
-msgstr "Filtravimo šablonas, kuriuo filtruoti failų naršyklę. Šis filtras veikia ant filter_mode."
+msgstr ""
+"Filtravimo šablonas, kuriuo filtruoti failų naršyklę. Šis filtras veikia ant"
+" filter_mode."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:7
 msgid "Open With Tree View"
@@ -2530,7 +2682,9 @@ msgstr "Atverti su medžio vaizdu"
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
-msgstr "Atverti medžio rodinį, vietoje žymių rodinio, kai įkeliamas failų naršyklės įskiepis"
+msgstr ""
+"Atverti medžio rodinį, vietoje žymių rodinio, kai įkeliamas failų naršyklės "
+"įskiepis"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
@@ -2540,7 +2694,9 @@ msgstr "Failų naršyklės šakninis katalogas"
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "Failų naršyklės šakninis katalogas naudojamas įkeliant failų naršyklės įskiepį ir esant onload/tree_view TEIGIAMOMS reikšmėms."
+msgstr ""
+"Failų naršyklės šakninis katalogas naudojamas įkeliant failų naršyklės "
+"įskiepį ir esant onload/tree_view TEIGIAMOMS reikšmėms."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
@@ -2551,7 +2707,10 @@ msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "Failų naršyklės virtualus šakninis katalogas naudojamas įkeliant failų naršyklės įskiepį ir esant onload/tree_view TEIGIAMOMS reikšmėms. Virtualus šakninis katalogas visada turi būti žemiau tikrojo šakninio."
+msgstr ""
+"Failų naršyklės virtualus šakninis katalogas naudojamas įkeliant failų "
+"naršyklės įskiepį ir esant onload/tree_view TEIGIAMOMS reikšmėms. Virtualus "
+"šakninis katalogas visada turi būti žemiau tikrojo šakninio."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2583,7 +2742,7 @@ msgstr "Atverti terminalą šiuo metu atvertame kataloge"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:726
 msgid "File Browser"
-msgstr "Failų naršyklė"
+msgstr "Failų tvarkytuvė"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:874
 msgid "An error occurred while creating a new directory"
@@ -2621,7 +2780,9 @@ msgstr "Iškilo klaida"
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "Nepavyko perkelti failo į šiukšlinę,\nar norite negrįžtamai ištrinti?"
+msgstr ""
+"Nepavyko perkelti failo į šiukšlinę,\n"
+"ar norite negrįžtamai ištrinti?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
@@ -2635,7 +2796,7 @@ msgstr "Pažymėtų failų nepavyko perkelti į šiukšlinę."
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "Ar tikrai norite negrįžtamai ištrinti „%s“?"
+msgstr "Ar tikrai norite ištrinti „%s“ visam laikui?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1170
 msgid "Are you sure you want to permanently delete the selected files?"
@@ -2643,7 +2804,7 @@ msgstr "Ar tikrai norite negrįžtamai ištrinti pasirinktus failus?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
 msgid "If you delete an item, it is permanently lost."
-msgstr "Jeigu ištrinsite elementą, jis bus nesugrąžinamai prarastas."
+msgstr "Ištrynus elementą, jis prarandamas negrįžtamai."
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
@@ -2653,7 +2814,9 @@ msgstr "(Tuščia)"
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "Pervardintasis failas šiuo metu yra atfiltruojamas. Reikės pakoreguoti filtravimo nustatymus, kad failas taptų matomas"
+msgstr ""
+"Pervardintasis failas šiuo metu yra atfiltruojamas. Reikės pakoreguoti "
+"filtravimo nustatymus, kad failas taptų matomas"
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -2665,7 +2828,9 @@ msgstr "failas"
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "Naujas failas šiuo metu atfiltruojamas. Reikės pakoreguoti filtravimo nustatymus, kad failas taptų matomas"
+msgstr ""
+"Naujas failas šiuo metu atfiltruojamas. Reikės pakoreguoti filtravimo "
+"nustatymus, kad failas taptų matomas"
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -2677,7 +2842,9 @@ msgstr "katalogas"
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
-msgstr "Naujas katalogas šiuo metu yra atfiltruojamas. Reikės pakoreguoti filtravimo nustatymus, kad katalogas taptų matomas"
+msgstr ""
+"Naujas katalogas šiuo metu yra atfiltruojamas. Reikės pakoreguoti filtravimo"
+" nustatymus, kad katalogas taptų matomas"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
@@ -2697,7 +2864,7 @@ msgstr "Perkelti pasirinktą failą ar aplanką į šiukšlinę"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:805
 msgid "_Delete"
-msgstr "_Ištrinti"
+msgstr "_Pašalinti"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Delete selected file or folder"
@@ -2733,7 +2900,7 @@ msgstr "Pridėti naują tuščią failą"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:834
 msgid "_Rename"
-msgstr "_Pervadinti"
+msgstr "Pe_rvardinti"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:835
 msgid "Rename selected file or folder"
@@ -2745,7 +2912,7 @@ msgstr "_Ankstesnė vieta"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Go to the previous visited location"
-msgstr "Atverti ankstesnę lankytą vietą"
+msgstr "Eiti į anksčiau aplankytą vietą"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "_Next Location"
@@ -2753,7 +2920,7 @@ msgstr "_Kita vieta"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
-msgstr "Atverti kitą lankytą vietą"
+msgstr "Eiti į kitą aplankytą vietą"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
@@ -2969,7 +3136,9 @@ msgstr "Sugrąžinti pasirinktą iškarpą"
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
-msgstr "Tai nėra tinkamas tabuliacijos perjungiklis. Perjungikliuose gali būti raidės arba vienas netekstinis simbolis, toks kaip {, [, ir t.t."
+msgstr ""
+"Tai nėra tinkamas tabuliacijos perjungiklis. Perjungikliuose gali būti "
+"raidės arba vienas netekstinis simbolis, toks kaip {, [, ir t.t."
 
 #: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
@@ -3021,7 +3190,8 @@ msgstr "Eksportavimas sėkmingai užbaigtas"
 #: ../plugins/snippets/snippets/Manager.py:857
 #: ../plugins/snippets/snippets/Manager.py:924
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
-msgstr "Ar norite į savo eksportavimą įtraukti pasirinktas <b>sistemos</b> iškarpas?"
+msgstr ""
+"Ar norite į savo eksportavimą įtraukti pasirinktas <b>sistemos</b> iškarpas?"
 
 #: ../plugins/snippets/snippets/Manager.py:872
 #: ../plugins/snippets/snippets/Manager.py:942
@@ -3035,7 +3205,9 @@ msgstr "Eksportuoti iškarpas"
 
 #: ../plugins/snippets/snippets/Manager.py:1055
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr "Įveskite naują spartųjį klavišą arba paspauskite Backspace, norėdami išvalyti"
+msgstr ""
+"Įveskite naują spartųjį klavišą arba paspauskite Backspace, norėdami "
+"išvalyti"
 
 #: ../plugins/snippets/snippets/Manager.py:1057
 msgid "Type a new shortcut"
@@ -3159,16 +3331,16 @@ msgid "_More..."
 msgstr "_Daugiau..."
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "_Ignoruoti visus"
 
 #. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
 msgid "_Add"
-msgstr "_Pridėti"
+msgstr "Į_dėti"
 
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "_Rašybos pasiūlymai..."
 
@@ -3348,7 +3520,7 @@ msgstr "Patikrina esamo dokumento rašybą"
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:724
 msgid "Tags"
-msgstr "Žymos"
+msgstr "Žymės"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
 msgid "Select the group of tags you want to use"
@@ -3400,7 +3572,7 @@ msgstr "Inkaro adresas"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:10
 msgid "Anchor"
-msgstr "Inkaras"
+msgstr "Prieraišas"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:12
@@ -3872,7 +4044,7 @@ msgstr "Multiple"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:145
 msgid "Name"
-msgstr "Vardas"
+msgstr "Pavadinimas"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:146
 msgid "Named property value"
@@ -4098,7 +4270,7 @@ msgstr "Mažo teksto stilius"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:206
 msgid "Source"
-msgstr "Pradinis tekstas"
+msgstr "Šaltinis"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:207
 msgid "Space-separated archive list"
@@ -4114,7 +4286,7 @@ msgstr "Tarpai laukeliuose"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:210
 msgid "Span"
-msgstr "Span"
+msgstr "Apgaubti"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:211
 msgid "Standby load message"
@@ -4304,11 +4476,11 @@ msgstr "Rėmelio spalva"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:262
 msgid "Border"
-msgstr "Rėmelis"
+msgstr "Kraštinė"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:263
 msgid "Center"
-msgstr "Vidurys"
+msgstr "Centruoti"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:264
 msgid "Checked (state)"
@@ -4684,7 +4856,7 @@ msgstr "Elementas su užrašu"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:38
 msgid "Item"
-msgstr "Elementas"
+msgstr "Įrašas"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:39
 msgid "Maths (display)"
@@ -4834,7 +5006,9 @@ msgstr "Žymų sąrašas"
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
-msgstr "Suteikia būdą lengvai įterpti į dokumentą dažnai naudojamas žymes/eilutes jų nerašant ranka."
+msgstr ""
+"Suteikia būdą lengvai įterpti į dokumentą dažnai naudojamas žymes/eilutes jų"
+" nerašant ranka."
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:1
 msgid "XSLT - Elements"
@@ -4950,7 +5124,7 @@ msgstr "Įterpti datą ir laiką"
 
 #: ../plugins/time/pluma-time-dialog.ui.h:2
 msgid "_Insert"
-msgstr "Į_terpti"
+msgstr "Įterpt_i"
 
 #: ../plugins/time/pluma-time-dialog.ui.h:3
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:5

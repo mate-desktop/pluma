@@ -1,22 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# ABE Tsunehiko, 2013-2014
-# あわしろいくや <ikunya@gmail.com>, 2017
-# Ikuru K <kanumaiku@gmail.com>, 2015
-# semicolon <mail@semicln.com>, 2016
-# Mika Kobayashi, 2017
-# Yuki Shira <shirayuking@gmail.com>, 2014
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 10:18+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
-"Language-Team: Japanese (http://www.transifex.com/mate/MATE/language/ja/)\n"
+"POT-Creation-Date: 2018-03-18 17:20+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,7 +28,10 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "pluma で指定したフォントの代わりにシステムのデフォルトフォントを編集で使用するかどうかを指定します。このオプションを無効にした場合は、システムフォントではなく \"エディターのフォント\" オプションで指定したフォントが使用されます。"
+msgstr ""
+"pluma "
+"で指定したフォントの代わりにシステムのデフォルトフォントを編集で使用するかどうかを指定します。このオプションを無効にした場合は、システムフォントではなく"
+" \"エディターのフォント\" オプションで指定したフォントが使用されます。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -66,7 +64,9 @@ msgstr "パックアップコピーの作成"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "ファイルを保存する時にバックアップコピーを作成するかどうかを指定します。\"バックアップコピーの拡張子\" オプションでバックアップファイルの拡張子を設定することができます。"
+msgstr ""
+"ファイルを保存する時にバックアップコピーを作成するかどうかを指定します。\"バックアップコピーの拡張子\" "
+"オプションでバックアップファイルの拡張子を設定することができます。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -128,7 +128,10 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "編集領域内の長い行をどのように折り返すかを指定します。折り返さない場合は \"GTK_WRAP_NONE\"、単語の境界で折り返す場合は \"GTK_WRAP_WORD\"、そして文字の境界で折り返す場合は \"GTK_WRAP_CHAR\" を使います。値は大文字小文字を区別することに注意してください。そしてここで記述したとおりに表示されるか確認してください。"
+msgstr ""
+"編集領域内の長い行をどのように折り返すかを指定します。折り返さない場合は \"GTK_WRAP_NONE\"、単語の境界で折り返す場合は "
+"\"GTK_WRAP_WORD\"、そして文字の境界で折り返す場合は \"GTK_WRAP_CHAR\" "
+"を使います。値は大文字小文字を区別することに注意してください。そしてここで記述したとおりに表示されるか確認してください。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
@@ -209,7 +212,12 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "[Home]/[End] キーを押下した時のカーソルの動きを指定します。\"DISABLED\" を指定すると常に行の先頭/末尾にカーソルを移動し、\"AFTER\" を指定するとキーを初めて押下した時は行の先頭/末尾に移動し二回目に押下したらホワイトスペースを除く文字列の先頭/終端にカーソルを移動し、\"BEFORE\" を指定すると行の先頭/末尾に移動する前に一旦文字列の先頭/終端にカーソルを移動し、\"ALWAYS\" を指定すると行の先頭/末尾ではなく常に文字列の先頭/終端にカーソルを移動します。"
+msgstr ""
+"[Home]/[End] キーを押下した時のカーソルの動きを指定します。\"DISABLED\" "
+"を指定すると常に行の先頭/末尾にカーソルを移動し、\"AFTER\" "
+"を指定するとキーを初めて押下した時は行の先頭/末尾に移動し二回目に押下したらホワイトスペースを除く文字列の先頭/終端にカーソルを移動し、\"BEFORE\""
+" を指定すると行の先頭/末尾に移動する前に一旦文字列の先頭/終端にカーソルを移動し、\"ALWAYS\" "
+"を指定すると行の先頭/末尾ではなく常に文字列の先頭/終端にカーソルを移動します。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
@@ -258,11 +266,16 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "ツールバーボタンのスタイルを指定します。可能な値はシステムのデフォルトスタイルを使う \"PLUMA_TOOLBAR_SYSTEM\" とアイコンのみを表示する \"PLUMA_TOOLBAR_ICONS\"、アイコンとテキスト両方を表示する \"PLUMA_TOOLBAR_ICONS_AND_TEXT\"、そしてアイコンのそばに優先的なテキストを表示する \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" があります。値は大文字小文字を区別することに注意してください。そしてここで記述したとおりに表示されるか確認してください。"
+msgstr ""
+"ツールバーボタンのスタイルを指定します。可能な値はシステムのデフォルトスタイルを使う \"PLUMA_TOOLBAR_SYSTEM\" "
+"とアイコンのみを表示する \"PLUMA_TOOLBAR_ICONS\"、アイコンとテキスト両方を表示する "
+"\"PLUMA_TOOLBAR_ICONS_AND_TEXT\"、そしてアイコンのそばに優先的なテキストを表示する "
+"\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" "
+"があります。値は大文字小文字を区別することに注意してください。そしてここで記述したとおりに表示されるか確認してください。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
-msgstr "ステータスバーの表示"
+msgstr "ステータスバーの表示可否"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
@@ -335,7 +348,10 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "印刷する際に長い行をどのように折り返すかを指定します。折り返さない場合は \"GTK_WRAP_NONE\"、単語の境界で折り返す場合は \"GTK_WRAP_WORD\"、そして文字の境界で折り返す場合は \"GTK_WRAP_CHAR\" を使います。値は大文字小文字を区別することに注意してください。そしてここで記述したとおりに印刷されるか確認してください。"
+msgstr ""
+"印刷する際に長い行をどのように折り返すかを指定します。折り返さない場合は \"GTK_WRAP_NONE\"、単語の境界で折り返す場合は "
+"\"GTK_WRAP_WORD\"、そして文字の境界で折り返す場合は \"GTK_WRAP_CHAR\" "
+"を使います。値は大文字小文字を区別することに注意してください。そしてここで記述したとおりに印刷されるか確認してください。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
@@ -406,7 +422,9 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "ファイルのエンコーディングを自動検出する際に pluma が使用するエンコーディングのリストです。\"CURRENT\" は現在使用しているロケールを表します。認識したエンコーディングのみ使用されます。"
+msgstr ""
+"ファイルのエンコーディングを自動検出する際に pluma が使用するエンコーディングのリストです。\"CURRENT\" "
+"は現在使用しているロケールを表します。認識したエンコーディングのみ使用されます。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
@@ -421,7 +439,8 @@ msgstr "メニューに表示するエンコーディング"
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
-msgstr "開く/保存のファイル選択ダイアログの文字エンコーディングメニューの中に表示するエンコーディングのリストです。認識したエンコーディングのみ使用します。"
+msgstr ""
+"開く/保存のファイル選択ダイアログの文字エンコーディングメニューの中に表示するエンコーディングのリストです。認識したエンコーディングのみ使用します。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
@@ -447,7 +466,9 @@ msgstr "利用可能なプラグイン"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "利用可能なプラグインの一覧です。プラグインの \"場所\" が含まれます。指定したプラグインの \"場所\" を得るには .pluma-plugin ファイルを参照してください。"
+msgstr ""
+"利用可能なプラグインの一覧です。プラグインの \"場所\" が含まれます。指定したプラグインの \"場所\" を得るには .pluma-plugin "
+"ファイルを参照してください。"
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -463,7 +484,8 @@ msgid ""
 "plugin system, which currently includes support for spell checking, "
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
-msgstr "<p>PlumaはMATEデスクトップ向けに特別に設計された、小型ながら強力なテキストエディターです。標準的なテキストエディターとしての機能を備え、Unicodeで書かれた多言語の文書に対応しています。構文の強調やソースコードの自動インデント、単一ウィンドウで複数の文書を表示・編集できるなど高度な機能も含まれています。</p><p>Plumaはプラグインで拡張することもでき、現在スペルチェックやファイルの比較、CVS変更履歴の表示、インデント合わせなどがあります。</p>"
+msgstr ""
+"<p>PlumaはMATEデスクトップ向けに特別に設計された、小型ながら強力なテキストエディターです。標準的なテキストエディターとしての機能を備え、Unicodeで書かれた多言語の文書に対応しています。構文の強調やソースコードの自動インデント、単一ウィンドウで複数の文書を表示・編集できるなど高度な機能も含まれています。</p><p>Plumaはプラグインで拡張することもでき、現在スペルチェックやファイルの比較、CVS変更履歴の表示、インデント合わせなどがあります。</p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
@@ -505,7 +527,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "保存しないと、%ld秒前からの変更内容が完全に失われます。"
+msgstr[0] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 msgid ""
@@ -520,7 +542,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "保存しないと、1分 %ld秒前からの変更内容が完全に失われます。"
+msgstr[0] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
 #, c-format
@@ -530,7 +552,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "保存しないと、%ld分前からの変更内容が完全に失われます。"
+msgstr[0] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
 msgid ""
@@ -545,7 +567,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "保存しないと、1時間 %d分前からの変更内容が完全に失われます。"
+msgstr[0] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
 #, c-format
@@ -553,46 +575,46 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "保存しないと、%d時間前からの変更内容が完全に失われます。"
+msgstr[0] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:518
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "ドキュメント \"%s\" への変更が完全に失われます。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:523
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "閉じる前にドキュメント \"%s\" で変更した内容を保存しますか?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:537
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:756
 msgid "Saving has been disabled by the system administrator."
 msgstr "システム管理者によってファイルの保存が利用できなくなっています。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:708
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "%d個のドキュメントへの変更が完全に失われます。"
+msgstr[0] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:714
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "まだ保存していないドキュメントが %d個あります。閉じる前にそれらを保存しますか?"
+msgstr[0] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:732
 msgid "Docum_ents with unsaved changes:"
 msgstr "まだ保存していない変更点を含むドキュメント(_E):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:734
 msgid "S_elect the documents you want to save:"
 msgstr "保存するドキュメントを選択してください(_E):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:758
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "保存しないと変更した内容が完全に失われます。"
 
@@ -694,7 +716,7 @@ msgstr "単語を二行以上に分割しない(_S)"
 msgid "Line Numbers"
 msgstr "行番号"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "行番号を表示する(_D)"
 
@@ -799,17 +821,17 @@ msgid "Plugins"
 msgstr "プラグイン"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1497
 msgid "Replace"
 msgstr "置換"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1495
 msgid "Find"
 msgstr "検索"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
-msgstr "すべて置換(_A)"
+msgstr "すべて置き換える(_A)"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
@@ -822,7 +844,7 @@ msgstr "すべて置換"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "_Search for: "
-msgstr "検索する文字列(_S): "
+msgstr "検索(_S): "
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "Replace _with: "
@@ -830,7 +852,7 @@ msgstr "置換後の文字列(_W): "
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:5
 msgid "_Match case"
-msgstr "大/小文字を区別する(_M)"
+msgstr "大文字小文字を区別してマッチ(_M)"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:6
 msgid "Match _regular expression"
@@ -838,15 +860,15 @@ msgstr "正規表現にマッチさせる(_R)"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "Match _entire word only"
-msgstr "単語全体にマッチさせる(_E)"
+msgstr "単語全体にのみマッチ(_E)"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Search _backwards"
-msgstr "先頭に向かって検索する(_B)"
+msgstr "後方検索(_B)"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "_Wrap around"
-msgstr "折り返しも対象にする(_W)"
+msgstr "折り返す(_W)"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "_Parse escape sequences (e.g. \\n)"
@@ -854,7 +876,7 @@ msgstr "エスケープシーケンス(\\nなど)を解釈する(_P)"
 
 #: ../pluma/pluma.c:108
 msgid "Show the application's version"
-msgstr "バージョンを表示する"
+msgstr "アプリケーションのバージョンを表示する"
 
 #: ../pluma/pluma.c:111
 msgid ""
@@ -897,7 +919,9 @@ msgstr "- テキストファイルを編集する"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\n'%s --help' で利用可能なすべてのコマンドラインオプションの一覧が表示されます\n"
+msgstr ""
+"%s\n"
+"'%s --help' で利用可能なすべてのコマンドラインオプションの一覧が表示されます\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -908,12 +932,12 @@ msgstr "ファイル '%s' を読み込んでいます…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "%d 個のファイルを読み込んでいます…"
+msgstr[0] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
 msgid "Open Files"
-msgstr "ファイルを開く"
+msgstr "開いたファイル"
 
 #: ../pluma/pluma-commands-file.c:574
 #, c-format
@@ -951,7 +975,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "%ld秒前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] ""
 
 #: ../pluma/pluma-commands-file.c:1148
 msgid ""
@@ -966,7 +990,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "1分 %ld秒前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] ""
 
 #: ../pluma/pluma-commands-file.c:1164
 #, c-format
@@ -976,7 +1000,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "%ld分前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] ""
 
 #: ../pluma/pluma-commands-file.c:1179
 msgid ""
@@ -991,7 +1015,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "1時間 %d分前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] ""
 
 #: ../pluma/pluma-commands-file.c:1200
 #, c-format
@@ -999,7 +1023,7 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "%d時間前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] ""
 
 #: ../pluma/pluma-commands-file.c:1226
 msgid "_Revert"
@@ -1011,13 +1035,24 @@ msgstr "Pluma は MATE デスクトップ用に作られた小型軽量のテキ
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "相花 毅 <takeshi.aihana@gmail.com>\n佐藤 暁 <ss@gnome.gr.jp>\nKAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\nAkira TAGOH <tagoh@gnome.gr.jp>\nYukihiro Nakai <nakai@gnome.gr.jp>\nYuusuke Tahara <tahara@gnome.gr.jp>\nAkira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\nやまね ひでき <henrich@debian.or.jp>\n草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n松澤 二郎 <jmatsuzawa@gnome.org>\n日本GNOMEユーザー会 http://www.gnome.gr.jp/"
+msgstr ""
+"相花 毅 <takeshi.aihana@gmail.com>\n"
+"佐藤 暁 <ss@gnome.gr.jp>\n"
+"KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
+"Akira TAGOH <tagoh@gnome.gr.jp>\n"
+"Yukihiro Nakai <nakai@gnome.gr.jp>\n"
+"Yuusuke Tahara <tahara@gnome.gr.jp>\n"
+"Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>\n"
+"やまね ひでき <henrich@debian.or.jp>\n"
+"草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
+"松澤 二郎 <jmatsuzawa@gnome.org>\n"
+"日本GNOMEユーザー会 http://www.gnome.gr.jp/"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "%d ヶ所で検索と置換を行いました。"
+msgstr[0] ""
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1030,19 +1065,19 @@ msgstr "%d ヶ所で検索と置換を行いました。"
 msgid "\"%s\" not found"
 msgstr "\"%s\" は見つかりませんでした"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "編集中のドキュメント %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2224 ../pluma/pluma-window.c:2229
 msgid "Read-Only"
 msgstr "読み取りのみ"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3626
 msgid "Documents"
-msgstr "ドキュメントの一覧"
+msgstr "ドキュメント"
 
 #: ../pluma/pluma-encodings.c:138 ../pluma/pluma-encodings.c:180
 #: ../pluma/pluma-encodings.c:182 ../pluma/pluma-encodings.c:184
@@ -1079,11 +1114,11 @@ msgstr "キリル文字"
 #: ../pluma/pluma-encodings.c:161 ../pluma/pluma-encodings.c:235
 #: ../pluma/pluma-encodings.c:276
 msgid "Arabic"
-msgstr "アラビア語"
+msgstr "アラビア文字"
 
 #: ../pluma/pluma-encodings.c:163 ../pluma/pluma-encodings.c:270
 msgid "Greek"
-msgstr "ギリシア語"
+msgstr "ギリシア文字"
 
 #: ../pluma/pluma-encodings.c:165
 msgid "Hebrew Visual"
@@ -1100,7 +1135,7 @@ msgstr "北欧"
 
 #: ../pluma/pluma-encodings.c:173
 msgid "Celtic"
-msgstr "ケルト語"
+msgstr "ケルト文字"
 
 #: ../pluma/pluma-encodings.c:177
 msgid "Romanian"
@@ -1108,7 +1143,7 @@ msgstr "ルーマニア語"
 
 #: ../pluma/pluma-encodings.c:195
 msgid "Armenian"
-msgstr "アルメニア語"
+msgstr "アルメニア文字"
 
 #: ../pluma/pluma-encodings.c:197 ../pluma/pluma-encodings.c:199
 #: ../pluma/pluma-encodings.c:213
@@ -1117,7 +1152,7 @@ msgstr "中国語 (繁体字)"
 
 #: ../pluma/pluma-encodings.c:201
 msgid "Cyrillic/Russian"
-msgstr "キリル/ロシア語"
+msgstr "キリル文字/ロシア語"
 
 #: ../pluma/pluma-encodings.c:204 ../pluma/pluma-encodings.c:206
 #: ../pluma/pluma-encodings.c:208 ../pluma/pluma-encodings.c:238
@@ -1137,15 +1172,15 @@ msgstr "中国語 (簡体字)"
 
 #: ../pluma/pluma-encodings.c:222
 msgid "Georgian"
-msgstr "グルジア語"
+msgstr "グルジア文字"
 
 #: ../pluma/pluma-encodings.c:233 ../pluma/pluma-encodings.c:274
 msgid "Hebrew"
-msgstr "ヘブライ語"
+msgstr "ヘブライ文字"
 
 #: ../pluma/pluma-encodings.c:250
 msgid "Cyrillic/Ukrainian"
-msgstr "キリル/ウクライナ語"
+msgstr "キリル文字/ウクライナ語"
 
 #: ../pluma/pluma-encodings.c:255 ../pluma/pluma-encodings.c:261
 #: ../pluma/pluma-encodings.c:280
@@ -1154,7 +1189,7 @@ msgstr "ベトナム語"
 
 #: ../pluma/pluma-encodings.c:257
 msgid "Thai"
-msgstr "タイ語"
+msgstr "タイ文字"
 
 #: ../pluma/pluma-encodings.c:431
 msgid "Unknown"
@@ -1182,211 +1217,211 @@ msgstr "すべてのテキストファイル"
 msgid "C_haracter Encoding:"
 msgstr "エンコーディング(_H):"
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:147
 msgid "L_ine Ending:"
 msgstr "行末(_I):"
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:166
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:172
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:178
 msgid "Windows"
-msgstr "Windows"
+msgstr "ウィンドウ"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr "ヘルプを表示する際にエラーが発生しました。"
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
 msgstr "再試行(_R)"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "ファイル %s が見つかりませんでした。"
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
 msgstr "入力した場所が正しいか確認して、もう一度実行してみてください。"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "場所 %s を処理できません。"
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "この場所を処理できません。"
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr "ファイルが格納されている場所をマウントできません。"
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "ファイルが格納されている場所がマウントされていないのでファイルにアクセスできません。"
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "%s はフォルダーです。"
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr "%s は適切な場所ではありません"
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr "ホスト %s が見つかりませんでした。プロキシの設定が正しいか確認して、もう一度実行してみてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr "ホスト名が間違っています。入力した場所が正しいか確認して、もう一度実行してみてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s は通常のファイルではありません。"
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr "接続がタイムアウトしたので、もう一度実行してみてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "ファイルサイズが大きすぎます。"
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "原因不明のエラー: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "ファイルが見つかりません。それは最近削除されたのかもしれません。"
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "ファイル \"%s\" を元に戻せませんでした"
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr "エンコーディング(_A):"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr "強制的に編集する(_W)"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr "編集しない(_O)"
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr "リンクの数が制限され、実際のファイルがこの制限内に見つけることができませんでした。"
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr "そのファイルを開く権限がありません。"
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr "文字のエンコーディングを検出できませんでした。"
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr "バイナリファイルを開こうとしていないか確認してください。"
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr "メニューから文字エンコーディングを選択して、もう一度実行してください。"
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "ファイル %s を開くする際にエラーが発生しました。"
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
 msgstr "開いたファイルに正しくない文字が含まれています。このファイルを編集し続けると、この文書が役に立たなくなるかもしれません。"
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
 msgstr "メニューから文字エンコーディングを選択して、もう一度実行してください。"
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr "ファイル %s を文字エンコーディング %s で開けませんでした。"
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
 msgstr "メニューから別の文字エンコーディングを選択して、もう一度実行してください。"
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "ファイル %s を開けませんでした。"
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr "ファイル %s を文字エンコーディング %s で保存できませんでした。"
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr "そのドキュメントには、指定した文字エンコーディングで表せない文字が一つ以上含まれています。"
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "このファイル (%s) は既に別の pluma ウィンドウの中に開いています。"
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr "このファイルのインスタンスを編集不可モードで開きました。編集を続行しますか?"
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "とにかく保存する(_A)"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "保存しない(_O)"
 
@@ -1395,90 +1430,92 @@ msgstr "保存しない(_O)"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "ファイル %s は変更されています。"
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "このファイルを保存すると外部からの変更はすべて失われます。強制的に保存しますか?"
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "%s を保存する際にバックアップ・ファイルを作成できませんでした。"
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "%s を保存する際に作業用のバックアップファイルを作成できませんでした。"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "pluma は新しいファイルを保存する前に古いファイルのバックアップファイルを作成することはできません。この警告を無視してファイルを強制的に保存することは可能ですが、保存中にエラーが発生すると古いファイルの内容を失う可能性があります。とにかく保存しますか?"
+msgstr ""
+"pluma "
+"は新しいファイルを保存する前に古いファイルのバックアップファイルを作成することはできません。この警告を無視してファイルを強制的に保存することは可能ですが、保存中にエラーが発生すると古いファイルの内容を失う可能性があります。とにかく保存しますか?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr "場所 %s へ書き込めません。入力した場所が正しいか確認して、もう一度実行してみてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr "この場所へ書き込めません。入力した場所が正しいか確認して、もう一度実行してみてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr "場所 %s が間違っています。入力した場所が正しいか確認して、もう一度実行してみてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
 msgstr "そのファイルを保存するために必要な権限がありません。入力した場所が正しいか確認して、もう一度実行してみてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
 msgstr "そのファイルを保存するのに十分な空き容量がありません。空き容量を増やしてから、もう一度実行してみてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr "読み込み専用のディスクにファイルを保存しようとしています。入力した場所が正しいか確認して、もう一度実行してみてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "同名のファイルが存在します。別の名前にしてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
 msgstr "保存先のディスクには指定できるファイル名の長さに制限があります。もっと短いファイル名にしてください。"
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr "保存先のディスクにはファイルサイズの制限があります。小さいファイルを保存するか、この制限のない泥空くに保存してください。"
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "ファイル %s を保存できませんでした。"
@@ -1488,26 +1525,26 @@ msgstr "ファイル %s を保存できませんでした。"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "ファイル %s が変更されたようです。"
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "変更を破棄して、もう一度ファイルを読み込み直してみますか?"
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr "そのファイルを読み込み直してみますか?"
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
 msgstr "再読み込み(_R)"
 
 #: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
-msgstr "履歴なし"
+msgstr "空"
 
 #: ../pluma/pluma-panel.c:385
 msgid "Hide panel"
@@ -1664,7 +1701,7 @@ msgstr " (%d行、%d列)"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "エラーが発生したタブが %d 個あります"
+msgstr[0] ""
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -1708,38 +1745,38 @@ msgid "Saving %s"
 msgstr "%s を保存しています"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "[書き込み禁止]"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "ファイル %s を読み込む際にエラー"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "ファイル %s に戻す際にエラー"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "ファイル %s を保存する際にエラー"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "Unicode (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
 msgstr "名前:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "MIME 型:"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "エンコーディング:"
 
@@ -1782,9 +1819,9 @@ msgstr "新しいドキュメントを作成します"
 
 #: ../pluma/pluma-ui.h:58
 msgid "_Open..."
-msgstr "開く(_O)..."
+msgstr "開く(_O).."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1425
 msgid "Open a file"
 msgstr "ファイルを開きます"
 
@@ -1795,7 +1832,7 @@ msgstr "設定(_E)"
 
 #: ../pluma/pluma-ui.h:63
 msgid "Configure the application"
-msgstr "pluma を設定します"
+msgstr "プログラムを設定します"
 
 #. Help menu
 #: ../pluma/pluma-ui.h:66
@@ -1808,11 +1845,11 @@ msgstr "pluma のマニュアルを開きます"
 
 #: ../pluma/pluma-ui.h:69
 msgid "About this application"
-msgstr "このアプリケーションの情報を表示します"
+msgstr "このアプリケーションについて"
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
-msgstr "フルスクリーン表示の解除"
+msgstr "フルスクリーンモードを解除します"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
@@ -1828,7 +1865,7 @@ msgstr "このファイルに名前を付けて保存します"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr "保存してある元のファイルに戻します"
+msgstr "ファイルを保存したものに戻します"
 
 #: ../pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -1848,19 +1885,19 @@ msgstr "このドキュメントを印刷します"
 
 #: ../pluma/pluma-ui.h:93
 msgid "Undo the last action"
-msgstr "最後に実行した操作を元に戻します"
+msgstr "最後に実行した操作を元に戻す"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
-msgstr "最後に実行しようとした操作をやり直します"
+msgstr "最後に実行しようとした操作をやり直す"
 
 #: ../pluma/pluma-ui.h:97
 msgid "Cut the selection"
-msgstr "選択範囲を切り取ります"
+msgstr "選択部分を切り取ります"
 
 #: ../pluma/pluma-ui.h:99
 msgid "Copy the selection"
-msgstr "選択範囲をコピーします"
+msgstr "選択部分をコピーします"
 
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
@@ -1918,7 +1955,7 @@ msgstr "文字列を検索し置換します"
 
 #: ../pluma/pluma-ui.h:119
 msgid "_Clear Highlight"
-msgstr "強調表示のクリア(_C)"
+msgstr "ハイライトを消去(_C)"
 
 #: ../pluma/pluma-ui.h:120
 msgid "Clear highlighting of search matches"
@@ -1926,7 +1963,7 @@ msgstr "検索時にマッチした文字列の強調表示をクリアします
 
 #: ../pluma/pluma-ui.h:121
 msgid "Go to _Line..."
-msgstr "指定行へジャンプ(_L)..."
+msgstr "指定行へ移動(_L)..."
 
 #: ../pluma/pluma-ui.h:122
 msgid "Go to a specific line"
@@ -1987,7 +2024,7 @@ msgstr "このファイルを閉じます"
 
 #: ../pluma/pluma-ui.h:150
 msgid "Quit the program"
-msgstr "pluma を終了します"
+msgstr "プログラムを終了します"
 
 #: ../pluma/pluma-ui.h:155
 msgid "_Toolbar"
@@ -2046,36 +2083,38 @@ msgid "/ on %s"
 msgstr "%s の / (ルート)"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "折り返しも検索する(_W)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "単語全体にマッチさせる(_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "大/小文字を区別する(_M)"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr "エスケープシーケンス(\nなど)を解釈する(_P)"
+msgstr ""
+"エスケープシーケンス(\n"
+"など)を解釈する(_P)"
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr "検索する文字列"
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr "カーソルを移動する行を入力してください"
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:982
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s 用の強調表示モードにします"
@@ -2083,7 +2122,7 @@ msgstr "%s 用の強調表示モードにします"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1039 ../pluma/pluma-window.c:1925
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2091,43 +2130,43 @@ msgstr "%s 用の強調表示モードにします"
 msgid "Plain Text"
 msgstr "なし"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1040
 msgid "Disable syntax highlighting"
 msgstr "構文の強調表示を無効にします"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1322
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' を開きます"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1427
 msgid "Open a recently used file"
 msgstr "最近使用したファイルを開きます"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1433
 msgid "Open"
 msgstr "開く"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1491
 msgid "Save"
 msgstr "保存"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1493
 msgid "Print"
 msgstr "印刷"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1650
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' に切り替えます"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1903
 msgid "Use Spaces"
 msgstr "空白にする"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1974
 msgid "Tab Width"
 msgstr "タブの幅:"
 
@@ -2188,7 +2227,7 @@ msgstr "ドキュメントを解析して、単語、行、文字と非スペー
 
 #: ../plugins/docinfo/docinfo.ui.h:2
 msgid "_Update"
-msgstr "更新(_U)"
+msgstr "更新する(_U)"
 
 #: ../plugins/docinfo/docinfo.ui.h:3
 msgid "File Name"
@@ -2220,7 +2259,7 @@ msgstr "ドキュメント"
 
 #: ../plugins/docinfo/docinfo.ui.h:11
 msgid "Selection"
-msgstr "選択範囲"
+msgstr "選択"
 
 #: ../plugins/docinfo/pluma-docinfo-plugin.c:443
 msgid "_Document Statistics"
@@ -2471,7 +2510,10 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "TRUE にすると、初めて開いたドキュメントがあるフォルダーで、ファイル参照プラグインがまだ使われたことがないディレクトリを表示します。(すなわち、この機能は一般的にコマンドラインからドキュメントを開く場合や Caja などからドキュメントを開く際に動作します。)"
+msgstr ""
+"TRUE "
+"にすると、初めて開いたドキュメントがあるフォルダーで、ファイル参照プラグインがまだ使われたことがないディレクトリを表示します。(すなわち、この機能は一般的にコマンドラインからドキュメントを開く場合や"
+" Caja などからドキュメントを開く際に動作します。)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
@@ -2483,7 +2525,10 @@ msgid ""
 "values are: none (filter nothing), hidden (filter hidden files), binary "
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
-msgstr "ファイル参照ペインでフィルターして表示しないファイルを指定します。指定可能な値: none (フィルターしない)、hidden (隠しファイルをフィルターする)、binary (バイナリファイルをフィルターする)、hidden_and_binary (隠しファイルとバイナリの両方をフィルターする)"
+msgstr ""
+"ファイル参照ペインでフィルターして表示しないファイルを指定します。指定可能な値: none (フィルターしない)、hidden "
+"(隠しファイルをフィルターする)、binary (バイナリファイルをフィルターする)、hidden_and_binary "
+"(隠しファイルとバイナリの両方をフィルターする)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
@@ -2524,7 +2569,9 @@ msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "ファイル参照プラグインを読み込んで onload/tree_view が TRUE の場合にファイル参照ブラウザが参照する仮想的なルートフォルダーを指定します。この仮想フォルダーは必ず実際のルートよりも下層にあるフォルダーを指定してください。"
+msgstr ""
+"ファイル参照プラグインを読み込んで onload/tree_view が TRUE "
+"の場合にファイル参照ブラウザが参照する仮想的なルートフォルダーを指定します。この仮想フォルダーは必ず実際のルートよりも下層にあるフォルダーを指定してください。"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2594,7 +2641,9 @@ msgstr "エラーが発生しました"
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "ファイルをゴミ箱へ移動できません。\n今すぐファイルを削除しますか?"
+msgstr ""
+"ファイルをゴミ箱へ移動できません。\n"
+"今すぐファイルを削除しますか?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
@@ -2608,7 +2657,7 @@ msgstr "選択したファイルをゴミ箱へ移動できません。"
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "\"%s\" を完全に抹消してもよろしいですか?"
+msgstr "\"%s\" を完全に削除しますか？"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1170
 msgid "Are you sure you want to permanently delete the selected files?"
@@ -2616,7 +2665,7 @@ msgstr "選択したファイルを完全に削除してもよろしいですか
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
 msgid "If you delete an item, it is permanently lost."
-msgstr "削除すると、そのアイテムは完全に無くなります。"
+msgstr "削除すると、二度と復活できません。"
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
@@ -2718,7 +2767,7 @@ msgstr "前の場所(_P)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Go to the previous visited location"
-msgstr "前に表示した場所へ戻ります"
+msgstr "前に訪問したレベルへ移動します"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "_Next Location"
@@ -2726,7 +2775,7 @@ msgstr "次の場所(_N)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
-msgstr "次に表示した場所へ進みます"
+msgstr "次に訪問したレベルへ移動します"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
@@ -2942,7 +2991,9 @@ msgstr "選択したスニペットを戻します"
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
-msgstr "これは [Tab] のトリガーとしては妥当ではありません。トリガーとして妥当な形式は、英数字 (_、:、. を含む) からなる文字列か、あるいは一文字の非英数字(例: {、[ など) のいずれかです。"
+msgstr ""
+"これは [Tab] のトリガーとしては妥当ではありません。トリガーとして妥当な形式は、英数字 (_、:、. を含む) "
+"からなる文字列か、あるいは一文字の非英数字(例: {、[ など) のいずれかです。"
 
 #: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
@@ -3132,16 +3183,16 @@ msgid "_More..."
 msgstr "詳細(_M)..."
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "すべて無視(_I)"
 
 #. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
 msgid "_Add"
 msgstr "追加(_A)"
 
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "スペルの提示(_S)..."
 
@@ -3243,7 +3294,7 @@ msgstr "スペルミスと思われる単語:"
 
 #: ../plugins/spell/spell-checker.ui.h:3
 msgid "word"
-msgstr "単語"
+msgstr "WORD"
 
 #: ../plugins/spell/spell-checker.ui.h:4
 msgid "Change _to:"
@@ -3373,7 +3424,7 @@ msgstr "<A HREF=> (URI 付きアンカー)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:10
 msgid "Anchor"
-msgstr "<A> (アンカー)"
+msgstr "アンカー"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:12
@@ -3476,7 +3527,7 @@ msgstr "COLS="
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:41
 msgid "Comment"
-msgstr "<!--  -->"
+msgstr "コメント"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:42
 msgid "Computer code fragment"
@@ -3535,7 +3586,7 @@ msgstr "Directionality (廃止)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:61
 msgid "Disabled"
-msgstr "DISABLED"
+msgstr "無効"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:62
 msgid "DIV container"
@@ -3701,7 +3752,7 @@ msgstr "<H6>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:103
 msgid "Height"
-msgstr "HEIGHT="
+msgstr "高さ"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:104
 msgid "Horizontal rule"
@@ -3742,7 +3793,7 @@ msgstr "<MAP>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:114
 msgid "Image"
-msgstr "<IMG>"
+msgstr "画像"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:115
 msgid "Inline frame"
@@ -3767,7 +3818,7 @@ msgstr "Java アプレット (廃止)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:121
 msgid "Label"
-msgstr "LABEL="
+msgstr "ラベル"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:122
 msgid "Language code"
@@ -3845,7 +3896,7 @@ msgstr "MULTIPLE"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:145
 msgid "Name"
-msgstr "NAME="
+msgstr "名前"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:146
 msgid "Named property value"
@@ -3984,7 +4035,7 @@ msgstr "<P STYLE=>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:182
 msgid "Paragraph"
-msgstr "<P>"
+msgstr "段落"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:183
 msgid "Preformatted text"
@@ -4071,7 +4122,7 @@ msgstr "<SMALL>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:206
 msgid "Source"
-msgstr "ソース"
+msgstr "サーバ"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:207
 msgid "Space-separated archive list"
@@ -4087,7 +4138,7 @@ msgstr "CELLPADDING="
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:210
 msgid "Span"
-msgstr "SPAN"
+msgstr "スパン(複数に跨げる)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:211
 msgid "Standby load message"
@@ -4118,11 +4169,11 @@ msgstr "<STYLE>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:220
 msgid "Subscript"
-msgstr "<SUB>"
+msgstr "下付き数字"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:221
 msgid "Superscript"
-msgstr "<SUP>"
+msgstr "上付き数字"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:222
 msgid "Table body"
@@ -4199,7 +4250,7 @@ msgstr "<KBD>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:241
 msgid "Title"
-msgstr "TITLE="
+msgstr "タイトル"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:242
 msgid "Underlined text style"
@@ -4219,7 +4270,7 @@ msgstr "VALUETYPE="
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:246
 msgid "Value"
-msgstr "VALUE="
+msgstr "値"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:247
 msgid "Variable or program argument"
@@ -4241,7 +4292,7 @@ msgstr "Visited link color (廃止)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:253
 msgid "Width"
-msgstr "WIDTH="
+msgstr "幅"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:254
 msgid "HTML - Tags"
@@ -4261,7 +4312,7 @@ msgstr "<ARRAY>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:258
 msgid "Background color"
-msgstr "BGCOLOR= (背景の色)"
+msgstr "背景の色"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:259
 msgid "Background texture tile"
@@ -4277,11 +4328,11 @@ msgstr "BORDERCOLOR= (枠線の色)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:262
 msgid "Border"
-msgstr "BORDER= (画像の枠線)"
+msgstr "境界線を付ける"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:263
 msgid "Center"
-msgstr "<CENTER> (中央揃え)"
+msgstr "中央"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:264
 msgid "Checked (state)"
@@ -4301,7 +4352,7 @@ msgstr "TYPE="
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:268
 msgid "Direction"
-msgstr "DIRECTION="
+msgstr "方向"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:269
 msgid "Directory list"
@@ -4357,7 +4408,7 @@ msgstr "<LAYER>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:282
 msgid "Link color"
-msgstr "LINK="
+msgstr "リンクの色"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:283
 msgid "Listing"
@@ -4405,7 +4456,7 @@ msgstr "NOWRAP"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:294
 msgid "Note"
-msgstr "<NOTE>"
+msgstr "ノート"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:295
 msgid "Object applet file"
@@ -4441,7 +4492,7 @@ msgstr "<ISINDEX>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:303
 msgid "Size"
-msgstr "SIZE="
+msgstr "サイズ"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:304
 msgid "Soft line break"
@@ -4449,7 +4500,7 @@ msgstr "<WBR>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:305
 msgid "Sound"
-msgstr "<SOUND>"
+msgstr "サウンド"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:306
 msgid "Spacer"
@@ -4457,7 +4508,7 @@ msgstr "<SPACER>"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:307
 msgid "Square root"
-msgstr "<SQRT>"
+msgstr "平方根"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:308
 msgid "Starting sequence number"
@@ -4481,7 +4532,7 @@ msgstr "COLOR="
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:313
 msgid "Text"
-msgstr "<TEXT>"
+msgstr "テキスト"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:314
 msgid "Top margin in pixels"
@@ -4489,7 +4540,7 @@ msgstr "上マージンのピクセルサイズ"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:315
 msgid "URL"
-msgstr "URL="
+msgstr "URL"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:316
 msgid "Vertical space"

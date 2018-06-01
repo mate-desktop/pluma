@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 10:17+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
-"Language-Team: Norwegian Nynorsk (http://www.transifex.com/mate/MATE/language/nn/)\n"
+"POT-Creation-Date: 2018-03-18 17:20+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Norwegian Nynorsk (https://www.transifex.com/mate/teams/13566/nn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +28,10 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "Om standard fastbreiddeskrift til systemet skal brukast i redigeringsområdet. Dersom dette valet er slått av, vert skrifta som er namngjeven i «Skrift i redigeringsområdet » brukt i staden."
+msgstr ""
+"Om standard fastbreiddeskrift til systemet skal brukast i "
+"redigeringsområdet. Dersom dette valet er slått av, vert skrifta som er "
+"namngjeven i «Skrift i redigeringsområdet » brukt i staden."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -42,7 +46,9 @@ msgstr "Skrift i redigeringsområdet"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "Ei sjølvvald skrift som vert brukt i redigeringsomådet. Dette valet vil berre ha noko å seia dersom valet «Bruk standard skrift» er slått av."
+msgstr ""
+"Ei sjølvvald skrift som vert brukt i redigeringsomådet. Dette valet vil "
+"berre ha noko å seia dersom valet «Bruk standard skrift» er slått av."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Style Scheme"
@@ -60,7 +66,9 @@ msgstr "Lag tryggleikskopiar"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "Om pluma skal laga tryggleikskopiar av filene han lagar. Du kan velja filendinga på tryggleikskopiane med valet «Ending på tryggleikskopiar»."
+msgstr ""
+"Om pluma skal laga tryggleikskopiar av filene han lagar. Du kan velja "
+"filendinga på tryggleikskopiane med valet «Ending på tryggleikskopiar»."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -71,7 +79,9 @@ msgid ""
 "Whether pluma should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
-msgstr "Om pluma skal lagra endra filer automatisk etter ei viss tid. Du kan velja tida med valet «Tid mellom automatiske lagringar»."
+msgstr ""
+"Om pluma skal lagra endra filer automatisk etter ei viss tid. Du kan velja "
+"tida med valet «Tid mellom automatiske lagringar»."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:12
 msgid "Autosave Interval"
@@ -81,7 +91,9 @@ msgstr "Tid mellom automatiske lagringar"
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
-msgstr "Talet på minutt mellom kvar automatisk lagring av endra filer. Dette valet har berre noko å seia dersom valet «Lagra automatisk» er slått på."
+msgstr ""
+"Talet på minutt mellom kvar automatisk lagring av endra filer. Dette valet "
+"har berre noko å seia dersom valet «Lagra automatisk» er slått på."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Show save confirmation"
@@ -99,7 +111,9 @@ msgstr "Skrivbare VFS-metodar"
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
-msgstr "Liste over VFS-metodar støtta i skrivemodus. Metoden «file» er skrivbar som standard."
+msgstr ""
+"Liste over VFS-metodar støtta i skrivemodus. Metoden «file» er skrivbar som "
+"standard."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
@@ -109,7 +123,9 @@ msgstr "Største tal på angringar"
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "Største tal på handlingar som kan angrast og gjenopprettast. Bruk «-1» for ubegrensa."
+msgstr ""
+"Største tal på handlingar som kan angrast og gjenopprettast. Bruk «-1» for "
+"ubegrensa."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
@@ -122,7 +138,11 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Styrer korleis lange linjer vert brote i redigeringsområdet. Bruk «GTK_WRAP_NONE» dersom du ikkje vil ha bryting. Bruk «GTK_WRAP_WORD» dersom du vil bryta linjene mellom to ord, og «GTK_WRAP_CHAR» for å bryta mellom to vilkårlege teikn. Verdiane må stå nett som her, med store bokstavar."
+msgstr ""
+"Styrer korleis lange linjer vert brote i redigeringsområdet. Bruk "
+"«GTK_WRAP_NONE» dersom du ikkje vil ha bryting. Bruk «GTK_WRAP_WORD» dersom "
+"du vil bryta linjene mellom to ord, og «GTK_WRAP_CHAR» for å bryta mellom to"
+" vilkårlege teikn. Verdiane må stå nett som her, med store bokstavar."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
@@ -203,7 +223,15 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "Styrer korleis markøren flyttar seg når Home- og End-tastane vert trykka. Bruk «DISABLED» for å alltid flytta til starten eller slutten av linja, «AFTER» for å flytta til starten eller slutten av linja første gongen knappane vert trykt og deretter flytta til starten eller slutten av teksten utan å ta omsyn for blankteikn på det påfølgjande trykket, «BEFORE» for å flytta til starten eller slutten av teksten før flytting til starten eller slutten av linja, og «ALWAYS» for å alltid flytte til starten eller slutten av teksten i staden for starten eller slutten av linja."
+msgstr ""
+"Styrer korleis markøren flyttar seg når Home- og End-tastane vert trykka. "
+"Bruk «DISABLED» for å alltid flytta til starten eller slutten av linja, "
+"«AFTER» for å flytta til starten eller slutten av linja første gongen "
+"knappane vert trykt og deretter flytta til starten eller slutten av teksten "
+"utan å ta omsyn for blankteikn på det påfølgjande trykket, «BEFORE» for å "
+"flytta til starten eller slutten av teksten før flytting til starten eller "
+"slutten av linja, og «ALWAYS» for å alltid flytte til starten eller slutten "
+"av teksten i staden for starten eller slutten av linja."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
@@ -213,7 +241,9 @@ msgstr "Gå tilbake til førre markørstilling"
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
-msgstr "Om pluma skal gå tilbake til den førre markørstillinga når ei fil vert lasta."
+msgstr ""
+"Om pluma skal gå tilbake til den førre markørstillinga når ei fil vert "
+"lasta."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Search Highlighting"
@@ -252,7 +282,12 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "Stil på verktøylinjeknappane. Moglege verdiar er: «PLUMA_TOOLBAR_SYSTEM», bruk standardstilen til systemet, «PLUMA_TOOLBAR_ICONS», vis berre ikon, «PLUMA_TOOLBAR_ICONS_AND_TEXT», vis både ikon og tekst, og «PLUMA_TOOLBAR_ICONS_BOTH_HORIZ» for å visa prioritert tekst attmed ikon. Verdiane må vera nett som dei står her, med store bokstavar."
+msgstr ""
+"Stil på verktøylinjeknappane. Moglege verdiar er: «PLUMA_TOOLBAR_SYSTEM», "
+"bruk standardstilen til systemet, «PLUMA_TOOLBAR_ICONS», vis berre ikon, "
+"«PLUMA_TOOLBAR_ICONS_AND_TEXT», vis både ikon og tekst, og "
+"«PLUMA_TOOLBAR_ICONS_BOTH_HORIZ» for å visa prioritert tekst attmed ikon. "
+"Verdiane må vera nett som dei står her, med store bokstavar."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
@@ -298,7 +333,9 @@ msgstr "Største tal på nyleg brukte filer"
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
-msgstr "Styrer kva som er det høgste talet på nyleg brukte filer som vert vist i undermenyen «Nyleg brukte filer»."
+msgstr ""
+"Styrer kva som er det høgste talet på nyleg brukte filer som vert vist i "
+"undermenyen «Nyleg brukte filer»."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
@@ -329,7 +366,11 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Styrer korleis lange linjer vert brote på utskrifter. Bruk «GTK_WRAP_NONE» dersom du ikkje vil ha bryting. Bruk «GTK_WRAP_WORD» dersom du vil bryta linjene mellom to ord, og «GTK_WRAP_CHAR» for å bryta mellom to vilkårlege teikn. Verdiane må stå nett som her, med store bokstavar."
+msgstr ""
+"Styrer korleis lange linjer vert brote på utskrifter. Bruk «GTK_WRAP_NONE» "
+"dersom du ikkje vil ha bryting. Bruk «GTK_WRAP_WORD» dersom du vil bryta "
+"linjene mellom to ord, og «GTK_WRAP_CHAR» for å bryta mellom to vilkårlege "
+"teikn. Verdiane må stå nett som her, med store bokstavar."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
@@ -340,7 +381,10 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "Dersom verdien er 0, vert linjenummer ikkje skrivne ut på utskrifter. Elles vert linjenummer skrivne kvar n-te linje, der n er verdien av denne nøkkelen."
+msgstr ""
+"Dersom verdien er 0, vert linjenummer ikkje skrivne ut på utskrifter. Elles "
+"vert linjenummer skrivne kvar n-te linje, der n er verdien av denne "
+"nøkkelen."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
@@ -354,7 +398,9 @@ msgstr "Skrift i brødteksten på utskrifter"
 #: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
-msgstr "Styrer kva for skrift som vert brukt til å skriva ut brødteksten til dokument."
+msgstr ""
+"Styrer kva for skrift som vert brukt til å skriva ut brødteksten til "
+"dokument."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:71
 msgctxt "print-font-header-pango"
@@ -369,7 +415,9 @@ msgstr "Skrift i topptekst på utskrifter"
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
-msgstr "Styrer kva for skrift som vert brukt til å skriva ut topptekst. Dette valet har berre noko å seia når valet «Skriv ut topptekst» er slått på."
+msgstr ""
+"Styrer kva for skrift som vert brukt til å skriva ut topptekst. Dette valet "
+"har berre noko å seia når valet «Skriv ut topptekst» er slått på."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
@@ -384,7 +432,9 @@ msgstr "Skrift i linjenummer på utskrifter"
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
-msgstr "Styrer kva for skrift som vert brukt til å skriva ut linjenummer. Dette valet har berre noko å seia når valet «Skriv ut linjenummer» er slått på."
+msgstr ""
+"Styrer kva for skrift som vert brukt til å skriva ut linjenummer. Dette "
+"valet har berre noko å seia når valet «Skriv ut linjenummer» er slått på."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
@@ -400,7 +450,10 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "Sortert liste over teiknkodingar som vert brukt av pluma til å attkjennateiknkodinga til ei fil automatisk. «CURRENT» er teiknkodinga til det noverande lokalet. Berre attkjende teiknkodingar vert brukt."
+msgstr ""
+"Sortert liste over teiknkodingar som vert brukt av pluma til å "
+"attkjennateiknkodinga til ei fil automatisk. «CURRENT» er teiknkodinga til "
+"det noverande lokalet. Berre attkjende teiknkodingar vert brukt."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
@@ -415,7 +468,9 @@ msgstr "Teiknkodingar viste i menyen"
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
-msgstr "Liste over teiknkodingar som vert vist i teiknkodingsmenyen i opna- og lagra-filveljarane. Berre attkjende teiknkodingar vert brukt."
+msgstr ""
+"Liste over teiknkodingar som vert vist i teiknkodingsmenyen i opna- og "
+"lagra-filveljarane. Berre attkjende teiknkodingar vert brukt."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
@@ -441,7 +496,10 @@ msgstr "Aktive tilleggsmodular"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "Liste over aktive programtillegg. Lista inneheld «adressa» av dei aktive tillegga. Sjå i fila «.pluma-plugin» for å finna «adressa» til eit gitt tillegg."
+msgstr ""
+"Liste over aktive programtillegg. Lista inneheld «adressa» av dei aktive "
+"tillegga. Sjå i fila «.pluma-plugin» for å finna «adressa» til eit gitt "
+"tillegg."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -499,13 +557,14 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Dersom du ikkje lagrar, vil endringane som er gjort det siste sekundet gå tapt."
-msgstr[1] "Dersom du ikkje lagrar, vil endringane som er gjort dei siste %ld sekunda gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
-msgstr "Dersom du ikkje lagrar, vil endringane frå det siste minuttet gå tapt."
+msgstr ""
+"Dersom du ikkje lagrar, vil endringane frå det siste minuttet gå tapt."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
 #, c-format
@@ -515,8 +574,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Dersom du ikkje lagrar, vil endringane frå det siste minuttet og sekundet gå tapt."
-msgstr[1] "Dersom du ikkje lagrar, vil endringane frå det siste minuttet og %ld sekunda gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
 #, c-format
@@ -526,8 +585,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Dersom du ikkje lagrar, vil endringane frå det siste minuttet gå tapt."
-msgstr[1] "Dersom du ikkje lagrar, vil endringane frå dei siste %ld minutta gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
 msgid ""
@@ -542,8 +601,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Dersom du ikkje lagrar, vil endringane frå den siste timen og minuttet gå tapt."
-msgstr[1] "Dersom du ikkje lagrar, vil endringane frå den siste timen og %d minutta gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
 #, c-format
@@ -551,49 +610,49 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "Dersom du ikkje lagrar, vil endringane frå den siste timen gå tapt."
-msgstr[1] "Dersom du ikkje lagrar, vil endringane frå dei siste %d timane gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:518
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "Endringar gjort i dokumentet «%s» vil gå tapt."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:523
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Lagra endringane i dokumentet «%s» før du lukkar?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:537
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:756
 msgid "Saving has been disabled by the system administrator."
 msgstr "Lagring er slått av av systemadministratoren."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:708
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "Endringar gjort i dokumentet den siste timen vil gå tapt."
-msgstr[1] "Endringar gjort i %d dokument dei siste timane vil gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:714
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "Det er eitt dokument med ulagra endringar. Lagra endringar før du lukkar?"
-msgstr[1] "Det er %d dokument med ulagra endringar. Lagra endringar før du lukkar?"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:732
 msgid "Docum_ents with unsaved changes:"
 msgstr "Dokum_ent med ikkje lagra endringar igjen:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:734
 msgid "S_elect the documents you want to save:"
 msgstr "V_el dokumenta du vil lagra:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:758
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "Dersom du ikkje lagrar, vil endringane dine gå tapt for godt."
 
@@ -604,12 +663,12 @@ msgstr "Teiknkodingar"
 #: ../pluma/dialogs/pluma-encodings-dialog.c:384
 #: ../pluma/dialogs/pluma-encodings-dialog.c:445
 msgid "_Description"
-msgstr "Skil_dring"
+msgstr "_Skildring"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.c:393
 #: ../pluma/dialogs/pluma-encodings-dialog.c:454
 msgid "_Encoding"
-msgstr "T_eiknkoding"
+msgstr "Teikn_koding"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:1
 msgid "Character encodings"
@@ -625,7 +684,9 @@ msgstr "Teiknkodi_ngar som vert viste i menyen:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
-msgstr "Trykk på denne knappen for å velja skrifta som vert brukt av skriveprogrammet"
+msgstr ""
+"Trykk på denne knappen for å velja skrifta som vert brukt av "
+"skriveprogrammet"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:582
 #, c-format
@@ -695,7 +756,7 @@ msgstr "Ikkje br_yt ord over to linjer"
 msgid "Line Numbers"
 msgstr "Linjenummer"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "_Vis linjenummer"
 
@@ -773,7 +834,7 @@ msgstr "Skriveprogram"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
 msgid "Font"
-msgstr "Skrifttypar"
+msgstr "Skrifttype"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
 msgid "Editor _font: "
@@ -800,11 +861,11 @@ msgid "Plugins"
 msgstr "Tilleggsmodular"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1497
 msgid "Replace"
 msgstr "Byt ut"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1495
 msgid "Find"
 msgstr "Finn"
 
@@ -815,7 +876,7 @@ msgstr "Byt ut _alle"
 #: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
-msgstr "_Byt ut"
+msgstr "By_t ut"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2
 msgid "Replace All"
@@ -855,13 +916,15 @@ msgstr ""
 
 #: ../pluma/pluma.c:108
 msgid "Show the application's version"
-msgstr "Vis programversjon"
+msgstr "Viser programmets versjon"
 
 #: ../pluma/pluma.c:111
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
-msgstr "Vel teiknkodinga som skal brukast til å opna filene oppgjevne på kommandolinja"
+msgstr ""
+"Vel teiknkodinga som skal brukast til å opna filene oppgjevne på "
+"kommandolinja"
 
 #: ../pluma/pluma.c:111
 msgid "ENCODING"
@@ -898,7 +961,9 @@ msgstr "- Rediger tekstfiler"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\nKøyr «%s --help» for å få ei fullstendig liste over tilgjengelege kommandolinjeval.\n"
+msgstr ""
+"%s\n"
+"Køyr «%s --help» for å sjå ei liste over kommandolinjeflagg.\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -909,13 +974,13 @@ msgstr "Lastar fila «%s» …"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "Lastar %d fil …"
-msgstr[1] "Lastar %d filer …"
+msgstr[0] ""
+msgstr[1] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
 msgid "Open Files"
-msgstr "Opna filer"
+msgstr "Opne filer"
 
 #: ../pluma/pluma-commands-file.c:574
 #, c-format
@@ -953,8 +1018,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Endringar gjort i dokumentet det siste sekundet vil gå tapt."
-msgstr[1] "Endringar gjort i dokumentet dei siste %ld sekunda vil gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1148
 msgid ""
@@ -969,8 +1034,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Endringar gjort i dokumentet det siste minuttet og sekundet vil gå tapt."
-msgstr[1] "Endringar gjort i dokumentet det siste minuttet og %ld sekunda vil gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1164
 #, c-format
@@ -980,8 +1045,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Endringar gjort i dokumentet det siste minuttet vil gå tapt."
-msgstr[1] "Endringar gjort i dokumentet dei siste %ld minutta vil gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1179
 msgid ""
@@ -996,8 +1061,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Endringar gjort i dokumentet den siste timen og minuttet vil gå tapt."
-msgstr[1] "Endringar gjort i dokumentet den siste timen og %d minutta vil gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1005,12 +1070,12 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "Endringar gjort i dokumentet den siste timen vil gå tapt."
-msgstr[1] "Endringar gjort i dokumentet dei siste %d timane vil gå tapt."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1226
 msgid "_Revert"
-msgstr "_Forkast endringar"
+msgstr "_Gå tilbake"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
@@ -1018,14 +1083,16 @@ msgstr ""
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "Åsmund Skjæveland <aasmunds@fys.uio.no>\nTorstein Adolf Winterseth <kvikende@fsfe.no>\n\nSend feilmeldingar og kommentarar til <i18n-nn@lister.ping.uio.no>"
+msgstr ""
+"Åsmund Skjæveland <aasmunds@fys.uio.no>\n"
+"Eskild Hustvedt <eskildh@gnome.org>"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "Fann og byta ut eitt tilfelle"
-msgstr[1] "Fann og byta ut %d tilfelle"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1038,17 +1105,17 @@ msgstr "Fann og byta ut eitt tilfelle"
 msgid "\"%s\" not found"
 msgstr "«%s» ikkje funne"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "Ikkje lagra dokument %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2224 ../pluma/pluma-window.c:2229
 msgid "Read-Only"
 msgstr "Skrivebeskytta"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3626
 msgid "Documents"
 msgstr "Dokument"
 
@@ -1095,7 +1162,7 @@ msgstr "Gresk"
 
 #: ../pluma/pluma-encodings.c:165
 msgid "Hebrew Visual"
-msgstr "Visuelt hebraisk"
+msgstr "Visuell hebraisk"
 
 #: ../pluma/pluma-encodings.c:167 ../pluma/pluma-encodings.c:231
 #: ../pluma/pluma-encodings.c:272
@@ -1121,7 +1188,7 @@ msgstr "Armensk"
 #: ../pluma/pluma-encodings.c:197 ../pluma/pluma-encodings.c:199
 #: ../pluma/pluma-encodings.c:213
 msgid "Chinese Traditional"
-msgstr "Tradisjonell kinesisk"
+msgstr "Kinesisk, tradisjonell"
 
 #: ../pluma/pluma-encodings.c:201
 msgid "Cyrillic/Russian"
@@ -1141,7 +1208,7 @@ msgstr "Koreansk"
 #: ../pluma/pluma-encodings.c:216 ../pluma/pluma-encodings.c:218
 #: ../pluma/pluma-encodings.c:220
 msgid "Chinese Simplified"
-msgstr "Forenkla kinesisk"
+msgstr "Kinesisk, forenkla"
 
 #: ../pluma/pluma-encodings.c:222
 msgid "Georgian"
@@ -1190,211 +1257,222 @@ msgstr "Alle tekstfiler"
 msgid "C_haracter Encoding:"
 msgstr "Tei_knkoding:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:147
 msgid "L_ine Ending:"
 msgstr "Koding av linje:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:166
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:172
 msgid "Mac OS Classic"
 msgstr "Mac OS klassisk"
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:178
 msgid "Windows"
-msgstr "Windows"
+msgstr "Vindauge"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr "Ein feil oppstod under framsyning av hjelp."
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
-msgstr "P_røv på nytt"
+msgstr "Prøv _omatt"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "Klarte ikkje å finna fila «%s»."
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
 msgstr "Kontroller at du skreiv adressa rett og prøv igjen."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "pluma kan ikkje handsama %s-adresser."
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "pluma kan ikkje handsama denne adressa."
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr "Adressa til fila kan ikkje monterast."
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "Adressa til fila kan ikkje opnast fordi ho ikkje er montert."
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "«%s» er ei mappe."
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr "«%s» er ikkje ei gyldig adresse."
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
-msgstr "Fann ikkje verten «%s». Kontroller mellomtenarinnstillingane dine og prøv igjen."
+msgstr ""
+"Fann ikkje verten «%s». Kontroller mellomtenarinnstillingane dine og prøv "
+"igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
-msgstr "Ugyldig vertsnamn. Kontroller at du skreiv adressa rett og prøv igjen."
+msgstr ""
+"Ugyldig vertsnamn. Kontroller at du skreiv adressa rett og prøv igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr "«%s» er ikkje ei vanleg fil."
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr "Tidsavbrot under tilkopling. Prøv igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "Fila er for stor."
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "Uventa feil: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "pluma kan ikkje finna fila. Kanskje fila vart sletta nyleg."
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "Klarte ikkje å forkasta ulagra endringar i fila «%s»."
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr "Tei_knkoding:"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr "_Rediger likevel"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr "_Ikkje rediger"
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
-msgstr "Talet på lenkjer som kan følgjast er begrensa og fila vart ikkje funnen innanfor denne grensa."
+msgstr ""
+"Talet på lenkjer som kan følgjast er begrensa og fila vart ikkje funnen "
+"innanfor denne grensa."
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Du har ikkje dei nødvendige løyva til å opna fila."
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr "pluma klarte ikkje å fastslå teiknkodinga."
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Kontroller at du ikkje prøver å opna ei binærfil."
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr "Vel ei teiknkoding frå menyen og prøv igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "Ein feil oppstod når fila %s skulle opnast."
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
-msgstr "Fila du har opna inneheld nokre ugyldige teikn. Om du fortset å redigera denne fila kan du gjera dette dokumentet ubrukeleg."
+msgstr ""
+"Fila du har opna inneheld nokre ugyldige teikn. Om du fortset å redigera "
+"denne fila kan du gjera dette dokumentet ubrukeleg."
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
 msgstr "Du kan òg velja ei anna teiknkoding og prøva på nytt."
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr "Klarte ikkje å opna fila «%s» med teiknkodinga «%s»."
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Vel ei anna teiknkoding frå menyen og prøv igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "Klarte ikkje å opna fila «%s»."
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr "Klarte ikkje å lagra fila «%s» med teiknkodinga «%s»."
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
-msgstr "Dokumentet inneheld eitt eller fleire teikn som ikkje kan kodast med den valde teiknkodinga."
+msgstr ""
+"Dokumentet inneheld eitt eller fleire teikn som ikkje kan kodast med den "
+"valde teiknkodinga."
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "Fila «%s» er alt open i eit anna pluma-vindauge."
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
-msgstr "pluma opna denne instansen av fila slik at ho ikkje er redigerbar. Vil du redigera henne likevel?"
+msgstr ""
+"pluma opna denne instansen av fila slik at ho ikkje er redigerbar. Vil du "
+"redigera henne likevel?"
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "_Lagra likevel"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "_Ikkje lagra"
 
@@ -1403,90 +1481,111 @@ msgstr "_Ikkje lagra"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Fila «%s» har vorte endra sidan ho vart opna/lagra."
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "Dersom du lagrar, kan alle eksterne endringar gå tapt. Lagra likevel?"
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "Klarte ikkje å laga tryggleikskopi under lagring av «%s»"
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "Klarte ikkje å laga mellombels tryggleikskopi under lagring av «%s»"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "pluma klarte ikkje å ta tryggleikskopi av den gamle fila før den nye vert lagra. Du kan oversjå denne åtvaringa og lagra fila likevel, men dersom det skjer ein feil under lagring, kan den gamle kopien av fila gå tapt. Lagra likevel?"
+msgstr ""
+"pluma klarte ikkje å ta tryggleikskopi av den gamle fila før den nye vert "
+"lagra. Du kan oversjå denne åtvaringa og lagra fila likevel, men dersom det "
+"skjer ein feil under lagring, kan den gamle kopien av fila gå tapt. Lagra "
+"likevel?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
-msgstr "pluma kan ikkje handsama %s-adresser i skrivemodus. Kontroller at du skreiv adressa rett og prøv igjen."
+msgstr ""
+"pluma kan ikkje handsama %s-adresser i skrivemodus. Kontroller at du skreiv "
+"adressa rett og prøv igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
-msgstr "pluma kan ikkje handsama denne adressa i skrivemodus. Kontroller at du skreiv adressa rett og prøv igjen."
+msgstr ""
+"pluma kan ikkje handsama denne adressa i skrivemodus. Kontroller at du "
+"skreiv adressa rett og prøv igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
-msgstr "%s er ikkje ei gyldig adresse. Kontroller at du skreiv adressa rett og prøv igjen."
+msgstr ""
+"%s er ikkje ei gyldig adresse. Kontroller at du skreiv adressa rett og prøv "
+"igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "Du har ikkje dei naudsynte løyva for å lagra fila. Kontroller at du skreiv rett adresse og prøv igjen."
+msgstr ""
+"Du har ikkje dei naudsynte løyva for å lagra fila. Kontroller at du skreiv "
+"rett adresse og prøv igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
-msgstr "Det er ikkje nok ledig plass på disken til å lagra fila. Frigjer litt plass og prøv igjen."
+msgstr ""
+"Det er ikkje nok ledig plass på disken til å lagra fila. Frigjer litt plass "
+"og prøv igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "Du prøver å lagra fila på ein skrivebeskytta disk. Kontroller at du skreiv adressa rett og prøv igjen."
+msgstr ""
+"Du prøver å lagra fila på ein skrivebeskytta disk. Kontroller at du skreiv "
+"adressa rett og prøv igjen."
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Ei fil med dette namnet finst frå før. Bruk eit anna namn."
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
-msgstr "Disken du prøver å lagra fila på har ei grense for kor lange filnamn kan vera. Bruk eit kortare namn."
+msgstr ""
+"Disken du prøver å lagra fila på har ei grense for kor lange filnamn kan "
+"vera. Bruk eit kortare namn."
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "Disken du prøver å lagra fila på har ei grense for kor store filer kan vera. Prøv å lagra mindre filer eller å lagra til ein disk som ikkje har slike grenser."
+msgstr ""
+"Disken du prøver å lagra fila på har ei grense for kor store filer kan vera."
+" Prøv å lagra mindre filer eller å lagra til ein disk som ikkje har slike "
+"grenser."
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "Klarte ikkje å lagra fila «%s»."
@@ -1496,22 +1595,22 @@ msgstr "Klarte ikkje å lagra fila «%s»."
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Fil %s er endra på disken."
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Vil du forkasta dine endringar og lasta fila på nytt?"
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr "Vil du lasta fila på nytt?"
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
-msgstr "_Last på nytt"
+msgstr "_Last om att"
 
 #: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
@@ -1552,7 +1651,7 @@ msgstr "_Nummerer kvar"
 
 #: ../pluma/pluma-print-preferences.ui.h:8
 msgid "lines"
-msgstr "linjer"
+msgstr "liner"
 
 #: ../pluma/pluma-print-preferences.ui.h:12
 msgid "Page header"
@@ -1672,8 +1771,8 @@ msgstr "  Li %d, kol %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "Det er ei fane med feil"
-msgstr[1] "Det er %d faner med feil"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -1717,38 +1816,38 @@ msgid "Saving %s"
 msgstr "Lagrar %s"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "Skrivebeskytta"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "Feil under opning av fila %s"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Feil ved forkasting av endringar i fila %s"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "Feil under lagring av fila %s»"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "Unicode (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
 msgstr "Namn:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "MIME-type:"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "Teiknkoding:"
 
@@ -1791,11 +1890,11 @@ msgstr "Lag eit nytt dokument"
 
 #: ../pluma/pluma-ui.h:58
 msgid "_Open..."
-msgstr "_Opna …"
+msgstr "_Opna..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1425
 msgid "Open a file"
-msgstr "Opna fil"
+msgstr "Opna ei fil"
 
 #. Edit menu
 #: ../pluma/pluma-ui.h:62
@@ -1825,11 +1924,11 @@ msgstr "Forlat fullskjermmodus"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
-msgstr "Lagra den noverande fila"
+msgstr "Lagra noverande fil"
 
 #: ../pluma/pluma-ui.h:82
 msgid "Save _As..."
-msgstr "L_agra som …"
+msgstr "Lagra _som ..."
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
@@ -1837,7 +1936,7 @@ msgstr "Lagra den noverande fila med eit anna namn"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr "Forkast endringar gjort sidan fila vart lagra"
+msgstr "Gå tilbake til lagra versjon av fila"
 
 #: ../pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -1849,7 +1948,7 @@ msgstr "Forhandsvising av utskrift"
 
 #: ../pluma/pluma-ui.h:88
 msgid "_Print..."
-msgstr "S_kriv ut …"
+msgstr "S_kriv ut..."
 
 #: ../pluma/pluma-ui.h:89
 msgid "Print the current page"
@@ -1857,7 +1956,7 @@ msgstr "Skriv ut den noverande sida"
 
 #: ../pluma/pluma-ui.h:93
 msgid "Undo the last action"
-msgstr "Angra siste handling"
+msgstr "Gjer om siste handling"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
@@ -1865,11 +1964,11 @@ msgstr "Gjer om den sist angra handlinga"
 
 #: ../pluma/pluma-ui.h:97
 msgid "Cut the selection"
-msgstr "Klipp ut merkinga"
+msgstr "Klipp ut valt område"
 
 #: ../pluma/pluma-ui.h:99
 msgid "Copy the selection"
-msgstr "Kopier merkinga"
+msgstr "Kopier utval"
 
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
@@ -1895,7 +1994,7 @@ msgstr "_Uthevingsmodus"
 #. Search menu
 #: ../pluma/pluma-ui.h:111
 msgid "_Find..."
-msgstr "_Finn …"
+msgstr "_Finn..."
 
 #: ../pluma/pluma-ui.h:112
 msgid "Search for text"
@@ -1992,7 +2091,7 @@ msgstr "Flytt det noverande dokumentet til eit nytt vindauge"
 
 #: ../pluma/pluma-ui.h:143
 msgid "Close the current file"
-msgstr "Lukk den noverande fila"
+msgstr "Lukk noverande fil"
 
 #: ../pluma/pluma-ui.h:150
 msgid "Quit the program"
@@ -2055,36 +2154,36 @@ msgid "/ on %s"
 msgstr "/ på %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "S_øk rundt"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "Finn berre h_eile ord"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "_Skil mellom små/store bokstavar"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr "Tekst å søkja etter"
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr "Linje du vil flytta markøren til"
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:982
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Bruk %s utheving"
@@ -2092,7 +2191,7 @@ msgstr "Bruk %s utheving"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1039 ../pluma/pluma-window.c:1925
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2100,43 +2199,43 @@ msgstr "Bruk %s utheving"
 msgid "Plain Text"
 msgstr "Rein tekst"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1040
 msgid "Disable syntax highlighting"
 msgstr "Slå av syntaksmerking"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1322
 #, c-format
 msgid "Open '%s'"
 msgstr "Opna «%s»"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1427
 msgid "Open a recently used file"
 msgstr "Opna ei nyleg brukt fil"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1433
 msgid "Open"
 msgstr "Opna"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1491
 msgid "Save"
 msgstr "Lagra"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1493
 msgid "Print"
 msgstr "Skriv ut"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1650
 #, c-format
 msgid "Activate '%s'"
 msgstr "Bruk «%s»"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1903
 msgid "Use Spaces"
 msgstr "Bruk mellomrom"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1974
 msgid "Tab Width"
 msgstr "Breidde på tabulatorar"
 
@@ -2193,7 +2292,9 @@ msgstr "Dokumentstatistikk"
 msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
-msgstr "Analyserer det opne dokumentet og finn talet på ord, linjer, teikn og ikkje-skiljande teikn."
+msgstr ""
+"Analyserer det opne dokumentet og finn talet på ord, linjer, teikn og ikkje-"
+"skiljande teikn."
 
 #: ../plugins/docinfo/docinfo.ui.h:2
 msgid "_Update"
@@ -2229,7 +2330,7 @@ msgstr "Dokument"
 
 #: ../plugins/docinfo/docinfo.ui.h:11
 msgid "Selection"
-msgstr "Merka område"
+msgstr "Val"
 
 #: ../plugins/docinfo/pluma-docinfo-plugin.c:443
 msgid "_Document Statistics"
@@ -2241,222 +2342,222 @@ msgstr "Vis statistikk om det noverdande dokumentet"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:1
 msgid "External Tools"
-msgstr ""
+msgstr "Eksterne verktøy"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:2
 msgid "Execute external commands and shell scripts."
-msgstr ""
+msgstr "Køyr eksterne kommandoar og skalskript."
 
 #: ../plugins/externaltools/tools/__init__.py:175
 msgid "Manage _External Tools..."
-msgstr ""
+msgstr "Handsam _eksterne verktøy …"
 
 #: ../plugins/externaltools/tools/__init__.py:177
 msgid "Opens the External Tools Manager"
-msgstr ""
+msgstr "Opnar handsamaren for eksterne verktøy"
 
 #: ../plugins/externaltools/tools/__init__.py:181
 msgid "External _Tools"
-msgstr ""
+msgstr "Eksterne verk_tøy"
 
 #: ../plugins/externaltools/tools/__init__.py:183
 msgid "External tools"
-msgstr ""
+msgstr "Eksterne verktøy"
 
 #: ../plugins/externaltools/tools/__init__.py:216
 msgid "Shell Output"
-msgstr ""
+msgstr "Skalutdata"
 
 #: ../plugins/externaltools/tools/capture.py:92
 #, python-format
 msgid "Could not execute command: %s"
-msgstr ""
+msgstr "Klarte ikkje å køyra kommando: %s"
 
 #: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
-msgstr ""
+msgstr "Du må stå i eit ord for å køyra denne kommandoen"
 
 #: ../plugins/externaltools/tools/functions.py:263
 msgid "Running tool:"
-msgstr ""
+msgstr "Køyrer verktøy:"
 
 #: ../plugins/externaltools/tools/functions.py:287
 msgid "Done."
-msgstr ""
+msgstr "Ferdig."
 
 #: ../plugins/externaltools/tools/functions.py:289
 msgid "Exited"
-msgstr ""
+msgstr "Avslutta"
 
 #: ../plugins/externaltools/tools/manager.py:136
 msgid "All languages"
-msgstr ""
+msgstr "Alle språk"
 
 #: ../plugins/externaltools/tools/manager.py:545
 #: ../plugins/externaltools/tools/manager.py:549
 #: ../plugins/externaltools/tools/manager.py:871
 #: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "All Languages"
-msgstr ""
+msgstr "Alle språk"
 
 #: ../plugins/externaltools/tools/manager.py:655
 msgid "New tool"
-msgstr ""
+msgstr "Nytt verktøy"
 
 #: ../plugins/externaltools/tools/manager.py:786
 #, python-format
 msgid "This accelerator is already bound to %s"
-msgstr ""
+msgstr "Denne snarvegstasten er alt bunden til %s"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr ""
+msgstr "Trykk ny snarvegstast, eller «Rettetast» for å fjerna"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
-msgstr ""
+msgstr "Trykk ny snarvegstast"
 
 #: ../plugins/externaltools/tools/outputpanel.py:101
 msgid "Stopped."
-msgstr ""
+msgstr "Stoppa."
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
 msgid "Nothing"
-msgstr ""
+msgstr "Inkje"
 
 #: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "Current document"
-msgstr ""
+msgstr "Noverande dokument"
 
 #: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
-msgstr ""
+msgstr "Alle dokumenta"
 
 #: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Current selection"
-msgstr ""
+msgstr "Noverande merking"
 
 #: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Current selection (default to document)"
-msgstr ""
+msgstr "Noverande merking (standard til dokument)"
 
 #: ../plugins/externaltools/tools/tools.ui.h:6
 msgid "Current line"
-msgstr ""
+msgstr "Noverande linje"
 
 #: ../plugins/externaltools/tools/tools.ui.h:7
 msgid "Current word"
-msgstr ""
+msgstr "Noverande ord"
 
 #: ../plugins/externaltools/tools/tools.ui.h:8
 msgid "Display in bottom pane"
-msgstr ""
+msgstr "Vis i botnpanelet"
 
 #: ../plugins/externaltools/tools/tools.ui.h:9
 msgid "Create new document"
-msgstr ""
+msgstr "Lag nytt dokument"
 
 #: ../plugins/externaltools/tools/tools.ui.h:10
 msgid "Append to current document"
-msgstr ""
+msgstr "Legg til i noverande dokument"
 
 #: ../plugins/externaltools/tools/tools.ui.h:11
 msgid "Replace current document"
-msgstr ""
+msgstr "Erstatt noverande dokument"
 
 #: ../plugins/externaltools/tools/tools.ui.h:12
 msgid "Replace current selection"
-msgstr ""
+msgstr "Erstatt noverande merking"
 
 #: ../plugins/externaltools/tools/tools.ui.h:13
 msgid "Insert at cursor position"
-msgstr ""
+msgstr "Set inn ved markøren"
 
 #: ../plugins/externaltools/tools/tools.ui.h:14
 msgid "All documents except untitled ones"
-msgstr ""
+msgstr "Alle dokumenta unnteke dei utan namn"
 
 #: ../plugins/externaltools/tools/tools.ui.h:15
 msgid "Local files only"
-msgstr ""
+msgstr "Berre lokale filer"
 
 #: ../plugins/externaltools/tools/tools.ui.h:16
 msgid "Remote files only"
-msgstr ""
+msgstr "Berre eksterne filer"
 
 #: ../plugins/externaltools/tools/tools.ui.h:17
 msgid "Untitled documents only"
-msgstr ""
+msgstr "Berre dokument utan namn"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
-msgstr ""
+msgstr "Handsamar for eksterne verktøy"
 
 #: ../plugins/externaltools/tools/tools.ui.h:19
 msgid "_Tools:"
-msgstr ""
+msgstr "_Verktøy:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
 #: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
-msgstr ""
+msgstr "R_ediger:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
-msgstr ""
+msgstr "_Bruksområde:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Output:"
-msgstr ""
+msgstr "_Utdata:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "_Input:"
-msgstr ""
+msgstr "_Inndata:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:26
 msgid "_Save:"
-msgstr ""
+msgstr "_Lagra:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:27
 msgid "_Shortcut Key:"
-msgstr ""
+msgstr "_Snøggtast:"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
-msgstr ""
+msgstr "Bygg"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:2
 msgid "Run \"make\" in the document directory"
-msgstr ""
+msgstr "Køyr «make» i dokumentmappa"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:1
 msgid "Open terminal here"
-msgstr ""
+msgstr "Opna terminal her"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:2
 msgid "Open a terminal in the document location"
-msgstr ""
+msgstr "Opna ein terminal i der dokumentet er"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:1
 msgid "Remove trailing spaces"
-msgstr ""
+msgstr "Fj_ern ekstra mellomrom"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:2
 msgid "Remove useless trailing spaces in your file"
-msgstr ""
+msgstr "Fjern ubrukelege ekstra mellomrom i fila di"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:1
 msgid "Run command"
-msgstr ""
+msgstr "Køyr kommando"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:2
 msgid "Execute a custom command and put its output in a new document"
-msgstr ""
+msgstr "Køyr ein sjølvvald kommando og putt utdataen i eit nytt dokument"
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
-msgstr ""
+msgstr "Søk"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
@@ -2480,7 +2581,11 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "Dersom set til TRUE, vil filvisartillegget visa katalogen til det først opna dokumentet når filvisaren ikkje har vore brukt før. (Så dette gjeld stort sett når eit dokument vert opna frå kommandolinja eller med Caja eller tilsvarande.)"
+msgstr ""
+"Dersom set til TRUE, vil filvisartillegget visa katalogen til det først opna"
+" dokumentet når filvisaren ikkje har vore brukt før. (Så dette gjeld stort "
+"sett når eit dokument vert opna frå kommandolinja eller med Caja eller "
+"tilsvarande.)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
@@ -2492,7 +2597,10 @@ msgid ""
 "values are: none (filter nothing), hidden (filter hidden files), binary "
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
-msgstr "Denne verdien styrer kvar som vert filtrert i filvisaren. Gyldige verdiar er: none (filtrer ingenting), hidden (filtrer gøymde filer), binary (filtrer binære filer) og hidden_and_binary (filtrer både gøymde og binære filer)."
+msgstr ""
+"Denne verdien styrer kvar som vert filtrert i filvisaren. Gyldige verdiar "
+"er: none (filtrer ingenting), hidden (filtrer gøymde filer), binary (filtrer"
+" binære filer) og hidden_and_binary (filtrer både gøymde og binære filer)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
@@ -2502,7 +2610,9 @@ msgstr "Filvisar, filtermønster"
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top"
 " of the filter_mode."
-msgstr "Filtermønsteret filvisaren skal filtrera etter. Dette filteret virkar oppå filter_mode."
+msgstr ""
+"Filtermønsteret filvisaren skal filtrera etter. Dette filteret virkar oppå "
+"filter_mode."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:7
 msgid "Open With Tree View"
@@ -2512,7 +2622,9 @@ msgstr "Opna med treframsyning"
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
-msgstr "Opna treframsyninga når filvisaren vert lasta, i staden for bokmerkeframsyninga"
+msgstr ""
+"Opna treframsyninga når filvisaren vert lasta, i staden for "
+"bokmerkeframsyninga"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
@@ -2522,7 +2634,9 @@ msgstr "Filvisar, rotkatalog"
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "Rotkatalog å bruka i filvisaren når filvisaren vert lasta og onload/tree_view er TRUE."
+msgstr ""
+"Rotkatalog å bruka i filvisaren når filvisaren vert lasta og "
+"onload/tree_view er TRUE."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
@@ -2533,7 +2647,10 @@ msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "Virtuell rotkatalog å bruka i filvisaren når filvisaren vert lasta og onload/tree_view er TRUE. Den virtuelle rotkatalogen må alltid vera under den verkelege rota."
+msgstr ""
+"Virtuell rotkatalog å bruka i filvisaren når filvisaren vert lasta og "
+"onload/tree_view er TRUE. Den virtuelle rotkatalogen må alltid vera under "
+"den verkelege rota."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2603,7 +2720,9 @@ msgstr "Ein feil oppstod"
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "Klarte ikkje å flytta fila til papirkorga.\nVil du sletta henne for godt?"
+msgstr ""
+"Klarte ikkje å flytta fila til papirkorga.\n"
+"Vil du sletta henne for godt?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
@@ -2625,7 +2744,7 @@ msgstr "Er du sikker på at du vil sletta dei valde filene for godt?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
 msgid "If you delete an item, it is permanently lost."
-msgstr "Dersom du slettar eit element vil det gå tapt for godt."
+msgstr "Viss du sletter ei oppføring, vert ho borte for godt."
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
@@ -2635,7 +2754,9 @@ msgstr "(Tomt)"
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "Fila med nytt namn er filtrert bort. Du må justera filterinnstillingane dine for å gjera fila synleg"
+msgstr ""
+"Fila med nytt namn er filtrert bort. Du må justera filterinnstillingane dine"
+" for å gjera fila synleg"
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -2647,7 +2768,9 @@ msgstr "fil"
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "Den nye fila er filtrert vekk. Du må justera filterinnstillingane dine for å gjera fila synleg"
+msgstr ""
+"Den nye fila er filtrert vekk. Du må justera filterinnstillingane dine for å"
+" gjera fila synleg"
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -2659,7 +2782,9 @@ msgstr "mappe"
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
-msgstr "Den nye mappa er filtrert bort. Du må justera filterinnstillingane dine for å gjera henne synleg"
+msgstr ""
+"Den nye mappa er filtrert bort. Du må justera filterinnstillingane dine for "
+"å gjera henne synleg"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
@@ -2825,38 +2950,38 @@ msgstr "Emacs-, Kate- og Vim-type moduslinjestøtte for pluma."
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:1
 #: ../plugins/pythonconsole/pythonconsole/__init__.py:55
 msgid "Python Console"
-msgstr ""
+msgstr "Python-konsoll"
 
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:2
 msgid "Interactive Python console standing in the bottom panel"
-msgstr ""
+msgstr "Interaktiv Python-konsoll som står i botnpanelet"
 
 #. ex:et:ts=4:
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
 msgid "C_ommand color:"
-msgstr ""
+msgstr "K_ommandofarge:"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "_Error color:"
-msgstr ""
+msgstr "_Feilfarge:"
 
 #. ex:ts=8:et:
 #: ../plugins/quickopen/quickopen/popup.py:31
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
-msgstr ""
+msgstr "Snøgg opning"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:65
 msgid "Quick open"
-msgstr ""
+msgstr "Snøgg opning"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:66
 msgid "Quickly open documents"
-msgstr ""
+msgstr "Opna dokument snøgt"
 
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
-msgstr ""
+msgstr "Opna filer snøgt"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
@@ -2864,45 +2989,45 @@ msgstr ""
 #: ../plugins/snippets/snippets/Document.py:193
 #: ../plugins/snippets/snippets/Document.py:614
 msgid "Snippets"
-msgstr ""
+msgstr "Snuttar"
 
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:2
 msgid "Insert often-used pieces of text in a fast way"
-msgstr ""
+msgstr "Set inn ofte brukte delar av tekst på ein snøgg måte"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:1
 msgid "Snippets Manager"
-msgstr ""
+msgstr "Handsama snuttar"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:2
 msgid "_Snippets:"
-msgstr ""
+msgstr "_Snuttar:"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:3
 msgid "Create new snippet"
-msgstr ""
+msgstr "Lag ny snutt"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
 #: ../plugins/snippets/snippets/Manager.py:792
 msgid "Import snippets"
-msgstr ""
+msgstr "Importer snuttar"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:5
 msgid "Export selected snippets"
-msgstr ""
+msgstr "Eksporter merka snuttar"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
 #: ../plugins/snippets/snippets/Manager.py:403
 msgid "Delete selected snippet"
-msgstr ""
+msgstr "Slett den merka snutten"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:8
 msgid "Activation"
-msgstr ""
+msgstr "Aktivering"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:10
 msgid "_Tab trigger:"
-msgstr ""
+msgstr "_Tab-utløysar:"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: ../plugins/snippets/snippets/snippets.ui.h:11
@@ -2916,7 +3041,7 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "S_hortcut key:"
-msgstr ""
+msgstr "Snøggtast:"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:14
 msgid "_Drop targets:"
@@ -2924,11 +3049,11 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
-msgstr ""
+msgstr "Handsama _snuttar ..."
 
 #: ../plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage snippets"
-msgstr ""
+msgstr "Handsama snuttar"
 
 #: ../plugins/snippets/snippets/Manager.py:41
 msgid "Snippets archive"
@@ -2936,15 +3061,15 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/Manager.py:66
 msgid "Add a new snippet..."
-msgstr ""
+msgstr "Legg til ny snutt ..."
 
 #: ../plugins/snippets/snippets/Manager.py:117
 msgid "Global"
-msgstr ""
+msgstr "Global"
 
 #: ../plugins/snippets/snippets/Manager.py:400
 msgid "Revert selected snippet"
-msgstr ""
+msgstr "Forkast vald tekstblokk"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
 #: ../plugins/snippets/snippets/Manager.py:674
@@ -2988,7 +3113,7 @@ msgstr ""
 #: ../plugins/snippets/snippets/Manager.py:887
 #: ../plugins/snippets/snippets/Manager.py:950
 msgid "All files"
-msgstr ""
+msgstr "Alle filer"
 
 #: ../plugins/snippets/snippets/Manager.py:813
 #, python-format
@@ -3141,16 +3266,16 @@ msgid "_More..."
 msgstr "_Meir ..."
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "_Oversjå alle"
 
 #. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
 msgid "_Add"
 msgstr "_Legg til"
 
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "_Staveframlegg ..."
 
@@ -3180,7 +3305,7 @@ msgstr "Stavekontroll ferdig"
 #, c-format
 msgctxt "language"
 msgid "%s (%s)"
-msgstr ""
+msgstr "%s (%s)"
 
 #. Translators: this refers to an unknown language code
 #. * (one which isn't in our built-in list).
@@ -3195,7 +3320,7 @@ msgstr ""
 #: ../plugins/spell/pluma-spell-checker-language.c:406
 msgctxt "language"
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: ../plugins/spell/pluma-spell-language-dialog.c:141
 #: ../plugins/spell/languages-dialog.ui.h:1
@@ -3252,7 +3377,7 @@ msgstr "Feilstava ord:"
 
 #: ../plugins/spell/spell-checker.ui.h:3
 msgid "word"
-msgstr ""
+msgstr "ord"
 
 #: ../plugins/spell/spell-checker.ui.h:4
 msgid "Change _to:"
@@ -3330,7 +3455,7 @@ msgstr "Kontrollerer stavinga til det aktive dokumentet."
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:724
 msgid "Tags"
-msgstr "Merker"
+msgstr "Merke"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
 msgid "Select the group of tags you want to use"
@@ -3338,7 +3463,7 @@ msgstr "Vel merkegruppa du vil bruka"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:632
 msgid "_Preview"
-msgstr ""
+msgstr "_Førehandsvis"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:706
 msgid "Available Tag Lists"
@@ -3485,7 +3610,7 @@ msgstr "Kolonner"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:41
 msgid "Comment"
-msgstr "Merknad"
+msgstr "Kommentar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:42
 msgid "Computer code fragment"
@@ -3544,7 +3669,7 @@ msgstr ""
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:61
 msgid "Disabled"
-msgstr "Kopla ut"
+msgstr "Avslått"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:62
 msgid "DIV container"
@@ -3710,7 +3835,7 @@ msgstr "Overskrift 6"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:103
 msgid "Height"
-msgstr "Høgd"
+msgstr "Høgde"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:104
 msgid "Horizontal rule"
@@ -4096,7 +4221,7 @@ msgstr "Avstand i celler"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:210
 msgid "Span"
-msgstr "Spenn"
+msgstr "Vidd"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:211
 msgid "Standby load message"
@@ -4127,11 +4252,11 @@ msgstr "Stilinfo"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:220
 msgid "Subscript"
-msgstr "Senka tekst"
+msgstr "Senka skrift"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:221
 msgid "Superscript"
-msgstr "Heva tekst"
+msgstr "Heva skrift"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:222
 msgid "Table body"
@@ -4250,7 +4375,7 @@ msgstr ""
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:253
 msgid "Width"
-msgstr "Breidd"
+msgstr "Breidde"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:254
 msgid "HTML - Tags"
@@ -4290,7 +4415,7 @@ msgstr "Kant"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:263
 msgid "Center"
-msgstr "Midtstill"
+msgstr "Midten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:264
 msgid "Checked (state)"
@@ -4666,7 +4791,7 @@ msgstr "Element med merkelapp"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:38
 msgid "Item"
-msgstr "Element"
+msgstr "Oppføring"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:39
 msgid "Maths (display)"
@@ -4896,7 +5021,7 @@ msgstr ""
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:3
 msgid "Custom format"
-msgstr ""
+msgstr "Sjølvvald format"
 
 #: ../plugins/time/pluma-time-plugin.c:189
 msgid "In_sert Date and Time..."
@@ -4932,7 +5057,7 @@ msgstr "Sett inn dato og tid"
 
 #: ../plugins/time/pluma-time-dialog.ui.h:2
 msgid "_Insert"
-msgstr "Sett _inn"
+msgstr "Set _inn"
 
 #: ../plugins/time/pluma-time-dialog.ui.h:3
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:5

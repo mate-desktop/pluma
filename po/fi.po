@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Andy, 2016
-# Eslam Ali <talvikahvi@gmail.com>, 2015
-# Lasse Liehu <larso@gmx.com>, 2015-2016
-# nomen omen <vapoursoft@gmail.com>, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 10:17+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
-"Language-Team: Finnish (http://www.transifex.com/mate/MATE/language/fi/)\n"
+"POT-Creation-Date: 2018-03-18 17:20+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Finnish (https://www.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,7 +28,10 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "Määrittää käytetäänkö tekstin muokkaukseen järjestelmän oletusfonttia plumassa määritellyn fontin sijasta. Jos tämä otetaan pois päältä, käytetään kohdassa ”Muokkaimen fontti” määriteltyä fonttia."
+msgstr ""
+"Määrittää käytetäänkö tekstin muokkaukseen järjestelmän oletusfonttia "
+"plumassa määritellyn fontin sijasta. Jos tämä otetaan pois päältä, käytetään"
+" kohdassa ”Muokkaimen fontti” määriteltyä fonttia."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -46,7 +46,9 @@ msgstr "Muokkaimen fontti"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "Mukautettu fontti, jota käytetään muokkausalueella. Tämä on voimassa ainoastaan mikäli asetus ”Käytä oletusfonttia” ei ole päällä."
+msgstr ""
+"Mukautettu fontti, jota käytetään muokkausalueella. Tämä on voimassa "
+"ainoastaan mikäli asetus ”Käytä oletusfonttia” ei ole päällä."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Style Scheme"
@@ -54,7 +56,8 @@ msgstr "Tyylimalli"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:7
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
-msgstr "Tunniste GtkSourceView-tyyliskeemalle, jota käytetään tekstin väritykseen."
+msgstr ""
+"Tunniste GtkSourceView-tyyliskeemalle, jota käytetään tekstin väritykseen."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:8
 msgid "Create Backup Copies"
@@ -64,7 +67,9 @@ msgstr "Luo varmuuskopiot"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "Määrittää tekeekö pluma tallennettavista tiedostoista varmuuskopiot. Voit asettaa tiedostonimen laajennoksen asetuksella ”Varmuuskopion nimilaajenne”."
+msgstr ""
+"Määrittää tekeekö pluma tallennettavista tiedostoista varmuuskopiot. Voit "
+"asettaa tiedostonimen laajennoksen asetuksella ”Varmuuskopion nimilaajenne”."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -75,7 +80,9 @@ msgid ""
 "Whether pluma should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
-msgstr "Tallentaako pluma automaattisesti muokatut tiedostot tietyn ajan jälkeen. Haluttu aikaväli voidaan asettaa ”Autotallennus väli”-valintaan."
+msgstr ""
+"Tallentaako pluma automaattisesti muokatut tiedostot tietyn ajan jälkeen. "
+"Haluttu aikaväli voidaan asettaa ”Autotallennus väli”-valintaan."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:12
 msgid "Autosave Interval"
@@ -85,15 +92,17 @@ msgstr "Autotallennuksen väli"
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
-msgstr "Minuuttimäärä, joka jälkeen pluma automaattisesti tallentaa muokatut tiedostot. Tämä on toiminnassa vain jos ”Autotallennus”-valinta on käytössä."
+msgstr ""
+"Minuuttimäärä, joka jälkeen pluma automaattisesti tallentaa muokatut "
+"tiedostot. Tämä on toiminnassa vain jos ”Autotallennus”-valinta on käytössä."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Show save confirmation"
-msgstr ""
+msgstr "Näytä tallentamisvahvistus"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:15
 msgid "Show save confirmation if the files have changes."
-msgstr ""
+msgstr "Näytä tallentamisvahvistus, jos tiedostoissa on muutoksia."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:16
 msgid "Writable VFS schemes"
@@ -103,7 +112,9 @@ msgstr "Kirjoitettavat VFS-mallit"
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
-msgstr "Luettelo VFS-malleista, joille kirjoitusta pluma tukee. Malli ”file” on kirjoitettavissa oletuksena."
+msgstr ""
+"Luettelo VFS-malleista, joille kirjoitusta pluma tukee. Malli ”file” on "
+"kirjoitettavissa oletuksena."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
@@ -113,7 +124,9 @@ msgstr "Kumoamistoimintojen enimmäismäärä"
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "Suurin määrä toimintoja, jotka pluma voi kumota tai tehdä uudestaan. Arvo ”-1” tarkoittaa rajatonta määrää."
+msgstr ""
+"Suurin määrä toimintoja, jotka pluma voi kumota tai tehdä uudestaan. Arvo "
+"”-1” tarkoittaa rajatonta määrää."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
@@ -126,7 +139,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Määrittää kuinka pitkät rivit rivitetään muokkausalueella. Käytä arvoa ”GTK_WRAP_NONE” jos et halua rivittää, ”GTK_WRAP_WORD” rivittääksesi sanan vaihtuessa, ja ”GTK_WRAP_CHAR” rivittääksesi yksittäisen merkin kohdalta. Huomaa että kirjainkoko merkitsee arvoissa, joten varmista että kirjoitat arvon täsmälleen kuten tässä on neuvottu."
+msgstr ""
+"Määrittää kuinka pitkät rivit rivitetään muokkausalueella. Käytä arvoa "
+"”GTK_WRAP_NONE” jos et halua rivittää, ”GTK_WRAP_WORD” rivittääksesi sanan "
+"vaihtuessa, ja ”GTK_WRAP_CHAR” rivittääksesi yksittäisen merkin kohdalta. "
+"Huomaa että kirjainkoko merkitsee arvoissa, joten varmista että kirjoitat "
+"arvon täsmälleen kuten tässä on neuvottu."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
@@ -136,7 +154,8 @@ msgstr "Sarkaimen koko"
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
-msgstr "Määrittää sarkainmerkkien sijasta lisättävien välilyöntien lukumäärän."
+msgstr ""
+"Määrittää sarkainmerkkien sijasta lisättävien välilyöntien lukumäärän."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Insert spaces"
@@ -207,7 +226,15 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "Määrittää, kuinka kohdistin liikkuu, kun Home ja End-näppäimiä painetaan. Arvolla ”DISABLED” siirrytään aina rivin alkuun tai loppuun, arvolla ”AFTER” siirrytään ensikerralla rivin alkuun tai loppuun, ja toisen kerran painettaessa tekstin alkuun tai loppuun, jättäen tyhjä tila huomioimatta toista kertaa painettaessa, arvolla ”BEFORE” siirrytään aina ensin tekstin alkuun tai loppuun ennen rivin alkuun tai loppuun siirtymistä, ja arvolla ”ALWAYS” siirrytään aina tekstin alkuun tai loppuun rivin alun ja lopun sijasta."
+msgstr ""
+"Määrittää, kuinka kohdistin liikkuu, kun Home ja End-näppäimiä painetaan. "
+"Arvolla ”DISABLED” siirrytään aina rivin alkuun tai loppuun, arvolla ”AFTER”"
+" siirrytään ensikerralla rivin alkuun tai loppuun, ja toisen kerran "
+"painettaessa tekstin alkuun tai loppuun, jättäen tyhjä tila huomioimatta "
+"toista kertaa painettaessa, arvolla ”BEFORE” siirrytään aina ensin tekstin "
+"alkuun tai loppuun ennen rivin alkuun tai loppuun siirtymistä, ja arvolla "
+"”ALWAYS” siirrytään aina tekstin alkuun tai loppuun rivin alun ja lopun "
+"sijasta."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
@@ -217,7 +244,9 @@ msgstr "Palaa edelliseen kohdistimen kohtaan"
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
-msgstr "Määrittää palauttaako pluma edellisen kohdistimen sijainnin avattaessa tiedostoa."
+msgstr ""
+"Määrittää palauttaako pluma edellisen kohdistimen sijainnin avattaessa "
+"tiedostoa."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Search Highlighting"
@@ -238,7 +267,7 @@ msgstr "Määrittää käyttääkö pluma syntaksiväritystä."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:46
 msgid "Toolbar is Visible"
-msgstr "Työkalupalkki näytetään"
+msgstr "Näytetäänkö työkalupalkki"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:47
 msgid "Whether the toolbar should be visible in editing windows."
@@ -256,11 +285,17 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "Työkalupalkissa näytettävien painikkeiden tyyli. Mahdollisia arvoja on ”PLUMA_TOOLBAR_SYSTEM” (käyttääksesi järjestelmän oletustyyliä), ”PLUMA_TOOLBAR_ICONS” (näyttääksesi sekä kuvakkeet että tekstin), ja ”PLUMA_TOOLBAR_INCONS_BOTH_HORIZ” (näyttääksesi tekstin tärkeiden kuvakkeiden vieressä). Huomaa että kirjainkoko merkitsee arvoissa, joten varmista että kirjoitat arvon täsmälleen kuten tässä on neuvottu."
+msgstr ""
+"Työkalupalkissa näytettävien painikkeiden tyyli. Mahdollisia arvoja on "
+"”PLUMA_TOOLBAR_SYSTEM” (käyttääksesi järjestelmän oletustyyliä), "
+"”PLUMA_TOOLBAR_ICONS” (näyttääksesi sekä kuvakkeet että tekstin), ja "
+"”PLUMA_TOOLBAR_INCONS_BOTH_HORIZ” (näyttääksesi tekstin tärkeiden "
+"kuvakkeiden vieressä). Huomaa että kirjainkoko merkitsee arvoissa, joten "
+"varmista että kirjoitat arvon täsmälleen kuten tässä on neuvottu."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
-msgstr "Tilarivi näytetään"
+msgstr "Näytetäänkö tilapalkki"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
@@ -302,7 +337,9 @@ msgstr "Viimeisimmät tiedostot -listan enimmäispituus"
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
-msgstr "Määrittää kohdassa ”Viimeisimmät tiedostot” näytettävien äskettäin avattujen tiedostojen enimmäismäärän."
+msgstr ""
+"Määrittää kohdassa ”Viimeisimmät tiedostot” näytettävien äskettäin avattujen"
+" tiedostojen enimmäismäärän."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
@@ -333,7 +370,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Määrittää kuinka pitkät rivit rivitetään tulostusta varten. Käytä arvoa ”GTK_WRAP_NONE” jos et halua rivittää, ”GTK_WRAP_WORD” rivittääksesi sanan vaihtuessa, ja ”GTK_WRAP_CHAR” rivittääksesi yksittäisen merkin kohdalta. Huomaa että kirjainkoko merkitsee arvoissa, joten varmista että kirjoitat arvon täsmälleen kuten tässä on neuvottu."
+msgstr ""
+"Määrittää kuinka pitkät rivit rivitetään tulostusta varten. Käytä arvoa "
+"”GTK_WRAP_NONE” jos et halua rivittää, ”GTK_WRAP_WORD” rivittääksesi sanan "
+"vaihtuessa, ja ”GTK_WRAP_CHAR” rivittääksesi yksittäisen merkin kohdalta. "
+"Huomaa että kirjainkoko merkitsee arvoissa, joten varmista että kirjoitat "
+"arvon täsmälleen kuten tässä on neuvottu."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
@@ -344,7 +386,9 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "Jos tämän arvo on 0, rivinumeroita ei näytetä asiakirjoja tulostettaessa. Muutoin pluma tulostaa rivinumeron määrittämäsi riviluvun välein."
+msgstr ""
+"Jos tämän arvo on 0, rivinumeroita ei näytetä asiakirjoja tulostettaessa. "
+"Muutoin pluma tulostaa rivinumeron määrittämäsi riviluvun välein."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
@@ -373,7 +417,9 @@ msgstr "Otsikkotietojen tulostusfontti"
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
-msgstr "Määrittää tulostettaessa käytettävän otsikkotiedon fontin. Tämä on voimassa ainoastaan, mikäli asetus ”Tulosta otsikkotiedot” on päällä."
+msgstr ""
+"Määrittää tulostettaessa käytettävän otsikkotiedon fontin. Tämä on voimassa "
+"ainoastaan, mikäli asetus ”Tulosta otsikkotiedot” on päällä."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
@@ -388,7 +434,9 @@ msgstr "Rivinumeroiden tulostusfontti"
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
-msgstr "Määrittää tulostettaessa käytettävän rivinumeron fontin. Tämä on voimassa ainoastaan, mikäli asetuksen ”Tulosta rivinumerot” arvo on muu kuin nolla."
+msgstr ""
+"Määrittää tulostettaessa käytettävän rivinumeron fontin. Tämä on voimassa "
+"ainoastaan, mikäli asetuksen ”Tulosta rivinumerot” arvo on muu kuin nolla."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
@@ -404,7 +452,10 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "Lajiteltu luettelo merkistöistä, joita pluma yrittää automaattisesti tunnistaa tiedostoista. ”NYKYINEN” tarkoittaa nykyisen maa-asetuston mukaista. Vain tunnettuja merkistöjä käytetään."
+msgstr ""
+"Lajiteltu luettelo merkistöistä, joita pluma yrittää automaattisesti "
+"tunnistaa tiedostoista. ”NYKYINEN” tarkoittaa nykyisen maa-asetuston "
+"mukaista. Vain tunnettuja merkistöjä käytetään."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
@@ -419,7 +470,9 @@ msgstr "Valikossa näytettävät koodaustavat"
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
-msgstr "Luettelo merkistöistä, jotka näytetään merkistökoodausvalikossa avaa/tallenna tiedostoikkunassa. Vain tunnettuja merkistöjä käytetään."
+msgstr ""
+"Luettelo merkistöistä, jotka näytetään merkistökoodausvalikossa "
+"avaa/tallenna tiedostoikkunassa. Vain tunnettuja merkistöjä käytetään."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
@@ -445,7 +498,10 @@ msgstr "Käytössä olevat liitännäiset"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "Lista aktiivisista liitännäisistä. Lista sisältää aktiivisen liitännäisen sijainnin. Katso tiedostoa .pluma-plugin, josta voit selvittää kunkin liitännäisen sijainnin kohdasta ”Location”."
+msgstr ""
+"Lista aktiivisista liitännäisistä. Lista sisältää aktiivisen liitännäisen "
+"sijainnin. Katso tiedostoa .pluma-plugin, josta voit selvittää kunkin "
+"liitännäisen sijainnin kohdasta ”Location”."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -469,7 +525,7 @@ msgstr "Pluma"
 
 #: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:763
 msgid "Text Editor"
-msgstr "Tekstimuokkain"
+msgstr "Tekstieditori"
 
 #: ../data/pluma.desktop.in.in.h:3
 msgid "Edit text files"
@@ -489,7 +545,7 @@ msgstr "_Peru uloskirjautuminen"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
 msgid "Close _without Saving"
-msgstr "_Sulje tallentamatta"
+msgstr "Sulje _ilman tallennusta"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:211
 msgid "Question"
@@ -503,13 +559,15 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Mikäli et tallenna, muutokset viimeisen %ld sekunnin ajalta menetetään pysyvästi."
-msgstr[1] "Mikäli et tallenna, muutokset viimeisten %ld sekunnin ajalta menetetään pysyvästi."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
-msgstr "Mikäli et tallenna, muutokset viimeisen minuutin ajalta menetetään pysyvästi."
+msgstr ""
+"Mikäli et tallenna, muutokset viimeisen minuutin ajalta menetetään "
+"pysyvästi."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
 #, c-format
@@ -519,8 +577,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Mikäli et tallenna, muutokset viimeisen minuutin ja %ld sekunnin ajalta menetetään pysyvästi."
-msgstr[1] "Mikäli et tallenna, muutokset viimeisten minuutin ja %ld sekunnin ajalta menetetään pysyvästi."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
 #, c-format
@@ -530,13 +588,14 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Mikäli et tallenna, muutokset viimeisen %ld minuutin ajalta menetetään pysyvästi."
-msgstr[1] "Mikäli et tallenna, muutokset viimeisten %ld minuutin ajalta menetetään pysyvästi."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
-msgstr "Mikäli et tallenna, muutokset viimeisen tunnin ajalta menetetään pysyvästi."
+msgstr ""
+"Mikäli et tallenna, muutokset viimeisen tunnin ajalta menetetään pysyvästi."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
 #, c-format
@@ -546,8 +605,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Mikäli et tallenna, muutokset viimeisen tunnin ja %d minuutin ajalta menetetään pysyvästi."
-msgstr[1] "Mikäli et tallenna, muutokset viimeisen tunnin ja %d minuutin ajalta menetetään pysyvästi."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
 #, c-format
@@ -555,51 +614,52 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "Mikäli et tallenna, muutokset viimeisen %d tunnin ajalta menetetään pysyvästi."
-msgstr[1] "Mikäli et tallenna, muutokset viimeisten %d tunnin ajalta menetetään pysyvästi."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:518
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "Muutokset asiakirjaan ”%s” menetetään lopullisesti."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:523
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Tallennetaanko muutokset asiakirjaan ”%s” ennen sulkemista?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:537
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:756
 msgid "Saving has been disabled by the system administrator."
 msgstr "Ylläpitäjä on estänyt tiedostojen tallennuksen."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:708
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "Muutokset %d asiakirjaan menetetään lopullisesti."
-msgstr[1] "Muutokset %d asiakirjaan menetetään lopullisesti."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:714
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "Sinulla on avoinna %d asiakirja jossa on tallentamattomia muutoksia. Tallennetaanko muutokset ennen sulkemista?"
-msgstr[1] "Sinulla on avoinna %d asiakirja jossa on tallentamattomia muutoksia. Tallennetaanko muutokset ennen sulkemista?"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:732
 msgid "Docum_ents with unsaved changes:"
 msgstr "Asia_kirjat, joissa on tallentamattomia muutoksia:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:734
 msgid "S_elect the documents you want to save:"
 msgstr "Valits_e asiakirjat jotka haluat tallentaa:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:758
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "Mikäli et tallenna, kaikki tekemäsi muutokset menetetään lopullisesti."
+msgstr ""
+"Mikäli et tallenna, kaikki tekemäsi muutokset menetetään lopullisesti."
 
 #: ../pluma/dialogs/pluma-encodings-dialog.c:321
 msgid "Character Encodings"
@@ -613,7 +673,7 @@ msgstr "_Kuvaus"
 #: ../pluma/dialogs/pluma-encodings-dialog.c:393
 #: ../pluma/dialogs/pluma-encodings-dialog.c:454
 msgid "_Encoding"
-msgstr "Koo_daustapa"
+msgstr "_Merkistö"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:1
 msgid "Character encodings"
@@ -621,11 +681,11 @@ msgstr "Merkistökoodaukset"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
 msgid "A_vailable encodings:"
-msgstr "Käytettävissä olevat koodausta_vat:"
+msgstr "_Mahdolliset merkistöt:"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
 msgid "E_ncodings shown in menu:"
-msgstr "Valikossa _näytettävät koodaustavat:"
+msgstr "_Valikossa näkyvät merkistöt:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
@@ -699,7 +759,7 @@ msgstr "Älä jaa _sanoja kahdelle riville"
 msgid "Line Numbers"
 msgstr "Rivinumerot"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "Näytä rivi_numerot"
 
@@ -804,22 +864,22 @@ msgid "Plugins"
 msgstr "Liitännäiset"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1497
 msgid "Replace"
 msgstr "Korvaa"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1495
 msgid "Find"
 msgstr "Etsi"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
-msgstr "Korvaa k_aikki"
+msgstr "Korvaa _Kaikki"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
-msgstr "Ko_rvaa"
+msgstr "_Korvaa"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2
 msgid "Replace All"
@@ -827,7 +887,7 @@ msgstr "Korvaa kaikki"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "_Search for: "
-msgstr "_Hakusana: "
+msgstr "_Etsittävä:"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "Replace _with: "
@@ -859,13 +919,15 @@ msgstr "Tulkitse _ohjausmerkkejä (esim. \\n)"
 
 #: ../pluma/pluma.c:108
 msgid "Show the application's version"
-msgstr "Näytä ohjelman versiotiedot"
+msgstr "Näytä sovelluksen versio"
 
 #: ../pluma/pluma.c:111
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
-msgstr "Aseta merkistön koodaus jota haluat käyttää avatessasi komentorivillä luettelemiasi tiedostoja"
+msgstr ""
+"Aseta merkistön koodaus jota haluat käyttää avatessasi komentorivillä "
+"luettelemiasi tiedostoja"
 
 #: ../pluma/pluma.c:111
 msgid "ENCODING"
@@ -902,7 +964,9 @@ msgstr "- Muokkaa tekstitiedostoja"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\nKomennolla '%s --help' näet kaikki mahdolliset komentorivivalitsimet.\n"
+msgstr ""
+"%s\n"
+"Suorita ”%s --help”, jos haluat nähdä kaikki mahdolliset komentorivivalitsimet.\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -913,13 +977,13 @@ msgstr "Ladataan tiedostoa ”%s”…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "Ladataan %d tiedosto…"
-msgstr[1] "Ladataan %d tiedostoa…"
+msgstr[0] ""
+msgstr[1] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
 msgid "Open Files"
-msgstr "Avaa tiedostoja"
+msgstr "Avoimet tiedostot"
 
 #: ../pluma/pluma-commands-file.c:574
 #, c-format
@@ -957,13 +1021,15 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Viimeisen %ld sekunnin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
-msgstr[1] "Viimeisten %ld sekunnin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1148
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
-msgstr "Viimeisen minuutin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
+msgstr ""
+"Viimeisen minuutin aikana asiakirjaan tehdyt muutokset menetetään "
+"lopullisesti."
 
 #: ../pluma/pluma-commands-file.c:1154
 #, c-format
@@ -973,8 +1039,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Viimeisen minuutin ja %ld sekunnin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
-msgstr[1] "Viimeisen minuutin ja %ld sekunnin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1164
 #, c-format
@@ -984,13 +1050,15 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Viimeisen %ld minuutin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
-msgstr[1] "Viimeisten %ld minuutin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1179
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
-msgstr "Viimeisen tunnin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
+msgstr ""
+"Viimeisen tunnin aikana asiakirjaan tehdyt muutokset menetetään "
+"lopullisesti."
 
 #: ../pluma/pluma-commands-file.c:1185
 #, c-format
@@ -1000,8 +1068,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Viimeisen tunnin ja %d minuutin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
-msgstr[1] "Viimeisen tunnin ja %d minuutin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1009,8 +1077,8 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "Viimeisen %d tunnin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
-msgstr[1] "Viimeisten %d tunnin aikana asiakirjaan tehdyt muutokset menetetään lopullisesti."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-file.c:1226
 msgid "_Revert"
@@ -1018,18 +1086,23 @@ msgstr "_Palauta levyltä"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
-msgstr ""
+msgstr "Pluma on pieni ja kevyt tekstimuokkain MATE Työpöydälle"
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "Ilkka Tuohela, 2005-2009\nLauri Nurmi, 2005-2007\nSami Pesonen, 2005\nJarkko Ranta, 2000-2004\n\nLaunchpad Contributions:\n  Eetu Huisman https://launchpad.net/~eh\n  Jiri Grönroos https://launchpad.net/~jiri-gronroos\n  Jussi Aalto https://launchpad.net/~jtaalto\n  Tommi Vainikainen https://launchpad.net/~thv"
+msgstr ""
+"Tommi Vainikainen, 2005\n"
+"Ilkka Tuohela, 2005\n"
+"Sami Pesonen, 2004\n"
+"Jarkko Ranta, 2003-2004\n"
+"Johanna Makkonen, 2003"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "Löydetty ja korvattu %d esiintymä."
-msgstr[1] "Löydetty ja korvattu %d esiintymää."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1042,17 +1115,17 @@ msgstr "Löydetty ja korvattu yksi esiintymä"
 msgid "\"%s\" not found"
 msgstr "”%s” ei löytynyt"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "Tallentamaton asiakirja %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2224 ../pluma/pluma-window.c:2229
 msgid "Read-Only"
 msgstr "Vain luku"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3626
 msgid "Documents"
 msgstr "Asiakirjat"
 
@@ -1066,7 +1139,7 @@ msgstr "Unicode"
 #: ../pluma/pluma-encodings.c:151 ../pluma/pluma-encodings.c:175
 #: ../pluma/pluma-encodings.c:225 ../pluma/pluma-encodings.c:268
 msgid "Western"
-msgstr "Länsimainen"
+msgstr "Läntinen"
 
 #: ../pluma/pluma-encodings.c:153 ../pluma/pluma-encodings.c:227
 #: ../pluma/pluma-encodings.c:264
@@ -1080,35 +1153,35 @@ msgstr "Eteläeurooppalainen"
 #: ../pluma/pluma-encodings.c:157 ../pluma/pluma-encodings.c:171
 #: ../pluma/pluma-encodings.c:278
 msgid "Baltic"
-msgstr "Balttilainen"
+msgstr "Baltialainen"
 
 #: ../pluma/pluma-encodings.c:159 ../pluma/pluma-encodings.c:229
 #: ../pluma/pluma-encodings.c:242 ../pluma/pluma-encodings.c:246
 #: ../pluma/pluma-encodings.c:248 ../pluma/pluma-encodings.c:266
 msgid "Cyrillic"
-msgstr "Kyrillinen"
+msgstr "Kyrillisiä merkkejä"
 
 #: ../pluma/pluma-encodings.c:161 ../pluma/pluma-encodings.c:235
 #: ../pluma/pluma-encodings.c:276
 msgid "Arabic"
-msgstr "arabia"
+msgstr "Arabialaisia merkkejä"
 
 #: ../pluma/pluma-encodings.c:163 ../pluma/pluma-encodings.c:270
 msgid "Greek"
-msgstr "kreikka"
+msgstr "Kreikkalainen"
 
 #: ../pluma/pluma-encodings.c:165
 msgid "Hebrew Visual"
-msgstr "Heprealainen kuvapohjainen"
+msgstr "Heprealainen (visual)"
 
 #: ../pluma/pluma-encodings.c:167 ../pluma/pluma-encodings.c:231
 #: ../pluma/pluma-encodings.c:272
 msgid "Turkish"
-msgstr "turkki"
+msgstr "Turkkilainen"
 
 #: ../pluma/pluma-encodings.c:169
 msgid "Nordic"
-msgstr "Pohjoismainen"
+msgstr "Skandinavialainen"
 
 #: ../pluma/pluma-encodings.c:173
 msgid "Celtic"
@@ -1116,57 +1189,57 @@ msgstr "Kelttiläinen"
 
 #: ../pluma/pluma-encodings.c:177
 msgid "Romanian"
-msgstr "romania"
+msgstr "Romanialainen"
 
 #: ../pluma/pluma-encodings.c:195
 msgid "Armenian"
-msgstr "armenia"
+msgstr "Armenialaisia merkkejä"
 
 #: ../pluma/pluma-encodings.c:197 ../pluma/pluma-encodings.c:199
 #: ../pluma/pluma-encodings.c:213
 msgid "Chinese Traditional"
-msgstr "Perinteinen kiinalainen"
+msgstr "Kiinalainen (perinteinen)"
 
 #: ../pluma/pluma-encodings.c:201
 msgid "Cyrillic/Russian"
-msgstr "Kyrillinen/Venäläinen"
+msgstr "Kyrillinen/venäläinen"
 
 #: ../pluma/pluma-encodings.c:204 ../pluma/pluma-encodings.c:206
 #: ../pluma/pluma-encodings.c:208 ../pluma/pluma-encodings.c:238
 #: ../pluma/pluma-encodings.c:253
 msgid "Japanese"
-msgstr "japani"
+msgstr "Japanilainen"
 
 #: ../pluma/pluma-encodings.c:211 ../pluma/pluma-encodings.c:240
 #: ../pluma/pluma-encodings.c:244 ../pluma/pluma-encodings.c:259
 msgid "Korean"
-msgstr "korea"
+msgstr "Korealainen"
 
 #: ../pluma/pluma-encodings.c:216 ../pluma/pluma-encodings.c:218
 #: ../pluma/pluma-encodings.c:220
 msgid "Chinese Simplified"
-msgstr "Yksinkertaistettu kiinalainen"
+msgstr "Kiinalainen (yksinkertaistettu)"
 
 #: ../pluma/pluma-encodings.c:222
 msgid "Georgian"
-msgstr "georgia"
+msgstr "Kartvelilaisia merkkejä"
 
 #: ../pluma/pluma-encodings.c:233 ../pluma/pluma-encodings.c:274
 msgid "Hebrew"
-msgstr "heprea"
+msgstr "Heprealaisia merkkejä"
 
 #: ../pluma/pluma-encodings.c:250
 msgid "Cyrillic/Ukrainian"
-msgstr "Kyrillinen/Ukrainalainen"
+msgstr "Kyrillinen/ukrainalainen"
 
 #: ../pluma/pluma-encodings.c:255 ../pluma/pluma-encodings.c:261
 #: ../pluma/pluma-encodings.c:280
 msgid "Vietnamese"
-msgstr "vietnam"
+msgstr "Vietnamilainen"
 
 #: ../pluma/pluma-encodings.c:257
 msgid "Thai"
-msgstr "thai"
+msgstr "Thai"
 
 #: ../pluma/pluma-encodings.c:431
 msgid "Unknown"
@@ -1194,211 +1267,223 @@ msgstr "Kaikki tekstitiedostot"
 msgid "C_haracter Encoding:"
 msgstr "_Merkistökoodaus:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:147
 msgid "L_ine Ending:"
 msgstr "_Rivinloppu:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:166
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:172
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:178
 msgid "Windows"
-msgstr "Windows"
+msgstr "Ikkunat"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr "Ohjetta näyttäessä tapahtui virhe."
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
-msgstr "Yritä _uudestaan"
+msgstr "_Yritä uudelleen"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "Tiedostoa ”%s” ei löytynyt."
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
 msgstr "Tarkista, että kirjoitit sijainnin oikein ja yritä uudelleen."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "pluma ei osaa käsitellä ”%s”-sijainteja."
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "pluma ei pysty käsittelemään tätä sijaintia."
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr "Tiedoston sijaintia ei voi liittää."
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "Tiedoston sijaintia ei voi avata, koska sitä ei ole liitetty."
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "”%s” on hakemisto."
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr "”%s” ei ole kelvollinen sijainti."
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
-msgstr "Verkkonimeä %s ei löydy. Tarkista että välipalvelimesi asetukset ovat kunnossa ja yritä uudelleen."
+msgstr ""
+"Verkkonimeä %s ei löydy. Tarkista että välipalvelimesi asetukset ovat "
+"kunnossa ja yritä uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
-msgstr "Kohdekoneen nimi ei ole kelvollinen. Tarkista kirjoittamasi osoite ja koeta uudelleen."
+msgstr ""
+"Kohdekoneen nimi ei ole kelvollinen. Tarkista kirjoittamasi osoite ja koeta "
+"uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s ei ole tavallinen tiedosto."
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr "Yhteys aikakatkaistiin, yritä uudestaan."
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "Tiedosto on liian suuri."
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "Odottamaton virhe: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "pluma ei löydä tiedostoa. Se on ehkä poistettu äskettäin."
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "Tiedoston ”%s” palauttaminen levyltä epäonnistui"
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr "_Merkistökoodaus:"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr "_Muokkaa joka tapauksessa"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr "Älä mu_okkaa"
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
-msgstr "Seurattujen linkkien lukumäärä on rajoitettu, eikä todellista tiedostoa löytynyt tämän rajan puitteissa."
+msgstr ""
+"Seurattujen linkkien lukumäärä on rajoitettu, eikä todellista tiedostoa "
+"löytynyt tämän rajan puitteissa."
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Sinulla ei ole tarvittavia oikeuksia tiedoston avaamiseksi."
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr "pluma ei kyennyt havaitsemaan merkistökoodausta."
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Tarkista, ettet yritä avata binääritiedostoa."
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr "Valitse merkistökoodaus valikosta ja koeta uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "Tiedostoa %s avatessa tapahtui virhe."
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
-msgstr "Avatussa tiedostossa on epäkelvollisia merkkejä. Jos jatkat tiedoston muokkausta, tiedosto ei välttämättä toimi myöhemmin."
+msgstr ""
+"Avatussa tiedostossa on epäkelvollisia merkkejä. Jos jatkat tiedoston "
+"muokkausta, tiedosto ei välttämättä toimi myöhemmin."
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
 msgstr "Voit valita toisen merkistökoodauksen ja koettaa uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr "Tiedoston %s avaaminen käyttäen merkistökoodausta %s ei onnistunut."
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Valitse toinen merkistökoodaus valikosta ja koeta uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "Tiedoston ”%s” avaaminen epäonnistui."
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr "Tiedoston %s tallennus käyttäen merkistökoodausta %s ei onnistunut."
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
-msgstr "Tiedosto sisältää yhden tai useamman fontin, joiden näyttäminen ei onnistu käyttäen valittua merkistökoodausta."
+msgstr ""
+"Tiedosto sisältää yhden tai useamman fontin, joiden näyttäminen ei onnistu "
+"käyttäen valittua merkistökoodausta."
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "Tiedosto (%s) on jo auki toisessa pluman ikkunassa."
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
-msgstr "Tämä tiedoston näkymä on avattu vain luettavassa tilassa. Haluatko silti muokata sitä?"
+msgstr ""
+"Tämä tiedoston näkymä on avattu vain luettavassa tilassa. Haluatko silti "
+"muokata sitä?"
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "T_allenna joka tapauksessa"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "Älä Ta_llenna"
 
@@ -1407,90 +1492,115 @@ msgstr "Älä Ta_llenna"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Tiedostoa ”%s” on muokattu sen avaamisen jälkeen."
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr "Jos tallennat tiedoston, kaikki ulkopuoliset muutokset hukataan. Tallennetaanko silti?"
+msgstr ""
+"Jos tallennat tiedoston, kaikki ulkopuoliset muutokset hukataan. "
+"Tallennetaanko silti?"
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "Varmuuskopiointitiedostoa ei voitu luoda tallennettaessa tiedostoa %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
-msgstr "Väliaikaista varmuuskopiointitiedostoa ei voitu luoda tallennettaessa tiedostoa %s"
+msgstr ""
+"Väliaikaista varmuuskopiointitiedostoa ei voitu luoda tallennettaessa "
+"tiedostoa %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "Pluma ei voinut varmuuskopioida vanhaa versiota tiedostosta ennen uuden tallentamista. Voit ohittaa tämän varoituksen ja tallentaa tästä huolimatta, mutta mikäli virhe tapahtuu tallennettaessa, saatat hävittää vanhan version tiedostosta. Tallenetaanko tästä huolimatta?"
+msgstr ""
+"Pluma ei voinut varmuuskopioida vanhaa versiota tiedostosta ennen uuden "
+"tallentamista. Voit ohittaa tämän varoituksen ja tallentaa tästä huolimatta,"
+" mutta mikäli virhe tapahtuu tallennettaessa, saatat hävittää vanhan version"
+" tiedostosta. Tallenetaanko tästä huolimatta?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
-msgstr "Pluma ei osaa kirjoittaa ”%s”-sijainteihin. Tarkista, että annoit sijainnin oikein ja yritä uudelleen."
+msgstr ""
+"Pluma ei osaa kirjoittaa ”%s”-sijainteihin. Tarkista, että annoit sijainnin "
+"oikein ja yritä uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
-msgstr "Pluma ei osaa kirjoittaa tämän tyyppiseen sijaintiin. Tarkista, että annoit sijainnin oikein ja yritä uudelleen."
+msgstr ""
+"Pluma ei osaa kirjoittaa tämän tyyppiseen sijaintiin. Tarkista, että annoit "
+"sijainnin oikein ja yritä uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
-msgstr "%s ei ole kelvollinen sijainti. Tarkista, että kirjoitit osoitteen oikein ja yritä uudelleen."
+msgstr ""
+"%s ei ole kelvollinen sijainti. Tarkista, että kirjoitit osoitteen oikein ja"
+" yritä uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "Oikeutesi eivät riitä tiedoston tallentamiseen. Tarkista, että annoit sijainnin oikein ja yritä uudelleen."
+msgstr ""
+"Oikeutesi eivät riitä tiedoston tallentamiseen. Tarkista, että annoit "
+"sijainnin oikein ja yritä uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
-msgstr "Levytila ei riitä tiedoston tallentamiseksi. Vapauta levytilaa ja yritä uudelleen."
+msgstr ""
+"Levytila ei riitä tiedoston tallentamiseksi. Vapauta levytilaa ja yritä "
+"uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "Yrität tallentaa tiedostoa levylle, jolta voi vain lukea. Tarkista, että kirjoitit osoitteen oikein ja yritä uudelleen."
+msgstr ""
+"Yrität tallentaa tiedostoa levylle, jolta voi vain lukea. Tarkista, että "
+"kirjoitit osoitteen oikein ja yritä uudelleen."
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Samanniminen tiedosto on jo olemassa. Käytä toista nimeä."
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
-msgstr "Levy, jolle yrität tallentaa tiedostoa, rajoittaa tiedostonimien pituutta. Valitse lyhyempi nimi."
+msgstr ""
+"Levy, jolle yrität tallentaa tiedostoa, rajoittaa tiedostonimien pituutta. "
+"Valitse lyhyempi nimi."
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "Levy, jonne olet tallentamassa tiedostoa on tiedostoilla kokorajoitus. Yritä tallentaa pienempi tiedosto tai tallenna se levylle, jolla ei ole tätä rajoitusta."
+msgstr ""
+"Levy, jonne olet tallentamassa tiedostoa on tiedostoilla kokorajoitus. Yritä"
+" tallentaa pienempi tiedosto tai tallenna se levylle, jolla ei ole tätä "
+"rajoitusta."
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "Tiedoston ”%s” tallentaminen epäonnistui."
@@ -1500,22 +1610,22 @@ msgstr "Tiedoston ”%s” tallentaminen epäonnistui."
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Tiedosto %s on muuttunut levyllä."
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Haluatko hylätä muutoksesi ja ladata tiedoston uudestaan?"
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr "Haluatko ladata tiedoston uudestaan?"
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
-msgstr "Ko_rvaa"
+msgstr "_Lataa uudestaan"
 
 #: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
@@ -1556,7 +1666,7 @@ msgstr "_Numeroinnin rivitystiheys:"
 
 #: ../pluma/pluma-print-preferences.ui.h:8
 msgid "lines"
-msgstr "rivin välein"
+msgstr "riviä"
 
 #: ../pluma/pluma-print-preferences.ui.h:12
 msgid "Page header"
@@ -1676,8 +1786,8 @@ msgstr "  Rvi %d, Srke %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "Yksi välilehti sisältää virheitä"
-msgstr[1] "%d välilehteä sisältää virheitä"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -1721,38 +1831,38 @@ msgid "Saving %s"
 msgstr "Tallennetaan %s"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "LUKU"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "Virhe avattaessa tiedostoa %s"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Virhe palautettaessa tiedostoa %s"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "Virhe tallennettaessa tiedostoa %s"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "Unicode (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
 msgstr "Nimi:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "MIME-tyyppi:"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "Koodaustapa:"
 
@@ -1797,7 +1907,7 @@ msgstr "Luo uusi asiakirja"
 msgid "_Open..."
 msgstr "_Avaa…"
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1425
 msgid "Open a file"
 msgstr "Avaa tiedosto"
 
@@ -1808,7 +1918,7 @@ msgstr "As_etukset"
 
 #: ../pluma/pluma-ui.h:63
 msgid "Configure the application"
-msgstr "Muokkaa sovelluksen asetuksia"
+msgstr "Muokkaa ohjelman asetuksia"
 
 #. Help menu
 #: ../pluma/pluma-ui.h:66
@@ -1821,11 +1931,11 @@ msgstr "Avaa pluman ohje"
 
 #: ../pluma/pluma-ui.h:69
 msgid "About this application"
-msgstr "Tietoja tästä sovelluksesta"
+msgstr "Tietoja tästä ohjelmasta"
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
-msgstr "Palaa kokoruututilasta"
+msgstr "Lopeta kokoruututila"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
@@ -1833,15 +1943,15 @@ msgstr "Tallenna nykyinen tiedosto"
 
 #: ../pluma/pluma-ui.h:82
 msgid "Save _As..."
-msgstr "Talle_nna nimellä…"
+msgstr "_Tallenna nimellä…"
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
-msgstr "Tallenna nykyinen tiedosto uudella nimellä"
+msgstr "Tallenna nykyinen tiedosto eri tiedostonimellä"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr "Palauta levylle tallennettu versio tiedostosta"
+msgstr "Palauta tallennettu versio tiedostosta"
 
 #: ../pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -1853,7 +1963,7 @@ msgstr "Tulostuksen esikatselu"
 
 #: ../pluma/pluma-ui.h:88
 msgid "_Print..."
-msgstr "Tul_osta…"
+msgstr "T_ulosta…"
 
 #: ../pluma/pluma-ui.h:89
 msgid "Print the current page"
@@ -1861,11 +1971,11 @@ msgstr "Tulosta tämänhetkinen sivu"
 
 #: ../pluma/pluma-ui.h:93
 msgid "Undo the last action"
-msgstr "Kumoa edellinen toiminto"
+msgstr "Kumoa viimeisin toiminto"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
-msgstr "Toista viimeksi kumottu toiminto"
+msgstr "Tee viimeisin kumottu toiminto uudelleen"
 
 #: ../pluma/pluma-ui.h:97
 msgid "Cut the selection"
@@ -1877,7 +1987,7 @@ msgstr "Kopioi valinta"
 
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
-msgstr "Liitä leikepöydän sisältö"
+msgstr "Liitä leikepöydältä"
 
 #: ../pluma/pluma-ui.h:103
 msgid "Delete the selected text"
@@ -1899,7 +2009,7 @@ msgstr "_Väritystila"
 #. Search menu
 #: ../pluma/pluma-ui.h:111
 msgid "_Find..."
-msgstr "_Etsi…"
+msgstr "_Etsi..."
 
 #: ../pluma/pluma-ui.h:112
 msgid "Search for text"
@@ -1915,7 +2025,7 @@ msgstr "Etsi eteenpäin samaa tekstiä"
 
 #: ../pluma/pluma-ui.h:115
 msgid "Find Pre_vious"
-msgstr "Etsi e_dellinen"
+msgstr "Etsi edellinen"
 
 #: ../pluma/pluma-ui.h:116
 msgid "Search backwards for the same text"
@@ -1939,7 +2049,7 @@ msgstr "Poista hakuosumien korostus käytöstä"
 
 #: ../pluma/pluma-ui.h:121
 msgid "Go to _Line..."
-msgstr "S_iirry riville…"
+msgstr "Siirry _riville..."
 
 #: ../pluma/pluma-ui.h:122
 msgid "Go to a specific line"
@@ -1964,7 +2074,7 @@ msgstr "Tallenna kaikki avoimet tiedostot"
 
 #: ../pluma/pluma-ui.h:129
 msgid "_Close All"
-msgstr "Sulje _kaikki"
+msgstr "_Sulje kaikki"
 
 #: ../pluma/pluma-ui.h:130
 msgid "Close all open files"
@@ -2004,7 +2114,7 @@ msgstr "Lopeta ohjelma"
 
 #: ../pluma/pluma-ui.h:155
 msgid "_Toolbar"
-msgstr "T_yökalupalkki"
+msgstr "Ty_ökalupalkki"
 
 #: ../pluma/pluma-ui.h:156
 msgid "Show or hide the toolbar in the current window"
@@ -2012,7 +2122,7 @@ msgstr "Näytä tai piilota työkalupalkki tässä ikkunassa"
 
 #: ../pluma/pluma-ui.h:158
 msgid "_Statusbar"
-msgstr "T_ilarivi"
+msgstr "_Tilarivi"
 
 #: ../pluma/pluma-ui.h:159
 msgid "Show or hide the statusbar in the current window"
@@ -2024,7 +2134,7 @@ msgstr "Muokkaa tekstiä kokoruututilassa"
 
 #: ../pluma/pluma-ui.h:169
 msgid "Side _Pane"
-msgstr "Sivu_paneeli"
+msgstr "_Sivupaneeli"
 
 #: ../pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
@@ -2059,36 +2169,38 @@ msgid "/ on %s"
 msgstr "/ levyjaossa %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "_Rivitä"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "Täsmää vain _kokonaisia sanoja"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "_Huomioi kirjainkoko"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr "Tulkitse _ohjausmerkkejä (esim. \n)"
+msgstr ""
+"Tulkitse _ohjausmerkkejä (esim. \n"
+")"
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr "Etsittävä merkkijono"
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr "Rivi, jolle haluat siirtää kursorin"
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:982
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Käytä %s-väritystä"
@@ -2096,7 +2208,7 @@ msgstr "Käytä %s-väritystä"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1039 ../pluma/pluma-window.c:1925
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2104,43 +2216,43 @@ msgstr "Käytä %s-väritystä"
 msgid "Plain Text"
 msgstr "Raakateksti"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1040
 msgid "Disable syntax highlighting"
 msgstr "Älä käytä syntaksiväritystä"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1322
 #, c-format
 msgid "Open '%s'"
 msgstr "Avaa ”%s”"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1427
 msgid "Open a recently used file"
 msgstr "Avaa äskettäin käytetty tiedosto"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1433
 msgid "Open"
 msgstr "Avaa"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1491
 msgid "Save"
 msgstr "Tallenna"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1493
 msgid "Print"
 msgstr "Tulosta"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1650
 #, c-format
 msgid "Activate '%s'"
 msgstr "Avaa ”%s”"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1903
 msgid "Use Spaces"
 msgstr "Käytä välilyöntejä"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1974
 msgid "Tab Width"
 msgstr "Sarkaimen leveys"
 
@@ -2197,7 +2309,9 @@ msgstr "Asiakirjan tilastot"
 msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
-msgstr "Käy läpi aktiivisen asiakirjan ja kertoo siinä olevien sanojen, rivien, merkkien ja ei-tyhjien merkkien määrät."
+msgstr ""
+"Käy läpi aktiivisen asiakirjan ja kertoo siinä olevien sanojen, rivien, "
+"merkkien ja ei-tyhjien merkkien määrät."
 
 #: ../plugins/docinfo/docinfo.ui.h:2
 msgid "_Update"
@@ -2245,137 +2359,138 @@ msgstr "Näytä tilastotietoja asiakirjasta"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:1
 msgid "External Tools"
-msgstr ""
+msgstr "Ulkoiset työkalut"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:2
 msgid "Execute external commands and shell scripts."
-msgstr ""
+msgstr "Suorita ulkoisia komentoja ja skriptejä."
 
 #: ../plugins/externaltools/tools/__init__.py:175
 msgid "Manage _External Tools..."
-msgstr ""
+msgstr "Hallinnoi _Ulkoisia työkaluja…"
 
 #: ../plugins/externaltools/tools/__init__.py:177
 msgid "Opens the External Tools Manager"
-msgstr ""
+msgstr "Avaa ulkoisten työkalujen hallinnan"
 
 #: ../plugins/externaltools/tools/__init__.py:181
 msgid "External _Tools"
-msgstr ""
+msgstr "Ulkoiset _työkalut"
 
 #: ../plugins/externaltools/tools/__init__.py:183
 msgid "External tools"
-msgstr ""
+msgstr "Ulkoiset työkalut"
 
 #: ../plugins/externaltools/tools/__init__.py:216
 msgid "Shell Output"
-msgstr ""
+msgstr "Komentotulkin tuloste"
 
 #: ../plugins/externaltools/tools/capture.py:92
 #, python-format
 msgid "Could not execute command: %s"
-msgstr ""
+msgstr "Komentoa ei voitu suorittaa: %s"
 
 #: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
 msgstr ""
+"Kohdistimen täytyy olla sanan kohdalla jotta komento voidaan suorittaa"
 
 #: ../plugins/externaltools/tools/functions.py:263
 msgid "Running tool:"
-msgstr ""
+msgstr "Suoritetaan työkalua:"
 
 #: ../plugins/externaltools/tools/functions.py:287
 msgid "Done."
-msgstr ""
+msgstr "Valmis."
 
 #: ../plugins/externaltools/tools/functions.py:289
 msgid "Exited"
-msgstr ""
+msgstr "Päättyi"
 
 #: ../plugins/externaltools/tools/manager.py:136
 msgid "All languages"
-msgstr ""
+msgstr "Kaikki kielet"
 
 #: ../plugins/externaltools/tools/manager.py:545
 #: ../plugins/externaltools/tools/manager.py:549
 #: ../plugins/externaltools/tools/manager.py:871
 #: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "All Languages"
-msgstr ""
+msgstr "Kaikki kielet"
 
 #: ../plugins/externaltools/tools/manager.py:655
 msgid "New tool"
-msgstr ""
+msgstr "Uusi työkalu"
 
 #: ../plugins/externaltools/tools/manager.py:786
 #, python-format
 msgid "This accelerator is already bound to %s"
-msgstr ""
+msgstr "Tämä pikanäppäin on jo käytössä toiminnolle %s"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr ""
+msgstr "Syötä uusi pikanäppäin tai tyhjennä arvo Backspacella"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
-msgstr ""
+msgstr "Syötä uusi pikanäppäin"
 
 #: ../plugins/externaltools/tools/outputpanel.py:101
 msgid "Stopped."
-msgstr ""
+msgstr "Pysäytetty."
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
 msgid "Nothing"
-msgstr ""
+msgstr "Ei mitään"
 
 #: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "Current document"
-msgstr ""
+msgstr "Nykyinen asiakirja"
 
 #: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
-msgstr ""
+msgstr "Kaikki asiakirjat"
 
 #: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Current selection"
-msgstr ""
+msgstr "Nykyinen valinta"
 
 #: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Current selection (default to document)"
-msgstr ""
+msgstr "Nykyinen valinta (asiakirjan oletus)"
 
 #: ../plugins/externaltools/tools/tools.ui.h:6
 msgid "Current line"
-msgstr ""
+msgstr "Nykyinen rivi"
 
 #: ../plugins/externaltools/tools/tools.ui.h:7
 msgid "Current word"
-msgstr ""
+msgstr "Nykyinen sana"
 
 #: ../plugins/externaltools/tools/tools.ui.h:8
 msgid "Display in bottom pane"
-msgstr ""
+msgstr "Näytä alapaneelissa"
 
 #: ../plugins/externaltools/tools/tools.ui.h:9
 msgid "Create new document"
-msgstr ""
+msgstr "Luo uusi asiakirja"
 
 #: ../plugins/externaltools/tools/tools.ui.h:10
 msgid "Append to current document"
-msgstr ""
+msgstr "Lisää nykyiseen asiakirjaan"
 
 #: ../plugins/externaltools/tools/tools.ui.h:11
 msgid "Replace current document"
-msgstr ""
+msgstr "Korvaa nykyinen asiakirja"
 
 #: ../plugins/externaltools/tools/tools.ui.h:12
 msgid "Replace current selection"
-msgstr ""
+msgstr "Korvaa nykyinen valinta"
 
 #: ../plugins/externaltools/tools/tools.ui.h:13
 msgid "Insert at cursor position"
-msgstr ""
+msgstr "Lisää kohdistimen kohdalle"
 
 #: ../plugins/externaltools/tools/tools.ui.h:14
 msgid "All documents except untitled ones"
@@ -2383,84 +2498,84 @@ msgstr "Kaikki asiakirjat lukuun ottamatta nimeämättömiä"
 
 #: ../plugins/externaltools/tools/tools.ui.h:15
 msgid "Local files only"
-msgstr ""
+msgstr "Vain paikalliset tiedostot"
 
 #: ../plugins/externaltools/tools/tools.ui.h:16
 msgid "Remote files only"
-msgstr ""
+msgstr "Vain etätiedostot"
 
 #: ../plugins/externaltools/tools/tools.ui.h:17
 msgid "Untitled documents only"
-msgstr ""
+msgstr "Vain nimeämättömät asiakirjat"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
-msgstr ""
+msgstr "Ulkoisten työkalujen hallinta"
 
 #: ../plugins/externaltools/tools/tools.ui.h:19
 msgid "_Tools:"
-msgstr ""
+msgstr "Työ_kalut:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
 #: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
-msgstr ""
+msgstr "_Muokkaa:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
-msgstr ""
+msgstr "_Kohteet:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Output:"
-msgstr ""
+msgstr "Tulosterivit:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "_Input:"
-msgstr ""
+msgstr "_Syöte:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:26
 msgid "_Save:"
-msgstr ""
+msgstr "_Tallenna_"
 
 #: ../plugins/externaltools/tools/tools.ui.h:27
 msgid "_Shortcut Key:"
-msgstr ""
+msgstr "_Pikanäppäin:"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
-msgstr ""
+msgstr "Käännös"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:2
 msgid "Run \"make\" in the document directory"
-msgstr ""
+msgstr "Suorita ”make” asiakirjahakemistossa"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:1
 msgid "Open terminal here"
-msgstr ""
+msgstr "Avaa pääte tähän"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:2
 msgid "Open a terminal in the document location"
-msgstr ""
+msgstr "Avaa pääte asiakirjan kansiossa"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:1
 msgid "Remove trailing spaces"
-msgstr ""
+msgstr "Poista ylimääräiset tyhjät"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:2
 msgid "Remove useless trailing spaces in your file"
-msgstr ""
+msgstr "Poista turhat tyhjät merkkijonot tiedostosta"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:1
 msgid "Run command"
-msgstr ""
+msgstr "Suorita komento"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:2
 msgid "Execute a custom command and put its output in a new document"
-msgstr ""
+msgstr "Suorita oma komento ja laita sen tuloste uuteen asiakirjaan"
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
-msgstr ""
+msgstr "Etsi"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
@@ -2484,7 +2599,11 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "Jos TOSI niin tiedostoselainliitännäinen näyttää ensin avatun asiakirjan hakemiston jos tiedostoselainta käytetään ensimmäistä kertaa. (Tämä siis käytännössä soveltuu tilanteisiin, joissa asiakirja on on avattu komentoriviltä tai Nautiluksesta jne.)"
+msgstr ""
+"Jos TOSI niin tiedostoselainliitännäinen näyttää ensin avatun asiakirjan "
+"hakemiston jos tiedostoselainta käytetään ensimmäistä kertaa. (Tämä siis "
+"käytännössä soveltuu tilanteisiin, joissa asiakirja on on avattu "
+"komentoriviltä tai Nautiluksesta jne.)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
@@ -2496,7 +2615,11 @@ msgid ""
 "values are: none (filter nothing), hidden (filter hidden files), binary "
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
-msgstr "Tämä avain määrittää, mitkä tiedostot suodatetaan tiedostoselaimessa. Kelvolliset arvot ovat: none (ei suodatusta), hidden (suodatetaan piilotiedostot), binary (suodatetaan binääritiedostot) sekä hidden_and_binary (suodatetaan piilo- ja binääritiedostot)"
+msgstr ""
+"Tämä avain määrittää, mitkä tiedostot suodatetaan tiedostoselaimessa. "
+"Kelvolliset arvot ovat: none (ei suodatusta), hidden (suodatetaan "
+"piilotiedostot), binary (suodatetaan binääritiedostot) sekä "
+"hidden_and_binary (suodatetaan piilo- ja binääritiedostot)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
@@ -2506,7 +2629,9 @@ msgstr "Tiedostoselaimen suodatinmalli"
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top"
 " of the filter_mode."
-msgstr "Tiedostoselaimen listan suodatuksessa käytetty suodatin. Tämä suodatin on käytössä avaimen filter_mode määrittelemällä tavalla."
+msgstr ""
+"Tiedostoselaimen listan suodatuksessa käytetty suodatin. Tämä suodatin on "
+"käytössä avaimen filter_mode määrittelemällä tavalla."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:7
 msgid "Open With Tree View"
@@ -2516,7 +2641,8 @@ msgstr "Avaa puunäkymä"
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
-msgstr "Avaa puunäkymä kirjanmerkkinäkymän sijasta, kun tiedostoselain ladataan"
+msgstr ""
+"Avaa puunäkymä kirjanmerkkinäkymän sijasta, kun tiedostoselain ladataan"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
@@ -2526,7 +2652,9 @@ msgstr "Tiedostoselaimen juurihakemisto"
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "Tiedostoselaimen juurikansiona käytettävä kansio, kun liitännäistä ladataan ja avain onload/tree_view on TOSI."
+msgstr ""
+"Tiedostoselaimen juurikansiona käytettävä kansio, kun liitännäistä ladataan "
+"ja avain onload/tree_view on TOSI."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
@@ -2537,7 +2665,10 @@ msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "Tiedostoselaimen virtuaalisena juurikansiona käytettävä kansio, kun liitännäistä ladataan ja avain onload/tree_view on TOSI. Virtuaalisen kansion täytyy aina olla todellisen juurikansion alikansio."
+msgstr ""
+"Tiedostoselaimen virtuaalisena juurikansiona käytettävä kansio, kun "
+"liitännäistä ladataan ja avain onload/tree_view on TOSI. Virtuaalisen "
+"kansion täytyy aina olla todellisen juurikansion alikansio."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2607,7 +2738,9 @@ msgstr "Tapahtui virhe"
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "Tiedostoa ei voi siirtää roskakoriin.\nHaluatko poistaa sen pysyvästi?"
+msgstr ""
+"Tiedostoa ei voi siirtää roskakoriin.\n"
+"Haluatko poistaa sen pysyvästi?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
@@ -2629,7 +2762,7 @@ msgstr "Haluatko varmasti poistaa valitut tiedostot pysyvästi?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
 msgid "If you delete an item, it is permanently lost."
-msgstr "Jos poistat kohteen, se menetetään pysyvästi."
+msgstr "Jos poistat kohdan, se hukataan pysyvästi."
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
@@ -2639,7 +2772,9 @@ msgstr "[Tyhjä]"
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "Uudelleennimetty tiedosto on tällä hetkellä suodatettu pois. Sinun täytyy muuttaa suodatinasetuksiasi, jos haluat nähdä sen."
+msgstr ""
+"Uudelleennimetty tiedosto on tällä hetkellä suodatettu pois. Sinun täytyy "
+"muuttaa suodatinasetuksiasi, jos haluat nähdä sen."
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -2651,7 +2786,9 @@ msgstr "tiedosto"
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "Uusi tiedosto on tällä hetkellä suodatettu pois. Sinun täytyy säätää suodatinasetuksiasi, jos haluat nähdä sen."
+msgstr ""
+"Uusi tiedosto on tällä hetkellä suodatettu pois. Sinun täytyy säätää "
+"suodatinasetuksiasi, jos haluat nähdä sen."
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -2663,7 +2800,9 @@ msgstr "kansio"
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
-msgstr "Uusi kansio on tällä hetkellä suodatettu pois. Sinun täytyy säätää suodatinasetuksiasi, jos haluat nähdä sen."
+msgstr ""
+"Uusi kansio on tällä hetkellä suodatettu pois. Sinun täytyy säätää "
+"suodatinasetuksiasi, jos haluat nähdä sen."
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
@@ -2719,7 +2858,7 @@ msgstr "Lisää uusi tyhjä tiedosto"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:834
 msgid "_Rename"
-msgstr "_Nimeä uudestaan"
+msgstr "_Nimeä uudelleen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:835
 msgid "Rename selected file or folder"
@@ -2731,7 +2870,7 @@ msgstr "_Edellinen sijainti"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Go to the previous visited location"
-msgstr "Siirry edelliseen aiemmin avattuun sijaintiin"
+msgstr "Siirry viimeksi käytyyn sijaintiin"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "_Next Location"
@@ -2739,7 +2878,7 @@ msgstr "_Seuraava sijainti"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
-msgstr "Siirry seuraavaan aiemmin avattuun sijaintiin"
+msgstr "Siirry seuraavana käytyyn sijaintiin"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
@@ -2829,38 +2968,38 @@ msgstr "Tuki emacsin, katen ja vimin tilariveille."
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:1
 #: ../plugins/pythonconsole/pythonconsole/__init__.py:55
 msgid "Python Console"
-msgstr ""
+msgstr "Python-konsoli"
 
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:2
 msgid "Interactive Python console standing in the bottom panel"
-msgstr ""
+msgstr "Interaktiivinen Python-konsoli alapaneelissa"
 
 #. ex:et:ts=4:
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
 msgid "C_ommand color:"
-msgstr ""
+msgstr "_Komennon väri:"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "_Error color:"
-msgstr ""
+msgstr "_Virheen väri:"
 
 #. ex:ts=8:et:
 #: ../plugins/quickopen/quickopen/popup.py:31
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
-msgstr ""
+msgstr "Pika-avaus"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:65
 msgid "Quick open"
-msgstr ""
+msgstr "Pika-avaus"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:66
 msgid "Quickly open documents"
-msgstr ""
+msgstr "Avaa asiakirjoja nopeasti"
 
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
-msgstr ""
+msgstr "Avaa tiedostoja nopeasti"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
@@ -2868,87 +3007,87 @@ msgstr ""
 #: ../plugins/snippets/snippets/Document.py:193
 #: ../plugins/snippets/snippets/Document.py:614
 msgid "Snippets"
-msgstr ""
+msgstr "Tekstileikkeet"
 
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:2
 msgid "Insert often-used pieces of text in a fast way"
-msgstr ""
+msgstr "Lisää usein käytettyjä tekstikatkelmia nopealla tavalla"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:1
 msgid "Snippets Manager"
-msgstr ""
+msgstr "Tekstikatkelmien hallinta"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:2
 msgid "_Snippets:"
-msgstr ""
+msgstr "_Tekstikatkelmat:"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:3
 msgid "Create new snippet"
-msgstr ""
+msgstr "Luo uusi tekstikatkelma"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
 #: ../plugins/snippets/snippets/Manager.py:792
 msgid "Import snippets"
-msgstr ""
+msgstr "Tuo tekstikatkelmia"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:5
 msgid "Export selected snippets"
-msgstr ""
+msgstr "Vie valitut tekstikatkelmat"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
 #: ../plugins/snippets/snippets/Manager.py:403
 msgid "Delete selected snippet"
-msgstr ""
+msgstr "Poista valittu tekstikatkelma"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:8
 msgid "Activation"
-msgstr ""
+msgstr "Aktivointi"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:10
 msgid "_Tab trigger:"
-msgstr ""
+msgstr "_Tab-liipaisu:"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: ../plugins/snippets/snippets/snippets.ui.h:11
 #: ../plugins/snippets/snippets/Manager.py:681
 msgid "Single word the snippet is activated with after pressing Tab"
-msgstr ""
+msgstr "Yksi sana, joka aktivoi katkelman Tab-näppäimen painamisen jälkeen"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:12
 msgid "Shortcut key with which the snippet is activated"
-msgstr ""
+msgstr "Pikanäppäin, jolla tekstikatkelma aktivoidaan"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "S_hortcut key:"
-msgstr ""
+msgstr "P_ikanäppäin:"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:14
 msgid "_Drop targets:"
-msgstr ""
+msgstr "_Pudotuskohteet:"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
-msgstr ""
+msgstr "Hallitse _tekstileikkeitä…"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage snippets"
-msgstr ""
+msgstr "Hallitse tekstileikkeitä"
 
 #: ../plugins/snippets/snippets/Manager.py:41
 msgid "Snippets archive"
-msgstr ""
+msgstr "Tekstikatkelmaarkisto"
 
 #: ../plugins/snippets/snippets/Manager.py:66
 msgid "Add a new snippet..."
-msgstr ""
+msgstr "Lisää uusi tekstikatkelma…"
 
 #: ../plugins/snippets/snippets/Manager.py:117
 msgid "Global"
-msgstr ""
+msgstr "Kaikkialla"
 
 #: ../plugins/snippets/snippets/Manager.py:400
 msgid "Revert selected snippet"
-msgstr ""
+msgstr "Peru valittu tekstikatkelma"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
 #: ../plugins/snippets/snippets/Manager.py:674
@@ -2956,123 +3095,125 @@ msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
 msgstr ""
+"Tämä ei ole kelvollinen Tab-laukaisin. Laukaisimet voivat sisältää vain "
+"kirjaimia tai yksittäisiä (ei-aakkosnumerrisia) merkkejä kuten: {, [, jne."
 
 #: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
 msgid "The following error occurred while importing: %s"
-msgstr ""
+msgstr "Seuraava virhe tapahtui tuotaessa tekstileikkeitä: %s"
 
 #: ../plugins/snippets/snippets/Manager.py:778
 msgid "Import successfully completed"
-msgstr ""
+msgstr "Tuonti valmistui onnistuneesti"
 
 #: ../plugins/snippets/snippets/Manager.py:797
 #: ../plugins/snippets/snippets/Manager.py:883
 #: ../plugins/snippets/snippets/Manager.py:946
 msgid "All supported archives"
-msgstr ""
+msgstr "Kaikki tuetut arkistot"
 
 #: ../plugins/snippets/snippets/Manager.py:798
 #: ../plugins/snippets/snippets/Manager.py:884
 #: ../plugins/snippets/snippets/Manager.py:947
 msgid "Gzip compressed archive"
-msgstr ""
+msgstr "Gzip-pakattu arkisto"
 
 #: ../plugins/snippets/snippets/Manager.py:799
 #: ../plugins/snippets/snippets/Manager.py:885
 #: ../plugins/snippets/snippets/Manager.py:948
 msgid "Bzip2 compressed archive"
-msgstr ""
+msgstr "Bzip2-pakattu arkisto"
 
 #: ../plugins/snippets/snippets/Manager.py:800
 msgid "Single snippets file"
-msgstr ""
+msgstr "Yksi tekstikatkelmatiedosto"
 
 #: ../plugins/snippets/snippets/Manager.py:801
 #: ../plugins/snippets/snippets/Manager.py:887
 #: ../plugins/snippets/snippets/Manager.py:950
 msgid "All files"
-msgstr ""
+msgstr "Kaikki tiedostot"
 
 #: ../plugins/snippets/snippets/Manager.py:813
 #, python-format
 msgid "The following error occurred while exporting: %s"
-msgstr ""
+msgstr "Seuraava virhe tapahtui vietäessä tekstileikkeitä: %s"
 
 #: ../plugins/snippets/snippets/Manager.py:817
 msgid "Export successfully completed"
-msgstr ""
+msgstr "Vienti valmistui onnistuneesti"
 
 #. Ask if system snippets should also be exported
 #: ../plugins/snippets/snippets/Manager.py:857
 #: ../plugins/snippets/snippets/Manager.py:924
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
-msgstr ""
+msgstr "Haluatko viedä myös valitut <b>järjestelmän</b> tekstileikkeet?"
 
 #: ../plugins/snippets/snippets/Manager.py:872
 #: ../plugins/snippets/snippets/Manager.py:942
 msgid "There are no snippets selected to be exported"
-msgstr ""
+msgstr "Tekstileikkeitä ei ole valittu vietäväksi"
 
 #: ../plugins/snippets/snippets/Manager.py:877
 #: ../plugins/snippets/snippets/Manager.py:915
 msgid "Export snippets"
-msgstr ""
+msgstr "Vie tekstileikkeitä"
 
 #: ../plugins/snippets/snippets/Manager.py:1055
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr ""
+msgstr "Syötä uusi pikanäppäin tai tyhjennä arvo Backspacella"
 
 #: ../plugins/snippets/snippets/Manager.py:1057
 msgid "Type a new shortcut"
-msgstr ""
+msgstr "Syötä uusi pikanäppäin"
 
 #: ../plugins/snippets/snippets/Exporter.py:65
 #, python-format
 msgid "The archive \"%s\" could not be created"
-msgstr ""
+msgstr "Arkistoa ”%s” ei voitu luoda"
 
 #: ../plugins/snippets/snippets/Exporter.py:82
 #, python-format
 msgid "Target directory \"%s\" does not exist"
-msgstr ""
+msgstr "Kohdehakemistoa ”%s” ei ole olemassa"
 
 #: ../plugins/snippets/snippets/Exporter.py:85
 #, python-format
 msgid "Target directory \"%s\" is not a valid directory"
-msgstr ""
+msgstr "Kohdehakemisto ”%s” ei ole kelvollinen hakemisto"
 
 #: ../plugins/snippets/snippets/Importer.py:29
 #: ../plugins/snippets/snippets/Importer.py:83
 #, python-format
 msgid "File \"%s\" does not exist"
-msgstr ""
+msgstr "Tiedostoa ”%s” ei ole olemassa"
 
 #: ../plugins/snippets/snippets/Importer.py:32
 #, python-format
 msgid "File \"%s\" is not a valid snippets file"
-msgstr ""
+msgstr "Tiedosto ”%s” ei ole kelvollinen katkelmatiedosto"
 
 #: ../plugins/snippets/snippets/Importer.py:42
 #, python-format
 msgid "Imported file \"%s\" is not a valid snippets file"
-msgstr ""
+msgstr "Tuotu tiedosto ”%s” ei ole kelvollinen katkelmatiedosto"
 
 #: ../plugins/snippets/snippets/Importer.py:52
 #, python-format
 msgid "The archive \"%s\" could not be extracted"
-msgstr ""
+msgstr "Arkistoa ”%s” ei voitu purkaa"
 
 #: ../plugins/snippets/snippets/Importer.py:70
 #, python-format
 msgid "The following files could not be imported: %s"
-msgstr ""
+msgstr "Seuraavia tiedostoja ei voitu tuoda: %s"
 
 #: ../plugins/snippets/snippets/Importer.py:86
 #: ../plugins/snippets/snippets/Importer.py:99
 #, python-format
 msgid "File \"%s\" is not a valid snippets archive"
-msgstr ""
+msgstr "Tiedosto ”%s” ei ole kelvollinen katkelma-arkisto"
 
 #: ../plugins/snippets/snippets/Placeholder.py:593
 #, python-format
@@ -3080,11 +3221,13 @@ msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
 "aborted."
 msgstr ""
+"Python-komennon (%s) suoritus ylitti suurimman sallitun ajan, joten suoritus"
+" keskeytettiin."
 
 #: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
 msgid "Execution of the Python command (%s) failed: %s"
-msgstr ""
+msgstr "Python-komennon (%s) suoritus epäonnistui: %s"
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
 msgid "S_ort..."
@@ -3145,16 +3288,16 @@ msgid "_More..."
 msgstr "_Lisää…"
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "_Ohita kaikki"
 
 #. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
 msgid "_Add"
 msgstr "_Lisää"
 
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "_Kirjoitusehdotuksia…"
 
@@ -3334,7 +3477,7 @@ msgstr "Tarkista aktiivisen asiakirjan oikeinkirjoitus."
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:724
 msgid "Tags"
-msgstr "Merkinnät"
+msgstr "Tageja"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
 msgid "Select the group of tags you want to use"
@@ -3548,7 +3691,7 @@ msgstr "Suunta (vanhentunut)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:61
 msgid "Disabled"
-msgstr "Pois käytöstä"
+msgstr "Ei käytössä"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:62
 msgid "DIV container"
@@ -3780,7 +3923,7 @@ msgstr "Java-sovelma (vanhentunut)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:121
 msgid "Label"
-msgstr "Otsikko"
+msgstr "Nimi"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:122
 msgid "Language code"
@@ -4100,7 +4243,7 @@ msgstr "Solujen välinen tila"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:210
 msgid "Span"
-msgstr "Väli"
+msgstr "Peitetty"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:211
 msgid "Standby load message"
@@ -4131,11 +4274,11 @@ msgstr "Tyylin tiedot"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:220
 msgid "Subscript"
-msgstr "Alaviite"
+msgstr "Alaindeksi"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:221
 msgid "Superscript"
-msgstr "Yläviite"
+msgstr "Yläindeksi"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:222
 msgid "Table body"
@@ -4290,11 +4433,11 @@ msgstr "Reunuksen väri"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:262
 msgid "Border"
-msgstr "Reunus"
+msgstr "Reuna"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:263
 msgid "Center"
-msgstr "Keskitä"
+msgstr "Keskitetty"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:264
 msgid "Checked (state)"
@@ -4462,7 +4605,7 @@ msgstr "Pehmeä rivinvaihto"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:305
 msgid "Sound"
-msgstr "Ääni"
+msgstr "Äänet"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:306
 msgid "Spacer"
@@ -4820,7 +4963,9 @@ msgstr "Merkintälista"
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
-msgstr "Tarjoaa tavan lisätä helposti usein käytettyjä tageja/tekstejä asiakirjaan kirjoittamatta niitä."
+msgstr ""
+"Tarjoaa tavan lisätä helposti usein käytettyjä tageja/tekstejä asiakirjaan "
+"kirjoittamatta niitä."
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:1
 msgid "XSLT - Elements"
@@ -4936,7 +5081,7 @@ msgstr "Lisää päiväys ja aika"
 
 #: ../plugins/time/pluma-time-dialog.ui.h:2
 msgid "_Insert"
-msgstr "L_isää"
+msgstr "_Lisää"
 
 #: ../plugins/time/pluma-time-dialog.ui.h:3
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:5

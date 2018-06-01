@@ -1,30 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Andy Andy <nd76er@gmail.com>, 2017
-# Lucas Lommer <drom@kdyne.net>, 2015,2017
-# Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2013
-# LiberteCzech <liberte.czech@gmail.com>, 2015
-# LiberteCzech <liberte.czech@gmail.com>, 2015
-# Michal Procházka <mich.procha@seznam.cz>, 2013
-# Michal <sinope@seznam.cz>, 2013
-# Stanislav Kučera <inactive+kacernator@transifex.com>, 2015
-# Stanislav Kučera <inactive+kacernator@transifex.com>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-12-03 08:38+0000\n"
-"Last-Translator: Lucas Lommer <drom@kdyne.net>\n"
-"Language-Team: Czech (http://www.transifex.com/mate/MATE/language/cs/)\n"
+"POT-Creation-Date: 2018-03-18 17:20+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Roman Horník <roman.hornik@debian-linux.cz>, 2018\n"
+"Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:1
 msgid "Use Default Font"
@@ -36,7 +28,10 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "Má-li být pro upravovaný text použito výchozí písmo systému místo písma specifického pro aplikaci GEdit. Je-li tato volba vypnuta, bude místo systémového písma použito písmo z volby „Písmo editoru“."
+msgstr ""
+"Má-li být pro upravovaný text použito výchozí písmo systému místo písma "
+"specifického pro aplikaci GEdit. Je-li tato volba vypnuta, bude místo "
+"systémového písma použito písmo z volby „Písmo editoru“."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -51,7 +46,10 @@ msgstr "Písmo editoru"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "Uživatelské písmo, které bude použito pro editační oblast. Toto nastavení bude mít vliv pouze v případě, že je vypnuta volba „Používat standardní písmo“."
+msgstr ""
+"Uživatelské písmo, které bude použito pro editační oblast. Toto nastavení "
+"bude mít vliv pouze v případě, že je vypnuta volba „Používat standardní "
+"písmo“."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Style Scheme"
@@ -69,7 +67,9 @@ msgstr "Vytvářet záložní kopie"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "Jestli má pluma vytvářet záložní kopie souborů při jejich uložení. Ve volbě „Přípona záložní kopie“ můžete nastavit příponu těchto záložních souborů."
+msgstr ""
+"Jestli má pluma vytvářet záložní kopie souborů při jejich uložení. Ve volbě "
+"„Přípona záložní kopie“ můžete nastavit příponu těchto záložních souborů."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -80,7 +80,10 @@ msgid ""
 "Whether pluma should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
-msgstr "Zda má pluma automaticky ukládat změněné soubory po stanoveném časovém intervalu. Časový interval lze nastavit volbou „Interval pro automatické ukládání“."
+msgstr ""
+"Zda má pluma automaticky ukládat změněné soubory po stanoveném časovém "
+"intervalu. Časový interval lze nastavit volbou „Interval pro automatické "
+"ukládání“."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:12
 msgid "Autosave Interval"
@@ -90,7 +93,10 @@ msgstr "Interval pro automatické ukládání"
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
-msgstr "Čas v minutách, po kterém pluma automaticky uloží změněné soubory. Toto nastavení bude mít vliv pouze v případě, že je zapnuta volba „Automatické ukládání“."
+msgstr ""
+"Čas v minutách, po kterém pluma automaticky uloží změněné soubory. Toto "
+"nastavení bude mít vliv pouze v případě, že je zapnuta volba „Automatické "
+"ukládání“."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Show save confirmation"
@@ -108,7 +114,9 @@ msgstr "Zapisovatelná schémata VFS"
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
-msgstr "Seznam schémat VFS, která pluma podporuje v režimu zápisu. Do schématu „file“ lze zapisovat standardně."
+msgstr ""
+"Seznam schémat VFS, která pluma podporuje v režimu zápisu. Do schématu "
+"„file“ lze zapisovat standardně."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
@@ -118,7 +126,9 @@ msgstr "Max. počet akcí, které lze vrátit zpět"
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "Maximální počet akcí, které bude pluma moci vzít zpět nebo provést znovu. Použijte „-1“, chcete-li neomezený počet akcí."
+msgstr ""
+"Maximální počet akcí, které bude pluma moci vzít zpět nebo provést znovu. "
+"Použijte „-1“, chcete-li neomezený počet akcí."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
@@ -131,7 +141,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Udává, jak zalamovat řádky v editační oblasti. Hodnota „GTK_WRAP_NONE“ řádky zalamovat nebude, hodnota „GTK_WRAP_WORD“ bude zalamovat řádky na hranicích slov, a hodnota „GTK_WRAP_CHAR“ bude zalamovat na hranicích znaků. Tyto hodnoty jsou citlivé na malá a velká písmena, takže dejte pozor, aby odpovídaly přesně hodnotám, které jsou zde popsány."
+msgstr ""
+"Udává, jak zalamovat řádky v editační oblasti. Hodnota „GTK_WRAP_NONE“ řádky"
+" zalamovat nebude, hodnota „GTK_WRAP_WORD“ bude zalamovat řádky na hranicích"
+" slov, a hodnota „GTK_WRAP_CHAR“ bude zalamovat na hranicích znaků. Tyto "
+"hodnoty jsou citlivé na malá a velká písmena, takže dejte pozor, aby "
+"odpovídaly přesně hodnotám, které jsou zde popsány."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
@@ -141,7 +156,8 @@ msgstr "Velikost tabelátoru"
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
-msgstr "Udává počet mezerníků, které by se měly zobrazovat místo znaků tabelátoru."
+msgstr ""
+"Udává počet mezerníků, které by se měly zobrazovat místo znaků tabelátoru."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Insert spaces"
@@ -212,7 +228,14 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "Udává, jak se kurzor bude pohybovat, když jsou stisknuty klávesy Domů a Konec. Použijte „Zakázáno“, pokud se chcete vždy přesunout na začátek/konec řádku, „Po“, pokud se chcete při prvním tisknutí přesunout na začátek/konec řádku a po druhém stisknutí přesunout na začátek/konec textu ignorujíce mezery, „Před“, pokud se chcete přesunout na začátek/konec textu před přesunutím na začátek/konec řádku a „Vždy“, pokud se chcete vždy přesunout na začátek/konec textu místo na začátek/konec řádku."
+msgstr ""
+"Udává, jak se kurzor bude pohybovat, když jsou stisknuty klávesy Domů a "
+"Konec. Použijte „Zakázáno“, pokud se chcete vždy přesunout na začátek/konec "
+"řádku, „Po“, pokud se chcete při prvním tisknutí přesunout na začátek/konec "
+"řádku a po druhém stisknutí přesunout na začátek/konec textu ignorujíce "
+"mezery, „Před“, pokud se chcete přesunout na začátek/konec textu před "
+"přesunutím na začátek/konec řádku a „Vždy“, pokud se chcete vždy přesunout "
+"na začátek/konec textu místo na začátek/konec řádku."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
@@ -222,7 +245,9 @@ msgstr "Obnovit předchozí umístění kurzoru"
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
-msgstr "Má-li pluma po otevření souboru zobrazit kurzor v stejném místě jako před uzavřením souboru."
+msgstr ""
+"Má-li pluma po otevření souboru zobrazit kurzor v stejném místě jako před "
+"uzavřením souboru."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Search Highlighting"
@@ -243,7 +268,7 @@ msgstr "Jestli má pluma povolit zvýrazňování syntaxe."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:46
 msgid "Toolbar is Visible"
-msgstr "Panel nástrojů je viditelný"
+msgstr "Lišta nástrojů je zobrazena"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:47
 msgid "Whether the toolbar should be visible in editing windows."
@@ -261,11 +286,18 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "Styl pro tlačítka lišty nástrojů. Možné hodnoty jsou „PLUMA_TOOLBAR_SYSTEM“, která bude používat standardní styl nastavený v systému, „PLUMA_TOOLBAR_ICONS“, která bude zobrazovat pouze ikony, „PLUMA_TOOLBAR_ICONS_AND_TEXT“, která bude zobrazovat ikony i text, a „PLUMA_TOOLBAR_ICONS_BOTH_HORIZ“, která bude zobrazovat prioritní text vedle ikon. Tyto hodnoty jsou citlivé na malá a velká písmena, takže dejte pozor, aby odpovídaly přesně hodnotám, které jsou zde popsány."
+msgstr ""
+"Styl pro tlačítka lišty nástrojů. Možné hodnoty jsou „PLUMA_TOOLBAR_SYSTEM“,"
+" která bude používat standardní styl nastavený v systému, "
+"„PLUMA_TOOLBAR_ICONS“, která bude zobrazovat pouze ikony, "
+"„PLUMA_TOOLBAR_ICONS_AND_TEXT“, která bude zobrazovat ikony i text, a "
+"„PLUMA_TOOLBAR_ICONS_BOTH_HORIZ“, která bude zobrazovat prioritní text vedle"
+" ikon. Tyto hodnoty jsou citlivé na malá a velká písmena, takže dejte pozor,"
+" aby odpovídaly přesně hodnotám, které jsou zde popsány."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
-msgstr "Stavový panel je viditelný"
+msgstr "Stavový řádek je zobrazen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
@@ -288,7 +320,9 @@ msgstr "Zobrazit karty spolu s bočním panelem"
 #: ../data/org.mate.pluma.gschema.xml.in.h:55
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
-msgstr "Pokud je nastaveno na nepravda (false) pluma nebude zobrazovat lištu s kartami, pokud je boční panel aktivní."
+msgstr ""
+"Pokud je nastaveno na nepravda (false) pluma nebude zobrazovat lištu s "
+"kartami, pokud je boční panel aktivní."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:56
 msgid "Bottom Panel is Visible"
@@ -307,7 +341,9 @@ msgstr "Maximální počet nedávno otevřených souborů"
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
-msgstr "Udává maximální počet nedávno otevřených souborů, které se budou zobrazovat v podnabídce „Otevřít nedávný“."
+msgstr ""
+"Udává maximální počet nedávno otevřených souborů, které se budou zobrazovat "
+"v podnabídce „Otevřít nedávný“."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
@@ -338,7 +374,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "Udává, jak při tisku zalamovat řádky. Hodnota „GTK_WRAP_NONE“ řádky zalamovat nebude, hodnota „GTK_WRAP_WORD“ bude zalamovat řádky na hranicích slov, a hodnota „GTK_WRAP_CHAR“ bude zalamovat na hranicích znaků. Tyto hodnoty jsou citlivé na malá a velká písmena, takže dejte pozor, aby odpovídaly přesně hodnotám, které jsou zde popsány."
+msgstr ""
+"Udává, jak při tisku zalamovat řádky. Hodnota „GTK_WRAP_NONE“ řádky "
+"zalamovat nebude, hodnota „GTK_WRAP_WORD“ bude zalamovat řádky na hranicích "
+"slov, a hodnota „GTK_WRAP_CHAR“ bude zalamovat na hranicích znaků. Tyto "
+"hodnoty jsou citlivé na malá a velká písmena, takže dejte pozor, aby "
+"odpovídaly přesně hodnotám, které jsou zde popsány."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
@@ -349,7 +390,9 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "Je-li hodnota nastavena na 0, nebudou tištěna žádná čísla řádků. Jinak bude vytištěno číslo řádku vždy po tomto počtu řádků."
+msgstr ""
+"Je-li hodnota nastavena na 0, nebudou tištěna žádná čísla řádků. Jinak bude "
+"vytištěno číslo řádku vždy po tomto počtu řádků."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
@@ -378,7 +421,10 @@ msgstr "Písmo záhlaví pro tisk"
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
-msgstr "Udává písmo, které bude použito pro záhlaví dokumentu při tisku. Toto nastavení bude mít vliv pouze v případě, že je zapnuta hodnota „Tisknout záhlaví“."
+msgstr ""
+"Udává písmo, které bude použito pro záhlaví dokumentu při tisku. Toto "
+"nastavení bude mít vliv pouze v případě, že je zapnuta hodnota „Tisknout "
+"záhlaví“."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
@@ -393,7 +439,10 @@ msgstr "Písmo číslování řádků pro tisk"
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
-msgstr "Udává písmo, které bude použito pro čísla řádků při tisku. Toto nastavení bude mít vliv pouze v případě, že hodnota „Tisknout čísla řádků“ je nenulová."
+msgstr ""
+"Udává písmo, které bude použito pro čísla řádků při tisku. Toto nastavení "
+"bude mít vliv pouze v případě, že hodnota „Tisknout čísla řádků“ je "
+"nenulová."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
@@ -409,7 +458,10 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "Seřazený seznam kódování používaný aplikací pluma k automatickému zjištění kódování souboru. „CURRENT“ znamená současné kódování podle národního prostředí. Používají se jen rozpoznaná kódování."
+msgstr ""
+"Seřazený seznam kódování používaný aplikací pluma k automatickému zjištění "
+"kódování souboru. „CURRENT“ znamená současné kódování podle národního "
+"prostředí. Používají se jen rozpoznaná kódování."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
@@ -424,7 +476,9 @@ msgstr "Kódování zobrazovaná v nabídce"
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
-msgstr "Seznam kódování zobrazených v nabídce Kódování znaků v dialogovém okně výběru otvíraných/ukládaných souborů. Používají se jen rozpoznaná kódování."
+msgstr ""
+"Seznam kódování zobrazených v nabídce Kódování znaků v dialogovém okně "
+"výběru otvíraných/ukládaných souborů. Používají se jen rozpoznaná kódování."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid "History for \"search for\" entries"
@@ -450,7 +504,9 @@ msgstr "Aktivní zásuvné moduly"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "Seznam aktivních zásuvných modulů. Obsahuje „Umístění“ aktivních modulů. Pro získání „Umístění“ daného modulu viz soubor .pluma-plugin."
+msgstr ""
+"Seznam aktivních zásuvných modulů. Obsahuje „Umístění“ aktivních modulů. Pro"
+" získání „Umístění“ daného modulu viz soubor .pluma-plugin."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -466,7 +522,15 @@ msgid ""
 "plugin system, which currently includes support for spell checking, "
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
-msgstr "<p> Pluma je malý ale mocný textový editor zvláště navržený pro pracovní prostředí MATE. Má většinu běžných funkcí textových editorů a plně podporuje národní kódování prostřednictvím Unicode. Pokročilé funkce zahrnují zvýrazňování syntaxe a automatické odsazování zdrojového kódu, tisk a úpravu několika dokumentů v jednom okně. </p> <p> Editor Pluma je rozšiřitelný skrze systém zásuvných modulů. Ty v současné době zahrnují podporu kontroly pravopisu, porovnávání souborů, prohlížení souborů změn v CVS a úpravu úrovně odsazení. </p>"
+msgstr ""
+"<p> Pluma je malý ale mocný textový editor zvláště navržený pro pracovní "
+"prostředí MATE. Má většinu běžných funkcí textových editorů a plně podporuje"
+" národní kódování prostřednictvím Unicode. Pokročilé funkce zahrnují "
+"zvýrazňování syntaxe a automatické odsazování zdrojového kódu, tisk a úpravu"
+" několika dokumentů v jednom okně. </p> <p> Editor Pluma je rozšiřitelný "
+"skrze systém zásuvných modulů. Ty v současné době zahrnují podporu kontroly "
+"pravopisu, porovnávání souborů, prohlížení souborů změn v CVS a úpravu "
+"úrovně odsazení. </p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
@@ -508,14 +572,25 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Pokud je neuložíte, budou změny provedené za poslední %ld sekundu navždy ztraceny."
-msgstr[1] "Pokud je neuložíte, budou změny provedené za poslední %ld sekundy navždy ztraceny."
-msgstr[2] "Pokud je neuložíte, budou změny provedené za posledních %ld sekund navždy ztraceny."
+msgstr[0] ""
+"Pokud je neuložíte, budou změny provedené za poslední %ld sekundu navždy "
+"ztraceny."
+msgstr[1] ""
+"Pokud je neuložíte, budou změny provedené za poslední %ld sekundy navždy "
+"ztraceny."
+msgstr[2] ""
+"Pokud je neuložíte, budou změny provedené za posledních %ld sekund navždy "
+"ztraceny."
+msgstr[3] ""
+"Pokud je neuložíte, budou změny provedené za posledních %ld sekund navždy "
+"ztraceny."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
-msgstr "Pokud je neuložíte, budou změny provedené za poslední minutu navždy ztraceny."
+msgstr ""
+"Pokud je neuložíte, budou změny provedené za poslední minutu navždy "
+"ztraceny."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
 #, c-format
@@ -525,9 +600,18 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekundu navždy ztraceny."
-msgstr[1] "Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekundy navždy ztraceny."
-msgstr[2] "Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekund navždy ztraceny."
+msgstr[0] ""
+"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekundu "
+"navždy ztraceny."
+msgstr[1] ""
+"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekundy "
+"navždy ztraceny."
+msgstr[2] ""
+"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekund "
+"navždy ztraceny."
+msgstr[3] ""
+"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekund "
+"navždy ztraceny."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
 #, c-format
@@ -537,14 +621,25 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Pokud je neuložíte, budou změny provedené za poslední %ld minutu navždy ztraceny."
-msgstr[1] "Pokud je neuložíte, budou změny provedené za poslední %ld minuty navždy ztraceny."
-msgstr[2] "Pokud je neuložíte, budou změny provedené za posledních %ld minut navždy ztraceny."
+msgstr[0] ""
+"Pokud je neuložíte, budou změny provedené za poslední %ld minutu navždy "
+"ztraceny."
+msgstr[1] ""
+"Pokud je neuložíte, budou změny provedené za poslední %ld minuty navždy "
+"ztraceny."
+msgstr[2] ""
+"Pokud je neuložíte, budou změny provedené za posledních %ld minut navždy "
+"ztraceny."
+msgstr[3] ""
+"Pokud je neuložíte, budou změny provedené za posledních %ld minut navždy "
+"ztraceny."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
-msgstr "Pokud je neuložíte, budou změny provedené za poslední hodinu navždy ztraceny."
+msgstr ""
+"Pokud je neuložíte, budou změny provedené za poslední hodinu navždy "
+"ztraceny."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
 #, c-format
@@ -554,9 +649,18 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minutu navždy ztraceny."
-msgstr[1] "Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minuty navždy ztraceny."
-msgstr[2] "Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minut navždy ztraceny."
+msgstr[0] ""
+"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minutu "
+"navždy ztraceny."
+msgstr[1] ""
+"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minuty "
+"navždy ztraceny."
+msgstr[2] ""
+"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minut "
+"navždy ztraceny."
+msgstr[3] ""
+"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minut "
+"navždy ztraceny."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
 #, c-format
@@ -564,34 +668,44 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "Pokud je neuložíte, budou změny provedené za poslední %d hodinu navždy ztraceny."
-msgstr[1] "Pokud je neuložíte, budou změny provedené za poslední %d hodiny navždy ztraceny."
-msgstr[2] "Pokud je neuložíte, budou změny provedené za posledních %d hodin navždy ztraceny."
+msgstr[0] ""
+"Pokud je neuložíte, budou změny provedené za poslední %d hodinu navždy "
+"ztraceny."
+msgstr[1] ""
+"Pokud je neuložíte, budou změny provedené za poslední %d hodiny navždy "
+"ztraceny."
+msgstr[2] ""
+"Pokud je neuložíte, budou změny provedené za posledních %d hodin navždy "
+"ztraceny."
+msgstr[3] ""
+"Pokud je neuložíte, budou změny provedené za posledních %d hodin navždy "
+"ztraceny."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:518
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "Změny v dokumentu „%s“ budou navždy ztraceny."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:523
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Uložit před zavřením změny v dokumentu „%s“?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:537
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:756
 msgid "Saving has been disabled by the system administrator."
 msgstr "Ukládání bylo administrátorem systému zakázáno."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:708
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "Změny v %d dokumentu budou navždy ztraceny."
-msgstr[1] "Změny ve %d dokumentech budou navždy ztraceny."
-msgstr[2] "Změny v %d dokumentech budou navždy ztraceny."
+msgstr[0] "Změny %d dokumentu budou trvale ztraceny."
+msgstr[1] "Změny %d dokumentů budou trvale ztraceny."
+msgstr[2] "Změny %d dokumentů budou trvale ztraceny."
+msgstr[3] "Změny %d dokumentů budou trvale ztraceny."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:714
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -600,16 +714,17 @@ msgid_plural ""
 msgstr[0] "V %d dokumentu jsou neuložené změny. Uložit změny před zavřením?"
 msgstr[1] "V %d dokumentech jsou neuložené změny. Uložit změny před zavřením?"
 msgstr[2] "V %d dokumentech jsou neuložené změny. Uložit změny před zavřením?"
+msgstr[3] "V %d dokumentech jsou neuložené změny. Uložit změny před zavřením?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:732
 msgid "Docum_ents with unsaved changes:"
 msgstr "Dokum_enty s neuloženými změnami:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:734
 msgid "S_elect the documents you want to save:"
 msgstr "_Vyberte dokumenty, které chcete uložit:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:758
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "Pokud je neuložíte, budou všechny vaše změny navždy ztraceny."
 
@@ -637,11 +752,13 @@ msgstr "_Dostupná kódování:"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
 msgid "E_ncodings shown in menu:"
-msgstr "Kódová_ní zobrazovaná v nabídce:"
+msgstr "Kódování zobrazovaná v _nabídce:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
-msgstr "Chcete-li vybrat písmo, které bude editor používat, klikněte na toto tlačítko"
+msgstr ""
+"Chcete-li vybrat písmo, které bude editor používat, klikněte na toto "
+"tlačítko"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:582
 #, c-format
@@ -694,7 +811,7 @@ msgstr "Zalamování textu"
 #: ../plugins/time/pluma-time-dialog.ui.h:4
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:3
 msgid "    "
-msgstr "    "
+msgstr " "
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
 #: ../pluma/pluma-print-preferences.ui.h:10
@@ -711,7 +828,7 @@ msgstr "Nerozdělovat _slova na dva řádky"
 msgid "Line Numbers"
 msgstr "Čísla řádků"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "Zobrazovat čísla řá_dků"
 
@@ -805,7 +922,7 @@ msgstr "Barevné schéma"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "_Add..."
-msgstr "Přid_at…"
+msgstr "Přid_at..."
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Font & Colors"
@@ -816,11 +933,11 @@ msgid "Plugins"
 msgstr "Zásuvné moduly"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1497
 msgid "Replace"
 msgstr "Nahradit"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1495
 msgid "Find"
 msgstr "Hledat"
 
@@ -831,7 +948,7 @@ msgstr "Nahradit _vše"
 #: ../pluma/dialogs/pluma-search-dialog.c:421
 #: ../pluma/pluma-commands-file.c:587
 msgid "_Replace"
-msgstr "Nah_radit"
+msgstr "_Nahradit"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2
 msgid "Replace All"
@@ -839,7 +956,7 @@ msgstr "Nahradit vše"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "_Search for: "
-msgstr "_Hledat: "
+msgstr "_Vyhledat: "
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "Replace _with: "
@@ -877,7 +994,9 @@ msgstr "Zobrazit verzi aplikace"
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
-msgstr "Nastavit kódování znaků, které bude používáno pro otevírání souborů vypsaných na příkazovém řádku"
+msgstr ""
+"Nastavit kódování znaků, které bude používáno pro otevírání souborů "
+"vypsaných na příkazovém řádku"
 
 #: ../pluma/pluma.c:111
 msgid "ENCODING"
@@ -889,7 +1008,8 @@ msgstr "Zobrazit seznam možných hodnot pro volbu kódování"
 
 #: ../pluma/pluma.c:117
 msgid "Create a new top-level window in an existing instance of pluma"
-msgstr "Vytvořit nové okno nejvyšší úrovně v existující instanci aplikace pluma"
+msgstr ""
+"Vytvořit nové okno nejvyšší úrovně v existující instanci aplikace pluma"
 
 #: ../pluma/pluma.c:120
 msgid "Create a new document in an existing instance of pluma"
@@ -914,7 +1034,9 @@ msgstr "- Úprava textových souborů"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\nPokud chcete vidět celý seznam dostupných možností příkazového řádku, spusťte „%s --help“.\n"
+msgstr ""
+"%s\n"
+"Úplný seznam voleb příkazového řádku zobrazíte spuštěním \"%s --help\".\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -928,6 +1050,7 @@ msgid_plural "Loading %d files…"
 msgstr[0] "Načítání %d souboru…"
 msgstr[1] "Načítání %d souborů…"
 msgstr[2] "Načítání %d souborů…"
+msgstr[3] "Načítání %d souborů…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
@@ -970,9 +1093,14 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "Změny provedené v dokumentu za poslední %ld sekundu budou navždy ztraceny."
-msgstr[1] "Změny provedené v dokumentu za poslední %ld sekundy budou navždy ztraceny."
-msgstr[2] "Změny provedené v dokumentu za posledních %ld sekund budou navždy ztraceny."
+msgstr[0] ""
+"Změny provedené v dokumentu za poslední %ld sekundu budou navždy ztraceny."
+msgstr[1] ""
+"Změny provedené v dokumentu za poslední %ld sekundy budou navždy ztraceny."
+msgstr[2] ""
+"Změny provedené v dokumentu za posledních %ld sekund budou navždy ztraceny."
+msgstr[3] ""
+"Změny provedené v dokumentu za posledních %ld sekund budou navždy ztraceny."
 
 #: ../pluma/pluma-commands-file.c:1148
 msgid ""
@@ -987,9 +1115,18 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "Změny provedené v dokumentu za poslední minutu a %ld sekundu budou navždy ztraceny."
-msgstr[1] "Změny provedené v dokumentu za poslední minutu a %ld sekundy budou navždy ztraceny."
-msgstr[2] "Změny provedené v dokumentu za poslední minutu a %ld sekund budou navždy ztraceny."
+msgstr[0] ""
+"Změny provedené v dokumentu za poslední minutu a %ld sekundu budou navždy "
+"ztraceny."
+msgstr[1] ""
+"Změny provedené v dokumentu za poslední minutu a %ld sekundy budou navždy "
+"ztraceny."
+msgstr[2] ""
+"Změny provedené v dokumentu za poslední minutu a %ld sekund budou navždy "
+"ztraceny."
+msgstr[3] ""
+"Změny provedené v dokumentu za poslední minutu a %ld sekund budou navždy "
+"ztraceny."
 
 #: ../pluma/pluma-commands-file.c:1164
 #, c-format
@@ -999,9 +1136,14 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Změny provedené v dokumentu za poslední %ld minutu budou navždy ztraceny."
-msgstr[1] "Změny provedené v dokumentu za poslední %ld minuty budou navždy ztraceny."
-msgstr[2] "Změny provedené v dokumentu za posledních %ld minut budou navždy ztraceny."
+msgstr[0] ""
+"Změny provedené v dokumentu za poslední %ld minutu budou navždy ztraceny."
+msgstr[1] ""
+"Změny provedené v dokumentu za poslední %ld minuty budou navždy ztraceny."
+msgstr[2] ""
+"Změny provedené v dokumentu za posledních %ld minut budou navždy ztraceny."
+msgstr[3] ""
+"Změny provedené v dokumentu za posledních %ld minut budou navždy ztraceny."
 
 #: ../pluma/pluma-commands-file.c:1179
 msgid ""
@@ -1016,9 +1158,18 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "Změny provedené v dokumentu za poslední hodinu a %d minutu budou navždy ztraceny."
-msgstr[1] "Změny provedené v dokumentu za poslední hodinu a %d minuty budou navždy ztraceny."
-msgstr[2] "Změny provedené v dokumentu za poslední hodinu a %d minut budou navždy ztraceny."
+msgstr[0] ""
+"Změny provedené v dokumentu za poslední hodinu a %d minutu budou navždy "
+"ztraceny."
+msgstr[1] ""
+"Změny provedené v dokumentu za poslední hodinu a %d minuty budou navždy "
+"ztraceny."
+msgstr[2] ""
+"Změny provedené v dokumentu za poslední hodinu a %d minut budou navždy "
+"ztraceny."
+msgstr[3] ""
+"Změny provedené v dokumentu za poslední hodinu a %d minut budou navždy "
+"ztraceny."
 
 #: ../pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1026,9 +1177,14 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "Změny provedené v dokumentu za poslední %d hodinu budou navždy ztraceny."
-msgstr[1] "Změny provedené v dokumentu za poslední %d hodiny budou navždy ztraceny."
-msgstr[2] "Změny provedené v dokumentu za posledních %d hodin budou navždy ztraceny."
+msgstr[0] ""
+"Změny provedené v dokumentu za poslední %d hodinu budou navždy ztraceny."
+msgstr[1] ""
+"Změny provedené v dokumentu za poslední %d hodiny budou navždy ztraceny."
+msgstr[2] ""
+"Změny provedené v dokumentu za posledních %d hodin budou navždy ztraceny."
+msgstr[3] ""
+"Změny provedené v dokumentu za posledních %d hodin budou navždy ztraceny."
 
 #: ../pluma/pluma-commands-file.c:1226
 msgid "_Revert"
@@ -1036,11 +1192,20 @@ msgstr "V_rátit"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
-msgstr "Pluma je malý a jednoduchý textový editor pro prostředí pracovní plochy MATE"
+msgstr ""
+"Pluma je malý a jednoduchý textový editor pro prostředí pracovní plochy MATE"
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "Michal Bukovjan <bukm@centrum.cz>\nMiloslav Trmač <mitr@volny.cz>\nLukáš Novotný <lukasnov@cvs.gnome.org>\nPetr Tomeš <ptomes@gmail.com>\nJakub Friedl <jfriedl@suse.cz>\nJiří Eischmann <jiri@eischmann.cz>\nPetr Kovář  <pknbe@volny.cz>"
+msgstr ""
+"Stanislav Brabec <utx@penguin.cz>\n"
+"Michal Bukovjan <bukm@centrum.cz>\n"
+"Miloslav Trmač <mitr@volny.cz>\n"
+"Petr Tomeš <ptomes@gmail.com>\n"
+"Jakub Friedl <jfriedl@suse.cz>\n"
+"Lucas Lommer <llommer@svn.gnome.org>\n"
+"Petr Kovář <pknbe@volny.cz>\n"
+"Roman Horník <roman.hornik@debian-linux.cz>"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
@@ -1049,6 +1214,7 @@ msgid_plural "Found and replaced %d occurrences"
 msgstr[0] "Nalezen a nahrazen %d výskyt"
 msgstr[1] "Nalezeny a nahrazeny %d výskyty"
 msgstr[2] "Nalezeno a nahrazeno %d výskytů"
+msgstr[3] "Nalezeno a nahrazeno %d výskytů"
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1061,17 +1227,17 @@ msgstr "Nalezen a nahrazen jeden výskyt"
 msgid "\"%s\" not found"
 msgstr "„%s“ nenalezeno"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "Neuložený dokument %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2224 ../pluma/pluma-window.c:2229
 msgid "Read-Only"
 msgstr "Pouze ke čtení"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3626
 msgid "Documents"
 msgstr "Dokumenty"
 
@@ -1127,7 +1293,7 @@ msgstr "Turecké"
 
 #: ../pluma/pluma-encodings.c:169
 msgid "Nordic"
-msgstr "Nordické"
+msgstr "Severské"
 
 #: ../pluma/pluma-encodings.c:173
 msgid "Celtic"
@@ -1189,7 +1355,7 @@ msgstr "Thajské"
 
 #: ../pluma/pluma-encodings.c:431
 msgid "Unknown"
-msgstr "Neznámý"
+msgstr "Neznámo"
 
 #: ../pluma/pluma-encodings-combo-box.c:272
 msgid "Automatically Detected"
@@ -1213,211 +1379,222 @@ msgstr "Všechny textové soubory"
 msgid "C_haracter Encoding:"
 msgstr "_Kódování znaků:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:147
 msgid "L_ine Ending:"
 msgstr "Úprava řá_dku:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:166
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:172
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:178
 msgid "Windows"
 msgstr "Windows"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr "Při zobrazování nápovědy došlo k chybě."
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
 msgstr "_Znovu"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "Nelze najít soubor %s."
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
 msgstr "Ověřte správný zápis umístění a zkuste to znovu."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "pluma nemůže zpracovat umístění %s."
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "pluma nemůže zpracovat toto umístění."
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr "Umístění souboru nelze připojit."
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "Umístění souboru je nepřístupné, protože není připojeno."
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "%s je adresář."
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr "%s není platné umístění."
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
-msgstr "Počítač %s nebyl nalezen. Zkontrolujte prosím, že je vaše nastavení proxy správné, a zkuste to znovu."
+msgstr ""
+"Počítač %s nebyl nalezen. Zkontrolujte prosím, že je vaše nastavení proxy "
+"správné, a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
-msgstr "Název počítače nebyl platný. Zkontrolujte prosím, že jste umístění napsali správně, a zkuste to znovu."
+msgstr ""
+"Název počítače nebyl platný. Zkontrolujte prosím, že jste umístění napsali "
+"správně, a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s není obyčejný soubor."
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr "Připojení vypršelo. Prosím, zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "Soubor je příliš velký."
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "Neočekávaná chyba: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "pluma nemůže soubor najít. Možná byl nedávno smazán."
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "Nelze soubor %s vrátit."
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr "_Kódování znaků:"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr "_Přesto upravovat"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr "Ne_upravovat"
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
-msgstr "Počet sledovaných odkazů je limitován a aktuální soubor nelze nalézt v tomto limitu."
+msgstr ""
+"Počet sledovaných odkazů je limitován a aktuální soubor nelze nalézt v tomto"
+" limitu."
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Nemáte oprávnění potřebná k otevření souboru."
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr "pluma nebyl schopen zjistit kódování znaků."
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Zkontrolujte prosím, že jste se nesnažili otevřít binární soubor."
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr "Vyberte kódování znaků z nabídky a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "Došlo k problému při otevírání souboru %s."
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
-msgstr "Soubor, který jste otevřeli, obsahuje nějaké neplatné znaky. Pokud budete pokračovat v úpravách tohoto dokumentu, může se stát nepoužitelným."
+msgstr ""
+"Soubor, který jste otevřeli, obsahuje nějaké neplatné znaky. Pokud budete "
+"pokračovat v úpravách tohoto dokumentu, může se stát nepoužitelným."
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
 msgstr "Můžete také vybrat jiné kódování znaků a zkusit to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr "Nelze otevřít soubor „%s“ s použitím kódováním znaků %s."
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Vyberte z nabídky jiné kódování znaků a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "Nelze otevřít soubor %s."
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr "Nelze uložit soubor %s s kódováním znaků %s."
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
-msgstr "Dokument obsahuje jeden nebo více znaků, které nelze zakódovat pomocí zadaného kódování znaků."
+msgstr ""
+"Dokument obsahuje jeden nebo více znaků, které nelze zakódovat pomocí "
+"zadaného kódování znaků."
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "Tento soubor (%s) je již otevřen v jiném okně plumau."
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
-msgstr "pluma otevřel tento soubor pouze pro čtení. Chcete jej přesto upravovat?"
+msgstr ""
+"pluma otevřel tento soubor pouze pro čtení. Chcete jej přesto upravovat?"
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "_Přesto uložit"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "Neuklá_dat"
 
@@ -1426,90 +1603,112 @@ msgstr "Neuklá_dat"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "Soubor %s byl od jeho načtení změněn."
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr "Pokud jej uložíte, všechny externí změny by mohly být ztraceny. Přesto jej uložit?"
+msgstr ""
+"Pokud jej uložíte, všechny externí změny by mohly být ztraceny. Přesto jej "
+"uložit?"
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "Nelze vytvořit záložní soubor při ukládání souboru %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "Nelze vytvořit dočasný záložní soubor při ukládání souboru %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "pluma nemohl zálohovat starou kopii souboru před uložením nové. Můžete toto varování ignorovat a přesto soubor uložit, ale pokud při ukládání dojde k chybě, mohli byste ztratit starou kopii souboru. Přesto uložit?"
+msgstr ""
+"pluma nemohl zálohovat starou kopii souboru před uložením nové. Můžete toto "
+"varování ignorovat a přesto soubor uložit, ale pokud při ukládání dojde k "
+"chybě, mohli byste ztratit starou kopii souboru. Přesto uložit?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
-msgstr "pluma neumí používat umístění %s v režimu zápisu. Zkontrolujte prosím, že jste zadali umístění správně, a zkuste to znovu."
+msgstr ""
+"pluma neumí používat umístění %s v režimu zápisu. Zkontrolujte prosím, že "
+"jste zadali umístění správně, a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
-msgstr "pluma nemůže zpracovat umístění  v režimu pro zápis. Zkontrolujte prosím, že jste umístění napsali správně, a zkuste to znovu."
+msgstr ""
+"pluma nemůže zpracovat umístění  v režimu pro zápis. Zkontrolujte prosím, že"
+" jste umístění napsali správně, a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
-msgstr "%s není platné umístění. Zkontrolujte prosím, že jste umístění napsali správně, a zkuste to znovu."
+msgstr ""
+"%s není platné umístění. Zkontrolujte prosím, že jste umístění napsali "
+"správně, a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "Nemáte oprávnění pro uložení souboru. Zkontrolujte prosím, že jste umístění napsali správně, a zkuste to znovu."
+msgstr ""
+"Nemáte oprávnění pro uložení souboru. Zkontrolujte prosím, že jste umístění "
+"napsali správně, a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
-msgstr "Pro uložení souboru není dostatek místa na disku. Uvolněte prosím nějaké místo a zkuste to znovu."
+msgstr ""
+"Pro uložení souboru není dostatek místa na disku. Uvolněte prosím nějaké "
+"místo a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "Pokoušíte se soubor uložit na disk určený pouze pro čtení. Zkontrolujte prosím, že jste umístění napsali správně, a zkuste to znovu."
+msgstr ""
+"Pokoušíte se soubor uložit na disk určený pouze pro čtení. Zkontrolujte "
+"prosím, že jste umístění napsali správně, a zkuste to znovu."
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Soubor se stejným jménem již existuje. Použijte prosím jiné jméno."
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
-msgstr "Disk, na který se snažíte uložit tento soubor, má nastaven limit délky názvu souboru. Použijte prosím kratší název."
+msgstr ""
+"Disk, na který se snažíte uložit tento soubor, má nastaven limit délky názvu"
+" souboru. Použijte prosím kratší název."
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "Disk, kam se snažíte uložit tento soubor, má nastaven limit velikosti souboru.  Zkuste prosím uložit menší soubor, nebo uložit tento soubor na disk, který nemá toto omezení."
+msgstr ""
+"Disk, kam se snažíte uložit tento soubor, má nastaven limit velikosti "
+"souboru.  Zkuste prosím uložit menší soubor, nebo uložit tento soubor na "
+"disk, který nemá toto omezení."
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "Nelze uložit soubor %s."
@@ -1519,20 +1718,20 @@ msgstr "Nelze uložit soubor %s."
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Soubor %s byl změněn na disku."
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Chcete zahodit provedené změny a soubor načíst znovu?"
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr "Chcete soubor znovu načíst?"
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
 msgstr "_Znovu načíst"
 
@@ -1698,6 +1897,7 @@ msgid_plural "There are %d tabs with errors"
 msgstr[0] "V kartě je chyba"
 msgstr[1] "Ve %d kartách jsou chyby"
 msgstr[2] "V %d kartách jsou chyby"
+msgstr[3] "V %d kartách jsou chyby"
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -1741,38 +1941,38 @@ msgid "Saving %s"
 msgstr "Ukládání %s"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "RO"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "Chyba při otevírání souboru %s"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Chyba při vrácení souboru %s do původního stavu"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "Chyba při ukládání souboru %s"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "Unicode (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
 msgstr "Název:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "Typ MIME:"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "Kódování:"
 
@@ -1783,7 +1983,7 @@ msgstr "Zavřít dokument"
 #. Toplevel
 #: ../pluma/pluma-ui.h:47
 msgid "_File"
-msgstr "_Soubor"
+msgstr "Soubor"
 
 #: ../pluma/pluma-ui.h:48
 msgid "_Edit"
@@ -1817,7 +2017,7 @@ msgstr "Vytvořit nový dokument"
 msgid "_Open..."
 msgstr "_Otevřít…"
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1425
 msgid "Open a file"
 msgstr "Otevřít soubor"
 
@@ -1845,19 +2045,19 @@ msgstr "O této aplikaci"
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
-msgstr "Opustit režim celé obrazovky"
+msgstr "Opustit režim přes celou obrazovku"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
-msgstr "Uložit tento soubor"
+msgstr "Uloží současný soubor"
 
 #: ../pluma/pluma-ui.h:82
 msgid "Save _As..."
-msgstr "Uložit _jako…"
+msgstr "Uloži_t jako..."
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
-msgstr "Uložit tento soubor pod jiným jménem"
+msgstr "Uloží současný soubor pod jiným jménem"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
@@ -1881,7 +2081,7 @@ msgstr "Vytisknout aktuální stránku"
 
 #: ../pluma/pluma-ui.h:93
 msgid "Undo the last action"
-msgstr "Vrátí zpět poslední akci"
+msgstr "Vrátit zpět poslední akci"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
@@ -1893,7 +2093,7 @@ msgstr "Vyjmout výběr"
 
 #: ../pluma/pluma-ui.h:99
 msgid "Copy the selection"
-msgstr "Kopírovat výběr"
+msgstr "Zkopírovat výběr"
 
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
@@ -1984,7 +2184,7 @@ msgstr "Uložit všechny otevřené soubory"
 
 #: ../pluma/pluma-ui.h:129
 msgid "_Close All"
-msgstr "Zavřít vš_e"
+msgstr "_Zavřít vše"
 
 #: ../pluma/pluma-ui.h:130
 msgid "Close all open files"
@@ -2016,15 +2216,15 @@ msgstr "Přesunout aktuální dokument do nového okna"
 
 #: ../pluma/pluma-ui.h:143
 msgid "Close the current file"
-msgstr "Zavřít tento soubor"
+msgstr "Zavře současný soubor"
 
 #: ../pluma/pluma-ui.h:150
 msgid "Quit the program"
-msgstr "Skončit program"
+msgstr "Ukončit program"
 
 #: ../pluma/pluma-ui.h:155
 msgid "_Toolbar"
-msgstr "_Panel nástrojů"
+msgstr "_Lišta nástrojů"
 
 #: ../pluma/pluma-ui.h:156
 msgid "Show or hide the toolbar in the current window"
@@ -2032,7 +2232,7 @@ msgstr "Zobrazí nebo skryje panel nástrojů v aktuálním okně"
 
 #: ../pluma/pluma-ui.h:158
 msgid "_Statusbar"
-msgstr "_Stavový panel"
+msgstr "_Stavový řádek"
 
 #: ../pluma/pluma-ui.h:159
 msgid "Show or hide the statusbar in the current window"
@@ -2044,7 +2244,7 @@ msgstr "Upravovat text v režimu celé obrazovky"
 
 #: ../pluma/pluma-ui.h:169
 msgid "Side _Pane"
-msgstr "Postranní _panel"
+msgstr "_Postranní lišta"
 
 #: ../pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
@@ -2079,36 +2279,38 @@ msgid "/ on %s"
 msgstr "/ na %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "Přecházet přes _okraj"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "Hledat pouze _celá slova"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "_Rozlišovat velikost písmen"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr "_Prohlédnout escape sekvence (např. \n)"
+msgstr ""
+"_Prohlédnout escape sekvence (např. \n"
+")"
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr "Řetězec, který chcete hledat"
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr "Řádek, na který chcete přesunout kurzor"
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:982
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Použít režim zvýrazňování %s"
@@ -2116,7 +2318,7 @@ msgstr "Použít režim zvýrazňování %s"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1039 ../pluma/pluma-window.c:1925
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2124,43 +2326,43 @@ msgstr "Použít režim zvýrazňování %s"
 msgid "Plain Text"
 msgstr "Prostý text"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1040
 msgid "Disable syntax highlighting"
 msgstr "Zakázat zvýrazňování syntaxe"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1322
 #, c-format
 msgid "Open '%s'"
 msgstr "Otevřít „%s“"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1427
 msgid "Open a recently used file"
 msgstr "Otevřít nedávno používaný soubor"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1433
 msgid "Open"
 msgstr "Otevřít"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1491
 msgid "Save"
 msgstr "Uložit"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1493
 msgid "Print"
-msgstr "Tisknout"
+msgstr "Tisk"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1650
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktivovat „%s“"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1903
 msgid "Use Spaces"
 msgstr "Použít mezery"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1974
 msgid "Tab Width"
 msgstr "Šířka tabelátoru"
 
@@ -2217,7 +2419,9 @@ msgstr "Statistika dokumentu"
 msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
-msgstr "Analyzuje aktuální dokument a určí v něm počet slov, řádků, znaků a znaků bez mezer."
+msgstr ""
+"Analyzuje aktuální dokument a určí v něm počet slov, řádků, znaků a znaků "
+"bez mezer."
 
 #: ../plugins/docinfo/docinfo.ui.h:2
 msgid "_Update"
@@ -2334,7 +2538,8 @@ msgstr "Tato klávesová zkratka je již přiřazena k %s"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr "Stiskněte novou klávesovou zkratku, nebo ji vymažte stisknutím Backspace"
+msgstr ""
+"Stiskněte novou klávesovou zkratku, nebo ji vymažte stisknutím Backspace"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
@@ -2504,7 +2709,11 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "Pokud je nastavené na TRUE, prohlížeč souborů zobrazí adresář prvního otevřeného dokumentu, jestliže nebyl prohlížeč souborů dosud použit. (Tedy toto obecně platí pro otevírání dokumentů z příkazové řádky, nebo v Nautilu atd.)"
+msgstr ""
+"Pokud je nastavené na TRUE, prohlížeč souborů zobrazí adresář prvního "
+"otevřeného dokumentu, jestliže nebyl prohlížeč souborů dosud použit. (Tedy "
+"toto obecně platí pro otevírání dokumentů z příkazové řádky, nebo v Nautilu "
+"atd.)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
@@ -2516,7 +2725,11 @@ msgid ""
 "values are: none (filter nothing), hidden (filter hidden files), binary "
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
-msgstr "Tato hodnota určuje, které soubory budou vyfiltrovány z prohlížeče souborů. Platné hodnoty jsou: none (nic nevyfiltruje), hidden (vyfiltruje skryté soubory), binary (vyfiltruje binární soubory) a hidden_and_binary (vyfiltruje jak skryté, tak binární soubory)."
+msgstr ""
+"Tato hodnota určuje, které soubory budou vyfiltrovány z prohlížeče souborů. "
+"Platné hodnoty jsou: none (nic nevyfiltruje), hidden (vyfiltruje skryté "
+"soubory), binary (vyfiltruje binární soubory) a hidden_and_binary "
+"(vyfiltruje jak skryté, tak binární soubory)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
@@ -2526,7 +2739,9 @@ msgstr "Filtrační vzorek prohlížeče souborů"
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top"
 " of the filter_mode."
-msgstr "Filtrační vzorek, který se používá pro filtrování v prohlížeči souborů. Tento filtr pracuje navrchu filter_mode."
+msgstr ""
+"Filtrační vzorek, který se používá pro filtrování v prohlížeči souborů. "
+"Tento filtr pracuje navrchu filter_mode."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:7
 msgid "Open With Tree View"
@@ -2536,7 +2751,9 @@ msgstr "Otevřít ve stromovém pohledu"
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
-msgstr "Otevřít stromové zobrazení, když se zásuvný modul prohlížeče souborů načte místo zobrazení záložek"
+msgstr ""
+"Otevřít stromové zobrazení, když se zásuvný modul prohlížeče souborů načte "
+"místo zobrazení záložek"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
@@ -2546,7 +2763,9 @@ msgstr "Kořenový adresář prohlížeče souborů"
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "Kořenový adresář prohlížeče souborů, který bude použit, když načítání zásuvného modulu prohlížeče souborů a onload/tree_view je TRUE."
+msgstr ""
+"Kořenový adresář prohlížeče souborů, který bude použit, když načítání "
+"zásuvného modulu prohlížeče souborů a onload/tree_view je TRUE."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
@@ -2557,7 +2776,10 @@ msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "Virtuální kořenový adresář prohlížeče souborů, který bude použit během načítání zásuvného modulu prohlížeče souborů, když onload/tree_view je TRUE. Virtuální kořen musí být vždy pod skutečným kořenem."
+msgstr ""
+"Virtuální kořenový adresář prohlížeče souborů, který bude použit během "
+"načítání zásuvného modulu prohlížeče souborů, když onload/tree_view je TRUE."
+" Virtuální kořen musí být vždy pod skutečným kořenem."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2569,7 +2791,7 @@ msgstr "Nastavuje, zda je povolena obnova vzdálených umístění."
 
 #: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
 msgid "File System"
-msgstr "Systém souborů"
+msgstr "Souborový systém"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
 msgid "_Set root to active document"
@@ -2589,7 +2811,7 @@ msgstr "Otevřít terminál v aktuálně otevřeném adresáři"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:726
 msgid "File Browser"
-msgstr "Prohlížeč souborů"
+msgstr "Správce souborů"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:874
 msgid "An error occurred while creating a new directory"
@@ -2627,7 +2849,9 @@ msgstr "Vyskytla se chyba"
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "Soubor nelze přesunout do koše,\nchcete ho trvale smazat?"
+msgstr ""
+"Soubor nelze přesunout do koše,\n"
+"chcete ho trvale smazat?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
@@ -2659,7 +2883,9 @@ msgstr "(Prázdné)"
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "Přejmenovaný soubor je nyní odfiltrován. Aby byl viditelný, musíte upravit své nastavení filtrování."
+msgstr ""
+"Přejmenovaný soubor je nyní odfiltrován. Aby byl viditelný, musíte upravit "
+"své nastavení filtrování."
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -2671,7 +2897,9 @@ msgstr "soubor"
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "Nový soubor je nyní odfiltrován. Aby byl viditelný, musíte upravit své nastavení filtrování."
+msgstr ""
+"Nový soubor je nyní odfiltrován. Aby byl viditelný, musíte upravit své "
+"nastavení filtrování."
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -2683,7 +2911,9 @@ msgstr "adresář"
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
-msgstr "Nový adresář je nyní odfiltrován. Aby byl viditelný, musíte upravit své nastavení filtrování."
+msgstr ""
+"Nový adresář je nyní odfiltrován. Aby byl viditelný, musíte upravit své "
+"nastavení filtrování."
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
@@ -2759,7 +2989,7 @@ msgstr "_Další umístění"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
-msgstr "Přejít na další navštívené umístění"
+msgstr "Přejít na následující navštívené umístění"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
@@ -2975,7 +3205,9 @@ msgstr "Vrátit vybraný úryvek do původního stavu"
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
-msgstr "Toto není platný tabulátorový spouštěč. Spouštěče mohou obsahovat buď písmena nebo jeden (ne-alfanumerický) znak jako jsou: {, [, apod."
+msgstr ""
+"Toto není platný tabulátorový spouštěč. Spouštěče mohou obsahovat buď "
+"písmena nebo jeden (ne-alfanumerický) znak jako jsou: {, [, apod."
 
 #: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
@@ -3041,7 +3273,8 @@ msgstr "Exportovat úryvky"
 
 #: ../plugins/snippets/snippets/Manager.py:1055
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr "Stiskněte novou klávesovou zkratku, nebo ji vymažte stisknutím Backspace"
+msgstr ""
+"Stiskněte novou klávesovou zkratku, nebo ji vymažte stisknutím Backspace"
 
 #: ../plugins/snippets/snippets/Manager.py:1057
 msgid "Type a new shortcut"
@@ -3099,7 +3332,9 @@ msgstr "Soubor „%s“ není platným archivem úryvků"
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
 "aborted."
-msgstr "Vykonání příkazu jazyka Python (%s) překročilo časový limit, vykonávání bylo přerušeno."
+msgstr ""
+"Vykonání příkazu jazyka Python (%s) překročilo časový limit, vykonávání bylo"
+" přerušeno."
 
 #: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
@@ -3165,16 +3400,16 @@ msgid "_More..."
 msgstr "Ví_ce…"
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "_Ignorovat vše"
 
 #. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
 msgid "_Add"
-msgstr "Přid_at"
+msgstr "Při_dat"
 
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "Návrhy pravopi_su…"
 
@@ -3354,7 +3589,7 @@ msgstr "Zkontroluje pravopis aktuálního dokumentu."
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:724
 msgid "Tags"
-msgstr "Tagy"
+msgstr "Štítky"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
 msgid "Select the group of tags you want to use"
@@ -3509,7 +3744,7 @@ msgstr "Sloupce"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:41
 msgid "Comment"
-msgstr "Poznámka"
+msgstr "Komentář"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:42
 msgid "Computer code fragment"
@@ -4120,7 +4355,7 @@ msgstr "Rozestup v buňkách"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:210
 msgid "Span"
-msgstr "Rozsah"
+msgstr "Rozšířený"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:211
 msgid "Standby load message"
@@ -4232,7 +4467,7 @@ msgstr "Text zadaný uživatelem"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:241
 msgid "Title"
-msgstr "Nadpis"
+msgstr "Název"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:242
 msgid "Underlined text style"
@@ -4310,11 +4545,11 @@ msgstr "Barva okraje"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:262
 msgid "Border"
-msgstr "Okraj"
+msgstr "Rámeček"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:263
 msgid "Center"
-msgstr "Vycentrovat"
+msgstr "Střed"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:264
 msgid "Checked (state)"
@@ -4490,7 +4725,7 @@ msgstr "Rozestup"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:307
 msgid "Square root"
-msgstr "Odmocnina"
+msgstr "Druhá odmocnina"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:308
 msgid "Starting sequence number"
@@ -4840,7 +5075,9 @@ msgstr "Seznam tagů"
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
-msgstr "Poskytuje možnost snadno do dokumentu vložit často používané značky/řetězce bez nutnosti je psát."
+msgstr ""
+"Poskytuje možnost snadno do dokumentu vložit často používané značky/řetězce "
+"bez nutnosti je psát."
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:1
 msgid "XSLT - Elements"
