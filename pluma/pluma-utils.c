@@ -863,12 +863,12 @@ pluma_utils_get_current_workspace (GdkScreen *screen)
 	root_win = gdk_screen_get_root_window (screen);
 	display = gdk_screen_get_display (screen);
 
-	gdk_error_trap_push ();
+	gdk_x11_display_error_trap_push (display);
 	result = XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display), GDK_WINDOW_XID (root_win),
 				     gdk_x11_get_xatom_by_name_for_display (display, "_NET_CURRENT_DESKTOP"),
 				     0, G_MAXLONG, False, XA_CARDINAL, &type, &format, &nitems,
 				     &bytes_after, (gpointer) &current_desktop);
-	err = gdk_error_trap_pop ();
+	err = gdk_x11_display_error_trap_pop (display);
 
 	if (err != Success || result != Success)
 		return ret;
@@ -914,12 +914,12 @@ pluma_utils_get_window_workspace (GtkWindow *gtkwindow)
 	window = gtk_widget_get_window (GTK_WIDGET (gtkwindow));
 	display = gdk_window_get_display (window);
 
-	gdk_error_trap_push ();
+	gdk_x11_display_error_trap_push (display);
 	result = XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display), GDK_WINDOW_XID (window),
 				     gdk_x11_get_xatom_by_name_for_display (display, "_NET_WM_DESKTOP"),
 				     0, G_MAXLONG, False, XA_CARDINAL, &type, &format, &nitems,
 				     &bytes_after, (gpointer) &workspace);
-	err = gdk_error_trap_pop ();
+	err = gdk_x11_display_error_trap_pop (display);
 
 	if (err != Success || result != Success)
 		return ret;
@@ -970,12 +970,12 @@ pluma_utils_get_current_viewport (GdkScreen    *screen,
 	root_win = gdk_screen_get_root_window (screen);
 	display = gdk_screen_get_display (screen);
 
-	gdk_error_trap_push ();
+	gdk_x11_display_error_trap_push (display);
 	result = XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display), GDK_WINDOW_XID (root_win),
 				     gdk_x11_get_xatom_by_name_for_display (display, "_NET_DESKTOP_VIEWPORT"),
 				     0, G_MAXLONG, False, XA_CARDINAL, &type, &format, &nitems,
 				     &bytes_after, (void*) &coordinates);
-	err = gdk_error_trap_pop ();
+	err = gdk_x11_display_error_trap_pop (display);
 
 	if (err != Success || result != Success)
 		return;
