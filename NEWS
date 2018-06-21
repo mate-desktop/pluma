@@ -1,26 +1,54 @@
+### pluma 1.21.1
+
+  * Translations update
+  * pluma-utils.c: avoid deprecated 'gdk_error_trap_push/pop'
+  * pluma-notebook: avoid new file with double click in vertical scrollbar
+  * pluma-notebook: avoid new file with double click in forward arrow button
+  * pluma-notebook: Fix: unexpected behavior with dnd selected text
+  * pluma-view: Fix: unexpected behavior with dnd under line numbers
+  * pluma-notebook: pass event to gdk_seat_grab
+  * pluma-window: use gtk_menu_popup_at_widget for GtkNotebook
+  * pluma-utils: remove unused 'pluma_utils_menu_position_under_tree_view'
+  * avoid deprecated 'gtk_menu_popup'
+  * pluma-print-preview: Fix weird behavior with mouse buttons
+  * Fix: Pluma crashes with mouse wheel over a tab
+  * pluma-notebook.c: avoid deprecated 'gdk_pointer_ ...' functions
+  * pluma-notebook.c: avoid deprecated 'gdk_window_at_pointer'
+  * avoid deprecated 'gtk_dialog_get_action_area'
+  * pluma-view.c: avoid deprecated 'gtk_widget_override_font'
+  * avoid deprecated 'gtk_font_button_set/get_font_name'
+  * pluma-view.c: Fix: GtkCheckMenuItem "Display line numbers" improved
+  * pluma-file-browser-widget.c: avoid deprecated GtkImageMenuItem
+  * error-message-area: avoid 'gtk_info_bar_new_with_buttons' with stock id
+  * avoid 'gtk_info_bar_add_button' with stock ids
+  * avoid 'pluma_file_chooser_dialog_new' with stock ids
+  * avoid 'gtk_file_chooser_dialog_new' with stock id
+  * pluma-time-plugin.c: avoid 'gtk_dialog_new_with_buttons' with stock id
+  * avoid 'gtk_dialog_add_buttons' with stock ids
+
 ### pluma 1.21.0
 
-    spell-checker.ui plugin: avoid deprecations
-    sort.ui plugin: avoid deprecations
-    pluma-time-setup-dialog.ui plugin: avoid deprecations
-    pluma-time-dialog.ui plugin: deprecations
-    pluma-spell-setup-dialog.ui plugin: avoid GtkRadioButton:xalign
-    pluma-preferences-dialog.ui: avoid GtkButton:use-stock and GtkImage:stock
-    pluma-encodings-dialog.ui: avoid GtkButton:use-stock
-    externaltools plugin: outputpanel.ui: avoid GtkHBox and GtkVButtonBox
-    spell plugin: languages-dialog.ui: avoid deprecations
-    docinfo.ui plugin: avoid GtkVBox, GtkHBox, GtkLabel:xpad/ypad and GtkTable
-    plugins: docinfo.ui: avoid GtkButton:use-stock and GtkImage:stock
-    spell plugin: pluma-spell-setup-dialog.ui: avoid deprecations
-    python console: config.ui: avoid GtkButton:use-stock
-    Make notebook tabs scrollable
-    avoid deprecated GtkButton:use-stock
-    Fix warning with external tools plugin
-    avoid deprecated GtkStock
+  * spell-checker.ui plugin: avoid deprecations
+  * sort.ui plugin: avoid deprecations
+  * pluma-time-setup-dialog.ui plugin: avoid deprecations
+  * pluma-time-dialog.ui plugin: deprecations
+  * pluma-spell-setup-dialog.ui plugin: avoid GtkRadioButton:xalign
+  * pluma-preferences-dialog.ui: avoid GtkButton:use-stock and GtkImage:stock
+  * pluma-encodings-dialog.ui: avoid GtkButton:use-stock
+  * externaltools plugin: outputpanel.ui: avoid GtkHBox and GtkVButtonBox
+  * spell plugin: languages-dialog.ui: avoid deprecations
+  * docinfo.ui plugin: avoid GtkVBox, GtkHBox, GtkLabel:xpad/ypad and GtkTable
+  * plugins: docinfo.ui: avoid GtkButton:use-stock and GtkImage:stock
+  * spell plugin: pluma-spell-setup-dialog.ui: avoid deprecations
+  * python console: config.ui: avoid GtkButton:use-stock
+  * Make notebook tabs scrollable
+  * avoid deprecated GtkButton:use-stock
+  * Fix warning with external tools plugin
+  * avoid deprecated GtkStock
 
 ### pluma 1.20.0
 
-  * sync with transifex
+  * Translations update
   * require GTK+ 3.22 and GLib 2.50
   * put 'peas_engine_enable_loader' in the correct place
   * update copyright year to 2018
@@ -32,7 +60,7 @@
 
 ### pluma 1.19.3
 
-  * sync with transifex
+  * Translations update
   * pluma-window: have GtkRecentData on stack instead of allocating it
   * WidthOfScreen and HeightOfScreen implementation
   * Fixes for regexp replacement with backreferences (e.g. "\0") (#259)
@@ -46,7 +74,7 @@
 
 ### pluma 1.19.2
 
-  * sync with transifex
+  * Translations update
   * don't request to save documents with no changes
   * add gsettings key to hide/show(default) tabs with the side pane
   * Hide tabs if we are using the sidebar
@@ -83,7 +111,7 @@
 
 ### pluma 1.19.0
 
-  * sync with transifex
+  * Translations update
   * double click to the right of the last open tab to open a new tab
   * Support new location of gtk bookmarks file
   * docs: we have encodings combobox, not option menu
