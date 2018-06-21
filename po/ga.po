@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 10:17+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
-"Language-Team: Irish (http://www.transifex.com/mate/MATE/language/ga/)\n"
+"POT-Creation-Date: 2018-04-17 17:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: David Ó Laıġeanáın, 2018\n"
+"Language-Team: Irish (https://www.transifex.com/mate/teams/13566/ga/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -487,11 +488,38 @@ msgstr "_Cealaigh Logáil Amach"
 msgid "Close _without Saving"
 msgstr "Dún _gan Sábháil"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:211
+#. Add a cancel button
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
+#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
+#: ../pluma/pluma-file-chooser-dialog.c:440
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:171
+#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/spell/pluma-spell-language-dialog.c:132
+#: ../plugins/spell/languages-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:3
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+msgid "_Cancel"
+msgstr "_Cealaigh"
+
+#. File menu
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+msgid "_Save"
+msgstr "_Sábháil"
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+msgid "Save _As"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
 msgid "Question"
 msgstr "Ceist"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:411
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -505,12 +533,12 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -524,7 +552,7 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -538,12 +566,12 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -557,7 +585,7 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
@@ -569,22 +597,22 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:717
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
@@ -594,7 +622,7 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -606,43 +634,77 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:743
 msgid "S_elect the documents you want to save:"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:321
+#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:133
+#: ../plugins/spell/languages-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-plugin.c:923
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+msgid "_OK"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
+#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:134
+#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+msgid "_Help"
+msgstr "Cab_hair"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:316
 msgid "Character Encodings"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:384
-#: ../pluma/dialogs/pluma-encodings-dialog.c:445
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Description"
-msgstr "C_ur Síos"
+msgstr "_Cur Síos"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:393
-#: ../pluma/dialogs/pluma-encodings-dialog.c:454
+#: ../pluma/dialogs/pluma-encodings-dialog.c:391
+#: ../pluma/dialogs/pluma-encodings-dialog.c:452
 msgid "_Encoding"
-msgstr "_Ionchódú"
+msgstr "_Ionchodú"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:1
 msgid "Character encodings"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:5
 msgid "A_vailable encodings:"
 msgstr "_Ionchóduithe ar fáil:"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#. + Add to Dictionary
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:6
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
+msgid "_Add"
+msgstr "Cuir _Leis"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:7
 msgid "E_ncodings shown in menu:"
 msgstr "Io_nchóduithe taispeánta sa roghchlár:"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+msgid "_Remove"
+msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
@@ -657,29 +719,39 @@ msgstr "Ú_sáid cló aonleithid an chórais (%s)"
 msgid "The selected color scheme cannot be installed."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:810
+#: ../pluma/dialogs/pluma-preferences-dialog.c:863
 msgid "Add Scheme"
 msgstr "Cuir Scéim Leis"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:817
+#: ../pluma/dialogs/pluma-preferences-dialog.c:870
 msgid "A_dd Scheme"
 msgstr "Cuir Scéim _Leis"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:825
+#: ../pluma/dialogs/pluma-preferences-dialog.c:878
 msgid "Color Scheme Files"
 msgstr "Comhaid Scéim Dathanna"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:832
-#: ../pluma/pluma-file-chooser-dialog.c:53
+#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
 msgstr "Gach Comhad"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:877
+#: ../pluma/dialogs/pluma-preferences-dialog.c:930
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "Níorbh fhéidir scéim dathanna \"%s\" a bhaint."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1088
+#. ex:et:ts=4:
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
+#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Close"
+msgstr "_Dún"
+
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
 msgid "Pluma Preferences"
 msgstr ""
 
@@ -687,190 +759,195 @@ msgstr ""
 msgid "Preferences"
 msgstr "Sainroghanna"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
 #: ../pluma/pluma-print-preferences.ui.h:9
 msgid "Text Wrapping"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../plugins/docinfo/docinfo.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:5
 #: ../plugins/externaltools/tools/tools.ui.h:21
 #: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:4
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
 #: ../pluma/pluma-print-preferences.ui.h:10
 msgid "Enable text _wrapping"
 msgstr "Cumasaigh _timfhilleadh téacs"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7
 #: ../pluma/pluma-print-preferences.ui.h:11
 msgid "Do not _split words over two lines"
 msgstr "Ná _roinn focail trasna dhá líne"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
 #: ../pluma/pluma-print-preferences.ui.h:3
 msgid "Line Numbers"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "T_aispeáin uimhreacha líne"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
 msgid "Current Line"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
 msgid "Highlight current _line"
 msgstr "Aibhsigh _líne reatha"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
 msgid "Right Margin"
-msgstr ""
+msgstr "An ciumhais ar an dheis"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
 msgid "Display right _margin"
 msgstr "Taispeáin _imeall ar dheis"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
 msgid "_Right margin at column:"
 msgstr "I_meall ar dheis ag colún:"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
 msgid "Bracket Matching"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
 msgid "Highlight matching _bracket"
 msgstr "Aibhsigh lúi_bín comhoiriúnach"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
 msgid "View"
 msgstr "Amharc"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
 msgid "Tab Stops"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
 msgid "_Tab width:"
 msgstr "Leithead _táib:"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
 msgid "Insert _spaces instead of tabs"
 msgstr "Ionsáigh _spásanna in ionad táb"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
 msgid "Automatic Indentation"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
 msgid "_Enable automatic indentation"
 msgstr "_Cumasaigh eangú uathoibríoch"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
 msgid "File Saving"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
 msgid "Create a _backup copy of files before saving"
 msgstr "Cruthaigh cóip cúl_taca de chomhaid roimh shábháil"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
 msgid "_Autosave files every"
 msgstr "_Uathshábháil comhaid gach"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
 msgid "_minutes"
 msgstr "_nóiméad"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
 msgid "Editor"
 msgstr "Eagarthóir"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
 msgid "Font"
-msgstr ""
+msgstr "Cló"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
 msgid "Editor _font: "
 msgstr "_Cló an eagarthóra"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "Pick the editor font"
 msgstr "Roghnaigh cló an eagarthóra"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Color Scheme"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
 msgid "_Add..."
 msgstr "Cuir _Leis..."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font & Colors"
 msgstr "Clónna & Dathanna"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Plugins"
 msgstr "Breiseáin"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1500
 msgid "Replace"
 msgstr "Ionadaigh"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1498
 msgid "Find"
 msgstr "Aimsigh"
+
+#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+msgid "_Find"
+msgstr ""
 
 #: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "Ionadaigh _Gach Rud"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:421
-#: ../pluma/pluma-commands-file.c:587
+#: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr "_Ionadaigh"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "Replace All"
 msgstr "Ionadaigh Gach Rud"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
 msgid "_Search for: "
 msgstr "_Cuardaigh ar: "
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
 msgid "Replace _with: "
 msgstr "Ionadaigh _le:"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "_Match case"
 msgstr "_Meaitseáil an cás"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Match _regular expression"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "Match _entire word only"
 msgstr "Meaitseáil an focal ar _fad amháin"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "Search _backwards"
 msgstr "Cuardaigh ar _gcúl"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:11
 msgid "_Wrap around"
 msgstr "_Timfhill"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:12
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr ""
 
@@ -920,6 +997,8 @@ msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
 msgstr ""
+"%s\n"
+"Rith '%s --help' chun amharc ar liosta iomlán de gach rogha líne na n-orduithe atá le fáil.\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -930,11 +1009,11 @@ msgstr "Comhad '%s' á luchtú..."
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "%d chomhad á luchtú..."
-msgstr[1] "%d chomhad á luchtú..."
-msgstr[2] "%d chomhad á luchtú..."
-msgstr[3] "%d gcomhad á luchtú..."
-msgstr[4] "%d comhad á luchtú..."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
@@ -950,26 +1029,26 @@ msgstr ""
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:648 ../pluma/pluma-commands-file.c:871
+#: ../pluma/pluma-commands-file.c:649 ../pluma/pluma-commands-file.c:872
 #, c-format
 msgid "Saving file '%s'…"
 msgstr "Comhad '%s' á shábháil..."
 
-#: ../pluma/pluma-commands-file.c:756
+#: ../pluma/pluma-commands-file.c:757
 msgid "Save As…"
 msgstr "Sábháil Mar..."
 
-#: ../pluma/pluma-commands-file.c:1085
+#: ../pluma/pluma-commands-file.c:1086
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1130
+#: ../pluma/pluma-commands-file.c:1131
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1139
+#: ../pluma/pluma-commands-file.c:1140
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently "
@@ -983,12 +1062,12 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/pluma-commands-file.c:1148
+#: ../pluma/pluma-commands-file.c:1149
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1154
+#: ../pluma/pluma-commands-file.c:1155
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -1002,7 +1081,7 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/pluma-commands-file.c:1164
+#: ../pluma/pluma-commands-file.c:1165
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently "
@@ -1016,12 +1095,12 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/pluma-commands-file.c:1179
+#: ../pluma/pluma-commands-file.c:1180
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1185
+#: ../pluma/pluma-commands-file.c:1186
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -1035,7 +1114,7 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/pluma-commands-file.c:1200
+#: ../pluma/pluma-commands-file.c:1201
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -1047,9 +1126,9 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: ../pluma/pluma-commands-file.c:1226
+#: ../pluma/pluma-commands-file.c:1228 ../pluma/pluma-ui.h:84
 msgid "_Revert"
-msgstr "_Fill"
+msgstr "Iom_paigh"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
@@ -1057,7 +1136,10 @@ msgstr ""
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "Alastair McKinstry <mckinstry@computer.org>\nPaul Duffy <dubhthach@frink.nuigalway.ie>\nAlan Horkan <horkan@maths.tcd.ie>\nSeán de Búrca <leftmostcat@gmail.com>"
+msgstr ""
+"Paul Duffy <dubhthach@frink.nuigalway.ie>\n"
+"Alastair McKinstry <mckinstry@computer.org>\n"
+"Seán de Búrca <leftmostcat@gmail.com>"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
@@ -1080,17 +1162,17 @@ msgstr ""
 msgid "\"%s\" not found"
 msgstr "\"%s\" gan aimsiú"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "Cáipéis Gan Sábháil %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2227 ../pluma/pluma-window.c:2232
 msgid "Read-Only"
 msgstr ""
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3646
 msgid "Documents"
 msgstr "Cáipéisí"
 
@@ -1129,11 +1211,11 @@ msgstr "Coireallach"
 #: ../pluma/pluma-encodings.c:161 ../pluma/pluma-encodings.c:235
 #: ../pluma/pluma-encodings.c:276
 msgid "Arabic"
-msgstr "Arabach"
+msgstr "Araibis"
 
 #: ../pluma/pluma-encodings.c:163 ../pluma/pluma-encodings.c:270
 msgid "Greek"
-msgstr "Gréagach"
+msgstr "Gréigis"
 
 #: ../pluma/pluma-encodings.c:165
 msgid "Hebrew Visual"
@@ -1158,7 +1240,7 @@ msgstr "Rómánach"
 
 #: ../pluma/pluma-encodings.c:195
 msgid "Armenian"
-msgstr "Airméanach"
+msgstr "Airméinis"
 
 #: ../pluma/pluma-encodings.c:197 ../pluma/pluma-encodings.c:199
 #: ../pluma/pluma-encodings.c:213
@@ -1187,11 +1269,11 @@ msgstr "Síneach Simplithe"
 
 #: ../pluma/pluma-encodings.c:222
 msgid "Georgian"
-msgstr "Seoirseach"
+msgstr "Seoirsis"
 
 #: ../pluma/pluma-encodings.c:233 ../pluma/pluma-encodings.c:274
 msgid "Hebrew"
-msgstr "Eabhrach"
+msgstr "Eabhrais"
 
 #: ../pluma/pluma-encodings.c:250
 msgid "Cyrillic/Ukrainian"
@@ -1204,7 +1286,7 @@ msgstr "Vítneamach"
 
 #: ../pluma/pluma-encodings.c:257
 msgid "Thai"
-msgstr "Téalannach"
+msgstr "Téalainnis"
 
 #: ../pluma/pluma-encodings.c:431
 msgid "Unknown"
@@ -1224,219 +1306,224 @@ msgstr "Logchaighdeán Reatha (%s)"
 msgid "Add or Remove..."
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:54
+#: ../pluma/pluma-file-chooser-dialog.c:55
 msgid "All Text Files"
 msgstr "Gach Comhad Téacs"
 
-#: ../pluma/pluma-file-chooser-dialog.c:82
+#: ../pluma/pluma-file-chooser-dialog.c:83
 msgid "C_haracter Encoding:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:148
 msgid "L_ine Ending:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:167
 msgid "Unix/Linux"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:173
 msgid "Mac OS Classic"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:179
 msgid "Windows"
-msgstr ""
+msgstr "Fuinneoga"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-file-chooser-dialog.c:442
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+msgid "_Open"
+msgstr "_Oscail"
+
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
-msgstr ""
+msgstr "_Atriail"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "Níorbh fhéidir an comhad %s a aimsiú."
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
 msgstr ""
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "Is fillteán é %s."
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "Níorbh fhéidir an comhad %s a fhilleadh."
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr ""
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr ""
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "Níorbh fhéidir an comhad %s a oscailt."
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "Sábháil Mar Sin _Féin"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "Ná Sá_bháil"
 
@@ -1445,27 +1532,27 @@ msgstr "Ná Sá_bháil"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "Níorbh fhéidir comhad cúltaca a chruthú agus %s á shábháil"
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "Níorbh fhéidir comhad cúltaca sealadach a chruthú agus %s á shábháil"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
@@ -1473,62 +1560,62 @@ msgid ""
 msgstr ""
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "Níorbh fhéidir an comhad %s a shábháil."
@@ -1538,20 +1625,20 @@ msgstr "Níorbh fhéidir an comhad %s a shábháil."
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
 msgstr "_Athluchtaigh"
 
@@ -1606,7 +1693,7 @@ msgstr "Priontáil c_eanntásca leathanaigh"
 
 #: ../pluma/pluma-print-preferences.ui.h:14
 msgid "Fonts"
-msgstr ""
+msgstr "Clónna"
 
 #: ../pluma/pluma-print-preferences.ui.h:15
 msgid "_Body:"
@@ -1762,42 +1849,42 @@ msgid "Saving %s"
 msgstr "%s á shábháil"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "LA"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "Earráid agus comhad %s á oscailt"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Earráid agus comhad %s á fhilleadh"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "Earráid agus comhad %s á shábháil"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "Unicode (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
 msgstr "Ainm:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "Cineál MIME:"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "Ionchódú:"
 
-#: ../pluma/pluma-tab-label.c:276
+#: ../pluma/pluma-tab-label.c:288
 msgid "Close document"
 msgstr "Dún cáipéis"
 
@@ -1816,7 +1903,7 @@ msgstr "_Amharc"
 
 #: ../pluma/pluma-ui.h:50
 msgid "_Search"
-msgstr "Cuar_daigh"
+msgstr "C_uardaigh"
 
 #: ../pluma/pluma-ui.h:51
 msgid "_Tools"
@@ -1826,9 +1913,10 @@ msgstr "_Uirlisí"
 msgid "_Documents"
 msgstr "Cái_péisí"
 
-#: ../pluma/pluma-ui.h:53
-msgid "_Help"
-msgstr "Cab_hair"
+#. File menu
+#: ../pluma/pluma-ui.h:56
+msgid "_New"
+msgstr "_Nua"
 
 #: ../pluma/pluma-ui.h:57
 msgid "Create a new document"
@@ -1838,7 +1926,7 @@ msgstr "Cruthaigh cáipéis nua"
 msgid "_Open..."
 msgstr "_Oscail..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1424
 msgid "Open a file"
 msgstr "Oscail comhad"
 
@@ -1860,13 +1948,22 @@ msgstr "_Inneachar"
 msgid "Open the pluma manual"
 msgstr "Oscail an lámhleabhar pluma"
 
+#: ../pluma/pluma-ui.h:68
+msgid "_About"
+msgstr "_Maidir Leis Seo"
+
 #: ../pluma/pluma-ui.h:69
 msgid "About this application"
 msgstr "Maidir leis an feidhmchlár seo"
 
+#. Fullscreen toolbar
+#: ../pluma/pluma-ui.h:72
+msgid "_Leave Fullscreen"
+msgstr ""
+
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
-msgstr ""
+msgstr "Fág mód lánscáileáin"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
@@ -1878,7 +1975,7 @@ msgstr "Sábháil _Mar..."
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
-msgstr "Sábháil an comhad reatha le hainm éagsúil"
+msgstr "Sábháil an comhad seo le ainm eile"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
@@ -1894,31 +1991,59 @@ msgstr "Réamhamharc priontála"
 
 #: ../pluma/pluma-ui.h:88
 msgid "_Print..."
-msgstr "_Priontáil"
+msgstr "_Priontáil..."
 
 #: ../pluma/pluma-ui.h:89
 msgid "Print the current page"
 msgstr "Priontáil an leathanach reatha"
 
+#. Edit menu
+#: ../pluma/pluma-ui.h:92
+msgid "_Undo"
+msgstr "_Cealaigh"
+
 #: ../pluma/pluma-ui.h:93
 msgid "Undo the last action"
 msgstr "Cealaigh an gníomh roimhe seo"
+
+#: ../pluma/pluma-ui.h:94
+msgid "_Redo"
+msgstr "_Athfheidhmigh"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
 msgstr "Athfheidhmigh an gníomh cealaithe is déanaí"
 
+#: ../pluma/pluma-ui.h:96
+msgid "Cu_t"
+msgstr "_Gearr"
+
 #: ../pluma/pluma-ui.h:97
 msgid "Cut the selection"
 msgstr "Gearr an roghnú"
+
+#: ../pluma/pluma-ui.h:98
+msgid "_Copy"
+msgstr "_Cóipeáil"
 
 #: ../pluma/pluma-ui.h:99
 msgid "Copy the selection"
 msgstr "Cóipeáil an roghnú"
 
+#: ../pluma/pluma-ui.h:100
+msgid "_Paste"
+msgstr "G_reamaigh"
+
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
 msgstr "Greamaigh an ghearrthaisce"
+
+#. Add delete button
+#: ../pluma/pluma-ui.h:102
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:182
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
+msgid "_Delete"
+msgstr "_Scrios"
 
 #: ../pluma/pluma-ui.h:103
 msgid "Delete the selected text"
@@ -1926,7 +2051,7 @@ msgstr "Scrios an téacs roghnaithe"
 
 #: ../pluma/pluma-ui.h:104
 msgid "Select _All"
-msgstr "Roghnaigh G_ach Rud"
+msgstr "Roghnaigh _Gach Rud"
 
 #: ../pluma/pluma-ui.h:105
 msgid "Select the entire document"
@@ -1956,7 +2081,7 @@ msgstr ""
 
 #: ../pluma/pluma-ui.h:115
 msgid "Find Pre_vious"
-msgstr "_Roimhe Seo"
+msgstr "An Ceann _Roimhe Seo"
 
 #: ../pluma/pluma-ui.h:116
 msgid "Search backwards for the same text"
@@ -2039,9 +2164,13 @@ msgstr "Bog an cáipéis reatha go fuinneog nua"
 msgid "Close the current file"
 msgstr "Dún an comhad reatha"
 
+#: ../pluma/pluma-ui.h:149
+msgid "_Quit"
+msgstr "Scoi_r"
+
 #: ../pluma/pluma-ui.h:150
 msgid "Quit the program"
-msgstr "Scoir ón feidhmchlár"
+msgstr "Scoir an feidhmchlár"
 
 #: ../pluma/pluma-ui.h:155
 msgid "_Toolbar"
@@ -2058,6 +2187,10 @@ msgstr "Barra _Stádais"
 #: ../pluma/pluma-ui.h:159
 msgid "Show or hide the statusbar in the current window"
 msgstr ""
+
+#: ../pluma/pluma-ui.h:161
+msgid "_Fullscreen"
+msgstr "_Lánscáileán"
 
 #: ../pluma/pluma-ui.h:162
 msgid "Edit text in fullscreen"
@@ -2100,36 +2233,36 @@ msgid "/ on %s"
 msgstr "/ ar %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "_Timfhill"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "Meaitseáil an Focal ar _Fad Amháin"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "_Meaitseáil an Cás"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr ""
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:983
 #, c-format
 msgid "Use %s highlight mode"
 msgstr ""
@@ -2137,7 +2270,7 @@ msgstr ""
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1040 ../pluma/pluma-window.c:1928
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2145,43 +2278,43 @@ msgstr ""
 msgid "Plain Text"
 msgstr "Gnáth-Théacs"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1041
 msgid "Disable syntax highlighting"
 msgstr ""
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1323
 #, c-format
 msgid "Open '%s'"
 msgstr "Oscail '%s'"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1430
 msgid "Open a recently used file"
 msgstr "Oscail comhad úsáidte le déanaí"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1436
 msgid "Open"
 msgstr "Oscail"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1494
 msgid "Save"
 msgstr "Sábháil"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1496
 msgid "Print"
 msgstr "Priontáil"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1653
 #, c-format
 msgid "Activate '%s'"
 msgstr "Gníomhachtaigh '%s'"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1906
 msgid "Use Spaces"
 msgstr "Úsáid Spásanna"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1977
 msgid "Tab Width"
 msgstr "Leithead Táib"
 
@@ -2240,39 +2373,39 @@ msgid ""
 "characters and non-space characters in it."
 msgstr ""
 
-#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/docinfo/docinfo.ui.h:3
 msgid "_Update"
 msgstr "_Nuashonraigh"
 
-#: ../plugins/docinfo/docinfo.ui.h:3
+#: ../plugins/docinfo/docinfo.ui.h:4
 msgid "File Name"
 msgstr ""
 
-#: ../plugins/docinfo/docinfo.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:6
 msgid "Bytes"
 msgstr "Bearta"
 
-#: ../plugins/docinfo/docinfo.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:7
 msgid "Characters (no spaces)"
 msgstr "Carachtair (gan spásanna)"
 
-#: ../plugins/docinfo/docinfo.ui.h:7
+#: ../plugins/docinfo/docinfo.ui.h:8
 msgid "Characters (with spaces)"
 msgstr "Carachtair (le spásanna)"
 
-#: ../plugins/docinfo/docinfo.ui.h:8
+#: ../plugins/docinfo/docinfo.ui.h:9
 msgid "Words"
 msgstr "Focail"
 
-#: ../plugins/docinfo/docinfo.ui.h:9
+#: ../plugins/docinfo/docinfo.ui.h:10
 msgid "Lines"
 msgstr "Línte"
 
-#: ../plugins/docinfo/docinfo.ui.h:10
+#: ../plugins/docinfo/docinfo.ui.h:11
 msgid "Document"
 msgstr "Cáipéis"
 
-#: ../plugins/docinfo/docinfo.ui.h:11
+#: ../plugins/docinfo/docinfo.ui.h:12
 msgid "Selection"
 msgstr "Roghnú"
 
@@ -2315,7 +2448,7 @@ msgstr ""
 #: ../plugins/externaltools/tools/capture.py:92
 #, python-format
 msgid "Could not execute command: %s"
-msgstr ""
+msgstr "Níorbh fhéidir ordú a rith: %s"
 
 #: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
@@ -2327,7 +2460,7 @@ msgstr ""
 
 #: ../plugins/externaltools/tools/functions.py:287
 msgid "Done."
-msgstr ""
+msgstr "Críochnaithe."
 
 #: ../plugins/externaltools/tools/functions.py:289
 msgid "Exited"
@@ -2335,18 +2468,18 @@ msgstr ""
 
 #: ../plugins/externaltools/tools/manager.py:136
 msgid "All languages"
-msgstr ""
+msgstr "Gach teanga"
 
 #: ../plugins/externaltools/tools/manager.py:545
 #: ../plugins/externaltools/tools/manager.py:549
 #: ../plugins/externaltools/tools/manager.py:871
 #: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "All Languages"
-msgstr ""
+msgstr "Gach Teanga"
 
 #: ../plugins/externaltools/tools/manager.py:655
 msgid "New tool"
-msgstr ""
+msgstr "Uirlis nua"
 
 #: ../plugins/externaltools/tools/manager.py:786
 #, python-format
@@ -2368,31 +2501,31 @@ msgstr ""
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
 msgid "Nothing"
-msgstr ""
+msgstr "Neamhní"
 
 #: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "Current document"
-msgstr ""
+msgstr "Cáipéis reatha"
 
 #: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
-msgstr ""
+msgstr "Gach cáipéis"
 
 #: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Current selection"
-msgstr ""
+msgstr "Roghnú reatha"
 
 #: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Current selection (default to document)"
-msgstr ""
+msgstr "Roghnú reatha (cáipéis mar réamhshocrú)"
 
 #: ../plugins/externaltools/tools/tools.ui.h:6
 msgid "Current line"
-msgstr ""
+msgstr "Líne reatha"
 
 #: ../plugins/externaltools/tools/tools.ui.h:7
 msgid "Current word"
-msgstr ""
+msgstr "Focal reatha"
 
 #: ../plugins/externaltools/tools/tools.ui.h:8
 msgid "Display in bottom pane"
@@ -2400,19 +2533,19 @@ msgstr ""
 
 #: ../plugins/externaltools/tools/tools.ui.h:9
 msgid "Create new document"
-msgstr ""
+msgstr "Cruthaigh cáipéis nua"
 
 #: ../plugins/externaltools/tools/tools.ui.h:10
 msgid "Append to current document"
-msgstr ""
+msgstr "Iarcheangail le cáipéis reatha"
 
 #: ../plugins/externaltools/tools/tools.ui.h:11
 msgid "Replace current document"
-msgstr ""
+msgstr "Ionadaigh cáipéis reatha"
 
 #: ../plugins/externaltools/tools/tools.ui.h:12
 msgid "Replace current selection"
-msgstr ""
+msgstr "Ionadaigh roghnú reatha"
 
 #: ../plugins/externaltools/tools/tools.ui.h:13
 msgid "Insert at cursor position"
@@ -2432,7 +2565,7 @@ msgstr ""
 
 #: ../plugins/externaltools/tools/tools.ui.h:17
 msgid "Untitled documents only"
-msgstr ""
+msgstr "Cáipéisí gan teideal amháin"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
@@ -2440,12 +2573,12 @@ msgstr ""
 
 #: ../plugins/externaltools/tools/tools.ui.h:19
 msgid "_Tools:"
-msgstr ""
+msgstr "_Uirlisí:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
 #: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
-msgstr ""
+msgstr "_Eagar:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
@@ -2453,15 +2586,15 @@ msgstr ""
 
 #: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Output:"
-msgstr ""
+msgstr "_Aschur:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "_Input:"
-msgstr ""
+msgstr "_Ionchur:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:26
 msgid "_Save:"
-msgstr ""
+msgstr "_Sábháil:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:27
 msgid "_Shortcut Key:"
@@ -2469,7 +2602,7 @@ msgstr ""
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
-msgstr ""
+msgstr "Tóg"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:2
 msgid "Run \"make\" in the document directory"
@@ -2493,7 +2626,7 @@ msgstr ""
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:1
 msgid "Run command"
-msgstr ""
+msgstr "Rith ordú"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:2
 msgid "Execute a custom command and put its output in a new document"
@@ -2501,7 +2634,7 @@ msgstr ""
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
-msgstr ""
+msgstr "Cuardaigh"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
@@ -2659,18 +2792,18 @@ msgstr ""
 msgid "The selected files cannot be moved to the trash."
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1165
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr ""
+msgstr "An bhfuil tú cinnte gur mhaith leat \"%s\" a scriosadh go buan?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1170
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1168
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1171
 msgid "If you delete an item, it is permanently lost."
-msgstr ""
+msgstr "Má scriosann tú mír, tá sí caillte go buan."
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
@@ -2722,10 +2855,6 @@ msgstr ""
 msgid "Move selected file or folder to trash"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
-msgid "_Delete"
-msgstr "Scri_os"
-
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Delete selected file or folder"
 msgstr "Scrios comhad nó fillteán roghnaithe"
@@ -2760,7 +2889,7 @@ msgstr ""
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:834
 msgid "_Rename"
-msgstr "_Athainmnigh"
+msgstr "_Athainmigh"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:835
 msgid "Rename selected file or folder"
@@ -2772,7 +2901,7 @@ msgstr "Suíomh _Roimhe Seo"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Go to the previous visited location"
-msgstr ""
+msgstr "Téigh go dtí an suíomh feicthe roimhe seo"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "_Next Location"
@@ -2780,7 +2909,7 @@ msgstr "An Chéad Suíomh _Eile"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
-msgstr ""
+msgstr "Téigh go dtí an chéad suíomh feicthe eile"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
@@ -2816,18 +2945,18 @@ msgstr ""
 msgid "Show binary files"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:993
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1023
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:991
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1004
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1027
 msgid "Previous location"
 msgstr "Suíomh roimhe seo"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:995
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
 msgid "Go to previous location"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1018
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:999
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
 msgid "Go to a previously opened location"
 msgstr ""
 
@@ -2835,25 +2964,25 @@ msgstr ""
 msgid "Next location"
 msgstr "An chéad suíomh eile"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1016
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1020
 msgid "Go to next location"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1228
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1232
 msgid "_Match Filename"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2140
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2144
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2220
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2224
 #, c-format
 msgid "Could not open media: %s"
 msgstr "Níorbh fhéidir meáin a oscailt: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2267
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2271
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "Níorbh fhéidir imleabhar a fheistiú: %s"
@@ -2876,14 +3005,13 @@ msgstr ""
 msgid "Interactive Python console standing in the bottom panel"
 msgstr ""
 
-#. ex:et:ts=4:
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
 msgstr ""
 
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
 msgid "_Error color:"
-msgstr ""
+msgstr "Dath _earráidí:"
 
 #. ex:ts=8:et:
 #: ../plugins/quickopen/quickopen/popup.py:31
@@ -2897,11 +3025,11 @@ msgstr ""
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:66
 msgid "Quickly open documents"
-msgstr ""
+msgstr "Oscail cáipéisí go tapa"
 
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
-msgstr ""
+msgstr "Oscail comhaid go tapa"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
@@ -2917,7 +3045,7 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/snippets.ui.h:1
 msgid "Snippets Manager"
-msgstr ""
+msgstr "Bainisteoir Blúirí"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:2
 msgid "_Snippets:"
@@ -2925,7 +3053,7 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/snippets.ui.h:3
 msgid "Create new snippet"
-msgstr ""
+msgstr "Cruthaigh blúire nua"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
 #: ../plugins/snippets/snippets/Manager.py:792
@@ -2939,7 +3067,7 @@ msgstr ""
 #: ../plugins/snippets/snippets/snippets.ui.h:6
 #: ../plugins/snippets/snippets/Manager.py:403
 msgid "Delete selected snippet"
-msgstr ""
+msgstr "Scrios an blúire roghnaithe"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:8
 msgid "Activation"
@@ -2985,11 +3113,11 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/Manager.py:117
 msgid "Global"
-msgstr ""
+msgstr "Domhanda"
 
 #: ../plugins/snippets/snippets/Manager.py:400
 msgid "Revert selected snippet"
-msgstr ""
+msgstr "Fill an blúire roghnaithe"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
 #: ../plugins/snippets/snippets/Manager.py:674
@@ -3033,7 +3161,7 @@ msgstr ""
 #: ../plugins/snippets/snippets/Manager.py:887
 #: ../plugins/snippets/snippets/Manager.py:950
 msgid "All files"
-msgstr ""
+msgstr "Gach comhad"
 
 #: ../plugins/snippets/snippets/Manager.py:813
 #, python-format
@@ -3066,7 +3194,7 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/Manager.py:1057
 msgid "Type a new shortcut"
-msgstr ""
+msgstr "Clóscríobh aicearra nua"
 
 #: ../plugins/snippets/snippets/Exporter.py:65
 #, python-format
@@ -3143,27 +3271,27 @@ msgstr "Sórtáil"
 msgid "Sorts a document or selected text."
 msgstr ""
 
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/sort/sort.ui.h:3
 msgid "_Sort"
 msgstr "_Sórtáil"
 
-#: ../plugins/sort/sort.ui.h:3
+#: ../plugins/sort/sort.ui.h:5
 msgid "_Reverse order"
 msgstr ""
 
-#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/sort/sort.ui.h:6
 msgid "R_emove duplicates"
 msgstr ""
 
-#: ../plugins/sort/sort.ui.h:5
+#: ../plugins/sort/sort.ui.h:7
 msgid "_Ignore case"
 msgstr ""
 
-#: ../plugins/sort/sort.ui.h:6
+#: ../plugins/sort/sort.ui.h:8
 msgid "S_tart at column:"
 msgstr ""
 
-#: ../plugins/sort/sort.ui.h:7
+#: ../plugins/sort/sort.ui.h:9
 msgid "You cannot undo a sort operation"
 msgstr ""
 
@@ -3177,7 +3305,7 @@ msgstr ""
 #. suggestions
 #. * for the current misspelled word
 #: ../plugins/spell/pluma-automatic-spell-checker.c:420
-#: ../plugins/spell/pluma-spell-checker-dialog.c:455
+#: ../plugins/spell/pluma-spell-checker-dialog.c:458
 msgid "(no suggested words)"
 msgstr ""
 
@@ -3186,16 +3314,11 @@ msgid "_More..."
 msgstr "_Tuilleadh..."
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "_Neamhaird a dhéanamh de gach rud"
 
-#. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
-msgid "_Add"
-msgstr "_Cuir Leis"
-
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr ""
 
@@ -3209,11 +3332,11 @@ msgstr ""
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word
 #. isn't misspelled
-#: ../plugins/spell/pluma-spell-checker-dialog.c:562
+#: ../plugins/spell/pluma-spell-checker-dialog.c:565
 msgid "(correct spelling)"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-checker-dialog.c:709
+#: ../plugins/spell/pluma-spell-checker-dialog.c:712
 msgid "Completed spell checking"
 msgstr ""
 
@@ -3242,12 +3365,12 @@ msgctxt "language"
 msgid "Default"
 msgstr "Réamhshocrú"
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:141
+#: ../plugins/spell/pluma-spell-language-dialog.c:136
 #: ../plugins/spell/languages-dialog.ui.h:1
 msgid "Set language"
 msgstr "Socraigh teanga"
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:195
+#: ../plugins/spell/pluma-spell-language-dialog.c:190
 msgid "Languages"
 msgstr "Teangacha"
 
@@ -3283,7 +3406,7 @@ msgstr ""
 msgid "No misspelled words"
 msgstr "Gan focal mílitrithe"
 
-#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/languages-dialog.ui.h:5
 msgid "Select the _language of the current document."
 msgstr ""
 
@@ -3297,7 +3420,7 @@ msgstr "Focal mílitrithe:"
 
 #: ../plugins/spell/spell-checker.ui.h:3
 msgid "word"
-msgstr ""
+msgstr "focal"
 
 #: ../plugins/spell/spell-checker.ui.h:4
 msgid "Change _to:"
@@ -3347,19 +3470,19 @@ msgstr ""
 msgid "_Configure Spell Checker plugin..."
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
 msgid "Autocheck spelling on document load..."
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:6
 msgid "_Never autocheck"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:7
 msgid "_Remember autocheck by document"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:8
 msgid "_Always autocheck"
 msgstr ""
 
@@ -3375,7 +3498,7 @@ msgstr ""
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:724
 msgid "Tags"
-msgstr ""
+msgstr "Clibeanna"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
 msgid "Select the group of tags you want to use"
@@ -3427,7 +3550,7 @@ msgstr ""
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:10
 msgid "Anchor"
-msgstr ""
+msgstr "Ancaire"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:12
@@ -4331,7 +4454,7 @@ msgstr "Dath imill"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:262
 msgid "Border"
-msgstr "Imeall"
+msgstr "Imlíne"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:263
 msgid "Center"
@@ -4355,7 +4478,7 @@ msgstr "Cineál ábhair"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:268
 msgid "Direction"
-msgstr "Treo"
+msgstr "Bealach"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:269
 msgid "Directory list"
@@ -4941,7 +5064,7 @@ msgstr ""
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:3
 msgid "Custom format"
-msgstr ""
+msgstr "Formáid saincheaptha"
 
 #: ../plugins/time/pluma-time-plugin.c:189
 msgid "In_sert Date and Time..."
@@ -4975,31 +5098,31 @@ msgstr ""
 msgid "Insert Date and Time"
 msgstr "Ionsáigh Dáta agus Am"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:4
 msgid "_Insert"
 msgstr "_Ionsáigh"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:3
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
+#: ../plugins/time/pluma-time-dialog.ui.h:5
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:8
 msgid "Use the _selected format"
 msgstr "Bain úsáid as an bhformáid _roghnaithe"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:5
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
+#: ../plugins/time/pluma-time-dialog.ui.h:7
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
 msgid "_Use custom format"
 msgstr "_Bain úsáid as formáid saincheaptha"
 
 #. Translators: Use the more common date format in your locale
-#: ../plugins/time/pluma-time-dialog.ui.h:7
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
+#: ../plugins/time/pluma-time-dialog.ui.h:9
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:12
 #, no-c-format
 msgid "%d/%m/%Y %H:%M:%S"
 msgstr ""
 
 #. Translators: This example should follow the date format defined in the
 #. entry above
-#: ../plugins/time/pluma-time-dialog.ui.h:8
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:11
+#: ../plugins/time/pluma-time-dialog.ui.h:10
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:14
 msgid "01/11/2009 17:52:00"
 msgstr ""
 
@@ -5007,10 +5130,10 @@ msgstr ""
 msgid "Configure date/time plugin"
 msgstr ""
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
 msgid "When inserting date/time..."
 msgstr ""
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:7
 msgid "_Prompt for a format"
 msgstr ""

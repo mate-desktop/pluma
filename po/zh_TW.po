@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Jeff Huang <s8321414@gmail.com>, 2015-2017
-# 趙惟倫 <bluebat@member.fsf.org>, 2012-2013
-# Jeff Huang <s8321414@gmail.com>, 2013-2014
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 12:58+0000\n"
-"Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/mate/MATE/language/zh_TW/)\n"
+"POT-Creation-Date: 2018-04-17 17:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Chinese (Taiwan) (https://www.transifex.com/mate/teams/13566/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,7 +28,9 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "pluma 是否使用系統預設的固定寬度字型作為編輯文字使用，而不用 pluma 指定的字型。如果關閉本選項，則會使用「編輯器字型」選項中的字型，而不用系統字型。"
+msgstr ""
+"pluma 是否使用系統預設的固定寬度字型作為編輯文字使用，而不用 pluma "
+"指定的字型。如果關閉本選項，則會使用「編輯器字型」選項中的字型，而不用系統字型。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -125,7 +125,8 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "指定編輯區域如何換列。使用“GTK_WRAP_NONE”代表不會換列，“GTK_WRAP_WORD”代表在字詞間換列，及“GTK_WRAP_CHAR”代表在個別字元間換列。請注意，設定值是會分辨大小寫的，所以請確保設定值和上面所列出的完全一致。"
+msgstr ""
+"指定編輯區域如何換列。使用“GTK_WRAP_NONE”代表不會換列，“GTK_WRAP_WORD”代表在字詞間換列，及“GTK_WRAP_CHAR”代表在個別字元間換列。請注意，設定值是會分辨大小寫的，所以請確保設定值和上面所列出的完全一致。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
@@ -206,7 +207,9 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "指定按下 HOME 與 END 鍵時游標要如何移動。使用「停用」游標會移至行的開始/結束處。使用「之後」游標會在第一次按下按鍵時移至行的開始/結束處，第二次按下按鍵時移至行的開始/結束處且略過空白字元。使用「之前」游標會在移至行的開始/結束前先移到文字的開始/結束處。使用「永遠」游標會以移至文字的開始/結束處代替移至行的開始/結束處。"
+msgstr ""
+"指定按下 HOME 與 END "
+"鍵時游標要如何移動。使用「停用」游標會移至行的開始/結束處。使用「之後」游標會在第一次按下按鍵時移至行的開始/結束處，第二次按下按鍵時移至行的開始/結束處且略過空白字元。使用「之前」游標會在移至行的開始/結束前先移到文字的開始/結束處。使用「永遠」游標會以移至文字的開始/結束處代替移至行的開始/結束處。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
@@ -255,7 +258,13 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "工具列按鈕的樣式。可接受的值為：\n“PLUMA_TOOLBAR_SYSTEM”表示使用系統預設的樣式，\n“PLUMA_TOOLBAR_ICONS”表示只顯示圖示，\n“PLUMA_TOOLBAR_ICONS_AND_TEXT”表示同時顯示圖示及文字，及\n“PLUMA_TOOLBAR_ICONS_BOTH_HORIZ”表示一部分的圖示旁邊會加上文字。\n請注意，設定值是會分辨大小寫的，所以請確保設定值和上面所列出的完全一致。"
+msgstr ""
+"工具列按鈕的樣式。可接受的值為：\n"
+"“PLUMA_TOOLBAR_SYSTEM”表示使用系統預設的樣式，\n"
+"“PLUMA_TOOLBAR_ICONS”表示只顯示圖示，\n"
+"“PLUMA_TOOLBAR_ICONS_AND_TEXT”表示同時顯示圖示及文字，及\n"
+"“PLUMA_TOOLBAR_ICONS_BOTH_HORIZ”表示一部分的圖示旁邊會加上文字。\n"
+"請注意，設定值是會分辨大小寫的，所以請確保設定值和上面所列出的完全一致。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
@@ -332,7 +341,8 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "指定列印時如何換列。使用“GTK_WRAP_NONE”代表不會換列，“GTK_WRAP_WORD”代表在字詞間換列，及“GTK_WRAP_CHAR”代表在個別字元間換列。請注意，設定值是會分辨大小寫的，所以請確保設定值和上面所列出的完全一致。"
+msgstr ""
+"指定列印時如何換列。使用“GTK_WRAP_NONE”代表不會換列，“GTK_WRAP_WORD”代表在字詞間換列，及“GTK_WRAP_CHAR”代表在個別字元間換列。請注意，設定值是會分辨大小寫的，所以請確保設定值和上面所列出的完全一致。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
@@ -392,7 +402,9 @@ msgstr "指定列印時列號所用的字型。本選項只有在「列印列號
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "['UTF-8', 'CURRENT', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB2312', 'GBK', 'GB18030', 'ISO-8859-15', 'UTF-16']"
+msgstr ""
+"['UTF-8', 'CURRENT', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB2312', 'GBK', "
+"'GB18030', 'ISO-8859-15', 'UTF-16']"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:78
 msgid "Automatically Detected Encodings"
@@ -403,12 +415,14 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "這裡是一系列已排序的編碼，pluma 會根據這個清單自動偵測檔案的字元編碼。「CURRENT」表示使用目前地區設定的編碼。只會使用能識別的編碼。"
+msgstr ""
+"這裡是一系列已排序的編碼，pluma 會根據這個清單自動偵測檔案的字元編碼。「CURRENT」表示使用目前地區設定的編碼。只會使用能識別的編碼。"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
-msgstr "['BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB2312', 'GBK', 'GB18030', 'ISO-8859-15']"
+msgstr ""
+"['BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB2312', 'GBK', 'GB18030', 'ISO-8859-15']"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:81
 msgid "Encodings shown in menu"
@@ -460,7 +474,10 @@ msgid ""
 "plugin system, which currently includes support for spell checking, "
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
-msgstr "<p> Pluma 是一個專為 MATE 桌面環境設計的小巧但功能強大的文字編輯器。它擁有大多數標準的文字編輯器所應具備的功能，且完整支援以 Unicode 所編碼的國際化文字。也包含了一些進階功能，像是語法突顯、原始碼自動縮排、在一個視窗內列印及編輯多個文件。 </p> <p> Pluma 可透過外掛程式系統擴充，目前包含了拼字檢查、比較檔案、檢視 CVS 變更紀錄、調整縮排等級等。</p>"
+msgstr ""
+"<p> Pluma 是一個專為 MATE 桌面環境設計的小巧但功能強大的文字編輯器。它擁有大多數標準的文字編輯器所應具備的功能，且完整支援以 "
+"Unicode 所編碼的國際化文字。也包含了一些進階功能，像是語法突顯、原始碼自動縮排、在一個視窗內列印及編輯多個文件。 </p> <p> Pluma "
+"可透過外掛程式系統擴充，目前包含了拼字檢查、比較檔案、檢視 CVS 變更紀錄、調整縮排等級等。</p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
@@ -490,11 +507,38 @@ msgstr "取消登出(_C)"
 msgid "Close _without Saving"
 msgstr "關閉但不儲存(_W)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:211
+#. Add a cancel button
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
+#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
+#: ../pluma/pluma-file-chooser-dialog.c:440
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:171
+#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/spell/pluma-spell-language-dialog.c:132
+#: ../plugins/spell/languages-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:3
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+msgid "_Cancel"
+msgstr "取消(_C)"
+
+#. File menu
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+msgid "_Save"
+msgstr "儲存(_S)"
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+msgid "Save _As"
+msgstr "另存為(_A)"
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
 msgid "Question"
 msgstr "問題"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:411
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -504,12 +548,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "如果您不儲存，將會永久地失去最後 %ld 秒前所作的修改。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr "如果不儲存，將會永久地失去 1 分鐘前所作的修改。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -519,7 +563,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "如果您不儲存，將會永久地失去最後 1 分 %ld 秒前所作的修改。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -529,12 +573,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "如果您不儲存，將會永久地失去最後 %ld 分鐘前所作的修改。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr "如果不儲存，將會永久地失去 1 小時前所作的修改。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -544,7 +588,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "如果您不儲存，將會永久地失去最後 %d 分鐘前所作的修改。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
@@ -552,28 +596,28 @@ msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] "如果您不儲存，將會永久地失去最後 %d 小時前所作的修改。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "將會永久地失去對文件“%s”所作的修改。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "關閉前要儲存修改到文件“%s”嗎？"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr "儲存功能已被系統管理員禁用。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:717
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] "將會永久地失去對 %d 份文件所作的修改。"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -581,29 +625,52 @@ msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] "%d 份文件有未儲存的變更。要在關閉之前儲存變更？"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
 msgstr "已修改但未儲存的文件(_E):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:743
 msgid "S_elect the documents you want to save:"
 msgstr "請選擇需要儲存的文件(_E):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "如果不儲存，所有已修改的部分將會永久地遺失。"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:321
+#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:133
+#: ../plugins/spell/languages-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-plugin.c:923
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+msgid "_OK"
+msgstr "確定(_O)"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
+#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:134
+#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+msgid "_Help"
+msgstr "說明(_H)"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:316
 msgid "Character Encodings"
 msgstr "字元編碼"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:384
-#: ../pluma/dialogs/pluma-encodings-dialog.c:445
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Description"
 msgstr "描述(_D)"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:393
-#: ../pluma/dialogs/pluma-encodings-dialog.c:454
+#: ../pluma/dialogs/pluma-encodings-dialog.c:391
+#: ../pluma/dialogs/pluma-encodings-dialog.c:452
 msgid "_Encoding"
 msgstr "編碼(_E)"
 
@@ -611,13 +678,24 @@ msgstr "編碼(_E)"
 msgid "Character encodings"
 msgstr "字元編碼"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:5
 msgid "A_vailable encodings:"
-msgstr "可使用的編碼(_V):"
+msgstr "可用的編碼(_V):"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#. + Add to Dictionary
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:6
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
+msgid "_Add"
+msgstr "加入(_A)"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:7
 msgid "E_ncodings shown in menu:"
-msgstr "選單中顯示的編碼(_N):"
+msgstr "在選單中顯示的編碼(_N):"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+msgid "_Remove"
+msgstr "移除(_R)"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
@@ -632,29 +710,39 @@ msgstr "使用系統固定寬度字型 [%s](_U)"
 msgid "The selected color scheme cannot be installed."
 msgstr "無法安裝所選的色彩配置。"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:810
+#: ../pluma/dialogs/pluma-preferences-dialog.c:863
 msgid "Add Scheme"
 msgstr "加入配色"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:817
+#: ../pluma/dialogs/pluma-preferences-dialog.c:870
 msgid "A_dd Scheme"
 msgstr "加入配色(_D)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:825
+#: ../pluma/dialogs/pluma-preferences-dialog.c:878
 msgid "Color Scheme Files"
 msgstr "色彩配置檔案"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:832
-#: ../pluma/pluma-file-chooser-dialog.c:53
+#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
 msgstr "所有檔案"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:877
+#: ../pluma/dialogs/pluma-preferences-dialog.c:930
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "無法移除色彩配置「%s」。"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1088
+#. ex:et:ts=4:
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
+#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Close"
+msgstr "關閉(_C)"
+
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
 msgid "Pluma Preferences"
 msgstr "Pluma 偏好設定"
 
@@ -662,190 +750,195 @@ msgstr "Pluma 偏好設定"
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
 #: ../pluma/pluma-print-preferences.ui.h:9
 msgid "Text Wrapping"
 msgstr "文字換列"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../plugins/docinfo/docinfo.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:5
 #: ../plugins/externaltools/tools/tools.ui.h:21
 #: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:4
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
 #: ../pluma/pluma-print-preferences.ui.h:10
 msgid "Enable text _wrapping"
 msgstr "啟用換列功能(_W)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7
 #: ../pluma/pluma-print-preferences.ui.h:11
 msgid "Do not _split words over two lines"
 msgstr "換列時不將字詞斷開(_S)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
 #: ../pluma/pluma-print-preferences.ui.h:3
 msgid "Line Numbers"
 msgstr "列號"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "顯示列號(_D)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
 msgid "Current Line"
 msgstr "目前的行"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
 msgid "Highlight current _line"
 msgstr "標示當前的行(_L)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
 msgid "Right Margin"
 msgstr "右邊邊界"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
 msgid "Display right _margin"
 msgstr "顯示右邊邊界(_M)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
 msgid "_Right margin at column:"
 msgstr "指定右邊邊界於欄位(_R):"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
 msgid "Bracket Matching"
 msgstr "對稱括號"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
 msgid "Highlight matching _bracket"
 msgstr "標示對稱的括號(_B)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
 msgid "View"
 msgstr "檢視"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
 msgid "Tab Stops"
 msgstr "Tab 停止位置"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
 msgid "_Tab width:"
 msgstr "_Tab 字元寬度："
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
 msgid "Insert _spaces instead of tabs"
 msgstr "插入空格代替 _Tab 字元"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
 msgid "Automatic Indentation"
 msgstr "自動縮排"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
 msgid "_Enable automatic indentation"
 msgstr "啟用自動縮排功能(_E)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
 msgid "File Saving"
 msgstr "正在儲存檔案"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
 msgid "Create a _backup copy of files before saving"
 msgstr "儲存前先製作暫存檔(_B)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
 msgid "_Autosave files every"
 msgstr "每隔指定時間自動儲存檔案(_A):"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
 msgid "_minutes"
 msgstr "分鐘(_M)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
 msgid "Editor"
 msgstr "編輯器"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
 msgid "Font"
 msgstr "字型"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
 msgid "Editor _font: "
 msgstr "編輯器字型(_F):"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "Pick the editor font"
 msgstr "請指定編輯器字型"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Color Scheme"
 msgstr "色彩配置"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
 msgid "_Add..."
 msgstr "加入(_A)…"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font & Colors"
 msgstr "字型及顏色"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Plugins"
 msgstr "外掛程式"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1500
 msgid "Replace"
 msgstr "取代"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1498
 msgid "Find"
 msgstr "尋找"
+
+#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+msgid "_Find"
+msgstr "尋找(_F)"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "全部取代(_A)"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:421
-#: ../pluma/pluma-commands-file.c:587
+#: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr "取代(_R)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "Replace All"
 msgstr "全部取代"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
 msgid "_Search for: "
 msgstr "搜尋(_S):"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
 msgid "Replace _with: "
 msgstr "取代為(_W):"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "_Match case"
 msgstr "符合大小寫(_M)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Match _regular expression"
 msgstr "符合正規表示式(_R)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "Match _entire word only"
 msgstr "只符合整個字詞(_E)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "Search _backwards"
 msgstr "向上搜尋(_B)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:11
 msgid "_Wrap around"
 msgstr "回到檔案開始部分再搜尋(_W)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:12
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "分析逃脫序列 (例如 \\n) (_P)"
 
@@ -894,7 +987,9 @@ msgstr "- 編輯文字檔"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\n執行 「%s --help」以查看完整的命令列可用選項清單。\n"
+msgstr ""
+"%s\n"
+"執行「%s --help」可列出命令列中可用的完整選項。\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -921,26 +1016,26 @@ msgstr "檔案“%s”是唯讀檔案。"
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "您是否嘗試以準備儲存的版本覆寫該檔案？"
 
-#: ../pluma/pluma-commands-file.c:648 ../pluma/pluma-commands-file.c:871
+#: ../pluma/pluma-commands-file.c:649 ../pluma/pluma-commands-file.c:872
 #, c-format
 msgid "Saving file '%s'…"
 msgstr "正在儲存檔案‘%s’…"
 
-#: ../pluma/pluma-commands-file.c:756
+#: ../pluma/pluma-commands-file.c:757
 msgid "Save As…"
 msgstr "另存新檔…"
 
-#: ../pluma/pluma-commands-file.c:1085
+#: ../pluma/pluma-commands-file.c:1086
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr "正在還原文件‘%s’…"
 
-#: ../pluma/pluma-commands-file.c:1130
+#: ../pluma/pluma-commands-file.c:1131
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr "是否將未儲存的文件‘%s’還原？"
 
-#: ../pluma/pluma-commands-file.c:1139
+#: ../pluma/pluma-commands-file.c:1140
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently "
@@ -950,12 +1045,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "%ld 秒之前對於文件所做的變更將會永久地失去。"
 
-#: ../pluma/pluma-commands-file.c:1148
+#: ../pluma/pluma-commands-file.c:1149
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "將會永久地失去 1 分鐘秒前對文件所作的修改。"
 
-#: ../pluma/pluma-commands-file.c:1154
+#: ../pluma/pluma-commands-file.c:1155
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -965,7 +1060,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "1 分 %ld 秒之前對於文件所做的變更將會永久地失去。"
 
-#: ../pluma/pluma-commands-file.c:1164
+#: ../pluma/pluma-commands-file.c:1165
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently "
@@ -975,12 +1070,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "%ld 分鐘之前對於文件所做的變更將會永久地失去。"
 
-#: ../pluma/pluma-commands-file.c:1179
+#: ../pluma/pluma-commands-file.c:1180
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
 msgstr "將會永久地失去 1 小時前對文件所作的修改。"
 
-#: ../pluma/pluma-commands-file.c:1185
+#: ../pluma/pluma-commands-file.c:1186
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -990,7 +1085,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "1 小時 %d 分鐘之前對於文件所做的變更將會永久地失去。"
 
-#: ../pluma/pluma-commands-file.c:1200
+#: ../pluma/pluma-commands-file.c:1201
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -998,9 +1093,9 @@ msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] "%d 小時之前對於文件所做的變更將會永久地失去。"
 
-#: ../pluma/pluma-commands-file.c:1226
+#: ../pluma/pluma-commands-file.c:1228 ../pluma/pluma-ui.h:84
 msgid "_Revert"
-msgstr "還原(_R)"
+msgstr "回復(_R)"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
@@ -1008,7 +1103,13 @@ msgstr "Pluma 是一個小巧的文字編輯器，適用於 MATE 桌面"
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "黃柏諺 <s8321414@yahoo.com.tw>,2013-14\n趙惟倫 <bluebat@member.fsf.org>, 2012\nWoodman Tuen <wmtuen@gmail.com>, 2005-07\nAnthony Tang <tkyanthony@yahoo.com.hk>, 2004\nAbel Cheung <abel@oaka.org>, 2001-03\nJing-Jong Shyue <shyue@sonoma.com.tw>, 2000"
+msgstr ""
+"黃柏諺 <s8321414@yahoo.com.tw>,2013-14\n"
+"Launchpad 貢獻者：\n"
+"  Jose Sun https://launchpad.net/~josesun\n"
+"  Toomore https://launchpad.net/~toomore\n"
+"  fetag https://launchpad.net/~coolfire\n"
+"Walter Cheuk <wwycheuk@gmail.com>, 2016."
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
@@ -1027,17 +1128,17 @@ msgstr "找到及取代了一個字串"
 msgid "\"%s\" not found"
 msgstr "找不到「%s」"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "未儲存文件 %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2227 ../pluma/pluma-window.c:2232
 msgid "Read-Only"
 msgstr "唯讀"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3646
 msgid "Documents"
 msgstr "文件"
 
@@ -1051,40 +1152,40 @@ msgstr "萬國碼"
 #: ../pluma/pluma-encodings.c:151 ../pluma/pluma-encodings.c:175
 #: ../pluma/pluma-encodings.c:225 ../pluma/pluma-encodings.c:268
 msgid "Western"
-msgstr "西歐諸語"
+msgstr "西歐語系"
 
 #: ../pluma/pluma-encodings.c:153 ../pluma/pluma-encodings.c:227
 #: ../pluma/pluma-encodings.c:264
 msgid "Central European"
-msgstr "中歐諸語"
+msgstr "中歐語系"
 
 #: ../pluma/pluma-encodings.c:155
 msgid "South European"
-msgstr "南歐諸語"
+msgstr "南歐語系"
 
 #: ../pluma/pluma-encodings.c:157 ../pluma/pluma-encodings.c:171
 #: ../pluma/pluma-encodings.c:278
 msgid "Baltic"
-msgstr "波羅的海諸語"
+msgstr "波羅的海語系"
 
 #: ../pluma/pluma-encodings.c:159 ../pluma/pluma-encodings.c:229
 #: ../pluma/pluma-encodings.c:242 ../pluma/pluma-encodings.c:246
 #: ../pluma/pluma-encodings.c:248 ../pluma/pluma-encodings.c:266
 msgid "Cyrillic"
-msgstr "西里爾諸語"
+msgstr "西里爾語系"
 
 #: ../pluma/pluma-encodings.c:161 ../pluma/pluma-encodings.c:235
 #: ../pluma/pluma-encodings.c:276
 msgid "Arabic"
-msgstr "阿拉伯語"
+msgstr "阿拉伯文"
 
 #: ../pluma/pluma-encodings.c:163 ../pluma/pluma-encodings.c:270
 msgid "Greek"
-msgstr "希臘語"
+msgstr "希臘文"
 
 #: ../pluma/pluma-encodings.c:165
 msgid "Hebrew Visual"
-msgstr "希伯來語(左至右)"
+msgstr "希伯來語（視覺順序）"
 
 #: ../pluma/pluma-encodings.c:167 ../pluma/pluma-encodings.c:231
 #: ../pluma/pluma-encodings.c:272
@@ -1093,11 +1194,11 @@ msgstr "土耳其語"
 
 #: ../pluma/pluma-encodings.c:169
 msgid "Nordic"
-msgstr "北歐諸語"
+msgstr "北歐語系"
 
 #: ../pluma/pluma-encodings.c:173
 msgid "Celtic"
-msgstr "塞爾特諸語"
+msgstr "塞爾特語系"
 
 #: ../pluma/pluma-encodings.c:177
 msgid "Romanian"
@@ -1105,7 +1206,7 @@ msgstr "羅馬尼亞語"
 
 #: ../pluma/pluma-encodings.c:195
 msgid "Armenian"
-msgstr "亞美尼亞語"
+msgstr "亞美尼亞文"
 
 #: ../pluma/pluma-encodings.c:197 ../pluma/pluma-encodings.c:199
 #: ../pluma/pluma-encodings.c:213
@@ -1134,11 +1235,11 @@ msgstr "簡化字漢語"
 
 #: ../pluma/pluma-encodings.c:222
 msgid "Georgian"
-msgstr "喬治亞語"
+msgstr "喬治亞文"
 
 #: ../pluma/pluma-encodings.c:233 ../pluma/pluma-encodings.c:274
 msgid "Hebrew"
-msgstr "希伯來語"
+msgstr "希伯來文"
 
 #: ../pluma/pluma-encodings.c:250
 msgid "Cyrillic/Ukrainian"
@@ -1151,11 +1252,11 @@ msgstr "越南語"
 
 #: ../pluma/pluma-encodings.c:257
 msgid "Thai"
-msgstr "泰語"
+msgstr "泰文"
 
 #: ../pluma/pluma-encodings.c:431
 msgid "Unknown"
-msgstr "不明"
+msgstr "未知的"
 
 #: ../pluma/pluma-encodings-combo-box.c:272
 msgid "Automatically Detected"
@@ -1171,219 +1272,224 @@ msgstr "目前的地區設定 (%s)"
 msgid "Add or Remove..."
 msgstr "加入或移除…"
 
-#: ../pluma/pluma-file-chooser-dialog.c:54
+#: ../pluma/pluma-file-chooser-dialog.c:55
 msgid "All Text Files"
 msgstr "所有文字檔"
 
-#: ../pluma/pluma-file-chooser-dialog.c:82
+#: ../pluma/pluma-file-chooser-dialog.c:83
 msgid "C_haracter Encoding:"
 msgstr "字元編碼(_H):"
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:148
 msgid "L_ine Ending:"
 msgstr "行結尾(_I):"
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:167
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:173
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:179
 msgid "Windows"
-msgstr "Windows"
+msgstr "視窗"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-file-chooser-dialog.c:442
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+msgid "_Open"
+msgstr "開啟(_O)"
+
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr "顯示說明文件時發生錯誤。"
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
 msgstr "重試(_R)"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "無法找到檔案 %s。"
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
 msgstr "檢查所輸入的位置是否正確後再試一次。"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "pluma 無法處理 %s 位置。"
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "pluma 無法處理此位置。"
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr "此檔案的位置不能被掛載。"
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "不能存取該檔案的位置，因為它尚未被掛載。"
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "%s 是一個目錄"
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr "%s 並不是一個有效的位置。"
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr "無法找到主機 %s。檢查代理伺服器的設定是否正確後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr "主機名稱無效。請檢查您所輸入的位置是否正確後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s 不是一個正規的檔案。"
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr "連線逾時，請再嘗試。"
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "檔案太大。"
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "無法預期錯誤：%s"
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "pluma 找不到該檔案。可能其已被刪除。"
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "無法還原檔案 %s。"
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr "字元編碼(_A):"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr "強制編輯(_W)"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr "不要編輯(_O)"
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr "連結的數量被限制而在此限制內找不到實際的檔案。"
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr "您沒有足夠的權限來開啟檔案。"
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr "pluma 將無法偵測字元編碼。"
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr "請檢查是否在嘗試開啟二元碼檔案。"
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr "在選單中選取字元編碼後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "開啟檔案 %s 時發生錯誤。"
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
 msgstr "您所開啟的檔案有部分無效的字元，如果您繼續編輯這個檔案，可能會讓這個文件無法使用。"
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
 msgstr "您可以選擇別的字元編碼後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr "無法使用 %2$s 編碼來開啟檔案 %1$s。"
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
 msgstr "在選單中選取其他的字元編碼後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "無法開啟檔案 %s。"
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr "無法使用 %2$s 編碼來儲存檔案 %1$s。"
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr "文件中包含了一個或更多無法使用指定編碼來儲存的字元。"
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "檔案 (%s) 已在其它的 pluma 視窗中開啟。"
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr "pluma 會以「不能編輯」的方式開啟此檔案。但是否仍然要編輯它？"
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "仍然儲存(_A)"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "不要儲存(_O)"
 
@@ -1392,90 +1498,91 @@ msgstr "不要儲存(_O)"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "檔案 %s 在閱讀前已被修改。"
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "如果儲存它，將會失去所有外部作出的變更。仍要儲存它？"
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "儲存 %s 時無法建構備份檔"
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "儲存 %s 時無法建構暫停檔"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "在儲存新的檔案前 pluma 無法備份舊的檔案。您可以忽略此警告訊息，然後繼續儲存；但如果儲存時發生錯誤，您將會失去檔案的舊版本，仍要儲存？"
+msgstr ""
+"在儲存新的檔案前 pluma 無法備份舊的檔案。您可以忽略此警告訊息，然後繼續儲存；但如果儲存時發生錯誤，您將會失去檔案的舊版本，仍要儲存？"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr "pluma 無法以寫入模式處理 %s 位置。檢查所輸入的位置是否正確後再試。"
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr "pluma 無法以寫入模式處理此位置。檢查所輸入的位置是否正確後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr "%s 並不是一個有效的位置。檢查所輸入的位置是否正確後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
 msgstr "您沒有足夠的權限來儲存檔案。檢查所輸入的位置是否正確後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
 msgstr "剩餘的磁碟空間不足以儲存檔案。請先騰空部分磁碟空間後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr "嘗試將檔案寫入唯讀的磁碟上。檢查所輸入的位置是否正確後再試一次。"
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "相同名稱的檔案已經存在，請使用其它名稱。"
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
 msgstr "準備用來儲存檔案的磁碟有檔案長度的限制。請使用較短的名稱。"
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr "準備用來儲存檔案的磁碟加上了有關檔案大小的限制。請嘗試儲存較小的檔案，或儲存至另一個沒有檔案大小限制的磁碟。"
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "無法儲存檔案 %s。"
@@ -1485,20 +1592,20 @@ msgstr "無法儲存檔案 %s。"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "磁碟上的檔案 %s 已變更"
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "是否要丟棄所有變更及重新載入檔案？"
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr "要重新載入檔案？"
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
 msgstr "重新載入(_R)"
 
@@ -1705,42 +1812,42 @@ msgid "Saving %s"
 msgstr "正在儲存 %s"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "唯讀"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "開啟 %s 時出現錯誤"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "還原檔案 %s 時出現錯誤"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "儲存檔案 %s 時出現錯誤"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "萬國碼 (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
-msgstr "名稱:"
+msgstr "名稱："
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "MIME 類型："
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "編碼："
 
-#: ../pluma/pluma-tab-label.c:276
+#: ../pluma/pluma-tab-label.c:288
 msgid "Close document"
 msgstr "關閉文件"
 
@@ -1759,7 +1866,7 @@ msgstr "檢視(_V)"
 
 #: ../pluma/pluma-ui.h:50
 msgid "_Search"
-msgstr "搜尋(_S)"
+msgstr "搜尋 (_S)"
 
 #: ../pluma/pluma-ui.h:51
 msgid "_Tools"
@@ -1769,9 +1876,10 @@ msgstr "工具(_T)"
 msgid "_Documents"
 msgstr "文件(_D)"
 
-#: ../pluma/pluma-ui.h:53
-msgid "_Help"
-msgstr "求助(_H)"
+#. File menu
+#: ../pluma/pluma-ui.h:56
+msgid "_New"
+msgstr "新增(_N)"
 
 #: ../pluma/pluma-ui.h:57
 msgid "Create a new document"
@@ -1781,7 +1889,7 @@ msgstr "新增文件"
 msgid "_Open..."
 msgstr "開啟(_O)…"
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1424
 msgid "Open a file"
 msgstr "開啟檔案"
 
@@ -1792,7 +1900,7 @@ msgstr "偏好設定(_E)"
 
 #: ../pluma/pluma-ui.h:63
 msgid "Configure the application"
-msgstr "設定應用程式"
+msgstr "設定此程式"
 
 #. Help menu
 #: ../pluma/pluma-ui.h:66
@@ -1803,9 +1911,18 @@ msgstr "內容(_C)"
 msgid "Open the pluma manual"
 msgstr "開啟 pluma 手冊"
 
+#: ../pluma/pluma-ui.h:68
+msgid "_About"
+msgstr "關於(_A)"
+
 #: ../pluma/pluma-ui.h:69
 msgid "About this application"
 msgstr "關於此程式"
+
+#. Fullscreen toolbar
+#: ../pluma/pluma-ui.h:72
+msgid "_Leave Fullscreen"
+msgstr "離開全螢幕(_L)"
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
@@ -1843,25 +1960,53 @@ msgstr "列印(_P)…"
 msgid "Print the current page"
 msgstr "列印本頁"
 
+#. Edit menu
+#: ../pluma/pluma-ui.h:92
+msgid "_Undo"
+msgstr "復原(_U)"
+
 #: ../pluma/pluma-ui.h:93
 msgid "Undo the last action"
-msgstr "復原最後一個動作"
+msgstr "復原上次動作"
+
+#: ../pluma/pluma-ui.h:94
+msgid "_Redo"
+msgstr "重做(_R)"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
-msgstr "取消上一個復原動作"
+msgstr "重做最後一筆已復原動作"
+
+#: ../pluma/pluma-ui.h:96
+msgid "Cu_t"
+msgstr "剪下(_T)"
 
 #: ../pluma/pluma-ui.h:97
 msgid "Cut the selection"
-msgstr "剪下選擇區域"
+msgstr "將已選的剪下"
+
+#: ../pluma/pluma-ui.h:98
+msgid "_Copy"
+msgstr "複製(_C)"
 
 #: ../pluma/pluma-ui.h:99
 msgid "Copy the selection"
 msgstr "複製選取的內容"
 
+#: ../pluma/pluma-ui.h:100
+msgid "_Paste"
+msgstr "貼上(_P)"
+
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
-msgstr "貼上剪貼簿的內容"
+msgstr "貼到剪貼板"
+
+#. Add delete button
+#: ../pluma/pluma-ui.h:102
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:182
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
+msgid "_Delete"
+msgstr "刪除(_D)"
 
 #: ../pluma/pluma-ui.h:103
 msgid "Delete the selected text"
@@ -1931,7 +2076,7 @@ msgstr "前往指定的列數"
 
 #: ../pluma/pluma-ui.h:123
 msgid "_Incremental Search..."
-msgstr "漸進式搜尋(_I)…."
+msgstr "漸進式搜尋(_I)…"
 
 #: ../pluma/pluma-ui.h:124
 msgid "Incrementally search for text"
@@ -1982,9 +2127,13 @@ msgstr "將目前的文件移至新的視窗"
 msgid "Close the current file"
 msgstr "關閉目前的檔案"
 
+#: ../pluma/pluma-ui.h:149
+msgid "_Quit"
+msgstr "結束(_Q)"
+
 #: ../pluma/pluma-ui.h:150
 msgid "Quit the program"
-msgstr "結束程式"
+msgstr "離開本程式"
 
 #: ../pluma/pluma-ui.h:155
 msgid "_Toolbar"
@@ -2001,6 +2150,10 @@ msgstr "狀態列(_S)"
 #: ../pluma/pluma-ui.h:159
 msgid "Show or hide the statusbar in the current window"
 msgstr "在目前的視窗中顯示或隱藏狀態列"
+
+#: ../pluma/pluma-ui.h:161
+msgid "_Fullscreen"
+msgstr "全螢幕(_F)"
 
 #: ../pluma/pluma-ui.h:162
 msgid "Edit text in fullscreen"
@@ -2043,36 +2196,38 @@ msgid "/ on %s"
 msgstr "/ 於 %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "回到檔案開始部分再搜尋(_W)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "只符合整個字詞(_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "符合大小寫(_M)"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr "分析逃脫序列 (例如 \\n) (_P \n)"
+msgstr ""
+"分析逃脫序列 (例如 \\n) (_P \n"
+")"
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr "要搜尋的字串"
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr "游標要移至的行"
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:983
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "使用 %s 標示模式"
@@ -2080,7 +2235,7 @@ msgstr "使用 %s 標示模式"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1040 ../pluma/pluma-window.c:1928
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2088,43 +2243,43 @@ msgstr "使用 %s 標示模式"
 msgid "Plain Text"
 msgstr "純文字"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1041
 msgid "Disable syntax highlighting"
 msgstr "停用語法標示"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1323
 #, c-format
 msgid "Open '%s'"
 msgstr "開啟「%s」"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1430
 msgid "Open a recently used file"
 msgstr "開啟最近使用過的檔案"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1436
 msgid "Open"
 msgstr "開啟"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1494
 msgid "Save"
 msgstr "儲存"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1496
 msgid "Print"
 msgstr "列印"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1653
 #, c-format
 msgid "Activate '%s'"
 msgstr "開啟‘%s’"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1906
 msgid "Use Spaces"
 msgstr "使用空格"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1977
 msgid "Tab Width"
 msgstr "Tab 字元寬度"
 
@@ -2183,41 +2338,41 @@ msgid ""
 "characters and non-space characters in it."
 msgstr "分析目前的文件並計算字數、列數、字元數目及非空格的字元數目，並顯示結果。"
 
-#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/docinfo/docinfo.ui.h:3
 msgid "_Update"
 msgstr "更新(_U)"
 
-#: ../plugins/docinfo/docinfo.ui.h:3
+#: ../plugins/docinfo/docinfo.ui.h:4
 msgid "File Name"
 msgstr "檔案名稱"
 
-#: ../plugins/docinfo/docinfo.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:6
 msgid "Bytes"
 msgstr "位元組"
 
-#: ../plugins/docinfo/docinfo.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:7
 msgid "Characters (no spaces)"
 msgstr "字元（不包括空格）"
 
-#: ../plugins/docinfo/docinfo.ui.h:7
+#: ../plugins/docinfo/docinfo.ui.h:8
 msgid "Characters (with spaces)"
 msgstr "字元（包括空格）"
 
-#: ../plugins/docinfo/docinfo.ui.h:8
+#: ../plugins/docinfo/docinfo.ui.h:9
 msgid "Words"
 msgstr "字詞"
 
-#: ../plugins/docinfo/docinfo.ui.h:9
+#: ../plugins/docinfo/docinfo.ui.h:10
 msgid "Lines"
 msgstr "行"
 
-#: ../plugins/docinfo/docinfo.ui.h:10
+#: ../plugins/docinfo/docinfo.ui.h:11
 msgid "Document"
 msgstr "文件"
 
-#: ../plugins/docinfo/docinfo.ui.h:11
+#: ../plugins/docinfo/docinfo.ui.h:12
 msgid "Selection"
-msgstr "選擇區域"
+msgstr "選擇區"
 
 #: ../plugins/docinfo/pluma-docinfo-plugin.c:443
 msgid "_Document Statistics"
@@ -2468,7 +2623,9 @@ msgid ""
 "document given that the file browser hasn't been used yet. (Thus this "
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
-msgstr "如設定為 TRUE，當從未使用過檔案瀏覽器時，則檔案瀏覽器外掛程式會顯示第一個開啟的檔案所在的目錄。（這通常會用於在命令列或 Caja 等程式中開啟文件時）"
+msgstr ""
+"如設定為 TRUE，當從未使用過檔案瀏覽器時，則檔案瀏覽器外掛程式會顯示第一個開啟的檔案所在的目錄。（這通常會用於在命令列或 Caja "
+"等程式中開啟文件時）"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
@@ -2480,7 +2637,8 @@ msgid ""
 "values are: none (filter nothing), hidden (filter hidden files), binary "
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
-msgstr "本數值決定哪些檔案在檔案瀏覽器中會被過濾。有效的數值為“none”（不過濾），“hidden”（只過濾隱藏檔），“binary”（只過濾二位元檔），“hidden_and_binary”（過濾隱藏檔及二位元檔）。"
+msgstr ""
+"本數值決定哪些檔案在檔案瀏覽器中會被過濾。有效的數值為“none”（不過濾），“hidden”（只過濾隱藏檔），“binary”（只過濾二位元檔），“hidden_and_binary”（過濾隱藏檔及二位元檔）。"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
@@ -2521,7 +2679,8 @@ msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "檔案瀏覽器虛擬根資料夾是用於載入檔案瀏覽器外掛程式及 onload/tree_view 設定為‘TRUE’時。虛擬根資料夾必須是處於真正的根資料夾之下。"
+msgstr ""
+"檔案瀏覽器虛擬根資料夾是用於載入檔案瀏覽器外掛程式及 onload/tree_view 設定為‘TRUE’時。虛擬根資料夾必須是處於真正的根資料夾之下。"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2591,7 +2750,9 @@ msgstr "發生錯誤"
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "檔案無法移至回收筒，\n要把它永久地刪除嗎？"
+msgstr ""
+"檔案無法移至回收筒，\n"
+"要把它永久地刪除嗎？"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
@@ -2602,16 +2763,16 @@ msgstr "檔案“%s”無法移至回收筒。"
 msgid "The selected files cannot be moved to the trash."
 msgstr "所選的檔案無法移至回收筒。"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1165
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "確定要永遠刪除“%s”嗎？"
+msgstr "確定要永遠刪除「%s」？"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1170
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1168
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "確定要永久刪除已選的檔案嗎？"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1171
 msgid "If you delete an item, it is permanently lost."
 msgstr "如果將項目刪除，它將會永久失去。"
 
@@ -2665,10 +2826,6 @@ msgstr "移至回收筒(_M)"
 msgid "Move selected file or folder to trash"
 msgstr "將已選的檔案或資料夾移至回收筒"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
-msgid "_Delete"
-msgstr "刪除(_D)"
-
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Delete selected file or folder"
 msgstr "刪除已選的檔案或資料夾"
@@ -2715,7 +2872,7 @@ msgstr "上一個位置(_P)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Go to the previous visited location"
-msgstr "回到上一個已造訪位置"
+msgstr "回到上一個曾經瀏覽的位置"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "_Next Location"
@@ -2723,7 +2880,7 @@ msgstr "下一個位置(_N)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
-msgstr "前往下一個已造訪位置"
+msgstr "前住下一個曾經瀏覽的位置"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
@@ -2759,18 +2916,18 @@ msgstr "顯示二位元檔(_B)"
 msgid "Show binary files"
 msgstr "顯示二位元檔"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:993
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1023
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:991
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1004
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1027
 msgid "Previous location"
 msgstr "上一個位置"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:995
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
 msgid "Go to previous location"
 msgstr "回到上一個位置"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1018
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:999
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
 msgid "Go to a previously opened location"
 msgstr "回到上一個已開啟的位置"
 
@@ -2778,25 +2935,25 @@ msgstr "回到上一個已開啟的位置"
 msgid "Next location"
 msgstr "下一個位置"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1016
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1020
 msgid "Go to next location"
 msgstr "前往下一個位置"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1228
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1232
 msgid "_Match Filename"
 msgstr "相符檔名(_M)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2140
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2144
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "掛載的儲存裝置沒有掛載物件：%s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2220
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2224
 #, c-format
 msgid "Could not open media: %s"
 msgstr "無法開啟媒體：%s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2267
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2271
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "無法掛載儲存裝置：%s"
@@ -2819,12 +2976,11 @@ msgstr "Python 主控臺"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "在底部面板的互動式 Python 主控臺"
 
-#. ex:et:ts=4:
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
 msgstr "指令顏色(_O)："
 
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
 msgid "_Error color:"
 msgstr "錯誤顏色(_E)："
 
@@ -3086,27 +3242,27 @@ msgstr "排序"
 msgid "Sorts a document or selected text."
 msgstr "將整份文件或將已選的文字排序。"
 
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/sort/sort.ui.h:3
 msgid "_Sort"
 msgstr "排序(_S)"
 
-#: ../plugins/sort/sort.ui.h:3
+#: ../plugins/sort/sort.ui.h:5
 msgid "_Reverse order"
 msgstr "相反次序排列(_R)"
 
-#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/sort/sort.ui.h:6
 msgid "R_emove duplicates"
 msgstr "刪除所有重複的內容(_E)"
 
-#: ../plugins/sort/sort.ui.h:5
+#: ../plugins/sort/sort.ui.h:7
 msgid "_Ignore case"
 msgstr "忽略大小寫(_I)"
 
-#: ../plugins/sort/sort.ui.h:6
+#: ../plugins/sort/sort.ui.h:8
 msgid "S_tart at column:"
 msgstr "由指定的字母位置開始排序(_T):"
 
-#: ../plugins/sort/sort.ui.h:7
+#: ../plugins/sort/sort.ui.h:9
 msgid "You cannot undo a sort operation"
 msgstr "不可以將排序後的內容復原"
 
@@ -3120,7 +3276,7 @@ msgstr "自動檢查類型"
 #. suggestions
 #. * for the current misspelled word
 #: ../plugins/spell/pluma-automatic-spell-checker.c:420
-#: ../plugins/spell/pluma-spell-checker-dialog.c:455
+#: ../plugins/spell/pluma-spell-checker-dialog.c:458
 msgid "(no suggested words)"
 msgstr "（不提供任何建議）"
 
@@ -3129,16 +3285,11 @@ msgid "_More..."
 msgstr "還有(_M)…"
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "全部忽略(_I)"
 
-#. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
-msgid "_Add"
-msgstr "加入(_A)"
-
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "拼字建議(_S)…"
 
@@ -3152,11 +3303,11 @@ msgstr "建議"
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word
 #. isn't misspelled
-#: ../plugins/spell/pluma-spell-checker-dialog.c:562
+#: ../plugins/spell/pluma-spell-checker-dialog.c:565
 msgid "(correct spelling)"
 msgstr "（拼字正確）"
 
-#: ../plugins/spell/pluma-spell-checker-dialog.c:709
+#: ../plugins/spell/pluma-spell-checker-dialog.c:712
 msgid "Completed spell checking"
 msgstr "拼字檢查完成"
 
@@ -3185,12 +3336,12 @@ msgctxt "language"
 msgid "Default"
 msgstr "預設值"
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:141
+#: ../plugins/spell/pluma-spell-language-dialog.c:136
 #: ../plugins/spell/languages-dialog.ui.h:1
 msgid "Set language"
 msgstr "設定語言"
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:195
+#: ../plugins/spell/pluma-spell-language-dialog.c:190
 msgid "Languages"
 msgstr "語言"
 
@@ -3226,7 +3377,7 @@ msgstr "文件是空白的。"
 msgid "No misspelled words"
 msgstr "沒有拼錯字詞"
 
-#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/languages-dialog.ui.h:5
 msgid "Select the _language of the current document."
 msgstr "請選擇目前文件所使的語言(_L)"
 
@@ -3240,7 +3391,7 @@ msgstr "拼錯的字詞："
 
 #: ../plugins/spell/spell-checker.ui.h:3
 msgid "word"
-msgstr "文字"
+msgstr "字詞"
 
 #: ../plugins/spell/spell-checker.ui.h:4
 msgid "Change _to:"
@@ -3290,19 +3441,19 @@ msgstr "語言"
 msgid "_Configure Spell Checker plugin..."
 msgstr "設定拼字檢查器外掛程式...(_C)"
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
 msgid "Autocheck spelling on document load..."
 msgstr "在文件載入時自動檢查拼字..."
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:6
 msgid "_Never autocheck"
 msgstr "永不自動檢查(_N)"
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:7
 msgid "_Remember autocheck by document"
 msgstr "記住文件的自動檢查(_R)"
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:8
 msgid "_Always autocheck"
 msgstr "總是自動檢查(_A)"
 
@@ -3370,7 +3521,7 @@ msgstr "Anchor URI"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:10
 msgid "Anchor"
-msgstr "Anchor"
+msgstr "錨點"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:12
@@ -3473,7 +3624,7 @@ msgstr "Columns"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:41
 msgid "Comment"
-msgstr "Comment"
+msgstr "評論"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:42
 msgid "Computer code fragment"
@@ -3532,7 +3683,7 @@ msgstr "Directionality（不建議再使用）"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:61
 msgid "Disabled"
-msgstr "Disabled"
+msgstr "已停用"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:62
 msgid "DIV container"
@@ -3698,7 +3849,7 @@ msgstr "Heading 6"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:103
 msgid "Height"
-msgstr "Height"
+msgstr "高度"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:104
 msgid "Horizontal rule"
@@ -3739,7 +3890,7 @@ msgstr "Image map"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:114
 msgid "Image"
-msgstr "Image"
+msgstr "圖片"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:115
 msgid "Inline frame"
@@ -3764,7 +3915,7 @@ msgstr "Java applet（不建議再使用）"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:121
 msgid "Label"
-msgstr "Label"
+msgstr "標貼"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:122
 msgid "Language code"
@@ -3842,7 +3993,7 @@ msgstr "Multiple"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:145
 msgid "Name"
-msgstr "Name"
+msgstr "名稱"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:146
 msgid "Named property value"
@@ -3981,7 +4132,7 @@ msgstr "Paragraph style"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:182
 msgid "Paragraph"
-msgstr "Paragraph"
+msgstr "段落"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:183
 msgid "Preformatted text"
@@ -4068,7 +4219,7 @@ msgstr "Small text style"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:206
 msgid "Source"
-msgstr "Source"
+msgstr "來源"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:207
 msgid "Space-separated archive list"
@@ -4084,7 +4235,7 @@ msgstr "Spacing within cells"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:210
 msgid "Span"
-msgstr "Span"
+msgstr "跨越"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:211
 msgid "Standby load message"
@@ -4115,11 +4266,11 @@ msgstr "Style info"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:220
 msgid "Subscript"
-msgstr "Subscript"
+msgstr "下標"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:221
 msgid "Superscript"
-msgstr "Superscript"
+msgstr "上標"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:222
 msgid "Table body"
@@ -4196,7 +4347,7 @@ msgstr "Text entered by user"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:241
 msgid "Title"
-msgstr "Title"
+msgstr "標題"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:242
 msgid "Underlined text style"
@@ -4216,7 +4367,7 @@ msgstr "Value interpretation"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:246
 msgid "Value"
-msgstr "Value"
+msgstr "數值"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:247
 msgid "Variable or program argument"
@@ -4238,7 +4389,7 @@ msgstr "Visited link color（不建議再使用）"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:253
 msgid "Width"
-msgstr "Width"
+msgstr "寬度"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:254
 msgid "HTML - Tags"
@@ -4258,7 +4409,7 @@ msgstr "Array"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:258
 msgid "Background color"
-msgstr "Background color"
+msgstr "背景顏色"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:259
 msgid "Background texture tile"
@@ -4274,11 +4425,11 @@ msgstr "Border color"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:262
 msgid "Border"
-msgstr "Border"
+msgstr "邊框"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:263
 msgid "Center"
-msgstr "Center"
+msgstr "置中"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:264
 msgid "Checked (state)"
@@ -4298,7 +4449,7 @@ msgstr "Content type"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:268
 msgid "Direction"
-msgstr "Direction"
+msgstr "方向"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:269
 msgid "Directory list"
@@ -4354,7 +4505,7 @@ msgstr "Layer"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:282
 msgid "Link color"
-msgstr "Link color"
+msgstr "連結顏色"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:283
 msgid "Listing"
@@ -4402,7 +4553,7 @@ msgstr "No word wrap"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:294
 msgid "Note"
-msgstr "Note"
+msgstr "備註"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:295
 msgid "Object applet file"
@@ -4438,7 +4589,7 @@ msgstr "Single line prompt"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:303
 msgid "Size"
-msgstr "Size"
+msgstr "大小"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:304
 msgid "Soft line break"
@@ -4446,7 +4597,7 @@ msgstr "Soft line break"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:305
 msgid "Sound"
-msgstr "Sound"
+msgstr "聲音"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:306
 msgid "Spacer"
@@ -4454,7 +4605,7 @@ msgstr "Spacer"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:307
 msgid "Square root"
-msgstr "Square root"
+msgstr "平方根"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:308
 msgid "Starting sequence number"
@@ -4478,7 +4629,7 @@ msgstr "Text color"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:313
 msgid "Text"
-msgstr "Text"
+msgstr "文字"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:314
 msgid "Top margin in pixels"
@@ -4654,7 +4805,7 @@ msgstr "Item with label"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:38
 msgid "Item"
-msgstr "Item"
+msgstr "項目"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:39
 msgid "Maths (display)"
@@ -4918,31 +5069,31 @@ msgstr "在儲存前移除句尾空格。"
 msgid "Insert Date and Time"
 msgstr "插入日期及時間"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:4
 msgid "_Insert"
 msgstr "插入(_I)"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:3
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
+#: ../plugins/time/pluma-time-dialog.ui.h:5
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:8
 msgid "Use the _selected format"
 msgstr "使用指定的格式(_S)"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:5
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
+#: ../plugins/time/pluma-time-dialog.ui.h:7
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
 msgid "_Use custom format"
 msgstr "使用自訂格式(_U)"
 
 #. Translators: Use the more common date format in your locale
-#: ../plugins/time/pluma-time-dialog.ui.h:7
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
+#: ../plugins/time/pluma-time-dialog.ui.h:9
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:12
 #, no-c-format
 msgid "%d/%m/%Y %H:%M:%S"
 msgstr "%Y-%m-%d %H:%M:%S"
 
 #. Translators: This example should follow the date format defined in the
 #. entry above
-#: ../plugins/time/pluma-time-dialog.ui.h:8
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:11
+#: ../plugins/time/pluma-time-dialog.ui.h:10
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:14
 msgid "01/11/2009 17:52:00"
 msgstr "2009-11-01 17:52:00"
 
@@ -4950,10 +5101,10 @@ msgstr "2009-11-01 17:52:00"
 msgid "Configure date/time plugin"
 msgstr "設定「加入日期及時間」外掛程式"
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
 msgid "When inserting date/time..."
 msgstr "當加入日期及時間…"
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:7
 msgid "_Prompt for a format"
 msgstr "提示可使用的格式(_P)"

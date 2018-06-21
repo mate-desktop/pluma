@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 10:17+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
-"Language-Team: Maithili (http://www.transifex.com/mate/MATE/language/mai/)\n"
+"POT-Creation-Date: 2018-04-17 17:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Maithili (https://www.transifex.com/mate/teams/13566/mai/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +28,11 @@ msgid ""
 "instead of a font specific to pluma. If this option is turned off, then the "
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
-msgstr "Whether to use the system's default fixed width font for editing text instead of a font specific to pluma. If this option is turned off, then the font named in the \"Editor Font\" option will be used instead of the system font."
+msgstr ""
+"Whether to use the system's default fixed width font for editing text "
+"instead of a font specific to pluma. If this option is turned off, then the "
+"font named in the \"Editor Font\" option will be used instead of the system "
+"font."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -42,7 +47,9 @@ msgstr "संपादक फाँट"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "एकटा पसंदीदा फाँट जकरा क्षेत्र क' संपादनमे प्रयोग कएल जएताह. ई सिर्फ तखने प्रभावी हएताह जँ \"मूलभूत फॉन्ट क' प्रयोग करू\" विकल्प बन्न कए देल जाएत अछि."
+msgstr ""
+"एकटा पसंदीदा फाँट जकरा क्षेत्र क' संपादनमे प्रयोग कएल जएताह. ई सिर्फ तखने "
+"प्रभावी हएताह जँ \"मूलभूत फॉन्ट क' प्रयोग करू\" विकल्प बन्न कए देल जाएत अछि."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Style Scheme"
@@ -60,7 +67,9 @@ msgstr "बैकअप कापी बनाबू"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "क' जीएडिटकेँ एकरा द्वारा सहेजल जाए बला फाइल क' बैकअप कापी रखनाइ अछि अहाँ बैकअप फाइल विस्तारकेँ \"बैकअप कापी विस्तार\" विकल्पसँ सेट कए सकैत छी."
+msgstr ""
+"क' जीएडिटकेँ एकरा द्वारा सहेजल जाए बला फाइल क' बैकअप कापी रखनाइ अछि अहाँ "
+"बैकअप फाइल विस्तारकेँ \"बैकअप कापी विस्तार\" विकल्पसँ सेट कए सकैत छी."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -99,7 +108,9 @@ msgstr "लिखब योग्य VFS योजना"
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
-msgstr "VFS योजना क' सूची pluma लेखन मोडमे समर्थन करैत अछि 'file' योजना मूलभूत रूप सँ लिखब योग्य अछि."
+msgstr ""
+"VFS योजना क' सूची pluma लेखन मोडमे समर्थन करैत अछि 'file' योजना मूलभूत रूप "
+"सँ लिखब योग्य अछि."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Maximum Number of Undo Actions"
@@ -109,7 +120,9 @@ msgstr ""
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "जी-एडिट द्वारा पूर्ववत करब अथवा दोहराबै क' क्रिया क' अधिकतम सँख्या . \"-1\" क' क्रिया क' असीमित सँख्या क'लेल प्रयोग करू."
+msgstr ""
+"जी-एडिट द्वारा पूर्ववत करब अथवा दोहराबै क' क्रिया क' अधिकतम सँख्या . \"-1\" "
+"क' क्रिया क' असीमित सँख्या क'लेल प्रयोग करू."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
@@ -122,7 +135,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "निर्दिष्ट करू जे कहिना संपादन क्षेत्रमे नमहर पंक्तिकेँ रैप कएनाइ अछि \"GTK_WRAP_NONE\" क' प्रयोग रैपिंग अनुपस्थिति क'लेल करू, \"GTK_WRAP_WORD\" क' प्रयोग शब्द सीमा पर रैपिंग क'लेल करू, आओर \"GTK_WRAP_CHAR\"केँ निजी संप्रतीक सीमा क' रैपिंग क'लेल करू. नोट करू जे मान स्थितिसभ क' प्रति संवेदनशील अछि, एहिलेल निश्चित करू जे ओ एतय बताओल तरहेँ देखाय पड़ैत अछि."
+msgstr ""
+"निर्दिष्ट करू जे कहिना संपादन क्षेत्रमे नमहर पंक्तिकेँ रैप कएनाइ अछि "
+"\"GTK_WRAP_NONE\" क' प्रयोग रैपिंग अनुपस्थिति क'लेल करू, \"GTK_WRAP_WORD\" "
+"क' प्रयोग शब्द सीमा पर रैपिंग क'लेल करू, आओर \"GTK_WRAP_CHAR\"केँ निजी "
+"संप्रतीक सीमा क' रैपिंग क'लेल करू. नोट करू जे मान स्थितिसभ क' प्रति "
+"संवेदनशील अछि, एहिलेल निश्चित करू जे ओ एतय बताओल तरहेँ देखाय पड़ैत अछि."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
@@ -132,7 +150,9 @@ msgstr "टैब आकार"
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
-msgstr "निर्दिष्ट करैत अछि जे टैब अक्षर क' बदलामे खाली जगहक कतेक सँख्या प्रदर्शित कएल जाए."
+msgstr ""
+"निर्दिष्ट करैत अछि जे टैब अक्षर क' बदलामे खाली जगहक कतेक सँख्या प्रदर्शित "
+"कएल जाए."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Insert spaces"
@@ -203,7 +223,14 @@ msgid ""
 "pressed, \"BEFORE\" to move to the start/end of the text before moving to "
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
-msgstr "Specifies how the cursor moves when the HOME and END keys are pressed. Use \"DISABLED\" to always move at the start/end of the line, \"AFTER\" to move to the start/end of the line the first time the keys are pressed and to the start/end of the text ignoring whitespaces the second time the keys are pressed, \"BEFORE\" to move to the start/end of the text before moving to the start/end of the line and \"ALWAYS\" to always move to the start/end of the text instead of the start/end of the line."
+msgstr ""
+"Specifies how the cursor moves when the HOME and END keys are pressed. Use "
+"\"DISABLED\" to always move at the start/end of the line, \"AFTER\" to move "
+"to the start/end of the line the first time the keys are pressed and to the "
+"start/end of the text ignoring whitespaces the second time the keys are "
+"pressed, \"BEFORE\" to move to the start/end of the text before moving to "
+"the start/end of the line and \"ALWAYS\" to always move to the start/end of "
+"the text instead of the start/end of the line."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Restore Previous Cursor Position"
@@ -213,7 +240,9 @@ msgstr "पछिला कर्सर स्थिति फिनु जम�
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
-msgstr "क' plumaकेँ पछिला कर्सर स्थिति फिनु बनओनाइ चाही जखन एकटा फाइल लोड कएल जाएत अछि."
+msgstr ""
+"क' plumaकेँ पछिला कर्सर स्थिति फिनु बनओनाइ चाही जखन एकटा फाइल लोड कएल जाएत "
+"अछि."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Enable Search Highlighting"
@@ -252,7 +281,13 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "टूलबार बटन क'लेल शैली. सिस्टमक मूलभूत शैलीकेँ प्रयोग करब क'लेल संभावित मान \"PLUMA_TOOLBAR_SYSTEM\" अछि सिर्फ प्रतीक देखाबै क'लेल \"PLUMA_TOOLBAR_ICONS\", प्रतीक आ पाठ दुनू क'लेल \"PLUMA_TOOLBAR_ICONS_AND_TEXT\", आओर प्रतीक क'बगलमे वरीयता बला पाठ क'लेल \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\". नोट करू जे मान स्थितिसभ क' प्रति संवेदनशील अछि, एहिलेल निश्चित करू जे ओ एतय बताओल गेला जकाँ देखाय पड़ैत अछि."
+msgstr ""
+"टूलबार बटन क'लेल शैली. सिस्टमक मूलभूत शैलीकेँ प्रयोग करब क'लेल संभावित मान "
+"\"PLUMA_TOOLBAR_SYSTEM\" अछि सिर्फ प्रतीक देखाबै क'लेल "
+"\"PLUMA_TOOLBAR_ICONS\", प्रतीक आ पाठ दुनू क'लेल "
+"\"PLUMA_TOOLBAR_ICONS_AND_TEXT\", आओर प्रतीक क'बगलमे वरीयता बला पाठ क'लेल "
+"\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\". नोट करू जे मान स्थितिसभ क' प्रति "
+"संवेदनशील अछि, एहिलेल निश्चित करू जे ओ एतय बताओल गेला जकाँ देखाय पड़ैत अछि."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
@@ -298,7 +333,9 @@ msgstr "हालमे प्रयुक्त फाइल क' अधिक�
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
-msgstr "हालमे खोलल गेल फाइलक अधिकतम सँख्या बताउ जे \"नवीन फाइल\" उपमेनूमे देखाओल जएताह."
+msgstr ""
+"हालमे खोलल गेल फाइलक अधिकतम सँख्या बताउ जे \"नवीन फाइल\" उपमेनूमे देखाओल "
+"जएताह."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
@@ -307,7 +344,9 @@ msgstr "वाक्य रचना हाइलाइटिंग छापू
 #: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
-msgstr "जखन दस्ताबेज़ मुद्रित कएल जाए तँ क' जी-एडिट वाक्य रचना हाइलाइटिंगओ मुद्रित करै."
+msgstr ""
+"जखन दस्ताबेज़ मुद्रित कएल जाए तँ क' जी-एडिट वाक्य रचना हाइलाइटिंगओ मुद्रित "
+"करै."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Print Header"
@@ -316,7 +355,8 @@ msgstr "हेडर छापू"
 #: ../data/org.mate.pluma.gschema.xml.in.h:63
 msgid ""
 "Whether pluma should include a document header when printing documents."
-msgstr "जखन दस्ताबेज़ मुद्रित कएल जाए तँ क' जी-एडिट दस्ताबेज़ हेडरओ मुद्रित करै."
+msgstr ""
+"जखन दस्ताबेज़ मुद्रित कएल जाए तँ क' जी-एडिट दस्ताबेज़ हेडरओ मुद्रित करै."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:64
 msgid "Printing Line Wrapping Mode"
@@ -329,7 +369,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "निर्दिष्ट करू जे कहिना छपाइ क'लेल नमहर पंक्तिकेँ समाहित कएनाइ अछि \"GTK_WRAP_NONE\" क' प्रयोग रैपिंग अनुपस्थिति क'लेल करू, \"GTK_WRAP_WORD\" क' प्रयोग शब्द सीमा पर रैपिंग क' लेल करू, आओर \"GTK_WRAP_CHAR\"केँ निजी संप्रतीक सीमाक रैपिंग क'लेल करू. नोट करू जे मान स्थितिसभक प्रति संवेदनशील अछि, एहिलेल निश्चित करू जे ओ एतय बताओल तरहेँ देखाय पड़ैत अछि."
+msgstr ""
+"निर्दिष्ट करू जे कहिना छपाइ क'लेल नमहर पंक्तिकेँ समाहित कएनाइ अछि "
+"\"GTK_WRAP_NONE\" क' प्रयोग रैपिंग अनुपस्थिति क'लेल करू, \"GTK_WRAP_WORD\" "
+"क' प्रयोग शब्द सीमा पर रैपिंग क' लेल करू, आओर \"GTK_WRAP_CHAR\"केँ निजी "
+"संप्रतीक सीमाक रैपिंग क'लेल करू. नोट करू जे मान स्थितिसभक प्रति संवेदनशील "
+"अछि, एहिलेल निश्चित करू जे ओ एतय बताओल तरहेँ देखाय पड़ैत अछि."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
@@ -340,7 +385,10 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "जँ ई मान 0 अछि तँ कोनो पंक्ति सँख्या दस्ताबेज क' छपाइक दौरान नहि प्रविष्ट कएल जएताह. नहि तँ, जीएडिट सभ पंक्ति सँख्या क'लेल पंक्ति सँख्या मुद्रित करताह."
+msgstr ""
+"जँ ई मान 0 अछि तँ कोनो पंक्ति सँख्या दस्ताबेज क' छपाइक दौरान नहि प्रविष्ट "
+"कएल जएताह. नहि तँ, जीएडिट सभ पंक्ति सँख्या क'लेल पंक्ति सँख्या मुद्रित "
+"करताह."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
@@ -354,7 +402,9 @@ msgstr "छपाइ लेल बाडी फाँट"
 #: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
-msgstr "जखन दस्ताबेज़ मुद्रित कएल जाएत अछि तँ दस्ताबेज़ क' मुख्य भाग लेल फाँट निर्दिष्ट करैत अछि."
+msgstr ""
+"जखन दस्ताबेज़ मुद्रित कएल जाएत अछि तँ दस्ताबेज़ क' मुख्य भाग लेल फाँट "
+"निर्दिष्ट करैत अछि."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:71
 msgctxt "print-font-header-pango"
@@ -369,7 +419,9 @@ msgstr "छपाइ लेल हेडर फाँट"
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
-msgstr "छपाइ क' दौरान पंक्ति सँख्या क'लेल फॉन्ट निर्दिष्ट करू. ई तखन प्रभावी हएताह जँ \"छपाइ हेडर\" विकल्प चालू अछि."
+msgstr ""
+"छपाइ क' दौरान पंक्ति सँख्या क'लेल फॉन्ट निर्दिष्ट करू. ई तखन प्रभावी हएताह "
+"जँ \"छपाइ हेडर\" विकल्प चालू अछि."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
@@ -384,7 +436,9 @@ msgstr "छपाइ लेल पंक्ति सँख्या फाँ�
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
-msgstr "छपाइ क' दौरान पंक्ति सँख्या क'लेल फॉन्ट निर्दिष्ट करू. ई तखन प्रभावी हएताह जँ \"छपाइ पंक्ति सँख्या \" विकल्प गैर शून्य सँख्या अछि."
+msgstr ""
+"छपाइ क' दौरान पंक्ति सँख्या क'लेल फॉन्ट निर्दिष्ट करू. ई तखन प्रभावी हएताह "
+"जँ \"छपाइ पंक्ति सँख्या \" विकल्प गैर शून्य सँख्या अछि."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
@@ -441,7 +495,9 @@ msgstr "प्लगिन सक्रिय"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "सक्रिय प्लगिन क' सूची. एहिमे सक्रिय प्लगिन क' \"स्थान\" समाहित अछि .pluma-plugin फाइल देल गेल प्लगिन क' \"स्थान\"केँ पाबै क'लेल देखू."
+msgstr ""
+"सक्रिय प्लगिन क' सूची. एहिमे सक्रिय प्लगिन क' \"स्थान\" समाहित अछि .pluma-"
+"plugin फाइल देल गेल प्लगिन क' \"स्थान\"केँ पाबै क'लेल देखू."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -487,11 +543,38 @@ msgstr "लॉगआउट रद्द करू (_C)"
 msgid "Close _without Saving"
 msgstr "बिनु सहेजने बन्न करू (_w)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:211
+#. Add a cancel button
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
+#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
+#: ../pluma/pluma-file-chooser-dialog.c:440
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:171
+#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/spell/pluma-spell-language-dialog.c:132
+#: ../plugins/spell/languages-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:3
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+msgid "_Cancel"
+msgstr "रद्द करू (_C)"
+
+#. File menu
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+msgid "_Save"
+msgstr "सहेजू (_S)"
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+msgid "Save _As"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
 msgid "Question"
 msgstr "प्रश्न"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:411
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -499,15 +582,17 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "जँ अहाँ सहेजैत नहि छी तँ अंतिम %ld सकेंडमे अहाँक द्वारा कएल गेल बदलाव स्थायी रूपसँ मेटाए जएताह."
-msgstr[1] "जँ अहाँ सहेजैत नहि छी तँ अंतिम %ld सकेंडमे अहाँक द्वारा कएल गेल बदलाव स्थायी रूपसँ मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
-msgstr "जँ अहाँ सहेजैत नहि छी तँ अहाँक द्वारा अंतिम मिनटमे कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
+msgstr ""
+"जँ अहाँ सहेजैत नहि छी तँ अहाँक द्वारा अंतिम मिनटमे कएल गेल बदलाव स्थायी रूप "
+"सँ मेटाए जएताह."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -515,10 +600,10 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "जँ अहाँ सहेजैत नहि छी तँ अंतिम मिनट आओर %ld सकेंडमे अहाँक द्वारा कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
-msgstr[1] "जँ अहाँ सहेजैत नहि छी तँ अंतिम मिनट आओर %ld सकेंडमे अहाँक द्वारा कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -526,15 +611,17 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "जँ अहाँ सहेजैत नहि छी तँ अहाँक द्वारा अंतिम %ld मिनटमे कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
-msgstr[1] "जँ अहाँ सहेजैत नहि छी तँ अहाँक द्वारा अंतिम %ld मिनटमे कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
-msgstr "जँ अहाँ सहेजैत नहि छी तँ अंतिम घंटामे अहाँक द्वारा कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
+msgstr ""
+"जँ अहाँ सहेजैत नहि छी तँ अंतिम घंटामे अहाँक द्वारा कएल गेल बदलाव स्थायी रूप "
+"सँ मेटाए जएताह."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -542,72 +629,97 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "जँ अहाँ सहेजैत नहि छी तँ अंतिम घंटा आ %d मिनटमे अहाँक द्वारा कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
-msgstr[1] "जँ अहाँ सहेजैत नहि छी तँ अंतिम घंटा आ %d मिनटमे अहाँक द्वारा कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "जँ अहाँ सहेजैत नहि छी तँ अंतिम %d घंटामे कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
-msgstr[1] "जँ अहाँ सहेजैत नहि छी तँ अंतिम %d घंटामे कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "\"%s\"मे कएल बदलाव स्थायी रूप सँ मेटाए जएताह."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "\"%s\" दस्तावेज बन्द करबासँ पहिने परिवर्तन सहेजू?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr "सिस्टम प्रशासक क' द्वारा सहेजल गेलकेँ निष्क्रिय कएल गेल ."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:717
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "दस्ताबेज़मे %dमे कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
-msgstr[1] "दस्ताबेज़मे %dमे कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "%d दस्ताबेज बिनु सहेजल गेल बदलाव क' सँग अछि बन्न करब क' पहिले बदलाव सहेजू?"
-msgstr[1] "%d दस्ताबेज बिनु सहेजल गेल बदलाव क' सँग अछि बन्न करब क' पहिले बदलाव सहेजू?"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
 msgstr "बिनु सहेजल बदलाव क' सँग दस्ताबेज (_e):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:743
 msgid "S_elect the documents you want to save:"
 msgstr "दस्ताबेज़ चुनू जकरा अहाँ सहेजनाइ चाहैत अछि: (_e)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "जँ अहाँ सहेजैत नहि छी तँ अहाँक द्वारा कएल गेल बदलाव स्थायी रूप सँ मेटाए जएताह."
+msgstr ""
+"जँ अहाँ सहेजैत नहि छी तँ अहाँक द्वारा कएल गेल बदलाव स्थायी रूप सँ मेटाए "
+"जएताह."
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:321
+#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:133
+#: ../plugins/spell/languages-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-plugin.c:923
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+msgid "_OK"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
+#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:134
+#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+msgid "_Help"
+msgstr "मद्दति (_H)"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:316
 msgid "Character Encodings"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:384
-#: ../pluma/dialogs/pluma-encodings-dialog.c:445
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Description"
 msgstr "वर्णन (_D)"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:393
-#: ../pluma/dialogs/pluma-encodings-dialog.c:454
+#: ../pluma/dialogs/pluma-encodings-dialog.c:391
+#: ../pluma/dialogs/pluma-encodings-dialog.c:452
 msgid "_Encoding"
 msgstr "एनकोडिंग (_E)"
 
@@ -615,13 +727,24 @@ msgstr "एनकोडिंग (_E)"
 msgid "Character encodings"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:5
 msgid "A_vailable encodings:"
 msgstr "उपलब्ध एनकोडिंग्स(_v):"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#. + Add to Dictionary
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:6
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
+msgid "_Add"
+msgstr "जोड़ू (_A)"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:7
 msgid "E_ncodings shown in menu:"
 msgstr "मेनूमे देखाओल गए एनकोडिंग्स (_E):"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+msgid "_Remove"
+msgstr "हटाबू (_R)"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
@@ -636,226 +759,241 @@ msgstr "तंत्रक स्थिर चओड़ाइ फान्ट (%
 msgid "The selected color scheme cannot be installed."
 msgstr "चुनल रंग योजना संस्थापित नहि कएल जाए सकैत अछि."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:810
+#: ../pluma/dialogs/pluma-preferences-dialog.c:863
 msgid "Add Scheme"
 msgstr "योजना जोड़ू"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:817
+#: ../pluma/dialogs/pluma-preferences-dialog.c:870
 msgid "A_dd Scheme"
 msgstr "योजना जोड़ू (_d)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:825
+#: ../pluma/dialogs/pluma-preferences-dialog.c:878
 msgid "Color Scheme Files"
 msgstr "रंग योजना फाइल"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:832
-#: ../pluma/pluma-file-chooser-dialog.c:53
+#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
-msgstr "सबहि फाइलसभ"
+msgstr "सबहि फ़ाइलसभ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:877
+#: ../pluma/dialogs/pluma-preferences-dialog.c:930
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "रंग योजना \"%s\" केँ हटाए नहि सकल."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1088
+#. ex:et:ts=4:
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
+#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Close"
+msgstr "बन्न करू (_C)"
+
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
 msgid "Pluma Preferences"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:1
 msgid "Preferences"
-msgstr "वरीयतासभ "
+msgstr "वरीयतासभ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
 #: ../pluma/pluma-print-preferences.ui.h:9
 msgid "Text Wrapping"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../plugins/docinfo/docinfo.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:5
 #: ../plugins/externaltools/tools/tools.ui.h:21
 #: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:4
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
 #: ../pluma/pluma-print-preferences.ui.h:10
 msgid "Enable text _wrapping"
 msgstr "पाठ व्रेप सक्षम करू (_w)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7
 #: ../pluma/pluma-print-preferences.ui.h:11
 msgid "Do not _split words over two lines"
 msgstr "शब्दसभकेँ दुइ पंक्तिमे तोड़ू नहि (_s)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
 #: ../pluma/pluma-print-preferences.ui.h:3
 msgid "Line Numbers"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "पँक्ति सँख्या प्रदर्शित करू(_D)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
 msgid "Current Line"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
 msgid "Highlight current _line"
 msgstr "मोजुदा पंक्ति आलोकित करू (_l)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
 msgid "Right Margin"
-msgstr ""
+msgstr "दहिन्ना हाशिया"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
 msgid "Display right _margin"
 msgstr "दहिन्ना मार्जिन देखाबू (_m)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
 msgid "_Right margin at column:"
 msgstr "स्तम्भ पर दहिन्ना हाशिया:(_R)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
 msgid "Bracket Matching"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
 msgid "Highlight matching _bracket"
 msgstr "मैचिंग कोष्ठककेँ उभारू (_b)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
 msgid "View"
 msgstr "दृश्य"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
 msgid "Tab Stops"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
 msgid "_Tab width:"
 msgstr "टैब चओड़ाइ (_T): "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
 msgid "Insert _spaces instead of tabs"
 msgstr "टैब क' बदला खाली स्थान प्रविष्ट करू (_s)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
 msgid "Automatic Indentation"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
 msgid "_Enable automatic indentation"
 msgstr "स्वचालित हाशिया सक्षम करू (_E)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
 msgid "File Saving"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
 msgid "Create a _backup copy of files before saving"
 msgstr "सहेजए सँ पूर्व फाइल क' बैकअप प्रति बनाबू (_b)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
 msgid "_Autosave files every"
 msgstr "फाइल स्वचालित सहेजू प्रत्येक (_A)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
 msgid "_minutes"
 msgstr "मिनट (_m)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
 msgid "Editor"
 msgstr "संपादक"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
 msgid "Font"
-msgstr ""
+msgstr "फ़ॉन्ट"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
 msgid "Editor _font: "
 msgstr "संपादक फाँट (_f):"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "Pick the editor font"
 msgstr "संपादक फाँट चुनू"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Color Scheme"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
 msgid "_Add..."
 msgstr "जोड़ू (_A)..."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font & Colors"
 msgstr "फाँट आओर रँग"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Plugins"
 msgstr "प्लगइन्स"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1500
 msgid "Replace"
 msgstr "बदलू"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1498
 msgid "Find"
 msgstr "खोजू"
+
+#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+msgid "_Find"
+msgstr ""
 
 #: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "सबहि बदलू (_A)"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:421
-#: ../pluma/pluma-commands-file.c:587
+#: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr "बदलू (_R)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "Replace All"
 msgstr "सबहि बदलू"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
 msgid "_Search for: "
 msgstr "खोजू (_S):"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
 msgid "Replace _with: "
 msgstr "सँ बदलू (_w):"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "_Match case"
 msgstr "अक्षर मिलाबू (_M)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Match _regular expression"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "Match _entire word only"
 msgstr "केवल पूर्ण शब्द जोड़ मिलाबू (_e)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "Search _backwards"
 msgstr "पाछाँ सँ खोजू (_b)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:11
 msgid "_Wrap around"
 msgstr "चारोकात व्रेप करू (_W)"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:12
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr ""
 
 #: ../pluma/pluma.c:108
 msgid "Show the application's version"
-msgstr "अनुप्रयोग संस्करण देखाउ"
+msgstr "अनुप्रयोग संस्करण देखाबू"
 
 #: ../pluma/pluma.c:111
 msgid ""
@@ -898,7 +1036,9 @@ msgstr "- पाठ फाइल संपादित करू"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\n'%s --help' केँ उपलब्ध कमांड लाइन विकल्पक पूरे सूची देखाबैक लेल चलाउ.\n"
+msgstr ""
+"%s\n"
+"'%s चलाबू--help' उपलब्ध कमाण्ड लाइन क' पूर्ण सूचीकेँ देखबाक लेल.\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -909,8 +1049,8 @@ msgstr "'%s' फाइल लोड कए रहल अछि…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "%d फाइल लोड कए रहल अछि..."
-msgstr[1] "%d फाइल लोड कए रहल अछि..."
+msgstr[0] ""
+msgstr[1] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
@@ -926,26 +1066,26 @@ msgstr "फाइल \"%s\" सिर्फ-पढ़बा-योग्य अ�
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "की अहाँ एकरा सहेजल जाएबला फाइल सँ एकरा बदलनाइ चाहैत छी ?"
 
-#: ../pluma/pluma-commands-file.c:648 ../pluma/pluma-commands-file.c:871
+#: ../pluma/pluma-commands-file.c:649 ../pluma/pluma-commands-file.c:872
 #, c-format
 msgid "Saving file '%s'…"
 msgstr "'%s' फाइल सहेजि रहल अछि…"
 
-#: ../pluma/pluma-commands-file.c:756
+#: ../pluma/pluma-commands-file.c:757
 msgid "Save As…"
 msgstr "एहि रूपमे सहेजू..."
 
-#: ../pluma/pluma-commands-file.c:1085
+#: ../pluma/pluma-commands-file.c:1086
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr "'%s' दस्ताबेज वापस कए रहल अछि…"
 
-#: ../pluma/pluma-commands-file.c:1130
+#: ../pluma/pluma-commands-file.c:1131
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr "दस्ताबेजमे \"%s\" बिनु सहेजल बदलाव वापस करू?"
 
-#: ../pluma/pluma-commands-file.c:1139
+#: ../pluma/pluma-commands-file.c:1140
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently "
@@ -953,15 +1093,15 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "दस्ताबेज़मे अंतिम %ld सकेंडमे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
-msgstr[1] "दस्ताबेज़मे अंतिम %ld सकेंडमे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1148
+#: ../pluma/pluma-commands-file.c:1149
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "दस्ताबेज़मे अंतिम मिनटमे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
 
-#: ../pluma/pluma-commands-file.c:1154
+#: ../pluma/pluma-commands-file.c:1155
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -969,10 +1109,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "दस्ताबेज़मे अंतिम मिनट आ %ld सकेंडमे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
-msgstr[1] "दस्ताबेज़मे अंतिम मिनट आ %ld सकेंडमे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1164
+#: ../pluma/pluma-commands-file.c:1165
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently "
@@ -980,15 +1120,15 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "दस्ताबेज़मे अंतिम मिनट %ld मे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
-msgstr[1] "दस्ताबेज़मे अंतिम मिनट %ld मे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1179
+#: ../pluma/pluma-commands-file.c:1180
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
 msgstr "दस्ताबेज़मे अंतिम घंटामे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
 
-#: ../pluma/pluma-commands-file.c:1185
+#: ../pluma/pluma-commands-file.c:1186
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -996,21 +1136,21 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "दस्ताबेज़मे अंतिम घंटा आ %d मिनटमे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
-msgstr[1] "दस्ताबेज़मे अंतिम घंटा आ %d मिनटमे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1200
+#: ../pluma/pluma-commands-file.c:1201
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "दस्ताबेज़मे अंतिम घंटा %d मे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
-msgstr[1] "दस्ताबेज़मे अंतिम घंटा %d मे कएल गेल बदलाव हरदम क' लेल मेटाए जएताह."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1226
+#: ../pluma/pluma-commands-file.c:1228 ../pluma/pluma-ui.h:84
 msgid "_Revert"
-msgstr "पुरान स्थितिमे घुराबू (_R)"
+msgstr "पुरान स्थितिमे लौटाबू (_R)"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
@@ -1024,8 +1164,8 @@ msgstr "संगीता कुमारी (sangeeta09@gmail.com)"
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "%d आवृतिकेँ पाओलक आ विस्थापित कएलक."
-msgstr[1] "%d आवृतिकेँ पाओलक आ विस्थापित कएलक."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1038,19 +1178,19 @@ msgstr "एकटा आवृतिकेँ पाओलक आ विस्�
 msgid "\"%s\" not found"
 msgstr "\"%s\" नहि भेटल"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "बिनु सहेजल दस्ताबेज़ %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2227 ../pluma/pluma-window.c:2232
 msgid "Read-Only"
 msgstr ""
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3646
 msgid "Documents"
-msgstr "दस्ताबेजसभ"
+msgstr "दस्तावेज़"
 
 #: ../pluma/pluma-encodings.c:138 ../pluma/pluma-encodings.c:180
 #: ../pluma/pluma-encodings.c:182 ../pluma/pluma-encodings.c:184
@@ -1091,7 +1231,7 @@ msgstr "अरबी"
 
 #: ../pluma/pluma-encodings.c:163 ../pluma/pluma-encodings.c:270
 msgid "Greek"
-msgstr "युनानी"
+msgstr "ग्रीक"
 
 #: ../pluma/pluma-encodings.c:165
 msgid "Hebrew Visual"
@@ -1112,7 +1252,7 @@ msgstr "सेल्टिक"
 
 #: ../pluma/pluma-encodings.c:177
 msgid "Romanian"
-msgstr "रोमेनियाइ"
+msgstr "रोमानियाइ"
 
 #: ../pluma/pluma-encodings.c:195
 msgid "Armenian"
@@ -1182,219 +1322,231 @@ msgstr "वर्तमान लोकेल (%s)"
 msgid "Add or Remove..."
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:54
+#: ../pluma/pluma-file-chooser-dialog.c:55
 msgid "All Text Files"
 msgstr "सबहि पाठ फाइलसभ"
 
-#: ../pluma/pluma-file-chooser-dialog.c:82
+#: ../pluma/pluma-file-chooser-dialog.c:83
 msgid "C_haracter Encoding:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:148
 msgid "L_ine Ending:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:167
 msgid "Unix/Linux"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:173
 msgid "Mac OS Classic"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:179
 msgid "Windows"
-msgstr ""
+msgstr "विंडोज़"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-file-chooser-dialog.c:442
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+msgid "_Open"
+msgstr "खोलू (_O)"
+
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
 msgstr "पुनः कोशिश करू (_R)"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "%s फाइल नहि पाबि सकल."
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
-msgstr "कृप्या जाँचू जे अहाँ अवस्थितिकेँ ठीक सँ टंकित केने अछि आओर फिनु कोशिश करू."
+msgstr ""
+"कृप्या जाँचू जे अहाँ अवस्थितिकेँ ठीक सँ टंकित केने अछि आओर फिनु कोशिश करू."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "pluma %s स्थान नियंत्रित नहि कए सकैत अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "जीएडिट एहि अवस्थितिकेँ नियंत्रित नहि कए सकैत अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr "ई फाइलक स्थान आरोहित नहि कएल जाए सकैत अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "ई फाइलक स्थानक पहुँच नहि लेल जाए सकैत अछि किएक ई आरोहित अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "%s एकटा निर्देशिका अछि"
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr "%s एकटा मान्य स्थान नहि अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
-msgstr "होस्ट %sकेँ पाओल नहि जाए सकल. कृप्या जाँचू जे अहाँक प्रॉक्सी सेटिंग सही अछि आओर फिनु कोशिश करू."
+msgstr ""
+"होस्ट %sकेँ पाओल नहि जाए सकल. कृप्या जाँचू जे अहाँक प्रॉक्सी सेटिंग सही अछि "
+"आओर फिनु कोशिश करू."
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s एकटा नियमित फाइल नहि अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr "कनेक्शन समय समाप्ति. फिनु कोशिश करू."
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "ई बहुत बड़ फाइल अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "अप्रत्याशित त्रुटि: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "जीएडिट ई फाइल पाबि नहि सकैत अछि. साइत एकरा हाले मे मेटाए देल गेल अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "फाइल %sकेँ पुरान स्थितिमे नहि आनल जाए सकत."
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr ""
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr "कोनो तरह संपादित करू (_w)"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr "संपादित नहि करू (_o)"
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
-msgstr "The number of followed links is limited and the actual file could not be found within this limit."
+msgstr ""
+"The number of followed links is limited and the actual file could not be "
+"found within this limit."
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr "फाइल खोलब क'लेल अहाँक पास आवश्यक अनुमति नहि अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr "अहाँ जाँचू जे अहाँ द्विपदीय फाइल खोलबाक प्रयास कए रहल अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "फाइल %s खोलि नहि सकल"
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "ई फाइल (%s) पहिले सँ आन जीएडिट विंडोमे खुलल अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
-msgstr "pluma ने गैर संपादन योग्य मोडमे फाइल क' ई नमूना खोललक. की अहाँ एकरा कोनो तरहेँ संपादित कएनाइ चाहैत छी?"
+msgstr ""
+"pluma ने गैर संपादन योग्य मोडमे फाइल क' ई नमूना खोललक. की अहाँ एकरा कोनो "
+"तरहेँ संपादित कएनाइ चाहैत छी?"
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "कोनो तरह सहेजू (_a)"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "नहि सहेजू (_o)"
 
@@ -1403,27 +1555,29 @@ msgstr "नहि सहेजू (_o)"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "फाइल %s बदलल जाए चुकल अछि जखनसँ ई पढ़ल गेल अछि."
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr "जँ अहाँ एकरा सहेजैत छी तँ सभ बाहरी बदलाव समाप्त भ' जएताह. एकरा कोनो तरह सहेजू?"
+msgstr ""
+"जँ अहाँ एकरा सहेजैत छी तँ सभ बाहरी बदलाव समाप्त भ' जएताह. एकरा कोनो तरह "
+"सहेजू?"
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "%s सहेजबाक दौरान बैकअप फाइल नहि बनाए सकल."
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "%s सहेजबाक दौरान अस्थायी बैकअप फाइल बनाए नहि सकल."
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
@@ -1431,62 +1585,76 @@ msgid ""
 msgstr ""
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
-msgstr "pluma %s स्थान लेखन मोडमे नियंत्रित नहि कए सकैत अछि कृप्या जाँचू जे अहाँ सही स्थान टाइप केने अछि आओर पुनः प्रयास करू."
+msgstr ""
+"pluma %s स्थान लेखन मोडमे नियंत्रित नहि कए सकैत अछि कृप्या जाँचू जे अहाँ सही"
+" स्थान टाइप केने अछि आओर पुनः प्रयास करू."
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
-msgstr "जीएडिट लेखन मोडमे एहि स्थानकेँ नियंत्रित नहि कए सकैत अछि कृप्या ई सुनिश्चित करू जे अहाँ स्थान सही टाइप केने अछि आओर पुनः प्रयास करू"
+msgstr ""
+"जीएडिट लेखन मोडमे एहि स्थानकेँ नियंत्रित नहि कए सकैत अछि कृप्या ई सुनिश्चित "
+"करू जे अहाँ स्थान सही टाइप केने अछि आओर पुनः प्रयास करू"
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
-msgstr "%s एकटा मान्य स्थान नहि अछि कृप्या जाँचू जे अहाँ सही स्थान टाइप केने अछि आओर पुनः प्रयास करू."
+msgstr ""
+"%s एकटा मान्य स्थान नहि अछि कृप्या जाँचू जे अहाँ सही स्थान टाइप केने अछि आओर"
+" पुनः प्रयास करू."
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "फाइल सहेजबाक लेल अहाँक पास आवश्यक अनुमति नहि अछि कृप्या जाँचू जे अहाँ स्थान सही टाइप केने अछि आओर पुनः प्रयास करू."
+msgstr ""
+"फाइल सहेजबाक लेल अहाँक पास आवश्यक अनुमति नहि अछि कृप्या जाँचू जे अहाँ स्थान "
+"सही टाइप केने अछि आओर पुनः प्रयास करू."
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
-msgstr "डिस्क पर फाइल सहेजबाक लेल पर्याप्त स्थान उपलब्ध नहि अछि कृप्या डिस्क पर किछु स्थान मुक्त करू आओर पुनः प्रयत्न करू."
+msgstr ""
+"डिस्क पर फाइल सहेजबाक लेल पर्याप्त स्थान उपलब्ध नहि अछि कृप्या डिस्क पर किछु"
+" स्थान मुक्त करू आओर पुनः प्रयत्न करू."
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "अहाँ सिर्फ लिखब योग्य डिस्क पर फाइल सहेजबाक कोशिश केने अछि कृप्या जाँचू जे अहाँ सही स्थान टाइप केने अछि आओर पुनः प्रयास करू."
+msgstr ""
+"अहाँ सिर्फ लिखब योग्य डिस्क पर फाइल सहेजबाक कोशिश केने अछि कृप्या जाँचू जे "
+"अहाँ सही स्थान टाइप केने अछि आओर पुनः प्रयास करू."
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "समान नाम क' सँग फाइल पहिले सँ मोजुद अछि कृप्या अलग नाम क' प्रयोग करू."
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
-msgstr "डिस्क जतए अहाँ फाइलकेँ सहेजनाइ चाहैत छी मे फाइल नाम क' नमाइ सीमित अछि कृप्या एकटा छोट नाम क' प्रयोग करू."
+msgstr ""
+"डिस्क जतए अहाँ फाइलकेँ सहेजनाइ चाहैत छी मे फाइल नाम क' नमाइ सीमित अछि कृप्या"
+" एकटा छोट नाम क' प्रयोग करू."
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "फाइल %s सहेजल नहि जाए सकल."
@@ -1496,20 +1664,21 @@ msgstr "फाइल %s सहेजल नहि जाए सकल."
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "फाइल %s डिस्क पर बदलल गेल."
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
-msgstr "की अहाँ अपन परिवर्तन केँ छोड़ब चाहैत छी आओर फाइल फेर लोड करब चाहैत छी?"
+msgstr ""
+"की अहाँ अपन परिवर्तन केँ छोड़ब चाहैत छी आओर फाइल फेर लोड करब चाहैत छी?"
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr "की अहाँ फाइल फेर लोड करब चाहैत छी?"
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
 msgstr "पुनः लोड करू (_R)"
 
@@ -1564,7 +1733,7 @@ msgstr "पृष्ठ शीर्षिका छापू (_h)"
 
 #: ../pluma/pluma-print-preferences.ui.h:14
 msgid "Fonts"
-msgstr ""
+msgstr "फ़ॉन्ट"
 
 #: ../pluma/pluma-print-preferences.ui.h:15
 msgid "_Body:"
@@ -1672,13 +1841,14 @@ msgstr "पं. %d, स्त. %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "त्रुटि क' सँग एकटा टैब अछि."
-msgstr[1] "त्रुटि क' सँग %d टैब अछि."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
 msgid "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
+msgstr ""
+"Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
@@ -1717,42 +1887,42 @@ msgid "Saving %s"
 msgstr "%s सहेजि रहल अछि"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "सिर्फ पढ़बाक लेल"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "फ़ाइल %s खोलबमे त्रुटि"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "फ़ाइल %s वापस करबमे त्रुटि"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "फ़ाइल %s सहेजएमे त्रुटि"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "यूनिकोड (यूटीएफ-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
 msgstr "नाम:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "माइम प्रकारः"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "एनकोडिंग:"
 
-#: ../pluma/pluma-tab-label.c:276
+#: ../pluma/pluma-tab-label.c:288
 msgid "Close document"
 msgstr "दस्ताबेज़ बन्न करू"
 
@@ -1781,9 +1951,10 @@ msgstr "अओजार (_T)"
 msgid "_Documents"
 msgstr "दस्ताबेज़ (_D)"
 
-#: ../pluma/pluma-ui.h:53
-msgid "_Help"
-msgstr "मद्दति (_H)"
+#. File menu
+#: ../pluma/pluma-ui.h:56
+msgid "_New"
+msgstr "नवीन (_N)"
 
 #: ../pluma/pluma-ui.h:57
 msgid "Create a new document"
@@ -1793,9 +1964,9 @@ msgstr "एकटा नवीन दस्ताबेज़ बनाबू "
 msgid "_Open..."
 msgstr "खोलू (_O)..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1424
 msgid "Open a file"
-msgstr "एकटा फाइल खोलू"
+msgstr "एकटा फ़ाइल खोलू"
 
 #. Edit menu
 #: ../pluma/pluma-ui.h:62
@@ -1804,7 +1975,7 @@ msgstr "वरीयतासभ (_e)"
 
 #: ../pluma/pluma-ui.h:63
 msgid "Configure the application"
-msgstr "अनुप्रयोग कॉन्फ़िगर करू"
+msgstr "अनुप्रयोग बिन्यस्त करू"
 
 #. Help menu
 #: ../pluma/pluma-ui.h:66
@@ -1815,9 +1986,18 @@ msgstr "विषय सूची (_C)"
 msgid "Open the pluma manual"
 msgstr "जी-एडिट मैनुअल खोलू"
 
+#: ../pluma/pluma-ui.h:68
+msgid "_About"
+msgstr "क' संबंधमे (_A)"
+
 #: ../pluma/pluma-ui.h:69
 msgid "About this application"
 msgstr "एहि अनुप्रयोग क' बारेमे"
+
+#. Fullscreen toolbar
+#: ../pluma/pluma-ui.h:72
+msgid "_Leave Fullscreen"
+msgstr ""
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
@@ -1825,19 +2005,19 @@ msgstr "पूर्ण स्क्रीन छोड़ू"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
-msgstr "वर्तमान फाइल सहेजू"
+msgstr "वर्तमान फ़ाइल सहेजू"
 
 #: ../pluma/pluma-ui.h:82
 msgid "Save _As..."
-msgstr "एहि रूपमे सहेजू... (_A)"
+msgstr "एहन सहेजू... (_A)"
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
-msgstr "वर्तमान फाइल एकटा भिन्न नाम सँ सहेजू"
+msgstr "वर्तमान फ़ाइल एकटा भिन्न नाम सँ सहेजू"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr "फाइल क' सहेजल गेल संस्करण पर पुनः जाउ"
+msgstr "फ़ाइल क' सहेजल गेल संस्करण पर पुनः जाउ"
 
 #: ../pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -1855,25 +2035,53 @@ msgstr "छापू... (_P)"
 msgid "Print the current page"
 msgstr "वर्तमान पृष्ठ छापू"
 
+#. Edit menu
+#: ../pluma/pluma-ui.h:92
+msgid "_Undo"
+msgstr "पूर्ववत् करू (_U)"
+
 #: ../pluma/pluma-ui.h:93
 msgid "Undo the last action"
 msgstr "पछिला क्रिया रद्द करू"
+
+#: ../pluma/pluma-ui.h:94
+msgid "_Redo"
+msgstr "दोहराबू (_R)"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
 msgstr "अंतिम पूर्ववत् कएल क्रियाकेँ दोहराबू"
 
+#: ../pluma/pluma-ui.h:96
+msgid "Cu_t"
+msgstr "काटू (_t)"
+
 #: ../pluma/pluma-ui.h:97
 msgid "Cut the selection"
-msgstr "चुनल काटू"
+msgstr "चयनित काटू"
+
+#: ../pluma/pluma-ui.h:98
+msgid "_Copy"
+msgstr "कॉपी करू (_C)"
 
 #: ../pluma/pluma-ui.h:99
 msgid "Copy the selection"
-msgstr "चुनल कापी करू"
+msgstr "चयनित कापी करू"
+
+#: ../pluma/pluma-ui.h:100
+msgid "_Paste"
+msgstr "साटू (_P)"
 
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
 msgstr "क्लिपबोर्डकेँ साटू"
+
+#. Add delete button
+#: ../pluma/pluma-ui.h:102
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:182
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
+msgid "_Delete"
+msgstr "मेटाबू (_D)"
 
 #: ../pluma/pluma-ui.h:103
 msgid "Delete the selected text"
@@ -1992,7 +2200,11 @@ msgstr "वर्तमान दस्ताबेज़केँ नवीन 
 
 #: ../pluma/pluma-ui.h:143
 msgid "Close the current file"
-msgstr "वर्तमान फाइल बन्न करू"
+msgstr "वर्तमान फ़ाइल बन्न करू"
+
+#: ../pluma/pluma-ui.h:149
+msgid "_Quit"
+msgstr "बाहर (_Q)"
 
 #: ../pluma/pluma-ui.h:150
 msgid "Quit the program"
@@ -2014,13 +2226,17 @@ msgstr "स्थिति-पट्टी (_S)"
 msgid "Show or hide the statusbar in the current window"
 msgstr "वर्तमान विंडोमे स्थिति-पट्टी क' दृश्यता देखाबू अथवा नुकाबू"
 
+#: ../pluma/pluma-ui.h:161
+msgid "_Fullscreen"
+msgstr "फुलस्क्रीन (_F)"
+
 #: ../pluma/pluma-ui.h:162
 msgid "Edit text in fullscreen"
 msgstr ""
 
 #: ../pluma/pluma-ui.h:169
 msgid "Side _Pane"
-msgstr "किनारक पट्टी (_P)"
+msgstr "किनार क' पट्टी (_P)"
 
 #: ../pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
@@ -2055,36 +2271,36 @@ msgid "/ on %s"
 msgstr "/ %s पर"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "चारोकात व्रेप करू (_W)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "केवल पूर्ण शब्द जोड़ मिलाबू (_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "अक्षर मिलाबू (_M)"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr "स्ट्रिंग जकरा अहाँ खोजनाइ चाहैत अछि"
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr "पंक्ति जकरा पर अहाँ कर्सरकेँ घसकओनाइ चाहैत अछि"
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:983
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "हाइलाइट मोड %s उपयोग करू"
@@ -2092,7 +2308,7 @@ msgstr "हाइलाइट मोड %s उपयोग करू"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1040 ../pluma/pluma-window.c:1928
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2100,43 +2316,43 @@ msgstr "हाइलाइट मोड %s उपयोग करू"
 msgid "Plain Text"
 msgstr "सादा पाठ"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1041
 msgid "Disable syntax highlighting"
 msgstr "वाक्य रचना हाइलाइटिंग निष्क्रिय करू"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1323
 #, c-format
 msgid "Open '%s'"
 msgstr "खोलू '%s'"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1430
 msgid "Open a recently used file"
 msgstr "हालमे प्रयुक्त फाइल खोलू"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1436
 msgid "Open"
 msgstr "खोलू"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1494
 msgid "Save"
 msgstr "सहेजू"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1496
 msgid "Print"
-msgstr "छापू"
+msgstr "छपाइ"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1653
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' सक्रिय करू"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1906
 msgid "Use Spaces"
 msgstr "खाली स्थानक प्रयोग करू"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1977
 msgid "Tab Width"
 msgstr "टैब चओड़ाइ"
 
@@ -2193,41 +2409,43 @@ msgstr "दस्ताबेज़ सांख्यिकी"
 msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
-msgstr "वर्तमान दस्ताबेज़ क' विश्लेषण कए रपट देत अछि जे एहिमे कतेक शब्द, पंक्तिसभ, अक्षर आओर नॉन-स्पेस संप्रतीक अछि"
+msgstr ""
+"वर्तमान दस्ताबेज़ क' विश्लेषण कए रपट देत अछि जे एहिमे कतेक शब्द, पंक्तिसभ, "
+"अक्षर आओर नॉन-स्पेस संप्रतीक अछि"
 
-#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/docinfo/docinfo.ui.h:3
 msgid "_Update"
 msgstr "अद्यतन करू (_U)"
 
-#: ../plugins/docinfo/docinfo.ui.h:3
+#: ../plugins/docinfo/docinfo.ui.h:4
 msgid "File Name"
 msgstr ""
 
-#: ../plugins/docinfo/docinfo.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:6
 msgid "Bytes"
 msgstr "बाइट"
 
-#: ../plugins/docinfo/docinfo.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:7
 msgid "Characters (no spaces)"
 msgstr "संप्रतीक (रिक्त स्थान नहि)"
 
-#: ../plugins/docinfo/docinfo.ui.h:7
+#: ../plugins/docinfo/docinfo.ui.h:8
 msgid "Characters (with spaces)"
 msgstr "संप्रतीक (रिक्त स्थान क' सँग)"
 
-#: ../plugins/docinfo/docinfo.ui.h:8
+#: ../plugins/docinfo/docinfo.ui.h:9
 msgid "Words"
 msgstr "शब्द"
 
-#: ../plugins/docinfo/docinfo.ui.h:9
+#: ../plugins/docinfo/docinfo.ui.h:10
 msgid "Lines"
 msgstr "पंक्तिसभ"
 
-#: ../plugins/docinfo/docinfo.ui.h:10
-msgid "Document"
-msgstr "दस्ताबेज"
-
 #: ../plugins/docinfo/docinfo.ui.h:11
+msgid "Document"
+msgstr "दस्तावेज"
+
+#: ../plugins/docinfo/docinfo.ui.h:12
 msgid "Selection"
 msgstr "चयन"
 
@@ -2241,222 +2459,222 @@ msgstr ""
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:1
 msgid "External Tools"
-msgstr ""
+msgstr "बाहरी अओजार"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:2
 msgid "Execute external commands and shell scripts."
-msgstr ""
+msgstr "बाहरी कमांड आओर शेल स्क्रिप्ट चलाबू"
 
 #: ../plugins/externaltools/tools/__init__.py:175
 msgid "Manage _External Tools..."
-msgstr ""
+msgstr "बाहरक अओजार प्रबंधित करू (_E)..."
 
 #: ../plugins/externaltools/tools/__init__.py:177
 msgid "Opens the External Tools Manager"
-msgstr ""
+msgstr "बाहरी अओजार प्रबंधक खोलैत अछि"
 
 #: ../plugins/externaltools/tools/__init__.py:181
 msgid "External _Tools"
-msgstr ""
+msgstr "बाहरक अओजार (_T)"
 
 #: ../plugins/externaltools/tools/__init__.py:183
 msgid "External tools"
-msgstr ""
+msgstr "बाहरक अओजार"
 
 #: ../plugins/externaltools/tools/__init__.py:216
 msgid "Shell Output"
-msgstr ""
+msgstr "शेल आउटपुट"
 
 #: ../plugins/externaltools/tools/capture.py:92
 #, python-format
 msgid "Could not execute command: %s"
-msgstr ""
+msgstr "कमांड चलाए नहि सकल: %s"
 
 #: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
-msgstr ""
+msgstr "एहि कमांडकेँ चलाबै क'लेल अहाँक जरूर भीतर होनाइ चाही"
 
 #: ../plugins/externaltools/tools/functions.py:263
 msgid "Running tool:"
-msgstr ""
+msgstr "कार्यशील अओजार:"
 
 #: ../plugins/externaltools/tools/functions.py:287
 msgid "Done."
-msgstr ""
+msgstr "सम्पन्न"
 
 #: ../plugins/externaltools/tools/functions.py:289
 msgid "Exited"
-msgstr ""
+msgstr "बाहर निकलल"
 
 #: ../plugins/externaltools/tools/manager.py:136
 msgid "All languages"
-msgstr ""
+msgstr "सभटा भाषा"
 
 #: ../plugins/externaltools/tools/manager.py:545
 #: ../plugins/externaltools/tools/manager.py:549
 #: ../plugins/externaltools/tools/manager.py:871
 #: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "All Languages"
-msgstr ""
+msgstr "सभ भाषा"
 
 #: ../plugins/externaltools/tools/manager.py:655
 msgid "New tool"
-msgstr ""
+msgstr "नवीन अओजार"
 
 #: ../plugins/externaltools/tools/manager.py:786
 #, python-format
 msgid "This accelerator is already bound to %s"
-msgstr ""
+msgstr "त्वरक पहिले सँ %s क' सँग बान्हल अछि"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr ""
+msgstr "नवीन त्वरक टाइप करू अथवा साफ करब लेल बैक स्पेस दाबू"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
-msgstr ""
+msgstr "नवीन त्वरक टाइप करू"
 
 #: ../plugins/externaltools/tools/outputpanel.py:101
 msgid "Stopped."
-msgstr ""
+msgstr "रूकल"
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
 msgid "Nothing"
-msgstr ""
+msgstr "किछु नहि"
 
 #: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "Current document"
-msgstr ""
+msgstr "मोजुदा दस्ताबेज़"
 
 #: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
-msgstr ""
+msgstr "सबहि दस्ताबेज़"
 
 #: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Current selection"
-msgstr ""
+msgstr "मोजुदा चयन"
 
 #: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Current selection (default to document)"
-msgstr ""
+msgstr "मोजुदा चयन (दस्तावेजमे पूर्वनिर्धारित)"
 
 #: ../plugins/externaltools/tools/tools.ui.h:6
 msgid "Current line"
-msgstr ""
+msgstr "मोजुदा पंक्ति"
 
 #: ../plugins/externaltools/tools/tools.ui.h:7
 msgid "Current word"
-msgstr ""
+msgstr "मोजुदा शब्द"
 
 #: ../plugins/externaltools/tools/tools.ui.h:8
 msgid "Display in bottom pane"
-msgstr ""
+msgstr "तलमे देखाउ"
 
 #: ../plugins/externaltools/tools/tools.ui.h:9
 msgid "Create new document"
-msgstr ""
+msgstr "एकटा नवीन दस्ताबेज़ बनाबू "
 
 #: ../plugins/externaltools/tools/tools.ui.h:10
 msgid "Append to current document"
-msgstr ""
+msgstr "वर्तमान दस्ताबेज़मे जोड़ू"
 
 #: ../plugins/externaltools/tools/tools.ui.h:11
 msgid "Replace current document"
-msgstr ""
+msgstr "मोजुदा दस्ताबेज प्रतिस्थापित करू"
 
 #: ../plugins/externaltools/tools/tools.ui.h:12
 msgid "Replace current selection"
-msgstr ""
+msgstr "मोजुदा चयन प्रतिस्थापित करू"
 
 #: ../plugins/externaltools/tools/tools.ui.h:13
 msgid "Insert at cursor position"
-msgstr ""
+msgstr "कर्सर स्थिति पर दिअ'"
 
 #: ../plugins/externaltools/tools/tools.ui.h:14
 msgid "All documents except untitled ones"
-msgstr ""
+msgstr "सभ दस्ताबेज सिवाय बिनु शीर्षक क'"
 
 #: ../plugins/externaltools/tools/tools.ui.h:15
 msgid "Local files only"
-msgstr ""
+msgstr "सिर्फ स्थानीय फाइल"
 
 #: ../plugins/externaltools/tools/tools.ui.h:16
 msgid "Remote files only"
-msgstr ""
+msgstr "सिर्फ रिमोट फाइल"
 
 #: ../plugins/externaltools/tools/tools.ui.h:17
 msgid "Untitled documents only"
-msgstr ""
+msgstr "सिर्फ बिनु शीर्षक क' दस्ताबेज़"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
-msgstr ""
+msgstr "बाहरक अओजार प्रबंधक"
 
 #: ../plugins/externaltools/tools/tools.ui.h:19
 msgid "_Tools:"
-msgstr ""
+msgstr "अओजार (_T)"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
 #: ../plugins/snippets/snippets/snippets.ui.h:7
 msgid "_Edit:"
-msgstr ""
+msgstr "संपादन (_E)"
 
 #: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
-msgstr ""
+msgstr "अनुप्रयुक्तता (_A):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Output:"
-msgstr ""
+msgstr "आउटपुट (_O):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "_Input:"
-msgstr ""
+msgstr "इनपुट (_I):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:26
 msgid "_Save:"
-msgstr ""
+msgstr "सहेजू (_S)"
 
 #: ../plugins/externaltools/tools/tools.ui.h:27
 msgid "_Shortcut Key:"
-msgstr ""
+msgstr "शार्टकट कुँजी (_S):"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
-msgstr ""
+msgstr "निर्मित"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:2
 msgid "Run \"make\" in the document directory"
-msgstr ""
+msgstr "दस्ताबेज निर्देशिकामे \"make\" चलाबू"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:1
 msgid "Open terminal here"
-msgstr ""
+msgstr "एतय टर्मिनल खोलू"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:2
 msgid "Open a terminal in the document location"
-msgstr ""
+msgstr "दस्ताबेज अवस्थिति पर टर्मिनल खोलू"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:1
 msgid "Remove trailing spaces"
-msgstr ""
+msgstr "ट्रैलिंग स्थान हटाबू"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:2
 msgid "Remove useless trailing spaces in your file"
-msgstr ""
+msgstr "अपन फाइलमे ट्रेलिंग स्थान हटाबू"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:1
 msgid "Run command"
-msgstr ""
+msgstr "कमांड चलाबू"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:2
 msgid "Execute a custom command and put its output in a new document"
-msgstr ""
+msgstr "एकटा पसंदीदा कमांड चलाबू आ एकर आउटपुटकेँ नवीन दस्ताबेजमे राखू"
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
-msgstr ""
+msgstr "खोजू"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
@@ -2492,7 +2710,11 @@ msgid ""
 "values are: none (filter nothing), hidden (filter hidden files), binary "
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
-msgstr "ई मान निर्धारित करैत अछि जे फाइल ब्रॉउजर सँ कओन फाइल फिल्टर कएल जाएत अछि. वैध मान अछि: none (किछु नहि फिल्टर करू), hidden (नुकल फाइलसभ फिल्टर करू), binary (द्विपदीय फाइलसभ फिल्टर करू) आओर hidden_and_binary (नुकल आ द्विपदीय दुनू फाइलसभ फिल्टर करू)."
+msgstr ""
+"ई मान निर्धारित करैत अछि जे फाइल ब्रॉउजर सँ कओन फाइल फिल्टर कएल जाएत अछि. "
+"वैध मान अछि: none (किछु नहि फिल्टर करू), hidden (नुकल फाइलसभ फिल्टर करू), "
+"binary (द्विपदीय फाइलसभ फिल्टर करू) आओर hidden_and_binary (नुकल आ द्विपदीय "
+"दुनू फाइलसभ फिल्टर करू)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
@@ -2502,7 +2724,9 @@ msgstr "फाइल ब्रॉउजर फिल्टर प्रारू
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top"
 " of the filter_mode."
-msgstr "फिल्टर प्रारूप जकरासँ फाइल ब्रॉउजरकेँ फिल्टर कएल जएनाइ अछि ई फिल्टर फिल्टर मोड क' शीर्ष पर काम करैत अछि (_m)."
+msgstr ""
+"फिल्टर प्रारूप जकरासँ फाइल ब्रॉउजरकेँ फिल्टर कएल जएनाइ अछि ई फिल्टर फिल्टर "
+"मोड क' शीर्ष पर काम करैत अछि (_m)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:7
 msgid "Open With Tree View"
@@ -2512,7 +2736,9 @@ msgstr "तरू दृश्य क' सँग खोलू"
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
-msgstr "तरू दृश्य खोलू जखन पुस्तकचिह्न दृश्य क' बजाय फाइल ब्रॉउजर प्लगिन लोड कएल जाएत अछि"
+msgstr ""
+"तरू दृश्य खोलू जखन पुस्तकचिह्न दृश्य क' बजाय फाइल ब्रॉउजर प्लगिन लोड कएल "
+"जाएत अछि"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
@@ -2522,7 +2748,9 @@ msgstr "फाइल ब्रॉउजर रूट निर्देशिक
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "फाइल ब्रॉउजर रूट निर्देशिका प्रयोग करब क'लेल जखन फाइल ब्रॉउजर प्लगिन लोड कएल जाएत अछि आओर ऑनलोड/ तरू दृश्य सही अछि (_v)."
+msgstr ""
+"फाइल ब्रॉउजर रूट निर्देशिका प्रयोग करब क'लेल जखन फाइल ब्रॉउजर प्लगिन लोड कएल"
+" जाएत अछि आओर ऑनलोड/ तरू दृश्य सही अछि (_v)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
@@ -2533,7 +2761,10 @@ msgid ""
 "The file browser virtual root directory to use when loading the file browser"
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
-msgstr "फाइल ब्रॉउजर आभासी रूट निर्देशिका प्रयोग करब क'लेल जखन फाइल ब्रॉउजर प्लगिन लोड कएल जाएत अछि आओर ऑनलोड/ तरू दृश्य सही अछि आभासी रूटकेँ वास्तविक रूट सँ हरदम नीच्चाँ होनाइ चाही (_v)."
+msgstr ""
+"फाइल ब्रॉउजर आभासी रूट निर्देशिका प्रयोग करब क'लेल जखन फाइल ब्रॉउजर प्लगिन "
+"लोड कएल जाएत अछि आओर ऑनलोड/ तरू दृश्य सही अछि आभासी रूटकेँ वास्तविक रूट सँ "
+"हरदम नीच्चाँ होनाइ चाही (_v)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
@@ -2545,7 +2776,7 @@ msgstr "सेट करू जे की रिमोट अवस्थित�
 
 #: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
 msgid "File System"
-msgstr "फाइल तंत्र"
+msgstr "फाइल सिस्टम"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
 msgid "_Set root to active document"
@@ -2603,7 +2834,9 @@ msgstr "एकटा त्रुटि आएल"
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "रद्दीमे फाइल नहि भेज सकैत अथि, की अहाँ एकरा\nस्थायी रूपेँ मेटान चाहते हैं?"
+msgstr ""
+"रद्दीमे फाइल नहि भेज सकैत अथि, की अहाँ एकरा\n"
+"स्थायी रूपेँ मेटान चाहते हैं?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
@@ -2614,18 +2847,18 @@ msgstr "फाइल \"%s\" रद्दीमे नहि भेजल जा�
 msgid "The selected files cannot be moved to the trash."
 msgstr "चुनल फाइल रद्दीमे नहि भेजल जाए सकैत अछि."
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1165
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr "की अहाँ सुनिश्चित छी जे अहाँ \"%s\" केँ स्थायी रूपेँ मेटएनाइ चाहैत छी?"
+msgstr "की अहाँ सुनिश्चित छी जे अहाँ \"%s\"केँ स्थायी तौर पर मेटओनाइ चाहैत अछि?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1170
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1168
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "की अहाँ समझैत छी जे अहाँ \"%s\" चुनल फाइल स्थायी रूपेँ मेटाएनाइ चाहैत छी?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1171
 msgid "If you delete an item, it is permanently lost."
-msgstr "जँ अहाँ एकटा मद मेटाबै छी, तँ ई हमेशा कए लेल खतम भए जाइछ."
+msgstr "जँ अहाँ कोनो वस्तुकेँ मेटाएब, तँ ई स्थाइ रूप सँ मेट जएताह."
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
@@ -2635,7 +2868,9 @@ msgstr "(रिक्त)"
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "The renamed file is currently filtered out. You need to adjust your filter settings to make the file visible"
+msgstr ""
+"The renamed file is currently filtered out. You need to adjust your filter "
+"settings to make the file visible"
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -2647,7 +2882,9 @@ msgstr "फाइल"
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "नवीन फाइल अखन फिल्टर भ' चुकल अछि अहाँक फिल्टर जमावटकेँ फाइलकेँ देखाबै क'लेल संयोजित करब हएताह"
+msgstr ""
+"नवीन फाइल अखन फिल्टर भ' चुकल अछि अहाँक फिल्टर जमावटकेँ फाइलकेँ देखाबै क'लेल "
+"संयोजित करब हएताह"
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -2659,7 +2896,9 @@ msgstr "निर्देशिका"
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
-msgstr "The new directory is currently filtered out. You need to adjust your filter settings to make the directory visible"
+msgstr ""
+"The new directory is currently filtered out. You need to adjust your filter "
+"settings to make the directory visible"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
@@ -2676,10 +2915,6 @@ msgstr ""
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:803
 msgid "Move selected file or folder to trash"
 msgstr "रद्दीमे चुनल फाइल अथवा निर्देशिका लए जाउ"
-
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
-msgid "_Delete"
-msgstr "मेटाबू (_D)"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Delete selected file or folder"
@@ -2771,18 +3006,18 @@ msgstr "द्विपदीय देखाबू (_B)"
 msgid "Show binary files"
 msgstr "द्विपदीय फाइल देखाबू"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:993
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1023
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:991
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1004
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1027
 msgid "Previous location"
 msgstr "पछिला स्थान"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:995
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
 msgid "Go to previous location"
 msgstr "पछिला स्थान पर जाउ"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1018
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:999
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
 msgid "Go to a previously opened location"
 msgstr "पहिले क' खुलल स्थान पर जाउ"
 
@@ -2790,25 +3025,25 @@ msgstr "पहिले क' खुलल स्थान पर जाउ"
 msgid "Next location"
 msgstr "अगिला स्थान"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1016
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1020
 msgid "Go to next location"
 msgstr "अगिला स्थान पर जाउ"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1228
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1232
 msgid "_Match Filename"
 msgstr "फाइलनाम मिलान करू (_M)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2140
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2144
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "आरोहित वाल्यूमक लेल कोनो आरोहित वस्तु नहि: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2220
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2224
 #, c-format
 msgid "Could not open media: %s"
 msgstr "मीडिया नहि खोलि सकल: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2267
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2271
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "वाल्यूम आरोहित नहि कए सकल: %s"
@@ -2825,38 +3060,37 @@ msgstr "Emacs, Kate आओर Vim-शैली मोडलाइन pluma क'�
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:1
 #: ../plugins/pythonconsole/pythonconsole/__init__.py:55
 msgid "Python Console"
-msgstr ""
+msgstr "पाइथन कँसोल "
 
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:2
 msgid "Interactive Python console standing in the bottom panel"
 msgstr ""
 
-#. ex:et:ts=4:
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
-msgid "C_ommand color:"
-msgstr ""
-
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
+msgid "C_ommand color:"
+msgstr "कमांड रंग (_o):"
+
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
 msgid "_Error color:"
-msgstr ""
+msgstr "त्रुटि रंग (_E):"
 
 #. ex:ts=8:et:
 #: ../plugins/quickopen/quickopen/popup.py:31
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
-msgstr ""
+msgstr "तेजी सँ खोलनाइ"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:65
 msgid "Quick open"
-msgstr ""
+msgstr "तेजी सँ खोलनाइ"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:66
 msgid "Quickly open documents"
-msgstr ""
+msgstr "दस्तावेज तेजी सँ खोलू"
 
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
-msgstr ""
+msgstr "फाइल तेजी सँ खोलू"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
@@ -2864,7 +3098,7 @@ msgstr ""
 #: ../plugins/snippets/snippets/Document.py:193
 #: ../plugins/snippets/snippets/Document.py:614
 msgid "Snippets"
-msgstr ""
+msgstr "स्निपेट"
 
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:2
 msgid "Insert often-used pieces of text in a fast way"
@@ -2872,29 +3106,29 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/snippets.ui.h:1
 msgid "Snippets Manager"
-msgstr ""
+msgstr "स्निपेट प्रबंधक"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:2
 msgid "_Snippets:"
-msgstr ""
+msgstr "स्निपेट (_S):"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:3
 msgid "Create new snippet"
-msgstr ""
+msgstr "नवीन स्निपेट बनाउ"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
 #: ../plugins/snippets/snippets/Manager.py:792
 msgid "Import snippets"
-msgstr ""
+msgstr "स्निपेट आयात करू"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:5
 msgid "Export selected snippets"
-msgstr ""
+msgstr "चुनल स्निपेट त्यागू"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
 #: ../plugins/snippets/snippets/Manager.py:403
 msgid "Delete selected snippet"
-msgstr ""
+msgstr "चुनल स्निपेट मेटाउ"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:8
 msgid "Activation"
@@ -2902,7 +3136,7 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/snippets.ui.h:10
 msgid "_Tab trigger:"
-msgstr ""
+msgstr "टैब ट्रिगर (_T):"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: ../plugins/snippets/snippets/snippets.ui.h:11
@@ -2912,39 +3146,39 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/snippets.ui.h:12
 msgid "Shortcut key with which the snippet is activated"
-msgstr ""
+msgstr "शॉर्टकट कुंजी जकर संग स्नपेट सक्रिय अछि"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "S_hortcut key:"
-msgstr ""
+msgstr "शार्टकट कुँजी (_h):"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:14
 msgid "_Drop targets:"
-msgstr ""
+msgstr "लक्ष्य छोडू (_D):"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
-msgstr ""
+msgstr "स्निपेट प्रबंधित करू (_S)..."
 
 #: ../plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage snippets"
-msgstr ""
+msgstr "स्निपेट प्रबंधित करू"
 
 #: ../plugins/snippets/snippets/Manager.py:41
 msgid "Snippets archive"
-msgstr ""
+msgstr "स्निपेट अभिलेख"
 
 #: ../plugins/snippets/snippets/Manager.py:66
 msgid "Add a new snippet..."
-msgstr ""
+msgstr "एकटा नवीन स्निपेट जोड़ू..."
 
 #: ../plugins/snippets/snippets/Manager.py:117
 msgid "Global"
-msgstr ""
+msgstr "वैश्विक"
 
 #: ../plugins/snippets/snippets/Manager.py:400
 msgid "Revert selected snippet"
-msgstr ""
+msgstr "चुनल स्निपेट वापस लिअ'"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
 #: ../plugins/snippets/snippets/Manager.py:674
@@ -2956,72 +3190,72 @@ msgstr ""
 #: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
 msgid "The following error occurred while importing: %s"
-msgstr ""
+msgstr "आयातक काले निम्नलिखित त्रुटि आएल: %s"
 
 #: ../plugins/snippets/snippets/Manager.py:778
 msgid "Import successfully completed"
-msgstr ""
+msgstr "आयात सफलतापूर्वक संपन्न"
 
 #: ../plugins/snippets/snippets/Manager.py:797
 #: ../plugins/snippets/snippets/Manager.py:883
 #: ../plugins/snippets/snippets/Manager.py:946
 msgid "All supported archives"
-msgstr ""
+msgstr "सभटा समर्थित अभिलेख"
 
 #: ../plugins/snippets/snippets/Manager.py:798
 #: ../plugins/snippets/snippets/Manager.py:884
 #: ../plugins/snippets/snippets/Manager.py:947
 msgid "Gzip compressed archive"
-msgstr ""
+msgstr "Gzip संकुचित अभिलेख"
 
 #: ../plugins/snippets/snippets/Manager.py:799
 #: ../plugins/snippets/snippets/Manager.py:885
 #: ../plugins/snippets/snippets/Manager.py:948
 msgid "Bzip2 compressed archive"
-msgstr ""
+msgstr "Bzip2 संकुचित अभिलेख"
 
 #: ../plugins/snippets/snippets/Manager.py:800
 msgid "Single snippets file"
-msgstr ""
+msgstr "एकल स्निपेट फाइल"
 
 #: ../plugins/snippets/snippets/Manager.py:801
 #: ../plugins/snippets/snippets/Manager.py:887
 #: ../plugins/snippets/snippets/Manager.py:950
 msgid "All files"
-msgstr ""
+msgstr "सबहि फ़ाइल"
 
 #: ../plugins/snippets/snippets/Manager.py:813
 #, python-format
 msgid "The following error occurred while exporting: %s"
-msgstr ""
+msgstr "निर्यातक काले त्रुटि निम्नलिखित त्रुटि आएल: %s"
 
 #: ../plugins/snippets/snippets/Manager.py:817
 msgid "Export successfully completed"
-msgstr ""
+msgstr "निर्यात सफलतापूर्वक संपन्न"
 
 #. Ask if system snippets should also be exported
 #: ../plugins/snippets/snippets/Manager.py:857
 #: ../plugins/snippets/snippets/Manager.py:924
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
-msgstr ""
+msgstr "अपन निर्यातमे की अहाँ चुनल <b>तंत्र</b> स्निपेट सामिल करबा चाहैत छी?"
 
 #: ../plugins/snippets/snippets/Manager.py:872
 #: ../plugins/snippets/snippets/Manager.py:942
 msgid "There are no snippets selected to be exported"
-msgstr ""
+msgstr "निर्यातक लेल कोनो स्निपेट चुनल नहि अछि"
 
 #: ../plugins/snippets/snippets/Manager.py:877
 #: ../plugins/snippets/snippets/Manager.py:915
 msgid "Export snippets"
-msgstr ""
+msgstr "स्निपेट निर्यात करू"
 
 #: ../plugins/snippets/snippets/Manager.py:1055
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr ""
+msgstr "नवीन शॉर्टकट टाइप करू, अथवा साफ करब लेल बैक स्पेस दाबू"
 
 #: ../plugins/snippets/snippets/Manager.py:1057
 msgid "Type a new shortcut"
-msgstr ""
+msgstr "नवीन शॉर्टकट टाइप करू"
 
 #: ../plugins/snippets/snippets/Exporter.py:65
 #, python-format
@@ -3062,7 +3296,7 @@ msgstr ""
 #: ../plugins/snippets/snippets/Importer.py:70
 #, python-format
 msgid "The following files could not be imported: %s"
-msgstr ""
+msgstr "निम्नलिखित फाइल आयात नहि कएल जाए सकल: %s"
 
 #: ../plugins/snippets/snippets/Importer.py:86
 #: ../plugins/snippets/snippets/Importer.py:99
@@ -3098,27 +3332,27 @@ msgstr "छाँटू"
 msgid "Sorts a document or selected text."
 msgstr "चुनल पाठ अथवा दस्ताबेज़ क्रमबद्ध करैत अछि"
 
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/sort/sort.ui.h:3
 msgid "_Sort"
 msgstr "छाँटू (_S)"
 
-#: ../plugins/sort/sort.ui.h:3
+#: ../plugins/sort/sort.ui.h:5
 msgid "_Reverse order"
 msgstr "विपरीत अनुक्रम (_R)"
 
-#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/sort/sort.ui.h:6
 msgid "R_emove duplicates"
 msgstr "कॉपीसभ मेटाबू (_e)"
 
-#: ../plugins/sort/sort.ui.h:5
+#: ../plugins/sort/sort.ui.h:7
 msgid "_Ignore case"
 msgstr "केस उपेक्षा करू (_I)"
 
-#: ../plugins/sort/sort.ui.h:6
+#: ../plugins/sort/sort.ui.h:8
 msgid "S_tart at column:"
 msgstr "कॉलम पर शुरु करू (_t):"
 
-#: ../plugins/sort/sort.ui.h:7
+#: ../plugins/sort/sort.ui.h:9
 msgid "You cannot undo a sort operation"
 msgstr "अहाँ छाँटबाक क्रियाकेँ पूर्ववत् नहि कए सकैछ"
 
@@ -3132,7 +3366,7 @@ msgstr ""
 #. suggestions
 #. * for the current misspelled word
 #: ../plugins/spell/pluma-automatic-spell-checker.c:420
-#: ../plugins/spell/pluma-spell-checker-dialog.c:455
+#: ../plugins/spell/pluma-spell-checker-dialog.c:458
 msgid "(no suggested words)"
 msgstr "(कोनो सुझाओल शब्द नहि)"
 
@@ -3141,16 +3375,11 @@ msgid "_More..."
 msgstr "बेसी (_M)..."
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "सबहि उपेक्षा करू (_I)"
 
-#. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
-msgid "_Add"
-msgstr "जोड़ू (_A)"
-
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "वर्तनी सुझाव (_S)..."
 
@@ -3164,11 +3393,11 @@ msgstr "सुझाव"
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word
 #. isn't misspelled
-#: ../plugins/spell/pluma-spell-checker-dialog.c:562
+#: ../plugins/spell/pluma-spell-checker-dialog.c:565
 msgid "(correct spelling)"
 msgstr "(सही वर्तनी)"
 
-#: ../plugins/spell/pluma-spell-checker-dialog.c:709
+#: ../plugins/spell/pluma-spell-checker-dialog.c:712
 msgid "Completed spell checking"
 msgstr "वर्तनी जाँच सम्पन्न"
 
@@ -3195,14 +3424,14 @@ msgstr "अज्ञात (%s)"
 #: ../plugins/spell/pluma-spell-checker-language.c:406
 msgctxt "language"
 msgid "Default"
-msgstr "पूर्वनिर्धारित"
+msgstr "मूलभूत"
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:141
+#: ../plugins/spell/pluma-spell-language-dialog.c:136
 #: ../plugins/spell/languages-dialog.ui.h:1
 msgid "Set language"
 msgstr "भाषा नियत करू"
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:195
+#: ../plugins/spell/pluma-spell-language-dialog.c:190
 msgid "Languages"
 msgstr "भाषा"
 
@@ -3238,7 +3467,7 @@ msgstr "दस्ताबेज़ खाली अछि."
 msgid "No misspelled words"
 msgstr "कोनो गलत वर्तनी बला शब्द नहि"
 
-#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/languages-dialog.ui.h:5
 msgid "Select the _language of the current document."
 msgstr "वर्तमान दस्ताबेज़ क' भाषा चुनू (_l)"
 
@@ -3252,7 +3481,7 @@ msgstr "गलत वर्तनी बला शब्द:"
 
 #: ../plugins/spell/spell-checker.ui.h:3
 msgid "word"
-msgstr ""
+msgstr "शब्द"
 
 #: ../plugins/spell/spell-checker.ui.h:4
 msgid "Change _to:"
@@ -3302,19 +3531,19 @@ msgstr ""
 msgid "_Configure Spell Checker plugin..."
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
 msgid "Autocheck spelling on document load..."
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:6
 msgid "_Never autocheck"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:7
 msgid "_Remember autocheck by document"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:8
 msgid "_Always autocheck"
 msgstr ""
 
@@ -3544,7 +3773,7 @@ msgstr "दिशात्मकता (पदावनत)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:61
 msgid "Disabled"
-msgstr "निष्क्रिय"
+msgstr "अक्षम"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:62
 msgid "DIV container"
@@ -4666,7 +4895,7 @@ msgstr "लेबल क' सँग मद"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:38
 msgid "Item"
-msgstr "मद"
+msgstr "वस्तु"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:39
 msgid "Maths (display)"
@@ -4896,7 +5125,7 @@ msgstr ""
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:3
 msgid "Custom format"
-msgstr ""
+msgstr "अनुकूलित प्रारूप"
 
 #: ../plugins/time/pluma-time-plugin.c:189
 msgid "In_sert Date and Time..."
@@ -4930,31 +5159,31 @@ msgstr ""
 msgid "Insert Date and Time"
 msgstr "दिनाँक आ समय प्रविष्ट करू"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:4
 msgid "_Insert"
 msgstr "प्रविष्ट करू (_I)"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:3
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
+#: ../plugins/time/pluma-time-dialog.ui.h:5
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:8
 msgid "Use the _selected format"
 msgstr "चुनल प्रारूप क'उपयोग करू (_s)"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:5
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
+#: ../plugins/time/pluma-time-dialog.ui.h:7
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
 msgid "_Use custom format"
 msgstr "मनपसंद प्रारूप क' उपयोग करू (_U)"
 
 #. Translators: Use the more common date format in your locale
-#: ../plugins/time/pluma-time-dialog.ui.h:7
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
+#: ../plugins/time/pluma-time-dialog.ui.h:9
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:12
 #, no-c-format
 msgid "%d/%m/%Y %H:%M:%S"
 msgstr ""
 
 #. Translators: This example should follow the date format defined in the
 #. entry above
-#: ../plugins/time/pluma-time-dialog.ui.h:8
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:11
+#: ../plugins/time/pluma-time-dialog.ui.h:10
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:14
 msgid "01/11/2009 17:52:00"
 msgstr ""
 
@@ -4962,10 +5191,10 @@ msgstr ""
 msgid "Configure date/time plugin"
 msgstr "दिनाँक/समय प्लगइन विन्यस्त करू"
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
 msgid "When inserting date/time..."
 msgstr ""
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:7
 msgid "_Prompt for a format"
 msgstr "प्रारूप लेल पूछू (_P)"

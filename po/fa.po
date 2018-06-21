@@ -1,21 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 10:17+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
-"Language-Team: Persian (http://www.transifex.com/mate/MATE/language/fa/)\n"
+"POT-Creation-Date: 2018-04-17 17:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Mohammadreza Abdollahzadeh <morealaz@gmail.com>, 2018\n"
+"Language-Team: Persian (https://www.transifex.com/mate/teams/13566/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fa\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:1
 msgid "Use Default Font"
@@ -28,6 +29,9 @@ msgid ""
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
 msgstr ""
+"اینکه آیا از فونت «عرض ثابت» پیشفرض سیستم استفاده شود یا یک فونت خاص که برای"
+" Pluma تنظیم شده باشد. اگر این گزینه خاموش باشد، از فونتی که در گزینه‌ی «قلم"
+" ویرایشگر» مشخص شده است استفاده میشود."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
@@ -42,7 +46,9 @@ msgstr "قلم ویرایشگر"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "قلم سفارشی‌ای که در محوطه‌ی ویرایش مورد استفاده قرار خواهد گرفت. تنهادر صورتی کار می‌کند که گزینه‌ی «Use Default Font» خاموش باشد."
+msgstr ""
+"قلم سفارشی‌ای که در محوطه‌ی ویرایش مورد استفاده قرار خواهد گرفت. تنهادر "
+"صورتی کار می‌کند که گزینه‌ی «Use Default Font» خاموش باشد."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Style Scheme"
@@ -60,7 +66,10 @@ msgstr "ایجاد نسخه‌های پشتیبان"
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
-msgstr "این که آیا pluma برای پرونده‌هایی که ذخیره می‌کند نسخه‌ی پشتیبان ایجاد بکند یا نه. می‌توان پسوند پرونده‌ی پشتیبان را با گزینه‌ی «پسوند نسخه‌ی پشتیبان» تنظیم کرد."
+msgstr ""
+"این که آیا pluma برای پرونده‌هایی که ذخیره می‌کند نسخه‌ی پشتیبان ایجاد بکند "
+"یا نه. می‌توان پسوند پرونده‌ی پشتیبان را با گزینه‌ی «پسوند نسخه‌ی پشتیبان» "
+"تنظیم کرد."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Autosave"
@@ -109,7 +118,9 @@ msgstr ""
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "حداکثر تعداد کنش‌هایی که pluma قادر خواهد بود برگرداند یا دوباره انجام دهد. برای تعداد نامحدود کنش‌ها از «‎-۱» استفاده کنید."
+msgstr ""
+"حداکثر تعداد کنش‌هایی که pluma قادر خواهد بود برگرداند یا دوباره انجام دهد. "
+"برای تعداد نامحدود کنش‌ها از «‎-۱» استفاده کنید."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Line Wrapping Mode"
@@ -122,7 +133,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "چگونگی پیچش سطرهای طولانی را در محوطه‌ی ویرایش مشخص می‌کند. برای نپیچاندن از ‏«GTK_WRAP_NONE»، برای پیچش در محدوده‌ی کلمات از «GTK_WRAP_WORD»، و برای پیچش در محدوده‌ی تک‌تک نویسه‌ها از «GTK_WRAP_CHAR» استفاده کنید. توجه کنید که مقادیر به کوچک و بزرگی حروف حساس هستند، پس مراقب باشید که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند."
+msgstr ""
+"چگونگی پیچش سطرهای طولانی را در محوطه‌ی ویرایش مشخص می‌کند. برای نپیچاندن از"
+" ‏«GTK_WRAP_NONE»، برای پیچش در محدوده‌ی کلمات از «GTK_WRAP_WORD»، و برای "
+"پیچش در محدوده‌ی تک‌تک نویسه‌ها از «GTK_WRAP_CHAR» استفاده کنید. توجه کنید "
+"که مقادیر به کوچک و بزرگی حروف حساس هستند، پس مراقب باشید که دقیقاً به شکلی "
+"که اینجا آمده‌اند وارد شوند."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Tab Size"
@@ -132,7 +148,8 @@ msgstr "اندازه‌ی جدول‌بندی"
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
-msgstr "تعداد فاصله‌هایی که باید به جای نویسه‌ی جهش نمایش داده شود را مشخص می‌کند."
+msgstr ""
+"تعداد فاصله‌هایی که باید به جای نویسه‌ی جهش نمایش داده شود را مشخص می‌کند."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Insert spaces"
@@ -234,7 +251,7 @@ msgstr "این که آیا pluma پررنگ‌سازی نحوی را به کار
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:46
 msgid "Toolbar is Visible"
-msgstr "نوار ابزار مرئی است"
+msgstr "نوار ابزار قابل رویت است"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:47
 msgid "Whether the toolbar should be visible in editing windows."
@@ -252,11 +269,17 @@ msgid ""
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" to display prioritized text beside icons."
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
-msgstr "سبک دکمه‌های نوار ابزار. مقادیر ممکن عبارتند از «PLUMA_TOOLBAR_SYSTEM» برای استفاده از سبک پیش‌فرض سیستم، «PLUMA_TOOLBAR_ICONS» برای نمایش فقط شمایل‌ها، ‏«PLUMA_TOOLBAR_ICONS_AND_TEXT» برای نمایش شمایل‌ها و متن، و ‏«PLUMA_TOOLBAR_ICONS_BOTH_HORIZ» برای نمایش متن دارای اولویت در کنار شمایل‌ها. به یاد داشته باشید که مقادیر به کوچک و بزرگی حروف حساس هستند، پس مراقب باشید که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند."
+msgstr ""
+"سبک دکمه‌های نوار ابزار. مقادیر ممکن عبارتند از «PLUMA_TOOLBAR_SYSTEM» برای "
+"استفاده از سبک پیش‌فرض سیستم، «PLUMA_TOOLBAR_ICONS» برای نمایش فقط شمایل‌ها،"
+" ‏«PLUMA_TOOLBAR_ICONS_AND_TEXT» برای نمایش شمایل‌ها و متن، و "
+"‏«PLUMA_TOOLBAR_ICONS_BOTH_HORIZ» برای نمایش متن دارای اولویت در کنار "
+"شمایل‌ها. به یاد داشته باشید که مقادیر به کوچک و بزرگی حروف حساس هستند، پس "
+"مراقب باشید که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Status Bar is Visible"
-msgstr "نوار وضعیت مرئی است"
+msgstr "نوار وضعیت قابل رویت است"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid ""
@@ -298,7 +321,9 @@ msgstr "حداکثر تعداد پرونده‌های اخیر"
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
-msgstr "حداکثر تعداد پرونده‌هایی را که اخیراً باز شده‌اند و در زیرمنوی «پرونده‌های اخیر» نمایش داده می‌شوند، مشخص می‌کند."
+msgstr ""
+"حداکثر تعداد پرونده‌هایی را که اخیراً باز شده‌اند و در زیرمنوی «پرونده‌های "
+"اخیر» نمایش داده می‌شوند، مشخص می‌کند."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Print Syntax Highlighting"
@@ -307,7 +332,8 @@ msgstr "چاپ پررنگ‌سازی نحوی"
 #: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
-msgstr "این که آیا pluma هنگام چاپ نوشتار پررنگ‌سازی نحوی را هم چاپ کند یا نه."
+msgstr ""
+"این که آیا pluma هنگام چاپ نوشتار پررنگ‌سازی نحوی را هم چاپ کند یا نه."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Print Header"
@@ -329,7 +355,12 @@ msgid ""
 "\"GTK_WRAP_CHAR\" for wrapping at individual character boundaries. Note that"
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
-msgstr "چگونگی پیچش سطرهای طولانی را برای چاپ مشخص می‌کند. برای نپیچاندن از ‏«GTK_WRAP_NONE»، برای پیچش در محدوده‌ی کلمات از «GTK_WRAP_WORD»، و برای پیچش در محدوده‌ی تک‌تک نویسه‌ها از «GTK_WRAP_CHAR» استفاده کنید. توجه کنید که مقادیر به کوچک و بزرگی حروف حساس هستند، پس مراقب باشید که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند."
+msgstr ""
+"چگونگی پیچش سطرهای طولانی را برای چاپ مشخص می‌کند. برای نپیچاندن از "
+"‏«GTK_WRAP_NONE»، برای پیچش در محدوده‌ی کلمات از «GTK_WRAP_WORD»، و برای "
+"پیچش در محدوده‌ی تک‌تک نویسه‌ها از «GTK_WRAP_CHAR» استفاده کنید. توجه کنید "
+"که مقادیر به کوچک و بزرگی حروف حساس هستند، پس مراقب باشید که دقیقاً به شکلی "
+"که اینجا آمده‌اند وارد شوند."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Line Numbers"
@@ -340,7 +371,9 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "اگر این مقدار ۰ باشد هنگام چاپ نوشتار، شماره سطرها درج نمی‌شود. در غیر این صورت، pluma هر این تعداد سطر، شماره‌ی سطرها را چاپ می‌کند."
+msgstr ""
+"اگر این مقدار ۰ باشد هنگام چاپ نوشتار، شماره سطرها درج نمی‌شود. در غیر این "
+"صورت، pluma هر این تعداد سطر، شماره‌ی سطرها را چاپ می‌کند."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
@@ -354,7 +387,8 @@ msgstr "قلم بدنه برای چاپ"
 #: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
-msgstr "قلم مورد استفاده برای بدنه‌ی نوشتار را هنگام چاپ نوشتارها مشخص می‌کند."
+msgstr ""
+"قلم مورد استفاده برای بدنه‌ی نوشتار را هنگام چاپ نوشتارها مشخص می‌کند."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:71
 msgctxt "print-font-header-pango"
@@ -369,7 +403,9 @@ msgstr "قلم سرصفحه برای چاپ"
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
-msgstr "قلم مورد استفاده برای سرصفحه‌ها هنگام چاپ نوشتار را مشخص می‌کند. تنها در صورتی کار ‌می‌کند که گزینه‌ی «چاپ سرصفحه» روشن باشد."
+msgstr ""
+"قلم مورد استفاده برای سرصفحه‌ها هنگام چاپ نوشتار را مشخص می‌کند. تنها در "
+"صورتی کار ‌می‌کند که گزینه‌ی «چاپ سرصفحه» روشن باشد."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgctxt "print-font-numbers-pango"
@@ -384,7 +420,9 @@ msgstr "قلم شماره‌ی سطرها برای چاپ"
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
-msgstr "قلم مورد استفاده برای شماره‌ی سطرها هنگام چاپ را مشخص می‌کند. تنها در صورتی تأثیر دارد که گزینه‌ی «چاپ شماره‌ی سطرها» ناصفر باشد."
+msgstr ""
+"قلم مورد استفاده برای شماره‌ی سطرها هنگام چاپ را مشخص می‌کند. تنها در صورتی "
+"تأثیر دارد که گزینه‌ی «چاپ شماره‌ی سطرها» ناصفر باشد."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgctxt "auto-detected"
@@ -441,7 +479,9 @@ msgstr "فعال کردن متصل شونده"
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
-msgstr "فهرست متصل شونده‌های فعال. حاوی «مکان» متصل شونده‌های فعال است. برای به دست آوردن «مکان» یک متصل شونده‌ی به‌خصوص، پرونده‌ی «pluma-plugin.» را ببینید."
+msgstr ""
+"فهرست متصل شونده‌های فعال. حاوی «مکان» متصل شونده‌های فعال است. برای به دست "
+"آوردن «مکان» یک متصل شونده‌ی به‌خصوص، پرونده‌ی «pluma-plugin.» را ببینید."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
@@ -485,13 +525,40 @@ msgstr ""
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
 msgid "Close _without Saving"
-msgstr "بد_ون ذخیره‌سازی بسته شود"
+msgstr "بستن _بدون ذخیره کردن"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:211
+#. Add a cancel button
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
+#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
+#: ../pluma/pluma-file-chooser-dialog.c:440
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:171
+#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/spell/pluma-spell-language-dialog.c:132
+#: ../plugins/spell/languages-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:3
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+msgid "_Cancel"
+msgstr "ان_صراف"
+
+#. File menu
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+msgid "_Save"
+msgstr "_ذخیره"
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+msgid "Save _As"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
 msgid "Question"
-msgstr "سؤال"
+msgstr "پرسش"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:411
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -499,14 +566,15 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "اگر ذخیره نکنید، تغییرات %Ild ثانیه‌ی اخیر برای همیشه از دست خواهد رفت."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr "اگر ذخیره نکنید، تغییرات یک دقیقه‌ی اخیر برای همیشه از دست خواهد رفت."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -514,9 +582,10 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "اگر ذخیره نکنید، تغییرات یک دقیقه و %Ild ثانیه‌ی اخیر برای همیشه از دست خواهد رفت."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -524,14 +593,15 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "اگر ذخیره نکنید، تغییرات %Ild دقیقه‌ی اخیر برای همیشه از دست خواهد رفت."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -539,68 +609,96 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "اگر ذخیره نکنید، تغییرات یک ساعت و  %Id دقیقه‌ی اخیر برای همیشه از دست خواهد رفت."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:717
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "%Id نوشتار با تغییرات ذخیره نشده موجود است. تغییرات پیش از بستن ذخیره شوند؟"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:743
 msgid "S_elect the documents you want to save:"
 msgstr "_نوشتاری را که قصد ذخیره‌ی آن را دارید انتخاب کنید:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "اگر ذخیره نکنید، تمام تغییراتی که داده‌اید برای همیشه از دست خواهد رفت."
+msgstr ""
+"اگر ذخیره نکنید، تمام تغییراتی که داده‌اید برای همیشه از دست خواهد رفت."
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:321
+#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:133
+#: ../plugins/spell/languages-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-plugin.c:923
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+msgid "_OK"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
+#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:134
+#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+msgid "_Help"
+msgstr "_راهنما"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:316
 msgid "Character Encodings"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:384
-#: ../pluma/dialogs/pluma-encodings-dialog.c:445
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Description"
 msgstr "_شرح"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:393
-#: ../pluma/dialogs/pluma-encodings-dialog.c:454
+#: ../pluma/dialogs/pluma-encodings-dialog.c:391
+#: ../pluma/dialogs/pluma-encodings-dialog.c:452
 msgid "_Encoding"
 msgstr "_کدگذاری"
 
@@ -608,13 +706,24 @@ msgstr "_کدگذاری"
 msgid "Character encodings"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:5
 msgid "A_vailable encodings:"
-msgstr "کدگذاری‌های مو_جود"
+msgstr "کدگذاری‌های _موجود:"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#. + Add to Dictionary
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:6
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
+msgid "_Add"
+msgstr "ا_ضافه شود"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:7
 msgid "E_ncodings shown in menu:"
-msgstr "کد_گذاری‌هایی که در منو نمایش داده می‌شود:"
+msgstr "_کدگذاری‌های نشان داده شونده در منو:"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+msgid "_Remove"
+msgstr "_حذف"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
@@ -629,232 +738,249 @@ msgstr ""
 msgid "The selected color scheme cannot be installed."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:810
+#: ../pluma/dialogs/pluma-preferences-dialog.c:863
 msgid "Add Scheme"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:817
+#: ../pluma/dialogs/pluma-preferences-dialog.c:870
 msgid "A_dd Scheme"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:825
+#: ../pluma/dialogs/pluma-preferences-dialog.c:878
 msgid "Color Scheme Files"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:832
-#: ../pluma/pluma-file-chooser-dialog.c:53
+#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
-msgstr "همه‌ی پرونده‌ها"
+msgstr "همهٔ پرونده‌ها"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:877
+#: ../pluma/dialogs/pluma-preferences-dialog.c:930
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1088
+#. ex:et:ts=4:
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
+#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Close"
+msgstr "_بستن"
+
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
 msgid "Pluma Preferences"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:1
 msgid "Preferences"
-msgstr "ترجیحات"
+msgstr "تنظیمات"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
 #: ../pluma/pluma-print-preferences.ui.h:9
 msgid "Text Wrapping"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../plugins/docinfo/docinfo.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:5
 #: ../plugins/externaltools/tools/tools.ui.h:21
 #: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:4
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
 #: ../pluma/pluma-print-preferences.ui.h:10
 msgid "Enable text _wrapping"
 msgstr "به کار انداختن پی_چش متن"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7
 #: ../pluma/pluma-print-preferences.ui.h:11
 msgid "Do not _split words over two lines"
 msgstr "کلمات بین دو سطر _شکسته نشوند"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
 #: ../pluma/pluma-print-preferences.ui.h:3
 msgid "Line Numbers"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr "نمایش _شماره سطرها"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
 msgid "Current Line"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
 msgid "Highlight current _line"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
 msgid "Right Margin"
-msgstr ""
+msgstr "حاشیه‌ی راست"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
 msgid "Display right _margin"
 msgstr "نمایش _حاشیه‌ی راست"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
 msgid "_Right margin at column:"
 msgstr "حاشیه‌ی _راست از ستون:"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
 msgid "Bracket Matching"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
 msgid "Highlight matching _bracket"
 msgstr "پررنگ کردن _قلاب متناظر"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
 msgid "View"
-msgstr "نما"
+msgstr "نمایش"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
 msgid "Tab Stops"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
 msgid "_Tab width:"
 msgstr "عرض خانه‌های _جدول:"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
 msgid "Insert _spaces instead of tabs"
 msgstr "درج _فاصله به جای نویسه‌ی جهش"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
 msgid "Automatic Indentation"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
 msgid "_Enable automatic indentation"
 msgstr "به کار انداختن _تورفتگی خودکار"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
 msgid "File Saving"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
 msgid "Create a _backup copy of files before saving"
 msgstr "ایجاد یک نسخه‌ی _پشتیبان از پرونده‌ها پیش از ذخیره‌سازی"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
 msgid "_Autosave files every"
 msgstr "پرونده هر"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
 msgid "_minutes"
 msgstr "_دقیقه به طور خودکار ذخیره شود"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
 msgid "Editor"
 msgstr "ویرایش‌گر"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
 msgid "Font"
-msgstr ""
+msgstr "قلم"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
 msgid "Editor _font: "
 msgstr "_قلم ویرایش‌گر"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "Pick the editor font"
 msgstr "قلم ویرایش‌گر را تعیین کنید"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Color Scheme"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
 msgid "_Add..."
-msgstr ""
+msgstr "_اضافه کردن..."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font & Colors"
 msgstr "قلم و رنگ‌ها"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Plugins"
 msgstr "متصل شونده‌ها"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1500
 msgid "Replace"
 msgstr "جای‌گزینی"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1498
 msgid "Find"
-msgstr "پیدا کردن"
+msgstr "پیدا کن"
+
+#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+msgid "_Find"
+msgstr ""
 
 #: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "_همه جای‌گزین شوند "
 
 #: ../pluma/dialogs/pluma-search-dialog.c:421
-#: ../pluma/pluma-commands-file.c:587
+#: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
-msgstr "_جای‌گزین شود"
+msgstr "_جای‌گزینی"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "Replace All"
 msgstr "جای‌گزینی همه"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
 msgid "_Search for: "
-msgstr "_جست و جو به دنبال:"
+msgstr "_جستجو به دنبال: "
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
 msgid "Replace _with: "
 msgstr "جای‌گزینی _با: "
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "_Match case"
 msgstr "_تطابق کوچک و بزرگی حروف"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Match _regular expression"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "Match _entire word only"
 msgstr "فقط تطبیق با کلمات _کامل"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "Search _backwards"
 msgstr "جستجو رو به _عقب"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:11
 msgid "_Wrap around"
 msgstr "دور کامل"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:12
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr ""
 
 #: ../pluma/pluma.c:108
 msgid "Show the application's version"
-msgstr ""
+msgstr "نشان دادن شمارهٔ نسخهٔ برنامه"
 
 #: ../pluma/pluma.c:111
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
-msgstr "تنظیم کدگذاری نویسه‌های مورد استفاده برای باز کردن پرونده‌های فهرست شده در سطر فرمان"
+msgstr ""
+"تنظیم کدگذاری نویسه‌های مورد استفاده برای باز کردن پرونده‌های فهرست شده در "
+"سطر فرمان"
 
 #: ../pluma/pluma.c:111
 msgid "ENCODING"
@@ -874,7 +1000,7 @@ msgstr "ایجاد یک نوشتار جدید در نمونه‌ی موجود pl
 
 #: ../pluma/pluma.c:123
 msgid "[FILE...]"
-msgstr ""
+msgstr "[پرونده...]"
 
 #: ../pluma/pluma.c:178
 #, c-format
@@ -903,11 +1029,12 @@ msgstr ""
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] ""
+msgstr[1] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
 msgid "Open Files"
-msgstr ""
+msgstr "باز کردن پرونده‌ها"
 
 #: ../pluma/pluma-commands-file.c:574
 #, c-format
@@ -916,28 +1043,29 @@ msgstr ""
 
 #: ../pluma/pluma-commands-file.c:579
 msgid "Do you want to try to replace it with the one you are saving?"
-msgstr "آیا می‌خواهید پرونده‌ای را که در حال ذخیره کردن آن هستید، جای‌گزین آن کنید؟"
+msgstr ""
+"آیا می‌خواهید پرونده‌ای را که در حال ذخیره کردن آن هستید، جای‌گزین آن کنید؟"
 
-#: ../pluma/pluma-commands-file.c:648 ../pluma/pluma-commands-file.c:871
+#: ../pluma/pluma-commands-file.c:649 ../pluma/pluma-commands-file.c:872
 #, c-format
 msgid "Saving file '%s'…"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:756
+#: ../pluma/pluma-commands-file.c:757
 msgid "Save As…"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1085
+#: ../pluma/pluma-commands-file.c:1086
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1130
+#: ../pluma/pluma-commands-file.c:1131
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1139
+#: ../pluma/pluma-commands-file.c:1140
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently "
@@ -945,14 +1073,17 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "تغییرات اعمال شده روی نوشتار در %Ild ثانیه‌ی اخیر برای همیشه از دست خواهند رفت."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1148
+#: ../pluma/pluma-commands-file.c:1149
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
-msgstr "تغییرات اعمال شده روی نوشتار در یک دقیقه‌ی اخیر برای همیشه از دست خواهند رفت."
+msgstr ""
+"تغییرات اعمال شده روی نوشتار در یک دقیقه‌ی اخیر برای همیشه از دست خواهند "
+"رفت."
 
-#: ../pluma/pluma-commands-file.c:1154
+#: ../pluma/pluma-commands-file.c:1155
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -960,9 +1091,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "تغییرات اعمال شده روی نوشتار در یک دقیقه و %Ild ثانیه‌ی اخیر برای همیشه از دست خواهند رفت."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1164
+#: ../pluma/pluma-commands-file.c:1165
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently "
@@ -970,14 +1102,15 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "تغییرات اعمال شده روی نوشتار در %Ild دقیقه‌ی اخیر برای همیشه از دست خواهند رفت."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1179
+#: ../pluma/pluma-commands-file.c:1180
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 
-#: ../pluma/pluma-commands-file.c:1185
+#: ../pluma/pluma-commands-file.c:1186
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -985,19 +1118,21 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "تغییرات اعمال شده روی نوشتار در یک ساعت و %Id دقیقه‌ی اخیر برای همیشه از دست خواهند رفت."
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1200
+#: ../pluma/pluma-commands-file.c:1201
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1226
+#: ../pluma/pluma-commands-file.c:1228 ../pluma/pluma-ui.h:84
 msgid "_Revert"
-msgstr "بازگشت"
+msgstr "باز_گشت"
 
 #: ../pluma/pluma-commands-help.c:83
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
@@ -1005,13 +1140,14 @@ msgstr ""
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "روزبه پورنادر <roozbeh@farsiweb.info>‏\nمیلاد زکریا <meelad@farsiweb.info>‏\nالناز سربر<elnaz@farsiweb.info>"
+msgstr "محمدرضا حاجیانپور <psyringe@protonmail.com>"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1024,19 +1160,19 @@ msgstr ""
 msgid "\"%s\" not found"
 msgstr ""
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr ""
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2227 ../pluma/pluma-window.c:2232
 msgid "Read-Only"
 msgstr ""
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3646
 msgid "Documents"
-msgstr ""
+msgstr "نوشتارها"
 
 #: ../pluma/pluma-encodings.c:138 ../pluma/pluma-encodings.c:180
 #: ../pluma/pluma-encodings.c:182 ../pluma/pluma-encodings.c:184
@@ -1086,11 +1222,11 @@ msgstr "عبری دیداری"
 #: ../pluma/pluma-encodings.c:167 ../pluma/pluma-encodings.c:231
 #: ../pluma/pluma-encodings.c:272
 msgid "Turkish"
-msgstr "ترکی استانبولی"
+msgstr "ترکی"
 
 #: ../pluma/pluma-encodings.c:169
 msgid "Nordic"
-msgstr "نُردی"
+msgstr "اسکاندیناویایی"
 
 #: ../pluma/pluma-encodings.c:173
 msgid "Celtic"
@@ -1152,7 +1288,7 @@ msgstr "تایلندی"
 
 #: ../pluma/pluma-encodings.c:431
 msgid "Unknown"
-msgstr "نامعلوم"
+msgstr "ناشناخته"
 
 #: ../pluma/pluma-encodings-combo-box.c:272
 msgid "Automatically Detected"
@@ -1168,219 +1304,224 @@ msgstr "شرایط محلی جاری (%s)"
 msgid "Add or Remove..."
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:54
+#: ../pluma/pluma-file-chooser-dialog.c:55
 msgid "All Text Files"
 msgstr "همه‌ی پرونده‌های متنی"
 
-#: ../pluma/pluma-file-chooser-dialog.c:82
+#: ../pluma/pluma-file-chooser-dialog.c:83
 msgid "C_haracter Encoding:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:148
 msgid "L_ine Ending:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:167
 msgid "Unix/Linux"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:173
 msgid "Mac OS Classic"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:179
 msgid "Windows"
-msgstr ""
+msgstr "پنجره‌ها"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-file-chooser-dialog.c:442
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+msgid "_Open"
+msgstr "_باز کردن"
+
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
-msgstr ""
+msgstr "سعی مجدد_"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
 msgstr ""
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "pluma نمی‌تواند با این مکان کار کند."
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "پرونده خیلی بزرگ است."
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr ""
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr ""
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr ""
 
@@ -1389,27 +1530,27 @@ msgstr ""
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
@@ -1417,62 +1558,62 @@ msgid ""
 msgstr ""
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr ""
@@ -1482,22 +1623,22 @@ msgstr ""
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
-msgstr ""
+msgstr "_بازخوانی"
 
 #: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
 msgid "Empty"
@@ -1659,6 +1800,7 @@ msgstr "  سطر %Id، ستون %Id"
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -1702,49 +1844,49 @@ msgid "Saving %s"
 msgstr ""
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "ف‌خ"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr ""
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr ""
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr ""
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "یونی‌کد (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
 msgstr "نام:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "نوع MIME:"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "کدگذاری:"
 
-#: ../pluma/pluma-tab-label.c:276
+#: ../pluma/pluma-tab-label.c:288
 msgid "Close document"
 msgstr ""
 
 #. Toplevel
 #: ../pluma/pluma-ui.h:47
 msgid "_File"
-msgstr "_پرونده"
+msgstr "_فایل"
 
 #: ../pluma/pluma-ui.h:48
 msgid "_Edit"
@@ -1766,9 +1908,10 @@ msgstr "_ابزارها"
 msgid "_Documents"
 msgstr "_نوشتارها"
 
-#: ../pluma/pluma-ui.h:53
-msgid "_Help"
-msgstr "_راهنما"
+#. File menu
+#: ../pluma/pluma-ui.h:56
+msgid "_New"
+msgstr "_جدید"
 
 #: ../pluma/pluma-ui.h:57
 msgid "Create a new document"
@@ -1778,7 +1921,7 @@ msgstr "ایجاد نوشتار جدید"
 msgid "_Open..."
 msgstr "_باز کردن..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1424
 msgid "Open a file"
 msgstr "باز کردن یک پرونده"
 
@@ -1800,29 +1943,38 @@ msgstr "_محتویات"
 msgid "Open the pluma manual"
 msgstr "باز کردن راهنمای pluma"
 
+#: ../pluma/pluma-ui.h:68
+msgid "_About"
+msgstr "_درباره"
+
 #: ../pluma/pluma-ui.h:69
 msgid "About this application"
 msgstr "درباره‌ی این برنامه"
 
+#. Fullscreen toolbar
+#: ../pluma/pluma-ui.h:72
+msgid "_Leave Fullscreen"
+msgstr ""
+
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
-msgstr ""
+msgstr "ترک حالت تمام صفحه"
 
 #: ../pluma/pluma-ui.h:81
 msgid "Save the current file"
-msgstr "ذخیره‌ی پرونده‌ی جاری"
+msgstr "ذخیره‌ی پرونده‌ی فعلی"
 
 #: ../pluma/pluma-ui.h:82
 msgid "Save _As..."
-msgstr "ذخیره به _نام..."
+msgstr "ذخیره به نام..."
 
 #: ../pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
-msgstr "ذخیره‌ی پرونده‌ی جاری به نامی دیگر"
+msgstr "ذخیره‌ی پرونده‌ی فعلی با یک نام دیگر"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr "بازیابی نسخه‌ی ذخیره شده‌ی پرونده"
+msgstr "بازگشت به نسخه‌ی ذخیره شده‌ی پرونده"
 
 #: ../pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -1840,25 +1992,53 @@ msgstr "_چاپ..."
 msgid "Print the current page"
 msgstr ""
 
+#. Edit menu
+#: ../pluma/pluma-ui.h:92
+msgid "_Undo"
+msgstr "ب_رگردان"
+
 #: ../pluma/pluma-ui.h:93
 msgid "Undo the last action"
-msgstr "برگرداندن عمل قبلی"
+msgstr "برگرداندن آخرین عملیات"
+
+#: ../pluma/pluma-ui.h:94
+msgid "_Redo"
+msgstr "_دوباره"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
 msgstr ""
 
+#: ../pluma/pluma-ui.h:96
+msgid "Cu_t"
+msgstr "برش"
+
 #: ../pluma/pluma-ui.h:97
 msgid "Cut the selection"
-msgstr "بریدن انتخاب شده‌ها"
+msgstr "برش انتخاب شده‌ها"
+
+#: ../pluma/pluma-ui.h:98
+msgid "_Copy"
+msgstr "_نسخه‌برداری"
 
 #: ../pluma/pluma-ui.h:99
 msgid "Copy the selection"
-msgstr "نسخه برداری از انتخاب شده‌ها"
+msgstr "نسخه‌برداری از انتخاب شده‌ها"
+
+#: ../pluma/pluma-ui.h:100
+msgid "_Paste"
+msgstr "چسباندن"
 
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
-msgstr "چسباندن محتویات تخته گیره"
+msgstr "چسباندن تخته‌گیره"
+
+#. Add delete button
+#: ../pluma/pluma-ui.h:102
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:182
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
+msgid "_Delete"
+msgstr "_حذف"
 
 #: ../pluma/pluma-ui.h:103
 msgid "Delete the selected text"
@@ -1880,7 +2060,7 @@ msgstr "_حالت پررنگ"
 #. Search menu
 #: ../pluma/pluma-ui.h:111
 msgid "_Find..."
-msgstr "_پیدا کردن..."
+msgstr "_یافتن..."
 
 #: ../pluma/pluma-ui.h:112
 msgid "Search for text"
@@ -1888,7 +2068,7 @@ msgstr "جستجو به دنبال متن"
 
 #: ../pluma/pluma-ui.h:113
 msgid "Find Ne_xt"
-msgstr "پیدا کردن _بعدی"
+msgstr "پیدا کردن ب_عدی"
 
 #: ../pluma/pluma-ui.h:114
 msgid "Search forwards for the same text"
@@ -1977,7 +2157,11 @@ msgstr "انتقال نوشتار جاری به یک پنجره‌ی جدید "
 
 #: ../pluma/pluma-ui.h:143
 msgid "Close the current file"
-msgstr "بستن پرونده‌ی جاری"
+msgstr "بستن پرونده‌ی فعلی"
+
+#: ../pluma/pluma-ui.h:149
+msgid "_Quit"
+msgstr "_ترک"
 
 #: ../pluma/pluma-ui.h:150
 msgid "Quit the program"
@@ -1985,7 +2169,7 @@ msgstr "ترک برنامه"
 
 #: ../pluma/pluma-ui.h:155
 msgid "_Toolbar"
-msgstr "نوار ابزار"
+msgstr "ن_وار ابزار"
 
 #: ../pluma/pluma-ui.h:156
 msgid "Show or hide the toolbar in the current window"
@@ -1993,11 +2177,15 @@ msgstr ""
 
 #: ../pluma/pluma-ui.h:158
 msgid "_Statusbar"
-msgstr "نوار _وضعیت"
+msgstr "_نوار وضعیت"
 
 #: ../pluma/pluma-ui.h:159
 msgid "Show or hide the statusbar in the current window"
 msgstr ""
+
+#: ../pluma/pluma-ui.h:161
+msgid "_Fullscreen"
+msgstr "_تمام‌صفحه"
 
 #: ../pluma/pluma-ui.h:162
 msgid "Edit text in fullscreen"
@@ -2005,7 +2193,7 @@ msgstr ""
 
 #: ../pluma/pluma-ui.h:169
 msgid "Side _Pane"
-msgstr ""
+msgstr "_قاب کناری"
 
 #: ../pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
@@ -2040,36 +2228,36 @@ msgid "/ on %s"
 msgstr ""
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr ""
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr ""
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr ""
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr ""
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:983
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "استفاده از حالت پررنگ %s"
@@ -2077,7 +2265,7 @@ msgstr "استفاده از حالت پررنگ %s"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1040 ../pluma/pluma-window.c:1928
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2085,43 +2273,43 @@ msgstr "استفاده از حالت پررنگ %s"
 msgid "Plain Text"
 msgstr ""
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1041
 msgid "Disable syntax highlighting"
 msgstr ""
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1323
 #, c-format
 msgid "Open '%s'"
 msgstr "باز کردن «‎%s‎»"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1430
 msgid "Open a recently used file"
 msgstr "باز کردن پرونده‌ای که اخیراً به کار رفته"
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1436
 msgid "Open"
 msgstr "باز کردن"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1494
 msgid "Save"
 msgstr "ذخیره"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1496
 msgid "Print"
 msgstr "چاپ"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1653
 #, c-format
 msgid "Activate '%s'"
 msgstr ""
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1906
 msgid "Use Spaces"
 msgstr ""
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1977
 msgid "Tab Width"
 msgstr ""
 
@@ -2178,43 +2366,45 @@ msgstr "آمار نوشتار"
 msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
-msgstr "نوشتار جاری را تحلیل می‌کند و  تعداد کلمات، سطرها، نویسه‌ها و نویسه‌های غیر از فاصله‌ی آن را گزارش می‌دهد."
+msgstr ""
+"نوشتار جاری را تحلیل می‌کند و  تعداد کلمات، سطرها، نویسه‌ها و نویسه‌های غیر "
+"از فاصله‌ی آن را گزارش می‌دهد."
 
-#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/docinfo/docinfo.ui.h:3
 msgid "_Update"
 msgstr "_به‌هنگام‌سازی"
 
-#: ../plugins/docinfo/docinfo.ui.h:3
+#: ../plugins/docinfo/docinfo.ui.h:4
 msgid "File Name"
 msgstr ""
 
-#: ../plugins/docinfo/docinfo.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:6
 msgid "Bytes"
 msgstr "بایت"
 
-#: ../plugins/docinfo/docinfo.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:7
 msgid "Characters (no spaces)"
 msgstr "نویسه (بدون فاصله)‏"
 
-#: ../plugins/docinfo/docinfo.ui.h:7
+#: ../plugins/docinfo/docinfo.ui.h:8
 msgid "Characters (with spaces)"
 msgstr "نویسه (با فاصله‌ها)‏"
 
-#: ../plugins/docinfo/docinfo.ui.h:8
+#: ../plugins/docinfo/docinfo.ui.h:9
 msgid "Words"
 msgstr "کلمه"
 
-#: ../plugins/docinfo/docinfo.ui.h:9
+#: ../plugins/docinfo/docinfo.ui.h:10
 msgid "Lines"
 msgstr "سطر"
 
-#: ../plugins/docinfo/docinfo.ui.h:10
-msgid "Document"
-msgstr ""
-
 #: ../plugins/docinfo/docinfo.ui.h:11
+msgid "Document"
+msgstr "نوشتار"
+
+#: ../plugins/docinfo/docinfo.ui.h:12
 msgid "Selection"
-msgstr ""
+msgstr "انتخاب"
 
 #: ../plugins/docinfo/pluma-docinfo-plugin.c:443
 msgid "_Document Statistics"
@@ -2441,7 +2631,7 @@ msgstr ""
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
-msgstr ""
+msgstr "جستجو"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
@@ -2530,7 +2720,7 @@ msgstr ""
 
 #: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
 msgid "File System"
-msgstr ""
+msgstr "سیستم پرونده‌ها"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
 msgid "_Set root to active document"
@@ -2550,7 +2740,7 @@ msgstr ""
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:726
 msgid "File Browser"
-msgstr ""
+msgstr "مرورگر پرونده"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:874
 msgid "An error occurred while creating a new directory"
@@ -2599,22 +2789,22 @@ msgstr ""
 msgid "The selected files cannot be moved to the trash."
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1165
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1170
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1168
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1171
 msgid "If you delete an item, it is permanently lost."
 msgstr ""
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
-msgstr ""
+msgstr "(خالی)"
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:3224
 msgid ""
@@ -2626,7 +2816,7 @@ msgstr ""
 #. browser pane.
 #: ../plugins/filebrowser/pluma-file-browser-store.c:3481
 msgid "file"
-msgstr ""
+msgstr "پرونده"
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:3505
 msgid ""
@@ -2648,7 +2838,7 @@ msgstr ""
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
-msgstr ""
+msgstr "چوب‌الف‌ها"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:797
 msgid "_Filter"
@@ -2661,10 +2851,6 @@ msgstr ""
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:803
 msgid "Move selected file or folder to trash"
 msgstr ""
-
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
-msgid "_Delete"
-msgstr "_حذف"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Delete selected file or folder"
@@ -2680,7 +2866,7 @@ msgstr ""
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:820
 msgid "Open the parent folder"
-msgstr ""
+msgstr "باز کردن پوشه‌ی والد"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:825
 msgid "_New Folder"
@@ -2700,7 +2886,7 @@ msgstr ""
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:834
 msgid "_Rename"
-msgstr ""
+msgstr "_تغییر نام"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:835
 msgid "Rename selected file or folder"
@@ -2712,7 +2898,7 @@ msgstr ""
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Go to the previous visited location"
-msgstr ""
+msgstr "رفتن به مکان بازدید شده‌ی قبلی"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "_Next Location"
@@ -2720,7 +2906,7 @@ msgstr ""
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
-msgstr ""
+msgstr "رفتن به مکان بازدید شده‌ی بعدی"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
@@ -2756,18 +2942,18 @@ msgstr ""
 msgid "Show binary files"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:993
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1023
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:991
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1004
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1027
 msgid "Previous location"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:995
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
 msgid "Go to previous location"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1018
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:999
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
 msgid "Go to a previously opened location"
 msgstr ""
 
@@ -2775,25 +2961,25 @@ msgstr ""
 msgid "Next location"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1016
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1020
 msgid "Go to next location"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1228
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1232
 msgid "_Match Filename"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2140
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2144
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2220
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2224
 #, c-format
 msgid "Could not open media: %s"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2267
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2271
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr ""
@@ -2816,12 +3002,11 @@ msgstr ""
 msgid "Interactive Python console standing in the bottom panel"
 msgstr ""
 
-#. ex:et:ts=4:
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
 msgstr ""
 
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
 msgid "_Error color:"
 msgstr ""
 
@@ -2973,7 +3158,7 @@ msgstr ""
 #: ../plugins/snippets/snippets/Manager.py:887
 #: ../plugins/snippets/snippets/Manager.py:950
 msgid "All files"
-msgstr ""
+msgstr "همه‌ی پرونده‌ها"
 
 #: ../plugins/snippets/snippets/Manager.py:813
 #, python-format
@@ -3083,27 +3268,27 @@ msgstr "مرتب سازی"
 msgid "Sorts a document or selected text."
 msgstr "یک نوشتار یا متن انتخاب شده را مرتب می‌کند."
 
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/sort/sort.ui.h:3
 msgid "_Sort"
 msgstr "_مرتب سازی"
 
-#: ../plugins/sort/sort.ui.h:3
+#: ../plugins/sort/sort.ui.h:5
 msgid "_Reverse order"
 msgstr "ترتیب _معکوس"
 
-#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/sort/sort.ui.h:6
 msgid "R_emove duplicates"
 msgstr "_حذف تکراری‌ها"
 
-#: ../plugins/sort/sort.ui.h:5
+#: ../plugins/sort/sort.ui.h:7
 msgid "_Ignore case"
 msgstr "_نادیده گرفتن بزرگی و کوچکی"
 
-#: ../plugins/sort/sort.ui.h:6
+#: ../plugins/sort/sort.ui.h:8
 msgid "S_tart at column:"
 msgstr "_شروع از ستون:"
 
-#: ../plugins/sort/sort.ui.h:7
+#: ../plugins/sort/sort.ui.h:9
 msgid "You cannot undo a sort operation"
 msgstr "نمی‌توان عملیات مرتب سازی را برگرداند"
 
@@ -3117,7 +3302,7 @@ msgstr ""
 #. suggestions
 #. * for the current misspelled word
 #: ../plugins/spell/pluma-automatic-spell-checker.c:420
-#: ../plugins/spell/pluma-spell-checker-dialog.c:455
+#: ../plugins/spell/pluma-spell-checker-dialog.c:458
 msgid "(no suggested words)"
 msgstr "(کلمه‌ای پیشنهاد نمی‌شود)"
 
@@ -3126,16 +3311,11 @@ msgid "_More..."
 msgstr "_بیشتر..."
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "_نادیده گرفتن همه"
 
-#. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
-msgid "_Add"
-msgstr "ا_ضافه کردن"
-
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "پیشنهادات _املایی"
 
@@ -3149,11 +3329,11 @@ msgstr "پیشنهادات"
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word
 #. isn't misspelled
-#: ../plugins/spell/pluma-spell-checker-dialog.c:562
+#: ../plugins/spell/pluma-spell-checker-dialog.c:565
 msgid "(correct spelling)"
 msgstr "(املای درست)"
 
-#: ../plugins/spell/pluma-spell-checker-dialog.c:709
+#: ../plugins/spell/pluma-spell-checker-dialog.c:712
 msgid "Completed spell checking"
 msgstr "تکمیل غلط‌یابی املایی"
 
@@ -3180,14 +3360,14 @@ msgstr ""
 #: ../plugins/spell/pluma-spell-checker-language.c:406
 msgctxt "language"
 msgid "Default"
-msgstr ""
+msgstr "پیش‌فرض"
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:141
+#: ../plugins/spell/pluma-spell-language-dialog.c:136
 #: ../plugins/spell/languages-dialog.ui.h:1
 msgid "Set language"
 msgstr "تعیین زبان"
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:195
+#: ../plugins/spell/pluma-spell-language-dialog.c:190
 msgid "Languages"
 msgstr "زبان‌ها"
 
@@ -3223,7 +3403,7 @@ msgstr "نوشتار خالی است."
 msgid "No misspelled words"
 msgstr ""
 
-#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/languages-dialog.ui.h:5
 msgid "Select the _language of the current document."
 msgstr "انتخاب _زبان نوشتار جاری."
 
@@ -3237,7 +3417,7 @@ msgstr "کلمه‌ی غلط:"
 
 #: ../plugins/spell/spell-checker.ui.h:3
 msgid "word"
-msgstr ""
+msgstr "کلمه"
 
 #: ../plugins/spell/spell-checker.ui.h:4
 msgid "Change _to:"
@@ -3287,19 +3467,19 @@ msgstr ""
 msgid "_Configure Spell Checker plugin..."
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
 msgid "Autocheck spelling on document load..."
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:6
 msgid "_Never autocheck"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:7
 msgid "_Remember autocheck by document"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:8
 msgid "_Always autocheck"
 msgstr ""
 
@@ -3323,7 +3503,7 @@ msgstr "گروه برچسب‌هایی را که می‌خواهید به کار
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:632
 msgid "_Preview"
-msgstr ""
+msgstr "_پیش‌نمایش"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:706
 msgid "Available Tag Lists"
@@ -3529,7 +3709,7 @@ msgstr ""
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:61
 msgid "Disabled"
-msgstr "از کار افتاده"
+msgstr "غیر فعال شده"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:62
 msgid "DIV container"
@@ -4065,7 +4245,7 @@ msgstr "سبک متن ریز"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:206
 msgid "Source"
-msgstr "مبدأ"
+msgstr "منبع"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:207
 msgid "Space-separated archive list"
@@ -4112,11 +4292,11 @@ msgstr "اطلاعات سبک"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:220
 msgid "Subscript"
-msgstr "زیرنوشت"
+msgstr "زیرنویس"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:221
 msgid "Superscript"
-msgstr "بالانوشت"
+msgstr "بالانویس"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:222
 msgid "Table body"
@@ -4399,7 +4579,7 @@ msgstr "بدون پیچش کلمه‌ای"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:294
 msgid "Note"
-msgstr "یادداشت"
+msgstr "نکته"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:295
 msgid "Object applet file"
@@ -4881,7 +5061,7 @@ msgstr ""
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:3
 msgid "Custom format"
-msgstr ""
+msgstr "قالب سفارشی"
 
 #: ../plugins/time/pluma-time-plugin.c:189
 msgid "In_sert Date and Time..."
@@ -4915,31 +5095,31 @@ msgstr ""
 msgid "Insert Date and Time"
 msgstr "درج تاریخ و زمان"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:4
 msgid "_Insert"
 msgstr "_درج"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:3
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
+#: ../plugins/time/pluma-time-dialog.ui.h:5
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:8
 msgid "Use the _selected format"
 msgstr "استفاده از قالب _انتخاب شده"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:5
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
+#: ../plugins/time/pluma-time-dialog.ui.h:7
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
 msgid "_Use custom format"
 msgstr "_استفاده از قالب سفارشی"
 
 #. Translators: Use the more common date format in your locale
-#: ../plugins/time/pluma-time-dialog.ui.h:7
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
+#: ../plugins/time/pluma-time-dialog.ui.h:9
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:12
 #, no-c-format
 msgid "%d/%m/%Y %H:%M:%S"
 msgstr ""
 
 #. Translators: This example should follow the date format defined in the
 #. entry above
-#: ../plugins/time/pluma-time-dialog.ui.h:8
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:11
+#: ../plugins/time/pluma-time-dialog.ui.h:10
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:14
 msgid "01/11/2009 17:52:00"
 msgstr ""
 
@@ -4947,10 +5127,10 @@ msgstr ""
 msgid "Configure date/time plugin"
 msgstr "پیکربندی متصل شونده‌ی تاریخ/زمان"
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
 msgid "When inserting date/time..."
 msgstr ""
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:7
 msgid "_Prompt for a format"
 msgstr "_درخواست قالب"

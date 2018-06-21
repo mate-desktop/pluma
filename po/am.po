@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# samson <sambelet@yahoo.com>, 2013,2015,2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 11:17+0100\n"
-"PO-Revision-Date: 2017-11-29 10:17+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>\n"
-"Language-Team: Amharic (http://www.transifex.com/mate/MATE/language/am/)\n"
+"POT-Creation-Date: 2018-04-17 17:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Amharic (https://www.transifex.com/mate/teams/13566/am/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +43,9 @@ msgstr "ፊደል ማረሚያ"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "እርስዎ የሚጠቀሙት ነባር ፊደል ማስተካከያ ለ ማረሚያ ቦታ: ይህ ውጠታማ የሚሆነው \"ነባር ፊደል መጠቀሚያ\" ምርጫ ሲጠፋ ነው"
+msgstr ""
+"እርስዎ የሚጠቀሙት ነባር ፊደል ማስተካከያ ለ ማረሚያ ቦታ: ይህ ውጠታማ የሚሆነው \"ነባር ፊደል መጠቀሚያ\" ምርጫ "
+"ሲጠፋ ነው"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Style Scheme"
@@ -86,11 +88,11 @@ msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Show save confirmation"
-msgstr ""
+msgstr "የ ማስቀመጫ ማረጋገጫ ማሳያ"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:15
 msgid "Show save confirmation if the files have changes."
-msgstr ""
+msgstr "ፋይሎቹ ከ ተቀየሩ የ ማስቀመጫ ማረጋገጫ ማሳያ "
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:16
 msgid "Writable VFS schemes"
@@ -341,7 +343,9 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "ይህ ዋጋ 0 ከሆነ: ምንም የ መስመር ቁጥር አይገባም ሰነድ በሚታተም ጊዜ: ያለ በለዚያ ፕሉማ ለ እያንዳንዱ መስመር ቁጥሮች ያትማል"
+msgstr ""
+"ይህ ዋጋ 0 ከሆነ: ምንም የ መስመር ቁጥር አይገባም ሰነድ በሚታተም ጊዜ: ያለ በለዚያ ፕሉማ ለ እያንዳንዱ መስመር "
+"ቁጥሮች ያትማል"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgctxt "print-font-body-pango"
@@ -488,11 +492,38 @@ msgstr "መውጫውን _መሰረዣ"
 msgid "Close _without Saving"
 msgstr "መዝጊያ  _ምንም ሳያስቀምጡ"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:211
+#. Add a cancel button
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
+#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
+#: ../pluma/pluma-file-chooser-dialog.c:440
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:171
+#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/spell/pluma-spell-language-dialog.c:132
+#: ../plugins/spell/languages-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:3
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+msgid "_Cancel"
+msgstr "_መሰረዣ "
+
+#. File menu
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+msgid "_Save"
+msgstr "_ማስቀመጫ"
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+msgid "Save _As"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
 msgid "Question"
 msgstr "ጥያቄ"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:411
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -500,15 +531,15 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው %ld ሰከንዶች ጀምሮ ያለው በቋሚነት ይጠፋል "
-msgstr[1] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው %ld ሰከንዶች ጀምሮ ያለው በቋሚነት ይጠፋል  "
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr "ካላስቀመጡት ለውጦቹን ከ መጨረሻው ደቂቃ ጀምሮ ያለው በቋሚነት ይጠፋል  "
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:426
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -516,10 +547,10 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው ደቂቃ እና %ld ሰከንዶች ጀምሮ ያለው በቋሚነት ይጠፋል"
-msgstr[1] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው ደቂቃ እና %ld ሰከንዶች ጀምሮ ያለው በቋሚነት ይጠፋል "
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:436
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -527,15 +558,15 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው %ld ደቂቃዎች ጀምሮ ያለው በቋሚነት ይጠፋል"
-msgstr[1] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው %ld ደቂቃዎች ጀምሮ ያለው በቋሚነት ይጠፋል  "
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:451
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr "ካላስቀመጡት ለውጦቹን ከ መጨረሻው ሰአት ጀምሮ ያለው በቋሚነት ይጠፋል  "
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:457
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -543,72 +574,95 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው ሰአት እና %d ደቂቃዎች ጀምሮ ያለው በቋሚነት ይጠፋል"
-msgstr[1] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው ሰአት እና %d ደቂቃዎች ጀምሮ ያለው በቋሚነት ይጠፋል"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:472
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው  %d ሰአት ጀምሮ ያለው በቋሚነት ይጠፋል"
-msgstr[1] "ካላስቀመጡት ለውጦቹን ከ መጨረሻው  %d ሰአት ጀምሮ ያለው በቋሚነት ይጠፋል  "
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:522
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "ለውጦቹ ከ ሰነዱ ላይ \"%s\" በቋሚነት ይጠፋሉ"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "ለውጦቹን ሰነዱ ላይ ላስቀምጣቸው \"%s\" ከመዘጋቱ በፊት?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:541
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:772
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr "በ ስርአት አስተዳዳሪው ማስቀመጥ ተሰናክሏል"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:720
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:717
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "ለውጦቹን ከ %d ሰነዱ ላይ በቋሚነት ይጠፋል"
-msgstr[1] "ለውጦቹ ከ %d ሰነዱ ላይ በቋሚነት ይጠፋሉ"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:726
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "እነዚህ %d ሰነዶች ያልተቀመጠ ለውጦች አላቸው: ለውጦቹን ከ መዘጋቱ በፊት ላስቀምጥ?"
-msgstr[1] "እነዚህ %d ሰነዶች ያልተቀመጠ ለውጦች አላቸው: ለውጦቹን ከ መዘጋቱ በፊት ላስቀምጥ? "
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:744
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
 msgstr "ሰነ_ዶች ያልተቀመጠ ለውጦች የያዙ"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:743
 msgid "S_elect the documents you want to save:"
 msgstr "ይ_ምረጡ ማስቀመጥ የሚፈልጉትን ሰነድ:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:774
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "ካላስቀመጡት ለውጦቹ በ ሙሉ በ ቋሚነት ይጠፋሉ "
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:321
+#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:133
+#: ../plugins/spell/languages-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-plugin.c:923
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+msgid "_OK"
+msgstr "_እሺ"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
+#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/spell/pluma-spell-language-dialog.c:134
+#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+msgid "_Help"
+msgstr "_እርዳታ"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.c:316
 msgid "Character Encodings"
 msgstr "ባህሪ መቀየሪያ"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:384
-#: ../pluma/dialogs/pluma-encodings-dialog.c:445
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Description"
 msgstr "_መግለጫ"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:393
-#: ../pluma/dialogs/pluma-encodings-dialog.c:454
+#: ../pluma/dialogs/pluma-encodings-dialog.c:391
+#: ../pluma/dialogs/pluma-encodings-dialog.c:452
 msgid "_Encoding"
 msgstr "_መቀየሪያ"
 
@@ -616,13 +670,24 @@ msgstr "_መቀየሪያ"
 msgid "Character encodings"
 msgstr "ባህሪ መቀየሪያ "
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:5
 msgid "A_vailable encodings:"
 msgstr "ዝ_ግጁ መቀየሪያዎች:"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
+#. + Add to Dictionary
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:6
+#: ../plugins/spell/pluma-automatic-spell-checker.c:514
+msgid "_Add"
+msgstr "_መጨመሪያ"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:7
 msgid "E_ncodings shown in menu:"
 msgstr "በ ዝርዝር ላይ የሚታዩት መ_ቀየሪያዎች:"
+
+#: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+msgid "_Remove"
+msgstr "_ማስወገጃ "
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
@@ -637,29 +702,39 @@ msgstr "_ይጠቀሙ የ ስርአቱን የ ተወሰነ ፊደል ስፋት (
 msgid "The selected color scheme cannot be installed."
 msgstr "የ ተመረጠውን የ ገጽታ ቀለም መግጠም አልተቻለም"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:810
+#: ../pluma/dialogs/pluma-preferences-dialog.c:863
 msgid "Add Scheme"
 msgstr "ገጽታ መጨመሪያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:817
+#: ../pluma/dialogs/pluma-preferences-dialog.c:870
 msgid "A_dd Scheme"
 msgstr "ገጽታ መ_ጨመሪያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:825
+#: ../pluma/dialogs/pluma-preferences-dialog.c:878
 msgid "Color Scheme Files"
 msgstr "የ ቀለም ገጽታ ፋይሎች"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:832
-#: ../pluma/pluma-file-chooser-dialog.c:53
+#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
 msgstr "ሁሉንም ፋይሎች"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:877
+#: ../pluma/dialogs/pluma-preferences-dialog.c:930
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "የ ቀለም ገጽታ ማስወገድ አልተቻለም \"%s\"."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1088
+#. ex:et:ts=4:
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
+#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Close"
+msgstr "_መዝጊያ"
+
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
 msgid "Pluma Preferences"
 msgstr "የ pluma ምርጫዎች "
 
@@ -667,190 +742,195 @@ msgstr "የ pluma ምርጫዎች "
 msgid "Preferences"
 msgstr "ምርጫዎች"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
 #: ../pluma/pluma-print-preferences.ui.h:9
 msgid "Text Wrapping"
 msgstr "ጽሁፍ መጠቅለያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../plugins/docinfo/docinfo.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:5
 #: ../plugins/externaltools/tools/tools.ui.h:21
 #: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:4
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:3
+#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
 #: ../pluma/pluma-print-preferences.ui.h:10
 msgid "Enable text _wrapping"
 msgstr "ጽሁፍ _መጠቅለያ ማስቻያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7
 #: ../pluma/pluma-print-preferences.ui.h:11
 msgid "Do not _split words over two lines"
 msgstr "ቃላቶችን ሁለት ቦታ _አትሰንጥቅ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
 #: ../pluma/pluma-print-preferences.ui.h:3
 msgid "Line Numbers"
 msgstr "የመስመር ቁጥር"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7 ../pluma/pluma-view.c:1966
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:1968
 msgid "_Display line numbers"
 msgstr " የመስመር ቁጥር _ማሳያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
 msgid "Current Line"
 msgstr "የ አሁኑ መስመር"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
 msgid "Highlight current _line"
 msgstr "የ አሁኑን _መስመር ማድመቂያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
 msgid "Right Margin"
 msgstr "የ ቀኝ መስመር "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
 msgid "Display right _margin"
 msgstr "የ ቀኝ _መስመር ማሳያ "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
 msgid "_Right margin at column:"
 msgstr "የ _ቀኝ መስመር በ አምድ ውስጥ:"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
 msgid "Bracket Matching"
 msgstr "ተመሳሳይ ቅንፍ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
 msgid "Highlight matching _bracket"
 msgstr "ተመሳሳይ _ቅንፎችን ማድመቂያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
 msgid "View"
 msgstr "መመልከቻ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
 msgid "Tab Stops"
 msgstr "ማስረጊያ ማስቆሚያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
 msgid "_Tab width:"
 msgstr "የ _ማስረጊያ ስፋት:"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
 msgid "Insert _spaces instead of tabs"
 msgstr "_ክፍተት ማስገቢያ ከ tabs ይልቅ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
 msgid "Automatic Indentation"
 msgstr "ራሱ በራሱ ማስረጊያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
 msgid "_Enable automatic indentation"
 msgstr "ራሱ በራሱ ማስረጊያ ማስቻያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
 msgid "File Saving"
 msgstr "ፋይል ማስቀመጫ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
 msgid "Create a _backup copy of files before saving"
 msgstr "_ተተኪ ኮፒ መፍጠሪያ ለ ፋይሎች ከ መቀመጣቸው በፊት"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
 msgid "_Autosave files every"
 msgstr "_ራሱ በራሱ ፋይሎች ማስቀመጫ በየ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
 msgid "_minutes"
 msgstr "_ደቂቃዎች"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
 msgid "Editor"
 msgstr "ማረሚያ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:26
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
 msgid "Font"
 msgstr "ፊደል"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
 msgid "Editor _font: "
 msgstr "_ፊደል ማረሚያ: "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "Pick the editor font"
 msgstr "የ ማረሚያ ፊደል መምረጫ"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Color Scheme"
 msgstr "የ ቀለም ገጽታ "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
 msgid "_Add..."
 msgstr "_መጨመሪያ..."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font & Colors"
 msgstr "ፊደል & ቀለሞች"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Plugins"
-msgstr "ተሰኪዎች"
+msgstr "ተሰኪዎች "
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1510
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1500
 msgid "Replace"
 msgstr "መቀየሪያ"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1508
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1498
 msgid "Find"
-msgstr "መፈለጊያ"
+msgstr "መፈለጎያ "
+
+#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+msgid "_Find"
+msgstr ""
 
 #: ../pluma/dialogs/pluma-search-dialog.c:420
 msgid "Replace _All"
 msgstr "_ሁሉንም መቀየሪያ"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:421
-#: ../pluma/pluma-commands-file.c:587
+#: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr "_መቀየሪያ"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:2
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
 msgid "Replace All"
 msgstr "ሁሉንም መቀየሪያ"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:3
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
 msgid "_Search for: "
 msgstr "_መፈለጊያ ለ:"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:4
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
 msgid "Replace _with: "
 msgstr "መቀየሪያ _በ: "
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:5
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "_Match case"
 msgstr "ጉዳይ _ማመሳሰያ "
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:6
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Match _regular expression"
 msgstr "ማመሳሰያ _መደበኛ አገላለጽ"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:7
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "Match _entire word only"
 msgstr "_ጠቅላላ ቃሉን ብቻ ማመሳሰያ"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:8
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "Search _backwards"
 msgstr "የ _ኋሊዮሽ መፈለጊያ"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:9
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:11
 msgid "_Wrap around"
 msgstr "ዙሪያውን _መጠቅለያ"
 
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:10
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:12
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr "_መተንተኛ መዝለያ ቅደም ተከቴል (e.g. \\n)"
 
@@ -899,7 +979,9 @@ msgstr "- የ ጽሁፍ ፋይሎች ማረሚያ"
 msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
-msgstr "%s\nማስኬጃ '%s --እርዳታ' ዝግጁ የሆኑ ዝርዝር ትእዛዞችን ምርጫ ለ መመልከት\n"
+msgstr ""
+"%s\n"
+"ማስኬጃ '%s --እርዳታ' ዝግጁ የሆኑ ዝርዝር ትእዛዞችን ምርጫ ለ መመልከት\n"
 
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
@@ -910,8 +992,8 @@ msgstr "ፋይል በ መጫን ላይ '%s'…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "በ መጫን ላይ %d ፋይል…"
-msgstr[1] "በ መጫን ላይ %d ፋይሎች…"
+msgstr[0] ""
+msgstr[1] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
@@ -927,26 +1009,26 @@ msgstr "ይህ ፋይል \"%s\" ለማንበብ ብቻ ነው"
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "እርስዎ አሁን በሚያስቀምጡት መቀየር ይፈልጋሉ?"
 
-#: ../pluma/pluma-commands-file.c:648 ../pluma/pluma-commands-file.c:871
+#: ../pluma/pluma-commands-file.c:649 ../pluma/pluma-commands-file.c:872
 #, c-format
 msgid "Saving file '%s'…"
 msgstr "ፋይል ማስቀመጫ '%s'…"
 
-#: ../pluma/pluma-commands-file.c:756
+#: ../pluma/pluma-commands-file.c:757
 msgid "Save As…"
-msgstr "ማስቀመጫ እንደ..."
+msgstr "ማስቀመጫ እንደ… "
 
-#: ../pluma/pluma-commands-file.c:1085
+#: ../pluma/pluma-commands-file.c:1086
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr "ሰነዱን እንደ ነበር መመለሻ '%s'…"
 
-#: ../pluma/pluma-commands-file.c:1130
+#: ../pluma/pluma-commands-file.c:1131
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr "በ ሰነድ ውስጥ ያልተቀመጡ ለውጦችን እንደ ነበር ልመልስ '%s'?"
 
-#: ../pluma/pluma-commands-file.c:1139
+#: ../pluma/pluma-commands-file.c:1140
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently "
@@ -954,15 +1036,15 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ %ld ሰከንዶች ውስጥ ይጠፋል "
-msgstr[1] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ %ld ሰከንዶች ውስጥ ይጠፋል "
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1148
+#: ../pluma/pluma-commands-file.c:1149
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ ሰከንዶች ውስጥ በቋሚነት ይጠፋል"
 
-#: ../pluma/pluma-commands-file.c:1154
+#: ../pluma/pluma-commands-file.c:1155
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -970,10 +1052,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ %ld ሰከንዶች ውስጥ በቋሚነት ይጠፋል "
-msgstr[1] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ %ld ሰከንዶች ውስጥ በቋሚነት ይጠፋል"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1164
+#: ../pluma/pluma-commands-file.c:1165
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently "
@@ -981,15 +1063,15 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ ሰከንዶች ውስጥ በቋሚነት ይጠፋል "
-msgstr[1] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ ሰከንዶች ውስጥ በቋሚነት ይጠፋል"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1179
+#: ../pluma/pluma-commands-file.c:1180
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
 msgstr "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ ሰከንዶች ውስጥ በቋሚነት ይጠፋል "
 
-#: ../pluma/pluma-commands-file.c:1185
+#: ../pluma/pluma-commands-file.c:1186
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -997,19 +1079,19 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ ሰአቶች ውስጥ እና  %d ደቂቃዎች ውስጥ በቋሚነት ይጠፋል "
-msgstr[1] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ ሰአቶች ውስጥ እና  %d ደቂቃዎች ውስጥ በቋሚነት ይጠፋል "
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1200
+#: ../pluma/pluma-commands-file.c:1201
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ ሰአቶች ውስጥ  %d  በቋሚነት ይጠፋል  "
-msgstr[1] "በ ሰነዱ ላይ መጨረሻ የ ተደረገው ለውጥ በ ሰአቶች ውስጥ  %d  በቋሚነት ይጠፋል "
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../pluma/pluma-commands-file.c:1226
+#: ../pluma/pluma-commands-file.c:1228 ../pluma/pluma-ui.h:84
 msgid "_Revert"
 msgstr "_ወደ ነበረበት መመለሻ"
 
@@ -1019,14 +1101,14 @@ msgstr "ፕሉማ ትንሽ እና ቀላል የሆነ የ ጽሁፍ ማረሚ�
 
 #: ../pluma/pluma-commands-help.c:95
 msgid "translator-credits"
-msgstr "ምስጋና ለተርጓሚዎች"
+msgstr "Samson-Belete-Belayineh"
 
 #: ../pluma/pluma-commands-search.c:112
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "ተገኝቷል እና ተቀይሯል %d ሁኑታው "
-msgstr[1] "ተገኝቷል እና ተቀይሯል %d ሁኑታው"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1039,17 +1121,17 @@ msgstr "አንድ ሁኔታ ተገኝቷል እና ተቀይሯል "
 msgid "\"%s\" not found"
 msgstr "\"%s\" አልተገኘም"
 
-#: ../pluma/pluma-document.c:1084 ../pluma/pluma-document.c:1104
+#: ../pluma/pluma-document.c:1086 ../pluma/pluma-document.c:1106
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "ያልተቀመጠ ሰነድ %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2237 ../pluma/pluma-window.c:2242
+#: ../pluma/pluma-window.c:2227 ../pluma/pluma-window.c:2232
 msgid "Read-Only"
 msgstr "ለንባብ-ብቻ"
 
-#: ../pluma/pluma-documents-panel.c:786 ../pluma/pluma-window.c:3667
+#: ../pluma/pluma-documents-panel.c:785 ../pluma/pluma-window.c:3646
 msgid "Documents"
 msgstr "ሰነዶች"
 
@@ -1183,219 +1265,226 @@ msgstr "የ አሁኑ ቋንቋ (%s)"
 msgid "Add or Remove..."
 msgstr "መጨመርያ ወይንም ማስወገጃ..."
 
-#: ../pluma/pluma-file-chooser-dialog.c:54
+#: ../pluma/pluma-file-chooser-dialog.c:55
 msgid "All Text Files"
 msgstr "ሁሉንም የጽሁፍ ፋይሎች"
 
-#: ../pluma/pluma-file-chooser-dialog.c:82
+#: ../pluma/pluma-file-chooser-dialog.c:83
 msgid "C_haracter Encoding:"
 msgstr "የ ባ_ህሪ Encoding:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:151
+#: ../pluma/pluma-file-chooser-dialog.c:148
 msgid "L_ine Ending:"
 msgstr "መ_ስመር መጨረሻ:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:174
+#: ../pluma/pluma-file-chooser-dialog.c:167
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: ../pluma/pluma-file-chooser-dialog.c:180
+#: ../pluma/pluma-file-chooser-dialog.c:173
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: ../pluma/pluma-file-chooser-dialog.c:186
+#: ../pluma/pluma-file-chooser-dialog.c:179
 msgid "Windows"
 msgstr "መስኮቶች"
 
-#: ../pluma/pluma-help.c:88
+#: ../pluma/pluma-file-chooser-dialog.c:442
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+msgid "_Open"
+msgstr "_መክፈቻ"
+
+#: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
 msgstr "ስህተት ተፈጥሯል እርዳታውን በማሳየት ላይ እንዳለ "
 
-#: ../pluma/pluma-io-error-message-area.c:187
-#: ../pluma/pluma-io-error-message-area.c:489
+#: ../pluma/pluma-io-error-message-area.c:179
+#: ../pluma/pluma-io-error-message-area.c:481
 msgid "_Retry"
 msgstr "_እንደገና መሞከሪያ"
 
-#: ../pluma/pluma-io-error-message-area.c:208
+#: ../pluma/pluma-io-error-message-area.c:200
 #, c-format
 msgid "Could not find the file %s."
 msgstr "ፋይሉን ማግኘት አልተቻለም \"%s\"."
 
-#: ../pluma/pluma-io-error-message-area.c:210
-#: ../pluma/pluma-io-error-message-area.c:249
-#: ../pluma/pluma-io-error-message-area.c:256
+#: ../pluma/pluma-io-error-message-area.c:202
+#: ../pluma/pluma-io-error-message-area.c:241
+#: ../pluma/pluma-io-error-message-area.c:248
 msgid "Please check that you typed the location correctly and try again."
 msgstr "እባክዎን አካባቢውን በ ትክክል መጻፍዎትን ያረጋግጡ እና እንደገና ይሞክሩ"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:225
+#: ../pluma/pluma-io-error-message-area.c:217
 #, c-format
 msgid "pluma cannot handle %s locations."
 msgstr "ፕሉም ይህን አካባቢ %s ማወቅ አልቻለም"
 
-#: ../pluma/pluma-io-error-message-area.c:231
+#: ../pluma/pluma-io-error-message-area.c:223
 msgid "pluma cannot handle this location."
 msgstr "ፕሉም ይህን አካባቢ ማወቅ አልቻለም"
 
-#: ../pluma/pluma-io-error-message-area.c:239
+#: ../pluma/pluma-io-error-message-area.c:231
 msgid "The location of the file cannot be mounted."
 msgstr "የ ፋይሉን አካባቢ መጫን አልተቻለም "
 
-#: ../pluma/pluma-io-error-message-area.c:243
+#: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr "ፋይሉ አካባቢ መድረስ አልተቻለም ምክንያቱም አልተጫነም"
 
-#: ../pluma/pluma-io-error-message-area.c:247
+#: ../pluma/pluma-io-error-message-area.c:239
 #, c-format
 msgid "%s is a directory."
 msgstr "%s ዳይሬክቶሪ ነው"
 
-#: ../pluma/pluma-io-error-message-area.c:254
+#: ../pluma/pluma-io-error-message-area.c:246
 #, c-format
 msgid "%s is not a valid location."
 msgstr "%s ዋጋ ያለው አካባቢ አይደለም "
 
-#: ../pluma/pluma-io-error-message-area.c:284
+#: ../pluma/pluma-io-error-message-area.c:276
 #, c-format
 msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr "ጋባዡን %s ማግኘት አልተቻለም: እባክዎን ወኪል በ ትክክል መሰናዳቱን ያረጋግጡ እና እንደገና ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:297
+#: ../pluma/pluma-io-error-message-area.c:289
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr "የ ጋባዥ ስም ዋጋ የለውም: እባክዎን አካባቢውን በ ትክክል መጻፍዎትን ያረጋግጡ እና እንደገና ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:305
+#: ../pluma/pluma-io-error-message-area.c:297
 #, c-format
 msgid "%s is not a regular file."
 msgstr "%s መደበኛ ፋይል አይደለም"
 
-#: ../pluma/pluma-io-error-message-area.c:310
+#: ../pluma/pluma-io-error-message-area.c:302
 msgid "Connection timed out. Please try again."
 msgstr "የ ግንኙነት ጊዜ አልፏል እባክዎን እንደገና ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:333
+#: ../pluma/pluma-io-error-message-area.c:325
 msgid "The file is too big."
 msgstr "ፋይሉ በጣም ትልቅ ነው"
 
-#: ../pluma/pluma-io-error-message-area.c:374
+#: ../pluma/pluma-io-error-message-area.c:366
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "ያልተጠበቀ ስህተት: %s"
 
-#: ../pluma/pluma-io-error-message-area.c:410
+#: ../pluma/pluma-io-error-message-area.c:402
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr "ፕሉማ ፋይሉን ማግኘት አልቻለም: ምናልባት አጥፍተውት ይሆናል"
 
-#: ../pluma/pluma-io-error-message-area.c:420
+#: ../pluma/pluma-io-error-message-area.c:412
 #, c-format
 msgid "Could not revert the file %s."
 msgstr "ፋይሉን እንደ ነበር መመለስ አልተቻለም %s."
 
-#: ../pluma/pluma-io-error-message-area.c:446
+#: ../pluma/pluma-io-error-message-area.c:438
 msgid "Ch_aracter Encoding:"
 msgstr "የ ባ_ህሪ Encoding:"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:498
-#: ../pluma/pluma-io-error-message-area.c:781
+#: ../pluma/pluma-io-error-message-area.c:490
+#: ../pluma/pluma-io-error-message-area.c:765
 msgid "Edit Any_way"
 msgstr "ለማን_ኛውም ማረሚያ"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: ../pluma/pluma-io-error-message-area.c:503
-#: ../pluma/pluma-io-error-message-area.c:786
+#: ../pluma/pluma-io-error-message-area.c:495
+#: ../pluma/pluma-io-error-message-area.c:770
 msgid "D_on't Edit"
 msgstr "አ_ታርም"
 
-#: ../pluma/pluma-io-error-message-area.c:607
+#: ../pluma/pluma-io-error-message-area.c:591
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr "እርስዎ የ ተከተሉት አገናኝ የ ተወሰነ ነው: እና ትክክለኛው ፋይል በዚህ መጠን ውስጥ አልተገኘም"
 
-#: ../pluma/pluma-io-error-message-area.c:611
+#: ../pluma/pluma-io-error-message-area.c:595
 msgid "You do not have the permissions necessary to open the file."
 msgstr "እርስዎ በቂ ፍቃድ የለዎትም ይህን ፋይል ለ መክፈት"
 
-#: ../pluma/pluma-io-error-message-area.c:617
+#: ../pluma/pluma-io-error-message-area.c:601
 msgid "pluma has not been able to detect the character encoding."
 msgstr "ፕሉማ የ ባህሪ መቀየሪያ ማግኘት አልቻለም"
 
-#: ../pluma/pluma-io-error-message-area.c:619
-#: ../pluma/pluma-io-error-message-area.c:641
+#: ../pluma/pluma-io-error-message-area.c:603
+#: ../pluma/pluma-io-error-message-area.c:625
 msgid "Please check that you are not trying to open a binary file."
 msgstr "እባክዎን ይመርምሩ እርስዎ ለ መክፈት እየሞከሩ ያለው ባይነሪ ፋይል አለመሆኑን "
 
-#: ../pluma/pluma-io-error-message-area.c:620
+#: ../pluma/pluma-io-error-message-area.c:604
 msgid "Select a character encoding from the menu and try again."
 msgstr "ይምረጡ የ ባህሪ መቀየሪያ ከ ዝርዝር ውስጥ እና እንደገና ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:610
 #, c-format
 msgid "There was a problem opening the file %s."
 msgstr "ፋይሉን በ መክፈት ላይ እንዳለ ስህተት ተፈጥሯል %s."
 
-#: ../pluma/pluma-io-error-message-area.c:628
+#: ../pluma/pluma-io-error-message-area.c:612
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
-msgstr "እርስዎ የ ከፈቱት ፋይል ዋጋ የሌላቸው ባህሪዎች ይዟል: እርስዎ ይህን ፋይል ማረም ከ ቀጠሉ ይህን ሰነድ ዋጋ የሌለው ያደርጉታል"
+msgstr ""
+"እርስዎ የ ከፈቱት ፋይል ዋጋ የሌላቸው ባህሪዎች ይዟል: እርስዎ ይህን ፋይል ማረም ከ ቀጠሉ ይህን ሰነድ ዋጋ የሌለው "
+"ያደርጉታል"
 
-#: ../pluma/pluma-io-error-message-area.c:631
+#: ../pluma/pluma-io-error-message-area.c:615
 msgid "You can also choose another character encoding and try again."
 msgstr "እርስዎ እንዲሁም መምረጥ ይችላሉ ለላ የ ባህሪ መቀየሪያ እና እንደገና ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:638
+#: ../pluma/pluma-io-error-message-area.c:622
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
 msgstr "ፋይሉን መክፈት አልተቻለም %s በ መጠቀም %s የ ባህሪ መቀየሪያ"
 
-#: ../pluma/pluma-io-error-message-area.c:642
-#: ../pluma/pluma-io-error-message-area.c:717
+#: ../pluma/pluma-io-error-message-area.c:626
+#: ../pluma/pluma-io-error-message-area.c:701
 msgid "Select a different character encoding from the menu and try again."
 msgstr "ይምረጡ የ ተለየ የ ባህሪ መቀየሪያ ከ ዝርዝር ውስጥ እና እንደገና ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:652
+#: ../pluma/pluma-io-error-message-area.c:636
 #, c-format
 msgid "Could not open the file %s."
 msgstr "ፋይሉን መክፈት አልተቻለም \"%s\"."
 
-#: ../pluma/pluma-io-error-message-area.c:712
+#: ../pluma/pluma-io-error-message-area.c:696
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
 msgstr "ፋይሉን ማስቀመጥ አልተቻለም %s በ መጠቀም %s የ ባህሪ መቀየሪያ"
 
-#: ../pluma/pluma-io-error-message-area.c:715
+#: ../pluma/pluma-io-error-message-area.c:699
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr "ሰነዱ አንድ ወይንም ተጨማሪ ባህሪዎች ይዟል: መቀየር የማይቻል ለ ተወሰነ ባህሪ መቀየሪያ "
 
-#: ../pluma/pluma-io-error-message-area.c:801
+#: ../pluma/pluma-io-error-message-area.c:785
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
 msgstr "ይህ ፋይል (%s) ቀደም ብሎ በ ፕሉማ መስኮት ተከፍቷል"
 
-#: ../pluma/pluma-io-error-message-area.c:819
+#: ../pluma/pluma-io-error-message-area.c:799
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr "ፕሉማ ይህን ሁኔታ ከፍቷል ለ ፋይል ምንም-በማይታረም ዘዴ: እርስዎ ለማንኛውም ማረም ይፈልጋሉ?"
 
-#: ../pluma/pluma-io-error-message-area.c:882
-#: ../pluma/pluma-io-error-message-area.c:986
+#: ../pluma/pluma-io-error-message-area.c:858
+#: ../pluma/pluma-io-error-message-area.c:954
 msgid "S_ave Anyway"
 msgstr "ለማንኛውም ማ_ስቀመጫ"
 
-#: ../pluma/pluma-io-error-message-area.c:886
-#: ../pluma/pluma-io-error-message-area.c:990
+#: ../pluma/pluma-io-error-message-area.c:862
+#: ../pluma/pluma-io-error-message-area.c:958
 msgid "D_on't Save"
 msgstr "_አታስቀምጥ"
 
@@ -1404,27 +1493,27 @@ msgstr "_አታስቀምጥ"
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:904
+#: ../pluma/pluma-io-error-message-area.c:880
 #, c-format
 msgid "The file %s has been modified since reading it."
 msgstr "ይህ ፋይል %s ተሻሽሏል ካነበቡት በኋላ"
 
-#: ../pluma/pluma-io-error-message-area.c:923
+#: ../pluma/pluma-io-error-message-area.c:895
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "እርስዎ ካስቀመጡት ሁሉም የ ውጪ ለውጦች ይጠፋሉ: ለማንኛውም ላስቀምጠው?"
 
-#: ../pluma/pluma-io-error-message-area.c:1008
+#: ../pluma/pluma-io-error-message-area.c:976
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "በ ማስቀመጥ ላይ እንዳለ ተተኪ ፋይል መፍጠር አልተቻለም : %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1011
+#: ../pluma/pluma-io-error-message-area.c:979
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr "በ ማስቀመጥ ላይ እንዳለ ጊዚያዊ ተተኪ ፋይል መፍጠር አልተቻለም : %s"
 
-#: ../pluma/pluma-io-error-message-area.c:1031
+#: ../pluma/pluma-io-error-message-area.c:995
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
@@ -1432,62 +1521,68 @@ msgid ""
 msgstr ""
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: ../pluma/pluma-io-error-message-area.c:1095
+#: ../pluma/pluma-io-error-message-area.c:1055
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
-msgstr "ፕሉማ ማግኘት አልቻለም %s አካባቢውን በ መጻፊያ ዘዴ: እባክዎን አካባቢውን በ ትክክል መጻፍዎትን ያረጋግጡ እና እንደገና ይሞክሩ"
+msgstr ""
+"ፕሉማ ማግኘት አልቻለም %s አካባቢውን በ መጻፊያ ዘዴ: እባክዎን አካባቢውን በ ትክክል መጻፍዎትን ያረጋግጡ እና "
+"እንደገና ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:1103
+#: ../pluma/pluma-io-error-message-area.c:1063
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
-msgstr "ፕሉማ ማግኘት አልቻለም አካባቢውን በ መጻፊያ ዘዴ: እባክዎን አካባቢውን በ ትክክል መጻፍዎትን ያረጋግጡ እና እንደገና ይሞክሩ "
+msgstr ""
+"ፕሉማ ማግኘት አልቻለም አካባቢውን በ መጻፊያ ዘዴ: እባክዎን አካባቢውን በ ትክክል መጻፍዎትን ያረጋግጡ እና እንደገና "
+"ይሞክሩ "
 
-#: ../pluma/pluma-io-error-message-area.c:1112
+#: ../pluma/pluma-io-error-message-area.c:1072
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr "%s iዋጋ ያለው አካባቢ አይደለም: እባክዎን ቦታውን በትክክል መጻፍዎትን ያረጋግጡ እና እንደገና ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:1118
+#: ../pluma/pluma-io-error-message-area.c:1078
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "እርስዎ ፋይል ለ ማስቀመጥ በቂ ፍቃድ የለዎትም: እባክዎን አካባቢውን በ ትክክል መጻፍዎትን ያረጋግጡ እና እንደገና ይሞክሩ"
+msgstr ""
+"እርስዎ ፋይል ለ ማስቀመጥ በቂ ፍቃድ የለዎትም: እባክዎን አካባቢውን በ ትክክል መጻፍዎትን ያረጋግጡ እና እንደገና "
+"ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:1124
+#: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
 msgstr "በቂ የ ዲስክ ቦታ ቦታ የለም ፋይል ለማስቀመጥ: እባክዎን የ ዲስክ ቦታ ነፃ ያድርጉ እና እንደገና ይሞክሩ"
 
-#: ../pluma/pluma-io-error-message-area.c:1129
+#: ../pluma/pluma-io-error-message-area.c:1089
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1135
+#: ../pluma/pluma-io-error-message-area.c:1095
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "ፋይል በዚህ ስም ቀደም ብሎ ነበር: እባክዎን ሌላ ስም ይጠቀሙ"
 
-#: ../pluma/pluma-io-error-message-area.c:1140
+#: ../pluma/pluma-io-error-message-area.c:1100
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1147
+#: ../pluma/pluma-io-error-message-area.c:1107
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr ""
 
-#: ../pluma/pluma-io-error-message-area.c:1163
+#: ../pluma/pluma-io-error-message-area.c:1123
 #, c-format
 msgid "Could not save the file %s."
 msgstr "ፋይሉን ማስቀመጥ አልተቻለም %s."
@@ -1497,20 +1592,20 @@ msgstr "ፋይሉን ማስቀመጥ አልተቻለም %s."
 #. could be interpreted as the changes he made in the document. beside
 #. "reading" is
 #. not accurate (since last load/save)
-#: ../pluma/pluma-io-error-message-area.c:1207
+#: ../pluma/pluma-io-error-message-area.c:1167
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "ይህ ፋይል %s በ ዲስኩ ላይ ተቀይሯል"
 
-#: ../pluma/pluma-io-error-message-area.c:1212
+#: ../pluma/pluma-io-error-message-area.c:1172
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "የ እርስዎን ለውጦች ትተው ፋይሉን እንደገና መጫን ይፈልጋሉ?"
 
-#: ../pluma/pluma-io-error-message-area.c:1214
+#: ../pluma/pluma-io-error-message-area.c:1174
 msgid "Do you want to reload the file?"
 msgstr "ፋይሉን እንደገና መጫን ይፈልጋሉ?"
 
-#: ../pluma/pluma-io-error-message-area.c:1219
+#: ../pluma/pluma-io-error-message-area.c:1179
 msgid "_Reload"
 msgstr "_እንደገና መጫኛ"
 
@@ -1673,8 +1768,8 @@ msgstr " መስመር %d: አምድ %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "ይህ tabs ከ ስህተት ጋር ነው "
-msgstr[1] "ይህ %d tabs ከ ስህተት ጋር ነው"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -1718,42 +1813,42 @@ msgid "Saving %s"
 msgstr "በማስቀመጥ ላይ %s"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1674
+#: ../pluma/pluma-tab.c:1668
 msgid "RO"
 msgstr "RO"
 
-#: ../pluma/pluma-tab.c:1721
+#: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
 msgstr "ስህተት ፋይሉን በ መክፈት ላይ %s"
 
-#: ../pluma/pluma-tab.c:1726
+#: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
 msgstr "ስህተት ፋይሉን እንደ ነበር በ መመለስ ላይ %s"
 
-#: ../pluma/pluma-tab.c:1731
+#: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
 msgstr "ስህተት ፋይሉን በማስቀመጥ ላይ %s"
 
-#: ../pluma/pluma-tab.c:1752
+#: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
 msgstr "ዩኒኮድ (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1759
+#: ../pluma/pluma-tab.c:1753
 msgid "Name:"
 msgstr "ስም:"
 
-#: ../pluma/pluma-tab.c:1760
+#: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
 msgstr "MIME Type:"
 
-#: ../pluma/pluma-tab.c:1761
+#: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
 msgstr "Encoding:"
 
-#: ../pluma/pluma-tab-label.c:276
+#: ../pluma/pluma-tab-label.c:288
 msgid "Close document"
 msgstr "ሰነዱን መዝጊያ "
 
@@ -1782,9 +1877,10 @@ msgstr "_መሳሪያዎች"
 msgid "_Documents"
 msgstr "_ሰነዶች"
 
-#: ../pluma/pluma-ui.h:53
-msgid "_Help"
-msgstr "_እርዳታ"
+#. File menu
+#: ../pluma/pluma-ui.h:56
+msgid "_New"
+msgstr "_አዲስ "
 
 #: ../pluma/pluma-ui.h:57
 msgid "Create a new document"
@@ -1794,7 +1890,7 @@ msgstr "አዲስ ሰነድ መፍጠሪያ"
 msgid "_Open..."
 msgstr "_መክፈቻ..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1438
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1424
 msgid "Open a file"
 msgstr "ፋይል መክፈቻ"
 
@@ -1805,7 +1901,7 @@ msgstr "ምር_ጫዎች"
 
 #: ../pluma/pluma-ui.h:63
 msgid "Configure the application"
-msgstr "መተግበሪያውን ማዋቀሪያ "
+msgstr "መተግበሪያ ማዋቀሪያ "
 
 #. Help menu
 #: ../pluma/pluma-ui.h:66
@@ -1816,9 +1912,18 @@ msgstr "_ይዞታዎች"
 msgid "Open the pluma manual"
 msgstr "የ ፕሉማ መምሪያውን መክፈቻ "
 
+#: ../pluma/pluma-ui.h:68
+msgid "_About"
+msgstr "_ስለ"
+
 #: ../pluma/pluma-ui.h:69
 msgid "About this application"
 msgstr "ስለዚህ ፕሮግራም"
+
+#. Fullscreen toolbar
+#: ../pluma/pluma-ui.h:72
+msgid "_Leave Fullscreen"
+msgstr ""
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
@@ -1856,25 +1961,53 @@ msgstr "_ማተሚያ..."
 msgid "Print the current page"
 msgstr "የ አሁኑን ገጽ ማተሚያ "
 
+#. Edit menu
+#: ../pluma/pluma-ui.h:92
+msgid "_Undo"
+msgstr "_መተው"
+
 #: ../pluma/pluma-ui.h:93
 msgid "Undo the last action"
-msgstr "የመጨረሻውን ተግባር መተው"
+msgstr "የ መጨረሻውን ተግባር መተው"
+
+#: ../pluma/pluma-ui.h:94
+msgid "_Redo"
+msgstr "_እንደገና መስሪያ"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
 msgstr "መጨረሻ የተተወውን ተግባር እንደገና መስሪያ"
 
+#: ../pluma/pluma-ui.h:96
+msgid "Cu_t"
+msgstr "መቁ_ረጫ "
+
 #: ../pluma/pluma-ui.h:97
 msgid "Cut the selection"
 msgstr "የተመረጠውን መቁረጫ"
+
+#: ../pluma/pluma-ui.h:98
+msgid "_Copy"
+msgstr "_ኮፒ "
 
 #: ../pluma/pluma-ui.h:99
 msgid "Copy the selection"
 msgstr "የተመረጠውን ኮፒ ማድረጊያ"
 
+#: ../pluma/pluma-ui.h:100
+msgid "_Paste"
+msgstr "_መለጠፊያ "
+
 #: ../pluma/pluma-ui.h:101
 msgid "Paste the clipboard"
 msgstr "ወደ ቁራጭ ሰሌዳ መለጠፊያ"
+
+#. Add delete button
+#: ../pluma/pluma-ui.h:102
+#: ../plugins/filebrowser/pluma-file-browser-utils.c:182
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
+msgid "_Delete"
+msgstr "_ማጥፊያ"
 
 #: ../pluma/pluma-ui.h:103
 msgid "Delete the selected text"
@@ -1944,7 +2077,7 @@ msgstr "ወደ ተወሰነ መስመር መሄጃ"
 
 #: ../pluma/pluma-ui.h:123
 msgid "_Incremental Search..."
-msgstr "_እየጨመረ በሚሄድ መፈለጊያ..."
+msgstr "_የሚቀጥል መፈለጊያ..."
 
 #: ../pluma/pluma-ui.h:124
 msgid "Incrementally search for text"
@@ -1995,6 +2128,10 @@ msgstr "የ አሁኑን ሰነድ ወደ አዲስ መስኮት ማንቀሳቀ
 msgid "Close the current file"
 msgstr "የአሁኑን ፋይል መዝጊያ"
 
+#: ../pluma/pluma-ui.h:149
+msgid "_Quit"
+msgstr "_ማጥፊያ"
+
 #: ../pluma/pluma-ui.h:150
 msgid "Quit the program"
 msgstr "መተግበሪያውን ማጥፊያ "
@@ -2009,11 +2146,15 @@ msgstr "በ አሁኑ መስኮት ውስጥ የ እቃ መደርደሪያውን
 
 #: ../pluma/pluma-ui.h:158
 msgid "_Statusbar"
-msgstr "_የሁኔታ መደርደሪያ"
+msgstr "የ _ሁኔታ መደርደሪያ "
 
 #: ../pluma/pluma-ui.h:159
 msgid "Show or hide the statusbar in the current window"
 msgstr "በ አሁኑ መስኮት ውስጥ የ ሁኔታ መደርደሪያውን ማሳያ ወይንም መደበቂያ "
+
+#: ../pluma/pluma-ui.h:161
+msgid "_Fullscreen"
+msgstr "_በሙሉ ገጽ መመልከቻ "
 
 #: ../pluma/pluma-ui.h:162
 msgid "Edit text in fullscreen"
@@ -2021,7 +2162,7 @@ msgstr "ጽሁፍ በ ሙሉ መመልከቻ ዘዴ ማረሚያ"
 
 #: ../pluma/pluma-ui.h:169
 msgid "Side _Pane"
-msgstr "የጎን _ክፍል"
+msgstr "የ ጎን _ክፍል "
 
 #: ../pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
@@ -2056,36 +2197,38 @@ msgid "/ on %s"
 msgstr "/ በ %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1204
+#: ../pluma/pluma-view.c:1206
 msgid "_Wrap Around"
 msgstr "ዙሪያውን _መጠቅለያ"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1214
+#: ../pluma/pluma-view.c:1216
 msgid "Match _Entire Word Only"
 msgstr "_ጠቅላላ ቃሉን ብቻ ማመሳሰያ"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1224
+#: ../pluma/pluma-view.c:1226
 msgid "_Match Case"
 msgstr "ጉዳይ _ማመሳሰያ "
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1234
+#: ../pluma/pluma-view.c:1236
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr "_መተንተኛ የ መዝለያ ቅደም ተከተል (e.g. \n)"
+msgstr ""
+"_መተንተኛ የ መዝለያ ቅደም ተከተል (e.g. \n"
+")"
 
-#: ../pluma/pluma-view.c:1348
+#: ../pluma/pluma-view.c:1350
 msgid "String you want to search for"
 msgstr "እርስዎ የሚፈልጉት ሀረግ ከ"
 
-#: ../pluma/pluma-view.c:1357
+#: ../pluma/pluma-view.c:1359
 msgid "Line you want to move the cursor to"
 msgstr "መጠቆሚያውን ወደ የትኛው መስመር ነው ማንቀሳቀስ የሚፈልጉት"
 
-#: ../pluma/pluma-window.c:991
+#: ../pluma/pluma-window.c:983
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "ይጠቀሙ %s ማድመቂያ ዘዴ"
@@ -2093,7 +2236,7 @@ msgstr "ይጠቀሙ %s ማድመቂያ ዘዴ"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1048 ../pluma/pluma-window.c:1938
+#: ../pluma/pluma-window.c:1040 ../pluma/pluma-window.c:1928
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2101,43 +2244,43 @@ msgstr "ይጠቀሙ %s ማድመቂያ ዘዴ"
 msgid "Plain Text"
 msgstr "መደበኛ ጽሁፍ"
 
-#: ../pluma/pluma-window.c:1049
+#: ../pluma/pluma-window.c:1041
 msgid "Disable syntax highlighting"
 msgstr "የ አገባብ ማድመቂያ ማሰናከያ"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1335
+#: ../pluma/pluma-window.c:1323
 #, c-format
 msgid "Open '%s'"
 msgstr "መክፈቻ '%s'"
 
-#: ../pluma/pluma-window.c:1440
+#: ../pluma/pluma-window.c:1430
 msgid "Open a recently used file"
 msgstr "በቅርብ ጊዜ የተጠቀሙበትን ፋይል መክፈቻ "
 
-#: ../pluma/pluma-window.c:1446
+#: ../pluma/pluma-window.c:1436
 msgid "Open"
 msgstr "መክፈቻ"
 
-#: ../pluma/pluma-window.c:1504
+#: ../pluma/pluma-window.c:1494
 msgid "Save"
 msgstr "ማስቀመጫ"
 
-#: ../pluma/pluma-window.c:1506
+#: ../pluma/pluma-window.c:1496
 msgid "Print"
 msgstr "ማተሚያ"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1663
+#: ../pluma/pluma-window.c:1653
 #, c-format
 msgid "Activate '%s'"
 msgstr "ማስነሻ '%s'"
 
-#: ../pluma/pluma-window.c:1916
+#: ../pluma/pluma-window.c:1906
 msgid "Use Spaces"
 msgstr "ክፍተት መጠቀሚያ"
 
-#: ../pluma/pluma-window.c:1987
+#: ../pluma/pluma-window.c:1977
 msgid "Tab Width"
 msgstr "የ ማስረጊያ ስፋት"
 
@@ -2196,39 +2339,39 @@ msgid ""
 "characters and non-space characters in it."
 msgstr ""
 
-#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/docinfo/docinfo.ui.h:3
 msgid "_Update"
 msgstr "_ማሻሻያ"
 
-#: ../plugins/docinfo/docinfo.ui.h:3
+#: ../plugins/docinfo/docinfo.ui.h:4
 msgid "File Name"
 msgstr "የፋይሉ ስም"
 
-#: ../plugins/docinfo/docinfo.ui.h:5
+#: ../plugins/docinfo/docinfo.ui.h:6
 msgid "Bytes"
 msgstr "ባይትስ "
 
-#: ../plugins/docinfo/docinfo.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:7
 msgid "Characters (no spaces)"
 msgstr "ባህሪዎች (ክፍተት የለም)"
 
-#: ../plugins/docinfo/docinfo.ui.h:7
+#: ../plugins/docinfo/docinfo.ui.h:8
 msgid "Characters (with spaces)"
 msgstr "ባህሪዎች (ከ ክፍተት ጋር)"
 
-#: ../plugins/docinfo/docinfo.ui.h:8
+#: ../plugins/docinfo/docinfo.ui.h:9
 msgid "Words"
 msgstr "ቃላት"
 
-#: ../plugins/docinfo/docinfo.ui.h:9
+#: ../plugins/docinfo/docinfo.ui.h:10
 msgid "Lines"
 msgstr "መስመሮች"
 
-#: ../plugins/docinfo/docinfo.ui.h:10
+#: ../plugins/docinfo/docinfo.ui.h:11
 msgid "Document"
 msgstr "ሰነድ"
 
-#: ../plugins/docinfo/docinfo.ui.h:11
+#: ../plugins/docinfo/docinfo.ui.h:12
 msgid "Selection"
 msgstr "መምረጫ"
 
@@ -2546,7 +2689,7 @@ msgstr "የ ሩቅ አካባቢ እንደ ነበር መመለሻ ማስቻያ �
 
 #: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
 msgid "File System"
-msgstr "የፋይል ስርአት "
+msgstr "የ ስርአቱ ፋይል"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
 msgid "_Set root to active document"
@@ -2604,7 +2747,9 @@ msgstr "ስህተት ተፈጥሯል"
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "ፋይሉን ወደ ቆሻሻ ማንቀሳቀስ አልተቻለም:\nእርስዎ በ እርግጥ በ ቋሚነት ማጥፋት ይፈልጋሉ?"
+msgstr ""
+"ፋይሉን ወደ ቆሻሻ ማንቀሳቀስ አልተቻለም:\n"
+"እርስዎ በ እርግጥ በ ቋሚነት ማጥፋት ይፈልጋሉ?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
@@ -2615,16 +2760,16 @@ msgstr "ፋይሉን \"%s\" ወደ ቆሻሻ ማንቀሳቀስ አልተቻለ�
 msgid "The selected files cannot be moved to the trash."
 msgstr "የ ተመረጠውን ፋይል ወደ ቆሻሻ ማንቀሳቀስ አልተቻለም"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1165
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "እርስዎ በ እርግጥ በ ቋሚነት ማጥፋት ይፈልጋሉ \"%s\"?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1170
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1168
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "የ ተመረጡትን ፋይሎች በ እርግጥ በ ቋሚነት ማጥፋት ይፈልጋሉ"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1173
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1171
 msgid "If you delete an item, it is permanently lost."
 msgstr "እርስዎ እቃ ካጠፉ በቋሚነት ይጠፋል"
 
@@ -2642,7 +2787,7 @@ msgstr ""
 #. browser pane.
 #: ../plugins/filebrowser/pluma-file-browser-store.c:3481
 msgid "file"
-msgstr "ፋይል "
+msgstr "ፋይል"
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:3505
 msgid ""
@@ -2677,10 +2822,6 @@ msgstr "ወደ ቆሻሽ _ማንቀሳቀሻ"
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:803
 msgid "Move selected file or folder to trash"
 msgstr "የተመረጠውን ፋይል ወይንም ፎልደር ወደ ቆሻሻ ማንቀሳቀሻ"
-
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
-msgid "_Delete"
-msgstr "_ማጥፊያ"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Delete selected file or folder"
@@ -2772,18 +2913,18 @@ msgstr "_Binary ማሳያ"
 msgid "Show binary files"
 msgstr "የ ማሳያ ፋይሎች ማሳያ "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:993
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1023
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:991
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1004
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1027
 msgid "Previous location"
 msgstr "ቀደም ያለው አካባቢ"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:995
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
 msgid "Go to previous location"
 msgstr "ቀደም ወዳለው አካባቢ መሄጃ "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:997
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1018
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:999
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
 msgid "Go to a previously opened location"
 msgstr "ቀደም ወዳለው ወደ ተከፈተው አካባቢ መሄጃ "
 
@@ -2791,25 +2932,25 @@ msgstr "ቀደም ወዳለው ወደ ተከፈተው አካባቢ መሄጃ "
 msgid "Next location"
 msgstr "የሚቀጥለው ቦታ"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1016
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1020
 msgid "Go to next location"
 msgstr "ወደ ሚቀጥለው አካባቢ መሄጃ "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1228
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1232
 msgid "_Match Filename"
 msgstr "የ ፋይል ስም ማመሳሰያ"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2140
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2144
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2220
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2224
 #, c-format
 msgid "Could not open media: %s"
 msgstr "መገናኛ መክፈት አልተቻለም: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2267
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2271
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "መጠኑን መጫን አልተቻለም: %s"
@@ -2832,12 +2973,11 @@ msgstr ""
 msgid "Interactive Python console standing in the bottom panel"
 msgstr ""
 
-#. ex:et:ts=4:
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
 msgstr "የ ት_እዛዝ ቀለም:"
 
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
 msgid "_Error color:"
 msgstr "የ _ስህተት ቀለም:"
 
@@ -3099,27 +3239,27 @@ msgstr "መለያ"
 msgid "Sorts a document or selected text."
 msgstr "ሰነድ ወይንም የ ተመረጠውን ጽሁፍ መለያ"
 
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/sort/sort.ui.h:3
 msgid "_Sort"
 msgstr "_መለያ"
 
-#: ../plugins/sort/sort.ui.h:3
+#: ../plugins/sort/sort.ui.h:5
 msgid "_Reverse order"
 msgstr "_በተቃራኒ ቅደም ተከተል"
 
-#: ../plugins/sort/sort.ui.h:4
+#: ../plugins/sort/sort.ui.h:6
 msgid "R_emove duplicates"
 msgstr "የተባዣ ማ_ስወገጃ"
 
-#: ../plugins/sort/sort.ui.h:5
+#: ../plugins/sort/sort.ui.h:7
 msgid "_Ignore case"
 msgstr "ጉዳዩን  _መተው"
 
-#: ../plugins/sort/sort.ui.h:6
+#: ../plugins/sort/sort.ui.h:8
 msgid "S_tart at column:"
 msgstr "በ አምድ ማ_ስጀመሪያ:"
 
-#: ../plugins/sort/sort.ui.h:7
+#: ../plugins/sort/sort.ui.h:9
 msgid "You cannot undo a sort operation"
 msgstr "እርስዎ የ መለያ ተግባር መተው አይችሉም"
 
@@ -3133,7 +3273,7 @@ msgstr "በራሱ መመርመሪያ አይነት"
 #. suggestions
 #. * for the current misspelled word
 #: ../plugins/spell/pluma-automatic-spell-checker.c:420
-#: ../plugins/spell/pluma-spell-checker-dialog.c:455
+#: ../plugins/spell/pluma-spell-checker-dialog.c:458
 msgid "(no suggested words)"
 msgstr "(ምንም አስተያየት የለም ለ ቃሎቹ)"
 
@@ -3142,16 +3282,11 @@ msgid "_More..."
 msgstr "_ተጨማሪ..."
 
 #. Ignore all
-#: ../plugins/spell/pluma-automatic-spell-checker.c:503
+#: ../plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
 msgstr "_ሁሉንም መተው"
 
-#. + Add to Dictionary
-#: ../plugins/spell/pluma-automatic-spell-checker.c:518
-msgid "_Add"
-msgstr "_መጨመሪያ"
-
-#: ../plugins/spell/pluma-automatic-spell-checker.c:557
+#: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
 msgstr "የ _ፊደል አስተያየቶች..."
 
@@ -3165,11 +3300,11 @@ msgstr "አስተያየቶች"
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word
 #. isn't misspelled
-#: ../plugins/spell/pluma-spell-checker-dialog.c:562
+#: ../plugins/spell/pluma-spell-checker-dialog.c:565
 msgid "(correct spelling)"
 msgstr "(ፊደል ማረሚያ)"
 
-#: ../plugins/spell/pluma-spell-checker-dialog.c:709
+#: ../plugins/spell/pluma-spell-checker-dialog.c:712
 msgid "Completed spell checking"
 msgstr "ፊደል ማረሙን ጨርሷል"
 
@@ -3196,14 +3331,14 @@ msgstr "ያልታወቀ (%s)"
 #: ../plugins/spell/pluma-spell-checker-language.c:406
 msgctxt "language"
 msgid "Default"
-msgstr "ነባር"
+msgstr "ነባር "
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:141
+#: ../plugins/spell/pluma-spell-language-dialog.c:136
 #: ../plugins/spell/languages-dialog.ui.h:1
 msgid "Set language"
 msgstr "ቋንቋን ማሰናጃ"
 
-#: ../plugins/spell/pluma-spell-language-dialog.c:195
+#: ../plugins/spell/pluma-spell-language-dialog.c:190
 msgid "Languages"
 msgstr "ቋንቋዎች"
 
@@ -3239,7 +3374,7 @@ msgstr "ሰነዱ ባዶ ነው"
 msgid "No misspelled words"
 msgstr "የ ተሳሳተ ፊደል የለም"
 
-#: ../plugins/spell/languages-dialog.ui.h:2
+#: ../plugins/spell/languages-dialog.ui.h:5
 msgid "Select the _language of the current document."
 msgstr ""
 
@@ -3303,19 +3438,19 @@ msgstr "ቋንቋ"
 msgid "_Configure Spell Checker plugin..."
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:2
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
 msgid "Autocheck spelling on document load..."
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:6
 msgid "_Never autocheck"
 msgstr "_በፍጹም በራሱ አትመርምር"
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:7
 msgid "_Remember autocheck by document"
 msgstr ""
 
-#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
+#: ../plugins/spell/pluma-spell-setup-dialog.ui.h:8
 msgid "_Always autocheck"
 msgstr "_ሁል ጊዜ በራሱ መመርመሪያ"
 
@@ -4097,7 +4232,7 @@ msgstr ""
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:210
 msgid "Span"
-msgstr ""
+msgstr "ስንዝር"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:211
 msgid "Standby load message"
@@ -4271,7 +4406,7 @@ msgstr "ማዘጋጃ"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:258
 msgid "Background color"
-msgstr "የ መደብ ቀለም "
+msgstr "የ መደብ ቀለም"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:259
 msgid "Background texture tile"
@@ -4467,7 +4602,7 @@ msgstr "ክፍተት"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:307
 msgid "Square root"
-msgstr "ስኴር ሩት"
+msgstr "ስኴር ሩት "
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:308
 msgid "Starting sequence number"
@@ -4931,31 +5066,31 @@ msgstr "ከ ማስቀመጡ በፊት ክፍተት ያስወግዳል"
 msgid "Insert Date and Time"
 msgstr "ቀን እና ሰአት ማስገቢያ"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:2
+#: ../plugins/time/pluma-time-dialog.ui.h:4
 msgid "_Insert"
 msgstr "_ማስገቢያ"
 
-#: ../plugins/time/pluma-time-dialog.ui.h:3
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
+#: ../plugins/time/pluma-time-dialog.ui.h:5
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:8
 msgid "Use the _selected format"
 msgstr "የ _ተመረጠውን አቀራረብ ይጠቀሙ "
 
-#: ../plugins/time/pluma-time-dialog.ui.h:5
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:6
+#: ../plugins/time/pluma-time-dialog.ui.h:7
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
 msgid "_Use custom format"
 msgstr "የ አቀራረብ ማስተካከያ ይጠቀሙ"
 
 #. Translators: Use the more common date format in your locale
-#: ../plugins/time/pluma-time-dialog.ui.h:7
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:9
+#: ../plugins/time/pluma-time-dialog.ui.h:9
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:12
 #, no-c-format
 msgid "%d/%m/%Y %H:%M:%S"
 msgstr "%d/%m/%Y %H:%M:%S"
 
 #. Translators: This example should follow the date format defined in the
 #. entry above
-#: ../plugins/time/pluma-time-dialog.ui.h:8
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:11
+#: ../plugins/time/pluma-time-dialog.ui.h:10
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:14
 msgid "01/11/2009 17:52:00"
 msgstr "01/11/2009 17:52:00"
 
@@ -4963,10 +5098,10 @@ msgstr "01/11/2009 17:52:00"
 msgid "Configure date/time plugin"
 msgstr "የ ቀን/ሰአት ተሰኪ ማሰናጃ"
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:2
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:5
 msgid "When inserting date/time..."
 msgstr "ቀን/ሰአት በሚያስገቡ ጊዜ..."
 
-#: ../plugins/time/pluma-time-setup-dialog.ui.h:4
+#: ../plugins/time/pluma-time-setup-dialog.ui.h:7
 msgid "_Prompt for a format"
 msgstr "አቀረረብ መሞከሪያ"
