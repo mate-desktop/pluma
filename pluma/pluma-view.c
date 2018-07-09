@@ -647,32 +647,43 @@ pluma_view_scroll_to_cursor (PlumaView *view)
 }
 
 static void
-pluma_override_font (GtkWidget   *widget,
-		     const gchar *font)
+pluma_override_font (GtkWidget            *widget,
+		     PangoFontDescription *font)
 {
-	gchar          *css;
 	GtkCssProvider *provider;
-	gchar          *tempsize;
+	gchar          *css;
+	gchar          *family;
+	gchar          *weight;
+	const gchar    *style;
+	gchar          *size;
+
+	family = g_strdup_printf ("font-family: %s;", pango_font_description_get_family (font));
+
+	weight = g_strdup_printf ("font-weight: %d;", pango_font_description_get_weight (font));
+
+	if (pango_font_description_get_style (font) == PANGO_STYLE_NORMAL)
+		style = "font-style: normal;";
+	else if (pango_font_description_get_style (font) == PANGO_STYLE_ITALIC)
+		style = "font-style: italic;";
+	else
+		style = "font-style: oblique;";
+
+	size = g_strdup_printf ("font-size: %d%s;",
+				pango_font_description_get_size (font) / PANGO_SCALE,
+				pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
 
 	provider = gtk_css_provider_new ();
-	tempsize = g_strdup (font);
-
-	g_strreverse (tempsize);
-	g_strcanon (tempsize, "1234567890", '\0');
-	g_strreverse (tempsize);
-
-	gchar tempfont [strlen (font)];
-	strcpy (tempfont, font);
-	tempfont [strlen (font) - strlen (tempsize)] = 0;
-
-	css = g_strdup_printf ("textview { font-family: %s; font-size: %spt; }", tempfont, tempsize);
+	css = g_strdup_printf ("textview { %s %s %s %s }", family, weight, style, size);
 	gtk_css_provider_load_from_data (provider, css, -1, NULL);
-	g_free (css);
 
 	gtk_style_context_add_provider (gtk_widget_get_style_context (widget),
 					GTK_STYLE_PROVIDER (provider),
 					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	g_object_unref (provider);
+	g_free (css);
+	g_free (family);
+	g_free (weight);
+	g_free (size);
 }
 
 /* FIXME this is an issue for introspection */
@@ -713,7 +724,7 @@ pluma_view_set_font (PlumaView   *view,
 
 	g_return_if_fail (font_desc != NULL);
 
-	pluma_override_font (GTK_WIDGET (view), pango_font_description_to_string (font_desc));
+	pluma_override_font (GTK_WIDGET (view), font_desc);
 
 	pango_font_description_free (font_desc);		
 }
