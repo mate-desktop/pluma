@@ -650,6 +650,7 @@ static void
 pluma_override_font (GtkWidget            *widget,
 		     PangoFontDescription *font)
 {
+	static gboolean provider_added = FALSE;
 	GtkCssProvider *provider;
 	gchar          *css;
 	gchar          *family;
@@ -672,14 +673,18 @@ pluma_override_font (GtkWidget            *widget,
 				pango_font_description_get_size (font) / PANGO_SCALE,
 				pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
 
-	provider = gtk_css_provider_new ();
+	provider = gtk_css_provider_get_default ();
+
 	css = g_strdup_printf ("textview { %s %s %s %s }", family, weight, style, size);
 	gtk_css_provider_load_from_data (provider, css, -1, NULL);
 
-	gtk_style_context_add_provider (gtk_widget_get_style_context (widget),
-					GTK_STYLE_PROVIDER (provider),
-					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-	g_object_unref (provider);
+	if (!provider_added) {
+		gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
+							   GTK_STYLE_PROVIDER (provider),
+							   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+		provider_added = TRUE;
+	}
+
 	g_free (css);
 	g_free (family);
 	g_free (weight);
