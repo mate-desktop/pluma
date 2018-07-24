@@ -675,7 +675,7 @@ contextmenu_font_changed_cb (GSettings *settings,
 	sys_font_desc = get_system_font ();
 	if (sys_font_desc)
 	{
-		pluma_override_font (".context-menu", GTK_WIDGET (user_data), sys_font_desc);
+		pluma_override_font (".context-menu", NULL, sys_font_desc);
 		pango_font_description_free (sys_font_desc);
 	}
 }
@@ -718,10 +718,13 @@ pluma_override_font (const gchar          *item,
 	{
 		if (strstr (prov_str, ".context-menu"))
 		{
-			prov_str = g_strdelimit (prov_str, "}", '\0');
-			prov_str = g_strdup_printf ("%s}", prov_str);
+			g_strdelimit (prov_str, "}", '\0');
+			gchar *prov_new_str = g_strdup_printf ("%s}", prov_str);
+			css = g_strdup_printf ("%s %s { %s %s %s %s }", prov_new_str, item, family, weight, style, size);
+			g_free (prov_new_str);
 		}
-		css = g_strdup_printf ("%s %s { %s %s %s %s }", prov_str, item, family, weight, style, size);
+		else
+			css = g_strdup_printf ("%s %s { %s %s %s %s }", prov_str, item, family, weight, style, size);
 	}
 	else
 		css = g_strdup_printf ("%s { %s %s %s %s }", item, family, weight, style, size);
