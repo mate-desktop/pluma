@@ -338,6 +338,35 @@ pluma_window_key_press_event (GtkWidget   *widget,
 			if (!g_settings_get_boolean (settings, "use-default-font") && (nsize > 5))
 				g_settings_set_string (settings, "editor-font", g_strconcat (tempfont, tempsize, NULL));
 		}
+
+		if (g_settings_get_boolean (settings, "ctrl-tab-switch-tabs"))
+		{
+			GtkNotebook *notebook = GTK_NOTEBOOK (_pluma_window_get_notebook (PLUMA_WINDOW (window)));
+
+			int pages = gtk_notebook_get_n_pages (notebook);
+			int page_num = gtk_notebook_get_current_page (notebook);
+
+			if (event->keyval == GDK_KEY_ISO_Left_Tab)
+			{
+				if (page_num != 0)
+					gtk_notebook_prev_page (notebook);
+				else
+					gtk_notebook_set_current_page (notebook, (pages - 1));
+				return TRUE;
+			}
+
+			if (event->keyval == GDK_KEY_Tab)
+			{
+				if (page_num != (pages -1))
+					gtk_notebook_next_page (notebook);
+				else
+					gtk_notebook_set_current_page (notebook, 0);
+				return TRUE;
+			}
+		}
+		g_object_unref (settings);
+		g_free (font);
+		g_free (tempsize);
 	}
 
 	if (grand_parent_class == NULL)
