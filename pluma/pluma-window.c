@@ -3942,6 +3942,23 @@ on_extension_removed (PeasExtensionSet *extensions,
 	gtk_ui_manager_ensure_update (window->priv->manager);
 }
 
+static gboolean handle_keypress(PlumaWindow *window, GdkEventKey *event)
+{
+	guint keyval = event->keyval;
+	if (event->state & GDK_CONTROL_MASK)
+	{
+		if (keyval == GDK_KEY_Tab || keyval == GDK_KEY_KP_Tab || keyval == GDK_KEY_ISO_Left_Tab) {
+			if (event->state & GDK_SHIFT_MASK ) {
+				_pluma_cmd_documents_previous_document(event, window);
+			} else {
+				_pluma_cmd_documents_next_document(event, window);
+			}
+			return TRUE;
+		}
+	}
+	return FALSE;
+}
+
 static void
 pluma_window_init (PlumaWindow *window)
 {
@@ -4086,6 +4103,9 @@ pluma_window_init (PlumaWindow *window)
 	init_panels_visibility (window);
 
 	update_sensitivity_according_to_open_tabs (window);
+
+	/* Need to catch CTRL+TAB and CTRL+SHIFT+TAB*/
+	g_signal_connect(window, "key_press_event", G_CALLBACK(handle_keypress), window);
 
 	pluma_debug_message (DEBUG_WINDOW, "END");
 }
