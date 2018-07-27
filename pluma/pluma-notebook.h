@@ -119,11 +119,6 @@ void            pluma_notebook_move_tab		(PlumaNotebook *src,
 						 PlumaTab      *tab,
 						 gint           dest_position);
 
-/* FIXME: do we really need this function ? */
-void		pluma_notebook_set_always_show_tabs	
-						(PlumaNotebook *nb,
-						 gboolean       show_tabs);
-
 void		pluma_notebook_set_close_buttons_sensitive
 						(PlumaNotebook *nb,
 						 gboolean       sensitive);

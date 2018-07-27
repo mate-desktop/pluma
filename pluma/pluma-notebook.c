@@ -964,24 +964,6 @@ remove_tab_label (PlumaNotebook *nb,
 }
 
 /**
- * pluma_notebook_set_always_show_tabs:
- * @nb: a #PlumaNotebook
- * @show_tabs: %TRUE to always show the tabs
- *
- * Sets the visibility of the tabs in the @nb.
- */
-void
-pluma_notebook_set_always_show_tabs (PlumaNotebook *nb, 
-				     gboolean       show_tabs)
-{
-	g_return_if_fail (PLUMA_IS_NOTEBOOK (nb));
-
-	nb->priv->always_show_tabs = (show_tabs != FALSE);
-
-	update_tabs_visibility (nb, FALSE);
-}
-
-/**
  * pluma_notebook_add_tab:
  * @nb: a #PlumaNotebook
  * @tab: a #PlumaTab
