@@ -62,7 +62,6 @@ struct _PlumaNotebookPrivate
 	gint           x_start;
 	gint           y_start;
 	gint           drag_in_progress : 1;
-	gint	       always_show_tabs : 1;
 	gint           close_buttons_sensitive : 1;
 	gint           tab_drag_and_drop_enabled : 1;
 	guint          destroy_has_run : 1;
@@ -783,8 +782,7 @@ pluma_notebook_switch_page_cb (GtkNotebook     *notebook,
  * and the pref is not set.
  */
 static void
-update_tabs_visibility (PlumaNotebook *nb, 
-			gboolean       before_inserting)
+update_tabs_visibility (PlumaNotebook *nb)
 {
 	gboolean   show_tabs;
 	guint      num;
@@ -792,11 +790,9 @@ update_tabs_visibility (PlumaNotebook *nb,
 
 	num = gtk_notebook_get_n_pages (GTK_NOTEBOOK (nb));
 
-	if (before_inserting) num++;
-
-	show_tabs = (nb->priv->always_show_tabs || num > 1);
-
 	settings = g_settings_new ("org.mate.pluma");
+
+	show_tabs = (g_settings_get_boolean (settings, "show-single-tab") || num > 1);
 
 	if (g_settings_get_boolean (settings, "show-tabs-with-side-pane"))
 		gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), show_tabs);
@@ -807,6 +803,8 @@ update_tabs_visibility (PlumaNotebook *nb,
 		else
 			gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), show_tabs);
 	}
+
+	g_object_unref (settings);
 }
 
 static void
@@ -820,8 +818,6 @@ pluma_notebook_init (PlumaNotebook *notebook)
 	gtk_notebook_set_scrollable (GTK_NOTEBOOK (notebook), TRUE);
 	gtk_notebook_set_show_border (GTK_NOTEBOOK (notebook), FALSE);
 	gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
-
-	notebook->priv->always_show_tabs = TRUE;
 
 	g_signal_connect (notebook, 
 			  "button-press-event",
@@ -988,7 +984,7 @@ pluma_notebook_add_tab (PlumaNotebook *nb,
 				  GTK_WIDGET (tab),
 				  tab_label,
 				  position);
-	update_tabs_visibility (nb, TRUE);
+	update_tabs_visibility (nb);
 
 	g_signal_emit (G_OBJECT (nb), signals[TAB_ADDED], 0, tab);
 
@@ -1054,7 +1050,7 @@ remove_tab (PlumaTab      *tab,
 
 	remove_tab_label (nb, tab);
 	gtk_notebook_remove_page (GTK_NOTEBOOK (nb), position);
-	update_tabs_visibility (nb, FALSE);
+	update_tabs_visibility (nb);
 
 	g_signal_emit (G_OBJECT (nb), signals[TAB_REMOVED], 0, tab);
 

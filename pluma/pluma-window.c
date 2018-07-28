@@ -3623,7 +3623,18 @@ side_panel_visibility_changed (GtkWidget   *side_panel,
 	settings = g_settings_new ("org.mate.pluma");
 
 	if (!g_settings_get_boolean (settings, "show-tabs-with-side-pane"))
-		gtk_notebook_set_show_tabs (GTK_NOTEBOOK (window->priv->notebook), !visible);
+	{
+		if (visible)
+			gtk_notebook_set_show_tabs (GTK_NOTEBOOK (window->priv->notebook), FALSE);
+		else
+			gtk_notebook_set_show_tabs (GTK_NOTEBOOK (window->priv->notebook),
+						    g_settings_get_boolean (settings, "show-single-tab") ||
+						    (gtk_notebook_get_n_pages (GTK_NOTEBOOK (window->priv->notebook)) > 1));
+	}
+	else
+		gtk_notebook_set_show_tabs (GTK_NOTEBOOK (window->priv->notebook),
+					    g_settings_get_boolean (settings, "show-single-tab") ||
+					    (gtk_notebook_get_n_pages (GTK_NOTEBOOK (window->priv->notebook)) > 1));
 
 	if (pluma_prefs_manager_side_pane_visible_can_set ())
 		pluma_prefs_manager_set_side_pane_visible (visible);
@@ -3638,6 +3649,8 @@ side_panel_visibility_changed (GtkWidget   *side_panel,
 	if (!visible && window->priv->active_tab != NULL)
 		gtk_widget_grab_focus (GTK_WIDGET (
 				pluma_tab_get_view (PLUMA_TAB (window->priv->active_tab))));
+
+	g_object_unref (settings);
 }
 
 static void
