@@ -352,7 +352,7 @@ pluma_window_key_press_event (GtkWidget   *widget,
 					gtk_notebook_prev_page (notebook);
 				else
 					gtk_notebook_set_current_page (notebook, (pages - 1));
-				return TRUE;
+				handled = TRUE;
 			}
 
 			if (event->keyval == GDK_KEY_Tab)
@@ -361,7 +361,7 @@ pluma_window_key_press_event (GtkWidget   *widget,
 					gtk_notebook_next_page (notebook);
 				else
 					gtk_notebook_set_current_page (notebook, 0);
-				return TRUE;
+				handled = TRUE;
 			}
 		}
 		g_object_unref (settings);
