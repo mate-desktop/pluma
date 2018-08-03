@@ -651,11 +651,12 @@ pluma_override_font (GtkWidget            *widget,
 		     PangoFontDescription *font)
 {
 	static gboolean provider_added = FALSE;
-	GtkCssProvider *provider;
+	static GtkCssProvider *provider;
 	gchar          *css;
 	gchar          *family;
 	gchar          *weight;
 	const gchar    *style;
+	GString        *string;
 	gchar          *size;
 
 	family = g_strdup_printf ("font-family: %s;", pango_font_description_get_family (font));
@@ -672,10 +673,20 @@ pluma_override_font (GtkWidget            *widget,
 	size = g_strdup_printf ("font-size: %d%s;",
 				pango_font_description_get_size (font) / PANGO_SCALE,
 				pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
+	if (!provider_added)
+		provider = gtk_css_provider_new ();
 
-	provider = gtk_css_provider_get_default ();
-
-	css = g_strdup_printf ("textview { %s %s %s %s }", family, weight, style, size);
+	/*Build a cssprovider that uses "initial" to exclude the context menu*/
+	string = g_string_new(NULL);
+	g_string_append (string, "textview menu {font-size: initial; font-family: initial; ");
+	g_string_append (string,"font-weight: initial; font-style: initial;}");
+	g_string_append (string, "textview {");
+	g_string_append (string,family);
+	g_string_append (string, weight);
+	g_string_append (string, style);
+	g_string_append (string,size);
+	g_string_append (string, "}");
+	css = g_string_free (string, FALSE);
 	gtk_css_provider_load_from_data (provider, css, -1, NULL);
 
 	if (!provider_added) {
