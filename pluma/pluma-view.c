@@ -686,7 +686,7 @@ pluma_override_font (const gchar          *item,
 		     PangoFontDescription *font)
 {
 	static gboolean provider_added = FALSE;
-	static GtkCssProvider *provider; /*We need to keep this as long as Pluma is running*/
+	GtkCssProvider *provider;
 	gchar          *prov_str;
 	gchar          *css;
 	gchar          *family;
@@ -709,8 +709,7 @@ pluma_override_font (const gchar          *item,
 				pango_font_description_get_size (font) / PANGO_SCALE,
 				pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
 
-	if (!provider_added)
-		provider = gtk_css_provider_new ();
+	provider = gtk_css_provider_get_default ();
 
 	prov_str = gtk_css_provider_to_string (provider);
 
@@ -730,7 +729,7 @@ pluma_override_font (const gchar          *item,
 
 	if (!provider_added)
 	{
-		static GSettings *settings; /*We need this for the life of the provider and program*/
+		GSettings *settings;
 		settings = g_settings_new ("org.mate.interface");
 		g_signal_connect (settings,
 				  "changed::" "font-name",
