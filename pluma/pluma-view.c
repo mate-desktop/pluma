@@ -667,15 +667,15 @@ static PangoFontDescription* get_system_font (void)
 }
 
 static void
-contextmenu_font_changed_cb (GSettings *settings,
-			     gchar     *key,
-			     gpointer   user_data)
+system_font_changed_cb (GSettings *settings,
+			gchar     *key,
+			gpointer   user_data)
 {
 	PangoFontDescription *sys_font_desc = NULL;
 	sys_font_desc = get_system_font ();
 	if (sys_font_desc)
 	{
-		pluma_override_font (".context-menu", NULL, sys_font_desc);
+		pluma_override_font ("label", NULL, sys_font_desc);
 		pango_font_description_free (sys_font_desc);
 	}
 }
@@ -714,9 +714,9 @@ pluma_override_font (const gchar          *item,
 
 	prov_str = gtk_css_provider_to_string (provider);
 
-	if (g_str_has_prefix (prov_str, "textview") && g_str_has_prefix (item, ".context-menu"))
+	if (g_str_has_prefix (prov_str, "textview") && g_str_has_prefix (item, "label"))
 	{
-		if (strstr (prov_str, ".context-menu"))
+		if (strstr (prov_str, "label"))
 		{
 			g_strdelimit (prov_str, "}", '\0');
 			gchar *prov_new_str = g_strdup_printf ("%s}", prov_str);
@@ -737,7 +737,7 @@ pluma_override_font (const gchar          *item,
 		settings = g_settings_new ("org.mate.interface");
 		g_signal_connect (settings,
 				  "changed::" "font-name",
-				  G_CALLBACK (contextmenu_font_changed_cb), NULL);
+				  G_CALLBACK (system_font_changed_cb), NULL);
 
 		gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
 							   GTK_STYLE_PROVIDER (provider),
@@ -795,7 +795,7 @@ pluma_view_set_font (PlumaView   *view,
 
 	sys_font_desc = get_system_font ();
 	if (sys_font_desc) {
-		pluma_override_font (".context-menu", GTK_WIDGET (view), sys_font_desc);
+		pluma_override_font ("label", GTK_WIDGET (view), sys_font_desc);
 		pango_font_description_free (sys_font_desc);
 	}
 
