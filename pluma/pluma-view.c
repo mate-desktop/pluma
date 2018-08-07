@@ -646,53 +646,18 @@ pluma_view_scroll_to_cursor (PlumaView *view)
 				      0.0);
 }
 
-static PangoFontDescription* get_system_font (void)
-{
-	PangoFontDescription *desc = NULL;
-	GSettings *settings;
-	char *name;
-
-	settings = g_settings_new ("org.mate.interface");
-	name = g_settings_get_string (settings, "font-name");
-
-	if (name)
-	{
-		desc = pango_font_description_from_string (name);
-		g_free (name);
-	}
-
-	g_object_unref (settings);
-
-	return desc;
-}
-
 static void
-contextmenu_font_changed_cb (GSettings *settings,
-			     gchar     *key,
-			     gpointer   user_data)
-{
-	PangoFontDescription *sys_font_desc = NULL;
-	sys_font_desc = get_system_font ();
-	if (sys_font_desc)
-	{
-		pluma_override_font (".context-menu", NULL, sys_font_desc);
-		pango_font_description_free (sys_font_desc);
-	}
-}
-
-void
-pluma_override_font (const gchar          *item,
-		     GtkWidget            *widget,
-		     PangoFontDescription *font)
+pluma_override_font (GtkWidget            *widget,
+		             PangoFontDescription *font)
 {
 	static gboolean provider_added = FALSE;
-	static GtkCssProvider *provider; /*We need to keep this as long as Pluma is running*/
-	gchar          *prov_str;
+	static GtkCssProvider *provider;
 	gchar          *css;
 	gchar          *family;
 	gchar          *weight;
-	const gchar    *style;
 	gchar          *size;
+	const gchar    *style;
+	GString        *string;
 
 	family = g_strdup_printf ("font-family: %s;", pango_font_description_get_family (font));
 
@@ -709,47 +674,38 @@ pluma_override_font (const gchar          *item,
 				pango_font_description_get_size (font) / PANGO_SCALE,
 				pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
 
-	if (!provider_added)
+	/*Create a cssprovider if we don't already have it*/
+	if (!provider_added){
 		provider = gtk_css_provider_new ();
-
-	prov_str = gtk_css_provider_to_string (provider);
-
-	if (g_str_has_prefix (prov_str, "textview") && g_str_has_prefix (item, ".context-menu"))
-	{
-		if (strstr (prov_str, ".context-menu"))
-		{
-			g_strdelimit (prov_str, "}", '\0');
-			gchar *prov_new_str = g_strdup_printf ("%s}", prov_str);
-			css = g_strdup_printf ("%s %s { %s %s %s %s }", prov_new_str, item, family, weight, style, size);
-			g_free (prov_new_str);
-		}
-		else
-			css = g_strdup_printf ("%s %s { %s %s %s %s }", prov_str, item, family, weight, style, size);
-	}
-	else
-		css = g_strdup_printf ("%s { %s %s %s %s }", item, family, weight, style, size);
-
-	gtk_css_provider_load_from_data (provider, css, -1, NULL);
-
-	if (!provider_added)
-	{
-		static GSettings *settings; /*We need this for the life of the provider and program*/
-		settings = g_settings_new ("org.mate.interface");
-		g_signal_connect (settings,
-				  "changed::" "font-name",
-				  G_CALLBACK (contextmenu_font_changed_cb), NULL);
+		/*Just initialize it for now, we will write to it later*/
+		gtk_css_provider_load_from_data (provider, "", -1, NULL);
 
 		gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
 							   GTK_STYLE_PROVIDER (provider),
 							   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 		provider_added = TRUE;
-	}
+		}
+
+	/*Build a css string that uses "initial" to exclude the context menu*/
+	string = g_string_new(NULL);
+	g_string_append (string, "textview menu {font-size: initial; font-family: initial; ");
+	g_string_append (string,"font-weight: initial; font-style: initial;}");
+	g_string_append (string, "textview {");
+	g_string_append (string,family);
+	g_string_append (string, weight);
+	g_string_append (string, style);
+	g_string_append (string,size);
+	g_string_append (string, "}");
+	/*This frees the string while transferrring the data to gchar css  */
+	css = g_string_free (string, FALSE);
+
+	/*Write the css to the existing provider*/
+	gtk_css_provider_load_from_data (provider, css, -1, NULL);
 
 	g_free (css);
 	g_free (family);
 	g_free (weight);
 	g_free (size);
-	g_free (prov_str);
 }
 
 /* FIXME this is an issue for introspection */
@@ -768,7 +724,6 @@ pluma_view_set_font (PlumaView   *view,
 		     const gchar *font_name)
 {
 	PangoFontDescription *font_desc = NULL;
-	PangoFontDescription *sys_font_desc = NULL;
 
 	pluma_debug (DEBUG_VIEW);
 
@@ -791,13 +746,7 @@ pluma_view_set_font (PlumaView   *view,
 
 	g_return_if_fail (font_desc != NULL);
 
-	pluma_override_font ("textview", GTK_WIDGET (view), font_desc);
-
-	sys_font_desc = get_system_font ();
-	if (sys_font_desc) {
-		pluma_override_font (".context-menu", GTK_WIDGET (view), sys_font_desc);
-		pango_font_description_free (sys_font_desc);
-	}
+	pluma_override_font (GTK_WIDGET (view), font_desc);
 
 	pango_font_description_free (font_desc);		
 }
