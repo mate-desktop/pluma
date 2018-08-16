@@ -107,6 +107,8 @@ static void	pluma_view_dispose		(GObject          *object);
 static void	pluma_view_finalize		(GObject          *object);
 static gint     pluma_view_focus_out		(GtkWidget        *widget,
 						 GdkEventFocus    *event);
+static gboolean pluma_view_scroll_event         (GtkWidget        *widget,
+                                                 GdkEventScroll   *event);
 static gboolean pluma_view_drag_motion		(GtkWidget        *widget,
 						 GdkDragContext   *context,
 						 gint              x,
@@ -181,6 +183,36 @@ document_read_only_notify_handler (PlumaDocument *document,
 				    !pluma_document_get_readonly (document));
 }
 
+static gboolean
+pluma_view_scroll_event (GtkWidget      *widget,
+                         GdkEventScroll *event)
+{
+	if (event->direction == GDK_SCROLL_UP)
+	{
+		event->delta_x = 0;
+		event->delta_y = -1;
+	}
+	else if (event->direction == GDK_SCROLL_DOWN)
+	{
+		event->delta_x = 0;
+		event->delta_y = 1;
+	}
+	else if (event->direction == GDK_SCROLL_LEFT)
+	{
+		event->delta_x = -1;
+		event->delta_y = 0;
+	}
+	else if (event->direction == GDK_SCROLL_RIGHT)
+	{
+		event->delta_x = 1;
+		event->delta_y = 0;
+	}
+
+	event->direction = GDK_SCROLL_SMOOTH;
+
+	return FALSE;
+}
+
 static void
 pluma_view_class_init (PlumaViewClass *klass)
 {
@@ -195,6 +227,7 @@ pluma_view_class_init (PlumaViewClass *klass)
 
 	widget_class->focus_out_event = pluma_view_focus_out;
 	widget_class->draw = pluma_view_draw;
+	widget_class->scroll_event = pluma_view_scroll_event;
 	
 	/*
 	 * Override the gtk_text_view_drag_motion and drag_drop
