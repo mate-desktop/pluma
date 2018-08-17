@@ -434,10 +434,12 @@ sort_real (SortDialog *dialog)
 					&start,
 					lines[i],
 					-1);
-		gtk_text_buffer_insert (GTK_TEXT_BUFFER (doc),
-					&start,
-					"\n",
-					-1);
+
+		if (i < (num_lines - 1))
+			gtk_text_buffer_insert (GTK_TEXT_BUFFER (doc),
+						&start,
+						"\n",
+						-1);
 
 		last_row = lines[i];
 	}
