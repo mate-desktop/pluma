@@ -650,12 +650,58 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 	g_type_class_add_private (object_class, sizeof(PlumaDocumentPrivate));
 }
 
+static gboolean
+file_with_bom (GFile *file)
+{
+	FILE    *testfile;
+	gchar    c;
+	int      i;
+	gchar   *bom;
+	gchar   *file_path;
+	gboolean has_bom;
+
+	file_path = g_file_get_path (file);
+
+	testfile = fopen (file_path, "r");
+
+	g_free (file_path);
+
+	if (testfile == NULL)
+	{
+		perror ("fopen");
+		return FALSE;
+	}
+
+	bom = "";
+
+	for (i = 0; i < 3; i++)
+	{
+		c = fgetc (testfile);
+
+		if (c == EOF)
+			break;
+		else
+			bom = g_strdup_printf ("%s%c", bom, c);
+	}
+
+	fclose (testfile);
+
+	if (g_strcmp0 (bom, "\357\273\277") == 0)
+		has_bom = TRUE;
+	else
+		has_bom = FALSE;
+
+	g_free (bom);
+	return has_bom;
+}
+
 static void
 set_language (PlumaDocument     *doc, 
               GtkSourceLanguage *lang,
               gboolean           set_by_user)
 {
 	GtkSourceLanguage *old_lang;
+	const gchar       *bom_langs;
 
 	pluma_debug (DEBUG_DOCUMENT);
 	
@@ -664,7 +710,20 @@ set_language (PlumaDocument     *doc,
 	if (old_lang == lang)
 		return;
 
-	gtk_source_buffer_set_language (GTK_SOURCE_BUFFER (doc), lang);
+	bom_langs = "asp,dtl,docbook,html,mxml,mallard,markdown,mediawiki,php,tera,xml,xslt";
+
+	if (g_strrstr (bom_langs, gtk_source_language_get_id (lang)))
+	{
+		GFile *file;
+		file = pluma_document_get_location (doc);
+
+		if (!file_with_bom (file))
+			gtk_source_buffer_set_language (GTK_SOURCE_BUFFER (doc), lang);
+
+		g_object_unref (file);
+	}
+	else
+		gtk_source_buffer_set_language (GTK_SOURCE_BUFFER (doc), lang);
 
 	if (lang != NULL)
 		gtk_source_buffer_set_highlight_syntax (GTK_SOURCE_BUFFER (doc),
