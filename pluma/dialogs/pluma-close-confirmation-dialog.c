@@ -776,7 +776,11 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (select_label), treeview);
 
-	gtk_widget_show_all (hbox);	
+	gtk_widget_show_all (hbox);
+
+	int new_width, new_height;
+	gtk_window_get_size (GTK_WINDOW (GTK_DIALOG (dlg)), &new_width, &new_height);
+	gtk_window_set_default_size (GTK_WINDOW (GTK_DIALOG (dlg)), new_width, new_height);
 }
 
 static void
