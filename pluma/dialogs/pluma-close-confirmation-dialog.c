@@ -674,17 +674,22 @@ static void
 build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 {
 	PlumaCloseConfirmationDialogPrivate *priv;
-	GtkWidget *hbox;
-	GtkWidget *image;
-	GtkWidget *vbox;
-	GtkWidget *primary_label;
-	GtkWidget *vbox2;
-	GtkWidget *select_label;
-	GtkWidget *scrolledwindow;
-	GtkWidget *treeview;
-	GtkWidget *secondary_label;
-	gchar     *str;
-	gchar     *markup_str;
+	GtkWidget   *hbox;
+	GtkWidget   *image;
+	GtkWidget   *vbox;
+	GtkWidget   *primary_label;
+	GtkWidget   *vbox2;
+	GtkWidget   *select_label;
+	GtkWidget   *scrolledwindow;
+	GtkWidget   *treeview;
+	GtkWidget   *secondary_label;
+	GdkDisplay  *display;
+	GdkRectangle mon_geo;
+	gchar       *str;
+	gchar       *markup_str;
+	gint         new_width;
+	gint         new_height;
+	gint         max_height;
 
 	priv = dlg->priv;
 
@@ -750,6 +755,7 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 	gtk_widget_set_can_focus (GTK_WIDGET (select_label), FALSE);
 
 	scrolledwindow = gtk_scrolled_window_new (NULL, NULL);
+	gtk_scrolled_window_set_propagate_natural_height (GTK_SCROLLED_WINDOW (scrolledwindow), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), scrolledwindow, TRUE, TRUE, 0);
 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow), 
 					GTK_POLICY_AUTOMATIC, 
@@ -778,9 +784,21 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 
 	gtk_widget_show_all (hbox);
 
-	int new_width, new_height;
 	gtk_window_get_size (GTK_WINDOW (GTK_DIALOG (dlg)), &new_width, &new_height);
-	gtk_window_set_default_size (GTK_WINDOW (GTK_DIALOG (dlg)), new_width, new_height);
+
+	display = gtk_widget_get_display (scrolledwindow);
+
+	gdk_monitor_get_geometry (gdk_display_get_primary_monitor (display), &mon_geo);
+
+	max_height = mon_geo.height * 40 / 100;
+
+	if (new_height > max_height)
+	{
+		gtk_window_set_resizable (GTK_WINDOW (GTK_DIALOG (dlg)), TRUE);
+		gtk_window_resize (GTK_WINDOW (GTK_DIALOG (dlg)), new_width, max_height);
+	}
+	else
+		gtk_window_set_default_size (GTK_WINDOW (GTK_DIALOG (dlg)), new_width, new_height);
 }
 
 static void
