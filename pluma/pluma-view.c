@@ -2137,6 +2137,18 @@ show_line_numbers_menu (GtkWidget      *view,
 static gboolean
 pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
 {
+	static gchar  *primtxt = "";
+
+	gchar *txt_clip = gtk_clipboard_wait_for_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY));
+
+	if (txt_clip)
+	{
+		primtxt = g_strdup (txt_clip);
+		g_free (txt_clip);
+	}
+	else
+		gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY), primtxt, strlen (primtxt));
+
 	if ((event->type == GDK_BUTTON_PRESS) && 
 	    (event->window == gtk_text_view_get_window (GTK_TEXT_VIEW (widget),
 						        GTK_TEXT_WINDOW_LEFT)))
