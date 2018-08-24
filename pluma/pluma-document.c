@@ -656,9 +656,8 @@ file_with_bom (GFile *file)
 	FILE    *testfile;
 	gchar    c;
 	int      i;
-	gchar   *bom;
+	gchar    bom[3];
 	gchar   *file_path;
-	gboolean has_bom;
 
 	file_path = g_file_get_path (file);
 
@@ -672,8 +671,6 @@ file_with_bom (GFile *file)
 		return FALSE;
 	}
 
-	bom = "";
-
 	for (i = 0; i < 3; i++)
 	{
 		c = fgetc (testfile);
@@ -681,18 +678,17 @@ file_with_bom (GFile *file)
 		if (c == EOF)
 			break;
 		else
-			bom = g_strdup_printf ("%s%c", bom, c);
+			bom[i] = c;
 	}
 
 	fclose (testfile);
 
-	if (g_strcmp0 (bom, "\357\273\277") == 0)
-		has_bom = TRUE;
+	if ((bom[0] == '\357') &&
+	    (bom[1] == '\273') &&
+	    (bom[2] == '\277'))
+		return TRUE;
 	else
-		has_bom = FALSE;
-
-	g_free (bom);
-	return has_bom;
+		return FALSE;
 }
 
 static void
