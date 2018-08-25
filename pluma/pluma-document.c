@@ -2113,7 +2113,7 @@ pluma_document_search_backward (PlumaDocument     *doc,
 								  search_flags,
 								  &m_start,
 								  &m_end,
-								  end,
+								  start,
 								  FALSE,
 								  &doc->priv->last_replace_text);
 		}

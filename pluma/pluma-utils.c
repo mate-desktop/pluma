@@ -1570,47 +1570,47 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 	gchar *text;
 	GtkTextIter *begin_iter;
 	GtkTextIter *end_iter;
-	gchar **all_matches;
 	gchar *match_string;
 	gboolean found;
-    gint non_null_result_number;
-    gboolean non_null_result_found;
-    guint result_size;
-	
+
+	match_string = "";
 	compile_flags = 0;
+
 	if ((flags & GTK_TEXT_SEARCH_CASE_INSENSITIVE) != 0)
-        	compile_flags |= G_REGEX_CASELESS;
+		compile_flags |= G_REGEX_CASELESS;
 
 	regex = g_regex_new (str,compile_flags,0,NULL);
+
 	if (regex == NULL)
 		return FALSE;
 
-    begin_iter = gtk_text_iter_copy (iter);
+	begin_iter = gtk_text_iter_copy (iter);
+
 	if (limit == NULL)
 	{
-        end_iter = gtk_text_iter_copy (begin_iter);
-        if (forward_search)
+		end_iter = gtk_text_iter_copy (begin_iter);
+		if (forward_search)
 		{
-        gtk_text_buffer_get_end_iter (gtk_text_iter_get_buffer(begin_iter),
-					     end_iter);
+			gtk_text_buffer_get_end_iter (gtk_text_iter_get_buffer(begin_iter),
+						      end_iter);
 		}
 		else
 		{
-        gtk_text_buffer_get_start_iter (gtk_text_iter_get_buffer (begin_iter),
-					       end_iter);
+			gtk_text_buffer_get_start_iter (gtk_text_iter_get_buffer (begin_iter),
+							end_iter);
 		}
 	}
 	else
 	{
-        end_iter = gtk_text_iter_copy (limit);
+		end_iter = gtk_text_iter_copy (limit);
 	}
 
 	if ((flags & GTK_TEXT_SEARCH_TEXT_ONLY) != 0)
 	{
 		if ((flags & GTK_TEXT_SEARCH_VISIBLE_ONLY) != 0)
-            text = gtk_text_iter_get_visible_text (begin_iter, end_iter);
+			text = gtk_text_iter_get_visible_text (begin_iter, end_iter);
 		else
-            text = gtk_text_iter_get_text (begin_iter, end_iter);
+			text = gtk_text_iter_get_text (begin_iter, end_iter);
 	}
 	else if ((flags & GTK_TEXT_SEARCH_VISIBLE_ONLY) != 0)
 		text = gtk_text_iter_get_visible_slice (begin_iter, end_iter);
@@ -1618,6 +1618,7 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 		text = gtk_text_iter_get_slice (begin_iter, end_iter);
 
 	found = g_regex_match (regex, text, 0, &match_info);
+
 	if (!found)
 		goto free_resources;
 
@@ -1627,28 +1628,18 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 								*replace_text,
 								NULL);
 	}
-	all_matches = g_match_info_fetch_all (match_info);
 
-	result_size = (gint) g_strv_length (all_matches);
-	non_null_result_number = (forward_search) ? 0 : (result_size -1);
-
-	non_null_result_found = FALSE;
-	while((non_null_result_number >= 0)
-	      && (non_null_result_number < result_size) )
+	while (g_match_info_matches (match_info))
 	{
-		non_null_result_found = g_utf8_strlen (all_matches [non_null_result_number], G_MAXSSIZE) != 0;
-		if (non_null_result_found)
+		match_string = g_match_info_fetch (match_info, 0);
+
+		if (forward_search)
 			break;
 
-		non_null_result_number += (forward_search) ? 1 : -1;
+		g_match_info_next (match_info, NULL);
 	}
 
-	if(!non_null_result_found) {
-		found = FALSE;
-		goto free_resources;
-	}
 
-	match_string = all_matches [non_null_result_number];
 	if (forward_search)
 	{
 		gtk_text_iter_forward_search (begin_iter,
@@ -1667,8 +1658,8 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 	}
 
 free_resources:
-    gtk_text_iter_free (begin_iter);
-    gtk_text_iter_free (end_iter);
+	gtk_text_iter_free (begin_iter);
+	gtk_text_iter_free (end_iter);
 	g_match_info_free (match_info);
 	g_regex_unref (regex);
 	return found;
