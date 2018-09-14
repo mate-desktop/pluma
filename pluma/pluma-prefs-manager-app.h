@@ -35,7 +35,7 @@
 #include <glib.h>
 #include <pluma/pluma-prefs-manager.h>
 
-/** LIFE CYCLE MANAGEMENT FUNCTIONS **/
+/* LIFE CYCLE MANAGEMENT FUNCTIONS */
 
 gboolean	 pluma_prefs_manager_app_init			(void);
 
