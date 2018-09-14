@@ -1167,7 +1167,7 @@ pluma_document_get_short_name_for_display (PlumaDocument *doc)
 /**
  * pluma_document_set_short_name_for_display:
  * @doc:
- * @short_name: (allow-none):
+ * @name: (allow-none):
  */
 void
 pluma_document_set_short_name_for_display (PlumaDocument *doc,

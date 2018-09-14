@@ -227,7 +227,7 @@ pluma_message_type_is_supported (GType type)
  * @object_path: (allow-none): the object path
  * @method: (allow-none): the method
  * @num_optional: number of optional arguments
- * @var_args: key/gtype pair variable argument list
+ * @va_args: key/gtype pair variable argument list
  *
  * Create a new #PlumaMessageType for @method at @object_path. Argument names
  * and values are supplied by the NULL terminated variable argument list.
@@ -320,10 +320,10 @@ pluma_message_type_set (PlumaMessageType *message_type,
  * pluma_message_type_set_valist:
  * @message_type: the #PlumaMessageType
  * @num_optional: number of optional arguments
- * @var_args: key/gtype pair variable argument list
+ * @va_args: key/gtype pair variable argument list
  *
  * Sets argument names/types supplied by the NULL terminated variable
- * argument list @var_args. The last @num_optional provided arguments are 
+ * argument list @va_args. The last @num_optional provided arguments are 
  * considered optional.
  *
  */

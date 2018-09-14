@@ -714,8 +714,8 @@ pluma_utils_uri_get_dirname (const gchar *uri)
 }
 
 /**
- * pluma_utils_location_get_dirname_for_display
- * @file: the location
+ * pluma_utils_location_get_dirname_for_display:
+ * @location: the location
  *
  * Returns a string suitable to be displayed in the UI indicating
  * the name of the directory where the file is located.
