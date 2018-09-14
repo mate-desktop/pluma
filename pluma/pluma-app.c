@@ -667,7 +667,7 @@ is_in_viewport (PlumaWindow  *window,
 }
 
 /**
- * _pluma_app_get_window_in_viewport
+ * _pluma_app_get_window_in_viewport:
  * @app: the #PlumaApp
  * @screen: the #GdkScreen
  * @workspace: the workspace number
