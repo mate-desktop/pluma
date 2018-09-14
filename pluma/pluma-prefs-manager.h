@@ -129,7 +129,7 @@ typedef enum {
 	PLUMA_TOOLBAR_ICONS_BOTH_HORIZ
 } PlumaToolbarSetting;
 
-/** LIFE CYCLE MANAGEMENT FUNCTIONS **/
+/* LIFE CYCLE MANAGEMENT FUNCTIONS */
 
 gboolean		 pluma_prefs_manager_init (void);
 
@@ -137,7 +137,7 @@ gboolean		 pluma_prefs_manager_init (void);
 void			 pluma_prefs_manager_shutdown (void);
 
 
-/** PREFS MANAGEMENT FUNCTIONS **/
+/* PREFS MANAGEMENT FUNCTIONS */
 
 /* Use default font */
 gboolean 		 pluma_prefs_manager_get_use_default_font 	(void);
