@@ -96,7 +96,7 @@
 		<othercredit role="reviewer">
 			<firstname>Baris</firstname>
 			<surname>Cicek provided information from earlier revisions of the pluma application.</surname>
-			<contrib>Acknowledgements</contrib>
+			<contrib>Acknowledgments</contrib>
     </othercredit>
 		<othercredit role="reviewer">
 			<firstname>Ajit</firstname>
@@ -328,7 +328,7 @@
 		  <varlistentry> <term>Side Pane</term>
 			 <listitem>
 				<para>The side pane displays a list of open documents, and other information depending on which plugins are enabled.</para>
-				<para>By default the side pane is not shown. To show it, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Side Pane</guimenuitem></menuchoice>.</para>
+				<para>By default, the side pane is not shown. To show it, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Side Pane</guimenuitem></menuchoice>.</para>
 			 </listitem>
 		  </varlistentry>
 		  <varlistentry> <term>Bottom Pane</term>
@@ -349,7 +349,7 @@
 		<para>You can run <application>&app;</application> from a command line and open a single file or multiple files. To open multiple files from a command line, type the following command, then press <keycap>Return</keycap>:</para>
 		<para><command>pluma <replaceable>file1.txt file2.txt file3.txt</replaceable></command></para>
 		<para>Alternatively, you can specify a URI instead of a filename.</para>
-    <para>For more information on how to run <application>&app;</application> from a command line, see the unix manual page for &app;, <ulink url="man:pluma" type="man"><citerefentry><refentrytitle>&app;</refentrytitle><manvolnum>1</manvolnum></citerefentry></ulink>.</para>
+    <para>For more information on how to run <application>&app;</application> from a command line, see the Unix manual page for &app;, <ulink url="man:pluma" type="man"><citerefentry><refentrytitle>&app;</refentrytitle><manvolnum>1</manvolnum></citerefentry></ulink>.</para>
 	 </sect2>
   </sect1>
 <!-- ================ Usage ================================ -->
@@ -382,7 +382,7 @@
 		  </listitem>
 		  <listitem><para>To save a new file or to save an existing file under a new filename, choose <menuchoice> <guimenu>File</guimenu> <guimenuitem>Save As</guimenuitem> </menuchoice>. Enter a name for the file in the <guilabel>Save As</guilabel> dialog, then click <guibutton>Save</guibutton>. </para>
 		  </listitem>
-		  <listitem><para>To save all of the files that are currently open in <application>&app;</application>, choose <menuchoice> <guimenu>Documents</guimenu> <guimenuitem>Save All</guimenuitem> </menuchoice>.</para>
+		  <listitem><para>To save all the files that are currently open in <application>&app;</application>, choose <menuchoice> <guimenu>Documents</guimenu> <guimenuitem>Save All</guimenuitem> </menuchoice>.</para>
 		  </listitem>
 		</itemizedlist>
 		<para>To close all of the files that are currently open in <application>&app;</application>, choose <menuchoice> <guimenu>Documents</guimenu> <guimenuitem>Close All</guimenuitem> </menuchoice>.</para>
@@ -406,7 +406,7 @@
 		<para>Click <guibutton>Open</guibutton>.</para>
 		</listitem>
 		</orderedlist>
-		<para>Valid types of <replaceable>URI</replaceable> include <literal>http:</literal>, <literal>ftp:</literal>, <literal>file:</literal>, and all of the methods supported by <literal>mate-vfs</literal>.</para>
+		<para>Valid types of <replaceable>URI</replaceable> include <literal>http:</literal>, <literal>ftp:</literal>, <literal>file:</literal>, and all the methods supported by <literal>mate-vfs</literal>.</para>
 		<para>Files from some types of URI are opened as read-only, and any changes you make must be saved to a different location. HTTP only allows files to be read. Files opened from FTP are read-only because because not all FTP servers may correctly work with saving remote files.</para>
 		<warning><para>Saving to FTP servers can be enabled with <ulink type="help" url="help:mateconf-editor"><application>Configuration Editor</application></ulink>, setting the key <systemitem>/apps/pluma/preferences/editor/save/writable_vfs_schemes</systemitem>, but this may cause errors.</para></warning>
 	 </sect2>
@@ -440,7 +440,7 @@
 		  </listitem>
 		  <listitem><para>To insert the contents of the clipboard at the cursor position, choose <menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Paste</guimenuitem> </menuchoice>. You must cut or copy text before you can paste text into the file, either from &app; or another application.</para>
 		  </listitem>
-		  <listitem><para>To select all of the text in a file, choose <menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Select All</guimenuitem> </menuchoice>. </para>
+		  <listitem><para>To select all the text in a file, choose <menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Select All</guimenuitem> </menuchoice>. </para>
 		  </listitem>
 		</itemizedlist>
 	 </sect2>
@@ -612,13 +612,13 @@
 	 	<variablelist>
 		  <varlistentry> <term><guilabel>Body</guilabel> </term>
 			 <listitem>
-				<para>Click on this button to select the font to use to print the body text of a file.</para>
+				<para>Click on this button to select the font used to print the body text of a file.</para>
 			 </listitem>
 		  </varlistentry>
 		  <varlistentry> <term><guilabel>Line numbers</guilabel>
 			 </term>
 			 <listitem>
-				<para>Click on this button to select the font to use to print line numbers.</para>
+				<para>Click on this button to select the font used to print line numbers.</para>
 			 </listitem>
 		  </varlistentry>
 		  <varlistentry> <term><guilabel>Headers and footers</guilabel> </term>
@@ -659,7 +659,7 @@
 				<itemizedlist>
 				<listitem>
 				<para><guilabel>All</guilabel></para>
-				<para>Select this option to print all of the pages in the file.</para>
+				<para>Select this option to print all the pages in the file.</para>
 				</listitem>
 				<listitem>
 				<para><guilabel>Lines</guilabel></para>
