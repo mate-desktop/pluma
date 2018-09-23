@@ -101,7 +101,7 @@
 		<othercredit role="reviewer">
 			<firstname>Ajit</firstname>
 			<surname>George provided information about plugins.</surname>
-			<contrib>Acknowledgements</contrib>
+			<contrib>Acknowledgments</contrib>
     </othercredit>
 
 
@@ -299,7 +299,7 @@
 		<variablelist>
 		  <varlistentry> <term>Menubar</term>
 			 <listitem>
-				<para>The menus on the menubar contain all of the commands you need to work with files in <application>&app;</application>.</para>
+				<para>The menus on the menubar contain all the commands you need to work with files in <application>&app;</application>.</para>
 			 </listitem>
 		  </varlistentry>
 		  <varlistentry> <term>Toolbar</term>
@@ -334,7 +334,7 @@
 		  <varlistentry> <term>Bottom Pane</term>
 			 <listitem>
 				<para>The bottom pane is used by programming tools such as the <application>Python Console</application> plugin to display output.</para>
-				<para>By default the bottom pane is not shown. To show it, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Bottom Pane</guimenuitem></menuchoice>.</para>
+				<para>By default, the bottom pane is not shown. To show it, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Bottom Pane</guimenuitem></menuchoice>.</para>
 			 </listitem>
 		  </varlistentry>
 		</variablelist>
@@ -385,7 +385,7 @@
 		  <listitem><para>To save all the files that are currently open in <application>&app;</application>, choose <menuchoice> <guimenu>Documents</guimenu> <guimenuitem>Save All</guimenuitem> </menuchoice>.</para>
 		  </listitem>
 		</itemizedlist>
-		<para>To close all of the files that are currently open in <application>&app;</application>, choose <menuchoice> <guimenu>Documents</guimenu> <guimenuitem>Close All</guimenuitem> </menuchoice>.</para>
+		<para>To close all the files that are currently open in <application>&app;</application>, choose <menuchoice> <guimenu>Documents</guimenu> <guimenuitem>Close All</guimenuitem> </menuchoice>.</para>
 	 </sect2>
 
 <!-- ============= To Open a File from a URI ======================= -->
@@ -407,7 +407,7 @@
 		</listitem>
 		</orderedlist>
 		<para>Valid types of <replaceable>URI</replaceable> include <literal>http:</literal>, <literal>ftp:</literal>, <literal>file:</literal>, and all the methods supported by <literal>mate-vfs</literal>.</para>
-		<para>Files from some types of URI are opened as read-only, and any changes you make must be saved to a different location. HTTP only allows files to be read. Files opened from FTP are read-only because because not all FTP servers may correctly work with saving remote files.</para>
+		<para>Files from some types of URI are opened as read-only, and any changes you make must be saved to a different location. HTTP only allows files to be read. Files opened from FTP are read-only because not all FTP servers may correctly work with saving remote files.</para>
 		<warning><para>Saving to FTP servers can be enabled with <ulink type="help" url="help:mateconf-editor"><application>Configuration Editor</application></ulink>, setting the key <systemitem>/apps/pluma/preferences/editor/save/writable_vfs_schemes</systemitem>, but this may cause errors.</para></warning>
 	 </sect2>
 
@@ -864,7 +864,7 @@
 <!-- ============= To Pipe the Output of a Command to a File ======= -->
 	 <sect2 id="pluma-pipe-output">
 		<title>Piping the Output of a Command to a File</title>
-		<para>You can use <application>&app;</application> to pipe the output of a command to a text file. For example, to pipe the output of an <command>ls</command> command to a text file, type <command>ls | pluma</command>, then press <keycap>Return</keycap>.</para>
+		<para>You can use <application>&app;</application> to pipe the output of a command to a text file. For example, to pipe the output of <command>ls</command> command to a text file, type <command>ls | pluma</command>, then press <keycap>Return</keycap>.</para>
 		<para>The output of the <command>ls</command> command is displayed in a new text file in the <application>&app;</application> window.</para>
 		<para>Alternatively, you can use the <application>External tools</application> plugin to pipe command output to the current file. <!-- fixme: xref needed! --></para>
 	 </sect2>
@@ -1531,7 +1531,7 @@
   <sect3 id="pluma-external-tools-plugin-define">
     <title>Defining a Command</title>
     <para>To add an external command, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>External Tools</guimenuitem></menuchoice>.</para>
-    <para>In the <guilabel>External Tools Manager</guilabel> window, click <guibutton>New</guibutton>. You can speficy the following details for the new command:</para>
+    <para>In the <guilabel>External Tools Manager</guilabel> window, click <guibutton>New</guibutton>. You can specify the following details for the new command:</para>
     <variablelist>
       <varlistentry><term>Description</term>
         <listitem>
