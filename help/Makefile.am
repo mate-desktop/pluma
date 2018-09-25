@@ -1,6 +1,6 @@
 @YELP_HELP_RULES@
  
-HELP_ID = pluma-user-quide
+HELP_ID = pluma
 HELP_FILES = index.docbook legal.xml
 HELP_MEDIA = \
 	figures/pluma_format_bold.png			\
