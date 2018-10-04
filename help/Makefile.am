@@ -6,7 +6,10 @@ HELP_MEDIA = \
 	figures/pluma_recent_files_menu_icon.png	\
 	figures/pluma_window.png	
 
-HELP_LINGUAS = ar bg ca cs da de el es fi fr hu it ja ko oc pt_BR ru sv th uk zh_CN zh_HK zh_TW
-
+# Add linguas to be ignored, e.g. IGNORE_HELP_LINGUAS = ca de es fr
+IGNORE_HELP_LINGUAS =
+HELP_LINGUAS = $(if $(IGNORE_HELP_LINGUAS), \
+	$(filter-out $(IGNORE_HELP_LINGUAS),$(subst /,,$(dir $(wildcard */*.po)))), \
+	$(subst /,,$(dir $(wildcard */*.po))) )
 
 -include $(top_srcdir)/git.mk
