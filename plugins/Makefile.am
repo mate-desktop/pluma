@@ -11,6 +11,7 @@ DIST_SUBDIRS =		\
 	spell 		\
 	taglist 	\
 	time		\
+	nocomments	\
 	trailsave
 
 SUBDIRS = 		\
@@ -25,6 +26,7 @@ SUBDIRS = 		\
 	sort		\
 	taglist		\
 	time		\
+	nocomments	\
 	trailsave
 
 if ENABLE_ENCHANT
