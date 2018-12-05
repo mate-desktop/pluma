@@ -328,7 +328,11 @@ pluma_window_key_press_event (GtkWidget   *widget,
 			sprintf (tempsize, "%d", nsize);
 
 			if (!g_settings_get_boolean (settings, "use-default-font") && (nsize < 73))
-				g_settings_set_string (settings, "editor-font", g_strconcat (tempfont, tempsize, NULL));
+			{
+				gchar *tmp = g_strconcat (tempfont, tempsize, NULL);
+				g_settings_set_string (settings, "editor-font", tmp);
+				g_free (tmp);
+			}
 		}
 		else if ((event->keyval == GDK_KEY_minus) || (event->keyval == GDK_KEY_KP_Subtract))
 		{
@@ -336,7 +340,11 @@ pluma_window_key_press_event (GtkWidget   *widget,
 			sprintf (tempsize, "%d", nsize);
 
 			if (!g_settings_get_boolean (settings, "use-default-font") && (nsize > 5))
-				g_settings_set_string (settings, "editor-font", g_strconcat (tempfont, tempsize, NULL));
+			{
+				gchar *tmp = g_strconcat (tempfont, tempsize, NULL);
+				g_settings_set_string (settings, "editor-font", tmp);
+				g_free (tmp);
+			}
 		}
 
 		if (g_settings_get_boolean (settings, "ctrl-tab-switch-tabs"))
