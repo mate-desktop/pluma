@@ -244,39 +244,9 @@ pluma_document_output_stream_detect_newline_type (PlumaDocumentOutputStream *str
 	return type;
 }
 
-/* If the last char is a newline, remove it from the buffer (otherwise
-   GtkTextView shows it as an empty line). See bug #324942. */
-static void
-remove_ending_newline (PlumaDocumentOutputStream *stream)
-{
-	GtkTextIter end;
-	GtkTextIter start;
-
-	gtk_text_buffer_get_end_iter (GTK_TEXT_BUFFER (stream->priv->doc), &end);
-	start = end;
-
-	gtk_text_iter_set_line_offset (&start, 0);
-
-	if (gtk_text_iter_ends_line (&start) &&
-	    gtk_text_iter_backward_line (&start))
-	{
-		if (!gtk_text_iter_ends_line (&start))
-		{
-			gtk_text_iter_forward_to_line_end (&start);
-		}
-
-		/* Delete the empty line which is from 'start' to 'end' */
-		gtk_text_buffer_delete (GTK_TEXT_BUFFER (stream->priv->doc),
-		                        &start,
-		                        &end);
-	}
-}
-
 static void
 end_append_text_to_document (PlumaDocumentOutputStream *stream)
 {
-	remove_ending_newline (stream);
-
 	gtk_text_buffer_set_modified (GTK_TEXT_BUFFER (stream->priv->doc),
 				      FALSE);
 

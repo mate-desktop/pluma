@@ -45,7 +45,6 @@ struct _PlumaDocumentInputStreamPrivate
 
 	PlumaDocumentNewlineType newline_type;
 
-	guint newline_added : 1;
 	guint is_initialized : 1;
 };
 
@@ -437,27 +436,6 @@ pluma_document_input_stream_read (GInputStream  *stream,
 					  &iter,
 					  dstream->priv->pos);
 
-	if (gtk_text_iter_is_end (&iter) &&
-	    !gtk_text_iter_is_start (&iter))
-	{
-		gssize newline_size;
-
-		newline_size = get_new_line_size (dstream);
-
-		if (space_left >= newline_size &&
-		    !dstream->priv->newline_added)
-		{
-			const gchar *newline;
-
-			newline = get_new_line (dstream);
-
-			memcpy ((void *) ((gsize) buffer + read), newline, newline_size);
-
-			read += newline_size;
-			dstream->priv->newline_added = TRUE;
-		}
-	}
-
 	return read;
 }
 
@@ -467,8 +445,6 @@ pluma_document_input_stream_close (GInputStream  *stream,
 				   GError       **error)
 {
 	PlumaDocumentInputStream *dstream = PLUMA_DOCUMENT_INPUT_STREAM (stream);
-
-	dstream->priv->newline_added = FALSE;
 
 	if (dstream->priv->is_initialized)
 	{
