@@ -55,7 +55,8 @@ MAINTAINERCLEANFILES = 		\
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-gtk-doc \
-	--disable-tests
+	--disable-tests \
+	CFLAGS='-Wno-deprecated-declarations'
 
 # Build ChangeLog from GIT  history
 ChangeLog:
