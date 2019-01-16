@@ -21,6 +21,7 @@ from gi.repository import GObject, GLib, Gtk, Peas, Pluma
 from .WindowHelper import WindowHelper
 from .Library import Library
 from .Manager import Manager
+from .comment import toggle_lines
 
 class SnippetsPlugin(GObject.Object, Peas.Activatable):
     __gtype_name__ = "SnippetsPlugin"

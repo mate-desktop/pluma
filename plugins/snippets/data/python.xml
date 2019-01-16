@@ -109,4 +109,15 @@ $0]]></text>
     <description>main</description>
     <tag>main</tag>
   </snippet>
+
+  <snippet id="Toggle comments">
+    <text><![CDATA[$<
+from snippets import toggle_lines
+lines = $PLUMA_SELECTED_TEXT or $PLUMA_CURRENT_LINE
+return toggle_lines(lines, comment="#", after_leading_space=True, comment_empty=False)
+>]]></text>
+    <description>Toggle comment</description>
+    <accelerator><![CDATA[<Primary>m]]></accelerator>
+  </snippet>
+
 </snippets>
