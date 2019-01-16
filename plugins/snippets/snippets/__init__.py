@@ -87,7 +87,7 @@ class SnippetsPlugin(GObject.Object, Peas.Activatable):
         def accelerator_activated(self, group, obj, keyval, mod):
                 ret = False
 
-                if _self.helper:
+                if self._helper:
                         ret = self._helper.accelerator_activated(keyval, mod)
 
                 return ret
