@@ -112,7 +112,7 @@ $0]]></text>
 
   <snippet id="Toggle comments">
     <text><![CDATA[$<
-    from comment import toggle_lines
+    from snippets import toggle_lines
 
     lines = $PLUMA_SELECTED_TEXT or $PLUMA_CURRENT_LINE
     return toggle_lines(lines, comment="#", after_leading_space=True, comment_empty=False)
