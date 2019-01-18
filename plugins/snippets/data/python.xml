@@ -112,35 +112,11 @@ $0]]></text>
 
   <snippet id="Toggle comments">
     <text><![CDATA[$<
-import re
+    from comment import toggle_lines
 
-def get_lines():
-    selected = $PLUMA_SELECTED_TEXT
-    if selected:
-        return selected
-    else:
-        return $PLUMA_CURRENT_LINE
+    lines = $PLUMA_SELECTED_TEXT or $PLUMA_CURRENT_LINE
+    return toggle_lines(lines, comment="#", after_leading_space=True, comment_empty=False)
 
-def toggle(selected_txt):
-    lines = []
-    for line in selected_txt.split("\n"):
-        if not line:
-            lines.append(line)
-            continue
-        try:
-            spaces, content = re.findall(r'^\s+|.+', line)
-        except:
-            spaces = ""
-            content = line
-
-        if content.startswith("#"):
-            lines.append("{}{}".format(spaces, content[1:]))
-        else:
-            lines.append("{}#{}".format(spaces, content))
-
-    return "\n".join(lines)
-
-return toggle(get_lines())
 >]]></text>
     <description>Toggle comment</description>
     <accelerator><![CDATA[<Primary>m]]></accelerator>
