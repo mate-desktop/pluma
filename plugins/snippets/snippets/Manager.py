@@ -599,16 +599,17 @@ class Manager:
                 if self.snippets_doc:
                         self.snippets_doc.stop()
                 
-                alloc = dlg.get_allocation()
-                self.default_size = [alloc.width, alloc.height]
                 self.manager = None
-
                 self.unref_languages()        
                 self.snippet = None        
                 self.model = None
                 self.dlg = None                
         
-        def on_dialog_snippets_response(self, dlg, resp):                                
+        def on_dialog_snippets_response(self, dlg, resp):
+
+                alloc = dlg.get_allocation()
+                self.default_size = [alloc.width, alloc.height]
+
                 if resp == Gtk.ResponseType.HELP:
                         Pluma.help_display(self, 'pluma', 'pluma-snippets-plugin')
                         return
