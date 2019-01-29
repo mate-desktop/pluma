@@ -388,29 +388,6 @@
 		<para>To close all the files that are currently open in <application>&app;</application>, choose <menuchoice> <guimenu>Documents</guimenu> <guimenuitem>Close All</guimenuitem> </menuchoice>.</para>
 	 </sect2>
 
-<!-- ============= To Open a File from a URI ======================= -->
-	 <sect2 id="pluma-open-from-uri">
-		<title>Opening a File from a URI</title>
-		<para>To open a file from a Uniform Resource Identifier (URI), perform the following steps:</para>
-		<orderedlist>
-		<listitem>
-		<para>Choose <menuchoice> <guimenu>File</guimenu> <guimenuitem>Open Location</guimenuitem> </menuchoice> to display the <guilabel>Open Location</guilabel> dialog. </para>
-		</listitem>
-		<listitem>
-		<para>Enter the URI of the file that you want to open.</para>
-		</listitem>
-		<listitem>
-		<para>Use the <guilabel>Character coding</guilabel> drop-down list to select the appropriate character coding. </para>
-		</listitem>
-		<listitem>
-		<para>Click <guibutton>Open</guibutton>.</para>
-		</listitem>
-		</orderedlist>
-		<para>Valid types of <replaceable>URI</replaceable> include <literal>http:</literal>, <literal>ftp:</literal>, <literal>file:</literal>, and all the methods supported by <literal>mate-vfs</literal>.</para>
-		<para>Files from some types of URI are opened as read-only, and any changes you make must be saved to a different location. HTTP only allows files to be read. Files opened from FTP are read-only because not all FTP servers may correctly work with saving remote files.</para>
-		<warning><para>Saving to FTP servers can be enabled with <ulink type="help" url="help:mateconf-editor"><application>Configuration Editor</application></ulink>, setting the key <systemitem>/apps/pluma/preferences/editor/save/writable_vfs_schemes</systemitem>, but this may cause errors.</para></warning>
-	 </sect2>
-
 <!-- ============= Working with tabs ======================== -->
 	 <sect2 id="pluma-tabs">
 	   <title>Working With Tabs</title>
