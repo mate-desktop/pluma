@@ -16,8 +16,12 @@
 -->
 <!-- =============Document Header ============================= -->
 <?db.chunk.max_depth 2?>
-<article id="index" lang="en">
+<article id="index" lang="en" xmlns:its="http://www.w3.org/2005/11/its" its:version="2.0">
 <!-- please do not change the id; for translations, change lang to -->
+         <its:rules version="2.0">
+           <its:translateRule translate="no" selector="//ulink/@type|//ulink/@url"/>
+           <its:withinTextRule withinText="no" selector="//ulink"/>
+         </its:rules>
 <!-- appropriate code -->
   <articleinfo>
 	 <title>Pluma Manual<!-- not using app entity because of lowercase ugliness --></title>
