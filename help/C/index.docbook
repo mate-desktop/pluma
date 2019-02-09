@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/dbits.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!--
       (Do not remove this comment block.)
   Maintained by the MATE Documentation Project
@@ -18,21 +19,21 @@
     <info>
         <title>Pluma Manual</title>
 
-        <copyright>
+        <copyright its:translate="no">
             <year>2015</year>
             <holder>MATE Documentation Project</holder> 
         </copyright>
-        <copyright>
+        <copyright its:translate="no">
             <year>2007</year>
             <holder>GNOME Documentation Project</holder> 
         </copyright>
-        <copyright>
+        <copyright its:translate="no">
             <year>2002</year>
             <year>2003</year>
             <year>2004</year>
             <holder>Sun Microsystems</holder> 
         </copyright>
-        <copyright>
+        <copyright its:translate="no">
             <year>2000</year>
             <holder>Eric Baudais</holder> 
         </copyright>
@@ -46,11 +47,11 @@
 
         <xi:include href="legal.xml"/>
 
-        <authorgroup>
+        <authorgroup its:translate="no">
             <author>
-                <orgname>MATE Documentation Project</orgname>
+                <orgname its:translate="yes">MATE Documentation Project</orgname>
                 <affiliation>
-                    <orgname>MATE Desktop</orgname>
+                    <orgname its:translate="yes">MATE Desktop</orgname>
                 </affiliation>
             </author>
             <author>
@@ -60,9 +61,9 @@
                 </personname>
             </author>
             <author>
-                <orgname>GNOME Documentation Project</orgname>
+                <orgname its:translate="yes">GNOME Documentation Project</orgname>
                 <affiliation>
-                    <orgname>GNOME</orgname>
+                    <orgname its:translate="yes">GNOME</orgname>
                 </affiliation>
             </author>
             <author>
@@ -70,12 +71,12 @@
                     <firstname>Hal</firstname>
                     <surname>Canary</surname>
                 </personname>
-                <contrib>Added the Shortcut Keys Table</contrib>
+                <contrib its:translate="yes">Added the Shortcut Keys Table</contrib>
             </author>
             <author>
-                <orgname>Sun Java Desktop System Documentation Team</orgname>
+                <orgname its:translate="yes">Sun Java Desktop System Documentation Team</orgname>
                 <affiliation>
-                    <orgname>Sun Microsystems</orgname>
+                    <orgname its:translate="yes">Sun Microsystems</orgname>
                 </affiliation>
                 <email>gdocteam@sun.com</email>
             </author>
@@ -85,7 +86,7 @@
                     <surname>Baudais</surname>
                 </personname>
                 <affiliation>
-                    <orgname>GNOME Documentation Project</orgname>
+                    <orgname its:translate="yes">GNOME Documentation Project</orgname>
                 </affiliation>
                 <email>baudais@okstate.edu</email> 
             </author>
@@ -94,116 +95,116 @@
                     <firstname>Baris</firstname>
                     <surname>Cicek</surname>
                 </personname>
-                <contrib>Provided information from earlier revisions of the pluma application.</contrib>
+                <contrib its:translate="yes">Provided information from earlier revisions of the pluma application.</contrib>
             </othercredit>
             <othercredit role="other">
                 <personname>
                     <firstname>George</firstname>
                     <surname>Ajit</surname>
                 </personname>
-                <contrib>Provided information about plugins.</contrib>
+                <contrib its:translate="yes">Provided information about plugins.</contrib>
             </othercredit>
         </authorgroup>
 
         <!-- According to GNU FDL, revision history is mandatory if you are
              modifying/reusing someone else's document.  If not, you can omit it. -->
-        <revhistory>
+        <revhistory its:translate="no">
             <!-- Remember to remove the &manrevision; entity from the revision
                  entries other than the current revision. -->
             <revision>
                 <revnumber>1.0</revnumber>
                 <date>2000</date>
                 <revdescription>
-                    <para role="author">Eric Baudais <email>baudais@okstate.edu</email></para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="no">Eric Baudais <email>baudais@okstate.edu</email></para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.0</revnumber>
-                <date>March 2002</date>
+                <date its:translate="yes">March 2002</date>
                 <revdescription>
-                    <para role="author">Sun GNOME Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">Sun GNOME Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.1</revnumber>
-                <date>June 2002</date>
+                <date its:translate="yes">June 2002</date>
                 <revdescription>
-                    <para role="author">Sun GNOME Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">Sun GNOME Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.2</revnumber>
-                <date>August 2002</date>
+                <date its:translate="yes">August 2002</date>
                 <revdescription>
-                    <para role="author">Sun GNOME Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">Sun GNOME Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.3</revnumber>
-                <date>September 2002</date>
+                <date its:translate="yes">September 2002</date>
                 <revdescription>
-                    <para role="author">Sun GNOME Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">Sun GNOME Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.4</revnumber>
-                <date>January 2003</date>
+                <date its:translate="yes">January 2003</date>
                 <revdescription>
-                    <para role="author">Sun GNOME Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">Sun GNOME Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.5</revnumber>
-                <date>March 2003</date>
+                <date its:translate="yes">March 2003</date>
                 <revdescription>
-                    <para role="author">Sun GNOME Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">Sun GNOME Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.6</revnumber>
-                <date>September 2003</date>
+                <date its:translate="yes">September 2003</date>
                 <revdescription>
-                    <para role="author">Sun GNOME Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">Sun GNOME Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.7</revnumber>
-                <date>March 2004</date>
+                <date its:translate="yes">March 2004</date>
                 <revdescription>
-                    <para role="author">Sun GNOME Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">Sun GNOME Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.8</revnumber>
-                <date>July 2015</date>
+                <date its:translate="yes">July 2015</date>
                 <revdescription>
-                    <para role="author">Sun Java Desktop System Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">Sun Java Desktop System Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>2.9</revnumber>
-                <date>July 2006</date>
+                <date its:translate="yes">July 2006</date>
                 <revdescription>
-                    <para role="author">GNOME Documentation Team</para>
-                    <para role="publisher">GNOME Documentation Project</para>
+                    <para role="author" its:translate="yes">GNOME Documentation Team</para>
+                    <para role="publisher" its:translate="yes">GNOME Documentation Project</para>
                 </revdescription>
             </revision>
             <revision>
                 <revnumber>3.0</revnumber>
-                <date>July 2015</date>
+                <date its:translate="yes">July 2015</date>
                 <revdescription>
-                    <para role="author">MATE Documentation Team</para>
-                    <para role="publisher">MATE Documentation Project</para>
+                    <para role="author" its:translate="yes">MATE Documentation Team</para>
+                    <para role="publisher" its:translate="yes">MATE Documentation Project</para>
                 </revdescription>
             </revision>
         </revhistory>
@@ -267,9 +268,9 @@
             </info>
             <para>When you start <application>pluma</application>, the following window is displayed:</para>
 
-            <figure xml:id="pluma-window">
+            <figure xml:id="pluma-window" its:translate="no">
                 <info>
-                    <title>pluma Window</title>
+                    <title its:translate="yes">pluma Window</title>
                 </info>
                 <screenshot>
                     <mediaobject>
@@ -277,7 +278,7 @@
                             <imagedata fileref="figures/pluma_window.png" format="PNG"/>
                         </imageobject>
                         <textobject> 
-                            <phrase>Shows pluma main window.</phrase>
+                            <phrase its:translate="yes">Shows pluma main window.</phrase>
                         </textobject>
                     </mediaobject>
                 </screenshot>
@@ -370,12 +371,12 @@
                 <title>Opening a File</title>
             </info>
             <para>To open a file, choose <menuchoice> <guimenu>File</guimenu> <guimenuitem>Open</guimenuitem> </menuchoice> to display the <guilabel>Open File</guilabel> dialog. Select the file that you want to open, then click <guibutton>Open</guibutton>. The file is displayed in the <application>pluma</application> window.</para>
-            <para>The application records the paths and filenames of the five most recent files that you edited and displays the files as menu items on the <menuchoice> <guimenu>File</guimenu> </menuchoice> menu. You can also click on the <inlinemediaobject>
+            <para>The application records the paths and filenames of the five most recent files that you edited and displays the files as menu items on the <menuchoice> <guimenu>File</guimenu> </menuchoice> menu. You can also click on the <inlinemediaobject its:translate="no">
                     <imageobject>
                         <imagedata fileref="figures/pluma_recent_files_menu_icon.png" format="PNG"/>
                     </imageobject>
                     <textobject>
-                        <phrase>Shows Recent Files menu icon.</phrase>
+                        <phrase its:translate="yes">Shows Recent Files menu icon.</phrase>
                     </textobject>
                 </inlinemediaobject> icon on the toolbar to display the list of recent files.</para>
             <note>
