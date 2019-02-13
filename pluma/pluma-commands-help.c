@@ -66,8 +66,9 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 	};
 
 	static const gchar* const documenters[] = {
-		"Sun GNOME Documentation Team <gdocteam@sun.com>",
-		"Eric Baudais <baudais@okstate.edu>",
+		"MATE Documentation Team",
+		"GNOME Documentation Team",
+		"Sun Microsystems",
 		NULL
 	};
 
