@@ -75,7 +75,25 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 	static const gchar comments[] = \
 		N_("Pluma is a small and lightweight text editor for the MATE Desktop");
 
+	static const gchar *license[] ={
+		N_("Pluma is free software; you can redistribute it and/or modify "
+		"it under the terms of the GNU General Public License as published by "
+		"the Free Software Foundation; either version 2 of the License, or "
+		"(at your option) any later version."),
+		N_("Pluma is distributed in the hope that it will be useful, "
+		"but WITHOUT ANY WARRANTY; without even the implied warranty of "
+		"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the "
+		"GNU General Public License for more details."),
+		N_("You should have received a copy of the GNU General Public License "
+		"along with Pluma; if not, write to the Free Software Foundation, Inc., "
+		"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA")
+	};
+
+	gchar *license_trans;
+
 	pluma_debug (DEBUG_COMMANDS);
+
+	license_trans = g_strjoin ("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
 	gtk_show_about_dialog(GTK_WINDOW(window),
 		"program-name", "Pluma",
@@ -87,10 +105,14 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 		               "Copyright \xc2\xa9 2004-2010 Paolo Borelli, Jesse van den Kieboom\nSteve Fr\303\251cinaux, Ignacio Casal Quinteiro\n"
 		               "Copyright \xc2\xa9 2011 Perberos\n"
 		               "Copyright \xc2\xa9 2012-2019 MATE developers"),
+		"license", license_trans,
+		"wrap-license", TRUE,
 		"documenters", documenters,
 		"logo_icon_name", "accessories-text-editor",
 		"translator-credits", _("translator-credits"),
 		"version", VERSION,
 		"website", "http://mate-desktop.org",
 		NULL);
+
+	g_free (license_trans);
 }
