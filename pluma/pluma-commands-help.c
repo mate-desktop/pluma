@@ -97,6 +97,7 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 
 	gtk_show_about_dialog(GTK_WINDOW(window),
 		"program-name", "Pluma",
+		"title", _("About Pluma"),
 		"authors", authors,
 		"comments", _(comments),
 		"copyright", _("Copyright \xc2\xa9 1998-2000 Evan Lawrence, Alex Robert\n"
