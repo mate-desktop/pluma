@@ -108,10 +108,14 @@ AC_ARG_ENABLE([spell],
 
 if test "x$enable_enchant" = "xyes" ; then
 
-	PKG_CHECK_MODULES(ENCHANT, enchant >= $ENCHANT_REQUIRED, \
-			  have_enchant=yes, have_enchant=no)
+	PKG_CHECK_MODULES(ENCHANT, enchant-2 >= $ENCHANT_REQUIRED, \
+			  have_enchant_2=yes, have_enchant_2=no)
 
-	if test "x$have_enchant" = "xyes"; then
+	if test "x$have_enchant_2" = "xno"; then
+                PKG_CHECK_MODULES(ENCHANT, enchant >= $ENCHANT_REQUIRED, \
+                                  have_enchant=yes, have_enchant=no)
+        fi
+	if test "x$have_enchant_2" = "xyes" || test "x$have_enchant" = "xyes"; then
 
 		PKG_CHECK_EXISTS([iso-codes >= $ISO_CODES_REQUIRED],
 				 [have_iso_codes=yes],[have_iso_codes=no])
