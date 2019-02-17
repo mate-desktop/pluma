@@ -65,10 +65,10 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 		NULL
 	};
 
-	static const gchar* const documenters[] = {
-		"MATE Documentation Team",
-		"GNOME Documentation Team",
-		"Sun Microsystems",
+	static const gchar* documenters[] = {
+		N_("MATE Documentation Team"),
+		N_("GNOME Documentation Team"),
+		N_("Sun Microsystems"),
 		NULL
 	};
 
@@ -90,10 +90,14 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 	};
 
 	gchar *license_trans;
+	static const gchar **p;
 
 	pluma_debug (DEBUG_COMMANDS);
 
 	license_trans = g_strjoin ("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
+
+	for (p = documenters; *p; ++p)
+		*p = _(*p);
 
 	gtk_show_about_dialog(GTK_WINDOW(window),
 		"program-name", "Pluma",
