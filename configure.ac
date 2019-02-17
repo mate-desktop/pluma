@@ -98,7 +98,7 @@ dnl ================================================================
 dnl spell plugins checks: enchant and iso-codes
 dnl ================================================================
 
-ENCHANT_REQUIRED=1.2.0
+ENCHANT_REQUIRED=1.6.0
 ISO_CODES_REQUIRED=0.35
 
 AC_ARG_ENABLE([spell],
@@ -107,15 +107,19 @@ AC_ARG_ENABLE([spell],
 	[enable_enchant=yes])
 
 if test "x$enable_enchant" = "xyes" ; then
-
-	PKG_CHECK_MODULES(ENCHANT, enchant-2 >= $ENCHANT_REQUIRED, \
-			  have_enchant_2=yes, have_enchant_2=no)
-
-	if test "x$have_enchant_2" = "xno"; then
-                PKG_CHECK_MODULES(ENCHANT, enchant >= $ENCHANT_REQUIRED, \
-                                  have_enchant=yes, have_enchant=no)
+        ENCHANT_MODNAME=enchant
+        PKG_CHECK_EXISTS([enchant-2 >= $ENCHANT_REQUIRED], [have_enchant_2=yes], [have_enchant_2=no])
+        if test "x$have_enchant_2" = "xyes"; then
+                ENCHANT_MODNAME=enchant-2
         fi
-	if test "x$have_enchant_2" = "xyes" || test "x$have_enchant" = "xyes"; then
+
+        AC_MSG_CHECKING([the version of enchant])
+        ENCHANT_VERSION=`pkg-config --modversion $ENCHANT_MODNAME`
+        AC_MSG_RESULT([$ENCHANT_VERSION])
+
+        PKG_CHECK_MODULES(ENCHANT, [$ENCHANT_MODNAME >= $ENCHANT_REQUIRED], \
+                          have_enchant=yes, have_enchant=no)
+	if test "x$have_enchant" = "xyes"; then
 
 		PKG_CHECK_EXISTS([iso-codes >= $ISO_CODES_REQUIRED],
 				 [have_iso_codes=yes],[have_iso_codes=no])
