@@ -13,6 +13,7 @@ AM_CPPFLAGS =								\
 	$(WARN_CFLAGS)							\
 	$(INTROSPECTION_CFLAGS)						\
 	-DDATADIR=\""$(datadir)"\"					\
+	-DPLUMA_DATADIR=\""$(datadir)/pluma"\"				\
 	-DLIBDIR=\""$(libdir)"\"
 
 pluma_SOURCES = \
@@ -172,6 +173,11 @@ pluma-marshal.c: pluma-marshal.list $(GLIB_GENMARSHAL)
 	$(AM_V_GEN) echo "#include \"pluma-marshal.h\"" > $@ && \
 	$(GLIB_GENMARSHAL) $< --body --prefix=pluma_marshal >> $@
 
+aboutdir = $(datadir)/pluma/
+about_DATA =				\
+	pluma.about			\
+	$(NULL)
+
 uidir = $(datadir)/pluma/ui/
 ui_DATA = 				\
 	pluma-ui.xml			\
@@ -179,6 +185,7 @@ ui_DATA = 				\
 
 EXTRA_DIST = 				\
 	$(ui_DATA)			\
+	$(about_DATA)			\
 	pluma-enum-types.h.template	\
 	pluma-enum-types.c.template	\
 	pluma-marshal.list		\

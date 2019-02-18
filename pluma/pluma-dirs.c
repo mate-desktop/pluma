@@ -69,7 +69,7 @@ gchar* pluma_dirs_get_user_accels_file(void)
 
 gchar* pluma_dirs_get_pluma_data_dir(void)
 {
-	return g_build_filename(DATADIR, "pluma", NULL);
+	return g_build_filename(PLUMA_DATADIR, NULL);
 }
 
 gchar* pluma_dirs_get_pluma_locale_dir(void)
