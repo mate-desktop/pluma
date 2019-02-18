@@ -35,6 +35,7 @@
 	#include <config.h>
 #endif
 
+#include <glib.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
@@ -50,21 +51,11 @@ void _pluma_cmd_help_contents(GtkAction* action, PlumaWindow* window)
 	pluma_help_display(GTK_WINDOW(window), NULL, NULL);
 }
 
+#define ABOUT_GROUP "About"
+#define EMAILIFY(string) (g_strdelimit ((string), "%", '@'))
+
 void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 {
-	static const gchar* const authors[] = {
-		"Paolo Maggi <paolo@gnome.org>",
-		"Paolo Borelli <pborelli@katamail.com>",
-		"Steve Fr\303\251cinaux  <steve@istique.net>",
-		"Jesse van den Kieboom  <jessevdk@gnome.org>",
-		"Ignacio Casal Quinteiro <icq@gnome.org>",
-		"James Willcox <jwillcox@gnome.org>",
-		"Chema Celorio",
-		"Federico Mena Quintero <federico@novell.com>",
-		"Perberos <perberos@gmail.com>",
-		NULL
-	};
-
 	static const gchar* documenters[] = {
 		N_("MATE Documentation Team"),
 		N_("GNOME Documentation Team"),
@@ -90,9 +81,27 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 	};
 
 	gchar *license_trans;
+	GKeyFile *key_file;
+	GError *error = NULL;
+	char **authors;
+	gsize n_authors = 0, i;
 	static const gchar **p;
 
 	pluma_debug (DEBUG_COMMANDS);
+
+	key_file = g_key_file_new ();
+	if (!g_key_file_load_from_file (key_file, PLUMA_DATADIR G_DIR_SEPARATOR_S "pluma.about", 0, &error)) {
+		g_warning ("Couldn't load about data: %s\n", error->message);
+		g_error_free (error);
+		g_key_file_free (key_file);
+		return;
+	}
+
+	authors = g_key_file_get_string_list (key_file, ABOUT_GROUP, "Authors", &n_authors, NULL);
+	g_key_file_free (key_file);
+
+	for (i = 0; i < n_authors; ++i)
+		authors[i] = EMAILIFY (authors[i]);
 
 	license_trans = g_strjoin ("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
@@ -119,5 +128,6 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 		"website", "http://mate-desktop.org",
 		NULL);
 
+	g_strfreev (authors);
 	g_free (license_trans);
 }
