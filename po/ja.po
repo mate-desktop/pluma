@@ -13,15 +13,17 @@
 # Mika Kobayashi, 2018
 # shinmili <rmsk.pl.ur.lpt@gmail.com>, 2018
 # semicolon <mail@semicln.com>, 2018
+# 323484, 2018
+# Wolfgang Ulbrich <mate@raveit.de>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 13:39+0200\n"
+"POT-Creation-Date: 2019-02-17 11:58+0100\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: semicolon <mail@semicln.com>, 2018\n"
+"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2019\n"
 "Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -573,7 +575,7 @@ msgstr "サーバ(_S)"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
 msgid "Save _As"
-msgstr ""
+msgstr "別名で保存(_A)"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
 msgid "Question"
@@ -925,11 +927,11 @@ msgid "Plugins"
 msgstr "プラグイン"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1529
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "置換"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1527
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "検索"
 
@@ -1138,11 +1140,61 @@ msgstr[0] ""
 msgid "_Revert"
 msgstr "戻す(_R)"
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:69
+msgid "MATE Documentation Team"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:70
+msgid "GNOME Documentation Team"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:71
+msgid "Sun Microsystems"
+msgstr "Sun Microsystems"
+
+#: ../pluma/pluma-commands-help.c:76
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "Pluma は MATE デスクトップ用に作られた小型軽量のテキストエディターです。"
 
-#: ../pluma/pluma-commands-help.c:95
+#: ../pluma/pluma-commands-help.c:79
+msgid ""
+"Pluma is free software; you can redistribute it and/or modify it under the "
+"terms of the GNU General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:83
+msgid ""
+"Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:87
+msgid ""
+"You should have received a copy of the GNU General Public License along with"
+" Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:104
+msgid "About Pluma"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:107
+msgid ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:117
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <takeshi.aihana@gmail.com>\n"
@@ -1180,11 +1232,11 @@ msgid "Unsaved Document %d"
 msgstr "編集中のドキュメント %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2256 ../pluma/pluma-window.c:2261
+#: ../pluma/pluma-window.c:2264 ../pluma/pluma-window.c:2269
 msgid "Read-Only"
 msgstr "読み取りのみ"
 
-#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3682
+#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3690
 msgid "Documents"
 msgstr "ドキュメント"
 
@@ -1936,7 +1988,7 @@ msgstr "新しいドキュメントを作成します"
 msgid "_Open..."
 msgstr "開く(_O).."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1453
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1461
 msgid "Open a file"
 msgstr "ファイルを開きます"
 
@@ -2274,7 +2326,7 @@ msgstr "検索する文字列"
 msgid "Line you want to move the cursor to"
 msgstr "カーソルを移動する行を入力してください"
 
-#: ../pluma/pluma-window.c:1012
+#: ../pluma/pluma-window.c:1020
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s 用の強調表示モードにします"
@@ -2282,7 +2334,7 @@ msgstr "%s 用の強調表示モードにします"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1069 ../pluma/pluma-window.c:1957
+#: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2290,43 +2342,43 @@ msgstr "%s 用の強調表示モードにします"
 msgid "Plain Text"
 msgstr "なし"
 
-#: ../pluma/pluma-window.c:1070
+#: ../pluma/pluma-window.c:1078
 msgid "Disable syntax highlighting"
 msgstr "構文の強調表示を無効にします"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1352
+#: ../pluma/pluma-window.c:1360
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' を開きます"
 
-#: ../pluma/pluma-window.c:1459
+#: ../pluma/pluma-window.c:1467
 msgid "Open a recently used file"
 msgstr "最近使用したファイルを開きます"
 
-#: ../pluma/pluma-window.c:1465
+#: ../pluma/pluma-window.c:1473
 msgid "Open"
 msgstr "開く"
 
-#: ../pluma/pluma-window.c:1523
+#: ../pluma/pluma-window.c:1531
 msgid "Save"
 msgstr "保存"
 
-#: ../pluma/pluma-window.c:1525
+#: ../pluma/pluma-window.c:1533
 msgid "Print"
 msgstr "印刷"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1682
+#: ../pluma/pluma-window.c:1690
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' に切り替えます"
 
-#: ../pluma/pluma-window.c:1935
+#: ../pluma/pluma-window.c:1943
 msgid "Use Spaces"
 msgstr "空白にする"
 
-#: ../pluma/pluma-window.c:2006
+#: ../pluma/pluma-window.c:2014
 msgid "Tab Width"
 msgstr "タブの幅:"
 
@@ -3078,7 +3130,7 @@ msgid "Create new snippet"
 msgstr "新しいスニペットを生成します"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:792
+#: ../plugins/snippets/snippets/Manager.py:793
 msgid "Import snippets"
 msgstr "スニペットをインポートします"
 
@@ -3101,7 +3153,7 @@ msgstr "タブ(_T):"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:681
+#: ../plugins/snippets/snippets/Manager.py:682
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr "スニペットを実行するために [Tab] キーを押下する前に入力する単語です"
 
@@ -3142,7 +3194,7 @@ msgid "Revert selected snippet"
 msgstr "選択したスニペットを戻します"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:674
+#: ../plugins/snippets/snippets/Manager.py:675
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
@@ -3150,73 +3202,73 @@ msgstr ""
 "これは [Tab] のトリガーとしては妥当ではありません。トリガーとして妥当な形式は、英数字 (_、:、. を含む) "
 "からなる文字列か、あるいは一文字の非英数字(例: {、[ など) のいずれかです。"
 
-#: ../plugins/snippets/snippets/Manager.py:771
+#: ../plugins/snippets/snippets/Manager.py:772
 #, python-format
 msgid "The following error occurred while importing: %s"
 msgstr "インポートする際に次のエラーが発生しました: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:778
+#: ../plugins/snippets/snippets/Manager.py:779
 msgid "Import successfully completed"
 msgstr "インポートが完了しました"
-
-#: ../plugins/snippets/snippets/Manager.py:797
-#: ../plugins/snippets/snippets/Manager.py:883
-#: ../plugins/snippets/snippets/Manager.py:946
-msgid "All supported archives"
-msgstr "サポートしている全アーカイブ"
 
 #: ../plugins/snippets/snippets/Manager.py:798
 #: ../plugins/snippets/snippets/Manager.py:884
 #: ../plugins/snippets/snippets/Manager.py:947
-msgid "Gzip compressed archive"
-msgstr "Gzip 圧縮のアーカイブ"
+msgid "All supported archives"
+msgstr "サポートしている全アーカイブ"
 
 #: ../plugins/snippets/snippets/Manager.py:799
 #: ../plugins/snippets/snippets/Manager.py:885
 #: ../plugins/snippets/snippets/Manager.py:948
+msgid "Gzip compressed archive"
+msgstr "Gzip 圧縮のアーカイブ"
+
+#: ../plugins/snippets/snippets/Manager.py:800
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:949
 msgid "Bzip2 compressed archive"
 msgstr "Bzip2 圧縮のアーカイブ"
 
-#: ../plugins/snippets/snippets/Manager.py:800
+#: ../plugins/snippets/snippets/Manager.py:801
 msgid "Single snippets file"
 msgstr "単一のスニペットファイル"
 
-#: ../plugins/snippets/snippets/Manager.py:801
-#: ../plugins/snippets/snippets/Manager.py:887
-#: ../plugins/snippets/snippets/Manager.py:950
+#: ../plugins/snippets/snippets/Manager.py:802
+#: ../plugins/snippets/snippets/Manager.py:888
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "All files"
 msgstr "すべてのファイル"
 
-#: ../plugins/snippets/snippets/Manager.py:813
+#: ../plugins/snippets/snippets/Manager.py:814
 #, python-format
 msgid "The following error occurred while exporting: %s"
 msgstr "スニペットを保存する際にエラーが発生しました: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:817
+#: ../plugins/snippets/snippets/Manager.py:818
 msgid "Export successfully completed"
 msgstr "保存が完了しました"
 
 #. Ask if system snippets should also be exported
-#: ../plugins/snippets/snippets/Manager.py:857
-#: ../plugins/snippets/snippets/Manager.py:924
+#: ../plugins/snippets/snippets/Manager.py:858
+#: ../plugins/snippets/snippets/Manager.py:925
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
 msgstr "選択した<b>システム</b>スニペットも一緒に保存しますか?"
 
-#: ../plugins/snippets/snippets/Manager.py:872
-#: ../plugins/snippets/snippets/Manager.py:942
+#: ../plugins/snippets/snippets/Manager.py:873
+#: ../plugins/snippets/snippets/Manager.py:943
 msgid "There are no snippets selected to be exported"
 msgstr "保存するスニペットがありません"
 
-#: ../plugins/snippets/snippets/Manager.py:877
-#: ../plugins/snippets/snippets/Manager.py:915
+#: ../plugins/snippets/snippets/Manager.py:878
+#: ../plugins/snippets/snippets/Manager.py:916
 msgid "Export snippets"
 msgstr "スニペットの保存"
 
-#: ../plugins/snippets/snippets/Manager.py:1055
+#: ../plugins/snippets/snippets/Manager.py:1056
 msgid "Type a new shortcut, or press Backspace to clear"
 msgstr "(新しいショートカットを入力してください/[BS]キーでクリア)"
 
-#: ../plugins/snippets/snippets/Manager.py:1057
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut"
 msgstr "(新しいショートカットを入力してください)"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 13:39+0200\n"
+"POT-Creation-Date: 2019-02-17 11:58+0100\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: Bengali (India) (https://www.transifex.com/mate/teams/13566/bn_IN/)\n"
@@ -975,11 +975,11 @@ msgid "Plugins"
 msgstr "প্লাগ-ইন"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1529
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "প্রতিস্থাপন"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1527
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "অনুসন্ধান"
 
@@ -1205,11 +1205,61 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "প্রত্যাবর্তন (_R)"
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:69
+msgid "MATE Documentation Team"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:70
+msgid "GNOME Documentation Team"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:71
+msgid "Sun Microsystems"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:76
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:95
+#: ../pluma/pluma-commands-help.c:79
+msgid ""
+"Pluma is free software; you can redistribute it and/or modify it under the "
+"terms of the GNU General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:83
+msgid ""
+"Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:87
+msgid ""
+"You should have received a copy of the GNU General Public License along with"
+" Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:104
+msgid "About Pluma"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:107
+msgid ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:117
 msgid "translator-credits"
 msgstr ""
 "সায়মিন্দু দাশগুপ্ত <unmadindu@bengalinux.org> \n"
@@ -1240,11 +1290,11 @@ msgid "Unsaved Document %d"
 msgstr "অসংরক্ষিত ডকুমেন্ট %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2256 ../pluma/pluma-window.c:2261
+#: ../pluma/pluma-window.c:2264 ../pluma/pluma-window.c:2269
 msgid "Read-Only"
 msgstr "শুধুমাত্র পাঠযোগ্য"
 
-#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3682
+#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3690
 msgid "Documents"
 msgstr "ডকুমেন্ট"
 
@@ -2035,7 +2085,7 @@ msgstr "নতুন ডকুমেন্ট নির্মাণ করুন
 msgid "_Open..."
 msgstr "খুলুন...(_O)"
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1453
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1461
 msgid "Open a file"
 msgstr "ফাইল খুলুন"
 
@@ -2372,7 +2422,7 @@ msgstr "অনুসন্ধানের উদ্দেশ্যে পংক�
 msgid "Line you want to move the cursor to"
 msgstr "কার্সার স্থানান্তরণের জন্য চিহ্নিত পংক্তি সংখ্যা"
 
-#: ../pluma/pluma-window.c:1012
+#: ../pluma/pluma-window.c:1020
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s উজ্জ্বলতার মোড ব্যবহার করা হবে"
@@ -2380,7 +2430,7 @@ msgstr "%s উজ্জ্বলতার মোড ব্যবহার কর
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1069 ../pluma/pluma-window.c:1957
+#: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2388,43 +2438,43 @@ msgstr "%s উজ্জ্বলতার মোড ব্যবহার কর
 msgid "Plain Text"
 msgstr "বিন্যাসবিহীন লেখা"
 
-#: ../pluma/pluma-window.c:1070
+#: ../pluma/pluma-window.c:1078
 msgid "Disable syntax highlighting"
 msgstr "সিন্টেক্সের বিভিন্ন অংশ পৃথকরূপে প্রদর্শন করা হবে না"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1352
+#: ../pluma/pluma-window.c:1360
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' খুলুন"
 
-#: ../pluma/pluma-window.c:1459
+#: ../pluma/pluma-window.c:1467
 msgid "Open a recently used file"
 msgstr "সম্প্রতি ব্যবহৃত কোনো ফাইল খুলুন"
 
-#: ../pluma/pluma-window.c:1465
+#: ../pluma/pluma-window.c:1473
 msgid "Open"
 msgstr "খুলুন"
 
-#: ../pluma/pluma-window.c:1523
+#: ../pluma/pluma-window.c:1531
 msgid "Save"
 msgstr "সংরক্ষণ"
 
-#: ../pluma/pluma-window.c:1525
+#: ../pluma/pluma-window.c:1533
 msgid "Print"
 msgstr "প্রিন্ট করুন"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1682
+#: ../pluma/pluma-window.c:1690
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' সক্রিয় করুন"
 
-#: ../pluma/pluma-window.c:1935
+#: ../pluma/pluma-window.c:1943
 msgid "Use Spaces"
 msgstr "শূণ্যস্থান প্রয়োগ করুন"
 
-#: ../pluma/pluma-window.c:2006
+#: ../pluma/pluma-window.c:2014
 msgid "Tab Width"
 msgstr "ট্যাবের দৈর্ঘ্য"
 
@@ -3195,7 +3245,7 @@ msgid "Create new snippet"
 msgstr "নতুন স্নিপেট নির্মাণ করুন"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:792
+#: ../plugins/snippets/snippets/Manager.py:793
 msgid "Import snippets"
 msgstr "স্নিপেট ইম্পোর্ট করুন"
 
@@ -3218,7 +3268,7 @@ msgstr "Tab-কি ট্রিগার:(_T)"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:681
+#: ../plugins/snippets/snippets/Manager.py:682
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr "ট্যাব-কি টেপার পরে স্নিপেট সক্রিয় করতে ব্যবহৃত কোনো একটি শব্দ"
 
@@ -3259,7 +3309,7 @@ msgid "Revert selected snippet"
 msgstr "নির্বাচিত স্নিপেট প্রত্যাবর্তন করুন"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:674
+#: ../plugins/snippets/snippets/Manager.py:675
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
@@ -3267,75 +3317,75 @@ msgstr ""
 "tab ট্রিগার বৈধ নয়। ট্রিগারের ক্ষেত্রে অক্ষর  অথবা শুধুমাত্র একটি "
 "আলফা-নিউমেরিক ব্যতীত অক্ষর যেমন  {, [, প্রভৃতি ব্যবহার করা যাবে।"
 
-#: ../plugins/snippets/snippets/Manager.py:771
+#: ../plugins/snippets/snippets/Manager.py:772
 #, python-format
 msgid "The following error occurred while importing: %s"
 msgstr "ইমপোর্ট করার সময় নিম্নলিখিত ত্রুটি উৎপন্ন হয়েছে: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:778
+#: ../plugins/snippets/snippets/Manager.py:779
 msgid "Import successfully completed"
 msgstr "সাফল্যের সাথে ইম্পোর্ট সমাপ্ত হয়েছে"
-
-#: ../plugins/snippets/snippets/Manager.py:797
-#: ../plugins/snippets/snippets/Manager.py:883
-#: ../plugins/snippets/snippets/Manager.py:946
-msgid "All supported archives"
-msgstr "সর্বধরনের সমর্থিত আর্কাইভ"
 
 #: ../plugins/snippets/snippets/Manager.py:798
 #: ../plugins/snippets/snippets/Manager.py:884
 #: ../plugins/snippets/snippets/Manager.py:947
-msgid "Gzip compressed archive"
-msgstr "Gzip দ্বারা কম্প্রেস করা আর্কাইভ"
+msgid "All supported archives"
+msgstr "সর্বধরনের সমর্থিত আর্কাইভ"
 
 #: ../plugins/snippets/snippets/Manager.py:799
 #: ../plugins/snippets/snippets/Manager.py:885
 #: ../plugins/snippets/snippets/Manager.py:948
+msgid "Gzip compressed archive"
+msgstr "Gzip দ্বারা কম্প্রেস করা আর্কাইভ"
+
+#: ../plugins/snippets/snippets/Manager.py:800
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:949
 msgid "Bzip2 compressed archive"
 msgstr "Bzip2 দ্বারা কম্প্রেস করা আর্কাইভ"
 
-#: ../plugins/snippets/snippets/Manager.py:800
+#: ../plugins/snippets/snippets/Manager.py:801
 msgid "Single snippets file"
 msgstr "একটি স্নিপেট ফাইল"
 
-#: ../plugins/snippets/snippets/Manager.py:801
-#: ../plugins/snippets/snippets/Manager.py:887
-#: ../plugins/snippets/snippets/Manager.py:950
+#: ../plugins/snippets/snippets/Manager.py:802
+#: ../plugins/snippets/snippets/Manager.py:888
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "All files"
 msgstr "সব ফাইল"
 
-#: ../plugins/snippets/snippets/Manager.py:813
+#: ../plugins/snippets/snippets/Manager.py:814
 #, python-format
 msgid "The following error occurred while exporting: %s"
 msgstr "এক্সপোর্ট করার সময় নিম্নলিখিত সমস্যা দেখা দিয়েছে: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:817
+#: ../plugins/snippets/snippets/Manager.py:818
 msgid "Export successfully completed"
 msgstr "সাফল্যের এক্সপোর্ট সমাপ্ত হয়েছে"
 
 #. Ask if system snippets should also be exported
-#: ../plugins/snippets/snippets/Manager.py:857
-#: ../plugins/snippets/snippets/Manager.py:924
+#: ../plugins/snippets/snippets/Manager.py:858
+#: ../plugins/snippets/snippets/Manager.py:925
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
 msgstr ""
 "এক্সপোর্ট করার জন্য চিহ্নিত বস্তুর মধ্যে নির্বাচিত <b>সিস্টেম</b> স্নিপেট "
 "অন্তর্ভুক্ত করতে ইচ্ছুক কি?"
 
-#: ../plugins/snippets/snippets/Manager.py:872
-#: ../plugins/snippets/snippets/Manager.py:942
+#: ../plugins/snippets/snippets/Manager.py:873
+#: ../plugins/snippets/snippets/Manager.py:943
 msgid "There are no snippets selected to be exported"
 msgstr "এক্সপোর্ট করার জন্য কোনো স্নিপেট নির্বাচন করা হয়নি"
 
-#: ../plugins/snippets/snippets/Manager.py:877
-#: ../plugins/snippets/snippets/Manager.py:915
+#: ../plugins/snippets/snippets/Manager.py:878
+#: ../plugins/snippets/snippets/Manager.py:916
 msgid "Export snippets"
 msgstr "স্নিপেট এক্সপোর্ট করুন"
 
-#: ../plugins/snippets/snippets/Manager.py:1055
+#: ../plugins/snippets/snippets/Manager.py:1056
 msgid "Type a new shortcut, or press Backspace to clear"
 msgstr "নতুন শর্ট-কাট লিখুন, অথবা ব্যাক-স্পেস টিপে মুছে ফেলুন"
 
-#: ../plugins/snippets/snippets/Manager.py:1057
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut"
 msgstr "নতুন শর্ট-কাট লিখুন"
 

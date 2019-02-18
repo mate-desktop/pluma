@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 13:39+0200\n"
+"POT-Creation-Date: 2019-02-17 11:58+0100\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Iñigo Varela <ivarela@softastur.org>, 2018\n"
 "Language-Team: Asturian (https://www.transifex.com/mate/teams/13566/ast/)\n"
@@ -993,7 +993,7 @@ msgstr "_Fonte del editor: "
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "Pick the editor font"
-msgstr "Escueya la fonte del editor"
+msgstr "Escueyi la fonte del editor"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Color Scheme"
@@ -1012,11 +1012,11 @@ msgid "Plugins"
 msgstr "Complementos"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1529
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "Trocar"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1527
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "Guetar"
 
@@ -1246,11 +1246,61 @@ msgstr[1] "Los cambeos fechos al documentu nes caberes %d hores van perdese."
 msgid "_Revert"
 msgstr "_Revertir"
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:69
+msgid "MATE Documentation Team"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:70
+msgid "GNOME Documentation Team"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:71
+msgid "Sun Microsystems"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:76
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "Pluma ye un editor de testu pequeñu y llixeru pal Escritoriu MATE"
 
-#: ../pluma/pluma-commands-help.c:95
+#: ../pluma/pluma-commands-help.c:79
+msgid ""
+"Pluma is free software; you can redistribute it and/or modify it under the "
+"terms of the GNU General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:83
+msgid ""
+"Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:87
+msgid ""
+"You should have received a copy of the GNU General Public License along with"
+" Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:104
+msgid "About Pluma"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:107
+msgid ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:117
 msgid "translator-credits"
 msgstr "Softastur <www.softastur.org>"
 
@@ -1278,11 +1328,11 @@ msgid "Unsaved Document %d"
 msgstr "Documentu non guardáu %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2256 ../pluma/pluma-window.c:2261
+#: ../pluma/pluma-window.c:2264 ../pluma/pluma-window.c:2269
 msgid "Read-Only"
 msgstr "Namái-llectura"
 
-#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3682
+#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3690
 msgid "Documents"
 msgstr "Documentos"
 
@@ -1556,7 +1606,7 @@ msgstr "Editar de toes _maneres"
 #: ../pluma/pluma-io-error-message-area.c:499
 #: ../pluma/pluma-io-error-message-area.c:776
 msgid "D_on't Edit"
-msgstr "N_un editar"
+msgstr "_Nun editar"
 
 #: ../pluma/pluma-io-error-message-area.c:597
 msgid ""
@@ -2077,7 +2127,7 @@ msgstr "Crear documentu nuevu"
 msgid "_Open..."
 msgstr "_Abrir..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1453
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1461
 msgid "Open a file"
 msgstr "Abrir un ficheru"
 
@@ -2415,7 +2465,7 @@ msgstr "Cadena que quies atopar"
 msgid "Line you want to move the cursor to"
 msgstr "Llinia a la que quies mover el cursor"
 
-#: ../pluma/pluma-window.c:1012
+#: ../pluma/pluma-window.c:1020
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Usar mou resaltar %s"
@@ -2423,7 +2473,7 @@ msgstr "Usar mou resaltar %s"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1069 ../pluma/pluma-window.c:1957
+#: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2431,43 +2481,43 @@ msgstr "Usar mou resaltar %s"
 msgid "Plain Text"
 msgstr "Testu planu"
 
-#: ../pluma/pluma-window.c:1070
+#: ../pluma/pluma-window.c:1078
 msgid "Disable syntax highlighting"
 msgstr "Desactivar resaltáu de sintaxis"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1352
+#: ../pluma/pluma-window.c:1360
 #, c-format
 msgid "Open '%s'"
 msgstr "Abrir '%s'"
 
-#: ../pluma/pluma-window.c:1459
+#: ../pluma/pluma-window.c:1467
 msgid "Open a recently used file"
 msgstr "Abrir un ficheru usáu recientemente"
 
-#: ../pluma/pluma-window.c:1465
+#: ../pluma/pluma-window.c:1473
 msgid "Open"
 msgstr "Abrir"
 
-#: ../pluma/pluma-window.c:1523
+#: ../pluma/pluma-window.c:1531
 msgid "Save"
 msgstr "Guardar"
 
-#: ../pluma/pluma-window.c:1525
+#: ../pluma/pluma-window.c:1533
 msgid "Print"
 msgstr "Imprentar"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1682
+#: ../pluma/pluma-window.c:1690
 #, c-format
 msgid "Activate '%s'"
 msgstr "Activar «%s»"
 
-#: ../pluma/pluma-window.c:1935
+#: ../pluma/pluma-window.c:1943
 msgid "Use Spaces"
 msgstr "Usar espacios"
 
-#: ../pluma/pluma-window.c:2006
+#: ../pluma/pluma-window.c:2014
 msgid "Tab Width"
 msgstr "Anchor de la tabulación"
 
@@ -3237,7 +3287,7 @@ msgid "Create new snippet"
 msgstr "Crear un recorte nuevu"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:792
+#: ../plugins/snippets/snippets/Manager.py:793
 msgid "Import snippets"
 msgstr "Importar recortes"
 
@@ -3260,7 +3310,7 @@ msgstr "_Disparador:"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:681
+#: ../plugins/snippets/snippets/Manager.py:682
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr "Pallabra cola que s'activa'l recorte dempués de calcar el tabulador"
 
@@ -3301,7 +3351,7 @@ msgid "Revert selected snippet"
 msgstr "Revertir el recorte seleicionáu"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:674
+#: ../plugins/snippets/snippets/Manager.py:675
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
@@ -3309,75 +3359,75 @@ msgstr ""
 "Esti nun ye un disparador válidu. Los disparadores pueden contener lletres o"
 " un solu caráuter non alfanumbéricu como {,[, etcétera."
 
-#: ../plugins/snippets/snippets/Manager.py:771
+#: ../plugins/snippets/snippets/Manager.py:772
 #, python-format
 msgid "The following error occurred while importing: %s"
 msgstr "Hebo un fallu al importar: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:778
+#: ../plugins/snippets/snippets/Manager.py:779
 msgid "Import successfully completed"
 msgstr "Importación completada satisfactoriamente"
-
-#: ../plugins/snippets/snippets/Manager.py:797
-#: ../plugins/snippets/snippets/Manager.py:883
-#: ../plugins/snippets/snippets/Manager.py:946
-msgid "All supported archives"
-msgstr "Tolos archivos soportaos"
 
 #: ../plugins/snippets/snippets/Manager.py:798
 #: ../plugins/snippets/snippets/Manager.py:884
 #: ../plugins/snippets/snippets/Manager.py:947
-msgid "Gzip compressed archive"
-msgstr "Archivu comprimíu con Gzip"
+msgid "All supported archives"
+msgstr "Tolos archivos soportaos"
 
 #: ../plugins/snippets/snippets/Manager.py:799
 #: ../plugins/snippets/snippets/Manager.py:885
 #: ../plugins/snippets/snippets/Manager.py:948
+msgid "Gzip compressed archive"
+msgstr "Archivu comprimíu con Gzip"
+
+#: ../plugins/snippets/snippets/Manager.py:800
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:949
 msgid "Bzip2 compressed archive"
 msgstr "Archivador comprimíu con Bzip"
 
-#: ../plugins/snippets/snippets/Manager.py:800
+#: ../plugins/snippets/snippets/Manager.py:801
 msgid "Single snippets file"
 msgstr "Ficheru individual de recortes"
 
-#: ../plugins/snippets/snippets/Manager.py:801
-#: ../plugins/snippets/snippets/Manager.py:887
-#: ../plugins/snippets/snippets/Manager.py:950
+#: ../plugins/snippets/snippets/Manager.py:802
+#: ../plugins/snippets/snippets/Manager.py:888
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "All files"
 msgstr "Tolos ficheros"
 
-#: ../plugins/snippets/snippets/Manager.py:813
+#: ../plugins/snippets/snippets/Manager.py:814
 #, python-format
 msgid "The following error occurred while exporting: %s"
 msgstr "Hebo un fallu al esportar: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:817
+#: ../plugins/snippets/snippets/Manager.py:818
 msgid "Export successfully completed"
 msgstr "Esportación completada satisfactoriamente"
 
 #. Ask if system snippets should also be exported
-#: ../plugins/snippets/snippets/Manager.py:857
-#: ../plugins/snippets/snippets/Manager.py:924
+#: ../plugins/snippets/snippets/Manager.py:858
+#: ../plugins/snippets/snippets/Manager.py:925
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
 msgstr ""
 "¿Quier incluyir los recortes del <b>sistema</b> seleicionaos na so "
 "exportación?"
 
-#: ../plugins/snippets/snippets/Manager.py:872
-#: ../plugins/snippets/snippets/Manager.py:942
+#: ../plugins/snippets/snippets/Manager.py:873
+#: ../plugins/snippets/snippets/Manager.py:943
 msgid "There are no snippets selected to be exported"
 msgstr "Nun hai recortes seleicionaos pa exportar"
 
-#: ../plugins/snippets/snippets/Manager.py:877
-#: ../plugins/snippets/snippets/Manager.py:915
+#: ../plugins/snippets/snippets/Manager.py:878
+#: ../plugins/snippets/snippets/Manager.py:916
 msgid "Export snippets"
 msgstr "Esportar recortes"
 
-#: ../plugins/snippets/snippets/Manager.py:1055
+#: ../plugins/snippets/snippets/Manager.py:1056
 msgid "Type a new shortcut, or press Backspace to clear"
 msgstr "Teclee un acelerador nuevu o calque Retrocesu pa llimpiar"
 
-#: ../plugins/snippets/snippets/Manager.py:1057
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut"
 msgstr "Teclee un acelerador nuevu"
 

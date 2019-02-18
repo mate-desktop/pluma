@@ -7,16 +7,16 @@
 # André Rivero Castillo <hab130@gmail.com>, 2018
 # Martin Wimpress <code@flexion.org>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2018
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 13:39+0200\n"
+"POT-Creation-Date: 2019-02-17 11:58+0100\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2018\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019\n"
 "Language-Team: Galician (https://www.transifex.com/mate/teams/13566/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,21 +60,25 @@ msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Switch tabs with [ctrl] + [tab]"
-msgstr ""
+msgstr "Cambiar de lapela con [Ctrl]+[Tab]"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:7
 msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
 msgstr ""
+"Se é verdadeiro, activa a posibilidade de cambiar de lapela empregando  "
+"[Ctrl+Tab] e [Ctrl+Maiús+Tab]."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:8
 msgid "Show the first tab if there is only one tab"
-msgstr ""
+msgstr "Amosar a primeira lapela se só hai unha lapela"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:9
 msgid "If false, it hides the first tab if there is only one tab."
 msgstr ""
+"Se se establece a «falso» (false), agacharase a primeira lapela se so hai "
+"unha lapela."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Style Scheme"
@@ -353,7 +357,7 @@ msgstr "Amosar as lapelas con panel lateral"
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
-"Se estabelece «falso», pluma agochará as lapelas no caderno de notas co "
+"Se estabelece «falso», pluma agachará as lapelas no caderno de notas co "
 "panel lateral activo."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
@@ -549,7 +553,7 @@ msgstr ""
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
-msgstr "Un editor de texto para o entorno de escritorio MATE"
+msgstr "Un editor de texto para o contorno de escritorio MATE"
 
 #: ../data/pluma.appdata.xml.in.h:2
 msgid ""
@@ -1013,11 +1017,11 @@ msgid "Plugins"
 msgstr "Engadidos"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1529
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "Substituír"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1527
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "Buscar"
 
@@ -1259,11 +1263,79 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "_Recuperar"
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:69
+msgid "MATE Documentation Team"
+msgstr " Equipo de documentación do MATE "
+
+#: ../pluma/pluma-commands-help.c:70
+msgid "GNOME Documentation Team"
+msgstr "Equipo de documentación do GNOME"
+
+#: ../pluma/pluma-commands-help.c:71
+msgid "Sun Microsystems"
+msgstr "Sun Microsystems"
+
+#: ../pluma/pluma-commands-help.c:76
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "O Pluma é un editor de textos pequeno e lixeiro para o MATE"
 
-#: ../pluma/pluma-commands-help.c:95
+#: ../pluma/pluma-commands-help.c:79
+msgid ""
+"Pluma is free software; you can redistribute it and/or modify it under the "
+"terms of the GNU General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
+msgstr ""
+"Pluma é software libre polo que vostede pode redistribuílo e/ou modificalo "
+"baixo os termos da Licenza Pública Xeral de GNU publicada pola Free Software"
+" Foundation tanto na versión 2 da licenza como (baixo a súa elección) "
+"calquera versión posterior."
+
+#: ../pluma/pluma-commands-help.c:83
+msgid ""
+"Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+"Pluma distribúese coa esperanza de que lle sexa útil, pero SEN GARANTÍA "
+"ALGUNHA, incluso sen a garantía implícita de MERCANTIBILIDADE ou ADECUACIÓN "
+"A UN PROPÓSITO EN PARTICULAR. Olle a Licenza Pública Xeral para obter máis "
+"información."
+
+#: ../pluma/pluma-commands-help.c:87
+msgid ""
+"You should have received a copy of the GNU General Public License along with"
+" Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA"
+msgstr ""
+"Debeu recibir unha copia da Licenza Pública Xeral de GNU co Pluma, se non é "
+"así, escriba á Free Software Foundation, Inc., 51 Franklin Street, Fifth "
+"Floor, Boston, MA 02110-1301 USA"
+
+#: ../pluma/pluma-commands-help.c:104
+msgid "About Pluma"
+msgstr "Sobre o Pluma"
+
+#: ../pluma/pluma-commands-help.c:107
+msgid ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+"Dereitos de autoría © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Dereitos de autoría © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Dereitos de autoría © 2003-2006 Paolo Maggi\n"
+"Dereitos de autoría © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Dereitos de autoría © 2011 Perberos\n"
+"Dereitos de autoría © 2012-2019 Os desenvolvedores do MATE"
+
+#: ../pluma/pluma-commands-help.c:117
 msgid "translator-credits"
 msgstr ""
 "Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
@@ -1293,11 +1365,11 @@ msgid "Unsaved Document %d"
 msgstr "O documento %d non se gardou"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2256 ../pluma/pluma-window.c:2261
+#: ../pluma/pluma-window.c:2264 ../pluma/pluma-window.c:2269
 msgid "Read-Only"
 msgstr "Só de lectura"
 
-#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3682
+#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3690
 msgid "Documents"
 msgstr "Documentos"
 
@@ -1515,8 +1587,8 @@ msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr ""
-"Non foi posíbel atopar o host %s. Verifique que a configuración do seu proxy"
-" sexa correcta e ténteo de novo."
+"Non foi posíbel atopar o host %s. Verifique que os axustes do seu proxy "
+"sexan correctos e ténteo de novo."
 
 #: ../pluma/pluma-io-error-message-area.c:293
 #, c-format
@@ -2093,7 +2165,7 @@ msgstr "Crear un documento novo"
 msgid "_Open..."
 msgstr "_Abrir..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1453
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1461
 msgid "Open a file"
 msgstr "Abrir un ficheiro"
 
@@ -2345,7 +2417,7 @@ msgstr "Barra de _ferramentas"
 
 #: ../pluma/pluma-ui.h:156
 msgid "Show or hide the toolbar in the current window"
-msgstr "Amosar ou agochar a barra de ferramentas na xanela actual"
+msgstr "Amosar ou agachar a barra de ferramentas na xanela actual"
 
 #: ../pluma/pluma-ui.h:158
 msgid "_Statusbar"
@@ -2353,7 +2425,7 @@ msgstr "Barra de e_stado"
 
 #: ../pluma/pluma-ui.h:159
 msgid "Show or hide the statusbar in the current window"
-msgstr "Amosar ou agochar a barra de estado na xanela actual"
+msgstr "Amosar ou agachar a barra de estado na xanela actual"
 
 #: ../pluma/pluma-ui.h:161
 msgid "_Fullscreen"
@@ -2369,7 +2441,7 @@ msgstr "_Panel lateral"
 
 #: ../pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
-msgstr "Amosar ou agochar o panel lateral da xanela actual"
+msgstr "Amosar ou agachar o panel lateral da xanela actual"
 
 #: ../pluma/pluma-ui.h:172
 msgid "_Bottom Pane"
@@ -2377,7 +2449,7 @@ msgstr "Panel _inferior"
 
 #: ../pluma/pluma-ui.h:173
 msgid "Show or hide the bottom pane in the current window"
-msgstr "Amosar ou agochar o panel inferior na xanela actual"
+msgstr "Amosar ou agachar o panel inferior na xanela actual"
 
 #: ../pluma/pluma-utils.c:1074
 msgid "Please check your installation."
@@ -2431,7 +2503,7 @@ msgstr "A cadea que quere buscar"
 msgid "Line you want to move the cursor to"
 msgstr "A liña á que quere mover o cursor"
 
-#: ../pluma/pluma-window.c:1012
+#: ../pluma/pluma-window.c:1020
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Usar o modo de realce %s"
@@ -2439,7 +2511,7 @@ msgstr "Usar o modo de realce %s"
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1069 ../pluma/pluma-window.c:1957
+#: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
@@ -2447,43 +2519,43 @@ msgstr "Usar o modo de realce %s"
 msgid "Plain Text"
 msgstr "Texto plano"
 
-#: ../pluma/pluma-window.c:1070
+#: ../pluma/pluma-window.c:1078
 msgid "Disable syntax highlighting"
 msgstr "Desactivar o realce de sintaxe"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1352
+#: ../pluma/pluma-window.c:1360
 #, c-format
 msgid "Open '%s'"
 msgstr "Abrir «%s»"
 
-#: ../pluma/pluma-window.c:1459
+#: ../pluma/pluma-window.c:1467
 msgid "Open a recently used file"
 msgstr "Abrir un ficheiro usado recentemente"
 
-#: ../pluma/pluma-window.c:1465
+#: ../pluma/pluma-window.c:1473
 msgid "Open"
 msgstr "Abrir"
 
-#: ../pluma/pluma-window.c:1523
+#: ../pluma/pluma-window.c:1531
 msgid "Save"
 msgstr "Gardar"
 
-#: ../pluma/pluma-window.c:1525
+#: ../pluma/pluma-window.c:1533
 msgid "Print"
 msgstr "Imprimir"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1682
+#: ../pluma/pluma-window.c:1690
 #, c-format
 msgid "Activate '%s'"
 msgstr "Activar «%s»"
 
-#: ../pluma/pluma-window.c:1935
+#: ../pluma/pluma-window.c:1943
 msgid "Use Spaces"
 msgstr "Usar espazos"
 
-#: ../pluma/pluma-window.c:2006
+#: ../pluma/pluma-window.c:2014
 msgid "Tab Width"
 msgstr "Largura da tabulación"
 
@@ -2849,8 +2921,8 @@ msgid ""
 msgstr ""
 "Este valor determina os ficheiros que se filtran no navegador de ficheiros. "
 "Os valores válidos son: none (non filtrar), hidden (filtrar ficheiros "
-"agochados), binary (filtrar ficheiros binarios) e hidden_and_binary (filtrar"
-" ficheiros agochados e binarios)."
+"agachados), binary (filtrar ficheiros binarios) e hidden_and_binary (filtrar"
+" ficheiros agachados e binarios)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
@@ -2957,7 +3029,7 @@ msgstr "Produciuse un erro ao abrir un cartafol no xestor de ficheiros"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
 msgid "An error occurred while setting a root directory"
-msgstr "Produciuse un erro ao configurar o cartafol raíz"
+msgstr "Produciuse un erro ao axustar o cartafol raíz"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:900
 msgid "An error occurred while loading a directory"
@@ -3255,7 +3327,7 @@ msgid "Create new snippet"
 msgstr "Crear un fragmento novo"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:792
+#: ../plugins/snippets/snippets/Manager.py:793
 msgid "Import snippets"
 msgstr "Importar fragmentos"
 
@@ -3278,7 +3350,7 @@ msgstr "_Activador de lapelas:"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:681
+#: ../plugins/snippets/snippets/Manager.py:682
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr "Palabra coa que se activa o fragmento despois de premer no tabulador"
 
@@ -3319,7 +3391,7 @@ msgid "Revert selected snippet"
 msgstr "Recuperar o fragmento seleccionado"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:674
+#: ../plugins/snippets/snippets/Manager.py:675
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
@@ -3327,74 +3399,74 @@ msgstr ""
 "Este non é un activador de lapelas admitido. Os activadores poden conter "
 "letras ou un só carácter (non alfanumérico), como {, [ etc."
 
-#: ../plugins/snippets/snippets/Manager.py:771
+#: ../plugins/snippets/snippets/Manager.py:772
 #, python-format
 msgid "The following error occurred while importing: %s"
 msgstr "Encontrouse o seguinte erro ao importar: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:778
+#: ../plugins/snippets/snippets/Manager.py:779
 msgid "Import successfully completed"
 msgstr "A importación rematou correctamente"
-
-#: ../plugins/snippets/snippets/Manager.py:797
-#: ../plugins/snippets/snippets/Manager.py:883
-#: ../plugins/snippets/snippets/Manager.py:946
-msgid "All supported archives"
-msgstr "Todos os arquivos compatíbeis"
 
 #: ../plugins/snippets/snippets/Manager.py:798
 #: ../plugins/snippets/snippets/Manager.py:884
 #: ../plugins/snippets/snippets/Manager.py:947
-msgid "Gzip compressed archive"
-msgstr "Arquivo comprimido con Gzip"
+msgid "All supported archives"
+msgstr "Todos os arquivos compatíbeis"
 
 #: ../plugins/snippets/snippets/Manager.py:799
 #: ../plugins/snippets/snippets/Manager.py:885
 #: ../plugins/snippets/snippets/Manager.py:948
+msgid "Gzip compressed archive"
+msgstr "Arquivo comprimido con Gzip"
+
+#: ../plugins/snippets/snippets/Manager.py:800
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:949
 msgid "Bzip2 compressed archive"
 msgstr "Arquivo comprimido con Bzip2"
 
-#: ../plugins/snippets/snippets/Manager.py:800
+#: ../plugins/snippets/snippets/Manager.py:801
 msgid "Single snippets file"
 msgstr "Ficheiro de fragmentos único"
 
-#: ../plugins/snippets/snippets/Manager.py:801
-#: ../plugins/snippets/snippets/Manager.py:887
-#: ../plugins/snippets/snippets/Manager.py:950
+#: ../plugins/snippets/snippets/Manager.py:802
+#: ../plugins/snippets/snippets/Manager.py:888
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "All files"
 msgstr "Todos os ficheiros"
 
-#: ../plugins/snippets/snippets/Manager.py:813
+#: ../plugins/snippets/snippets/Manager.py:814
 #, python-format
 msgid "The following error occurred while exporting: %s"
 msgstr "Encontrouse o seguinte erro ao exportar: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:817
+#: ../plugins/snippets/snippets/Manager.py:818
 msgid "Export successfully completed"
 msgstr "A exportación rematou correctamente"
 
 #. Ask if system snippets should also be exported
-#: ../plugins/snippets/snippets/Manager.py:857
-#: ../plugins/snippets/snippets/Manager.py:924
+#: ../plugins/snippets/snippets/Manager.py:858
+#: ../plugins/snippets/snippets/Manager.py:925
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
 msgstr ""
 "Quere incluír os fragmentos de <b>sistema</b> seleccionados na exportación?"
 
-#: ../plugins/snippets/snippets/Manager.py:872
-#: ../plugins/snippets/snippets/Manager.py:942
+#: ../plugins/snippets/snippets/Manager.py:873
+#: ../plugins/snippets/snippets/Manager.py:943
 msgid "There are no snippets selected to be exported"
 msgstr "Non se seleccionou ningún fragmento para exportar"
 
-#: ../plugins/snippets/snippets/Manager.py:877
-#: ../plugins/snippets/snippets/Manager.py:915
+#: ../plugins/snippets/snippets/Manager.py:878
+#: ../plugins/snippets/snippets/Manager.py:916
 msgid "Export snippets"
 msgstr "Exportar fragmentos"
 
-#: ../plugins/snippets/snippets/Manager.py:1055
+#: ../plugins/snippets/snippets/Manager.py:1056
 msgid "Type a new shortcut, or press Backspace to clear"
 msgstr "Escriba un atallo novo ou prema a tecla retroceso para limpar"
 
-#: ../plugins/snippets/snippets/Manager.py:1057
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut"
 msgstr "Escriba un atallo novo"
 

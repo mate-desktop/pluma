@@ -6,16 +6,16 @@
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Benedikt Straub <benedikt-straub@web.de>, 2018
+# Benedikt Straub <benedikt-straub@web.de>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-08 13:39+0200\n"
+"POT-Creation-Date: 2019-02-17 11:58+0100\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Benedikt Straub <benedikt-straub@web.de>, 2018\n"
+"Last-Translator: Benedikt Straub <benedikt-straub@web.de>, 2019\n"
 "Language-Team: Low German (https://www.transifex.com/mate/teams/13566/nds/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,61 +34,76 @@ msgid ""
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
 msgstr ""
+"Of de normaale Fastbreden-Schriftaard vum System tum Bewarken vun Text "
+"bruukt worden sall un nich eene besünnere Schriftaard vun Pluma. Wenn nich, "
+"word de Schriftaard, de in de Optioon »Bewarker-Schriftaard« geven is, "
+"bruukt, un nich de System-Schriftaard."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:3
 msgctxt "editor-font"
 msgid "'Monospace 12'"
-msgstr ""
+msgstr "'Monospace 12'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:4
 msgid "Editor Font"
-msgstr ""
+msgstr "Bewarker-Schriftaard"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:5
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
 msgstr ""
+"De Schriftaard, wat für de Bewarker bruukt worden sall. Dat is blot dann vun"
+" Belang, wenn de Optioon »Normaale Schrift bruken« utknipst is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Switch tabs with [ctrl] + [tab]"
-msgstr ""
+msgstr "Registerkaarten mit [Strg]+[Tab] wesseln"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:7
 msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
 msgstr ""
+"Wenn jau, könen Registerkaarten mit [Strg + Tab] un [Strg + Umschalt + Tab] "
+"wesselt worden."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:8
 msgid "Show the first tab if there is only one tab"
-msgstr ""
+msgstr "Wies de eerste Registerkaart, wenn 't blot eene gifft"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:9
 msgid "If false, it hides the first tab if there is only one tab."
 msgstr ""
+"Wenn nich, word de eerste Registerkaart nich wiesen, wenn 't blot eene "
+"Registerkaart gifft."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Style Scheme"
-msgstr ""
+msgstr "Utsehn-Schema"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:11
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
 msgstr ""
+"De ID vun eenem GtkSourceView-Utsehn-Schema, um de Klöör vum Text "
+"fasttoleggen."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:12
 msgid "Create Backup Copies"
-msgstr ""
+msgstr "Sekerheidskopien maken"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:13
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
 msgstr ""
+"Of Pluma för sekerte Dateien Sekerheidskopien maken sall. Du kannst de "
+"Dateierwiedern för Sekerheidskopien mit de Optioon »Dateierwiedern för "
+"Sekerheidskopien« setten."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:14
 msgid "Autosave"
-msgstr ""
+msgstr "Automatisk sekern"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:15
 msgid ""
@@ -96,48 +111,57 @@ msgid ""
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
 msgstr ""
+"Of Pluma ännerte Dateien na eener wissen Tied automatisk sakern sall. Du "
+"kannst deese Tiedspann mit de Optioon »Ofstand tum automatisken Sekern« "
+"setten."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:16
 msgid "Autosave Interval"
-msgstr ""
+msgstr "Ofstand tum automatisken Sekern"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:17
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
 msgstr ""
+"De Tahl vun Menüten, na denen Pluma ännerte Dateien automatisk sekert. Dat "
+"is blot dann vun Belang, wenn de Optioon »Automatisk sekern« anknipst is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:18
 msgid "Show save confirmation"
-msgstr ""
+msgstr "Vör de Sekern fragen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:19
 msgid "Show save confirmation if the files have changes."
-msgstr ""
+msgstr "Vör de Sekern nafragen, wenn de Dateien ännert sünd."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:20
 msgid "Writable VFS schemes"
-msgstr ""
+msgstr "VFS-Schemen tum Schrieven"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:21
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
 msgstr ""
+"De VFS-Schemen, wat Pluma bi'm Schrieven verlöövt. Normaal is dat Schema "
+"»file« tum Schrieven verlöövt."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:22
 msgid "Maximum Number of Undo Actions"
-msgstr ""
+msgstr "Hoogste Tahl vun Torüggnehmen-Dingen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:23
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
 msgstr ""
+"De hoogste Tahl vun Dingen, wat Pluma torüggnehmen oder wedderhalen kann. "
+"Bruuk »-1«, um de Tahl nich to begrenzen."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:24
 msgid "Line Wrapping Mode"
-msgstr ""
+msgstr "Riegen umpacken"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:25
 msgid ""
@@ -147,76 +171,85 @@ msgid ""
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
 msgstr ""
+"Gifft an, wo lange Riegen im Bewarker umpackt worden. Bruuk »GTK_WRAP_NONE«,"
+" um se nich umtopacken, »GTK_WRAP_WORD«, um blot tüsken Woorten umtopacken, "
+"oder »GTK_WRAP_CHAR«, um se na eets Bookstaav umtopacken. Wahrschau: De "
+"Weerten mutten mit Grot- un Kleenbookstaven jüüst so schreven worden, as se "
+"hier stahn."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:26
 msgid "Tab Size"
-msgstr ""
+msgstr "Inschuuv-Grött"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:27
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr ""
+"Gifft de Tahl vun Leeg-Tekens an, wat för Inschuuv-Bookstaven wiest worden "
+"sallen."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:28
 msgid "Insert spaces"
-msgstr ""
+msgstr "Leegtekens infögen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:29
 msgid "Whether pluma should insert spaces instead of tabs."
-msgstr ""
+msgstr "Of Pluma Leegtekens statt Inschuvens infögen sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:30
 msgid "Automatic indent"
-msgstr ""
+msgstr "Automatisk inschuven"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:31
 msgid "Whether pluma should enable automatic indentation."
-msgstr ""
+msgstr "Of Pluma neje Regen automatisk inschuven sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:32
 msgid "Display Line Numbers"
-msgstr ""
+msgstr "Riegen-Tahlen wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:33
 msgid "Whether pluma should display line numbers in the editing area."
-msgstr ""
+msgstr "Of Pluma im Bewarker de Riegen-Tahlen wiesen sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:34
 msgid "Highlight Current Line"
-msgstr ""
+msgstr "Aktuelle Rieg wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:35
 msgid "Whether pluma should highlight the current line."
-msgstr ""
+msgstr "Of Pluma de aktuelle Rieg in eener annern Farv wiesen sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:36
 msgid "Highlight Matching Bracket"
-msgstr ""
+msgstr "Daartohörende Klammer wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:37
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr ""
+"Of Pluma de Klammer, wat to de utkörten daartohöört, in eener annern Farv "
+"wiesen sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Display Right Margin"
-msgstr ""
+msgstr "Rechten Rann wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:39
 msgid "Whether pluma should display the right margin in the editing area."
-msgstr ""
+msgstr "Of Pluma im Bewarker de rechten Rann wiesen sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:40
 msgid "Right Margin Position"
-msgstr ""
+msgstr "Stee vum rechten Rann"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:41
 msgid "Specifies the position of the right margin."
-msgstr ""
+msgstr "Gifft an, wo wied na rechts de rechte Rann is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:42
 msgid "Smart Home End"
-msgstr ""
+msgstr "Klokes Pos1/Enn"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:43
 msgid ""
@@ -228,45 +261,55 @@ msgid ""
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
 msgstr ""
+"Gifft an, wat de Wieser maakt, wenn de Tasten POS1 un ENN bruukt worden. "
+"Bruuk »DISABLED«, um alltieden tum Anfang/Enn vun de Rieg to gahn; »AFTER«, "
+"um bi'm eersten Maal, wenn de Tast drückt word, tum Anfang/Enn vun de Rieg "
+"to gahn um tum Anfang/Enn sünner Leegtekens, wenn se noch maal drückt "
+"worden; »BEFORE«, um dat annersrum to maken; oder »ALWAYS«, um alltieden tum"
+" Anfang/Enn vum Text un nich vun de Rieg to gahn."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:44
 msgid "Restore Previous Cursor Position"
-msgstr ""
+msgstr "Leste Wieserstee upheven"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:45
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
 msgstr ""
+"Of Pluma bi'm Opmaken vun eener Datei de Wieser daar hensetten sall, waar 't"
+" tolest weer."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:46
 msgid "Enable Search Highlighting"
-msgstr ""
+msgstr "Bi'm Söken wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:47
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
 msgstr ""
+"Of Pluma de Text, wat för söcht word, överall in eener annern Farv wiesen "
+"sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:48
 msgid "Enable Syntax Highlighting"
-msgstr ""
+msgstr "Syntax wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:49
 msgid "Whether pluma should enable syntax highlighting."
-msgstr ""
+msgstr "Of Pluma de Syntax wiesen sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:50
 msgid "Toolbar is Visible"
-msgstr ""
+msgstr "Warktüüg-Balken wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:51
 msgid "Whether the toolbar should be visible in editing windows."
-msgstr ""
+msgstr "Of de Warktüüg-Balken im Bewarker daar is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:52
 msgid "Toolbar Buttons Style"
-msgstr ""
+msgstr "Utsehn vun Warktüüg-Balken-Knopen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:53
 msgid ""
@@ -277,74 +320,85 @@ msgid ""
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
 msgstr ""
+"Wo de Warktüüg-Balken-Knopen utsehn. Verloovte Weerten sünd "
+"»PLUMA_TOOLBAR_SYSTEM« för dat, wat vum System vörgeven word, "
+"»PLUMA_TOOLBAR_ICONS«, um blot Tekens to wiesen, "
+"»PLUMA_TOOLBAR_ICONS_AND_TEXT«, um Tekens un Text to wiesen, oder "
+"»PLUMA_TOOLBAR_ICONS_BOTH_HORIZ«, um wichtigen Text tegen Tekens to wiesen. "
+"Wahrschau: De Weerten mutten mit Grot- un Kleenbookstaven jüüst so schreven "
+"worden, as se hier stahn."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:54
 msgid "Status Bar is Visible"
-msgstr ""
+msgstr "Tostandsbalken wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:55
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
-msgstr ""
+msgstr "Of de Tostandsbalken am unnern Rann vum Bewarker daar is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:56
 msgid "Side Pane is Visible"
-msgstr ""
+msgstr "Sietenrebeet wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:57
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
-msgstr ""
+msgstr "Of dat Sietenrebeet links vum Bewarker daar is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:58
 msgid "Show tabs with side pane"
-msgstr ""
+msgstr "Mit Sietenrebeet Registerkaarts wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:59
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
+"Wenn nich, wiest Pluma keene Registerkaarten im Bewarker, wenn dat "
+"Sietenrebeet daar is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Bottom Panel is Visible"
-msgstr ""
+msgstr "Unneres Rebeet wiesen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:61
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
-msgstr ""
+msgstr "Of dat Unnere Rebeet unner de Bewarker daar is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:62
 msgid "Maximum Recent Files"
-msgstr ""
+msgstr "Hoogste Tahl vun lesten Dateien"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:63
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
 msgstr ""
+"Wo völe Dateien, wat lestens open weren, hoogstens im »Leste "
+"Dateien«-Unnermenü wiest worden."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:64
 msgid "Print Syntax Highlighting"
-msgstr ""
+msgstr "Syntax drucken"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:65
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
-msgstr ""
+msgstr "Of Pluma de Syntax bi'm Drucken wiesen sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:66
 msgid "Print Header"
-msgstr ""
+msgstr "Druck-Kopprieg"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:67
 msgid ""
 "Whether pluma should include a document header when printing documents."
-msgstr ""
+msgstr "Of Pluma bi'm Drucken vun Dateien eene Kopprieg infögen sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:68
 msgid "Printing Line Wrapping Mode"
-msgstr ""
+msgstr "Riegen umpacken bi'm Drucken"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:69
 msgid ""
@@ -354,6 +408,11 @@ msgid ""
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
 msgstr ""
+"Gifft an, wo lange Riegen bi'm Drucken umpackt worden. Bruuk "
+"»GTK_WRAP_NONE«, um se nich umtopacken, »GTK_WRAP_WORD«, um blot tüsken "
+"Woorten umtopacken, oder »GTK_WRAP_CHAR«, um se na eets Bookstaav "
+"umtopacken. Wahrschau: De Weerten mutten mit Grot- un Kleenbookstaven jüüst "
+"so schreven worden, as se hier stahn."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:70
 msgid "Print Line Numbers"
@@ -365,59 +424,69 @@ msgid ""
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
 msgstr ""
+"Wenn deeser Weert 0 is, worden keene Riegen-Tahlen bi'm Drucken inföögt. "
+"Anners druckt Pluma all deese Tahl vun Riegen de Riegen-Tahl."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:72
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
-msgstr ""
+msgstr "'Monospace 9'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:73
 msgid "Body Font for Printing"
-msgstr ""
+msgstr "Höövd-Schriftaard bi'm Drucken"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:74
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
 msgstr ""
+"Gifft de Schriftaard, wat Pluma för de Höövddeel vun eener Datei bi'm "
+"Drucken bruken sall."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:75
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
-msgstr ""
+msgstr "'Sans 11'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:76
 msgid "Header Font for Printing"
-msgstr ""
+msgstr "Kopp-Schriftaard bi'm Drucken"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:77
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
 msgstr ""
+"Gifft de Schriftaard, wat för de Kopprieg vun eener Datei bi'm Drucken "
+"bruukt worden sall. Dat is blot dann vun Belang, wenn de Optioon »Druck-"
+"Kopprieg« anknipst is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:78
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
-msgstr ""
+msgstr "'Sans 8'"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:79
 msgid "Line Number Font for Printing"
-msgstr ""
+msgstr "Schriftaard för Riegen-Tahlen i'm Drucken"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:80
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
 msgstr ""
+"Gifft de Schriftaard, wat bi'm Drucken för Riegen-Tahlen bruukt worden sall."
+" Dat is blot dann vun Belang, wenn de Optioon »Riegen-Tahlen wiesen« nich "
+"null is."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:81
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
+msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:82
 msgid "Automatically Detected Encodings"
-msgstr ""
+msgstr "Automatisk utmaakte Koderens"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:83
 msgid ""
@@ -425,37 +494,42 @@ msgid ""
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
 msgstr ""
+"Sorteerte List vun Koderens, wat Pluma bruken sall, um de Koderen vun eener "
+"Datei automatisk uttomaken. »CURRENT« staht för de Koderen vun de aktuellen "
+"Spraak. Blot utmaakte Koderens worden bruukt."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:84
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
-msgstr ""
+msgstr "[ 'ISO-8859-15' ]"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:85
 msgid "Encodings shown in menu"
-msgstr ""
+msgstr "Im Menü wiesene Koderens"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:86
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
 msgstr ""
+"List vun Koderens, wat im Bookstaven-Koderens-Menü bi'm Opmaken/Sekern wiest"
+" worden. Blot utmaakte Koderens worden bruukt."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:87
 msgid "History for \"search for\" entries"
-msgstr ""
+msgstr "Histoorje för »Söken na«-Indragen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:88
 msgid "List of entries in \"search for\" textbox."
-msgstr ""
+msgstr "De List vun Indragen in de »Söken na«-Ingaavfeld."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:89
 msgid "History for \"replace with\" entries"
-msgstr ""
+msgstr "Histoorje för »Överschrieven mit«-Indragen"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:90
 msgid "List of entries in \"replace with\" textbox."
-msgstr ""
+msgstr "De List vun Indragen in de »Överschrieven mit«-Ingaavfeld."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:91
 msgid "Active plugins"
@@ -466,10 +540,12 @@ msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
 msgstr ""
+"List vun aktiven Plugins. Enthollt de »Stee« vun de aktiven Plugins. Kiek in"
+" de .pluma-plugin-Datei, um de »Stee« för een wisses Plugin to kriegen."
 
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
-msgstr ""
+msgstr "Een Text-Bewarker för de MATE-Schrievdisk"
 
 #: ../data/pluma.appdata.xml.in.h:2
 msgid ""
@@ -482,10 +558,18 @@ msgid ""
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
 msgstr ""
+"<p> Pluma is een lütter aver machtiger Text-Bewarker, wat jüüst för de MATE-"
+"Schrievdisk schreven is. 't kann alls, wat een normaaler Text-Bewarker könen"
+" mutt, un unnerstütt kumpleet Text in all Spraken in Unicode. Butendem kann "
+"Pluma in Quelltexten de Syntax wiesen un Text automatisk inschuven, "
+"Dokumenten drucken un mennig Dokumenten in eenem Fenster bewarken. </p> <p> "
+"Pluma kann mit eenem Plugin-System verwiedert worden, wat nu dat Naprüfen "
+"vun de Rechtschrieven, dat Verglieken vun Dateien, da Ankieken vun CVS-"
+"ChangeLogs un dat Anpassen vun Inschuuv-Deepten unnerstütt. </p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
-msgstr ""
+msgstr "Pluma"
 
 #: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:760
 msgid "Text Editor"
@@ -497,15 +581,15 @@ msgstr "Textdateien bewarken"
 
 #: ../data/pluma.desktop.in.in.h:4
 msgid "Pluma Text Editor"
-msgstr ""
+msgstr "Pluma Text-Bewarker"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "Log Out _without Saving"
-msgstr ""
+msgstr "Ofmellen _sünner Sekern"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:144
 msgid "_Cancel Logout"
-msgstr ""
+msgstr "Ofmellen _ofbreken"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
 msgid "Close _without Saving"
@@ -540,7 +624,7 @@ msgstr "_Spiekern"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
 msgid "Save _As"
-msgstr ""
+msgstr "Sekern _as"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
 msgid "Question"
@@ -555,12 +639,18 @@ msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de leste %ld Sekünn för immer "
+"verloren."
 msgstr[1] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de lesten %ld Sekünnen för immer "
+"verloren."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr ""
+"Wenn du nich sekerst, gahn de Ännerns vun de lesten Menüüt för immer "
+"verloren."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
 #, c-format
@@ -571,7 +661,11 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de leste Menüüt un %ld Sekünn för "
+"immer verloren."
 msgstr[1] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de leste Menüüt un %ld Sekünnen "
+"för immer verloren."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
 #, c-format
@@ -582,12 +676,17 @@ msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de leste %ld Menüüt för immer "
+"verloren."
 msgstr[1] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de lesten %ld Menüten för immer "
+"verloren."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr ""
+"Wenn du nich sekerst, gahn de Ännerns vun de leste Stunn för immer verloren."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
 #, c-format
@@ -598,7 +697,11 @@ msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de leste Stunn un %d Menüüt för "
+"immer verloren."
 msgstr[1] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de leste Stunn un %d Menüten för "
+"immer verloren."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
 #, c-format
@@ -607,29 +710,33 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de leste %d Stunn för immer "
+"verloren."
 msgstr[1] ""
+"Wenn du nich sekerst, gahn de Ännerns vun de lesten %d Stunnen för immer "
+"verloren."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
-msgstr ""
+msgstr "De Ännerns in Dokument »%s« gahn för immer verloren."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
-msgstr ""
+msgstr "Ännerns in Dokument »%s« vör de Sluten sekern?"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:771
 msgid "Saving has been disabled by the system administrator."
-msgstr ""
+msgstr "De System-Verwalter hett dat Sekern verseggt."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "De Ännerns in %d Dokument gahn för immer verloren."
+msgstr[1] "De Ännerns in %d Dokumenten gahn för immer verloren."
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:728
 #, c-format
@@ -638,19 +745,21 @@ msgid ""
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] ""
+"'t gifft %d Dokument mit nich sekerten Ännerns. Vör de Sluten sekern?"
 msgstr[1] ""
+"'t gifft %d Dokumenten mit nich sekerten Ännerns. Vör de Sluten sekern?"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
 msgid "Docum_ents with unsaved changes:"
-msgstr ""
+msgstr "_Dokumenten mit nich sekerten Ännerns:"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:748
 msgid "S_elect the documents you want to save:"
-msgstr ""
+msgstr "De Dokumenten tum Sekern _utkören:"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:773
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr ""
+msgstr "Wenn du nich sekerst, gahn all diene Ännerns för immer verloren."
 
 #: ../pluma/dialogs/pluma-encodings-dialog.c:313
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
@@ -660,7 +769,7 @@ msgstr ""
 #: ../plugins/time/pluma-time-plugin.c:923
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:4
 msgid "_OK"
-msgstr ""
+msgstr "_Jau"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.c:314
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
@@ -677,7 +786,7 @@ msgstr "_Hölp"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.c:316
 msgid "Character Encodings"
-msgstr ""
+msgstr "Bookstaven-Koderens"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.c:379
 #: ../pluma/dialogs/pluma-encodings-dialog.c:440
@@ -687,15 +796,15 @@ msgstr "_Beschrieven"
 #: ../pluma/dialogs/pluma-encodings-dialog.c:388
 #: ../pluma/dialogs/pluma-encodings-dialog.c:449
 msgid "_Encoding"
-msgstr ""
+msgstr "_Koderen"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:1
 msgid "Character encodings"
-msgstr ""
+msgstr "Bookstaven-Koderens"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:5
 msgid "A_vailable encodings:"
-msgstr ""
+msgstr "_Verföögbare Koderens"
 
 #. + Add to Dictionary
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:6
@@ -705,37 +814,37 @@ msgstr "_Hentofögen"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:7
 msgid "E_ncodings shown in menu:"
-msgstr ""
+msgstr "Im _Menü wiesene Koderens"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
 msgid "_Remove"
-msgstr ""
+msgstr "_Wegdoon"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:572
 msgid "Click on this button to select the font to be used by the editor"
-msgstr ""
+msgstr "Klick up deesen Knoop, um de Schriftaard för de Bewarker uttokören."
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:582
 #, c-format
 msgid "_Use the system fixed width font (%s)"
-msgstr ""
+msgstr "De Fastbreden-Schriftaard vum S_ystem bruken (%s)"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:785
 msgid "The selected color scheme cannot be installed."
-msgstr ""
+msgstr "Dat utköörte Farvschema kann nich installeert worden."
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:863
 msgid "Add Scheme"
-msgstr ""
+msgstr "Schema hentofögen"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:870
 msgid "A_dd Scheme"
-msgstr ""
+msgstr "Schema _hentofögen"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:878
 msgid "Color Scheme Files"
-msgstr ""
+msgstr "Farvschema-Dateien"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:885
 #: ../pluma/pluma-file-chooser-dialog.c:54
@@ -745,7 +854,7 @@ msgstr "All Dateien"
 #: ../pluma/dialogs/pluma-preferences-dialog.c:930
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
-msgstr ""
+msgstr "Kunn dat Farvschema »%s« nich wegdoon."
 
 #. ex:et:ts=4:
 #: ../pluma/dialogs/pluma-preferences-dialog.c:1137
@@ -759,7 +868,7 @@ msgstr "_Sluten"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:1140
 msgid "Pluma Preferences"
-msgstr ""
+msgstr "Pluma-Instellens"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:1
 msgid "Preferences"
@@ -768,7 +877,7 @@ msgstr "Instellens"
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:4
 #: ../pluma/pluma-print-preferences.ui.h:9
 msgid "Text Wrapping"
-msgstr ""
+msgstr "Riegen umpacken"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
 #: ../plugins/docinfo/docinfo.ui.h:5
@@ -782,49 +891,49 @@ msgstr "    "
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:6
 #: ../pluma/pluma-print-preferences.ui.h:10
 msgid "Enable text _wrapping"
-msgstr ""
+msgstr "Riegen um_packen"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:7
 #: ../pluma/pluma-print-preferences.ui.h:11
 msgid "Do not _split words over two lines"
-msgstr ""
+msgstr "_Woorten nich över twee Riegen umpacken"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:8
 #: ../pluma/pluma-print-preferences.ui.h:3
 msgid "Line Numbers"
-msgstr ""
+msgstr "Riegen-Tahlen"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2114
 msgid "_Display line numbers"
-msgstr ""
+msgstr "Riegen-_Tahlen wiesen"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:10
 msgid "Current Line"
-msgstr ""
+msgstr "Aktuelle Rieg"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:11
 msgid "Highlight current _line"
-msgstr ""
+msgstr "Aktuelle _Rieg wiesen"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:12
 msgid "Right Margin"
-msgstr ""
+msgstr "Rechter Rann"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:13
 msgid "Display right _margin"
-msgstr ""
+msgstr "Re_chten Rann wiesen"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:14
 msgid "_Right margin at column:"
-msgstr ""
+msgstr "Rechter Rann in _Striep:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
 msgid "Bracket Matching"
-msgstr ""
+msgstr "Tohörende Klammern"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
 msgid "Highlight matching _bracket"
-msgstr ""
+msgstr "Daartohörende _Klammer wiesen"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
 msgid "View"
@@ -832,23 +941,23 @@ msgstr "Ansicht"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:18
 msgid "Tab Stops"
-msgstr ""
+msgstr "Inschuvens"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:19
 msgid "_Tab width:"
-msgstr ""
+msgstr "_Inschuuv-Brede:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:20
 msgid "Insert _spaces instead of tabs"
-msgstr ""
+msgstr "_Leegtekens statt Inschuvens infögen"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:21
 msgid "Automatic Indentation"
-msgstr ""
+msgstr "Automatisk inschuven"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:22
 msgid "_Enable automatic indentation"
-msgstr ""
+msgstr "Automatisk inschu_ven"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:23
 msgid "File Saving"
@@ -856,7 +965,7 @@ msgstr "Datei spiekern"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:24
 msgid "Create a _backup copy of files before saving"
-msgstr ""
+msgstr "Vör de Sekern Seker_heidskopien vun Dateien maken"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:25
 msgid "_Autosave files every"
@@ -876,15 +985,15 @@ msgstr "Schriftart"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
 msgid "Editor _font: "
-msgstr ""
+msgstr "Bewarker-Schrift_aard_"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
 msgid "Pick the editor font"
-msgstr ""
+msgstr "De Bewarker-Schriftaard utkören"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
 msgid "Color Scheme"
-msgstr ""
+msgstr "Farvschema"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
 msgid "_Add..."
@@ -899,18 +1008,18 @@ msgid "Plugins"
 msgstr "Plugins"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:301
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1529
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "Överschrieven"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1527
+#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "Finnen"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:413
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "_Find"
-msgstr ""
+msgstr "_Finnen"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:416
 msgid "Replace _All"
@@ -935,53 +1044,55 @@ msgstr "Överschrieven _mit:"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:7
 msgid "_Match case"
-msgstr ""
+msgstr "Up Grot-/Kleen_bookstavens uppassen"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Match _regular expression"
-msgstr ""
+msgstr "_Regel-Utdrücken bruken"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "Match _entire word only"
-msgstr ""
+msgstr "Blot na _ganzen Woorten söken"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:10
 msgid "Search _backwards"
-msgstr ""
+msgstr "Na _achtern söken"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:11
 msgid "_Wrap around"
-msgstr ""
+msgstr "_Umpacken"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:12
 msgid "_Parse escape sequences (e.g. \\n)"
-msgstr ""
+msgstr "_Maskeerte Woorten (to'n Bispööl \\n) bruken"
 
 #: ../pluma/pluma.c:108
 msgid "Show the application's version"
-msgstr ""
+msgstr "Programm-Versioon wiesen"
 
 #: ../pluma/pluma.c:111
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
 msgstr ""
+"Sett de Bookstaven-Koderen, wat bruukt worden sall, um de Dateien "
+"opentomaken, wat in de Oorderreeg uplist worden"
 
 #: ../pluma/pluma.c:111
 msgid "ENCODING"
-msgstr ""
+msgstr "KODEREN"
 
 #: ../pluma/pluma.c:114
 msgid "Display list of possible values for the encoding option"
-msgstr ""
+msgstr "Eene List von verlöövten Weerten för de Koderen-Optioon wiesen"
 
 #: ../pluma/pluma.c:117
 msgid "Create a new top-level window in an existing instance of pluma"
-msgstr ""
+msgstr "Een nejes Fenster ut eener annern Instanz vun Pluma opmaken"
 
 #: ../pluma/pluma.c:120
 msgid "Create a new document in an existing instance of pluma"
-msgstr ""
+msgstr "Een nejes Dokument in eener annern Instanz vun Pluma opmaken"
 
 #: ../pluma/pluma.c:123
 msgid "[FILE...]"
@@ -990,12 +1101,12 @@ msgstr "[FILE...]"
 #: ../pluma/pluma.c:178
 #, c-format
 msgid "%s: invalid encoding.\n"
-msgstr ""
+msgstr "%s: ungültiges Koderen.\n"
 
 #. Setup command line options
 #: ../pluma/pluma.c:524
 msgid "- Edit text files"
-msgstr ""
+msgstr "- Bewark Textdateien"
 
 #: ../pluma/pluma.c:535
 #, c-format
@@ -1009,14 +1120,14 @@ msgstr ""
 #: ../pluma/pluma-commands-file.c:250
 #, c-format
 msgid "Loading file '%s'…"
-msgstr ""
+msgstr "Lade Datei »%s«…"
 
 #: ../pluma/pluma-commands-file.c:259
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Lade %d Datei…"
+msgstr[1] "Lade %d Dateien…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
@@ -1026,16 +1137,16 @@ msgstr "Dateien opmaken"
 #: ../pluma/pluma-commands-file.c:574
 #, c-format
 msgid "The file \"%s\" is read-only."
-msgstr ""
+msgstr "De Datei »%s« is blot tum Lesen."
 
 #: ../pluma/pluma-commands-file.c:579
 msgid "Do you want to try to replace it with the one you are saving?"
-msgstr ""
+msgstr "Willst du versöken, 't mit diener nejen Datei uttowesseln?"
 
 #: ../pluma/pluma-commands-file.c:649 ../pluma/pluma-commands-file.c:872
 #, c-format
 msgid "Saving file '%s'…"
-msgstr ""
+msgstr "Sekere Datei »%s«…"
 
 #: ../pluma/pluma-commands-file.c:757
 msgid "Save As…"
@@ -1044,12 +1155,12 @@ msgstr "Spiekern as..."
 #: ../pluma/pluma-commands-file.c:1086
 #, c-format
 msgid "Reverting the document '%s'…"
-msgstr ""
+msgstr "Haal de Datei »%s« torügg…"
 
 #: ../pluma/pluma-commands-file.c:1131
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
-msgstr ""
+msgstr "Nich sekerte Änners in de Datei »%s« wegdoon?"
 
 #: ../pluma/pluma-commands-file.c:1140
 #, c-format
@@ -1059,13 +1170,13 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "De Ännerns vun de leste %ld Sekünn gahn för immer verloren."
+msgstr[1] "De Ännerns vun de lesten %ld Sekünnen gahn för immer verloren."
 
 #: ../pluma/pluma-commands-file.c:1149
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
-msgstr ""
+msgstr "De Ännerns vun de leste Menüüt gahn för immer verloren."
 
 #: ../pluma/pluma-commands-file.c:1155
 #, c-format
@@ -1076,7 +1187,9 @@ msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"De Ännerns vun de leste Menüüt un %ld Sekünn gahn för immer verloren."
 msgstr[1] ""
+"De Ännerns vun de leste Menüüt un %ld Sekünnen gahn för immer verloren."
 
 #: ../pluma/pluma-commands-file.c:1165
 #, c-format
@@ -1086,13 +1199,13 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "De Ännerns vun de leste %ld Menüüt gahn för immer verloren."
+msgstr[1] "De Ännerns vun de lesten %ld Menüten gahn för immer verloren."
 
 #: ../pluma/pluma-commands-file.c:1180
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
-msgstr ""
+msgstr "De Ännerns vun de leste Stunn gahn för immer verloren."
 
 #: ../pluma/pluma-commands-file.c:1186
 #, c-format
@@ -1103,7 +1216,9 @@ msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
+"De Ännerns vun de leste Stunn un %d Menüüt gahn för immer verloren."
 msgstr[1] ""
+"De Ännerns vun de leste Stunn un %d Menüten gahn för immer verloren."
 
 #: ../pluma/pluma-commands-file.c:1201
 #, c-format
@@ -1111,18 +1226,68 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "De Ännerns vun de leste %d Stunn gahn för immer verloren."
+msgstr[1] "De Ännerns vun de lesten %d Stunnen gahn för immer verloren."
 
 #: ../pluma/pluma-commands-file.c:1228 ../pluma/pluma-ui.h:84
 msgid "_Revert"
 msgstr "_Umdreihn"
 
-#: ../pluma/pluma-commands-help.c:83
-msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
+#: ../pluma/pluma-commands-help.c:69
+msgid "MATE Documentation Team"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:95
+#: ../pluma/pluma-commands-help.c:70
+msgid "GNOME Documentation Team"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:71
+msgid "Sun Microsystems"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:76
+msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
+msgstr "Pluma is een lütter, lichter Text-Bewarker för de MATE-Schrievdisk."
+
+#: ../pluma/pluma-commands-help.c:79
+msgid ""
+"Pluma is free software; you can redistribute it and/or modify it under the "
+"terms of the GNU General Public License as published by the Free Software "
+"Foundation; either version 2 of the License, or (at your option) any later "
+"version."
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:83
+msgid ""
+"Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:87
+msgid ""
+"You should have received a copy of the GNU General Public License along with"
+" Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:104
+msgid "About Pluma"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:107
+msgid ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2019 MATE developers"
+msgstr ""
+
+#: ../pluma/pluma-commands-help.c:117
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -1133,31 +1298,31 @@ msgstr ""
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hebb %d Stee funnen un överschreven."
+msgstr[1] "Hebb %d Steden funnen un överschreven."
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
-msgstr ""
+msgstr "Hebb eebe Stee funnen un överschreven."
 
 #. Translators: %s is replaced by the text
 #. entered by the user in the search box
 #: ../pluma/pluma-commands-search.c:143
 #, c-format
 msgid "\"%s\" not found"
-msgstr ""
+msgstr "»%s« is nich funnen worden."
 
 #: ../pluma/pluma-document.c:1141 ../pluma/pluma-document.c:1161
 #, c-format
 msgid "Unsaved Document %d"
-msgstr ""
+msgstr "Nich sekertes Dokument %d"
 
 #: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2256 ../pluma/pluma-window.c:2261
+#: ../pluma/pluma-window.c:2264 ../pluma/pluma-window.c:2269
 msgid "Read-Only"
-msgstr ""
+msgstr "Blot tum Lesen"
 
-#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3682
+#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3690
 msgid "Documents"
 msgstr "Dokumente"
 
@@ -1279,7 +1444,7 @@ msgstr "Unbekannt"
 
 #: ../pluma/pluma-encodings-combo-box.c:272
 msgid "Automatically Detected"
-msgstr ""
+msgstr "Automatisk utmaakt"
 
 #: ../pluma/pluma-encodings-combo-box.c:288
 #: ../pluma/pluma-encodings-combo-box.c:303
@@ -1289,7 +1454,7 @@ msgstr "Aktuelle Sprak (%s)"
 
 #: ../pluma/pluma-encodings-combo-box.c:353
 msgid "Add or Remove..."
-msgstr ""
+msgstr "Hentofögen oder wegdoon…"
 
 #: ../pluma/pluma-file-chooser-dialog.c:55
 msgid "All Text Files"
@@ -1297,19 +1462,19 @@ msgstr "All Textdateien"
 
 #: ../pluma/pluma-file-chooser-dialog.c:83
 msgid "C_haracter Encoding:"
-msgstr ""
+msgstr "Bookstaven-_Koderens"
 
 #: ../pluma/pluma-file-chooser-dialog.c:148
 msgid "L_ine Ending:"
-msgstr ""
+msgstr "Riegen-_Enn:"
 
 #: ../pluma/pluma-file-chooser-dialog.c:167
 msgid "Unix/Linux"
-msgstr ""
+msgstr "Unix/Linux"
 
 #: ../pluma/pluma-file-chooser-dialog.c:173
 msgid "Mac OS Classic"
-msgstr ""
+msgstr "Mac OS Classic"
 
 #: ../pluma/pluma-file-chooser-dialog.c:179
 msgid "Windows"
@@ -1322,7 +1487,7 @@ msgstr "_Opmaken"
 
 #: ../pluma/pluma-help.c:81
 msgid "There was an error displaying the help."
-msgstr ""
+msgstr "Bi'm Wiesen vun de Hülp hett 't eenen Fehler geven."
 
 #: ../pluma/pluma-io-error-message-area.c:183
 #: ../pluma/pluma-io-error-message-area.c:485
@@ -1332,41 +1497,43 @@ msgstr "_Nohmal versöken"
 #: ../pluma/pluma-io-error-message-area.c:204
 #, c-format
 msgid "Could not find the file %s."
-msgstr ""
+msgstr "Kunn de Datei »%s« nich finnen."
 
 #: ../pluma/pluma-io-error-message-area.c:206
 #: ../pluma/pluma-io-error-message-area.c:245
 #: ../pluma/pluma-io-error-message-area.c:252
 msgid "Please check that you typed the location correctly and try again."
 msgstr ""
+"Bidde kiek na, of du de Stee richtig ingeven hest, un versöök 't weer."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: ../pluma/pluma-io-error-message-area.c:221
 #, c-format
 msgid "pluma cannot handle %s locations."
-msgstr ""
+msgstr "Pluma kummt mit %s-Steden nich klaar."
 
 #: ../pluma/pluma-io-error-message-area.c:227
 msgid "pluma cannot handle this location."
-msgstr ""
+msgstr "Pluma kummt mit deeser Stee nich klaar."
 
 #: ../pluma/pluma-io-error-message-area.c:235
 msgid "The location of the file cannot be mounted."
-msgstr ""
+msgstr "Kunn de Stee vun de Datei nich inbinnen."
 
 #: ../pluma/pluma-io-error-message-area.c:239
 msgid "The location of the file cannot be accessed because it is not mounted."
 msgstr ""
+"Kunn up de Stee vun de Datei nich togriepen, wiel se nich inbunnen is."
 
 #: ../pluma/pluma-io-error-message-area.c:243
 #, c-format
 msgid "%s is a directory."
-msgstr ""
+msgstr "%s is een Verteeknis."
 
 #: ../pluma/pluma-io-error-message-area.c:250
 #, c-format
 msgid "%s is not a valid location."
-msgstr ""
+msgstr "%s is keene gültige Stee."
 
 #: ../pluma/pluma-io-error-message-area.c:280
 #, c-format
@@ -1374,6 +1541,8 @@ msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr ""
+"De Weert %s kunn nich funnen worden. Bidde kiek na, of diene Proxy-"
+"Instellens richtig sünd, un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:293
 #, c-format
@@ -1381,15 +1550,17 @@ msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr ""
+"De Weertnaam is ungültig. Bidde kiek na, of du de Stee richtig ingeven hest,"
+" un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:301
 #, c-format
 msgid "%s is not a regular file."
-msgstr ""
+msgstr "%s is keene normaale Datei."
 
 #: ../pluma/pluma-io-error-message-area.c:306
 msgid "Connection timed out. Please try again."
-msgstr ""
+msgstr "De Verbinnen hett de Tied överweggahn. Bidde versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:329
 msgid "The file is too big."
@@ -1398,20 +1569,20 @@ msgstr "De Datei is too groot."
 #: ../pluma/pluma-io-error-message-area.c:370
 #, c-format
 msgid "Unexpected error: %s"
-msgstr ""
+msgstr "Unverwachter Fehler: %s"
 
 #: ../pluma/pluma-io-error-message-area.c:406
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
-msgstr ""
+msgstr "Pluma kann de Datei nich finnen. Villicht is se jüüst lösket worden."
 
 #: ../pluma/pluma-io-error-message-area.c:416
 #, c-format
 msgid "Could not revert the file %s."
-msgstr ""
+msgstr "Kunn de Datei %s nich torügghalen."
 
 #: ../pluma/pluma-io-error-message-area.c:442
 msgid "Ch_aracter Encoding:"
-msgstr ""
+msgstr "Bookstaven-_Koderens:"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
@@ -1432,75 +1603,84 @@ msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr ""
+"Ick kann nich so völen Verwiesens nagahn; de eegentlike Datei kunn ick nich "
+"nah genoog finnen."
 
 #: ../pluma/pluma-io-error-message-area.c:601
 msgid "You do not have the permissions necessary to open the file."
-msgstr ""
+msgstr "Du hest nich de Rechten, wat du bruukst, um de Datei opentomaken."
 
 #: ../pluma/pluma-io-error-message-area.c:607
 msgid "pluma has not been able to detect the character encoding."
-msgstr ""
+msgstr "Pluma kunn de Bookstaven-Koderen nich utfinnen."
 
 #: ../pluma/pluma-io-error-message-area.c:609
 #: ../pluma/pluma-io-error-message-area.c:631
 msgid "Please check that you are not trying to open a binary file."
-msgstr ""
+msgstr "Bidde kiek na, of du nich versöchst, eene Binäär-Datei optomaken."
 
 #: ../pluma/pluma-io-error-message-area.c:610
 msgid "Select a character encoding from the menu and try again."
-msgstr ""
+msgstr "Köör eene Bookstaven-Koderen ut de Menü ut un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:616
 #, c-format
 msgid "There was a problem opening the file %s."
-msgstr ""
+msgstr "'t hett eenen Fehler bi'm Versöök geven, de Datei %s optomaken."
 
 #: ../pluma/pluma-io-error-message-area.c:618
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
 msgstr ""
+"In de Datei, wat du opmaakt hest, gifft 't ungültige Bookstavens. Wenn du "
+"deese Datei bewarkst, maakst du se villicht kaputt."
 
 #: ../pluma/pluma-io-error-message-area.c:621
 msgid "You can also choose another character encoding and try again."
 msgstr ""
+"Du kannst ok eene annere Bookstaven-Koderen utkören un 't weer versöken."
 
 #: ../pluma/pluma-io-error-message-area.c:628
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
-msgstr ""
+msgstr "Kunn de Datei %s mit de Bookstaven-Koderen %s nich opmaken."
 
 #: ../pluma/pluma-io-error-message-area.c:632
 #: ../pluma/pluma-io-error-message-area.c:707
 msgid "Select a different character encoding from the menu and try again."
-msgstr ""
+msgstr "Köör eene annere Bookstaven-Koderen ut de Menü ut un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:642
 #, c-format
 msgid "Could not open the file %s."
-msgstr ""
+msgstr "Kunn de Datei %s nich opmaken."
 
 #: ../pluma/pluma-io-error-message-area.c:702
 #, c-format
 msgid "Could not save the file %s using the %s character encoding."
-msgstr ""
+msgstr "Kunn de Datei %s mit de Bookstaven-Koderen %s nich sekern."
 
 #: ../pluma/pluma-io-error-message-area.c:705
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr ""
+"In deesem Dokument gifft 't Bookstavens, wat mit deeser Bookstaven-Koderen "
+"nich kodeert worden könen."
 
 #: ../pluma/pluma-io-error-message-area.c:791
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
-msgstr ""
+msgstr "Deese Datei (%s) is al in eenem annern Fenster vun Pluma open."
 
 #: ../pluma/pluma-io-error-message-area.c:805
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr ""
+"Pluma hett de Datei hier nich tum Bewarken opmaakt. Willst du se doch "
+"bewarken?"
 
 #: ../pluma/pluma-io-error-message-area.c:864
 #: ../pluma/pluma-io-error-message-area.c:960
@@ -1520,22 +1700,23 @@ msgstr "Nich _spiekern"
 #: ../pluma/pluma-io-error-message-area.c:886
 #, c-format
 msgid "The file %s has been modified since reading it."
-msgstr ""
+msgstr "De Datei %s is siet de lesten Lesen ännert worden."
 
 #: ../pluma/pluma-io-error-message-area.c:901
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
+"Wenn du se sekerst, könen de annern Ännerns verloren gahn. Doch sekern?"
 
 #: ../pluma/pluma-io-error-message-area.c:982
 #, c-format
 msgid "Could not create a backup file while saving %s"
-msgstr ""
+msgstr "Kunn bi'm Sekern vun %s keene Sekerheidskopie maken"
 
 #: ../pluma/pluma-io-error-message-area.c:985
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
-msgstr ""
+msgstr "Kunn bi'm Sekern vun %s keene tiedwiese Sekerheidskopie maken"
 
 #: ../pluma/pluma-io-error-message-area.c:1001
 msgid ""
@@ -1543,6 +1724,10 @@ msgid ""
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
 msgstr ""
+"Pluma kunn de olle Versioon vun de Datei nich sekern, ehr de neje sekert "
+"word. Du kannst deese Warnen ignoreren un de Datei doch sekern, aver wenn "
+"daar een Fehler bi uptreddt, verlierst du villicht de olle Kopie vun de "
+"Datei. Doch sekern?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: ../pluma/pluma-io-error-message-area.c:1061
@@ -1551,12 +1736,16 @@ msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr ""
+"Pluma kummt bi'm Sekern mit %s-Steden nich klaar. Bidde kiek na, of du de "
+"Stee richtig ingeven hest, un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:1069
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr ""
+"Pluma kummt bi'm Sekern mit deeser Stee nich klaar. Bidde kiek na, of du de "
+"Stee richtig ingeven hest, un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:1078
 #, c-format
@@ -1564,34 +1753,45 @@ msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr ""
+"%s is keene gültige Stee. Bidde kiek na, of du de Stee richtig ingeven hest,"
+" un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:1084
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
 msgstr ""
+"Du hest nich de Rechten, wat du bruukst, um de Datei to sekern. Bidde kiek "
+"na, of du de Stee richtig ingeven hest, un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:1090
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
 msgstr ""
+"'t gifft nich genoog frejen Spieker, um de Datei to sekern. Bidde maak wat "
+"Spieker freei un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:1095
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr ""
+"Du versöchst, de Datei up eenen Spieker to schrieven, wat blot tum Lesen is."
+" Bidde kiek na, of du de Stee richtig ingeven hest, un versöök 't weer."
 
 #: ../pluma/pluma-io-error-message-area.c:1101
 msgid "A file with the same name already exists. Please use a different name."
 msgstr ""
+"Eene Datei mit de sülven Naam gifft 't al. Bidde bruuk eenen annern Naam."
 
 #: ../pluma/pluma-io-error-message-area.c:1106
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
 msgstr ""
+"De Spieker, waar du de Datei sekern willst, verlöövt keene so langen "
+"Dateinamen. Bidde bruuk eenen körteren Naam."
 
 #: ../pluma/pluma-io-error-message-area.c:1113
 msgid ""
@@ -1599,11 +1799,14 @@ msgid ""
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr ""
+"De Spieker, waar du de Datei sekern willst, verlöövt keene so groten "
+"Dateien. Bidde maak de Datei lütter oder seker se up eenen Spieker sünner "
+"Grött-Begrenzens."
 
 #: ../pluma/pluma-io-error-message-area.c:1129
 #, c-format
 msgid "Could not save the file %s."
-msgstr ""
+msgstr "Kunn de Datei %s nich sekern."
 
 #. FIXME: review this message, it's not clear since for the user the
 #. "modification"
@@ -1613,11 +1816,11 @@ msgstr ""
 #: ../pluma/pluma-io-error-message-area.c:1173
 #, c-format
 msgid "The file %s changed on disk."
-msgstr ""
+msgstr "De Datei %s is up'm Spieker ännert worden."
 
 #: ../pluma/pluma-io-error-message-area.c:1178
 msgid "Do you want to drop your changes and reload the file?"
-msgstr ""
+msgstr "Willst du diene Ännerns wegdoon un de Datei neei laden?"
 
 #: ../pluma/pluma-io-error-message-area.c:1180
 msgid "Do you want to reload the file?"
@@ -1633,7 +1836,7 @@ msgstr "Leer"
 
 #: ../pluma/pluma-panel.c:385
 msgid "Hide panel"
-msgstr ""
+msgstr "Balken verbargen"
 
 #: ../pluma/pluma-print-job.c:544
 #, c-format
@@ -1642,27 +1845,27 @@ msgstr "Datei: %s"
 
 #: ../pluma/pluma-print-job.c:553
 msgid "Page %N of %Q"
-msgstr ""
+msgstr "Sied %N vun %Q"
 
 #: ../pluma/pluma-print-job.c:810
 msgid "Preparing..."
-msgstr ""
+msgstr "Vörbereiden…"
 
 #: ../pluma/pluma-print-preferences.ui.h:1
 msgid "Syntax Highlighting"
-msgstr ""
+msgstr "Syntax wiesen"
 
 #: ../pluma/pluma-print-preferences.ui.h:2
 msgid "Print synta_x highlighting"
-msgstr ""
+msgstr "Synta_x drucken"
 
 #: ../pluma/pluma-print-preferences.ui.h:4
 msgid "Print line nu_mbers"
-msgstr ""
+msgstr "Riegen-_Tahlen drucken"
 
 #: ../pluma/pluma-print-preferences.ui.h:6
 msgid "_Number every"
-msgstr ""
+msgstr "Tahl _all … Riegen"
 
 #: ../pluma/pluma-print-preferences.ui.h:8
 msgid "lines"
@@ -1670,11 +1873,11 @@ msgstr "Reegen"
 
 #: ../pluma/pluma-print-preferences.ui.h:12
 msgid "Page header"
-msgstr ""
+msgstr "Druck-Kopprieg"
 
 #: ../pluma/pluma-print-preferences.ui.h:13
 msgid "Print page _headers"
-msgstr ""
+msgstr "Druck-Kopprieg _drucken"
 
 #: ../pluma/pluma-print-preferences.ui.h:14
 msgid "Fonts"
@@ -1682,31 +1885,31 @@ msgstr "Schriftarten"
 
 #: ../pluma/pluma-print-preferences.ui.h:15
 msgid "_Body:"
-msgstr ""
+msgstr "_Höövddeel:"
 
 #: ../pluma/pluma-print-preferences.ui.h:16
 msgid "He_aders and footers:"
-msgstr ""
+msgstr "_Kopp un Foot:"
 
 #: ../pluma/pluma-print-preferences.ui.h:17
 msgid "_Line numbers:"
-msgstr ""
+msgstr "_Riegen-Tahlen"
 
 #: ../pluma/pluma-print-preferences.ui.h:18
 msgid "_Restore Default Fonts"
-msgstr ""
+msgstr "_Weer normaale Schriften bruken"
 
 #: ../pluma/pluma-print-preview.c:571
 msgid "Show the previous page"
-msgstr ""
+msgstr "Wies de leste Sied"
 
 #: ../pluma/pluma-print-preview.c:584
 msgid "Show the next page"
-msgstr ""
+msgstr "Wies de anner Sied"
 
 #: ../pluma/pluma-print-preview.c:600
 msgid "Current page (Alt+P)"
-msgstr ""
+msgstr "Deese Sied (Alt+P)"
 
 #. Translators: the "of" from "1 of 19" in print preview.
 #: ../pluma/pluma-print-preview.c:623
@@ -1715,15 +1918,15 @@ msgstr "vun"
 
 #: ../pluma/pluma-print-preview.c:631
 msgid "Page total"
-msgstr ""
+msgstr "All Sieden"
 
 #: ../pluma/pluma-print-preview.c:632
 msgid "The total number of pages in the document"
-msgstr ""
+msgstr "De Tahl vun Sieden in deesem Dokument"
 
 #: ../pluma/pluma-print-preview.c:650
 msgid "Show multiple pages"
-msgstr ""
+msgstr "Mennig Sieden wiesen"
 
 #: ../pluma/pluma-print-preview.c:664
 msgid "Zoom 1:1"
@@ -1731,15 +1934,15 @@ msgstr "Gröte 1:1"
 
 #: ../pluma/pluma-print-preview.c:674
 msgid "Zoom to fit the whole page"
-msgstr ""
+msgstr "Vergrotern, um de ganze Sied to bruken"
 
 #: ../pluma/pluma-print-preview.c:684
 msgid "Zoom the page in"
-msgstr ""
+msgstr "De Sied vergrotern"
 
 #: ../pluma/pluma-print-preview.c:694
 msgid "Zoom the page out"
-msgstr ""
+msgstr "De Sied verkleenern"
 
 #: ../pluma/pluma-print-preview.c:706
 msgid "_Close Preview"
@@ -1752,7 +1955,7 @@ msgstr "Druckutblick sluten"
 #: ../pluma/pluma-print-preview.c:784
 #, c-format
 msgid "Page %d of %d"
-msgstr ""
+msgstr "Sied %d vun %d"
 
 #: ../pluma/pluma-print-preview.c:965
 msgid "Page Preview"
@@ -1760,11 +1963,11 @@ msgstr "Sietenutblick"
 
 #: ../pluma/pluma-print-preview.c:966
 msgid "The preview of a page in the document to be printed"
-msgstr ""
+msgstr "De Vörschau vun eener Sied in de Dokument, wat druckt worden sall"
 
 #: ../pluma/pluma-smart-charset-converter.c:319
 msgid "It is not possible to detect the encoding automatically"
-msgstr ""
+msgstr "De Koderen kann nich automatisk utmaakt worden"
 
 #: ../pluma/pluma-statusbar.c:70 ../pluma/pluma-statusbar.c:76
 msgid "OVR"
@@ -1780,38 +1983,39 @@ msgstr ""
 #: ../pluma/pluma-statusbar.c:251
 #, c-format
 msgid "  Ln %d, Col %d"
-msgstr ""
+msgstr "  Rg %d, St %d"
 
 #: ../pluma/pluma-statusbar.c:352
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "'t gifft eene Registerkaart mit Fehlers"
+msgstr[1] "'t gifft %d Registerkaarten mit Fehlers"
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format
 msgid "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
 msgstr ""
+"Kunn dat Verteeknis »%s« nich maken: g_mkdir_with_parents() gaht nich: %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
 #: ../pluma/pluma-tab.c:672
 #, c-format
 msgid "Reverting %s from %s"
-msgstr ""
+msgstr "Haal de Datei %s ut %s torügg…"
 
 #: ../pluma/pluma-tab.c:679
 #, c-format
 msgid "Reverting %s"
-msgstr ""
+msgstr "Haal %s torügg"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
 #: ../pluma/pluma-tab.c:695
 #, c-format
 msgid "Loading %s from %s"
-msgstr ""
+msgstr "Lade %s ut %s"
 
 #: ../pluma/pluma-tab.c:702
 #, c-format
@@ -1833,26 +2037,26 @@ msgstr "Spieker %s"
 #. Read only
 #: ../pluma/pluma-tab.c:1668
 msgid "RO"
-msgstr ""
+msgstr "BL"
 
 #: ../pluma/pluma-tab.c:1715
 #, c-format
 msgid "Error opening file %s"
-msgstr ""
+msgstr "Fehler bi'm Opmaken vun de Datei %s"
 
 #: ../pluma/pluma-tab.c:1720
 #, c-format
 msgid "Error reverting file %s"
-msgstr ""
+msgstr "Fehler bi'm Torügghalen vun de Datei %s"
 
 #: ../pluma/pluma-tab.c:1725
 #, c-format
 msgid "Error saving file %s"
-msgstr ""
+msgstr "Fehler bi'm Sekern vun de Datei %s"
 
 #: ../pluma/pluma-tab.c:1746
 msgid "Unicode (UTF-8)"
-msgstr ""
+msgstr "Unicode (UTF-8)"
 
 #: ../pluma/pluma-tab.c:1753
 msgid "Name:"
@@ -1860,11 +2064,11 @@ msgstr "Naam:"
 
 #: ../pluma/pluma-tab.c:1754
 msgid "MIME Type:"
-msgstr ""
+msgstr "MIME-Aard:"
 
 #: ../pluma/pluma-tab.c:1755
 msgid "Encoding:"
-msgstr ""
+msgstr "Koderen:"
 
 #: ../pluma/pluma-tab-label.c:278
 msgid "Close document"
@@ -1908,7 +2112,7 @@ msgstr "Nejes Dokument erstellen"
 msgid "_Open..."
 msgstr "_Opmaken..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1453
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1461
 msgid "Open a file"
 msgstr "Datei opmaken"
 
@@ -1941,7 +2145,7 @@ msgstr "Över düsses Programm"
 #. Fullscreen toolbar
 #: ../pluma/pluma-ui.h:72
 msgid "_Leave Fullscreen"
-msgstr ""
+msgstr "Fullbill _verlaten"
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
@@ -1961,7 +2165,7 @@ msgstr "Düsse Datei mit ee'm annern Naam spiekern"
 
 #: ../pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr ""
+msgstr "To eener sekerten Versioon vun de Datei torüggsetten"
 
 #: ../pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -1977,7 +2181,7 @@ msgstr "_Drucken..."
 
 #: ../pluma/pluma-ui.h:89
 msgid "Print the current page"
-msgstr ""
+msgstr "De aktuelle Sied drucken"
 
 #. Edit menu
 #: ../pluma/pluma-ui.h:92
@@ -1994,7 +2198,7 @@ msgstr "_Wedderholen"
 
 #: ../pluma/pluma-ui.h:95
 msgid "Redo the last undone action"
-msgstr ""
+msgstr "Dat tolest torüggnohmene Ding wedderhalen"
 
 #: ../pluma/pluma-ui.h:96
 msgid "Cu_t"
@@ -2042,7 +2246,7 @@ msgstr "All Dokument markeren"
 #. View menu
 #: ../pluma/pluma-ui.h:108
 msgid "_Highlight Mode"
-msgstr ""
+msgstr "_Hervörhevens-Aard"
 
 #. Search menu
 #: ../pluma/pluma-ui.h:111
@@ -2059,7 +2263,7 @@ msgstr "_Nähsten finnen"
 
 #: ../pluma/pluma-ui.h:114
 msgid "Search forwards for the same text"
-msgstr ""
+msgstr "De sülven Text wieder vörn söken"
 
 #: ../pluma/pluma-ui.h:115
 msgid "Find Pre_vious"
@@ -2067,7 +2271,7 @@ msgstr "_Vorige finnen"
 
 #: ../pluma/pluma-ui.h:116
 msgid "Search backwards for the same text"
-msgstr ""
+msgstr "De sülven Text wieder achtern söken"
 
 #: ../pluma/pluma-ui.h:117
 msgid "_Replace..."
@@ -2075,31 +2279,31 @@ msgstr "_Överschrieven..."
 
 #: ../pluma/pluma-ui.h:118
 msgid "Search for and replace text"
-msgstr ""
+msgstr "Text söken un överschrieven"
 
 #: ../pluma/pluma-ui.h:119
 msgid "_Clear Highlight"
-msgstr ""
+msgstr "Ni_x hervörheven"
 
 #: ../pluma/pluma-ui.h:120
 msgid "Clear highlighting of search matches"
-msgstr ""
+msgstr "De Söök-Resultaten nich mehr hervörheven"
 
 #: ../pluma/pluma-ui.h:121
 msgid "Go to _Line..."
-msgstr ""
+msgstr "T_o Rieg gahn…"
 
 #: ../pluma/pluma-ui.h:122
 msgid "Go to a specific line"
-msgstr ""
+msgstr "To eener wissen Rieg gahn"
 
 #: ../pluma/pluma-ui.h:123
 msgid "_Incremental Search..."
-msgstr ""
+msgstr "Fixe Söö_k…"
 
 #: ../pluma/pluma-ui.h:124
 msgid "Incrementally search for text"
-msgstr ""
+msgstr "Fix na Text söken"
 
 #. Documents menu
 #: ../pluma/pluma-ui.h:127
@@ -2120,11 +2324,11 @@ msgstr "All open Dateien sluten"
 
 #: ../pluma/pluma-ui.h:131
 msgid "_Previous Document"
-msgstr ""
+msgstr "_Lestes Dokument"
 
 #: ../pluma/pluma-ui.h:132
 msgid "Activate previous document"
-msgstr ""
+msgstr "Tum lesten Dokument gahn"
 
 #: ../pluma/pluma-ui.h:133
 msgid "_Next Document"
@@ -2132,7 +2336,7 @@ msgstr "_Nahstes Dokument"
 
 #: ../pluma/pluma-ui.h:134
 msgid "Activate next document"
-msgstr ""
+msgstr "Tum annern Dokument gahn"
 
 #: ../pluma/pluma-ui.h:135
 msgid "_Move to New Window"
@@ -2140,7 +2344,7 @@ msgstr "_In nejes Finster verschuven"
 
 #: ../pluma/pluma-ui.h:136
 msgid "Move the current document to a new window"
-msgstr ""
+msgstr "Dat aktuelle Dokument in een nejes Fenster verschuven"
 
 #: ../pluma/pluma-ui.h:143
 msgid "Close the current file"
@@ -2160,7 +2364,7 @@ msgstr "_Warktüügbalken"
 
 #: ../pluma/pluma-ui.h:156
 msgid "Show or hide the toolbar in the current window"
-msgstr ""
+msgstr "De Warktüügbalken in de aktuellen Fenster wiesen or verbargen"
 
 #: ../pluma/pluma-ui.h:158
 msgid "_Statusbar"
@@ -2168,7 +2372,7 @@ msgstr "_Statusbalken"
 
 #: ../pluma/pluma-ui.h:159
 msgid "Show or hide the statusbar in the current window"
-msgstr ""
+msgstr "De Tostandbalken in de aktuellen Fenster wiesen or verbargen"
 
 #: ../pluma/pluma-ui.h:161
 msgid "_Fullscreen"
@@ -2176,7 +2380,7 @@ msgstr "_Fullbill"
 
 #: ../pluma/pluma-ui.h:162
 msgid "Edit text in fullscreen"
-msgstr ""
+msgstr "Text in Fullbill bewarken"
 
 #: ../pluma/pluma-ui.h:169
 msgid "Side _Pane"
@@ -2184,165 +2388,167 @@ msgstr "_Sietenrebeet"
 
 #: ../pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
-msgstr ""
+msgstr "De Sietenrebeet in de aktuellen Fenster wiesen or verbargen"
 
 #: ../pluma/pluma-ui.h:172
 msgid "_Bottom Pane"
-msgstr ""
+msgstr "_Unneres Rebeet"
 
 #: ../pluma/pluma-ui.h:173
 msgid "Show or hide the bottom pane in the current window"
-msgstr ""
+msgstr "Dat Unnere Rebeet in de aktuellen Fenster wiesen or verbargen"
 
 #: ../pluma/pluma-utils.c:1074
 msgid "Please check your installation."
-msgstr ""
+msgstr "Bidde kiek na, of dien Installeren richtig is."
 
 #: ../pluma/pluma-utils.c:1147
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
-msgstr ""
+msgstr "Kunn de UI-Datei %s nich opmaken. Fehler: %s"
 
 #: ../pluma/pluma-utils.c:1167
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
-msgstr ""
+msgstr "Kunn dat Ding »%s« in de Datei %s nich finnen."
 
 #. Translators: '/ on <remote-share>'
 #: ../pluma/pluma-utils.c:1327
 #, c-format
 msgid "/ on %s"
-msgstr ""
+msgstr "/ up %s"
 
 #. create "Wrap Around" menu item.
 #: ../pluma/pluma-view.c:1352
 msgid "_Wrap Around"
-msgstr ""
+msgstr "_Umpacken"
 
 #. create "Match Entire Word Only" menu item.
 #: ../pluma/pluma-view.c:1362
 msgid "Match _Entire Word Only"
-msgstr ""
+msgstr "Blot na _ganzen Woorten söken"
 
 #. create "Match Case" menu item.
 #: ../pluma/pluma-view.c:1372
 msgid "_Match Case"
-msgstr ""
+msgstr "Up Grot-/Kleen_bookstavens uppassen"
 
 #. create "Parse escapes" menu item.
 #: ../pluma/pluma-view.c:1382
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr ""
+msgstr "_Maskeerte Woorten (to'n Bispööl \\n) bruken"
 
 #: ../pluma/pluma-view.c:1496
 msgid "String you want to search for"
-msgstr ""
+msgstr "De Text, waar du na söken willst"
 
 #: ../pluma/pluma-view.c:1505
 msgid "Line you want to move the cursor to"
-msgstr ""
+msgstr "De Rieg, waar du de Wieser hendoon willst"
 
-#: ../pluma/pluma-window.c:1012
+#: ../pluma/pluma-window.c:1020
 #, c-format
 msgid "Use %s highlight mode"
-msgstr ""
+msgstr "Bruuk de Hervörhevens-Aard %s"
 
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1069 ../pluma/pluma-window.c:1957
+#: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
 #: ../plugins/externaltools/tools/manager.py:138
 #: ../plugins/externaltools/tools/manager.py:445
 #: ../plugins/externaltools/tools/manager.py:556
 #: ../plugins/externaltools/tools/manager.py:873
 msgid "Plain Text"
-msgstr ""
+msgstr "Normaaler Text"
 
-#: ../pluma/pluma-window.c:1070
+#: ../pluma/pluma-window.c:1078
 msgid "Disable syntax highlighting"
-msgstr ""
+msgstr "Syntax nich wiesen"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1352
+#: ../pluma/pluma-window.c:1360
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' opmaken"
 
-#: ../pluma/pluma-window.c:1459
+#: ../pluma/pluma-window.c:1467
 msgid "Open a recently used file"
 msgstr "Een tolest opmaktes Dokument nej opmaken"
 
-#: ../pluma/pluma-window.c:1465
+#: ../pluma/pluma-window.c:1473
 msgid "Open"
 msgstr "Opmaken"
 
-#: ../pluma/pluma-window.c:1523
+#: ../pluma/pluma-window.c:1531
 msgid "Save"
 msgstr "Spiekern"
 
-#: ../pluma/pluma-window.c:1525
+#: ../pluma/pluma-window.c:1533
 msgid "Print"
 msgstr "Drucken"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1682
+#: ../pluma/pluma-window.c:1690
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' aktiveren"
 
-#: ../pluma/pluma-window.c:1935
+#: ../pluma/pluma-window.c:1943
 msgid "Use Spaces"
-msgstr ""
+msgstr "Leegtekens bruken"
 
-#: ../pluma/pluma-window.c:2006
+#: ../pluma/pluma-window.c:2014
 msgid "Tab Width"
-msgstr ""
+msgstr "Inschuuv-Brede"
 
 #: ../plugins/changecase/changecase.plugin.desktop.in.h:1
 msgid "Change Case"
-msgstr ""
+msgstr "Groot-/Kleenbookstavens ännern"
 
 #: ../plugins/changecase/changecase.plugin.desktop.in.h:2
 msgid "Changes the case of selected text."
-msgstr ""
+msgstr "De Groot-/Kleenschrieven in de utköörten Text ännern."
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:246
 msgid "C_hange Case"
-msgstr ""
+msgstr "Groot-/Kleen_bookstavens ännern"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:247
 msgid "All _Upper Case"
-msgstr ""
+msgstr "All _Grootbookstavens"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:248
 msgid "Change selected text to upper case"
-msgstr ""
+msgstr "De utkörten Text mit Grootbookstavens utwesseln"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:250
 msgid "All _Lower Case"
-msgstr ""
+msgstr "All _Kleenbookstavens"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:251
 msgid "Change selected text to lower case"
-msgstr ""
+msgstr "De utkörten Text mit Kleenbookstavens utwesseln"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:253
 msgid "_Invert Case"
-msgstr ""
+msgstr "Groot-/Kleenbookstavens _utwesseln"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:254
 msgid "Invert the case of selected text"
-msgstr ""
+msgstr "Groot- to Kleenbookstavens maken un annersrum"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:256
 msgid "_Title Case"
-msgstr ""
+msgstr "_Titelwoorten"
 
 #: ../plugins/changecase/pluma-changecase-plugin.c:257
 msgid "Capitalize the first letter of each selected word"
 msgstr ""
+"De eerste Bookstaav vun elkeen utköörten Woort groot maken un de annern "
+"kleen"
 
 #: ../plugins/docinfo/docinfo.plugin.desktop.in.h:1
 #: ../plugins/docinfo/docinfo.ui.h:1
@@ -2354,6 +2560,8 @@ msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
 msgstr ""
+"Dat aktuelle Dokument dörlesen un de Tahl vun Woorten, Riegen, Bookstavens "
+"un nich legen Tekens angeven."
 
 #: ../plugins/docinfo/docinfo.ui.h:3
 msgid "_Update"
@@ -2361,7 +2569,7 @@ msgstr "_Opfrischen"
 
 #: ../plugins/docinfo/docinfo.ui.h:4
 msgid "File Name"
-msgstr ""
+msgstr "Dateinaam"
 
 #: ../plugins/docinfo/docinfo.ui.h:6
 msgid "Bytes"
@@ -2369,11 +2577,11 @@ msgstr "Bytes"
 
 #: ../plugins/docinfo/docinfo.ui.h:7
 msgid "Characters (no spaces)"
-msgstr ""
+msgstr "Bookstavens (sünner Leegtekens)"
 
 #: ../plugins/docinfo/docinfo.ui.h:8
 msgid "Characters (with spaces)"
-msgstr ""
+msgstr "Bookstavens (mit Leegtekens)"
 
 #: ../plugins/docinfo/docinfo.ui.h:9
 msgid "Words"
@@ -2397,48 +2605,48 @@ msgstr "_Dokumentstatistiken"
 
 #: ../plugins/docinfo/pluma-docinfo-plugin.c:445
 msgid "Get statistical information on the current document"
-msgstr ""
+msgstr "Statistik-Informatioonen över dat aktuelle Dokument kriegen"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:1
 msgid "External Tools"
-msgstr ""
+msgstr "Frömdes Warktüüg"
 
 #: ../plugins/externaltools/externaltools.plugin.desktop.in.h:2
 msgid "Execute external commands and shell scripts."
-msgstr ""
+msgstr "Buten Befehlen un Oorderreeg-Skripten utführen."
 
 #: ../plugins/externaltools/tools/__init__.py:175
 msgid "Manage _External Tools..."
-msgstr ""
+msgstr "Frö_mdes Warktüüg verwalten…"
 
 #: ../plugins/externaltools/tools/__init__.py:177
 msgid "Opens the External Tools Manager"
-msgstr ""
+msgstr "Maakt de Verwalter för frömdes Warktüüg op"
 
 #: ../plugins/externaltools/tools/__init__.py:181
 msgid "External _Tools"
-msgstr ""
+msgstr "_Frömdes Warktüüg"
 
 #: ../plugins/externaltools/tools/__init__.py:183
 msgid "External tools"
-msgstr ""
+msgstr "Frömdes Warktüüg"
 
 #: ../plugins/externaltools/tools/__init__.py:216
 msgid "Shell Output"
-msgstr ""
+msgstr "Oorderreeg-Utgaav"
 
 #: ../plugins/externaltools/tools/capture.py:92
 #, python-format
 msgid "Could not execute command: %s"
-msgstr ""
+msgstr "Kunn de Befehl nich utführen: %s"
 
 #: ../plugins/externaltools/tools/functions.py:157
 msgid "You must be inside a word to run this command"
-msgstr ""
+msgstr "Du muttst in eenem Woort sien, um deese Oorder to bruken"
 
 #: ../plugins/externaltools/tools/functions.py:263
 msgid "Running tool:"
-msgstr ""
+msgstr "Warktüüg utführen:"
 
 #: ../plugins/externaltools/tools/functions.py:287
 msgid "Done."
@@ -2446,7 +2654,7 @@ msgstr "Doon."
 
 #: ../plugins/externaltools/tools/functions.py:289
 msgid "Exited"
-msgstr ""
+msgstr "Kumpleet"
 
 #: ../plugins/externaltools/tools/manager.py:136
 msgid "All languages"
@@ -2466,19 +2674,19 @@ msgstr "Nejes Warktüüg"
 #: ../plugins/externaltools/tools/manager.py:786
 #, python-format
 msgid "This accelerator is already bound to %s"
-msgstr ""
+msgstr "Deese Handigtaste wiest al to %s"
 
 #: ../plugins/externaltools/tools/manager.py:837
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr ""
+msgstr "Giff eene neje Handigtaste an oder drück de Torüggknopp tum Lösken"
 
 #: ../plugins/externaltools/tools/manager.py:839
 msgid "Type a new accelerator"
-msgstr ""
+msgstr "Giff eene neje Handigtaste an"
 
 #: ../plugins/externaltools/tools/outputpanel.py:101
 msgid "Stopped."
-msgstr ""
+msgstr "Anhollt."
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
@@ -2511,7 +2719,7 @@ msgstr "Aktuelles Woord"
 
 #: ../plugins/externaltools/tools/tools.ui.h:8
 msgid "Display in bottom pane"
-msgstr ""
+msgstr "Im unnern Rebeet wiesen"
 
 #: ../plugins/externaltools/tools/tools.ui.h:9
 msgid "Create new document"
@@ -2519,23 +2727,23 @@ msgstr "Nejes Dokument erstellen"
 
 #: ../plugins/externaltools/tools/tools.ui.h:10
 msgid "Append to current document"
-msgstr ""
+msgstr "An dat aktuelle Dokument anfögen"
 
 #: ../plugins/externaltools/tools/tools.ui.h:11
 msgid "Replace current document"
-msgstr ""
+msgstr "Aktuelles Dokument utwesseln"
 
 #: ../plugins/externaltools/tools/tools.ui.h:12
 msgid "Replace current selection"
-msgstr ""
+msgstr "Aktuell utköörten Text utwesseln"
 
 #: ../plugins/externaltools/tools/tools.ui.h:13
 msgid "Insert at cursor position"
-msgstr ""
+msgstr "Am Wieser infögen"
 
 #: ../plugins/externaltools/tools/tools.ui.h:14
 msgid "All documents except untitled ones"
-msgstr ""
+msgstr "All Dokumenten, wat eenen Naam hebben"
 
 #: ../plugins/externaltools/tools/tools.ui.h:15
 msgid "Local files only"
@@ -2543,15 +2751,15 @@ msgstr "Just lokale Dateien"
 
 #: ../plugins/externaltools/tools/tools.ui.h:16
 msgid "Remote files only"
-msgstr ""
+msgstr "Blot feerne Dateien"
 
 #: ../plugins/externaltools/tools/tools.ui.h:17
 msgid "Untitled documents only"
-msgstr ""
+msgstr "Blot Dokumenten sünner Naam"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
-msgstr ""
+msgstr "Verwalter för frömdes Warktüüg"
 
 #: ../plugins/externaltools/tools/tools.ui.h:19
 msgid "_Tools:"
@@ -2564,7 +2772,7 @@ msgstr "_Bewarken:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
-msgstr ""
+msgstr "_Bruukbaarheid:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Output:"
@@ -2584,27 +2792,27 @@ msgstr "_Koortsniedknopp:"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
-msgstr ""
+msgstr "Bauen"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:2
 msgid "Run \"make\" in the document directory"
-msgstr ""
+msgstr "Im Dokument-Verteeknis »make« utführen"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:1
 msgid "Open terminal here"
-msgstr ""
+msgstr "Hier Oorderreeg opmaken"
 
 #: ../plugins/externaltools/data/open-terminal-here.desktop.in.h:2
 msgid "Open a terminal in the document location"
-msgstr ""
+msgstr "Eene Oorderreeg in de Stee vum Dokument opmaken"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:1
 msgid "Remove trailing spaces"
-msgstr ""
+msgstr "Leegtekens am Enn wegmaken"
 
 #: ../plugins/externaltools/data/remove-trailing-spaces.desktop.in.h:2
 msgid "Remove useless trailing spaces in your file"
-msgstr ""
+msgstr "Unnütze Leegtekens in de Datei wegmaken"
 
 #: ../plugins/externaltools/data/run-command.desktop.in.h:1
 msgid "Run command"
@@ -2613,6 +2821,7 @@ msgstr "Order loopen laten"
 #: ../plugins/externaltools/data/run-command.desktop.in.h:2
 msgid "Execute a custom command and put its output in a new document"
 msgstr ""
+"Eenen eegenen Befehl utführen un de Utgaav in een nejes Dokument schrieven"
 
 #: ../plugins/externaltools/data/search-recursive.desktop.in.h:1
 msgid "Search"
@@ -2624,15 +2833,15 @@ msgstr ""
 
 #: ../plugins/filebrowser/filebrowser.plugin.desktop.in.h:1
 msgid "File Browser Pane"
-msgstr ""
+msgstr "Datei-Uppasser-Rebeet"
 
 #: ../plugins/filebrowser/filebrowser.plugin.desktop.in.h:2
 msgid "Easy file access from the side pane"
-msgstr ""
+msgstr "Vun de Sietenrebeet licht up Dateien togriepen"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:1
 msgid "Set Location to First Document"
-msgstr ""
+msgstr "Eerstes Dokument as Stee setten"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:2
 msgid ""
@@ -2641,10 +2850,14 @@ msgid ""
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
 msgstr ""
+"Wenn TRUE, wiest dat Datei-Uppasser-Plugin dat Verteeknis vun de eersten "
+"openen Dokument, wenn de Datei-Uppasser noch nich bruukt worden is. (Dat is "
+"also vör allem dann so, wenn een Dokument vun de Oorderreeg, ut Caja oder so"
+" opendaan wurre.)"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:3
 msgid "File Browser Filter Mode"
-msgstr ""
+msgstr "Filter för Datei-Uppasser"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:4
 msgid ""
@@ -2653,40 +2866,50 @@ msgid ""
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
 msgstr ""
+"Deeser Weert leggt fast, wat för Dateien de Datei-Uppasser nich wiest. "
+"Gültige Weerten sünd: »none« (nix verbargen), »hidden« (verstokene Dateien "
+"verbargen), »binary« (Binäär-Dateien verbargen) un »hidden_and_binary« "
+"(verstokene un Binäär-Dateien verbargen)."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:5
 msgid "File Browser Filter Pattern"
-msgstr ""
+msgstr "Filter-Muster för Datei-Uppasser"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:6
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top"
 " of the filter_mode."
 msgstr ""
+"Dat Muster, wo de Datei-Uppasser Dateien verbargen sall. Dat word na de "
+"filter_mode anwandt."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:7
 msgid "Open With Tree View"
-msgstr ""
+msgstr "Mit Boom-Ansicht opmaken"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:8
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
 msgstr ""
+"Wenn dat Datei-Uppasser-Plugin laden word, de Boom-Ansicht un nich de "
+"Leseteken-Ansicht opmaken"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:9
 msgid "File Browser Root Directory"
-msgstr ""
+msgstr "Ruut-Verteeknis för Datei-Uppasser"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:10
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
 msgstr ""
+"Dat Ruut-Verteeknis, wat dat Datei-Uppasser-Plugin bi'm Laden bruken sall, "
+"wenn onload/tree_view TRUE is."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:11
 msgid "File Browser Virtual Root Directory"
-msgstr ""
+msgstr "Virtuelles Ruut-Verteeknis för Datei-Uppasser"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:12
 msgid ""
@@ -2694,14 +2917,17 @@ msgid ""
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
 msgstr ""
+"Dat virtuelle Ruut-Verteeknis, wat dat Datei-Uppasser-Plugin bi'm Laden "
+"bruken sall, wenn onload/tree_view TRUE is. De virtuelle Ruut mutt immer "
+"unner de eegentliken Ruut sien."
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:13
 msgid "Enable Restore of Remote Locations"
-msgstr ""
+msgstr "Feerne Steden wedderhalen"
 
 #: ../plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in.h:14
 msgid "Sets whether to enable restoring of remote locations."
-msgstr ""
+msgstr "Of feerne Steden wedderhaalt worden sallen."
 
 #: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
 msgid "File System"
@@ -2709,11 +2935,11 @@ msgstr "Dateisystem"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
 msgid "_Set root to active document"
-msgstr ""
+msgstr "Aktuelles Dokument as _Ruut"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:579
 msgid "Set the root to the active document location"
-msgstr ""
+msgstr "Sett de Ruut as de Stee vum aktuellen Dokument"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:584
 msgid "_Open terminal here"
@@ -2721,7 +2947,7 @@ msgstr "Hier Terminal _opmaken"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:586
 msgid "Open a terminal at the currently opened directory"
-msgstr ""
+msgstr "Eene Oorderreeg in de Stee vum aktuellen Dokument opmaken"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:726
 msgid "File Browser"
@@ -2729,31 +2955,31 @@ msgstr "Dateikieker"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:874
 msgid "An error occurred while creating a new directory"
-msgstr ""
+msgstr "Fehler bi'm Maken vun eenem nejen Verteeknis"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:877
 msgid "An error occurred while creating a new file"
-msgstr ""
+msgstr "Fehler bi'm Maken vun eener nejen Datei"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:882
 msgid "An error occurred while renaming a file or directory"
-msgstr ""
+msgstr "Fehler bi'm Umbenömen vun eener Datei oder eenem Verteeknis"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:887
 msgid "An error occurred while deleting a file or directory"
-msgstr ""
+msgstr "Fehler bi'm Lösken vun eener Datei oder eenem Verteeknis"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while opening a directory in the file manager"
-msgstr ""
+msgstr "Fehler bi'm Opmaken vun eenem Verteeknis im Datei-Uppasser"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
 msgid "An error occurred while setting a root directory"
-msgstr ""
+msgstr "Fehler bi'm Setten vum Ruut-Verteeknis"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:900
 msgid "An error occurred while loading a directory"
-msgstr ""
+msgstr "Fehler bi'm Laden vun eenem Verteeknis"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:903
 msgid "An error occurred"
@@ -2764,28 +2990,30 @@ msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
 msgstr ""
+"Kann de Datei nich in de Papierkörv \n"
+"verschuven, willst du se stracks lösken?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
-msgstr ""
+msgstr "De Datei »%s« kann nich in de Papierkörv verschuven worden."
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1137
 msgid "The selected files cannot be moved to the trash."
-msgstr ""
+msgstr "De utkörten Dateien könen nich in de Papierkörv verschuven worden."
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1165
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
-msgstr ""
+msgstr "Willst du »%s« würrelk för immer lösken?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1168
 msgid "Are you sure you want to permanently delete the selected files?"
-msgstr ""
+msgstr "Willst du de utkööten Dateien würrelk för immer lösken?"
 
 #: ../plugins/filebrowser/pluma-file-browser-plugin.c:1171
 msgid "If you delete an item, it is permanently lost."
-msgstr ""
+msgstr "Wenn du wat löskest, kannst du 't nich mehr torügg halen."
 
 #: ../plugins/filebrowser/pluma-file-browser-store.c:1668
 msgid "(Empty)"
@@ -2796,6 +3024,8 @@ msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
+"De umbenöhmte Datei is nu verbargen. Du muttst de Filter-Instellens ännern, "
+"um se to sehn."
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -2808,6 +3038,8 @@ msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
+"De neje Datei is nu verbargen. Du muttst de Filter-Instellens ännern, um se "
+"to sehn."
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -2820,6 +3052,8 @@ msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr ""
+"Dat neje Verteeknis is nu verbargen. Du muttst de Filter-Instellens ännern, "
+"um 't to sehn."
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:716
 msgid "Bookmarks"
@@ -2831,11 +3065,11 @@ msgstr "_Filter"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:802
 msgid "_Move to Trash"
-msgstr ""
+msgstr "In de _Papierkörv verschuven"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:803
 msgid "Move selected file or folder to trash"
-msgstr ""
+msgstr "De utköört Datei oder Verteeknis in de Papierkörv verschuven"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Delete selected file or folder"
@@ -2843,7 +3077,7 @@ msgstr "Utwählte Datei or Verteeknis löschen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:813
 msgid "Open selected file"
-msgstr ""
+msgstr "Utköört Datei opmaken"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:819
 msgid "Up"
@@ -2875,7 +3109,7 @@ msgstr "_Annern Naam geven"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:835
 msgid "Rename selected file or folder"
-msgstr ""
+msgstr "Utköört Datei oder Verteeknis umbenömen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:841
 msgid "_Previous Location"
@@ -2883,7 +3117,7 @@ msgstr "_Voriger Ort"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Go to the previous visited location"
-msgstr ""
+msgstr "To de tolest besöchten Stee gahn"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "_Next Location"
@@ -2891,7 +3125,7 @@ msgstr "_Nahster Ort"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Go to the next visited location"
-msgstr ""
+msgstr "To de anner besöchten Stee gahn"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Re_fresh View"
@@ -2899,7 +3133,7 @@ msgstr "Ansicht _opfrischen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:848
 msgid "Refresh the view"
-msgstr ""
+msgstr "Ansicht opfrischen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:849
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:867
@@ -2909,7 +3143,7 @@ msgstr "_Verteeknis opwiesen"
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:850
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:868
 msgid "View folder in file manager"
-msgstr ""
+msgstr "Verteeknis im Datei-Uppasser wiesen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:857
 msgid "Show _Hidden"
@@ -2917,57 +3151,57 @@ msgstr "_Verbargte opwiesen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:858
 msgid "Show hidden files and folders"
-msgstr ""
+msgstr "Verbargene Dateien un Verteeknissen wiesen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:860
 msgid "Show _Binary"
-msgstr ""
+msgstr "_Binäär-Dateien wiesen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:861
 msgid "Show binary files"
-msgstr ""
+msgstr "Binäär-Dateien nich verbargen"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:994
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1007
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1033
 msgid "Previous location"
-msgstr ""
+msgstr "Leste Stee"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1000
 msgid "Go to previous location"
-msgstr ""
+msgstr "To eener tolest besöchten Stee gahn"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1028
 msgid "Go to a previously opened location"
-msgstr ""
+msgstr "To eener tolest opmaakten Stee gahn"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1020
 msgid "Next location"
-msgstr ""
+msgstr "Anner Stee"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1026
 msgid "Go to next location"
-msgstr ""
+msgstr "To eener tolest besöchten Stee gahn"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:1238
 msgid "_Match Filename"
-msgstr ""
+msgstr "Datei-_Naam is gliek"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:2139
 #, c-format
 msgid "No mount object for mounted volume: %s"
-msgstr ""
+msgstr "Keen inbunnen Ding för dat inbunnen Lööpwark: %s"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:2219
 #, c-format
 msgid "Could not open media: %s"
-msgstr ""
+msgstr "Kunn Medium nich opmaken: %s"
 
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:2266
 #, c-format
 msgid "Could not mount volume: %s"
-msgstr ""
+msgstr "Kunn Lööpwark nich inbinnen: %s"
 
 #. ex:ts=8:noet:
 #: ../plugins/modelines/modelines.plugin.desktop.in.h:1
@@ -2981,37 +3215,37 @@ msgstr ""
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:1
 #: ../plugins/pythonconsole/pythonconsole/__init__.py:55
 msgid "Python Console"
-msgstr ""
+msgstr "Python-Oorderreeg"
 
 #: ../plugins/pythonconsole/pythonconsole.plugin.desktop.in.h:2
 msgid "Interactive Python console standing in the bottom panel"
-msgstr ""
+msgstr "Interaktive Python-Oorderreeg im Unnern Rebeet"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
-msgstr ""
+msgstr "Farv för _Befehlen:"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
 msgid "_Error color:"
-msgstr ""
+msgstr "Farv för _Fehlers:"
 
 #. ex:ts=8:et:
 #: ../plugins/quickopen/quickopen/popup.py:31
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
-msgstr ""
+msgstr "Fix opmaken"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:65
 msgid "Quick open"
-msgstr ""
+msgstr "Fix opmaken"
 
 #: ../plugins/quickopen/quickopen/windowhelper.py:66
 msgid "Quickly open documents"
-msgstr ""
+msgstr "Dokumenten fix opmaken"
 
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:2
 msgid "Quickly open files"
-msgstr ""
+msgstr "Dateien fix opmaken"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
@@ -3019,79 +3253,79 @@ msgstr ""
 #: ../plugins/snippets/snippets/Document.py:193
 #: ../plugins/snippets/snippets/Document.py:614
 msgid "Snippets"
-msgstr ""
+msgstr "Woorten in Swang"
 
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:2
 msgid "Insert often-used pieces of text in a fast way"
-msgstr ""
+msgstr "Text-Delen, wat du vööl bruukst, fix infögen"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:1
 msgid "Snippets Manager"
-msgstr ""
+msgstr "Woorten in Swang verwalten"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:2
 msgid "_Snippets:"
-msgstr ""
+msgstr "_Woorten in Swang:"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:3
 msgid "Create new snippet"
-msgstr ""
+msgstr "Nejes Woort maken"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:792
+#: ../plugins/snippets/snippets/Manager.py:793
 msgid "Import snippets"
-msgstr ""
+msgstr "Woorten halen"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:5
 msgid "Export selected snippets"
-msgstr ""
+msgstr "Utköörte Woorten exporteren"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
 #: ../plugins/snippets/snippets/Manager.py:403
 msgid "Delete selected snippet"
-msgstr ""
+msgstr "Utköört Woort wegdoon"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:8
 msgid "Activation"
-msgstr ""
+msgstr "Anmaken"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:10
 msgid "_Tab trigger:"
-msgstr ""
+msgstr "Mit _Tab utlösen"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:681
+#: ../plugins/snippets/snippets/Manager.py:682
 msgid "Single word the snippet is activated with after pressing Tab"
-msgstr ""
+msgstr "Dat eene Woort, waar du Tab na drückst, um de Woorten intofögen"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:12
 msgid "Shortcut key with which the snippet is activated"
-msgstr ""
+msgstr "De Handigtast, wat deese Woorten inföögt"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "S_hortcut key:"
-msgstr ""
+msgstr "_Handigtast:"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:14
 msgid "_Drop targets:"
-msgstr ""
+msgstr "Hent_recken:"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
-msgstr ""
+msgstr "Woorten in Swang _verwalten…"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage snippets"
-msgstr ""
+msgstr "Woorten in Swang verwalten"
 
 #: ../plugins/snippets/snippets/Manager.py:41
 msgid "Snippets archive"
-msgstr ""
+msgstr "Olle Woorten in Swang"
 
 #: ../plugins/snippets/snippets/Manager.py:66
 msgid "Add a new snippet..."
-msgstr ""
+msgstr "Nejes Woort maken…"
 
 #: ../plugins/snippets/snippets/Manager.py:117
 msgid "Global"
@@ -3099,143 +3333,145 @@ msgstr ""
 
 #: ../plugins/snippets/snippets/Manager.py:400
 msgid "Revert selected snippet"
-msgstr ""
+msgstr "Utköört Woort torüggsetten"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:674
+#: ../plugins/snippets/snippets/Manager.py:675
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
 msgstr ""
+"Dat is keen gültiger Tab-Utlöser. Een Utlöser is of eene Riege vun normaalen"
+" Bookstavens of een eenziger (annerer) Bookstaav, to'n Bispööl { oder [."
 
-#: ../plugins/snippets/snippets/Manager.py:771
+#: ../plugins/snippets/snippets/Manager.py:772
 #, python-format
 msgid "The following error occurred while importing: %s"
-msgstr ""
+msgstr "Bi'm Halen hett 't deesen Fehler geven: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:778
+#: ../plugins/snippets/snippets/Manager.py:779
 msgid "Import successfully completed"
-msgstr ""
-
-#: ../plugins/snippets/snippets/Manager.py:797
-#: ../plugins/snippets/snippets/Manager.py:883
-#: ../plugins/snippets/snippets/Manager.py:946
-msgid "All supported archives"
-msgstr ""
+msgstr "Haalt"
 
 #: ../plugins/snippets/snippets/Manager.py:798
 #: ../plugins/snippets/snippets/Manager.py:884
 #: ../plugins/snippets/snippets/Manager.py:947
-msgid "Gzip compressed archive"
-msgstr ""
+msgid "All supported archives"
+msgstr "All unnerstütten Archiven"
 
 #: ../plugins/snippets/snippets/Manager.py:799
 #: ../plugins/snippets/snippets/Manager.py:885
 #: ../plugins/snippets/snippets/Manager.py:948
-msgid "Bzip2 compressed archive"
-msgstr ""
+msgid "Gzip compressed archive"
+msgstr "Mit Gzip komprimeertes Archiv"
 
 #: ../plugins/snippets/snippets/Manager.py:800
-msgid "Single snippets file"
-msgstr ""
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:949
+msgid "Bzip2 compressed archive"
+msgstr "Mit Bzip2 komprimeertes Archiv"
 
 #: ../plugins/snippets/snippets/Manager.py:801
-#: ../plugins/snippets/snippets/Manager.py:887
-#: ../plugins/snippets/snippets/Manager.py:950
+msgid "Single snippets file"
+msgstr "Eene Woorten-Datei"
+
+#: ../plugins/snippets/snippets/Manager.py:802
+#: ../plugins/snippets/snippets/Manager.py:888
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "All files"
 msgstr "All Dateien"
 
-#: ../plugins/snippets/snippets/Manager.py:813
+#: ../plugins/snippets/snippets/Manager.py:814
 #, python-format
 msgid "The following error occurred while exporting: %s"
-msgstr ""
+msgstr "Bi'm Exporteren hett 't deesen Fehler geven: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:817
+#: ../plugins/snippets/snippets/Manager.py:818
 msgid "Export successfully completed"
-msgstr ""
+msgstr "Exporteert"
 
 #. Ask if system snippets should also be exported
-#: ../plugins/snippets/snippets/Manager.py:857
-#: ../plugins/snippets/snippets/Manager.py:924
+#: ../plugins/snippets/snippets/Manager.py:858
+#: ../plugins/snippets/snippets/Manager.py:925
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
-msgstr ""
+msgstr "Willst du de utköörten <b>System-</b>Woorten ok exporteren?"
 
-#: ../plugins/snippets/snippets/Manager.py:872
-#: ../plugins/snippets/snippets/Manager.py:942
+#: ../plugins/snippets/snippets/Manager.py:873
+#: ../plugins/snippets/snippets/Manager.py:943
 msgid "There are no snippets selected to be exported"
-msgstr ""
+msgstr "Du hest keene Woorten tum Exporteren utköört"
 
-#: ../plugins/snippets/snippets/Manager.py:877
-#: ../plugins/snippets/snippets/Manager.py:915
+#: ../plugins/snippets/snippets/Manager.py:878
+#: ../plugins/snippets/snippets/Manager.py:916
 msgid "Export snippets"
-msgstr ""
+msgstr "Woorten exporteren"
 
-#: ../plugins/snippets/snippets/Manager.py:1055
+#: ../plugins/snippets/snippets/Manager.py:1056
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr ""
+msgstr "Giff de neje Handigtaste an oder drück de Torüggknopp tum Lösken"
 
-#: ../plugins/snippets/snippets/Manager.py:1057
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut"
-msgstr ""
+msgstr "Giff eene neje Handigtaste an"
 
 #: ../plugins/snippets/snippets/Exporter.py:65
 #, python-format
 msgid "The archive \"%s\" could not be created"
-msgstr ""
+msgstr "Dat Archiv »%s« kunn nich maakt worden"
 
 #: ../plugins/snippets/snippets/Exporter.py:82
 #, python-format
 msgid "Target directory \"%s\" does not exist"
-msgstr ""
+msgstr "Dat Enn-Verteeknis »%s« gifft 't nich"
 
 #: ../plugins/snippets/snippets/Exporter.py:85
 #, python-format
 msgid "Target directory \"%s\" is not a valid directory"
-msgstr ""
+msgstr "Dat Enn-Verteeknis »%s« is keen gültiges Verteeknis"
 
 #: ../plugins/snippets/snippets/Importer.py:29
 #: ../plugins/snippets/snippets/Importer.py:83
 #, python-format
 msgid "File \"%s\" does not exist"
-msgstr ""
+msgstr "De Datei »%s« gifft 't nich"
 
 #: ../plugins/snippets/snippets/Importer.py:32
 #, python-format
 msgid "File \"%s\" is not a valid snippets file"
-msgstr ""
+msgstr "De Datei »%s« is keene gültige Woorten-Datei"
 
 #: ../plugins/snippets/snippets/Importer.py:42
 #, python-format
 msgid "Imported file \"%s\" is not a valid snippets file"
-msgstr ""
+msgstr "De importeerte Datei »%s« is keene gültige Woorten-Datei"
 
 #: ../plugins/snippets/snippets/Importer.py:52
 #, python-format
 msgid "The archive \"%s\" could not be extracted"
-msgstr ""
+msgstr "Dat Archiv »%s« kunn nich opendaan worden"
 
 #: ../plugins/snippets/snippets/Importer.py:70
 #, python-format
 msgid "The following files could not be imported: %s"
-msgstr ""
+msgstr "Deese Dateien kunnen nich haalt worden: %s"
 
 #: ../plugins/snippets/snippets/Importer.py:86
 #: ../plugins/snippets/snippets/Importer.py:99
 #, python-format
 msgid "File \"%s\" is not a valid snippets archive"
-msgstr ""
+msgstr "De Datei »%s« is keen gültiges Woorten-Archiv"
 
 #: ../plugins/snippets/snippets/Placeholder.py:593
 #, python-format
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
 "aborted."
-msgstr ""
+msgstr "Deeser Python-Befehl (%s) löppt to lange un wurr ofbroken."
 
 #: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
 msgid "Execution of the Python command (%s) failed: %s"
-msgstr ""
+msgstr "Deeser Python-Befehl (%s) hett nich funktioneert: %s"
 
 #: ../plugins/sort/pluma-sort-plugin.c:94
 msgid "S_ort..."
@@ -3243,7 +3479,7 @@ msgstr "_Grupperen..."
 
 #: ../plugins/sort/pluma-sort-plugin.c:96
 msgid "Sort the current document or selection"
-msgstr ""
+msgstr "Dat aktuelle Dokument oder de utköörten Text sorteren"
 
 #: ../plugins/sort/sort.plugin.desktop.in.h:1 ../plugins/sort/sort.ui.h:1
 msgid "Sort"
@@ -3251,7 +3487,7 @@ msgstr "Grupperen"
 
 #: ../plugins/sort/sort.plugin.desktop.in.h:2
 msgid "Sorts a document or selected text."
-msgstr ""
+msgstr "Sorteert een Dokument oder utköörten Text."
 
 #: ../plugins/sort/sort.ui.h:3
 msgid "_Sort"
@@ -3259,27 +3495,27 @@ msgstr "_Grupperen"
 
 #: ../plugins/sort/sort.ui.h:5
 msgid "_Reverse order"
-msgstr ""
+msgstr "Bört _umdreihn"
 
 #: ../plugins/sort/sort.ui.h:6
 msgid "R_emove duplicates"
-msgstr ""
+msgstr "_Dübbelte Dingen wegdoon"
 
 #: ../plugins/sort/sort.ui.h:7
 msgid "_Ignore case"
-msgstr ""
+msgstr "Groot-/Kleenbookstavens _ignoreren"
 
 #: ../plugins/sort/sort.ui.h:8
 msgid "S_tart at column:"
-msgstr ""
+msgstr "Bi _Striep … begünnen:"
 
 #: ../plugins/sort/sort.ui.h:9
 msgid "You cannot undo a sort operation"
-msgstr ""
+msgstr "Dat Sorteren kann nich torüggnohmen worden"
 
 #: ../plugins/spell/org.mate.pluma.plugins.spell.gschema.xml.in.h:1
 msgid "Autocheck Type"
-msgstr ""
+msgstr "Aard automatisk nakieken"
 
 #. Translators: Displayed in the "Check Spelling" dialog if there are no
 #. suggestions for the current misspelled word
@@ -3289,7 +3525,7 @@ msgstr ""
 #: ../plugins/spell/pluma-automatic-spell-checker.c:420
 #: ../plugins/spell/pluma-spell-checker-dialog.c:458
 msgid "(no suggested words)"
-msgstr ""
+msgstr "(keene Woorten tum vörslagen)"
 
 #: ../plugins/spell/pluma-automatic-spell-checker.c:444
 msgid "_More..."
@@ -3302,25 +3538,25 @@ msgstr "Alles _ignoreren"
 
 #: ../plugins/spell/pluma-automatic-spell-checker.c:553
 msgid "_Spelling Suggestions..."
-msgstr ""
+msgstr "_Rechtschrievens-Vörslagen…"
 
 #: ../plugins/spell/pluma-spell-checker-dialog.c:270
 msgid "Check Spelling"
-msgstr ""
+msgstr "Rechtschrieven nakieken"
 
 #: ../plugins/spell/pluma-spell-checker-dialog.c:281
 msgid "Suggestions"
-msgstr ""
+msgstr "Vörslagen"
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word
 #. isn't misspelled
 #: ../plugins/spell/pluma-spell-checker-dialog.c:565
 msgid "(correct spelling)"
-msgstr ""
+msgstr "(richtige Schrievwies)"
 
 #: ../plugins/spell/pluma-spell-checker-dialog.c:712
 msgid "Completed spell checking"
-msgstr ""
+msgstr "Rechtschriev-Prüfung kumpleet"
 
 #. Translators: the first %s is the language name, and
 #. * the second %s is the locale name. Example:
@@ -3358,11 +3594,11 @@ msgstr "Spraken"
 
 #: ../plugins/spell/pluma-spell-plugin.c:100
 msgid "_Check Spelling..."
-msgstr ""
+msgstr "Rechtschrieven na_kieken…"
 
 #: ../plugins/spell/pluma-spell-plugin.c:102
 msgid "Check the current document for incorrect spelling"
-msgstr ""
+msgstr "Falske Schrievwiesen im aktuellen Dokument finnen"
 
 #: ../plugins/spell/pluma-spell-plugin.c:108
 msgid "Set _Language..."
@@ -3370,35 +3606,35 @@ msgstr "Sprak _setten..."
 
 #: ../plugins/spell/pluma-spell-plugin.c:110
 msgid "Set the language of the current document"
-msgstr ""
+msgstr "De Spraak vun de aktuellen Dokument setten"
 
 #: ../plugins/spell/pluma-spell-plugin.c:119
 msgid "_Autocheck Spelling"
-msgstr ""
+msgstr "Rechtschrieven _automatisk nakieken"
 
 #: ../plugins/spell/pluma-spell-plugin.c:121
 msgid "Automatically spell-check the current document"
-msgstr ""
+msgstr "Falske Schrievwiesen im aktuellen Dokument automatisk finnen"
 
 #: ../plugins/spell/pluma-spell-plugin.c:921
 msgid "The document is empty."
-msgstr ""
+msgstr "Dat Dokument is leeg."
 
 #: ../plugins/spell/pluma-spell-plugin.c:946
 msgid "No misspelled words"
-msgstr ""
+msgstr "Keene falsk schrevenen Woorten"
 
 #: ../plugins/spell/languages-dialog.ui.h:5
 msgid "Select the _language of the current document."
-msgstr ""
+msgstr "De _Spraak vun de aktuellen Dokument utkören"
 
 #: ../plugins/spell/spell-checker.ui.h:1
 msgid "Check spelling"
-msgstr ""
+msgstr "Rechtschrieven nakieken"
 
 #: ../plugins/spell/spell-checker.ui.h:2
 msgid "Misspelled word:"
-msgstr ""
+msgstr "Falsk schrevenes Woort:"
 
 #: ../plugins/spell/spell-checker.ui.h:3
 msgid "word"
@@ -3414,7 +3650,7 @@ msgstr "Woord unnersöken"
 
 #: ../plugins/spell/spell-checker.ui.h:6
 msgid "_Suggestions:"
-msgstr ""
+msgstr "_Vörslagen:"
 
 #: ../plugins/spell/spell-checker.ui.h:7
 msgid "_Ignore"
@@ -3426,7 +3662,7 @@ msgstr "_Ännern"
 
 #: ../plugins/spell/spell-checker.ui.h:9
 msgid "Ignore _All"
-msgstr ""
+msgstr "Överall i_gnoreren"
 
 #: ../plugins/spell/spell-checker.ui.h:10
 msgid "Change A_ll"
@@ -3434,7 +3670,7 @@ msgstr "Allens _ännern"
 
 #: ../plugins/spell/spell-checker.ui.h:11
 msgid "User dictionary:"
-msgstr ""
+msgstr "Bruker-Woortenbook:"
 
 #: ../plugins/spell/spell-checker.ui.h:12
 msgid "Add w_ord"
@@ -3446,35 +3682,35 @@ msgstr "Sprak:"
 
 #: ../plugins/spell/spell-checker.ui.h:14
 msgid "Language"
-msgstr ""
+msgstr "Spraak"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:1
 msgid "_Configure Spell Checker plugin..."
-msgstr ""
+msgstr "Rechtschriev-Prüfung-Plugin an_passen…"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
 msgid "Autocheck spelling on document load..."
-msgstr ""
+msgstr "Schrievwies bi'm _Laden vun eenem Dokument automatisk nakieken…"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:6
 msgid "_Never autocheck"
-msgstr ""
+msgstr "_Nie automatisk nakieken"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:7
 msgid "_Remember autocheck by document"
-msgstr ""
+msgstr "För elkeen Dokument _marken"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:8
 msgid "_Always autocheck"
-msgstr ""
+msgstr "All_tieden automatisk nakieken"
 
 #: ../plugins/spell/spell.plugin.desktop.in.h:1
 msgid "Spell Checker"
-msgstr ""
+msgstr "Rechtschriev-Prüfung"
 
 #: ../plugins/spell/spell.plugin.desktop.in.h:2
 msgid "Checks the spelling of the current document."
-msgstr ""
+msgstr "Finnt falske Schrievwiesen im aktuellen Dokument."
 
 #: ../plugins/taglist/pluma-taglist-plugin.c:125
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
@@ -3484,7 +3720,7 @@ msgstr "Tekens"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
 msgid "Select the group of tags you want to use"
-msgstr ""
+msgstr "Köör de Grupp vun Slötelwoorten ut, wat du bruken willst"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:632
 msgid "_Preview"
@@ -3492,83 +3728,83 @@ msgstr "_Utblick"
 
 #: ../plugins/taglist/pluma-taglist-plugin-panel.c:706
 msgid "Available Tag Lists"
-msgstr ""
+msgstr "List vun verföögbaaren Slötelwoorten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:1
 msgid "XHTML 1.0 - Tags"
-msgstr ""
+msgstr "Slötelwoorten för XHTML 1.0"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:2
 msgid "Abbreviated form"
-msgstr ""
+msgstr "Ofkört"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:3
 msgid "Abbreviation"
-msgstr ""
+msgstr "Ofkört"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:4
 msgid "Accessibility key character"
-msgstr ""
+msgstr "Toganglikheids-Slötel-Bookstaav"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:5
 msgid "Acronym"
-msgstr ""
+msgstr "Akronym"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:6
 msgid "Align"
-msgstr ""
+msgstr "Justeren"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:7
 msgid "Alignment character"
-msgstr ""
+msgstr "Justeren-Bookstaav"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:8
 msgid "Alternative"
-msgstr ""
+msgstr "Alternativ"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:9
 msgid "Anchor URI"
-msgstr ""
+msgstr "Anker-URI"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:10
 msgid "Anchor"
-msgstr ""
+msgstr "Anker"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:12
 msgid "Applet class file code (deprecated)"
-msgstr ""
+msgstr "Quell för Programm-Klassen-Datei (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:13
 msgid "Associated information"
-msgstr ""
+msgstr "Verwandte Informatioonen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:14
 msgid "Author info"
-msgstr ""
+msgstr "Över de Schriever"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:15
 msgid "Axis related headers"
-msgstr ""
+msgstr "Koppriegen över de Assen"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:17
 msgid "Background color (deprecated)"
-msgstr ""
+msgstr "Achtergrund-Farv (nich mehr bruken)"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:19
 msgid "Background texture tile (deprecated)"
-msgstr ""
+msgstr "Achtergrund-Textuur-Floor (nich mehr bruken)"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:21
 msgid "Base font (deprecated)"
-msgstr ""
+msgstr "Normaale Schriftaard (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:22
 msgid "Base URI"
-msgstr ""
+msgstr "Normaale URI"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:23
 msgid "Bold"
@@ -3577,61 +3813,61 @@ msgstr "Dick"
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:25
 msgid "Border (deprecated)"
-msgstr ""
+msgstr "Grenz (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:26
 msgid "Cell rowspan"
-msgstr ""
+msgstr "Zellen-Riegenbrede"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:28
 msgid "Center (deprecated)"
-msgstr ""
+msgstr "Midde (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:29
 msgid "Character encoding of linked resource"
-msgstr ""
+msgstr "Bookstaven-Koderen vun de verwiesen Quell"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:30
 msgid "Checked state"
-msgstr ""
+msgstr "Ankrüüz-Tostand"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:31
 msgid "Citation"
-msgstr ""
+msgstr "Zitat"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:32
 msgid "Cite reason for change"
-msgstr ""
+msgstr "Grund för Ziteer-Ännern"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:33
 msgid "Class implementation ID"
-msgstr ""
+msgstr "ID för de Klassen-Implementeren"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:34
 msgid "Class list"
-msgstr ""
+msgstr "Klassenlist"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:35
 msgid "Clear text flow control"
-msgstr ""
+msgstr "Klare Textstroom-Stüren"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:36
 msgid "Code content type"
-msgstr ""
+msgstr "Aard vum Quell-Inholl"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:38
 msgid "Color of selected links (deprecated)"
-msgstr ""
+msgstr "Farv för utkörte Verwiesens (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:39
 msgid "Column span"
-msgstr ""
+msgstr "Striepenbrede"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:40
 msgid "Columns"
-msgstr ""
+msgstr "Striepens"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:41
 msgid "Comment"
@@ -3639,58 +3875,58 @@ msgstr "Kommentar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:42
 msgid "Computer code fragment"
-msgstr ""
+msgstr "Reekner-Quell-Deel"
 
 #. The "type" attribute is deprecated for the "ol" tag only,
 #. since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:45
 msgid "Content type (deprecated)"
-msgstr ""
+msgstr "Aard vum Inholl (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:46
 msgid "Coordinates"
-msgstr ""
+msgstr "Stee"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:47
 msgid "Date and time of change"
-msgstr ""
+msgstr "Dag un Tied vum Ännern"
 
 #. NOTE: used in "object" tag
 #: ../plugins/taglist/HTML.tags.xml.in.h:49
 msgid "Declare flag"
-msgstr ""
+msgstr "Angaav över 't Deklareren"
 
 #. Translators: DEFER is an optional attribute of the <script> tag.
 #. It indicates that the script is not going to generate any document
 #. content. The browser can continue parsing and drawing the page.
 #: ../plugins/taglist/HTML.tags.xml.in.h:53
 msgid "Defer attribute"
-msgstr ""
+msgstr "DEFER-Eegenskupp"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:54
 msgid "Definition description"
-msgstr ""
+msgstr "Defineren-Beschrieven"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:55
 msgid "Definition list"
-msgstr ""
+msgstr "List vum Defineren"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:56
 msgid "Definition term"
-msgstr ""
+msgstr "Term vum Defineren"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:57
 msgid "Deleted text"
-msgstr ""
+msgstr "Lösketer Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:58
 msgid "Directionality"
-msgstr ""
+msgstr "Richt"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:60
 msgid "Directionality (deprecated)"
-msgstr ""
+msgstr "Richt (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:61
 msgid "Disabled"
@@ -3698,165 +3934,165 @@ msgstr "Deaktivert"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:62
 msgid "DIV container"
-msgstr ""
+msgstr "DIV-Entholler"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:63
 msgid "DIV Style container"
-msgstr ""
+msgstr "Aard vum DIV-Entholler"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:64
 msgid "Document base"
-msgstr ""
+msgstr "Dokumenten-Grund"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:65
 msgid "Document body"
-msgstr ""
+msgstr "Dokumenten-Höövddeel"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:66
 msgid "Document head"
-msgstr ""
+msgstr "Dokumenten-Kopp"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:67
 msgid "Element ID"
-msgstr ""
+msgstr "ID vum Ding"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:68
 msgid "Document title"
-msgstr ""
+msgstr "Dokumenten-Titel"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:69
 msgid "Document type"
-msgstr ""
+msgstr "Dokumenten-Aard"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:70
 #: ../plugins/taglist/Latex.tags.xml.in.h:72
 msgid "Emphasis"
-msgstr ""
+msgstr "Betonen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:71
 msgid "Encode type"
-msgstr ""
+msgstr "Koderen-Aard"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:73
 msgid "Font face (deprecated)"
-msgstr ""
+msgstr "Schriftaard-Vörsied (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:74
 msgid "For label"
-msgstr ""
+msgstr "As Kennteken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:75
 msgid "Forced line break"
-msgstr ""
+msgstr "Riegenbreken dwingen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:76
 msgid "Form action handler"
-msgstr ""
+msgstr "Aktioons-Ofwickeln för Formulaar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:77
 msgid "Form control group"
-msgstr ""
+msgstr "Stüür-Grupp för Formulaar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:78
 msgid "Form field label text"
-msgstr ""
+msgstr "Feld-Kennteken-Text för Formulaar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:79
 msgid "Form input type"
-msgstr ""
+msgstr "Ingaav-Aard för Formulaar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:80
 msgid "Form input"
-msgstr ""
+msgstr "Ingaav för Formulaar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:81
 msgid "Form method"
-msgstr ""
+msgstr "Upgaav för Formulaar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:82
 msgid "Form"
-msgstr ""
+msgstr "Formulaar"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:83
 msgid "Forward link"
-msgstr ""
+msgstr "Verwies na vörn"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:84
 msgid "Frame render parts"
-msgstr ""
+msgstr "Rahm-Teken-Delen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:85
 msgid "Frame source"
-msgstr ""
+msgstr "Rahm-Quell"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:86
 msgid "Frame target"
-msgstr ""
+msgstr "Rahm-Enn"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:87
 msgid "Frame"
-msgstr ""
+msgstr "Rahm"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:88
 msgid "Frame border"
-msgstr ""
+msgstr "Rahm-Grenz"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:89
 msgid "Frameset columns"
-msgstr ""
+msgstr "Striepen in Rahmengrupp"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:90
 msgid "Frameset rows"
-msgstr ""
+msgstr "Riegen in Rahmengrupp"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:91
 msgid "Frameset"
-msgstr ""
+msgstr "Rahmengrupp"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:92
 msgid "Frame spacing"
-msgstr ""
+msgstr "Lege Rüümte am Rahm"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:93
 msgid "Generic embedded object"
-msgstr ""
+msgstr "Allgemeenes inschreven Ding"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:94
 msgid "Generic metainformation"
-msgstr ""
+msgstr "Allgemeene Meta-Informatioonen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:95
 msgid "Generic span"
-msgstr ""
+msgstr "Allgemeene Spann"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:96
 msgid "Header cell IDs"
-msgstr ""
+msgstr "Kopp-Zellen-ID"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:97
 msgid "Heading 1"
-msgstr ""
+msgstr "Överschrift 1"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:98
 msgid "Heading 2"
-msgstr ""
+msgstr "Överschrift 2"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:99
 msgid "Heading 3"
-msgstr ""
+msgstr "Överschrift 3"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:100
 msgid "Heading 4"
-msgstr ""
+msgstr "Överschrift 4"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:101
 msgid "Heading 5"
-msgstr ""
+msgstr "Överschrift 5"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:102
 msgid "Heading 6"
-msgstr ""
+msgstr "Överschrift 6"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:103
 msgid "Height"
@@ -3864,28 +4100,28 @@ msgstr "Höhe"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:104
 msgid "Horizontal rule"
-msgstr ""
+msgstr "Horizontale Regel"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:106
 msgid "Horizontal space (deprecated)"
-msgstr ""
+msgstr "Horizontale Rüümte (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:107
 msgid "HREF URI"
-msgstr ""
+msgstr "HREF-URI"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:108
 msgid "HTML root element"
-msgstr ""
+msgstr "HTML-Ruut-Ding"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:109
 msgid "HTTP header name"
-msgstr ""
+msgstr "HTML-Kopp-Naam"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:110
 msgid "I18N BiDi override"
-msgstr ""
+msgstr "i18n-BiDi-Överschrieven"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:111
 msgid "Image map area"
@@ -3905,41 +4141,41 @@ msgstr "Bill"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:115
 msgid "Inline frame"
-msgstr ""
+msgstr "Rahm in de Rieg"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:116
 msgid "Inserted text"
-msgstr ""
+msgstr "Inföögter Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:117
 msgid "Instance definition"
-msgstr ""
+msgstr "Instanz-Defineren"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:118
 msgid "Italic text"
-msgstr ""
+msgstr "Schüner Text"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:120
 msgid "Java applet (deprecated)"
-msgstr ""
+msgstr "Java-Programm (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:121
 msgid "Label"
-msgstr ""
+msgstr "Kennteken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:122
 msgid "Language code"
-msgstr ""
+msgstr "Spraak-Quell"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:123
 msgid "Large text style"
-msgstr ""
+msgstr "Grooter Text"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:125
 msgid "Link color (deprecated)"
-msgstr ""
+msgstr "Verwies-Farv (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:126
 msgid "List item"
@@ -3947,60 +4183,60 @@ msgstr "Listelement"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:127
 msgid "List of MIME types for file upload"
-msgstr ""
+msgstr "List vun MIME-Aarden tum Upladen vun Dateien"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:128
 msgid "List of supported character sets"
-msgstr ""
+msgstr "List vun unnerstütten Bookstaven-Gruppen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:129
 msgid "Local change to font"
-msgstr ""
+msgstr "Lokal as Schrift ännern"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:130
 msgid "Long description link"
-msgstr ""
+msgstr "Verwies to langer Beschrieven"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:131
 msgid "Long quotation"
-msgstr ""
+msgstr "Langes Zitat"
 
 #. Supported in XHTML 1.0 Frameset DTD only.
 #: ../plugins/taglist/HTML.tags.xml.in.h:133
 msgid "Margin pixel height"
-msgstr ""
+msgstr "Pixel-Höcht am Rann"
 
 #. Supported in XHTML 1.0 Frameset DTD only.
 #: ../plugins/taglist/HTML.tags.xml.in.h:135
 msgid "Margin pixel width"
-msgstr ""
+msgstr "Pixel-Breddt am Rann"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:136
 msgid "Maximum length of text field"
-msgstr ""
+msgstr "Hoogste Längt im Textfeld"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:137
 msgid "Output media"
-msgstr ""
+msgstr "Utgaav-Medium"
 
 #. Here I take some liberties: There's no mandatory attributes,
 #. but those are most common, and will likely be used.
 #: ../plugins/taglist/HTML.tags.xml.in.h:140
 msgid "Media-independent link"
-msgstr ""
+msgstr "Verwies freei vum Medium"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:142
 msgid "Menu list (deprecated)"
-msgstr ""
+msgstr "Menü-List (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:143
 msgid "Multi-line text field"
-msgstr ""
+msgstr "Textfeld mit mennig Riegen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:144
 msgid "Multiple"
-msgstr ""
+msgstr "Mennig"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:145
 msgid "Name"
@@ -4008,24 +4244,24 @@ msgstr "Naam"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:146
 msgid "Named property value"
-msgstr ""
+msgstr "Eegenskupp-Weert mit Naam"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:147
 msgid "No frames"
-msgstr ""
+msgstr "Keen Rahm"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:148
 msgid "No resize"
-msgstr ""
+msgstr "Grött nich ännern"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:149
 msgid "No script"
-msgstr ""
+msgstr "Keen Skript"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:151
 msgid "No shade (deprecated)"
-msgstr ""
+msgstr "Keen Scheem (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:152
 msgid "No URI"
@@ -4034,120 +4270,120 @@ msgstr "Keene URI"
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:154
 msgid "No word wrap (deprecated)"
-msgstr ""
+msgstr "Woorten nich umpacken (nich mehr bruken)"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:156
 msgid "Object applet file (deprecated)"
-msgstr ""
+msgstr "Ding-Programm-Datei (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:157
 msgid "Object data reference"
-msgstr ""
+msgstr "Ding-Daten-Verwies"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:158
 msgid "Offset for alignment character"
-msgstr ""
+msgstr "Justeren-Bookstaav ofsetten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:159
 msgid "OnBlur event"
-msgstr ""
+msgstr "Vörfall bi'm Verwisken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:160
 msgid "OnChange event"
-msgstr ""
+msgstr "Vörfall bi'm Ännern"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:161
 msgid "OnClick event"
-msgstr ""
+msgstr "Vörfall bi'm Klicken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:162
 msgid "OnDblClick event"
-msgstr ""
+msgstr "Vörfall bi'm Dübbelklicken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:163
 msgid "OnFocus event"
-msgstr ""
+msgstr "Vörfall bi'm Fokus kriegen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:164
 msgid "OnKeyDown event"
-msgstr ""
+msgstr "Vörfall bi Tast unnen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:165
 msgid "OnKeyPress event"
-msgstr ""
+msgstr "Vörfall bi'm Tastendruck"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:166
 msgid "OnKeyUp event"
-msgstr ""
+msgstr "Vörfall bi Tast lösslaten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:167
 msgid "OnLoad event"
-msgstr ""
+msgstr "Vörfall bi'm Laden"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:168
 msgid "OnMouseDown event"
-msgstr ""
+msgstr "Vörfall bi Muus unnen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:169
 msgid "OnMouseMove event"
-msgstr ""
+msgstr "Vörfall bi'm Muus verschuven"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:170
 msgid "OnMouseOut event"
-msgstr ""
+msgstr "Vörfall bi Muus gaht weg"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:171
 msgid "OnMouseOver event"
-msgstr ""
+msgstr "Vörfall bi Muus dröver"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:172
 msgid "OnMouseUp event"
-msgstr ""
+msgstr "Vörfall bi Muus lösslaten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:173
 msgid "OnReset event"
-msgstr ""
+msgstr "Vörfall bi'm Torüggsetten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:174
 msgid "OnSelect event"
-msgstr ""
+msgstr "Vörfall bi'm Utkören"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:175
 msgid "OnSubmit event"
-msgstr ""
+msgstr "Vörfall bi'm Angeven"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:176
 msgid "OnUnload event"
-msgstr ""
+msgstr "Vörfall bi'm Utladen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:177
 msgid "Option group"
-msgstr ""
+msgstr "Optioonen-Grupp"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:178
 msgid "Option selector"
-msgstr ""
+msgstr "Optioon-Utkörer"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:179
 msgid "Ordered list"
-msgstr ""
+msgstr "Sorteerte List"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:180
 msgid "Paragraph class"
-msgstr ""
+msgstr "Absatz-Klass"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:181
 msgid "Paragraph style"
-msgstr ""
+msgstr "Absatz-Aard"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:182
 msgid "Paragraph"
-msgstr ""
+msgstr "Absatz"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:183
 msgid "Preformatted text"
-msgstr ""
+msgstr "Vör-Formateerter Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:184
 msgid "Profile metainfo dictionary"
@@ -4155,53 +4391,53 @@ msgstr ""
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:185
 msgid "Push button"
-msgstr ""
+msgstr "Knoop tum Drücken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:186
 msgid "ReadOnly text and password"
-msgstr ""
+msgstr "Kennwoort un Text blot tum Lesen"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:188
 msgid "Reduced spacing (deprecated)"
-msgstr ""
+msgstr "Körte Rüümte (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:189
 msgid "Reverse link"
-msgstr ""
+msgstr "Umdreihter Verwies"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:190
 msgid "Rows"
-msgstr ""
+msgstr "Riegens"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:191
 msgid "Rulings between rows and columns"
-msgstr ""
+msgstr "Ofmetens tüsken Riegen un Striepen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:192
 msgid "Sample program output, scripts"
-msgstr ""
+msgstr "Bispööl-Programm-Utgaav, Skripten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:193
 msgid "Scope covered by header cells"
-msgstr ""
+msgstr "Rebeet, wat de Kopp-Zellen bedecken"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:195
 msgid "Script language name"
-msgstr ""
+msgstr "Naam vun de Skript-Spraak"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:196
 msgid "Script statements"
-msgstr ""
+msgstr "Skript-Befehlen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:197
 msgid "Scrollbar"
-msgstr ""
+msgstr "Rullbalken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:198
 msgid "Selectable option"
-msgstr ""
+msgstr "Optioon tum Utkören"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:199
 msgid "Selected"
@@ -4213,20 +4449,20 @@ msgstr ""
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:201
 msgid "Shape"
-msgstr ""
+msgstr "Förm"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:202
 msgid "Short inline quotation"
-msgstr ""
+msgstr "Körtes Zitat in de Rieg"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:204
 msgid "Size (deprecated)"
-msgstr ""
+msgstr "Grött (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:205
 msgid "Small text style"
-msgstr ""
+msgstr "Lütter Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:206
 msgid "Source"
@@ -4234,114 +4470,114 @@ msgstr "Wellen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:207
 msgid "Space-separated archive list"
-msgstr ""
+msgstr "List vun Archiven, Leegtekens tum Trennen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:208
 msgid "Spacing between cells"
-msgstr ""
+msgstr "Rüümte tüsken Zellen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:209
 msgid "Spacing within cells"
-msgstr ""
+msgstr "Rüümte in Zellen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:210
 msgid "Span"
-msgstr ""
+msgstr "Spann"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:211
 msgid "Standby load message"
-msgstr ""
+msgstr "Naricht bi'm Laden un Wachten"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:213
 msgid "Starting sequence number (deprecated)"
-msgstr ""
+msgstr "Tahl vun de Anfang-Sequenz (nich mehr bruken)"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:215
 msgid "Strike-through text style (deprecated)"
-msgstr ""
+msgstr "Aard vun dörstreken Text (nich mehr bruken)"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:217
 msgid "Strike-through text (deprecated)"
-msgstr ""
+msgstr "Dörstrekener Text (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:218
 msgid "Strong emphasis"
-msgstr ""
+msgstr "Stark betonen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:219
 msgid "Style info"
-msgstr ""
+msgstr "Aard-Informatioon:"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:220
 msgid "Subscript"
-msgstr ""
+msgstr "Deper Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:221
 msgid "Superscript"
-msgstr ""
+msgstr "Hoger Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:222
 msgid "Table body"
-msgstr ""
+msgstr "Tabell-Höövddeel"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:223
 msgid "Table caption"
-msgstr ""
+msgstr "Tabell-Titel"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:224
 msgid "Table column group properties"
-msgstr ""
+msgstr "Eegenskuppen vun Tabell-Striepengruppen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:225
 msgid "Table column properties"
-msgstr ""
+msgstr "Eegenskuppen vun Tabell-Striepen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:226
 msgid "Table data cell"
-msgstr ""
+msgstr "Tabell-Datenzell"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:227
 msgid "Table footer"
-msgstr ""
+msgstr "Tabell-Unnerrieg"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:228
 msgid "Table header cell"
-msgstr ""
+msgstr "Tabell-Koppzell"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:229
 msgid "Table header"
-msgstr ""
+msgstr "Tabell-Kopp"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:230
 msgid "Table row"
-msgstr ""
+msgstr "Tabell-Rieg"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:231
 msgid "Table summary"
-msgstr ""
+msgstr "Tabell-Tosamenfaten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:232
 msgid "Table"
-msgstr ""
+msgstr "Tabell"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:233
 msgid "Target - Blank"
-msgstr ""
+msgstr "Enn – Leeg"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:234
 msgid "Target - Parent"
-msgstr ""
+msgstr "Enn – Vader"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:235
 msgid "Target - Self"
-msgstr ""
+msgstr "Enn – Sülvst"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:236
 msgid "Target - Top"
-msgstr ""
+msgstr "Enn – Boven"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:237
 msgid "Teletype or monospace text style"
@@ -4350,11 +4586,11 @@ msgstr ""
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:239
 msgid "Text color (deprecated)"
-msgstr ""
+msgstr "Text-Farv (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:240
 msgid "Text entered by user"
-msgstr ""
+msgstr "Text vum Bruker ingeven"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:241
 msgid "Title"
@@ -4362,19 +4598,19 @@ msgstr "Titel"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:242
 msgid "Underlined text style"
-msgstr ""
+msgstr "Unnerstreken Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:243
 msgid "Unordered list"
-msgstr ""
+msgstr "Nich sorteerte List"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:244
 msgid "Use image map"
-msgstr ""
+msgstr "Bill-Kaart bruken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:245
 msgid "Value interpretation"
-msgstr ""
+msgstr "Weert-Bedüden"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:246
 msgid "Value"
@@ -4386,17 +4622,17 @@ msgstr ""
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:248
 msgid "Vertical cell alignment"
-msgstr ""
+msgstr "Vertikale Zell-Justeren"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:250
 msgid "Vertical space (deprecated)"
-msgstr ""
+msgstr "Vertikale Rüümte (nich mehr bruken)"
 
 #. Deprecated since HTML 4.01, not supported in XHTML 1.0 Strict DTD.
 #: ../plugins/taglist/HTML.tags.xml.in.h:252
 msgid "Visited link color (deprecated)"
-msgstr ""
+msgstr "Besöchte-Verwiesen-Farv (nich mehr bruken)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:253
 msgid "Width"
@@ -4404,7 +4640,7 @@ msgstr "Brede"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:254
 msgid "HTML - Tags"
-msgstr ""
+msgstr "HTML-Slötelwoorten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:255
 msgid "Above"
@@ -4412,11 +4648,11 @@ msgstr "Över"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:256
 msgid "Applet class file code"
-msgstr ""
+msgstr "Quell för Programm-Klassen-Datei"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:257
 msgid "Array"
-msgstr ""
+msgstr "Feld"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:258
 msgid "Background color"
@@ -4424,15 +4660,15 @@ msgstr "Achtergrundklöör"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:259
 msgid "Background texture tile"
-msgstr ""
+msgstr "Achtergrund-Textuur-Floor"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:260
 msgid "Base font"
-msgstr ""
+msgstr "Normaale Schriftaard"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:261
 msgid "Border color"
-msgstr ""
+msgstr "Grenz-Farv"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:262
 msgid "Border"
@@ -4444,59 +4680,59 @@ msgstr "Inne Midde"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:264
 msgid "Checked (state)"
-msgstr ""
+msgstr "Ankrüzen (Tostand)"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:265
 msgid "Color of selected links"
-msgstr ""
+msgstr "Farv för utkörte Verwiesens"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:266
 msgid "Content scheme"
-msgstr ""
+msgstr "Inholl-Schema"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:267
 msgid "Content type"
-msgstr ""
+msgstr "Aard vum Inholl"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:268
 msgid "Direction"
-msgstr ""
+msgstr "Richtung"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:269
 msgid "Directory list"
-msgstr ""
+msgstr "Verteeknis-List"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:270
 msgid "HTML version"
-msgstr ""
+msgstr "HTML-Versioon"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:271
 msgid "Embedded object"
-msgstr ""
+msgstr "Inschreven Ding"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:272
 msgid "Figure"
-msgstr ""
+msgstr "Bill"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:273
 msgid "Font face"
-msgstr ""
+msgstr "Schriftaard-Vörsied"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:274
 msgid "Frameborder"
-msgstr ""
+msgstr "Rahmgrenz"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:275
 msgid "Framespacing"
-msgstr ""
+msgstr "Rüümte um Rahm"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:276
 msgid "Heading"
-msgstr ""
+msgstr "Överschrift"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:277
 msgid "Horizontal space"
-msgstr ""
+msgstr "Horizontale Rüümte"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:278
 msgid "Image source"
@@ -4504,15 +4740,15 @@ msgstr "Billwell"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:279
 msgid "Inline layer"
-msgstr ""
+msgstr "Schicht in de Rieg"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:280
 msgid "Java applet"
-msgstr ""
+msgstr "Java-Programm"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:281
 msgid "Layer"
-msgstr ""
+msgstr "Schicht"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:282
 msgid "Link color"
@@ -4520,15 +4756,15 @@ msgstr "Verknüppenklöör"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:283
 msgid "Listing"
-msgstr ""
+msgstr "List"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:284
 msgid "Mail link"
-msgstr ""
+msgstr "E-Post-Verwies"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:285
 msgid "Marquee"
-msgstr ""
+msgstr "Löpptext"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:286
 msgid "Menu list"
@@ -4536,43 +4772,43 @@ msgstr "Menülist"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:287
 msgid "Multicolumn"
-msgstr ""
+msgstr "Mennig Striepens"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:288
 msgid "Next ID"
-msgstr ""
+msgstr "Anner ID"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:289
 msgid "No embedded objects"
-msgstr ""
+msgstr "Keene inschreven Dingen"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:290
 msgid "No layers"
-msgstr ""
+msgstr "Keene Schichten"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:291
 msgid "No line break"
-msgstr ""
+msgstr "Keen Riegenbreken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:292
 msgid "No shade"
-msgstr ""
+msgstr "Keen Scheem"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:293
 msgid "No word wrap"
-msgstr ""
+msgstr "Woorten nich umpacken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:294
 msgid "Note"
-msgstr ""
+msgstr "Notiz"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:295
 msgid "Object applet file"
-msgstr ""
+msgstr "Ding-Programm-Datei"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:296
 msgid "Preformatted listing"
-msgstr ""
+msgstr "Vör-Formateerte List"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:297
 msgid "Prompt message"
@@ -4580,19 +4816,19 @@ msgstr ""
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:298
 msgid "Quote"
-msgstr ""
+msgstr "Zitat"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:299
 msgid "Range"
-msgstr ""
+msgstr "Spann"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:300
 msgid "Reduced spacing"
-msgstr ""
+msgstr "Körte Rüümte"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:301
 msgid "Root"
-msgstr ""
+msgstr "Ruut"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:302
 msgid "Single line prompt"
@@ -4604,7 +4840,7 @@ msgstr "Gröte"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:304
 msgid "Soft line break"
-msgstr ""
+msgstr "Wekes Riegenbreken"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:305
 msgid "Sound"
@@ -4612,27 +4848,27 @@ msgstr "Ton"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:306
 msgid "Spacer"
-msgstr ""
+msgstr "Rüümte-Maker"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:307
 msgid "Square root"
-msgstr ""
+msgstr "Quadraatwuddel"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:308
 msgid "Starting sequence number"
-msgstr ""
+msgstr "Tahl vun de Anfang-Sequenz"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:309
 msgid "Strike-through text style"
-msgstr ""
+msgstr "Aard vun dörstreken Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:310
 msgid "Strike-through text"
-msgstr ""
+msgstr "Dörstrekener Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:311
 msgid "Tab order position"
-msgstr ""
+msgstr "Stee in Registerkaarten-Bört"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:312
 msgid "Text color"
@@ -4644,7 +4880,7 @@ msgstr "Text"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:314
 msgid "Top margin in pixels"
-msgstr ""
+msgstr "Bovene Rann in Pixeln"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:315
 msgid "URL"
@@ -4652,23 +4888,23 @@ msgstr "URL"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:316
 msgid "Vertical space"
-msgstr ""
+msgstr "Vertikale Rüümte"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:317
 msgid "Visited link color"
-msgstr ""
+msgstr "Besöchte-Verwiesen-Farv"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:318
 msgid "HTML - Special Characters"
-msgstr ""
+msgstr "HTML: Besünnere Bookstavens"
 
 #: ../plugins/taglist/HTML.tags.xml.in.h:319
 msgid "Non-breaking space"
-msgstr ""
+msgstr "Leegteken sünner Riegenbreken"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:1
 msgid "Latex - Tags"
-msgstr ""
+msgstr "Latex-Slötelwoorten"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:2
 msgid "Bibliography (cite)"
@@ -4688,19 +4924,19 @@ msgstr ""
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:6
 msgid "Brackets ()"
-msgstr ""
+msgstr "Klammern ()"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:7
 msgid "Brackets []"
-msgstr ""
+msgstr "Klammern []"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:8
 msgid "Brackets {}"
-msgstr ""
+msgstr "Klammern {}"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:9
 msgid "Brackets <>"
-msgstr ""
+msgstr "Klammern <>"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:10
 msgid "File input"
@@ -4708,111 +4944,111 @@ msgstr "Dateiingav"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:11
 msgid "Function cosine"
-msgstr ""
+msgstr "Kosinus-Funktioon"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:12
 msgid "Function e^"
-msgstr ""
+msgstr "e-Funktioon"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:13
 msgid "Function exp"
-msgstr ""
+msgstr "exp-Funktioon"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:14
 msgid "Function log"
-msgstr ""
+msgstr "log-Funktioon"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:15
 msgid "Function log10"
-msgstr ""
+msgstr "log10-Funktioon"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:16
 msgid "Function sine"
-msgstr ""
+msgstr "Sinus-Funktioon"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:17
 msgid "Greek alpha"
-msgstr ""
+msgstr "Greekskes Alpha"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:18
 msgid "Greek beta"
-msgstr ""
+msgstr "Greekskes Beta"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:19
 msgid "Greek epsilon"
-msgstr ""
+msgstr "Greekskes Epsilon"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:20
 msgid "Greek gamma"
-msgstr ""
+msgstr "Greekskes Gamma"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:21
 msgid "Greek lambda"
-msgstr ""
+msgstr "Greekskes Lambda"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:22
 msgid "Greek rho"
-msgstr ""
+msgstr "Greekskes Rho"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:23
 msgid "Greek tau"
-msgstr ""
+msgstr "Greekskes Tau"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:24
 msgid "Header 0 (chapter)"
-msgstr ""
+msgstr "Överschrift 0 (chapter)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:25
 msgid "Header 0 (chapter*)"
-msgstr ""
+msgstr "Överschrift 0 (chapter*)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:26
 msgid "Header 1 (section)"
-msgstr ""
+msgstr "Överschrift 1 (section)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:27
 msgid "Header 1 (section*)"
-msgstr ""
+msgstr "Överschrift 1 (section*)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:28
 msgid "Header 2 (subsection)"
-msgstr ""
+msgstr "Överschrift 2 (subsection)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:29
 msgid "Header 2 (subsection*)"
-msgstr ""
+msgstr "Överschrift 2 (subsection*)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:30
 msgid "Header 3 (subsubsection)"
-msgstr ""
+msgstr "Överschrift 3 (subsubsection)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:31
 msgid "Header 3 (subsubsection*)"
-msgstr ""
+msgstr "Överschrift 3 (subsubsection*)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:32
 msgid "Header 4 (paragraph)"
-msgstr ""
+msgstr "Överschrift 4 (paragraph)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:33
 msgid "Header appendix"
-msgstr ""
+msgstr "Överschrift Anhang"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:34
 msgid "List description"
-msgstr ""
+msgstr "List: description"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:35
 msgid "List enumerate"
-msgstr ""
+msgstr "List: enumerate"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:36
 msgid "List itemize"
-msgstr ""
+msgstr "List: itemize"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:37
 msgid "Item with label"
-msgstr ""
+msgstr "Ding mit Kennteken"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:38
 msgid "Item"
@@ -4820,165 +5056,167 @@ msgstr "Element"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:39
 msgid "Maths (display)"
-msgstr ""
+msgstr "Mathematik (Absatz)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:40
 msgid "Maths (inline)"
-msgstr ""
+msgstr "Mathematik (in de Rieg)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:41
 msgid "Operator fraction"
-msgstr ""
+msgstr "Operatoor: Bröök"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:42
 msgid "Operator integral (display)"
-msgstr ""
+msgstr "Operatoor: Integraal (Absatz)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:43
 msgid "Operator integral (inline)"
-msgstr ""
+msgstr "Operatoor: Integraal (in de Rieg)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:44
 msgid "Operator sum (display)"
-msgstr ""
+msgstr "Operatoor: Summe (Absatz)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:45
 msgid "Operator sum (inline)"
-msgstr ""
+msgstr "Operatoor: Summe (in de Rieg)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:46
 msgid "Reference label"
-msgstr ""
+msgstr "Verwies: label"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:47
 msgid "Reference ref"
-msgstr ""
+msgstr "Verwies: ref"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:48
 msgid "Symbol <<"
-msgstr ""
+msgstr "Teken <<"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:49
 msgid "Symbol <="
-msgstr ""
+msgstr "Teken <="
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:50
 msgid "Symbol >="
-msgstr ""
+msgstr "Teken >="
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:51
 msgid "Symbol >>"
-msgstr ""
+msgstr "Teken >>"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:52
 msgid "Symbol and"
-msgstr ""
+msgstr "Teken and"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:53
 msgid "Symbol const"
-msgstr ""
+msgstr "Teken const"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:54
 msgid "Symbol d2-by-dt2-partial"
-msgstr ""
+msgstr "Teken d2-by-dt2-partial"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:55
 msgid "Symbol dagger"
-msgstr ""
+msgstr "Teken dagger"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:56
 msgid "Symbol d-by-dt"
-msgstr ""
+msgstr "Teken d-by-dt"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:57
 msgid "Symbol d-by-dt-partial"
-msgstr ""
+msgstr "Teken d-by-dt-partial"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:58
 msgid "Symbol equiv"
-msgstr ""
+msgstr "Teken equiv"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:59
 msgid "Symbol en-dash --"
-msgstr ""
+msgstr "Teken en-dash --"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:60
 msgid "Symbol em-dash ---"
-msgstr ""
+msgstr "Teken em-dash ---"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:61
 msgid "Symbol infinity"
-msgstr ""
+msgstr "Teken infinity"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:62
 msgid "Symbol mathspace ,"
-msgstr ""
+msgstr "Teken mathspace ,"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:63
 msgid "Symbol mathspace ."
-msgstr ""
+msgstr "Teken mathspace ."
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:64
 msgid "Symbol mathspace _"
-msgstr ""
+msgstr "Teken mathspace _"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:65
 msgid "Symbol mathspace __"
-msgstr ""
+msgstr "Teken mathspace __"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:66
 msgid "Symbol simeq"
-msgstr ""
+msgstr "Teken simeq"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:67
 msgid "Symbol star"
-msgstr ""
+msgstr "Teken star"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:68
 msgid "Typeface bold"
-msgstr ""
+msgstr "Schriftaard Fett"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:69
 msgid "Typeface type"
-msgstr ""
+msgstr "Schriftaard Tippen"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:70
 msgid "Typeface italic"
-msgstr ""
+msgstr "Schriftaard Kursiv"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:71
 msgid "Typeface slanted"
-msgstr ""
+msgstr "Schriftaard Schüün"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:73
 msgid "Unbreakable text"
-msgstr ""
+msgstr "Text sünner umbreken"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:74
 msgid "Footnote"
-msgstr ""
+msgstr "Footnoot"
 
 #: ../plugins/taglist/taglist.plugin.desktop.in.h:1
 msgid "Tag list"
-msgstr ""
+msgstr "List vun Tekens"
 
 #: ../plugins/taglist/taglist.plugin.desktop.in.h:2
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
 msgstr ""
+"Verlöövt 't, Tekens oder Woorten, wat man vööl bruukt, licht sünner se to "
+"tippen intofögen."
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:1
 msgid "XSLT - Elements"
-msgstr ""
+msgstr "XSLT-Dingen"
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:2
 msgid "XSLT - Functions"
-msgstr ""
+msgstr "XSLT-Funktioonen"
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:3
 msgid "XSLT - Axes"
-msgstr ""
+msgstr "XSLT-Assen"
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:4
 msgid "ancestor"
@@ -5042,7 +5280,7 @@ msgstr ""
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:2
 msgid "Selected format"
-msgstr ""
+msgstr "Utköört Formaat"
 
 #: ../plugins/time/org.mate.pluma.plugins.time.gschema.xml.in.h:3
 msgid "Custom format"
@@ -5050,31 +5288,31 @@ msgstr "Eegens Format"
 
 #: ../plugins/time/pluma-time-plugin.c:189
 msgid "In_sert Date and Time..."
-msgstr ""
+msgstr "Dat_um un Tied infögen…"
 
 #: ../plugins/time/pluma-time-plugin.c:191
 msgid "Insert current date and time at the cursor position"
-msgstr ""
+msgstr "Dat aktuelle Datum un de Tied am Wieser infögen"
 
 #: ../plugins/time/pluma-time-plugin.c:581
 msgid "Available formats"
-msgstr ""
+msgstr "Verföögbaare Formaaten"
 
 #: ../plugins/time/time.plugin.desktop.in.h:1
 msgid "Insert Date/Time"
-msgstr ""
+msgstr "Datum/Tied infögen"
 
 #: ../plugins/time/time.plugin.desktop.in.h:2
 msgid "Inserts current date and time at the cursor position."
-msgstr ""
+msgstr "Föögt dat aktuelle Datum un de Tied am Wieser in."
 
 #: ../plugins/trailsave/trailsave.plugin.desktop.in.h:1
 msgid "Save Without Trailing Spaces"
-msgstr ""
+msgstr "Sünner Leegtekens am Riegenenn sekern"
 
 #: ../plugins/trailsave/trailsave.plugin.desktop.in.h:2
 msgid "Removes trailing spaces from lines before saving."
-msgstr ""
+msgstr "Maakt vör de Sekern Leegtekens am Enn vun elkeen Rieg weg."
 
 #: ../plugins/time/pluma-time-dialog.ui.h:1
 msgid "Insert Date and Time"
@@ -5087,35 +5325,35 @@ msgstr "_Infögen"
 #: ../plugins/time/pluma-time-dialog.ui.h:5
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:8
 msgid "Use the _selected format"
-msgstr ""
+msgstr "Utköört Formaat _bruken"
 
 #: ../plugins/time/pluma-time-dialog.ui.h:7
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:9
 msgid "_Use custom format"
-msgstr ""
+msgstr "_Eegenes Formaat bruken"
 
 #. Translators: Use the more common date format in your locale
 #: ../plugins/time/pluma-time-dialog.ui.h:9
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:12
 #, no-c-format
 msgid "%d/%m/%Y %H:%M:%S"
-msgstr ""
+msgstr "%d.%m.%Y, %H:%M:%S"
 
 #. Translators: This example should follow the date format defined in the
 #. entry above
 #: ../plugins/time/pluma-time-dialog.ui.h:10
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:14
 msgid "01/11/2009 17:52:00"
-msgstr ""
+msgstr "01.11.2009, 17:52:00"
 
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:1
 msgid "Configure date/time plugin"
-msgstr ""
+msgstr "Datum/Tied-Plugin konfigureren"
 
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:5
 msgid "When inserting date/time..."
-msgstr ""
+msgstr "Bi'm Infögen vun Datum un Tied…"
 
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:7
 msgid "_Prompt for a format"
-msgstr ""
+msgstr "Een Formaat för_dern"
