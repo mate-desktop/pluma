@@ -1,6 +1,29 @@
+### pluma 1.22.0
+
+    tx: sync with transifex
+    Add update-authors.pl script which helps to update pluma.about
+    Read authors (updated) from pluma.about file
+    show enchant version when configure
+    Replace the deprecated enchant_dict_add_to_pwl with enchant_dict_add.
+    Make translatable the documenters in the about dialog
+    Ensure proper translation of the about dialog title
+    initial travis support
+    Add License button in About Pluma dialog
+    Make translatable the copyright in about dialog
+    Update Documenters
+    remove type & url attr of ulink in translation
+    remove deprecated help section: Opening a File from a URI
+    eggsmclient: avoid deprecated 'g_type_class_add_private'
+    addresses #391 - gets snippet window size before destroying it
+    simple bug fix of misplaced underscore
+    disable deprecation warnings for distcheck
+    move appdata to metainfo directory
+    pluma-utils: Fix memory leak
+    pluma-window: Fix memory leaks
+
 ### pluma 1.21.2
 
-  * sync with transifex
+  * Translations update
   * tx: update translation sources
   * Use the same legal.xml file
   * Use make functions for HELP_LINGUAS
