@@ -8,7 +8,7 @@ class Proposal(GObject.Object, GtkSource.CompletionProposal):
     __gtype_name__ = "PlumaSnippetsProposal"
 
     def __init__(self, snippet):
-        GObject.Object.__init__(self)
+        super(Proposal, self).__init__()
         self._snippet = Snippet(snippet)
 
     def snippet(self):
@@ -25,7 +25,7 @@ class Provider(GObject.Object, GtkSource.CompletionProvider):
     __gtype_name__ = "PlumaSnippetsProvider"
 
     def __init__(self, name, language_id, handler):
-        GObject.Object.__init__(self)
+        super(Provider, self).__init__()
 
         self.name = name
         self.info_widget = None
@@ -38,7 +38,10 @@ class Provider(GObject.Object, GtkSource.CompletionProvider):
         theme = Gtk.IconTheme.get_default()
         f, w, h = Gtk.icon_size_lookup(Gtk.IconSize.MENU)
 
-        self.icon = theme.load_icon(Gtk.STOCK_JUSTIFY_LEFT, w, 0)
+        try:
+            self.icon = theme.load_icon(Gtk.STOCK_JUSTIFY_LEFT, w, 0)
+        except:
+            self.icon = None
 
     def __del__(self):
         if self.mark:

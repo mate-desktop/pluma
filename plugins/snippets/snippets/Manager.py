@@ -159,9 +159,9 @@ class Manager:
         snippet = model.get_value(iter, self.SNIPPET_COLUMN)
 
         if snippet and not snippet.valid:
-            cell.set_property('stock-id', Gtk.STOCK_DIALOG_ERROR)
+            cell.set_property('icon-name', 'dialog-error')
         else:
-            cell.set_property('stock-id', None)
+            cell.set_property('icon-name', None)
 
         cell.set_property('xalign', 1.0)
 
@@ -611,7 +611,7 @@ class Manager:
         self.default_size = [alloc.width, alloc.height]
 
         if resp == Gtk.ResponseType.HELP:
-            Pluma.help_display(self, 'pluma', 'pluma-snippets-plugin')
+            Pluma.help_display(self.dlg, 'pluma', 'pluma-snippets-plugin')
             return
 
         self.dlg.destroy()

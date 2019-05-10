@@ -124,7 +124,7 @@ class LanguagesPopup(Gtk.Window):
         self.model.foreach(self.enabled_languages, ret)
         return ret
 
-    def on_separator(self, model, piter):
+    def on_separator(self, model, piter, user_data=None):
         val = model.get_value(piter, self.COLUMN_NAME)
         return val == '-'
 
@@ -142,7 +142,7 @@ class LanguagesPopup(Gtk.Window):
             self.model.append([lang.get_name(), lang.get_id(), lang.get_id() in languages])
 
     def correct_all(self, model, path, piter, enabled):
-        if path == (0,):
+        if path.get_indices()[0] == 0:
             return False
 
         model.set_value(piter, self.COLUMN_ENABLED, enabled)
@@ -450,7 +450,9 @@ class Manager(GObject.Object):
             n1 = t1.name
             n2 = t2.name
 
-        return cmp(n1.lower(), n2.lower())
+        n1 = n1.lower()
+        n2 = n2.lower()
+        return (n1 > n2) - (n1 < n2)
 
     def __init_tools_view(self):
         # Tools column

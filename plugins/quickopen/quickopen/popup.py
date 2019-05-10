@@ -431,7 +431,7 @@ class Popup(Gtk.Dialog):
             else:
                 self._select_index(num - 1, hasctrl, hasshift)
         else:
-            idx = path[0]
+            idx = path.get_indices()[0]
 
             if idx + howmany < 0:
                 self._select_index(0, hasctrl, hasshift)

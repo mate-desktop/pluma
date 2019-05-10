@@ -15,7 +15,6 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import string
 from xml.sax import saxutils
 from xml.etree.ElementTree import *
 import re
@@ -145,9 +144,8 @@ def _write_node(node, file, cdata_nodes=(), indent=0):
         if node.tail and node.tail.strip() != "":
             file.write(saxutils.escape(node.tail))
 
-def _cdata(text, replace=string.replace):
-    text = text.encode('utf-8')
-    return '<![CDATA[' + replace(text, ']]>', ']]]]><![CDATA[>') + ']]>'
+def _cdata(text):
+    return '<![CDATA[' + text.replace(']]>', ']]]]><![CDATA[>') + ']]>'
 
 def buffer_word_boundary(buf):
     iter = buf.get_iter_at_mark(buf.get_insert())

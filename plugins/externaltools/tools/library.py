@@ -266,9 +266,6 @@ class Tool(object):
     def is_local(self):
         return self.library.get_full_path(self.get_path(), system=False) is not None
 
-    def is_global(self):
-        return self.library.get_full_path(self.get_path(), local=False) is not None
-
     def get_path(self):
         if self.filename is not None:
             return os.path.join(self.parent.get_path(), self.filename)
@@ -419,7 +416,7 @@ class Tool(object):
 
     def _dump_properties(self):
         lines = ['# [Pluma Tool]']
-        for item in self._properties.iteritems():
+        for item in self._properties.items():
             if item[0] in self._transform:
                 lines.append('# %s=%s' % (item[0], self._transform[item[0]][1](item[1])))
             elif item[1] is not None:

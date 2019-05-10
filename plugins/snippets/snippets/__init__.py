@@ -53,7 +53,7 @@ class SnippetsPlugin(GObject.Object, Peas.Activatable):
         library = Library()
         library.add_accelerator_callback(self.accelerator_activated)
 
-        snippetsdir = os.path.join(GLib.get_user_config_dir(), '/pluma/snippets')
+        snippetsdir = os.path.join(GLib.get_user_config_dir(), 'pluma/snippets')
         library.set_dirs(snippetsdir, self.system_dirs())
 
         self._helper = WindowHelper(self)

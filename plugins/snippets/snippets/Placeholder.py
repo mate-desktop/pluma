@@ -412,7 +412,7 @@ class PlaceholderShell(PlaceholderExpand):
         self.close_shell()
         self.remove_timeout()
 
-        self.set_text(str.join('', self.shell_output).rstrip('\n'))
+        self.set_text(''.join(self.shell_output).rstrip('\n'))
 
         if self.default == None:
             self.default = self.get_text()

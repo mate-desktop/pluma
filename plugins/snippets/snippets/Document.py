@@ -108,7 +108,7 @@ class Document:
                 self.deactivate_snippet(snippet, True)
 
             completion = self.view.get_completion()
-            if completion:
+            if completion and self.provider in completion.get_providers():
                 completion.remove_provider(self.provider)
 
         self.view = view
@@ -192,6 +192,7 @@ class Document:
             provider = Completion.Provider(_('Snippets'), self.language_id, self.on_proposal_activated)
             provider.set_proposals(snippets)
 
+            cm = self.view.get_completion()
             cm.show([provider], cm.create_context(None))
 
         return True
@@ -275,7 +276,7 @@ class Document:
                 currentIndex = index
                 current = placeholder
 
-        if current and current != found and \
+        if current and found and current != found and \
            (current.begin_iter().compare(found.begin_iter()) == 0 or \
             current.end_iter().compare(found.begin_iter()) == 0) and \
            self.active_placeholder and \
@@ -906,6 +907,9 @@ class Document:
         return not (x < rect.x or x > rect.x + rect.width or y < rect.y or y > rect.y + rect.height)
 
     def on_drag_data_received(self, view, context, x, y, data, info, timestamp):
+        if not self.view.get_editable():
+            return
+
         uris = drop_get_uris(data)
         if not uris:
             return
@@ -943,6 +947,9 @@ class Document:
         return self.view.drag_dest_find_target(context, lst)
 
     def on_proposal_activated(self, proposal, piter):
+        if not self.view.get_editable():
+            return False
+
         buf = self.view.get_buffer()
         bounds = buf.get_selection_bounds()
 
