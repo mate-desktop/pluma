@@ -329,7 +329,7 @@ class PythonConsole(Gtk.ScrolledWindow):
             try:
                 r = eval(command, self.namespace, self.namespace)
                 if r is not None:
-                    print `r`
+                    print(repr(r))
             except SyntaxError:
                 exec command in self.namespace
         except:

@@ -74,7 +74,7 @@ class ToolLibrary(Singleton):
         if not os.path.isfile(filename):
             return
 
-        print "External tools: importing old tools into the new store..."
+        print("External tools: importing old tools into the new store...")
 
         xtree = et.parse(filename)
         xroot = xtree.getroot()
@@ -479,10 +479,10 @@ if __name__ == '__main__':
     library = ToolLibrary()
 
     def print_tool(t, indent):
-        print indent * "  " + "%s: %s" % (t.filename, t.name)
+        print(indent * "  " + "%s: %s" % (t.filename, t.name))
 
     def print_dir(d, indent):
-        print indent * "  " + d.dirname + '/'
+        print(indent * "  " + d.dirname + '/')
         for i in d.subdirs:
             print_dir(i, indent+1)
         for i in d.tools:

@@ -47,8 +47,8 @@ class PythonConsolePlugin(GObject.Object, Peas.Activatable):
         self._console = PythonConsole(namespace = {'__builtins__' : __builtins__,
                                              'pluma' : Pluma,
                                              'window' : window})
-        self._console.eval('print "You can access the main window through ' \
-                     '\'window\' :\\n%s" % window', False)
+        self._console.eval('print("You can access the main window through ' \
+                           '\'window\' :\\n%s" % window)', False)
         bottom = window.get_bottom_panel()
         image = Gtk.Image()
         image.set_from_icon_name(PYTHON_ICON, Gtk.IconSize.MENU)
