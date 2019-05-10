@@ -31,11 +31,11 @@ class Popup(Gtk.Dialog):
         Gtk.Dialog.__init__(self,
                             title=_('Quick Open'),
                             parent=window,
-                            flags=Gtk.DialogFlags.DESTROY_WITH_PARENT | Gtk.DialogFlags.MODAL,
-                            buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL))
+                            flags=Gtk.DialogFlags.DESTROY_WITH_PARENT | Gtk.DialogFlags.MODAL)
 
-        self._open_button = self.add_button(Gtk.STOCK_OPEN, Gtk.ResponseType.ACCEPT)
-
+        self.add_button(_("_Cancel"), Gtk.ResponseType.CANCEL)
+        self._open_button = self.add_button(_("_Open"),
+                                            Gtk.ResponseType.ACCEPT)
         self._handler = handler
         self._build_ui()
 
@@ -67,10 +67,12 @@ class Popup(Gtk.Dialog):
         return self._size
 
     def _build_ui(self):
+        self.set_border_width(5)
         vbox = self.get_content_area()
         vbox.set_spacing(3)
 
-        self._entry = Gtk.Entry()
+        self._entry = Gtk.SearchEntry()
+        self._entry.set_placeholder_text(_('Type to search...'))
 
         self._entry.connect('changed', self.on_changed)
         self._entry.connect('key-press-event', self.on_key_press_event)
@@ -113,7 +115,7 @@ class Popup(Gtk.Dialog):
         vbox.pack_start(sw, True, True, 0)
 
         lbl = Gtk.Label()
-        lbl.set_alignment(0, 0.5)
+        lbl.set_halign(Gtk.Align.START)
         lbl.set_ellipsize(Pango.EllipsizeMode.MIDDLE)
         self._info_label = lbl
 
@@ -160,7 +162,8 @@ class Popup(Gtk.Dialog):
                 if not entry:
                     break
 
-                entries.append((gfile.get_child(entry.get_name()), entry))
+                if not entry.get_is_backup():
+                    entries.append((gfile.get_child(entry.get_name()), entry))
         else:
             entries = ret
 
@@ -356,7 +359,6 @@ class Popup(Gtk.Dialog):
             path = self._store.get_path(piter)
             self._treeview.get_selection().select_path(path)
 
-        self.get_window().set_cursor(None)
         self._set_busy(False)
 
     def do_show(self):
@@ -378,7 +380,7 @@ class Popup(Gtk.Dialog):
             model, rows = selection.get_selected_rows()
             start = rows[0]
 
-            self._shift_start = Gtk.TreeRowReference(self._store, start)
+            self._shift_start = Gtk.TreeRowReference.new(self._store, start)
         else:
             start = self._shift_start.get_path()
 
@@ -479,13 +481,15 @@ class Popup(Gtk.Dialog):
                 return True
 
         if rows and ret:
-            self.destroy()
+            # We destroy the popup in an idle callback to work around a crash that happens with
+            # GTK_IM_MODULE=xim.  See https://bugzilla.gnome.org/show_bug.cgi?id=737711 .
+            GLib.idle_add(self.destroy)
 
         if not rows:
             gfile = self._direct_file()
 
             if gfile and self._handler(gfile):
-                self.destroy()
+                GLib.idle_add(self.destroy)
             else:
                 ret = False
         else:

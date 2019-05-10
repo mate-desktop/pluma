@@ -48,7 +48,7 @@ class VirtualDirectory(object):
             pass
 
 class RecentDocumentsDirectory(VirtualDirectory):
-    def __init__(self, maxitems=10):
+    def __init__(self, maxitems=200):
         VirtualDirectory.__init__(self, 'recent')
 
         self._maxitems = maxitems

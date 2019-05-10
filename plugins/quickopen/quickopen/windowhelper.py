@@ -95,7 +95,7 @@ class WindowHelper:
                 if uri:
                     gfile = Gio.file_new_for_uri(uri)
 
-                    if gfile.is_native():
+                    if gfile and gfile.is_native():
                         paths.append(gfile)
 
         except Exception:
@@ -128,7 +128,7 @@ class WindowHelper:
         self._popup.connect('destroy', self.on_popup_destroy)
 
     def _local_bookmarks(self):
-        filename = os.path.expanduser('~/.gtk-bookmarks')
+        filename = os.path.expanduser('~/.config/gtk-3.0/bookmarks')
 
         if not os.path.isfile(filename):
             return []
