@@ -703,7 +703,7 @@ class Manager(GObject.Object):
             if language in node.languages:
                 node.languages.remove(language)
 
-            self._tool_rows[node] = filter(lambda x: x.valid(), self._tool_rows[node])
+            self._tool_rows[node] = [x for x in self._tool_rows[node] if x.valid()]
 
             if not self._tool_rows[node]:
                 del self._tool_rows[node]

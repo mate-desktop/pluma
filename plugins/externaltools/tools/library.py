@@ -210,7 +210,7 @@ class Tool(object):
         if value.strip() == '':
             return []
         else:
-            return map(lambda x: x.strip(), value.split(','))
+            return [x.strip() for x in value.split(',')]
 
     def _from_list(self, value):
         return ','.join(value)
