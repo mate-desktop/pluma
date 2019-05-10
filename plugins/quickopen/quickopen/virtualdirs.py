@@ -56,7 +56,7 @@ class RecentDocumentsDirectory(VirtualDirectory):
         manager = Gtk.RecentManager.get_default()
 
         items = manager.get_items()
-        items.sort(lambda a, b: cmp(b.get_visited(), a.get_visited()))
+        items.sort(key=lambda a: a.get_visited(), reverse=True)
 
         added = 0
 

@@ -317,8 +317,7 @@ class Snippet:
         # So now all of the snippet is in the buffer, we have all our
         # placeholders right here, what's next, put all marks in the
         # plugin_data.marks
-        k = self.placeholders.keys()
-        k.sort(reverse=True)
+        k = sorted(self.placeholders.keys(), reverse=True)
 
         plugin_data.placeholders.insert(last_index, self.placeholders[0])
         last_iter = self.placeholders[0].end_iter()

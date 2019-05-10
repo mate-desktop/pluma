@@ -145,8 +145,7 @@ class ToolDirectory(object):
                 continue
             for i in os.listdir(d):
                 elements[i] = None
-        keys = elements.keys()
-        keys.sort()
+        keys = sorted(elements.keys())
         return keys
 
     def _load(self):

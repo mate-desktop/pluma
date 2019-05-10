@@ -18,6 +18,7 @@
 #  Boston, MA 02110-1301, USA.
 
 import os
+import sys
 import fnmatch
 import xml.sax.saxutils
 from gi.repository import GObject, Gio, GLib, Gdk, Gtk, Pango, Pluma
@@ -162,16 +163,8 @@ class Popup(Gtk.Dialog):
 
         return children
 
-    def _compare_entries(self, a, b, lpart):
-        if lpart in a:
-            if lpart in b:
-                return cmp(a.index(lpart), b.index(lpart))
-            else:
-                return -1
-        elif lpart in b:
-            return 1
-        else:
-            return 0
+    def _key_entries(self, pos):
+        return pos if pos >= 0 else sys.maxsize
 
     def _match_glob(self, s, glob):
         if glob:
@@ -185,8 +178,7 @@ class Popup(Gtk.Dialog):
 
         if not d in self._cache:
             entries = self._list_dir(d)
-            entries.sort(lambda x, y: cmp(x[1].lower(), y[1].lower()))
-
+            entries.sort(key=lambda x: x[1].lower())
             self._cache[d] = entries
         else:
             entries = self._cache[d]
@@ -212,7 +204,7 @@ class Popup(Gtk.Dialog):
                         (not lpart or len(parts) == 1):
                     found.append(entry)
 
-        found.sort(lambda a, b: self._compare_entries(a[1].lower(), b[1].lower(), lpart))
+        found.sort(key=lambda x: self._key_entries(x[1].lower().find(lpart)))
 
         if lpart == '..':
             newdirs.append(d.get_parent())
