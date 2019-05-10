@@ -567,7 +567,7 @@ class PlaceholderEval(PlaceholderExpand):
             del self.namespace['process_snippet']
 
         try:
-            exec text in self.namespace
+            exec(text, self.namespace)
         except:
             traceback.print_exc()
 
