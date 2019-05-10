@@ -89,7 +89,7 @@ class Capture(GObject.Object):
 
         try:
             self.pipe = subprocess.Popen(self.command, **popen_args)
-        except OSError, e:
+        except OSError as e:
             self.pipe = None
             self.emit('stderr-line', _('Could not execute command: %s') % (e, ))
             return

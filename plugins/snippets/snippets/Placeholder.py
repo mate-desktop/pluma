@@ -428,7 +428,7 @@ class PlaceholderShell(PlaceholderExpand):
             if len(line) > 0:
                 try:
                     line = unicode(line, 'utf-8')
-                except:
+                except UnicodeDecodeError:
                     line = unicode(line, locale.getdefaultlocale()[1],
                             'replace')
 
@@ -593,7 +593,7 @@ class PlaceholderEval(PlaceholderExpand):
                 'time, execution aborted.') % self.command)
 
                 return False
-            except Exception, detail:
+            except Exception as detail:
                 self.remove_timeout()
 
                 message_dialog(None, Gtk.MessageType.ERROR,
@@ -672,7 +672,7 @@ class PlaceholderRegex(PlaceholderExpand):
         # Try to compile pattern
         try:
             regex = re.compile(pattern, self.modifiers)
-        except re.error, message:
+        except re.error as message:
             sys.stderr.write('Could not compile regular expression: %s\n%s\n' % (pattern, message))
             return False
 

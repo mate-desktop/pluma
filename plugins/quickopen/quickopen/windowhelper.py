@@ -98,7 +98,7 @@ class WindowHelper:
                     if gfile.is_native():
                         paths.append(gfile)
 
-        except StandardError:
+        except Exception:
             pass
 
         # Recent documents
