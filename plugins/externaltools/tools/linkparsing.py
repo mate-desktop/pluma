@@ -193,7 +193,7 @@ REGEXP_VALAC = r"""
 
 #ruby
 #test.rb:5: ...
-#	from test.rb:3:in `each'
+#   from test.rb:3:in `each'
 # fist line parsed by REGEXP_STANDARD
 REGEXP_RUBY = r"""
 ^\s+from\s

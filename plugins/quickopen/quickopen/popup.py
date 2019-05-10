@@ -24,533 +24,532 @@ from gi.repository import GObject, Gio, GLib, Gdk, Gtk, Pango, Pluma
 from virtualdirs import VirtualDirectory
 
 class Popup(Gtk.Dialog):
-        __gtype_name__ = "QuickOpenPopup"
+    __gtype_name__ = "QuickOpenPopup"
 
-        def __init__(self, window, paths, handler):
-                Gtk.Dialog.__init__(self,
-                                    title=_('Quick Open'),
-                                    parent=window,
-                                    flags=Gtk.DialogFlags.DESTROY_WITH_PARENT | Gtk.DialogFlags.MODAL,
-                                    buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL))
+    def __init__(self, window, paths, handler):
+        Gtk.Dialog.__init__(self,
+                            title=_('Quick Open'),
+                            parent=window,
+                            flags=Gtk.DialogFlags.DESTROY_WITH_PARENT | Gtk.DialogFlags.MODAL,
+                            buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL))
 
-                self._open_button = self.add_button(Gtk.STOCK_OPEN, Gtk.ResponseType.ACCEPT)
+        self._open_button = self.add_button(Gtk.STOCK_OPEN, Gtk.ResponseType.ACCEPT)
 
-                self._handler = handler
-                self._build_ui()
+        self._handler = handler
+        self._build_ui()
 
-                self._size = (0, 0)
-                self._dirs = []
-                self._cache = {}
-                self._theme = None
-                self._cursor = None
-                self._shift_start = None
+        self._size = (0, 0)
+        self._dirs = []
+        self._cache = {}
+        self._theme = None
+        self._cursor = None
+        self._shift_start = None
 
-                self._busy_cursor = Gdk.Cursor(Gdk.CursorType.WATCH)
+        self._busy_cursor = Gdk.Cursor(Gdk.CursorType.WATCH)
 
-                accel_group = Gtk.AccelGroup()
-                accel_group.connect(Gdk.KEY_l, Gdk.ModifierType.CONTROL_MASK, 0, self.on_focus_entry)
+        accel_group = Gtk.AccelGroup()
+        accel_group.connect(Gdk.KEY_l, Gdk.ModifierType.CONTROL_MASK, 0, self.on_focus_entry)
 
-                self.add_accel_group(accel_group)
+        self.add_accel_group(accel_group)
 
-                unique = []
+        unique = []
 
-                for path in paths:
-                        if not path.get_uri() in unique:
-                                self._dirs.append(path)
-                                unique.append(path.get_uri())
+        for path in paths:
+            if not path.get_uri() in unique:
+                self._dirs.append(path)
+                unique.append(path.get_uri())
 
-        def get_final_size(self):
-                return self._size
+    def get_final_size(self):
+        return self._size
 
-        def _build_ui(self):
-                vbox = self.get_content_area()
-                vbox.set_spacing(3)
+    def _build_ui(self):
+        vbox = self.get_content_area()
+        vbox.set_spacing(3)
 
-                self._entry = Gtk.Entry()
+        self._entry = Gtk.Entry()
 
-                self._entry.connect('changed', self.on_changed)
-                self._entry.connect('key-press-event', self.on_key_press_event)
+        self._entry.connect('changed', self.on_changed)
+        self._entry.connect('key-press-event', self.on_key_press_event)
 
-                sw = Gtk.ScrolledWindow()
-                sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-                sw.set_shadow_type(Gtk.ShadowType.OUT)
+        sw = Gtk.ScrolledWindow()
+        sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        sw.set_shadow_type(Gtk.ShadowType.OUT)
 
-                tv = Gtk.TreeView()
-                tv.set_headers_visible(False)
+        tv = Gtk.TreeView()
+        tv.set_headers_visible(False)
 
-                self._store = Gtk.ListStore(Gio.Icon, str, GObject.Object, Gio.FileType)
-                tv.set_model(self._store)
+        self._store = Gtk.ListStore(Gio.Icon, str, GObject.Object, Gio.FileType)
+        tv.set_model(self._store)
 
-                self._treeview = tv
-                tv.connect('row-activated', self.on_row_activated)
+        self._treeview = tv
+        tv.connect('row-activated', self.on_row_activated)
 
-                renderer = Gtk.CellRendererPixbuf()
-                column = Gtk.TreeViewColumn()
-                column.pack_start(renderer, False)
-                column.add_attribute(renderer, "gicon", 0)
+        renderer = Gtk.CellRendererPixbuf()
+        column = Gtk.TreeViewColumn()
+        column.pack_start(renderer, False)
+        column.add_attribute(renderer, "gicon", 0)
 
-                renderer = Gtk.CellRendererText()
-                column.pack_start(renderer, True)
-                column.add_attribute(renderer, "markup", 1)
+        renderer = Gtk.CellRendererText()
+        column.pack_start(renderer, True)
+        column.add_attribute(renderer, "markup", 1)
 
-                column.set_cell_data_func(renderer, self.on_cell_data_cb, None)
+        column.set_cell_data_func(renderer, self.on_cell_data_cb, None)
 
-                tv.append_column(column)
-                sw.add(tv)
-                
-                selection = tv.get_selection()
-                selection.connect('changed', self.on_selection_changed)
-                selection.set_mode(Gtk.SelectionMode.MULTIPLE)
+        tv.append_column(column)
+        sw.add(tv)
 
-                vbox.pack_start(self._entry, False, False, 0)
-                vbox.pack_start(sw, True, True, 0)
+        selection = tv.get_selection()
+        selection.connect('changed', self.on_selection_changed)
+        selection.set_mode(Gtk.SelectionMode.MULTIPLE)
 
-                lbl = Gtk.Label()
-                lbl.set_alignment(0, 0.5)
-                lbl.set_ellipsize(Pango.EllipsizeMode.MIDDLE)
-                self._info_label = lbl
+        vbox.pack_start(self._entry, False, False, 0)
+        vbox.pack_start(sw, True, True, 0)
 
-                vbox.pack_start(lbl, False, False, 0)
+        lbl = Gtk.Label()
+        lbl.set_alignment(0, 0.5)
+        lbl.set_ellipsize(Pango.EllipsizeMode.MIDDLE)
+        self._info_label = lbl
 
-                # Initial selection
-                self.on_selection_changed(tv.get_selection())
-                vbox.show_all()
+        vbox.pack_start(lbl, False, False, 0)
 
-        def on_cell_data_cb(self, column, cell, model, piter, user_data):
-                path = model.get_path(piter)
-                
-                if self._cursor and path == self._cursor.get_path():
-                        style = self._treeview.get_style()
-                        bg = style.bg[Gtk.StateType.PRELIGHT]
-                        
-                        cell.set_property('cell-background-gdk', bg)
-                        cell.set_property('style', Pango.Style.ITALIC)
-                else:
-                        cell.set_property('cell-background-set', False)
-                        cell.set_property('style-set', False)
+        # Initial selection
+        self.on_selection_changed(tv.get_selection())
+        vbox.show_all()
 
-        def _icon_from_stock(self, stock):
-                theme = Gtk.icon_theme_get_default()
-                size = Gtk.icon_size_lookup(Gtk.IconSize.MENU)
-                pixbuf = theme.load_icon(stock, size[0], Gtk.IconLookupFlags.USE_BUILTIN)
+    def on_cell_data_cb(self, column, cell, model, piter, user_data):
+        path = model.get_path(piter)
 
-                return pixbuf
+        if self._cursor and path == self._cursor.get_path():
+            style = self._treeview.get_style()
+            bg = style.bg[Gtk.StateType.PRELIGHT]
 
-        def _list_dir(self, gfile):
-                entries = []
+            cell.set_property('cell-background-gdk', bg)
+            cell.set_property('style', Pango.Style.ITALIC)
+        else:
+            cell.set_property('cell-background-set', False)
+            cell.set_property('style-set', False)
 
-                try:
-                        ret = gfile.enumerate_children("standard::*", Gio.FileQueryInfoFlags.NONE, None)
-                except GLib.GError:
-                        pass
+    def _icon_from_stock(self, stock):
+        theme = Gtk.icon_theme_get_default()
+        size = Gtk.icon_size_lookup(Gtk.IconSize.MENU)
+        pixbuf = theme.load_icon(stock, size[0], Gtk.IconLookupFlags.USE_BUILTIN)
 
-                if isinstance(ret, Gio.FileEnumerator):
-                        while True:
-                                entry = ret.next_file(None)
+        return pixbuf
 
-                                if not entry:
-                                        break
+    def _list_dir(self, gfile):
+        entries = []
 
-                                entries.append((gfile.get_child(entry.get_name()), entry))
-                else:
-                        entries = ret
+        try:
+            ret = gfile.enumerate_children("standard::*", Gio.FileQueryInfoFlags.NONE, None)
+        except GLib.GError:
+            pass
 
-                children = []
+        if isinstance(ret, Gio.FileEnumerator):
+            while True:
+                entry = ret.next_file(None)
 
-                for entry in entries:
-                        children.append((entry[0], entry[1].get_name(), entry[1].get_file_type(), entry[1].get_icon()))
+                if not entry:
+                    break
 
-                return children
+                entries.append((gfile.get_child(entry.get_name()), entry))
+        else:
+            entries = ret
 
-        def _compare_entries(self, a, b, lpart):
-                if lpart in a:
-                        if lpart in b:
-                                return cmp(a.index(lpart), b.index(lpart))
-                        else:
-                                return -1
-                elif lpart in b:
-                        return 1
-                else:
-                        return 0
+        children = []
 
-        def _match_glob(self, s, glob):
-                if glob:
-                        glob += '*'
+        for entry in entries:
+            children.append((entry[0], entry[1].get_name(), entry[1].get_file_type(), entry[1].get_icon()))
 
-                return fnmatch.fnmatch(s, glob)
+        return children
 
-        def do_search_dir(self, parts, d):
-                if not parts or not d:
-                        return []
+    def _compare_entries(self, a, b, lpart):
+        if lpart in a:
+            if lpart in b:
+                return cmp(a.index(lpart), b.index(lpart))
+            else:
+                return -1
+        elif lpart in b:
+            return 1
+        else:
+            return 0
 
-                if not d in self._cache:
-                        entries = self._list_dir(d)
-                        entries.sort(lambda x, y: cmp(x[1].lower(), y[1].lower()))
+    def _match_glob(self, s, glob):
+        if glob:
+            glob += '*'
 
-                        self._cache[d] = entries
-                else:
-                        entries = self._cache[d]
+        return fnmatch.fnmatch(s, glob)
 
-                found = []
-                newdirs = []
+    def do_search_dir(self, parts, d):
+        if not parts or not d:
+            return []
 
-                lpart = parts[0].lower()
+        if not d in self._cache:
+            entries = self._list_dir(d)
+            entries.sort(lambda x, y: cmp(x[1].lower(), y[1].lower()))
 
-                for entry in entries:
-                        if not entry:
-                                continue
+            self._cache[d] = entries
+        else:
+            entries = self._cache[d]
 
-                        lentry = entry[1].lower()
+        found = []
+        newdirs = []
 
-                        if not lpart or lpart in lentry or self._match_glob(lentry, lpart):
-                                if entry[2] == Gio.FileType.DIRECTORY:
-                                        if len(parts) > 1:
-                                                newdirs.append(entry[0])
-                                        else:
-                                                found.append(entry)
-                                elif entry[2] == Gio.FileType.REGULAR and \
-                                     (not lpart or len(parts) == 1):
-                                        found.append(entry)
+        lpart = parts[0].lower()
 
-                found.sort(lambda a, b: self._compare_entries(a[1].lower(), b[1].lower(), lpart))
+        for entry in entries:
+            if not entry:
+                continue
 
-                if lpart == '..':
-                        newdirs.append(d.get_parent())
+            lentry = entry[1].lower()
 
-                for dd in newdirs:
-                        found.extend(self.do_search_dir(parts[1:], dd))
+            if not lpart or lpart in lentry or self._match_glob(lentry, lpart):
+                if entry[2] == Gio.FileType.DIRECTORY:
+                    if len(parts) > 1:
+                        newdirs.append(entry[0])
+                    else:
+                        found.append(entry)
+                elif entry[2] == Gio.FileType.REGULAR and \
+                        (not lpart or len(parts) == 1):
+                    found.append(entry)
 
-                return found
+        found.sort(lambda a, b: self._compare_entries(a[1].lower(), b[1].lower(), lpart))
 
-        def _replace_insensitive(self, s, find, rep):
-                out = ''
-                l = s.lower()
-                find = find.lower()
-                last = 0
+        if lpart == '..':
+            newdirs.append(d.get_parent())
 
-                if len(find) == 0:
-                        return xml.sax.saxutils.escape(s)
+        for dd in newdirs:
+            found.extend(self.do_search_dir(parts[1:], dd))
 
-                while True:
-                        m = l.find(find, last)
+        return found
 
-                        if m == -1:
-                                break
-                        else:
-                                out += xml.sax.saxutils.escape(s[last:m]) + rep % (xml.sax.saxutils.escape(s[m:m + len(find)]),)
-                                last = m + len(find)
+    def _replace_insensitive(self, s, find, rep):
+        out = ''
+        l = s.lower()
+        find = find.lower()
+        last = 0
 
-                return out + xml.sax.saxutils.escape(s[last:])
+        if len(find) == 0:
+            return xml.sax.saxutils.escape(s)
 
+        while True:
+            m = l.find(find, last)
 
-        def make_markup(self, parts, path):
-                out = []
+            if m == -1:
+                break
+            else:
+                out += xml.sax.saxutils.escape(s[last:m]) + rep % (xml.sax.saxutils.escape(s[m:m + len(find)]),)
+                last = m + len(find)
 
-                for i in range(0, len(parts)):
-                        out.append(self._replace_insensitive(path[i], parts[i], "<b>%s</b>"))
+        return out + xml.sax.saxutils.escape(s[last:])
 
-                return os.sep.join(out)
+    def make_markup(self, parts, path):
+        out = []
 
-        def _get_icon(self, f):
-                query = f.query_info(Gio.FILE_ATTRIBUTE_STANDARD_ICON, Gio.FileQueryInfoFlags.NONE, None)
+        for i in range(0, len(parts)):
+            out.append(self._replace_insensitive(path[i], parts[i], "<b>%s</b>"))
 
-                if not query:
-                        return None
-                else:
-                        return query.get_icon()
+        return os.sep.join(out)
 
-        def _make_parts(self, parent, child, pp):
-                parts = []
+    def _get_icon(self, f):
+        query = f.query_info(Gio.FILE_ATTRIBUTE_STANDARD_ICON, Gio.FileQueryInfoFlags.NONE, None)
 
-                # We went from parent, to child, using pp
-                idx = len(pp) - 1
+        if not query:
+            return None
+        else:
+            return query.get_icon()
 
-                while idx >= 0:
-                        if pp[idx] == '..':
-                                parts.insert(0, '..')
-                        else:
-                                parts.insert(0, child.get_basename())
-                                child = child.get_parent()
+    def _make_parts(self, parent, child, pp):
+        parts = []
 
-                        idx -= 1
+        # We went from parent, to child, using pp
+        idx = len(pp) - 1
 
-                return parts
+        while idx >= 0:
+            if pp[idx] == '..':
+                parts.insert(0, '..')
+            else:
+                parts.insert(0, child.get_basename())
+                child = child.get_parent()
 
-        def normalize_relative(self, parts):
-                if not parts:
-                        return []
+            idx -= 1
 
-                out = self.normalize_relative(parts[:-1])
+        return parts
 
-                if parts[-1] == '..':
-                        if not out or (out[-1] == '..') or len(out) == 1:
-                                out.append('..')
-                        else:
-                                del out[-1]
-                else:
-                        out.append(parts[-1])
+    def normalize_relative(self, parts):
+        if not parts:
+            return []
 
-                return out
+        out = self.normalize_relative(parts[:-1])
 
-        def _append_to_store(self, item):
-                if not item in self._stored_items:
-                        self._store.append(item)
-                        self._stored_items[item] = True
+        if parts[-1] == '..':
+            if not out or (out[-1] == '..') or len(out) == 1:
+                out.append('..')
+            else:
+                del out[-1]
+        else:
+            out.append(parts[-1])
 
-        def _clear_store(self):
-                self._store.clear()
-                self._stored_items = {}
+        return out
 
-        def _show_virtuals(self):
-                for d in self._dirs:
-                        if isinstance(d, VirtualDirectory):
-                                for entry in d.enumerate_children("standard::*", 0, None):
-                                        self._append_to_store((entry[1].get_icon(), xml.sax.saxutils.escape(entry[1].get_name()), entry[0], entry[1].get_file_type()))
+    def _append_to_store(self, item):
+        if not item in self._stored_items:
+            self._store.append(item)
+            self._stored_items[item] = True
 
-        def _set_busy(self, busy):
-                if busy:
-                        self.get_window().set_cursor(self._busy_cursor)
-                else:
-                        self.get_window().set_cursor(None)
+    def _clear_store(self):
+        self._store.clear()
+        self._stored_items = {}
 
-                Gdk.flush()
+    def _show_virtuals(self):
+        for d in self._dirs:
+            if isinstance(d, VirtualDirectory):
+                for entry in d.enumerate_children("standard::*", 0, None):
+                    self._append_to_store((entry[1].get_icon(), xml.sax.saxutils.escape(entry[1].get_name()), entry[0], entry[1].get_file_type()))
 
-        def _remove_cursor(self):
-                if self._cursor:
-                        path = self._cursor.get_path()
-                        self._cursor = None
+    def _set_busy(self, busy):
+        if busy:
+            self.get_window().set_cursor(self._busy_cursor)
+        else:
+            self.get_window().set_cursor(None)
 
-                        self._store.row_changed(path, self._store.get_iter(path))
+        Gdk.flush()
 
-        def do_search(self):
-                self._set_busy(True)
-                self._remove_cursor()
+    def _remove_cursor(self):
+        if self._cursor:
+            path = self._cursor.get_path()
+            self._cursor = None
 
-                text = self._entry.get_text().strip()
-                self._clear_store()
+            self._store.row_changed(path, self._store.get_iter(path))
 
-                if text == '':
-                        self._show_virtuals()
-                else:
-                        parts = self.normalize_relative(text.split(os.sep))
-                        files = []
+    def do_search(self):
+        self._set_busy(True)
+        self._remove_cursor()
 
-                        for d in self._dirs:
-                                for entry in self.do_search_dir(parts, d):
-                                        pathparts = self._make_parts(d, entry[0], parts)
-                                        self._append_to_store((entry[3], self.make_markup(parts, pathparts), entry[0], entry[2]))
+        text = self._entry.get_text().strip()
+        self._clear_store()
 
-                piter = self._store.get_iter_first()
+        if text == '':
+            self._show_virtuals()
+        else:
+            parts = self.normalize_relative(text.split(os.sep))
+            files = []
 
-                if piter:
-                        self._treeview.get_selection().select_path(self._store.get_path(piter))
+            for d in self._dirs:
+                for entry in self.do_search_dir(parts, d):
+                    pathparts = self._make_parts(d, entry[0], parts)
+                    self._append_to_store((entry[3], self.make_markup(parts, pathparts), entry[0], entry[2]))
 
-                self.get_window().set_cursor(None)
-                self._set_busy(False)
+        piter = self._store.get_iter_first()
 
-        def do_show(self):
-                Gtk.Window.do_show(self)
+        if piter:
+            self._treeview.get_selection().select_path(self._store.get_path(piter))
 
+        self.get_window().set_cursor(None)
+        self._set_busy(False)
+
+    def do_show(self):
+        Gtk.Window.do_show(self)
+
+        self._entry.grab_focus()
+        self._entry.set_text("")
+
+        self.do_search()
+
+    def on_changed(self, editable):
+        self.do_search()
+        self.on_selection_changed(self._treeview.get_selection())
+
+    def _shift_extend(self, towhere):
+        selection = self._treeview.get_selection()
+
+        if not self._shift_start:
+            model, rows = selection.get_selected_rows()
+            start = rows[0]
+
+            self._shift_start = Gtk.TreeRowReference(self._store, start)
+        else:
+            start = self._shift_start.get_path()
+
+        selection.unselect_all()
+        selection.select_range(start, towhere)
+
+    def _select_index(self, idx, hasctrl, hasshift):
+        path = (idx,)
+
+        if not (hasctrl or hasshift):
+            self._treeview.get_selection().unselect_all()
+
+        if hasshift:
+            self._shift_extend(path)
+        else:
+            self._shift_start = None
+
+            if not hasctrl:
+                self._treeview.get_selection().select_path(path)
+
+        self._treeview.scroll_to_cell(path, None, True, 0.5, 0)
+        self._remove_cursor()
+
+        if hasctrl or hasshift:
+            self._cursor = Gtk.TreeRowReference(self._store, path)
+
+            piter = self._store.get_iter(path)
+            self._store.row_changed(path, piter)
+
+    def _move_selection(self, howmany, hasctrl, hasshift):
+        num = self._store.iter_n_children(None)
+
+        if num == 0:
+            return True
+
+        # Test for cursor
+        path = None
+
+        if self._cursor:
+            path = self._cursor.get_path()
+        else:
+            model, rows = self._treeview.get_selection().get_selected_rows()
+
+            if len(rows) == 1:
+                path = rows[0]
+
+        if not path:
+            if howmany > 0:
+                self._select_index(0, hasctrl, hasshift)
+            else:
+                self._select_index(num - 1, hasctrl, hasshift)
+        else:
+            idx = path[0]
+
+            if idx + howmany < 0:
+                self._select_index(0, hasctrl, hasshift)
+            elif idx + howmany >= num:
+                self._select_index(num - 1, hasctrl, hasshift)
+            else:
+                self._select_index(idx + howmany, hasctrl, hasshift)
+
+        return True
+
+    def _direct_file(self):
+        uri = self._entry.get_text()
+        gfile = None
+
+        if Pluma.utils_is_valid_uri(uri):
+            gfile = Gio.file_new_for_uri(uri)
+        elif os.path.isabs(uri):
+            f = Gio.file_new_for_uri(uri)
+
+            if f.query_exists():
+                gfile = f
+
+        return gfile
+
+    def _activate(self):
+        model, rows = self._treeview.get_selection().get_selected_rows()
+        ret = True
+
+        for row in rows:
+            s = model.get_iter(row)
+            info = model.get(s, 2, 3)
+
+            if info[1] != Gio.FileType.DIRECTORY:
+                ret = ret and self._handler(info[0])
+            else:
+                text = self._entry.get_text()
+
+                for i in range(len(text) - 1, -1, -1):
+                    if text[i] == os.sep:
+                        break
+
+                self._entry.set_text(os.path.join(text[:i], os.path.basename(info[0].get_uri())) + os.sep)
+                self._entry.set_position(-1)
                 self._entry.grab_focus()
-                self._entry.set_text("")
-
-                self.do_search()
-
-        def on_changed(self, editable):
-                self.do_search()
-                self.on_selection_changed(self._treeview.get_selection())
-
-        def _shift_extend(self, towhere):
-                selection = self._treeview.get_selection()
-                
-                if not self._shift_start:
-                        model, rows = selection.get_selected_rows()
-                        start = rows[0]
-
-                        self._shift_start = Gtk.TreeRowReference(self._store, start)
-                else:
-                        start = self._shift_start.get_path()
-
-                selection.unselect_all()
-                selection.select_range(start, towhere)
-
-        def _select_index(self, idx, hasctrl, hasshift):
-                path = (idx,)
-                
-                if not (hasctrl or hasshift):
-                        self._treeview.get_selection().unselect_all()
-                
-                if hasshift:
-                        self._shift_extend(path)
-                else:
-                        self._shift_start = None
-                        
-                        if not hasctrl:
-                                self._treeview.get_selection().select_path(path)
-
-                self._treeview.scroll_to_cell(path, None, True, 0.5, 0)
-                self._remove_cursor()
-
-                if hasctrl or hasshift:
-                        self._cursor = Gtk.TreeRowReference(self._store, path)
-                        
-                        piter = self._store.get_iter(path)
-                        self._store.row_changed(path, piter)
-
-        def _move_selection(self, howmany, hasctrl, hasshift):
-                num = self._store.iter_n_children(None)
-
-                if num == 0:
-                        return True
-
-                # Test for cursor
-                path = None
-                
-                if self._cursor:
-                        path = self._cursor.get_path()
-                else:
-                        model, rows = self._treeview.get_selection().get_selected_rows()
-                        
-                        if len(rows) == 1:
-                                path = rows[0]
-
-                if not path:
-                        if howmany > 0:
-                                self._select_index(0, hasctrl, hasshift)
-                        else:
-                                self._select_index(num - 1, hasctrl, hasshift)
-                else:
-                        idx = path[0]
-
-                        if idx + howmany < 0:
-                                self._select_index(0, hasctrl, hasshift)
-                        elif idx + howmany >= num:
-                                self._select_index(num - 1, hasctrl, hasshift)
-                        else:
-                                self._select_index(idx + howmany, hasctrl, hasshift)
-
                 return True
 
-        def _direct_file(self):
-                uri = self._entry.get_text()
-                gfile = None
+        if rows and ret:
+            self.destroy()
 
-                if Pluma.utils_is_valid_uri(uri):
-                        gfile = Gio.file_new_for_uri(uri)
-                elif os.path.isabs(uri):
-                        f = Gio.file_new_for_uri(uri)
+        if not rows:
+            gfile = self._direct_file()
 
-                        if f.query_exists():
-                                gfile = f
+            if gfile and self._handler(gfile):
+                self.destroy()
+            else:
+                ret = False
+        else:
+            ret = False
 
-                return gfile
+        return ret
 
-        def _activate(self):
-                model, rows = self._treeview.get_selection().get_selected_rows()
-                ret = True
-                
-                for row in rows:
-                        s = model.get_iter(row)
-                        info = model.get(s, 2, 3)
+    def toggle_cursor(self):
+        if not self._cursor:
+            return
 
-                        if info[1] != Gio.FileType.DIRECTORY:
-                                ret = ret and self._handler(info[0])
-                        else:
-                                text = self._entry.get_text()
+        path = self._cursor.get_path()
+        selection = self._treeview.get_selection()
 
-                                for i in range(len(text) - 1, -1, -1):
-                                        if text[i] == os.sep:
-                                                break
+        if selection.path_is_selected(path):
+            selection.unselect_path(path)
+        else:
+            selection.select_path(path)
 
-                                self._entry.set_text(os.path.join(text[:i], os.path.basename(info[0].get_uri())) + os.sep)
-                                self._entry.set_position(-1)
-                                self._entry.grab_focus()
-                                return True
+    def on_key_press_event(self, widget, event):
+        move_mapping = {
+            Gdk.KEY_Down: 1,
+            Gdk.KEY_Up: -1,
+            Gdk.KEY_Page_Down: 5,
+            Gdk.KEY_Page_Up: -5
+        }
 
-                if rows and ret:
-                        self.destroy()
+        if event.keyval == Gdk.KEY_Escape:
+            self.destroy()
+            return True
+        elif event.keyval in move_mapping:
+            return self._move_selection(move_mapping[event.keyval], event.state & Gdk.ModifierType.CONTROL_MASK, event.state & Gdk.ModifierType.SHIFT_MASK)
+        elif event.keyval in [Gdk.KEY_Return, Gdk.KEY_KP_Enter, Gdk.KEY_Tab, Gdk.KEY_ISO_Left_Tab]:
+            return self._activate()
+        elif event.keyval == Gdk.KEY_space and event.state & Gdk.ModifierType.CONTROL_MASK:
+            self.toggle_cursor()
 
-                if not rows:
-                        gfile = self._direct_file()
+        return False
 
-                        if gfile and self._handler(gfile):
-                                self.destroy()
-                        else:
-                                ret = False
-                else:
-                        ret = False
+    def on_row_activated(self, view, path, column):
+        self._activate()
 
-                return ret
+    def do_response(self, response):
+        if response != Gtk.ResponseType.ACCEPT or not self._activate():
+            self.destroy()
 
-        def toggle_cursor(self):
-                if not self._cursor:
-                        return
-                
-                path = self._cursor.get_path()
-                selection = self._treeview.get_selection()
-                
-                if selection.path_is_selected(path):
-                        selection.unselect_path(path)
-                else:
-                        selection.select_path(path)
+    def do_configure_event(self, event):
+        if self.get_realized():
+            alloc = self.get_allocation()
+            self._size = (alloc.width, alloc.height)
 
-        def on_key_press_event(self, widget, event):
-                move_mapping = {
-                        Gdk.KEY_Down: 1,
-                        Gdk.KEY_Up: -1,
-                        Gdk.KEY_Page_Down: 5,
-                        Gdk.KEY_Page_Up: -5
-                }
-                
-                if event.keyval == Gdk.KEY_Escape:
-                        self.destroy()
-                        return True
-                elif event.keyval in move_mapping:
-                        return self._move_selection(move_mapping[event.keyval], event.state & Gdk.ModifierType.CONTROL_MASK, event.state & Gdk.ModifierType.SHIFT_MASK)
-                elif event.keyval in [Gdk.KEY_Return, Gdk.KEY_KP_Enter, Gdk.KEY_Tab, Gdk.KEY_ISO_Left_Tab]:
-                        return self._activate()
-                elif event.keyval == Gdk.KEY_space and event.state & Gdk.ModifierType.CONTROL_MASK:
-                        self.toggle_cursor()
+        return Gtk.Dialog.do_configure_event(self, event)
 
-                return False
+    def on_selection_changed(self, selection):
+        model, rows = selection.get_selected_rows()
 
-        def on_row_activated(self, view, path, column):
-                self._activate()
+        gfile = None
+        fname = None
 
-        def do_response(self, response):
-                if response != Gtk.ResponseType.ACCEPT or not self._activate():
-                        self.destroy()
+        if not rows:
+            gfile = self._direct_file()
+        elif len(rows) == 1:
+            gfile = model.get(model.get_iter(rows[0]), 2)[0]
+        else:
+            fname = ''
 
-        def do_configure_event(self, event):
-                if self.get_realized():
-                        alloc = self.get_allocation()
-                        self._size = (alloc.width, alloc.height)
+        if gfile:
+            if gfile.is_native():
+                fname = xml.sax.saxutils.escape(gfile.get_path())
+            else:
+                fname = xml.sax.saxutils.escape(gfile.get_uri())
 
-                return Gtk.Dialog.do_configure_event(self, event)
+        self._open_button.set_sensitive(fname != None)
+        self._info_label.set_markup(fname or '')
 
-        def on_selection_changed(self, selection):
-                model, rows = selection.get_selected_rows()
-                
-                gfile = None
-                fname = None
+    def on_focus_entry(self, group, accel, keyval, modifier):
+        self._entry.grab_focus()
 
-                if not rows:
-                        gfile = self._direct_file()
-                elif len(rows) == 1:
-                        gfile = model.get(model.get_iter(rows[0]), 2)[0]
-                else:
-                        fname = ''
-
-                if gfile:
-                        if gfile.is_native():
-                                fname = xml.sax.saxutils.escape(gfile.get_path())
-                        else:
-                                fname = xml.sax.saxutils.escape(gfile.get_uri())
-
-                self._open_button.set_sensitive(fname != None)
-                self._info_label.set_markup(fname or '')
-
-        def on_focus_entry(self, group, accel, keyval, modifier):
-                self._entry.grab_focus()
-
-# ex:ts=8:et:
+# ex:ts=4:et:

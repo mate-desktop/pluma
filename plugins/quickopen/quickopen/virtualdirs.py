@@ -20,64 +20,64 @@
 from gi.repository import Gio, Gtk
 
 class VirtualDirectory(object):
-        def __init__(self, name):
-                self._name = name
-                self._children = []
+    def __init__(self, name):
+        self._name = name
+        self._children = []
 
-        def get_uri(self):
-                return 'virtual://' + self._name
+    def get_uri(self):
+        return 'virtual://' + self._name
 
-        def get_parent(self):
-                return None
+    def get_parent(self):
+        return None
 
-        def enumerate_children(self, attr, flags, callback):
-                return self._children
+    def enumerate_children(self, attr, flags, callback):
+        return self._children
 
-        def append(self, child):
-                if not child.is_native():
-                        return
+    def append(self, child):
+        if not child.is_native():
+            return
 
-                try:
-                        info = child.query_info("standard::*", Gio.FileQueryInfoFlags.NONE, None)
+        try:
+            info = child.query_info("standard::*", Gio.FileQueryInfoFlags.NONE, None)
 
-                        if info:
-                                self._children.append((child, info))
-                except:
-                        pass
+            if info:
+                self._children.append((child, info))
+        except:
+            pass
 
 class RecentDocumentsDirectory(VirtualDirectory):
-        def __init__(self, maxitems=10):
-                VirtualDirectory.__init__(self, 'recent')
+    def __init__(self, maxitems=10):
+        VirtualDirectory.__init__(self, 'recent')
 
-                self._maxitems = maxitems
-                self.fill()
+        self._maxitems = maxitems
+        self.fill()
 
-        def fill(self):
-                manager = Gtk.RecentManager.get_default()
+    def fill(self):
+        manager = Gtk.RecentManager.get_default()
 
-                items = manager.get_items()
-                items.sort(lambda a, b: cmp(b.get_visited(), a.get_visited()))
+        items = manager.get_items()
+        items.sort(lambda a, b: cmp(b.get_visited(), a.get_visited()))
 
-                added = 0
+        added = 0
 
-                for item in items:
-                        if item.has_group('pluma'):
-                                self.append(Gio.file_new_for_uri(item.get_uri()))
-                                added += 1
+        for item in items:
+            if item.has_group('pluma'):
+                self.append(Gio.file_new_for_uri(item.get_uri()))
+                added += 1
 
-                                if added >= self._maxitems:
-                                        break
+                if added >= self._maxitems:
+                    break
 
 class CurrentDocumentsDirectory(VirtualDirectory):
-        def __init__(self, window):
-                VirtualDirectory.__init__(self, 'documents')
+    def __init__(self, window):
+        VirtualDirectory.__init__(self, 'documents')
 
-                self.fill(window)
+        self.fill(window)
 
-        def fill(self, window):
-                for doc in window.get_documents():
-                        location = doc.get_location()
-                        if location:
-                                self.append(location)
+    def fill(self, window):
+        for doc in window.get_documents():
+            location = doc.get_location()
+            if location:
+                self.append(location)
 
-# ex:ts=8:et:
+# ex:ts=4:et:

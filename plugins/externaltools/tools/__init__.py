@@ -57,12 +57,12 @@ class ToolMenu(object):
             action._tool_handler = None
 
             self._action_group.remove_action(action)
-        
+
         accelmap = Gtk.AccelMap.get()
 
         for s in self._signals:
             accelmap.disconnect(s)
-        
+
         self._signals = []
 
     def _insert_directory(self, directory, path):
@@ -76,7 +76,7 @@ class ToolMenu(object):
             manager.add_ui(self._merge_id, path,
                            action_name, action_name,
                            Gtk.UIManagerItemType.MENU, False)
-                           
+
             self._insert_directory(item, path + '/' + action_name)
 
         for item in directory.tools:
@@ -87,16 +87,16 @@ class ToolMenu(object):
             # Attach the item and the handler to the action object
             action._tool_item = item
             action._tool_handler = handler
-            
+
             # Make sure to replace accel
             accelpath = '<Actions>/ExternalToolsPluginToolActions/%s' % (action_name, )
-            
+
             if item.shortcut:
                 key, mod = Gtk.accelerator_parse(item.shortcut)
                 Gtk.AccelMap.change_entry(accelpath, key, mod, True)
-                
+
                 self._signals.append(Gtk.AccelMap.get().connect('changed::%s' % (accelpath,), self.on_accelmap_changed, item))
-                
+
             self._action_group.add_action_with_accel(action, item.shortcut)
 
             manager.add_ui(self._merge_id, path,
@@ -106,7 +106,7 @@ class ToolMenu(object):
     def on_accelmap_changed(self, accelmap, path, key, mod, tool):
         tool.shortcut = Gtk.accelerator_name(key, mod)
         tool.save()
-        
+
         self._plugin.update_manager(tool)
 
     def update(self):
@@ -119,10 +119,10 @@ class ToolMenu(object):
     def filter_language(self, language, item):
         if not item.languages:
             return True
-        
+
         if not language and 'plain' in item.languages:
             return True
-        
+
         if language and (language.get_id() in item.languages):
             return True
         else:
@@ -142,7 +142,7 @@ class ToolMenu(object):
             'titled': titled,
             'untitled': not titled,
         }
-        
+
         language = document.get_language()
 
         for action in self._action_group.list_actions():

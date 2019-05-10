@@ -286,64 +286,80 @@ class Tool(object):
         applicability = self._properties.get('Applicability')
         if applicability: return applicability
         return 'all'
+
     def set_applicability(self, value):
         self._set_property_if_changed('Applicability', value)
+
     applicability = property(get_applicability, set_applicability)
 
     def get_name(self):
         name = self._properties.get('Name')
         if name: return name
         return os.path.basename(self.filename)
+
     def set_name(self, value):
         self._set_property_if_changed('Name', value)
+
     name = property(get_name, set_name)
 
     def get_shortcut(self):
         shortcut = self._properties.get('Shortcut')
         if shortcut: return shortcut
         return None
+
     def set_shortcut(self, value):
         self._set_property_if_changed('Shortcut', value)
+
     shortcut = property(get_shortcut, set_shortcut)
 
     def get_comment(self):
         comment = self._properties.get('Comment')
         if comment: return comment
         return self.filename
+
     def set_comment(self, value):
         self._set_property_if_changed('Comment', value)
+
     comment = property(get_comment, set_comment)
 
     def get_input(self):
         input = self._properties.get('Input')
         if input: return input
         return 'nothing'
+
     def set_input(self, value):
         self._set_property_if_changed('Input', value)
+
     input = property(get_input, set_input)
 
     def get_output(self):
         output = self._properties.get('Output')
         if output: return output
         return 'output-panel'
+
     def set_output(self, value):
         self._set_property_if_changed('Output', value)
+
     output = property(get_output, set_output)
 
     def get_save_files(self):
         save_files = self._properties.get('Save-files')
         if save_files: return save_files
         return 'nothing'
+
     def set_save_files(self, value):
         self._set_property_if_changed('Save-files', value)
+
     save_files = property(get_save_files, set_save_files)
 
     def get_languages(self):
         languages = self._properties.get('Languages')
         if languages: return languages
         return []
+
     def set_languages(self, value):
         self._set_property_if_changed('Languages', value)
+
     languages = property(get_languages, set_languages)
 
     def has_hash_bang(self):
@@ -358,7 +374,6 @@ class Tool(object):
         for line in fp:
             if line.strip() == '':
                 continue
-
             return line.startswith('#!')
 
     # There is no property for this one because this function is quite
@@ -404,7 +419,6 @@ class Tool(object):
 
     def save_with_script(self, script):
         filename = self.library.get_full_path(self.filename, 'w')
-
         fp = open(filename, 'w', 1)
 
         # Make sure to first print header (shebang, modeline), then

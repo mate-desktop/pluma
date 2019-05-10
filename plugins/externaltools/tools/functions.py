@@ -30,13 +30,13 @@ def default(val, d):
 def current_word(document):
     piter = document.get_iter_at_mark(document.get_insert())
     start = piter.copy()
-    
+
     if not piter.starts_word() and (piter.inside_word() or piter.ends_word()):
         start.backward_word_start()
-    
+
     if not piter.ends_word() and piter.inside_word():
         piter.forward_word_end()
-            
+
     return (start, piter)
 
 # ==== Capture related functions ====
@@ -56,32 +56,32 @@ def run_external_tool(window, panel, node):
         # Environment vars relative to current document
         document = view.get_buffer()
         uri = document.get_uri()
-        
+
         # Current line number
         piter = document.get_iter_at_mark(document.get_insert())
         capture.set_env(PLUMA_CURRENT_LINE_NUMBER=str(piter.get_line() + 1))
-        
+
         # Current line text
         piter.set_line_offset(0)
         end = piter.copy()
-        
+
         if not end.ends_line():
             end.forward_to_line_end()
-        
+
         capture.set_env(PLUMA_CURRENT_LINE=piter.get_text(end))
-        
+
         # Selected text (only if input is not selection)
         if node.input != 'selection' and node.input != 'selection-document':
             bounds = document.get_selection_bounds()
-            
+
             if bounds:
                 capture.set_env(PLUMA_SELECTED_TEXT=bounds[0].get_text(bounds[1]))
-        
+
         bounds = current_word(document)
         capture.set_env(PLUMA_CURRENT_WORD=bounds[0].get_text(bounds[1]))
-        
+
         capture.set_env(PLUMA_CURRENT_DOCUMENT_TYPE=document.get_mime_type())
-        
+
         if uri is not None:
             gfile = Gio.file_new_for_uri(uri)
             scheme = gfile.get_uri_scheme()
@@ -106,7 +106,7 @@ def run_external_tool(window, panel, node):
                         PLUMA_DOCUMENTS_PATH = ' '.join(documents_path))
 
     flags = capture.CAPTURE_BOTH
-    
+
     if not node.has_hash_bang():
         flags |= capture.CAPTURE_NEEDS_SHELL
 
@@ -131,7 +131,7 @@ def run_external_tool(window, panel, node):
         elif input_type == 'selection' or input_type == 'selection-document':
             try:
                 start, end = document.get_selection_bounds()
-                
+
                 print start, end
             except ValueError:
                 if input_type == 'selection-document':
@@ -142,7 +142,7 @@ def run_external_tool(window, panel, node):
                 else:
                     start = document.get_iter_at_mark(document.get_insert())
                     end = start.copy()
-                    
+
         elif input_type == 'line':
             start = document.get_iter_at_mark(document.get_insert())
             end = start.copy()
@@ -196,12 +196,12 @@ def run_external_tool(window, panel, node):
         document.begin_user_action()
 
     capture.connect('stderr-line', capture_stderr_line_panel, panel)
-    capture.connect('begin-execute', capture_begin_execute_panel, panel, view, node.name)    
+    capture.connect('begin-execute', capture_begin_execute_panel, panel, view, node.name)
     capture.connect('end-execute', capture_end_execute_panel, panel, view, output_type)
 
     # Run the command
     capture.execute()
-    
+
     if output_type != 'nothing':
         document.end_user_action()
 
@@ -222,7 +222,7 @@ class MultipleDocumentsSaver:
             signals[doc] = doc.connect('saving', self.on_document_saving)
             Pluma.commands_save_document(window, doc)
             doc.disconnect(signals[doc])
-    
+
     def on_document_saving(self, doc, size, total_size):
         self._counter += 1
         self._signal_ids[doc] = doc.connect('saved', self.on_document_saved)
@@ -230,12 +230,12 @@ class MultipleDocumentsSaver:
     def on_document_saved(self, doc, error):
         if error:
             self._error = True
-        
+
         doc.disconnect(self._signal_ids[doc])
         del self._signal_ids[doc]
-        
+
         self._counter -= 1
-        
+
         if self._counter == 0 and not self._error:
             run_external_tool(self._window, self._panel, self._node)
 
@@ -275,7 +275,7 @@ def capture_end_execute_panel(capture, exit_code, panel, view, output_type):
         mtype, uncertain = Gio.content_type_guess(None, doc.get_text(start, end, False).encode('utf-8'))
         lmanager = GtkSource.LanguageManager.get_default()
         language = lmanager.guess_language(doc.get_uri(), mtype)
-        
+
         if language is not None:
             doc.set_language(language)
 

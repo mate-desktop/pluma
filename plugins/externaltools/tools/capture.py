@@ -29,7 +29,7 @@ class Capture(GObject.Object):
     CAPTURE_STDERR = 0x02
     CAPTURE_BOTH   = 0x03
     CAPTURE_NEEDS_SHELL = 0x04
-    
+
     WRITE_BUFFER_SIZE = 0x4000
 
     __gsignals__ = {
@@ -73,7 +73,7 @@ class Capture(GObject.Object):
             'shell': self.flags & self.CAPTURE_NEEDS_SHELL,
             'env'  : self.env
         }
-        
+
         if self.input_text is not None:
             popen_args['stdin'] = subprocess.PIPE
         if self.flags & self.CAPTURE_STDOUT:
@@ -84,17 +84,17 @@ class Capture(GObject.Object):
         self.tried_killing = False
         self.idle_write_id = 0
         self.read_buffer = ''
-        
+
         try:
             self.pipe = subprocess.Popen(self.command, **popen_args)
         except OSError, e:
             self.pipe = None
             self.emit('stderr-line', _('Could not execute command: %s') % (e, ))
             return
-        
+
         # Signal
         self.emit('begin-execute')
-        
+
         if self.flags & self.CAPTURE_STDOUT:
             # Set non blocking
             flags = fcntl.fcntl(self.pipe.stdout.fileno(), fcntl.F_GETFL) | os.O_NONBLOCK
@@ -132,13 +132,13 @@ class Capture(GObject.Object):
         try:
             l = len(self.write_buffer)
             m = min(l, self.WRITE_BUFFER_SIZE)
-         
+
             self.pipe.stdin.write(self.write_buffer[:m])
-            
+
             if m == l:
                 self.write_buffer = ''
                 self.pipe.stdin.close()
-                
+
                 self.idle_write_id = 0
 
                 return False
@@ -165,7 +165,7 @@ class Capture(GObject.Object):
 
                 self.read_buffer += line
                 lines = self.read_buffer.splitlines(True)
-                
+
                 if not lines[-1].endswith("\n"):
                     self.read_buffer = lines[-1]
                     lines = lines[0:-1]

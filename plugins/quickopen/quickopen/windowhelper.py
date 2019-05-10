@@ -27,7 +27,7 @@ ui_str = """<ui>
   <menubar name="MenuBar">
     <menu name="FileMenu" action="File">
       <placeholder name="FileOps_2">
-        <menuitem name="QuickOpen" action="QuickOpen"/>
+    <menuitem name="QuickOpen" action="QuickOpen"/>
       </placeholder>
     </menu>
   </menubar>
@@ -35,157 +35,157 @@ ui_str = """<ui>
 """
 
 class WindowHelper:
-        def __init__(self, window, plugin):
-                self._window = window
-                self._plugin = plugin
+    def __init__(self, window, plugin):
+        self._window = window
+        self._plugin = plugin
 
-                self._popup = None
-                self._install_menu()
+        self._popup = None
+        self._install_menu()
 
-        def deactivate(self):
-                self._uninstall_menu()
-                self._window = None
-                self._plugin = None
+    def deactivate(self):
+        self._uninstall_menu()
+        self._window = None
+        self._plugin = None
 
-        def update_ui(self):
-                pass
+    def update_ui(self):
+        pass
 
-        def _uninstall_menu(self):
-                manager = self._window.get_ui_manager()
+    def _uninstall_menu(self):
+        manager = self._window.get_ui_manager()
 
-                manager.remove_ui(self._ui_id)
-                manager.remove_action_group(self._action_group)
+        manager.remove_ui(self._ui_id)
+        manager.remove_action_group(self._action_group)
 
-                manager.ensure_update()
+        manager.ensure_update()
 
-        def _install_menu(self):
-                manager = self._window.get_ui_manager()
-                self._action_group = Gtk.ActionGroup("PlumaQuickOpenPluginActions")
-                self._action_group.add_actions([
-                        ("QuickOpen", Gtk.STOCK_OPEN, _("Quick open"),
-                         '<Ctrl><Alt>O', _("Quickly open documents"),
-                         self.on_quick_open_activate)
-                ])
+    def _install_menu(self):
+        manager = self._window.get_ui_manager()
+        self._action_group = Gtk.ActionGroup("PlumaQuickOpenPluginActions")
+        self._action_group.add_actions([
+            ("QuickOpen", Gtk.STOCK_OPEN, _("Quick open"),
+             '<Ctrl><Alt>O', _("Quickly open documents"),
+             self.on_quick_open_activate)
+        ])
 
-                manager.insert_action_group(self._action_group, -1)
-                self._ui_id = manager.add_ui_from_string(ui_str)
+        manager.insert_action_group(self._action_group, -1)
+        self._ui_id = manager.add_ui_from_string(ui_str)
 
-        def _create_popup(self):
-                paths = []
+    def _create_popup(self):
+        paths = []
 
-                # Open documents
-                paths.append(CurrentDocumentsDirectory(self._window))
+        # Open documents
+        paths.append(CurrentDocumentsDirectory(self._window))
 
-                doc = self._window.get_active_document()
+        doc = self._window.get_active_document()
 
-                # Current document directory
-                if doc and doc.is_local():
-                        gfile = doc.get_location()
-                        paths.append(gfile.get_parent())
+        # Current document directory
+        if doc and doc.is_local():
+            gfile = doc.get_location()
+            paths.append(gfile.get_parent())
 
-                # File browser root directory
-                bus = self._window.get_message_bus()
+        # File browser root directory
+        bus = self._window.get_message_bus()
 
+        try:
+            msg = bus.send_sync('/plugins/filebrowser', 'get_root')
+
+            if msg:
+                uri = msg.get_value('uri')
+
+                if uri:
+                    gfile = Gio.file_new_for_uri(uri)
+
+                    if gfile.is_native():
+                        paths.append(gfile)
+
+        except StandardError:
+            pass
+
+        # Recent documents
+        paths.append(RecentDocumentsDirectory())
+
+        # Local bookmarks
+        for path in self._local_bookmarks():
+            paths.append(path)
+
+        # Desktop directory
+        desktopdir = self._desktop_dir()
+
+        if desktopdir:
+            paths.append(Gio.file_new_for_path(desktopdir))
+
+        # Home directory
+        paths.append(Gio.file_new_for_path(os.path.expanduser('~')))
+
+        self._popup = Popup(self._window, paths, self.on_activated)
+
+        self._popup.set_default_size(*self._plugin.get_popup_size())
+        self._popup.set_transient_for(self._window)
+        self._popup.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
+
+        self._window.get_group().add_window(self._popup)
+
+        self._popup.connect('destroy', self.on_popup_destroy)
+
+    def _local_bookmarks(self):
+        filename = os.path.expanduser('~/.gtk-bookmarks')
+
+        if not os.path.isfile(filename):
+            return []
+
+        paths = []
+
+        for line in file(filename, 'r').xreadlines():
+            uri = line.strip().split(" ")[0]
+            f = Gio.file_new_for_uri(uri)
+
+            if f.is_native():
                 try:
-                        msg = bus.send_sync('/plugins/filebrowser', 'get_root')
+                    info = f.query_info(Gio.FILE_ATTRIBUTE_STANDARD_TYPE, Gio.FileQueryInfoFlags.NONE, None)
 
-                        if msg:
-                                uri = msg.get_value('uri')
+                    if info and info.get_file_type() == Gio.FileType.DIRECTORY:
+                        paths.append(f)
+                except GLib.GError:
+                    pass
 
-                                if uri:
-                                        gfile = Gio.file_new_for_uri(uri)
+        return paths
 
-                                        if gfile.is_native():
-                                                paths.append(gfile)
+    def _desktop_dir(self):
+        config = os.getenv('XDG_CONFIG_HOME')
 
-                except StandardError:
-                        pass
+        if not config:
+            config = os.path.expanduser('~/.config')
 
-                # Recent documents
-                paths.append(RecentDocumentsDirectory())
+        config = os.path.join(config, 'user-dirs.dirs')
+        desktopdir = None
 
-                # Local bookmarks
-                for path in self._local_bookmarks():
-                        paths.append(path)
+        if os.path.isfile(config):
+            for line in file(config, 'r').xreadlines():
+                line = line.strip()
 
-                # Desktop directory
-                desktopdir = self._desktop_dir()
+                if line.startswith('XDG_DESKTOP_DIR'):
+                    parts = line.split('=', 1)
+                    desktopdir = os.path.expandvars(parts[1].strip('"').strip("'"))
+                    break
 
-                if desktopdir:
-                        paths.append(Gio.file_new_for_path(desktopdir))
+        if not desktopdir:
+            desktopdir = os.path.expanduser('~/Desktop')
 
-                # Home directory
-                paths.append(Gio.file_new_for_path(os.path.expanduser('~')))
+        return desktopdir
 
-                self._popup = Popup(self._window, paths, self.on_activated)
+    # Callbacks
+    def on_quick_open_activate(self, action):
+        if not self._popup:
+            self._create_popup()
 
-                self._popup.set_default_size(*self._plugin.get_popup_size())
-                self._popup.set_transient_for(self._window)
-                self._popup.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
+        self._popup.show()
 
-                self._window.get_group().add_window(self._popup)
+    def on_popup_destroy(self, popup):
+        self._plugin.set_popup_size(popup.get_final_size())
+        self._popup = None
 
-                self._popup.connect('destroy', self.on_popup_destroy)
+    def on_activated(self, gfile):
+        Pluma.commands_load_uri(self._window, gfile.get_uri(), None, -1)
+        return True
 
-        def _local_bookmarks(self):
-                filename = os.path.expanduser('~/.gtk-bookmarks')
-
-                if not os.path.isfile(filename):
-                        return []
-
-                paths = []
-
-                for line in file(filename, 'r').xreadlines():
-                        uri = line.strip().split(" ")[0]
-                        f = Gio.file_new_for_uri(uri)
-
-                        if f.is_native():
-                                try:
-                                        info = f.query_info(Gio.FILE_ATTRIBUTE_STANDARD_TYPE, Gio.FileQueryInfoFlags.NONE, None)
-
-                                        if info and info.get_file_type() == Gio.FileType.DIRECTORY:
-                                                paths.append(f)
-                                except GLib.GError:
-                                        pass
-
-                return paths
-
-        def _desktop_dir(self):
-                config = os.getenv('XDG_CONFIG_HOME')
-
-                if not config:
-                        config = os.path.expanduser('~/.config')
-
-                config = os.path.join(config, 'user-dirs.dirs')
-                desktopdir = None
-
-                if os.path.isfile(config):
-                        for line in file(config, 'r').xreadlines():
-                                line = line.strip()
-
-                                if line.startswith('XDG_DESKTOP_DIR'):
-                                        parts = line.split('=', 1)
-                                        desktopdir = os.path.expandvars(parts[1].strip('"').strip("'"))
-                                        break
-
-                if not desktopdir:
-                        desktopdir = os.path.expanduser('~/Desktop')
-
-                return desktopdir
-
-        # Callbacks
-        def on_quick_open_activate(self, action):
-                if not self._popup:
-                        self._create_popup()
-
-                self._popup.show()
-
-        def on_popup_destroy(self, popup):
-                self._plugin.set_popup_size(popup.get_final_size())
-                self._popup = None
-
-        def on_activated(self, gfile):
-                Pluma.commands_load_uri(self._window, gfile.get_uri(), None, -1)
-                return True
-
-# ex:ts=8:et:
+# ex:ts=4:et:

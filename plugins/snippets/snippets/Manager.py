@@ -30,1119 +30,1119 @@ from Document import Document
 from LanguageManager import get_language_manager
 
 class Manager:
-        NAME_COLUMN = 0
-        SORT_COLUMN = 1
-        LANG_COLUMN = 2
-        SNIPPET_COLUMN = 3
-        TARGET_URI = 105
+    NAME_COLUMN = 0
+    SORT_COLUMN = 1
+    LANG_COLUMN = 2
+    SNIPPET_COLUMN = 3
+    TARGET_URI = 105
 
-        model = None
-        drag_icons = ('mate-mime-application-x-tarz', 'mate-package', 'package')
-        default_export_name = _('Snippets archive') + '.tar.gz'
-        dragging = False
-        dnd_target_list = [Gtk.TargetEntry.new('text/uri-list', 0, TARGET_URI)]
+    model = None
+    drag_icons = ('mate-mime-application-x-tarz', 'mate-package', 'package')
+    default_export_name = _('Snippets archive') + '.tar.gz'
+    dragging = False
+    dnd_target_list = [Gtk.TargetEntry.new('text/uri-list', 0, TARGET_URI)]
 
-        def __init__(self, datadir):
-                self.datadir = datadir
-                self.snippet = None
-                self.dlg = None
-                self._temp_export = None
-                self.snippets_doc = None
-                self.manager = None
-                self.default_size = None
+    def __init__(self, datadir):
+        self.datadir = datadir
+        self.snippet = None
+        self.dlg = None
+        self._temp_export = None
+        self.snippets_doc = None
+        self.manager = None
+        self.default_size = None
 
-                self.key_press_id = 0
-                self.run()
-        
-        def get_language_snippets(self, path, name = None):
-                library = Library()
-                
-                name = self.get_language(path)
-                nodes = library.get_snippets(name)
+        self.key_press_id = 0
+        self.run()
 
-                return nodes
+    def get_language_snippets(self, path, name = None):
+        library = Library()
 
-        def add_new_snippet_node(self, parent):
-                return self.model.append(parent, ('<i>' + _('Add a new snippet...') + \
-                                '</i>', '', None, None))
+        name = self.get_language(path)
+        nodes = library.get_snippets(name)
 
-        def fill_language(self, piter, expand=True):
-                # Remove all children
-                child = self.model.iter_children(piter)
-                
-                while child and self.model.remove(child):
-                        True
-                
-                path = self.model.get_path(piter)
-                nodes = self.get_language_snippets(path)
-                language = self.get_language(path)
-                
-                Library().ref(language)
-                
-                if nodes:
-                        for node in nodes:
-                                self.add_snippet(piter, node)
-                else:
-                        # Add node that tells there are no snippets currently
-                        self.add_new_snippet_node(piter)
+        return nodes
 
-                if expand:
-                        self.tree_view.expand_row(path, False)
+    def add_new_snippet_node(self, parent):
+        return self.model.append(parent, ('<i>' + _('Add a new snippet...') + \
+                '</i>', '', None, None))
 
-        def build_model(self, force_reload = False):
-                window = Pluma.App.get_default().get_active_window()
-                
-                if window:
-                        view = window.get_active_view()
+    def fill_language(self, piter, expand=True):
+        # Remove all children
+        child = self.model.iter_children(piter)
 
-                        if not view:
-                                current_lang = None
-                        else:
-                                current_lang = view.get_buffer().get_language()
-                                source_view = self['source_view_snippet']
+        while child and self.model.remove(child):
+            True
 
-                else:
-                        current_lang = None
+        path = self.model.get_path(piter)
+        nodes = self.get_language_snippets(path)
+        language = self.get_language(path)
 
-                tree_view = self['tree_view_snippets']
-                expand = None
-                
-                if not self.model or force_reload:
-                        self.model = Gtk.TreeStore(str, str, GObject.Object, object)
-                        self.model.set_sort_column_id(self.SORT_COLUMN, Gtk.SortType.ASCENDING)
-                        manager = get_language_manager()
-                        langs = [manager.get_language(x) for x in manager.get_language_ids()]
-                        langs.sort(key=lambda x: x.get_name())
-                        
-                        piter = self.model.append(None, (_('Global'), '', None, None))
-                        # Add dummy node
-                        self.model.append(piter, ('', '', None, None))
-                        
-                        nm = None
-                        
-                        if current_lang:
-                                nm = current_lang.get_name()
-                
-                        for lang in langs:
-                                name = lang.get_name()
-                                parent = self.model.append(None, (name, name, lang, None))
+        Library().ref(language)
 
-                                # Add dummy node
-                                self.model.append(parent, ('', '', None, None))
+        if nodes:
+            for node in nodes:
+                self.add_snippet(piter, node)
+        else:
+            # Add node that tells there are no snippets currently
+            self.add_new_snippet_node(piter)
 
-                                if (nm == name):
-                                        expand = parent
-                else:
-                        if current_lang:
-                                piter = self.model.get_iter_first()
-                                nm = current_lang.get_name()
-                                
-                                while piter:
-                                        lang = self.model.get_value(piter, \
-                                                        self.SORT_COLUMN)
-                                        
-                                        if lang == nm:
-                                                expand = piter
-                                                break;
-                                                
-                                        piter = self.model.iter_next(piter)
+        if expand:
+            self.tree_view.expand_row(path, False)
 
-                tree_view.set_model(self.model)
-                
-                if not expand:
-                        expand = self.model.get_iter_first()
-                        
-                tree_view.expand_row(self.model.get_path(expand), False)
-                self.select_iter(expand)
+    def build_model(self, force_reload = False):
+        window = Pluma.App.get_default().get_active_window()
 
-        def get_cell_data_pixbuf_cb(self, column, cell, model, iter, data):
-                snippet = model.get_value(iter, self.SNIPPET_COLUMN)
-                
-                if snippet and not snippet.valid:
-                        cell.set_property('stock-id', Gtk.STOCK_DIALOG_ERROR)
-                else:
-                        cell.set_property('stock-id', None)
+        if window:
+            view = window.get_active_view()
 
-                cell.set_property('xalign', 1.0)
-                
-        def get_cell_data_cb(self, column, cell, model, iter, data):
-                snippet = model.get_value(iter, self.SNIPPET_COLUMN)
-                
-                cell.set_property('editable', snippet != None)
-                cell.set_property('markup', model.get_value(iter, self.NAME_COLUMN))
-
-        def on_tree_view_drag_data_get(self, widget, context, selection_data, info, time):
-                gfile = Gio.file_new_for_path(self._temp_export)
-                selection_data.set_uris([gfile.get_uri()])
-       
-        def on_tree_view_drag_begin(self, widget, context):
-                self.dragging = True
-                
-                if self._temp_export:
-                      shutil.rmtree(os.path.dirname(self._temp_export))
-                      self._temp_export = None
-
-                if self.dnd_name:
-                        Gtk.drag_set_icon_name(context, self.dnd_name, 0, 0)
-
-                dirname = tempfile.mkdtemp()
-                filename = os.path.join(dirname, self.default_export_name)
-                
-                # Generate temporary file name
-                self.export_snippets(filename, False)
-                self._temp_export = filename
-        
-        def on_tree_view_drag_end(self, widget, context):
-                self.dragging = False
-
-        def on_tree_view_drag_data_received(self, widget, context, x, y, selection, info, timestamp):
-                uris = selection.get_uris()
-                
-                self.import_snippets(uris)
-
-        def on_tree_view_drag_motion(self, widget, context, x, y, timestamp):
-                # Return False if we are dragging
-                if self.dragging:
-                        return False
-                
-                # Check uri target
-                if not Gtk.targets_include_uri(context.targets):
-                        return False
-
-                # Check action
-                action = None
-                if context.suggested_action == Gdk.DragAction.COPY:
-                        action = Gdk.DragAction.COPY
-                else:
-                        for act in context.actions:
-                                if act == Gdk.DragAction.COPY:
-                                      action = Gdk.DragAction.COPY
-                                      break  
-                
-                if action == Gdk.DragAction.COPY:
-                        context.drag_status(Gdk.DragAction.COPY, timestamp)
-                        return True
-                else:
-                        return False
-
-        def build_dnd(self):
-                tv = self.tree_view
-                
-                # Set it as a drag source for exporting snippets
-                tv.drag_source_set(Gdk.ModifierType.BUTTON1_MASK, self.dnd_target_list, Gdk.DragAction.DEFAULT | Gdk.DragAction.COPY)
-                
-                # Set it as a drag destination for importing snippets
-                tv.drag_dest_set(Gtk.DestDefaults.HIGHLIGHT | Gtk.DestDefaults.DROP,
-                                 self.dnd_target_list, Gdk.DragAction.DEFAULT | Gdk.DragAction.COPY)
-                
-                tv.connect('drag_data_get', self.on_tree_view_drag_data_get)
-                tv.connect('drag_begin', self.on_tree_view_drag_begin)
-                tv.connect('drag_end', self.on_tree_view_drag_end)
-                tv.connect('drag_data_received', self.on_tree_view_drag_data_received)
-                tv.connect('drag_motion', self.on_tree_view_drag_motion)
-
-                theme = Gtk.IconTheme.get_for_screen(tv.get_screen())
-                
-                self.dnd_name = None
-                for name in self.drag_icons:
-                        icon = theme.lookup_icon(name, Gtk.IconSize.DND, 0)
-                        
-                        if icon:
-                                self.dnd_name = name
-                                break
-                
-        def build_tree_view(self):                
-                self.tree_view = self['tree_view_snippets']
-                
-                self.column = Gtk.TreeViewColumn(None)
-
-                self.renderer = Gtk.CellRendererText()
-                self.column.pack_start(self.renderer, False)
-                self.column.set_cell_data_func(self.renderer, self.get_cell_data_cb, None)
-
-                renderer = Gtk.CellRendererPixbuf()
-                self.column.pack_start(renderer, True)
-                self.column.set_cell_data_func(renderer, self.get_cell_data_pixbuf_cb, None)
-
-                self.tree_view.append_column(self.column)
-                
-                self.renderer.connect('edited', self.on_cell_edited)
-                self.renderer.connect('editing-started', self.on_cell_editing_started)
-
-                selection = self.tree_view.get_selection()
-                selection.set_mode(Gtk.SelectionMode.MULTIPLE)
-                selection.connect('changed', self.on_tree_view_selection_changed)
-                
-                self.build_dnd()
-        
-        def build(self):
-                self.builder = Gtk.Builder()
-                self.builder.add_from_file(os.path.join(self.datadir, 'ui', 'snippets.ui'))
-                
-                handlers_dic = {
-                        'on_dialog_snippets_response': self.on_dialog_snippets_response,
-                        'on_dialog_snippets_destroy': self.on_dialog_snippets_destroy,
-                        'on_button_new_snippet_clicked': self.on_button_new_snippet_clicked,
-                        'on_button_import_snippets_clicked': self.on_button_import_snippets_clicked,
-                        'on_button_export_snippets_clicked': self.on_button_export_snippets_clicked,
-                        'on_button_remove_snippet_clicked': self.on_button_remove_snippet_clicked,
-                        'on_entry_tab_trigger_focus_out': self.on_entry_tab_trigger_focus_out,
-                        'on_entry_tab_trigger_changed': self.on_entry_tab_trigger_changed,
-                        'on_entry_accelerator_focus_out': self.on_entry_accelerator_focus_out,
-                        'on_entry_accelerator_focus_in': self.on_entry_accelerator_focus_in,
-                        'on_entry_accelerator_key_press': self.on_entry_accelerator_key_press,
-                        'on_source_view_snippet_focus_out': self.on_source_view_snippet_focus_out,
-                        'on_tree_view_snippets_row_expanded': self.on_tree_view_snippets_row_expanded,
-                        'on_tree_view_snippets_key_press': self.on_tree_view_snippets_key_press}
-
-                self.builder.connect_signals(handlers_dic)
-                
-                self.build_tree_view()
-                self.build_model()
-
-                image = self['image_remove']
-                image.set_from_stock(Gtk.STOCK_REMOVE, Gtk.IconSize.SMALL_TOOLBAR)
-
+            if not view:
+                current_lang = None
+            else:
+                current_lang = view.get_buffer().get_language()
                 source_view = self['source_view_snippet']
-                manager = get_language_manager()
-                lang = manager.get_language('snippets')
 
-                if lang:
-                        source_view.get_buffer().set_highlight_syntax(True)
-                        source_view.get_buffer().set_language(lang)
-                        self.snippets_doc = Document(None, source_view)
+        else:
+            current_lang = None
 
-                combo = self['combo_drop_targets']
+        tree_view = self['tree_view_snippets']
+        expand = None
 
-                entry = combo.get_child()
-                entry.connect('focus-out-event', self.on_entry_drop_targets_focus_out)
-                entry.connect('drag-data-received', self.on_entry_drop_targets_drag_data_received)
-                
-                lst = entry.drag_dest_get_target_list()
-                lst.add_uri_targets(self.TARGET_URI)
-                
-                self.dlg = self['dialog_snippets']
-                
-                if self.default_size:
-                        self.dlg.set_default_size(*self.default_size)
-        
-        def __getitem__(self, key):
-                return self.builder.get_object(key)
+        if not self.model or force_reload:
+            self.model = Gtk.TreeStore(str, str, GObject.Object, object)
+            self.model.set_sort_column_id(self.SORT_COLUMN, Gtk.SortType.ASCENDING)
+            manager = get_language_manager()
+            langs = [manager.get_language(x) for x in manager.get_language_ids()]
+            langs.sort(key=lambda x: x.get_name())
 
-        def is_filled(self, piter):
-                if not self.model.iter_has_child(piter):
-                        return True
-                
-                child = self.model.iter_children(piter)
-                nm = self.model.get_value(child, self.NAME_COLUMN)
-                lang = self.model.get_value(child, self.LANG_COLUMN)
-                snippet = self.model.get_value(child, self.SNIPPET_COLUMN)
-                
-                return (lang or snippet or nm)
+            piter = self.model.append(None, (_('Global'), '', None, None))
+            # Add dummy node
+            self.model.append(piter, ('', '', None, None))
 
-        def fill_if_needed(self, piter, expand=True):
-                if not self.is_filled(piter):
-                        self.fill_language(piter, expand)
+            nm = None
 
-        def find_iter(self, parent, snippet):
-                self.fill_if_needed(parent)
-                piter = self.model.iter_children(parent)
-                
-                while (piter):
-                        node = self.model.get_value(piter, self.SNIPPET_COLUMN)
+            if current_lang:
+                nm = current_lang.get_name()
 
-                        if node == snippet.data:
-                                return piter
-                        
-                        piter = self.model.iter_next(piter)
-                
-                return None
+            for lang in langs:
+                name = lang.get_name()
+                parent = self.model.append(None, (name, name, lang, None))
 
-        def selected_snippets_state(self):
-                snippets = self.selected_snippets(False)
-                override = False
-                remove = False
-                system = False
-                
-                for snippet in snippets:
-                        if not snippet:
-                                continue
+                # Add dummy node
+                self.model.append(parent, ('', '', None, None))
 
-                        if snippet.is_override():
-                                override = True
-                        elif snippet.can_modify():
-                                remove = True
-                        else:
-                                system = True
-                        
-                        # No need to continue if both are found
-                        if override and remove:
-                                break
-
-                return (override, remove, system)
-
-        def update_buttons(self):
-                button_remove = self['button_remove_snippet']
-                button_new = self['button_new_snippet']
-                image_remove = self['image_remove']
-
-                button_new.set_sensitive(self.language_path != None)
-                override, remove, system = self.selected_snippets_state()
-                
-                if not (override ^ remove) or system:
-                        button_remove.set_sensitive(False)
-                        image_remove.set_from_stock(Gtk.STOCK_DELETE, Gtk.IconSize.BUTTON)
-                else:
-                        button_remove.set_sensitive(True)
-                        
-                        if override:
-                                image_remove.set_from_stock(Gtk.STOCK_UNDO, Gtk.IconSize.BUTTON)
-                                tooltip = _('Revert selected snippet')
-                        else:
-                                image_remove.set_from_stock(Gtk.STOCK_DELETE, Gtk.IconSize.BUTTON)
-                                tooltip = _('Delete selected snippet')
-                        
-                        button_remove.set_tooltip_text(tooltip)
-
-        def snippet_changed(self, piter = None):
-                if piter:
-                        node = self.model.get_value(piter, self.SNIPPET_COLUMN)
-                        s = Snippet(node)
-                else:
-                        s = self.snippet
-                        piter = self.find_iter(self.model.get_iter(self.language_path), s)
-
-                if piter:
-                        nm = s.display()
-                        
-                        self.model.set_value(piter, self.NAME_COLUMN, nm)
-                        self.model.set_value(piter, self.SORT_COLUMN, nm)
-                        self.update_buttons()
-                        self.entry_tab_trigger_update_valid()
-
-                return piter
-
-        def add_snippet(self, parent, snippet):
-                piter = self.model.append(parent, ('', '', None, snippet))
-                
-                return self.snippet_changed(piter)
-
-        def run(self):
-                if not self.dlg:
-                        self.build()
-                        self.dlg.show()
-                else:
-                        self.build_model()
-                        self.dlg.present()
-
-        def snippet_from_iter(self, model, piter):
-                parent = model.iter_parent(piter)
-                
-                if parent:
-                        return model.get_value(piter, self.SNIPPET_COLUMN)
-                else:
-                        return None
-        
-        def language_snippets(self, model, parent, as_path=False):
-                self.fill_if_needed(parent, False)
-                piter = model.iter_children(parent)
-                snippets = []
-                
-                if not piter:
-                        return snippets
-                
-                while piter:
-                        snippet = self.snippet_from_iter(model, piter)
-                        
-                        if snippet:
-                                if as_path:
-                                        snippets.append(model.get_path(piter))
-                                else:
-                                        snippets.append(snippet)
-
-                        piter = model.iter_next(piter)
-                
-                return snippets
-        
-        def selected_snippets(self, include_languages=True, as_path=False):
-                selection = self.tree_view.get_selection()
-                (model, paths) = selection.get_selected_rows()
-                snippets = []
-                
-                if paths and len(paths) != 0:
-                        for p in paths:
-                                piter = model.get_iter(p)
-                                parent = model.iter_parent(piter)
-                                
-                                if not piter:
-                                        continue
-                                
-                                if parent:
-                                        snippet = self.snippet_from_iter(model, piter)
-                                        
-                                        if not snippet:
-                                                continue
-                                        
-                                        if as_path:
-                                                snippets.append(p)
-                                        else:
-                                                snippets.append(snippet)
-                                elif include_languages:
-                                        snippets += self.language_snippets(model, piter, as_path)
-                        
-                return snippets                        
-        
-        def selected_snippet(self):
-                selection = self.tree_view.get_selection()
-                (model, paths) = selection.get_selected_rows()
-                
-                if len(paths) == 1:
-                        piter = model.get_iter(paths[0])
-                        parent = model.iter_parent(piter)
-                        snippet = self.snippet_from_iter(model, piter)
-                        
-                        return parent, piter, snippet
-                else:
-                        return None, None, None
-
-        def selection_changed(self):
-                if not self.snippet:
-                        sens = False
-
-                        self['entry_tab_trigger'].set_text('')
-                        self['entry_accelerator'].set_text('')
-                        buf = self['source_view_snippet'].get_buffer()
-                        buf.begin_not_undoable_action()
-                        buf.set_text('')
-                        buf.end_not_undoable_action()
-                        self['combo_drop_targets'].get_child().set_text('')
-
-                else:
-                        sens = True
-
-                        self['entry_tab_trigger'].set_text(self.snippet['tag'])
-                        self['entry_accelerator'].set_text( \
-                                        self.snippet.accelerator_display())
-                        self['combo_drop_targets'].get_child().set_text(', '.join(self.snippet['drop-targets']))
-                        
-                        buf = self['source_view_snippet'].get_buffer()
-                        buf.begin_not_undoable_action()
-                        buf.set_text(self.snippet['text'])
-                        buf.end_not_undoable_action()
-
-
-                for name in ['source_view_snippet', 'label_tab_trigger',
-                                'entry_tab_trigger', 'label_accelerator', 
-                                'entry_accelerator', 'label_drop_targets',
-                                'combo_drop_targets']:
-                        self[name].set_sensitive(sens)
-                
-                self.update_buttons()
-                        
-        def select_iter(self, piter, unselect=True):
-                selection = self.tree_view.get_selection()
-                
-                if unselect:
-                        selection.unselect_all()
-
-                selection.select_iter(piter)
-                
-                self.tree_view.scroll_to_cell(self.model.get_path(piter), None, \
-                        True, 0.5, 0.5)
-
-        def get_language(self, path):
-                if path.get_indices()[0] == 0:
-                        return None
-                else:
-                        return self.model.get_value(self.model.get_iter(path), \
-                                                    self.LANG_COLUMN).get_id()
-
-        def new_snippet(self, properties=None):
-                if not self.language_path:
-                        return None
-
-                snippet = Library().new_snippet(self.get_language(self.language_path), properties)
-                
-                return Snippet(snippet)
-
-        def get_dummy(self, parent):
-                if not self.model.iter_n_children(parent) == 1:
-                        return None
-                
-                dummy = self.model.iter_children(parent)
-                
-                if not self.model.get_value(dummy, self.SNIPPET_COLUMN):
-                        return dummy
-        
-                return None
-        
-        def unref_languages(self):
+                if (nm == name):
+                    expand = parent
+        else:
+            if current_lang:
                 piter = self.model.get_iter_first()
-                library = Library()
-                
+                nm = current_lang.get_name()
+
                 while piter:
-                        if self.is_filled(piter):
-                                language = self.get_language(self.model.get_path(piter))
-                                library.save(language)
+                    lang = self.model.get_value(piter, \
+                            self.SORT_COLUMN)
 
-                                library.unref(language)
-                        
-                        piter = self.model.iter_next(piter)
+                    if lang == nm:
+                        expand = piter
+                        break;
 
-        # Callbacks
-        def on_dialog_snippets_destroy(self, dlg):
-                # Remove temporary drag export
-                if self._temp_export:
-                      shutil.rmtree(os.path.dirname(self._temp_export))
-                      self._temp_export = None
+                    piter = self.model.iter_next(piter)
 
-                if self.snippets_doc:
-                        self.snippets_doc.stop()
-                
-                self.manager = None
-                self.unref_languages()        
-                self.snippet = None        
-                self.model = None
-                self.dlg = None                
-        
-        def on_dialog_snippets_response(self, dlg, resp):
+        tree_view.set_model(self.model)
 
-                alloc = dlg.get_allocation()
-                self.default_size = [alloc.width, alloc.height]
+        if not expand:
+            expand = self.model.get_iter_first()
 
-                if resp == Gtk.ResponseType.HELP:
-                        Pluma.help_display(self, 'pluma', 'pluma-snippets-plugin')
-                        return
+        tree_view.expand_row(self.model.get_path(expand), False)
+        self.select_iter(expand)
 
-                self.dlg.destroy()
-        
-        def on_cell_editing_started(self, renderer, editable, path):
-                piter = self.model.get_iter(path)
-                
-                if not self.model.iter_parent(piter):
-                        renderer.stop_editing(True)
-                        editable.remove_widget()
-                elif isinstance(editable, Gtk.Entry):
-                        if self.snippet:
-                                editable.set_text(self.snippet['description'])
-                        else:
-                                # This is the `Add a new snippet...` item
-                                editable.set_text('')
-                        
-                        editable.grab_focus()
-        
-        def on_cell_edited(self, cell, path, new_text):                
-                if new_text != '':
-                        piter = self.model.get_iter(path)
-                        node = self.model.get_value(piter, self.SNIPPET_COLUMN)
-                        
-                        if node:
-                                if node == self.snippet.data:
-                                        s = self.snippet
-                                else:
-                                        s = Snippet(node)
-                        
-                                s['description'] = new_text
-                                self.snippet_changed(piter)
-                                self.select_iter(piter)
-                        else:
-                                # This is the `Add a new snippet...` item
-                                # We create a new snippet
-                                snippet = self.new_snippet({'description': new_text})
-                                
-                                if snippet:
-                                        self.model.set_value(piter, self.SNIPPET_COLUMN, snippet.data)
-                                        self.snippet_changed(piter)
-                                        self.snippet = snippet
-                                        self.selection_changed()
-        
-        def on_entry_accelerator_focus_out(self, entry, event):
-                if not self.snippet:
-                        return
+    def get_cell_data_pixbuf_cb(self, column, cell, model, iter, data):
+        snippet = model.get_value(iter, self.SNIPPET_COLUMN)
 
-                entry.set_text(self.snippet.accelerator_display())
+        if snippet and not snippet.valid:
+            cell.set_property('stock-id', Gtk.STOCK_DIALOG_ERROR)
+        else:
+            cell.set_property('stock-id', None)
 
-        def entry_tab_trigger_update_valid(self):
-                entry = self['entry_tab_trigger']
-                text = entry.get_text()
-                
-                if text and not Library().valid_tab_trigger(text):
-                        img = self['image_tab_trigger']
-                        img.set_from_stock(Gtk.STOCK_DIALOG_ERROR, Gtk.IconSize.BUTTON)
-                        img.show()
+        cell.set_property('xalign', 1.0)
 
-                        #self['hbox_tab_trigger'].set_spacing(3)
-                        tip = _('This is not a valid Tab trigger. Triggers can either contain letters or a single (non-alphanumeric) character like: {, [, etc.')
-                        
-                        entry.set_tooltip_text(tip)
-                        img.set_tooltip_text(tip)
-                else:
-                        self['image_tab_trigger'].hide()
-                        #self['hbox_tab_trigger'].set_spacing(0)
-                        entry.set_tooltip_text(_('Single word the snippet is activated with after pressing Tab'))
-                
-                return False
+    def get_cell_data_cb(self, column, cell, model, iter, data):
+        snippet = model.get_value(iter, self.SNIPPET_COLUMN)
 
-        def on_entry_tab_trigger_focus_out(self, entry, event):
-                if not self.snippet:
-                        return
+        cell.set_property('editable', snippet != None)
+        cell.set_property('markup', model.get_value(iter, self.NAME_COLUMN))
 
-                text = entry.get_text()
+    def on_tree_view_drag_data_get(self, widget, context, selection_data, info, time):
+        gfile = Gio.file_new_for_path(self._temp_export)
+        selection_data.set_uris([gfile.get_uri()])
 
-                # save tag
-                self.snippet['tag'] = text
-                self.snippet_changed()
-        
-        def on_entry_drop_targets_focus_out(self, entry, event):
-                if not self.snippet:
-                        return
-                
-                text = entry.get_text()
+    def on_tree_view_drag_begin(self, widget, context):
+        self.dragging = True
 
-                # save drop targets
-                self.snippet['drop-targets'] = text
-                self.snippet_changed()
-        
-        def on_entry_tab_trigger_changed(self, entry):
-                self.entry_tab_trigger_update_valid()
-        
-        def on_source_view_snippet_focus_out(self, source_view, event):
-                if not self.snippet:
-                        return
+        if self._temp_export:
+              shutil.rmtree(os.path.dirname(self._temp_export))
+              self._temp_export = None
 
-                buf = source_view.get_buffer()
-                text = buf.get_text(buf.get_start_iter(), \
-                                buf.get_end_iter(), False)
+        if self.dnd_name:
+            Gtk.drag_set_icon_name(context, self.dnd_name, 0, 0)
 
-                self.snippet['text'] = text
-                self.snippet_changed()
-        
-        def on_button_new_snippet_clicked(self, button):
-                snippet = self.new_snippet()
-                
-                if not snippet:
-                        return
+        dirname = tempfile.mkdtemp()
+        filename = os.path.join(dirname, self.default_export_name)
 
-                parent = self.model.get_iter(self.language_path)
-                path = self.model.get_path(parent)
-                
-                dummy = self.get_dummy(parent)
-                
-                if dummy:
-                        # Remove the dummy
-                        self.model.remove(dummy)
-                
-                # Add the snippet
-                piter = self.add_snippet(parent, snippet.data)
-                self.select_iter(piter)
+        # Generate temporary file name
+        self.export_snippets(filename, False)
+        self._temp_export = filename
 
-                if not self.tree_view.row_expanded(path):
-                        self.tree_view.expand_row(path, False)
-                        self.select_iter(piter)
+    def on_tree_view_drag_end(self, widget, context):
+        self.dragging = False
 
-                self.tree_view.grab_focus()
+    def on_tree_view_drag_data_received(self, widget, context, x, y, selection, info, timestamp):
+        uris = selection.get_uris()
 
-                path = self.model.get_path(piter)
-                self.tree_view.set_cursor(path, self.column, True)
-        
-        def file_filter(self, name, pattern):
-                fil = Gtk.FileFilter()
-                fil.set_name(name)
-                
-                for p in pattern:
-                        fil.add_pattern(p)
-                
-                return fil
-        
-        def import_snippets(self, filenames):
-                success = True
-                
-                for filename in filenames:
-                        if not Pluma.utils_uri_has_file_scheme(filename):
-                                continue
+        self.import_snippets(uris)
 
-                        # Remove file://
-                        gfile = Gio.file_new_for_uri(filename)
-                        filename = gfile.get_path()
+    def on_tree_view_drag_motion(self, widget, context, x, y, timestamp):
+        # Return False if we are dragging
+        if self.dragging:
+            return False
 
-                        importer = Importer(filename)
-                        error = importer.run()
-         
-                        if error:
-                                message = _('The following error occurred while importing: %s') % error
-                                success = False
-                                message_dialog(self.dlg, Gtk.MessageType.ERROR, message)
-                
-                self.build_model(True)
+        # Check uri target
+        if not Gtk.targets_include_uri(context.targets):
+            return False
 
-                if success:
-                        message = _('Import successfully completed')
-                        message_dialog(self.dlg, Gtk.MessageType.INFO, message)
-               
-        def on_import_response(self, dialog, response):
-                if response == Gtk.ResponseType.CANCEL or response == Gtk.ResponseType.CLOSE:
-                        dialog.destroy()
-                        return
-                
-                f = dialog.get_uris()
-                dialog.destroy()
-                
-                self.import_snippets(f)
-                
-        def on_button_import_snippets_clicked(self, button):
-                dlg = Gtk.FileChooserDialog(parent=self.dlg, title=_("Import snippets"),
-                                action=Gtk.FileChooserAction.OPEN,
-                                buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                                         Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
-                
-                dlg.add_filter(self.file_filter(_('All supported archives'), ('*.gz','*.bz2','*.tar', '*.xml')))
-                dlg.add_filter(self.file_filter(_('Gzip compressed archive'), ('*.tar.gz',)))
-                dlg.add_filter(self.file_filter(_('Bzip2 compressed archive'), ('*.tar.bz2',)))
-                dlg.add_filter(self.file_filter(_('Single snippets file'), ('*.xml',)))
-                dlg.add_filter(self.file_filter(_('All files'), '*'))
+        # Check action
+        action = None
+        if context.suggested_action == Gdk.DragAction.COPY:
+            action = Gdk.DragAction.COPY
+        else:
+            for act in context.actions:
+                if act == Gdk.DragAction.COPY:
+                      action = Gdk.DragAction.COPY
+                      break
 
-                dlg.connect('response', self.on_import_response)
-                dlg.set_local_only(True)
-                
-                dlg.show()
+        if action == Gdk.DragAction.COPY:
+            context.drag_status(Gdk.DragAction.COPY, timestamp)
+            return True
+        else:
+            return False
 
-        def export_snippets_real(self, filename, snippets, show_dialogs=True):
-                export = Exporter(filename, snippets)
-                error = export.run()
-                
-                if error:
-                        message = _('The following error occurred while exporting: %s') % error
-                        msgtype = Gtk.MessageType.ERROR
-                        retval = False
-                else:
-                        message = _('Export successfully completed')
-                        msgtype = Gtk.MessageType.INFO
-                        retval = True
+    def build_dnd(self):
+        tv = self.tree_view
 
-                if show_dialogs:
-                        message_dialog(self.dlg, msgtype, message)
+        # Set it as a drag source for exporting snippets
+        tv.drag_source_set(Gdk.ModifierType.BUTTON1_MASK, self.dnd_target_list, Gdk.DragAction.DEFAULT | Gdk.DragAction.COPY)
 
-                return retval
-                
-        def on_export_response(self, dialog, response):
-                filename = dialog.get_filename()
-                snippets = dialog._export_snippets
-                
-                dialog.destroy()
-                
-                if response != Gtk.ResponseType.OK:
-                        return
-                
-                self.export_snippets_real(filename, snippets);
-        
-        def export_snippets(self, filename=None, show_dialogs=True):
-                snippets = self.selected_snippets()
-                
-                if not snippets or len(snippets) == 0:
-                        return False
-                        
-                usersnippets = []
-                systemsnippets = []
+        # Set it as a drag destination for importing snippets
+        tv.drag_dest_set(Gtk.DestDefaults.HIGHLIGHT | Gtk.DestDefaults.DROP,
+                 self.dnd_target_list, Gdk.DragAction.DEFAULT | Gdk.DragAction.COPY)
 
-                # Iterate through snippets and look for system snippets
-                for snippet in snippets:
-                        if snippet.can_modify():
-                                usersnippets.append(snippet)
-                        else:
-                                systemsnippets.append(snippet)
-               
-                export_snippets = snippets
+        tv.connect('drag_data_get', self.on_tree_view_drag_data_get)
+        tv.connect('drag_begin', self.on_tree_view_drag_begin)
+        tv.connect('drag_end', self.on_tree_view_drag_end)
+        tv.connect('drag_data_received', self.on_tree_view_drag_data_received)
+        tv.connect('drag_motion', self.on_tree_view_drag_motion)
 
-                if len(systemsnippets) != 0 and show_dialogs:
-                        # Ask if system snippets should also be exported
-                        message = _('Do you want to include selected <b>system</b> snippets in your export?')
-                        mes = Gtk.MessageDialog(flags=Gtk.DialogFlags.MODAL,
-                                        type=Gtk.MessageType.QUESTION,
-                                        buttons=Gtk.ButtonsType.YES_NO,
-                                        message_format=message)
-                        mes.set_property('use-markup', True)
-                        resp = mes.run()
-                        mes.destroy()
-                        
-                        if resp == Gtk.ResponseType.NO:
-                                export_snippets = usersnippets
-                        elif resp != Gtk.ResponseType.YES:
-                                return False
-                
-                if len(export_snippets) == 0 and show_dialogs:                        
-                        message = _('There are no snippets selected to be exported')
-                        message_dialog(self.dlg, Gtk.MessageType.INFO, message)
-                        return False
-                
-                if not filename:
-                        dlg = Gtk.FileChooserDialog(parent=self.dlg, title=_('Export snippets'),
-                                        action=Gtk.FileChooserAction.SAVE,
-                                        buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                                                 Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
-                        
-                        dlg._export_snippets = export_snippets
-                        dlg.add_filter(self.file_filter(_('All supported archives'), ('*.gz','*.bz2','*.tar')))
-                        dlg.add_filter(self.file_filter(_('Gzip compressed archive'), ('*.tar.gz',)))
-                        dlg.add_filter(self.file_filter(_('Bzip2 compressed archive'), ('*.tar.bz2',)))
+        theme = Gtk.IconTheme.get_for_screen(tv.get_screen())
 
-                        dlg.add_filter(self.file_filter(_('All files'), '*'))
-                        dlg.set_do_overwrite_confirmation(True)
-                        dlg.set_current_name(self.default_export_name)
-                
-                        dlg.connect('response', self.on_export_response)
-                        dlg.set_local_only(True)
-                
-                        dlg.show()
-                        return True
-                else:
-                        return self.export_snippets_real(filename, export_snippets, show_dialogs)
-        
-        def on_button_export_snippets_clicked(self, button):
-                snippets = self.selected_snippets()
-                
-                if not snippets or len(snippets) == 0:
-                        return
-                        
-                usersnippets = []
-                systemsnippets = []
+        self.dnd_name = None
+        for name in self.drag_icons:
+            icon = theme.lookup_icon(name, Gtk.IconSize.DND, 0)
 
-                # Iterate through snippets and look for system snippets
-                for snippet in snippets:
-                        if snippet.can_modify():
-                                usersnippets.append(snippet)
-                        else:
-                                systemsnippets.append(snippet)
+            if icon:
+                self.dnd_name = name
+                break
 
-                dlg = Gtk.FileChooserDialog(parent=self.dlg, title=_('Export snippets'),
-                                action=Gtk.FileChooserAction.SAVE,
-                                buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                                         Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
-                
-                dlg._export_snippets = snippets
+    def build_tree_view(self):
+        self.tree_view = self['tree_view_snippets']
 
-                if len(systemsnippets) != 0:
-                        # Ask if system snippets should also be exported
-                        message = _('Do you want to include selected <b>system</b> snippets in your export?')
-                        mes = Gtk.MessageDialog(flags=Gtk.DialogFlags.MODAL,
-                                        type=Gtk.MessageType.QUESTION,
-                                        buttons=Gtk.ButtonsType.YES_NO,
-                                        message_format=message)
-                        mes.set_property('use-markup', True)
-                        resp = mes.run()
-                        mes.destroy()
-                        
-                        if resp == Gtk.ResponseType.NO:
-                                dlg._export_snippets = usersnippets
-                        elif resp != Gtk.ResponseType.YES:
-                                dlg.destroy()
-                                return
-                
-                if len(dlg._export_snippets) == 0:
-                        dlg.destroy()
-                        
-                        message = _('There are no snippets selected to be exported')
-                        message_dialog(self.dlg, Gtk.MessageType.INFO, message)
-                        return
-                
-                dlg.add_filter(self.file_filter(_('All supported archives'), ('*.gz','*.bz2','*.tar')))
-                dlg.add_filter(self.file_filter(_('Gzip compressed archive'), ('*.tar.gz',)))
-                dlg.add_filter(self.file_filter(_('Bzip2 compressed archive'), ('*.tar.bz2',)))
+        self.column = Gtk.TreeViewColumn(None)
 
-                dlg.add_filter(self.file_filter(_('All files'), '*'))
-                dlg.set_do_overwrite_confirmation(True)
-                dlg.set_current_name(self.default_export_name)
-                
-                dlg.connect('response', self.on_export_response)
-                dlg.set_local_only(True)
-                
-                dlg.show()                
-        
-        def remove_snippet_revert(self, path, piter):
-                node = self.snippet_from_iter(self.model, piter)
-                Library().revert_snippet(node)
-                
+        self.renderer = Gtk.CellRendererText()
+        self.column.pack_start(self.renderer, False)
+        self.column.set_cell_data_func(self.renderer, self.get_cell_data_cb, None)
+
+        renderer = Gtk.CellRendererPixbuf()
+        self.column.pack_start(renderer, True)
+        self.column.set_cell_data_func(renderer, self.get_cell_data_pixbuf_cb, None)
+
+        self.tree_view.append_column(self.column)
+
+        self.renderer.connect('edited', self.on_cell_edited)
+        self.renderer.connect('editing-started', self.on_cell_editing_started)
+
+        selection = self.tree_view.get_selection()
+        selection.set_mode(Gtk.SelectionMode.MULTIPLE)
+        selection.connect('changed', self.on_tree_view_selection_changed)
+
+        self.build_dnd()
+
+    def build(self):
+        self.builder = Gtk.Builder()
+        self.builder.add_from_file(os.path.join(self.datadir, 'ui', 'snippets.ui'))
+
+        handlers_dic = {
+            'on_dialog_snippets_response': self.on_dialog_snippets_response,
+            'on_dialog_snippets_destroy': self.on_dialog_snippets_destroy,
+            'on_button_new_snippet_clicked': self.on_button_new_snippet_clicked,
+            'on_button_import_snippets_clicked': self.on_button_import_snippets_clicked,
+            'on_button_export_snippets_clicked': self.on_button_export_snippets_clicked,
+            'on_button_remove_snippet_clicked': self.on_button_remove_snippet_clicked,
+            'on_entry_tab_trigger_focus_out': self.on_entry_tab_trigger_focus_out,
+            'on_entry_tab_trigger_changed': self.on_entry_tab_trigger_changed,
+            'on_entry_accelerator_focus_out': self.on_entry_accelerator_focus_out,
+            'on_entry_accelerator_focus_in': self.on_entry_accelerator_focus_in,
+            'on_entry_accelerator_key_press': self.on_entry_accelerator_key_press,
+            'on_source_view_snippet_focus_out': self.on_source_view_snippet_focus_out,
+            'on_tree_view_snippets_row_expanded': self.on_tree_view_snippets_row_expanded,
+            'on_tree_view_snippets_key_press': self.on_tree_view_snippets_key_press}
+
+        self.builder.connect_signals(handlers_dic)
+
+        self.build_tree_view()
+        self.build_model()
+
+        image = self['image_remove']
+        image.set_from_stock(Gtk.STOCK_REMOVE, Gtk.IconSize.SMALL_TOOLBAR)
+
+        source_view = self['source_view_snippet']
+        manager = get_language_manager()
+        lang = manager.get_language('snippets')
+
+        if lang:
+            source_view.get_buffer().set_highlight_syntax(True)
+            source_view.get_buffer().set_language(lang)
+            self.snippets_doc = Document(None, source_view)
+
+        combo = self['combo_drop_targets']
+
+        entry = combo.get_child()
+        entry.connect('focus-out-event', self.on_entry_drop_targets_focus_out)
+        entry.connect('drag-data-received', self.on_entry_drop_targets_drag_data_received)
+
+        lst = entry.drag_dest_get_target_list()
+        lst.add_uri_targets(self.TARGET_URI)
+
+        self.dlg = self['dialog_snippets']
+
+        if self.default_size:
+            self.dlg.set_default_size(*self.default_size)
+
+    def __getitem__(self, key):
+        return self.builder.get_object(key)
+
+    def is_filled(self, piter):
+        if not self.model.iter_has_child(piter):
+            return True
+
+        child = self.model.iter_children(piter)
+        nm = self.model.get_value(child, self.NAME_COLUMN)
+        lang = self.model.get_value(child, self.LANG_COLUMN)
+        snippet = self.model.get_value(child, self.SNIPPET_COLUMN)
+
+        return (lang or snippet or nm)
+
+    def fill_if_needed(self, piter, expand=True):
+        if not self.is_filled(piter):
+            self.fill_language(piter, expand)
+
+    def find_iter(self, parent, snippet):
+        self.fill_if_needed(parent)
+        piter = self.model.iter_children(parent)
+
+        while (piter):
+            node = self.model.get_value(piter, self.SNIPPET_COLUMN)
+
+            if node == snippet.data:
                 return piter
-        
-        def remove_snippet_delete(self, path, piter):
-                node = self.snippet_from_iter(self.model, piter)
-                parent = self.model.iter_parent(piter)
 
-                Library().remove_snippet(node)
-                idx = path.get_indices()
+            piter = self.model.iter_next(piter)
 
-                if self.model.remove(piter):
-                        return piter
-                elif idx[-1] != 0:
-                        self.select_iter(self.model.get_iter((idx[0], idx[1] - 1)))
+        return None
+
+    def selected_snippets_state(self):
+        snippets = self.selected_snippets(False)
+        override = False
+        remove = False
+        system = False
+
+        for snippet in snippets:
+            if not snippet:
+                continue
+
+            if snippet.is_override():
+                override = True
+            elif snippet.can_modify():
+                remove = True
+            else:
+                system = True
+
+            # No need to continue if both are found
+            if override and remove:
+                break
+
+        return (override, remove, system)
+
+    def update_buttons(self):
+        button_remove = self['button_remove_snippet']
+        button_new = self['button_new_snippet']
+        image_remove = self['image_remove']
+
+        button_new.set_sensitive(self.language_path != None)
+        override, remove, system = self.selected_snippets_state()
+
+        if not (override ^ remove) or system:
+            button_remove.set_sensitive(False)
+            image_remove.set_from_stock(Gtk.STOCK_DELETE, Gtk.IconSize.BUTTON)
+        else:
+            button_remove.set_sensitive(True)
+
+            if override:
+                image_remove.set_from_stock(Gtk.STOCK_UNDO, Gtk.IconSize.BUTTON)
+                tooltip = _('Revert selected snippet')
+            else:
+                image_remove.set_from_stock(Gtk.STOCK_DELETE, Gtk.IconSize.BUTTON)
+                tooltip = _('Delete selected snippet')
+
+            button_remove.set_tooltip_text(tooltip)
+
+    def snippet_changed(self, piter = None):
+        if piter:
+            node = self.model.get_value(piter, self.SNIPPET_COLUMN)
+            s = Snippet(node)
+        else:
+            s = self.snippet
+            piter = self.find_iter(self.model.get_iter(self.language_path), s)
+
+        if piter:
+            nm = s.display()
+
+            self.model.set_value(piter, self.NAME_COLUMN, nm)
+            self.model.set_value(piter, self.SORT_COLUMN, nm)
+            self.update_buttons()
+            self.entry_tab_trigger_update_valid()
+
+        return piter
+
+    def add_snippet(self, parent, snippet):
+        piter = self.model.append(parent, ('', '', None, snippet))
+
+        return self.snippet_changed(piter)
+
+    def run(self):
+        if not self.dlg:
+            self.build()
+            self.dlg.show()
+        else:
+            self.build_model()
+            self.dlg.present()
+
+    def snippet_from_iter(self, model, piter):
+        parent = model.iter_parent(piter)
+
+        if parent:
+            return model.get_value(piter, self.SNIPPET_COLUMN)
+        else:
+            return None
+
+    def language_snippets(self, model, parent, as_path=False):
+        self.fill_if_needed(parent, False)
+        piter = model.iter_children(parent)
+        snippets = []
+
+        if not piter:
+            return snippets
+
+        while piter:
+            snippet = self.snippet_from_iter(model, piter)
+
+            if snippet:
+                if as_path:
+                    snippets.append(model.get_path(piter))
                 else:
-                        dummy = self.add_new_snippet_node(parent)
-                        self.tree_view.expand_row(self.model.get_path(parent), False)
-                        return dummy
-       
-        def on_button_remove_snippet_clicked(self, button):
-                override, remove, system = self.selected_snippets_state()
-                
-                if not (override ^ remove) or system:
-                        return
-                
-                paths = self.selected_snippets(include_languages=False, as_path=True)
-                
-                if override:
-                        action = self.remove_snippet_revert
+                    snippets.append(snippet)
+
+            piter = model.iter_next(piter)
+
+        return snippets
+
+    def selected_snippets(self, include_languages=True, as_path=False):
+        selection = self.tree_view.get_selection()
+        (model, paths) = selection.get_selected_rows()
+        snippets = []
+
+        if paths and len(paths) != 0:
+            for p in paths:
+                piter = model.get_iter(p)
+                parent = model.iter_parent(piter)
+
+                if not piter:
+                    continue
+
+                if parent:
+                    snippet = self.snippet_from_iter(model, piter)
+
+                    if not snippet:
+                        continue
+
+                    if as_path:
+                        snippets.append(p)
+                    else:
+                        snippets.append(snippet)
+                elif include_languages:
+                    snippets += self.language_snippets(model, piter, as_path)
+
+        return snippets
+
+    def selected_snippet(self):
+        selection = self.tree_view.get_selection()
+        (model, paths) = selection.get_selected_rows()
+
+        if len(paths) == 1:
+            piter = model.get_iter(paths[0])
+            parent = model.iter_parent(piter)
+            snippet = self.snippet_from_iter(model, piter)
+
+            return parent, piter, snippet
+        else:
+            return None, None, None
+
+    def selection_changed(self):
+        if not self.snippet:
+            sens = False
+
+            self['entry_tab_trigger'].set_text('')
+            self['entry_accelerator'].set_text('')
+            buf = self['source_view_snippet'].get_buffer()
+            buf.begin_not_undoable_action()
+            buf.set_text('')
+            buf.end_not_undoable_action()
+            self['combo_drop_targets'].get_child().set_text('')
+
+        else:
+            sens = True
+
+            self['entry_tab_trigger'].set_text(self.snippet['tag'])
+            self['entry_accelerator'].set_text( \
+                    self.snippet.accelerator_display())
+            self['combo_drop_targets'].get_child().set_text(', '.join(self.snippet['drop-targets']))
+
+            buf = self['source_view_snippet'].get_buffer()
+            buf.begin_not_undoable_action()
+            buf.set_text(self.snippet['text'])
+            buf.end_not_undoable_action()
+
+
+        for name in ['source_view_snippet', 'label_tab_trigger',
+                'entry_tab_trigger', 'label_accelerator',
+                'entry_accelerator', 'label_drop_targets',
+                'combo_drop_targets']:
+            self[name].set_sensitive(sens)
+
+        self.update_buttons()
+
+    def select_iter(self, piter, unselect=True):
+        selection = self.tree_view.get_selection()
+
+        if unselect:
+            selection.unselect_all()
+
+        selection.select_iter(piter)
+
+        self.tree_view.scroll_to_cell(self.model.get_path(piter), None, \
+            True, 0.5, 0.5)
+
+    def get_language(self, path):
+        if path.get_indices()[0] == 0:
+            return None
+        else:
+            return self.model.get_value(self.model.get_iter(path), \
+                            self.LANG_COLUMN).get_id()
+
+    def new_snippet(self, properties=None):
+        if not self.language_path:
+            return None
+
+        snippet = Library().new_snippet(self.get_language(self.language_path), properties)
+
+        return Snippet(snippet)
+
+    def get_dummy(self, parent):
+        if not self.model.iter_n_children(parent) == 1:
+            return None
+
+        dummy = self.model.iter_children(parent)
+
+        if not self.model.get_value(dummy, self.SNIPPET_COLUMN):
+            return dummy
+
+        return None
+
+    def unref_languages(self):
+        piter = self.model.get_iter_first()
+        library = Library()
+
+        while piter:
+            if self.is_filled(piter):
+                language = self.get_language(self.model.get_path(piter))
+                library.save(language)
+
+                library.unref(language)
+
+            piter = self.model.iter_next(piter)
+
+    # Callbacks
+    def on_dialog_snippets_destroy(self, dlg):
+        # Remove temporary drag export
+        if self._temp_export:
+              shutil.rmtree(os.path.dirname(self._temp_export))
+              self._temp_export = None
+
+        if self.snippets_doc:
+            self.snippets_doc.stop()
+
+        self.manager = None
+        self.unref_languages()
+        self.snippet = None
+        self.model = None
+        self.dlg = None
+
+    def on_dialog_snippets_response(self, dlg, resp):
+
+        alloc = dlg.get_allocation()
+        self.default_size = [alloc.width, alloc.height]
+
+        if resp == Gtk.ResponseType.HELP:
+            Pluma.help_display(self, 'pluma', 'pluma-snippets-plugin')
+            return
+
+        self.dlg.destroy()
+
+    def on_cell_editing_started(self, renderer, editable, path):
+        piter = self.model.get_iter(path)
+
+        if not self.model.iter_parent(piter):
+            renderer.stop_editing(True)
+            editable.remove_widget()
+        elif isinstance(editable, Gtk.Entry):
+            if self.snippet:
+                editable.set_text(self.snippet['description'])
+            else:
+                # This is the `Add a new snippet...` item
+                editable.set_text('')
+
+            editable.grab_focus()
+
+    def on_cell_edited(self, cell, path, new_text):
+        if new_text != '':
+            piter = self.model.get_iter(path)
+            node = self.model.get_value(piter, self.SNIPPET_COLUMN)
+
+            if node:
+                if node == self.snippet.data:
+                    s = self.snippet
                 else:
-                        action = self.remove_snippet_delete
-                
-                # Remove selection
-                self.tree_view.get_selection().unselect_all()
-                
-                # Create tree row references
-                references = []
-                for path in paths:
-                        references.append(Gtk.TreeRowReference(self.model, path))
+                    s = Snippet(node)
 
-                # Remove/revert snippets
-                select = None
-                for reference in references:
-                        path = reference.get_path()
-                        piter = self.model.get_iter(path)
-                        
-                        res = action(path, piter)
-                        
-                        if res:
-                                select = res
-
-                if select:
-                        self.select_iter(select)
-
-                self.selection_changed()
-        
-        def set_accelerator(self, keyval, mod):
-                accelerator = Gtk.accelerator_name(keyval, mod)
-                self.snippet['accelerator'] = accelerator
-
-                return True
-        
-        def on_entry_accelerator_key_press(self, entry, event):
-                source_view = self['source_view_snippet']
-
-                if event.keyval == Gdk.keyval_from_name('Escape'):
-                        # Reset
-                        entry.set_text(self.snippet.accelerator_display())
-                        self.tree_view.grab_focus()
-                        
-                        return True
-                elif event.keyval == Gdk.keyval_from_name('Delete') or \
-                                event.keyval == Gdk.keyval_from_name('BackSpace'):
-                        # Remove the accelerator
-                        entry.set_text('')
-                        self.snippet['accelerator'] = ''
-                        self.tree_view.grab_focus()
-                        
-                        self.snippet_changed()
-                        return True
-                elif Library().valid_accelerator(event.keyval, event.state):
-                        # New accelerator
-                        self.set_accelerator(event.keyval, \
-                                        event.state & Gtk.accelerator_get_default_mod_mask())
-                        entry.set_text(self.snippet.accelerator_display())
-                        self.snippet_changed()
-                        self.tree_view.grab_focus()
-
-                else:
-                        return True
-        
-        def on_entry_accelerator_focus_in(self, entry, event):
-                if self.snippet['accelerator']:
-                        entry.set_text(_('Type a new shortcut, or press Backspace to clear'))
-                else:
-                        entry.set_text(_('Type a new shortcut'))
-        
-        def update_language_path(self):
-                model, paths = self.tree_view.get_selection().get_selected_rows()
-                
-                # Check if all have the same language parent
-                current_parent = None
-
-                for path in paths:
-                        piter = model.get_iter(path)
-                        parent = model.iter_parent(piter)
-                        
-                        if parent:
-                                path = model.get_path(parent)
-
-                        if current_parent != None and current_parent != path:
-                                current_parent = None
-                                break
-                        else:
-                                current_parent = path
-
-                self.language_path = current_parent
-                
-        def on_tree_view_selection_changed(self, selection):
-                parent, piter, node = self.selected_snippet()
-                
-                if self.snippet:
-                        self.on_entry_tab_trigger_focus_out(self['entry_tab_trigger'],
-                                        None)
-                        self.on_source_view_snippet_focus_out(self['source_view_snippet'], 
-                                        None)
-                        self.on_entry_drop_targets_focus_out(self['combo_drop_targets'].get_child(),
-                                        None)
-                
-                self.update_language_path()
-
-                if node:
-                        self.snippet = Snippet(node)
-                else:
-                        self.snippet = None
-
-                self.selection_changed()
-
-        def iter_after(self, target, after):
-                if not after:
-                        return True
-
-                tp = self.model.get_path(target)
-                ap = self.model.get_path(after)
-                
-                if tp[0] > ap[0] or (tp[0] == ap[0] and (len(ap) == 1 or tp[1] > ap[1])):
-                        return True
-                
-                return False
-                
-        def on_tree_view_snippets_key_press(self, treeview, event):
-                if event.keyval == Gdk.keyval_from_name('Delete'):
-                        self.on_button_remove_snippet_clicked(None)
-                        return True
-
-        def on_tree_view_snippets_row_expanded(self, treeview, piter, path):
-                # Check if it is already filled
-                self.fill_if_needed(piter)
+                s['description'] = new_text
+                self.snippet_changed(piter)
                 self.select_iter(piter)
-        
-        def on_entry_drop_targets_drag_data_received(self, entry, context, x, y, selection_data, info, timestamp):
-                uris = drop_get_uris(selection_data)
-                
-                if not uris:
-                        return
-                
-                if entry.get_text():
-                        mimes = [entry.get_text()]
-                else:
-                        mimes = []
-                
-                for uri in uris:
-                        try:
-                                mime = Gio.content_type_guess(uri)
-                        except:
-                                mime = None
-                        
-                        if mime:
-                                mimes.append(mime)
-                
-                entry.set_text(', '.join(mimes))
-                self.on_entry_drop_targets_focus_out(entry, None)
-                context.finish(True, False, timestamp)
-                
-                entry.stop_emission('drag_data_received')
-# ex:ts=8:et:
+            else:
+                # This is the `Add a new snippet...` item
+                # We create a new snippet
+                snippet = self.new_snippet({'description': new_text})
+
+                if snippet:
+                    self.model.set_value(piter, self.SNIPPET_COLUMN, snippet.data)
+                    self.snippet_changed(piter)
+                    self.snippet = snippet
+                    self.selection_changed()
+
+    def on_entry_accelerator_focus_out(self, entry, event):
+        if not self.snippet:
+            return
+
+        entry.set_text(self.snippet.accelerator_display())
+
+    def entry_tab_trigger_update_valid(self):
+        entry = self['entry_tab_trigger']
+        text = entry.get_text()
+
+        if text and not Library().valid_tab_trigger(text):
+            img = self['image_tab_trigger']
+            img.set_from_stock(Gtk.STOCK_DIALOG_ERROR, Gtk.IconSize.BUTTON)
+            img.show()
+
+            #self['hbox_tab_trigger'].set_spacing(3)
+            tip = _('This is not a valid Tab trigger. Triggers can either contain letters or a single (non-alphanumeric) character like: {, [, etc.')
+
+            entry.set_tooltip_text(tip)
+            img.set_tooltip_text(tip)
+        else:
+            self['image_tab_trigger'].hide()
+            #self['hbox_tab_trigger'].set_spacing(0)
+            entry.set_tooltip_text(_('Single word the snippet is activated with after pressing Tab'))
+
+        return False
+
+    def on_entry_tab_trigger_focus_out(self, entry, event):
+        if not self.snippet:
+            return
+
+        text = entry.get_text()
+
+        # save tag
+        self.snippet['tag'] = text
+        self.snippet_changed()
+
+    def on_entry_drop_targets_focus_out(self, entry, event):
+        if not self.snippet:
+            return
+
+        text = entry.get_text()
+
+        # save drop targets
+        self.snippet['drop-targets'] = text
+        self.snippet_changed()
+
+    def on_entry_tab_trigger_changed(self, entry):
+        self.entry_tab_trigger_update_valid()
+
+    def on_source_view_snippet_focus_out(self, source_view, event):
+        if not self.snippet:
+            return
+
+        buf = source_view.get_buffer()
+        text = buf.get_text(buf.get_start_iter(), \
+                buf.get_end_iter(), False)
+
+        self.snippet['text'] = text
+        self.snippet_changed()
+
+    def on_button_new_snippet_clicked(self, button):
+        snippet = self.new_snippet()
+
+        if not snippet:
+            return
+
+        parent = self.model.get_iter(self.language_path)
+        path = self.model.get_path(parent)
+
+        dummy = self.get_dummy(parent)
+
+        if dummy:
+            # Remove the dummy
+            self.model.remove(dummy)
+
+        # Add the snippet
+        piter = self.add_snippet(parent, snippet.data)
+        self.select_iter(piter)
+
+        if not self.tree_view.row_expanded(path):
+            self.tree_view.expand_row(path, False)
+            self.select_iter(piter)
+
+        self.tree_view.grab_focus()
+
+        path = self.model.get_path(piter)
+        self.tree_view.set_cursor(path, self.column, True)
+
+    def file_filter(self, name, pattern):
+        fil = Gtk.FileFilter()
+        fil.set_name(name)
+
+        for p in pattern:
+            fil.add_pattern(p)
+
+        return fil
+
+    def import_snippets(self, filenames):
+        success = True
+
+        for filename in filenames:
+            if not Pluma.utils_uri_has_file_scheme(filename):
+                continue
+
+            # Remove file://
+            gfile = Gio.file_new_for_uri(filename)
+            filename = gfile.get_path()
+
+            importer = Importer(filename)
+            error = importer.run()
+
+            if error:
+                message = _('The following error occurred while importing: %s') % error
+                success = False
+                message_dialog(self.dlg, Gtk.MessageType.ERROR, message)
+
+        self.build_model(True)
+
+        if success:
+            message = _('Import successfully completed')
+            message_dialog(self.dlg, Gtk.MessageType.INFO, message)
+
+    def on_import_response(self, dialog, response):
+        if response == Gtk.ResponseType.CANCEL or response == Gtk.ResponseType.CLOSE:
+            dialog.destroy()
+            return
+
+        f = dialog.get_uris()
+        dialog.destroy()
+
+        self.import_snippets(f)
+
+    def on_button_import_snippets_clicked(self, button):
+        dlg = Gtk.FileChooserDialog(parent=self.dlg, title=_("Import snippets"),
+                action=Gtk.FileChooserAction.OPEN,
+                buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+                     Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+
+        dlg.add_filter(self.file_filter(_('All supported archives'), ('*.gz','*.bz2','*.tar', '*.xml')))
+        dlg.add_filter(self.file_filter(_('Gzip compressed archive'), ('*.tar.gz',)))
+        dlg.add_filter(self.file_filter(_('Bzip2 compressed archive'), ('*.tar.bz2',)))
+        dlg.add_filter(self.file_filter(_('Single snippets file'), ('*.xml',)))
+        dlg.add_filter(self.file_filter(_('All files'), '*'))
+
+        dlg.connect('response', self.on_import_response)
+        dlg.set_local_only(True)
+
+        dlg.show()
+
+    def export_snippets_real(self, filename, snippets, show_dialogs=True):
+        export = Exporter(filename, snippets)
+        error = export.run()
+
+        if error:
+            message = _('The following error occurred while exporting: %s') % error
+            msgtype = Gtk.MessageType.ERROR
+            retval = False
+        else:
+            message = _('Export successfully completed')
+            msgtype = Gtk.MessageType.INFO
+            retval = True
+
+        if show_dialogs:
+            message_dialog(self.dlg, msgtype, message)
+
+        return retval
+
+    def on_export_response(self, dialog, response):
+        filename = dialog.get_filename()
+        snippets = dialog._export_snippets
+
+        dialog.destroy()
+
+        if response != Gtk.ResponseType.OK:
+            return
+
+        self.export_snippets_real(filename, snippets);
+
+    def export_snippets(self, filename=None, show_dialogs=True):
+        snippets = self.selected_snippets()
+
+        if not snippets or len(snippets) == 0:
+            return False
+
+        usersnippets = []
+        systemsnippets = []
+
+        # Iterate through snippets and look for system snippets
+        for snippet in snippets:
+            if snippet.can_modify():
+                usersnippets.append(snippet)
+            else:
+                systemsnippets.append(snippet)
+
+        export_snippets = snippets
+
+        if len(systemsnippets) != 0 and show_dialogs:
+            # Ask if system snippets should also be exported
+            message = _('Do you want to include selected <b>system</b> snippets in your export?')
+            mes = Gtk.MessageDialog(flags=Gtk.DialogFlags.MODAL,
+                    type=Gtk.MessageType.QUESTION,
+                    buttons=Gtk.ButtonsType.YES_NO,
+                    message_format=message)
+            mes.set_property('use-markup', True)
+            resp = mes.run()
+            mes.destroy()
+
+            if resp == Gtk.ResponseType.NO:
+                export_snippets = usersnippets
+            elif resp != Gtk.ResponseType.YES:
+                return False
+
+        if len(export_snippets) == 0 and show_dialogs:
+            message = _('There are no snippets selected to be exported')
+            message_dialog(self.dlg, Gtk.MessageType.INFO, message)
+            return False
+
+        if not filename:
+            dlg = Gtk.FileChooserDialog(parent=self.dlg, title=_('Export snippets'),
+                    action=Gtk.FileChooserAction.SAVE,
+                    buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+                         Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
+
+            dlg._export_snippets = export_snippets
+            dlg.add_filter(self.file_filter(_('All supported archives'), ('*.gz','*.bz2','*.tar')))
+            dlg.add_filter(self.file_filter(_('Gzip compressed archive'), ('*.tar.gz',)))
+            dlg.add_filter(self.file_filter(_('Bzip2 compressed archive'), ('*.tar.bz2',)))
+
+            dlg.add_filter(self.file_filter(_('All files'), '*'))
+            dlg.set_do_overwrite_confirmation(True)
+            dlg.set_current_name(self.default_export_name)
+
+            dlg.connect('response', self.on_export_response)
+            dlg.set_local_only(True)
+
+            dlg.show()
+            return True
+        else:
+            return self.export_snippets_real(filename, export_snippets, show_dialogs)
+
+    def on_button_export_snippets_clicked(self, button):
+        snippets = self.selected_snippets()
+
+        if not snippets or len(snippets) == 0:
+            return
+
+        usersnippets = []
+        systemsnippets = []
+
+        # Iterate through snippets and look for system snippets
+        for snippet in snippets:
+            if snippet.can_modify():
+                usersnippets.append(snippet)
+            else:
+                systemsnippets.append(snippet)
+
+        dlg = Gtk.FileChooserDialog(parent=self.dlg, title=_('Export snippets'),
+                action=Gtk.FileChooserAction.SAVE,
+                buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+                     Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
+
+        dlg._export_snippets = snippets
+
+        if len(systemsnippets) != 0:
+            # Ask if system snippets should also be exported
+            message = _('Do you want to include selected <b>system</b> snippets in your export?')
+            mes = Gtk.MessageDialog(flags=Gtk.DialogFlags.MODAL,
+                    type=Gtk.MessageType.QUESTION,
+                    buttons=Gtk.ButtonsType.YES_NO,
+                    message_format=message)
+            mes.set_property('use-markup', True)
+            resp = mes.run()
+            mes.destroy()
+
+            if resp == Gtk.ResponseType.NO:
+                dlg._export_snippets = usersnippets
+            elif resp != Gtk.ResponseType.YES:
+                dlg.destroy()
+                return
+
+        if len(dlg._export_snippets) == 0:
+            dlg.destroy()
+
+            message = _('There are no snippets selected to be exported')
+            message_dialog(self.dlg, Gtk.MessageType.INFO, message)
+            return
+
+        dlg.add_filter(self.file_filter(_('All supported archives'), ('*.gz','*.bz2','*.tar')))
+        dlg.add_filter(self.file_filter(_('Gzip compressed archive'), ('*.tar.gz',)))
+        dlg.add_filter(self.file_filter(_('Bzip2 compressed archive'), ('*.tar.bz2',)))
+
+        dlg.add_filter(self.file_filter(_('All files'), '*'))
+        dlg.set_do_overwrite_confirmation(True)
+        dlg.set_current_name(self.default_export_name)
+
+        dlg.connect('response', self.on_export_response)
+        dlg.set_local_only(True)
+
+        dlg.show()
+
+    def remove_snippet_revert(self, path, piter):
+        node = self.snippet_from_iter(self.model, piter)
+        Library().revert_snippet(node)
+
+        return piter
+
+    def remove_snippet_delete(self, path, piter):
+        node = self.snippet_from_iter(self.model, piter)
+        parent = self.model.iter_parent(piter)
+
+        Library().remove_snippet(node)
+        idx = path.get_indices()
+
+        if self.model.remove(piter):
+            return piter
+        elif idx[-1] != 0:
+            self.select_iter(self.model.get_iter((idx[0], idx[1] - 1)))
+        else:
+            dummy = self.add_new_snippet_node(parent)
+            self.tree_view.expand_row(self.model.get_path(parent), False)
+            return dummy
+
+    def on_button_remove_snippet_clicked(self, button):
+        override, remove, system = self.selected_snippets_state()
+
+        if not (override ^ remove) or system:
+            return
+
+        paths = self.selected_snippets(include_languages=False, as_path=True)
+
+        if override:
+            action = self.remove_snippet_revert
+        else:
+            action = self.remove_snippet_delete
+
+        # Remove selection
+        self.tree_view.get_selection().unselect_all()
+
+        # Create tree row references
+        references = []
+        for path in paths:
+            references.append(Gtk.TreeRowReference(self.model, path))
+
+        # Remove/revert snippets
+        select = None
+        for reference in references:
+            path = reference.get_path()
+            piter = self.model.get_iter(path)
+
+            res = action(path, piter)
+
+            if res:
+                select = res
+
+        if select:
+            self.select_iter(select)
+
+        self.selection_changed()
+
+    def set_accelerator(self, keyval, mod):
+        accelerator = Gtk.accelerator_name(keyval, mod)
+        self.snippet['accelerator'] = accelerator
+
+        return True
+
+    def on_entry_accelerator_key_press(self, entry, event):
+        source_view = self['source_view_snippet']
+
+        if event.keyval == Gdk.keyval_from_name('Escape'):
+            # Reset
+            entry.set_text(self.snippet.accelerator_display())
+            self.tree_view.grab_focus()
+
+            return True
+        elif event.keyval == Gdk.keyval_from_name('Delete') or \
+                event.keyval == Gdk.keyval_from_name('BackSpace'):
+            # Remove the accelerator
+            entry.set_text('')
+            self.snippet['accelerator'] = ''
+            self.tree_view.grab_focus()
+
+            self.snippet_changed()
+            return True
+        elif Library().valid_accelerator(event.keyval, event.state):
+            # New accelerator
+            self.set_accelerator(event.keyval, \
+                    event.state & Gtk.accelerator_get_default_mod_mask())
+            entry.set_text(self.snippet.accelerator_display())
+            self.snippet_changed()
+            self.tree_view.grab_focus()
+
+        else:
+            return True
+
+    def on_entry_accelerator_focus_in(self, entry, event):
+        if self.snippet['accelerator']:
+            entry.set_text(_('Type a new shortcut, or press Backspace to clear'))
+        else:
+            entry.set_text(_('Type a new shortcut'))
+
+    def update_language_path(self):
+        model, paths = self.tree_view.get_selection().get_selected_rows()
+
+        # Check if all have the same language parent
+        current_parent = None
+
+        for path in paths:
+            piter = model.get_iter(path)
+            parent = model.iter_parent(piter)
+
+            if parent:
+                path = model.get_path(parent)
+
+            if current_parent != None and current_parent != path:
+                current_parent = None
+                break
+            else:
+                current_parent = path
+
+        self.language_path = current_parent
+
+    def on_tree_view_selection_changed(self, selection):
+        parent, piter, node = self.selected_snippet()
+
+        if self.snippet:
+            self.on_entry_tab_trigger_focus_out(self['entry_tab_trigger'],
+                    None)
+            self.on_source_view_snippet_focus_out(self['source_view_snippet'],
+                    None)
+            self.on_entry_drop_targets_focus_out(self['combo_drop_targets'].get_child(),
+                    None)
+
+        self.update_language_path()
+
+        if node:
+            self.snippet = Snippet(node)
+        else:
+            self.snippet = None
+
+        self.selection_changed()
+
+    def iter_after(self, target, after):
+        if not after:
+            return True
+
+        tp = self.model.get_path(target)
+        ap = self.model.get_path(after)
+
+        if tp[0] > ap[0] or (tp[0] == ap[0] and (len(ap) == 1 or tp[1] > ap[1])):
+            return True
+
+        return False
+
+    def on_tree_view_snippets_key_press(self, treeview, event):
+        if event.keyval == Gdk.keyval_from_name('Delete'):
+            self.on_button_remove_snippet_clicked(None)
+            return True
+
+    def on_tree_view_snippets_row_expanded(self, treeview, piter, path):
+        # Check if it is already filled
+        self.fill_if_needed(piter)
+        self.select_iter(piter)
+
+    def on_entry_drop_targets_drag_data_received(self, entry, context, x, y, selection_data, info, timestamp):
+        uris = drop_get_uris(selection_data)
+
+        if not uris:
+            return
+
+        if entry.get_text():
+            mimes = [entry.get_text()]
+        else:
+            mimes = []
+
+        for uri in uris:
+            try:
+                mime = Gio.content_type_guess(uri)
+            except:
+                mime = None
+
+            if mime:
+                mimes.append(mime)
+
+        entry.set_text(', '.join(mimes))
+        self.on_entry_drop_targets_focus_out(entry, None)
+        context.finish(True, False, timestamp)
+
+        entry.stop_emission('drag_data_received')
+# ex:ts=4:et:
