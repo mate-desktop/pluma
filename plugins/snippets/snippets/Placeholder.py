@@ -528,7 +528,7 @@ class PlaceholderEval(PlaceholderExpand):
         return hasattr(signal, 'SIGALRM')
 
     def timeout_cb(self, signum = 0, frame = 0):
-        raise TimeoutError, "Operation timed out (>2 seconds)"
+        raise TimeoutError("Operation timed out (>2 seconds)")
 
     def install_timeout(self):
         if not self.timeout_supported():

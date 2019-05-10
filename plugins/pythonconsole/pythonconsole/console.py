@@ -361,8 +361,8 @@ class OutFile:
     def readlines(self):     return []
     def write(self, s):      self.console.write(s, self.tag)
     def writelines(self, l): self.console.write(l, self.tag)
-    def seek(self, a):       raise IOError, (29, 'Illegal seek')
-    def tell(self):          raise IOError, (29, 'Illegal seek')
+    def seek(self, a):       raise IOError(29, 'Illegal seek')
+    def tell(self):          raise IOError(29, 'Illegal seek')
     truncate = tell
 
 # ex:et:ts=4:
