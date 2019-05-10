@@ -38,7 +38,9 @@ class VirtualDirectory(object):
             return
 
         try:
-            info = child.query_info("standard::*", Gio.FileQueryInfoFlags.NONE, None)
+            info = child.query_info("standard::*",
+                                    Gio.FileQueryInfoFlags.NONE,
+                                    None)
 
             if info:
                 self._children.append((child, info))

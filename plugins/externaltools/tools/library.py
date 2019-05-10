@@ -26,8 +26,7 @@ class Singleton(object):
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
-            cls._instance = super(Singleton, cls).__new__(
-                             cls, *args, **kwargs)
+            cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)
             cls._instance.__init_once__()
 
         return cls._instance
@@ -46,7 +45,7 @@ class ToolLibrary(Singleton):
 
         # self.locations[0] is where we save the custom scripts
         toolsdir = os.path.join(GLib.get_user_config_dir(), 'pluma/tools')
-        self.locations.insert(0, toolsdir);
+        self.locations.insert(0, toolsdir)
 
         if not os.path.isdir(self.locations[0]):
             os.makedirs(self.locations[0])
@@ -238,8 +237,10 @@ class Tool(object):
             if not in_block:
                 in_block = line.startswith('# [Pluma Tool]')
                 continue
-            if line.startswith('##') or line.startswith('# #'): continue
-            if not line.startswith('# '): break
+            if line.startswith('##') or line.startswith('# #'):
+                continue
+            if not line.startswith('# '):
+                break
 
             try:
                 (key, value) = [i.strip() for i in line[2:].split('=', 1)]
@@ -283,7 +284,8 @@ class Tool(object):
 
     def get_applicability(self):
         applicability = self._properties.get('Applicability')
-        if applicability: return applicability
+        if applicability:
+            return applicability
         return 'all'
 
     def set_applicability(self, value):
@@ -293,7 +295,8 @@ class Tool(object):
 
     def get_name(self):
         name = self._properties.get('Name')
-        if name: return name
+        if name:
+            return name
         return os.path.basename(self.filename)
 
     def set_name(self, value):
@@ -303,7 +306,8 @@ class Tool(object):
 
     def get_shortcut(self):
         shortcut = self._properties.get('Shortcut')
-        if shortcut: return shortcut
+        if shortcut:
+            return shortcut
         return None
 
     def set_shortcut(self, value):
@@ -313,7 +317,8 @@ class Tool(object):
 
     def get_comment(self):
         comment = self._properties.get('Comment')
-        if comment: return comment
+        if comment:
+            return comment
         return self.filename
 
     def set_comment(self, value):
@@ -323,7 +328,8 @@ class Tool(object):
 
     def get_input(self):
         input = self._properties.get('Input')
-        if input: return input
+        if input:
+            return input
         return 'nothing'
 
     def set_input(self, value):
@@ -333,7 +339,8 @@ class Tool(object):
 
     def get_output(self):
         output = self._properties.get('Output')
-        if output: return output
+        if output:
+            return output
         return 'output-panel'
 
     def set_output(self, value):
@@ -343,7 +350,8 @@ class Tool(object):
 
     def get_save_files(self):
         save_files = self._properties.get('Save-files')
-        if save_files: return save_files
+        if save_files:
+            return save_files
         return 'nothing'
 
     def set_save_files(self, value):
@@ -353,7 +361,8 @@ class Tool(object):
 
     def get_languages(self):
         languages = self._properties.get('Languages')
-        if languages: return languages
+        if languages:
+            return languages
         return []
 
     def set_languages(self, value):
@@ -395,7 +404,8 @@ class Tool(object):
             lines.append(line)
         # in the block:
         for line in fp:
-            if line.startswith('##'): continue
+            if line.startswith('##'):
+                continue
             if not (line.startswith('# ') and '=' in line):
                 # after the block: strip one emtpy line (if present)
                 if line.strip() != '':

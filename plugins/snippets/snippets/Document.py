@@ -31,8 +31,7 @@ class DynamicSnippet(dict):
         self.valid = True
 
 class Document:
-    TAB_KEY_VAL = (Gdk.KEY_Tab, \
-            Gdk.KEY_ISO_Left_Tab)
+    TAB_KEY_VAL = (Gdk.KEY_Tab, Gdk.KEY_ISO_Left_Tab)
     SPACE_KEY_VAL = (Gdk.KEY_space,)
 
     def __init__(self, instance, view):

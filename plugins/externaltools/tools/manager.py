@@ -714,7 +714,9 @@ class Manager(GObject.Object):
                     self.script_hash = None
 
                     if self.model.iter_is_valid(piter):
-                        self.view.set_cursor(self.model.get_path(piter), self.view.get_column(self.TOOL_COLUMN), False)
+                        self.view.set_cursor(self.model.get_path(piter),
+                                             self.view.get_column(self.TOOL_COLUMN),
+                                             False)
 
                 self.view.grab_focus()
 

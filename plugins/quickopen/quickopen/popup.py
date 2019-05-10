@@ -49,7 +49,10 @@ class Popup(Gtk.Dialog):
         self._busy_cursor = Gdk.Cursor(Gdk.CursorType.WATCH)
 
         accel_group = Gtk.AccelGroup()
-        accel_group.connect(Gdk.KEY_l, Gdk.ModifierType.CONTROL_MASK, 0, self.on_focus_entry)
+        accel_group.connect(Gdk.KEY_l,
+                            Gdk.ModifierType.CONTROL_MASK,
+                            0,
+                            self.on_focus_entry)
 
         self.add_accel_group(accel_group)
 
@@ -79,7 +82,10 @@ class Popup(Gtk.Dialog):
         tv = Gtk.TreeView()
         tv.set_headers_visible(False)
 
-        self._store = Gtk.ListStore(Gio.Icon, str, GObject.Object, Gio.FileType)
+        self._store = Gtk.ListStore(Gio.Icon,
+                                    str,
+                                    GObject.Object,
+                                    Gio.FileType)
         tv.set_model(self._store)
 
         self._treeview = tv
@@ -141,8 +147,10 @@ class Popup(Gtk.Dialog):
         entries = []
 
         try:
-            ret = gfile.enumerate_children("standard::*", Gio.FileQueryInfoFlags.NONE, None)
-        except GLib.GError:
+            ret = gfile.enumerate_children("standard::*",
+                                           Gio.FileQueryInfoFlags.NONE,
+                                           None)
+        except GLib.Error:
             pass
 
         if isinstance(ret, Gio.FileEnumerator):
@@ -159,7 +167,10 @@ class Popup(Gtk.Dialog):
         children = []
 
         for entry in entries:
-            children.append((entry[0], entry[1].get_name(), entry[1].get_file_type(), entry[1].get_icon()))
+            children.append((entry[0],
+                             entry[1].get_name(),
+                             entry[1].get_file_type(),
+                             entry[1].get_icon()))
 
         return children
 
@@ -243,7 +254,9 @@ class Popup(Gtk.Dialog):
         return os.sep.join(out)
 
     def _get_icon(self, f):
-        query = f.query_info(Gio.FILE_ATTRIBUTE_STANDARD_ICON, Gio.FileQueryInfoFlags.NONE, None)
+        query = f.query_info(Gio.FILE_ATTRIBUTE_STANDARD_ICON,
+                             Gio.FileQueryInfoFlags.NONE,
+                             None)
 
         if not query:
             return None
@@ -296,7 +309,10 @@ class Popup(Gtk.Dialog):
         for d in self._dirs:
             if isinstance(d, VirtualDirectory):
                 for entry in d.enumerate_children("standard::*", 0, None):
-                    self._append_to_store((entry[1].get_icon(), xml.sax.saxutils.escape(entry[1].get_name()), entry[0], entry[1].get_file_type()))
+                    self._append_to_store((entry[1].get_icon(),
+                                           xml.sax.saxutils.escape(entry[1].get_name()),
+                                           entry[0],
+                                           entry[1].get_file_type()))
 
     def _set_busy(self, busy):
         if busy:
@@ -329,12 +345,16 @@ class Popup(Gtk.Dialog):
             for d in self._dirs:
                 for entry in self.do_search_dir(parts, d):
                     pathparts = self._make_parts(d, entry[0], parts)
-                    self._append_to_store((entry[3], self.make_markup(parts, pathparts), entry[0], entry[2]))
+                    self._append_to_store((entry[3],
+                                           self.make_markup(parts, pathparts),
+                                           entry[0],
+                                           entry[2]))
 
         piter = self._store.get_iter_first()
 
         if piter:
-            self._treeview.get_selection().select_path(self._store.get_path(piter))
+            path = self._store.get_path(piter)
+            self._treeview.get_selection().select_path(path)
 
         self.get_window().set_cursor(None)
         self._set_busy(False)
