@@ -18,9 +18,9 @@
 import os
 from gi.repository import GObject, GLib, Gtk, Peas, Pluma
 
-from WindowHelper import WindowHelper
-from Library import Library
-from Manager import Manager
+from .WindowHelper import WindowHelper
+from .Library import Library
+from .Manager import Manager
 
 class SnippetsPlugin(GObject.Object, Peas.Activatable):
     __gtype_name__ = "SnippetsPlugin"

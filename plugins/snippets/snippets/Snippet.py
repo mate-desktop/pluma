@@ -18,9 +18,9 @@
 import os
 from gi.repository import Gio, Gtk
 
-from Placeholder import *
-from Parser import Parser, Token
-from Helper import *
+from .Placeholder import *
+from .Parser import Parser, Token
+from .Helper import *
 
 class EvalUtilities:
     def __init__(self, view=None):

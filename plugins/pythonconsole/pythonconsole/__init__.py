@@ -26,9 +26,9 @@
 
 from gi.repository import GObject, Gtk, Peas, Pluma
 
-from console import PythonConsole
-from config import PythonConsoleConfigDialog
-from config import PythonConsoleConfig
+from .console import PythonConsole
+from .config import PythonConsoleConfigDialog
+from .config import PythonConsoleConfig
 
 PYTHON_ICON = 'text-x-python'
 

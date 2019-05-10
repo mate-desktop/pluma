@@ -18,7 +18,9 @@
 
 __all__ = ('Capture', )
 
-import os, sys, signal
+import os
+import sys
+import signal
 import locale
 import subprocess
 import fcntl

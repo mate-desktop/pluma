@@ -18,8 +18,8 @@
 
 import os
 from gi.repository import Gio, Gdk, Gtk, GtkSource, Pluma
-from outputpanel import OutputPanel
-from capture import *
+from .outputpanel import OutputPanel
+from .capture import *
 
 def default(val, d):
     if val is not None:

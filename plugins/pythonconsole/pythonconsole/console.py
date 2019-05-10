@@ -30,7 +30,7 @@ import re
 import traceback
 from gi.repository import GObject, Gdk, Gtk, Pango
 
-from config import PythonConsoleConfig
+from .config import PythonConsoleConfig
 
 __all__ = ('PythonConsole', 'OutFile')
 

@@ -1,8 +1,8 @@
 from gi.repository import GObject, Gtk, GtkSource, Pluma
 
-from Library import Library
-from LanguageManager import get_language_manager
-from Snippet import Snippet
+from .Library import Library
+from .LanguageManager import get_language_manager
+from .Snippet import Snippet
 
 class Proposal(GObject.Object, GtkSource.CompletionProposal):
     __gtype_name__ = "PlumaSnippetsProposal"

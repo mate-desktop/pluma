@@ -20,10 +20,10 @@ import re
 
 from gi.repository import GLib, Gio, Gdk, Gtk, GtkSource, Pluma
 
-from Library import Library
-from Snippet import Snippet
-from Placeholder import *
-import Completion
+from .Library import Library
+from .Snippet import Snippet
+from .Placeholder import *
+from . import Completion
 
 class DynamicSnippet(dict):
     def __init__(self, text):

@@ -24,8 +24,8 @@ import locale
 import subprocess
 from gi.repository import GObject, GLib, Gtk
 
-from SubstitutionParser import SubstitutionParser
-from Helper import *
+from .SubstitutionParser import SubstitutionParser
+from .Helper import *
 
 # These are places in a view where the cursor can go and do things
 class Placeholder:

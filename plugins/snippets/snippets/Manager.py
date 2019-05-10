@@ -21,13 +21,13 @@ import shutil
 
 from gi.repository import GObject, Gio, Gdk, Gtk, GtkSource, Pluma
 
-from Snippet import Snippet
-from Helper import *
-from Library import *
-from Importer import *
-from Exporter import *
-from Document import Document
-from LanguageManager import get_language_manager
+from .Snippet import Snippet
+from .Helper import *
+from .Library import *
+from .Importer import *
+from .Exporter import *
+from .Document import Document
+from .LanguageManager import get_language_manager
 
 class Manager:
     NAME_COLUMN = 0

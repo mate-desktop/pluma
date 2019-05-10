@@ -19,11 +19,11 @@
 __all__ = ('ExternalToolsPlugin', 'Manager', 'OutputPanel', 'Capture', 'UniqueById')
 
 from gi.repository import GObject, Gtk, Peas, Pluma
-from manager import Manager
-from library import ToolLibrary
-from outputpanel import OutputPanel
-from capture import Capture
-from functions import *
+from .manager import Manager
+from .library import ToolLibrary
+from .outputpanel import OutputPanel
+from .capture import Capture
+from .functions import *
 
 class ToolMenu(object):
     def __init__(self, library, window, panel, plugin, menupath):

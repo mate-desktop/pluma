@@ -24,7 +24,7 @@ import re
 from gi.repository import Gdk, Gtk
 
 import xml.etree.ElementTree as et
-from Helper import *
+from .Helper import *
 
 class NamespacedId:
     def __init__(self, namespace, id):

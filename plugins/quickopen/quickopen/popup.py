@@ -21,7 +21,7 @@ import os
 import fnmatch
 import xml.sax.saxutils
 from gi.repository import GObject, Gio, GLib, Gdk, Gtk, Pango, Pluma
-from virtualdirs import VirtualDirectory
+from .virtualdirs import VirtualDirectory
 
 class Popup(Gtk.Dialog):
     __gtype_name__ = "QuickOpenPopup"

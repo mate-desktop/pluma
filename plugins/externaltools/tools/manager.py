@@ -19,8 +19,8 @@
 __all__ = ('Manager', )
 
 import os.path
-from library import *
-from functions import *
+from .library import *
+from .functions import *
 import hashlib
 from xml.sax import saxutils
 from gi.repository import GObject, Gio, Gdk, Gtk, GtkSource, Pluma
