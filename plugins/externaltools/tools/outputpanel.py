@@ -129,11 +129,11 @@ class OutputPanel(UniqueById):
         # find all links and apply the appropriate tag for them
         links = self.link_parser.parse(text)
         for lnk in links:
-            
+
             insert_iter = buffer.get_iter_at_mark(insert)
             lnk.start = insert_iter.get_offset() + lnk.start
             lnk.end = insert_iter.get_offset() + lnk.end
-            
+
             start_iter = buffer.get_iter_at_offset(lnk.start)
             end_iter = buffer.get_iter_at_offset(lnk.end)
 
@@ -156,7 +156,7 @@ class OutputPanel(UniqueById):
         panel.show()
         panel.activate_item(self.panel)
 
-    def update_cursor_style(self, view, x, y):       
+    def update_cursor_style(self, view, x, y):
         if self.get_link_at_location(view, x, y) is not None:
             cursor = self.link_cursor
         else:

@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with pluma; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin St, Fifth Floor, 
+# Foundation, Inc., 51 Franklin St, Fifth Floor,
 # Boston, MA  02110-1301  USA
 
 import re
@@ -57,7 +57,7 @@ Options:
   --with-$feature       Enable $feature
   --without-$feature    Disable $feature
   --help / -h           Show this message and exits
-    
+
 Features:
   config-dlg            Plugin configuration dialog
   menu                  Plugin menu entries
@@ -69,7 +69,7 @@ TEMPLATE_DIR = os.path.join(os.path.dirname(sys.argv[0]), "plugin_template")
 
 # Parsing command line options
 try:
-    opts, args = getopt.getopt(sys.argv[1:], 
+    opts, args = getopt.getopt(sys.argv[1:],
                                'l:h',
                                ['language=',
                                 'description=',
@@ -102,7 +102,7 @@ for opt, arg in opts:
 
     elif opt[0:7] == '--with-':
         options['with-' + opt[7:]] = True
-    
+
     elif opt[0:10] == '--without-':
         options['with-' + opt[10:]] = False
 
@@ -150,10 +150,10 @@ if options['with-bottom-pane']:
 
 if options['with-menu']:
     directives['WITH_MENU'] = True
-    
+
 if options['with-config-dlg']:
     directives['WITH_CONFIGURE_DIALOG'] = True
-    
+
 
 # Generate the plugin base
 for infile, outfile in output_files.iteritems():
@@ -166,11 +166,11 @@ for infile, outfile in output_files.iteritems():
     if not os.path.isfile(infile):
         print >>sys.stderr, 'Input file does not exist : %s.' % os.path.basename(infile)
         continue
-    
+
     # Make sure the destination directory exists
     if not os.path.isdir(os.path.split(outfile)[0]):
         os.makedirs(os.path.split(outfile)[0])
-   
+
     # Variables relative to the generated file
     directives['DIRNAME'], directives['FILENAME'] = os.path.split(outfile)
 

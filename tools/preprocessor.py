@@ -17,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with pluma; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin St, Fifth Floor, 
+# Foundation, Inc., 51 Franklin St, Fifth Floor,
 # Boston, MA  02110-1301  USA
 
 import sys
@@ -49,7 +49,7 @@ def _subvar(match, macros):
             return ''
     else:
         return ''
-    
+
     mods = match.group('mods')
     if mods is not None:
         for mod in mods[1:].split('.'):
@@ -58,7 +58,7 @@ def _subvar(match, macros):
             elif mod == 'upper':
                 val = val.upper()
             elif mod == 'camel':
-                val = ''.join(i.capitalize() 
+                val = ''.join(i.capitalize()
                               for i in val.split('_'))
     return val
 
@@ -74,20 +74,20 @@ def process(infile = sys.stdin, outfile = sys.stdout, macros = {}):
         close_outfile = True
     else:
         close_outfile = False
-    
+
     deepness = 0
     writing_disabled = None
-    
+
     for line in infile:
         # Skip comments
         if line[0:3].lower() == '##c':
             continue
 
-        # Check whether current line is a preprocessor directive        
+        # Check whether current line is a preprocessor directive
         for statement in statements:
             match = statement.match(line)
             if match: break
-    
+
         if match is not None:
             stmt = match.group('stmt')
 
@@ -113,7 +113,7 @@ def process(infile = sys.stdin, outfile = sys.stdout, macros = {}):
                 deepness += 1
                 if writing_disabled is None and \
                    match.group('key') in macros:
-                    writing_disabled = deepness                    
+                    writing_disabled = deepness
 
             elif stmt == "if":
                 deepness += 1
@@ -148,7 +148,7 @@ def process(infile = sys.stdin, outfile = sys.stdout, macros = {}):
 
         # Do variable substitution in the remaining lines
         elif writing_disabled is None:
-            outfile.write(re.sub(variable, 
+            outfile.write(re.sub(variable,
                                  lambda m: _subvar(m, macros),
                                  line))
 

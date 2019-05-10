@@ -21,30 +21,30 @@ from gi.repository import GObject, Peas
 from windowhelper import WindowHelper
 
 class QuickOpenPlugin(GObject.Object, Peas.Activatable):
-        __gtype_name__ = "QuickOpenPlugin"
+    __gtype_name__ = "QuickOpenPlugin"
 
-        object = GObject.Property(type=GObject.Object)
+    object = GObject.Property(type=GObject.Object)
 
-        def __init__(self):
-                GObject.Object.__init__(self)
+    def __init__(self):
+        GObject.Object.__init__(self)
 
-                self._popup_size = (450, 300)
+        self._popup_size = (450, 300)
 
-        def do_activate(self):
-                window = self.object
-                self._helper = WindowHelper(window, self)
+    def do_activate(self):
+        window = self.object
+        self._helper = WindowHelper(window, self)
 
-        def do_deactivate(self):
-                self._helper.deactivate()
-                self._helper = None
+    def do_deactivate(self):
+        self._helper.deactivate()
+        self._helper = None
 
-        def do_update_state(self):
-                self._helper.update_ui()
+    def do_update_state(self):
+        self._helper.update_ui()
 
-        def get_popup_size(self):
-                return self._popup_size
+    def get_popup_size(self):
+        return self._popup_size
 
-        def set_popup_size(self, size):
-                self._popup_size = size
+    def set_popup_size(self, size):
+        self._popup_size = size
 
-# ex:ts=8:et:
+# ex:ts=4:et:

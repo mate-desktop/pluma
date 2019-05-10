@@ -23,71 +23,73 @@ from Library import Library
 from Manager import Manager
 
 class SnippetsPlugin(GObject.Object, Peas.Activatable):
-        __gtype_name__ = "SnippetsPlugin"
+    __gtype_name__ = "SnippetsPlugin"
 
-        object = GObject.Property(type=GObject.Object)
+    object = GObject.Property(type=GObject.Object)
 
-        def __init__(self):
-                GObject.Object.__init__(self)
+    def __init__(self):
+        GObject.Object.__init__(self)
 
-                self.dlg = None
+        self.dlg = None
 
-        def system_dirs(self):
-                if 'XDG_DATA_DIRS' in os.environ:
-                        datadirs = os.environ['XDG_DATA_DIRS']
-                else:
-                        datadirs = '/usr/local/share' + os.pathsep + '/usr/share'
+    def system_dirs(self):
+        if 'XDG_DATA_DIRS' in os.environ:
+            datadirs = os.environ['XDG_DATA_DIRS']
+        else:
+            datadirs = '/usr/local/share' + os.pathsep + '/usr/share'
 
-                dirs = []
+        dirs = []
 
-                for d in datadirs.split(os.pathsep):
-                        d = os.path.join(d, 'pluma', 'plugins', 'snippets')
+        for d in datadirs.split(os.pathsep):
+            d = os.path.join(d, 'pluma', 'plugins', 'snippets')
 
-                        if os.path.isdir(d):
-                                dirs.append(d)
+            if os.path.isdir(d):
+                dirs.append(d)
 
-                dirs.append(self.plugin_info.get_data_dir())
-                return dirs
+        dirs.append(self.plugin_info.get_data_dir())
+        return dirs
 
-        def do_activate(self):
-                library = Library()
-                library.add_accelerator_callback(self.accelerator_activated)
+    def do_activate(self):
+        library = Library()
+        library.add_accelerator_callback(self.accelerator_activated)
 
-                snippetsdir = os.path.join(GLib.get_user_config_dir(), '/pluma/snippets')
-                library.set_dirs(snippetsdir, self.system_dirs())
+        snippetsdir = os.path.join(GLib.get_user_config_dir(), '/pluma/snippets')
+        library.set_dirs(snippetsdir, self.system_dirs())
 
-                self._helper = WindowHelper(self)
+        self._helper = WindowHelper(self)
 
-                window = self.object
-                self._helper.run(window)
+        window = self.object
+        self._helper.run(window)
 
-        def do_deactivate(self):
-                library = Library()
-                library.remove_accelerator_callback(self.accelerator_activated)
+    def do_deactivate(self):
+        library = Library()
+        library.remove_accelerator_callback(self.accelerator_activated)
 
-                self._helper.stop()
-                self._helper = None
+        self._helper.stop()
+        self._helper = None
 
-        def do_update_state(self):
-                self._helper.update()
+    def do_update_state(self):
+        self._helper.update()
 
-        def create_configure_dialog(self):
-                if not self.dlg:
-                        self.dlg = Manager(self.plugin_info.get_data_dir())
-                else:
-                        self.dlg.run()
+    def create_configure_dialog(self):
+        if not self.dlg:
+            self.dlg = Manager(self.plugin_info.get_data_dir())
+        else:
+            self.dlg.run()
 
-                window = Pluma.App.get_default().get_active_window()
+        window = Pluma.App.get_default().get_active_window()
 
-                if window:
-                        self.dlg.dlg.set_transient_for(window)
+        if window:
+            self.dlg.dlg.set_transient_for(window)
 
-                return self.dlg.dlg
+        return self.dlg.dlg
 
-        def accelerator_activated(self, group, obj, keyval, mod):
-                ret = False
+    def accelerator_activated(self, group, obj, keyval, mod):
+        ret = False
 
-                if self._helper:
-                        ret = self._helper.accelerator_activated(keyval, mod)
+        if self._helper:
+            ret = self._helper.accelerator_activated(keyval, mod)
 
-                return ret
+        return ret
+
+# ex:ts=4:et:
