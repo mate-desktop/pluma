@@ -611,7 +611,7 @@ class SnippetsUserFile(SnippetsSystemFile):
 
         try:
             if not os.path.isdir(path):
-                os.makedirs(path, 0755)
+                os.makedirs(path, 0o755)
         except OSError:
             # TODO: this is bad...
             sys.stderr.write("Error in making dirs\n")

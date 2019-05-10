@@ -462,7 +462,7 @@ class Tool(object):
             fp.write(line + "\n")
 
         fp.close()
-        os.chmod(filename, 0750)
+        os.chmod(filename, 0o750)
         self.changed = False
 
     def save(self):
