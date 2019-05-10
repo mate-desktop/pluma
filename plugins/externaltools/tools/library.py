@@ -229,7 +229,7 @@ class Tool(object):
         if filename is None:
             return
 
-        fp = file(filename, 'r', 1)
+        fp = open(filename, 'r', 1, encoding='utf-8')
         in_block = False
         lang = locale.getlocale(locale.LC_MESSAGES)[0]
 

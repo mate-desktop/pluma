@@ -135,7 +135,7 @@ class WindowHelper:
 
         paths = []
 
-        for line in file(filename, 'r').xreadlines():
+        for line in open(filename, 'r', encoding='utf-8'):
             uri = line.strip().split(" ")[0]
             f = Gio.file_new_for_uri(uri)
 
@@ -160,7 +160,7 @@ class WindowHelper:
         desktopdir = None
 
         if os.path.isfile(config):
-            for line in file(config, 'r').xreadlines():
+            for line in open(config, 'r', encoding='utf-8'):
                 line = line.strip()
 
                 if line.startswith('XDG_DESKTOP_DIR'):
