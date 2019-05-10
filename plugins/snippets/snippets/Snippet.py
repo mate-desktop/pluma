@@ -87,8 +87,8 @@ class EvalUtilities:
             for col in range(0, len(items[row]) - 1):
                 item = items[row][col]
 
-                result += item + ("\t" * ((maxlen[col] - \
-                        self._real_len(item, tablen)) / tablen))
+                result += item + ("\t" * int(((maxlen[col] - \
+                        self._real_len(item, tablen)) / tablen)))
 
             result += items[row][len(items[row]) - 1]
 
@@ -243,7 +243,7 @@ class Snippet:
                 sys.stderr.write('Token class not supported: %s\n' % token.klass)
                 continue
 
-            if isinstance(val, basestring):
+            if isinstance(val, str):
                 # Insert text
                 self._insert_text(val)
             else:

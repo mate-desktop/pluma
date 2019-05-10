@@ -60,7 +60,7 @@ class Capture(GObject.Object):
         self.flags = flags
 
     def set_input(self, text):
-        self.input_text = text
+        self.input_text = text.encode("utf-8") if text else None
 
     def set_cwd(self, cwd):
         self.cwd = cwd
@@ -118,7 +118,7 @@ class Capture(GObject.Object):
         # IO
         if self.input_text is not None:
             # Write async, in chunks of something
-            self.write_buffer = str(self.input_text)
+            self.write_buffer = self.input_text
 
             if self.idle_write_chunk():
                 self.idle_write_id = GLib.idle_add(self.idle_write_chunk)
@@ -138,7 +138,7 @@ class Capture(GObject.Object):
             self.pipe.stdin.write(self.write_buffer[:m])
 
             if m == l:
-                self.write_buffer = ''
+                self.write_buffer = b''
                 self.pipe.stdin.close()
 
                 self.idle_write_id = 0

@@ -500,7 +500,7 @@ class Manager(GObject.Object):
             return None, None
 
     def compute_hash(self, string):
-        return hashlib.md5(string).hexdigest()
+        return hashlib.md5(string.encode('utf-8')).hexdigest()
 
     def save_current_tool(self):
         if self.current_node is None:
@@ -574,7 +574,7 @@ class Manager(GObject.Object):
         buf.end_not_undoable_action()
 
         self.script_hash = self.compute_hash(script)
-        contenttype, uncertain = Gio.content_type_guess(None, script)
+        contenttype, uncertain = Gio.content_type_guess(None, script.encode("utf-8"))
         lmanager = GtkSource.LanguageManager.get_default()
         language = lmanager.guess_language(content_type=contenttype)
 

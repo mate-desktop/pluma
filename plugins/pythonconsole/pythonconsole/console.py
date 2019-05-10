@@ -320,11 +320,6 @@ class PythonConsole(Gtk.ScrolledWindow):
         sys.stdout, self.stdout = self.stdout, sys.stdout
         sys.stderr, self.stderr = self.stderr, sys.stderr
 
-        # eval and exec are broken in how they deal with utf8-encoded
-        # strings so we have to explicitly decode the command before
-        # passing it along
-        command = command.decode('utf8')
-
         try:
             try:
                 r = eval(command, self.namespace, self.namespace)
