@@ -159,11 +159,10 @@ class Capture(GObject.Object):
 
             if len(line) > 0:
                 try:
-                    line = unicode(line, 'utf-8')
+                    line = line.decode('utf-8')
                 except:
-                    line = unicode(line,
-                                   locale.getdefaultlocale()[1],
-                                   'replace')
+                    line = line.decode(locale.getdefaultlocale()[1],
+                                       'replace')
 
                 self.read_buffer += line
                 lines = self.read_buffer.splitlines(True)

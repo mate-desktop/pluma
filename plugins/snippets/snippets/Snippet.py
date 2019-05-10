@@ -149,7 +149,7 @@ class Snippet:
 
     def _insert_text(self, text):
         # Insert text keeping indentation in mind
-        indented = unicode.join('\n' + unicode(self._indent), spaces_instead_of_tabs(self._view, text).split('\n'))
+        indented = str.join('\n' + self._indent, spaces_instead_of_tabs(self._view, text).split('\n'))
         self._view.get_buffer().insert(self._insert_iter(), indented)
 
     def _insert_iter(self):
@@ -165,7 +165,7 @@ class Snippet:
         indent = all_indent[len(self._indent):]
 
         # Keep indentation
-        return unicode.join('\n' + unicode(indent), val.split('\n'))
+        return str.join('\n' + indent, val.split('\n'))
 
     def _create_placeholder(self, data):
         tabstop = data['tabstop']
