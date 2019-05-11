@@ -16,7 +16,7 @@
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from xml.sax import saxutils
-from xml.etree.ElementTree import *
+import xml.etree.ElementTree as et
 import re
 import codecs
 
@@ -107,9 +107,9 @@ def _write_node(node, file, cdata_nodes=(), indent=0):
     # write XML to file
     tag = node.tag
 
-    if node is Comment:
+    if node is et.Comment:
         _write_indent(file, "<!-- %s -->\n" % saxutils.escape(node.text), indent)
-    elif node is ProcessingInstruction:
+    elif node is et.ProcessingInstruction:
         _write_indent(file, "<?%s?>\n" % saxutils.escape(node.text), indent)
     else:
         items = node.items()
