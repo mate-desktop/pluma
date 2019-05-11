@@ -98,11 +98,13 @@ class PythonConsole(Gtk.ScrolledWindow):
     def __key_press_event_cb(self, view, event):
         modifier_mask = Gtk.accelerator_get_default_mod_mask()
         event_state = event.state & modifier_mask
+        keyname = Gdk.keyval_name(event.keyval)
 
-        if event.keyval == Gdk.KEY_D and event_state == Gdk.ModifierType.CONTROL_MASK:
+        if keyname == "d" and event_state == Gdk.ModifierType.CONTROL_MASK:
             self.destroy()
 
-        elif event.keyval == Gdk.KEY_Return and event_state == Gdk.ModifierType.CONTROL_MASK:
+        elif keyname == "Return" and \
+             event_state == Gdk.ModifierType.CONTROL_MASK:
             # Get the command
             buffer = view.get_buffer()
             inp_mark = buffer.get_mark("input")
@@ -128,7 +130,7 @@ class PythonConsole(Gtk.ScrolledWindow):
             GObject.idle_add(self.scroll_to_end)
             return True
 
-        elif event.keyval == Gdk.KEY_Return:
+        elif keyname == "Return":
             # Get the marks
             buffer = view.get_buffer()
             lin_mark = buffer.get_mark("input-line")
@@ -172,22 +174,22 @@ class PythonConsole(Gtk.ScrolledWindow):
             GObject.idle_add(self.scroll_to_end)
             return True
 
-        elif event.keyval == Gdk.KEY_KP_Down or event.keyval == Gdk.KEY_Down:
+        elif keyname == "KP_Down" or keyname == "Down":
             # Next entry from history
             view.emit_stop_by_name("key_press_event")
             self.history_down()
             GObject.idle_add(self.scroll_to_end)
             return True
 
-        elif event.keyval == Gdk.KEY_KP_Up or event.keyval == Gdk.KEY_Up:
+        elif keyname == "KP_Up" or keyname == "Up":
             # Previous entry from history
             view.emit_stop_by_name("key_press_event")
             self.history_up()
             GObject.idle_add(self.scroll_to_end)
             return True
 
-        elif event.keyval == Gdk.KEY_KP_Left or event.keyval == Gdk.KEY_Left or \
-             event.keyval == Gdk.KEY_BackSpace:
+        elif keyname == "KP_Left" or keyname == "Left" or \
+             keyname == "BackSpace":
             buffer = view.get_buffer()
             inp = buffer.get_iter_at_mark(buffer.get_mark("input"))
             cur = buffer.get_iter_at_mark(buffer.get_insert())
@@ -200,7 +202,7 @@ class PythonConsole(Gtk.ScrolledWindow):
         # For the console we enable smart/home end behavior incoditionally
         # since it is useful when editing python
 
-        elif (event.keyval == Gdk.KEY_KP_Home or event.keyval == Gdk.KEY_Home) and \
+        elif (keyname == "KP_Home" or keyname == "Home") and \
              event_state == event_state & (Gdk.ModifierType.SHIFT_MASK|Gdk.ModifierType.CONTROL_MASK):
             # Go to the begin of the command instead of the begin of the line
             buffer = view.get_buffer()
@@ -219,7 +221,7 @@ class PythonConsole(Gtk.ScrolledWindow):
                 buffer.place_cursor(iter)
             return True
 
-        elif (event.keyval == Gdk.KEY_KP_End or event.keyval == Gdk.KEY_End) and \
+        elif (keyname == "KP_End" or keyname == "End") and \
              event_state == event_state & (Gdk.ModifierType.SHIFT_MASK|Gdk.ModifierType.CONTROL_MASK):
 
             buffer = view.get_buffer()
@@ -338,7 +340,7 @@ class PythonConsole(Gtk.ScrolledWindow):
 
     def destroy(self):
         pass
-        #gtk.ScrolledWindow.destroy(self)
+        #Gtk.ScrolledWindow.destroy(self)
 
 class OutFile:
     """A fake output file object. It sends output to a TK test widget,
