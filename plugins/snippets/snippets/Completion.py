@@ -116,6 +116,10 @@ class Provider(GObject.Object, GtkSource.CompletionProvider):
 
             sw = Gtk.ScrolledWindow()
             sw.add(view)
+            sw.show_all()
+
+            # Fixed size
+            sw.set_size_request(300, 200)
 
             self.info_view = view
             self.info_widget = sw
