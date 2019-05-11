@@ -181,8 +181,6 @@ class Document:
         snippets = Library().from_accelerator(accelerator, \
                 self.language_id)
 
-        snippets_debug('Accel!')
-
         if len(snippets) == 0:
             return False
         elif len(snippets) == 1:
