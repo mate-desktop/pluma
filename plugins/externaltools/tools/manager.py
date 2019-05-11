@@ -25,52 +25,20 @@ import hashlib
 from xml.sax import saxutils
 from gi.repository import GObject, Gio, Gdk, Gtk, GtkSource, Pluma
 
-class LanguagesPopup(Gtk.Window):
-    __gtype_name__ = "LanguagePopup"
+class LanguagesPopup(Gtk.Popover):
+    __gtype_name__ = "LanguagesPopup"
 
     COLUMN_NAME = 0
     COLUMN_ID = 1
     COLUMN_ENABLED = 2
 
-    def __init__(self, languages):
-        Gtk.Window.__init__(self, type=Gtk.WindowType.POPUP)
+    def __init__(self, widget, languages):
+        Gtk.Popover.__init__(self, relative_to=widget)
 
-        self.set_default_size(200, 200)
         self.props.can_focus = True
 
         self.build()
         self.init_languages(languages)
-
-        self.show()
-
-        self.grab_add()
-
-        self.keyboard = None
-        device_manager = Gdk.Display.get_device_manager(self.get_window().get_display())
-        for device in device_manager.list_devices(Gdk.DeviceType.MASTER):
-            if device.get_source() == Gdk.InputSource.KEYBOARD:
-                self.keyboard = device
-                break
-
-        self.pointer = device_manager.get_client_pointer()
-
-        if self.keyboard is not None:
-            self.keyboard.grab(self.get_window(),
-                               Gdk.GrabOwnership.WINDOW, False,
-                               Gdk.EventMask.KEY_PRESS_MASK |
-                               Gdk.EventMask.KEY_RELEASE_MASK,
-                               None, Gdk.CURRENT_TIME)
-        self.pointer.grab(self.get_window(),
-                          Gdk.GrabOwnership.WINDOW, False,
-                          Gdk.EventMask.BUTTON_PRESS_MASK |
-                          Gdk.EventMask.BUTTON_RELEASE_MASK |
-                          Gdk.EventMask.POINTER_MOTION_MASK |
-                          Gdk.EventMask.ENTER_NOTIFY_MASK |
-                          Gdk.EventMask.LEAVE_NOTIFY_MASK |
-                          Gdk.EventMask.PROXIMITY_IN_MASK |
-                          Gdk.EventMask.PROXIMITY_OUT_MASK |
-                          Gdk.EventMask.SCROLL_MASK,
-                          None, Gdk.CURRENT_TIME)
 
         self.view.get_selection().select_path((0,))
 
@@ -78,12 +46,13 @@ class LanguagesPopup(Gtk.Window):
         self.model = Gtk.ListStore(str, str, bool)
 
         self.sw = Gtk.ScrolledWindow()
+        self.sw.set_size_request(-1, 200)
         self.sw.show()
 
-        self.sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        self.sw.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         self.sw.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
 
-        self.view = Gtk.TreeView(self.model)
+        self.view = Gtk.TreeView(model=self.model)
         self.view.show()
 
         self.view.set_headers_visible(False)
@@ -92,16 +61,16 @@ class LanguagesPopup(Gtk.Window):
 
         renderer = Gtk.CellRendererToggle()
         column.pack_start(renderer, False)
-        column.set_attributes(renderer, active=self.COLUMN_ENABLED)
+        column.add_attribute(renderer, 'active', self.COLUMN_ENABLED)
 
         renderer.connect('toggled', self.on_language_toggled)
 
         renderer = Gtk.CellRendererText()
         column.pack_start(renderer, True)
-        column.set_attributes(renderer, text=self.COLUMN_NAME)
+        column.add_attribute(renderer, 'text', self.COLUMN_NAME)
 
         self.view.append_column(column)
-        self.view.set_row_separator_func(self.on_separator)
+        self.view.set_row_separator_func(self.on_separator, None)
 
         self.sw.add(self.view)
 
@@ -158,113 +127,6 @@ class LanguagesPopup(Gtk.Window):
         else:
             self.model.set_value(self.model.get_iter_first(), self.COLUMN_ENABLED, False)
 
-    def do_key_press_event(self, event):
-        if event.keyval == Gdk.KEY_Escape:
-            self.destroy()
-            return True
-        else:
-            event.window = self.view.get_bin_window()
-            return self.view.event(event)
-
-    def do_key_release_event(self, event):
-        event.window = self.view.get_bin_window()
-        return self.view.event(event)
-
-    def in_window(self, event, window=None):
-        if not window:
-            window = self.get_window()
-
-        geometry = window.get_geometry()
-        origin = window.get_origin()
-
-        return event.x_root >= origin[1] and \
-               event.x_root <= origin[1] + geometry[2] and \
-               event.y_root >= origin[2] and \
-               event.y_root <= origin[2] + geometry[3]
-
-    def do_destroy(self):
-        if self.keyboard:
-            self.keyboard.ungrab(Gdk.CURRENT_TIME)
-        self.pointer.ungrab(Gdk.CURRENT_TIME)
-
-        return Gtk.Window.do_destroy(self)
-
-    def setup_event(self, event, window):
-        fr = event.window.get_origin()
-        to = window.get_origin()
-
-        event.window = window
-        event.x += fr[1] - to[1]
-        event.y += fr[2] - to[2]
-
-    def resolve_widgets(self, root):
-        res = [root]
-
-        if isinstance(root, Gtk.Container):
-            root.forall(lambda x, y: res.extend(self.resolve_widgets(x)), None)
-
-        return res
-
-    def resolve_windows(self, window):
-        if not window:
-            return []
-
-        res = [window]
-        res.extend(window.get_children())
-
-        return res
-
-    def propagate_mouse_event(self, event, reverse=True):
-        allwidgets = self.resolve_widgets(self.get_child())
-
-        if reverse:
-            allwidgets.reverse()
-
-        for widget in allwidgets:
-            windows = self.resolve_windows(widget.get_window())
-            windows.reverse()
-
-            for window in windows:
-                if not (window.get_events() & event.type):
-                    continue
-
-                if self.in_window(event, window):
-                    self.setup_event(event, window)
-
-                    if widget.event(event):
-                        return True
-
-        return False
-
-    def do_button_press_event(self, event):
-        if not self.in_window(event):
-            self.destroy()
-        else:
-            return self.propagate_mouse_event(event)
-
-    def do_button_release_event(self, event):
-        if not self.in_window(event):
-            self.destroy()
-        else:
-            return self.propagate_mouse_event(event)
-
-    def do_scroll_event(self, event):
-        return self.propagate_mouse_event(event, False)
-
-    def do_motion_notify_event(self, event):
-        return self.propagate_mouse_event(event)
-
-    def do_enter_notify_event(self, event):
-        return self.propagate_mouse_event(event)
-
-    def do_leave_notify_event(self, event):
-        return self.propagate_mouse_event(event)
-
-    def do_proximity_in_event(self, event):
-        return self.propagate_mouse_event(event)
-
-    def do_proximity_out_event(self, event):
-        return self.propagate_mouse_event(event)
 
 class Manager(GObject.Object):
     TOOL_COLUMN = 0 # For Tree
@@ -970,12 +832,8 @@ class Manager(GObject.Object):
         self.view.get_selection().handler_unblock(self.selection_changed_id)
 
     def on_languages_button_clicked(self, button):
-        popup = LanguagesPopup(self.current_node.languages)
-        popup.set_transient_for(self.dialog)
-
-        origin = button.get_window().get_origin()
-        popup.move(origin[1], origin[2] - popup.get_allocation().height)
-
-        popup.connect('destroy', self.update_languages)
+        popup = LanguagesPopup(button, self.current_node.languages)
+        popup.show()
+        popup.connect('closed', self.update_languages)
 
 # ex:et:ts=4:
