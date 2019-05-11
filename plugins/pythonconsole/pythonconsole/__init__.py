@@ -24,22 +24,22 @@
 # Bits from pluma Python Console Plugin
 #     Copyrignt (C), 2005 Raphaël Slinckx
 
-from gi.repository import GObject, Gtk, Peas, Pluma
+from gi.repository import GObject, Gtk, Peas, PeasGtk, Pluma
 
 from .console import PythonConsole
-from .config import PythonConsoleConfigDialog
+from .config import PythonConsoleConfigWidget
 from .config import PythonConsoleConfig
 
 PYTHON_ICON = 'text-x-python'
 
-class PythonConsolePlugin(GObject.Object, Peas.Activatable):
+class PythonConsolePlugin(GObject.Object, Peas.Activatable, PeasGtk.Configurable):
     __gtype_name__ = "PythonConsolePlugin"
 
     object = GObject.Property(type=GObject.Object)
 
     def __init__(self):
         GObject.Object.__init__(self)
-        self.dlg = None
+        self.config_widget = None
 
     def do_activate(self):
         window = self.object
@@ -61,22 +61,9 @@ class PythonConsolePlugin(GObject.Object, Peas.Activatable):
         bottom = window.get_bottom_panel()
         bottom.remove_item(self._console)
 
-def create_configure_dialog(self):
-
-    if not self.dlg:
-        self.dlg = PythonConsoleConfigDialog(self.get_data_dir())
-
-    dialog = self.dlg.dialog()
-    window = pluma.app_get_default().get_active_window()
-    if window:
-        dialog.set_transient_for(window)
-
-    return dialog
-
-# Here we dynamically insert create_configure_dialog based on if configuration
-# is enabled. This has to be done like this because pluma checks if a plugin
-# is configurable solely on the fact that it has this member defined or not
-if PythonConsoleConfig.enabled():
-    PythonConsolePlugin.create_configure_dialog = create_configure_dialog
+    def do_create_configure_widget(self):
+        if not self.config_widget:
+            self.config_widget = PythonConsoleConfigWidget(self.plugin_info.get_data_dir())
+        return self.config_widget.configure_widget()
 
 # ex:et:ts=4:

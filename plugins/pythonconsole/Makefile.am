@@ -7,9 +7,22 @@ plugin_in_files = pythonconsole.plugin.desktop.in
 
 plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
 
-EXTRA_DIST = $(plugin_in_files)
+pythonconsole_gschema_in = org.mate.pluma.plugins.pythonconsole.gschema.xml.in
+gsettings_SCHEMAS = $(pythonconsole_gschema_in:.xml.in=.xml)
+@GSETTINGS_RULES@
 
-CLEANFILES = $(plugin_DATA)
-DISTCLEANFILES = $(plugin_DATA)
+EXTRA_DIST = \
+	$(plugin_in_files) \
+	$(pythonconsole_gschema_in)
+
+CLEANFILES = \
+	$(plugin_DATA) \
+	$(gsettings_SCHEMAS_in)		\
+	$(gsettings_SCHEMAS)
+
+DISTCLEANFILES = \
+	$(plugin_DATA) \
+	$(gsettings_SCHEMAS_in)		\
+	$(gsettings_SCHEMAS)
 
 -include $(top_srcdir)/git.mk

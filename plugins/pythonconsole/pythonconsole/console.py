@@ -40,13 +40,14 @@ class PythonConsole(Gtk.ScrolledWindow):
         'grab-focus' : 'override',
     }
 
+    DEFAULT_FONT = "Monospace 10"
+
     def __init__(self, namespace = {}):
         Gtk.ScrolledWindow.__init__(self)
 
         self.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         self.set_shadow_type(Gtk.ShadowType.IN)
         self.view = Gtk.TextView()
-        self.view.modify_font(Pango.font_description_from_string('Monospace'))
         self.view.set_editable(True)
         self.view.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
         self.add(self.view)
@@ -57,7 +58,8 @@ class PythonConsole(Gtk.ScrolledWindow):
         self.error  = buffer.create_tag("error")
         self.command = buffer.create_tag("command")
 
-        PythonConsoleConfig.add_handler(self.apply_preferences)
+        self.config = PythonConsoleConfig()
+        self.config.add_handler(self.apply_preferences)
         self.apply_preferences()
 
         self.__spaces_pattern = re.compile(r'^\s+')
@@ -88,9 +90,28 @@ class PythonConsole(Gtk.ScrolledWindow):
         self.view.grab_focus()
 
     def apply_preferences(self, *args):
-        config = PythonConsoleConfig()
-        self.error.set_property("foreground", config.color_error)
-        self.command.set_property("foreground", config.color_command)
+        self.error.set_property("foreground", self.config.color_error)
+        self.command.set_property("foreground", self.config.color_command)
+
+        if self.config.use_system_font:
+            font_name = self.config.monospace_font_name
+        else:
+            font_name = self.config.font
+
+        font_desc = None
+        try:
+            font_desc = Pango.FontDescription(font_name)
+        except:
+            try:
+                font_desc = Pango.FontDescription(self.config.monospace_font_name)
+            except:
+                try:
+                    font_desc = Pango.FontDescription(self.DEFAULT_FONT)
+                except:
+                    pass
+
+        if font_desc:
+            self.view.modify_font(font_desc)
 
     def stop(self):
         self.namespace = None
