@@ -98,8 +98,9 @@ class EvalUtilities:
         return result
 
 class Snippet:
-    def __init__(self, data):
+    def __init__(self, data, environ = {}):
         self.data = data
+        self.environ = environ
 
     def __getitem__(self, prop):
         return self.data[prop]
@@ -156,7 +157,10 @@ class Snippet:
         return self._view.get_buffer().get_iter_at_mark(self._insert_mark)
 
     def _create_environment(self, data):
-        val = ((data in os.environ) and os.environ[data]) or ''
+        if data in self.environ['utf8']:
+            val = self.environ['utf8'][data]
+        else:
+            val = ''
 
         # Get all the current indentation
         all_indent = compute_indentation(self._view, self._insert_iter())
@@ -173,25 +177,25 @@ class Snippet:
 
         if tabstop == 0:
             # End placeholder
-            return PlaceholderEnd(self._view, begin, data['default'])
+            return PlaceholderEnd(self._view, self.environ, begin, data['default'])
         elif tabstop in self.placeholders:
             # Mirror placeholder
-            return PlaceholderMirror(self._view, tabstop, begin)
+            return PlaceholderMirror(self._view, tabstop, self.environ, begin)
         else:
             # Default placeholder
-            return Placeholder(self._view, tabstop, data['default'], begin)
+            return Placeholder(self._view, tabstop, self.environ, data['default'], begin)
 
     def _create_shell(self, data):
         begin = self._insert_iter()
-        return PlaceholderShell(self._view, data['tabstop'], begin, data['contents'])
+        return PlaceholderShell(self._view, data['tabstop'], self.environ, begin, data['contents'])
 
     def _create_eval(self, data):
         begin = self._insert_iter()
-        return PlaceholderEval(self._view, data['tabstop'], data['dependencies'], begin, data['contents'], self._utils.namespace)
+        return PlaceholderEval(self._view, data['tabstop'], self.environ, data['dependencies'], begin, data['contents'], self._utils.namespace)
 
     def _create_regex(self, data):
         begin = self._insert_iter()
-        return PlaceholderRegex(self._view, data['tabstop'], begin, data['input'], data['pattern'], data['substitution'], data['modifiers'])
+        return PlaceholderRegex(self._view, data['tabstop'], self.environ, begin, data['input'], data['pattern'], data['substitution'], data['modifiers'])
 
     def _create_text(self, data):
         return data
@@ -252,7 +256,7 @@ class Snippet:
 
         # Create end placeholder if there isn't one yet
         if 0 not in self.placeholders:
-            self.placeholders[0] = PlaceholderEnd(self._view, self.end_iter(), None)
+            self.placeholders[0] = PlaceholderEnd(self._view, self.environ, self.end_iter(), None)
             self.plugin_data.ordered_placeholders.append(self.placeholders[0])
 
         # Make sure run_last is ran for all placeholders and remove any

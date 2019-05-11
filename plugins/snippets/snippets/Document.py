@@ -350,67 +350,110 @@ class Document:
         (current, prev) = self.previous_placeholder()
         return self.goto_placeholder(current, prev)
 
+    def string_in_native_doc_encoding(self, buf, s):
+        enc = buf.get_encoding()
+
+        if not enc or enc.get_charset().lower() == 'utf-8':
+            return s
+
+        try:
+            cv = GLib.convert(s, -1, enc.get_charset(), 'utf-8')
+            return cv[0]
+        except GLib.GError:
+            pass
+
+        return s
+
     def env_get_selected_text(self, buf):
         bounds = buf.get_selection_bounds()
 
         if bounds:
-            return buf.get_text(bounds[0], bounds[1], False)
+            u8 = buf.get_text(bounds[0], bounds[1], False)
+            return {'utf8': u8, 'noenc': self.string_in_native_doc_encoding(buf, u8)}
         else:
             return ''
 
     def env_get_current_word(self, buf):
         start, end = buffer_word_boundary(buf)
-
-        return buf.get_text(start, end, False)
+        u8 = buf.get_text(start, end, False)
+        return {'utf8': u8, 'noenc': self.string_in_native_doc_encoding(buf, u8)}
 
     def env_get_current_line(self, buf):
         start, end = buffer_line_boundary(buf)
-
-        return buf.get_text(start, end, False)
+        u8 = buf.get_text(start, end, False)
+        return {'utf8': u8, 'noenc': self.string_in_native_doc_encoding(buf, u8)}
 
     def env_get_current_line_number(self, buf):
         start, end = buffer_line_boundary(buf)
         return str(start.get_line() + 1)
 
-    def env_get_document_uri(self, buf):
-        location = buf.get_location()
+    def location_uri_for_env(self, location):
+        if not location:
+            return {'utf8': '', 'noenc': ''}
 
+        u8 = location.get_parse_name()
+
+        if location.has_uri_scheme('file'):
+            u8 = "file://" + u8
+
+        return {'utf8': u8, 'noenc': location.get_uri()}
+
+    def location_name_for_env(self, location):
         if location:
-            return location.get_uri()
+            try:
+                info = location.query_info("standard::display-name", 0, None)
+                display_name = info.get_display_name()
+            except:
+                display_name = ''
+
+            return {'utf8': display_name,
+                    'noenc': location.get_basename()}
         else:
             return ''
 
-    def env_get_document_name(self, buf):
-        location = buf.get_location()
-
-        if location:
-            return location.get_basename()
-        else:
-            return ''
-
-    def env_get_document_scheme(self, buf):
-        location = buf.get_location()
-
+    def location_scheme_for_env(self, location):
         if location:
             return location.get_uri_scheme()
         else:
             return ''
 
-    def env_get_document_path(self, buf):
-        location = buf.get_location()
-
-        if location:
-            return location.get_path()
+    def location_path_for_env(self, location):
+        if location and location.has_uri_scheme('file'):
+            return {'utf8': location.get_parse_name(),
+                    'noenc': location.get_path()}
         else:
             return ''
 
-    def env_get_document_dir(self, buf):
-        location = buf.get_location()
-
+    def location_dir_for_env(self, location):
         if location:
-            return location.get_parent().get_path() or ''
-        else:
-            return ''
+            parent = location.get_parent()
+
+            if parent and parent.has_uri_scheme('file'):
+                return {'utf8': parent.get_parse_name(),
+                        'noenc': parent.get_path()}
+
+        return ''
+
+    def env_add_for_location(self, environ, location, prefix):
+        parts = {
+            'URI': self.location_uri_for_env,
+            'NAME': self.location_name_for_env,
+            'SCHEME': self.location_scheme_for_env,
+            'PATH': self.location_path_for_env,
+            'DIR': self.location_dir_for_env}
+
+        for k in parts:
+            v = parts[k](location)
+            key = prefix + '_' + k
+
+            if isinstance(v, dict):
+                environ['utf8'][key] = v['utf8']
+                environ['noenc'][key] = v['noenc']
+            else:
+                environ['utf8'][key] = v
+                environ['noenc'][key] = str(v)
+
+        return environ
 
     def env_get_document_type(self, buf):
         typ = buf.get_mime_type()
@@ -422,51 +465,73 @@ class Document:
 
     def env_get_documents_uri(self, buf):
         toplevel = self.view.get_toplevel()
+        documents_uri = {'utf8': [], 'noenc': []}
 
         if isinstance(toplevel, Pluma.Window):
-            documents_uri = [doc.get_location().get_uri()
-                     for doc in toplevel.get_documents()
-                     if doc.get_location() is not None]
-        else:
-            documents_uri = []
+            for doc in toplevel.get_documents():
+                r = self.location_uri_for_env(doc.get_location())
 
-        return ' '.join(documents_uri)
+                if isinstance(r, dict):
+                    documents_uri['utf8'].append(r['utf8'])
+                    documents_uri['noenc'].append(r['noenc'])
+                else:
+                    documents_uri['utf8'].append(r)
+                    documents_uri['noenc'].append(str(r))
+
+        return {'utf8': ' '.join(documents_uri['utf8']),
+                 'noenc': ' '.join(documents_uri['noenc'])}
 
     def env_get_documents_path(self, buf):
         toplevel = self.view.get_toplevel()
+        documents_path = {'utf8': [], 'noenc': []}
 
         if isinstance(toplevel, Pluma.Window):
-            documents_location = [doc.get_location()
-                          for doc in toplevel.get_documents()
-                          if doc.get_location() is not None]
+            for doc in toplevel.get_documents():
+                r = self.location_path_for_env(doc.get_location())
 
-            documents_path = [location.get_path()
-                      for location in documents_location
-                      if Pluma.utils_uri_has_file_scheme(location.get_uri())]
-        else:
-            documents_path = []
+                if isinstance(r, dict):
+                    documents_path['utf8'].append(r['utf8'])
+                    documents_path['noenc'].append(r['noenc'])
+                else:
+                    documents_path['utf8'].append(r)
+                    documents_path['noenc'].append(str(r))
 
-        return ' '.join(documents_path)
+        return {'utf8': ' '.join(documents_path['utf8']),
+                'noenc': ' '.join(documents_path['noenc'])}
 
-    def update_environment(self):
+    def get_environment(self):
         buf = self.view.get_buffer()
+        environ = {'utf8': {}, 'noenc': {}}
 
-        variables = {'PLUMA_SELECTED_TEXT': self.env_get_selected_text,
+        for k in os.environ:
+            # Get the original environment and as utf-8
+            v = os.environ[k]
+            environ['noenc'][k] = v
+            environ['utf8'][k] = os.environ[k].encode('utf-8')
+
+        variables = {
+                 'PLUMA_SELECTED_TEXT': self.env_get_selected_text,
                  'PLUMA_CURRENT_WORD': self.env_get_current_word,
                  'PLUMA_CURRENT_LINE': self.env_get_current_line,
                  'PLUMA_CURRENT_LINE_NUMBER': self.env_get_current_line_number,
-                 'PLUMA_CURRENT_DOCUMENT_URI': self.env_get_document_uri,
-                 'PLUMA_CURRENT_DOCUMENT_NAME': self.env_get_document_name,
-                 'PLUMA_CURRENT_DOCUMENT_SCHEME': self.env_get_document_scheme,
-                 'PLUMA_CURRENT_DOCUMENT_PATH': self.env_get_document_path,
-                 'PLUMA_CURRENT_DOCUMENT_DIR': self.env_get_document_dir,
                  'PLUMA_CURRENT_DOCUMENT_TYPE': self.env_get_document_type,
                  'PLUMA_DOCUMENTS_URI': self.env_get_documents_uri,
                  'PLUMA_DOCUMENTS_PATH': self.env_get_documents_path,
             }
 
         for var in variables:
-            os.environ[var] = variables[var](buf)
+            v = variables[var](buf)
+
+            if isinstance(v, dict):
+                environ['utf8'][var] = v['utf8']
+                environ['noenc'][var] = v['noenc']
+            else:
+                environ['utf8'][var] = v
+                environ['noenc'][var] = str(v)
+
+        self.env_add_for_location(environ, buf.get_location(), 'PLUMA_CURRENT_DOCUMENT')
+
+        return environ
 
     def uses_current_word(self, snippet):
         matches = re.findall('(\\\\*)\\$PLUMA_CURRENT_WORD', snippet['text'])
@@ -486,12 +551,22 @@ class Document:
 
         return False
 
-    def apply_snippet(self, snippet, start = None, end = None):
+    def apply_snippet(self, snippet, start = None, end = None, environ = {}):
         if not snippet.valid:
             return False
 
+        # Set environmental variables
+        env = self.get_environment()
+
+        if environ:
+            for k in environ['utf8']:
+                env['utf8'][k] = environ['utf8'][k]
+
+            for k in environ['noenc']:
+                env['noenc'][k] = environ['noenc'][k]
+
         buf = self.view.get_buffer()
-        s = Snippet(snippet)
+        s = Snippet(snippet, env)
 
         if not start:
             start = buf.get_iter_at_mark(buf.get_insert())
@@ -509,9 +584,6 @@ class Document:
             # the current line. Set start and end to the line boundary so that
             # it will be removed
             start, end = buffer_line_boundary(buf)
-
-        # Set environmental variables
-        self.update_environment()
 
         # You know, we could be in an end placeholder
         (current, next) = self.next_placeholder()
@@ -862,20 +934,10 @@ class Document:
         pathname = ''
         dirname = ''
         ruri = ''
+        environ = {'utf8': {'PLUMA_DROP_DOCUMENT_TYPE': mime.encode('utf-8')},
+                   'noenc': {'PLUMA_DROP_DOCUMENT_TYPE': mime}}
 
-        if Pluma.utils_uri_has_file_scheme(uri):
-            pathname = gfile.get_path()
-            dirname = gfile.get_parent().get_path()
-
-        name = os.path.basename(uri)
-        scheme = gfile.get_uri_scheme()
-
-        os.environ['PLUMA_DROP_DOCUMENT_URI'] = uri
-        os.environ['PLUMA_DROP_DOCUMENT_NAME'] = name
-        os.environ['PLUMA_DROP_DOCUMENT_SCHEME'] = scheme
-        os.environ['PLUMA_DROP_DOCUMENT_PATH'] = pathname
-        os.environ['PLUMA_DROP_DOCUMENT_DIR'] = dirname
-        os.environ['PLUMA_DROP_DOCUMENT_TYPE'] = mime
+        self.env_add_for_location(environ, gfile, 'PLUMA_DROP_DOCUMENT')
 
         buf = self.view.get_buffer()
         location = buf.get_location()
@@ -884,7 +946,9 @@ class Document:
 
         relpath = self.relative_path(ruri, uri, mime)
 
-        os.environ['PLUMA_DROP_DOCUMENT_RELATIVE_PATH'] = relpath
+        # CHECK: what is the encoding of relpath?
+        environ['utf8']['PLUMA_DROP_DOCUMENT_RELATIVE_PATH'] = relpath.encode('utf-8')
+        environ['noenc']['PLUMA_DROP_DOCUMENT_RELATIVE_PATH'] = relpath
 
         mark = buf.get_mark('gtk_drag_target')
 
@@ -892,7 +956,7 @@ class Document:
             mark = buf.get_insert()
 
         piter = buf.get_iter_at_mark(mark)
-        self.apply_snippet(snippet, piter, piter)
+        self.apply_snippet(snippet, piter, piter, environ)
 
     def in_bounds(self, x, y):
         rect = self.view.get_visible_rect()

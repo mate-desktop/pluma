@@ -29,7 +29,7 @@ from .Helper import *
 
 # These are places in a view where the cursor can go and do things
 class Placeholder:
-    def __init__(self, view, tabstop, defaults, begin):
+    def __init__(self, view, tabstop, environ, defaults, begin):
         self.ok = True
         self.done = False
         self.buf = view.get_buffer()
@@ -38,6 +38,7 @@ class Placeholder:
         self.mirrors = []
         self.leave_mirrors = []
         self.tabstop = tabstop
+        self.environ = environ
         self.set_default(defaults)
         self.prev_contents = self.default
         self.set_mark_gravity()
@@ -48,6 +49,9 @@ class Placeholder:
             self.begin = None
 
         self.end = None
+
+    def get_environ(self):
+        return self.environ['utf8']
 
     def __str__(self):
         return '%s (%s)' % (str(self.__class__), str(self.default))
@@ -81,10 +85,12 @@ class Placeholder:
         return s
 
     def re_environment(self, m):
-        if m.group(1) or not m.group(2) in os.environ:
+        env = self.get_environ()
+
+        if m.group(1) or not m.group(2) in env:
             return '$' + m.group(2)
         else:
-            return self.format_environment(os.environ[m.group(2)])
+            return self.format_environment(env[m.group(2)])
 
     def expand_environment(self, text):
         if not text:
@@ -214,8 +220,8 @@ class Placeholder:
 
 # This is an placeholder which inserts a mirror of another Placeholder
 class PlaceholderMirror(Placeholder):
-    def __init__(self, view, tabstop, begin):
-        Placeholder.__init__(self, view, -1, None, begin)
+    def __init__(self, view, tabstop, environ, begin):
+        Placeholder.__init__(self, view, -1, environ, None, begin)
         self.mirror_stop = tabstop
 
     def update(self, mirror):
@@ -237,8 +243,8 @@ class PlaceholderMirror(Placeholder):
 
 # This placeholder indicates the end of a snippet
 class PlaceholderEnd(Placeholder):
-    def __init__(self, view, begin, default):
-        Placeholder.__init__(self, view, 0, default, begin)
+    def __init__(self, view, environ, begin, default):
+        Placeholder.__init__(self, view, 0, environ, default, begin)
 
     def run_last(self, placeholders):
         Placeholder.run_last(self, placeholders)
@@ -264,8 +270,8 @@ class PlaceholderEnd(Placeholder):
 
 # This placeholder is used to expand a command with embedded mirrors
 class PlaceholderExpand(Placeholder):
-    def __init__(self, view, tabstop, begin, s):
-        Placeholder.__init__(self, view, tabstop, None, begin)
+    def __init__(self, view, tabstop, environ, begin, s):
+        Placeholder.__init__(self, view, tabstop, environ, None, begin)
 
         self.mirror_text = {0: ''}
         self.timeout_id = None
@@ -377,11 +383,14 @@ class PlaceholderExpand(Placeholder):
 
 # The shell placeholder executes commands in a subshell
 class PlaceholderShell(PlaceholderExpand):
-    def __init__(self, view, tabstop, begin, s):
-        PlaceholderExpand.__init__(self, view, tabstop, begin, s)
+    def __init__(self, view, tabstop, environ, begin, s):
+        PlaceholderExpand.__init__(self, view, tabstop, environ, begin, s)
 
         self.shell = None
         self.remove_me = False
+
+    def get_environ(self):
+        return self.environ['noenc']
 
     def close_shell(self):
         self.shell.stdout.close()
@@ -453,7 +462,7 @@ class PlaceholderShell(PlaceholderExpand):
         popen_args = {
             'cwd'  : None,
             'shell': True,
-            'env'  : os.environ,
+            'env': self.get_environ(),
             'stdout': subprocess.PIPE
         }
 
@@ -488,8 +497,8 @@ class TimeoutError(Exception):
 
 # The python placeholder evaluates commands in python
 class PlaceholderEval(PlaceholderExpand):
-    def __init__(self, view, tabstop, refs, begin, s, namespace):
-        PlaceholderExpand.__init__(self, view, tabstop, begin, s)
+    def __init__(self, view, tabstop, environ, refs, begin, s, namespace):
+        PlaceholderExpand.__init__(self, view, tabstop, environ, begin, s)
 
         self.fdread = 0
         self.remove_me = False
@@ -609,8 +618,8 @@ class PlaceholderEval(PlaceholderExpand):
 
 # Regular expression placeholder
 class PlaceholderRegex(PlaceholderExpand):
-    def __init__(self, view, tabstop, begin, inp, pattern, substitution, modifiers):
-        PlaceholderExpand.__init__(self, view, tabstop, begin, '')
+    def __init__(self, view, tabstop, environ, begin, inp, pattern, substitution, modifiers):
+        PlaceholderExpand.__init__(self, view, tabstop, environ, begin, '')
 
         self.instant_update = True
         self.inp = inp
@@ -649,10 +658,12 @@ class PlaceholderRegex(PlaceholderExpand):
         return re.escape(s)
 
     def get_input(self):
+        env = self.get_environ()
+
         if isinstance(self.inp, int):
             return self.mirror_text[self.inp]
-        elif self.inp in os.environ:
-            return os.environ[self.inp]
+        elif self.inp in env:
+            return env[self.inp]
         else:
             return ''
 
