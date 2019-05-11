@@ -250,6 +250,7 @@ plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml
 plugins/modelines/Makefile
 plugins/pythonconsole/Makefile
 plugins/pythonconsole/pythonconsole/Makefile
+plugins/pythonconsole/org.mate.pluma.plugins.pythonconsole.gschema.xml
 plugins/quickopen/Makefile
 plugins/quickopen/quickopen/Makefile
 plugins/snippets/data/lang/Makefile
