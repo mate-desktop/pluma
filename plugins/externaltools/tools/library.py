@@ -484,6 +484,7 @@ class Tool(object):
 
 if __name__ == '__main__':
     library = ToolLibrary()
+    library.set_locations(os.path.expanduser("~/.config/pluma/tools"))
 
     def print_tool(t, indent):
         print(indent * "  " + "%s: %s" % (t.filename, t.name))

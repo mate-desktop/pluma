@@ -915,7 +915,7 @@ class Manager(GObject.Object):
         ret = None
 
         if node:
-            ref = Gtk.TreeRowReference(self.model, self.model.get_path(piter))
+            ref = Gtk.TreeRowReference.new(self.model, self.model.get_path(piter))
 
         # Update languages, make sure to inhibit selection change stuff
         self.view.get_selection().handler_block(self.selection_changed_id)

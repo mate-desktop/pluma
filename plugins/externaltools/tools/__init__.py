@@ -16,13 +16,12 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-__all__ = ('ExternalToolsPlugin', 'Manager', 'OutputPanel', 'Capture', 'UniqueById')
+__all__ = ('ExternalToolsPlugin', )
 
 from gi.repository import GObject, Gtk, Peas, Pluma
 from .manager import Manager
 from .library import ToolLibrary
 from .outputpanel import OutputPanel
-from .capture import Capture
 from .functions import *
 
 class ToolMenu(object):
