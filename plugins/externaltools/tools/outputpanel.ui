@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.2 
+<!-- Generated with glade 3.22.1 
 
 Version: 2.91.3
 	Date: Sat Nov 18 13:58:59 2006
@@ -9,14 +9,17 @@ Version: 2.91.3
 -->
 <interface>
   <requires lib="gtk+" version="3.22"/>
-  <object class="GtkBox" id="output-panel">
+  <object class="GtkGrid" id="output-panel">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
     <child>
       <object class="GtkScrolledWindow" id="scrolledwindow1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
         <property name="shadow_type">in</property>
         <child>
           <object class="GtkTextView" id="view">
@@ -33,9 +36,8 @@ Version: 2.91.3
         </child>
       </object>
       <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
+        <property name="left_attach">0</property>
+        <property name="top_attach">0</property>
       </packing>
     </child>
     <child>
@@ -43,7 +45,6 @@ Version: 2.91.3
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="border_width">6</property>
-        <property name="orientation">vertical</property>
         <property name="spacing">6</property>
         <property name="layout_style">end</property>
         <child>
@@ -57,16 +58,15 @@ Version: 2.91.3
             <signal name="clicked" handler="on_stop_clicked" swapped="no"/>
           </object>
           <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
             <property name="position">0</property>
           </packing>
         </child>
       </object>
       <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">1</property>
+        <property name="left_attach">1</property>
+        <property name="top_attach">0</property>
       </packing>
     </child>
   </object>
