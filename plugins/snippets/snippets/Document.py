@@ -18,7 +18,7 @@
 import os
 import re
 
-from gi.repository import GLib, Gio, Gdk, Gtk, GtkSource, Pluma
+from gi.repository import GLib, Gio, Gdk, Gtk, Pluma
 
 from .Library import Library
 from .Snippet import Snippet
@@ -266,7 +266,6 @@ class Document:
 
             # Find the nearest placeholder
             if nearest(piter, begin, end, found):
-                foundIndex = index
                 found = placeholder
 
             # Find the current placeholder
@@ -527,8 +526,6 @@ class Document:
         buf.delete(start, end)
 
         # Insert the snippet
-        holders = len(self.placeholders)
-
         if len(self.active_snippets) == 0:
             self.first_snippet_inserted()
 
@@ -637,7 +634,6 @@ class Document:
             return True
 
     def deactivate_snippet(self, snippet, force = False):
-        buf = self.view.get_buffer()
         remove = []
         ordered_remove = []
 
@@ -1053,8 +1049,6 @@ class Document:
     def draw_placeholder(self, ctx, placeholder):
         if isinstance(placeholder, PlaceholderEnd):
             return
-
-        buf = self.view.get_buffer()
 
         col = self.view.get_style_context().get_color(Gtk.StateFlags.INSENSITIVE)
         col.alpha = 0.5

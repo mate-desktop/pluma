@@ -359,8 +359,6 @@ class PlaceholderExpand(Placeholder):
         return ret
 
     def update(self, mirror):
-        text = None
-
         if mirror:
             self.mirror_text[mirror.tabstop] = mirror.get_text()
 
