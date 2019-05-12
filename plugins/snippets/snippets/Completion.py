@@ -39,7 +39,7 @@ class Provider(GObject.Object, GtkSource.CompletionProvider):
         f, w, h = Gtk.icon_size_lookup(Gtk.IconSize.MENU)
 
         try:
-            self.icon = theme.load_icon(Gtk.STOCK_JUSTIFY_LEFT, w, 0)
+            self.icon = theme.load_icon("format-justify-left", w, 0)
         except:
             self.icon = None
 

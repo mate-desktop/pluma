@@ -213,7 +213,7 @@ class ExternalToolsPlugin(GObject.Object, Peas.Activatable):
         bottom = window.get_bottom_panel()
         bottom.add_item_with_icon(self._output_buffer.panel,
                                   _("Shell Output"),
-                                  Gtk.STOCK_EXECUTE)
+                                  "system-run")
 
     def do_deactivate(self):
         window = self.object

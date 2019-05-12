@@ -33,9 +33,10 @@ class Popup(Gtk.Dialog):
                             parent=window,
                             flags=Gtk.DialogFlags.DESTROY_WITH_PARENT | Gtk.DialogFlags.MODAL)
 
-        self.add_button(_("_Cancel"), Gtk.ResponseType.CANCEL)
-        self._open_button = self.add_button(_("_Open"),
-                                            Gtk.ResponseType.ACCEPT)
+        self._add_button(_("_Cancel"), Gtk.ResponseType.CANCEL, "process-stop")
+        self._open_button = self._add_button(_("_Open"),
+                                             Gtk.ResponseType.ACCEPT,
+                                             "document-open")
         self._handler = handler
         self._build_ui()
 
@@ -138,12 +139,13 @@ class Popup(Gtk.Dialog):
             cell.set_property('cell-background-set', False)
             cell.set_property('style-set', False)
 
-    def _icon_from_stock(self, stock):
-        theme = Gtk.icon_theme_get_default()
-        size = Gtk.icon_size_lookup(Gtk.IconSize.MENU)
-        pixbuf = theme.load_icon(stock, size[0], Gtk.IconLookupFlags.USE_BUILTIN)
-
-        return pixbuf
+    def _add_button(self, label, response, icon=None):
+        button = self.add_button(label, response)
+        if icon:
+            image = Gtk.Image.new_from_icon_name(icon, Gtk.IconSize.BUTTON)
+            button.set_image(image)
+            button.set_property("always-show-image", True)
+        return button
 
     def _list_dir(self, gfile):
         entries = []

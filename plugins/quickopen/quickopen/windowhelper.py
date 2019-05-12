@@ -60,12 +60,13 @@ class WindowHelper:
 
     def _install_menu(self):
         manager = self._window.get_ui_manager()
+        action = Gtk.Action.new("QuickOpen",
+                                _("Quick open"),
+                                _("Quickly open documents"))
+        action.set_icon_name("document-open")
+        action.connect("activate", self.on_quick_open_activate)
         self._action_group = Gtk.ActionGroup("PlumaQuickOpenPluginActions")
-        self._action_group.add_actions([
-            ("QuickOpen", Gtk.STOCK_OPEN, _("Quick open"),
-             '<Ctrl><Alt>O', _("Quickly open documents"),
-             self.on_quick_open_activate)
-        ])
+        self._action_group.add_action_with_accel(action, "<Ctrl><Alt>O")
 
         manager.insert_action_group(self._action_group, -1)
         self._ui_id = manager.add_ui_from_string(ui_str)
