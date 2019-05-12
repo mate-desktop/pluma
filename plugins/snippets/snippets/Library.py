@@ -541,6 +541,7 @@ class SnippetsUserFile(SnippetsSystemFile):
         SnippetsSystemFile.__init__(self, path)
         self.tainted = False
         self.need_id = False
+        self.root = None
 
     def _set_root(self, element):
         SnippetsSystemFile._set_root(self, element)
