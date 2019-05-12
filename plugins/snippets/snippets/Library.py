@@ -453,6 +453,7 @@ class SnippetsSystemFile:
                 lambda node: elements.append((node, True)), \
                 lambda node: elements.append((node, False)))
 
+        self.ok = True
         parser = et.XMLParser(target=builder)
         self.insnippet = False
 
