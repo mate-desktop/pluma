@@ -1782,7 +1782,7 @@
                 </listitem>
                 <listitem>
                     <para>
-                        <application><!-- <link linkend="pluma-file-browser-plugin">File Browser</link>-->File Browser</application> allows you to browse your files and folders in the side pane.</para>
+                        <xref linkend="pluma-file-browser-plugin"/> allows you to browse your files and folders in the side pane.</para>
                 </listitem>
                 <listitem>
                     <para>
@@ -1802,6 +1802,11 @@
                 <listitem>
                     <para>
                         <xref linkend="pluma-python-console-plugin"/> allows you to run commands in the python programming language.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <xref linkend="pluma-trailsave-plugin"/> allows you to strip trailing whitespaces in your document after saving.
                     </para>
                 </listitem>
                 <listitem>
@@ -2074,9 +2079,9 @@
 
         <section xml:id="pluma-file-browser-plugin">
             <info>
-                <title>File Browser Plugin</title>
+                <title>File Browser Pane Plugin</title>
             </info>
-            <para>The <application>File Browser</application> Plugin shows your files and folders in the side pane, allowing you to quickly open files.</para>
+            <para>The <application>File Browser Pane</application> Plugin shows your files and folders in the side pane, allowing you to quickly open files.</para>
             <para>To view the File Browser, choose <menuchoice> <guimenu>View</guimenu> <guimenuitem>Side Pane</guimenuitem> </menuchoice> and then click on the tab showing the File Browser icon at the bottom of the side pane.</para>
 
             <section xml:id="pluma-file-browser-plugin-browsing">
@@ -2249,6 +2254,24 @@
             <caution>
                 <para>Commands entered into the python console are not checked before they are run. It is therefore possible to hang <application>pluma</application>, for example by entering an infinite loop.</para>
             </caution>
+        </section>
+
+        <section xml:id="pluma-trailsave-plugin">
+            <info>
+                <title>Save Without Trailing Spaces Plugin</title>
+            </info>
+            <para>The <application>Save Without Trailing Spaces</application> Plugin removes whitespace characters such as space (<command>˽</command>), tab (<command>\t</command>), carriage returns (<command>\r</command>) etc. from the end of a line. To use the Save Without Trailing Spaces plugin, perform the following steps:</para>
+            <orderedlist inheritnum="ignore" continuation="restarts">
+                <listitem>
+                    <para>Enable the plugin as described in <xref linkend="pluma-prefs-plugins"/>.</para>
+                </listitem>
+                <listitem>
+                    <para>When your document is ready, save it.</para>
+                </listitem>
+                <listitem>   
+                    <para>You will see that any trailing whitespaces has been stripped after the document has been saved.</para>
+                </listitem>
+            </orderedlist>
         </section>
 
         <section xml:id="pluma-snippets-plugin">
