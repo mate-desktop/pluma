@@ -135,4 +135,16 @@ class PythonConsoleConfigWidget(object):
     def on_fontbutton_font_set(self, fontbutton):
         self._config.font = fontbutton.get_font_name()
 
+    def on_widget_config_parent_set(self, widget, oldparent):
+        # Set icon in dialog close button.
+        try:
+            actionarea = widget.get_toplevel().get_action_area()
+            image = Gtk.Image.new_from_icon_name("window-close",
+                                                 Gtk.IconSize.BUTTON)
+            for button in actionarea.get_children():
+                button.set_image(image)
+                button.set_property("always-show-image", True)
+        except:
+            pass
+
 # ex:et:ts=4:

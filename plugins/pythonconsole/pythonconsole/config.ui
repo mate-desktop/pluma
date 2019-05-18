@@ -12,6 +12,7 @@
     <property name="orientation">vertical</property>
     <property name="row_spacing">6</property>
     <property name="column_spacing">6</property>
+    <signal name="parent-set" handler="on_widget_config_parent_set" swapped="no"/>
     <child>
       <object class="GtkLabel" id="label-error">
         <property name="visible">True</property>
@@ -30,7 +31,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">True</property>
-        <property name="color">#999900000000</property>
+        <property name="rgba">rgb(153,0,0)</property>
         <signal name="color-set" handler="on_colorbutton_error_color_set" swapped="no"/>
       </object>
       <packing>
@@ -43,7 +44,7 @@
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <property name="receives_default">True</property>
-        <property name="color">#31314e4e6c6c</property>
+        <property name="rgba">rgb(49,78,108)</property>
         <signal name="color-set" handler="on_colorbutton_command_color_set" swapped="no"/>
       </object>
       <packing>
