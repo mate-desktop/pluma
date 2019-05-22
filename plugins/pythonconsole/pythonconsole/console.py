@@ -30,7 +30,7 @@ import re
 import traceback
 from gi.repository import GObject, Gdk, Gtk, Pango
 
-from config import PythonConsoleConfig
+from .config import PythonConsoleConfig
 
 __all__ = ('PythonConsole', 'OutFile')
 
@@ -40,13 +40,14 @@ class PythonConsole(Gtk.ScrolledWindow):
         'grab-focus' : 'override',
     }
 
+    DEFAULT_FONT = "Monospace 10"
+
     def __init__(self, namespace = {}):
         Gtk.ScrolledWindow.__init__(self)
 
         self.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         self.set_shadow_type(Gtk.ShadowType.IN)
         self.view = Gtk.TextView()
-        self.view.modify_font(Pango.font_description_from_string('Monospace'))
         self.view.set_editable(True)
         self.view.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
         self.add(self.view)
@@ -57,7 +58,8 @@ class PythonConsole(Gtk.ScrolledWindow):
         self.error  = buffer.create_tag("error")
         self.command = buffer.create_tag("command")
 
-        PythonConsoleConfig.add_handler(self.apply_preferences)
+        self.config = PythonConsoleConfig()
+        self.config.add_handler(self.apply_preferences)
         self.apply_preferences()
 
         self.__spaces_pattern = re.compile(r'^\s+')
@@ -88,9 +90,28 @@ class PythonConsole(Gtk.ScrolledWindow):
         self.view.grab_focus()
 
     def apply_preferences(self, *args):
-        config = PythonConsoleConfig()
-        self.error.set_property("foreground", config.color_error)
-        self.command.set_property("foreground", config.color_command)
+        self.error.set_property("foreground", self.config.color_error)
+        self.command.set_property("foreground", self.config.color_command)
+
+        if self.config.use_system_font:
+            font_name = self.config.monospace_font_name
+        else:
+            font_name = self.config.font
+
+        font_desc = None
+        try:
+            font_desc = Pango.FontDescription(font_name)
+        except:
+            try:
+                font_desc = Pango.FontDescription(self.config.monospace_font_name)
+            except:
+                try:
+                    font_desc = Pango.FontDescription(self.DEFAULT_FONT)
+                except:
+                    pass
+
+        if font_desc:
+            self.view.modify_font(font_desc)
 
     def stop(self):
         self.namespace = None
@@ -98,11 +119,13 @@ class PythonConsole(Gtk.ScrolledWindow):
     def __key_press_event_cb(self, view, event):
         modifier_mask = Gtk.accelerator_get_default_mod_mask()
         event_state = event.state & modifier_mask
+        keyname = Gdk.keyval_name(event.keyval)
 
-        if event.keyval == Gdk.KEY_D and event_state == Gdk.ModifierType.CONTROL_MASK:
+        if keyname == "d" and event_state == Gdk.ModifierType.CONTROL_MASK:
             self.destroy()
 
-        elif event.keyval == Gdk.KEY_Return and event_state == Gdk.ModifierType.CONTROL_MASK:
+        elif keyname == "Return" and \
+             event_state == Gdk.ModifierType.CONTROL_MASK:
             # Get the command
             buffer = view.get_buffer()
             inp_mark = buffer.get_mark("input")
@@ -128,7 +151,7 @@ class PythonConsole(Gtk.ScrolledWindow):
             GObject.idle_add(self.scroll_to_end)
             return True
 
-        elif event.keyval == Gdk.KEY_Return:
+        elif keyname == "Return":
             # Get the marks
             buffer = view.get_buffer()
             lin_mark = buffer.get_mark("input-line")
@@ -172,22 +195,22 @@ class PythonConsole(Gtk.ScrolledWindow):
             GObject.idle_add(self.scroll_to_end)
             return True
 
-        elif event.keyval == Gdk.KEY_KP_Down or event.keyval == Gdk.KEY_Down:
+        elif keyname == "KP_Down" or keyname == "Down":
             # Next entry from history
             view.emit_stop_by_name("key_press_event")
             self.history_down()
             GObject.idle_add(self.scroll_to_end)
             return True
 
-        elif event.keyval == Gdk.KEY_KP_Up or event.keyval == Gdk.KEY_Up:
+        elif keyname == "KP_Up" or keyname == "Up":
             # Previous entry from history
             view.emit_stop_by_name("key_press_event")
             self.history_up()
             GObject.idle_add(self.scroll_to_end)
             return True
 
-        elif event.keyval == Gdk.KEY_KP_Left or event.keyval == Gdk.KEY_Left or \
-             event.keyval == Gdk.KEY_BackSpace:
+        elif keyname == "KP_Left" or keyname == "Left" or \
+             keyname == "BackSpace":
             buffer = view.get_buffer()
             inp = buffer.get_iter_at_mark(buffer.get_mark("input"))
             cur = buffer.get_iter_at_mark(buffer.get_insert())
@@ -200,7 +223,7 @@ class PythonConsole(Gtk.ScrolledWindow):
         # For the console we enable smart/home end behavior incoditionally
         # since it is useful when editing python
 
-        elif (event.keyval == Gdk.KEY_KP_Home or event.keyval == Gdk.KEY_Home) and \
+        elif (keyname == "KP_Home" or keyname == "Home") and \
              event_state == event_state & (Gdk.ModifierType.SHIFT_MASK|Gdk.ModifierType.CONTROL_MASK):
             # Go to the begin of the command instead of the begin of the line
             buffer = view.get_buffer()
@@ -219,7 +242,7 @@ class PythonConsole(Gtk.ScrolledWindow):
                 buffer.place_cursor(iter)
             return True
 
-        elif (event.keyval == Gdk.KEY_KP_End or event.keyval == Gdk.KEY_End) and \
+        elif (keyname == "KP_End" or keyname == "End") and \
              event_state == event_state & (Gdk.ModifierType.SHIFT_MASK|Gdk.ModifierType.CONTROL_MASK):
 
             buffer = view.get_buffer()
@@ -323,15 +346,18 @@ class PythonConsole(Gtk.ScrolledWindow):
         # eval and exec are broken in how they deal with utf8-encoded
         # strings so we have to explicitly decode the command before
         # passing it along
-        command = command.decode('utf8')
+        try:
+            command = command.decode('utf8')
+        except:
+            pass
 
         try:
             try:
                 r = eval(command, self.namespace, self.namespace)
                 if r is not None:
-                    print `r`
+                    print(repr(r))
             except SyntaxError:
-                exec command in self.namespace
+                exec(command, self.namespace)
         except:
             if hasattr(sys, 'last_type') and sys.last_type == SystemExit:
                 self.destroy()
@@ -343,7 +369,7 @@ class PythonConsole(Gtk.ScrolledWindow):
 
     def destroy(self):
         pass
-        #gtk.ScrolledWindow.destroy(self)
+        #Gtk.ScrolledWindow.destroy(self)
 
 class OutFile:
     """A fake output file object. It sends output to a TK test widget,
@@ -361,8 +387,8 @@ class OutFile:
     def readlines(self):     return []
     def write(self, s):      self.console.write(s, self.tag)
     def writelines(self, l): self.console.write(l, self.tag)
-    def seek(self, a):       raise IOError, (29, 'Illegal seek')
-    def tell(self):          raise IOError, (29, 'Illegal seek')
+    def seek(self, a):       raise IOError(29, 'Illegal seek')
+    def tell(self):          raise IOError(29, 'Illegal seek')
     truncate = tell
 
 # ex:et:ts=4:

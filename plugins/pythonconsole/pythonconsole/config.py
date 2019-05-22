@@ -25,110 +25,126 @@
 #     Copyrignt (C), 2005 Raphaël Slinckx
 
 import os
-import gtk
+from gi.repository import Gio, Gtk, Gdk
 
-__all__ = ('PythonConsoleConfig', 'PythonConsoleConfigDialog')
-
-MATECONF_KEY_BASE = '/apps/pluma/plugins/pythonconsole'
-MATECONF_KEY_COMMAND_COLOR = MATECONF_KEY_BASE + '/command-color'
-MATECONF_KEY_ERROR_COLOR = MATECONF_KEY_BASE + '/error-color'
-
-DEFAULT_COMMAND_COLOR = '#314e6c' # Blue Shadow
-DEFAULT_ERROR_COLOR = '#990000' # Accent Red Dark
+__all__ = ('PythonConsoleConfig', 'PythonConsoleConfigWidget')
 
 class PythonConsoleConfig(object):
-    try:
-        import mateconf
-    except ImportError:
-        mateconf = None
 
-    def __init__(self):
-        pass
+    CONSOLE_KEY_BASE = 'org.mate.pluma.plugins.pythonconsole'
+    CONSOLE_KEY_COMMAND_COLOR = 'command-color'
+    CONSOLE_KEY_ERROR_COLOR = 'error-color'
+    CONSOLE_KEY_USE_SYSTEM_FONT = 'use-system-font'
+    CONSOLE_KEY_FONT = 'font'
 
-    @staticmethod
-    def enabled():
-        return PythonConsoleConfig.mateconf != None
-
-    @staticmethod
-    def add_handler(handler):
-        if PythonConsoleConfig.mateconf:
-            PythonConsoleConfig.mateconf.client_get_default().notify_add(MATECONF_KEY_BASE, handler)
+    INTERFACE_KEY_BASE = 'org.mate.interface'
+    INTERFACE_KEY_MONOSPACE_FONT_NAME = 'monospace-font-name'
 
     color_command = property(
-        lambda self: self.mateconf_get_str(MATECONF_KEY_COMMAND_COLOR, DEFAULT_COMMAND_COLOR),
-        lambda self, value: self.mateconf_set_str(MATECONF_KEY_COMMAND_COLOR, value))
+        lambda self: self.console_settings.get_string(self.CONSOLE_KEY_COMMAND_COLOR),
+        lambda self, value: self.console_settings.set_string(self.CONSOLE_KEY_COMMAND_COLOR, value)
+    )
 
     color_error = property(
-        lambda self: self.mateconf_get_str(MATECONF_KEY_ERROR_COLOR, DEFAULT_ERROR_COLOR),
-        lambda self, value: self.mateconf_set_str(MATECONF_KEY_ERROR_COLOR, value))
+        lambda self: self.console_settings.get_string(self.CONSOLE_KEY_ERROR_COLOR),
+        lambda self, value: self.console_settings.set_string(self.CONSOLE_KEY_ERROR_COLOR, value)
+    )
 
-    @staticmethod
-    def mateconf_get_str(key, default=''):
-        if not PythonConsoleConfig.mateconf:
-            return default
+    use_system_font = property(
+        lambda self: self.console_settings.get_boolean(self.CONSOLE_KEY_USE_SYSTEM_FONT),
+        lambda self, value: self.console_settings.set_boolean(self.CONSOLE_KEY_USE_SYSTEM_FONT, value)
+    )
 
-        val = PythonConsoleConfig.mateconf.client_get_default().get(key)
-        if val is not None and val.type == mateconf.VALUE_STRING:
-            return val.get_string()
-        else:
-            return default
+    font = property(
+        lambda self: self.console_settings.get_string(self.CONSOLE_KEY_FONT),
+        lambda self, value: self.console_settings.set_string(self.CONSOLE_KEY_FONT, value)
+    )
 
-    @staticmethod
-    def mateconf_set_str(key, value):
-        if not PythonConsoleConfig.mateconf:
-            return
+    monospace_font_name = property(
+        lambda self: self.interface_settings.get_string(self.INTERFACE_KEY_MONOSPACE_FONT_NAME)
+    )
 
-        v = PythonConsoleConfig.mateconf.Value(mateconf.VALUE_STRING)
-        v.set_string(value)
-        PythonConsoleConfig.mateconf.client_get_default().set(key, v)
+    console_settings = Gio.Settings.new(CONSOLE_KEY_BASE)
+    interface_settings = Gio.Settings.new(INTERFACE_KEY_BASE)
 
-class PythonConsoleConfigDialog(object):
+    def __init__(self):
+        object.__init__(self)
+
+    @classmethod
+    def enabled(self):
+        return self.console_settings != None
+
+    @classmethod
+    def add_handler(self, handler):
+        self.console_settings.connect("changed", handler)
+        self.interface_settings.connect("changed", handler)
+
+
+class PythonConsoleConfigWidget(object):
+
+    CONSOLE_KEY_BASE = 'org.mate.pluma.plugins.pythonconsole'
+    CONSOLE_KEY_COMMAND_COLOR = 'command-color'
+    CONSOLE_KEY_ERROR_COLOR = 'error-color'
 
     def __init__(self, datadir):
         object.__init__(self)
-        self._dialog = None
+        self._widget = None
         self._ui_path = os.path.join(datadir, 'ui', 'config.ui')
-        self.config = PythonConsoleConfig()
+        self._config = PythonConsoleConfig()
+        self._ui = Gtk.Builder()
 
-    def dialog(self):
-        if self._dialog is None:
-            self._ui = gtk.Builder()
+    def configure_widget(self):
+        if self._widget is None:
             self._ui.add_from_file(self._ui_path)
 
             self.set_colorbutton_color(self._ui.get_object('colorbutton-command'),
-                                        self.config.color_command)
+                                        self._config.color_command)
             self.set_colorbutton_color(self._ui.get_object('colorbutton-error'),
-                                        self.config.color_error)
-
+                                        self._config.color_error)
+            checkbox = self._ui.get_object('checkbox-system-font')
+            checkbox.set_active(self._config.use_system_font)
+            self._fontbutton = self._ui.get_object('fontbutton-font')
+            self._fontbutton.set_font_name(self._config.font)
+            self.on_checkbox_system_font_toggled(checkbox)
             self._ui.connect_signals(self)
 
-            self._dialog = self._ui.get_object('dialog-config')
-            self._dialog.show_all()
-        else:
-            self._dialog.present()
+            self._widget = self._ui.get_object('widget-config')
+            self._widget.show_all()
 
-        return self._dialog
+        return self._widget
 
     @staticmethod
     def set_colorbutton_color(colorbutton, value):
-        try:
-            color = gtk.gdk.color_parse(value)
-        except ValueError:
-            pass    # Default color in config.ui used
-        else:
-            colorbutton.set_color(color)
+        rgba = Gdk.RGBA()
+        parsed = rgba.parse(value)
 
-    def on_dialog_config_response(self, dialog, response_id):
-        self._dialog.destroy()
-
-    def on_dialog_config_destroy(self, dialog):
-        self._dialog = None
-        self._ui = None
+        if parsed:
+            colorbutton.set_rgba(rgba)
 
     def on_colorbutton_command_color_set(self, colorbutton):
-        self.config.color_command = colorbutton.get_color().to_string()
+        self._config.color_command = colorbutton.get_color().to_string()
 
     def on_colorbutton_error_color_set(self, colorbutton):
-        self.config.color_error = colorbutton.get_color().to_string()
+        self._config.color_error = colorbutton.get_color().to_string()
+
+    def on_checkbox_system_font_toggled(self, checkbox):
+        val = checkbox.get_active()
+        self._config.use_system_font = val
+        self._fontbutton.set_sensitive(not val)
+
+    def on_fontbutton_font_set(self, fontbutton):
+        self._config.font = fontbutton.get_font_name()
+
+    def on_widget_config_parent_set(self, widget, oldparent):
+        # Set icon in dialog close button.
+        try:
+            actionarea = widget.get_toplevel().get_action_area()
+            image = Gtk.Image.new_from_icon_name("window-close",
+                                                 Gtk.IconSize.BUTTON)
+            for button in actionarea.get_children():
+                button.set_image(image)
+                button.set_property("always-show-image", True)
+        except:
+            pass
 
 # ex:et:ts=4:
