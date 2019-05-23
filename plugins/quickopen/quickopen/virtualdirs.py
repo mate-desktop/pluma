@@ -38,7 +38,9 @@ class VirtualDirectory(object):
             return
 
         try:
-            info = child.query_info("standard::*", Gio.FileQueryInfoFlags.NONE, None)
+            info = child.query_info("standard::*",
+                                    Gio.FileQueryInfoFlags.NONE,
+                                    None)
 
             if info:
                 self._children.append((child, info))
@@ -46,7 +48,7 @@ class VirtualDirectory(object):
             pass
 
 class RecentDocumentsDirectory(VirtualDirectory):
-    def __init__(self, maxitems=10):
+    def __init__(self, maxitems=200):
         VirtualDirectory.__init__(self, 'recent')
 
         self._maxitems = maxitems
@@ -56,7 +58,7 @@ class RecentDocumentsDirectory(VirtualDirectory):
         manager = Gtk.RecentManager.get_default()
 
         items = manager.get_items()
-        items.sort(lambda a, b: cmp(b.get_visited(), a.get_visited()))
+        items.sort(key=lambda a: a.get_visited(), reverse=True)
 
         added = 0
 

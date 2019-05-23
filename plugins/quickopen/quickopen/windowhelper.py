@@ -17,11 +17,12 @@
 #  Foundation, Inc., 51 Franklin St, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from popup import Popup
 import os
+import codecs
 from gi.repository import Gio, GLib, Gtk, Pluma
-from virtualdirs import RecentDocumentsDirectory
-from virtualdirs import CurrentDocumentsDirectory
+from .popup import Popup
+from .virtualdirs import RecentDocumentsDirectory
+from .virtualdirs import CurrentDocumentsDirectory
 
 ui_str = """<ui>
   <menubar name="MenuBar">
@@ -60,12 +61,13 @@ class WindowHelper:
 
     def _install_menu(self):
         manager = self._window.get_ui_manager()
+        action = Gtk.Action.new("QuickOpen",
+                                _("Quick open"),
+                                _("Quickly open documents"))
+        action.set_icon_name("document-open")
+        action.connect("activate", self.on_quick_open_activate)
         self._action_group = Gtk.ActionGroup("PlumaQuickOpenPluginActions")
-        self._action_group.add_actions([
-            ("QuickOpen", Gtk.STOCK_OPEN, _("Quick open"),
-             '<Ctrl><Alt>O', _("Quickly open documents"),
-             self.on_quick_open_activate)
-        ])
+        self._action_group.add_action_with_accel(action, "<Ctrl><Alt>O")
 
         manager.insert_action_group(self._action_group, -1)
         self._ui_id = manager.add_ui_from_string(ui_str)
@@ -95,10 +97,10 @@ class WindowHelper:
                 if uri:
                     gfile = Gio.file_new_for_uri(uri)
 
-                    if gfile.is_native():
+                    if gfile and gfile.is_native():
                         paths.append(gfile)
 
-        except StandardError:
+        except Exception:
             pass
 
         # Recent documents
@@ -128,14 +130,14 @@ class WindowHelper:
         self._popup.connect('destroy', self.on_popup_destroy)
 
     def _local_bookmarks(self):
-        filename = os.path.expanduser('~/.gtk-bookmarks')
+        filename = os.path.expanduser('~/.config/gtk-3.0/bookmarks')
 
         if not os.path.isfile(filename):
             return []
 
         paths = []
 
-        for line in file(filename, 'r').xreadlines():
+        for line in codecs.open(filename, 'r', encoding='utf-8'):
             uri = line.strip().split(" ")[0]
             f = Gio.file_new_for_uri(uri)
 
@@ -160,7 +162,7 @@ class WindowHelper:
         desktopdir = None
 
         if os.path.isfile(config):
-            for line in file(config, 'r').xreadlines():
+            for line in codecs.open(config, 'r', encoding='utf-8'):
                 line = line.strip()
 
                 if line.startswith('XDG_DESKTOP_DIR'):
