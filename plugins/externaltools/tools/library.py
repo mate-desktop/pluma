@@ -19,18 +19,20 @@
 import os
 import re
 import locale
+import codecs
 from gi.repository import GLib
+
 
 class Singleton(object):
     _instance = None
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
-            cls._instance = super(Singleton, cls).__new__(
-                             cls, *args, **kwargs)
+            cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)
             cls._instance.__init_once__()
 
         return cls._instance
+
 
 class ToolLibrary(Singleton):
     def __init_once__(self):
@@ -46,7 +48,7 @@ class ToolLibrary(Singleton):
 
         # self.locations[0] is where we save the custom scripts
         toolsdir = os.path.join(GLib.get_user_config_dir(), 'pluma/tools')
-        self.locations.insert(0, toolsdir);
+        self.locations.insert(0, toolsdir)
 
         if not os.path.isdir(self.locations[0]):
             os.makedirs(self.locations[0])
@@ -74,7 +76,7 @@ class ToolLibrary(Singleton):
         if not os.path.isfile(filename):
             return
 
-        print "External tools: importing old tools into the new store..."
+        print("External tools: importing old tools into the new store...")
 
         xtree = et.parse(filename)
         xroot = xtree.getroot()
@@ -97,7 +99,7 @@ class ToolLibrary(Singleton):
 
             tool.save_with_script(xtool.text)
 
-    def get_full_path(self, path, mode='r', system = True, local = True):
+    def get_full_path(self, path, mode='r', system=True, local=True):
         assert (system or local)
         if path is None:
             return None
@@ -123,6 +125,7 @@ class ToolLibrary(Singleton):
                 os.mkdir(dirname)
             return path
 
+
 class ToolDirectory(object):
     def __init__(self, parent, dirname):
         super(ToolDirectory, self).__init__()
@@ -145,8 +148,7 @@ class ToolDirectory(object):
                 continue
             for i in os.listdir(d):
                 elements[i] = None
-        keys = elements.keys()
-        keys.sort()
+        keys = sorted(elements.keys())
         return keys
 
     def _load(self):
@@ -196,7 +198,7 @@ class ToolDirectory(object):
 class Tool(object):
     RE_KEY = re.compile('^([a-zA-Z_][a-zA-Z0-9_.\-]*)(\[([a-zA-Z_@]+)\])?$')
 
-    def __init__(self, parent, filename = None):
+    def __init__(self, parent, filename=None):
         super(Tool, self).__init__()
         self.parent = parent
         self.library = parent.library
@@ -212,7 +214,7 @@ class Tool(object):
         if value.strip() == '':
             return []
         else:
-            return map(lambda x: x.strip(), value.split(','))
+            return [x.strip() for x in value.split(',')]
 
     def _from_list(self, value):
         return ','.join(value)
@@ -231,7 +233,7 @@ class Tool(object):
         if filename is None:
             return
 
-        fp = file(filename, 'r', 1)
+        fp = codecs.open(filename, 'r', encoding='utf-8')
         in_block = False
         lang = locale.getlocale(locale.LC_MESSAGES)[0]
 
@@ -239,8 +241,10 @@ class Tool(object):
             if not in_block:
                 in_block = line.startswith('# [Pluma Tool]')
                 continue
-            if line.startswith('##') or line.startswith('# #'): continue
-            if not line.startswith('# '): break
+            if line.startswith('##') or line.startswith('# #'):
+                continue
+            if not line.startswith('# '):
+                break
 
             try:
                 (key, value) = [i.strip() for i in line[2:].split('=', 1)]
@@ -266,9 +270,6 @@ class Tool(object):
     def is_local(self):
         return self.library.get_full_path(self.get_path(), system=False) is not None
 
-    def is_global(self):
-        return self.library.get_full_path(self.get_path(), local=False) is not None
-
     def get_path(self):
         if self.filename is not None:
             return os.path.join(self.parent.get_path(), self.filename)
@@ -284,7 +285,8 @@ class Tool(object):
 
     def get_applicability(self):
         applicability = self._properties.get('Applicability')
-        if applicability: return applicability
+        if applicability:
+            return applicability
         return 'all'
 
     def set_applicability(self, value):
@@ -294,7 +296,8 @@ class Tool(object):
 
     def get_name(self):
         name = self._properties.get('Name')
-        if name: return name
+        if name:
+            return name
         return os.path.basename(self.filename)
 
     def set_name(self, value):
@@ -304,7 +307,8 @@ class Tool(object):
 
     def get_shortcut(self):
         shortcut = self._properties.get('Shortcut')
-        if shortcut: return shortcut
+        if shortcut:
+            return shortcut
         return None
 
     def set_shortcut(self, value):
@@ -314,7 +318,8 @@ class Tool(object):
 
     def get_comment(self):
         comment = self._properties.get('Comment')
-        if comment: return comment
+        if comment:
+            return comment
         return self.filename
 
     def set_comment(self, value):
@@ -324,7 +329,8 @@ class Tool(object):
 
     def get_input(self):
         input = self._properties.get('Input')
-        if input: return input
+        if input:
+            return input
         return 'nothing'
 
     def set_input(self, value):
@@ -334,7 +340,8 @@ class Tool(object):
 
     def get_output(self):
         output = self._properties.get('Output')
-        if output: return output
+        if output:
+            return output
         return 'output-panel'
 
     def set_output(self, value):
@@ -344,7 +351,8 @@ class Tool(object):
 
     def get_save_files(self):
         save_files = self._properties.get('Save-files')
-        if save_files: return save_files
+        if save_files:
+            return save_files
         return 'nothing'
 
     def set_save_files(self, value):
@@ -354,7 +362,8 @@ class Tool(object):
 
     def get_languages(self):
         languages = self._properties.get('Languages')
-        if languages: return languages
+        if languages:
+            return languages
         return []
 
     def set_languages(self, value):
@@ -370,7 +379,7 @@ class Tool(object):
         if filename is None:
             return True
 
-        fp = open(filename, 'r', 1)
+        fp = codecs.open(filename, 'r', encoding='utf-8')
         for line in fp:
             if line.strip() == '':
                 continue
@@ -386,7 +395,7 @@ class Tool(object):
         if filename is None:
             return ["#!/bin/sh\n"]
 
-        fp = open(filename, 'r', 1)
+        fp = codecs.open(filename, 'r', encoding='utf-8')
         lines = list()
 
         # before entering the data block
@@ -396,7 +405,8 @@ class Tool(object):
             lines.append(line)
         # in the block:
         for line in fp:
-            if line.startswith('##'): continue
+            if line.startswith('##'):
+                continue
             if not (line.startswith('# ') and '=' in line):
                 # after the block: strip one emtpy line (if present)
                 if line.strip() != '':
@@ -410,7 +420,7 @@ class Tool(object):
 
     def _dump_properties(self):
         lines = ['# [Pluma Tool]']
-        for item in self._properties.iteritems():
+        for item in self._properties.items():
             if item[0] in self._transform:
                 lines.append('# %s=%s' % (item[0], self._transform[item[0]][1](item[1])))
             elif item[1] is not None:
@@ -419,7 +429,7 @@ class Tool(object):
 
     def save_with_script(self, script):
         filename = self.library.get_full_path(self.filename, 'w')
-        fp = open(filename, 'w', 1)
+        fp = codecs.open(filename, 'w', encoding='utf-8')
 
         # Make sure to first print header (shebang, modeline), then
         # properties, and then actual content
@@ -430,7 +440,6 @@ class Tool(object):
         # Parse
         for line in script:
             line = line.rstrip("\n")
-
             if not inheader:
                 content.append(line)
             elif line.startswith('#!'):
@@ -453,7 +462,7 @@ class Tool(object):
             fp.write(line + "\n")
 
         fp.close()
-        os.chmod(filename, 0750)
+        os.chmod(filename, 0o750)
         self.changed = False
 
     def save(self):
@@ -478,16 +487,17 @@ class Tool(object):
 
 if __name__ == '__main__':
     library = ToolLibrary()
+    library.set_locations(os.path.expanduser("~/.config/pluma/tools"))
 
     def print_tool(t, indent):
-        print indent * "  " + "%s: %s" % (t.filename, t.name)
+        print(indent * "  " + "%s: %s" % (t.filename, t.name))
 
     def print_dir(d, indent):
-        print indent * "  " + d.dirname + '/'
+        print(indent * "  " + d.dirname + '/')
         for i in d.subdirs:
-            print_dir(i, indent+1)
+            print_dir(i, indent + 1)
         for i in d.tools:
-            print_tool(i, indent+1)
+            print_tool(i, indent + 1)
 
     print_dir(library.tree, 0)
 
