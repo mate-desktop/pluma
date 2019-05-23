@@ -18,7 +18,9 @@
 
 __all__ = ('Capture', )
 
-import os, sys, signal
+import os
+import sys
+import signal
 import locale
 import subprocess
 import fcntl
@@ -39,7 +41,7 @@ class Capture(GObject.Object):
         'end-execute'  : (GObject.SignalFlags.RUN_LAST, GObject.TYPE_NONE, (GObject.TYPE_INT,))
     }
 
-    def __init__(self, command, cwd = None, env = {}):
+    def __init__(self, command, cwd=None, env={}):
         GObject.GObject.__init__(self)
         self.pipe = None
         self.env = env
@@ -58,6 +60,8 @@ class Capture(GObject.Object):
         self.flags = flags
 
     def set_input(self, text):
+        if text and not isinstance(text, bytes):
+            text = text.encode("utf-8")
         self.input_text = text
 
     def set_cwd(self, cwd):
@@ -87,7 +91,7 @@ class Capture(GObject.Object):
 
         try:
             self.pipe = subprocess.Popen(self.command, **popen_args)
-        except OSError, e:
+        except OSError as e:
             self.pipe = None
             self.emit('stderr-line', _('Could not execute command: %s') % (e, ))
             return
@@ -116,7 +120,7 @@ class Capture(GObject.Object):
         # IO
         if self.input_text is not None:
             # Write async, in chunks of something
-            self.write_buffer = str(self.input_text)
+            self.write_buffer = self.input_text
 
             if self.idle_write_chunk():
                 self.idle_write_id = GLib.idle_add(self.idle_write_chunk)
@@ -136,7 +140,7 @@ class Capture(GObject.Object):
             self.pipe.stdin.write(self.write_buffer[:m])
 
             if m == l:
-                self.write_buffer = ''
+                self.write_buffer = b''
                 self.pipe.stdin.close()
 
                 self.idle_write_id = 0
@@ -157,11 +161,10 @@ class Capture(GObject.Object):
 
             if len(line) > 0:
                 try:
-                    line = unicode(line, 'utf-8')
+                    line = line.decode('utf-8')
                 except:
-                    line = unicode(line,
-                                   locale.getdefaultlocale()[1],
-                                   'replace')
+                    line = line.decode(locale.getdefaultlocale()[1],
+                                       'replace')
 
                 self.read_buffer += line
                 lines = self.read_buffer.splitlines(True)

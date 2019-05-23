@@ -16,14 +16,13 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-__all__ = ('ExternalToolsPlugin', 'Manager', 'OutputPanel', 'Capture', 'UniqueById')
+__all__ = ('ExternalToolsPlugin', )
 
 from gi.repository import GObject, Gtk, Peas, Pluma
-from manager import Manager
-from library import ToolLibrary
-from outputpanel import OutputPanel
-from capture import Capture
-from functions import *
+from .manager import Manager
+from .library import ToolLibrary
+from .outputpanel import OutputPanel
+from .functions import *
 
 class ToolMenu(object):
     def __init__(self, library, window, panel, plugin, menupath):
@@ -214,7 +213,7 @@ class ExternalToolsPlugin(GObject.Object, Peas.Activatable):
         bottom = window.get_bottom_panel()
         bottom.add_item_with_icon(self._output_buffer.panel,
                                   _("Shell Output"),
-                                  Gtk.STOCK_EXECUTE)
+                                  "system-run")
 
     def do_deactivate(self):
         window = self.object
