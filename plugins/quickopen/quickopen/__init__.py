@@ -18,7 +18,7 @@
 #  Boston, MA 02110-1301, USA.
 
 from gi.repository import GObject, Peas
-from windowhelper import WindowHelper
+from .windowhelper import WindowHelper
 
 class QuickOpenPlugin(GObject.Object, Peas.Activatable):
     __gtype_name__ = "QuickOpenPlugin"
