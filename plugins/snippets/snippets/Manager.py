@@ -21,13 +21,13 @@ import shutil
 
 from gi.repository import GObject, Gio, Gdk, Gtk, GtkSource, Pluma
 
-from Snippet import Snippet
-from Helper import *
-from Library import *
-from Importer import *
-from Exporter import *
-from Document import Document
-from LanguageManager import get_language_manager
+from .Snippet import Snippet
+from .Helper import *
+from .Library import *
+from .Importer import *
+from .Exporter import *
+from .Document import Document
+from .LanguageManager import get_language_manager
 
 class Manager:
     NAME_COLUMN = 0
@@ -42,7 +42,7 @@ class Manager:
     dragging = False
     dnd_target_list = [Gtk.TargetEntry.new('text/uri-list', 0, TARGET_URI)]
 
-    def __init__(self, datadir):
+    def __init__(self, datadir, window=None):
         self.datadir = datadir
         self.snippet = None
         self.dlg = None
@@ -52,7 +52,7 @@ class Manager:
         self.default_size = None
 
         self.key_press_id = 0
-        self.run()
+        self.run(window)
 
     def get_language_snippets(self, path, name = None):
         library = Library()
@@ -159,9 +159,9 @@ class Manager:
         snippet = model.get_value(iter, self.SNIPPET_COLUMN)
 
         if snippet and not snippet.valid:
-            cell.set_property('stock-id', Gtk.STOCK_DIALOG_ERROR)
+            cell.set_property('icon-name', 'dialog-error')
         else:
-            cell.set_property('stock-id', None)
+            cell.set_property('icon-name', None)
 
         cell.set_property('xalign', 1.0)
 
@@ -300,9 +300,6 @@ class Manager:
         self.build_tree_view()
         self.build_model()
 
-        image = self['image_remove']
-        image.set_from_stock(Gtk.STOCK_REMOVE, Gtk.IconSize.SMALL_TOOLBAR)
-
         source_view = self['source_view_snippet']
         manager = get_language_manager()
         lang = manager.get_language('snippets')
@@ -391,15 +388,15 @@ class Manager:
 
         if not (override ^ remove) or system:
             button_remove.set_sensitive(False)
-            image_remove.set_from_stock(Gtk.STOCK_DELETE, Gtk.IconSize.BUTTON)
+            image_remove.set_from_icon_name("edit-delete", Gtk.IconSize.BUTTON)
         else:
             button_remove.set_sensitive(True)
 
             if override:
-                image_remove.set_from_stock(Gtk.STOCK_UNDO, Gtk.IconSize.BUTTON)
+                image_remove.set_from_icon_name("edit-undo", Gtk.IconSize.BUTTON)
                 tooltip = _('Revert selected snippet')
             else:
-                image_remove.set_from_stock(Gtk.STOCK_DELETE, Gtk.IconSize.BUTTON)
+                image_remove.set_from_icon_name("edit-delete", Gtk.IconSize.BUTTON)
                 tooltip = _('Delete selected snippet')
 
             button_remove.set_tooltip_text(tooltip)
@@ -427,12 +424,14 @@ class Manager:
 
         return self.snippet_changed(piter)
 
-    def run(self):
+    def run(self, window=None):
         if not self.dlg:
             self.build()
+            self.dlg.set_transient_for(window)
             self.dlg.show()
         else:
             self.build_model()
+            self.dlg.set_transient_for(window)
             self.dlg.present()
 
     def snippet_from_iter(self, model, piter):
@@ -611,7 +610,7 @@ class Manager:
         self.default_size = [alloc.width, alloc.height]
 
         if resp == Gtk.ResponseType.HELP:
-            Pluma.help_display(self, 'pluma', 'pluma-snippets-plugin')
+            Pluma.help_display(self.dlg, 'pluma', 'pluma-snippets-plugin')
             return
 
         self.dlg.destroy()
@@ -668,7 +667,7 @@ class Manager:
 
         if text and not Library().valid_tab_trigger(text):
             img = self['image_tab_trigger']
-            img.set_from_stock(Gtk.STOCK_DIALOG_ERROR, Gtk.IconSize.BUTTON)
+            img.set_from_icon_name("dialog-error", Gtk.IconSize.BUTTON)
             img.show()
 
             #self['hbox_tab_trigger'].set_spacing(3)
@@ -790,10 +789,11 @@ class Manager:
         self.import_snippets(f)
 
     def on_button_import_snippets_clicked(self, button):
-        dlg = Gtk.FileChooserDialog(parent=self.dlg, title=_("Import snippets"),
-                action=Gtk.FileChooserAction.OPEN,
-                buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                     Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+        dlg = Gtk.FileChooserDialog(title=_("Import snippets"),
+                                    parent=self.dlg,
+                                    action=Gtk.FileChooserAction.OPEN)
+        self._add_button(dlg, _('_Cancel'), Gtk.ResponseType.CANCEL, "process-stop")
+        self._add_button(dlg, _("_Open"), Gtk.ResponseType.OK, "document-open")
 
         dlg.add_filter(self.file_filter(_('All supported archives'), ('*.gz','*.bz2','*.tar', '*.xml')))
         dlg.add_filter(self.file_filter(_('Gzip compressed archive'), ('*.tar.gz',)))
@@ -875,10 +875,11 @@ class Manager:
             return False
 
         if not filename:
-            dlg = Gtk.FileChooserDialog(parent=self.dlg, title=_('Export snippets'),
-                    action=Gtk.FileChooserAction.SAVE,
-                    buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                         Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
+            dlg = Gtk.FileChooserDialog(title=_('Export snippets'),
+                                        parent=self.dlg,
+                                        action=Gtk.FileChooserAction.SAVE)
+            self._add_button(dlg, _('_Cancel'), Gtk.ResponseType.CANCEL, "process-stop")
+            self._add_button(dlg, _("_Save"), Gtk.ResponseType.OK, "document-save")
 
             dlg._export_snippets = export_snippets
             dlg.add_filter(self.file_filter(_('All supported archives'), ('*.gz','*.bz2','*.tar')))
@@ -913,10 +914,11 @@ class Manager:
             else:
                 systemsnippets.append(snippet)
 
-        dlg = Gtk.FileChooserDialog(parent=self.dlg, title=_('Export snippets'),
-                action=Gtk.FileChooserAction.SAVE,
-                buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                     Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
+        dlg = Gtk.FileChooserDialog(title=_('Export snippets'),
+                                    parent=self.dlg,
+                                    action=Gtk.FileChooserAction.SAVE)
+        self._add_button(dlg, _('_Cancel'), Gtk.ResponseType.CANCEL, "process-stop")
+        self._add_button(dlg, _("_Save"), Gtk.ResponseType.OK, "document-save")
 
         dlg._export_snippets = snippets
 
@@ -1145,4 +1147,14 @@ class Manager:
         context.finish(True, False, timestamp)
 
         entry.stop_emission('drag_data_received')
+
+    @staticmethod
+    def _add_button(dialog, label, response, icon=None):
+        button = dialog.add_button(label, response)
+        if icon:
+            image = Gtk.Image.new_from_icon_name(icon, Gtk.IconSize.BUTTON)
+            button.set_image(image)
+            button.set_property("always-show-image", True)
+        return button
+
 # ex:ts=4:et:

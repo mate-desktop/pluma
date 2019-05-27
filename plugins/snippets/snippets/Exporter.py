@@ -3,9 +3,9 @@ import tempfile
 import sys
 import shutil
 
-from Library import *
+from .Library import *
 import xml.etree.ElementTree as et
-from Helper import *
+from .Helper import *
 
 class Exporter:
     def __init__(self, filename, snippets):

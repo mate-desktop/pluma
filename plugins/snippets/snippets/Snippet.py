@@ -16,11 +16,12 @@
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
+import six
 from gi.repository import Gio, Gtk
 
-from Placeholder import *
-from Parser import Parser, Token
-from Helper import *
+from .Placeholder import *
+from .Parser import Parser, Token
+from .Helper import *
 
 class EvalUtilities:
     def __init__(self, view=None):
@@ -87,8 +88,8 @@ class EvalUtilities:
             for col in range(0, len(items[row]) - 1):
                 item = items[row][col]
 
-                result += item + ("\t" * ((maxlen[col] - \
-                        self._real_len(item, tablen)) / tablen))
+                result += item + ("\t" * int(((maxlen[col] - \
+                        self._real_len(item, tablen)) / tablen)))
 
             result += items[row][len(items[row]) - 1]
 
@@ -98,8 +99,9 @@ class EvalUtilities:
         return result
 
 class Snippet:
-    def __init__(self, data):
+    def __init__(self, data, environ = {}):
         self.data = data
+        self.environ = environ
 
     def __getitem__(self, prop):
         return self.data[prop]
@@ -132,7 +134,7 @@ class Snippet:
         if not detail:
             return nm
         else:
-            return nm + ' (<b>' + markup_escape(str.join(', ', detail)) + \
+            return nm + ' (<b>' + markup_escape(", ".join(detail)) + \
                     '</b>)'
 
     def _add_placeholder(self, placeholder):
@@ -149,14 +151,17 @@ class Snippet:
 
     def _insert_text(self, text):
         # Insert text keeping indentation in mind
-        indented = unicode.join('\n' + unicode(self._indent), spaces_instead_of_tabs(self._view, text).split('\n'))
+        indented = (six.u('\n') + self._indent).join(spaces_instead_of_tabs(self._view, text).split('\n'))
         self._view.get_buffer().insert(self._insert_iter(), indented)
 
     def _insert_iter(self):
         return self._view.get_buffer().get_iter_at_mark(self._insert_mark)
 
     def _create_environment(self, data):
-        val = ((data in os.environ) and os.environ[data]) or ''
+        if data in self.environ:
+            val = self.environ[data]
+        else:
+            val = ''
 
         # Get all the current indentation
         all_indent = compute_indentation(self._view, self._insert_iter())
@@ -165,7 +170,7 @@ class Snippet:
         indent = all_indent[len(self._indent):]
 
         # Keep indentation
-        return unicode.join('\n' + unicode(indent), val.split('\n'))
+        return (six.u('\n') + indent).join(val.split('\n'))
 
     def _create_placeholder(self, data):
         tabstop = data['tabstop']
@@ -173,25 +178,25 @@ class Snippet:
 
         if tabstop == 0:
             # End placeholder
-            return PlaceholderEnd(self._view, begin, data['default'])
+            return PlaceholderEnd(self._view, self.environ, begin, data['default'])
         elif tabstop in self.placeholders:
             # Mirror placeholder
-            return PlaceholderMirror(self._view, tabstop, begin)
+            return PlaceholderMirror(self._view, tabstop, self.environ, begin)
         else:
             # Default placeholder
-            return Placeholder(self._view, tabstop, data['default'], begin)
+            return Placeholder(self._view, tabstop, self.environ, data['default'], begin)
 
     def _create_shell(self, data):
         begin = self._insert_iter()
-        return PlaceholderShell(self._view, data['tabstop'], begin, data['contents'])
+        return PlaceholderShell(self._view, data['tabstop'], self.environ, begin, data['contents'])
 
     def _create_eval(self, data):
         begin = self._insert_iter()
-        return PlaceholderEval(self._view, data['tabstop'], data['dependencies'], begin, data['contents'], self._utils.namespace)
+        return PlaceholderEval(self._view, data['tabstop'], self.environ, data['dependencies'], begin, data['contents'], self._utils.namespace)
 
     def _create_regex(self, data):
         begin = self._insert_iter()
-        return PlaceholderRegex(self._view, data['tabstop'], begin, data['input'], data['pattern'], data['substitution'], data['modifiers'])
+        return PlaceholderRegex(self._view, data['tabstop'], self.environ, begin, data['input'], data['pattern'], data['substitution'], data['modifiers'])
 
     def _create_text(self, data):
         return data
@@ -239,11 +244,11 @@ class Snippet:
                     'eval': self._create_eval,
                     'regex': self._create_regex,
                     'text': self._create_text}[token.klass](token.data)
-            except:
+            except KeyError:
                 sys.stderr.write('Token class not supported: %s\n' % token.klass)
                 continue
 
-            if isinstance(val, basestring):
+            if isinstance(val, six.string_types):
                 # Insert text
                 self._insert_text(val)
             else:
@@ -252,7 +257,7 @@ class Snippet:
 
         # Create end placeholder if there isn't one yet
         if 0 not in self.placeholders:
-            self.placeholders[0] = PlaceholderEnd(self._view, self.end_iter(), None)
+            self.placeholders[0] = PlaceholderEnd(self._view, self.environ, self.end_iter(), None)
             self.plugin_data.ordered_placeholders.append(self.placeholders[0])
 
         # Make sure run_last is ran for all placeholders and remove any
@@ -317,8 +322,7 @@ class Snippet:
         # So now all of the snippet is in the buffer, we have all our
         # placeholders right here, what's next, put all marks in the
         # plugin_data.marks
-        k = self.placeholders.keys()
-        k.sort(reverse=True)
+        k = sorted(self.placeholders.keys(), reverse=True)
 
         plugin_data.placeholders.insert(last_index, self.placeholders[0])
         last_iter = self.placeholders[0].end_iter()

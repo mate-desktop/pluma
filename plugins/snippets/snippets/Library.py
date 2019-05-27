@@ -20,11 +20,12 @@ import weakref
 import sys
 import tempfile
 import re
+import codecs
 
 from gi.repository import Gdk, Gtk
 
 import xml.etree.ElementTree as et
-from Helper import *
+from .Helper import *
 
 class NamespacedId:
     def __init__(self, namespace, id):
@@ -453,28 +454,38 @@ class SnippetsSystemFile:
                 lambda node: elements.append((node, True)), \
                 lambda node: elements.append((node, False)))
 
-        parser = et.XMLTreeBuilder(target=builder)
+        self.ok = True
+        parser = et.XMLParser(target=builder)
         self.insnippet = False
 
         try:
-            f = open(self.path, "r")
-
-            while True:
-                data = f.read(readsize)
-
-                if not data:
-                    break
-
-                parser.feed(data)
-
-                for element in elements:
-                    yield element
-
-                del elements[:]
-
-            f.close()
+            f = codecs.open(self.path, "r", encoding='utf-8')
         except IOError:
             self.ok = False
+            return
+
+        while self.ok:
+            try:
+                data = f.read(readsize)
+            except IOError:
+                self.ok = False
+                break
+
+            if not data:
+                break
+
+            try:
+                parser.feed(data)
+            except Exception:
+                self.ok = False
+                break
+
+            for element in elements:
+                yield element
+
+            del elements[:]
+
+        f.close()
 
     def load(self):
         if not self.ok:
@@ -531,6 +542,8 @@ class SnippetsUserFile(SnippetsSystemFile):
         SnippetsSystemFile.__init__(self, path)
         self.tainted = False
         self.need_id = False
+        self.modifier = False
+        self.root = None
 
     def _set_root(self, element):
         SnippetsSystemFile._set_root(self, element)
@@ -611,7 +624,7 @@ class SnippetsUserFile(SnippetsSystemFile):
 
         try:
             if not os.path.isdir(path):
-                os.makedirs(path, 0755)
+                os.makedirs(path, 0o755)
         except OSError:
             # TODO: this is bad...
             sys.stderr.write("Error in making dirs\n")
@@ -929,8 +942,8 @@ class Library(Singleton):
     def valid_accelerator(self, keyval, mod):
         mod &= Gtk.accelerator_get_default_mod_mask()
 
-        return (mod and (Gdk.keyval_to_unicode(keyval) or \
-                keyval in range(Gdk.KEY_F1, Gdk.KEY_F12 + 1)))
+        return mod and (Gdk.keyval_to_unicode(keyval) or \
+                re.match('^F(?:1[012]?|[2-9])$', Gdk.keyval_name(keyval)))
 
     def valid_tab_trigger(self, trigger):
         if not trigger:

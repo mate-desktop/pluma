@@ -1,14 +1,14 @@
 from gi.repository import GObject, Gtk, GtkSource, Pluma
 
-from Library import Library
-from LanguageManager import get_language_manager
-from Snippet import Snippet
+from .Library import Library
+from .LanguageManager import get_language_manager
+from .Snippet import Snippet
 
 class Proposal(GObject.Object, GtkSource.CompletionProposal):
     __gtype_name__ = "PlumaSnippetsProposal"
 
     def __init__(self, snippet):
-        GObject.Object.__init__(self)
+        super(Proposal, self).__init__()
         self._snippet = Snippet(snippet)
 
     def snippet(self):
@@ -25,7 +25,7 @@ class Provider(GObject.Object, GtkSource.CompletionProvider):
     __gtype_name__ = "PlumaSnippetsProvider"
 
     def __init__(self, name, language_id, handler):
-        GObject.Object.__init__(self)
+        super(Provider, self).__init__()
 
         self.name = name
         self.info_widget = None
@@ -38,7 +38,10 @@ class Provider(GObject.Object, GtkSource.CompletionProvider):
         theme = Gtk.IconTheme.get_default()
         f, w, h = Gtk.icon_size_lookup(Gtk.IconSize.MENU)
 
-        self.icon = theme.load_icon(Gtk.STOCK_JUSTIFY_LEFT, w, 0)
+        try:
+            self.icon = theme.load_icon("format-justify-left", w, 0)
+        except:
+            self.icon = None
 
     def __del__(self):
         if self.mark:
@@ -89,9 +92,9 @@ class Provider(GObject.Object, GtkSource.CompletionProvider):
 
         # Filter based on the current word
         if word:
-            proposals = filter(lambda x: x['tag'].startswith(word), proposals)
+            proposals = (x for x in proposals if x['tag'].startswith(word))
 
-        return map(lambda x: Proposal(x), proposals)
+        return [Proposal(x) for x in proposals]
 
     def do_populate(self, context):
         proposals = self.get_proposals(self.get_word(context))
@@ -113,6 +116,10 @@ class Provider(GObject.Object, GtkSource.CompletionProvider):
 
             sw = Gtk.ScrolledWindow()
             sw.add(view)
+            sw.show_all()
+
+            # Fixed size
+            sw.set_size_request(300, 200)
 
             self.info_view = view
             self.info_widget = sw

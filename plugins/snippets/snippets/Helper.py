@@ -15,10 +15,10 @@
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import string
 from xml.sax import saxutils
-from xml.etree.ElementTree import *
+import xml.etree.ElementTree as et
 import re
+import codecs
 
 from gi.repository import Gtk
 
@@ -93,7 +93,7 @@ def write_xml(node, f, cdata_nodes=()):
     assert node is not None
 
     if not hasattr(f, "write"):
-        f = open(f, "wb")
+        f = codecs.open(f, "wb", encoding="utf-8")
 
     # Encoding
     f.write("<?xml version='1.0' encoding='utf-8'?>\n")
@@ -107,27 +107,27 @@ def _write_node(node, file, cdata_nodes=(), indent=0):
     # write XML to file
     tag = node.tag
 
-    if node is Comment:
-        _write_indent(file, "<!-- %s -->\n" % saxutils.escape(node.text.encode('utf-8')), indent)
-    elif node is ProcessingInstruction:
-        _write_indent(file, "<?%s?>\n" % saxutils.escape(node.text.encode('utf-8')), indent)
+    if node is et.Comment:
+        _write_indent(file, "<!-- %s -->\n" % saxutils.escape(node.text), indent)
+    elif node is et.ProcessingInstruction:
+        _write_indent(file, "<?%s?>\n" % saxutils.escape(node.text), indent)
     else:
         items = node.items()
 
         if items or node.text or len(node):
-            _write_indent(file, "<" + tag.encode('utf-8'), indent)
+            _write_indent(file, "<" + tag, indent)
 
             if items:
                 items.sort() # lexical order
                 for k, v in items:
-                    file.write(" %s=%s" % (k.encode('utf-8'), saxutils.quoteattr(v.encode('utf-8'))))
+                    file.write(" %s=%s" % (k, saxutils.quoteattr(v)))
             if node.text or len(node):
                 file.write(">")
                 if node.text and node.text.strip() != "":
                     if tag in cdata_nodes:
                         file.write(_cdata(node.text))
                     else:
-                        file.write(saxutils.escape(node.text.encode('utf-8')))
+                        file.write(saxutils.escape(node.text))
                 else:
                     file.write("\n")
 
@@ -135,19 +135,17 @@ def _write_node(node, file, cdata_nodes=(), indent=0):
                     _write_node(n, file, cdata_nodes, indent + 1)
 
                 if not len(node):
-                    file.write("</" + tag.encode('utf-8') + ">\n")
+                    file.write("</" + tag + ">\n")
                 else:
-                    _write_indent(file, "</" + tag.encode('utf-8') + ">\n", \
-                            indent)
+                    _write_indent(file, "</" + tag + ">\n", indent)
             else:
                 file.write(" />\n")
 
         if node.tail and node.tail.strip() != "":
-            file.write(saxutils.escape(node.tail.encode('utf-8')))
+            file.write(saxutils.escape(node.tail))
 
-def _cdata(text, replace=string.replace):
-    text = text.encode('utf-8')
-    return '<![CDATA[' + replace(text, ']]>', ']]]]><![CDATA[>') + ']]>'
+def _cdata(text):
+    return '<![CDATA[' + text.replace(']]>', ']]]]><![CDATA[>') + ']]>'
 
 def buffer_word_boundary(buf):
     iter = buf.get_iter_at_mark(buf.get_insert())
