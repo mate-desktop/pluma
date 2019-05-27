@@ -21,8 +21,8 @@ import gettext
 
 from gi.repository import GObject, Gtk, Pluma
 
-from Document import Document
-from Library import Library
+from .Document import Document
+from .Library import Library
 
 class WindowHelper:
     def __init__(self, plugin):

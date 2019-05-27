@@ -18,9 +18,9 @@
 import os
 from gi.repository import GObject, GLib, Gtk, Peas, Pluma
 
-from WindowHelper import WindowHelper
-from Library import Library
-from Manager import Manager
+from .WindowHelper import WindowHelper
+from .Library import Library
+from .Manager import Manager
 
 class SnippetsPlugin(GObject.Object, Peas.Activatable):
     __gtype_name__ = "SnippetsPlugin"
@@ -53,7 +53,7 @@ class SnippetsPlugin(GObject.Object, Peas.Activatable):
         library = Library()
         library.add_accelerator_callback(self.accelerator_activated)
 
-        snippetsdir = os.path.join(GLib.get_user_config_dir(), '/pluma/snippets')
+        snippetsdir = os.path.join(GLib.get_user_config_dir(), 'pluma/snippets')
         library.set_dirs(snippetsdir, self.system_dirs())
 
         self._helper = WindowHelper(self)
@@ -72,15 +72,12 @@ class SnippetsPlugin(GObject.Object, Peas.Activatable):
         self._helper.update()
 
     def create_configure_dialog(self):
-        if not self.dlg:
-            self.dlg = Manager(self.plugin_info.get_data_dir())
-        else:
-            self.dlg.run()
-
         window = Pluma.App.get_default().get_active_window()
 
-        if window:
-            self.dlg.dlg.set_transient_for(window)
+        if not self.dlg:
+            self.dlg = Manager(self.plugin_info.get_data_dir(), window)
+        else:
+            self.dlg.run(window)
 
         return self.dlg.dlg
 

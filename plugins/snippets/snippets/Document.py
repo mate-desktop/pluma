@@ -18,12 +18,12 @@
 import os
 import re
 
-from gi.repository import GLib, Gio, Gdk, Gtk, GtkSource, Pluma
+from gi.repository import GLib, Gio, Gdk, Gtk, Pluma
 
-from Library import Library
-from Snippet import Snippet
-from Placeholder import *
-import Completion
+from .Library import Library
+from .Snippet import Snippet
+from .Placeholder import *
+from . import Completion
 
 class DynamicSnippet(dict):
     def __init__(self, text):
@@ -31,9 +31,7 @@ class DynamicSnippet(dict):
         self.valid = True
 
 class Document:
-    TAB_KEY_VAL = (Gdk.KEY_Tab, \
-            Gdk.KEY_ISO_Left_Tab)
-    SPACE_KEY_VAL = (Gdk.KEY_space,)
+    TAB_KEY_VAL = ('Tab', 'ISO_Left_Tab')
 
     def __init__(self, instance, view):
         self.view = None
@@ -109,7 +107,7 @@ class Document:
                 self.deactivate_snippet(snippet, True)
 
             completion = self.view.get_completion()
-            if completion:
+            if completion and self.provider in completion.get_providers():
                 completion.remove_provider(self.provider)
 
         self.view = view
@@ -182,8 +180,6 @@ class Document:
         snippets = Library().from_accelerator(accelerator, \
                 self.language_id)
 
-        snippets_debug('Accel!')
-
         if len(snippets) == 0:
             return False
         elif len(snippets) == 1:
@@ -193,6 +189,7 @@ class Document:
             provider = Completion.Provider(_('Snippets'), self.language_id, self.on_proposal_activated)
             provider.set_proposals(snippets)
 
+            cm = self.view.get_completion()
             cm.show([provider], cm.create_context(None))
 
         return True
@@ -266,7 +263,6 @@ class Document:
 
             # Find the nearest placeholder
             if nearest(piter, begin, end, found):
-                foundIndex = index
                 found = placeholder
 
             # Find the current placeholder
@@ -276,7 +272,7 @@ class Document:
                 currentIndex = index
                 current = placeholder
 
-        if current and current != found and \
+        if current and found and current != found and \
            (current.begin_iter().compare(found.begin_iter()) == 0 or \
             current.end_iter().compare(found.begin_iter()) == 0) and \
            self.active_placeholder and \
@@ -363,57 +359,60 @@ class Document:
 
     def env_get_current_word(self, buf):
         start, end = buffer_word_boundary(buf)
-
         return buf.get_text(start, end, False)
 
     def env_get_current_line(self, buf):
         start, end = buffer_line_boundary(buf)
-
         return buf.get_text(start, end, False)
 
     def env_get_current_line_number(self, buf):
         start, end = buffer_line_boundary(buf)
         return str(start.get_line() + 1)
 
-    def env_get_document_uri(self, buf):
-        location = buf.get_location()
-
+    def location_uri_for_env(self, location):
         if location:
             return location.get_uri()
-        else:
-            return ''
+        return ''
 
-    def env_get_document_name(self, buf):
-        location = buf.get_location()
-
+    def location_name_for_env(self, location):
         if location:
             return location.get_basename()
-        else:
-            return ''
+        return ''
 
-    def env_get_document_scheme(self, buf):
-        location = buf.get_location()
-
+    def location_scheme_for_env(self, location):
         if location:
             return location.get_uri_scheme()
-        else:
-            return ''
+        return ''
 
-    def env_get_document_path(self, buf):
-        location = buf.get_location()
-
+    def location_path_for_env(self, location):
         if location:
             return location.get_path()
-        else:
-            return ''
+        return ''
 
-    def env_get_document_dir(self, buf):
-        location = buf.get_location()
-
+    def location_dir_for_env(self, location):
         if location:
-            return location.get_parent().get_path() or ''
-        else:
-            return ''
+            parent = location.get_parent()
+
+            if parent and parent.has_uri_scheme('file'):
+                return parent.get_path() or ''
+
+        return ''
+
+    def env_add_for_location(self, environ, location, prefix):
+        parts = {
+            'URI': self.location_uri_for_env,
+            'NAME': self.location_name_for_env,
+            'SCHEME': self.location_scheme_for_env,
+            'PATH': self.location_path_for_env,
+            'DIR': self.location_dir_for_env,
+        }
+
+        for k in parts:
+            v = parts[k](location)
+            key = prefix + '_' + k
+            environ[key] = str(v)
+
+        return environ
 
     def env_get_document_type(self, buf):
         typ = buf.get_mime_type()
@@ -451,25 +450,30 @@ class Document:
 
         return ' '.join(documents_path)
 
-    def update_environment(self):
+    def get_environment(self):
         buf = self.view.get_buffer()
+        environ = {}
 
-        variables = {'PLUMA_SELECTED_TEXT': self.env_get_selected_text,
+        for k in os.environ:
+            # Get the original environment
+            v = os.environ[k]
+            environ[k] = v
+
+        variables = {
+                 'PLUMA_SELECTED_TEXT': self.env_get_selected_text,
                  'PLUMA_CURRENT_WORD': self.env_get_current_word,
                  'PLUMA_CURRENT_LINE': self.env_get_current_line,
                  'PLUMA_CURRENT_LINE_NUMBER': self.env_get_current_line_number,
-                 'PLUMA_CURRENT_DOCUMENT_URI': self.env_get_document_uri,
-                 'PLUMA_CURRENT_DOCUMENT_NAME': self.env_get_document_name,
-                 'PLUMA_CURRENT_DOCUMENT_SCHEME': self.env_get_document_scheme,
-                 'PLUMA_CURRENT_DOCUMENT_PATH': self.env_get_document_path,
-                 'PLUMA_CURRENT_DOCUMENT_DIR': self.env_get_document_dir,
                  'PLUMA_CURRENT_DOCUMENT_TYPE': self.env_get_document_type,
                  'PLUMA_DOCUMENTS_URI': self.env_get_documents_uri,
                  'PLUMA_DOCUMENTS_PATH': self.env_get_documents_path,
             }
 
         for var in variables:
-            os.environ[var] = variables[var](buf)
+            environ[var] = variables[var](buf)
+
+        self.env_add_for_location(environ, buf.get_location(), 'PLUMA_CURRENT_DOCUMENT')
+        return environ
 
     def uses_current_word(self, snippet):
         matches = re.findall('(\\\\*)\\$PLUMA_CURRENT_WORD', snippet['text'])
@@ -489,12 +493,19 @@ class Document:
 
         return False
 
-    def apply_snippet(self, snippet, start = None, end = None):
+    def apply_snippet(self, snippet, start = None, end = None, environ = {}):
         if not snippet.valid:
             return False
 
+        # Set environmental variables
+        env = self.get_environment()
+
+        if environ:
+            for k in environ:
+                env[k] = environ[k]
+
         buf = self.view.get_buffer()
-        s = Snippet(snippet)
+        s = Snippet(snippet, env)
 
         if not start:
             start = buf.get_iter_at_mark(buf.get_insert())
@@ -513,9 +524,6 @@ class Document:
             # it will be removed
             start, end = buffer_line_boundary(buf)
 
-        # Set environmental variables
-        self.update_environment()
-
         # You know, we could be in an end placeholder
         (current, next) = self.next_placeholder()
         if current and current.__class__ == PlaceholderEnd:
@@ -527,8 +535,6 @@ class Document:
         buf.delete(start, end)
 
         # Insert the snippet
-        holders = len(self.placeholders)
-
         if len(self.active_snippets) == 0:
             self.first_snippet_inserted()
 
@@ -536,7 +542,7 @@ class Document:
         self.active_snippets.append(sn)
 
         # Put cursor at first tab placeholder
-        keys = filter(lambda x: x > 0, sn.placeholders.keys())
+        keys = [x for x in sn.placeholders.keys() if x > 0]
 
         if len(keys) == 0:
             if 0 in sn.placeholders:
@@ -637,7 +643,6 @@ class Document:
             return True
 
     def deactivate_snippet(self, snippet, force = False):
-        buf = self.view.get_buffer()
         remove = []
         ordered_remove = []
 
@@ -792,10 +797,11 @@ class Document:
         library = Library()
 
         state = event.get_state()
+        keyname = Gdk.keyval_name(event.keyval)
 
         if not (state & Gdk.ModifierType.CONTROL_MASK) and \
                 not (state & Gdk.ModifierType.MOD1_MASK) and \
-                event.keyval in self.TAB_KEY_VAL:
+                keyname in self.TAB_KEY_VAL:
             if not state & Gdk.ModifierType.SHIFT_MASK:
                 return self.run_snippet()
             else:
@@ -868,20 +874,9 @@ class Document:
         pathname = ''
         dirname = ''
         ruri = ''
+        environ = {'PLUMA_DROP_DOCUMENT_TYPE': mime}
 
-        if Pluma.utils_uri_has_file_scheme(uri):
-            pathname = gfile.get_path()
-            dirname = gfile.get_parent().get_path()
-
-        name = os.path.basename(uri)
-        scheme = gfile.get_uri_scheme()
-
-        os.environ['PLUMA_DROP_DOCUMENT_URI'] = uri
-        os.environ['PLUMA_DROP_DOCUMENT_NAME'] = name
-        os.environ['PLUMA_DROP_DOCUMENT_SCHEME'] = scheme
-        os.environ['PLUMA_DROP_DOCUMENT_PATH'] = pathname
-        os.environ['PLUMA_DROP_DOCUMENT_DIR'] = dirname
-        os.environ['PLUMA_DROP_DOCUMENT_TYPE'] = mime
+        self.env_add_for_location(environ, gfile, 'PLUMA_DROP_DOCUMENT')
 
         buf = self.view.get_buffer()
         location = buf.get_location()
@@ -890,7 +885,7 @@ class Document:
 
         relpath = self.relative_path(ruri, uri, mime)
 
-        os.environ['PLUMA_DROP_DOCUMENT_RELATIVE_PATH'] = relpath
+        environ['PLUMA_DROP_DOCUMENT_RELATIVE_PATH'] = relpath
 
         mark = buf.get_mark('gtk_drag_target')
 
@@ -898,7 +893,7 @@ class Document:
             mark = buf.get_insert()
 
         piter = buf.get_iter_at_mark(mark)
-        self.apply_snippet(snippet, piter, piter)
+        self.apply_snippet(snippet, piter, piter, environ)
 
     def in_bounds(self, x, y):
         rect = self.view.get_visible_rect()
@@ -907,6 +902,9 @@ class Document:
         return not (x < rect.x or x > rect.x + rect.width or y < rect.y or y > rect.y + rect.height)
 
     def on_drag_data_received(self, view, context, x, y, data, info, timestamp):
+        if not self.view.get_editable():
+            return
+
         uris = drop_get_uris(data)
         if not uris:
             return
@@ -944,6 +942,9 @@ class Document:
         return self.view.drag_dest_find_target(context, lst)
 
     def on_proposal_activated(self, proposal, piter):
+        if not self.view.get_editable():
+            return False
+
         buf = self.view.get_buffer()
         bounds = buf.get_selection_bounds()
 
@@ -1047,8 +1048,6 @@ class Document:
     def draw_placeholder(self, ctx, placeholder):
         if isinstance(placeholder, PlaceholderEnd):
             return
-
-        buf = self.view.get_buffer()
 
         col = self.view.get_style_context().get_color(Gtk.StateFlags.INSENSITIVE)
         col.alpha = 0.5

@@ -24,12 +24,12 @@ import locale
 import subprocess
 from gi.repository import GObject, GLib, Gtk
 
-from SubstitutionParser import SubstitutionParser
-from Helper import *
+from .SubstitutionParser import SubstitutionParser
+from .Helper import *
 
 # These are places in a view where the cursor can go and do things
 class Placeholder:
-    def __init__(self, view, tabstop, defaults, begin):
+    def __init__(self, view, tabstop, environ, defaults, begin):
         self.ok = True
         self.done = False
         self.buf = view.get_buffer()
@@ -38,6 +38,7 @@ class Placeholder:
         self.mirrors = []
         self.leave_mirrors = []
         self.tabstop = tabstop
+        self.environ = environ
         self.set_default(defaults)
         self.prev_contents = self.default
         self.set_mark_gravity()
@@ -48,6 +49,9 @@ class Placeholder:
             self.begin = None
 
         self.end = None
+
+    def get_environ(self):
+        return self.environ
 
     def __str__(self):
         return '%s (%s)' % (str(self.__class__), str(self.default))
@@ -81,10 +85,12 @@ class Placeholder:
         return s
 
     def re_environment(self, m):
-        if m.group(1) or not m.group(2) in os.environ:
+        env = self.get_environ()
+
+        if m.group(1) or not m.group(2) in env:
             return '$' + m.group(2)
         else:
-            return self.format_environment(os.environ[m.group(2)])
+            return self.format_environment(env[m.group(2)])
 
     def expand_environment(self, text):
         if not text:
@@ -214,8 +220,8 @@ class Placeholder:
 
 # This is an placeholder which inserts a mirror of another Placeholder
 class PlaceholderMirror(Placeholder):
-    def __init__(self, view, tabstop, begin):
-        Placeholder.__init__(self, view, -1, None, begin)
+    def __init__(self, view, tabstop, environ, begin):
+        Placeholder.__init__(self, view, -1, environ, None, begin)
         self.mirror_stop = tabstop
 
     def update(self, mirror):
@@ -237,8 +243,8 @@ class PlaceholderMirror(Placeholder):
 
 # This placeholder indicates the end of a snippet
 class PlaceholderEnd(Placeholder):
-    def __init__(self, view, begin, default):
-        Placeholder.__init__(self, view, 0, default, begin)
+    def __init__(self, view, environ, begin, default):
+        Placeholder.__init__(self, view, 0, environ, default, begin)
 
     def run_last(self, placeholders):
         Placeholder.run_last(self, placeholders)
@@ -264,8 +270,8 @@ class PlaceholderEnd(Placeholder):
 
 # This placeholder is used to expand a command with embedded mirrors
 class PlaceholderExpand(Placeholder):
-    def __init__(self, view, tabstop, begin, s):
-        Placeholder.__init__(self, view, tabstop, None, begin)
+    def __init__(self, view, tabstop, environ, begin, s):
+        Placeholder.__init__(self, view, tabstop, environ, None, begin)
 
         self.mirror_text = {0: ''}
         self.timeout_id = None
@@ -359,8 +365,6 @@ class PlaceholderExpand(Placeholder):
         return ret
 
     def update(self, mirror):
-        text = None
-
         if mirror:
             self.mirror_text[mirror.tabstop] = mirror.get_text()
 
@@ -379,8 +383,8 @@ class PlaceholderExpand(Placeholder):
 
 # The shell placeholder executes commands in a subshell
 class PlaceholderShell(PlaceholderExpand):
-    def __init__(self, view, tabstop, begin, s):
-        PlaceholderExpand.__init__(self, view, tabstop, begin, s)
+    def __init__(self, view, tabstop, environ, begin, s):
+        PlaceholderExpand.__init__(self, view, tabstop, environ, begin, s)
 
         self.shell = None
         self.remove_me = False
@@ -412,7 +416,7 @@ class PlaceholderShell(PlaceholderExpand):
         self.close_shell()
         self.remove_timeout()
 
-        self.set_text(str.join('', self.shell_output).rstrip('\n'))
+        self.set_text(''.join(self.shell_output).rstrip('\n'))
 
         if self.default == None:
             self.default = self.get_text()
@@ -423,19 +427,24 @@ class PlaceholderShell(PlaceholderExpand):
 
     def process_cb(self, source, condition):
         if condition & GObject.IO_IN:
-            line = source.readline()
+            while True:
+                line = source.readline()
 
-            if len(line) > 0:
-                try:
-                    line = unicode(line, 'utf-8')
-                except:
-                    line = unicode(line, locale.getdefaultlocale()[1],
-                            'replace')
+                if len(line) <= 0:
+                    break
 
-            self.shell_output += line
-            self.install_timeout()
+                if isinstance(line, bytes):
+                    try:
+                        line = line.decode('utf-8')
+                    except UnicodeDecodeError:
+                        line = line.decode(locale.getdefaultlocale()[1],
+                                           errors='replace')
 
-            return True
+                self.shell_output += line
+                self.install_timeout()
+
+                if not (condition & GObject.IO_HUP):
+                    return True
 
         self.process_close()
         return False
@@ -456,7 +465,7 @@ class PlaceholderShell(PlaceholderExpand):
         popen_args = {
             'cwd'  : None,
             'shell': True,
-            'env'  : os.environ,
+            'env': self.get_environ(),
             'stdout': subprocess.PIPE
         }
 
@@ -491,8 +500,8 @@ class TimeoutError(Exception):
 
 # The python placeholder evaluates commands in python
 class PlaceholderEval(PlaceholderExpand):
-    def __init__(self, view, tabstop, refs, begin, s, namespace):
-        PlaceholderExpand.__init__(self, view, tabstop, begin, s)
+    def __init__(self, view, tabstop, environ, refs, begin, s, namespace):
+        PlaceholderExpand.__init__(self, view, tabstop, environ, begin, s)
 
         self.fdread = 0
         self.remove_me = False
@@ -529,7 +538,7 @@ class PlaceholderEval(PlaceholderExpand):
         return hasattr(signal, 'SIGALRM')
 
     def timeout_cb(self, signum = 0, frame = 0):
-        raise TimeoutError, "Operation timed out (>2 seconds)"
+        raise TimeoutError("Operation timed out (>2 seconds)")
 
     def install_timeout(self):
         if not self.timeout_supported():
@@ -568,7 +577,7 @@ class PlaceholderEval(PlaceholderExpand):
             del self.namespace['process_snippet']
 
         try:
-            exec text in self.namespace
+            exec(text, self.namespace)
         except:
             traceback.print_exc()
 
@@ -593,7 +602,7 @@ class PlaceholderEval(PlaceholderExpand):
                 'time, execution aborted.') % self.command)
 
                 return False
-            except Exception, detail:
+            except Exception as detail:
                 self.remove_timeout()
 
                 message_dialog(None, Gtk.MessageType.ERROR,
@@ -612,8 +621,8 @@ class PlaceholderEval(PlaceholderExpand):
 
 # Regular expression placeholder
 class PlaceholderRegex(PlaceholderExpand):
-    def __init__(self, view, tabstop, begin, inp, pattern, substitution, modifiers):
-        PlaceholderExpand.__init__(self, view, tabstop, begin, '')
+    def __init__(self, view, tabstop, environ, begin, inp, pattern, substitution, modifiers):
+        PlaceholderExpand.__init__(self, view, tabstop, environ, begin, '')
 
         self.instant_update = True
         self.inp = inp
@@ -652,10 +661,12 @@ class PlaceholderRegex(PlaceholderExpand):
         return re.escape(s)
 
     def get_input(self):
+        env = self.get_environ()
+
         if isinstance(self.inp, int):
             return self.mirror_text[self.inp]
-        elif self.inp in os.environ:
-            return os.environ[self.inp]
+        elif self.inp in env:
+            return env[self.inp]
         else:
             return ''
 
@@ -672,7 +683,7 @@ class PlaceholderRegex(PlaceholderExpand):
         # Try to compile pattern
         try:
             regex = re.compile(pattern, self.modifiers)
-        except re.error, message:
+        except re.error as message:
             sys.stderr.write('Could not compile regular expression: %s\n%s\n' % (pattern, message))
             return False
 
