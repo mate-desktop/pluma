@@ -71,6 +71,12 @@ enum
 	NUM_COLUMNS
 };
 
+typedef enum
+{
+  DRAW_NONE = 0,
+  DRAW_TRAILING = 1,
+  DRAW_ALL = 2
+} DrawSpacesSettings;
 
 #define PLUMA_PREFERENCES_DIALOG_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
 						     PLUMA_TYPE_PREFERENCES_DIALOG, \
@@ -100,6 +106,13 @@ struct _PlumaPreferencesDialogPrivate
 
 	/* Auto indentation */
 	GtkWidget	*auto_indent_checkbutton;
+
+	/* Draw spaces... */
+	GtkWidget	*draw_spaces_checkbutton;
+	GtkWidget	*draw_trailing_spaces_checkbutton;
+	GtkWidget	*draw_tabs_checkbutton;
+	GtkWidget	*draw_trailing_tabs_checkbutton;
+	GtkWidget	*draw_newlines_checkbutton;
 
 	/* Text Wrapping */
 	GtkWidget	*wrap_text_checkbutton;
@@ -200,6 +213,88 @@ auto_indent_checkbutton_toggled (GtkToggleButton        *button,
 }
 
 static void
+draw_spaces_checkbutton_toggled (GtkToggleButton        *button,
+                                 PlumaPreferencesDialog *dlg)
+{
+	int v;
+        pluma_debug (DEBUG_PREFS);
+
+        g_return_if_fail (button == GTK_TOGGLE_BUTTON (dlg->priv->draw_spaces_checkbutton));
+
+        if (gtk_toggle_button_get_active (button))
+                v = DRAW_ALL;
+        else
+                v = DRAW_NONE;
+
+        pluma_prefs_manager_set_draw_spaces (v);
+#ifdef GTK_SOURCE_VERSION_3_24
+        gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_spaces_checkbutton), v > DRAW_NONE);
+        gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton), v == DRAW_NONE);
+#endif
+
+}
+
+static void
+draw_trailing_spaces_checkbutton_toggled (GtkToggleButton        *button,
+                                          PlumaPreferencesDialog *dlg)
+{
+        pluma_debug (DEBUG_PREFS);
+
+        g_return_if_fail (button == GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton));
+
+        if (gtk_toggle_button_get_active (button))
+                pluma_prefs_manager_set_draw_spaces (DRAW_TRAILING);
+        else
+                pluma_prefs_manager_set_draw_spaces (DRAW_ALL);
+}
+
+static void
+draw_tabs_checkbutton_toggled (GtkToggleButton        *button,
+                               PlumaPreferencesDialog *dlg)
+{
+	int v;
+        pluma_debug (DEBUG_PREFS);
+
+        g_return_if_fail (button == GTK_TOGGLE_BUTTON(dlg->priv->draw_tabs_checkbutton));
+
+        if (gtk_toggle_button_get_active (button))
+                v = DRAW_ALL;
+        else
+                v = DRAW_NONE;
+
+        pluma_prefs_manager_set_draw_tabs (v);
+#ifdef GTK_SOURCE_VERSION_3_24
+        gtk_widget_set_sensitive (GTK_WIDGET(dlg->priv->draw_trailing_tabs_checkbutton), v > DRAW_NONE);
+        gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON(dlg->priv->draw_trailing_tabs_checkbutton), v == DRAW_NONE);
+#endif
+}
+
+static void
+draw_trailing_tabs_checkbutton_toggled (GtkToggleButton        *button,
+                                        PlumaPreferencesDialog *dlg)
+{
+        pluma_debug (DEBUG_PREFS);
+
+        g_return_if_fail (button == GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_tabs_checkbutton));
+
+        if (gtk_toggle_button_get_active (button))
+                pluma_prefs_manager_set_draw_tabs (DRAW_TRAILING);
+        else
+                pluma_prefs_manager_set_draw_tabs (DRAW_ALL);
+}
+
+static void
+draw_newlines_checkbutton_toggled (GtkToggleButton        *button,
+                                   PlumaPreferencesDialog *dlg)
+{
+        pluma_debug (DEBUG_PREFS);
+
+        g_return_if_fail (button == GTK_TOGGLE_BUTTON (dlg->priv->draw_newlines_checkbutton));
+
+        pluma_prefs_manager_set_draw_newlines (gtk_toggle_button_get_active (button));
+}
+
+static void
 auto_save_checkbutton_toggled (GtkToggleButton        *button,
 			       PlumaPreferencesDialog *dlg)
 {
@@ -257,6 +352,36 @@ setup_editor_page (PlumaPreferencesDialog *dlg)
 				      pluma_prefs_manager_get_insert_spaces ());
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->auto_indent_checkbutton), 
 				      pluma_prefs_manager_get_auto_indent ());
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_spaces_checkbutton),
+				      pluma_prefs_manager_get_draw_spaces () > 0);
+#ifdef GTK_SOURCE_VERSION_3_24
+	gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_spaces_checkbutton),
+				      pluma_prefs_manager_get_draw_spaces () > 0);
+	gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton),
+				      pluma_prefs_manager_get_draw_spaces () == 0);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton),
+				      pluma_prefs_manager_get_draw_spaces () == 1);
+#else
+	gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_spaces_checkbutton), FALSE);
+	gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton), TRUE);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton), FALSE);
+#endif
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_tabs_checkbutton),
+				      pluma_prefs_manager_get_draw_tabs () > 0);
+#ifdef GTK_SOURCE_VERSION_3_24
+	gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_tabs_checkbutton),
+				      pluma_prefs_manager_get_draw_tabs () > 0);
+	gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_tabs_checkbutton),
+				      pluma_prefs_manager_get_draw_tabs () == 0);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_tabs_checkbutton),
+				      pluma_prefs_manager_get_draw_tabs () == 1);
+#else
+	gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_tabs_checkbutton), FALSE);
+	gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_tabs_checkbutton), FALSE);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_tabs_checkbutton), FALSE);
+#endif
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_newlines_checkbutton),
+				      pluma_prefs_manager_get_draw_newlines ());
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->backup_copy_checkbutton),
 				      pluma_prefs_manager_get_create_backup_copy ());
 
@@ -278,6 +403,12 @@ setup_editor_page (PlumaPreferencesDialog *dlg)
 				  pluma_prefs_manager_insert_spaces_can_set ());
 	gtk_widget_set_sensitive (dlg->priv->auto_indent_checkbutton,
 				  pluma_prefs_manager_auto_indent_can_set ());
+	gtk_widget_set_sensitive (dlg->priv->draw_spaces_checkbutton,
+				  pluma_prefs_manager_draw_spaces_can_set ());
+	gtk_widget_set_sensitive (dlg->priv->draw_tabs_checkbutton,
+				  pluma_prefs_manager_draw_tabs_can_set ());
+	gtk_widget_set_sensitive (dlg->priv->draw_newlines_checkbutton,
+				  pluma_prefs_manager_draw_newlines_can_set ());
 	gtk_widget_set_sensitive (dlg->priv->backup_copy_checkbutton,
 				  pluma_prefs_manager_create_backup_copy_can_set ());
 	gtk_widget_set_sensitive (dlg->priv->autosave_hbox, 
@@ -298,6 +429,26 @@ setup_editor_page (PlumaPreferencesDialog *dlg)
 	g_signal_connect (dlg->priv->auto_indent_checkbutton,
 			  "toggled",
 			  G_CALLBACK (auto_indent_checkbutton_toggled),
+			  dlg);
+	g_signal_connect (dlg->priv->draw_spaces_checkbutton,
+			  "toggled",
+			  G_CALLBACK (draw_spaces_checkbutton_toggled),
+			  dlg);
+	g_signal_connect (dlg->priv->draw_trailing_spaces_checkbutton,
+			  "toggled",
+			  G_CALLBACK (draw_trailing_spaces_checkbutton_toggled),
+			  dlg);
+	g_signal_connect (dlg->priv->draw_tabs_checkbutton,
+			  "toggled",
+			  G_CALLBACK (draw_tabs_checkbutton_toggled),
+			  dlg);
+	g_signal_connect (dlg->priv->draw_trailing_tabs_checkbutton,
+			  "toggled",
+			  G_CALLBACK (draw_trailing_tabs_checkbutton_toggled),
+			  dlg);
+	g_signal_connect (dlg->priv->draw_newlines_checkbutton,
+			  "toggled",
+			  G_CALLBACK (draw_newlines_checkbutton_toggled),
 			  dlg);
 	g_signal_connect (dlg->priv->auto_save_checkbutton,
 			  "toggled",
@@ -1172,6 +1323,12 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 		"insert_spaces_checkbutton", &dlg->priv->insert_spaces_checkbutton,
 
 		"auto_indent_checkbutton", &dlg->priv->auto_indent_checkbutton,
+
+		"draw_spaces_checkbutton", &dlg->priv->draw_spaces_checkbutton,
+		"draw_trailing_spaces_checkbutton", &dlg->priv->draw_trailing_spaces_checkbutton,
+		"draw_tabs_checkbutton", &dlg->priv->draw_tabs_checkbutton,
+		"draw_trailing_tabs_checkbutton", &dlg->priv->draw_trailing_tabs_checkbutton,
+		"draw_newlines_checkbutton", &dlg->priv->draw_newlines_checkbutton,
 
 		"autosave_hbox", &dlg->priv->autosave_hbox,
 		"backup_copy_checkbutton", &dlg->priv->backup_copy_checkbutton,
