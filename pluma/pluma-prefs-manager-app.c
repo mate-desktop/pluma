@@ -116,6 +116,22 @@ static void pluma_prefs_manager_lockdown_changed	(GSettings *settings,
 							 gchar       *key,
 							 gpointer     user_data);
 
+static void pluma_prefs_manager_draw_spaces_changed	(GSettings *settings,
+							 gchar       *key,
+							 gpointer     user_data);
+
+static void pluma_prefs_manager_draw_tabs_changed	(GSettings *settings,
+							 gchar       *key,
+							 gpointer     user_data);
+
+static void pluma_prefs_manager_draw_newlines_changed	(GSettings *settings,
+							 gchar       *key,
+							 gpointer     user_data);
+
+static void pluma_prefs_manager_draw_nbsp_changed	(GSettings *settings,
+							 gchar       *key,
+							 gpointer     user_data);
+
 /* GUI state is serialized to a .desktop file, not in GSettings */
 
 #define PLUMA_STATE_DEFAULT_WINDOW_STATE	0
@@ -713,6 +729,27 @@ pluma_prefs_manager_app_init (void)
 				"changed",
 				G_CALLBACK (pluma_prefs_manager_lockdown_changed),
 				NULL);
+
+		g_signal_connect (pluma_prefs_manager->settings,
+				"changed::" GPM_SPACE_DRAWER_SPACE,
+				G_CALLBACK (pluma_prefs_manager_draw_spaces_changed),
+				NULL);
+
+		g_signal_connect (pluma_prefs_manager->settings,
+				"changed::" GPM_SPACE_DRAWER_TAB,
+				G_CALLBACK (pluma_prefs_manager_draw_tabs_changed),
+				NULL);
+
+		g_signal_connect (pluma_prefs_manager->settings,
+				"changed::" GPM_SPACE_DRAWER_NEWLINE,
+				G_CALLBACK (pluma_prefs_manager_draw_newlines_changed),
+				NULL);
+
+		g_signal_connect (pluma_prefs_manager->settings,
+				"changed::" GPM_SPACE_DRAWER_NBSP,
+				G_CALLBACK (pluma_prefs_manager_draw_nbsp_changed),
+				NULL);
+
 	}
 
 	return pluma_prefs_manager != NULL;
@@ -1438,4 +1475,147 @@ pluma_prefs_manager_lockdown_changed (GSettings *settings,
 		_pluma_app_set_lockdown_bit (app,
 					     PLUMA_LOCKDOWN_SAVE_TO_DISK,
 					     locked);
+}
+
+#ifdef GTK_SOURCE_VERSION_3_24
+static void
+pluma_prefs_manager_space_drawer_generic (GSettings  *settings,
+                                          gint       level,
+                                          GtkSourceSpaceTypeFlags type)
+{
+
+        GList *views;
+        GList *l;
+
+        pluma_debug (DEBUG_PREFS);
+
+        views = pluma_app_get_views (pluma_app_get_default ());
+        l = views;
+
+        while (l != NULL)
+        {
+		pluma_set_source_space_drawer_by_level (GTK_SOURCE_VIEW (l->data),
+                                                        level, type);
+                l = l->next;
+        }
+
+        g_list_free (views);
+}
+#else
+static void
+pluma_prefs_manager_draw_generic (GSettings  *settings,
+                                  gint       level,
+                                  GtkSourceDrawSpacesFlags type)
+{
+
+        GList *views;
+        GList *l;
+
+        pluma_debug (DEBUG_PREFS);
+
+        views = pluma_app_get_views (pluma_app_get_default ());
+        l = views;
+
+        while (l != NULL)
+        {
+                GtkSourceSpaceTypeFlags value;
+
+                value = gtk_source_view_get_draw_spaces (GTK_SOURCE_VIEW (l->data));
+                if (level > 0)
+                        value |= type;
+                else
+                        value &= ~type;
+                gtk_source_view_set_draw_spaces (GTK_SOURCE_VIEW (l->data),
+                                                 value);
+                l = l->next;
+        }
+
+        g_list_free (views);
+}
+#endif
+
+static void
+pluma_prefs_manager_draw_spaces_changed (GSettings *settings,
+                                         gchar       *key,
+                                         gpointer     user_data)
+{
+        pluma_debug (DEBUG_PREFS);
+
+        if (strcmp (key, GPM_SPACE_DRAWER_SPACE))
+                return;
+
+#ifdef GTK_SOURCE_VERSION_3_24
+        pluma_prefs_manager_space_drawer_generic (settings,
+                                                  g_settings_get_enum (settings, key),
+                                                  GTK_SOURCE_SPACE_TYPE_SPACE);
+#else
+        pluma_prefs_manager_draw_generic (settings,
+                                          g_settings_get_enum (settings, key),
+                                          GTK_SOURCE_DRAW_SPACES_SPACE);
+#endif
+}
+
+static void
+pluma_prefs_manager_draw_tabs_changed (GSettings *settings,
+                                       gchar       *key,
+                                       gpointer     user_data)
+{
+        pluma_debug (DEBUG_PREFS);
+
+        if (strcmp (key, GPM_SPACE_DRAWER_TAB))
+                return;
+
+#ifdef GTK_SOURCE_VERSION_3_24
+        pluma_prefs_manager_space_drawer_generic (settings,
+                                                  g_settings_get_enum (settings, key),
+                                                  GTK_SOURCE_SPACE_TYPE_TAB);
+#else
+        pluma_prefs_manager_draw_generic (settings,
+                                          g_settings_get_enum (settings, key),
+                                          GTK_SOURCE_DRAW_SPACES_TAB);
+#endif
+
+}
+
+static void
+pluma_prefs_manager_draw_newlines_changed (GSettings *settings,
+                                           gchar       *key,
+                                           gpointer     user_data)
+{
+        pluma_debug (DEBUG_PREFS);
+
+        if (strcmp (key, GPM_SPACE_DRAWER_NEWLINE))
+                return;
+
+#ifdef GTK_SOURCE_VERSION_3_24
+        pluma_prefs_manager_space_drawer_generic (settings,
+                                                  g_settings_get_boolean (settings, key) ? 1 : 0,
+                                                  GTK_SOURCE_SPACE_TYPE_NEWLINE);
+#else
+        pluma_prefs_manager_draw_generic (settings,
+                                          g_settings_get_boolean (settings, key) ? 1 : 0,
+                                          GTK_SOURCE_DRAW_SPACES_NEWLINE);
+#endif
+
+}
+
+static void
+pluma_prefs_manager_draw_nbsp_changed (GSettings *settings,
+                                       gchar       *key,
+                                       gpointer     user_data)
+{
+        pluma_debug (DEBUG_PREFS);
+
+        if (strcmp (key, GPM_SPACE_DRAWER_NBSP))
+                return;
+
+#ifdef GTK_SOURCE_VERSION_3_24
+        pluma_prefs_manager_space_drawer_generic (settings,
+                                                  g_settings_get_enum (settings, key),
+                                                  GTK_SOURCE_SPACE_TYPE_NBSP);
+#else
+        pluma_prefs_manager_draw_generic (settings,
+                                          g_settings_get_enum (settings, key),
+                                          GTK_SOURCE_DRAW_SPACES_NBSP);
+#endif
 }
