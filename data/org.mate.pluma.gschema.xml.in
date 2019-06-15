@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <enum id="org.mate.pluma.SpaceDrawer">
+    <value nick="draw-none" value="0"/>
+    <value nick="draw-trailing" value="1"/>
+    <value nick="draw-all" value="2"/>
+  </enum>
   <schema id="org.mate.pluma" path="/org/mate/pluma/">
     <key name="use-default-font" type="b">
       <default>true</default>
@@ -215,6 +220,26 @@
       <default>[ 'docinfo', 'modelines', 'filebrowser', 'spell', 'time' ]</default>
       <summary>Active plugins</summary>
       <description>List of active plugins. It contains the "Location" of the active plugins. See the .pluma-plugin file for obtaining the "Location" of a given plugin.</description>
+    </key>
+    <key name="enable-space-drawer-newline" type="b">
+      <default>false</default>
+      <summary>Draw newline</summary>
+      <description>Whether pluma should draw newlines in the editor window.</description>
+    </key>
+    <key name="enable-space-drawer-nbsp" enum="org.mate.pluma.SpaceDrawer">
+      <default>'draw-none'</default>
+      <summary>Draw nbsp</summary>
+      <description>Whether pluma should draw not breaking spaces in the editor window: 'draw-none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all spaces.</description>
+    </key>
+    <key name="enable-space-drawer-tab" enum="org.mate.pluma.SpaceDrawer">
+      <default>'draw-none'</default>
+      <summary>Draw tabs</summary>
+      <description>Whether pluma should draw tabs in the editor window: 'draw-none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all spaces.</description>
+    </key>
+    <key name="enable-space-drawer-space" enum="org.mate.pluma.SpaceDrawer">
+      <default>'draw-none'</default>
+      <summary>Draw spaces</summary>
+      <description>Whether pluma should draw spaces in the editor window: 'draw-none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all spaces.</description>
     </key>
   </schema>
 </schemalist>

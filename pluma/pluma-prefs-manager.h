@@ -122,6 +122,12 @@
 #define GPM_DEFAULT_AUTO_SAVE_INTERVAL	10 /* minutes */
 #define GPM_DEFAULT_MAX_RECENTS			5
 
+/* space drawer settings */
+#define GPM_SPACE_DRAWER_SPACE		"enable-space-drawer-space"
+#define GPM_SPACE_DRAWER_TAB		"enable-space-drawer-tab"
+#define GPM_SPACE_DRAWER_NEWLINE	"enable-space-drawer-newline"
+#define GPM_SPACE_DRAWER_NBSP		"enable-space-drawer-nbsp"
+
 typedef enum {
 	PLUMA_TOOLBAR_SYSTEM = 0,
 	PLUMA_TOOLBAR_ICONS,
@@ -329,6 +335,26 @@ PlumaLockdownMask	 pluma_prefs_manager_get_lockdown			(void);
 /* GSettings utilities */
 GSList*				 pluma_prefs_manager_get_gslist (GSettings *settings, const gchar *key);
 void				 pluma_prefs_manager_set_gslist (GSettings *settings, const gchar *key, GSList *list);
+
+/* Enable drawing space */
+gint                    pluma_prefs_manager_get_draw_spaces     (void);
+void                    pluma_prefs_manager_set_draw_spaces     (gint enable_draw_spaces);
+gboolean                pluma_prefs_manager_draw_spaces_can_set (void);
+
+/* Enable drawing tab */
+gint                    pluma_prefs_manager_get_draw_tabs       (void);
+void                    pluma_prefs_manager_set_draw_tabs       (gint enable_draw_tabs);
+gboolean                pluma_prefs_manager_draw_tabs_can_set   (void);
+
+/* Enable drawing newline */
+gboolean                pluma_prefs_manager_get_draw_newlines           (void);
+void                    pluma_prefs_manager_set_draw_newlines           (gboolean enable_draw_newlines);
+gboolean                pluma_prefs_manager_draw_newlines_can_set       (void);
+
+/* Enable drawing nbsp */
+gint                    pluma_prefs_manager_get_draw_nbsp       (void);
+void                    pluma_prefs_manager_set_draw_nbsp       (gint enable_draw_nbsp);
+gboolean                pluma_prefs_manager_draw_nbsp_can_set   (void);
 
 
 #endif  /* __PLUMA_PREFS_MANAGER_H__ */

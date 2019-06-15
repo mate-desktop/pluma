@@ -107,6 +107,14 @@ void 		 pluma_view_set_font		(PlumaView       *view,
 						 gboolean         def,
 						 const gchar     *font_name);
 
+#ifdef GTK_SOURCE_VERSION_3_24
+void
+pluma_set_source_space_drawer_by_level (GtkSourceView *view,
+                                        gint level,
+                                        GtkSourceSpaceTypeFlags type);
+#endif
+
+
 G_END_DECLS
 
 #endif /* __PLUMA_VIEW_H__ */

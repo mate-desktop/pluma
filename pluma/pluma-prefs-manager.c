@@ -122,6 +122,33 @@ pluma_prefs_manager_ ## name ## _can_set (void)				\
 }		
 
 
+
+#define DEFINE_ENUM_PREF(name, key) gint				\
+pluma_prefs_manager_get_ ## name (void)			 		\
+{									\
+	pluma_debug (DEBUG_PREFS);					\
+									\
+	return pluma_prefs_manager_get_enum (key);			\
+}									\
+									\
+void 									\
+pluma_prefs_manager_set_ ## name (gint v)				\
+{									\
+	pluma_debug (DEBUG_PREFS);					\
+									\
+	pluma_prefs_manager_set_enum (key,				\
+				      v);				\
+}									\
+									\
+gboolean								\
+pluma_prefs_manager_ ## name ## _can_set (void)				\
+{									\
+	pluma_debug (DEBUG_PREFS);					\
+									\
+	return pluma_prefs_manager_key_is_writable (key);		\
+}
+
+
 PlumaPrefsManager *pluma_prefs_manager = NULL;
 
 
@@ -132,6 +159,8 @@ static gboolean		 pluma_prefs_manager_get_bool		(const gchar* key);
 static gint		 pluma_prefs_manager_get_int		(const gchar* key);
 
 static gchar		*pluma_prefs_manager_get_string		(const gchar* key);
+
+static gint		 pluma_prefs_manager_get_enum		(const gchar* key);
 
 
 gboolean
@@ -189,6 +218,14 @@ pluma_prefs_manager_get_string (const gchar* key)
 	return g_settings_get_string (pluma_prefs_manager->settings, key);
 }
 
+static gint
+pluma_prefs_manager_get_enum (const gchar* key)
+{
+	pluma_debug (DEBUG_PREFS);
+
+	return g_settings_get_enum (pluma_prefs_manager->settings, key);
+}
+
 static void		 
 pluma_prefs_manager_set_bool (const gchar* key, gboolean value)
 {
@@ -222,6 +259,17 @@ pluma_prefs_manager_set_string (const gchar* key, const gchar* value)
 				pluma_prefs_manager->settings, key));
 
 	g_settings_set_string (pluma_prefs_manager->settings, key, value);
+}
+
+static void
+pluma_prefs_manager_set_enum (const gchar* key, gint value)
+{
+	pluma_debug (DEBUG_PREFS);
+
+	g_return_if_fail (g_settings_is_writable (
+				pluma_prefs_manager->settings, key));
+
+	g_settings_set_enum (pluma_prefs_manager->settings, key, value);
 }
 
 static gboolean 
@@ -939,3 +987,19 @@ pluma_prefs_manager_get_lockdown (void)
 
 	return lockdown;
 }
+
+/* enable drawing 'normal' spaces */
+DEFINE_ENUM_PREF(draw_spaces,
+        GPM_SPACE_DRAWER_SPACE)
+
+/* enable drawing tabs */
+DEFINE_ENUM_PREF(draw_tabs,
+        GPM_SPACE_DRAWER_TAB)
+
+/* enable drawing newline */
+DEFINE_BOOL_PREF(draw_newlines,
+        GPM_SPACE_DRAWER_NEWLINE)
+
+/* enable drawing nbsp */
+DEFINE_ENUM_PREF(draw_nbsp,
+        GPM_SPACE_DRAWER_NBSP)
