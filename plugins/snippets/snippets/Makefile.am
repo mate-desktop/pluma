@@ -15,7 +15,8 @@ plugin_PYTHON = \
 	Importer.py \
 	Exporter.py \
 	LanguageManager.py \
-	Completion.py
+	Completion.py \
+	comment.py
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/snippets/ui
 ui_DATA = snippets.ui
