@@ -740,7 +740,7 @@ get_page_at_coords (PlumaPrintPreview *preview,
 
 	priv = preview->priv;
 
-	if (priv->tile_h <= 0 || priv->tile_h <= 0)
+	if (priv->tile_h <= 0 || priv->tile_w <= 0)
 		return -1;
 
 	hadj = gtk_scrollable_get_hadjustment (GTK_SCROLLABLE (priv->layout));
