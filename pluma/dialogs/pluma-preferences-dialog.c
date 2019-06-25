@@ -216,20 +216,22 @@ static void
 draw_spaces_checkbutton_toggled (GtkToggleButton        *button,
                                  PlumaPreferencesDialog *dlg)
 {
-	int v;
+        DrawSpacesSettings setting;
         pluma_debug (DEBUG_PREFS);
 
         g_return_if_fail (button == GTK_TOGGLE_BUTTON (dlg->priv->draw_spaces_checkbutton));
 
         if (gtk_toggle_button_get_active (button))
-                v = DRAW_ALL;
+                setting = DRAW_ALL;
         else
-                v = DRAW_NONE;
+                setting = DRAW_NONE;
 
-        pluma_prefs_manager_set_draw_spaces (v);
+        pluma_prefs_manager_set_draw_spaces (setting);
 #ifdef GTK_SOURCE_VERSION_3_24
-        gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_spaces_checkbutton), v > DRAW_NONE);
-        gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton), v == DRAW_NONE);
+        if (setting == DRAW_NONE)
+                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton), FALSE);
+        gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_spaces_checkbutton), setting > DRAW_NONE);
+        gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton), setting == DRAW_NONE);
 #endif
 
 }
@@ -245,27 +247,34 @@ draw_trailing_spaces_checkbutton_toggled (GtkToggleButton        *button,
         if (gtk_toggle_button_get_active (button))
                 pluma_prefs_manager_set_draw_spaces (DRAW_TRAILING);
         else
-                pluma_prefs_manager_set_draw_spaces (DRAW_ALL);
+        {
+                if (pluma_prefs_manager_get_draw_spaces ())
+                        pluma_prefs_manager_set_draw_spaces (DRAW_ALL);
+                else
+                        pluma_prefs_manager_set_draw_spaces (DRAW_NONE);
+        }
 }
 
 static void
 draw_tabs_checkbutton_toggled (GtkToggleButton        *button,
                                PlumaPreferencesDialog *dlg)
 {
-	int v;
+        DrawSpacesSettings setting;
         pluma_debug (DEBUG_PREFS);
 
         g_return_if_fail (button == GTK_TOGGLE_BUTTON(dlg->priv->draw_tabs_checkbutton));
 
         if (gtk_toggle_button_get_active (button))
-                v = DRAW_ALL;
+                setting = DRAW_ALL;
         else
-                v = DRAW_NONE;
+                setting = DRAW_NONE;
 
-        pluma_prefs_manager_set_draw_tabs (v);
+        pluma_prefs_manager_set_draw_tabs (setting);
 #ifdef GTK_SOURCE_VERSION_3_24
-        gtk_widget_set_sensitive (GTK_WIDGET(dlg->priv->draw_trailing_tabs_checkbutton), v > DRAW_NONE);
-        gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON(dlg->priv->draw_trailing_tabs_checkbutton), v == DRAW_NONE);
+        if (setting == DRAW_NONE)
+                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_tabs_checkbutton), FALSE);
+        gtk_widget_set_sensitive (GTK_WIDGET(dlg->priv->draw_trailing_tabs_checkbutton), setting > DRAW_NONE);
+        gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON(dlg->priv->draw_trailing_tabs_checkbutton), setting == DRAW_NONE);
 #endif
 }
 
@@ -280,7 +289,12 @@ draw_trailing_tabs_checkbutton_toggled (GtkToggleButton        *button,
         if (gtk_toggle_button_get_active (button))
                 pluma_prefs_manager_set_draw_tabs (DRAW_TRAILING);
         else
-                pluma_prefs_manager_set_draw_tabs (DRAW_ALL);
+        {
+                if (pluma_prefs_manager_get_draw_tabs ())
+                        pluma_prefs_manager_set_draw_tabs (DRAW_ALL);
+                else
+                        pluma_prefs_manager_set_draw_tabs (DRAW_NONE);
+        }
 }
 
 static void
@@ -348,33 +362,33 @@ setup_editor_page (PlumaPreferencesDialog *dlg)
 	/* Set initial state */
 	gtk_spin_button_set_value (GTK_SPIN_BUTTON (dlg->priv->tabs_width_spinbutton),
 				   (guint) pluma_prefs_manager_get_tabs_size ());
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->insert_spaces_checkbutton), 
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->insert_spaces_checkbutton),
 				      pluma_prefs_manager_get_insert_spaces ());
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->auto_indent_checkbutton), 
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->auto_indent_checkbutton),
 				      pluma_prefs_manager_get_auto_indent ());
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_spaces_checkbutton),
-				      pluma_prefs_manager_get_draw_spaces () > 0);
+				      pluma_prefs_manager_get_draw_spaces () > DRAW_NONE);
 #ifdef GTK_SOURCE_VERSION_3_24
 	gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_spaces_checkbutton),
-				      pluma_prefs_manager_get_draw_spaces () > 0);
+				      pluma_prefs_manager_get_draw_spaces () > DRAW_NONE);
 	gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton),
-				      pluma_prefs_manager_get_draw_spaces () == 0);
+				      pluma_prefs_manager_get_draw_spaces () == DRAW_NONE);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton),
-				      pluma_prefs_manager_get_draw_spaces () == 1);
+				      pluma_prefs_manager_get_draw_spaces () == DRAW_TRAILING);
 #else
 	gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_spaces_checkbutton), FALSE);
 	gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton), TRUE);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_spaces_checkbutton), FALSE);
 #endif
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_tabs_checkbutton),
-				      pluma_prefs_manager_get_draw_tabs () > 0);
+				      pluma_prefs_manager_get_draw_tabs () > DRAW_NONE);
 #ifdef GTK_SOURCE_VERSION_3_24
 	gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_tabs_checkbutton),
-				      pluma_prefs_manager_get_draw_tabs () > 0);
+				      pluma_prefs_manager_get_draw_tabs () > DRAW_NONE);
 	gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_tabs_checkbutton),
-				      pluma_prefs_manager_get_draw_tabs () == 0);
+				      pluma_prefs_manager_get_draw_tabs () == DRAW_NONE);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_tabs_checkbutton),
-				      pluma_prefs_manager_get_draw_tabs () == 1);
+				      pluma_prefs_manager_get_draw_tabs () == DRAW_TRAILING);
 #else
 	gtk_widget_set_sensitive (GTK_WIDGET (dlg->priv->draw_trailing_tabs_checkbutton), FALSE);
 	gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (dlg->priv->draw_trailing_tabs_checkbutton), FALSE);
