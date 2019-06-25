@@ -163,7 +163,7 @@ pluma_search_dialog_class_init (PlumaSearchDialogClass *klass)
 		  	      G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
 		  	      G_STRUCT_OFFSET (PlumaSearchDialogClass, show_replace),
 			      NULL, NULL,
-			      pluma_marshal_BOOLEAN__NONE,
+			      pluma_marshal_BOOLEAN__VOID,
 			      G_TYPE_BOOLEAN, 0);
 			      
 	g_object_class_install_property (object_class, PROP_SHOW_REPLACE,

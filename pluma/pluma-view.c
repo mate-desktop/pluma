@@ -261,7 +261,7 @@ pluma_view_class_init (PlumaViewClass *klass)
 		  	      G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
 		  	      G_STRUCT_OFFSET (PlumaViewClass, start_interactive_search),
 			      NULL, NULL,
-			      pluma_marshal_BOOLEAN__NONE,
+			      pluma_marshal_BOOLEAN__VOID,
 			      G_TYPE_BOOLEAN, 0);	
 
 	view_signals[START_INTERACTIVE_GOTO_LINE] =
@@ -270,7 +270,7 @@ pluma_view_class_init (PlumaViewClass *klass)
 		  	      G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
 		  	      G_STRUCT_OFFSET (PlumaViewClass, start_interactive_goto_line),
 			      NULL, NULL,
-			      pluma_marshal_BOOLEAN__NONE,
+			      pluma_marshal_BOOLEAN__VOID,
 			      G_TYPE_BOOLEAN, 0);
 
 	view_signals[RESET_SEARCHED_TEXT] =
@@ -279,7 +279,7 @@ pluma_view_class_init (PlumaViewClass *klass)
 		  	      G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
 		  	      G_STRUCT_OFFSET (PlumaViewClass, reset_searched_text),
 			      NULL, NULL,
-			      pluma_marshal_BOOLEAN__NONE,
+			      pluma_marshal_BOOLEAN__VOID,
 			      G_TYPE_BOOLEAN, 0);		
 
 	/* A new signal DROP_URIS has been added to allow plugins to intercept
