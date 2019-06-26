@@ -990,16 +990,16 @@ pluma_prefs_manager_get_lockdown (void)
 
 /* enable drawing 'normal' spaces */
 DEFINE_ENUM_PREF(draw_spaces,
-        GPM_SPACE_DRAWER_SPACE)
+                 GPM_SPACE_DRAWER_SPACE)
 
 /* enable drawing tabs */
 DEFINE_ENUM_PREF(draw_tabs,
-        GPM_SPACE_DRAWER_TAB)
+                 GPM_SPACE_DRAWER_TAB)
 
 /* enable drawing newline */
 DEFINE_BOOL_PREF(draw_newlines,
-        GPM_SPACE_DRAWER_NEWLINE)
+                 GPM_SPACE_DRAWER_NEWLINE)
 
 /* enable drawing nbsp */
 DEFINE_ENUM_PREF(draw_nbsp,
-        GPM_SPACE_DRAWER_NBSP)
+                 GPM_SPACE_DRAWER_NBSP)

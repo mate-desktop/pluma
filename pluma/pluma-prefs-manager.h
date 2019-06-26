@@ -337,26 +337,23 @@ GSList*				 pluma_prefs_manager_get_gslist (GSettings *settings, const gchar *ke
 void				 pluma_prefs_manager_set_gslist (GSettings *settings, const gchar *key, GSList *list);
 
 /* Enable drawing space */
-gint                    pluma_prefs_manager_get_draw_spaces     (void);
-void                    pluma_prefs_manager_set_draw_spaces     (gint enable_draw_spaces);
-gboolean                pluma_prefs_manager_draw_spaces_can_set (void);
+gint     pluma_prefs_manager_get_draw_spaces     (void);
+void     pluma_prefs_manager_set_draw_spaces     (gint enable_draw_spaces);
+gboolean pluma_prefs_manager_draw_spaces_can_set (void);
 
 /* Enable drawing tab */
-gint                    pluma_prefs_manager_get_draw_tabs       (void);
-void                    pluma_prefs_manager_set_draw_tabs       (gint enable_draw_tabs);
-gboolean                pluma_prefs_manager_draw_tabs_can_set   (void);
+gint     pluma_prefs_manager_get_draw_tabs     (void);
+void     pluma_prefs_manager_set_draw_tabs     (gint enable_draw_tabs);
+gboolean pluma_prefs_manager_draw_tabs_can_set (void);
 
 /* Enable drawing newline */
-gboolean                pluma_prefs_manager_get_draw_newlines           (void);
-void                    pluma_prefs_manager_set_draw_newlines           (gboolean enable_draw_newlines);
-gboolean                pluma_prefs_manager_draw_newlines_can_set       (void);
+gboolean pluma_prefs_manager_get_draw_newlines     (void);
+void     pluma_prefs_manager_set_draw_newlines     (gboolean enable_draw_newlines);
+gboolean pluma_prefs_manager_draw_newlines_can_set (void);
 
 /* Enable drawing nbsp */
-gint                    pluma_prefs_manager_get_draw_nbsp       (void);
-void                    pluma_prefs_manager_set_draw_nbsp       (gint enable_draw_nbsp);
-gboolean                pluma_prefs_manager_draw_nbsp_can_set   (void);
-
+gint     pluma_prefs_manager_get_draw_nbsp     (void);
+void     pluma_prefs_manager_set_draw_nbsp     (gint enable_draw_nbsp);
+gboolean pluma_prefs_manager_draw_nbsp_can_set (void);
 
 #endif  /* __PLUMA_PREFS_MANAGER_H__ */
-
-
