@@ -378,35 +378,35 @@ pluma_set_source_space_drawer_by_level (GtkSourceView *view,
                                         gint level,
                                         GtkSourceSpaceTypeFlags type)
 {
-        GtkSourceSpaceLocationFlags locs[] = {GTK_SOURCE_SPACE_LOCATION_LEADING,
-                                              GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT,
-                                              GTK_SOURCE_SPACE_LOCATION_TRAILING};
-        /* this array links the level to the location */
-        GtkSourceSpaceLocationFlags levels[] = {
-                                        0,
-                                        GTK_SOURCE_SPACE_LOCATION_TRAILING,
-                                        GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT |
-                                               GTK_SOURCE_SPACE_LOCATION_TRAILING |
-                                               GTK_SOURCE_SPACE_LOCATION_LEADING
-        };
+	GtkSourceSpaceLocationFlags locs[] = {GTK_SOURCE_SPACE_LOCATION_LEADING,
+	                                      GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT,
+	                                      GTK_SOURCE_SPACE_LOCATION_TRAILING};
+	/* this array links the level to the location */
+	GtkSourceSpaceLocationFlags levels[] = {
+	                                        0,
+	                                        GTK_SOURCE_SPACE_LOCATION_TRAILING,
+	                                        GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT |
+	                                        	GTK_SOURCE_SPACE_LOCATION_TRAILING |
+	                                        	GTK_SOURCE_SPACE_LOCATION_LEADING
+	};
 
-        gint i;
+	gint i;
 
-        GtkSourceSpaceDrawer *drawer =  gtk_source_view_get_space_drawer (view);
+	GtkSourceSpaceDrawer *drawer = gtk_source_view_get_space_drawer (view);
 
-        if (level >= G_N_ELEMENTS(levels) || level < 0)
-                level = 0;
+	if (level >= G_N_ELEMENTS(levels) || level < 0)
+		level = 0;
 
-        for (i = 0 ; i < G_N_ELEMENTS(locs) ; i++ ) {
-                GtkSourceSpaceTypeFlags f;
-                f = gtk_source_space_drawer_get_types_for_locations (drawer,
-                                                                     locs[i]);
-                if (locs[i] & levels[level])
-                        f |= type;
-                else
-                        f &= ~type;
-                gtk_source_space_drawer_set_types_for_locations (drawer, locs[i], f);
-        }
+	for (i = 0 ; i < G_N_ELEMENTS(locs) ; i++ ) {
+		GtkSourceSpaceTypeFlags f;
+		f = gtk_source_space_drawer_get_types_for_locations (drawer,
+		                                                     locs[i]);
+		if (locs[i] & levels[level])
+			f |= type;
+		else
+			f &= ~type;
+		gtk_source_space_drawer_set_types_for_locations (drawer, locs[i], f);
+	}
 }
 #endif
 
@@ -414,42 +414,42 @@ pluma_set_source_space_drawer_by_level (GtkSourceView *view,
 static void
 pluma_set_source_space_drawer (GtkSourceView *view)
 {
-        pluma_set_source_space_drawer_by_level (view,
-                                                pluma_prefs_manager_get_draw_spaces (),
-                                                GTK_SOURCE_SPACE_TYPE_SPACE);
-        pluma_set_source_space_drawer_by_level (view,
-                                                pluma_prefs_manager_get_draw_tabs (),
-                                                GTK_SOURCE_SPACE_TYPE_TAB);
-        pluma_set_source_space_drawer_by_level (view,
-                                                pluma_prefs_manager_get_draw_newlines () ? 2 : 0,
-                                                GTK_SOURCE_SPACE_TYPE_NEWLINE);
-        pluma_set_source_space_drawer_by_level (view,
-                                                pluma_prefs_manager_get_draw_nbsp (),
-                                                GTK_SOURCE_SPACE_TYPE_NBSP);
-        gtk_source_space_drawer_set_enable_matrix (gtk_source_view_get_space_drawer (view),
-                                                   TRUE);
+	pluma_set_source_space_drawer_by_level (view,
+	                                        pluma_prefs_manager_get_draw_spaces (),
+	                                        GTK_SOURCE_SPACE_TYPE_SPACE);
+	pluma_set_source_space_drawer_by_level (view,
+	                                        pluma_prefs_manager_get_draw_tabs (),
+	                                        GTK_SOURCE_SPACE_TYPE_TAB);
+	pluma_set_source_space_drawer_by_level (view,
+	                                        pluma_prefs_manager_get_draw_newlines () ? 2 : 0,
+	                                        GTK_SOURCE_SPACE_TYPE_NEWLINE);
+	pluma_set_source_space_drawer_by_level (view,
+	                                        pluma_prefs_manager_get_draw_nbsp (),
+	                                        GTK_SOURCE_SPACE_TYPE_NBSP);
+	gtk_source_space_drawer_set_enable_matrix (gtk_source_view_get_space_drawer (view),
+	                                           TRUE);
 
 }
 #else
 static void
 pluma_set_source_space_drawer (GtkSourceView *view)
 {
-        GtkSourceSpaceTypeFlags flags = 0;
+	GtkSourceSpaceTypeFlags flags = 0;
 
-        if (pluma_prefs_manager_get_draw_spaces () > 0)
-                flags |= GTK_SOURCE_DRAW_SPACES_SPACE;
-        if (pluma_prefs_manager_get_draw_tabs () > 0)
-                flags |= GTK_SOURCE_DRAW_SPACES_TAB;
-        if (pluma_prefs_manager_get_draw_newlines ())
-                flags |= GTK_SOURCE_DRAW_SPACES_NEWLINE;
-        if (pluma_prefs_manager_get_draw_nbsp () > 0)
-                flags |= GTK_SOURCE_DRAW_SPACES_NBSP;
+	if (pluma_prefs_manager_get_draw_spaces () > 0)
+		flags |= GTK_SOURCE_DRAW_SPACES_SPACE;
+	if (pluma_prefs_manager_get_draw_tabs () > 0)
+		flags |= GTK_SOURCE_DRAW_SPACES_TAB;
+	if (pluma_prefs_manager_get_draw_newlines ())
+		flags |= GTK_SOURCE_DRAW_SPACES_NEWLINE;
+	if (pluma_prefs_manager_get_draw_nbsp () > 0)
+		flags |= GTK_SOURCE_DRAW_SPACES_NBSP;
 
-        flags |= GTK_SOURCE_DRAW_SPACES_TRAILING |
-                 GTK_SOURCE_DRAW_SPACES_TEXT |
-                 GTK_SOURCE_DRAW_SPACES_LEADING;
+	flags |= GTK_SOURCE_DRAW_SPACES_TRAILING |
+		GTK_SOURCE_DRAW_SPACES_TEXT |
+		GTK_SOURCE_DRAW_SPACES_LEADING;
 
-        gtk_source_view_set_draw_spaces (view, flags);
+	gtk_source_view_set_draw_spaces (view, flags);
 }
 #endif
 
@@ -494,7 +494,7 @@ pluma_view_init (PlumaView *view)
 		      "indent_on_tab", TRUE,
 		      NULL);
 
-	pluma_set_source_space_drawer(GTK_SOURCE_VIEW (view));
+	pluma_set_source_space_drawer (GTK_SOURCE_VIEW (view));
 
 	view->priv->typeselect_flush_timeout = 0;
 	view->priv->wrap_around = TRUE;

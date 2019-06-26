@@ -109,8 +109,8 @@ void 		 pluma_view_set_font		(PlumaView       *view,
 
 #ifdef GTK_SOURCE_VERSION_3_24
 void
-pluma_set_source_space_drawer_by_level (GtkSourceView *view,
-                                        gint level,
+pluma_set_source_space_drawer_by_level (GtkSourceView          *view,
+                                        gint                    level,
                                         GtkSourceSpaceTypeFlags type);
 #endif
 
