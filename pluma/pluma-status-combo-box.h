@@ -41,13 +41,13 @@ typedef struct _PlumaStatusComboBoxPrivate	PlumaStatusComboBoxPrivate;
 
 struct _PlumaStatusComboBox {
 	GtkEventBox parent;
-	
+
 	PlumaStatusComboBoxPrivate *priv;
 };
 
 struct _PlumaStatusComboBoxClass {
 	GtkEventBoxClass parent_class;
-	
+
 	void (*changed) (PlumaStatusComboBox *combo,
 			 GtkMenuItem         *item);
 };

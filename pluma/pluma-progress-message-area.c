@@ -2,7 +2,7 @@
  * pluma-progress-message-area.c
  * This file is part of pluma
  *
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,20 +16,20 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
- 
+
  /* TODO: add properties */
- 
+
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -106,7 +106,7 @@ pluma_progress_message_area_get_property (GObject      *object,
 	}
 }
 
-static void 
+static void
 pluma_progress_message_area_class_init (PlumaProgressMessageAreaClass *klass)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
@@ -132,9 +132,9 @@ pluma_progress_message_area_init (PlumaProgressMessageArea *area)
 {
 	GtkWidget *vbox;
 	GtkWidget *hbox;
-	
+
 	area->priv = PLUMA_PROGRESS_MESSAGE_AREA_GET_PRIVATE (area);
-	
+
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_widget_show (vbox);
 
@@ -142,19 +142,19 @@ pluma_progress_message_area_init (PlumaProgressMessageArea *area)
 	gtk_widget_show (hbox);
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 
-	area->priv->image = gtk_image_new_from_icon_name ("image-missing", 
+	area->priv->image = gtk_image_new_from_icon_name ("image-missing",
 							  GTK_ICON_SIZE_SMALL_TOOLBAR);
 	gtk_widget_show (area->priv->image);
 	gtk_widget_set_halign (area->priv->image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (area->priv->image, GTK_ALIGN_CENTER);
 	gtk_box_pack_start (GTK_BOX (hbox), area->priv->image, FALSE, FALSE, 4);
-	
+
 	area->priv->label = gtk_label_new ("");
 	gtk_widget_show (area->priv->label);
 	gtk_box_pack_start (GTK_BOX (hbox), area->priv->label, TRUE, TRUE, 0);
 	gtk_label_set_use_markup (GTK_LABEL (area->priv->label), TRUE);
 	gtk_label_set_xalign (GTK_LABEL (area->priv->label), 0.0);
-	gtk_label_set_ellipsize (GTK_LABEL (area->priv->label), 
+	gtk_label_set_ellipsize (GTK_LABEL (area->priv->label),
 				 PANGO_ELLIPSIZE_END);
 
 	area->priv->progress = gtk_progress_bar_new ();
@@ -163,7 +163,7 @@ pluma_progress_message_area_init (PlumaProgressMessageArea *area)
 	gtk_widget_set_size_request (area->priv->progress, -1, 15);
 
 	GtkWidget *content;
-	
+
 	content = gtk_info_bar_get_content_area (GTK_INFO_BAR (area));
 	gtk_container_add (GTK_CONTAINER (content), vbox);
 }
@@ -188,7 +188,7 @@ pluma_progress_message_area_new (const gchar *image_id,
 	pluma_progress_message_area_set_markup (area,
 						markup);
 
-	return GTK_WIDGET (area);	
+	return GTK_WIDGET (area);
 }
 
 void
@@ -197,7 +197,7 @@ pluma_progress_message_area_set_image (PlumaProgressMessageArea *area,
 {
 	g_return_if_fail (PLUMA_IS_PROGRESS_MESSAGE_AREA (area));
 	g_return_if_fail (image_id != NULL);
-	
+
 	gtk_image_set_from_icon_name (GTK_IMAGE (area->priv->image),
 				      image_id,
 				      GTK_ICON_SIZE_SMALL_TOOLBAR);

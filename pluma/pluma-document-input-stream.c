@@ -16,7 +16,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with pluma; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA  02110-1301  USA
  */
 
@@ -141,7 +141,7 @@ pluma_document_input_stream_class_init (PlumaDocumentInputStreamClass *klass)
 	 *
 	 * The :newline-type property determines what is considered
 	 * as a line ending when reading complete lines from the stream.
-	 */ 
+	 */
 	g_object_class_install_property (gobject_class,
 					 PROP_NEWLINE_TYPE,
 					 g_param_spec_enum ("newline-type",

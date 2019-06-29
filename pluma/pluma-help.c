@@ -2,7 +2,7 @@
  * pluma-help.c
  * This file is part of pluma
  *
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -38,7 +38,7 @@
 #include <string.h>
 #include <gtk/gtk.h>
 
-gboolean    
+gboolean
 pluma_help_display (GtkWindow   *parent,
 		    const gchar *name, /* "pluma" if NULL */
 		    const gchar *link_id)
@@ -46,7 +46,7 @@ pluma_help_display (GtkWindow   *parent,
 	GError *error = NULL;
 	gboolean ret;
 	gchar *link;
-	
+
 	g_return_val_if_fail ((parent == NULL) || GTK_IS_WINDOW (parent), FALSE);
 
 	if (name == NULL)
@@ -54,7 +54,7 @@ pluma_help_display (GtkWindow   *parent,
 	else if (strcmp (name, "pluma.xml") == 0)
 	{
 		g_warning ("%s: Using \"pluma.xml\" for the help name is deprecated, use \"pluma\" or simply NULL instead", G_STRFUNC);
-		
+
 		name = "pluma";
 	}
 
@@ -77,7 +77,7 @@ pluma_help_display (GtkWindow   *parent,
 		dialog = gtk_message_dialog_new (parent,
 						 GTK_DIALOG_DESTROY_WITH_PARENT,
 						 GTK_MESSAGE_ERROR,
-						 GTK_BUTTONS_CLOSE, 
+						 GTK_BUTTONS_CLOSE,
 						 _("There was an error displaying the help."));
 
 		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),

@@ -3,7 +3,7 @@
  * pluma-spell-checker-language.c
  * This file is part of pluma
  *
- * Copyright (C) 2006 Paolo Maggi 
+ * Copyright (C) 2006 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2006. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2006. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  */
 
 /* Part of the code taked from Epiphany.
@@ -52,10 +52,10 @@
 
 #define ISOCODESLOCALEDIR	ISO_CODES_PREFIX "/share/locale"
 
-struct _PlumaSpellCheckerLanguage 
+struct _PlumaSpellCheckerLanguage
 {
 	gchar *abrev;
-	gchar *name;	
+	gchar *name;
 };
 
 static gboolean available_languages_initialized = FALSE;
@@ -126,7 +126,7 @@ read_iso_3166_entry (xmlTextReaderPtr reader,
 		xmlFree (code);
 
 		/* g_print ("%s -> %s\n", lcode, name); */
-		
+
 		g_hash_table_insert (table, lcode, name);
 	}
 	else
@@ -242,7 +242,7 @@ create_iso_3166_table (void)
 	table = g_hash_table_new_full (g_str_hash, g_str_equal,
 				       (GDestroyNotify) g_free,
 				       (GDestroyNotify) xmlFree);
-	
+
 	load_iso_entries (3166, (GFunc) read_iso_3166_entry, table);
 
 	return table;
@@ -258,7 +258,7 @@ create_name_for_language (const char *code)
 
 	g_return_val_if_fail (iso_639_table != NULL, NULL);
 	g_return_val_if_fail (iso_3166_table != NULL, NULL);
-		
+
 	str = g_strsplit (code, "_", -1);
 	len = g_strv_length (str);
 	g_return_val_if_fail (len != 0, NULL);
@@ -272,10 +272,10 @@ create_name_for_language (const char *code)
 	else if (len == 2 && langname != NULL)
 	{
 		gchar *locale_code = g_ascii_strdown (str[1], -1);
-		
+
 		localename = (const char *) g_hash_table_lookup (iso_3166_table, locale_code);
 		g_free (locale_code);
-		
+
 		if (localename != NULL)
 		{
 			/* Translators: the first %s is the language name, and
@@ -313,14 +313,14 @@ enumerate_dicts (const char * const lang_tag,
 		 void * user_data)
 {
 	gchar *lang_name;
-	
+
 	GTree *dicts = (GTree *)user_data;
-	
+
 	lang_name = create_name_for_language (lang_tag);
 	g_return_if_fail (lang_name != NULL);
-	
+
 	/* g_print ("%s - %s\n", lang_tag, lang_name); */
-	
+
 	g_tree_replace (dicts, g_strdup (lang_tag), lang_name);
 }
 
@@ -338,15 +338,15 @@ lang_cmp (const PlumaSpellCheckerLanguage *a,
 }
 
 static gboolean
-build_langs_list (const gchar *key, 
-		  const gchar *value, 
+build_langs_list (const gchar *key,
+		  const gchar *value,
 		  gpointer     data)
 {
 	PlumaSpellCheckerLanguage *lang = g_new (PlumaSpellCheckerLanguage, 1);
-	
+
 	lang->abrev = g_strdup (key);
 	lang->name = g_strdup (value);
-	
+
 	available_languages = g_slist_insert_sorted (available_languages,
 						     lang,
 						     (GCompareFunc)lang_cmp);
@@ -364,12 +364,12 @@ pluma_spell_checker_get_available_languages (void)
 		return available_languages;
 
 	g_return_val_if_fail (available_languages == NULL, NULL);
-			
+
 	available_languages_initialized = TRUE;
-	
+
 	broker = enchant_broker_init ();
 	g_return_val_if_fail (broker != NULL, NULL);
-	
+
 	/* Use a GTree to efficiently remove duplicates while building the list */
 	dicts = g_tree_new_full (key_cmp,
 				 NULL,
@@ -378,21 +378,21 @@ pluma_spell_checker_get_available_languages (void)
 
 	iso_639_table = create_iso_639_table ();
 	iso_3166_table = create_iso_3166_table ();
-	
+
 	enchant_broker_list_dicts (broker, enumerate_dicts, dicts);
 
 	enchant_broker_free (broker);
-	
+
 	g_hash_table_destroy (iso_639_table);
 	g_hash_table_destroy (iso_3166_table);
-	
+
 	iso_639_table = NULL;
 	iso_3166_table = NULL;
-	
+
 	g_tree_foreach (dicts, (GTraverseFunc)build_langs_list, NULL);
-	
+
 	g_tree_destroy (dicts);
-	
+
 	return available_languages;
 }
 
@@ -412,7 +412,7 @@ const gchar *
 pluma_spell_checker_language_to_key (const PlumaSpellCheckerLanguage *lang)
 {
 	g_return_val_if_fail (lang != NULL, NULL);
-	
+
 	return lang->abrev;
 }
 

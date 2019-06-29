@@ -85,14 +85,14 @@ struct _PlumaPrintPreviewPrivate
 
 G_DEFINE_TYPE (PlumaPrintPreview, pluma_print_preview, GTK_TYPE_BOX)
 
-static void 
+static void
 pluma_print_preview_get_property (GObject    *object,
 				  guint       prop_id,
 				  GValue     *value,
 				  GParamSpec *pspec)
 {
 	//PlumaPrintPreview *preview = PLUMA_PRINT_PREVIEW (object);
-	
+
 	switch (prop_id)
 	{
 		default:
@@ -101,14 +101,14 @@ pluma_print_preview_get_property (GObject    *object,
 	}
 }
 
-static void 
+static void
 pluma_print_preview_set_property (GObject      *object,
 				  guint	        prop_id,
 				  const GValue *value,
 				  GParamSpec   *pspec)
 {
 	//PlumaPrintPreview *preview = PLUMA_PRINT_PREVIEW (object);
-	
+
 	switch (prop_id)
 	{
 		default:
@@ -135,7 +135,7 @@ pluma_print_preview_grab_focus (GtkWidget *widget)
 	gtk_widget_grab_focus (GTK_WIDGET (preview->priv->layout));
 }
 
-static void						 
+static void
 pluma_print_preview_class_init (PlumaPrintPreviewClass *klass)
 {
 	GObjectClass *object_class;
@@ -150,7 +150,7 @@ pluma_print_preview_class_init (PlumaPrintPreviewClass *klass)
 
 	widget_class->grab_focus = pluma_print_preview_grab_focus;
 
-	g_type_class_add_private (object_class, sizeof(PlumaPrintPreviewPrivate));	
+	g_type_class_add_private (object_class, sizeof(PlumaPrintPreviewPrivate));
 }
 
 static void
@@ -196,7 +196,7 @@ get_paper_height (PlumaPrintPreview *preview)
 }
 
 #define PAGE_PAD 12
-#define PAGE_SHADOW_OFFSET 5 
+#define PAGE_SHADOW_OFFSET 5
 
 /* The tile size is the size of the area where a page
  * will be drawn including the padding and idependent
@@ -206,7 +206,7 @@ get_paper_height (PlumaPrintPreview *preview)
 static void
 update_tile_size (PlumaPrintPreview *preview)
 {
-	PlumaPrintPreviewPrivate *priv;	
+	PlumaPrintPreviewPrivate *priv;
 	gint w, h;
 
 	priv = preview->priv;
@@ -223,7 +223,7 @@ update_tile_size (PlumaPrintPreview *preview)
 	else
 	{
 		priv->tile_w = w;
-		priv->tile_h = h;	
+		priv->tile_h = h;
 	}
 }
 
@@ -234,7 +234,7 @@ static void
 set_zoom_factor (PlumaPrintPreview *preview,
 		 double	            zoom)
 {
-	PlumaPrintPreviewPrivate *priv;	
+	PlumaPrintPreviewPrivate *priv;
 
 	priv = preview->priv;
 
@@ -247,7 +247,7 @@ set_zoom_factor (PlumaPrintPreview *preview,
 static void
 set_zoom_fit_to_size (PlumaPrintPreview *preview)
 {
-	PlumaPrintPreviewPrivate *priv;	
+	PlumaPrintPreviewPrivate *priv;
 	double width, height;
 	double p_width, p_height;
 	double zoomx, zoomy;
@@ -417,7 +417,7 @@ page_entry_insert_text (GtkEditable *editable,
 	}
 }
 
-static gboolean 
+static gboolean
 page_entry_focus_out (GtkWidget         *widget,
 		      GdkEventFocus     *event,
 		      PlumaPrintPreview *preview)
@@ -600,15 +600,15 @@ create_bar (PlumaPrintPreview *preview)
 	gtk_widget_set_tooltip_text (priv->page_entry, _("Current page (Alt+P)"));
 
 	g_signal_connect (priv->page_entry,
-			  "activate", 
+			  "activate",
 			  G_CALLBACK (page_entry_activated),
 			  preview);
 	g_signal_connect (priv->page_entry,
-			  "insert-text", 
+			  "insert-text",
 			  G_CALLBACK (page_entry_insert_text),
 			  NULL);
 	g_signal_connect (priv->page_entry,
-			  "focus-out-event", 
+			  "focus-out-event",
 			  G_CALLBACK (page_entry_focus_out),
 			  preview);
 
@@ -763,7 +763,7 @@ get_page_at_coords (PlumaPrintPreview *preview,
 
 	/* FIXME: we could try to be picky and check
 	 * if we actually are inside the page */
-	return pg; 
+	return pg;
 }
 
 static gboolean
@@ -1006,8 +1006,8 @@ static void
 pluma_print_preview_init (PlumaPrintPreview *preview)
 {
 	PlumaPrintPreviewPrivate *priv;
-	
-	priv = G_TYPE_INSTANCE_GET_PRIVATE (preview, 
+
+	priv = G_TYPE_INSTANCE_GET_PRIVATE (preview,
 					    PLUMA_TYPE_PRINT_PREVIEW,
 					    PlumaPrintPreviewPrivate);
 
@@ -1187,7 +1187,7 @@ get_screen_dpi (PlumaPrintPreview *preview)
 	GdkScreen *screen;
 	double dpi;
 
-	screen = gtk_widget_get_screen (GTK_WIDGET (preview));	
+	screen = gtk_widget_get_screen (GTK_WIDGET (preview));
 
 	dpi = gdk_screen_get_resolution (screen);
 	if (dpi < 30. || 600. < dpi)
@@ -1254,7 +1254,7 @@ update_paper_size (PlumaPrintPreview *preview,
 }
 
 static void
-preview_got_page_size (GtkPrintOperationPreview *gtk_preview, 
+preview_got_page_size (GtkPrintOperationPreview *gtk_preview,
 		       GtkPrintContext          *context,
 		       GtkPageSetup             *page_setup,
 		       PlumaPrintPreview        *preview)
@@ -1339,7 +1339,7 @@ pluma_print_preview_new (GtkPrintOperation        *op,
 	update_paper_size (preview, page_setup);
 
 	/* FIXME: we need a cr to paginate... but we can't get the drawing
-	 * area surface because it's not there yet... for now I create 
+	 * area surface because it's not there yet... for now I create
 	 * a dummy pdf surface */
 
 	surface = create_preview_surface (preview, &dpi_x, &dpi_y);

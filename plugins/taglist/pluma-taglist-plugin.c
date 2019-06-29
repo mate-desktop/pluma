@@ -1,6 +1,6 @@
 /*
  * pluma-taglist-plugin.h
- * 
+ *
  * Copyright (C) 2002-2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
@@ -20,9 +20,9 @@
  */
 
 /*
- * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -98,7 +98,7 @@ pluma_taglist_plugin_finalize (GObject *object)
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaTaglistPlugin finalizing");
 
 	free_taglist ();
-	
+
 	G_OBJECT_CLASS (pluma_taglist_plugin_parent_class)->finalize (object);
 }
 
@@ -120,9 +120,9 @@ pluma_taglist_plugin_activate (PeasActivatable *activatable)
 	priv->taglist_panel = pluma_taglist_plugin_panel_new (window, data_dir);
 	g_free (data_dir);
 
-	pluma_panel_add_item_with_icon (side_panel, 
+	pluma_panel_add_item_with_icon (side_panel,
 					priv->taglist_panel,
-					_("Tags"), 
+					_("Tags"),
 					"list-add");
 }
 
@@ -132,14 +132,14 @@ pluma_taglist_plugin_deactivate (PeasActivatable *activatable)
 	PlumaTaglistPluginPrivate *priv;
 	PlumaWindow *window;
 	PlumaPanel *side_panel;
-	
+
 	pluma_debug (DEBUG_PLUGINS);
-	
+
 	priv = PLUMA_TAGLIST_PLUGIN (activatable)->priv;
 	window = PLUMA_WINDOW (priv->window);
 	side_panel = pluma_window_get_side_panel (window);
 
-	pluma_panel_remove_item (side_panel, 
+	pluma_panel_remove_item (side_panel,
 				 priv->taglist_panel);
 }
 

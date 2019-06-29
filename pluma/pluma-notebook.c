@@ -2,7 +2,7 @@
  * pluma-notebook.c
  * This file is part of pluma
  *
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  */
 
 /* This file is a modified version of the epiphany file ephy-notebook.c
@@ -213,7 +213,7 @@ find_notebook_at_pointer (gint abs_x, gint abs_y)
 	gdk_window_get_user_data (toplevel_win, &toplevel);
 
 	/* toplevel should be an PlumaWindow */
-	if ((toplevel != NULL) && 
+	if ((toplevel != NULL) &&
 	    PLUMA_IS_WINDOW (toplevel))
 	{
 		return PLUMA_NOTEBOOK (_pluma_window_get_notebook
@@ -226,7 +226,7 @@ find_notebook_at_pointer (gint abs_x, gint abs_y)
 
 static gboolean
 is_in_notebook_window (PlumaNotebook *notebook,
-		       gint           abs_x, 
+		       gint           abs_x,
 		       gint           abs_y)
 {
 	PlumaNotebook *nb_at_pointer;
@@ -239,8 +239,8 @@ is_in_notebook_window (PlumaNotebook *notebook,
 }
 
 static gint
-find_tab_num_at_pos (PlumaNotebook *notebook, 
-		     gint           abs_x, 
+find_tab_num_at_pos (PlumaNotebook *notebook,
+		     gint           abs_x,
 		     gint           abs_y)
 {
 	GtkPositionType tab_pos;
@@ -281,14 +281,14 @@ find_tab_num_at_pos (PlumaNotebook *notebook,
 		max_x = x_root + allocation.x + allocation.width;
 		max_y = y_root + allocation.y + allocation.height;
 
-		if (((tab_pos == GTK_POS_TOP) || 
+		if (((tab_pos == GTK_POS_TOP) ||
 		     (tab_pos == GTK_POS_BOTTOM)) &&
 		    (abs_x <= max_x))
 		{
 			return page_num;
 		}
-		else if (((tab_pos == GTK_POS_LEFT) || 
-		          (tab_pos == GTK_POS_RIGHT)) && 
+		else if (((tab_pos == GTK_POS_LEFT) ||
+		          (tab_pos == GTK_POS_RIGHT)) &&
 		         (abs_y <= max_y))
 		{
 			return page_num;
@@ -296,12 +296,12 @@ find_tab_num_at_pos (PlumaNotebook *notebook,
 
 		++page_num;
 	}
-	
+
 	return AFTER_ALL_TABS;
 }
 
-static gint 
-find_notebook_and_tab_at_pos (gint            abs_x, 
+static gint
+find_notebook_and_tab_at_pos (gint            abs_x,
 			      gint            abs_y,
 			      PlumaNotebook **notebook,
 			      gint           *page_num)
@@ -311,7 +311,7 @@ find_notebook_and_tab_at_pos (gint            abs_x,
 	{
 		return NOT_IN_APP_WINDOWS;
 	}
-	
+
 	*page_num = find_tab_num_at_pos (*notebook, abs_x, abs_y);
 
 	if (*page_num < 0)
@@ -332,8 +332,8 @@ find_notebook_and_tab_at_pos (gint            abs_x,
  * @dest_position: the position for @tab
  *
  * Moves @tab from @src to @dest.
- * If dest_position is greater than or equal to the number of tabs 
- * of the destination nootebook or negative, tab will be moved to the 
+ * If dest_position is greater than or equal to the number of tabs
+ * of the destination nootebook or negative, tab will be moved to the
  * end of the tabs.
  */
 void
@@ -342,7 +342,7 @@ pluma_notebook_move_tab (PlumaNotebook *src,
 			 PlumaTab      *tab,
 			 gint           dest_position)
 {
-	g_return_if_fail (PLUMA_IS_NOTEBOOK (src));	
+	g_return_if_fail (PLUMA_IS_NOTEBOOK (src));
 	g_return_if_fail (PLUMA_IS_NOTEBOOK (dest));
 	g_return_if_fail (src != dest);
 	g_return_if_fail (PLUMA_IS_TAB (tab));
@@ -361,8 +361,8 @@ pluma_notebook_move_tab (PlumaNotebook *src,
  * @dest_position: the position for @tab
  *
  * Reorders the page containing @tab, so that it appears in @dest_position position.
- * If dest_position is greater than or equal to the number of tabs 
- * of the destination notebook or negative, tab will be moved to the 
+ * If dest_position is greater than or equal to the number of tabs
+ * of the destination notebook or negative, tab will be moved to the
  * end of the tabs.
  */
 void
@@ -371,24 +371,24 @@ pluma_notebook_reorder_tab (PlumaNotebook *src,
 			    gint           dest_position)
 {
 	gint old_position;
-	
-	g_return_if_fail (PLUMA_IS_NOTEBOOK (src));	
+
+	g_return_if_fail (PLUMA_IS_NOTEBOOK (src));
 	g_return_if_fail (PLUMA_IS_TAB (tab));
 
-	old_position = gtk_notebook_page_num (GTK_NOTEBOOK (src), 
+	old_position = gtk_notebook_page_num (GTK_NOTEBOOK (src),
 				    	      GTK_WIDGET (tab));
-				    	      
+
 	if (old_position == dest_position)
 		return;
 
-	gtk_notebook_reorder_child (GTK_NOTEBOOK (src), 
+	gtk_notebook_reorder_child (GTK_NOTEBOOK (src),
 				    GTK_WIDGET (tab),
 				    dest_position);
-		
+
 	if (!src->priv->drag_in_progress)
 	{
-		g_signal_emit (G_OBJECT (src), 
-			       signals[TABS_REORDERED], 
+		g_signal_emit (G_OBJECT (src),
+			       signals[TABS_REORDERED],
 			       0);
 	}
 }
@@ -436,8 +436,8 @@ drag_stop (PlumaNotebook *notebook)
 {
 	if (notebook->priv->drag_in_progress)
 	{
-		g_signal_emit (G_OBJECT (notebook), 
-			       signals[TABS_REORDERED], 
+		g_signal_emit (G_OBJECT (notebook),
+			       signals[TABS_REORDERED],
 			       0);
 	}
 
@@ -464,10 +464,10 @@ move_current_tab (PlumaNotebook *notebook,
 	if (dest_position != cur_page_num)
 	{
 		GtkWidget *cur_tab;
-		
+
 		cur_tab = gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook),
 						     cur_page_num);
-						     
+
 		pluma_notebook_reorder_tab (PLUMA_NOTEBOOK (notebook),
 					    PLUMA_TAB (cur_tab),
 					    dest_position);
@@ -487,11 +487,11 @@ motion_notify_cb (PlumaNotebook  *notebook,
 	{
 		if (notebook->priv->tab_drag_and_drop_enabled == FALSE)
 			return FALSE;
-			
+
 		if (gtk_drag_check_threshold (GTK_WIDGET (notebook),
 					      notebook->priv->x_start,
 					      notebook->priv->y_start,
-					      event->x_root, 
+					      event->x_root,
 					      event->y_root))
 		{
 			if (drag_ready)
@@ -507,16 +507,16 @@ motion_notify_cb (PlumaNotebook  *notebook,
 
 	result = find_notebook_and_tab_at_pos ((gint)event->x_root,
 					       (gint)event->y_root,
-					       &dest, 
+					       &dest,
 					       &page_num);
 
 	if (result != NOT_IN_APP_WINDOWS)
 	{
 		if (dest != notebook)
 		{
-			move_current_tab_to_another_notebook (notebook, 
+			move_current_tab_to_another_notebook (notebook,
 							      dest,
-						      	      event, 
+						      	      event,
 						      	      page_num);
 		}
 		else
@@ -554,7 +554,7 @@ move_current_tab_to_another_notebook (PlumaNotebook  *src,
 	g_return_if_fail (dest != src);
 
 	cur_page = gtk_notebook_get_current_page (GTK_NOTEBOOK (src));
-	tab = PLUMA_TAB (gtk_notebook_get_nth_page (GTK_NOTEBOOK (src), 
+	tab = PLUMA_TAB (gtk_notebook_get_nth_page (GTK_NOTEBOOK (src),
 						    cur_page));
 
 	/* stop drag in origin window */
@@ -608,8 +608,8 @@ button_release_cb (PlumaNotebook  *notebook,
 		{
 			/* Tab was detached */
 			g_signal_emit (G_OBJECT (notebook),
-				       signals[TAB_DETACHED], 
-				       0, 
+				       signals[TAB_DETACHED],
+				       0,
 				       cur_page);
 		}
 
@@ -645,26 +645,26 @@ button_press_cb (PlumaNotebook  *notebook,
 					   event->x_root,
 					   event->y_root);
 
-	if ((event->button == 1) && 
-	    (event->type == GDK_BUTTON_PRESS) && 
+	if ((event->button == 1) &&
+	    (event->type == GDK_BUTTON_PRESS) &&
 	    (tab_clicked >= 0))
 	{
 		notebook->priv->x_start = event->x_root;
 		notebook->priv->y_start = event->y_root;
-		
+
 		notebook->priv->motion_notify_handler_id =
 			g_signal_connect (G_OBJECT (notebook),
 					  "motion-notify-event",
-					  G_CALLBACK (motion_notify_cb), 
+					  G_CALLBACK (motion_notify_cb),
 					  NULL);
 	}
-	else if ((event->type == GDK_BUTTON_PRESS) && 
+	else if ((event->type == GDK_BUTTON_PRESS) &&
 		 (event->button == 3 || event->button == 2))
 	{
 		if (tab_clicked == -1)
 		{
 			// CHECK: do we really need it?
-			
+
 			/* consume event, so that we don't pop up the context menu when
 			 * the mouse if not over a tab label
 			 */
@@ -678,7 +678,7 @@ button_press_cb (PlumaNotebook  *notebook,
 			}
 
 			/* Switch to the page the mouse is over, but don't consume the event */
-			gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), 
+			gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook),
 						       tab_clicked);
 		}
 	}
@@ -814,40 +814,40 @@ pluma_notebook_init (PlumaNotebook *notebook)
 
 	notebook->priv->close_buttons_sensitive = TRUE;
 	notebook->priv->tab_drag_and_drop_enabled = TRUE;
-	
+
 	gtk_notebook_set_scrollable (GTK_NOTEBOOK (notebook), TRUE);
 	gtk_notebook_set_show_border (GTK_NOTEBOOK (notebook), FALSE);
 	gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
 
-	g_signal_connect (notebook, 
+	g_signal_connect (notebook,
 			  "button-press-event",
-			  (GCallback)button_press_cb, 
+			  (GCallback)button_press_cb,
 			  NULL);
 
-	g_signal_connect (notebook, 
+	g_signal_connect (notebook,
 			  "button-release-event",
 			  (GCallback)button_release_cb,
 			  NULL);
 
-	g_signal_connect (notebook, 
+	g_signal_connect (notebook,
 			  "grab-focus",
 			  (GCallback)grab_focus_cb,
 			  NULL);
 
-	g_signal_connect (notebook, 
+	g_signal_connect (notebook,
 			  "focus-in-event",
 			  (GCallback)focus_in_cb,
 			  NULL);
 
-	g_signal_connect (notebook, 
+	g_signal_connect (notebook,
 			  "focus-out-event",
 			  (GCallback)focus_out_cb,
 			  NULL);
 
-	gtk_widget_add_events (GTK_WIDGET (notebook), 
+	gtk_widget_add_events (GTK_WIDGET (notebook),
 			       GDK_BUTTON1_MOTION_MASK);
 
-	g_signal_connect_after (G_OBJECT (notebook), 
+	g_signal_connect_after (G_OBJECT (notebook),
 				"switch_page",
                                 G_CALLBACK (pluma_notebook_switch_page_cb),
                                 NULL);
@@ -873,17 +873,17 @@ pluma_notebook_change_current_page (GtkNotebook *notebook,
 {
 	gboolean wrap_around;
 	gint current;
-	
+
 	current = gtk_notebook_get_current_page (notebook);
 
 	if (current != -1)
 	{
 		current = current + offset;
-		
+
 		g_object_get (gtk_widget_get_settings (GTK_WIDGET (notebook)),
 			      "gtk-keynav-wrap-around", &wrap_around,
 			      NULL);
-		
+
 		if (wrap_around)
 		{
 			if (current < 0)
@@ -895,7 +895,7 @@ pluma_notebook_change_current_page (GtkNotebook *notebook,
 				current = 0;
 			}
 		}
-		
+
 		gtk_notebook_set_current_page (notebook, current);
 	}
 	else
@@ -980,7 +980,7 @@ pluma_notebook_add_tab (PlumaNotebook *nb,
 	g_return_if_fail (PLUMA_IS_TAB (tab));
 
 	tab_label = create_tab_label (nb, tab);
-	gtk_notebook_insert_page (GTK_NOTEBOOK (nb), 
+	gtk_notebook_insert_page (GTK_NOTEBOOK (nb),
 				  GTK_WIDGET (tab),
 				  tab_label,
 				  position);
@@ -989,19 +989,19 @@ pluma_notebook_add_tab (PlumaNotebook *nb,
 	g_signal_emit (G_OBJECT (nb), signals[TAB_ADDED], 0, tab);
 
 	/* The signal handler may have reordered the tabs */
-	position = gtk_notebook_page_num (GTK_NOTEBOOK (nb), 
+	position = gtk_notebook_page_num (GTK_NOTEBOOK (nb),
 					  GTK_WIDGET (tab));
 
 	if (jump_to)
 	{
 		PlumaView *view;
-		
+
 		gtk_notebook_set_current_page (GTK_NOTEBOOK (nb), position);
-		g_object_set_data (G_OBJECT (tab), 
+		g_object_set_data (G_OBJECT (tab),
 				   "jump_to",
 				   GINT_TO_POINTER (jump_to));
 		view = pluma_tab_get_view (tab);
-		
+
 		gtk_widget_grab_focus (GTK_WIDGET (view));
 	}
 }
@@ -1030,7 +1030,7 @@ smart_tab_switching_on_closure (PlumaNotebook *nb,
 		child = GTK_WIDGET (l->data);
 		page_num = gtk_notebook_page_num (GTK_NOTEBOOK (nb),
 						  child);
-		gtk_notebook_set_current_page (GTK_NOTEBOOK (nb), 
+		gtk_notebook_set_current_page (GTK_NOTEBOOK (nb),
 					       page_num);
 	}
 }
@@ -1096,9 +1096,9 @@ pluma_notebook_remove_tab (PlumaNotebook *nb,
  */
 void
 pluma_notebook_remove_all_tabs (PlumaNotebook *nb)
-{	
+{
 	g_return_if_fail (PLUMA_IS_NOTEBOOK (nb));
-	
+
 	g_list_free (nb->priv->focused_pages);
 	nb->priv->focused_pages = NULL;
 
@@ -1172,13 +1172,13 @@ pluma_notebook_set_tab_drag_and_drop_enabled (PlumaNotebook *nb,
 					      gboolean       enable)
 {
 	g_return_if_fail (PLUMA_IS_NOTEBOOK (nb));
-	
+
 	enable = (enable != FALSE);
-	
+
 	if (enable == nb->priv->tab_drag_and_drop_enabled)
 		return;
-		
-	nb->priv->tab_drag_and_drop_enabled = enable;		
+
+	nb->priv->tab_drag_and_drop_enabled = enable;
 }
 
 /**
@@ -1189,11 +1189,11 @@ pluma_notebook_set_tab_drag_and_drop_enabled (PlumaNotebook *nb,
  *
  * Returns: %TRUE if the drag and drop is enabled.
  */
-gboolean	
+gboolean
 pluma_notebook_get_tab_drag_and_drop_enabled (PlumaNotebook *nb)
 {
 	g_return_val_if_fail (PLUMA_IS_NOTEBOOK (nb), TRUE);
-	
+
 	return nb->priv->tab_drag_and_drop_enabled;
 }
 

@@ -1,4 +1,4 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- 
+/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*-
  *
  * plumatextregion.h - GtkTextMark based region utility functions
  *
@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor,
- * Boston, MA 02110-1301, USA.  
+ * Boston, MA 02110-1301, USA.
  */
 
 #ifndef __PLUMA_TEXT_REGION_H__
@@ -40,7 +40,7 @@ struct _PlumaTextRegionIterator {
 	/*< private >*/
 	gpointer dummy1;
 	guint32  dummy2;
-	gpointer dummy3;	
+	gpointer dummy3;
 };
 
 PlumaTextRegion *pluma_text_region_new                          (GtkTextBuffer *buffer);

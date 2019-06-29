@@ -3,8 +3,8 @@
  * This file is part of pluma
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
- * Copyright (C) 2000, 2001 Chema Celorio, Paolo Maggi 
- * Copyright (C) 2002-2005 Paolo Maggi 
+ * Copyright (C) 2000, 2001 Chema Celorio, Paolo Maggi
+ * Copyright (C) 2002-2005 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,14 +18,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -58,7 +58,7 @@
 #define METADATA_QUERY "metadata::*"
 #endif
 
-#undef ENABLE_PROFILE 
+#undef ENABLE_PROFILE
 
 #ifdef ENABLE_PROFILE
 #define PROFILE(x) x
@@ -88,17 +88,17 @@ static void	pluma_document_save_real	(PlumaDocument          *doc,
 						 const PlumaEncoding    *encoding,
 						 PlumaDocumentSaveFlags  flags);
 static void	to_search_region_range 		(PlumaDocument *doc,
-						 GtkTextIter   *start, 
-						 GtkTextIter   *end);
-static void 	insert_text_cb		 	(PlumaDocument *doc, 
-						 GtkTextIter   *pos,
-						 const gchar   *text, 
-						 gint           length);
-						 
-static void	delete_range_cb 		(PlumaDocument *doc, 
 						 GtkTextIter   *start,
 						 GtkTextIter   *end);
-			     
+static void 	insert_text_cb		 	(PlumaDocument *doc,
+						 GtkTextIter   *pos,
+						 const gchar   *text,
+						 gint           length);
+
+static void	delete_range_cb 		(PlumaDocument *doc,
+						 GtkTextIter   *start,
+						 GtkTextIter   *end);
+
 struct _PlumaDocumentPrivate
 {
 	gchar	    *uri;
@@ -123,7 +123,7 @@ struct _PlumaDocumentPrivate
 
 	/* Temp data while loading */
 	PlumaDocumentLoader *loader;
-	gboolean             create; /* Create file if uri points 
+	gboolean             create; /* Create file if uri points
 	                              * to a non existing file */
 	const PlumaEncoding *requested_encoding;
 	gint                 requested_line_pos;
@@ -140,7 +140,7 @@ struct _PlumaDocumentPrivate
 	gpointer		    mount_operation_userdata;
 
 	gint readonly : 1;
-	gint last_save_was_manually : 1; 
+	gint last_save_was_manually : 1;
 	gint language_set_by_user : 1;
 	gint stop_cursor_moved_emission : 1;
 	gint dispose_has_run : 1;
@@ -203,7 +203,7 @@ get_untitled_number (void)
 	{
 		if (g_hash_table_lookup (allocated_untitled_numbers, GINT_TO_POINTER (i)) == NULL)
 		{
-			g_hash_table_insert (allocated_untitled_numbers, 
+			g_hash_table_insert (allocated_untitled_numbers,
 					     GINT_TO_POINTER (i),
 					     GINT_TO_POINTER (i));
 
@@ -225,7 +225,7 @@ release_untitled_number (gint n)
 static void
 pluma_document_dispose (GObject *object)
 {
-	PlumaDocument *doc = PLUMA_DOCUMENT (object); 
+	PlumaDocument *doc = PLUMA_DOCUMENT (object);
 
 	pluma_debug (DEBUG_DOCUMENT);
 
@@ -256,7 +256,7 @@ pluma_document_dispose (GObject *object)
 				&iter,
 				gtk_text_buffer_get_insert (GTK_TEXT_BUFFER (doc)));
 
-		position = g_strdup_printf ("%d", 
+		position = g_strdup_printf ("%d",
 					    gtk_text_iter_get_offset (&iter));
 
 		if (language == NULL)
@@ -289,7 +289,7 @@ pluma_document_dispose (GObject *object)
 static void
 pluma_document_finalize (GObject *object)
 {
-	PlumaDocument *doc = PLUMA_DOCUMENT (object); 
+	PlumaDocument *doc = PLUMA_DOCUMENT (object);
 
 	pluma_debug (DEBUG_DOCUMENT);
 
@@ -425,7 +425,7 @@ pluma_document_changed (GtkTextBuffer *buffer)
 	GTK_TEXT_BUFFER_CLASS (pluma_document_parent_class)->changed (buffer);
 }
 
-static void 
+static void
 pluma_document_class_init (PlumaDocumentClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -525,7 +525,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 	/* This signal is used to update the cursor position is the statusbar,
 	 * it's emitted either when the insert mark is moved explicitely or
 	 * when the buffer changes (insert/delete).
-	 * We prevent the emission of the signal during replace_all to 
+	 * We prevent the emission of the signal during replace_all to
 	 * improve performance.
 	 */
 	document_signals[CURSOR_MOVED] =
@@ -642,8 +642,8 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      G_STRUCT_OFFSET (PlumaDocumentClass, search_highlight_updated),
 			      NULL, NULL,
 			      pluma_marshal_VOID__BOXED_BOXED,
-			      G_TYPE_NONE, 
-			      2, 
+			      G_TYPE_NONE,
+			      2,
 			      GTK_TYPE_TEXT_ITER | G_SIGNAL_TYPE_STATIC_SCOPE,
 			      GTK_TYPE_TEXT_ITER | G_SIGNAL_TYPE_STATIC_SCOPE);
 
@@ -692,7 +692,7 @@ file_with_bom (GFile *file)
 }
 
 static void
-set_language (PlumaDocument     *doc, 
+set_language (PlumaDocument     *doc,
               GtkSourceLanguage *lang,
               gboolean           set_by_user)
 {
@@ -700,9 +700,9 @@ set_language (PlumaDocument     *doc,
 	const gchar       *bom_langs;
 
 	pluma_debug (DEBUG_DOCUMENT);
-	
+
 	old_lang = gtk_source_buffer_get_language (GTK_SOURCE_BUFFER (doc));
-	
+
 	if (old_lang == lang)
 		return;
 
@@ -725,7 +725,7 @@ set_language (PlumaDocument     *doc,
 		gtk_source_buffer_set_highlight_syntax (GTK_SOURCE_BUFFER (doc),
 				 pluma_prefs_manager_get_enable_syntax_highlighting ());
 	else
-		gtk_source_buffer_set_highlight_syntax (GTK_SOURCE_BUFFER (doc), 
+		gtk_source_buffer_set_highlight_syntax (GTK_SOURCE_BUFFER (doc),
 				 FALSE);
 
 	if (set_by_user && (doc->priv->uri != NULL))
@@ -739,7 +739,7 @@ set_language (PlumaDocument     *doc,
 }
 
 static void
-set_encoding (PlumaDocument       *doc, 
+set_encoding (PlumaDocument       *doc,
 	      const PlumaEncoding *encoding,
 	      gboolean             set_by_user)
 {
@@ -782,9 +782,9 @@ get_default_style_scheme (void)
 		g_warning ("Default style scheme '%s' cannot be found, falling back to 'classic' style scheme ", scheme_id);
 
 		def_style = gtk_source_style_scheme_manager_get_scheme (manager, "classic");
-		if (def_style == NULL) 
+		if (def_style == NULL)
 		{
-			g_warning ("Style scheme 'classic' cannot be found, check your GtkSourceView installation.");			
+			g_warning ("Style scheme 'classic' cannot be found, check your GtkSourceView installation.");
 		}
 	}
 
@@ -950,10 +950,10 @@ pluma_document_init (PlumaDocument *doc)
 
 	doc->priv->newline_type = PLUMA_DOCUMENT_NEWLINE_TYPE_DEFAULT;
 
-	gtk_source_buffer_set_max_undo_levels (GTK_SOURCE_BUFFER (doc), 
+	gtk_source_buffer_set_max_undo_levels (GTK_SOURCE_BUFFER (doc),
 					       pluma_prefs_manager_get_undo_actions_limit ());
 
-	gtk_source_buffer_set_highlight_matching_brackets (GTK_SOURCE_BUFFER (doc), 
+	gtk_source_buffer_set_highlight_matching_brackets (GTK_SOURCE_BUFFER (doc),
 							   pluma_prefs_manager_get_bracket_matching ());
 
 	pluma_document_set_enable_search_highlighting (doc,
@@ -964,12 +964,12 @@ pluma_document_init (PlumaDocument *doc)
 		gtk_source_buffer_set_style_scheme (GTK_SOURCE_BUFFER (doc),
 						    style_scheme);
 
-	g_signal_connect_after (doc, 
+	g_signal_connect_after (doc,
 			  	"insert-text",
 			  	G_CALLBACK (insert_text_cb),
 			  	NULL);
 
-	g_signal_connect_after (doc, 
+	g_signal_connect_after (doc,
 			  	"delete-range",
 			  	G_CALLBACK (delete_range_cb),
 			  	NULL);
@@ -1220,7 +1220,7 @@ set_readonly (PlumaDocument *doc,
 
 	readonly = (readonly != FALSE);
 
-	if (doc->priv->readonly == readonly) 
+	if (doc->priv->readonly == readonly)
 		return FALSE;
 
 	doc->priv->readonly = readonly;
@@ -1297,9 +1297,9 @@ _pluma_document_check_externally_modified (PlumaDocument *doc)
 
 			g_file_info_get_modification_time (info, &timeval);
 			g_object_unref (info);
-	
+
 			return (timeval.tv_sec > doc->priv->mtime.tv_sec) ||
-			       (timeval.tv_sec == doc->priv->mtime.tv_sec && 
+			       (timeval.tv_sec == doc->priv->mtime.tv_sec &&
 			       timeval.tv_usec > doc->priv->mtime.tv_usec);
 		}
 	}
@@ -1356,7 +1356,7 @@ document_loader_loaded (PlumaDocumentLoader *loader,
 
 		g_get_current_time (&doc->priv->time_of_last_save_or_load);
 
-		set_encoding (doc, 
+		set_encoding (doc,
 			      pluma_document_loader_get_encoding (loader),
 			      (doc->priv->requested_encoding != NULL));
 
@@ -1421,7 +1421,7 @@ document_loader_loaded (PlumaDocumentLoader *loader,
 
 		return;
 	}
-	
+
 	g_signal_emit (doc,
 		       document_signals[LOADED],
 		       0,
@@ -1454,7 +1454,7 @@ document_loader_loading (PlumaDocumentLoader *loader,
 
 		read = pluma_document_loader_get_bytes_read (loader);
 
-		g_signal_emit (doc, 
+		g_signal_emit (doc,
 			       document_signals[LOADING],
 			       0,
 			       read,
@@ -1575,8 +1575,8 @@ document_saver_saving (PlumaDocumentSaver *saver,
 			gtk_text_buffer_set_modified (GTK_TEXT_BUFFER (doc),
 						      FALSE);
 
-			set_encoding (doc, 
-				      doc->priv->requested_encoding, 
+			set_encoding (doc,
+				      doc->priv->requested_encoding,
 				      TRUE);
 		}
 
@@ -1692,7 +1692,7 @@ pluma_document_insert_file (PlumaDocument       *doc,
 {
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), FALSE);
 	g_return_val_if_fail (iter != NULL, FALSE);
-	g_return_val_if_fail (gtk_text_iter_get_buffer (iter) == 
+	g_return_val_if_fail (gtk_text_iter_get_buffer (iter) ==
 				GTK_TEXT_BUFFER (doc), FALSE);
 
 	/* TODO */
@@ -1700,16 +1700,16 @@ pluma_document_insert_file (PlumaDocument       *doc,
 	return FALSE;
 }
 
-gboolean	 
+gboolean
 pluma_document_is_untouched (PlumaDocument *doc)
 {
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), TRUE);
 
-	return (doc->priv->uri == NULL) && 
+	return (doc->priv->uri == NULL) &&
 		(!gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc)));
 }
 
-gboolean 
+gboolean
 pluma_document_is_untitled (PlumaDocument *doc)
 {
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), TRUE);
@@ -1743,7 +1743,7 @@ pluma_document_get_deleted (PlumaDocument *doc)
  * to the last line and FALSE is returned.
  */
 gboolean
-pluma_document_goto_line (PlumaDocument *doc, 
+pluma_document_goto_line (PlumaDocument *doc,
 			  gint           line)
 {
 	gboolean ret = TRUE;
@@ -1783,11 +1783,11 @@ pluma_document_goto_line_offset (PlumaDocument *doc,
 	gboolean ret = TRUE;
 	guint offset_count;
 	GtkTextIter iter;
-	
+
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), FALSE);
 	g_return_val_if_fail (line >= -1, FALSE);
 	g_return_val_if_fail (line_offset >= -1, FALSE);
-	
+
 	gtk_text_buffer_get_iter_at_line (GTK_TEXT_BUFFER (doc),
 					  &iter,
 					  line);
@@ -1801,7 +1801,7 @@ pluma_document_goto_line_offset (PlumaDocument *doc,
 	{
 		gtk_text_iter_set_line_offset (&iter, line_offset);
 	}
-	
+
 	gtk_text_buffer_place_cursor (GTK_TEXT_BUFFER (doc), &iter);
 
 	return ret;
@@ -1850,7 +1850,7 @@ pluma_document_set_search_text (PlumaDocument *doc,
 	gchar *converted_text;
 	gboolean notify = FALSE;
 	gboolean update_to_search_region = FALSE;
-	
+
 	g_return_if_fail (PLUMA_IS_DOCUMENT (doc));
 	g_return_if_fail ((text == NULL) || (doc->priv->search_text != text));
 	g_return_if_fail ((text == NULL) || g_utf8_validate (text, -1, NULL));
@@ -1869,19 +1869,19 @@ pluma_document_set_search_text (PlumaDocument *doc,
 			converted_text = g_strdup("");
 			notify = pluma_document_get_can_search_again (doc);
 		}
-		
+
 		g_free (doc->priv->search_text);
-	
+
 		doc->priv->search_text = converted_text;
 		doc->priv->num_of_lines_search_text = compute_num_of_lines (doc->priv->search_text);
 		update_to_search_region = TRUE;
 	}
-	
+
 	if (!PLUMA_SEARCH_IS_DONT_SET_FLAGS (flags))
 	{
 		if (doc->priv->search_flags != flags)
 			update_to_search_region = TRUE;
-			
+
 		doc->priv->search_flags = flags;
 
 	}
@@ -1890,16 +1890,16 @@ pluma_document_set_search_text (PlumaDocument *doc,
 	{
 		GtkTextIter begin;
 		GtkTextIter end;
-		
+
 		gtk_text_buffer_get_bounds (GTK_TEXT_BUFFER (doc),
 					    &begin,
 					    &end);
-					    
+
 		to_search_region_range (doc,
 					&begin,
 					&end);
 	}
-	
+
 	if (notify)
 		g_object_notify (G_OBJECT (doc), "can-search-again");
 }
@@ -1955,7 +1955,7 @@ pluma_document_get_can_search_again (PlumaDocument *doc)
 {
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), FALSE);
 
-	return ((doc->priv->search_text != NULL) && 
+	return ((doc->priv->search_text != NULL) &&
 	        (*doc->priv->search_text != '\0'));
 }
 
@@ -1979,13 +1979,13 @@ pluma_document_search_forward (PlumaDocument     *doc,
 	gboolean found = FALSE;
 	GtkTextIter m_start;
 	GtkTextIter m_end;
-	
+
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), FALSE);
-	g_return_val_if_fail ((start == NULL) || 
+	g_return_val_if_fail ((start == NULL) ||
 			      (gtk_text_iter_get_buffer (start) ==  GTK_TEXT_BUFFER (doc)), FALSE);
-	g_return_val_if_fail ((end == NULL) || 
+	g_return_val_if_fail ((end == NULL) ||
 			      (gtk_text_iter_get_buffer (end) ==  GTK_TEXT_BUFFER (doc)), FALSE);
-	
+
 	if (doc->priv->search_text == NULL)
 	{
 		pluma_debug_message (DEBUG_DOCUMENT, "doc->priv->search_text == NULL\n");
@@ -1993,7 +1993,7 @@ pluma_document_search_forward (PlumaDocument     *doc,
 	}
 	else
 		pluma_debug_message (DEBUG_DOCUMENT, "doc->priv->search_text == \"%s\"\n", doc->priv->search_text);
-				      
+
 	if (start == NULL)
 		gtk_text_buffer_get_start_iter (GTK_TEXT_BUFFER (doc), &iter);
 	else
@@ -2005,7 +2005,7 @@ pluma_document_search_forward (PlumaDocument     *doc,
 	{
 		search_flags = search_flags | GTK_TEXT_SEARCH_CASE_INSENSITIVE;
 	}
-		
+
 	while (!found)
 	{
 		if(!PLUMA_SEARCH_IS_MATCH_REGEX(doc->priv->search_flags))
@@ -2026,26 +2026,26 @@ pluma_document_search_forward (PlumaDocument     *doc,
 								  TRUE,
 								  &doc->priv->last_replace_text);
 		}
-	
+
 		if (found && PLUMA_SEARCH_IS_ENTIRE_WORD (doc->priv->search_flags))
 		{
-			found = gtk_text_iter_starts_word (&m_start) && 
+			found = gtk_text_iter_starts_word (&m_start) &&
 					gtk_text_iter_ends_word (&m_end);
 
-			if (!found) 
+			if (!found)
 				iter = m_end;
 		}
 		else
 			break;
 	}
-	
+
 	if (found && (match_start != NULL))
 		*match_start = m_start;
-	
+
 	if (found && (match_end != NULL))
 		*match_end = m_end;
-	
-	return found;			    
+
+	return found;
 }
 
 /**
@@ -2140,10 +2140,10 @@ pluma_document_search_backward (PlumaDocument     *doc,
 }
 
 /* FIXME this is an issue for introspection regardning @find */
-gint 
+gint
 pluma_document_replace_all (PlumaDocument       *doc,
-			    const gchar         *find, 
-			    const gchar         *replace, 
+			    const gchar         *find,
+			    const gchar         *replace,
 			    guint                flags)
 {
 	GtkTextIter iter;
@@ -2231,7 +2231,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 		{
 			gboolean word;
 
-			word = gtk_text_iter_starts_word (&m_start) && 
+			word = gtk_text_iter_starts_word (&m_start) &&
 			       gtk_text_iter_ends_word (&m_end);
 
 			if (!word)
@@ -2245,7 +2245,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 		{
 			++cont;
 
-			gtk_text_buffer_delete (buffer, 
+			gtk_text_buffer_delete (buffer,
 						&m_start,
 						&m_end);
 			gtk_text_buffer_insert (buffer,
@@ -2261,7 +2261,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 	gtk_text_buffer_end_user_action (buffer);
 
 	/* re-enable cursor_moved emission and notify
-	 * the current position 
+	 * the current position
 	 */
 	doc->priv->stop_cursor_moved_emission = FALSE;
 	emit_cursor_moved (doc);
@@ -2283,7 +2283,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
  * @lang: (allow-none):
  **/
 void
-pluma_document_set_language (PlumaDocument     *doc, 
+pluma_document_set_language (PlumaDocument     *doc,
 			     GtkSourceLanguage *lang)
 {
 	g_return_if_fail (PLUMA_IS_DOCUMENT (doc));
@@ -2319,7 +2319,7 @@ _pluma_document_get_seconds_since_last_save_or_load (PlumaDocument *doc)
 	GTimeVal current_time;
 
 	pluma_debug (DEBUG_DOCUMENT);
-	
+
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), -1);
 
 	g_get_current_time (&current_time);
@@ -2348,10 +2348,10 @@ get_search_match_colors (PlumaDocument *doc,
 	if (style == NULL)
 		goto fallback;
 
-	g_object_get (style, 
-		      "foreground-set", foreground_set, 
+	g_object_get (style,
+		      "foreground-set", foreground_set,
 		      "foreground", &fg,
-		      "background-set", background_set, 
+		      "background-set", background_set,
 		      "background", &bg,
 		      NULL);
 
@@ -2371,7 +2371,7 @@ get_search_match_colors (PlumaDocument *doc,
 		{
 			*background_set = FALSE;
 		}
-	}	
+	}
 
 	g_free (fg);
 	g_free (bg);
@@ -2379,7 +2379,7 @@ get_search_match_colors (PlumaDocument *doc,
 	return;
 
  fallback:
-	pluma_debug_message (DEBUG_DOCUMENT, 
+	pluma_debug_message (DEBUG_DOCUMENT,
 			     "Falling back to hard-coded colors "
 			     "for the \"found\" text tag.");
 
@@ -2439,21 +2439,21 @@ search_region (PlumaDocument *doc,
 	GtkTextSearchFlags search_flags = 0;
 	gboolean found = TRUE;
 
-	GtkTextBuffer *buffer;	
+	GtkTextBuffer *buffer;
 
 	pluma_debug (DEBUG_DOCUMENT);
-	
+
 	buffer = GTK_TEXT_BUFFER (doc);
-	
+
 	if (doc->priv->found_tag == NULL)
 	{
-		doc->priv->found_tag = gtk_text_buffer_create_tag (GTK_TEXT_BUFFER (doc), 
+		doc->priv->found_tag = gtk_text_buffer_create_tag (GTK_TEXT_BUFFER (doc),
 								   "found",
 								   NULL);
 
 		sync_found_tag (doc, NULL, NULL);
 
-		g_signal_connect (doc, 
+		g_signal_connect (doc,
 				  "notify::style-scheme",
 				  G_CALLBACK (sync_found_tag),
 				  NULL);
@@ -2463,7 +2463,7 @@ search_region (PlumaDocument *doc,
 	 * syntax highlighting tags */
 	text_tag_set_highest_priority (doc->priv->found_tag,
 				       GTK_TEXT_BUFFER (doc));
-				   
+
 
 	if (doc->priv->search_text == NULL)
 		return;
@@ -2502,28 +2502,28 @@ search_region (PlumaDocument *doc,
 	{
 		search_flags = search_flags | GTK_TEXT_SEARCH_CASE_INSENSITIVE;
 	}
-	
+
 	do
 	{
 		if ((end != NULL) && gtk_text_iter_is_end (end))
 			end = NULL;
-			
+
 		found = gtk_text_iter_forward_search (&iter,
-							doc->priv->search_text, 
+							doc->priv->search_text,
 							search_flags,
-                        	                	&m_start, 
+                        	                	&m_start,
                         	                	&m_end,
                                 	               	end);
-				
+
 		iter = m_end;
-						      	               	
+
 		if (found && PLUMA_SEARCH_IS_ENTIRE_WORD (doc->priv->search_flags))
 		{
 			gboolean word;
-						
-			word = gtk_text_iter_starts_word (&m_start) && 
+
+			word = gtk_text_iter_starts_word (&m_start) &&
 			       gtk_text_iter_ends_word (&m_end);
-				
+
 			if (!word)
 				continue;
 		}
@@ -2534,24 +2534,24 @@ search_region (PlumaDocument *doc,
 						   doc->priv->found_tag,
 						   &m_start,
 						   &m_end);
-		}		
+		}
 
 	} while (found);
 }
 
 static void
 to_search_region_range (PlumaDocument *doc,
-			GtkTextIter   *start, 
+			GtkTextIter   *start,
 			GtkTextIter   *end)
 {
 	pluma_debug (DEBUG_DOCUMENT);
-	
+
 	if (doc->priv->to_search_region == NULL)
 		return;
-		
+
 	gtk_text_iter_set_line_offset (start, 0);
 	gtk_text_iter_forward_to_line_end (end);
-	
+
 	/*
 	g_print ("+ [%u (%u), %u (%u)]\n", gtk_text_iter_get_line (start), gtk_text_iter_get_offset (start),
 					   gtk_text_iter_get_line (end), gtk_text_iter_get_offset (end));
@@ -2563,7 +2563,7 @@ to_search_region_range (PlumaDocument *doc,
 	/* Notify views of the updated highlight region */
 	gtk_text_iter_backward_lines (start, doc->priv->num_of_lines_search_text);
 	gtk_text_iter_forward_lines (end, doc->priv->num_of_lines_search_text);
-	
+
 	g_signal_emit (doc, document_signals [SEARCH_HIGHLIGHT_UPDATED], 0, start, end);
 }
 
@@ -2575,11 +2575,11 @@ _pluma_document_search_region (PlumaDocument     *doc,
 	PlumaTextRegion *region;
 
 	pluma_debug (DEBUG_DOCUMENT);
-		
+
 	g_return_if_fail (PLUMA_IS_DOCUMENT (doc));
 	g_return_if_fail (start != NULL);
 	g_return_if_fail (end != NULL);
-	
+
 	if (doc->priv->to_search_region == NULL)
 		return;
 
@@ -2587,24 +2587,24 @@ _pluma_document_search_region (PlumaDocument     *doc,
 	g_print ("U [%u (%u), %u (%u)]\n", gtk_text_iter_get_line (start), gtk_text_iter_get_offset (start),
 					   gtk_text_iter_get_line (end), gtk_text_iter_get_offset (end));
 	*/
-		
+
 	/* get the subregions not yet highlighted */
-	region = pluma_text_region_intersect (doc->priv->to_search_region, 
+	region = pluma_text_region_intersect (doc->priv->to_search_region,
 					      start,
 					      end);
-	if (region) 
+	if (region)
 	{
 		gint i;
 		GtkTextIter start_search;
 		GtkTextIter end_search;
 
 		i = pluma_text_region_subregions (region);
-		pluma_text_region_nth_subregion (region, 
+		pluma_text_region_nth_subregion (region,
 						 0,
 						 &start_search,
 						 NULL);
 
-		pluma_text_region_nth_subregion (region, 
+		pluma_text_region_nth_subregion (region,
 						 i - 1,
 						 NULL,
 						 &end_search);
@@ -2617,38 +2617,38 @@ _pluma_document_search_region (PlumaDocument     *doc,
 
 		/* remove the just highlighted region */
 		pluma_text_region_subtract (doc->priv->to_search_region,
-					    start, 
+					    start,
 					    end);
 	}
 }
 
 static void
-insert_text_cb (PlumaDocument *doc, 
+insert_text_cb (PlumaDocument *doc,
 		GtkTextIter   *pos,
-		const gchar   *text, 
+		const gchar   *text,
 		gint           length)
 {
 	GtkTextIter start;
 	GtkTextIter end;
 
 	pluma_debug (DEBUG_DOCUMENT);
-		
+
 	start = end = *pos;
 
 	/*
 	 * pos is invalidated when
 	 * insertion occurs (because the buffer contents change), but the
 	 * default signal handler revalidates it to point to the end of the
-	 * inserted text 
+	 * inserted text
 	 */
 	gtk_text_iter_backward_chars (&start,
 				      g_utf8_strlen (text, length));
-				     
+
 	to_search_region_range (doc, &start, &end);
 }
-						 
-static void	
-delete_range_cb (PlumaDocument *doc, 
+
+static void
+delete_range_cb (PlumaDocument *doc,
 		 GtkTextIter   *start,
 		 GtkTextIter   *end)
 {
@@ -2656,10 +2656,10 @@ delete_range_cb (PlumaDocument *doc,
 	GtkTextIter d_end;
 
 	pluma_debug (DEBUG_DOCUMENT);
-		
+
 	d_start = *start;
 	d_end = *end;
-	
+
 	to_search_region_range (doc, &d_start, &d_end);
 }
 
@@ -2668,12 +2668,12 @@ pluma_document_set_enable_search_highlighting (PlumaDocument *doc,
 					       gboolean       enable)
 {
 	g_return_if_fail (PLUMA_IS_DOCUMENT (doc));
-	
+
 	enable = enable != FALSE;
-	
+
 	if ((doc->priv->to_search_region != NULL) == enable)
 		return;
-	
+
 	if (doc->priv->to_search_region != NULL)
 	{
 		/* Disable search highlighting */
@@ -2682,7 +2682,7 @@ pluma_document_set_enable_search_highlighting (PlumaDocument *doc,
 			/* If needed remove the found_tag */
 			GtkTextIter begin;
 			GtkTextIter end;
-		
+
 			gtk_text_buffer_get_bounds (GTK_TEXT_BUFFER (doc),
 						    &begin,
 						    &end);
@@ -2692,7 +2692,7 @@ pluma_document_set_enable_search_highlighting (PlumaDocument *doc,
 				    		    &begin,
 				    		    &end);
 		}
-		
+
 		pluma_text_region_destroy (doc->priv->to_search_region,
 					   TRUE);
 		doc->priv->to_search_region = NULL;
@@ -2705,11 +2705,11 @@ pluma_document_set_enable_search_highlighting (PlumaDocument *doc,
 			/* If search_text is not empty, highligth all its occurrences */
 			GtkTextIter begin;
 			GtkTextIter end;
-		
+
 			gtk_text_buffer_get_bounds (GTK_TEXT_BUFFER (doc),
 						    &begin,
 						    &end);
-					    
+
 			to_search_region_range (doc,
 						&begin,
 						&end);
@@ -2721,7 +2721,7 @@ gboolean
 pluma_document_get_enable_search_highlighting (PlumaDocument *doc)
 {
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), FALSE);
-	
+
 	return (doc->priv->to_search_region != NULL);
 }
 
@@ -2753,7 +2753,7 @@ _pluma_document_set_mount_operation_factory (PlumaDocument 	       *doc,
 					    gpointer	                userdata)
 {
 	g_return_if_fail (PLUMA_IS_DOCUMENT (doc));
-	
+
 	doc->priv->mount_operation_factory = callback;
 	doc->priv->mount_operation_userdata = userdata;
 }
@@ -2762,11 +2762,11 @@ GMountOperation *
 _pluma_document_create_mount_operation (PlumaDocument *doc)
 {
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), NULL);
-	
+
 	if (doc->priv->mount_operation_factory == NULL)
 		return g_mount_operation_new ();
 	else
-		return doc->priv->mount_operation_factory (doc, 
+		return doc->priv->mount_operation_factory (doc,
 						           doc->priv->mount_operation_userdata);
 }
 
@@ -2811,7 +2811,7 @@ pluma_document_set_metadata (PlumaDocument *doc,
 	for (key = first_key; key; key = va_arg (var_args, const gchar *))
 	{
 		value = va_arg (var_args, const gchar *);
-		
+
 		pluma_metadata_manager_set (doc->priv->uri,
 					    key,
 					    value);
@@ -2891,7 +2891,7 @@ pluma_document_set_metadata (PlumaDocument *doc,
 	for (key = first_key; key; key = va_arg (var_args, const gchar *))
 	{
 		value = va_arg (var_args, const gchar *);
-		
+
 		if (value != NULL)
 		{
 			g_file_info_set_attribute_string (info,
@@ -2925,7 +2925,7 @@ pluma_document_set_metadata (PlumaDocument *doc,
 
 		g_object_unref (location);
 	}
-	
+
 	g_object_unref (info);
 }
 #endif

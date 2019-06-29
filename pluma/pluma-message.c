@@ -42,7 +42,7 @@ static void
 pluma_message_finalize (GObject *object)
 {
 	PlumaMessage *message = PLUMA_MESSAGE (object);
-	
+
 	pluma_message_type_unref (message->priv->type);
 	g_hash_table_destroy (message->priv->values);
 
@@ -99,16 +99,16 @@ add_value (PlumaMessage *message,
 {
 	GValue *value;
 	GType type = pluma_message_type_lookup (message->priv->type, key);
-	
+
 	if (type == G_TYPE_INVALID)
 		return NULL;
-	
+
 	value = g_new0 (GValue, 1);
 	g_value_init (value, type);
 	g_value_reset (value);
 
 	g_hash_table_insert (message->priv->values, g_strdup (key), value);
-	
+
 	return value;
 }
 
@@ -116,11 +116,11 @@ static void
 pluma_message_class_init (PlumaMessageClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
-	
+
 	object_class->finalize = pluma_message_finalize;
 	object_class->get_property = pluma_message_get_property;
 	object_class->set_property = pluma_message_set_property;
-	
+
 	/**
 	 * PlumaMessage:object_path:
 	 *
@@ -148,7 +148,7 @@ pluma_message_class_init (PlumaMessageClass *klass)
 							      NULL,
 							      G_PARAM_READABLE |
 							      G_PARAM_STATIC_STRINGS));
-	
+
 	/**
 	 * PlumaMEssage:type:
 	 *
@@ -186,17 +186,17 @@ pluma_message_init (PlumaMessage *self)
 }
 
 static gboolean
-set_value_real (GValue 	     *to, 
+set_value_real (GValue 	     *to,
 		const GValue *from)
 {
 	GType from_type;
 	GType to_type;
-	
+
 	from_type = G_VALUE_TYPE (from);
 	to_type = G_VALUE_TYPE (to);
 
 	if (!g_type_is_a (from_type, to_type))
-	{		
+	{
 		if (!g_value_transform (from, to))
 		{
 			g_warning ("%s: Unable to make conversion from %s to %s",
@@ -205,10 +205,10 @@ set_value_real (GValue 	     *to,
 				   g_type_name (to_type));
 			return FALSE;
 		}
-		
+
 		return TRUE;
 	}
-	
+
 	g_value_copy (from, to);
 	return TRUE;
 }
@@ -219,10 +219,10 @@ value_lookup (PlumaMessage *message,
 	      gboolean	    create)
 {
 	GValue *ret = (GValue *)g_hash_table_lookup (message->priv->values, key);
-	
+
 	if (!ret && create)
 		ret = add_value (message, key);
-	
+
 	return ret;
 }
 
@@ -239,7 +239,7 @@ const gchar *
 pluma_message_get_method (PlumaMessage *message)
 {
 	g_return_val_if_fail (PLUMA_IS_MESSAGE (message), NULL);
-	
+
 	return pluma_message_type_get_method (message->priv->type);
 }
 
@@ -256,7 +256,7 @@ const gchar *
 pluma_message_get_object_path (PlumaMessage *message)
 {
 	g_return_val_if_fail (PLUMA_IS_MESSAGE (message), NULL);
-	
+
 	return pluma_message_type_get_object_path (message->priv->type);
 }
 
@@ -305,21 +305,21 @@ pluma_message_set_valist (PlumaMessage *message,
 		GValue *container = value_lookup (message, key, TRUE);
 		GValue value = {0,};
 		gchar *error = NULL;
-		
+
 		if (!container)
 		{
-			g_warning ("%s: Cannot set value for %s, does not exist", 
+			g_warning ("%s: Cannot set value for %s, does not exist",
 				   G_STRLOC,
 				   key);
-			
+
 			/* skip value */
 			va_arg (var_args, gpointer);
 			continue;
 		}
-		
+
 		g_value_init (&value, G_VALUE_TYPE (container));
 		G_VALUE_COLLECT (&value, var_args, 0, &error);
-		
+
 		if (error)
 		{
 			g_warning ("%s: %s", G_STRLOC, error);
@@ -347,17 +347,17 @@ pluma_message_set_value (PlumaMessage *message,
 {
 	GValue *container;
 	g_return_if_fail (PLUMA_IS_MESSAGE (message));
-	
+
 	container = value_lookup (message, key, TRUE);
-	
+
 	if (!container)
 	{
-		g_warning ("%s: Cannot set value for %s, does not exist", 
-			   G_STRLOC, 
+		g_warning ("%s: Cannot set value for %s, does not exist",
+			   G_STRLOC,
 			   key);
 		return;
 	}
-	
+
 	set_value_real (container, value);
 }
 
@@ -378,9 +378,9 @@ pluma_message_set_valuesv (PlumaMessage	 *message,
 			   gint		  n_values)
 {
 	gint i;
-	
+
 	g_return_if_fail (PLUMA_IS_MESSAGE (message));
-	
+
 	for (i = 0; i < n_values; i++)
 	{
 		pluma_message_set_value (message, keys[i], &values[i]);
@@ -398,14 +398,14 @@ pluma_message_set_valuesv (PlumaMessage	 *message,
  * value for the specified key.
  *
  */
-void 
+void
 pluma_message_get (PlumaMessage	*message,
 		   ...)
 {
 	va_list ap;
 
 	g_return_if_fail (PLUMA_IS_MESSAGE (message));
-	
+
 	va_start (ap, message);
 	pluma_message_get_valist (message, ap);
 	va_end (ap);
@@ -428,7 +428,7 @@ pluma_message_get_valist (PlumaMessage *message,
 	const gchar *key;
 
 	g_return_if_fail (PLUMA_IS_MESSAGE (message));
-	
+
 	while ((key = va_arg (var_args, const gchar *)) != NULL)
 	{
 		GValue *container;
@@ -436,30 +436,30 @@ pluma_message_get_valist (PlumaMessage *message,
 		gchar *error = NULL;
 
 		container = value_lookup (message, key, FALSE);
-	
+
 		if (!container)
-		{		
+		{
 			/* skip value */
 			va_arg (var_args, gpointer);
 			continue;
 		}
-		
+
 		/* copy the value here, to be sure it isn't tainted */
 		g_value_init (&copy, G_VALUE_TYPE (container));
 		g_value_copy (container, &copy);
-		
+
 		G_VALUE_LCOPY (&copy, var_args, 0, &error);
-		
+
 		if (error)
 		{
 			g_warning ("%s: %s", G_STRLOC, error);
 			g_free (error);
-			
+
 			/* purposely leak the value here, because it might
 			   be in a bad state */
 			continue;
 		}
-		
+
 		g_value_unset (&copy);
 	}
 }
@@ -474,17 +474,17 @@ pluma_message_get_valist (PlumaMessage *message,
  * with the correct type.
  *
  */
-void 
+void
 pluma_message_get_value (PlumaMessage *message,
 			 const gchar  *key,
 			 GValue	      *value)
 {
 	GValue *container;
-	
+
 	g_return_if_fail (PLUMA_IS_MESSAGE (message));
-	
+
 	container = value_lookup (message, key, FALSE);
-	
+
 	if (!container)
 	{
 		g_warning ("%s: Invalid key `%s'",
@@ -492,7 +492,7 @@ pluma_message_get_value (PlumaMessage *message,
 			   key);
 		return;
 	}
-	
+
 	g_value_init (value, G_VALUE_TYPE (container));
 	set_value_real (value, container);
 }
@@ -507,7 +507,7 @@ pluma_message_get_value (PlumaMessage *message,
  * Return value: the type of @key
  *
  */
-GType 
+GType
 pluma_message_get_key_type (PlumaMessage    *message,
 			    const gchar	    *key)
 {
@@ -532,14 +532,14 @@ pluma_message_has_key (PlumaMessage *message,
 		       const gchar  *key)
 {
 	g_return_val_if_fail (PLUMA_IS_MESSAGE (message), FALSE);
-	
+
 	return value_lookup (message, key, FALSE) != NULL;
 }
 
 typedef struct
 {
 	PlumaMessage *message;
-	gboolean valid;	
+	gboolean valid;
 } ValidateInfo;
 
 static void
@@ -549,12 +549,12 @@ validate_key (const gchar  *key,
 	      ValidateInfo *info)
 {
 	GValue *value;
-	
+
 	if (!info->valid || !required)
 		return;
-	
+
 	value = value_lookup (info->message, key, FALSE);
-	
+
 	if (!value)
 		info->valid = FALSE;
 }
@@ -575,16 +575,16 @@ pluma_message_validate (PlumaMessage *message)
 
 	g_return_val_if_fail (PLUMA_IS_MESSAGE (message), FALSE);
 	g_return_val_if_fail (message->priv->type != NULL, FALSE);
-	
+
 	if (!message->priv->valid)
 	{
-		pluma_message_type_foreach (message->priv->type, 
+		pluma_message_type_foreach (message->priv->type,
 					    (PlumaMessageTypeForeach)validate_key,
 					    &info);
 
 		message->priv->valid = info.valid;
 	}
-	
+
 	return message->priv->valid;
 }
 

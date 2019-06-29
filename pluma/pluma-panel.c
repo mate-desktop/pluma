@@ -2,7 +2,7 @@
  * pluma-panel.c
  * This file is part of pluma
  *
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,13 +16,13 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
  * See the ChangeLog files for a list of changes.
  *
  * $Id$
@@ -43,10 +43,10 @@
 
 #define PLUMA_PANEL_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_PANEL, PlumaPanelPrivate))
 
-struct _PlumaPanelPrivate 
+struct _PlumaPanelPrivate
 {
 	GtkOrientation orientation;
-	
+
 	/* Title bar (vertical panel only) */
 	GtkWidget *title_image;
 	GtkWidget *title_label;
@@ -57,7 +57,7 @@ struct _PlumaPanelPrivate
 
 typedef struct _PlumaPanelItem PlumaPanelItem;
 
-struct _PlumaPanelItem 
+struct _PlumaPanelItem
 {
 	gchar *name;
 	GtkWidget *icon;
@@ -101,7 +101,7 @@ pluma_panel_get_property (GObject    *object,
 			  GParamSpec *pspec)
 {
 	PlumaPanel *panel = PLUMA_PANEL (object);
-	
+
 	switch (prop_id)
 	{
 		case PROP_ORIENTATION:
@@ -238,7 +238,7 @@ pluma_panel_class_init (PlumaPanelClass *klass)
 			      G_STRUCT_OFFSET (PlumaPanelClass, focus_document),
 		  	      NULL, NULL,
 		  	      g_cclosure_marshal_VOID__VOID,
-			      G_TYPE_NONE, 0);					
+			      G_TYPE_NONE, 0);
 	binding_set = gtk_binding_set_by_class (klass);
 
 	gtk_binding_entry_add_signal (binding_set,
@@ -308,7 +308,7 @@ sync_title (PlumaPanel     *panel,
 
 	if (item != NULL)
 	{
-		gtk_label_set_text (GTK_LABEL (panel->priv->title_label), 
+		gtk_label_set_text (GTK_LABEL (panel->priv->title_label),
 				    item->name);
 
 		set_gtk_image_from_gtk_image (GTK_IMAGE (panel->priv->title_image),
@@ -316,7 +316,7 @@ sync_title (PlumaPanel     *panel,
 	}
 	else
 	{
-		gtk_label_set_text (GTK_LABEL (panel->priv->title_label), 
+		gtk_label_set_text (GTK_LABEL (panel->priv->title_label),
 				    _("Empty"));
 
 		gtk_image_set_from_icon_name (GTK_IMAGE (panel->priv->title_image),
@@ -421,10 +421,10 @@ build_horizontal_panel (PlumaPanel *panel)
 
 	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 
-	gtk_box_pack_start (GTK_BOX (box), 
-			    panel->priv->notebook, 
-			    TRUE, 
-			    TRUE, 
+	gtk_box_pack_start (GTK_BOX (box),
+			    panel->priv->notebook,
+			    TRUE,
+			    TRUE,
 			    0);
 
 	/* Toolbar, close button and first separator */
@@ -433,16 +433,16 @@ build_horizontal_panel (PlumaPanel *panel)
 
 	gtk_box_pack_start (GTK_BOX (box),
 			    sidebar,
-			    FALSE, 
-			    FALSE, 
+			    FALSE,
+			    FALSE,
 			    0);
 
 	close_button = create_close_button (panel);
 
 	gtk_box_pack_start (GTK_BOX (sidebar),
 			    close_button,
-			    FALSE, 
-			    FALSE, 
+			    FALSE,
+			    FALSE,
 			    0);
 
 	gtk_widget_show_all (box);
@@ -465,32 +465,32 @@ build_vertical_panel (PlumaPanel *panel)
 	/* Create title hbox */
 	title_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 	gtk_container_set_border_width (GTK_CONTAINER (title_hbox), 5);
-					
+
 	gtk_box_pack_start (GTK_BOX (panel), title_hbox, FALSE, FALSE, 0);
-	
+
 	icon_name_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-	gtk_box_pack_start (GTK_BOX (title_hbox), 
-			    icon_name_hbox, 
-			    TRUE, 
-			    TRUE, 
+	gtk_box_pack_start (GTK_BOX (title_hbox),
+			    icon_name_hbox,
+			    TRUE,
+			    TRUE,
 			    0);
-		
-	panel->priv->title_image = 
+
+	panel->priv->title_image =
 				gtk_image_new_from_icon_name ("text-x-generic",
 				                              GTK_ICON_SIZE_MENU);
-	gtk_box_pack_start (GTK_BOX (icon_name_hbox), 
-			    panel->priv->title_image, 
-			    FALSE, 
-			    TRUE, 
+	gtk_box_pack_start (GTK_BOX (icon_name_hbox),
+			    panel->priv->title_image,
+			    FALSE,
+			    TRUE,
 			    0);
 
 	dummy_label = gtk_label_new (" ");
 
-	gtk_box_pack_start (GTK_BOX (icon_name_hbox), 
-			    dummy_label, 
-			    FALSE, 
-			    FALSE, 
-			    0);	
+	gtk_box_pack_start (GTK_BOX (icon_name_hbox),
+			    dummy_label,
+			    FALSE,
+			    FALSE,
+			    0);
 
 	panel->priv->title_label = gtk_label_new (_("Empty"));
 	gtk_label_set_xalign (GTK_LABEL (panel->priv->title_label), 0.0);
@@ -505,9 +505,9 @@ build_vertical_panel (PlumaPanel *panel)
 	close_button = create_close_button (panel);
 
 	gtk_box_pack_start (GTK_BOX (title_hbox),
-			    close_button, 
-			    FALSE, 
-			    FALSE, 
+			    close_button,
+			    FALSE,
+			    FALSE,
 			    0);
 
 	gtk_widget_show_all (title_hbox);
@@ -524,7 +524,7 @@ pluma_panel_constructor (GType type,
 			 guint n_construct_properties,
 			 GObjectConstructParam *construct_properties)
 {
-	
+
 	/* Invoke parent constructor. */
 	PlumaPanelClass *klass = PLUMA_PANEL_CLASS (g_type_class_peek (PLUMA_TYPE_PANEL));
 	GObjectClass *parent_class = G_OBJECT_CLASS (g_type_class_peek_parent (klass));
@@ -532,7 +532,7 @@ pluma_panel_constructor (GType type,
 						  n_construct_properties,
 						  construct_properties);
 
-	/* Build the panel, now that we know the orientation 
+	/* Build the panel, now that we know the orientation
 			   (_init has been called previously) */
 	PlumaPanel *panel = PLUMA_PANEL (obj);
 
@@ -621,8 +621,8 @@ build_tab_label (PlumaPanel  *panel,
  * Adds a new item to the @panel.
  */
 void
-pluma_panel_add_item (PlumaPanel  *panel, 
-		      GtkWidget   *item, 
+pluma_panel_add_item (PlumaPanel  *panel,
+		      GtkWidget   *item,
 		      const gchar *name,
 		      GtkWidget   *image)
 {
@@ -630,7 +630,7 @@ pluma_panel_add_item (PlumaPanel  *panel,
 	GtkWidget *tab_label;
 	GtkWidget *menu_label;
 	gint w, h;
-	
+
 	g_return_if_fail (PLUMA_IS_PANEL (panel));
 	g_return_if_fail (GTK_IS_WIDGET (item));
 	g_return_if_fail (name != NULL);
@@ -653,7 +653,7 @@ pluma_panel_add_item (PlumaPanel  *panel,
 
 	gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &w, &h);
 	gtk_widget_set_size_request (data->icon, w, h);
-	
+
 	g_object_set_data (G_OBJECT (item),
 		           PANEL_ITEM_KEY,
 		           data);
@@ -684,8 +684,8 @@ pluma_panel_add_item (PlumaPanel  *panel,
  * Same as pluma_panel_add_item() but using an image from icon name.
  */
 void
-pluma_panel_add_item_with_icon (PlumaPanel  *panel, 
-				GtkWidget   *item, 
+pluma_panel_add_item_with_icon (PlumaPanel  *panel,
+				GtkWidget   *item,
 				const gchar *name,
 				const gchar *icon_name)
 {
@@ -716,20 +716,20 @@ pluma_panel_remove_item (PlumaPanel *panel,
 {
 	PlumaPanelItem *data;
 	gint page_num;
-	
+
 	g_return_val_if_fail (PLUMA_IS_PANEL (panel), FALSE);
 	g_return_val_if_fail (GTK_IS_WIDGET (item), FALSE);
 
 	page_num = gtk_notebook_page_num (GTK_NOTEBOOK (panel->priv->notebook),
 					  item);
-					  
+
 	if (page_num == -1)
 		return FALSE;
-		
+
 	data = (PlumaPanelItem *)g_object_get_data (G_OBJECT (item),
 					            PANEL_ITEM_KEY);
 	g_return_val_if_fail (data != NULL, FALSE);
-	
+
 	g_free (data->name);
 	g_free (data);
 
@@ -740,7 +740,7 @@ pluma_panel_remove_item (PlumaPanel *panel,
 	/* ref the item to keep it alive during signal emission */
 	g_object_ref (G_OBJECT (item));
 
-	gtk_notebook_remove_page (GTK_NOTEBOOK (panel->priv->notebook), 
+	gtk_notebook_remove_page (GTK_NOTEBOOK (panel->priv->notebook),
 				  page_num);
 
 	/* if we removed all the pages, reset the title */
@@ -819,7 +819,7 @@ pluma_panel_item_is_active (PlumaPanel *panel,
  * pluma_panel_get_orientation:
  * @panel: a #PlumaPanel
  *
- * Gets the orientation of the @panel. 
+ * Gets the orientation of the @panel.
  *
  * Returns: the #GtkOrientation of #PlumaPanel
  */
@@ -836,7 +836,7 @@ pluma_panel_get_orientation (PlumaPanel *panel)
  * @panel: a #PlumaPanel
  *
  * Gets the number of items in a @panel.
- * 
+ *
  * Returns: the number of items contained in #PlumaPanel
  */
 gint

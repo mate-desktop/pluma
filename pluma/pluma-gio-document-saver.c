@@ -56,7 +56,7 @@ typedef struct
 
 #define REMOTE_QUERY_ATTRIBUTES G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE "," \
 				G_FILE_ATTRIBUTE_TIME_MODIFIED
-				
+
 #define PLUMA_GIO_DOCUMENT_SAVER_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
 							  PLUMA_TYPE_GIO_DOCUMENT_SAVER, \
 							  PlumaGioDocumentSaverPrivate))
@@ -80,7 +80,7 @@ struct _PlumaGioDocumentSaverPrivate
 	GCancellable		 *cancellable;
 	GOutputStream		 *stream;
 	GInputStream		 *input;
-	
+
 	GError                   *error;
 };
 
@@ -129,7 +129,7 @@ static AsyncData *
 async_data_new (PlumaGioDocumentSaver *gvsaver)
 {
 	AsyncData *async;
-	
+
 	async = g_slice_new (AsyncData);
 	async->saver = gvsaver;
 	async->cancellable = g_object_ref (gvsaver->priv->cancellable);
@@ -156,7 +156,7 @@ async_data_free (AsyncData *async)
 	g_slice_free (AsyncData, async);
 }
 
-static void 
+static void
 pluma_gio_document_saver_class_init (PlumaGioDocumentSaverClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -181,7 +181,7 @@ pluma_gio_document_saver_init (PlumaGioDocumentSaver *gvsaver)
 }
 
 static void
-remote_save_completed_or_failed (PlumaGioDocumentSaver *gvsaver, 
+remote_save_completed_or_failed (PlumaGioDocumentSaver *gvsaver,
 				 AsyncData 	       *async)
 {
 	pluma_document_saver_saving (PLUMA_DOCUMENT_SAVER (gvsaver),
@@ -295,7 +295,7 @@ remote_get_info_cb (GFile        *source,
 		async_data_free (async);
 		return;
 	}
-	
+
 	saver = async->saver;
 
 	pluma_debug_message (DEBUG_SAVER, "Finished query info on file");
@@ -332,9 +332,9 @@ close_async_ready_get_info_cb (GOutputStream *stream,
 		async_data_free (async);
 		return;
 	}
-	
+
 	pluma_debug_message (DEBUG_SAVER, "Finished closing stream");
-	
+
 	if (!g_output_stream_close_finish (stream, res, &error))
 	{
 		pluma_debug_message (DEBUG_SAVER, "Closing stream error: %s", error->message);
@@ -343,7 +343,7 @@ close_async_ready_get_info_cb (GOutputStream *stream,
 		return;
 	}
 
-	/* get the file info: note we cannot use 
+	/* get the file info: note we cannot use
 	 * g_file_output_stream_query_info_async since it is not able to get the
 	 * content type etc, beside it is not supported by gvfs.
 	 * I'm not sure this is actually necessary, can't we just use
@@ -513,11 +513,11 @@ async_replace_ready_callback (GFile        *source,
 		async_data_free (async);
 		return;
 	}
-	
+
 	gvsaver = async->saver;
 	saver = PLUMA_DOCUMENT_SAVER (gvsaver);
 	file_stream = g_file_replace_finish (source, res, &error);
-	
+
 	/* handle any error that might occur */
 	if (!file_stream)
 	{
@@ -545,7 +545,7 @@ async_replace_ready_callback (GFile        *source,
 	{
 		gvsaver->priv->stream = G_OUTPUT_STREAM (file_stream);
 	}
-	
+
 	gvsaver->priv->input = pluma_document_input_stream_new (GTK_TEXT_BUFFER (saver->document),
 								saver->newline_type);
 
@@ -604,7 +604,7 @@ mount_ready_callback (GFile        *file,
 	}
 
 	mounted = g_file_mount_enclosing_volume_finish (file, res, &error);
-	
+
 	if (!mounted)
 	{
 		async_failed (async, error);
@@ -621,7 +621,7 @@ recover_not_mounted (AsyncData *async)
 {
 	PlumaDocument *doc;
 	GMountOperation *mount_operation;
-	
+
 	pluma_debug (DEBUG_LOADER);
 
 	doc = pluma_document_saver_get_document (PLUMA_DOCUMENT_SAVER (async->saver));
@@ -655,7 +655,7 @@ check_modification_callback (GFile        *source,
 		async_data_free (async);
 		return;
 	}
-	
+
 	gvsaver = async->saver;
 	info = g_file_query_info_finish (source, res, &error);
 	if (info == NULL)
@@ -666,7 +666,7 @@ check_modification_callback (GFile        *source,
 			g_error_free (error);
 			return;
 		}
-		
+
 		/* it's perfectly fine if the file doesn't exist yet */
 		if (error->code != G_IO_ERROR_NOT_FOUND)
 		{
@@ -716,7 +716,7 @@ check_modified_async (AsyncData *async)
 {
 	pluma_debug_message (DEBUG_SAVER, "Check externally modified");
 
-	g_file_query_info_async (async->saver->priv->gfile, 
+	g_file_query_info_async (async->saver->priv->gfile,
 				 G_FILE_ATTRIBUTE_TIME_MODIFIED,
 				 G_FILE_QUERY_INFO_NONE,
 				 G_PRIORITY_HIGH,
@@ -731,14 +731,14 @@ save_remote_file_real (PlumaGioDocumentSaver *gvsaver)
 	AsyncData *async;
 
 	pluma_debug_message (DEBUG_SAVER, "Starting gio save");
-	
+
 	/* First find out if the file is modified externally. This requires
 	 * a stat, but I don't think we can do this any other way
 	 */
 	async = async_data_new (gvsaver);
-	
+
 	check_modified_async (async);
-	
+
 	/* return false to stop timeout */
 	return FALSE;
 }

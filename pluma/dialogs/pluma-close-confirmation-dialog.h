@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
 
 /*
- * Modified by the pluma Team, 2004-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2004-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  */
 
 #ifndef __PLUMA_CLOSE_CONFIRMATION_DIALOG_H__
@@ -45,7 +45,7 @@ typedef struct _PlumaCloseConfirmationDialog 		PlumaCloseConfirmationDialog;
 typedef struct _PlumaCloseConfirmationDialogClass 	PlumaCloseConfirmationDialogClass;
 typedef struct _PlumaCloseConfirmationDialogPrivate 	PlumaCloseConfirmationDialogPrivate;
 
-struct _PlumaCloseConfirmationDialog 
+struct _PlumaCloseConfirmationDialog
 {
 	GtkDialog parent;
 
@@ -53,7 +53,7 @@ struct _PlumaCloseConfirmationDialog
 	PlumaCloseConfirmationDialogPrivate *priv;
 };
 
-struct _PlumaCloseConfirmationDialogClass 
+struct _PlumaCloseConfirmationDialogClass
 {
 	GtkDialogClass parent_class;
 };
@@ -63,7 +63,7 @@ GType 		 pluma_close_confirmation_dialog_get_type		(void) G_GNUC_CONST;
 GtkWidget	*pluma_close_confirmation_dialog_new			(GtkWindow     *parent,
 									 GList         *unsaved_documents,
 									 gboolean       logout_mode);
-GtkWidget 	*pluma_close_confirmation_dialog_new_single 		(GtkWindow     *parent, 
+GtkWidget 	*pluma_close_confirmation_dialog_new_single 		(GtkWindow     *parent,
 									 PlumaDocument *doc,
  									 gboolean       logout_mode);
 

@@ -2,7 +2,7 @@
  * pluma-encodings.c
  * This file is part of pluma
  *
- * Copyright (C) 2002-2005 Paolo Maggi 
+ * Copyright (C) 2002-2005 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -46,8 +46,8 @@ struct _PlumaEncoding
 	const gchar *name;
 };
 
-/* 
- * The original versions of the following tables are taken from profterm 
+/*
+ * The original versions of the following tables are taken from profterm
  *
  * Copyright (C) 2002 Red Hat, Inc.
  */
@@ -108,7 +108,7 @@ typedef enum
   PLUMA_ENCODING_KOI8_R,
   PLUMA_ENCODING_KOI8__R,
   PLUMA_ENCODING_KOI8_U,
-  
+
   PLUMA_ENCODING_SHIFT_JIS,
   PLUMA_ENCODING_TCVN,
   PLUMA_ENCODING_TIS_620,
@@ -129,7 +129,7 @@ typedef enum
 
   PLUMA_ENCODING_UTF_8,
   PLUMA_ENCODING_UNKNOWN
-  
+
 } PlumaEncodingIndex;
 
 static const PlumaEncoding utf8_encoding =  {
@@ -141,8 +141,8 @@ static const PlumaEncoding utf8_encoding =  {
 /* initialized in pluma_encoding_lazy_init() */
 static PlumaEncoding unknown_encoding = {
 	PLUMA_ENCODING_UNKNOWN,
-	NULL, 
-	NULL 
+	NULL,
+	NULL
 };
 
 static const PlumaEncoding encodings [] = {
@@ -248,7 +248,7 @@ static const PlumaEncoding encodings [] = {
     "KOI8-R", N_("Cyrillic") },
   { PLUMA_ENCODING_KOI8_U,
     "KOI8U", N_("Cyrillic/Ukrainian") },
-  
+
   { PLUMA_ENCODING_SHIFT_JIS,
     "SHIFT_JIS", N_("Japanese") },
   { PLUMA_ENCODING_TCVN,
@@ -312,12 +312,12 @@ pluma_encoding_get_from_charset (const gchar *charset)
 	if (g_ascii_strcasecmp (charset, "UTF-8") == 0)
 		return pluma_encoding_get_utf8 ();
 
-	i = 0; 
+	i = 0;
 	while (i < PLUMA_ENCODING_LAST)
 	{
 		if (g_ascii_strcasecmp (charset, encodings[i].charset) == 0)
 			return &encodings[i];
-      
+
 		++i;
 	}
 
@@ -364,17 +364,17 @@ pluma_encoding_get_current (void)
 	if (initialized != FALSE)
 		return locale_encoding;
 
-	if (g_get_charset (&locale_charset) == FALSE) 
+	if (g_get_charset (&locale_charset) == FALSE)
 	{
 		g_return_val_if_fail (locale_charset != NULL, &utf8_encoding);
-		
+
 		locale_encoding = pluma_encoding_get_from_charset (locale_charset);
 	}
 	else
 	{
 		locale_encoding = &utf8_encoding;
 	}
-	
+
 	if (locale_encoding == NULL)
 	{
 		locale_encoding = &unknown_encoding;
@@ -391,7 +391,7 @@ gchar *
 pluma_encoding_to_string (const PlumaEncoding* enc)
 {
 	g_return_val_if_fail (enc != NULL, NULL);
-	
+
 	pluma_encoding_lazy_init ();
 
 	g_return_val_if_fail (enc->charset != NULL, NULL);
@@ -443,7 +443,7 @@ pluma_encoding_copy (const PlumaEncoding *enc)
 	return (PlumaEncoding *) enc;
 }
 
-void 
+void
 pluma_encoding_free (PlumaEncoding *enc)
 {
 	g_return_if_fail (enc != NULL);
@@ -451,13 +451,13 @@ pluma_encoding_free (PlumaEncoding *enc)
 
 /**
  * pluma_encoding_get_type:
- * 
+ *
  * Retrieves the GType object which is associated with the
  * #PlumaEncoding class.
- * 
+ *
  * Return value: the GType associated with #PlumaEncoding.
  **/
-GType 
+GType
 pluma_encoding_get_type (void)
 {
 	static GType our_type = 0;
@@ -469,5 +469,5 @@ pluma_encoding_get_type (void)
 			(GBoxedFreeFunc) pluma_encoding_free);
 
 	return our_type;
-} 
+}
 

@@ -3,7 +3,7 @@
  * pluma-automatic-spell-checker.c
  * This file is part of pluma
  *
- * Copyright (C) 2002 Paolo Maggi 
+ * Copyright (C) 2002 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
 
 /*
- * Modified by the pluma Team, 2002. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2002. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  */
 
 /* This is a modified version of gtkspell 2.0.5  (gtkspell.sf.net) */
@@ -46,7 +46,7 @@
 struct _PlumaAutomaticSpellChecker {
 	PlumaDocument		*doc;
 	GSList 			*views;
-	
+
 	GtkTextMark 		*mark_insert_start;
 	GtkTextMark		*mark_insert_end;
 	gboolean 		 deferred_check;
@@ -69,7 +69,7 @@ view_destroy (PlumaView *view, PlumaAutomaticSpellChecker *spell)
 }
 
 static void
-check_word (PlumaAutomaticSpellChecker *spell, GtkTextIter *start, GtkTextIter *end) 
+check_word (PlumaAutomaticSpellChecker *spell, GtkTextIter *start, GtkTextIter *end)
 {
 	gchar *word;
 
@@ -80,34 +80,34 @@ check_word (PlumaAutomaticSpellChecker *spell, GtkTextIter *start, GtkTextIter *
 						gtk_text_iter_get_offset (end));
 	*/
 
-	if (!pluma_spell_checker_check_word (spell->spell_checker, word, -1)) 
+	if (!pluma_spell_checker_check_word (spell->spell_checker, word, -1))
 	{
 		/*
 		g_print ("Apply tag: [%d - %d]\n", gtk_text_iter_get_offset (start),
 						gtk_text_iter_get_offset (end));
 		*/
-		gtk_text_buffer_apply_tag (GTK_TEXT_BUFFER (spell->doc), 
-					   spell->tag_highlight, 
-					   start, 
+		gtk_text_buffer_apply_tag (GTK_TEXT_BUFFER (spell->doc),
+					   spell->tag_highlight,
+					   start,
 					   end);
 	}
-	
+
 	g_free (word);
 }
 
 static void
-check_range (PlumaAutomaticSpellChecker *spell, 
-	     GtkTextIter                 start, 
+check_range (PlumaAutomaticSpellChecker *spell,
+	     GtkTextIter                 start,
 	     GtkTextIter                 end,
-	     gboolean                    force_all) 
+	     gboolean                    force_all)
 {
 	/* we need to "split" on word boundaries.
-	 * luckily, Pango knows what "words" are 
+	 * luckily, Pango knows what "words" are
 	 * so we don't have to figure it out. */
 
 	GtkTextIter wstart;
 	GtkTextIter wend;
-	GtkTextIter cursor; 
+	GtkTextIter cursor;
 	GtkTextIter precursor;
   	gboolean    highlight;
 
@@ -118,65 +118,65 @@ check_range (PlumaAutomaticSpellChecker *spell,
 
 	if (gtk_text_iter_inside_word (&end))
 		gtk_text_iter_forward_word_end (&end);
-	
-	if (!gtk_text_iter_starts_word (&start)) 
+
+	if (!gtk_text_iter_starts_word (&start))
 	{
-		if (gtk_text_iter_inside_word (&start) || 
-		    gtk_text_iter_ends_word (&start)) 
+		if (gtk_text_iter_inside_word (&start) ||
+		    gtk_text_iter_ends_word (&start))
 		{
 			gtk_text_iter_backward_word_start (&start);
-		} 
-		else 
+		}
+		else
 		{
 			/* if we're neither at the beginning nor inside a word,
 			 * me must be in some spaces.
 			 * skip forward to the beginning of the next word. */
-			
+
 			if (gtk_text_iter_forward_word_end (&start))
 				gtk_text_iter_backward_word_start (&start);
 		}
 	}
 
-	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (spell->doc), 
+	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (spell->doc),
 					  &cursor,
 					  gtk_text_buffer_get_insert (GTK_TEXT_BUFFER (spell->doc)));
-  	 
+
 	precursor = cursor;
 	gtk_text_iter_backward_char (&precursor);
-	
+
   	highlight = gtk_text_iter_has_tag (&cursor, spell->tag_highlight) ||
   	            gtk_text_iter_has_tag (&precursor, spell->tag_highlight);
-	
-	gtk_text_buffer_remove_tag (GTK_TEXT_BUFFER (spell->doc), 
-				    spell->tag_highlight, 
-				    &start, 
+
+	gtk_text_buffer_remove_tag (GTK_TEXT_BUFFER (spell->doc),
+				    spell->tag_highlight,
+				    &start,
 				    &end);
 
 	/* Fix a corner case when replacement occurs at beginning of buffer:
 	 * An iter at offset 0 seems to always be inside a word,
   	 * even if it's not.  Possibly a pango bug.
 	 */
-  	if (gtk_text_iter_get_offset (&start) == 0) 
+  	if (gtk_text_iter_get_offset (&start) == 0)
 	{
 		gtk_text_iter_forward_word_end(&start);
 		gtk_text_iter_backward_word_start(&start);
 	}
 
 	wstart = start;
-	
+
 	while (pluma_spell_utils_skip_no_spell_check (&wstart, &end) &&
-	       gtk_text_iter_compare (&wstart, &end) < 0) 
+	       gtk_text_iter_compare (&wstart, &end) < 0)
 	{
-		gboolean inword; 
+		gboolean inword;
 
 		/* move wend to the end of the current word. */
 		wend = wstart;
-		
+
 		gtk_text_iter_forward_word_end (&wend);
 
 		inword = (gtk_text_iter_compare (&wstart, &cursor) < 0) &&
 			 (gtk_text_iter_compare (&cursor, &wend) <= 0);
-  	 
+
 		if (inword && !force_all)
 		{
 			/* this word is being actively edited,
@@ -186,8 +186,8 @@ check_range (PlumaAutomaticSpellChecker *spell,
 				check_word (spell, &wstart, &wend);
 			else
 				spell->deferred_check = TRUE;
-		} 
-		else 
+		}
+		else
 		{
 			check_word (spell, &wstart, &wend);
 			spell->deferred_check = FALSE;
@@ -196,7 +196,7 @@ check_range (PlumaAutomaticSpellChecker *spell,
 		/* now move wend to the beginning of the next word, */
 		gtk_text_iter_forward_word_end (&wend);
 		gtk_text_iter_backward_word_start (&wend);
-		
+
 		/* make sure we've actually advanced
 		 * (we don't advance in some corner cases), */
 		if (gtk_text_iter_equal (&wstart, &wend))
@@ -208,16 +208,16 @@ check_range (PlumaAutomaticSpellChecker *spell,
 }
 
 static void
-check_deferred_range (PlumaAutomaticSpellChecker *spell, 
-		      gboolean                    force_all) 
+check_deferred_range (PlumaAutomaticSpellChecker *spell,
+		      gboolean                    force_all)
 {
 	GtkTextIter start, end;
 
-	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (spell->doc), 
-					  &start, 
+	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (spell->doc),
+					  &start,
 					  spell->mark_insert_start);
 	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (spell->doc),
-					  &end, 
+					  &end,
 					  spell->mark_insert_end);
 
 	check_range (spell, start, end, force_all);
@@ -232,20 +232,20 @@ check_deferred_range (PlumaAutomaticSpellChecker *spell,
 
 static void
 insert_text_before (GtkTextBuffer *buffer, GtkTextIter *iter,
-		gchar *text, gint len, PlumaAutomaticSpellChecker *spell) 
+		gchar *text, gint len, PlumaAutomaticSpellChecker *spell)
 {
 	gtk_text_buffer_move_mark (buffer, spell->mark_insert_start, iter);
 }
 
 static void
 insert_text_after (GtkTextBuffer *buffer, GtkTextIter *iter,
-                  gchar *text, gint len, PlumaAutomaticSpellChecker *spell) 
+                  gchar *text, gint len, PlumaAutomaticSpellChecker *spell)
 {
 	GtkTextIter start;
 
 	/* we need to check a range of text. */
 	gtk_text_buffer_get_iter_at_mark (buffer, &start, spell->mark_insert_start);
-	
+
 	check_range (spell, start, *iter, FALSE);
 
 	gtk_text_buffer_move_mark (buffer, spell->mark_insert_end, iter);
@@ -259,17 +259,17 @@ insert_text_after (GtkTextBuffer *buffer, GtkTextIter *iter,
  */
 
 static void
-delete_range_after (GtkTextBuffer *buffer, GtkTextIter *start, GtkTextIter *end, 
-		PlumaAutomaticSpellChecker *spell) 
+delete_range_after (GtkTextBuffer *buffer, GtkTextIter *start, GtkTextIter *end,
+		PlumaAutomaticSpellChecker *spell)
 {
 	check_range (spell, *start, *end, FALSE);
 }
 
 static void
-mark_set (GtkTextBuffer              *buffer, 
+mark_set (GtkTextBuffer              *buffer,
 	  GtkTextIter                *iter,
-	  GtkTextMark                *mark, 
-	  PlumaAutomaticSpellChecker *spell) 
+	  GtkTextMark                *mark,
+	  PlumaAutomaticSpellChecker *spell)
 {
 	/* if the cursor has moved and there is a deferred check so handle it now */
 	if ((mark == gtk_text_buffer_get_insert (buffer)) && spell->deferred_check)
@@ -277,18 +277,18 @@ mark_set (GtkTextBuffer              *buffer,
 }
 
 static void
-get_word_extents_from_mark (GtkTextBuffer *buffer, 
-			    GtkTextIter   *start, 
+get_word_extents_from_mark (GtkTextBuffer *buffer,
+			    GtkTextIter   *start,
 			    GtkTextIter   *end,
 			    GtkTextMark   *mark)
 {
 	gtk_text_buffer_get_iter_at_mark(buffer, start, mark);
-	
-	if (!gtk_text_iter_starts_word (start)) 
+
+	if (!gtk_text_iter_starts_word (start))
 		gtk_text_iter_backward_word_start (start);
-	
+
 	*end = *start;
-	
+
 	if (gtk_text_iter_inside_word (end))
 		gtk_text_iter_forward_word_end (end);
 }
@@ -302,17 +302,17 @@ remove_tag_to_word (PlumaAutomaticSpellChecker *spell, const gchar *word)
 	gboolean found;
 
 	gtk_text_buffer_get_iter_at_offset (GTK_TEXT_BUFFER (spell->doc), &iter, 0);
-	
+
 	found = TRUE;
 
 	while (found)
 	{
-		found = gtk_text_iter_forward_search (&iter, 
-				word, 
+		found = gtk_text_iter_forward_search (&iter,
+				word,
 				GTK_TEXT_SEARCH_VISIBLE_ONLY | GTK_TEXT_SEARCH_TEXT_ONLY,
-				&match_start, 
+				&match_start,
 				&match_end,
-				NULL);	
+				NULL);
 
 		if (found)
 		{
@@ -321,7 +321,7 @@ remove_tag_to_word (PlumaAutomaticSpellChecker *spell, const gchar *word)
 			{
 				gtk_text_buffer_remove_tag (GTK_TEXT_BUFFER (spell->doc),
 						spell->tag_highlight,
-						&match_start, 
+						&match_start,
 						&match_end);
 			}
 
@@ -331,55 +331,55 @@ remove_tag_to_word (PlumaAutomaticSpellChecker *spell, const gchar *word)
 }
 
 static void
-add_to_dictionary (GtkWidget *menuitem, PlumaAutomaticSpellChecker *spell) 
+add_to_dictionary (GtkWidget *menuitem, PlumaAutomaticSpellChecker *spell)
 {
 	gchar *word;
-	
-	GtkTextIter start, end;
-	
-	get_word_extents_from_mark (GTK_TEXT_BUFFER (spell->doc), &start, &end, spell->mark_click);	
 
-	word = gtk_text_buffer_get_text (GTK_TEXT_BUFFER (spell->doc), 
-					 &start, 
-					 &end, 
+	GtkTextIter start, end;
+
+	get_word_extents_from_mark (GTK_TEXT_BUFFER (spell->doc), &start, &end, spell->mark_click);
+
+	word = gtk_text_buffer_get_text (GTK_TEXT_BUFFER (spell->doc),
+					 &start,
+					 &end,
 					 FALSE);
-	
+
 	pluma_spell_checker_add_word_to_personal (spell->spell_checker, word, -1);
 
 	g_free (word);
 }
 
 static void
-ignore_all (GtkWidget *menuitem, PlumaAutomaticSpellChecker *spell) 
+ignore_all (GtkWidget *menuitem, PlumaAutomaticSpellChecker *spell)
 {
 	gchar *word;
-	
-	GtkTextIter start, end;
-	
-	get_word_extents_from_mark (GTK_TEXT_BUFFER (spell->doc), &start, &end, spell->mark_click);	
 
-	word = gtk_text_buffer_get_text (GTK_TEXT_BUFFER (spell->doc), 
-					 &start, 
-					 &end, 
+	GtkTextIter start, end;
+
+	get_word_extents_from_mark (GTK_TEXT_BUFFER (spell->doc), &start, &end, spell->mark_click);
+
+	word = gtk_text_buffer_get_text (GTK_TEXT_BUFFER (spell->doc),
+					 &start,
+					 &end,
 					 FALSE);
-	
+
 	pluma_spell_checker_add_word_to_session (spell->spell_checker, word, -1);
 
 	g_free (word);
 }
 
 static void
-replace_word (GtkWidget *menuitem, PlumaAutomaticSpellChecker *spell) 
+replace_word (GtkWidget *menuitem, PlumaAutomaticSpellChecker *spell)
 {
 	gchar *oldword;
 	const gchar *newword;
-	
+
 	GtkTextIter start, end;
 
-	get_word_extents_from_mark (GTK_TEXT_BUFFER (spell->doc), &start, &end, spell->mark_click);	
+	get_word_extents_from_mark (GTK_TEXT_BUFFER (spell->doc), &start, &end, spell->mark_click);
 
 	oldword = gtk_text_buffer_get_text (GTK_TEXT_BUFFER (spell->doc), &start, &end, FALSE);
-	
+
 	newword =  g_object_get_qdata (G_OBJECT (menuitem), suggestion_id);
 	g_return_if_fail (newword != NULL);
 
@@ -390,7 +390,7 @@ replace_word (GtkWidget *menuitem, PlumaAutomaticSpellChecker *spell)
 
 	gtk_text_buffer_end_user_action (GTK_TEXT_BUFFER (spell->doc));
 
-	pluma_spell_checker_set_correction (spell->spell_checker, 
+	pluma_spell_checker_set_correction (spell->spell_checker,
 				oldword, strlen (oldword),
 				newword, strlen (newword));
 
@@ -398,49 +398,49 @@ replace_word (GtkWidget *menuitem, PlumaAutomaticSpellChecker *spell)
 }
 
 static GtkWidget *
-build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word) 
+build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word)
 {
 	GtkWidget *topmenu, *menu;
 	GtkWidget *mi;
 	GSList *suggestions;
 	GSList *list;
 	gchar *label_text;
-	
+
 	topmenu = menu = gtk_menu_new();
 
 	suggestions = pluma_spell_checker_get_suggestions (spell->spell_checker, word, -1);
 
 	list = suggestions;
 
-	if (suggestions == NULL) 
-	{		
+	if (suggestions == NULL)
+	{
 		/* no suggestions.  put something in the menu anyway... */
 		GtkWidget *label;
 		/* Translators: Displayed in the "Check Spelling" dialog if there are no suggestions for the current misspelled word */
 		label = gtk_label_new (_("(no suggested words)"));
-		
+
 		mi = gtk_menu_item_new ();
 		gtk_widget_set_sensitive (mi, FALSE);
 		gtk_container_add (GTK_CONTAINER(mi), label);
 		gtk_widget_show_all (mi);
 		gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), mi);
-	} 
-	else 
+	}
+	else
 	{
 		gint count = 0;
-		
+
 		/* build a set of menus with suggestions. */
-		while (suggestions != NULL) 
+		while (suggestions != NULL)
 		{
 			GtkWidget *label;
 
-			if (count == 10) 
+			if (count == 10)
 			{
 				/* Separator */
 				mi = gtk_menu_item_new ();
 				gtk_widget_show (mi);
 				gtk_menu_shell_append (GTK_MENU_SHELL (menu), mi);
-	
+
 				mi = gtk_menu_item_new_with_mnemonic (_("_More..."));
 				gtk_widget_show (mi);
 				gtk_menu_shell_append (GTK_MENU_SHELL (menu), mi);
@@ -449,22 +449,22 @@ build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word)
 				gtk_menu_item_set_submenu (GTK_MENU_ITEM (mi), menu);
 				count = 0;
 			}
-			
+
 			label_text = g_strdup_printf ("<b>%s</b>", (gchar*) suggestions->data);
-			
+
 			label = gtk_label_new (label_text);
 			gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
 			gtk_label_set_xalign (GTK_LABEL (label), 0.0);
 
 			mi = gtk_menu_item_new ();
 			gtk_container_add (GTK_CONTAINER(mi), label);
-			
+
 			gtk_widget_show_all (mi);
 			gtk_menu_shell_append (GTK_MENU_SHELL (menu), mi);
 
-			g_object_set_qdata_full (G_OBJECT (mi), 
-				 suggestion_id, 
-				 g_strdup (suggestions->data), 
+			g_object_set_qdata_full (G_OBJECT (mi),
+				 suggestion_id,
+				 g_strdup (suggestions->data),
 				 (GDestroyNotify)g_free);
 
 			g_free (label_text);
@@ -498,9 +498,9 @@ build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word)
 	/* Ignore all */
 	mi = gtk_image_menu_item_new_with_mnemonic (_("_Ignore All"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
-				       gtk_image_new_from_icon_name ("go-bottom", 
+				       gtk_image_new_from_icon_name ("go-bottom",
 					       			     GTK_ICON_SIZE_MENU));
-	
+
 	g_signal_connect (mi,
 			  "activate",
 			  G_CALLBACK(ignore_all),
@@ -513,7 +513,7 @@ build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word)
 	/* + Add to Dictionary */
 	mi = gtk_image_menu_item_new_with_mnemonic (_("_Add"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
-				       gtk_image_new_from_icon_name ("list-add", 
+				       gtk_image_new_from_icon_name ("list-add",
 					       			     GTK_ICON_SIZE_MENU));
 
 	g_signal_connect (mi,
@@ -522,23 +522,23 @@ build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word)
 			  spell);
 
 	gtk_widget_show_all (mi);
-	
+
 	gtk_menu_shell_append (GTK_MENU_SHELL (topmenu), mi);
 
 	return topmenu;
 }
 
 static void
-populate_popup (GtkTextView *textview, GtkMenu *menu, PlumaAutomaticSpellChecker *spell) 
+populate_popup (GtkTextView *textview, GtkMenu *menu, PlumaAutomaticSpellChecker *spell)
 {
 	GtkWidget *img, *mi;
 	GtkTextIter start, end;
 	char *word;
 
 	/* we need to figure out if they picked a misspelled word. */
-	get_word_extents_from_mark (GTK_TEXT_BUFFER (spell->doc), &start, &end, spell->mark_click);	
+	get_word_extents_from_mark (GTK_TEXT_BUFFER (spell->doc), &start, &end, spell->mark_click);
 
-	/* if our highlight algorithm ever messes up, 
+	/* if our highlight algorithm ever messes up,
 	 * this isn't correct, either. */
 	if (!gtk_text_iter_has_tag (&start, spell->tag_highlight))
 		return; /* word wasn't misspelled. */
@@ -574,9 +574,9 @@ pluma_automatic_spell_checker_recheck_all (PlumaAutomaticSpellChecker *spell)
 	check_range (spell, start, end, TRUE);
 }
 
-static void 
-add_word_signal_cb (PlumaSpellChecker          *checker, 
-		    const gchar                *word, 
+static void
+add_word_signal_cb (PlumaSpellChecker          *checker,
+		    const gchar                *word,
 		    gint                        len,
 		    PlumaAutomaticSpellChecker *spell)
 {
@@ -592,7 +592,7 @@ add_word_signal_cb (PlumaSpellChecker          *checker,
 	g_free (w);
 }
 
-static void 
+static void
 set_language_cb (PlumaSpellChecker               *checker,
 		 const PlumaSpellCheckerLanguage *lang,
 		 PlumaAutomaticSpellChecker      *spell)
@@ -600,7 +600,7 @@ set_language_cb (PlumaSpellChecker               *checker,
 	pluma_automatic_spell_checker_recheck_all (spell);
 }
 
-static void 
+static void
 clear_session_cb (PlumaSpellChecker          *checker,
 		  PlumaAutomaticSpellChecker *spell)
 {
@@ -609,14 +609,14 @@ clear_session_cb (PlumaSpellChecker          *checker,
 
 /* When the user right-clicks on a word, they want to check that word.
  * Here, we do NOT  move the cursor to the location of the clicked-upon word
- * since that prevents the use of edit functions on the context menu. 
+ * since that prevents the use of edit functions on the context menu.
  */
 static gboolean
 button_press_event (GtkTextView *view,
 		    GdkEventButton *event,
-		    PlumaAutomaticSpellChecker *spell) 
+		    PlumaAutomaticSpellChecker *spell)
 {
-	if (event->button == 3) 
+	if (event->button == 3)
 	{
 		gint x, y;
 		GtkTextIter iter;
@@ -627,11 +627,11 @@ button_press_event (GtkTextView *view,
   	        if (spell->deferred_check)
 			check_deferred_range (spell, TRUE);
 
-		gtk_text_view_window_to_buffer_coords (view, 
-				GTK_TEXT_WINDOW_TEXT, 
+		gtk_text_view_window_to_buffer_coords (view,
+				GTK_TEXT_WINDOW_TEXT,
 				event->x, event->y,
 				&x, &y);
-		
+
 		gtk_text_view_get_iter_at_location (view, &iter, x, y);
 
 		gtk_text_buffer_move_mark (buffer, spell->mark_click, &iter);
@@ -645,7 +645,7 @@ button_press_event (GtkTextView *view,
  * will contain the wrong set of suggestions.
  */
 static gboolean
-popup_menu_event (GtkTextView *view, PlumaAutomaticSpellChecker *spell) 
+popup_menu_event (GtkTextView *view, PlumaAutomaticSpellChecker *spell)
 {
 	GtkTextIter iter;
 	GtkTextBuffer *buffer;
@@ -673,7 +673,7 @@ tag_table_changed (GtkTextTagTable            *table,
 				   gtk_text_tag_table_get_size (table) - 1);
 }
 
-static void 
+static void
 tag_added_or_removed (GtkTextTagTable            *table,
 		      GtkTextTag                 *tag,
 		      PlumaAutomaticSpellChecker *spell)
@@ -681,7 +681,7 @@ tag_added_or_removed (GtkTextTagTable            *table,
 	tag_table_changed (table, spell);
 }
 
-static void 
+static void
 tag_changed (GtkTextTagTable            *table,
 	     GtkTextTag                 *tag,
 	     gboolean                    size_changed,
@@ -718,7 +718,7 @@ pluma_automatic_spell_checker_new (PlumaDocument     *doc,
 	g_return_val_if_fail (PLUMA_IS_SPELL_CHECKER (checker), NULL);
 	g_return_val_if_fail ((spell = pluma_automatic_spell_checker_get_from_document (doc)) == NULL,
 			      spell);
-	
+
 	/* attach to the widget */
 	spell = g_new0 (PlumaAutomaticSpellChecker, 1);
 
@@ -727,7 +727,7 @@ pluma_automatic_spell_checker_new (PlumaDocument     *doc,
 
 	if (automatic_spell_checker_id == 0)
 	{
-		automatic_spell_checker_id = 
+		automatic_spell_checker_id =
 			g_quark_from_string ("PlumaAutomaticSpellCheckerID");
 	}
 	if (suggestion_id == 0)
@@ -735,26 +735,26 @@ pluma_automatic_spell_checker_new (PlumaDocument     *doc,
 		suggestion_id = g_quark_from_string ("PlumaAutoSuggestionID");
 	}
 
-	g_object_set_qdata_full (G_OBJECT (doc), 
-				 automatic_spell_checker_id, 
-				 spell, 
+	g_object_set_qdata_full (G_OBJECT (doc),
+				 automatic_spell_checker_id,
+				 spell,
 				 (GDestroyNotify)pluma_automatic_spell_checker_free_internal);
 
 	g_signal_connect (doc,
 			  "insert-text",
-			  G_CALLBACK (insert_text_before), 
+			  G_CALLBACK (insert_text_before),
 			  spell);
 	g_signal_connect_after (doc,
 			  "insert-text",
-			  G_CALLBACK (insert_text_after), 
+			  G_CALLBACK (insert_text_after),
 			  spell);
 	g_signal_connect_after (doc,
 			  "delete-range",
-			  G_CALLBACK (delete_range_after), 
+			  G_CALLBACK (delete_range_after),
 			  spell);
 	g_signal_connect (doc,
 			  "mark-set",
-			  G_CALLBACK (mark_set), 
+			  G_CALLBACK (mark_set),
 			  spell);
 
 	g_signal_connect (doc,
@@ -791,7 +791,7 @@ pluma_automatic_spell_checker_new (PlumaDocument     *doc,
 
 	tag_table = gtk_text_buffer_get_tag_table (GTK_TEXT_BUFFER (doc));
 
-	gtk_text_tag_set_priority (spell->tag_highlight, 
+	gtk_text_tag_set_priority (spell->tag_highlight,
 				   gtk_text_tag_table_get_size (tag_table) - 1);
 
 	g_signal_connect (tag_table,
@@ -810,16 +810,16 @@ pluma_automatic_spell_checker_new (PlumaDocument     *doc,
 	/* we create the mark here, but we don't use it until text is
 	 * inserted, so we don't really care where iter points.  */
 	gtk_text_buffer_get_bounds (GTK_TEXT_BUFFER (doc), &start, &end);
-	
+
 	spell->mark_insert_start = gtk_text_buffer_get_mark (GTK_TEXT_BUFFER (doc),
 					"pluma-automatic-spell-checker-insert-start");
 
 	if (spell->mark_insert_start == NULL)
 	{
-		spell->mark_insert_start = 
+		spell->mark_insert_start =
 			gtk_text_buffer_create_mark (GTK_TEXT_BUFFER (doc),
 						     "pluma-automatic-spell-checker-insert-start",
-						     &start, 
+						     &start,
 						     TRUE);
 	}
 	else
@@ -834,10 +834,10 @@ pluma_automatic_spell_checker_new (PlumaDocument     *doc,
 
 	if (spell->mark_insert_end == NULL)
 	{
-		spell->mark_insert_end = 
+		spell->mark_insert_end =
 			gtk_text_buffer_create_mark (GTK_TEXT_BUFFER (doc),
 						     "pluma-automatic-spell-checker-insert-end",
-						     &start, 
+						     &start,
 						     TRUE);
 	}
 	else
@@ -852,10 +852,10 @@ pluma_automatic_spell_checker_new (PlumaDocument     *doc,
 
 	if (spell->mark_click == NULL)
 	{
-		spell->mark_click = 
+		spell->mark_click =
 			gtk_text_buffer_create_mark (GTK_TEXT_BUFFER (doc),
 						     "pluma-automatic-spell-checker-click",
-						     &start, 
+						     &start,
 						     TRUE);
 	}
 	else
@@ -879,18 +879,18 @@ pluma_automatic_spell_checker_get_from_document (const PlumaDocument *doc)
 		return NULL;
 
 	return g_object_get_qdata (G_OBJECT (doc), automatic_spell_checker_id);
-}	
+}
 
 void
 pluma_automatic_spell_checker_free (PlumaAutomaticSpellChecker *spell)
 {
 	g_return_if_fail (spell != NULL);
 	g_return_if_fail (pluma_automatic_spell_checker_get_from_document (spell->doc) == spell);
-	
+
 	if (automatic_spell_checker_id == 0)
 		return;
 
-	g_object_set_qdata (G_OBJECT (spell->doc), automatic_spell_checker_id, NULL);	
+	g_object_set_qdata (G_OBJECT (spell->doc), automatic_spell_checker_id, NULL);
 }
 
 static void
@@ -899,19 +899,19 @@ pluma_automatic_spell_checker_free_internal (PlumaAutomaticSpellChecker *spell)
 	GtkTextTagTable *table;
 	GtkTextIter start, end;
 	GSList *list;
-	
+
 	g_return_if_fail (spell != NULL);
 
 	table = gtk_text_buffer_get_tag_table (GTK_TEXT_BUFFER (spell->doc));
 
 	if (table != NULL && spell->tag_highlight != NULL)
 	{
-		gtk_text_buffer_get_bounds (GTK_TEXT_BUFFER (spell->doc), 
-					    &start, 
+		gtk_text_buffer_get_bounds (GTK_TEXT_BUFFER (spell->doc),
+					    &start,
 					    &end);
-		gtk_text_buffer_remove_tag (GTK_TEXT_BUFFER (spell->doc), 
-					    spell->tag_highlight, 
-					    &start, 
+		gtk_text_buffer_remove_tag (GTK_TEXT_BUFFER (spell->doc),
+					    spell->tag_highlight,
+					    &start,
 					    &end);
 
 		g_signal_handlers_disconnect_matched (G_OBJECT (table),
@@ -921,7 +921,7 @@ pluma_automatic_spell_checker_free_internal (PlumaAutomaticSpellChecker *spell)
 
 		gtk_text_tag_table_remove (table, spell->tag_highlight);
 	}
-		
+
 	g_signal_handlers_disconnect_matched (G_OBJECT (spell->doc),
 			G_SIGNAL_MATCH_DATA,
 			0, 0, NULL, NULL,
@@ -938,7 +938,7 @@ pluma_automatic_spell_checker_free_internal (PlumaAutomaticSpellChecker *spell)
 	while (list != NULL)
 	{
 		PlumaView *view = PLUMA_VIEW (list->data);
-		
+
 		g_signal_handlers_disconnect_matched (G_OBJECT (view),
 				G_SIGNAL_MATCH_DATA,
 				0, 0, NULL, NULL,
@@ -953,13 +953,13 @@ pluma_automatic_spell_checker_free_internal (PlumaAutomaticSpellChecker *spell)
 	}
 
 	g_slist_free (spell->views);
-	
+
 	g_free (spell);
 }
 
 void
 pluma_automatic_spell_checker_attach_view (
-		PlumaAutomaticSpellChecker *spell, 
+		PlumaAutomaticSpellChecker *spell,
 		PlumaView *view)
 {
 	g_return_if_fail (spell != NULL);
@@ -970,25 +970,25 @@ pluma_automatic_spell_checker_attach_view (
 
 	g_signal_connect (view,
 			  "button-press-event",
-			  G_CALLBACK (button_press_event), 
+			  G_CALLBACK (button_press_event),
 			  spell);
 	g_signal_connect (view,
 			  "popup-menu",
-			  G_CALLBACK (popup_menu_event), 
+			  G_CALLBACK (popup_menu_event),
 			  spell);
 	g_signal_connect (view,
 			  "populate-popup",
-			  G_CALLBACK (populate_popup), 
+			  G_CALLBACK (populate_popup),
 			  spell);
 	g_signal_connect (view,
 			  "destroy",
-			  G_CALLBACK (view_destroy), 
+			  G_CALLBACK (view_destroy),
 			  spell);
 
 	spell->views = g_slist_prepend (spell->views, view);
 }
 
-void 
+void
 pluma_automatic_spell_checker_detach_view (
 		PlumaAutomaticSpellChecker *spell,
 		PlumaView *view)

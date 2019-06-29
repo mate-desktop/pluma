@@ -3,8 +3,8 @@
  * This file is part of pluma
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
- * Copyright (C) 2000, 2001 Chema Celorio, Paolo Maggi 
- * Copyright (C) 2002-2005 Paolo Maggi 
+ * Copyright (C) 2000, 2001 Chema Celorio, Paolo Maggi
+ * Copyright (C) 2002-2005 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,18 +18,18 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
- 
+
 #ifndef __PLUMA_DOCUMENT_H__
 #define __PLUMA_DOCUMENT_H__
 
@@ -66,7 +66,7 @@ typedef enum
 
 typedef enum
 {
-	PLUMA_SEARCH_DONT_SET_FLAGS	= 1 << 0, 
+	PLUMA_SEARCH_DONT_SET_FLAGS	= 1 << 0,
 	PLUMA_SEARCH_ENTIRE_WORD	= 1 << 1,
 	PLUMA_SEARCH_CASE_SENSITIVE	= 1 << 2,
 	PLUMA_SEARCH_PARSE_ESCAPES	= 1 << 3,
@@ -94,11 +94,11 @@ typedef struct _PlumaDocumentPrivate    PlumaDocumentPrivate;
  * Main object structure
  */
 typedef struct _PlumaDocument           PlumaDocument;
- 
+
 struct _PlumaDocument
 {
 	GtkSourceBuffer buffer;
-	
+
 	/*< private > */
 	PlumaDocumentPrivate *priv;
 };
@@ -198,11 +198,11 @@ void		 pluma_document_load 		(PlumaDocument       *doc,
 						 const gchar         *uri,
 						 const PlumaEncoding *encoding,
 						 gint                 line_pos,
-						 gboolean             create); 
+						 gboolean             create);
 
 gboolean	 pluma_document_insert_file	(PlumaDocument       *doc,
-						 GtkTextIter         *iter, 
-						 const gchar         *uri, 
+						 GtkTextIter         *iter,
+						 const gchar         *uri,
 						 const PlumaEncoding *encoding);
 
 gboolean	 pluma_document_load_cancel	(PlumaDocument       *doc);
@@ -210,8 +210,8 @@ gboolean	 pluma_document_load_cancel	(PlumaDocument       *doc);
 void		 pluma_document_save 		(PlumaDocument       *doc,
 						 PlumaDocumentSaveFlags flags);
 
-void		 pluma_document_save_as 	(PlumaDocument       *doc,	
-						 const gchar         *uri, 
+void		 pluma_document_save_as 	(PlumaDocument       *doc,
+						 const gchar         *uri,
 						 const PlumaEncoding *encoding,
 						 PlumaDocumentSaveFlags flags);
 
@@ -222,7 +222,7 @@ gboolean	 pluma_document_is_local	(PlumaDocument       *doc);
 
 gboolean	 pluma_document_get_deleted	(PlumaDocument       *doc);
 
-gboolean	 pluma_document_goto_line 	(PlumaDocument       *doc, 
+gboolean	 pluma_document_goto_line 	(PlumaDocument       *doc,
 						 gint                 line);
 
 gboolean	 pluma_document_goto_line_offset(PlumaDocument *doc,
@@ -259,19 +259,19 @@ gboolean	 pluma_document_search_backward	(PlumaDocument       *doc,
 						 GtkTextIter         *match_end);
 
 gint		 pluma_document_replace_all 	(PlumaDocument       *doc,
-				            	 const gchar         *find, 
-						 const gchar         *replace, 
+				            	 const gchar         *find,
+						 const gchar         *replace,
 					    	 guint                flags);
 
 void 		 pluma_document_set_language 	(PlumaDocument       *doc,
 						 GtkSourceLanguage   *lang);
-GtkSourceLanguage 
+GtkSourceLanguage
 		*pluma_document_get_language 	(PlumaDocument       *doc);
 
-const PlumaEncoding 
+const PlumaEncoding
 		*pluma_document_get_encoding	(PlumaDocument       *doc);
 
-void		 pluma_document_set_enable_search_highlighting 
+void		 pluma_document_set_enable_search_highlighting
 						(PlumaDocument       *doc,
 						 gboolean             enable);
 
@@ -291,13 +291,13 @@ void		 pluma_document_set_metadata	(PlumaDocument *doc,
 						 const gchar   *first_key,
 						 ...);
 
-/* 
+/*
  * Non exported functions
  */
 void		 _pluma_document_set_readonly 	(PlumaDocument       *doc,
 						 gboolean             readonly);
 
-glong		 _pluma_document_get_seconds_since_last_save_or_load 
+glong		 _pluma_document_get_seconds_since_last_save_or_load
 						(PlumaDocument       *doc);
 
 /* Note: this is a sync stat: use only on local files */
@@ -307,7 +307,7 @@ gboolean	_pluma_document_check_externally_modified
 void		_pluma_document_search_region   (PlumaDocument       *doc,
 						 const GtkTextIter   *start,
 						 const GtkTextIter   *end);
-						  
+
 /* Search macros */
 #define PLUMA_SEARCH_IS_DONT_SET_FLAGS(sflags) ((sflags & PLUMA_SEARCH_DONT_SET_FLAGS) != 0)
 #define PLUMA_SEARCH_SET_DONT_SET_FLAGS(sflags,state) ((state == TRUE) ? \
@@ -330,7 +330,7 @@ void		_pluma_document_search_region   (PlumaDocument       *doc,
 (sflags |= PLUMA_SEARCH_MATCH_REGEX) : (sflags &= ~PLUMA_SEARCH_MATCH_REGEX))
 
 
-typedef GMountOperation *(*PlumaMountOperationFactory)(PlumaDocument *doc, 
+typedef GMountOperation *(*PlumaMountOperationFactory)(PlumaDocument *doc,
 						       gpointer       userdata);
 
 void		 _pluma_document_set_mount_operation_factory

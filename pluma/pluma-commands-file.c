@@ -168,7 +168,7 @@ load_file_list (PlumaWindow         *window,
 			}
 			else
 			{
-				files_to_load = g_slist_prepend (files_to_load, 
+				files_to_load = g_slist_prepend (files_to_load,
 								 l->data);
 			}
 		}
@@ -178,7 +178,7 @@ load_file_list (PlumaWindow         *window,
 
 	if (files_to_load == NULL)
 		return loaded_files;
-	
+
 	files_to_load = g_slist_reverse (files_to_load);
 	l = files_to_load;
 
@@ -459,7 +459,7 @@ _pluma_cmd_file_open (GtkAction   *action,
 		return;
 	}
 
-	/* Translators: "Open Files" is the title of the file chooser window */ 
+	/* Translators: "Open Files" is the title of the file chooser window */
 	open_dialog = pluma_file_chooser_dialog_new (_("Open Files"),
 						     GTK_WINDOW (window),
 						     GTK_FILE_CHOOSER_ACTION_OPEN,
@@ -856,13 +856,13 @@ file_save (PlumaTab    *tab,
 	doc = pluma_tab_get_document (tab);
 	g_return_if_fail (PLUMA_IS_DOCUMENT (doc));
 
-	if (pluma_document_is_untitled (doc) || 
+	if (pluma_document_is_untitled (doc) ||
 	    pluma_document_get_readonly (doc))
 	{
 		pluma_debug_message (DEBUG_COMMANDS, "Untitled or Readonly");
 
 		file_save_as (tab, window);
-		
+
 		return;
 	}
 
@@ -933,7 +933,7 @@ _pluma_cmd_file_save_documents_list (PlumaWindow *window,
 
 	pluma_debug (DEBUG_COMMANDS);
 
-	g_return_if_fail (!(pluma_window_get_state (window) & 
+	g_return_if_fail (!(pluma_window_get_state (window) &
 			    (PLUMA_WINDOW_STATE_PRINTING |
 			     PLUMA_WINDOW_STATE_SAVING_SESSION)));
 
@@ -945,7 +945,7 @@ _pluma_cmd_file_save_documents_list (PlumaWindow *window,
 		PlumaTabState state;
 
 		g_return_if_fail (PLUMA_IS_DOCUMENT (l->data));
- 
+
 		doc = PLUMA_DOCUMENT (l->data);
 		t = pluma_tab_get_from_document (doc);
 		state = pluma_tab_get_state (t);
@@ -960,7 +960,7 @@ _pluma_cmd_file_save_documents_list (PlumaWindow *window,
 		{
 			/* FIXME: manage the case of local readonly files owned by the
 			   user is running pluma - Paolo (Dec. 8, 2005) */
-			if (pluma_document_is_untitled (doc) || 
+			if (pluma_document_is_untitled (doc) ||
 			    pluma_document_get_readonly (doc))
 			{
 				if (document_needs_saving (doc))
@@ -971,7 +971,7 @@ _pluma_cmd_file_save_documents_list (PlumaWindow *window,
 			}
 			else
 			{
-				file_save (t, window);			
+				file_save (t, window);
 			}
 		}
 		else
@@ -1034,7 +1034,7 @@ void
 pluma_commands_save_all_documents (PlumaWindow *window)
 {
 	GList *docs;
-	
+
 	g_return_if_fail (PLUMA_IS_WINDOW (window));
 
 	pluma_debug (DEBUG_COMMANDS);
@@ -1061,9 +1061,9 @@ pluma_commands_save_document (PlumaWindow   *window,
 
 	g_return_if_fail (PLUMA_IS_WINDOW (window));
 	g_return_if_fail (PLUMA_IS_DOCUMENT (document));
-	
+
 	pluma_debug (DEBUG_COMMANDS);
-	
+
 	tab = pluma_tab_get_from_document (document);
 	file_save (tab, window);
 }
@@ -1426,7 +1426,7 @@ save_and_close_all_documents (const GList  *docs,
 		   - PLUMA_TAB_STATE_LOADING: close, we are sure the file is unmodified
 		   - PLUMA_TAB_STATE_REVERTING: since the user wants
 		     to return back to the version of the file she previously saved, we can close
-		     without saving (CHECK: are we sure this is the right behavior, suppose the case 
+		     without saving (CHECK: are we sure this is the right behavior, suppose the case
 		     the original file has been deleted)
 		   - [*] PLUMA_TAB_STATE_SAVING: invalid, ClosAll
 		     and Quit are unsensitive if the window state is SAVING.
@@ -1456,12 +1456,12 @@ save_and_close_all_documents (const GList  *docs,
 		{
 			if ((g_list_index ((GList *)docs, doc) >= 0) &&
 			    (state != PLUMA_TAB_STATE_LOADING) &&
-			    (state != PLUMA_TAB_STATE_LOADING_ERROR) &&			    
+			    (state != PLUMA_TAB_STATE_LOADING_ERROR) &&
 			    (state != PLUMA_TAB_STATE_REVERTING)) /* CHECK: is this the right behavior with REVERTING ?*/
-			{			
+			{
 				/* The document must be saved before closing */
 				g_return_if_fail (document_needs_saving (doc));
-				
+
 				/* FIXME: manage the case of local readonly files owned by the
 				   user is running pluma - Paolo (Dec. 8, 2005) */
 				if (pluma_document_is_untitled (doc) ||
@@ -1720,8 +1720,8 @@ _pluma_cmd_file_close_tab (PlumaTab    *tab,
 			   PLUMA_IS_QUITTING,
 			   GBOOLEAN_TO_POINTER (FALSE));
 
-	g_object_set_data (G_OBJECT (window), 
-	                   PLUMA_IS_QUITTING_ALL, 
+	g_object_set_data (G_OBJECT (window),
+	                   PLUMA_IS_QUITTING_ALL,
 	                   GINT_TO_POINTER (FALSE));
 
 
@@ -1769,7 +1769,7 @@ file_close_all (PlumaWindow *window,
 	g_object_set_data (G_OBJECT (window),
 			   PLUMA_IS_QUITTING,
 			   GBOOLEAN_TO_POINTER (is_quitting));
-			   
+
 	unsaved_docs = pluma_window_get_unsaved_documents (window);
 
 	if (unsaved_docs == NULL)

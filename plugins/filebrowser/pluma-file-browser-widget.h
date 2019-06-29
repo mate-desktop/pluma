@@ -1,5 +1,5 @@
 /*
- * pluma-file-browser-widget.h - Pluma plugin providing easy file access 
+ * pluma-file-browser-widget.h - Pluma plugin providing easy file access
  * from the sidepanel
  *
  * Copyright (C) 2006 - Jesse van den Kieboom <jesse@icecrew.nl>
@@ -46,21 +46,21 @@ gboolean (*PlumaFileBrowserWidgetFilterFunc) (PlumaFileBrowserWidget * obj,
 					      model, GtkTreeIter * iter,
 					      gpointer user_data);
 
-struct _PlumaFileBrowserWidget 
+struct _PlumaFileBrowserWidget
 {
 	GtkBox parent;
 
 	PlumaFileBrowserWidgetPrivate *priv;
 };
 
-struct _PlumaFileBrowserWidgetClass 
+struct _PlumaFileBrowserWidgetClass
 {
 	GtkBoxClass parent_class;
 
 	/* Signals */
 	void (*uri_activated)        (PlumaFileBrowserWidget * widget,
 			              gchar const *uri);
-	void (*error)                (PlumaFileBrowserWidget * widget, 
+	void (*error)                (PlumaFileBrowserWidget * widget,
 	                              guint code,
 		                      gchar const *message);
 	gboolean (*confirm_delete)   (PlumaFileBrowserWidget * widget,
@@ -87,23 +87,23 @@ pluma_file_browser_widget_set_root_and_virtual_root (PlumaFileBrowserWidget * ob
 						     gchar const *virtual_root);
 
 gboolean
-pluma_file_browser_widget_get_selected_directory    (PlumaFileBrowserWidget * obj, 
+pluma_file_browser_widget_get_selected_directory    (PlumaFileBrowserWidget * obj,
                                                      GtkTreeIter * iter);
 
-PlumaFileBrowserStore * 
+PlumaFileBrowserStore *
 pluma_file_browser_widget_get_browser_store         (PlumaFileBrowserWidget * obj);
-PlumaFileBookmarksStore * 
+PlumaFileBookmarksStore *
 pluma_file_browser_widget_get_bookmarks_store       (PlumaFileBrowserWidget * obj);
 PlumaFileBrowserView *
 pluma_file_browser_widget_get_browser_view          (PlumaFileBrowserWidget * obj);
 GtkWidget *
 pluma_file_browser_widget_get_filter_entry          (PlumaFileBrowserWidget * obj);
 
-GtkUIManager * 
+GtkUIManager *
 pluma_file_browser_widget_get_ui_manager            (PlumaFileBrowserWidget * obj);
 
 gulong pluma_file_browser_widget_add_filter         (PlumaFileBrowserWidget * obj,
-                                                     PlumaFileBrowserWidgetFilterFunc func, 
+                                                     PlumaFileBrowserWidgetFilterFunc func,
                                                      gpointer user_data,
                                                      GDestroyNotify notify);
 void pluma_file_browser_widget_remove_filter        (PlumaFileBrowserWidget * obj,

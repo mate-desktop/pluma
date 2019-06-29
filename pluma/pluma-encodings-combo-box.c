@@ -17,14 +17,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2003-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2003-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id: pluma-encodings-combo-box.c 6112 2008-01-23 08:26:24Z sfre $
  */
@@ -108,7 +108,7 @@ pluma_encodings_combo_box_get_property (GObject    *object,
 	combo = PLUMA_ENCODINGS_COMBO_BOX (object);
 
 	switch (prop_id)
-	{	
+	{
 		case PROP_SAVE_MODE:
 			g_value_set_boolean (value, combo->priv->save_mode);
 			break;

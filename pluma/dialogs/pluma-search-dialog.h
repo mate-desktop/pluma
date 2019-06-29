@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -54,7 +54,7 @@ typedef struct _PlumaSearchDialogPrivate PlumaSearchDialogPrivate;
  */
 typedef struct _PlumaSearchDialog PlumaSearchDialog;
 
-struct _PlumaSearchDialog 
+struct _PlumaSearchDialog
 {
 	GtkDialog dialog;
 
@@ -67,10 +67,10 @@ struct _PlumaSearchDialog
  */
 typedef struct _PlumaSearchDialogClass PlumaSearchDialogClass;
 
-struct _PlumaSearchDialogClass 
+struct _PlumaSearchDialogClass
 {
 	GtkDialogClass parent_class;
-	
+
 	/* Key bindings */
 	gboolean (* show_replace) (PlumaSearchDialog *dlg);
 };
@@ -126,7 +126,7 @@ gboolean	 pluma_search_dialog_get_backwards	(PlumaSearchDialog *dialog);
 void		 pluma_search_dialog_set_wrap_around	(PlumaSearchDialog *dialog,
 							 gboolean           wrap_around);
 gboolean	 pluma_search_dialog_get_wrap_around	(PlumaSearchDialog *dialog);
-   
+
 
 void		pluma_search_dialog_set_parse_escapes (PlumaSearchDialog *dialog,
                                     		       gboolean           parse_escapes);

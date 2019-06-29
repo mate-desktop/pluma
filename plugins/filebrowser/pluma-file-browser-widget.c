@@ -1,5 +1,5 @@
 /*
- * pluma-file-browser-widget.c - Pluma plugin providing easy file access 
+ * pluma-file-browser-widget.c - Pluma plugin providing easy file access
  * from the sidepanel
  *
  * Copyright (C) 2006 - Jesse van den Kieboom <jesse@icecrew.nl>
@@ -49,7 +49,7 @@
 #define XML_UI_FILE "pluma-file-browser-widget-ui.xml"
 #define LOCATION_DATA_KEY "pluma-file-browser-widget-location"
 
-enum 
+enum
 {
 	BOOKMARKS_ID,
 	SEPARATOR_CUSTOM_ID,
@@ -58,7 +58,7 @@ enum
 	NUM_DEFAULT_IDS
 };
 
-enum 
+enum
 {
 	COLUMN_INDENT,
 	COLUMN_ICON,
@@ -69,16 +69,16 @@ enum
 };
 
 /* Properties */
-enum 
+enum
 {
 	PROP_0,
-	
+
 	PROP_FILTER_PATTERN,
 	PROP_ENABLE_DELETE
 };
 
 /* Signals */
-enum 
+enum
 {
 	URI_ACTIVATED,
 	ERROR,
@@ -89,7 +89,7 @@ enum
 
 static guint signals[NUM_SIGNALS] = { 0 };
 
-typedef struct _SignalNode 
+typedef struct _SignalNode
 {
 	GObject *object;
 	gulong id;
@@ -103,7 +103,7 @@ typedef struct
 	GDestroyNotify destroy_notify;
 } FilterFunc;
 
-typedef struct 
+typedef struct
 {
 	GFile *root;
 	GFile *virtual_root;
@@ -115,7 +115,7 @@ typedef struct
 	GdkPixbuf *icon;
 } NameIcon;
 
-struct _PlumaFileBrowserWidgetPrivate 
+struct _PlumaFileBrowserWidgetPrivate
 {
 	PlumaFileBrowserView *treeview;
 	PlumaFileBrowserStore *file_store;
@@ -152,29 +152,29 @@ struct _PlumaFileBrowserWidgetPrivate
 	GtkWidget *location_previous_menu;
 	GtkWidget *location_next_menu;
 	GtkWidget *current_location_menu_item;
-	
+
 	gboolean enable_delete;
-	
+
 	GCancellable *cancellable;
-	
+
 	GdkCursor *busy_cursor;
 };
 
 static void set_enable_delete		       (PlumaFileBrowserWidget *obj,
 						gboolean enable);
-static void on_model_set                       (GObject * gobject, 
+static void on_model_set                       (GObject * gobject,
 						GParamSpec * arg1,
 						PlumaFileBrowserWidget * obj);
 static void on_treeview_error                  (PlumaFileBrowserView * tree_view,
-						guint code, 
-						gchar * message,
-						PlumaFileBrowserWidget * obj);
-static void on_file_store_error                (PlumaFileBrowserStore * store, 
 						guint code,
 						gchar * message,
 						PlumaFileBrowserWidget * obj);
-static gboolean on_file_store_no_trash 	       (PlumaFileBrowserStore * store, 
-						GList * files, 
+static void on_file_store_error                (PlumaFileBrowserStore * store,
+						guint code,
+						gchar * message,
+						PlumaFileBrowserWidget * obj);
+static gboolean on_file_store_no_trash 	       (PlumaFileBrowserStore * store,
+						GList * files,
 						PlumaFileBrowserWidget * obj);
 static void on_combo_changed                   (GtkComboBox * combo,
 						PlumaFileBrowserWidget * obj);
@@ -183,7 +183,7 @@ static gboolean on_treeview_popup_menu         (PlumaFileBrowserView * treeview,
 static gboolean on_treeview_button_press_event (PlumaFileBrowserView * treeview,
 						GdkEventButton * event,
 						PlumaFileBrowserWidget * obj);
-static gboolean on_treeview_key_press_event    (PlumaFileBrowserView * treeview, 
+static gboolean on_treeview_key_press_event    (PlumaFileBrowserView * treeview,
 						GdkEventKey * event,
 						PlumaFileBrowserWidget * obj);
 static void on_selection_changed               (GtkTreeSelection * selection,
@@ -196,11 +196,11 @@ static void on_virtual_root_changed            (PlumaFileBrowserStore * model,
 static gboolean on_entry_filter_activate       (PlumaFileBrowserWidget * obj);
 static void on_location_jump_activate          (GtkMenuItem * item,
 						PlumaFileBrowserWidget * obj);
-static void on_bookmarks_row_changed           (GtkTreeModel * model, 
+static void on_bookmarks_row_changed           (GtkTreeModel * model,
                                                 GtkTreePath * path,
                                                 GtkTreeIter * iter,
                                                 PlumaFileBrowserWidget * obj);
-static void on_bookmarks_row_deleted           (GtkTreeModel * model, 
+static void on_bookmarks_row_deleted           (GtkTreeModel * model,
                                                 GtkTreePath * path,
                                                 PlumaFileBrowserWidget * obj);
 static void on_filter_mode_changed	       (PlumaFileBrowserStore * model,
@@ -278,7 +278,7 @@ location_free (Location * loc)
 {
 	if (loc->root)
 		g_object_unref (loc->root);
-	
+
 	if (loc->virtual_root)
 		g_object_unref (loc->virtual_root);
 
@@ -322,7 +322,7 @@ cancel_async_operation (PlumaFileBrowserWidget *widget)
 {
 	if (!widget->priv->cancellable)
 		return;
-	
+
 	g_cancellable_cancel (widget->priv->cancellable);
 	g_object_unref (widget->priv->cancellable);
 
@@ -356,7 +356,7 @@ pluma_file_browser_widget_finalize (GObject * object)
 	g_list_free (obj->priv->locations);
 
 	g_hash_table_destroy (obj->priv->bookmarks_hash);
-	
+
 	cancel_async_operation (obj);
 
 	g_object_unref (obj->priv->busy_cursor);
@@ -531,10 +531,10 @@ get_from_bookmark_file (PlumaFileBrowserWidget * obj, GFile * file,
 	NameIcon * item;
 
 	data = g_hash_table_lookup (obj->priv->bookmarks_hash, file);
-	
+
 	if (data == NULL)
 		return FALSE;
-	
+
 	item = (NameIcon *)data;
 
 	*name = g_strdup (item->name);
@@ -549,10 +549,10 @@ get_from_bookmark_file (PlumaFileBrowserWidget * obj, GFile * file,
 }
 
 static void
-insert_path_item (PlumaFileBrowserWidget * obj, 
+insert_path_item (PlumaFileBrowserWidget * obj,
                   GFile * file,
-		  GtkTreeIter * after, 
-		  GtkTreeIter * iter, 
+		  GtkTreeIter * after,
+		  GtkTreeIter * iter,
 		  guint indent)
 {
 	gchar * unescape;
@@ -562,21 +562,21 @@ insert_path_item (PlumaFileBrowserWidget * obj,
 	if (!get_from_bookmark_file (obj, file, &unescape, &icon)) {
 		/* It's not a bookmark, fetch the name and the icon ourselves */
 		unescape = pluma_file_browser_utils_file_basename (file);
-		
+
 		/* Get the icon */
 		icon = pluma_file_browser_utils_pixbuf_from_file (file, GTK_ICON_SIZE_MENU);
 	}
 
 	gtk_tree_store_insert_after (obj->priv->combo_model, iter, NULL,
 				     after);
-	
-	gtk_tree_store_set (obj->priv->combo_model, 
-	                    iter, 
+
+	gtk_tree_store_set (obj->priv->combo_model,
+	                    iter,
 	                    COLUMN_INDENT, indent,
-	                    COLUMN_ICON, icon, 
-	                    COLUMN_NAME, unescape, 
+	                    COLUMN_ICON, icon,
+	                    COLUMN_NAME, unescape,
 	                    COLUMN_FILE, file,
-			    COLUMN_ID, PATH_ID, 
+			    COLUMN_ID, PATH_ID,
 			    -1);
 
 	if (icon)
@@ -618,15 +618,15 @@ uri_num_parents (GFile * from, GFile * to)
 		return 0;
 
 	g_object_ref (from);
-	
+
 	while ((parent = g_file_get_parent (from)) && !(to && g_file_equal (from, to))) {
 		g_object_unref (from);
 		from = parent;
-		
+
 		++parents;
 	}
-	
-	g_object_unref (from);	
+
+	g_object_unref (from);
 	return parents;
 }
 
@@ -639,7 +639,7 @@ insert_location_path (PlumaFileBrowserWidget * obj)
 	GtkTreeIter separator;
 	GtkTreeIter iter;
 	guint indent;
-	
+
 	if (!obj->priv->current_location) {
 		g_message ("insert_location_path: no current location");
 		return;
@@ -649,7 +649,7 @@ insert_location_path (PlumaFileBrowserWidget * obj)
 
 	current = loc->virtual_root;
 	combo_find_by_id (obj, SEPARATOR_ID, &separator);
-	
+
 	indent = uri_num_parents (loc->virtual_root, loc->root);
 
 	while (current != NULL) {
@@ -675,7 +675,7 @@ insert_location_path (PlumaFileBrowserWidget * obj)
 		}
 
 		tmp = g_file_get_parent (current);
-		
+
 		if (current != loc->virtual_root)
 			g_object_unref (current);
 
@@ -723,22 +723,22 @@ fill_combo_model (PlumaFileBrowserWidget * obj)
 }
 
 static void
-indent_cell_data_func (GtkCellLayout * cell_layout, 
+indent_cell_data_func (GtkCellLayout * cell_layout,
                        GtkCellRenderer * cell,
-                       GtkTreeModel * model, 
-                       GtkTreeIter * iter, 
+                       GtkTreeModel * model,
+                       GtkTreeIter * iter,
                        gpointer data)
 {
 	gchar * indent;
 	guint num;
-	
+
 	gtk_tree_model_get (model, iter, COLUMN_INDENT, &num, -1);
-	
+
 	if (num == 0)
 		g_object_set (cell, "text", "", NULL);
 	else {
 		indent = g_strnfill (num * 2, ' ');
-	
+
 		g_object_set (cell, "text", indent, NULL);
 		g_free (indent);
 	}
@@ -792,12 +792,12 @@ create_combo (PlumaFileBrowserWidget * obj)
 	gtk_widget_show (obj->priv->combo);
 }
 
-static GtkActionEntry toplevel_actions[] = 
+static GtkActionEntry toplevel_actions[] =
 {
 	{"FilterMenuAction", NULL, N_("_Filter")}
 };
 
-static const GtkActionEntry tree_actions_selection[] = 
+static const GtkActionEntry tree_actions_selection[] =
 {
 	{"FileMoveToTrash", "mate-stock-trash", N_("_Move to Trash"), NULL,
 	 N_("Move selected file or folder to trash"),
@@ -829,14 +829,14 @@ static const GtkActionEntry tree_actions_single_most_selection[] =
 	 N_("Add new empty file"), G_CALLBACK (on_action_file_new)}
 };
 
-static const GtkActionEntry tree_actions_single_selection[] = 
+static const GtkActionEntry tree_actions_single_selection[] =
 {
 	{"FileRename", NULL, N_("_Rename"), NULL,
 	 N_("Rename selected file or folder"),
 	 G_CALLBACK (on_action_file_rename)}
 };
 
-static const GtkActionEntry tree_actions_sensitive[] = 
+static const GtkActionEntry tree_actions_sensitive[] =
 {
 	{"DirectoryPrevious", "go-previous", N_("_Previous Location"),
 	 NULL,
@@ -851,7 +851,7 @@ static const GtkActionEntry tree_actions_sensitive[] =
 	 G_CALLBACK (on_action_directory_open)}
 };
 
-static const GtkToggleActionEntry tree_actions_toggle[] = 
+static const GtkToggleActionEntry tree_actions_toggle[] =
 {
 	{"FilterHidden", "dialog-password",
 	 N_("Show _Hidden"), NULL,
@@ -1036,24 +1036,24 @@ create_toolbar (PlumaFileBrowserWidget * obj,
 
 	gtk_box_pack_start (GTK_BOX (obj), toolbar, FALSE, FALSE, 0);
 	gtk_widget_show (toolbar);
-	
+
 	set_enable_delete (obj, obj->priv->enable_delete);
 }
 
-static void 
+static void
 set_enable_delete (PlumaFileBrowserWidget *obj,
 		   gboolean enable)
 {
 	GtkAction *action;
 	obj->priv->enable_delete = enable;
-	
+
 	if (obj->priv->action_group_selection == NULL)
 		return;
-	
+
 	action =
 	    gtk_action_group_get_action (obj->priv->action_group_selection,
 					 "FileDelete");
-	
+
 	g_object_set (action, "visible", enable, "sensitive", enable, NULL);
 }
 
@@ -1093,7 +1093,7 @@ add_bookmark_hash (PlumaFileBrowserWidget * obj,
 
 	if (uri == NULL)
 		return;
-	
+
 	file = g_file_new_for_uri (uri);
 	g_free (uri);
 
@@ -1101,8 +1101,8 @@ add_bookmark_hash (PlumaFileBrowserWidget * obj,
 			    PLUMA_FILE_BOOKMARKS_STORE_COLUMN_ICON,
 			    &pixbuf,
 			    PLUMA_FILE_BOOKMARKS_STORE_COLUMN_NAME,
-			    &name, -1);	
-	
+			    &name, -1);
+
 	item = g_new (NameIcon, 1);
 	item->name = name;
 	item->icon = pixbuf;
@@ -1119,14 +1119,14 @@ init_bookmarks_hash (PlumaFileBrowserWidget * obj)
 	GtkTreeModel *model;
 
 	model = GTK_TREE_MODEL (obj->priv->bookmarks_store);
-	
+
 	if (!gtk_tree_model_get_iter_first (model, &iter))
 		return;
-	
+
 	do {
 		add_bookmark_hash (obj, &iter);
 	} while (gtk_tree_model_iter_next (model, &iter));
-	
+
 	g_signal_connect (obj->priv->bookmarks_store,
 		          "row-changed",
 		          G_CALLBACK (on_bookmarks_row_changed),
@@ -1139,7 +1139,7 @@ init_bookmarks_hash (PlumaFileBrowserWidget * obj)
 }
 
 static void
-on_begin_loading (PlumaFileBrowserStore  *model, 
+on_begin_loading (PlumaFileBrowserStore  *model,
 		  GtkTreeIter            *iter,
 		  PlumaFileBrowserWidget *obj)
 {
@@ -1151,7 +1151,7 @@ on_begin_loading (PlumaFileBrowserStore  *model,
 }
 
 static void
-on_end_loading (PlumaFileBrowserStore  *model, 
+on_end_loading (PlumaFileBrowserStore  *model,
 		GtkTreeIter            *iter,
 		PlumaFileBrowserWidget *obj)
 {
@@ -1212,16 +1212,16 @@ create_tree (PlumaFileBrowserWidget * obj)
 
 	g_signal_connect (obj->priv->file_store, "notify::virtual-root",
 			  G_CALLBACK (on_virtual_root_changed), obj);
-			  
+
 	g_signal_connect (obj->priv->file_store, "begin-loading",
 			  G_CALLBACK (on_begin_loading), obj);
-			  
+
 	g_signal_connect (obj->priv->file_store, "end-loading",
 			  G_CALLBACK (on_end_loading), obj);
 
 	g_signal_connect (obj->priv->file_store, "error",
 			  G_CALLBACK (on_file_store_error), obj);
-	      
+
 	init_bookmarks_hash (obj);
 
 	gtk_widget_show (sw);
@@ -1275,7 +1275,7 @@ pluma_file_browser_widget_init (PlumaFileBrowserWidget * obj)
 	gtk_box_set_spacing (GTK_BOX (obj), 3);
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (obj),
 	                                GTK_ORIENTATION_VERTICAL);
-	
+
 	display = gtk_widget_get_display (GTK_WIDGET (obj));
 	obj->priv->busy_cursor = gdk_cursor_new_for_display (display, GDK_WATCH);
 }
@@ -1332,15 +1332,15 @@ pluma_file_browser_widget_get_first_selected (PlumaFileBrowserWidget *obj,
 	GtkTreeModel *model;
 	GList *rows = gtk_tree_selection_get_selected_rows (selection, &model);
 	gboolean result;
-	
+
 	if (!rows)
 		return FALSE;
-	
+
 	result = gtk_tree_model_get_iter(model, iter, (GtkTreePath *)(rows->data));
 
 	g_list_foreach (rows, (GFunc)gtk_tree_path_free, NULL);
 	g_list_free (rows);
-	
+
 	return result;
 }
 
@@ -1444,15 +1444,15 @@ get_deletable_files (PlumaFileBrowserWidget *obj) {
 	/* Get all selected files */
 	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (obj->priv->treeview));
 	rows = gtk_tree_selection_get_selected_rows (selection, &model);
-	
+
 	for (row = rows; row; row = row->next) {
 		path = (GtkTreePath *)(row->data);
-		
+
 		if (!gtk_tree_model_get_iter (model, &iter, path))
 			continue;
-		
-		gtk_tree_model_get (model, &iter, 
-				    PLUMA_FILE_BROWSER_STORE_COLUMN_FLAGS, 
+
+		gtk_tree_model_get (model, &iter,
+				    PLUMA_FILE_BROWSER_STORE_COLUMN_FLAGS,
 				    &flags, -1);
 
 		if (FILE_IS_DUMMY (flags))
@@ -1460,10 +1460,10 @@ get_deletable_files (PlumaFileBrowserWidget *obj) {
 
 		paths = g_list_append (paths, gtk_tree_path_copy (path));
 	}
-	
+
 	g_list_foreach (rows, (GFunc)gtk_tree_path_free, NULL);
 	g_list_free (rows);
-	
+
 	return paths;
 }
 
@@ -1479,7 +1479,7 @@ delete_selected_files (PlumaFileBrowserWidget * obj, gboolean trash)
 
 	if (!PLUMA_IS_FILE_BROWSER_STORE (model))
 		return FALSE;
-		
+
 	rows = get_deletable_files (obj);
 
 	if (!rows)
@@ -1494,7 +1494,7 @@ delete_selected_files (PlumaFileBrowserWidget * obj, gboolean trash)
 
 	result = pluma_file_browser_store_delete_all (PLUMA_FILE_BROWSER_STORE (model),
 						      rows, trash);
-	
+
 	g_list_foreach (rows, (GFunc)gtk_tree_path_free, NULL);
 	g_list_free (rows);
 
@@ -1502,14 +1502,14 @@ delete_selected_files (PlumaFileBrowserWidget * obj, gboolean trash)
 }
 
 static gboolean
-on_file_store_no_trash (PlumaFileBrowserStore * store, 
-			GList * files, 
+on_file_store_no_trash (PlumaFileBrowserStore * store,
+			GList * files,
 			PlumaFileBrowserWidget * obj)
 {
 	gboolean confirm = FALSE;
-	
+
 	g_signal_emit (obj, signals[CONFIRM_NO_TRASH], 0, files, &confirm);
-	
+
 	return confirm;
 }
 
@@ -1518,14 +1518,14 @@ get_topmost_file (GFile * file)
 {
 	GFile * tmp;
 	GFile * current;
-	
+
 	current = g_object_ref (file);
-	
+
 	while ((tmp = g_file_get_parent (current)) != NULL) {
 		g_object_unref (current);
 		current = tmp;
 	}
-	
+
 	return current;
 }
 
@@ -1542,7 +1542,7 @@ create_goto_menu_item (PlumaFileBrowserWidget * obj, GList * item,
 
 	if (!get_from_bookmark_file (obj, loc->virtual_root, &unescape, &pixbuf)) {
 		unescape = pluma_file_browser_utils_file_basename (loc->virtual_root);
-		
+
 		if (icon)
 			pixbuf = g_object_ref (icon);
 	}
@@ -1553,7 +1553,7 @@ create_goto_menu_item (PlumaFileBrowserWidget * obj, GList * item,
 	} else {
 		result = gtk_menu_item_new_with_label (unescape);
 	}
-	
+
 	g_object_set_data (G_OBJECT (result), LOCATION_DATA_KEY, item);
 	g_signal_connect (result, "activate",
 			  G_CALLBACK (on_location_jump_activate), obj);
@@ -1658,7 +1658,7 @@ jump_to_location (PlumaFileBrowserWidget * obj, GList * item,
 	/* Set the new root + virtual root */
 	root = g_file_get_uri (loc->root);
 	virtual_root = g_file_get_uri (loc->virtual_root);
-	
+
 	pluma_file_browser_widget_set_root_and_virtual_root (obj,
 							     root,
 							     virtual_root);
@@ -1704,8 +1704,8 @@ clear_next_locations (PlumaFileBrowserWidget * obj)
 }
 
 static void
-update_filter_mode (PlumaFileBrowserWidget * obj, 
-                    GtkAction * action, 
+update_filter_mode (PlumaFileBrowserWidget * obj,
+                    GtkAction * action,
                     PlumaFileBrowserStoreFilterMode mode)
 {
 	gboolean active =
@@ -1744,8 +1744,8 @@ set_filter_pattern_real (PlumaFileBrowserWidget * obj,
 
 	if (pattern == NULL && obj->priv->filter_pattern_str == NULL)
 		return;
-	
-	if (pattern != NULL && obj->priv->filter_pattern_str != NULL && 
+
+	if (pattern != NULL && obj->priv->filter_pattern_str != NULL &&
 	    strcmp (pattern, obj->priv->filter_pattern_str) == 0)
 		return;
 
@@ -1860,7 +1860,7 @@ pluma_file_browser_widget_set_root_and_virtual_root (PlumaFileBrowserWidget *obj
 
 	if (!virtual_root)
 		result =
-		    pluma_file_browser_store_set_root_and_virtual_root 
+		    pluma_file_browser_store_set_root_and_virtual_root
 		    (obj->priv->file_store, root, root);
 	else
 		result =
@@ -1873,7 +1873,7 @@ pluma_file_browser_widget_set_root_and_virtual_root (PlumaFileBrowserWidget *obj
 
 void
 pluma_file_browser_widget_set_root (PlumaFileBrowserWidget * obj,
-				    gchar const *root, 
+				    gchar const *root,
 				    gboolean virtual_root)
 {
 	GFile *file;
@@ -1898,7 +1898,7 @@ pluma_file_browser_widget_set_root (PlumaFileBrowserWidget * obj,
 	    (obj, str, root);
 
 	g_free (str);
-	
+
 	g_object_unref (file);
 	g_object_unref (parent);
 }
@@ -1935,7 +1935,7 @@ pluma_file_browser_widget_get_filter_entry (PlumaFileBrowserWidget * obj)
 
 gulong
 pluma_file_browser_widget_add_filter (PlumaFileBrowserWidget * obj,
-				      PlumaFileBrowserWidgetFilterFunc func, 
+				      PlumaFileBrowserWidgetFilterFunc func,
 				      gpointer user_data,
 				      GDestroyNotify notify)
 {
@@ -1979,7 +1979,7 @@ pluma_file_browser_widget_remove_filter (PlumaFileBrowserWidget * obj,
 	}
 }
 
-void 
+void
 pluma_file_browser_widget_set_filter_pattern (PlumaFileBrowserWidget * obj,
                                               gchar const *pattern)
 {
@@ -1987,7 +1987,7 @@ pluma_file_browser_widget_set_filter_pattern (PlumaFileBrowserWidget * obj,
 }
 
 gboolean
-pluma_file_browser_widget_get_selected_directory (PlumaFileBrowserWidget * obj, 
+pluma_file_browser_widget_get_selected_directory (PlumaFileBrowserWidget * obj,
 						  GtkTreeIter * iter)
 {
 	GtkTreeModel *model =
@@ -2035,12 +2035,12 @@ pluma_file_browser_widget_get_num_selected_files_or_directories (PlumaFileBrowse
 
 	if (PLUMA_IS_FILE_BOOKMARKS_STORE (model))
 		return 0;
-	
+
 	rows = gtk_tree_selection_get_selected_rows (selection, &model);
-	
+
 	for (row = rows; row; row = row->next) {
 		path = (GtkTreePath *)(row->data);
-		
+
 		/* Get iter from path */
 		if (!gtk_tree_model_get_iter (model, &iter, path))
 			continue;
@@ -2061,7 +2061,7 @@ pluma_file_browser_widget_get_num_selected_files_or_directories (PlumaFileBrowse
 
 	g_list_foreach (rows, (GFunc)gtk_tree_path_free, NULL);
 	g_list_free (rows);
-	
+
 	return result;
 }
 
@@ -2075,15 +2075,15 @@ static AsyncData *
 async_data_new (PlumaFileBrowserWidget *widget)
 {
 	AsyncData *ret;
-	
+
 	ret = g_new (AsyncData, 1);
 	ret->widget = widget;
-	
+
 	cancel_async_operation (widget);
 	widget->priv->cancellable = g_cancellable_new ();
-	
+
 	ret->cancellable = g_object_ref (widget->priv->cancellable);
-	
+
 	return ret;
 }
 
@@ -2098,9 +2098,9 @@ static void
 set_busy (PlumaFileBrowserWidget *obj, gboolean busy)
 {
 	GdkWindow *window;
-	
+
 	window = gtk_widget_get_window (GTK_WIDGET (obj->priv->treeview));
-	
+
 	if (!GDK_IS_WINDOW (window))
 		return;
 
@@ -2129,31 +2129,31 @@ activate_mount (PlumaFileBrowserWidget *widget,
 {
 	GFile *root;
 	gchar *uri;
-	
+
 	if (!mount)
 	{
 		gchar *message;
 		gchar *name;
-		
+
 		name = g_volume_get_name (volume);
 		message = g_strdup_printf (_("No mount object for mounted volume: %s"), name);
-		
-		g_signal_emit (widget, 
-			       signals[ERROR], 
-			       0, 
+
+		g_signal_emit (widget,
+			       signals[ERROR],
+			       0,
 			       PLUMA_FILE_BROWSER_ERROR_SET_ROOT,
 			       message);
-		
+
 		g_free (name);
 		g_free (message);
 		return;
 	}
-	
+
 	root = g_mount_get_root (mount);
 	uri = g_file_get_uri (root);
-	
+
 	pluma_file_browser_widget_set_root (widget, uri, FALSE);
-	
+
 	g_free (uri);
 	g_object_unref (root);
 }
@@ -2165,12 +2165,12 @@ try_activate_drive (PlumaFileBrowserWidget *widget,
 	GList *volumes;
 	GVolume *volume;
 	GMount *mount;
-	
+
 	volumes = g_drive_get_volumes (drive);
-	
+
 	volume = G_VOLUME (volumes->data);
 	mount = g_volume_get_mount (volume);
-	
+
 	if (mount)
 	{
 		/* try set the root of the mount */
@@ -2182,7 +2182,7 @@ try_activate_drive (PlumaFileBrowserWidget *widget,
 		/* try to mount it then? */
 		try_mount_volume (widget, volume);
 	}
-	
+
 	g_list_foreach (volumes, (GFunc)g_object_unref, NULL);
 	g_list_free (volumes);
 }
@@ -2200,11 +2200,11 @@ poll_for_media_cb (GDrive       *drive,
 		async_free (async);
 		return;
 	}
-	
+
 	/* finish poll operation */
 	set_busy (async->widget, FALSE);
-	
-	if (g_drive_poll_for_media_finish (drive, res, &error) && 
+
+	if (g_drive_poll_for_media_finish (drive, res, &error) &&
 	    g_drive_has_media (drive) &&
 	    g_drive_has_volumes (drive))
 	{
@@ -2214,22 +2214,22 @@ poll_for_media_cb (GDrive       *drive,
 	{
 		gchar *message;
 		gchar *name;
-		
+
 		name = g_drive_get_name (drive);
 		message = g_strdup_printf (_("Could not open media: %s"), name);
 
-		g_signal_emit (async->widget, 
-			       signals[ERROR], 
-			       0, 
+		g_signal_emit (async->widget,
+			       signals[ERROR],
+			       0,
 			       PLUMA_FILE_BROWSER_ERROR_SET_ROOT,
 			       message);
 
 		g_free (name);
 		g_free (message);
-		
+
 		g_error_free (error);
 	}
-	
+
 	async_free (async);
 }
 
@@ -2246,14 +2246,14 @@ mount_volume_cb (GVolume      *volume,
 		async_free (async);
 		return;
 	}
-	
+
 	if (g_volume_mount_finish (volume, res, &error))
 	{
 		GMount *mount;
-		
+
 		mount = g_volume_get_mount (volume);
 		activate_mount (async->widget, volume, mount);
-		
+
 		if (mount)
 			g_object_unref (mount);
 	}
@@ -2261,22 +2261,22 @@ mount_volume_cb (GVolume      *volume,
 	{
 		gchar *message;
 		gchar *name;
-		
+
 		name = g_volume_get_name (volume);
 		message = g_strdup_printf (_("Could not mount volume: %s"), name);
 
-		g_signal_emit (async->widget, 
-			       signals[ERROR], 
-			       0, 
+		g_signal_emit (async->widget,
+			       signals[ERROR],
+			       0,
 			       PLUMA_FILE_BROWSER_ERROR_SET_ROOT,
 			       message);
 
 		g_free (name);
 		g_free (message);
-		
+
 		g_error_free (error);
 	}
-	
+
 	set_busy (async->widget, FALSE);
 	async_free (async);
 }
@@ -2295,8 +2295,8 @@ activate_drive (PlumaFileBrowserWidget *obj,
 	/* most common use case is a floppy drive, we'll poll for media and
 	   go from there */
 	async = async_data_new (obj);
-	g_drive_poll_for_media (drive, 
-				async->cancellable, 
+	g_drive_poll_for_media (drive,
+				async->cancellable,
 				(GAsyncReadyCallback)poll_for_media_cb,
 				async);
 
@@ -2304,8 +2304,8 @@ activate_drive (PlumaFileBrowserWidget *obj,
 	set_busy (obj, TRUE);
 }
 
-static void 
-try_mount_volume (PlumaFileBrowserWidget *widget, 
+static void
+try_mount_volume (PlumaFileBrowserWidget *widget,
 		  GVolume 		 *volume)
 {
 	GMountOperation *operation;
@@ -2313,14 +2313,14 @@ try_mount_volume (PlumaFileBrowserWidget *widget,
 
 	operation = gtk_mount_operation_new (GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (widget))));
 	async = async_data_new (widget);
-	
+
 	g_volume_mount (volume,
 			G_MOUNT_MOUNT_NONE,
 			operation,
 			async->cancellable,
 			(GAsyncReadyCallback)mount_volume_cb,
 			async);
-			
+
 	g_object_unref (operation);
 	set_busy (widget, TRUE);
 }
@@ -2330,17 +2330,17 @@ activate_volume (PlumaFileBrowserWidget *obj,
 		 GtkTreeIter	        *iter)
 {
 	GVolume *volume;
-	
+
 	gtk_tree_model_get (GTK_TREE_MODEL (obj->priv->bookmarks_store), iter,
 			    PLUMA_FILE_BOOKMARKS_STORE_COLUMN_OBJECT,
 			    &volume, -1);
 
 	/* see if we can mount the volume */
-	try_mount_volume (obj, volume);	
+	try_mount_volume (obj, volume);
 	g_object_unref (volume);
 }
 
-void 
+void
 pluma_file_browser_widget_refresh (PlumaFileBrowserWidget *obj)
 {
 	GtkTreeModel *model =
@@ -2358,7 +2358,7 @@ pluma_file_browser_widget_refresh (PlumaFileBrowserWidget *obj)
 	}
 }
 
-void 
+void
 pluma_file_browser_widget_history_back (PlumaFileBrowserWidget *obj)
 {
 	if (obj->priv->locations) {
@@ -2391,7 +2391,7 @@ bookmark_open (PlumaFileBrowserWidget *obj,
 	gtk_tree_model_get (model, iter,
 			    PLUMA_FILE_BOOKMARKS_STORE_COLUMN_FLAGS,
 			    &flags, -1);
-	
+
 	if (flags & PLUMA_FILE_BOOKMARKS_STORE_IS_DRIVE)
 	{
 		/* handle a drive node */
@@ -2498,7 +2498,7 @@ on_bookmark_activated (PlumaFileBrowserView   *tree_view,
 }
 
 static void
-on_file_activated (PlumaFileBrowserView   *tree_view, 
+on_file_activated (PlumaFileBrowserView   *tree_view,
 		   GtkTreeIter            *iter,
 		   PlumaFileBrowserWidget *obj)
 {
@@ -2508,18 +2508,18 @@ on_file_activated (PlumaFileBrowserView   *tree_view,
 }
 
 static gboolean
-virtual_root_is_root (PlumaFileBrowserWidget * obj, 
+virtual_root_is_root (PlumaFileBrowserWidget * obj,
                       PlumaFileBrowserStore  * model)
 {
 	GtkTreeIter root;
 	GtkTreeIter virtual_root;
-	
+
 	if (!pluma_file_browser_store_get_iter_root (model, &root))
 		return TRUE;
-	
+
 	if (!pluma_file_browser_store_get_iter_virtual_root (model, &virtual_root))
 		return TRUE;
-	
+
 	return pluma_file_browser_store_iter_equal (model, &root, &virtual_root);
 }
 
@@ -2597,12 +2597,12 @@ on_virtual_root_changed (PlumaFileBrowserStore * model,
 					g_object_unref (pixbuf);
 
 			}
-			
+
 			action =
 			    gtk_action_group_get_action (obj->priv->
 			                                 action_group,
 			                                 "DirectoryUp");
-			gtk_action_set_sensitive (action, 
+			gtk_action_set_sensitive (action,
 			                          !virtual_root_is_root (obj, model));
 
 			action =
@@ -2727,11 +2727,11 @@ on_combo_changed (GtkComboBox * combo, PlumaFileBrowserWidget * obj)
 		gtk_tree_model_get (GTK_TREE_MODEL
 				    (obj->priv->combo_model), &iter,
 				    COLUMN_FILE, &file, -1);
-		
+
 		uri = g_file_get_uri (file);
 		pluma_file_browser_store_set_virtual_root_from_string
 		    (obj->priv->file_store, uri);
-		
+
 		g_free (uri);
 		g_object_unref (file);
 		break;
@@ -2764,13 +2764,13 @@ do_change_directory (PlumaFileBrowserWidget * obj,
 {
 	GtkAction * action = NULL;
 
-	if ((event->state & 
-	    (~GDK_CONTROL_MASK & ~GDK_SHIFT_MASK & ~GDK_MOD1_MASK)) == 
+	if ((event->state &
+	    (~GDK_CONTROL_MASK & ~GDK_SHIFT_MASK & ~GDK_MOD1_MASK)) ==
 	     event->state && event->keyval == GDK_KEY_BackSpace)
 		action = gtk_action_group_get_action (obj->priv->
 		                                      action_group_sensitive,
 		                                      "DirectoryPrevious");
-	else if (!((event->state & GDK_MOD1_MASK) && 
+	else if (!((event->state & GDK_MOD1_MASK) &&
 	    (event->state & (~GDK_CONTROL_MASK & ~GDK_SHIFT_MASK)) == event->state))
 		return FALSE;
 
@@ -2793,12 +2793,12 @@ do_change_directory (PlumaFileBrowserWidget * obj,
 		default:
 		break;
 	}
-	
+
 	if (action != NULL) {
 		gtk_action_activate (action);
 		return TRUE;
 	}
-	
+
 	return FALSE;
 }
 
@@ -2903,7 +2903,7 @@ on_location_jump_activate (GtkMenuItem * item,
 }
 
 static void
-on_bookmarks_row_changed (GtkTreeModel * model, 
+on_bookmarks_row_changed (GtkTreeModel * model,
                           GtkTreePath * path,
                           GtkTreeIter * iter,
                           PlumaFileBrowserWidget *obj)
@@ -2912,19 +2912,19 @@ on_bookmarks_row_changed (GtkTreeModel * model,
 }
 
 static void
-on_bookmarks_row_deleted (GtkTreeModel * model, 
+on_bookmarks_row_deleted (GtkTreeModel * model,
                           GtkTreePath * path,
                           PlumaFileBrowserWidget *obj)
 {
 	GtkTreeIter iter;
 	gchar * uri;
 	GFile * file;
-	
+
 	if (!gtk_tree_model_get_iter (model, &iter, path))
 		return;
 
 	uri = pluma_file_bookmarks_store_get_uri (obj->priv->bookmarks_store, &iter);
-	
+
 	if (!uri)
 		return;
 
@@ -2935,7 +2935,7 @@ on_bookmarks_row_deleted (GtkTreeModel * model,
 	g_free (uri);
 }
 
-static void 
+static void
 on_filter_mode_changed (PlumaFileBrowserStore * model,
                         GParamSpec * param,
                         PlumaFileBrowserWidget * obj)
@@ -2945,20 +2945,20 @@ on_filter_mode_changed (PlumaFileBrowserStore * model,
 	gboolean active;
 
 	mode = pluma_file_browser_store_get_filter_mode (model);
-	
-	action = GTK_TOGGLE_ACTION (gtk_action_group_get_action (obj->priv->action_group, 
+
+	action = GTK_TOGGLE_ACTION (gtk_action_group_get_action (obj->priv->action_group,
 	                                                         "FilterHidden"));
 	active = !(mode & PLUMA_FILE_BROWSER_STORE_FILTER_MODE_HIDE_HIDDEN);
-	
+
 	if (active != gtk_toggle_action_get_active (action))
 		gtk_toggle_action_set_active (action, active);
 
-	action = GTK_TOGGLE_ACTION (gtk_action_group_get_action (obj->priv->action_group, 
+	action = GTK_TOGGLE_ACTION (gtk_action_group_get_action (obj->priv->action_group,
 	                                                         "FilterBinary"));
 	active = !(mode & PLUMA_FILE_BROWSER_STORE_FILTER_MODE_HIDE_BINARY);
-	
+
 	if (active != gtk_toggle_action_get_active (action))
-		gtk_toggle_action_set_active (action, active);	
+		gtk_toggle_action_set_active (action, active);
 }
 
 static void
@@ -2974,7 +2974,7 @@ on_action_directory_previous (GtkAction * action,
 	pluma_file_browser_widget_history_back (obj);
 }
 
-static void 
+static void
 on_action_directory_up (GtkAction              * action,
 			PlumaFileBrowserWidget * obj)
 {
@@ -2984,8 +2984,8 @@ on_action_directory_up (GtkAction              * action,
 
 	if (!PLUMA_IS_FILE_BROWSER_STORE (model))
 		return;
-	
-	pluma_file_browser_store_set_virtual_root_up (PLUMA_FILE_BROWSER_STORE (model));	
+
+	pluma_file_browser_store_set_virtual_root_up (PLUMA_FILE_BROWSER_STORE (model));
 }
 
 static void
@@ -3021,7 +3021,7 @@ on_action_file_open (GtkAction * action, PlumaFileBrowserWidget * obj)
 	GtkTreePath *path;
 
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (obj->priv->treeview));
-	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (obj->priv->treeview));	
+	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (obj->priv->treeview));
 
 	if (!PLUMA_IS_FILE_BROWSER_STORE (model))
 		return;
@@ -3099,22 +3099,22 @@ on_action_directory_open (GtkAction * action, PlumaFileBrowserWidget * obj)
 	GtkTreePath *path;
 
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (obj->priv->treeview));
-	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (obj->priv->treeview));	
+	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (obj->priv->treeview));
 
 	if (!PLUMA_IS_FILE_BROWSER_STORE (model))
 		return;
 
 	rows = gtk_tree_selection_get_selected_rows (selection, &model);
-	
+
 	for (row = rows; row; row = row->next) {
 		path = (GtkTreePath *)(row->data);
 
 		if (gtk_tree_model_get_iter (model, &iter, path))
 			directory_opened |= directory_open (obj, model, &iter);
-		
+
 		gtk_tree_path_free (path);
 	}
-	
+
 	if (!directory_opened) {
 		if (pluma_file_browser_widget_get_selected_directory (obj, &iter))
 			directory_open (obj, model, &iter);
@@ -3126,16 +3126,16 @@ on_action_directory_open (GtkAction * action, PlumaFileBrowserWidget * obj)
 static void
 on_action_filter_hidden (GtkAction * action, PlumaFileBrowserWidget * obj)
 {
-	update_filter_mode (obj, 
-	                    action, 
+	update_filter_mode (obj,
+	                    action,
 	                    PLUMA_FILE_BROWSER_STORE_FILTER_MODE_HIDE_HIDDEN);
 }
 
 static void
 on_action_filter_binary (GtkAction * action, PlumaFileBrowserWidget * obj)
 {
-	update_filter_mode (obj, 
-	                    action, 
+	update_filter_mode (obj,
+	                    action,
 	                    PLUMA_FILE_BROWSER_STORE_FILTER_MODE_HIDE_BINARY);
 }
 

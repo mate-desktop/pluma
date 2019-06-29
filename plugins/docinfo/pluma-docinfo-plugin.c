@@ -1,13 +1,13 @@
 /*
  * pluma-docinfo-plugin.c
- * 
- * Copyright (C) 2002-2005 Paolo Maggi 
+ *
+ * Copyright (C) 2002-2005 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2, or (at your option)
  * any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -161,7 +161,7 @@ get_docinfo_dialog (PlumaDocInfoPlugin *plugin)
 					 GTK_RESPONSE_OK);
 	gtk_window_set_transient_for (GTK_WINDOW (dialog->dialog),
 				      GTK_WINDOW (window));
-	
+
 	g_signal_connect (dialog->dialog,
 			  "destroy",
 			  G_CALLBACK (docinfo_dialog_destroy_cb),
@@ -175,15 +175,15 @@ get_docinfo_dialog (PlumaDocInfoPlugin *plugin)
 	return dialog;
 }
 
-static void 
+static void
 calculate_info (PlumaDocument *doc,
 		GtkTextIter   *start,
-		GtkTextIter   *end, 
+		GtkTextIter   *end,
 		gint          *chars,
 		gint          *words,
 		gint          *white_chars,
 		gint          *bytes)
-{	
+{
 	gchar *text;
 
 	pluma_debug (DEBUG_PLUGINS);
@@ -313,7 +313,7 @@ selectioninfo_real (PlumaDocument *doc,
 	if (sel)
 	{
 		lines = gtk_text_iter_get_line (&end) - gtk_text_iter_get_line (&start) + 1;
-	
+
 		calculate_info (doc,
 				&start, &end,
 				&chars, &words, &white_chars, &bytes);
@@ -383,15 +383,15 @@ docinfo_cb (GtkAction	*action,
 
 		dialog = get_docinfo_dialog (plugin);
 		g_return_if_fail (dialog != NULL);
-		
+
 		data->dialog = dialog;
 
 		gtk_widget_show (GTK_WIDGET (dialog->dialog));
 	}
-	
-	docinfo_real (doc, 
-		      data->dialog);	
-	selectioninfo_real (doc, 
+
+	docinfo_real (doc,
+		      data->dialog);
+	selectioninfo_real (doc,
 			    data->dialog);
 }
 
@@ -419,18 +419,18 @@ docinfo_dialog_response_cb (GtkDialog	*widget,
 		case GTK_RESPONSE_OK:
 		{
 			PlumaDocument *doc;
-			
+
 			pluma_debug_message (DEBUG_PLUGINS, "GTK_RESPONSE_OK");
-			
+
 			doc = pluma_window_get_active_document (window);
 			g_return_if_fail (doc != NULL);
-			
+
 			docinfo_real (doc,
 				      data->dialog);
 
 			selectioninfo_real (doc,
 					    data->dialog);
-			
+
 			break;
 		}
 	}
@@ -545,7 +545,7 @@ pluma_docinfo_plugin_activate (PeasActivatable *activatable)
 	PlumaDocInfoPluginPrivate *data;
 	PlumaWindow *window;
 	GtkUIManager *manager;
-	
+
 	pluma_debug (DEBUG_PLUGINS);
 
 	plugin = PLUMA_DOCINFO_PLUGIN (activatable);
@@ -554,8 +554,8 @@ pluma_docinfo_plugin_activate (PeasActivatable *activatable)
 
 	data->dialog = NULL;
 	data->ui_action_group = gtk_action_group_new ("PlumaDocInfoPluginActions");
-	
-	gtk_action_group_set_translation_domain (data->ui_action_group, 
+
+	gtk_action_group_set_translation_domain (data->ui_action_group,
 						 GETTEXT_PACKAGE);
 	gtk_action_group_add_actions (data->ui_action_group,
 				      action_entries,
@@ -569,12 +569,12 @@ pluma_docinfo_plugin_activate (PeasActivatable *activatable)
 
 	data->ui_id = gtk_ui_manager_new_merge_id (manager);
 
-	gtk_ui_manager_add_ui (manager, 
-			       data->ui_id, 
+	gtk_ui_manager_add_ui (manager,
+			       data->ui_id,
 			       MENU_PATH,
-			       "DocumentStatistics", 
 			       "DocumentStatistics",
-			       GTK_UI_MANAGER_MENUITEM, 
+			       "DocumentStatistics",
+			       GTK_UI_MANAGER_MENUITEM,
 			       FALSE);
 
 	update_ui (data);

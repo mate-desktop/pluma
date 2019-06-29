@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -56,7 +56,7 @@ enum
 
 static guint dialog_signals [LAST_SIGNAL] = { 0 };
 
-struct _PlumaSearchDialogPrivate 
+struct _PlumaSearchDialogPrivate
 {
 	gboolean   show_replace;
 
@@ -135,28 +135,28 @@ pluma_search_dialog_present_with_time (PlumaSearchDialog *dialog,
 
 	gtk_window_present_with_time (GTK_WINDOW (dialog), timestamp);
 
-	gtk_widget_grab_focus (dialog->priv->search_text_entry);	
+	gtk_widget_grab_focus (dialog->priv->search_text_entry);
 }
 
 static gboolean
 show_replace (PlumaSearchDialog *dlg)
 {
 	pluma_search_dialog_set_show_replace (dlg, TRUE);
-	
+
 	return TRUE;
 }
 
-static void 
+static void
 pluma_search_dialog_class_init (PlumaSearchDialogClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	GtkBindingSet *binding_set;
-	
+
 	object_class->set_property = pluma_search_dialog_set_property;
 	object_class->get_property = pluma_search_dialog_get_property;
-	
+
 	klass->show_replace = show_replace;
-	
+
 	dialog_signals[SHOW_REPLACE] =
     		g_signal_new ("show_replace",
 		  	      G_TYPE_FROM_CLASS (object_class),
@@ -165,7 +165,7 @@ pluma_search_dialog_class_init (PlumaSearchDialogClass *klass)
 			      NULL, NULL,
 			      pluma_marshal_BOOLEAN__VOID,
 			      G_TYPE_BOOLEAN, 0);
-			      
+
 	g_object_class_install_property (object_class, PROP_SHOW_REPLACE,
 					 g_param_spec_boolean ("show-replace",
 					 		       "Show Replace",
@@ -176,8 +176,8 @@ pluma_search_dialog_class_init (PlumaSearchDialogClass *klass)
 	g_type_class_add_private (object_class, sizeof (PlumaSearchDialogPrivate));
 
 	binding_set = gtk_binding_set_by_class (klass);
-	
-	/* Note: we cannot use the keyval/modifier associated with the 
+
+	/* Note: we cannot use the keyval/modifier associated with the
 	 * GTK_STOCK_FIND_AND_REPLACE stock item since MATE HIG suggests Ctrl+h
 	 * for Replace while gtk+ uses Ctrl+r */
 	gtk_binding_entry_add_signal (binding_set, GDK_KEY_h, GDK_CONTROL_MASK, "show_replace", 0);
@@ -231,18 +231,18 @@ search_text_entry_changed (GtkEditable       *editable,
 
 	if (*search_string != '\0')
 	{
-		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), 
+		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 			PLUMA_SEARCH_DIALOG_FIND_RESPONSE, TRUE);
-		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), 
+		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 			PLUMA_SEARCH_DIALOG_REPLACE_ALL_RESPONSE, TRUE);
 	}
 	else
 	{
-		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), 
+		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 			PLUMA_SEARCH_DIALOG_FIND_RESPONSE, FALSE);
-		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), 
+		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 			PLUMA_SEARCH_DIALOG_REPLACE_RESPONSE, FALSE);
-		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), 
+		gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 			PLUMA_SEARCH_DIALOG_REPLACE_ALL_RESPONSE, FALSE);
 	}
 }
@@ -331,7 +331,7 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	gtk_window_set_destroy_with_parent (GTK_WINDOW (dlg), TRUE);
 
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Close"), "window-close", GTK_RESPONSE_CANCEL);
-				
+
 	/* HIG defaults */
 	gtk_container_set_border_width (GTK_CONTAINER (dlg), 5);
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))),
@@ -482,11 +482,11 @@ pluma_search_dialog_new (GtkWindow *parent,
 	{
 		gtk_window_set_transient_for (GTK_WINDOW (dlg),
 					      parent);
-	
+
 		gtk_window_set_destroy_with_parent (GTK_WINDOW (dlg),
 						    TRUE);
 	}
-	
+
 	return GTK_WIDGET (dlg);
 }
 
@@ -526,7 +526,7 @@ pluma_search_dialog_set_search_text (PlumaSearchDialog *dialog,
 	gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 					   PLUMA_SEARCH_DIALOG_FIND_RESPONSE,
 					   (*text != '\0'));
-					   
+
 	gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog),
 					   PLUMA_SEARCH_DIALOG_REPLACE_ALL_RESPONSE,
 					   (*text != '\0'));

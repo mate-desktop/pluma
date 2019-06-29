@@ -2,7 +2,7 @@
  * pluma-window.h
  * This file is part of pluma
  *
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -49,7 +49,7 @@ typedef enum
 	PLUMA_WINDOW_STATE_ERROR		= 1 << 4,
 	PLUMA_WINDOW_STATE_SAVING_SESSION	= 1 << 5
 } PlumaWindowState;
-	
+
 /*
  * Type checking and casting macros
  */
@@ -68,7 +68,7 @@ typedef struct _PlumaWindowPrivate PlumaWindowPrivate;
  */
 typedef struct _PlumaWindow PlumaWindow;
 
-struct _PlumaWindow 
+struct _PlumaWindow
 {
 	GtkWindow window;
 
@@ -81,10 +81,10 @@ struct _PlumaWindow
  */
 typedef struct _PlumaWindowClass PlumaWindowClass;
 
-struct _PlumaWindowClass 
+struct _PlumaWindowClass
 {
 	GtkWindowClass parent_class;
-	
+
 	/* Signals */
 	void	 (* tab_added)      	(PlumaWindow *window,
 				     	 PlumaTab    *tab);
@@ -93,7 +93,7 @@ struct _PlumaWindowClass
 	void	 (* tabs_reordered) 	(PlumaWindow *window);
 	void	 (* active_tab_changed)	(PlumaWindow *window,
 				     	 PlumaTab    *tab);
-	void	 (* active_tab_state_changed)	
+	void	 (* active_tab_state_changed)
 					(PlumaWindow *window);
 };
 
@@ -104,22 +104,22 @@ GType 		 pluma_window_get_type 			(void) G_GNUC_CONST;
 
 PlumaTab	*pluma_window_create_tab		(PlumaWindow         *window,
 							 gboolean             jump_to);
-							 
+
 PlumaTab	*pluma_window_create_tab_from_uri	(PlumaWindow         *window,
 							 const gchar         *uri,
 							 const PlumaEncoding *encoding,
 							 gint                 line_pos,
 							 gboolean             create,
 							 gboolean             jump_to);
-							 
+
 void		 pluma_window_close_tab			(PlumaWindow         *window,
 							 PlumaTab            *tab);
-							 
+
 void		 pluma_window_close_all_tabs		(PlumaWindow         *window);
 
 void		 pluma_window_close_tabs		(PlumaWindow         *window,
 							 const GList         *tabs);
-							 
+
 PlumaTab	*pluma_window_get_active_tab		(PlumaWindow         *window);
 
 void		 pluma_window_set_active_tab		(PlumaWindow         *window,
@@ -132,7 +132,7 @@ PlumaDocument	*pluma_window_get_active_document	(PlumaWindow         *window);
 /* Returns a newly allocated list with all the documents in the window */
 GList		*pluma_window_get_documents		(PlumaWindow         *window);
 
-/* Returns a newly allocated list with all the documents that need to be 
+/* Returns a newly allocated list with all the documents that need to be
    saved before closing the window */
 GList		*pluma_window_get_unsaved_documents 	(PlumaWindow         *window);
 

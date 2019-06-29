@@ -82,19 +82,19 @@ static void
 last_search_data_store_position (PlumaSearchDialog *dlg)
 {
 	LastSearchData *data;
-	
+
 	data = g_object_get_data (G_OBJECT (dlg), PLUMA_LAST_SEARCH_DATA_KEY);
-	
+
 	if (data == NULL)
 	{
 		data = g_slice_new (LastSearchData);
-		
+
 		g_object_set_data_full (G_OBJECT (dlg),
 					PLUMA_LAST_SEARCH_DATA_KEY,
 					data,
 					(GDestroyNotify) last_search_data_free);
 	}
-	
+
 	gtk_window_get_position (GTK_WINDOW (dlg),
 				 &data->x,
 				 &data->y);
@@ -133,7 +133,7 @@ text_not_found (PlumaWindow *window,
 		const gchar *text)
 {
 	gchar *searched;
-	
+
 	searched = pluma_utils_str_end_truncate (text, MAX_MSG_LENGTH);
 
 	pluma_statusbar_flash_message (PLUMA_STATUSBAR (window->priv->statusbar),
@@ -376,8 +376,8 @@ do_replace (PlumaSearchDialog *dialog,
 
 	unescaped_search_text = pluma_utils_unescape_search_text (search_entry_text);
 
-	get_selected_text (GTK_TEXT_BUFFER (doc), 
-			   &selected_text, 
+	get_selected_text (GTK_TEXT_BUFFER (doc),
+			   &selected_text,
 			   NULL);
 
 	match_case = pluma_search_dialog_get_match_case (dialog);
@@ -476,7 +476,7 @@ do_replace_all (PlumaSearchDialog *dialog,
 	PLUMA_SEARCH_SET_MATCH_REGEX (flags, match_regex);
 	PLUMA_SEARCH_SET_ENTIRE_WORD (flags, entire_word);
 
-	count = pluma_document_replace_all (doc, 
+	count = pluma_document_replace_all (doc,
 					    search_entry_text,
 					    replace_entry_text,
 					    flags);
@@ -599,9 +599,9 @@ _pluma_cmd_search_find (GtkAction   *action,
 	else
 	{
 		g_return_if_fail (PLUMA_IS_SEARCH_DIALOG (data));
-		
+
 		search_dialog = GTK_WIDGET (data);
-		
+
 		/* turn the dialog into a find dialog if needed */
 		if (pluma_search_dialog_get_show_replace (PLUMA_SEARCH_DIALOG (search_dialog)))
 			pluma_search_dialog_set_show_replace (PLUMA_SEARCH_DIALOG (search_dialog),
@@ -673,9 +673,9 @@ _pluma_cmd_search_replace (GtkAction   *action,
 	else
 	{
 		g_return_if_fail (PLUMA_IS_SEARCH_DIALOG (data));
-		
+
 		replace_dialog = GTK_WIDGET (data);
-		
+
 		/* turn the dialog into a find dialog if needed */
 		if (!pluma_search_dialog_get_show_replace (PLUMA_SEARCH_DIALOG (replace_dialog)))
 			pluma_search_dialog_set_show_replace (PLUMA_SEARCH_DIALOG (replace_dialog),
@@ -730,15 +730,15 @@ do_find_again (PlumaWindow *window,
 	PlumaView *active_view;
 	gboolean wrap_around = TRUE;
 	gpointer data;
-	
+
 	active_view = pluma_window_get_active_view (window);
 	g_return_if_fail (active_view != NULL);
 
 	data = g_object_get_data (G_OBJECT (window), PLUMA_SEARCH_DIALOG_KEY);
-	
+
 	if (data != NULL)
 		wrap_around = pluma_search_dialog_get_wrap_around (PLUMA_SEARCH_DIALOG (data));
-	
+
 	run_search (active_view,
 		    wrap_around,
 		    backward);
@@ -788,7 +788,7 @@ _pluma_cmd_search_goto_line (GtkAction   *action,
 	if (active_view == NULL)
 		return;
 
-	/* Focus the view if needed: we need to focus the view otherwise 
+	/* Focus the view if needed: we need to focus the view otherwise
 	   activating the binding for goto line has no effect */
 	gtk_widget_grab_focus (GTK_WIDGET (active_view));
 
@@ -813,10 +813,10 @@ _pluma_cmd_search_incremental_search (GtkAction   *action,
 	if (active_view == NULL)
 		return;
 
-	/* Focus the view if needed: we need to focus the view otherwise 
+	/* Focus the view if needed: we need to focus the view otherwise
 	   activating the binding for incremental search has no effect */
 	gtk_widget_grab_focus (GTK_WIDGET (active_view));
-	
+
 	/* incremental search is builtin in PlumaView, just activate
 	 * the corresponding binding.
 	 */
