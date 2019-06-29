@@ -11,9 +11,9 @@ G_BEGIN_DECLS
 #define PLUMA_TYPE_MESSAGE_TYPE			(pluma_message_type_get_type ())
 #define PLUMA_MESSAGE_TYPE(x)			((PlumaMessageType *)(x))
 
-typedef void (*PlumaMessageTypeForeach)		(const gchar *key, 
-						 GType 	      type, 
-						 gboolean     required, 
+typedef void (*PlumaMessageTypeForeach)		(const gchar *key,
+						 GType 	      type,
+						 gboolean     required,
 						 gpointer     user_data);
 
 typedef struct _PlumaMessageType			PlumaMessageType;
@@ -25,7 +25,7 @@ gchar *pluma_message_type_identifier		 (const gchar *object_path,
 						  const gchar *method);
 gboolean pluma_message_type_is_valid_object_path (const gchar *object_path);
 
-PlumaMessageType *pluma_message_type_new	 (const gchar *object_path, 
+PlumaMessageType *pluma_message_type_new	 (const gchar *object_path,
 						  const gchar *method,
 						  guint	      num_optional,
 						  ...) G_GNUC_NULL_TERMINATED;
@@ -55,7 +55,7 @@ const gchar *pluma_message_type_get_method	 (PlumaMessageType *message_type);
 
 GType pluma_message_type_lookup			 (PlumaMessageType *message_type,
 						  const gchar      *key);
-						 
+
 void pluma_message_type_foreach 		 (PlumaMessageType 	  *message_type,
 						  PlumaMessageTypeForeach  func,
 						  gpointer	   	   user_data);

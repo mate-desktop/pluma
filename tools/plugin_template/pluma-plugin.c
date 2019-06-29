@@ -7,7 +7,7 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2, or (at your option)
  * any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -40,7 +40,7 @@ PLUMA_PLUGIN_REGISTER_TYPE (##(PLUGIN_ID.camel)Plugin, ##(PLUGIN_ID.lower)_plugi
 
 ##ifdef WITH_MENU
 /* UI string. See pluma-ui.xml for reference */
-static const gchar ui_str = 
+static const gchar ui_str =
 	"<ui>"
 	"  <menubar name='MenuBar'>"
 	"    <!-- Put your menu entries here -->"
@@ -96,7 +96,7 @@ impl_activate (PlumaPlugin *plugin,
 ##ifdef WITH_MENU
 	GtkUIManager *manager;
 	WindowData *data;
-##endif	
+##endif
 
 	pluma_debug (DEBUG_PLUGINS);
 
@@ -117,11 +117,11 @@ impl_activate (PlumaPlugin *plugin,
 	data->ui_id = gtk_ui_manager_add_ui_from_string (manager, ui_str,
 							 -1, NULL);
 
-	g_object_set_data_full (G_OBJECT (window), 
-				WINDOW_DATA_KEY, 
+	g_object_set_data_full (G_OBJECT (window),
+				WINDOW_DATA_KEY,
 				data,
 				(GDestroyNotify) free_window_data);
-##endif	
+##endif
 }
 
 static void
@@ -179,6 +179,6 @@ static void
 	plugin_class->create_configure_dialog = impl_create_configure_dialog;
 ##endif
 
-	g_type_class_add_private (object_class, 
+	g_type_class_add_private (object_class,
 				  sizeof (##(PLUGIN_ID.camel)PluginPrivate));
 }

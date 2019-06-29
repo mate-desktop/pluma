@@ -1,5 +1,5 @@
 /*
- * pluma-file-bookmarks-store.c - Pluma plugin providing easy file access 
+ * pluma-file-bookmarks-store.c - Pluma plugin providing easy file access
  * from the sidepanel
  *
  * Copyright (C) 2006 - Jesse van den Kieboom <jesse@icecrew.nl>
@@ -31,27 +31,27 @@
 		G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_FILE_BOOKMARKS_STORE, \
 		PlumaFileBookmarksStorePrivate))
 
-struct _PlumaFileBookmarksStorePrivate 
+struct _PlumaFileBookmarksStorePrivate
 {
 	GVolumeMonitor * volume_monitor;
 	GFileMonitor * bookmarks_monitor;
 };
 
-static void remove_node               (GtkTreeModel * model, 
+static void remove_node               (GtkTreeModel * model,
                                        GtkTreeIter * iter);
 
 static void on_fs_changed             (GVolumeMonitor 		*monitor,
                                        GObject 			*object,
                                        PlumaFileBookmarksStore 	*model);
-                                       
+
 static void on_bookmarks_file_changed (GFileMonitor * monitor,
 				       GFile * file,
 				       GFile * other_file,
 				       GFileMonitorEvent event_type,
 				       PlumaFileBookmarksStore * model);
-static gboolean find_with_flags       (GtkTreeModel * model, 
+static gboolean find_with_flags       (GtkTreeModel * model,
                                        GtkTreeIter * iter,
-                                       gpointer obj, 
+                                       gpointer obj,
                                        guint flags,
                                        guint notflags);
 
@@ -110,11 +110,11 @@ pluma_file_bookmarks_store_init (PlumaFileBookmarksStore * obj)
 
 /* Private */
 static void
-add_node (PlumaFileBookmarksStore *model, 
+add_node (PlumaFileBookmarksStore *model,
 	  GdkPixbuf 		  *pixbuf,
-	  const gchar 		  *name, 
-	  GObject 		  *obj, 
-	  guint 		   flags, 
+	  const gchar 		  *name,
+	  GObject 		  *obj,
+	  guint 		   flags,
 	  GtkTreeIter 		  *iter)
 {
 	GtkTreeIter newiter;
@@ -133,10 +133,10 @@ add_node (PlumaFileBookmarksStore *model,
 }
 
 static gboolean
-add_file (PlumaFileBookmarksStore *model, 
+add_file (PlumaFileBookmarksStore *model,
 	  GFile 		  *file,
-	  const gchar 		  *name, 
-	  guint 		   flags, 
+	  const gchar 		  *name,
+	  guint 		   flags,
 	  GtkTreeIter 		  *iter)
 {
 	GdkPixbuf *pixbuf = NULL;
@@ -235,11 +235,11 @@ init_special_directories (PlumaFileBookmarksStore * model)
 			 PLUMA_FILE_BOOKMARKS_STORE_IS_SPECIAL_DIR, NULL);
 		g_object_unref (file);
 	}
-	
+
 	file = g_file_new_for_uri ("file:///");
 	add_file (model, file, _("File System"), PLUMA_FILE_BOOKMARKS_STORE_IS_ROOT, NULL);
 	g_object_unref (file);
-	
+
 	check_mount_separator (model, PLUMA_FILE_BOOKMARKS_STORE_IS_ROOT, TRUE);
 }
 
@@ -254,36 +254,36 @@ get_fs_properties (gpointer    fs,
 	*flags = PLUMA_FILE_BOOKMARKS_STORE_IS_FS;
 	*name = NULL;
 	*pixbuf = NULL;
-	
+
 	if (G_IS_DRIVE (fs))
 	{
 		icon = g_drive_get_icon (G_DRIVE (fs));
 		*name = g_drive_get_name (G_DRIVE (fs));
-		
+
 		*flags |= PLUMA_FILE_BOOKMARKS_STORE_IS_DRIVE;
 	}
 	else if (G_IS_VOLUME (fs))
 	{
 		icon = g_volume_get_icon (G_VOLUME (fs));
 		*name = g_volume_get_name (G_VOLUME (fs));
-	
+
 		*flags |= PLUMA_FILE_BOOKMARKS_STORE_IS_VOLUME;
 	}
 	else if (G_IS_MOUNT (fs))
 	{
 		icon = g_mount_get_icon (G_MOUNT (fs));
 		*name = g_mount_get_name (G_MOUNT (fs));
-		
+
 		*flags |= PLUMA_FILE_BOOKMARKS_STORE_IS_MOUNT;
 	}
-	
+
 	if (icon)
 	{
 		*pixbuf = pluma_file_browser_utils_pixbuf_from_icon (icon, GTK_ICON_SIZE_MENU);
 		g_object_unref (icon);
 	}
 }
-		   
+
 
 static void
 add_fs (PlumaFileBookmarksStore *model,
@@ -294,10 +294,10 @@ add_fs (PlumaFileBookmarksStore *model,
 	gchar *name;
 	GdkPixbuf *pixbuf;
 	guint fsflags;
-	
+
 	get_fs_properties (fs, &name, &pixbuf, &fsflags);
 	add_node (model, pixbuf, name, fs, flags | fsflags, iter);
-	
+
 	if (pixbuf)
 		g_object_unref (pixbuf);
 
@@ -312,7 +312,7 @@ process_volume_cb (GVolume 		   *volume,
 	GMount *mount;
 	guint flags = PLUMA_FILE_BOOKMARKS_STORE_NONE;
 	mount = g_volume_get_mount (volume);
-	
+
 	/* CHECK: should we use the LOCAL/REMOTE thing still? */
 	if (mount)
 	{
@@ -336,7 +336,7 @@ process_drive_novolumes (PlumaFileBookmarksStore *model,
 	   !g_drive_is_media_check_automatic (drive) &&
 	    g_drive_can_poll_for_media (drive))
 	{
-		/* This can be the case for floppy drives or other 
+		/* This can be the case for floppy drives or other
 		   drives where media detection fails. We show the
 		   drive and poll for media when the user activates
 		   it */
@@ -361,14 +361,14 @@ process_drive_cb (GDrive   	          *drive,
 	else
 	{
 		process_drive_novolumes (model, drive);
-	}	
+	}
 }
 
 static void
 init_drives (PlumaFileBookmarksStore *model)
 {
 	GList *drives;
-		
+
 	drives = g_volume_monitor_get_connected_drives (model->priv->volume_monitor);
 
 	g_list_foreach (drives, (GFunc)process_drive_cb, model);
@@ -381,15 +381,15 @@ process_volume_nodrive_cb (GVolume 		   *volume,
 			   PlumaFileBookmarksStore *model)
 {
 	GDrive *drive;
-	
+
 	drive = g_volume_get_drive (volume);
-	
+
 	if (drive)
 	{
 		g_object_unref (drive);
 		return;
 	}
-	
+
 	process_volume_cb (volume, model);
 }
 
@@ -397,9 +397,9 @@ static void
 init_volumes (PlumaFileBookmarksStore *model)
 {
 	GList *volumes;
-		
+
 	volumes = g_volume_monitor_get_volumes (model->priv->volume_monitor);
-	
+
 	g_list_foreach (volumes, (GFunc)process_volume_nodrive_cb, model);
 	g_list_foreach (volumes, (GFunc)g_object_unref, NULL);
 	g_list_free (volumes);
@@ -410,9 +410,9 @@ process_mount_novolume_cb (GMount 		   *mount,
 			   PlumaFileBookmarksStore *model)
 {
 	GVolume *volume;
-	
+
 	volume = g_mount_get_volume (mount);
-	
+
 	if (volume)
 	{
 		g_object_unref (volume);
@@ -428,9 +428,9 @@ static void
 init_mounts (PlumaFileBookmarksStore *model)
 {
 	GList *mounts;
-		
+
 	mounts = g_volume_monitor_get_mounts (model->priv->volume_monitor);
-	
+
 	g_list_foreach (mounts, (GFunc)process_mount_novolume_cb, model);
 	g_list_foreach (mounts, (GFunc)g_object_unref, NULL);
 	g_list_free (mounts);
@@ -447,10 +447,10 @@ init_fs (PlumaFileBookmarksStore * model)
 			"mount-added", "mount-removed", "mount-changed",
 			NULL
 		};
-		
+
 		model->priv->volume_monitor = g_volume_monitor_get ();
 
-		/* Connect signals */		
+		/* Connect signals */
 		for (ptr = signals; *ptr; ptr++)
 		{
 			g_signal_connect (model->priv->volume_monitor,
@@ -461,16 +461,16 @@ init_fs (PlumaFileBookmarksStore * model)
 
 	/* First go through all the connected drives */
 	init_drives (model);
-	
+
 	/* Then add all volumes, not associated with a drive */
 	init_volumes (model);
-	
+
 	/* Then finally add all mounts that have no volume */
 	init_mounts (model);
 }
 
 static gboolean
-add_bookmark (PlumaFileBookmarksStore * model, 
+add_bookmark (PlumaFileBookmarksStore * model,
 	      gchar const * name,
 	      gchar const * uri)
 {
@@ -478,9 +478,9 @@ add_bookmark (PlumaFileBookmarksStore * model,
 	gboolean ret;
 	guint flags = PLUMA_FILE_BOOKMARKS_STORE_IS_BOOKMARK;
 	GtkTreeIter iter;
-	
+
 	file = g_file_new_for_uri (uri);
-	
+
 	if (g_file_is_native (file)) {
 		flags |= PLUMA_FILE_BOOKMARKS_STORE_IS_LOCAL_BOOKMARK;
 	} else {
@@ -490,7 +490,7 @@ add_bookmark (PlumaFileBookmarksStore * model,
 	ret = add_file (model, file, name, flags, &iter);
 
 	g_object_unref (file);
-	
+
 	return ret;
 }
 
@@ -727,7 +727,7 @@ find_with_flags (GtkTreeModel * model, GtkTreeIter * iter, gpointer obj,
 	guint childflags = 0;
  	GObject * childobj;
  	gboolean fequal;
-	
+
 	if (!gtk_tree_model_get_iter_first (model, &child))
 		return FALSE;
 
@@ -737,12 +737,12 @@ find_with_flags (GtkTreeModel * model, GtkTreeIter * iter, gpointer obj,
 				    &childobj,
 				    PLUMA_FILE_BOOKMARKS_STORE_COLUMN_FLAGS,
 				    &childflags, -1);
-		
+
 		fequal = (obj == childobj);
-		
+
 		if (childobj)
 			g_object_unref (childobj);
-		 
+
 		if ((obj == NULL || fequal) &&
 		    (childflags & flags) == flags
 		    && !(childflags & notflags)) {
@@ -832,14 +832,14 @@ pluma_file_bookmarks_store_get_uri (PlumaFileBookmarksStore * model,
 	guint flags;
 	gchar * ret = NULL;
 	gboolean isfs;
-	
+
 	g_return_val_if_fail (PLUMA_IS_FILE_BOOKMARKS_STORE (model), NULL);
 	g_return_val_if_fail (iter != NULL, NULL);
 
 	gtk_tree_model_get (GTK_TREE_MODEL (model), iter,
 			    PLUMA_FILE_BOOKMARKS_STORE_COLUMN_FLAGS,
 			    &flags,
-			    PLUMA_FILE_BOOKMARKS_STORE_COLUMN_OBJECT, 
+			    PLUMA_FILE_BOOKMARKS_STORE_COLUMN_OBJECT,
 			    &obj,
 			    -1);
 
@@ -847,7 +847,7 @@ pluma_file_bookmarks_store_get_uri (PlumaFileBookmarksStore * model,
 		return NULL;
 
 	isfs = (flags & PLUMA_FILE_BOOKMARKS_STORE_IS_FS);
-	
+
 	if (isfs && (flags & PLUMA_FILE_BOOKMARKS_STORE_IS_MOUNT))
 	{
 		file = g_mount_get_root (G_MOUNT (obj));
@@ -856,15 +856,15 @@ pluma_file_bookmarks_store_get_uri (PlumaFileBookmarksStore * model,
 	{
 		file = g_object_ref (obj);
 	}
-	
+
 	g_object_unref (obj);
-	
+
 	if (file)
 	{
 		ret = g_file_get_uri (file);
 		g_object_unref (file);
 	}
-	
+
 	return ret;
 }
 
@@ -888,7 +888,7 @@ on_fs_changed (GVolumeMonitor 	      *monitor,
 	/* clear all fs items */
 	while (find_with_flags (tree_model, &iter, NULL, flags, noflags))
 		remove_node (tree_model, &iter);
-	
+
 	/* then reinitialize */
 	init_fs (model);
 }

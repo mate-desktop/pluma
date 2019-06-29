@@ -2,7 +2,7 @@
  * pluma-encodings-dialog.c
  * This file is part of pluma
  *
- * Copyright (C) 2002-2005 Paolo Maggi 
+ * Copyright (C) 2002-2005 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
 
 /*
- * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -93,7 +93,7 @@ enum {
 static void
 count_selected_items_func (GtkTreeModel *model,
 			   GtkTreePath  *path,
-			   GtkTreeIter  *iter, 
+			   GtkTreeIter  *iter,
 			   gpointer      data)
 {
 	int *count = data;
@@ -132,7 +132,7 @@ displayed_selection_changed_callback (GtkTreeSelection     *selection,
 static void
 get_selected_encodings_func (GtkTreeModel *model,
 			     GtkTreePath  *path,
-			     GtkTreeIter  *iter, 
+			     GtkTreeIter  *iter,
 			     gpointer      data)
 {
 	GSList **list = data;
@@ -220,7 +220,7 @@ remove_button_clicked_callback (GtkWidget            *button,
 					     &encodings);
 
 	tmp = encodings;
-	while (tmp != NULL) 
+	while (tmp != NULL)
 	{
 		dialog->priv->show_in_menu_list = g_slist_remove (dialog->priv->show_in_menu_list,
 								  tmp->data);
@@ -269,7 +269,7 @@ init_shown_in_menu_tree_model (PlumaEncodingsDialog *dialog)
 	g_slist_free (list);
 }
 
-static void 
+static void
 response_handler (GtkDialog            *dialog,
 		  gint                  response_id,
                   PlumaEncodingsDialog *dlg)
@@ -308,14 +308,14 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 	};
 
 	dlg->priv = PLUMA_ENCODINGS_DIALOG_GET_PRIVATE (dlg);
-	
+
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_OK"), "gtk-ok", GTK_RESPONSE_OK);
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
 
 	gtk_window_set_title (GTK_WINDOW (dlg), _("Character Encodings"));
 	gtk_window_set_default_size (GTK_WINDOW (dlg), 650, 400);
-	
+
 	/* HIG defaults */
 	gtk_container_set_border_width (GTK_CONTAINER (dlg), 5);
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))),
@@ -348,7 +348,7 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 		gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))),
 		                    error_widget,
 		                    TRUE, TRUE, 0);
-		gtk_container_set_border_width (GTK_CONTAINER (error_widget), 5);			     
+		gtk_container_set_border_width (GTK_CONTAINER (error_widget), 5);
 
 		return;
 	}
@@ -356,7 +356,7 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))),
 			    content, TRUE, TRUE, 0);
 	g_object_unref (content);
-	gtk_container_set_border_width (GTK_CONTAINER (content), 5);			     
+	gtk_container_set_border_width (GTK_CONTAINER (content), 5);
 
 	gtk_button_set_image (GTK_BUTTON (dlg->priv->add_button), gtk_image_new_from_icon_name ("list-add", GTK_ICON_SIZE_BUTTON));
 	gtk_button_set_image (GTK_BUTTON (dlg->priv->remove_button), gtk_image_new_from_icon_name ("list-remove", GTK_ICON_SIZE_BUTTON));
@@ -396,7 +396,7 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 
 	/* Add the data */
 	i = 0;
-	while ((enc = pluma_encoding_get_from_index (i)) != NULL) 
+	while ((enc = pluma_encoding_get_from_index (i)) != NULL)
 	{
 		gtk_list_store_append (dlg->priv->available_liststore,
 				       &parent_iter);

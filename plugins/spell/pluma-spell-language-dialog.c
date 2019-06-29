@@ -3,7 +3,7 @@
  * pluma-spell-language-dialog.c
  * This file is part of pluma
  *
- * Copyright (C) 2002 Paolo Maggi 
+ * Copyright (C) 2002 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2002. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2002. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  */
 
 #ifdef HAVE_CONFIG_H
@@ -47,7 +47,7 @@ enum
 };
 
 
-struct _PlumaSpellLanguageDialog 
+struct _PlumaSpellLanguageDialog
 {
 	GtkDialog dialog;
 
@@ -58,7 +58,7 @@ struct _PlumaSpellLanguageDialog
 G_DEFINE_TYPE(PlumaSpellLanguageDialog, pluma_spell_language_dialog, GTK_TYPE_DIALOG)
 
 
-static void 
+static void
 pluma_spell_language_dialog_class_init (PlumaSpellLanguageDialogClass *klass)
 {
 	/* GObjectClass *object_class = G_OBJECT_CLASS (klass); */
@@ -78,7 +78,7 @@ dialog_response_handler (GtkDialog *dlg,
 	}
 }
 
-static void 
+static void
 scroll_to_selected (GtkTreeView *tree_view)
 {
 	GtkTreeModel *model;
@@ -128,7 +128,7 @@ create_dialog (PlumaSpellLanguageDialog *dlg,
 		"content",
 		NULL
 	};
-	
+
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_OK"), "gtk-ok", GTK_RESPONSE_OK);
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
@@ -149,13 +149,13 @@ create_dialog (PlumaSpellLanguageDialog *dlg,
 
 	ui_file = g_build_filename (data_dir, "languages-dialog.ui", NULL);
 	ret = pluma_utils_get_ui_objects (ui_file,
-					  root_objects,	
+					  root_objects,
 					  &error_widget,
 					  "content", &content,
 					  "languages_treeview", &dlg->languages_treeview,
 					  NULL);
 	g_free (ui_file);
-	
+
 	if (!ret)
 	{
 		gtk_widget_show (error_widget);
@@ -184,11 +184,11 @@ create_dialog (PlumaSpellLanguageDialog *dlg,
 	/* Add the encoding column */
 	cell = gtk_cell_renderer_text_new ();
 	column = gtk_tree_view_column_new_with_attributes (_("Languages"),
-							   cell, 
+							   cell,
 							   "text",
 							   COLUMN_LANGUAGE_NAME,
 							   NULL);
-	
+
 	gtk_tree_view_append_column (GTK_TREE_VIEW (dlg->languages_treeview),
 				     column);
 
@@ -200,7 +200,7 @@ create_dialog (PlumaSpellLanguageDialog *dlg,
 			  G_CALLBACK (scroll_to_selected),
 			  dlg);
 	g_signal_connect (dlg->languages_treeview,
-			  "row-activated", 
+			  "row-activated",
 			  G_CALLBACK (language_row_activated),
 			  dlg);
 }
@@ -208,7 +208,7 @@ create_dialog (PlumaSpellLanguageDialog *dlg,
 static void
 pluma_spell_language_dialog_init (PlumaSpellLanguageDialog *dlg)
 {
-	
+
 }
 
 static void
@@ -267,7 +267,7 @@ pluma_spell_language_dialog_new (GtkWindow                       *parent,
 	populate_language_list (dlg, cur_lang);
 
 	gtk_window_set_transient_for (GTK_WINDOW (dlg), parent);
-	gtk_widget_grab_focus (dlg->languages_treeview);					     
+	gtk_widget_grab_focus (dlg->languages_treeview);
 
 	return GTK_WIDGET (dlg);
 }

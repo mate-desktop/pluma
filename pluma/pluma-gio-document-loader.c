@@ -21,7 +21,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
  * Modified by the pluma Team, 2005-2008. See the AUTHORS file for a
  * list of people on the pluma Team.
@@ -172,12 +172,12 @@ static AsyncData *
 async_data_new (PlumaGioDocumentLoader *gvloader)
 {
 	AsyncData *async;
-	
+
 	async = g_slice_new (AsyncData);
 	async->loader = gvloader;
 	async->cancellable = g_object_ref (gvloader->priv->cancellable);
 	async->tried_mount = FALSE;
-	
+
 	return async;
 }
 
@@ -222,7 +222,7 @@ get_metadata_encoding (PlumaDocumentLoader *loader)
 
 		if (charset == NULL)
 			return NULL;
-		
+
 		enc = pluma_encoding_get_from_charset (charset);
 	}
 #endif
@@ -263,9 +263,9 @@ close_input_stream_ready_cb (GInputStream *stream,
 		async_data_free (async);
 		return;
 	}
-	
+
 	pluma_debug_message (DEBUG_SAVER, "Finished closing input stream");
-	
+
 	if (!g_input_stream_close_finish (stream, res, &error))
 	{
 		pluma_debug_message (DEBUG_SAVER, "Closing input stream error: %s", error->message);
@@ -420,7 +420,7 @@ static void
 read_file_chunk (AsyncData *async)
 {
 	PlumaGioDocumentLoader *gvloader;
-	
+
 	gvloader = async->loader;
 
 	g_input_stream_read_async (G_INPUT_STREAM (gvloader->priv->stream),
@@ -457,7 +457,7 @@ finish_query_info (AsyncData *async)
 	GInputStream *conv_stream;
 	GFileInfo *info;
 	GSList *candidate_encodings;
-	
+
 	gvloader = async->loader;
 	loader = PLUMA_DOCUMENT_LOADER (gvloader);
 	info = loader->info;
@@ -488,7 +488,7 @@ finish_query_info (AsyncData *async)
 
 	gvloader->priv->converter = pluma_smart_charset_converter_new (candidate_encodings);
 	g_slist_free (candidate_encodings);
-	
+
 	conv_stream = g_converter_input_stream_new (gvloader->priv->stream,
 						    G_CONVERTER (gvloader->priv->converter));
 	g_object_unref (gvloader->priv->stream);
@@ -518,7 +518,7 @@ query_info_cb (GFile        *source,
 	{
 		async_data_free (async);
 		return;
-	}	
+	}
 
 	gvloader = async->loader;
 
@@ -535,7 +535,7 @@ query_info_cb (GFile        *source,
 	}
 
 	PLUMA_DOCUMENT_LOADER (gvloader)->info = info;
-	
+
 	finish_query_info (async);
 }
 
@@ -557,7 +557,7 @@ mount_ready_callback (GFile        *file,
 	}
 
 	mounted = g_file_mount_enclosing_volume_finish (file, res, &error);
-	
+
 	if (!mounted)
 	{
 		async_failed (async, error);
@@ -598,7 +598,7 @@ async_read_ready_callback (GObject      *source,
 {
 	GError *error = NULL;
 	PlumaGioDocumentLoader *gvloader;
-	
+
 	pluma_debug (DEBUG_LOADER);
 
 	/* manual check for cancelled state */
@@ -609,19 +609,19 @@ async_read_ready_callback (GObject      *source,
 	}
 
 	gvloader = async->loader;
-	
+
 	gvloader->priv->stream = G_INPUT_STREAM (g_file_read_finish (gvloader->priv->gfile,
 								     res, &error));
 
 	if (!gvloader->priv->stream)
-	{		
+	{
 		if (error->code == G_IO_ERROR_NOT_MOUNTED && !async->tried_mount)
 		{
 			recover_not_mounted (async);
 			g_error_free (error);
 			return;
 		}
-		
+
 		/* Propagate error */
 		g_propagate_error (&gvloader->priv->error, error);
 		pluma_document_loader_loading (PLUMA_DOCUMENT_LOADER (gvloader),
@@ -632,7 +632,7 @@ async_read_ready_callback (GObject      *source,
 		return;
 	}
 
-	/* get the file info: note we cannot use 
+	/* get the file info: note we cannot use
 	 * g_file_input_stream_query_info_async since it is not able to get the
 	 * content type etc, beside it is not supported by gvfs.
 	 * Using the file instead of the stream is slightly racy, but for
@@ -650,7 +650,7 @@ async_read_ready_callback (GObject      *source,
 static void
 open_async_read (AsyncData *async)
 {
-	g_file_read_async (async->loader->priv->gfile, 
+	g_file_read_async (async->loader->priv->gfile,
 	                   G_PRIORITY_HIGH,
 	                   async->cancellable,
 	                   (GAsyncReadyCallback) async_read_ready_callback,
@@ -662,7 +662,7 @@ pluma_gio_document_loader_load (PlumaDocumentLoader *loader)
 {
 	PlumaGioDocumentLoader *gvloader = PLUMA_GIO_DOCUMENT_LOADER (loader);
 	AsyncData *async;
-	
+
 	pluma_debug (DEBUG_LOADER);
 
 	/* make sure no load operation is currently running */
@@ -677,7 +677,7 @@ pluma_gio_document_loader_load (PlumaDocumentLoader *loader)
 
 	gvloader->priv->cancellable = g_cancellable_new ();
 	async = async_data_new (gvloader);
-	
+
 	open_async_read (async);
 }
 

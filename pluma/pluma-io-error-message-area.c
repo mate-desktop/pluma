@@ -2,7 +2,7 @@
  * pluma-io-error-message-area.c
  * This file is part of pluma
  *
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,18 +16,18 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
- 
+
 /*
  * Verbose error reporting for file I/O operations (load, save, revert, create)
  */
@@ -84,7 +84,7 @@ set_contents (GtkWidget *area,
 	      GtkWidget *contents)
 {
 	GtkWidget *content_area;
-	
+
 	content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (area));
 	gtk_container_add (GTK_CONTAINER (content_area), contents);
 }
@@ -190,9 +190,9 @@ create_io_loading_error_message_area (const gchar *primary_text,
 
 static gboolean
 parse_gio_error (gint          code,
-	         gchar       **error_message, 
-	         gchar       **message_details, 
-	         const gchar  *uri, 
+	         gchar       **error_message,
+	         gchar       **message_details,
+	         const gchar  *uri,
 	         const gchar  *uri_for_display)
 {
 	gboolean ret = TRUE;
@@ -210,7 +210,7 @@ parse_gio_error (gint          code,
 		{
 			gchar *scheme_string;
 			gchar *scheme_markup;
-			
+
 			scheme_string = g_uri_parse_scheme (uri);
 
 			if ((scheme_string != NULL) && g_utf8_validate (scheme_string, -1, NULL))
@@ -225,7 +225,7 @@ parse_gio_error (gint          code,
 			else
 			{
 				*message_details = g_strdup (_("pluma cannot handle this location."));
-			}	
+			}
 
 			g_free (scheme_string);
 		}
@@ -234,25 +234,25 @@ parse_gio_error (gint          code,
 	case G_IO_ERROR_NOT_MOUNTABLE_FILE:
 		*message_details = g_strdup (_("The location of the file cannot be mounted."));
 		break;
-	
+
 	case G_IO_ERROR_NOT_MOUNTED:
 		*message_details = g_strdup( _("The location of the file cannot be accessed because it is not mounted."));
 
-		break;	
+		break;
 	case G_IO_ERROR_IS_DIRECTORY:
 		*error_message = g_strdup_printf (_("%s is a directory."),
 						 uri_for_display);
 		*message_details = g_strdup (_("Please check that you typed the "
 					      "location correctly and try again."));
 		break;
-		
+
 	case G_IO_ERROR_INVALID_FILENAME:
 		*error_message = g_strdup_printf (_("%s is not a valid location."),
 						 uri_for_display);
 		*message_details = g_strdup (_("Please check that you typed the "
 					      "location correctly and try again."));
 		break;
-		
+
 	case G_IO_ERROR_HOST_NOT_FOUND:
 		/* This case can be hit for user-typed strings like "foo" due to
 		 * the code that guesses web addresses when there's no initial "/".
@@ -285,7 +285,7 @@ parse_gio_error (gint          code,
 					g_free (host_markup);
 				}
 			}
-			
+
 			if (!*message_details)
 			{
 				/* use the same string as INVALID_HOST */
@@ -316,9 +316,9 @@ parse_gio_error (gint          code,
 
 static gboolean
 parse_pluma_error (gint          code,
-	           gchar       **error_message, 
-	           gchar       **message_details, 
-	           const gchar  *uri, 
+	           gchar       **error_message,
+	           gchar       **message_details,
+	           const gchar  *uri,
 	           const gchar  *uri_for_display)
 {
 	gboolean ret = TRUE;
@@ -338,10 +338,10 @@ parse_pluma_error (gint          code,
 }
 
 static void
-parse_error (const GError *error, 
-	     gchar       **error_message, 
-	     gchar       **message_details, 
-	     const gchar  *uri, 
+parse_error (const GError *error,
+	     gchar       **error_message,
+	     gchar       **message_details,
+	     const gchar  *uri,
 	     const gchar  *uri_for_display)
 {
 	gboolean ret = FALSE;
@@ -362,12 +362,12 @@ parse_error (const GError *error,
 					 uri,
 					 uri_for_display);
 	}
-	
+
 	if (!ret)
 	{
-		g_warning ("Hit unhandled case %d (%s) in %s.", 
-			   error->code, error->message, G_STRFUNC);	
-		*message_details = g_strdup_printf (_("Unexpected error: %s"), 
+		g_warning ("Hit unhandled case %d (%s) in %s.",
+			   error->code, error->message, G_STRFUNC);
+		*message_details = g_strdup_printf (_("Unexpected error: %s"),
 						   error->message);
 	}
 }
@@ -385,7 +385,7 @@ pluma_unrecoverable_reverting_error_message_area_new (const gchar  *uri,
 
 	g_return_val_if_fail (uri != NULL, NULL);
 	g_return_val_if_fail (error != NULL, NULL);
-	g_return_val_if_fail ((error->domain == PLUMA_DOCUMENT_ERROR) || 
+	g_return_val_if_fail ((error->domain == PLUMA_DOCUMENT_ERROR) ||
 			      (error->domain == G_IO_ERROR), NULL);
 
 	full_formatted_uri = pluma_utils_uri_for_display (uri);
@@ -394,8 +394,8 @@ pluma_unrecoverable_reverting_error_message_area_new (const gchar  *uri,
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri, 
-								MAX_URI_IN_DIALOG_LENGTH);								
+	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
 	uri_for_display = g_markup_printf_escaped ("<i>%s</i>", temp_uri_for_display);
@@ -444,8 +444,8 @@ create_combo_box (GtkWidget *message_area, GtkWidget *vbox)
 	g_free (label_markup);
 	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
 	menu = pluma_encodings_combo_box_new (TRUE);
-	g_object_set_data (G_OBJECT (message_area), 
-			   "pluma-message-area-encoding-menu", 
+	g_object_set_data (G_OBJECT (message_area),
+			   "pluma-message-area-encoding-menu",
 			   menu);
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), menu);
@@ -518,10 +518,10 @@ create_conversion_error_message_area (const gchar *primary_text,
 	gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
 	gtk_widget_set_halign (image, GTK_ALIGN_CENTER);
 	gtk_widget_set_valign (image, GTK_ALIGN_START);
-  
+
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
-	
+
 	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
 	primary_label = gtk_label_new (primary_markup);
 	g_free (primary_markup);
@@ -567,13 +567,13 @@ pluma_io_loading_error_message_area_new (const gchar         *uri,
 	GtkWidget *message_area;
 	gboolean edit_anyway = FALSE;
 	gboolean convert_error = FALSE;
-	
+
 	g_return_val_if_fail (uri != NULL, NULL);
 	g_return_val_if_fail (error != NULL, NULL);
 	g_return_val_if_fail ((error->domain == G_CONVERT_ERROR) ||
 			      (error->domain == PLUMA_DOCUMENT_ERROR) ||
 			      (error->domain == G_IO_ERROR), NULL);
-	
+
 	full_formatted_uri = pluma_utils_uri_for_display (uri);
 
 	/* Truncate the URI so it doesn't get insanely wide. Note that even
@@ -583,7 +583,7 @@ pluma_io_loading_error_message_area_new (const gchar         *uri,
 	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri,
 								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
-	
+
 	uri_for_display = g_markup_printf_escaped ("<i>%s</i>", temp_uri_for_display);
 	g_free (temp_uri_for_display);
 
@@ -626,7 +626,7 @@ pluma_io_loading_error_message_area_new (const gchar         *uri,
 	else if (is_gio_error (error, G_IO_ERROR_INVALID_DATA) && encoding != NULL)
 	{
 		error_message = g_strdup_printf (_("Could not open the file %s using the %s character encoding."),
-						 uri_for_display, 
+						 uri_for_display,
 						 encoding_name);
 		message_details = g_strconcat (_("Please check that you are not trying to open a binary file."), "\n",
 					       _("Select a different character encoding from the menu and try again."), NULL);
@@ -660,7 +660,7 @@ pluma_io_loading_error_message_area_new (const gchar         *uri,
 	g_free (encoding_name);
 	g_free (error_message);
 	g_free (message_details);
-	
+
 	return message_area;
 }
 
@@ -677,35 +677,35 @@ pluma_conversion_error_while_saving_message_area_new (
 	gchar *uri_for_display;
 	gchar *temp_uri_for_display;
 	GtkWidget *message_area;
-	
+
 	g_return_val_if_fail (uri != NULL, NULL);
 	g_return_val_if_fail (error != NULL, NULL);
 	g_return_val_if_fail (error->domain == G_CONVERT_ERROR ||
 	                      error->domain == G_IO_ERROR, NULL);
 	g_return_val_if_fail (encoding != NULL, NULL);
-	
+
 	full_formatted_uri = pluma_utils_uri_for_display (uri);
 
 	/* Truncate the URI so it doesn't get insanely wide. Note that even
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri, 
-								MAX_URI_IN_DIALOG_LENGTH);								
+	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
-	
+
 	uri_for_display = g_markup_printf_escaped ("<i>%s</i>", temp_uri_for_display);
 	g_free (temp_uri_for_display);
 
 	encoding_name = pluma_encoding_to_string (encoding);
-	
+
 	error_message = g_strdup_printf (_("Could not save the file %s using the %s character encoding."),
-					 uri_for_display, 
+					 uri_for_display,
 					 encoding_name);
 	message_details = g_strconcat (_("The document contains one or more characters that cannot be encoded "
 					 "using the specified character encoding."), "\n",
 				       _("Select a different character encoding from the menu and try again."), NULL);
-	
+
 	message_area = create_conversion_error_message_area (
 								error_message,
 								message_details,
@@ -715,7 +715,7 @@ pluma_conversion_error_while_saving_message_area_new (
 	g_free (encoding_name);
 	g_free (error_message);
 	g_free (message_details);
-	
+
 	return message_area;
 }
 
@@ -726,10 +726,10 @@ pluma_conversion_error_message_area_get_encoding (GtkWidget *message_area)
 
 	g_return_val_if_fail (GTK_IS_INFO_BAR (message_area), NULL);
 
-	menu = g_object_get_data (G_OBJECT (message_area), 
-				  "pluma-message-area-encoding-menu");	
+	menu = g_object_get_data (G_OBJECT (message_area),
+				  "pluma-message-area-encoding-menu");
 	g_return_val_if_fail (menu, NULL);
-	
+
 	return pluma_encodings_combo_box_get_selected_encoding
 					(PLUMA_ENCODINGS_COMBO_BOX (menu));
 }
@@ -750,17 +750,17 @@ pluma_file_already_open_warning_message_area_new (const gchar *uri)
 	gchar *full_formatted_uri;
 	gchar *uri_for_display;
 	gchar *temp_uri_for_display;
-	
+
 	full_formatted_uri = pluma_utils_uri_for_display (uri);
 
 	/* Truncate the URI so it doesn't get insanely wide. Note that even
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri, 
-								MAX_URI_IN_DIALOG_LENGTH);								
+	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
-	
+
 	uri_for_display = g_markup_printf_escaped ("<i>%s</i>", temp_uri_for_display);
 	g_free (temp_uri_for_display);
 
@@ -790,7 +790,7 @@ pluma_file_already_open_warning_message_area_new (const gchar *uri)
 
 	primary_text = g_strdup_printf (_("This file (%s) is already open in another pluma window."), uri_for_display);
 	g_free (uri_for_display);
-	
+
 	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
 	g_free (primary_text);
 	primary_label = gtk_label_new (primary_markup);
@@ -851,15 +851,15 @@ pluma_externally_modified_saving_error_message_area_new (
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri, 
-								MAX_URI_IN_DIALOG_LENGTH);								
+	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
 	uri_for_display = g_markup_printf_escaped ("<i>%s</i>", temp_uri_for_display);
 	g_free (temp_uri_for_display);
 
 	message_area = gtk_info_bar_new ();
-	
+
 	info_bar_add_icon_button_with_text (GTK_INFO_BAR (message_area),
 					    _("S_ave Anyway"),
 					    "document-save",
@@ -947,15 +947,15 @@ pluma_no_backup_saving_error_message_area_new (const gchar  *uri,
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri, 
-								MAX_URI_IN_DIALOG_LENGTH);								
+	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
 	uri_for_display = g_markup_printf_escaped ("<i>%s</i>", temp_uri_for_display);
 	g_free (temp_uri_for_display);
 
 	message_area = gtk_info_bar_new ();
-	
+
 	info_bar_add_icon_button_with_text (GTK_INFO_BAR (message_area),
 					    _("S_ave Anyway"),
 					    "document-save",
@@ -1033,7 +1033,7 @@ pluma_unrecoverable_saving_error_message_area_new (const gchar  *uri,
 
 	g_return_val_if_fail (uri != NULL, NULL);
 	g_return_val_if_fail (error != NULL, NULL);
-	g_return_val_if_fail ((error->domain == PLUMA_DOCUMENT_ERROR) || 
+	g_return_val_if_fail ((error->domain == PLUMA_DOCUMENT_ERROR) ||
 			      (error->domain == G_IO_ERROR), NULL);
 
 	full_formatted_uri = pluma_utils_uri_for_display (uri);
@@ -1042,7 +1042,7 @@ pluma_unrecoverable_saving_error_message_area_new (const gchar  *uri,
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri, 
+	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri,
 								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
@@ -1075,7 +1075,7 @@ pluma_unrecoverable_saving_error_message_area_new (const gchar  *uri,
 	}
 	else if (is_gio_error (error, G_IO_ERROR_INVALID_FILENAME))
 	{
-		message_details = g_strdup (_("%s is not a valid location. " 
+		message_details = g_strdup (_("%s is not a valid location. "
 					      "Please check that you typed the "
 					      "location correctly and try again."));
 	}
@@ -1117,10 +1117,10 @@ pluma_unrecoverable_saving_error_message_area_new (const gchar  *uri,
 	}
 	else
 	{
-		parse_error (error, 
-			     &error_message, 
-			     &message_details, 
-			     uri, 
+		parse_error (error,
+			     &error_message,
+			     &message_details,
+			     uri,
 			     uri_for_display);
 	}
 
@@ -1160,7 +1160,7 @@ pluma_externally_modified_message_area_new (const gchar *uri,
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri, 
+	temp_uri_for_display = pluma_utils_str_middle_truncate (full_formatted_uri,
 								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
@@ -1180,7 +1180,7 @@ pluma_externally_modified_message_area_new (const gchar *uri,
 		secondary_text = _("Do you want to reload the file?");
 
 	message_area = gtk_info_bar_new ();
-	
+
 	info_bar_add_icon_button_with_text (GTK_INFO_BAR (message_area),
 					    _("_Reload"),
 					    "view-refresh",

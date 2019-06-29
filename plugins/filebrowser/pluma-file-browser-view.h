@@ -1,5 +1,5 @@
 /*
- * pluma-file-browser-view.h - Pluma plugin providing easy file access 
+ * pluma-file-browser-view.h - Pluma plugin providing easy file access
  * from the sidepanel
  *
  * Copyright (C) 2006 - Jesse van den Kieboom <jesse@icecrew.nl>
@@ -39,22 +39,22 @@ typedef struct _PlumaFileBrowserViewPrivate PlumaFileBrowserViewPrivate;
 
 typedef enum {
 	PLUMA_FILE_BROWSER_VIEW_CLICK_POLICY_DOUBLE,
-	PLUMA_FILE_BROWSER_VIEW_CLICK_POLICY_SINGLE	
+	PLUMA_FILE_BROWSER_VIEW_CLICK_POLICY_SINGLE
 } PlumaFileBrowserViewClickPolicy;
 
-struct _PlumaFileBrowserView 
+struct _PlumaFileBrowserView
 {
 	GtkTreeView parent;
 
 	PlumaFileBrowserViewPrivate *priv;
 };
 
-struct _PlumaFileBrowserViewClass 
+struct _PlumaFileBrowserViewClass
 {
 	GtkTreeViewClass parent_class;
 
 	/* Signals */
-	void (*error) (PlumaFileBrowserView * filetree, 
+	void (*error) (PlumaFileBrowserView * filetree,
 	               guint code,
 		       gchar const *message);
 	void (*file_activated) (PlumaFileBrowserView * filetree,
@@ -71,7 +71,7 @@ void _pluma_file_browser_view_register_type		(GTypeModule 			* module);
 GtkWidget *pluma_file_browser_view_new			(void);
 void pluma_file_browser_view_set_model			(PlumaFileBrowserView 		* tree_view,
 							 GtkTreeModel 			* model);
-void pluma_file_browser_view_start_rename		(PlumaFileBrowserView 		* tree_view, 
+void pluma_file_browser_view_start_rename		(PlumaFileBrowserView 		* tree_view,
 							 GtkTreeIter 			* iter);
 void pluma_file_browser_view_set_click_policy		(PlumaFileBrowserView 		* tree_view,
 							 PlumaFileBrowserViewClickPolicy  policy);

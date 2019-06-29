@@ -1,13 +1,13 @@
 /*
  * pluma-spell-plugin.c
- * 
- * Copyright (C) 2002-2005 Paolo Maggi 
+ *
+ * Copyright (C) 2002-2005 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2, or (at your option)
  * any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -194,7 +194,7 @@ pluma_spell_plugin_dispose (GObject *object)
 	G_OBJECT_CLASS (pluma_spell_plugin_parent_class)->dispose (object);
 }
 
-static void 
+static void
 set_spell_language_cb (PlumaSpellChecker   *spell,
 		       const PlumaSpellCheckerLanguage *lang,
 		       PlumaDocument 	   *doc)
@@ -278,9 +278,9 @@ get_spell_checker_from_document (PlumaDocument *doc)
 
 		set_language_from_metadata (spell, doc);
 
-		g_object_set_qdata_full (G_OBJECT (doc), 
-					 spell_checker_id, 
-					 spell, 
+		g_object_set_qdata_full (G_OBJECT (doc),
+					 spell_checker_id,
+					 spell,
 					 (GDestroyNotify) g_object_unref);
 
 		g_signal_connect (spell,
@@ -327,24 +327,24 @@ update_current (PlumaDocument *doc,
 	range = get_check_range (doc);
 	g_return_if_fail (range != NULL);
 
-	gtk_text_buffer_get_iter_at_offset (GTK_TEXT_BUFFER (doc), 
+	gtk_text_buffer_get_iter_at_offset (GTK_TEXT_BUFFER (doc),
 					    &iter, current);
 
 	if (!gtk_text_iter_inside_word (&iter))
-	{	
+	{
 		/* if we're not inside a word,
 		 * we must be in some spaces.
 		 * skip forward to the beginning of the next word. */
 		if (!gtk_text_iter_is_end (&iter))
 		{
 			gtk_text_iter_forward_word_end (&iter);
-			gtk_text_iter_backward_word_start (&iter);	
+			gtk_text_iter_backward_word_start (&iter);
 		}
 	}
 	else
 	{
 		if (!gtk_text_iter_starts_word (&iter))
-			gtk_text_iter_backward_word_start (&iter);	
+			gtk_text_iter_backward_word_start (&iter);
 	}
 
 	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (doc),
@@ -352,7 +352,7 @@ update_current (PlumaDocument *doc,
 					  range->end_mark);
 
 	if (gtk_text_iter_compare (&end_iter, &iter) < 0)
-	{	
+	{
 		gtk_text_buffer_move_mark (GTK_TEXT_BUFFER (doc),
 					   range->current_mark,
 					   &end_iter);
@@ -394,9 +394,9 @@ set_check_range (PlumaDocument *doc,
 		range->current_mark = gtk_text_buffer_create_mark (GTK_TEXT_BUFFER (doc),
 				"check_range_current_mark", &iter, TRUE);
 
-		g_object_set_qdata_full (G_OBJECT (doc), 
-				 check_range_id, 
-				 range, 
+		g_object_set_qdata_full (G_OBJECT (doc),
+				 check_range_id,
+				 range,
 				 (GDestroyNotify)g_free);
 	}
 
@@ -455,12 +455,12 @@ get_current_word (PlumaDocument *doc, gint *start, gint *end)
 	range = get_check_range (doc);
 	g_return_val_if_fail (range != NULL, NULL);
 
-	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (doc), 
+	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (doc),
 			&end_iter, range->end_mark);
 
 	range_end = gtk_text_iter_get_offset (&end_iter);
 
-	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (doc), 
+	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (doc),
 			&current_iter, range->current_mark);
 
 	end_iter = current_iter;
@@ -501,7 +501,7 @@ goto_next_word (PlumaDocument *doc)
 	range = get_check_range (doc);
 	g_return_val_if_fail (range != NULL, FALSE);
 
-	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (doc), 
+	gtk_text_buffer_get_iter_at_mark (GTK_TEXT_BUFFER (doc),
 					  &current_iter,
 					  range->current_mark);
 	gtk_text_buffer_get_end_iter (GTK_TEXT_BUFFER (doc), &end_iter);
@@ -607,7 +607,7 @@ ignore_cb (PlumaSpellCheckerDialog *dlg,
 	if (word == NULL)
 	{
 		pluma_spell_checker_dialog_set_completed (dlg);
-		
+
 		return;
 	}
 
@@ -1076,7 +1076,7 @@ update_ui (PlumaSpellPlugin *plugin)
 		{
 			action = gtk_action_group_get_action (data->action_group,
 							      "AutoSpell");
-	
+
 			g_signal_handlers_block_by_func (action, auto_spell_cb,
 							 plugin);
 			set_auto_spell (window, doc, autospell);
@@ -1127,7 +1127,7 @@ set_auto_spell_from_metadata (PlumaSpellPlugin *plugin,
 	if (active_str)
 	{
 		active = *active_str == '1';
-	
+
 		g_free (active_str);
 	}
 
@@ -1141,7 +1141,7 @@ set_auto_spell_from_metadata (PlumaSpellPlugin *plugin,
 	if (active_doc == doc && action_group != NULL)
 	{
 		GtkAction *action;
-		
+
 		action = gtk_action_group_get_action (action_group,
 						      "AutoSpell");
 
@@ -1256,7 +1256,7 @@ tab_removed_cb (PlumaWindow *window,
 	PlumaDocument *doc;
 
 	doc = pluma_tab_get_document (tab);
-	
+
 	g_signal_handlers_disconnect_by_func (doc, on_document_loaded, plugin);
 	g_signal_handlers_disconnect_by_func (doc, on_document_saved, plugin);
 }
@@ -1279,13 +1279,13 @@ pluma_spell_plugin_activate (PeasActivatable *activatable)
 	manager = pluma_window_get_ui_manager (window);
 
 	data->action_group = gtk_action_group_new ("PlumaSpellPluginActions");
-	gtk_action_group_set_translation_domain (data->action_group, 
+	gtk_action_group_set_translation_domain (data->action_group,
 						 GETTEXT_PACKAGE);
 	gtk_action_group_add_actions (data->action_group,
 					   action_entries,
 					   G_N_ELEMENTS (action_entries),
 					   plugin);
-	gtk_action_group_add_toggle_actions (data->action_group, 
+	gtk_action_group_add_toggle_actions (data->action_group,
 					     toggle_action_entries,
 					     G_N_ELEMENTS (toggle_action_entries),
 					     plugin);
@@ -1295,7 +1295,7 @@ pluma_spell_plugin_activate (PeasActivatable *activatable)
 	data->ui_id = gtk_ui_manager_new_merge_id (manager);
 
 	data->message_cid = gtk_statusbar_get_context_id
-			(GTK_STATUSBAR (pluma_window_get_statusbar (window)), 
+			(GTK_STATUSBAR (pluma_window_get_statusbar (window)),
 			 "spell_plugin_message");
 
 	gtk_ui_manager_add_ui (manager,
@@ -1303,23 +1303,23 @@ pluma_spell_plugin_activate (PeasActivatable *activatable)
 			       MENU_PATH,
 			       "CheckSpell",
 			       "CheckSpell",
-			       GTK_UI_MANAGER_MENUITEM, 
+			       GTK_UI_MANAGER_MENUITEM,
 			       FALSE);
 
-	gtk_ui_manager_add_ui (manager, 
-			       data->ui_id, 
+	gtk_ui_manager_add_ui (manager,
+			       data->ui_id,
 			       MENU_PATH,
-			       "AutoSpell", 
 			       "AutoSpell",
-			       GTK_UI_MANAGER_MENUITEM, 
+			       "AutoSpell",
+			       GTK_UI_MANAGER_MENUITEM,
 			       FALSE);
 
-	gtk_ui_manager_add_ui (manager, 
-			       data->ui_id, 
+	gtk_ui_manager_add_ui (manager,
+			       data->ui_id,
 			       MENU_PATH,
-			       "ConfigSpell", 
 			       "ConfigSpell",
-			       GTK_UI_MANAGER_MENUITEM, 
+			       "ConfigSpell",
+			       GTK_UI_MANAGER_MENUITEM,
 			       FALSE);
 
 	update_ui (plugin);

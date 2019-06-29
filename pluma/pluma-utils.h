@@ -18,14 +18,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -65,13 +65,13 @@ GtkWidget	*pluma_gtk_button_new_with_icon		(const gchar *label,
 
 GtkWidget	*pluma_dialog_add_button		(GtkDialog   *dialog,
 							 const gchar *text,
-							 const gchar *icon_name, 
+							 const gchar *icon_name,
 							 gint         response_id);
 
 gchar		*pluma_utils_escape_underscores		(const gchar *text,
 							 gssize       length);
 
-gchar		*pluma_utils_str_middle_truncate	(const gchar *string, 
+gchar		*pluma_utils_str_middle_truncate	(const gchar *string,
 							 guint        truncate_length);
 
 gchar		*pluma_utils_str_end_truncate		(const gchar *string,
@@ -131,7 +131,7 @@ gboolean         pluma_utils_file_has_parent            (GFile *gfile);
 /* Return NULL if str is not a valid URI and/or filename */
 gchar		*pluma_utils_make_canonical_uri_from_shell_arg
 							(const gchar *str);
-		
+
 gchar		*pluma_utils_uri_for_display 	        (const gchar *uri);
 gchar           *pluma_utils_basename_for_display	(const gchar *uri);
 gboolean	 pluma_utils_decode_uri 		(const gchar *uri,

@@ -1,5 +1,5 @@
 /*
- * pluma-file-bookmarks-store.h - Pluma plugin providing easy file access 
+ * pluma-file-bookmarks-store.h - Pluma plugin providing easy file access
  * from the sidepanel
  *
  * Copyright (C) 2006 - Jesse van den Kieboom <jesse@icecrew.nl>
@@ -37,7 +37,7 @@ typedef struct _PlumaFileBookmarksStore        PlumaFileBookmarksStore;
 typedef struct _PlumaFileBookmarksStoreClass   PlumaFileBookmarksStoreClass;
 typedef struct _PlumaFileBookmarksStorePrivate PlumaFileBookmarksStorePrivate;
 
-enum 
+enum
 {
 	PLUMA_FILE_BOOKMARKS_STORE_COLUMN_ICON = 0,
 	PLUMA_FILE_BOOKMARKS_STORE_COLUMN_NAME,
@@ -46,7 +46,7 @@ enum
 	PLUMA_FILE_BOOKMARKS_STORE_N_COLUMNS
 };
 
-enum 
+enum
 {
 	PLUMA_FILE_BOOKMARKS_STORE_NONE            	= 0,
 	PLUMA_FILE_BOOKMARKS_STORE_IS_SEPARATOR   	= 1 << 0,  /* Separator item */
@@ -64,14 +64,14 @@ enum
 	PLUMA_FILE_BOOKMARKS_STORE_IS_LOCAL_BOOKMARK	= 1 << 12  /* A local gtk bookmark */
 };
 
-struct _PlumaFileBookmarksStore 
+struct _PlumaFileBookmarksStore
 {
 	GtkTreeStore parent;
 
 	PlumaFileBookmarksStorePrivate *priv;
 };
 
-struct _PlumaFileBookmarksStoreClass 
+struct _PlumaFileBookmarksStoreClass
 {
 	GtkTreeStoreClass parent_class;
 };

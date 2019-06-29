@@ -3,7 +3,7 @@
  * This file is part of pluma
  *
  * Copyright (C) 2002 Ximian, Inc.
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * Author: Federico Mena-Quintero <federico@ximian.com>
  *
@@ -19,16 +19,16 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
 
 /*
- * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
+ * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
  * See the ChangeLog files for a list of changes.
  *
- * $Id 
+ * $Id
  */
 
 #ifndef __PLUMA_SESSION_H__

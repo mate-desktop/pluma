@@ -1,5 +1,5 @@
 /*
- * pluma-file-browser-error.h - Pluma plugin providing easy file access 
+ * pluma-file-browser-error.h - Pluma plugin providing easy file access
  * from the sidepanel
  *
  * Copyright (C) 2006 - Jesse van den Kieboom <jesse@icecrew.nl>

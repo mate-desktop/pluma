@@ -2,7 +2,7 @@
  * pluma-tab.h
  * This file is part of pluma
  *
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -43,13 +43,13 @@ typedef enum
 	PLUMA_TAB_STATE_NORMAL = 0,
 	PLUMA_TAB_STATE_LOADING,
 	PLUMA_TAB_STATE_REVERTING,
-	PLUMA_TAB_STATE_SAVING,	
+	PLUMA_TAB_STATE_SAVING,
 	PLUMA_TAB_STATE_PRINTING,
 	PLUMA_TAB_STATE_PRINT_PREVIEWING,
 	PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW,
 	PLUMA_TAB_STATE_GENERIC_NOT_EDITABLE,
 	PLUMA_TAB_STATE_LOADING_ERROR,
-	PLUMA_TAB_STATE_REVERTING_ERROR,	
+	PLUMA_TAB_STATE_REVERTING_ERROR,
 	PLUMA_TAB_STATE_SAVING_ERROR,
 	PLUMA_TAB_STATE_GENERIC_ERROR,
 	PLUMA_TAB_STATE_CLOSING,
@@ -75,7 +75,7 @@ typedef struct _PlumaTabPrivate PlumaTabPrivate;
  */
 typedef struct _PlumaTab PlumaTab;
 
-struct _PlumaTab 
+struct _PlumaTab
 {
 	GtkBox vbox;
 
@@ -88,7 +88,7 @@ struct _PlumaTab
  */
 typedef struct _PlumaTabClass PlumaTabClass;
 
-struct _PlumaTabClass 
+struct _PlumaTabClass
 {
 	GtkBoxClass parent_class;
 };
@@ -107,18 +107,18 @@ PlumaTab	*pluma_tab_get_from_document	(PlumaDocument       *doc);
 
 PlumaTabState	 pluma_tab_get_state		(PlumaTab	     *tab);
 
-gboolean	 pluma_tab_get_auto_save_enabled	
-						(PlumaTab            *tab); 
-
-void		 pluma_tab_set_auto_save_enabled	
-						(PlumaTab            *tab, 
-						 gboolean            enable);
-
-gint		 pluma_tab_get_auto_save_interval 
+gboolean	 pluma_tab_get_auto_save_enabled
 						(PlumaTab            *tab);
 
-void		 pluma_tab_set_auto_save_interval 
-						(PlumaTab            *tab, 
+void		 pluma_tab_set_auto_save_enabled
+						(PlumaTab            *tab,
+						 gboolean            enable);
+
+gint		 pluma_tab_get_auto_save_interval
+						(PlumaTab            *tab);
+
+void		 pluma_tab_set_auto_save_interval
+						(PlumaTab            *tab,
 						 gint                interval);
 
 void		 pluma_tab_set_info_bar		(PlumaTab            *tab,
@@ -128,7 +128,7 @@ void		 pluma_tab_set_info_bar		(PlumaTab            *tab,
  */
 GtkWidget 	*_pluma_tab_new 		(void);
 
-/* Whether create is TRUE, creates a new empty document if location does 
+/* Whether create is TRUE, creates a new empty document if location does
    not refer to an existing file */
 GtkWidget	*_pluma_tab_new_from_uri	(const gchar         *uri,
 						 const PlumaEncoding *encoding,

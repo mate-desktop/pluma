@@ -2,7 +2,7 @@
  * pluma-tab.c
  * This file is part of pluma
  *
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  */
 
 #ifdef HAVE_CONFIG_H
@@ -52,7 +52,7 @@
 struct _PlumaTabPrivate
 {
 	PlumaTabState	        state;
-	
+
 	GtkWidget	       *view;
 	GtkWidget	       *view_scrolled_window;
 
@@ -67,7 +67,7 @@ struct _PlumaTabPrivate
 	/* tmp data for loading */
 	gint                    tmp_line_pos;
 	const PlumaEncoding    *tmp_encoding;
-	
+
 	GTimer 		       *timer;
 	guint		        times_called;
 
@@ -75,7 +75,7 @@ struct _PlumaTabPrivate
 
         gint                    auto_save_interval;
         guint                   auto_save_timeout;
-        
+
 	gint	                not_editable : 1;
 	gint                    auto_save : 1;
 
@@ -107,7 +107,7 @@ install_auto_save_timeout (PlumaTab *tab)
 	g_return_if_fail (tab->priv->auto_save_timeout <= 0);
 	g_return_if_fail (tab->priv->auto_save);
 	g_return_if_fail (tab->priv->auto_save_interval > 0);
-	
+
 	g_return_if_fail (tab->priv->state != PLUMA_TAB_STATE_LOADING);
 	g_return_if_fail (tab->priv->state != PLUMA_TAB_STATE_SAVING);
 	g_return_if_fail (tab->priv->state != PLUMA_TAB_STATE_REVERTING);
@@ -130,7 +130,7 @@ install_auto_save_timeout_if_needed (PlumaTab *tab)
 	PlumaDocument *doc;
 
 	pluma_debug (DEBUG_TAB);
-	
+
 	g_return_val_if_fail (tab->priv->auto_save_timeout <= 0, FALSE);
 	g_return_val_if_fail ((tab->priv->state == PLUMA_TAB_STATE_NORMAL) ||
 			      (tab->priv->state == PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW) ||
@@ -141,15 +141,15 @@ install_auto_save_timeout_if_needed (PlumaTab *tab)
 
 	doc = pluma_tab_get_document (tab);
 
- 	if (tab->priv->auto_save && 
+ 	if (tab->priv->auto_save &&
  	    !pluma_document_is_untitled (doc) &&
  	    !pluma_document_get_readonly (doc))
- 	{ 
+ 	{
  		install_auto_save_timeout (tab);
- 		
+
  		return TRUE;
  	}
- 	
+
  	return FALSE;
 }
 
@@ -159,9 +159,9 @@ remove_auto_save_timeout (PlumaTab *tab)
 	pluma_debug (DEBUG_TAB);
 
 	/* FIXME: check sugli stati */
-	
+
 	g_return_if_fail (tab->priv->auto_save_timeout > 0);
-	
+
 	g_source_remove (tab->priv->auto_save_timeout);
 	tab->priv->auto_save_timeout = 0;
 }
@@ -183,7 +183,7 @@ pluma_tab_get_property (GObject    *object,
 		case PROP_STATE:
 			g_value_set_enum (value,
 					  pluma_tab_get_state (tab));
-			break;			
+			break;
 		case PROP_AUTO_SAVE:
 			g_value_set_boolean (value,
 					     pluma_tab_get_auto_save_enabled (tab));
@@ -194,7 +194,7 @@ pluma_tab_get_property (GObject    *object,
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-			break;			
+			break;
 	}
 }
 
@@ -218,7 +218,7 @@ pluma_tab_set_property (GObject      *object,
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-			break;			
+			break;
 	}
 }
 
@@ -244,7 +244,7 @@ pluma_tab_finalize (GObject *object)
 	G_OBJECT_CLASS (pluma_tab_parent_class)->finalize (object);
 }
 
-static void 
+static void
 pluma_tab_class_init (PlumaTabClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -252,7 +252,7 @@ pluma_tab_class_init (PlumaTabClass *klass)
 	object_class->finalize = pluma_tab_finalize;
 	object_class->get_property = pluma_tab_get_property;
 	object_class->set_property = pluma_tab_set_property;
-	
+
 	g_object_class_install_property (object_class,
 					 PROP_NAME,
 					 g_param_spec_string ("name",
@@ -307,7 +307,7 @@ PlumaTabState
 pluma_tab_get_state (PlumaTab *tab)
 {
 	g_return_val_if_fail (PLUMA_IS_TAB (tab), PLUMA_TAB_STATE_NORMAL);
-	
+
 	return tab->priv->state;
 }
 
@@ -411,27 +411,27 @@ pluma_tab_set_state (PlumaTab      *tab,
 	set_cursor_according_to_state (GTK_TEXT_VIEW (tab->priv->view),
 				       state);
 
-	g_object_notify (G_OBJECT (tab), "state");		
+	g_object_notify (G_OBJECT (tab), "state");
 }
 
-static void 
+static void
 document_uri_notify_handler (PlumaDocument *document,
 			     GParamSpec    *pspec,
 			     PlumaTab      *tab)
 {
 	pluma_debug (DEBUG_TAB);
-	
+
 	/* Notify the change in the URI */
 	g_object_notify (G_OBJECT (tab), "name");
 }
 
-static void 
+static void
 document_shortname_notify_handler (PlumaDocument *document,
 				   GParamSpec    *pspec,
 				   PlumaTab      *tab)
 {
 	pluma_debug (DEBUG_TAB);
-	
+
 	/* Notify the change in the shortname */
 	g_object_notify (G_OBJECT (tab), "name");
 }
@@ -462,9 +462,9 @@ set_message_area (PlumaTab  *tab,
 			    tab->priv->message_area,
 			    FALSE,
 			    FALSE,
-			    0);		
+			    0);
 
-	g_object_add_weak_pointer (G_OBJECT (tab->priv->message_area), 
+	g_object_add_weak_pointer (G_OBJECT (tab->priv->message_area),
 				   (gpointer *)&tab->priv->message_area);
 }
 
@@ -478,7 +478,7 @@ remove_tab (PlumaTab *tab)
 	pluma_notebook_remove_tab (notebook, tab);
 }
 
-static void 
+static void
 io_loading_error_message_area_response (GtkWidget        *message_area,
 					gint              response_id,
 					PlumaTab         *tab)
@@ -538,26 +538,26 @@ io_loading_error_message_area_response (GtkWidget        *message_area,
 	g_free (uri);
 }
 
-static void 
+static void
 file_already_open_warning_message_area_response (GtkWidget   *message_area,
 						 gint         response_id,
 						 PlumaTab    *tab)
 {
 	PlumaView *view;
-	
+
 	view = pluma_tab_get_view (tab);
-	
+
 	if (response_id == GTK_RESPONSE_YES)
 	{
 		tab->priv->not_editable = FALSE;
-		
+
 		gtk_text_view_set_editable (GTK_TEXT_VIEW (view),
 					    TRUE);
 	}
 
 	gtk_widget_destroy (message_area);
 
-	gtk_widget_grab_focus (GTK_WIDGET (view));	
+	gtk_widget_grab_focus (GTK_WIDGET (view));
 }
 
 static void
@@ -566,10 +566,10 @@ load_cancelled (GtkWidget        *area,
                 PlumaTab         *tab)
 {
 	g_return_if_fail (PLUMA_IS_PROGRESS_MESSAGE_AREA (tab->priv->message_area));
-	
+
 	g_object_ref (tab);
 	pluma_document_load_cancel (pluma_tab_get_document (tab));
-	g_object_unref (tab);	
+	g_object_unref (tab);
 }
 
 static gboolean
@@ -580,13 +580,13 @@ scroll_to_cursor (PlumaTab *tab)
 	return FALSE;
 }
 
-static void 
+static void
 unrecoverable_reverting_error_message_area_response (GtkWidget        *message_area,
 						     gint              response_id,
 						     PlumaTab         *tab)
 {
 	PlumaView *view;
-	
+
 	pluma_tab_set_state (tab,
 			     PLUMA_TAB_STATE_NORMAL);
 
@@ -595,8 +595,8 @@ unrecoverable_reverting_error_message_area_response (GtkWidget        *message_a
 	view = pluma_tab_get_view (tab);
 
 	gtk_widget_grab_focus (GTK_WIDGET (view));
-	
-	install_auto_save_timeout_if_needed (tab);	
+
+	install_auto_save_timeout_if_needed (tab);
 }
 
 #define MAX_MSG_LENGTH 100
@@ -617,7 +617,7 @@ show_loading_message_area (PlumaTab *tab)
 		return;
 
 	pluma_debug (DEBUG_TAB);
-		
+
 	doc = pluma_tab_get_document (tab);
 	g_return_if_fail (doc != NULL);
 
@@ -653,7 +653,7 @@ show_loading_message_area (PlumaTab *tab)
 			 * we have a title long 99 + 20, but I think it's a rare enough
 			 * case to be acceptable. It's justa darn title afterall :)
 			 */
-			dirname = pluma_utils_str_middle_truncate (str, 
+			dirname = pluma_utils_str_middle_truncate (str,
 								   MAX (20, MAX_MSG_LENGTH - len));
 			g_free (str);
 		}
@@ -676,10 +676,10 @@ show_loading_message_area (PlumaTab *tab)
 		}
 		else
 		{
-			msg = g_strdup_printf (_("Reverting %s"), 
+			msg = g_strdup_printf (_("Reverting %s"),
 					       name_markup);
 		}
-		
+
 		area = pluma_progress_message_area_new ("document-revert",
 							msg,
 							TRUE);
@@ -699,7 +699,7 @@ show_loading_message_area (PlumaTab *tab)
 		}
 		else
 		{
-			msg = g_strdup_printf (_("Loading %s"), 
+			msg = g_strdup_printf (_("Loading %s"),
 					       name_markup);
 		}
 
@@ -712,7 +712,7 @@ show_loading_message_area (PlumaTab *tab)
 			  "response",
 			  G_CALLBACK (load_cancelled),
 			  tab);
-						 
+
 	gtk_widget_show (area);
 
 	set_message_area (tab, area);
@@ -737,12 +737,12 @@ show_saving_message_area (PlumaTab *tab)
 	gint len;
 
 	g_return_if_fail (tab->priv->tmp_save_uri != NULL);
-	
+
 	if (tab->priv->message_area != NULL)
 		return;
-	
+
 	pluma_debug (DEBUG_TAB);
-		
+
 	doc = pluma_tab_get_document (tab);
 	g_return_if_fail (doc != NULL);
 
@@ -755,7 +755,7 @@ show_saving_message_area (PlumaTab *tab)
 	 */
 	if (len > MAX_MSG_LENGTH)
 	{
-		from = pluma_utils_str_middle_truncate (short_name, 
+		from = pluma_utils_str_middle_truncate (short_name,
 							MAX_MSG_LENGTH);
 		g_free (short_name);
 	}
@@ -767,10 +767,10 @@ show_saving_message_area (PlumaTab *tab)
 
 		to = pluma_utils_uri_for_display (tab->priv->tmp_save_uri);
 
-		str = pluma_utils_str_middle_truncate (to, 
+		str = pluma_utils_str_middle_truncate (to,
 						       MAX (20, MAX_MSG_LENGTH - len));
 		g_free (to);
-			
+
 		to = str;
 	}
 
@@ -817,12 +817,12 @@ message_area_set_progress (PlumaTab *tab,
 	pluma_debug_message (DEBUG_TAB, "%" G_GUINT64_FORMAT "/%" G_GUINT64_FORMAT, size, total_size);
 
 	g_return_if_fail (PLUMA_IS_PROGRESS_MESSAGE_AREA (tab->priv->message_area));
-	
+
 	if (total_size == 0)
 	{
 		if (size != 0)
 			pluma_progress_message_area_pulse (
-					PLUMA_PROGRESS_MESSAGE_AREA (tab->priv->message_area));	
+					PLUMA_PROGRESS_MESSAGE_AREA (tab->priv->message_area));
 		else
 			pluma_progress_message_area_set_fraction (
 				PLUMA_PROGRESS_MESSAGE_AREA (tab->priv->message_area),
@@ -836,7 +836,7 @@ message_area_set_progress (PlumaTab *tab,
 
 		pluma_progress_message_area_set_fraction (
 				PLUMA_PROGRESS_MESSAGE_AREA (tab->priv->message_area),
-				frac);		
+				frac);
 	}
 }
 
@@ -919,7 +919,7 @@ document_loaded (PlumaDocument *document,
 		    error->code == G_IO_ERROR_CANCELLED)
 		{
 			/* remove the tab, but in an idle handler, since
-			 * we are in the handler of doc loaded and we 
+			 * we are in the handler of doc loaded and we
 			 * don't want doc and tab to be finalized now.
 			 */
 			g_idle_add ((GSourceFunc) remove_tab_idle, tab);
@@ -943,7 +943,7 @@ document_loaded (PlumaDocument *document,
 			else
 			{
 				g_return_if_fail (tab->priv->state == PLUMA_TAB_STATE_REVERTING_ERROR);
-				
+
 				emsg = pluma_unrecoverable_reverting_error_message_area_new (uri,
 											     error);
 
@@ -1019,7 +1019,7 @@ document_loaded (PlumaDocument *document,
 		for (l = all_documents; l != NULL; l = g_list_next (l))
 		{
 			PlumaDocument *d = PLUMA_DOCUMENT (l->data);
-			
+
 			if (d != document)
 			{
 				GFile *loc;
@@ -1050,7 +1050,7 @@ document_loaded (PlumaDocument *document,
 			    		g_object_unref (loc);
 			    		break;
 			    	}
-			    	
+
 			    	if (loc != NULL)
 					g_object_unref (loc);
 			}
@@ -1059,7 +1059,7 @@ document_loaded (PlumaDocument *document,
 		g_list_free (all_documents);
 
 		pluma_tab_set_state (tab, PLUMA_TAB_STATE_NORMAL);
-		
+
 		install_auto_save_timeout_if_needed (tab);
 
 		tab->priv->ask_if_externally_modified = TRUE;
@@ -1115,32 +1115,32 @@ end_saving (PlumaTab *tab)
 	g_free (tab->priv->tmp_save_uri);
 	tab->priv->tmp_save_uri = NULL;
 	tab->priv->tmp_encoding = NULL;
-	
+
 	install_auto_save_timeout_if_needed (tab);
 }
 
-static void 
+static void
 unrecoverable_saving_error_message_area_response (GtkWidget        *message_area,
 						  gint              response_id,
 						  PlumaTab         *tab)
 {
 	PlumaView *view;
-	
+
 	if (tab->priv->print_preview != NULL)
 		pluma_tab_set_state (tab, PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW);
 	else
 		pluma_tab_set_state (tab, PLUMA_TAB_STATE_NORMAL);
 
 	end_saving (tab);
-	
+
 	set_message_area (tab, NULL);
 
 	view = pluma_tab_get_view (tab);
 
-	gtk_widget_grab_focus (GTK_WIDGET (view));	
+	gtk_widget_grab_focus (GTK_WIDGET (view));
 }
 
-static void 
+static void
 no_backup_error_message_area_response (GtkWidget        *message_area,
 				       gint              response_id,
 				       PlumaTab         *tab)
@@ -1163,7 +1163,7 @@ no_backup_error_message_area_response (GtkWidget        *message_area,
 		tab->priv->save_flags |= PLUMA_DOCUMENT_SAVE_IGNORE_BACKUP;
 
 		g_return_if_fail (tab->priv->auto_save_timeout <= 0);
-		
+
 		/* Force saving */
 		pluma_document_save (doc, tab->priv->save_flags);
 	}
@@ -1186,7 +1186,7 @@ externally_modified_error_message_area_response (GtkWidget        *message_area,
 
 		doc = pluma_tab_get_document (tab);
 		g_return_if_fail (PLUMA_IS_DOCUMENT (doc));
-		
+
 		set_message_area (tab, NULL);
 
 		g_return_if_fail (tab->priv->tmp_save_uri != NULL);
@@ -1195,21 +1195,21 @@ externally_modified_error_message_area_response (GtkWidget        *message_area,
 		pluma_tab_set_state (tab, PLUMA_TAB_STATE_SAVING);
 
 		g_return_if_fail (tab->priv->auto_save_timeout <= 0);
-		
+
 		/* ignore mtime should not be persisted in save flags across saves */
 
 		/* Force saving */
 		pluma_document_save (doc, tab->priv->save_flags | PLUMA_DOCUMENT_SAVE_IGNORE_MTIME);
 	}
 	else
-	{		
+	{
 		unrecoverable_saving_error_message_area_response (message_area,
 								  response_id,
 								  tab);
 	}
 }
 
-static void 
+static void
 recoverable_saving_error_message_area_response (GtkWidget        *message_area,
 						gint              response_id,
 						PlumaTab         *tab)
@@ -1218,11 +1218,11 @@ recoverable_saving_error_message_area_response (GtkWidget        *message_area,
 
 	doc = pluma_tab_get_document (tab);
 	g_return_if_fail (PLUMA_IS_DOCUMENT (doc));
-	
+
 	if (response_id == GTK_RESPONSE_OK)
 	{
 		const PlumaEncoding *encoding;
-		
+
 		encoding = pluma_conversion_error_message_area_get_encoding (
 									GTK_WIDGET (message_area));
 
@@ -1231,22 +1231,22 @@ recoverable_saving_error_message_area_response (GtkWidget        *message_area,
 		set_message_area (tab, NULL);
 
 		g_return_if_fail (tab->priv->tmp_save_uri != NULL);
-				
+
 		pluma_tab_set_state (tab, PLUMA_TAB_STATE_SAVING);
-			
+
 		tab->priv->tmp_encoding = encoding;
 
 		pluma_debug_message (DEBUG_TAB, "Force saving with URI '%s'", tab->priv->tmp_save_uri);
-			 
+
 		g_return_if_fail (tab->priv->auto_save_timeout <= 0);
-		
+
 		pluma_document_save_as (doc,
 					tab->priv->tmp_save_uri,
 					tab->priv->tmp_encoding,
 					tab->priv->save_flags);
 	}
 	else
-	{		
+	{
 		unrecoverable_saving_error_message_area_response (message_area,
 								  response_id,
 								  tab);
@@ -1263,25 +1263,25 @@ document_saved (PlumaDocument *document,
 	g_return_if_fail (tab->priv->state == PLUMA_TAB_STATE_SAVING);
 
 	g_return_if_fail (tab->priv->tmp_save_uri != NULL);
-	g_return_if_fail (tab->priv->tmp_encoding != NULL);	
+	g_return_if_fail (tab->priv->tmp_encoding != NULL);
 	g_return_if_fail (tab->priv->auto_save_timeout <= 0);
-	
+
 	g_timer_destroy (tab->priv->timer);
 	tab->priv->timer = NULL;
 	tab->priv->times_called = 0;
-	
+
 	set_message_area (tab, NULL);
-	
+
 	if (error != NULL)
 	{
 		pluma_tab_set_state (tab, PLUMA_TAB_STATE_SAVING_ERROR);
-		
+
 		if (error->domain == PLUMA_DOCUMENT_ERROR &&
 		    error->code == PLUMA_DOCUMENT_ERROR_EXTERNALLY_MODIFIED)
 		{
 			/* This error is recoverable */
 			emsg = pluma_externally_modified_saving_error_message_area_new (
-							tab->priv->tmp_save_uri, 
+							tab->priv->tmp_save_uri,
 							error);
 			g_return_if_fail (emsg != NULL);
 
@@ -1299,7 +1299,7 @@ document_saved (PlumaDocument *document,
 		{
 			/* This error is recoverable */
 			emsg = pluma_no_backup_saving_error_message_area_new (
-							tab->priv->tmp_save_uri, 
+							tab->priv->tmp_save_uri,
 							error);
 			g_return_if_fail (emsg != NULL);
 
@@ -1319,10 +1319,10 @@ document_saved (PlumaDocument *document,
 			_pluma_recent_remove  (PLUMA_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tab))),
 					       tab->priv->tmp_save_uri);
 
-			emsg = pluma_unrecoverable_saving_error_message_area_new (tab->priv->tmp_save_uri, 
+			emsg = pluma_unrecoverable_saving_error_message_area_new (tab->priv->tmp_save_uri,
 								  error);
 			g_return_if_fail (emsg != NULL);
-	
+
 			set_message_area (tab, emsg);
 
 			g_signal_connect (emsg,
@@ -1369,12 +1369,12 @@ document_saved (PlumaDocument *document,
 			pluma_tab_set_state (tab, PLUMA_TAB_STATE_NORMAL);
 
 		tab->priv->ask_if_externally_modified = TRUE;
-			
+
 		end_saving (tab);
 	}
 }
 
-static void 
+static void
 externally_modified_notification_message_area_response (GtkWidget        *message_area,
 							gint              response_id,
 							PlumaTab         *tab)
@@ -1500,7 +1500,7 @@ pluma_tab_init (PlumaTab *tab)
 
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (tab),
 	                                GTK_ORIENTATION_VERTICAL);
-	
+
 	/* Create the scrolled window */
 	sw = gtk_scrolled_window_new (NULL, NULL);
 	tab->priv->view_scrolled_window = sw;
@@ -1535,7 +1535,7 @@ pluma_tab_init (PlumaTab *tab)
 	gtk_box_pack_end (GTK_BOX (tab), sw, TRUE, TRUE, 0);
 	gtk_container_add (GTK_CONTAINER (sw), tab->priv->view);
 	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (sw),
-					     GTK_SHADOW_IN);	
+					     GTK_SHADOW_IN);
 	gtk_widget_show (sw);
 
 	g_signal_connect (doc,
@@ -1584,12 +1584,12 @@ _pluma_tab_new (void)
 	return GTK_WIDGET (g_object_new (PLUMA_TYPE_TAB, NULL));
 }
 
-/* Whether create is TRUE, creates a new empty document if location does 
+/* Whether create is TRUE, creates a new empty document if location does
    not refer to an existing file */
 GtkWidget *
 _pluma_tab_new_from_uri (const gchar         *uri,
 			 const PlumaEncoding *encoding,
-			 gint                 line_pos,			
+			 gint                 line_pos,
 			 gboolean             create)
 {
 	PlumaTab *tab;
@@ -1605,7 +1605,7 @@ _pluma_tab_new_from_uri (const gchar         *uri,
 			 create);
 
 	return GTK_WIDGET (tab);
-}		
+}
 
 /**
  * pluma_tab_get_view:
@@ -1658,23 +1658,23 @@ _pluma_tab_get_name (PlumaTab *tab)
 	if (gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc)))
 	{
 		tab_name = g_strdup_printf ("*%s", docname);
-	} 
-	else 
+	}
+	else
 	{
- #if 0		
-		if (pluma_document_get_readonly (doc)) 
+ #if 0
+		if (pluma_document_get_readonly (doc))
 		{
-			tab_name = g_strdup_printf ("%s [%s]", docname, 
+			tab_name = g_strdup_printf ("%s [%s]", docname,
 						/*Read only*/ _("RO"));
-		} 
-		else 
+		}
+		else
 		{
 			tab_name = g_strdup_printf ("%s", docname);
 		}
 #endif
 		tab_name = g_strdup (docname);
 	}
-	
+
 	g_free (docname);
 	g_free (name);
 
@@ -1707,7 +1707,7 @@ _pluma_tab_get_tooltips	(PlumaTab *tab)
 		gchar *content_type;
 		gchar *mime_type;
 		gchar *content_description;
-		gchar *content_full_description; 
+		gchar *content_full_description;
 		gchar *encoding;
 		const PlumaEncoding *enc;
 
@@ -1719,12 +1719,12 @@ _pluma_tab_get_tooltips	(PlumaTab *tab)
 		case PLUMA_TAB_STATE_REVERTING_ERROR:
 			tip = g_strdup_printf (_("Error reverting file %s"),
 					       ruri_markup);
-			break;			
+			break;
 
 		case PLUMA_TAB_STATE_SAVING_ERROR:
 			tip =  g_strdup_printf (_("Error saving file %s"),
 						ruri_markup);
-			break;			
+			break;
 		default:
 			content_type = pluma_document_get_content_type (doc);
 			mime_type = pluma_document_get_mime_type (doc);
@@ -1733,7 +1733,7 @@ _pluma_tab_get_tooltips	(PlumaTab *tab)
 			if (content_description == NULL)
 				content_full_description = g_strdup (mime_type);
 			else
-				content_full_description = g_strdup_printf ("%s (%s)", 
+				content_full_description = g_strdup_printf ("%s (%s)",
 						content_description, mime_type);
 
 			g_free (content_type);
@@ -1760,9 +1760,9 @@ _pluma_tab_get_tooltips	(PlumaTab *tab)
 			break;
 	}
 
-	g_free (ruri);	
+	g_free (ruri);
 	g_free (ruri_markup);
-	
+
 	return tip;
 }
 
@@ -1772,28 +1772,28 @@ resize_icon (GdkPixbuf *pixbuf,
 {
 	gint width, height;
 
-	width = gdk_pixbuf_get_width (pixbuf); 
+	width = gdk_pixbuf_get_width (pixbuf);
 	height = gdk_pixbuf_get_height (pixbuf);
 
 	/* if the icon is larger than the nominal size, scale down */
-	if (MAX (width, height) > size) 
+	if (MAX (width, height) > size)
 	{
 		GdkPixbuf *scaled_pixbuf;
-		
-		if (width > height) 
+
+		if (width > height)
 		{
 			height = height * size / width;
 			width = size;
-		} 
-		else 
+		}
+		else
 		{
 			width = width * size / height;
 			height = size;
 		}
-		
-		scaled_pixbuf = gdk_pixbuf_scale_simple	(pixbuf, 
-							 width, 
-							 height, 
+
+		scaled_pixbuf = gdk_pixbuf_scale_simple	(pixbuf,
+							 width,
+							 height,
 							 GDK_INTERP_BILINEAR);
 		g_object_unref (pixbuf);
 		pixbuf = scaled_pixbuf;
@@ -1803,21 +1803,21 @@ resize_icon (GdkPixbuf *pixbuf,
 }
 
 static GdkPixbuf *
-get_stock_icon (GtkIconTheme *theme, 
+get_stock_icon (GtkIconTheme *theme,
 		const gchar  *icon_name,
 		gint          size)
 {
 	GdkPixbuf *pixbuf;
-	
+
 	pixbuf = gtk_icon_theme_load_icon (theme, icon_name, size, 0, NULL);
 	if (pixbuf == NULL)
 		return NULL;
-		
+
 	return resize_icon (pixbuf, size);
 }
 
 static GdkPixbuf *
-get_icon (GtkIconTheme *theme, 
+get_icon (GtkIconTheme *theme,
 	  GFile        *location,
 	  gint          size)
 {
@@ -1830,10 +1830,10 @@ get_icon (GtkIconTheme *theme,
 		return get_stock_icon (theme, "text-x-generic", size);
 
 	/* FIXME: Doing a sync stat is bad, this should be fixed */
-	info = g_file_query_info (location, 
-	                          G_FILE_ATTRIBUTE_STANDARD_ICON, 
-	                          G_FILE_QUERY_INFO_NONE, 
-	                          NULL, 
+	info = g_file_query_info (location,
+	                          G_FILE_ATTRIBUTE_STANDARD_ICON,
+	                          G_FILE_QUERY_INFO_NONE,
+	                          NULL,
 	                          NULL);
 	if (info == NULL)
 		return get_stock_icon (theme, "text-x-generic", size);
@@ -1847,17 +1847,17 @@ get_icon (GtkIconTheme *theme,
 	}
 
 	icon_info = gtk_icon_theme_lookup_by_gicon (theme, gicon, size, 0);
-	g_object_unref (info);	
-	
+	g_object_unref (info);
+
 	if (icon_info == NULL)
 		return get_stock_icon (theme, "text-x-generic", size);
-	
+
 	pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
 	g_object_unref (icon_info);
-	
+
 	if (pixbuf == NULL)
 		return get_stock_icon (theme, "text-x-generic", size);
-		
+
 	return resize_icon (pixbuf, size);
 }
 
@@ -1883,33 +1883,33 @@ _pluma_tab_get_icon (PlumaTab *tab)
 	switch (tab->priv->state)
 	{
 		case PLUMA_TAB_STATE_LOADING:
-			pixbuf = get_stock_icon (theme, 
-						 "document-open", 
+			pixbuf = get_stock_icon (theme,
+						 "document-open",
 						 icon_size);
 			break;
 
 		case PLUMA_TAB_STATE_REVERTING:
-			pixbuf = get_stock_icon (theme, 
-						 "document-revert", 
-						 icon_size);						 
+			pixbuf = get_stock_icon (theme,
+						 "document-revert",
+						 icon_size);
 			break;
 
 		case PLUMA_TAB_STATE_SAVING:
-			pixbuf = get_stock_icon (theme, 
-						 "document-save", 
+			pixbuf = get_stock_icon (theme,
+						 "document-save",
 						 icon_size);
 			break;
 
 		case PLUMA_TAB_STATE_PRINTING:
-			pixbuf = get_stock_icon (theme, 
-						 "document-print", 
+			pixbuf = get_stock_icon (theme,
+						 "document-print",
 						 icon_size);
 			break;
 
 		case PLUMA_TAB_STATE_PRINT_PREVIEWING:
-		case PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW:		
-			pixbuf = get_stock_icon (theme, 
-						 "gtk-print-preview", 
+		case PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW:
+			pixbuf = get_stock_icon (theme,
+						 "gtk-print-preview",
 						 icon_size);
 			break;
 
@@ -1917,8 +1917,8 @@ _pluma_tab_get_icon (PlumaTab *tab)
 		case PLUMA_TAB_STATE_REVERTING_ERROR:
 		case PLUMA_TAB_STATE_SAVING_ERROR:
 		case PLUMA_TAB_STATE_GENERIC_ERROR:
-			pixbuf = get_stock_icon (theme, 
-						 "dialog-error", 
+			pixbuf = get_stock_icon (theme,
+						 "dialog-error",
 						 icon_size);
 			break;
 
@@ -1958,11 +1958,11 @@ PlumaTab *
 pluma_tab_get_from_document (PlumaDocument *doc)
 {
 	gpointer res;
-	
+
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), NULL);
-	
+
 	res = g_object_get_data (G_OBJECT (doc), PLUMA_TAB_KEY);
-	
+
 	return (res != NULL) ? PLUMA_TAB (res) : NULL;
 }
 
@@ -2070,11 +2070,11 @@ _pluma_tab_save (PlumaTab *tab)
 
 	/* uri used in error messages, will be freed in document_saved */
 	tab->priv->tmp_save_uri = pluma_document_get_uri (doc);
-	tab->priv->tmp_encoding = pluma_document_get_encoding (doc); 
+	tab->priv->tmp_encoding = pluma_document_get_encoding (doc);
 
 	if (tab->priv->auto_save_timeout > 0)
 		remove_auto_save_timeout (tab);
-		
+
 	pluma_document_save (doc, save_flags);
 }
 
@@ -2084,12 +2084,12 @@ pluma_tab_auto_save (PlumaTab *tab)
 	PlumaDocument *doc;
 
 	pluma_debug (DEBUG_TAB);
-	
+
 	g_return_val_if_fail (tab->priv->tmp_save_uri == NULL, FALSE);
 	g_return_val_if_fail (tab->priv->tmp_encoding == NULL, FALSE);
-	
+
 	doc = pluma_tab_get_document (tab);
-	
+
 	g_return_val_if_fail (!pluma_document_is_untitled (doc), FALSE);
 	g_return_val_if_fail (!pluma_document_get_readonly (doc), FALSE);
 
@@ -2103,7 +2103,7 @@ pluma_tab_auto_save (PlumaTab *tab)
 
 		return TRUE;
 	}
-			
+
 	if ((tab->priv->state != PLUMA_TAB_STATE_NORMAL) &&
 	    (tab->priv->state != PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW))
 	{
@@ -2122,12 +2122,12 @@ pluma_tab_auto_save (PlumaTab *tab)
 	    	/* Returns FALSE so the old timeout is "destroyed" */
 		return FALSE;
 	}
-	
+
 	pluma_tab_set_state (tab, PLUMA_TAB_STATE_SAVING);
 
 	/* uri used in error messages, will be freed in document_saved */
 	tab->priv->tmp_save_uri = pluma_document_get_uri (doc);
-	tab->priv->tmp_encoding = pluma_document_get_encoding (doc); 
+	tab->priv->tmp_encoding = pluma_document_get_encoding (doc);
 
 	/* Set auto_save_timeout to 0 since the timeout is going to be destroyed */
 	tab->priv->auto_save_timeout = 0;
@@ -2137,9 +2137,9 @@ pluma_tab_auto_save (PlumaTab *tab)
 	   error happens while saving, the last backup is not preserved since the user
 	   expressed his willing of saving the file */
 	pluma_document_save (doc, tab->priv->save_flags | PLUMA_DOCUMENT_SAVE_PRESERVE_BACKUP);
-	
+
 	pluma_debug_message (DEBUG_TAB, "Done");
-	
+
 	/* Returns FALSE so the old timeout is "destroyed" */
 	return FALSE;
 }
@@ -2260,7 +2260,7 @@ printing_cb (PlumaPrintJob       *job,
 	     PlumaPrintJobStatus  status,
 	     PlumaTab            *tab)
 {
-	g_return_if_fail (PLUMA_IS_PROGRESS_MESSAGE_AREA (tab->priv->message_area));	
+	g_return_if_fail (PLUMA_IS_PROGRESS_MESSAGE_AREA (tab->priv->message_area));
 
 	gtk_widget_show (tab->priv->message_area);
 
@@ -2383,9 +2383,9 @@ print_preview_destroyed (GtkWidget *preview,
 		 * preview. In this case let us continue whithout changing
 		 * the state and show the document. See bug #352658 */
 		gtk_widget_show (tab->priv->view_scrolled_window);
-		
+
 		g_return_if_fail (tab->priv->state == PLUMA_TAB_STATE_PRINTING);
-	}	
+	}
 }
 #endif
 
@@ -2412,7 +2412,7 @@ show_preview_cb (PlumaPrintJob       *job,
 	g_signal_connect (tab->priv->print_preview,
 			  "destroy",
 			  G_CALLBACK (print_preview_destroyed),
-			  tab);	
+			  tab);
 */
 	pluma_tab_set_state (tab, PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW);
 }
@@ -2425,7 +2425,7 @@ set_print_preview (PlumaTab  *tab,
 {
 	if (tab->priv->print_preview == print_preview)
 		return;
-		
+
 	if (tab->priv->print_preview != NULL)
 		gtk_widget_destroy (tab->priv->print_preview);
 
@@ -2435,7 +2435,7 @@ set_print_preview (PlumaTab  *tab,
 			  tab->priv->print_preview,
 			  TRUE,
 			  TRUE,
-			  0);		
+			  0);
 
 	gtk_widget_grab_focus (tab->priv->print_preview);
 
@@ -2453,17 +2453,17 @@ preview_finished_cb (GtkSourcePrintJob *pjob, PlumaTab *tab)
 
 	g_return_if_fail (PLUMA_IS_PROGRESS_MESSAGE_AREA (tab->priv->message_area));
 	set_message_area (tab, NULL); /* destroy the message area */
-	
+
 	gjob = gtk_source_print_job_get_print_job (pjob);
 
-	preview = pluma_print_job_preview_new (gjob);	
+	preview = pluma_print_job_preview_new (gjob);
  	g_object_unref (gjob);
-	
+
 	set_print_preview (tab, preview);
-	
+
 	gtk_widget_show (preview);
 	g_object_unref (pjob);
-	
+
 	pluma_tab_set_state (tab, PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW);
 }
 
@@ -2500,7 +2500,7 @@ show_printing_message_area (PlumaTab *tab, gboolean preview)
 			  "response",
 			  G_CALLBACK (print_cancelled),
 			  tab);
-	  
+
 	set_message_area (tab, area);
 }
 
@@ -2523,7 +2523,7 @@ pluma_tab_print_or_print_preview (PlumaTab                *tab,
 	is_preview = (print_action == GTK_PRINT_OPERATION_ACTION_PREVIEW);
 
 	tab->priv->print_job = pluma_print_job_new (view);
-	g_object_add_weak_pointer (G_OBJECT (tab->priv->print_job), 
+	g_object_add_weak_pointer (G_OBJECT (tab->priv->print_job),
 				   (gpointer *) &tab->priv->print_job);
 
 	show_printing_message_area (tab, is_preview);
@@ -2567,7 +2567,7 @@ pluma_tab_print_or_print_preview (PlumaTab                *tab,
 	}
 }
 
-void 
+void
 _pluma_tab_print (PlumaTab     *tab)
 {
 	g_return_if_fail (PLUMA_IS_TAB (tab));
@@ -2593,12 +2593,12 @@ _pluma_tab_print_preview (PlumaTab     *tab)
 					  GTK_PRINT_OPERATION_ACTION_PREVIEW);
 }
 
-void 
+void
 _pluma_tab_mark_for_closing (PlumaTab *tab)
 {
 	g_return_if_fail (PLUMA_IS_TAB (tab));
 	g_return_if_fail (tab->priv->state == PLUMA_TAB_STATE_NORMAL);
-	
+
 	pluma_tab_set_state (tab, PLUMA_TAB_STATE_CLOSING);
 }
 
@@ -2629,7 +2629,7 @@ _pluma_tab_can_close (PlumaTab *tab)
 	/* Do not close tab with saving errors */
 	if (ts == PLUMA_TAB_STATE_SAVING_ERROR)
 		return FALSE;
-		
+
 	/* TODO: we need to save the file also if it has been externally
 	   modified - Paolo (Oct 10, 2005) */
 
@@ -2640,9 +2640,9 @@ _pluma_tab_can_close (PlumaTab *tab)
 /**
  * pluma_tab_get_auto_save_enabled:
  * @tab: a #PlumaTab
- * 
+ *
  * Gets the current state for the autosave feature
- * 
+ *
  * Return value: %TRUE if the autosave is enabled, else %FALSE
  **/
 gboolean
@@ -2659,17 +2659,17 @@ pluma_tab_get_auto_save_enabled	(PlumaTab *tab)
  * pluma_tab_set_auto_save_enabled:
  * @tab: a #PlumaTab
  * @enable: enable (%TRUE) or disable (%FALSE) auto save
- * 
+ *
  * Enables or disables the autosave feature. It does not install an
  * autosave timeout if the document is new or is read-only
  **/
 void
-pluma_tab_set_auto_save_enabled	(PlumaTab *tab, 
+pluma_tab_set_auto_save_enabled	(PlumaTab *tab,
 				 gboolean  enable)
 {
 	PlumaDocument *doc = NULL;
 	PlumaLockdownMask lockdown;
-	
+
 	pluma_debug (DEBUG_TAB);
 
 	g_return_if_fail (PLUMA_IS_TAB (tab));
@@ -2678,7 +2678,7 @@ pluma_tab_set_auto_save_enabled	(PlumaTab *tab,
 	lockdown = pluma_app_get_lockdown (pluma_app_get_default());
 	if (lockdown & PLUMA_LOCKDOWN_SAVE_TO_DISK)
 		enable = FALSE;
-	
+
 	doc = pluma_tab_get_document (tab);
 
 	if (tab->priv->auto_save == enable)
@@ -2686,7 +2686,7 @@ pluma_tab_set_auto_save_enabled	(PlumaTab *tab,
 
 	tab->priv->auto_save = enable;
 
- 	if (enable && 
+ 	if (enable &&
  	    (tab->priv->auto_save_timeout <=0) &&
  	    !pluma_document_is_untitled (doc) &&
  	    !pluma_document_get_readonly (doc))
@@ -2702,30 +2702,30 @@ pluma_tab_set_auto_save_enabled	(PlumaTab *tab,
 		}
 		/* else: the timeout will be installed when loading/saving/reverting
 		         will terminate */
-		
+
 		return;
 	}
- 		
+
  	if (!enable && (tab->priv->auto_save_timeout > 0))
  	{
 		remove_auto_save_timeout (tab);
-		
- 		return; 
- 	} 
 
- 	g_return_if_fail ((!enable && (tab->priv->auto_save_timeout <= 0)) ||  
- 			  pluma_document_is_untitled (doc) || pluma_document_get_readonly (doc)); 
+ 		return;
+ 	}
+
+ 	g_return_if_fail ((!enable && (tab->priv->auto_save_timeout <= 0)) ||
+ 			  pluma_document_is_untitled (doc) || pluma_document_get_readonly (doc));
 }
 
 /**
  * pluma_tab_get_auto_save_interval:
  * @tab: a #PlumaTab
- * 
+ *
  * Gets the current interval for the autosaves
- * 
+ *
  * Return value: the value of the autosave
  **/
-gint 
+gint
 pluma_tab_get_auto_save_interval (PlumaTab *tab)
 {
 	pluma_debug (DEBUG_TAB);
@@ -2739,20 +2739,20 @@ pluma_tab_get_auto_save_interval (PlumaTab *tab)
  * pluma_tab_set_auto_save_interval:
  * @tab: a #PlumaTab
  * @interval: the new interval
- * 
+ *
  * Sets the interval for the autosave feature. It does nothing if the
  * interval is the same as the one already present. It removes the old
  * interval timeout and adds a new one with the autosave passed as
  * argument.
  **/
-void 
-pluma_tab_set_auto_save_interval (PlumaTab *tab, 
+void
+pluma_tab_set_auto_save_interval (PlumaTab *tab,
 				  gint      interval)
 {
 	PlumaDocument *doc = NULL;
-	
+
 	pluma_debug (DEBUG_TAB);
-	
+
 	g_return_if_fail (PLUMA_IS_TAB (tab));
 
 	doc = pluma_tab_get_document(tab);
@@ -2764,7 +2764,7 @@ pluma_tab_set_auto_save_interval (PlumaTab *tab,
 		return;
 
 	tab->priv->auto_save_interval = interval;
-		
+
 	if (!tab->priv->auto_save)
 		return;
 

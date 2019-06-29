@@ -156,7 +156,7 @@ pluma_document_saver_dispose (GObject *object)
 	G_OBJECT_CLASS (pluma_document_saver_parent_class)->dispose (object);
 }
 
-static void 
+static void
 pluma_document_saver_class_init (PlumaDocumentSaverClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);

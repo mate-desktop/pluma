@@ -83,7 +83,7 @@ is_owned_by_user_and_socket (const char *path)
 
 	if ((s.st_mode & S_IFSOCK) != S_IFSOCK)
 		return FALSE;
-	
+
 	return TRUE;
 }
 

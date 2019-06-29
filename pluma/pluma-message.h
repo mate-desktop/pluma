@@ -20,7 +20,7 @@ typedef struct _PlumaMessagePrivate	PlumaMessagePrivate;
 
 struct _PlumaMessage {
 	GObject parent;
-	
+
 	PlumaMessagePrivate *priv;
 };
 

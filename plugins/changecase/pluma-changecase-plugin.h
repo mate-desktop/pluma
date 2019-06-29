@@ -1,6 +1,6 @@
 /*
  * pluma-changecase-plugin.h
- * 
+ *
  * Copyright (C) 2004-2005 - Paolo Borelli
  *
  * This program is free software; you can redistribute it and/or modify

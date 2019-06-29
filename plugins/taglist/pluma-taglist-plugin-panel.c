@@ -64,7 +64,7 @@ struct _PlumaTaglistPluginPanelPrivate
 	GtkWidget *preview;
 
 	TagGroup *selected_tag_group;
-	
+
 	gchar *data_dir;
 };
 
@@ -132,7 +132,7 @@ static void
 pluma_taglist_plugin_panel_finalize (GObject *object)
 {
 	PlumaTaglistPluginPanel *panel = PLUMA_TAGLIST_PLUGIN_PANEL (object);
-	
+
 	g_free (panel->priv->data_dir);
 
 	G_OBJECT_CLASS (pluma_taglist_plugin_panel_parent_class)->finalize (object);
@@ -436,7 +436,7 @@ selected_group_changed (GtkComboBox             *combo,
 
 		populate_tags_list (panel);
 	}
-	
+
 	/* Clean up preview */
 	gtk_label_set_text (GTK_LABEL (panel->priv->preview),
 			    "");
@@ -783,9 +783,9 @@ pluma_taglist_plugin_panel_new (PlumaWindow *window,
 	panel = g_object_new (PLUMA_TYPE_TAGLIST_PLUGIN_PANEL,
 			      "window", window,
 			      NULL);
-	
+
 	panel->priv->data_dir = g_strdup (data_dir);
-	
+
 	return GTK_WIDGET (panel);
 }
 

@@ -16,13 +16,13 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
 
 /*
- * Modified by the pluma Team, 2004-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
+ * Modified by the pluma Team, 2004-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
  * See the ChangeLog files for a list of changes.
  *
  * $Id$
@@ -41,9 +41,9 @@
 
 
 /* Properties */
-enum 
+enum
 {
-	PROP_0,	
+	PROP_0,
 	PROP_UNSAVED_DOCUMENTS,
 	PROP_LOGOUT_MODE
 };
@@ -64,16 +64,16 @@ enum
 	N_COLUMNS
 };
 
-struct _PlumaCloseConfirmationDialogPrivate 
+struct _PlumaCloseConfirmationDialogPrivate
 {
 	gboolean     logout_mode;
 
 	GList       *unsaved_documents;
-	
+
 	GList       *selected_documents;
 
 	GtkTreeModel *list_store;
-	
+
 	gboolean     disable_save_to_disk;
 };
 
@@ -92,7 +92,7 @@ static void 	 set_unsaved_document 		(PlumaCloseConfirmationDialog *dlg,
 
 static GList 	*get_selected_docs 		(GtkTreeModel                 *store);
 
-/*  Since we connect in the costructor we are sure this handler will be called 
+/*  Since we connect in the costructor we are sure this handler will be called
  *  before the user ones
  */
 static void
@@ -105,7 +105,7 @@ response_cb (PlumaCloseConfirmationDialog *dlg,
 	g_return_if_fail (PLUMA_IS_CLOSE_CONFIRMATION_DIALOG (dlg));
 
 	priv = dlg->priv;
-	
+
 	if (priv->selected_documents != NULL)
 		g_list_free (priv->selected_documents);
 
@@ -113,7 +113,7 @@ response_cb (PlumaCloseConfirmationDialog *dlg,
 	{
 		if (GET_MODE (priv) == SINGLE_DOC_MODE)
 		{
-			priv->selected_documents = 
+			priv->selected_documents =
 				g_list_copy (priv->unsaved_documents);
 		}
 		else
@@ -133,7 +133,7 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 		 gboolean                      logout_mode)
 {
 	dlg->priv->logout_mode = logout_mode;
-	
+
 	if (logout_mode)
 	{
 		gtk_dialog_add_button (GTK_DIALOG (dlg),
@@ -156,7 +156,7 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 					 "process-stop",
 					 GTK_RESPONSE_CANCEL);
 	}
-	
+
 	if (dlg->priv->disable_save_to_disk)
 	{
 		gtk_dialog_set_default_response	(GTK_DIALOG (dlg),
@@ -165,14 +165,14 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 	else
 	{
 		const gchar *icon_id = "document-save";
-		
+
 		if (GET_MODE (dlg->priv) == SINGLE_DOC_MODE)
 		{
 			PlumaDocument *doc;
-			
+
 			doc = PLUMA_DOCUMENT (dlg->priv->unsaved_documents->data);
-			
-			if (pluma_document_get_readonly (doc) || 
+
+			if (pluma_document_get_readonly (doc) ||
 			    pluma_document_is_untitled (doc))
 				icon_id = "document-save-as";
 		}
@@ -188,28 +188,28 @@ set_logout_mode (PlumaCloseConfirmationDialog *dlg,
 						 icon_id,
 						 GTK_RESPONSE_YES);
 
-		gtk_dialog_set_default_response	(GTK_DIALOG (dlg), 
+		gtk_dialog_set_default_response	(GTK_DIALOG (dlg),
 						 GTK_RESPONSE_YES);
 	}
 }
 
-static void 
+static void
 pluma_close_confirmation_dialog_init (PlumaCloseConfirmationDialog *dlg)
 {
 	AtkObject *atk_obj;
 
 	dlg->priv = PLUMA_CLOSE_CONFIRMATION_DIALOG_GET_PRIVATE (dlg);
 
-	dlg->priv->disable_save_to_disk = 
-			pluma_app_get_lockdown (pluma_app_get_default ()) 
+	dlg->priv->disable_save_to_disk =
+			pluma_app_get_lockdown (pluma_app_get_default ())
 			& PLUMA_LOCKDOWN_SAVE_TO_DISK;
 
-	gtk_container_set_border_width (GTK_CONTAINER (dlg), 5);		
+	gtk_container_set_border_width (GTK_CONTAINER (dlg), 5);
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))),
 			     14);
 	gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
 	gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dlg), TRUE);
-	
+
 	gtk_window_set_title (GTK_WINDOW (dlg), "");
 
 	gtk_window_set_modal (GTK_WINDOW (dlg), TRUE);
@@ -218,14 +218,14 @@ pluma_close_confirmation_dialog_init (PlumaCloseConfirmationDialog *dlg)
 	atk_obj = gtk_widget_get_accessible (GTK_WIDGET (dlg));
 	atk_object_set_role (atk_obj, ATK_ROLE_ALERT);
 	atk_object_set_name (atk_obj, _("Question"));
-	
+
 	g_signal_connect (dlg,
 			  "response",
 			  G_CALLBACK (response_cb),
 			  NULL);
 }
 
-static void 
+static void
 pluma_close_confirmation_dialog_finalize (GObject *object)
 {
 	PlumaCloseConfirmationDialogPrivate *priv;
@@ -243,9 +243,9 @@ pluma_close_confirmation_dialog_finalize (GObject *object)
 }
 
 static void
-pluma_close_confirmation_dialog_set_property (GObject      *object, 
-					      guint         prop_id, 
-					      const GValue *value, 
+pluma_close_confirmation_dialog_set_property (GObject      *object,
+					      guint         prop_id,
+					      const GValue *value,
 					      GParamSpec   *pspec)
 {
 	PlumaCloseConfirmationDialog *dlg;
@@ -257,7 +257,7 @@ pluma_close_confirmation_dialog_set_property (GObject      *object,
 		case PROP_UNSAVED_DOCUMENTS:
 			set_unsaved_document (dlg, g_value_get_pointer (value));
 			break;
-			
+
 		case PROP_LOGOUT_MODE:
 			set_logout_mode (dlg, g_value_get_boolean (value));
 			break;
@@ -269,9 +269,9 @@ pluma_close_confirmation_dialog_set_property (GObject      *object,
 }
 
 static void
-pluma_close_confirmation_dialog_get_property (GObject    *object, 
-					      guint       prop_id, 
-					      GValue     *value, 
+pluma_close_confirmation_dialog_get_property (GObject    *object,
+					      guint       prop_id,
+					      GValue     *value,
 					      GParamSpec *pspec)
 {
 	PlumaCloseConfirmationDialogPrivate *priv;
@@ -294,7 +294,7 @@ pluma_close_confirmation_dialog_get_property (GObject    *object,
 	}
 }
 
-static void 
+static void
 pluma_close_confirmation_dialog_class_init (PlumaCloseConfirmationDialogClass *klass)
 {
 	GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
@@ -310,7 +310,7 @@ pluma_close_confirmation_dialog_class_init (PlumaCloseConfirmationDialogClass *k
 					 g_param_spec_pointer ("unsaved_documents",
 						 	       "Unsaved Documents",
 							       "List of Unsaved Documents",
-							       (G_PARAM_READWRITE | 
+							       (G_PARAM_READWRITE |
 							        G_PARAM_CONSTRUCT_ONLY)));
 
 	g_object_class_install_property (gobject_class,
@@ -319,8 +319,8 @@ pluma_close_confirmation_dialog_class_init (PlumaCloseConfirmationDialogClass *k
 						 	       "Logout Mode",
 							       "Whether the dialog is in logout mode",
 							       FALSE,
-							       (G_PARAM_READWRITE | 
-							        G_PARAM_CONSTRUCT_ONLY)));							        
+							       (G_PARAM_READWRITE |
+							        G_PARAM_CONSTRUCT_ONLY)));
 }
 
 static GList *
@@ -338,7 +338,7 @@ get_selected_docs (GtkTreeModel *store)
 		gboolean       to_save;
 		PlumaDocument *doc;
 
-		gtk_tree_model_get (store, &iter, 
+		gtk_tree_model_get (store, &iter,
 				    SAVE_COLUMN, &to_save,
 				    DOC_COLUMN, &doc,
 				    -1);
@@ -362,7 +362,7 @@ pluma_close_confirmation_dialog_get_selected_documents (PlumaCloseConfirmationDi
 }
 
 GtkWidget *
-pluma_close_confirmation_dialog_new (GtkWindow *parent, 
+pluma_close_confirmation_dialog_new (GtkWindow *parent,
 				     GList     *unsaved_documents,
 				     gboolean   logout_mode)
 {
@@ -379,28 +379,28 @@ pluma_close_confirmation_dialog_new (GtkWindow *parent,
 	{
 		gtk_window_group_add_window (pluma_window_get_group (PLUMA_WINDOW (parent)),
 					     GTK_WINDOW (dlg));
-		
-		gtk_window_set_transient_for (GTK_WINDOW (dlg), parent);					     
+
+		gtk_window_set_transient_for (GTK_WINDOW (dlg), parent);
 	}
 
 	return dlg;
 }
 
 GtkWidget *
-pluma_close_confirmation_dialog_new_single (GtkWindow     *parent, 
+pluma_close_confirmation_dialog_new_single (GtkWindow     *parent,
 					    PlumaDocument *doc,
 					    gboolean       logout_mode)
 {
 	GtkWidget *dlg;
 	GList *unsaved_documents;
 	g_return_val_if_fail (doc != NULL, NULL);
-	
+
 	unsaved_documents = g_list_prepend (NULL, doc);
 
-	dlg = pluma_close_confirmation_dialog_new (parent, 
+	dlg = pluma_close_confirmation_dialog_new (parent,
 						   unsaved_documents,
 						   logout_mode);
-	
+
 	g_list_free (unsaved_documents);
 
 	return dlg;
@@ -411,10 +411,10 @@ get_text_secondary_label (PlumaDocument *doc)
 {
 	glong  seconds;
 	gchar *secondary_msg;
-	
+
 	seconds = MAX (1, _pluma_document_get_seconds_since_last_save_or_load (doc));
 
-	if (seconds < 55)	
+	if (seconds < 55)
 	{
 		secondary_msg = g_strdup_printf (
 					ngettext ("If you don't save, changes from the last %ld second "
@@ -543,7 +543,7 @@ build_single_doc_dialog (PlumaCloseConfirmationDialog *dlg)
 
 	/* Secondary label */
 	if (dlg->priv->disable_save_to_disk)
-		str = g_strdup (_("Saving has been disabled by the system administrator."));	
+		str = g_strdup (_("Saving has been disabled by the system administrator."));
 	else
 		str = get_text_secondary_label (doc);
 	secondary_label = gtk_label_new (str);
@@ -560,17 +560,17 @@ build_single_doc_dialog (PlumaCloseConfirmationDialog *dlg)
 	gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
 
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
-	
+
 	gtk_box_pack_start (GTK_BOX (hbox), vbox, FALSE, FALSE, 0);
 
 	gtk_box_pack_start (GTK_BOX (vbox), primary_label, FALSE, FALSE, 0);
-		      
+
 	gtk_box_pack_start (GTK_BOX (vbox), secondary_label, FALSE, FALSE, 0);
 
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))),
-			    hbox, 
-	                    FALSE, 
-			    FALSE, 
+			    hbox,
+	                    FALSE,
+			    FALSE,
 			    0);
 
 	gtk_widget_show_all (hbox);
@@ -643,7 +643,7 @@ create_treeview (PlumaCloseConfirmationDialogPrivate *priv)
 	g_object_unref (store);
 
 	priv->list_store = GTK_TREE_MODEL (store);
-	
+
 	/* Add columns */
 	if (!priv->disable_save_to_disk)
 	{
@@ -734,11 +734,11 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 
 	markup_str = g_strconcat ("<span weight=\"bold\" size=\"larger\">", str, "</span>", NULL);
 	g_free (str);
-	
+
 	gtk_label_set_markup (GTK_LABEL (primary_label), markup_str);
 	g_free (markup_str);
 	gtk_box_pack_start (GTK_BOX (vbox), primary_label, FALSE, FALSE, 0);
-	
+
 	vbox2 = gtk_box_new (GTK_ORIENTATION_VERTICAL, 8);
 	gtk_box_pack_start (GTK_BOX (vbox), vbox2, FALSE, FALSE, 0);
 
@@ -757,10 +757,10 @@ build_multiple_docs_dialog (PlumaCloseConfirmationDialog *dlg)
 	scrolledwindow = gtk_scrolled_window_new (NULL, NULL);
 	gtk_scrolled_window_set_propagate_natural_height (GTK_SCROLLED_WINDOW (scrolledwindow), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), scrolledwindow, TRUE, TRUE, 0);
-	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow), 
-					GTK_POLICY_AUTOMATIC, 
+	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow),
+					GTK_POLICY_AUTOMATIC,
 					GTK_POLICY_AUTOMATIC);
-	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolledwindow), 
+	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolledwindow),
 					     GTK_SHADOW_IN);
 
 	treeview = create_treeview (priv);
@@ -807,7 +807,7 @@ set_unsaved_document (PlumaCloseConfirmationDialog *dlg,
 {
 	PlumaCloseConfirmationDialogPrivate *priv;
 
-	g_return_if_fail (list != NULL);	
+	g_return_if_fail (list != NULL);
 
 	priv = dlg->priv;
 	g_return_if_fail (priv->unsaved_documents == NULL);
@@ -821,7 +821,7 @@ set_unsaved_document (PlumaCloseConfirmationDialog *dlg,
 	else
 	{
 		build_multiple_docs_dialog (dlg);
-	}	
+	}
 }
 
 const GList *

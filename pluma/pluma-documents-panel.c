@@ -2,7 +2,7 @@
  * pluma-documents-panel.c
  * This file is part of pluma
  *
- * Copyright (C) 2005 - Paolo Maggi 
+ * Copyright (C) 2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -98,7 +98,7 @@ tab_get_name (PlumaTab *tab)
 		}
 		else
 		{
-			tab_name = g_markup_printf_escaped ("<i>%s</i>", 
+			tab_name = g_markup_printf_escaped ("<i>%s</i>",
 							    docname);
 		}
 	}
@@ -144,7 +144,7 @@ static void
 window_active_tab_changed (PlumaWindow         *window,
 			   PlumaTab            *tab,
 			   PlumaDocumentsPanel *panel)
-{	
+{
 	g_return_if_fail (tab != NULL);
 
 	if (!_pluma_window_is_removing_tabs (window))
@@ -177,7 +177,7 @@ refresh_list (PlumaDocumentsPanel *panel)
 	PlumaTab *active_tab;
 
 	/* g_debug ("refresh_list"); */
-	
+
 	list_store = GTK_LIST_STORE (panel->priv->model);
 
 	gtk_list_store_clear (list_store);
@@ -190,9 +190,9 @@ refresh_list (PlumaDocumentsPanel *panel)
 	l = tabs;
 
 	panel->priv->adding_tab = TRUE;
-	
+
 	while (l != NULL)
-	{	
+	{
 		GdkPixbuf *pixbuf;
 		gchar *name;
 		GtkTreeIter iter;
@@ -225,7 +225,7 @@ refresh_list (PlumaDocumentsPanel *panel)
 
 		l = g_list_next (l);
 	}
-	
+
 	panel->priv->adding_tab = FALSE;
 
 	g_list_free (tabs);
@@ -295,8 +295,8 @@ window_tab_added (PlumaWindow         *window,
 	get_iter_from_tab (panel, tab, &sibling);
 
 	panel->priv->adding_tab = TRUE;
-	
-	if (gtk_list_store_iter_is_valid (GTK_LIST_STORE (panel->priv->model), 
+
+	if (gtk_list_store_iter_is_valid (GTK_LIST_STORE (panel->priv->model),
 					  &sibling))
 	{
 		gtk_list_store_insert_after (GTK_LIST_STORE (panel->priv->model),
@@ -307,7 +307,7 @@ window_tab_added (PlumaWindow         *window,
 	{
 		PlumaTab *active_tab;
 
-		gtk_list_store_append (GTK_LIST_STORE (panel->priv->model), 
+		gtk_list_store_append (GTK_LIST_STORE (panel->priv->model),
 				       &iter);
 
 		active_tab = pluma_window_get_active_tab (panel->priv->window);
@@ -448,7 +448,7 @@ static void
 pluma_documents_panel_finalize (GObject *object)
 {
 	/* PlumaDocumentsPanel *tab = PLUMA_DOCUMENTS_PANEL (object); */
-	
+
 	/* TODO: disconnect signal with window */
 
 	G_OBJECT_CLASS (pluma_documents_panel_parent_class)->finalize (object);
@@ -468,7 +468,7 @@ pluma_documents_panel_dispose (GObject *object)
 	G_OBJECT_CLASS (pluma_documents_panel_parent_class)->dispose (object);
 }
 
-static void 
+static void
 pluma_documents_panel_class_init (PlumaDocumentsPanelClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -533,7 +533,7 @@ panel_button_press_event (GtkTreeView         *treeview,
 							   NULL,
 							   NULL,
 							   NULL))
-			{				
+			{
 
 				gtk_tree_view_set_cursor (treeview,
 							  path,
@@ -632,19 +632,19 @@ treeview_row_inserted (GtkTreeModel        *tree_model,
 	GtkWidget *nb;
 	gint old_position;
 	gint new_position;
-	
+
 	if (panel->priv->adding_tab)
 		return;
-		
+
 	tab = pluma_window_get_active_tab (panel->priv->window);
 	g_return_if_fail (tab != NULL);
 
 	panel->priv->is_reodering = TRUE;
-	
+
 	indeces = gtk_tree_path_get_indices (path);
-	
+
 	/* g_debug ("New Index: %d (path: %s)", indeces[0], gtk_tree_path_to_string (path));*/
-	
+
 	nb = _pluma_window_get_notebook (panel->priv->window);
 
 	new_position = indeces[0];
@@ -652,7 +652,7 @@ treeview_row_inserted (GtkTreeModel        *tree_model,
 				    	      GTK_WIDGET (tab));
 	if (new_position > old_position)
 		new_position = MAX (0, new_position - 1);
-		
+
 	pluma_notebook_reorder_tab (PLUMA_NOTEBOOK (nb),
 				    tab,
 				    new_position);
@@ -669,17 +669,17 @@ pluma_documents_panel_init (PlumaDocumentsPanel *panel)
 	GtkTreeSelection 	*selection;
 
 	panel->priv = PLUMA_DOCUMENTS_PANEL_GET_PRIVATE (panel);
-	
+
 	panel->priv->adding_tab = FALSE;
 	panel->priv->is_reodering = FALSE;
 
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (panel),
 	                                GTK_ORIENTATION_VERTICAL);
-	
+
 	/* Create the scrolled window */
 	sw = gtk_scrolled_window_new (NULL, NULL);
 	g_return_if_fail (sw != NULL);
-	
+
 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (sw),
 					GTK_POLICY_AUTOMATIC,
 					GTK_POLICY_AUTOMATIC);
@@ -687,7 +687,7 @@ pluma_documents_panel_init (PlumaDocumentsPanel *panel)
                                              GTK_SHADOW_IN);
 	gtk_widget_show (sw);
 	gtk_box_pack_start (GTK_BOX (panel), sw, TRUE, TRUE, 0);
-	
+
 	/* Create the empty model */
 	panel->priv->model = GTK_TREE_MODEL (gtk_list_store_new (N_COLUMNS,
 								 GDK_TYPE_PIXBUF,
@@ -704,7 +704,7 @@ pluma_documents_panel_init (PlumaDocumentsPanel *panel)
 	g_object_set (panel->priv->treeview, "has-tooltip", TRUE, NULL);
 
 	gtk_widget_show (panel->priv->treeview);
-	
+
 	column = gtk_tree_view_column_new ();
 	gtk_tree_view_column_set_title (column, _("Documents"));
 
@@ -717,12 +717,12 @@ pluma_documents_panel_init (PlumaDocumentsPanel *panel)
 
 	gtk_tree_view_append_column (GTK_TREE_VIEW (panel->priv->treeview),
 				     column);
-				     
+
 	selection = gtk_tree_view_get_selection (
 			GTK_TREE_VIEW (panel->priv->treeview));
 
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
-	
+
 	g_signal_connect (panel->priv->treeview,
 			  "cursor_changed",
 			  G_CALLBACK (treeview_cursor_changed),

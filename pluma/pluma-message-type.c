@@ -10,12 +10,12 @@
  * the Object Path, Method and Arguments of the message.
  *
  * A message type can contain any number of required and optional arguments.
- * To instantiate a #PlumaMessage from a #PlumaMessageType, use 
+ * To instantiate a #PlumaMessage from a #PlumaMessageType, use
  * pluma_message_type_instantiate().
  *
  * Registering a new message type on a #PlumaMessageBus with
  * pluma_message_bus_register() internally creates a new #PlumaMessageType. When
- * then using pluma_message_bus_send(), an actual instantiation of the 
+ * then using pluma_message_bus_send(), an actual instantiation of the
  * registered type is internally created and send over the bus.
  *
  * <example>
@@ -47,10 +47,10 @@ struct _PlumaMessageType
 
 	gchar *object_path;
 	gchar *method;
-	
+
 	guint num_arguments;
 	guint num_required;
-	
+
 	GHashTable *arguments; // mapping of key -> ArgumentInfo
 };
 
@@ -68,7 +68,7 @@ pluma_message_type_ref (PlumaMessageType *message_type)
 {
 	g_return_val_if_fail (message_type != NULL, NULL);
 	g_atomic_int_inc (&message_type->ref_count);
-	
+
 	return message_type;
 }
 
@@ -80,30 +80,30 @@ pluma_message_type_ref (PlumaMessageType *message_type)
  * drops to 0, @message_type is destroyed.
  *
  */
-void 
+void
 pluma_message_type_unref (PlumaMessageType *message_type)
 {
 	g_return_if_fail (message_type != NULL);
 
 	if (!g_atomic_int_dec_and_test (&message_type->ref_count))
 		return;
-	
+
 	g_free (message_type->object_path);
 	g_free (message_type->method);
-	
+
 	g_hash_table_destroy (message_type->arguments);
 	g_free (message_type);
 }
 
 /**
  * pluma_message_type_get_type:
- * 
+ *
  * Retrieves the GType object which is associated with the
  * #PlumaMessageType class.
- * 
+ *
  * Return value: the GType associated with #PlumaMessageType.
  **/
-GType 
+GType
 pluma_message_type_get_type (void)
 {
 	static GType our_type = 0;
@@ -148,17 +148,17 @@ pluma_message_type_is_valid_object_path (const gchar *object_path)
 {
 	if (!object_path)
 		return FALSE;
-	
+
 	/* needs to start with / */
 	if (*object_path != '/')
 		return FALSE;
-	
+
 	while (*object_path)
 	{
 		if (*object_path == '/')
 		{
 			++object_path;
-			
+
 			if (!*object_path || !(g_ascii_isalpha (*object_path) || *object_path == '_'))
 				return FALSE;
 		}
@@ -166,10 +166,10 @@ pluma_message_type_is_valid_object_path (const gchar *object_path)
 		{
 			return FALSE;
 		}
-		
+
 		++object_path;
 	}
-	
+
 	return TRUE;
 }
 
@@ -186,7 +186,7 @@ gboolean
 pluma_message_type_is_supported (GType type)
 {
 	gint i = 0;
-  
+
 	static const GType type_list[] =
 	{
 		G_TYPE_BOOLEAN,
@@ -249,7 +249,7 @@ pluma_message_type_new_valist (const gchar *object_path,
 	g_return_val_if_fail (pluma_message_type_is_valid_object_path (object_path), NULL);
 
 	message_type = g_new0(PlumaMessageType, 1);
-	
+
 	message_type->ref_count = 1;
 	message_type->object_path = g_strdup(object_path);
 	message_type->method = g_strdup(method);
@@ -285,11 +285,11 @@ pluma_message_type_new (const gchar *object_path,
 {
 	PlumaMessageType *message_type;
 	va_list var_args;
-	
+
 	va_start(var_args, num_optional);
 	message_type = pluma_message_type_new_valist (object_path, method, num_optional, var_args);
 	va_end(var_args);
-	
+
 	return message_type;
 }
 
@@ -310,7 +310,7 @@ pluma_message_type_set (PlumaMessageType *message_type,
 			...)
 {
 	va_list va_args;
-	
+
 	va_start (va_args, num_optional);
 	pluma_message_type_set_valist (message_type, num_optional, va_args);
 	va_end (va_args);
@@ -323,11 +323,11 @@ pluma_message_type_set (PlumaMessageType *message_type,
  * @va_args: key/gtype pair variable argument list
  *
  * Sets argument names/types supplied by the NULL terminated variable
- * argument list @va_args. The last @num_optional provided arguments are 
+ * argument list @va_args. The last @num_optional provided arguments are
  * considered optional.
  *
  */
-void 
+void
 pluma_message_type_set_valist (PlumaMessageType *message_type,
 			       guint             num_optional,
 			       va_list	         var_args)
@@ -343,35 +343,35 @@ pluma_message_type_set_valist (PlumaMessageType *message_type,
 		// get corresponding GType
 		GType gtype = va_arg (var_args, GType);
 		ArgumentInfo *info;
-		
+
 		if (!pluma_message_type_is_supported (gtype))
 		{
 			g_error ("Message type '%s' is not supported", g_type_name (gtype));
 
 			pluma_message_type_unref (message_type);
 			g_free (optional);
-			
+
 			return;
 		}
-		
+
 		info = g_new(ArgumentInfo, 1);
 		info->type = gtype;
 		info->required = TRUE;
 
 		g_hash_table_insert (message_type->arguments, g_strdup (key), info);
-		
+
 		++message_type->num_arguments;
 		++added;
-		
+
 		if (num_optional > 0)
 		{
 			for (i = num_optional - 1; i > 0; --i)
 				optional[i] = optional[i - 1];
-		
+
 			*optional = info;
 		}
 	}
-	
+
 	message_type->num_required += added;
 
 	// set required for last num_optional arguments
@@ -383,7 +383,7 @@ pluma_message_type_set_valist (PlumaMessageType *message_type,
 			--message_type->num_required;
 		}
 	}
-	
+
 	g_free (optional);
 }
 
@@ -403,12 +403,12 @@ pluma_message_type_instantiate_valist (PlumaMessageType *message_type,
 				       va_list		 va_args)
 {
 	PlumaMessage *message;
-	
+
 	g_return_val_if_fail (message_type != NULL, NULL);
-	
+
 	message = PLUMA_MESSAGE (g_object_new (PLUMA_TYPE_MESSAGE, "type", message_type, NULL));
 	pluma_message_set_valist (message, va_args);
-	
+
 	return message;
 }
 
@@ -429,11 +429,11 @@ pluma_message_type_instantiate (PlumaMessageType *message_type,
 {
 	PlumaMessage *message;
 	va_list va_args;
-	
+
 	va_start (va_args, message_type);
 	message = pluma_message_type_instantiate_valist (message_type, va_args);
 	va_end (va_args);
-	
+
 	return message;
 }
 
@@ -482,10 +482,10 @@ pluma_message_type_lookup (PlumaMessageType *message_type,
 			   const gchar      *key)
 {
 	ArgumentInfo *info = g_hash_table_lookup (message_type->arguments, key);
-	
+
 	if (!info)
 		return G_TYPE_INVALID;
-	
+
 	return info->type;
 }
 
@@ -512,7 +512,7 @@ foreach_gtype (const gchar  *key,
  * Calls @func for each argument in the message type.
  *
  */
-void 
+void
 pluma_message_type_foreach (PlumaMessageType 	    *message_type,
 			    PlumaMessageTypeForeach  func,
 			    gpointer		     user_data)

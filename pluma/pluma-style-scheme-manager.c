@@ -61,7 +61,7 @@ get_pluma_styles_path (void)
 					NULL);
 		g_free (config_dir);
 	}
-	
+
 	return dir;
 }
 
@@ -76,7 +76,7 @@ add_pluma_styles_path (GtkSourceStyleSchemeManager *mgr)
 	{
 		gtk_source_style_scheme_manager_append_search_path (mgr, dir);
 		g_free (dir);
-	}	
+	}
 }
 
 GtkSourceStyleSchemeManager *
@@ -112,12 +112,12 @@ pluma_style_scheme_manager_list_schemes_sorted (GtkSourceStyleSchemeManager *man
 	g_return_val_if_fail (GTK_SOURCE_IS_STYLE_SCHEME_MANAGER (manager), NULL);
 
 	scheme_ids = gtk_source_style_scheme_manager_get_scheme_ids (manager);
-	
+
 	while (*scheme_ids != NULL)
 	{
 		GtkSourceStyleScheme *scheme;
 
-		scheme = gtk_source_style_scheme_manager_get_scheme (manager, 
+		scheme = gtk_source_style_scheme_manager_get_scheme (manager,
 								     *scheme_ids);
 
 		schemes = g_slist_prepend (schemes, scheme);
@@ -364,9 +364,9 @@ _pluma_style_scheme_manager_uninstall_scheme (GtkSourceStyleSchemeManager *manag
 
 	if (g_unlink (filename) == -1)
 		return FALSE;
-		
+
 	/* Reload the available style schemes */
 	gtk_source_style_scheme_manager_force_rescan (manager);
-	
-	return TRUE;	
+
+	return TRUE;
 }

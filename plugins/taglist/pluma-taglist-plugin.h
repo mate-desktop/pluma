@@ -1,6 +1,6 @@
 /*
  * pluma-taglist-plugin.h
- * 
+ *
  * Copyright (C) 2002-2005 - Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
@@ -20,13 +20,13 @@
  */
 
 /*
- * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2002-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
- 
+
 #ifndef __PLUMA_TAGLIST_PLUGIN_H__
 #define __PLUMA_TAGLIST_PLUGIN_H__
 

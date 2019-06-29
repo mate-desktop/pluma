@@ -21,13 +21,13 @@ typedef struct _PlumaMessageBusPrivate	PlumaMessageBusPrivate;
 
 struct _PlumaMessageBus {
 	GObject parent;
-	
+
 	PlumaMessageBusPrivate *priv;
 };
 
 struct _PlumaMessageBusClass {
 	GObjectClass parent_class;
-	
+
 	void (*dispatch)		(PlumaMessageBus  *bus,
 					 PlumaMessage     *message);
 	void (*registered)		(PlumaMessageBus  *bus,
@@ -73,8 +73,8 @@ void pluma_message_bus_foreach		  (PlumaMessageBus        *bus,
 					   gpointer		   userdata);
 
 
-/* connecting to message events */		   
-guint pluma_message_bus_connect	 	  (PlumaMessageBus	*bus, 
+/* connecting to message events */
+guint pluma_message_bus_connect	 	  (PlumaMessageBus	*bus,
 					   const gchar		*object_path,
 					   const gchar		*method,
 					   PlumaMessageCallback	 callback,
@@ -112,7 +112,7 @@ void pluma_message_bus_send_message	  (PlumaMessageBus	*bus,
 					   PlumaMessage		*message);
 void pluma_message_bus_send_message_sync  (PlumaMessageBus	*bus,
 					   PlumaMessage		*message);
-					  
+
 void pluma_message_bus_send		  (PlumaMessageBus	*bus,
 					   const gchar		*object_path,
 					   const gchar		*method,

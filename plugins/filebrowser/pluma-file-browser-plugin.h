@@ -1,5 +1,5 @@
 /*
- * pluma-file-browser-plugin.h - Pluma plugin providing easy file access 
+ * pluma-file-browser-plugin.h - Pluma plugin providing easy file access
  * from the sidepanel
  *
  * Copyright (C) 2006 - Jesse van den Kieboom <jesse@icecrew.nl>
@@ -44,7 +44,7 @@ typedef struct _PlumaFileBrowserPluginPrivate PlumaFileBrowserPluginPrivate;
 typedef struct _PlumaFileBrowserPlugin        PlumaFileBrowserPlugin;
 typedef struct _PlumaFileBrowserPluginClass   PlumaFileBrowserPluginClass;
 
-struct _PlumaFileBrowserPlugin 
+struct _PlumaFileBrowserPlugin
 {
 	PeasExtensionBase parent_instance;
 
@@ -52,7 +52,7 @@ struct _PlumaFileBrowserPlugin
 	PlumaFileBrowserPluginPrivate *priv;
 };
 
-struct _PlumaFileBrowserPluginClass 
+struct _PlumaFileBrowserPluginClass
 {
 	PeasExtensionBaseClass parent_class;
 };

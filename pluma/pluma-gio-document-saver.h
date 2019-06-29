@@ -21,7 +21,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
  * Modified by the pluma Team, 2005-2007. See the AUTHORS file for a
  * list of people on the pluma Team.
@@ -53,7 +53,7 @@ typedef struct _PlumaGioDocumentSaverPrivate PlumaGioDocumentSaverPrivate;
  */
 typedef struct _PlumaGioDocumentSaver PlumaGioDocumentSaver;
 
-struct _PlumaGioDocumentSaver 
+struct _PlumaGioDocumentSaver
 {
 	PlumaDocumentSaver saver;
 

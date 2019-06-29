@@ -16,14 +16,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2006. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2006. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -78,11 +78,11 @@ guint		 pluma_history_entry_get_history_length	(PlumaHistoryEntry *gentry);
 
 gchar		*pluma_history_entry_get_history_id	(PlumaHistoryEntry *entry);
 
-void             pluma_history_entry_set_enable_completion 
+void             pluma_history_entry_set_enable_completion
 							(PlumaHistoryEntry *entry,
 							 gboolean           enable);
-							 
-gboolean         pluma_history_entry_get_enable_completion 
+
+gboolean         pluma_history_entry_get_enable_completion
 							(PlumaHistoryEntry *entry);
 
 GtkWidget	*pluma_history_entry_get_entry		(PlumaHistoryEntry *entry);

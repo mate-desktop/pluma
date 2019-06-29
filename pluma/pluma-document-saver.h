@@ -51,7 +51,7 @@ G_BEGIN_DECLS
  */
 typedef struct _PlumaDocumentSaver PlumaDocumentSaver;
 
-struct _PlumaDocumentSaver 
+struct _PlumaDocumentSaver
 {
 	GObject object;
 
@@ -74,7 +74,7 @@ struct _PlumaDocumentSaver
  */
 typedef struct _PlumaDocumentSaverClass PlumaDocumentSaverClass;
 
-struct _PlumaDocumentSaverClass 
+struct _PlumaDocumentSaverClass
 {
 	GObjectClass parent_class;
 

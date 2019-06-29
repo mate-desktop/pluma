@@ -3,7 +3,7 @@
  * This file is part of pluma
  *
  * Copyright (C) 2000-2001 Chema Celorio, Paolo Maggi
- * Copyright (C) 2002-2008 Paolo Maggi  
+ * Copyright (C) 2002-2008 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id: pluma-print.c 6022 2007-12-09 14:38:57Z pborelli $
  */
@@ -62,7 +62,7 @@ struct _PlumaPrintJobPrivate
 	GtkWidget                *preview;
 
 	PlumaPrintJobStatus       status;
-	
+
 	gchar                    *status_string;
 
 	gdouble			  progress;
@@ -94,7 +94,7 @@ enum
 	PROP_VIEW
 };
 
-enum 
+enum
 {
 	PRINTING,
 	SHOW_PREVIEW,
@@ -113,7 +113,7 @@ set_view (PlumaPrintJob *job, PlumaView *view)
 	job->priv->doc = PLUMA_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)));
 }
 
-static void 
+static void
 pluma_print_job_get_property (GObject    *object,
 			      guint       prop_id,
 			      GValue     *value,
@@ -132,7 +132,7 @@ pluma_print_job_get_property (GObject    *object,
 	}
 }
 
-static void 
+static void
 pluma_print_job_set_property (GObject      *object,
 			      guint         prop_id,
 			      const GValue *value,
@@ -157,7 +157,7 @@ pluma_print_job_finalize (GObject *object)
 	PlumaPrintJob *job = PLUMA_PRINT_JOB (object);
 
 	g_free (job->priv->status_string);
-	
+
 	if (job->priv->compositor != NULL)
 		g_object_unref (job->priv->compositor);
 
@@ -167,7 +167,7 @@ pluma_print_job_finalize (GObject *object)
 	G_OBJECT_CLASS (pluma_print_job_parent_class)->finalize (object);
 }
 
-static void 
+static void
 pluma_print_job_class_init (PlumaPrintJobClass *klass)
 {
 	GObjectClass *object_class;
@@ -221,7 +221,7 @@ pluma_print_job_class_init (PlumaPrintJobClass *klass)
 			      2,
 			      G_TYPE_UINT,
 			      G_TYPE_POINTER);
-			      			      
+
 	g_type_class_add_private (object_class, sizeof (PlumaPrintJobPrivate));
 }
 
@@ -231,7 +231,7 @@ line_numbers_checkbutton_toggled (GtkToggleButton *button,
 {
 	if (gtk_toggle_button_get_active (button))
 	{
-		gtk_widget_set_sensitive (job->priv->line_numbers_hbox, 
+		gtk_widget_set_sensitive (job->priv->line_numbers_hbox,
 					  pluma_prefs_manager_print_line_numbers_can_set ());
 	}
 	else
@@ -246,7 +246,7 @@ wrap_mode_checkbutton_toggled (GtkToggleButton *button,
 {
 	if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (job->priv->text_wrapping_checkbutton)))
 	{
-		gtk_widget_set_sensitive (job->priv->do_not_split_checkbutton, 
+		gtk_widget_set_sensitive (job->priv->do_not_split_checkbutton,
 					  FALSE);
 		gtk_toggle_button_set_inconsistent (
 			GTK_TOGGLE_BUTTON (job->priv->do_not_split_checkbutton),
@@ -278,7 +278,7 @@ restore_button_clicked (GtkButton     *button,
 
 		g_free (font);
 	}
-	
+
 	if (pluma_prefs_manager_print_font_header_can_set ())
 	{
 		gchar *font;
@@ -305,7 +305,7 @@ restore_button_clicked (GtkButton     *button,
 }
 
 static GObject *
-create_custom_widget_cb (GtkPrintOperation *operation, 
+create_custom_widget_cb (GtkPrintOperation *operation,
 			 PlumaPrintJob     *job)
 {
 	gboolean ret;
@@ -374,7 +374,7 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 	{
 		gtk_spin_button_set_value (GTK_SPIN_BUTTON (job->priv->line_numbers_spinbutton),
 					   (guint) line_numbers);
-		gtk_widget_set_sensitive (job->priv->line_numbers_hbox, can_set);	
+		gtk_widget_set_sensitive (job->priv->line_numbers_hbox, can_set);
 	}
 	else
 	{
@@ -410,7 +410,7 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 	can_set = pluma_prefs_manager_print_wrap_mode_can_set ();
 
 	gtk_widget_set_sensitive (job->priv->text_wrapping_checkbutton, can_set);
-	gtk_widget_set_sensitive (job->priv->do_not_split_checkbutton, 
+	gtk_widget_set_sensitive (job->priv->do_not_split_checkbutton,
 				  can_set && (wrap_mode != GTK_WRAP_NONE));
 
 	/* Set initial values */
@@ -493,7 +493,7 @@ custom_widget_apply_cb (GtkPrintOperation *operation,
 		else
 		{
 			pluma_prefs_manager_set_print_wrap_mode (GTK_WRAP_CHAR);
-		}	
+		}
 	}
 
 	pluma_prefs_manager_set_print_font_body (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->body_fontbutton)));
@@ -507,12 +507,12 @@ create_compositor (PlumaPrintJob *job)
 	gchar *print_font_body;
 	gchar *print_font_header;
 	gchar *print_font_numbers;
-	
+
 	/* Create and initialize print compositor */
 	print_font_body = pluma_prefs_manager_get_print_font_body ();
 	print_font_header = pluma_prefs_manager_get_print_font_header ();
 	print_font_numbers = pluma_prefs_manager_get_print_font_numbers ();
-	
+
 	job->priv->compositor = GTK_SOURCE_PRINT_COMPOSITOR (
 					g_object_new (GTK_SOURCE_TYPE_PRINT_COMPOSITOR,
 						     "buffer", GTK_SOURCE_BUFFER (job->priv->doc),
@@ -531,7 +531,7 @@ create_compositor (PlumaPrintJob *job)
 	g_free (print_font_body);
 	g_free (print_font_header);
 	g_free (print_font_numbers);
-	
+
 	if (pluma_prefs_manager_get_print_header ())
 	{
 		gchar *doc_name;
@@ -544,7 +544,7 @@ create_compositor (PlumaPrintJob *job)
 		left = g_strdup_printf (_("File: %s"), name_to_display);
 
 		/* Translators: %N is the current page number, %Q is the total
-		 * number of pages (ex. Page 2 of 10) 
+		 * number of pages (ex. Page 2 of 10)
 		 */
 		gtk_source_print_compositor_set_header_format (job->priv->compositor,
 							       TRUE,
@@ -555,11 +555,11 @@ create_compositor (PlumaPrintJob *job)
 		g_free (doc_name);
 		g_free (name_to_display);
 		g_free (left);
-	}		
+	}
 }
 
 static void
-begin_print_cb (GtkPrintOperation *operation, 
+begin_print_cb (GtkPrintOperation *operation,
 	        GtkPrintContext   *context,
 	        PlumaPrintJob     *job)
 {
@@ -568,7 +568,7 @@ begin_print_cb (GtkPrintOperation *operation,
 	job->priv->status = PLUMA_PRINT_JOB_STATUS_PAGINATING;
 
 	job->priv->progress = 0.0;
-	
+
 	g_signal_emit (job, print_job_signals[PRINTING], 0, job->priv->status);
 }
 
@@ -589,7 +589,7 @@ preview_destroyed (GtkWidget                *preview,
 	gtk_print_operation_preview_end_preview (gtk_preview);
 }
 
-static gboolean 
+static gboolean
 preview_cb (GtkPrintOperation        *op,
 	    GtkPrintOperationPreview *gtk_preview,
 	    GtkPrintContext          *context,
@@ -613,16 +613,16 @@ preview_cb (GtkPrintOperation        *op,
 }
 
 static gboolean
-paginate_cb (GtkPrintOperation *operation, 
+paginate_cb (GtkPrintOperation *operation,
 	     GtkPrintContext   *context,
 	     PlumaPrintJob     *job)
 {
-	gboolean res;	
-	
+	gboolean res;
+
 	job->priv->status = PLUMA_PRINT_JOB_STATUS_PAGINATING;
-	
+
 	res = gtk_source_print_compositor_paginate (job->priv->compositor, context);
-		
+
 	if (res)
 	{
 		gint n_pages;
@@ -656,25 +656,25 @@ draw_page_cb (GtkPrintOperation *operation,
 	if (!job->priv->is_preview)
 	{
 		g_free (job->priv->status_string);
-	
+
 		n_pages = gtk_source_print_compositor_get_n_pages (job->priv->compositor);
-	
+
 		job->priv->status = PLUMA_PRINT_JOB_STATUS_DRAWING;
-	
-		job->priv->status_string = g_strdup_printf ("Rendering page %d of %d...", 
+
+		job->priv->status_string = g_strdup_printf ("Rendering page %d of %d...",
 							    page_nr + 1,
 							    n_pages);
-	
+
 		job->priv->progress = page_nr / (2.0 * n_pages) + 0.5;
 
 		g_signal_emit (job, print_job_signals[PRINTING], 0, job->priv->status);
-	}	
+	}
 
 	gtk_source_print_compositor_draw_page (job->priv->compositor, context, page_nr);
 }
 
 static void
-end_print_cb (GtkPrintOperation *operation, 
+end_print_cb (GtkPrintOperation *operation,
 	      GtkPrintContext   *context,
 	      PlumaPrintJob     *job)
 {
@@ -690,7 +690,7 @@ done_cb (GtkPrintOperation       *operation,
 	GError *error = NULL;
 	PlumaPrintJobResult print_result;
 
-	switch (result) 
+	switch (result)
 	{
 		case GTK_PRINT_OPERATION_RESULT_CANCEL:
 			print_result = PLUMA_PRINT_JOB_RESULT_CANCEL;
@@ -708,20 +708,20 @@ done_cb (GtkPrintOperation       *operation,
 		default:
 			g_return_if_reached ();
 	}
-	
+
 	/* Avoid job is destroyed in the handler of the "done" message */
 	g_object_ref (job);
-	
+
 	g_signal_emit (job, print_job_signals[DONE], 0, print_result, error);
-	
+
 	g_object_unref (operation);
 	job->priv->operation = NULL;
-	
+
 	g_object_unref (job);
 }
 
 /* Note that pluma_print_job_print can can only be called once on a given PlumaPrintJob */
-GtkPrintOperationResult	 
+GtkPrintOperationResult
 pluma_print_job_print (PlumaPrintJob            *job,
 		       GtkPrintOperationAction   action,
 		       GtkPageSetup             *page_setup,
@@ -762,15 +762,15 @@ pluma_print_job_print (PlumaPrintJob            *job,
 	gtk_print_operation_set_allow_async (priv->operation, TRUE);
 
 	g_signal_connect (priv->operation,
-			  "create-custom-widget", 
+			  "create-custom-widget",
 			  G_CALLBACK (create_custom_widget_cb),
 			  job);
 	g_signal_connect (priv->operation,
-			  "custom-widget-apply", 
-			  G_CALLBACK (custom_widget_apply_cb), 
+			  "custom-widget-apply",
+			  G_CALLBACK (custom_widget_apply_cb),
 			  job);
   	g_signal_connect (priv->operation,
-			  "begin-print", 
+			  "begin-print",
 			  G_CALLBACK (begin_print_cb),
 			  job);
 	g_signal_connect (priv->operation,
@@ -778,23 +778,23 @@ pluma_print_job_print (PlumaPrintJob            *job,
 			  G_CALLBACK (preview_cb),
 			  job);
   	g_signal_connect (priv->operation,
-			  "paginate", 
+			  "paginate",
 			  G_CALLBACK (paginate_cb),
 			  job);
 	g_signal_connect (priv->operation,
-			  "draw-page", 
+			  "draw-page",
 			  G_CALLBACK (draw_page_cb),
 			  job);
 	g_signal_connect (priv->operation,
-			  "end-print", 
+			  "end-print",
 			  G_CALLBACK (end_print_cb),
 			  job);
 	g_signal_connect (priv->operation,
-			  "done", 
+			  "done",
 			  G_CALLBACK (done_cb),
-			  job);			  
+			  job);
 
-	return gtk_print_operation_run (priv->operation, 
+	return gtk_print_operation_run (priv->operation,
 					action,
 					parent,
 					error);
@@ -804,9 +804,9 @@ static void
 pluma_print_job_init (PlumaPrintJob *job)
 {
 	job->priv = PLUMA_PRINT_JOB_GET_PRIVATE (job);
-	
+
 	job->priv->status = PLUMA_PRINT_JOB_STATUS_INIT;
-	
+
 	job->priv->status_string = g_strdup (_("Preparing..."));
 }
 
@@ -814,9 +814,9 @@ PlumaPrintJob *
 pluma_print_job_new (PlumaView *view)
 {
 	PlumaPrintJob *job;
-	
+
 	g_return_val_if_fail (PLUMA_IS_VIEW (view), NULL);
-	
+
 	job = PLUMA_PRINT_JOB (g_object_new (PLUMA_TYPE_PRINT_JOB,
 					     "view", view,
 					      NULL));
@@ -837,7 +837,7 @@ pluma_print_job_get_status_string (PlumaPrintJob *job)
 {
 	g_return_val_if_fail (PLUMA_IS_PRINT_JOB (job), NULL);
 	g_return_val_if_fail (job->priv->status_string != NULL, NULL);
-	
+
 	return job->priv->status_string;
 }
 

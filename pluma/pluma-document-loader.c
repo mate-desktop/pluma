@@ -17,10 +17,10 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
  * Modified by the pluma Team, 2005-2007. See the AUTHORS file for a
  * list of people on the pluma Team.
@@ -290,7 +290,7 @@ pluma_document_loader_load (PlumaDocumentLoader *loader)
 	PLUMA_DOCUMENT_LOADER_GET_CLASS (loader)->load (loader);
 }
 
-gboolean 
+gboolean
 pluma_document_loader_cancel (PlumaDocumentLoader *loader)
 {
 	pluma_debug (DEBUG_LOADER);
@@ -333,7 +333,7 @@ pluma_document_loader_get_encoding (PlumaDocumentLoader *loader)
 	if (loader->encoding != NULL)
 		return loader->encoding;
 
-	g_return_val_if_fail (loader->auto_detected_encoding != NULL, 
+	g_return_val_if_fail (loader->auto_detected_encoding != NULL,
 			      pluma_encoding_get_current ());
 
 	return loader->auto_detected_encoding;

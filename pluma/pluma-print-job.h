@@ -3,7 +3,7 @@
  * This file is part of pluma
  *
  * Copyright (C) 2000-2001 Chema Celorio, Paolo Maggi
- * Copyright (C) 2002-2008 Paolo Maggi  
+ * Copyright (C) 2002-2008 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 1998-2005. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  *
  * $Id$
  */
@@ -60,7 +60,7 @@ typedef enum
 {
 	PLUMA_PRINT_JOB_RESULT_OK,
 	PLUMA_PRINT_JOB_RESULT_CANCEL,
-	PLUMA_PRINT_JOB_RESULT_ERROR	
+	PLUMA_PRINT_JOB_RESULT_ERROR
 } PlumaPrintJobResult;
 
 /* Private structure type */
@@ -72,10 +72,10 @@ typedef struct _PlumaPrintJobPrivate PlumaPrintJobPrivate;
 typedef struct _PlumaPrintJob PlumaPrintJob;
 
 
-struct _PlumaPrintJob 
+struct _PlumaPrintJob
 {
 	GObject parent;
-	
+
 	/* <private> */
 	PlumaPrintJobPrivate *priv;
 };
@@ -85,7 +85,7 @@ struct _PlumaPrintJob
  */
 typedef struct _PlumaPrintJobClass PlumaPrintJobClass;
 
-struct _PlumaPrintJobClass 
+struct _PlumaPrintJobClass
 {
 	GObjectClass parent_class;
 

@@ -3,7 +3,7 @@
  * pluma-spell-checker-dialog.h
  * This file is part of pluma
  *
- * Copyright (C) 2002 Paolo Maggi 
+ * Copyright (C) 2002 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2002. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2002. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  */
 
 #ifndef __PLUMA_SPELL_CHECKER_DIALOG_H__
@@ -47,7 +47,7 @@ typedef struct _PlumaSpellCheckerDialog PlumaSpellCheckerDialog;
 
 typedef struct _PlumaSpellCheckerDialogClass PlumaSpellCheckerDialogClass;
 
-struct _PlumaSpellCheckerDialogClass 
+struct _PlumaSpellCheckerDialogClass
 {
 	GtkWindowClass parent_class;
 
@@ -57,10 +57,10 @@ struct _PlumaSpellCheckerDialogClass
 	void		(*ignore_all)		(PlumaSpellCheckerDialog *dlg,
 						 const gchar *word);
 	void		(*change)		(PlumaSpellCheckerDialog *dlg,
-						 const gchar *word, 
+						 const gchar *word,
 						 const gchar *change_to);
 	void		(*change_all)		(PlumaSpellCheckerDialog *dlg,
-						 const gchar *word, 
+						 const gchar *word,
 						 const gchar *change_to);
 	void		(*add_word_to_personal)	(PlumaSpellCheckerDialog *dlg,
 						 const gchar *word);
@@ -71,21 +71,21 @@ GType        		 pluma_spell_checker_dialog_get_type	(void) G_GNUC_CONST;
 
 /* Constructors */
 GtkWidget		*pluma_spell_checker_dialog_new		(const gchar *data_dir);
-GtkWidget		*pluma_spell_checker_dialog_new_from_spell_checker 
+GtkWidget		*pluma_spell_checker_dialog_new_from_spell_checker
 								(PlumaSpellChecker *spell,
 								 const gchar *data_dir);
 
 void 			 pluma_spell_checker_dialog_set_spell_checker
 								(PlumaSpellCheckerDialog *dlg,
 								 PlumaSpellChecker *spell);
-void			 pluma_spell_checker_dialog_set_misspelled_word 
-								(PlumaSpellCheckerDialog *dlg, 
-								 const gchar* word, 
+void			 pluma_spell_checker_dialog_set_misspelled_word
+								(PlumaSpellCheckerDialog *dlg,
+								 const gchar* word,
 								 gint len);
 
-void 			 pluma_spell_checker_dialog_set_completed 
+void 			 pluma_spell_checker_dialog_set_completed
 								(PlumaSpellCheckerDialog *dlg);
-								
+
 G_END_DECLS
 
 #endif  /* __PLUMA_SPELL_CHECKER_DIALOG_H__ */

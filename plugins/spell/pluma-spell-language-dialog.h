@@ -3,7 +3,7 @@
  * pluma-spell-language-dialog.h
  * This file is part of pluma
  *
- * Copyright (C) 2002 Paolo Maggi 
+ * Copyright (C) 2002 Paolo Maggi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
- * Boston, MA 02110-1301, USA. 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
- * Modified by the pluma Team, 2002. See the AUTHORS file for a 
- * list of people on the pluma Team.  
- * See the ChangeLog files for a list of changes. 
+ * Modified by the pluma Team, 2002. See the AUTHORS file for a
+ * list of people on the pluma Team.
+ * See the ChangeLog files for a list of changes.
  */
 
 #ifndef __PLUMA_SPELL_LANGUAGE_DIALOG_H__
@@ -47,7 +47,7 @@ typedef struct _PlumaSpellLanguageDialog PlumaSpellLanguageDialog;
 
 typedef struct _PlumaSpellLanguageDialogClass PlumaSpellLanguageDialogClass;
 
-struct _PlumaSpellLanguageDialogClass 
+struct _PlumaSpellLanguageDialogClass
 {
 	GtkDialogClass parent_class;
 };

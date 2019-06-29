@@ -17,10 +17,10 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, 
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 /*
  * Modified by the pluma Team, 2005-2007. See the AUTHORS file for a
  * list of people on the pluma Team.
@@ -54,7 +54,7 @@ typedef struct _PlumaDocumentLoaderPrivate PlumaDocumentLoaderPrivate;
  */
 typedef struct _PlumaDocumentLoader PlumaDocumentLoader;
 
-struct _PlumaDocumentLoader 
+struct _PlumaDocumentLoader
 {
 	GObject object;
 
@@ -74,7 +74,7 @@ struct _PlumaDocumentLoader
  */
 typedef struct _PlumaDocumentLoaderClass PlumaDocumentLoaderClass;
 
-struct _PlumaDocumentLoaderClass 
+struct _PlumaDocumentLoaderClass
 {
 	GObjectClass parent_class;
 
@@ -106,13 +106,13 @@ void			 pluma_document_loader_loading		(PlumaDocumentLoader *loader,
 void			 pluma_document_loader_load		(PlumaDocumentLoader *loader);
 #if 0
 gboolean		 pluma_document_loader_load_from_stdin	(PlumaDocumentLoader *loader);
-#endif		 
+#endif
 gboolean		 pluma_document_loader_cancel		(PlumaDocumentLoader *loader);
 
 PlumaDocument		*pluma_document_loader_get_document	(PlumaDocumentLoader *loader);
 
 /* Returns STDIN_URI if loading from stdin */
-#define STDIN_URI "stdin:" 
+#define STDIN_URI "stdin:"
 const gchar		*pluma_document_loader_get_uri		(PlumaDocumentLoader *loader);
 
 const PlumaEncoding	*pluma_document_loader_get_encoding	(PlumaDocumentLoader *loader);
@@ -121,7 +121,7 @@ PlumaDocumentNewlineType pluma_document_loader_get_newline_type (PlumaDocumentLo
 
 goffset			 pluma_document_loader_get_bytes_read	(PlumaDocumentLoader *loader);
 
-/* You can get from the info: content_type, time_modified, standard_size, access_can_write 
+/* You can get from the info: content_type, time_modified, standard_size, access_can_write
    and also the metadata*/
 GFileInfo		*pluma_document_loader_get_info		(PlumaDocumentLoader *loader);
 

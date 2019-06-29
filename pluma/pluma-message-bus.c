@@ -46,8 +46,8 @@
  *
  * // Register 'method' at '/plugins/example' with one required
  * // string argument 'arg1'
- * PlumaMessageType *message_type = pluma_message_bus_register ("/plugins/example", "method", 
- *                                                              0, 
+ * PlumaMessageType *message_type = pluma_message_bus_register ("/plugins/example", "method",
+ *                                                              0,
  *                                                              "arg1", G_TYPE_STRING,
  *                                                              NULL);
  * </programlisting>
@@ -61,20 +61,20 @@
  *                    gpointer         userdata)
  * {
  * 	gchar *arg1 = NULL;
- *	
+ *
  * 	pluma_message_get (message, "arg1", &arg1, NULL);
  * 	g_message ("Evoked /plugins/example.method with: %s", arg1);
  * 	g_free (arg1);
  * }
  *
  * PlumaMessageBus *bus = pluma_message_bus_get_default ();
- * 
- * guint id = pluma_message_bus_connect (bus, 
+ *
+ * guint id = pluma_message_bus_connect (bus,
  *                                       "/plugins/example", "method",
  *                                       example_method_cb,
  *                                       NULL,
  *                                       NULL);
- *                                        
+ *
  * </programlisting>
  * </example>
  * <example>
@@ -82,14 +82,14 @@
  * <programlisting>
  * PlumaMessageBus *bus = pluma_message_bus_get_default ();
  *
- * pluma_message_bus_send (bus, 
- *                         "/plugins/example", "method", 
- *                         "arg1", "Hello World", 
+ * pluma_message_bus_send (bus,
+ *                         "/plugins/example", "method",
+ *                         "arg1", "Hello World",
  *                         NULL);
  * </programlisting>
  * </example>
  */
- 
+
 #define PLUMA_MESSAGE_BUS_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_MESSAGE_BUS, PlumaMessageBusPrivate))
 
 typedef struct
@@ -125,7 +125,7 @@ struct _PlumaMessageBusPrivate
 	guint idle_id;
 
 	guint next_id;
-	
+
 	GHashTable *types; /* mapping from identifier to PlumaMessageType */
 };
 
@@ -159,10 +159,10 @@ message_free (Message *message)
 {
 	g_free (message->method);
 	g_free (message->object_path);
-	
+
 	g_list_foreach (message->listeners, (GFunc)listener_free, NULL);
 	g_list_free (message->listeners);
-	
+
 	g_free (message);
 }
 
@@ -177,16 +177,16 @@ static void
 pluma_message_bus_finalize (GObject *object)
 {
 	PlumaMessageBus *bus = PLUMA_MESSAGE_BUS (object);
-	
+
 	if (bus->priv->idle_id != 0)
 		g_source_remove (bus->priv->idle_id);
-	
+
 	message_queue_free (bus->priv->message_queue);
 
 	g_hash_table_destroy (bus->priv->messages);
 	g_hash_table_destroy (bus->priv->idmap);
 	g_hash_table_destroy (bus->priv->types);
-	
+
 	G_OBJECT_CLASS (pluma_message_bus_parent_class)->finalize (object);
 }
 
@@ -194,9 +194,9 @@ static void
 pluma_message_bus_class_init (PlumaMessageBusClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	
+
 	object_class->finalize = pluma_message_bus_finalize;
-	
+
 	klass->dispatch = pluma_message_bus_dispatch_real;
 
 	/**
@@ -205,7 +205,7 @@ pluma_message_bus_class_init (PlumaMessageBusClass *klass)
 	 * @message: the #PlumaMessage to dispatch
 	 *
 	 * The "dispatch" signal is emitted when a message is to be dispatched.
-	 * The message is dispatched in the default handler of this signal. 
+	 * The message is dispatched in the default handler of this signal.
 	 * Primary use of this signal is to customize the dispatch of a message
 	 * (for instance to automatically dispatch all messages over DBus).
 	 *2
@@ -246,7 +246,7 @@ pluma_message_bus_class_init (PlumaMessageBusClass *klass)
 	 * @bus: a #PlumaMessageBus
 	 * @message_type: the unregistered #PlumaMessageType
 	 *
-	 * The "unregistered" signal is emitted when a message has been 
+	 * The "unregistered" signal is emitted when a message has been
 	 * unregistered from the bus.
 	 *
 	 */
@@ -270,12 +270,12 @@ message_new (PlumaMessageBus *bus,
 	     const gchar     *method)
 {
 	Message *message = g_new (Message, 1);
-	
+
 	message->object_path = g_strdup (object_path);
 	message->method = g_strdup (method);
 	message->listeners = NULL;
 
-	g_hash_table_insert (bus->priv->messages, 
+	g_hash_table_insert (bus->priv->messages,
 			     pluma_message_type_identifier (object_path, method),
 			     message);
 	return message;
@@ -289,17 +289,17 @@ lookup_message (PlumaMessageBus *bus,
 {
 	gchar *identifier;
 	Message *message;
-	
+
 	identifier = pluma_message_type_identifier (object_path, method);
 	message = (Message *)g_hash_table_lookup (bus->priv->messages, identifier);
 	g_free (identifier);
 
 	if (!message && !create)
 		return NULL;
-	
+
 	if (!message)
 		message = message_new (bus, object_path, method);
-	
+
 	return message;
 }
 
@@ -312,7 +312,7 @@ add_listener (PlumaMessageBus      *bus,
 {
 	Listener *listener;
 	IdMap *idmap;
-	
+
 	listener = g_new (Listener, 1);
 	listener->id = ++bus->priv->next_id;
 	listener->callback = callback;
@@ -321,12 +321,12 @@ add_listener (PlumaMessageBus      *bus,
 	listener->destroy_data = destroy_data;
 
 	message->listeners = g_list_append (message->listeners, listener);
-	
+
 	idmap = g_new (IdMap, 1);
 	idmap->message = message;
 	idmap->listener = g_list_last (message->listeners);
 
-	g_hash_table_insert (bus->priv->idmap, GINT_TO_POINTER (listener->id), idmap);	
+	g_hash_table_insert (bus->priv->idmap, GINT_TO_POINTER (listener->id), idmap);
 	return listener->id;
 }
 
@@ -336,16 +336,16 @@ remove_listener (PlumaMessageBus *bus,
 		 GList		 *listener)
 {
 	Listener *lst;
-	
+
 	lst = (Listener *)listener->data;
-	
+
 	/* remove from idmap */
 	g_hash_table_remove (bus->priv->idmap, GINT_TO_POINTER (lst->id));
 	listener_free (lst);
 
 	/* remove from list of listeners */
 	message->listeners = g_list_delete_link (message->listeners, listener);
-	
+
 	if (!message->listeners)
 	{
 		/* remove message because it does not have any listeners */
@@ -359,7 +359,7 @@ block_listener (PlumaMessageBus *bus,
 		GList		*listener)
 {
 	Listener *lst;
-	
+
 	lst = (Listener *)listener->data;
 	lst->blocked = TRUE;
 }
@@ -370,7 +370,7 @@ unblock_listener (PlumaMessageBus *bus,
 		  GList		  *listener)
 {
 	Listener *lst;
-	
+
 	lst = (Listener *)listener->data;
 	lst->blocked = FALSE;
 }
@@ -381,11 +381,11 @@ dispatch_message_real (PlumaMessageBus *bus,
 		       PlumaMessage    *message)
 {
 	GList *item;
-	
+
 	for (item = msg->listeners; item; item = item->next)
 	{
 		Listener *listener = (Listener *)item->data;
-		
+
 		if (!listener->blocked)
 			listener->callback (bus, message, listener->userdata);
 	}
@@ -398,12 +398,12 @@ pluma_message_bus_dispatch_real (PlumaMessageBus *bus,
 	const gchar *object_path;
 	const gchar *method;
 	Message *msg;
-	
+
 	object_path = pluma_message_get_object_path (message);
 	method = pluma_message_get_method (message);
 
 	msg = lookup_message (bus, object_path, method, FALSE);
-	
+
 	if (msg)
 		dispatch_message_real (bus, msg, message);
 }
@@ -412,7 +412,7 @@ static void
 dispatch_message (PlumaMessageBus *bus,
 		  PlumaMessage    *message)
 {
-	g_signal_emit (bus, message_bus_signals[DISPATCH], 0, message);	
+	g_signal_emit (bus, message_bus_signals[DISPATCH], 0, message);
 }
 
 static gboolean
@@ -420,7 +420,7 @@ idle_dispatch (PlumaMessageBus *bus)
 {
 	GList *list;
 	GList *item;
-	
+
 	/* make sure to set idle_id to 0 first so that any new async messages
 	   will be queued properly */
 	bus->priv->idle_id = 0;
@@ -428,14 +428,14 @@ idle_dispatch (PlumaMessageBus *bus)
 	/* reverse queue to get correct delivery order */
 	list = g_list_reverse (bus->priv->message_queue);
 	bus->priv->message_queue = NULL;
-	
+
 	for (item = list; item; item = item->next)
 	{
 		PlumaMessage *msg = PLUMA_MESSAGE (item->data);
-		
+
 		dispatch_message (bus, msg);
 	}
-	
+
 	message_queue_free (list);
 	return FALSE;
 }
@@ -448,15 +448,15 @@ process_by_id (PlumaMessageBus  *bus,
 	       MatchCallback     processor)
 {
 	IdMap *idmap;
-	
+
 	idmap = (IdMap *)g_hash_table_lookup (bus->priv->idmap, GINT_TO_POINTER (id));
-	
+
 	if (idmap == NULL)
 	{
 		g_warning ("No handler registered with id `%d'", id);
 		return;
 	}
-		
+
 	processor (bus, idmap->message, idmap->listener);
 }
 
@@ -470,27 +470,27 @@ process_by_match (PlumaMessageBus      *bus,
 {
 	Message *message;
 	GList *item;
-	
+
 	message = lookup_message (bus, object_path, method, FALSE);
-	
+
 	if (!message)
 	{
 		g_warning ("No such handler registered for %s.%s", object_path, method);
 		return;
 	}
-	
+
 	for (item = message->listeners; item; item = item->next)
 	{
 		Listener *listener = (Listener *)item->data;
-		
-		if (listener->callback == callback && 
+
+		if (listener->callback == callback &&
 		    listener->userdata == userdata)
 		{
 			processor (bus, message, item);
 			return;
 		}
 	}
-	
+
 	g_warning ("No such handler registered for %s.%s", object_path, method);
 }
 
@@ -498,7 +498,7 @@ static void
 pluma_message_bus_init (PlumaMessageBus *self)
 {
 	self->priv = PLUMA_MESSAGE_BUS_GET_PRIVATE (self);
-	
+
 	self->priv->messages = g_hash_table_new_full (g_str_hash,
 						      g_str_equal,
 						      (GDestroyNotify)g_free,
@@ -508,7 +508,7 @@ pluma_message_bus_init (PlumaMessageBus *self)
 	 					   g_direct_equal,
 	 					   NULL,
 	 					   (GDestroyNotify)g_free);
-	 					   
+
 	self->priv->types = g_hash_table_new_full (g_str_hash,
 						   g_str_equal,
 						   (GDestroyNotify)g_free,
@@ -527,20 +527,20 @@ PlumaMessageBus *
 pluma_message_bus_get_default (void)
 {
 	static PlumaMessageBus *default_bus = NULL;
-	
+
 	if (G_UNLIKELY (default_bus == NULL))
 	{
 		default_bus = g_object_new (PLUMA_TYPE_MESSAGE_BUS, NULL);
 		g_object_add_weak_pointer (G_OBJECT (default_bus),
 				           (gpointer) &default_bus);
 	}
-	
+
 	return default_bus;
 }
 
 /**
  * pluma_message_bus_new:
- * 
+ *
  * Create a new message bus. Use pluma_message_bus_get_default() to get the
  * default, application wide, message bus. Creating a new bus is useful for
  * associating a specific bus with for instance a #PlumaWindow.
@@ -560,7 +560,7 @@ pluma_message_bus_new (void)
  * @object_path: the object path
  * @method: the method
  *
- * Get the registered #PlumaMessageType for @method at @object_path. The 
+ * Get the registered #PlumaMessageType for @method at @object_path. The
  * returned #PlumaMessageType is owned by the bus and should not be unreffed.
  *
  * Return value: the registered #PlumaMessageType or %NULL if no message type
@@ -574,14 +574,14 @@ pluma_message_bus_lookup (PlumaMessageBus *bus,
 {
 	gchar *identifier;
 	PlumaMessageType *message_type;
-	
+
 	g_return_val_if_fail (PLUMA_IS_MESSAGE_BUS (bus), NULL);
 	g_return_val_if_fail (object_path != NULL, NULL);
 	g_return_val_if_fail (method != NULL, NULL);
 
 	identifier = pluma_message_type_identifier (object_path, method);
 	message_type = PLUMA_MESSAGE_TYPE (g_hash_table_lookup (bus->priv->types, identifier));
-	
+
 	g_free (identifier);
 	return message_type;
 }
@@ -595,9 +595,9 @@ pluma_message_bus_lookup (PlumaMessageBus *bus,
  * @...: NULL terminated list of key/gtype method argument pairs
  *
  * Register a message on the bus. A message must be registered on the bus before
- * it can be send. This function registers the type arguments for @method at 
- * @object_path. The arguments are specified with the variable arguments which 
- * should contain pairs of const gchar *key and GType terminated by %NULL. The 
+ * it can be send. This function registers the type arguments for @method at
+ * @object_path. The arguments are specified with the variable arguments which
+ * should contain pairs of const gchar *key and GType terminated by %NULL. The
  * last @num_optional arguments are registered as optional (and are thus not
  * required when sending a message).
  *
@@ -621,7 +621,7 @@ pluma_message_bus_register (PlumaMessageBus *bus,
 
 	g_return_val_if_fail (PLUMA_IS_MESSAGE_BUS (bus), NULL);
 	g_return_val_if_fail (pluma_message_type_is_valid_object_path (object_path), NULL);
-	
+
 	if (pluma_message_bus_is_registered (bus, object_path, method))
 	{
 		g_warning ("Message type for '%s.%s' is already registered", object_path, method);
@@ -630,14 +630,14 @@ pluma_message_bus_register (PlumaMessageBus *bus,
 
 	identifier = pluma_message_type_identifier (object_path, method);
 	g_hash_table_lookup (bus->priv->types, identifier);
-	
+
 	va_start (var_args, num_optional);
-	message_type = pluma_message_type_new_valist (object_path, 
+	message_type = pluma_message_type_new_valist (object_path,
 						      method,
 						      num_optional,
 						      var_args);
 	va_end (var_args);
-	
+
 	if (message_type)
 	{
 		g_hash_table_insert (bus->priv->types, identifier, message_type);
@@ -647,8 +647,8 @@ pluma_message_bus_register (PlumaMessageBus *bus,
 	{
 		g_free (identifier);
 	}
-	
-	return message_type;	
+
+	return message_type;
 }
 
 static void
@@ -657,18 +657,18 @@ pluma_message_bus_unregister_real (PlumaMessageBus  *bus,
 				   gboolean          remove_from_store)
 {
 	gchar *identifier;
-	
+
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
 
-	identifier = pluma_message_type_identifier (pluma_message_type_get_object_path (message_type), 
+	identifier = pluma_message_type_identifier (pluma_message_type_get_object_path (message_type),
 						    pluma_message_type_get_method (message_type));
-	
+
 	/* Keep message type alive for signal emission */
 	pluma_message_type_ref (message_type);
 
 	if (!remove_from_store || g_hash_table_remove (bus->priv->types, identifier))
 		g_signal_emit (bus, message_bus_signals[UNREGISTERED], 0, message_type);
-	
+
 	pluma_message_type_unref (message_type);
 	g_free (identifier);
 }
@@ -678,7 +678,7 @@ pluma_message_bus_unregister_real (PlumaMessageBus  *bus,
  * @bus: a #PlumaMessageBus
  * @message_type: the #PlumaMessageType to unregister
  *
- * Unregisters a previously registered message type. This is especially useful 
+ * Unregisters a previously registered message type. This is especially useful
  * for plugins which should unregister message types when they are deactivated.
  *
  * This function emits the #PlumaMessageBus::unregistered signal.
@@ -692,7 +692,7 @@ pluma_message_bus_unregister (PlumaMessageBus  *bus,
 	pluma_message_bus_unregister_real (bus, message_type, TRUE);
 }
 
-typedef struct 
+typedef struct
 {
 	PlumaMessageBus *bus;
 	const gchar *object_path;
@@ -705,11 +705,11 @@ unregister_each (const gchar      *identifier,
 {
 	if (strcmp (pluma_message_type_get_object_path (message_type),
 		    info->object_path) == 0)
-	{	
+	{
 		pluma_message_bus_unregister_real (info->bus, message_type, FALSE);
 		return TRUE;
 	}
-	
+
 	return FALSE;
 }
 
@@ -734,7 +734,7 @@ pluma_message_bus_unregister_all (PlumaMessageBus *bus,
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
 	g_return_if_fail (object_path != NULL);
 
-	g_hash_table_foreach_remove (bus->priv->types, 
+	g_hash_table_foreach_remove (bus->priv->types,
 				     (GHRFunc)unregister_each,
 				     &info);
 }
@@ -745,10 +745,10 @@ pluma_message_bus_unregister_all (PlumaMessageBus *bus,
  * @object_path: the object path
  * @method: the method
  *
- * Check whether a message type @method at @object_path is registered on the 
+ * Check whether a message type @method at @object_path is registered on the
  * bus.
  *
- * Return value: %TRUE if the @method at @object_path is a registered message 
+ * Return value: %TRUE if the @method at @object_path is a registered message
  *               type on the bus
  *
  */
@@ -759,14 +759,14 @@ pluma_message_bus_is_registered (PlumaMessageBus	*bus,
 {
 	gchar *identifier;
 	gboolean ret;
-	
+
 	g_return_val_if_fail (PLUMA_IS_MESSAGE_BUS (bus), FALSE);
 	g_return_val_if_fail (object_path != NULL, FALSE);
 	g_return_val_if_fail (method != NULL, FALSE);
 
 	identifier = pluma_message_type_identifier (object_path, method);
 	ret = g_hash_table_lookup (bus->priv->types, identifier) != NULL;
-	
+
 	g_free(identifier);
 	return ret;
 }
@@ -796,13 +796,13 @@ foreach_type (const gchar      *key,
  * Calls @func for each message type registered on the bus
  *
  */
-void 
+void
 pluma_message_bus_foreach (PlumaMessageBus        *bus,
 			   PlumaMessageBusForeach  func,
 			   gpointer		   userdata)
 {
 	ForeachInfo info = {func, userdata};
-	
+
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
 	g_return_if_fail (func != NULL);
 
@@ -826,7 +826,7 @@ pluma_message_bus_foreach (PlumaMessageBus        *bus,
  *
  */
 guint
-pluma_message_bus_connect (PlumaMessageBus	*bus, 
+pluma_message_bus_connect (PlumaMessageBus	*bus,
 		           const gchar		*object_path,
 		           const gchar		*method,
 		           PlumaMessageCallback  callback,
@@ -839,10 +839,10 @@ pluma_message_bus_connect (PlumaMessageBus	*bus,
 	g_return_val_if_fail (object_path != NULL, 0);
 	g_return_val_if_fail (method != NULL, 0);
 	g_return_val_if_fail (callback != NULL, 0);
-	
+
 	/* lookup the message and create if it does not exist yet */
 	message = lookup_message (bus, object_path, method, TRUE);
-	
+
 	return add_listener (bus, message, callback, userdata, destroy_data);
 }
 
@@ -859,7 +859,7 @@ pluma_message_bus_disconnect (PlumaMessageBus *bus,
 			      guint            id)
 {
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
-	
+
 	process_by_id (bus, id, remove_listener);
 }
 
@@ -871,8 +871,8 @@ pluma_message_bus_disconnect (PlumaMessageBus *bus,
  * @callback: (scope call): the connected callback
  * @userdata: the userdata with which the callback was connected
  *
- * Disconnects a previously connected message callback by matching the 
- * provided callback function and userdata. See also 
+ * Disconnects a previously connected message callback by matching the
+ * provided callback function and userdata. See also
  * pluma_message_bus_disconnect().
  *
  */
@@ -884,7 +884,7 @@ pluma_message_bus_disconnect_by_func (PlumaMessageBus      *bus,
 				      gpointer		    userdata)
 {
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
-	
+
 	process_by_match (bus, object_path, method, callback, userdata, remove_listener);
 }
 
@@ -902,7 +902,7 @@ pluma_message_bus_block (PlumaMessageBus *bus,
 			 guint		  id)
 {
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
-	
+
 	process_by_id (bus, id, block_listener);
 }
 
@@ -926,7 +926,7 @@ pluma_message_bus_block_by_func (PlumaMessageBus      *bus,
 				 gpointer	       userdata)
 {
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
-	
+
 	process_by_match (bus, object_path, method, callback, userdata, block_listener);
 }
 
@@ -943,7 +943,7 @@ pluma_message_bus_unblock (PlumaMessageBus *bus,
 			   guint	    id)
 {
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
-	
+
 	process_by_id (bus, id, unblock_listener);
 }
 
@@ -966,7 +966,7 @@ pluma_message_bus_unblock_by_func (PlumaMessageBus      *bus,
 				   gpointer	         userdata)
 {
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
-	
+
 	process_by_match (bus, object_path, method, callback, userdata, unblock_listener);
 }
 
@@ -979,7 +979,7 @@ validate_message (PlumaMessage *message)
 							 pluma_message_get_method (message));
 		return FALSE;
 	}
-	
+
 	return TRUE;
 }
 
@@ -991,8 +991,8 @@ send_message_real (PlumaMessageBus *bus,
 	{
 		return;
 	}
-	
-	bus->priv->message_queue = g_list_prepend (bus->priv->message_queue, 
+
+	bus->priv->message_queue = g_list_prepend (bus->priv->message_queue,
 						   g_object_ref (message));
 
 	if (bus->priv->idle_id == 0)
@@ -1008,7 +1008,7 @@ send_message_real (PlumaMessageBus *bus,
  * @message: the message to send
  *
  * This sends the provided @message asynchronously over the bus. To send
- * a message synchronously, use pluma_message_bus_send_message_sync(). The 
+ * a message synchronously, use pluma_message_bus_send_message_sync(). The
  * convenience function pluma_message_bus_send() can be used to easily send
  * a message without constructing the message object explicitly first.
  *
@@ -1019,7 +1019,7 @@ pluma_message_bus_send_message (PlumaMessageBus *bus,
 {
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
 	g_return_if_fail (PLUMA_IS_MESSAGE (message));
-	
+
 	send_message_real (bus, message);
 }
 
@@ -1031,7 +1031,7 @@ send_message_sync_real (PlumaMessageBus *bus,
 	{
 		return;
 	}
-	
+
 	dispatch_message (bus, message);
 }
 
@@ -1041,7 +1041,7 @@ send_message_sync_real (PlumaMessageBus *bus,
  * @message: the message to send
  *
  * This sends the provided @message synchronously over the bus. To send
- * a message asynchronously, use pluma_message_bus_send_message(). The 
+ * a message asynchronously, use pluma_message_bus_send_message(). The
  * convenience function pluma_message_bus_send_sync() can be used to easily send
  * a message without constructing the message object explicitly first.
  *
@@ -1053,7 +1053,7 @@ pluma_message_bus_send_message_sync (PlumaMessageBus *bus,
 	g_return_if_fail (PLUMA_IS_MESSAGE_BUS (bus));
 	g_return_if_fail (PLUMA_IS_MESSAGE (message));
 
-	send_message_sync_real (bus, message);	
+	send_message_sync_real (bus, message);
 }
 
 static PlumaMessage *
@@ -1063,16 +1063,16 @@ create_message (PlumaMessageBus *bus,
 		va_list          var_args)
 {
 	PlumaMessageType *message_type;
-	
+
 	message_type = pluma_message_bus_lookup (bus, object_path, method);
-	
+
 	if (!message_type)
 	{
 		g_warning ("Could not find message type for '%s.%s'", object_path, method);
 		return NULL;
 	}
 
-	return pluma_message_type_instantiate_valist (message_type, 
+	return pluma_message_type_instantiate_valist (message_type,
 						      var_args);
 }
 
@@ -1083,9 +1083,9 @@ create_message (PlumaMessageBus *bus,
  * @method: the method
  * @...: NULL terminated list of key/value pairs
  *
- * This provides a convenient way to quickly send a message @method at 
- * @object_path asynchronously over the bus. The variable argument list 
- * specifies key (string) value pairs used to construct the message arguments. 
+ * This provides a convenient way to quickly send a message @method at
+ * @object_path asynchronously over the bus. The variable argument list
+ * specifies key (string) value pairs used to construct the message arguments.
  * To send a message synchronously use pluma_message_bus_send_sync().
  *
  */
@@ -1097,11 +1097,11 @@ pluma_message_bus_send (PlumaMessageBus *bus,
 {
 	va_list var_args;
 	PlumaMessage *message;
-	
+
 	va_start (var_args, method);
 
 	message = create_message (bus, object_path, method, var_args);
-	
+
 	if (message)
 	{
 		send_message_real (bus, message);
@@ -1122,9 +1122,9 @@ pluma_message_bus_send (PlumaMessageBus *bus,
  * @method: the method
  * @...: NULL terminated list of key/value pairs
  *
- * This provides a convenient way to quickly send a message @method at 
- * @object_path synchronously over the bus. The variable argument list 
- * specifies key (string) value pairs used to construct the message 
+ * This provides a convenient way to quickly send a message @method at
+ * @object_path synchronously over the bus. The variable argument list
+ * specifies key (string) value pairs used to construct the message
  * arguments. To send a message asynchronously use pluma_message_bus_send().
  *
  * Return value: (transfer full): the constructed #PlumaMessage. The caller owns a reference
@@ -1139,15 +1139,15 @@ pluma_message_bus_send_sync (PlumaMessageBus *bus,
 {
 	va_list var_args;
 	PlumaMessage *message;
-	
+
 	va_start (var_args, method);
 	message = create_message (bus, object_path, method, var_args);
-	
+
 	if (message)
 		send_message_sync_real (bus, message);
 
 	va_end (var_args);
-	
+
 	return message;
 }
 
