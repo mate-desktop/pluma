@@ -19,9 +19,11 @@ plugin_PYTHON = \
 	comment.py
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/snippets/ui
-ui_DATA = snippets.ui
+ui_files = snippets.ui
+include $(top_srcdir)/gla11y.mk
+ui_DATA = $(ui_files)
 
-EXTRA_DIST = $(ui_DATA)
+EXTRA_DIST = $(ui_DATA) ui-a11y.suppr
 
 CLEANFILES = *.bak *.gladep *.pyc
 DISTCLEANFILES = *.bak *.gladep *.pyc

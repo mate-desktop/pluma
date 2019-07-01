@@ -34,7 +34,9 @@ libspell_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
 libspell_la_LIBADD  = $(PLUMA_LIBS) $(ENCHANT_LIBS)
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/spell
-ui_DATA = spell-checker.ui languages-dialog.ui pluma-spell-setup-dialog.ui
+ui_files = spell-checker.ui languages-dialog.ui pluma-spell-setup-dialog.ui
+include $(top_srcdir)/gla11y.mk
+ui_DATA = $(ui_files)
 
 pluma-spell-marshal.h: pluma-spell-marshal.list $(GLIB_GENMARSHAL)
 	$(AM_V_GEN) $(GLIB_GENMARSHAL) $< --header --prefix=pluma_marshal > $@
@@ -59,7 +61,8 @@ EXTRA_DIST = 					\
 	$(ui_DATA)				\
 	$(plugin_in_files)			\
 	pluma-spell-marshal.list    	        \
-	$(spell_gschema_in)
+	$(spell_gschema_in)			\
+	ui-a11y.suppr
 
 CLEANFILES = $(BUILT_SOURCES) $(plugin_DATA) $(gsettings_SCHEMAS)
 
