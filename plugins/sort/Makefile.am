@@ -16,7 +16,9 @@ libsort_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
 libsort_la_LIBADD  = $(PLUMA_LIBS)
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/sort
-ui_DATA = sort.ui
+ui_files = sort.ui
+include $(top_srcdir)/gla11y.mk
+ui_DATA = $(ui_files)
 
 plugin_in_files = sort.plugin.desktop.in
 
@@ -24,7 +26,7 @@ plugin_in_files = sort.plugin.desktop.in
 
 plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
 
-EXTRA_DIST = $(ui_DATA) $(plugin_in_files)
+EXTRA_DIST = $(ui_DATA) $(plugin_in_files) ui-a11y.suppr
 
 CLEANFILES = $(plugin_DATA)
 DISTCLEANFILES = $(plugin_DATA)

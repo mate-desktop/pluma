@@ -20,11 +20,15 @@ libdialogs_la_SOURCES = 			\
 	pluma-search-dialog.h			\
 	pluma-search-dialog.c
 
-ui_DATA =					\
+ui_files =					\
 	pluma-encodings-dialog.ui		\
 	pluma-preferences-dialog.ui		\
 	pluma-search-dialog.ui
 
-EXTRA_DIST = $(ui_DATA)
+include $(top_srcdir)/gla11y.mk
+
+ui_DATA = $(ui_files)
+
+EXTRA_DIST = $(ui_DATA) ui-a11y.suppr
 
 -include $(top_srcdir)/git.mk

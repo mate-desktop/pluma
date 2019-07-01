@@ -179,9 +179,11 @@ about_DATA =				\
 	$(NULL)
 
 uidir = $(datadir)/pluma/ui/
+ui_files = pluma-print-preferences.ui
+include $(top_srcdir)/gla11y.mk
 ui_DATA = 				\
 	pluma-ui.xml			\
-	pluma-print-preferences.ui
+	$(ui_files)
 
 EXTRA_DIST = 				\
 	$(ui_DATA)			\
@@ -189,7 +191,8 @@ EXTRA_DIST = 				\
 	pluma-enum-types.h.template	\
 	pluma-enum-types.c.template	\
 	pluma-marshal.list		\
-	pluma.rc
+	pluma.rc			\
+	ui-a11y.suppr
 
 CLEANFILES = $(BUILT_SOURCES)
 
