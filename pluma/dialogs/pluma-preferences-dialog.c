@@ -78,10 +78,6 @@ typedef enum
 	DRAW_ALL = 2
 } DrawSpacesSettings;
 
-#define PLUMA_PREFERENCES_DIALOG_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-						     PLUMA_TYPE_PREFERENCES_DIALOG, \
-						     PlumaPreferencesDialogPrivate))
-
 struct _PlumaPreferencesDialogPrivate
 {
 	GtkWidget	*notebook;
@@ -146,15 +142,12 @@ struct _PlumaPreferencesDialogPrivate
 };
 
 
-G_DEFINE_TYPE(PlumaPreferencesDialog, pluma_preferences_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaPreferencesDialog, pluma_preferences_dialog, GTK_TYPE_DIALOG)
 
 
 static void
 pluma_preferences_dialog_class_init (PlumaPreferencesDialogClass *klass)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	g_type_class_add_private (object_class, sizeof (PlumaPreferencesDialogPrivate));
 }
 
 static void
@@ -1296,7 +1289,7 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 
 	pluma_debug (DEBUG_PREFS);
 
-	dlg->priv = PLUMA_PREFERENCES_DIALOG_GET_PRIVATE (dlg);
+	dlg->priv = pluma_preferences_dialog_get_instance_private (dlg);
 
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Close"), "window-close", GTK_RESPONSE_CLOSE);
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
