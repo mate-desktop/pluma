@@ -77,15 +77,11 @@ struct _PlumaCloseConfirmationDialogPrivate
 	gboolean     disable_save_to_disk;
 };
 
-#define PLUMA_CLOSE_CONFIRMATION_DIALOG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), \
-							PLUMA_TYPE_CLOSE_CONFIRMATION_DIALOG, \
-							PlumaCloseConfirmationDialogPrivate))
-
 #define GET_MODE(priv) (((priv->unsaved_documents != NULL) && \
 			 (priv->unsaved_documents->next == NULL)) ? \
 			  SINGLE_DOC_MODE : MULTIPLE_DOCS_MODE)
 
-G_DEFINE_TYPE(PlumaCloseConfirmationDialog, pluma_close_confirmation_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaCloseConfirmationDialog, pluma_close_confirmation_dialog, GTK_TYPE_DIALOG)
 
 static void 	 set_unsaved_document 		(PlumaCloseConfirmationDialog *dlg,
 						 const GList                  *list);
@@ -198,7 +194,7 @@ pluma_close_confirmation_dialog_init (PlumaCloseConfirmationDialog *dlg)
 {
 	AtkObject *atk_obj;
 
-	dlg->priv = PLUMA_CLOSE_CONFIRMATION_DIALOG_GET_PRIVATE (dlg);
+	dlg->priv = pluma_close_confirmation_dialog_get_instance_private (dlg);
 
 	dlg->priv->disable_save_to_disk =
 			pluma_app_get_lockdown (pluma_app_get_default ())
@@ -302,8 +298,6 @@ pluma_close_confirmation_dialog_class_init (PlumaCloseConfirmationDialogClass *k
 	gobject_class->set_property = pluma_close_confirmation_dialog_set_property;
 	gobject_class->get_property = pluma_close_confirmation_dialog_get_property;
 	gobject_class->finalize = pluma_close_confirmation_dialog_finalize;
-
-	g_type_class_add_private (klass, sizeof (PlumaCloseConfirmationDialogPrivate));
 
 	g_object_class_install_property (gobject_class,
 					 PROP_UNSAVED_DOCUMENTS,
