@@ -46,10 +46,6 @@
 #include "pluma-help.h"
 #include "pluma-dirs.h"
 
-#define PLUMA_ENCODINGS_DIALOG_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-						   PLUMA_TYPE_ENCODINGS_DIALOG,           \
-						   PlumaEncodingsDialogPrivate))
-
 struct _PlumaEncodingsDialogPrivate
 {
 	GtkListStore	*available_liststore;
@@ -62,7 +58,7 @@ struct _PlumaEncodingsDialogPrivate
 	GSList		*show_in_menu_list;
 };
 
-G_DEFINE_TYPE(PlumaEncodingsDialog, pluma_encodings_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaEncodingsDialog, pluma_encodings_dialog, GTK_TYPE_DIALOG)
 
 static void
 pluma_encodings_dialog_finalize (GObject *object)
@@ -80,8 +76,6 @@ pluma_encodings_dialog_class_init (PlumaEncodingsDialogClass *klass)
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
 	object_class->finalize = pluma_encodings_dialog_finalize;
-
-	g_type_class_add_private (object_class, sizeof (PlumaEncodingsDialogPrivate));
 }
 
 enum {
@@ -307,7 +301,7 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 		NULL
 	};
 
-	dlg->priv = PLUMA_ENCODINGS_DIALOG_GET_PRIVATE (dlg);
+	dlg->priv = pluma_encodings_dialog_get_instance_private (dlg);
 
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_OK"), "gtk-ok", GTK_RESPONSE_OK);
