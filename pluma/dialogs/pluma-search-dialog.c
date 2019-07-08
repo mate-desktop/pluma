@@ -43,10 +43,6 @@
 #include "pluma-marshal.h"
 #include "pluma-dirs.h"
 
-#define PLUMA_SEARCH_DIALOG_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-						PLUMA_TYPE_SEARCH_DIALOG,              \
-						PlumaSearchDialogPrivate))
-
 /* Signals */
 enum
 {
@@ -80,7 +76,7 @@ struct _PlumaSearchDialogPrivate
 	gboolean   ui_error;
 };
 
-G_DEFINE_TYPE(PlumaSearchDialog, pluma_search_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaSearchDialog, pluma_search_dialog, GTK_TYPE_DIALOG)
 
 enum
 {
@@ -172,8 +168,6 @@ pluma_search_dialog_class_init (PlumaSearchDialogClass *klass)
 					 		       "Whether the dialog is used for Search&Replace",
 					 		       FALSE,
 					 		       G_PARAM_READWRITE));
-
-	g_type_class_add_private (object_class, sizeof (PlumaSearchDialogPrivate));
 
 	binding_set = gtk_binding_set_by_class (klass);
 
@@ -325,7 +319,7 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 		NULL
 	};
 
-	dlg->priv = PLUMA_SEARCH_DIALOG_GET_PRIVATE (dlg);
+	dlg->priv = pluma_search_dialog_get_instance_private (dlg);
 
 	gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
 	gtk_window_set_destroy_with_parent (GTK_WINDOW (dlg), TRUE);
