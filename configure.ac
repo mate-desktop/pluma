@@ -32,7 +32,7 @@ AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 AC_SYS_LARGEFILE
 PKG_PROG_PKG_CONFIG
-AC_PATH_PROG([GLA11Y], [gla11y], [true])
+AC_PATH_PROG([GLA11Y], [gla11y], [/dev/null])
 
 # Initialize libtool
 LT_PREREQ([2.2.6])
