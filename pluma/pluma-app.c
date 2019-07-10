@@ -50,8 +50,6 @@
 #define PLUMA_PAGE_SETUP_FILE		"pluma-page-setup"
 #define PLUMA_PRINT_SETTINGS_FILE	"pluma-print-settings"
 
-#define PLUMA_APP_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_APP, PlumaAppPrivate))
-
 /* Properties */
 enum
 {
@@ -70,7 +68,7 @@ struct _PlumaAppPrivate
 	GtkPrintSettings  *print_settings;
 };
 
-G_DEFINE_TYPE(PlumaApp, pluma_app, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaApp, pluma_app, G_TYPE_OBJECT)
 
 static void
 pluma_app_finalize (GObject *object)
@@ -123,8 +121,6 @@ pluma_app_class_init (PlumaAppClass *klass)
 							     0,
 							     G_PARAM_READABLE |
 							     G_PARAM_STATIC_STRINGS));
-
-	g_type_class_add_private (object_class, sizeof(PlumaAppPrivate));
 }
 
 static gboolean
@@ -330,7 +326,7 @@ save_print_settings (PlumaApp *app)
 static void
 pluma_app_init (PlumaApp *app)
 {
-	app->priv = PLUMA_APP_GET_PRIVATE (app);
+	app->priv = pluma_app_get_instance_private (app);
 
 	load_accels ();
 
