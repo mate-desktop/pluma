@@ -76,8 +76,6 @@ PROFILE (static GTimer *timer = NULL)
 #define PLUMA_MAX_PATH_LEN  2048
 #endif
 
-#define PLUMA_DOCUMENT_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_DOCUMENT, PlumaDocumentPrivate))
-
 static void	pluma_document_load_real	(PlumaDocument          *doc,
 						 const gchar            *uri,
 						 const PlumaEncoding    *encoding,
@@ -174,7 +172,7 @@ enum {
 
 static guint document_signals[LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE(PlumaDocument, pluma_document, GTK_SOURCE_TYPE_BUFFER)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaDocument, pluma_document, GTK_SOURCE_TYPE_BUFFER)
 
 GQuark
 pluma_document_error_quark (void)
@@ -646,8 +644,6 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      2,
 			      GTK_TYPE_TEXT_ITER | G_SIGNAL_TYPE_STATIC_SCOPE,
 			      GTK_TYPE_TEXT_ITER | G_SIGNAL_TYPE_STATIC_SCOPE);
-
-	g_type_class_add_private (object_class, sizeof(PlumaDocumentPrivate));
 }
 
 static gboolean
@@ -923,7 +919,7 @@ pluma_document_init (PlumaDocument *doc)
 
 	pluma_debug (DEBUG_DOCUMENT);
 
-	doc->priv = PLUMA_DOCUMENT_GET_PRIVATE (doc);
+	doc->priv = pluma_document_get_instance_private (doc);
 
 	doc->priv->uri = NULL;
 	doc->priv->untitled_number = get_untitled_number ();
