@@ -35,8 +35,6 @@
  * thread */
 
 
-G_DEFINE_TYPE (PlumaDocumentInputStream, pluma_document_input_stream, G_TYPE_INPUT_STREAM);
-
 struct _PlumaDocumentInputStreamPrivate
 {
 	GtkTextBuffer *buffer;
@@ -48,6 +46,8 @@ struct _PlumaDocumentInputStreamPrivate
 	guint newline_added : 1;
 	guint is_initialized : 1;
 };
+
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaDocumentInputStream, pluma_document_input_stream, G_TYPE_INPUT_STREAM);
 
 enum
 {
@@ -119,8 +119,6 @@ pluma_document_input_stream_class_init (PlumaDocumentInputStreamClass *klass)
 	GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 	GInputStreamClass *stream_class = G_INPUT_STREAM_CLASS (klass);
 
-	g_type_class_add_private (klass, sizeof (PlumaDocumentInputStreamPrivate));
-
 	gobject_class->get_property = pluma_document_input_stream_get_property;
 	gobject_class->set_property = pluma_document_input_stream_set_property;
 
@@ -158,9 +156,7 @@ pluma_document_input_stream_class_init (PlumaDocumentInputStreamClass *klass)
 static void
 pluma_document_input_stream_init (PlumaDocumentInputStream *stream)
 {
-	stream->priv = G_TYPE_INSTANCE_GET_PRIVATE (stream,
-						    PLUMA_TYPE_DOCUMENT_INPUT_STREAM,
-						    PlumaDocumentInputStreamPrivate);
+	stream->priv = pluma_document_input_stream_get_instance_private (stream);
 }
 
 static gsize
