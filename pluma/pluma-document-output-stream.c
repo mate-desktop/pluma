@@ -34,10 +34,6 @@
  * there is no I/O involved and should be accessed only by the main
  * thread */
 
-#define PLUMA_DOCUMENT_OUTPUT_STREAM_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object),\
-							 PLUMA_TYPE_DOCUMENT_OUTPUT_STREAM,\
-							 PlumaDocumentOutputStreamPrivate))
-
 #define MAX_UNICHAR_LEN 6
 
 struct _PlumaDocumentOutputStreamPrivate
@@ -58,7 +54,7 @@ enum
 	PROP_DOCUMENT
 };
 
-G_DEFINE_TYPE (PlumaDocumentOutputStream, pluma_document_output_stream, G_TYPE_OUTPUT_STREAM)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaDocumentOutputStream, pluma_document_output_stream, G_TYPE_OUTPUT_STREAM)
 
 static gssize	pluma_document_output_stream_write (GOutputStream            *stream,
 						    const void               *buffer,
@@ -169,14 +165,12 @@ pluma_document_output_stream_class_init (PlumaDocumentOutputStreamClass *klass)
 							      PLUMA_TYPE_DOCUMENT,
 							      G_PARAM_READWRITE |
 							      G_PARAM_CONSTRUCT_ONLY));
-
-	g_type_class_add_private (object_class, sizeof (PlumaDocumentOutputStreamPrivate));
 }
 
 static void
 pluma_document_output_stream_init (PlumaDocumentOutputStream *stream)
 {
-	stream->priv = PLUMA_DOCUMENT_OUTPUT_STREAM_GET_PRIVATE (stream);
+	stream->priv = pluma_document_output_stream_get_instance_private (stream);
 
 	stream->priv->buffer = NULL;
 	stream->priv->buflen = 0;
