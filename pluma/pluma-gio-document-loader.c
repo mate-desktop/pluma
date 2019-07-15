@@ -66,11 +66,6 @@ typedef struct
 				G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE "," \
 				PLUMA_METADATA_ATTRIBUTE_ENCODING
 
-#define PLUMA_GIO_DOCUMENT_LOADER_GET_PRIVATE(object) \
-				(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-				 PLUMA_TYPE_GIO_DOCUMENT_LOADER,   \
-				 PlumaGioDocumentLoaderPrivate))
-
 static void	    pluma_gio_document_loader_load		(PlumaDocumentLoader *loader);
 static gboolean     pluma_gio_document_loader_cancel		(PlumaDocumentLoader *loader);
 static goffset      pluma_gio_document_loader_get_bytes_read	(PlumaDocumentLoader *loader);
@@ -95,7 +90,7 @@ struct _PlumaGioDocumentLoaderPrivate
 	GError           *error;
 };
 
-G_DEFINE_TYPE(PlumaGioDocumentLoader, pluma_gio_document_loader, PLUMA_TYPE_DOCUMENT_LOADER)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaGioDocumentLoader, pluma_gio_document_loader, PLUMA_TYPE_DOCUMENT_LOADER)
 
 static void
 pluma_gio_document_loader_dispose (GObject *object)
@@ -155,14 +150,12 @@ pluma_gio_document_loader_class_init (PlumaGioDocumentLoaderClass *klass)
 	loader_class->load = pluma_gio_document_loader_load;
 	loader_class->cancel = pluma_gio_document_loader_cancel;
 	loader_class->get_bytes_read = pluma_gio_document_loader_get_bytes_read;
-
-	g_type_class_add_private (object_class, sizeof(PlumaGioDocumentLoaderPrivate));
 }
 
 static void
 pluma_gio_document_loader_init (PlumaGioDocumentLoader *gvloader)
 {
-	gvloader->priv = PLUMA_GIO_DOCUMENT_LOADER_GET_PRIVATE (gvloader);
+	gvloader->priv = pluma_gio_document_loader_get_instance_private (gvloader);
 
 	gvloader->priv->converter = NULL;
 	gvloader->priv->error = NULL;
