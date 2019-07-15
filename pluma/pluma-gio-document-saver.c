@@ -57,10 +57,6 @@ typedef struct
 #define REMOTE_QUERY_ATTRIBUTES G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE "," \
 				G_FILE_ATTRIBUTE_TIME_MODIFIED
 
-#define PLUMA_GIO_DOCUMENT_SAVER_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-							  PLUMA_TYPE_GIO_DOCUMENT_SAVER, \
-							  PlumaGioDocumentSaverPrivate))
-
 static void	     pluma_gio_document_saver_save		    (PlumaDocumentSaver *saver,
 								     GTimeVal           *old_mtime);
 static goffset	     pluma_gio_document_saver_get_file_size	    (PlumaDocumentSaver *saver);
@@ -84,7 +80,7 @@ struct _PlumaGioDocumentSaverPrivate
 	GError                   *error;
 };
 
-G_DEFINE_TYPE(PlumaGioDocumentSaver, pluma_gio_document_saver, PLUMA_TYPE_DOCUMENT_SAVER)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaGioDocumentSaver, pluma_gio_document_saver, PLUMA_TYPE_DOCUMENT_SAVER)
 
 static void
 pluma_gio_document_saver_dispose (GObject *object)
@@ -167,14 +163,12 @@ pluma_gio_document_saver_class_init (PlumaGioDocumentSaverClass *klass)
 	saver_class->save = pluma_gio_document_saver_save;
 	saver_class->get_file_size = pluma_gio_document_saver_get_file_size;
 	saver_class->get_bytes_written = pluma_gio_document_saver_get_bytes_written;
-
-	g_type_class_add_private (object_class, sizeof(PlumaGioDocumentSaverPrivate));
 }
 
 static void
 pluma_gio_document_saver_init (PlumaGioDocumentSaver *gvsaver)
 {
-	gvsaver->priv = PLUMA_GIO_DOCUMENT_SAVER_GET_PRIVATE (gvsaver);
+	gvsaver->priv = pluma_gio_document_saver_get_instance_private (gvsaver);
 
 	gvsaver->priv->cancellable = g_cancellable_new ();
 	gvsaver->priv->error = NULL;
