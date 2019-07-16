@@ -42,10 +42,6 @@
 
 #define ENCODING_KEY "Enconding"
 
-#define PLUMA_ENCODINGS_COMBO_BOX_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object),	\
-							PLUMA_TYPE_ENCODINGS_COMBO_BOX,	\
-							PlumaEncodingsComboBoxPrivate))
-
 struct _PlumaEncodingsComboBoxPrivate
 {
 	GtkListStore *store;
@@ -72,7 +68,7 @@ enum
 };
 
 
-G_DEFINE_TYPE(PlumaEncodingsComboBox, pluma_encodings_combo_box, GTK_TYPE_COMBO_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaEncodingsComboBox, pluma_encodings_combo_box, GTK_TYPE_COMBO_BOX)
 
 static void	  update_menu 		(PlumaEncodingsComboBox       *combo_box);
 
@@ -150,8 +146,6 @@ pluma_encodings_combo_box_class_init (PlumaEncodingsComboBoxClass *klass)
 							       G_PARAM_READWRITE |
 							       G_PARAM_CONSTRUCT |
 							       G_PARAM_STATIC_STRINGS));
-
-	g_type_class_add_private (object_class, sizeof (PlumaEncodingsComboBoxPrivate));
 }
 
 static void
@@ -369,7 +363,7 @@ pluma_encodings_combo_box_init (PlumaEncodingsComboBox *menu)
 {
 	GtkCellRenderer *text_renderer;
 
-	menu->priv = PLUMA_ENCODINGS_COMBO_BOX_GET_PRIVATE (menu);
+	menu->priv = pluma_encodings_combo_box_get_instance_private (menu);
 
 	menu->priv->store = gtk_list_store_new (N_COLUMNS,
 						G_TYPE_STRING,
