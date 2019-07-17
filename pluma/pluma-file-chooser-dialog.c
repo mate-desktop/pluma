@@ -49,8 +49,6 @@
 #include "pluma-enum-types.h"
 #include "pluma-utils.h"
 
-#define PLUMA_FILE_CHOOSER_DIALOG_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_FILE_CHOOSER_DIALOG, PlumaFileChooserDialogPrivate))
-
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
 
@@ -64,14 +62,11 @@ struct _PlumaFileChooserDialogPrivate
 	GtkListStore *newline_store;
 };
 
-G_DEFINE_TYPE(PlumaFileChooserDialog, pluma_file_chooser_dialog, GTK_TYPE_FILE_CHOOSER_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaFileChooserDialog, pluma_file_chooser_dialog, GTK_TYPE_FILE_CHOOSER_DIALOG)
 
 static void
 pluma_file_chooser_dialog_class_init (PlumaFileChooserDialogClass *klass)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	g_type_class_add_private (object_class, sizeof(PlumaFileChooserDialogPrivate));
 }
 
 static void
@@ -354,7 +349,7 @@ all_text_files_filter (const GtkFileFilterInfo *filter_info,
 static void
 pluma_file_chooser_dialog_init (PlumaFileChooserDialog *dialog)
 {
-	dialog->priv = PLUMA_FILE_CHOOSER_DIALOG_GET_PRIVATE (dialog);
+	dialog->priv = pluma_file_chooser_dialog_get_instance_private (dialog);
 }
 
 static GtkWidget *
