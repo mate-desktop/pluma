@@ -50,10 +50,6 @@ enum {
 
 #define PLUMA_HISTORY_ENTRY_HISTORY_LENGTH_DEFAULT 10
 
-#define PLUMA_HISTORY_ENTRY_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-						PLUMA_TYPE_HISTORY_ENTRY, \
-						PlumaHistoryEntryPrivate))
-
 struct _PlumaHistoryEntryPrivate
 {
 	gchar              *history_id;
@@ -64,7 +60,7 @@ struct _PlumaHistoryEntryPrivate
 	GSettings          *settings;
 };
 
-G_DEFINE_TYPE(PlumaHistoryEntry, pluma_history_entry, GTK_TYPE_COMBO_BOX_TEXT)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaHistoryEntry, pluma_history_entry, GTK_TYPE_COMBO_BOX_TEXT)
 
 static void
 pluma_history_entry_set_property (GObject      *object,
@@ -173,8 +169,6 @@ pluma_history_entry_class_init (PlumaHistoryEntryClass *klass)
 							    G_PARAM_STATIC_STRINGS));
 
 	/* TODO: Add enable-completion property */
-
-	g_type_class_add_private (object_class, sizeof(PlumaHistoryEntryPrivate));
 }
 
 static GtkListStore *
@@ -401,7 +395,7 @@ pluma_history_entry_init (PlumaHistoryEntry *entry)
 {
 	PlumaHistoryEntryPrivate *priv;
 
-	priv = PLUMA_HISTORY_ENTRY_GET_PRIVATE (entry);
+	priv = pluma_history_entry_get_instance_private (entry);
 	entry->priv = priv;
 
 	priv->history_id = NULL;
