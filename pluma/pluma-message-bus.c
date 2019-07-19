@@ -90,8 +90,6 @@
  * </example>
  */
 
-#define PLUMA_MESSAGE_BUS_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_MESSAGE_BUS, PlumaMessageBusPrivate))
-
 typedef struct
 {
 	gchar *object_path;
@@ -143,7 +141,7 @@ static guint message_bus_signals[LAST_SIGNAL] = { 0 };
 static void pluma_message_bus_dispatch_real (PlumaMessageBus *bus,
 				 	     PlumaMessage    *message);
 
-G_DEFINE_TYPE(PlumaMessageBus, pluma_message_bus, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaMessageBus, pluma_message_bus, G_TYPE_OBJECT)
 
 static void
 listener_free (Listener *listener)
@@ -260,8 +258,6 @@ pluma_message_bus_class_init (PlumaMessageBusClass *klass)
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_MESSAGE_TYPE);
-
-	g_type_class_add_private (object_class, sizeof(PlumaMessageBusPrivate));
 }
 
 static Message *
@@ -497,7 +493,7 @@ process_by_match (PlumaMessageBus      *bus,
 static void
 pluma_message_bus_init (PlumaMessageBus *self)
 {
-	self->priv = PLUMA_MESSAGE_BUS_GET_PRIVATE (self);
+	self->priv = pluma_message_bus_get_instance_private (self);
 
 	self->priv->messages = g_hash_table_new_full (g_str_hash,
 						      g_str_equal,
