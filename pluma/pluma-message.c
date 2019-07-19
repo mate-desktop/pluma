@@ -18,7 +18,6 @@
  * who is the sender and who is the receiver. There is no explicit distinction
  * between methods and signals.
  */
-#define PLUMA_MESSAGE_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_MESSAGE, PlumaMessagePrivate))
 
 enum {
 	PROP_0,
@@ -36,7 +35,7 @@ struct _PlumaMessagePrivate
 	GHashTable *values;
 };
 
-G_DEFINE_TYPE (PlumaMessage, pluma_message, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaMessage, pluma_message, G_TYPE_OBJECT)
 
 static void
 pluma_message_finalize (GObject *object)
@@ -163,8 +162,6 @@ pluma_message_class_init (PlumaMessageClass *klass)
 					 		     G_PARAM_READWRITE |
 					 		     G_PARAM_CONSTRUCT_ONLY |
 					 		     G_PARAM_STATIC_STRINGS));
-
-	g_type_class_add_private (object_class, sizeof(PlumaMessagePrivate));
 }
 
 static void
@@ -177,7 +174,7 @@ destroy_value (GValue *value)
 static void
 pluma_message_init (PlumaMessage *self)
 {
-	self->priv = PLUMA_MESSAGE_GET_PRIVATE (self);
+	self->priv = pluma_message_get_instance_private (self);
 
 	self->priv->values = g_hash_table_new_full (g_str_hash,
 						    g_str_equal,
