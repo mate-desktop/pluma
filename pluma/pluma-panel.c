@@ -41,8 +41,6 @@
 
 #define PANEL_ITEM_KEY "PlumaPanelItemKey"
 
-#define PLUMA_PANEL_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_PANEL, PlumaPanelPrivate))
-
 struct _PlumaPanelPrivate
 {
 	GtkOrientation orientation;
@@ -85,7 +83,7 @@ static GObject	*pluma_panel_constructor	(GType type,
 						 GObjectConstructParam *construct_properties);
 
 
-G_DEFINE_TYPE(PlumaPanel, pluma_panel, GTK_TYPE_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaPanel, pluma_panel, GTK_TYPE_BOX)
 
 static void
 pluma_panel_finalize (GObject *obj)
@@ -176,8 +174,6 @@ pluma_panel_class_init (PlumaPanelClass *klass)
 	GtkBindingSet *binding_set;
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
-
-	g_type_class_add_private (klass, sizeof (PlumaPanelPrivate));
 
 	object_class->constructor = pluma_panel_constructor;
 	object_class->finalize = pluma_panel_finalize;
@@ -362,10 +358,9 @@ panel_show (PlumaPanel *panel,
 static void
 pluma_panel_init (PlumaPanel *panel)
 {
-	panel->priv = PLUMA_PANEL_GET_PRIVATE (panel);
+	panel->priv = pluma_panel_get_instance_private (panel);
 
-	gtk_orientable_set_orientation (GTK_ORIENTABLE (panel),
-									GTK_ORIENTATION_VERTICAL);
+	gtk_orientable_set_orientation (GTK_ORIENTABLE (panel), GTK_ORIENTATION_VERTICAL);
 }
 
 static void
