@@ -53,8 +53,6 @@
 #define AFTER_ALL_TABS -1
 #define NOT_IN_APP_WINDOWS -2
 
-#define PLUMA_NOTEBOOK_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_NOTEBOOK, PlumaNotebookPrivate))
-
 struct _PlumaNotebookPrivate
 {
 	GList         *focused_pages;
@@ -67,7 +65,7 @@ struct _PlumaNotebookPrivate
 	guint          destroy_has_run : 1;
 };
 
-G_DEFINE_TYPE(PlumaNotebook, pluma_notebook, GTK_TYPE_NOTEBOOK)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaNotebook, pluma_notebook, GTK_TYPE_NOTEBOOK)
 
 static void pluma_notebook_finalize (GObject *object);
 
@@ -182,8 +180,6 @@ pluma_notebook_class_init (PlumaNotebookClass *klass)
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_TAB);
-
-	g_type_class_add_private (object_class, sizeof(PlumaNotebookPrivate));
 }
 
 static PlumaNotebook *
@@ -810,7 +806,7 @@ update_tabs_visibility (PlumaNotebook *nb)
 static void
 pluma_notebook_init (PlumaNotebook *notebook)
 {
-	notebook->priv = PLUMA_NOTEBOOK_GET_PRIVATE (notebook);
+	notebook->priv = pluma_notebook_get_instance_private (notebook);
 
 	notebook->priv->close_buttons_sensitive = TRUE;
 	notebook->priv->tab_drag_and_drop_enabled = TRUE;
