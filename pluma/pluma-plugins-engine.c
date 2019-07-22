@@ -43,12 +43,12 @@
 #include "pluma-prefs-manager.h"
 #include "pluma-dirs.h"
 
-G_DEFINE_TYPE (PlumaPluginsEngine, pluma_plugins_engine, PEAS_TYPE_ENGINE)
-
 struct _PlumaPluginsEnginePrivate
 {
 	GSettings *plugin_settings;
 };
+
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaPluginsEngine, pluma_plugins_engine, PEAS_TYPE_ENGINE)
 
 PlumaPluginsEngine *default_engine = NULL;
 
@@ -62,9 +62,7 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 
 	peas_engine_enable_loader (PEAS_ENGINE (engine), "python3");
 
-	engine->priv = G_TYPE_INSTANCE_GET_PRIVATE (engine,
-	                                            PLUMA_TYPE_PLUGINS_ENGINE,
-	                                            PlumaPluginsEnginePrivate);
+	engine->priv = pluma_plugins_engine_get_instance_private (engine);
 
 	engine->priv->plugin_settings = g_settings_new (PLUMA_SCHEMA);
 
@@ -132,8 +130,6 @@ pluma_plugins_engine_class_init (PlumaPluginsEngineClass *klass)
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
 	object_class->dispose = pluma_plugins_engine_dispose;
-
-	g_type_class_add_private (klass, sizeof (PlumaPluginsEnginePrivate));
 }
 
 PlumaPluginsEngine *
