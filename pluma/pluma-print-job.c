@@ -45,10 +45,6 @@
 #include "pluma-dirs.h"
 
 
-#define PLUMA_PRINT_JOB_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-					    PLUMA_TYPE_PRINT_JOB, \
-					    PlumaPrintJobPrivate))
-
 struct _PlumaPrintJobPrivate
 {
 	PlumaView                *view;
@@ -104,7 +100,7 @@ enum
 
 static guint print_job_signals[LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE (PlumaPrintJob, pluma_print_job, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaPrintJob, pluma_print_job, G_TYPE_OBJECT)
 
 static void
 set_view (PlumaPrintJob *job, PlumaView *view)
@@ -221,8 +217,6 @@ pluma_print_job_class_init (PlumaPrintJobClass *klass)
 			      2,
 			      G_TYPE_UINT,
 			      G_TYPE_POINTER);
-
-	g_type_class_add_private (object_class, sizeof (PlumaPrintJobPrivate));
 }
 
 static void
@@ -803,7 +797,7 @@ pluma_print_job_print (PlumaPrintJob            *job,
 static void
 pluma_print_job_init (PlumaPrintJob *job)
 {
-	job->priv = PLUMA_PRINT_JOB_GET_PRIVATE (job);
+	job->priv = pluma_print_job_get_instance_private (job);
 
 	job->priv->status = PLUMA_PRINT_JOB_STATUS_INIT;
 
