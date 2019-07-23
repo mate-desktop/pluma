@@ -45,9 +45,6 @@ enum {
 	PROP_HAS_CANCEL_BUTTON
 };
 
-
-#define PLUMA_PROGRESS_MESSAGE_AREA_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_PROGRESS_MESSAGE_AREA, PlumaProgressMessageAreaPrivate))
-
 struct _PlumaProgressMessageAreaPrivate
 {
 	GtkWidget *image;
@@ -55,7 +52,7 @@ struct _PlumaProgressMessageAreaPrivate
 	GtkWidget *progress;
 };
 
-G_DEFINE_TYPE(PlumaProgressMessageArea, pluma_progress_message_area, GTK_TYPE_INFO_BAR)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaProgressMessageArea, pluma_progress_message_area, GTK_TYPE_INFO_BAR)
 
 static void
 pluma_progress_message_area_set_has_cancel_button (PlumaProgressMessageArea *area,
@@ -123,8 +120,6 @@ pluma_progress_message_area_class_init (PlumaProgressMessageAreaClass *klass)
 							       G_PARAM_WRITABLE |
 							       G_PARAM_CONSTRUCT_ONLY |
 							       G_PARAM_STATIC_STRINGS));
-
-	g_type_class_add_private (gobject_class, sizeof(PlumaProgressMessageAreaPrivate));
 }
 
 static void
@@ -133,7 +128,7 @@ pluma_progress_message_area_init (PlumaProgressMessageArea *area)
 	GtkWidget *vbox;
 	GtkWidget *hbox;
 
-	area->priv = PLUMA_PROGRESS_MESSAGE_AREA_GET_PRIVATE (area);
+	area->priv = pluma_progress_message_area_get_instance_private (area);
 
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_widget_show (vbox);
