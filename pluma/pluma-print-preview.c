@@ -83,7 +83,7 @@ struct _PlumaPrintPreviewPrivate
 	guint cur_page;
 };
 
-G_DEFINE_TYPE (PlumaPrintPreview, pluma_print_preview, GTK_TYPE_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaPrintPreview, pluma_print_preview, GTK_TYPE_BOX)
 
 static void
 pluma_print_preview_get_property (GObject    *object,
@@ -149,8 +149,6 @@ pluma_print_preview_class_init (PlumaPrintPreviewClass *klass)
 	object_class->finalize = pluma_print_preview_finalize;
 
 	widget_class->grab_focus = pluma_print_preview_grab_focus;
-
-	g_type_class_add_private (object_class, sizeof(PlumaPrintPreviewPrivate));
 }
 
 static void
@@ -1007,9 +1005,7 @@ pluma_print_preview_init (PlumaPrintPreview *preview)
 {
 	PlumaPrintPreviewPrivate *priv;
 
-	priv = G_TYPE_INSTANCE_GET_PRIVATE (preview,
-					    PLUMA_TYPE_PRINT_PREVIEW,
-					    PlumaPrintPreviewPrivate);
+	priv = pluma_print_preview_get_instance_private (preview);
 
 	preview->priv = priv;
 
