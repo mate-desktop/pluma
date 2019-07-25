@@ -38,10 +38,6 @@
 
 #include "pluma-statusbar.h"
 
-#define PLUMA_STATUSBAR_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object),\
-					    PLUMA_TYPE_STATUSBAR,\
-					    PlumaStatusbarPrivate))
-
 struct _PlumaStatusbarPrivate
 {
 	GtkWidget     *overwrite_mode_label;
@@ -61,7 +57,7 @@ struct _PlumaStatusbarPrivate
 	guint          flash_message_id;
 };
 
-G_DEFINE_TYPE(PlumaStatusbar, pluma_statusbar, GTK_TYPE_STATUSBAR)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaStatusbar, pluma_statusbar, GTK_TYPE_STATUSBAR)
 
 
 static gchar *
@@ -96,8 +92,6 @@ pluma_statusbar_class_init (PlumaStatusbarClass *klass)
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
 	object_class->dispose = pluma_statusbar_dispose;
-
-	g_type_class_add_private (object_class, sizeof (PlumaStatusbarPrivate));
 }
 
 #define CURSOR_POSITION_LABEL_WIDTH_CHARS 18
@@ -108,7 +102,7 @@ pluma_statusbar_init (PlumaStatusbar *statusbar)
 	GtkWidget *hbox;
 	GtkWidget *error_image;
 
-	statusbar->priv = PLUMA_STATUSBAR_GET_PRIVATE (statusbar);
+	statusbar->priv = pluma_statusbar_get_instance_private (statusbar);
 
 	gtk_widget_set_margin_top (GTK_WIDGET (statusbar), 0);
 	gtk_widget_set_margin_bottom (GTK_WIDGET (statusbar), 0);
