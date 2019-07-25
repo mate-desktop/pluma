@@ -27,8 +27,6 @@
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 
-#define PLUMA_SMART_CHARSET_CONVERTER_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_SMART_CHARSET_CONVERTER, PlumaSmartCharsetConverterPrivate))
-
 struct _PlumaSmartCharsetConverterPrivate
 {
 	GCharsetConverter *charset_conv;
@@ -44,6 +42,7 @@ static void pluma_smart_charset_converter_iface_init    (GConverterIface *iface)
 
 G_DEFINE_TYPE_WITH_CODE (PlumaSmartCharsetConverter, pluma_smart_charset_converter,
 			 G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (PlumaSmartCharsetConverter)
 			 G_IMPLEMENT_INTERFACE (G_TYPE_CONVERTER,
 						pluma_smart_charset_converter_iface_init))
 
@@ -82,14 +81,12 @@ pluma_smart_charset_converter_class_init (PlumaSmartCharsetConverterClass *klass
 
 	object_class->finalize = pluma_smart_charset_converter_finalize;
 	object_class->dispose = pluma_smart_charset_converter_dispose;
-
-	g_type_class_add_private (object_class, sizeof (PlumaSmartCharsetConverterPrivate));
 }
 
 static void
 pluma_smart_charset_converter_init (PlumaSmartCharsetConverter *smart)
 {
-	smart->priv = PLUMA_SMART_CHARSET_CONVERTER_GET_PRIVATE (smart);
+	smart->priv = pluma_smart_charset_converter_get_instance_private (smart);
 
 	smart->priv->charset_conv = NULL;
 	smart->priv->encodings = NULL;
