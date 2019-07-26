@@ -24,8 +24,6 @@
 
 #define COMBO_BOX_TEXT_DATA "PlumaStatusComboBoxTextData"
 
-#define PLUMA_STATUS_COMBO_BOX_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_STATUS_COMBO_BOX, PlumaStatusComboBoxPrivate))
-
 struct _PlumaStatusComboBoxPrivate
 {
 	GtkWidget *frame;
@@ -56,7 +54,7 @@ enum
 
 static guint signals[NUM_SIGNALS] = { 0 };
 
-G_DEFINE_TYPE(PlumaStatusComboBox, pluma_status_combo_box, GTK_TYPE_EVENT_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaStatusComboBox, pluma_status_combo_box, GTK_TYPE_EVENT_BOX)
 
 static void
 pluma_status_combo_box_finalize (GObject *object)
@@ -171,8 +169,6 @@ pluma_status_combo_box_class_init (PlumaStatusComboBoxClass *klass)
 					 		      "The label",
 					 		      NULL,
 					 		      G_PARAM_READWRITE));
-
-	g_type_class_add_private (object_class, sizeof(PlumaStatusComboBoxPrivate));
 }
 
 static void
@@ -238,7 +234,7 @@ set_shadow_type (PlumaStatusComboBox *combo)
 static void
 pluma_status_combo_box_init (PlumaStatusComboBox *self)
 {
-	self->priv = PLUMA_STATUS_COMBO_BOX_GET_PRIVATE (self);
+	self->priv = pluma_status_combo_box_get_instance_private (self);
 
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (self), TRUE);
 
