@@ -45,8 +45,6 @@
 #include "pluma-prefs-manager-app.h"
 #include "pluma-enum-types.h"
 
-#define PLUMA_TAB_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_TAB, PlumaTabPrivate))
-
 #define PLUMA_TAB_KEY "PLUMA_TAB_KEY"
 
 struct _PlumaTabPrivate
@@ -84,7 +82,7 @@ struct _PlumaTabPrivate
 	guint			idle_scroll;
 };
 
-G_DEFINE_TYPE(PlumaTab, pluma_tab, GTK_TYPE_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaTab, pluma_tab, GTK_TYPE_BOX)
 
 enum
 {
@@ -291,8 +289,6 @@ pluma_tab_class_init (PlumaTabClass *klass)
 							   0,
 							   G_PARAM_READWRITE |
 							   G_PARAM_STATIC_STRINGS));
-
-	g_type_class_add_private (object_class, sizeof (PlumaTabPrivate));
 }
 
 /**
@@ -1488,7 +1484,7 @@ pluma_tab_init (PlumaTab *tab)
 	PlumaDocument *doc;
 	PlumaLockdownMask lockdown;
 
-	tab->priv = PLUMA_TAB_GET_PRIVATE (tab);
+	tab->priv = pluma_tab_get_instance_private (tab);
 
 	tab->priv->state = PLUMA_TAB_STATE_NORMAL;
 
