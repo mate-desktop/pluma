@@ -54,8 +54,6 @@
 
 #define MIN_SEARCH_COMPLETION_KEY_LEN	3
 
-#define PLUMA_VIEW_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_VIEW, PlumaViewPrivate))
-
 /* Local variables */
 static gboolean middle_or_right_down = FALSE;
 
@@ -152,7 +150,7 @@ static void	pluma_view_delete_from_cursor 	(GtkTextView     *text_view,
 						 GtkDeleteType    type,
 						 gint             count);
 
-G_DEFINE_TYPE(PlumaView, pluma_view, GTK_SOURCE_TYPE_VIEW)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaView, pluma_view, GTK_SOURCE_TYPE_VIEW)
 
 /* Signals */
 enum
@@ -299,8 +297,6 @@ pluma_view_class_init (PlumaViewClass *klass)
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__BOXED,
 			      G_TYPE_NONE, 1, G_TYPE_STRV);
-
-	g_type_class_add_private (klass, sizeof (PlumaViewPrivate));
 
 	binding_set = gtk_binding_set_by_class (klass);
 
@@ -460,7 +456,7 @@ pluma_view_init (PlumaView *view)
 
 	pluma_debug (DEBUG_VIEW);
 
-	view->priv = PLUMA_VIEW_GET_PRIVATE (view);
+	view->priv = pluma_view_get_instance_private (view);
 
 	/*
 	 *  Set tab, fonts, wrap mode, colors, etc. according
