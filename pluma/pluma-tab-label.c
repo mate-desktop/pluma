@@ -29,8 +29,6 @@
 #include "pluma-tab-label.h"
 #include "pluma-close-button.h"
 
-#define PLUMA_TAB_LABEL_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_TAB_LABEL, PlumaTabLabelPrivate))
-
 /* Signals */
 enum
 {
@@ -59,7 +57,7 @@ struct _PlumaTabLabelPrivate
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE (PlumaTabLabel, pluma_tab_label, GTK_TYPE_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaTabLabel, pluma_tab_label, GTK_TYPE_BOX)
 
 static void
 pluma_tab_label_finalize (GObject *object)
@@ -242,8 +240,6 @@ pluma_tab_label_class_init (PlumaTabLabelClass *klass)
 							      PLUMA_TYPE_TAB,
 							      G_PARAM_READWRITE |
 							      G_PARAM_CONSTRUCT_ONLY));
-
-	g_type_class_add_private (object_class, sizeof(PlumaTabLabelPrivate));
 }
 
 static void
@@ -257,7 +253,7 @@ pluma_tab_label_init (PlumaTabLabel *tab_label)
 	GtkWidget *label;
 	GtkWidget *dummy_label;
 
-	tab_label->priv = PLUMA_TAB_LABEL_GET_PRIVATE (tab_label);
+	tab_label->priv = pluma_tab_label_get_instance_private (tab_label);
 
 	tab_label->priv->close_button_sensitive = TRUE;
 
