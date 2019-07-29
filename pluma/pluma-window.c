@@ -68,10 +68,6 @@
 #define LANGUAGE_DATA "PlumaWindowLanguageData"
 #define FULLSCREEN_ANIMATION_SPEED 4
 
-#define PLUMA_WINDOW_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object),\
-					 PLUMA_TYPE_WINDOW,                    \
-					 PlumaWindowPrivate))
-
 /* Local variables */
 static gboolean cansave = TRUE;
 
@@ -99,7 +95,7 @@ enum
 	TARGET_URI_LIST = 100
 };
 
-G_DEFINE_TYPE(PlumaWindow, pluma_window, GTK_TYPE_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaWindow, pluma_window, GTK_TYPE_WINDOW)
 
 static void	recent_manager_changed	(GtkRecentManager *manager,
 					 PlumaWindow *window);
@@ -476,8 +472,6 @@ pluma_window_class_init (PlumaWindowClass *klass)
 							     PLUMA_WINDOW_STATE_NORMAL,
 							     G_PARAM_READABLE |
 							     G_PARAM_STATIC_STRINGS));
-
-	g_type_class_add_private (object_class, sizeof(PlumaWindowPrivate));
 }
 
 static void
@@ -3971,7 +3965,7 @@ pluma_window_init (PlumaWindow *window)
 
 	pluma_debug (DEBUG_WINDOW);
 
-	window->priv = PLUMA_WINDOW_GET_PRIVATE (window);
+	window->priv = pluma_window_get_instance_private (window);
 	window->priv->active_tab = NULL;
 	window->priv->num_tabs = 0;
 	window->priv->removing_tabs = FALSE;
