@@ -33,18 +33,7 @@
 #include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 
-#define PLUMA_CHANGECASE_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-					            PLUMA_TYPE_CHANGECASE_PLUGIN, \
-					            PlumaChangecasePluginPrivate))
-
 static void peas_activatable_iface_init (PeasActivatableInterface *iface);
-
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaChangecasePlugin,
-                                pluma_changecase_plugin,
-                                PEAS_TYPE_EXTENSION_BASE,
-                                0,
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
-                                                               peas_activatable_iface_init))
 
 struct _PlumaChangecasePluginPrivate
 {
@@ -53,6 +42,14 @@ struct _PlumaChangecasePluginPrivate
 	GtkActionGroup   *action_group;
 	guint             ui_id;
 };
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaChangecasePlugin,
+                                pluma_changecase_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaChangecasePlugin)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init))
 
 enum {
 	PROP_0,
@@ -280,7 +277,7 @@ pluma_changecase_plugin_init (PlumaChangecasePlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaChangecasePlugin initializing");
 
-	plugin->priv = PLUMA_CHANGECASE_PLUGIN_GET_PRIVATE (plugin);
+	plugin->priv = pluma_changecase_plugin_get_instance_private (plugin);
 }
 
 static void
@@ -446,8 +443,6 @@ pluma_changecase_plugin_class_init (PlumaChangecasePluginClass *klass)
 	object_class->get_property = pluma_changecase_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_OBJECT, "object");
-
-	g_type_class_add_private (klass, sizeof (PlumaChangecasePluginPrivate));
 }
 
 static void
