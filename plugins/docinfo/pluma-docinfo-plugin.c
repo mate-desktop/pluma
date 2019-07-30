@@ -39,18 +39,7 @@
 
 #define MENU_PATH "/MenuBar/ToolsMenu/ToolsOps_2"
 
-#define PLUMA_DOCINFO_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-					         PLUMA_TYPE_DOCINFO_PLUGIN, \
-					         PlumaDocInfoPluginPrivate))
-
 static void peas_activatable_iface_init (PeasActivatableInterface *iface);
-
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaDocInfoPlugin,
-                                pluma_docinfo_plugin,
-                                PEAS_TYPE_EXTENSION_BASE,
-                                0,
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
-                                                               peas_activatable_iface_init))
 
 typedef struct
 {
@@ -78,6 +67,14 @@ struct _PlumaDocInfoPluginPrivate
 
 	DocInfoDialog *dialog;
 };
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaDocInfoPlugin,
+                                pluma_docinfo_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaDocInfoPlugin)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init))
 
 enum {
 	PROP_0,
@@ -473,7 +470,7 @@ pluma_docinfo_plugin_init (PlumaDocInfoPlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaDocInfoPlugin initializing");
 
-	plugin->priv = PLUMA_DOCINFO_PLUGIN_GET_PRIVATE (plugin);
+	plugin->priv = pluma_docinfo_plugin_get_instance_private (plugin);
 }
 
 static void
@@ -618,8 +615,6 @@ pluma_docinfo_plugin_class_init (PlumaDocInfoPluginClass *klass)
 	object_class->get_property = pluma_docinfo_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_OBJECT, "object");
-
-	g_type_class_add_private (klass, sizeof (PlumaDocInfoPluginPrivate));
 }
 
 static void
