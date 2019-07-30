@@ -430,7 +430,7 @@ pluma_set_source_space_drawer (GtkSourceView *view)
 static void
 pluma_set_source_space_drawer (GtkSourceView *view)
 {
-	GtkSourceSpaceTypeFlags flags = 0;
+	GtkSourceDrawSpacesFlags flags = 0;
 
 	if (pluma_prefs_manager_get_draw_spaces () > 0)
 		flags |= GTK_SOURCE_DRAW_SPACES_SPACE;

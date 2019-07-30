@@ -1503,9 +1503,9 @@ pluma_prefs_manager_space_drawer_generic (GSettings              *settings,
 }
 #else
 static void
-pluma_prefs_manager_draw_generic (GSettings              *settings,
-                                  gint                    level,
-                                  GtkSourceSpaceTypeFlags type)
+pluma_prefs_manager_draw_generic (GSettings               *settings,
+                                  gint                     level,
+                                  GtkSourceDrawSpacesFlags type)
 {
 
 	GList *views;
@@ -1518,7 +1518,7 @@ pluma_prefs_manager_draw_generic (GSettings              *settings,
 
 	while (l != NULL)
 	{
-		GtkSourceSpaceTypeFlags value;
+		GtkSourceDrawSpacesFlags value;
 
 		value = gtk_source_view_get_draw_spaces (GTK_SOURCE_VIEW (l->data));
 		if (level > 0)
