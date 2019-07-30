@@ -27,10 +27,6 @@
 #include "pluma-file-bookmarks-store.h"
 #include "pluma-file-browser-utils.h"
 
-#define PLUMA_FILE_BOOKMARKS_STORE_GET_PRIVATE(object)( \
-		G_TYPE_INSTANCE_GET_PRIVATE((object), PLUMA_TYPE_FILE_BOOKMARKS_STORE, \
-		PlumaFileBookmarksStorePrivate))
-
 struct _PlumaFileBookmarksStorePrivate
 {
 	GVolumeMonitor * volume_monitor;
@@ -55,7 +51,11 @@ static gboolean find_with_flags       (GtkTreeModel * model,
                                        guint flags,
                                        guint notflags);
 
-G_DEFINE_DYNAMIC_TYPE (PlumaFileBookmarksStore, pluma_file_bookmarks_store, GTK_TYPE_TREE_STORE)
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaFileBookmarksStore,
+                                pluma_file_bookmarks_store,
+                                GTK_TYPE_TREE_STORE,
+                                0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaFileBookmarksStore))
 
 static void
 pluma_file_bookmarks_store_dispose (GObject * object)
@@ -92,20 +92,18 @@ pluma_file_bookmarks_store_class_init (PlumaFileBookmarksStoreClass *klass)
 
 	object_class->dispose = pluma_file_bookmarks_store_dispose;
 	object_class->finalize = pluma_file_bookmarks_store_finalize;
-
-	g_type_class_add_private (object_class, sizeof (PlumaFileBookmarksStorePrivate));
 }
 
 static void
 pluma_file_bookmarks_store_class_finalize (PlumaFileBookmarksStoreClass *klass)
 {
-	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE */
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }
 
 static void
 pluma_file_bookmarks_store_init (PlumaFileBookmarksStore * obj)
 {
-	obj->priv = PLUMA_FILE_BOOKMARKS_STORE_GET_PRIVATE (obj);
+	obj->priv = pluma_file_bookmarks_store_get_instance_private (obj);
 }
 
 /* Private */
