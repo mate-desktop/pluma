@@ -33,10 +33,6 @@
 #include "pluma-file-browser-error.h"
 #include "pluma-file-browser-utils.h"
 
-#define PLUMA_FILE_BROWSER_STORE_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE((object), \
-						     PLUMA_TYPE_FILE_BROWSER_STORE, \
-						     PlumaFileBrowserStorePrivate))
-
 #define NODE_IS_DIR(node)		(FILE_IS_DIR((node)->flags))
 #define NODE_IS_HIDDEN(node)		(FILE_IS_HIDDEN((node)->flags))
 #define NODE_IS_TEXT(node)		(FILE_IS_TEXT((node)->flags))
@@ -197,12 +193,13 @@ static void next_files_async 				    (GFileEnumerator * enumerator,
 static void delete_files                                    (AsyncData              *data);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaFileBrowserStore, pluma_file_browser_store,
-			G_TYPE_OBJECT,
-			0,
-			G_IMPLEMENT_INTERFACE_DYNAMIC (GTK_TYPE_TREE_MODEL,
-							  pluma_file_browser_store_iface_init)
-			G_IMPLEMENT_INTERFACE_DYNAMIC (GTK_TYPE_TREE_DRAG_SOURCE,
-							  pluma_file_browser_store_drag_source_init))
+                                G_TYPE_OBJECT,
+                                0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaFileBrowserStore)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (GTK_TYPE_TREE_MODEL,
+                                                               pluma_file_browser_store_iface_init)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (GTK_TYPE_TREE_DRAG_SOURCE,
+                                                               pluma_file_browser_store_drag_source_init))
 
 /* Properties */
 enum {
@@ -420,9 +417,6 @@ pluma_file_browser_store_class_init (PlumaFileBrowserStoreClass * klass)
 	    		  g_cclosure_marshal_VOID__STRING,
 	    		  G_TYPE_NONE, 1,
 	    		  G_TYPE_STRING);
-
-	g_type_class_add_private (object_class,
-				  sizeof (PlumaFileBrowserStorePrivate));
 }
 
 static void
@@ -460,7 +454,7 @@ pluma_file_browser_store_drag_source_init (GtkTreeDragSourceIface * iface)
 static void
 pluma_file_browser_store_init (PlumaFileBrowserStore * obj)
 {
-	obj->priv = PLUMA_FILE_BROWSER_STORE_GET_PRIVATE (obj);
+	obj->priv = pluma_file_browser_store_get_instance_private (obj);
 
 	obj->priv->column_types[PLUMA_FILE_BROWSER_STORE_COLUMN_URI] =
 	    G_TYPE_STRING;
