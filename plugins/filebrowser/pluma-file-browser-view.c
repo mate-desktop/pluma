@@ -30,10 +30,6 @@
 #include "pluma-file-browser-marshal.h"
 #include "pluma-file-browser-enum-types.h"
 
-#define PLUMA_FILE_BROWSER_VIEW_GET_PRIVATE(object)( \
-		G_TYPE_INSTANCE_GET_PRIVATE((object), \
-		PLUMA_TYPE_FILE_BROWSER_VIEW, PlumaFileBrowserViewPrivate))
-
 struct _PlumaFileBrowserViewPrivate
 {
 	GtkTreeViewColumn *column;
@@ -85,8 +81,11 @@ static const GtkTargetEntry drag_source_targets[] = {
 	{ "text/uri-list", 0, 0 }
 };
 
-G_DEFINE_DYNAMIC_TYPE (PlumaFileBrowserView, pluma_file_browser_view,
-	                  GTK_TYPE_TREE_VIEW)
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaFileBrowserView,
+                                pluma_file_browser_view,
+                                GTK_TYPE_TREE_VIEW,
+                                0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaFileBrowserView))
 
 static void on_cell_edited 		(GtkCellRendererText 	* cell,
 				 	 gchar 			* path,
@@ -906,15 +905,12 @@ pluma_file_browser_view_class_init (PlumaFileBrowserViewClass * klass)
 					   bookmark_activated), NULL, NULL,
 			  g_cclosure_marshal_VOID__BOXED,
 			  G_TYPE_NONE, 1, GTK_TYPE_TREE_ITER);
-
-	g_type_class_add_private (object_class,
-				  sizeof (PlumaFileBrowserViewPrivate));
 }
 
 static void
 pluma_file_browser_view_class_finalize (PlumaFileBrowserViewClass *klass)
 {
-	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE */
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }
 
 static void
@@ -954,7 +950,7 @@ pluma_file_browser_view_init (PlumaFileBrowserView * obj)
 {
 	GdkDisplay *display;
 
-	obj->priv = PLUMA_FILE_BROWSER_VIEW_GET_PRIVATE (obj);
+	obj->priv = pluma_file_browser_view_get_instance_private (obj);
 
 	obj->priv->column = gtk_tree_view_column_new ();
 
