@@ -50,8 +50,6 @@
 #define TERMINAL_SCHEMA				"org.mate.applications-terminal"
 #define TERMINAL_EXEC_KEY			"exec"
 
-#define PLUMA_FILE_BROWSER_PLUGIN_GET_PRIVATE(object)	(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_FILE_BROWSER_PLUGIN, PlumaFileBrowserPluginPrivate))
-
 struct _PlumaFileBrowserPluginPrivate
 {
 	GtkWidget               *window;
@@ -115,6 +113,7 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaFileBrowserPlugin,
                                 pluma_file_browser_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaFileBrowserPlugin)
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
                                                                peas_activatable_iface_init)    \
                                                                                                \
@@ -128,7 +127,7 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaFileBrowserPlugin,
 static void
 pluma_file_browser_plugin_init (PlumaFileBrowserPlugin * plugin)
 {
-	plugin->priv = PLUMA_FILE_BROWSER_PLUGIN_GET_PRIVATE (plugin);
+	plugin->priv = pluma_file_browser_plugin_get_instance_private (plugin);
 }
 
 static void
@@ -815,9 +814,6 @@ pluma_file_browser_plugin_class_init (PlumaFileBrowserPluginClass * klass)
 	object_class->get_property = pluma_file_browser_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_OBJECT, "object");
-
-	g_type_class_add_private (object_class,
-				  sizeof (PlumaFileBrowserPluginPrivate));
 }
 
 static void
