@@ -37,18 +37,9 @@
 #include <pluma/pluma-utils.h>
 #include <pluma/pluma-help.h>
 
-#define PLUMA_SORT_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_SORT_PLUGIN, PlumaSortPluginPrivate))
-
 #define MENU_PATH "/MenuBar/EditMenu/EditOps_6"
 
 static void peas_activatable_iface_init (PeasActivatableInterface *iface);
-
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaSortPlugin,
-                                pluma_sort_plugin,
-                                PEAS_TYPE_EXTENSION_BASE,
-                                0,
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
-                                                               peas_activatable_iface_init))
 
 enum {
 	PROP_0,
@@ -83,6 +74,14 @@ typedef struct
 	gboolean remove_duplicates;
 	gint starting_column;
 } SortInfo;
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaSortPlugin,
+                                pluma_sort_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaSortPlugin)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init))
 
 static void sort_cb (GtkAction *action, PlumaSortPlugin *plugin);
 static void sort_real (SortDialog *dialog);
@@ -582,7 +581,7 @@ pluma_sort_plugin_init (PlumaSortPlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaSortPlugin initializing");
 
-	plugin->priv = PLUMA_SORT_PLUGIN_GET_PRIVATE (plugin);
+	plugin->priv = pluma_sort_plugin_get_instance_private (plugin);
 }
 
 static void
@@ -617,8 +616,6 @@ pluma_sort_plugin_class_init (PlumaSortPluginClass *klass)
 	object_class->get_property = pluma_sort_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_OBJECT, "object");
-
-	g_type_class_add_private (klass, sizeof (PlumaSortPluginPrivate));
 }
 
 static void
