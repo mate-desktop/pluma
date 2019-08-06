@@ -59,6 +59,7 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaModelinePlugin,
                                 pluma_modeline_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaModelinePlugin)
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
                                                                peas_activatable_iface_init))
 
@@ -87,9 +88,7 @@ pluma_modeline_plugin_init (PlumaModelinePlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaModelinePlugin initializing");
 
-	plugin->priv = G_TYPE_INSTANCE_GET_PRIVATE (plugin,
-	                                            PLUMA_TYPE_MODELINE_PLUGIN,
-	                                            PlumaModelinePluginPrivate);
+	plugin->priv = pluma_modeline_plugin_get_instance_private (plugin);
 }
 
 static void
@@ -298,8 +297,6 @@ pluma_modeline_plugin_class_init (PlumaModelinePluginClass *klass)
 	object_class->get_property = pluma_modeline_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_OBJECT, "object");
-
-	g_type_class_add_private (klass, sizeof (PlumaModelinePluginPrivate));
 }
 
 static void
