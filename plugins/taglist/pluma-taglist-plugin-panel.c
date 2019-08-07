@@ -44,10 +44,6 @@
 #include <gdk/gdkkeysyms.h>
 #include <glib/gi18n.h>
 
-#define PLUMA_TAGLIST_PLUGIN_PANEL_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-						       PLUMA_TYPE_TAGLIST_PLUGIN_PANEL, \
-						       PlumaTaglistPluginPanelPrivate))
-
 enum
 {
 	COLUMN_TAG_NAME,
@@ -68,7 +64,11 @@ struct _PlumaTaglistPluginPanelPrivate
 	gchar *data_dir;
 };
 
-G_DEFINE_DYNAMIC_TYPE (PlumaTaglistPluginPanel, pluma_taglist_plugin_panel, GTK_TYPE_BOX)
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaTaglistPluginPanel,
+                                pluma_taglist_plugin_panel,
+                                GTK_TYPE_BOX,
+                                0,
+                                G_ADD_PRIVATE_DYNAMIC(PlumaTaglistPluginPanel))
 
 enum
 {
@@ -119,8 +119,8 @@ pluma_taglist_plugin_panel_get_property (GObject    *object,
 	switch (prop_id)
 	{
 		case PROP_WINDOW:
-			g_value_set_object (value,
-					    PLUMA_TAGLIST_PLUGIN_PANEL_GET_PRIVATE (panel)->window);
+			panel->priv = pluma_taglist_plugin_panel_get_instance_private (panel);
+			g_value_set_object (value, panel->priv->window);
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -155,14 +155,12 @@ pluma_taglist_plugin_panel_class_init (PlumaTaglistPluginPanelClass *klass)
 							 PLUMA_TYPE_WINDOW,
 							 G_PARAM_READWRITE |
 							 G_PARAM_CONSTRUCT_ONLY));
-
-	g_type_class_add_private (object_class, sizeof(PlumaTaglistPluginPanelPrivate));
 }
 
 static void
 pluma_taglist_plugin_panel_class_finalize (PlumaTaglistPluginPanelClass *klass)
 {
-	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE */
+	/* dummy function - used by G_DEFINE_DYNAMIC_TYPE_EXTENDED */
 }
 
 static void
@@ -671,7 +669,7 @@ pluma_taglist_plugin_panel_init (PlumaTaglistPluginPanel *panel)
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	panel->priv = PLUMA_TAGLIST_PLUGIN_PANEL_GET_PRIVATE (panel);
+	panel->priv = pluma_taglist_plugin_panel_get_instance_private (panel);
 	panel->priv->data_dir = NULL;
 
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (panel),
