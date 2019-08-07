@@ -42,8 +42,6 @@
 #include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 
-#define PLUMA_TAGLIST_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), PLUMA_TYPE_TAGLIST_PLUGIN, PlumaTaglistPluginPrivate))
-
 struct _PlumaTaglistPluginPrivate
 {
 	GtkWidget *window;
@@ -57,6 +55,7 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaTaglistPlugin,
                                 pluma_taglist_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaTaglistPlugin)
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
                                                                peas_activatable_iface_init) \
                                                                                             \
@@ -71,7 +70,7 @@ enum {
 static void
 pluma_taglist_plugin_init (PlumaTaglistPlugin *plugin)
 {
-	plugin->priv = PLUMA_TAGLIST_PLUGIN_GET_PRIVATE (plugin);
+	plugin->priv = pluma_taglist_plugin_get_instance_private (plugin);
 
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaTaglistPlugin initializing");
 }
@@ -212,8 +211,6 @@ pluma_taglist_plugin_class_init (PlumaTaglistPluginClass *klass)
 	object_class->get_property = pluma_taglist_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_OBJECT, "object");
-
-	g_type_class_add_private (object_class, sizeof (PlumaTaglistPluginPrivate));
 }
 
 static void
