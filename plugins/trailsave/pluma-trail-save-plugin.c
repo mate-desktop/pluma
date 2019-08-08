@@ -29,18 +29,7 @@
 
 #include "pluma-trail-save-plugin.h"
 
-#define PLUMA_TRAIL_SAVE_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-					            PLUMA_TYPE_TRAIL_SAVE_PLUGIN, \
-					            PlumaTrailSavePluginPrivate))
-
 static void peas_activatable_iface_init (PeasActivatableInterface *iface);
-
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaTrailSavePlugin,
-                                pluma_trail_save_plugin,
-                                PEAS_TYPE_EXTENSION_BASE,
-                                0,
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
-                                                               peas_activatable_iface_init))
 
 struct _PlumaTrailSavePluginPrivate
 {
@@ -51,6 +40,14 @@ enum {
 	PROP_0,
 	PROP_OBJECT
 };
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaTrailSavePlugin,
+                                pluma_trail_save_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaTrailSavePlugin)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init))
 
 static void
 strip_trailing_spaces (GtkTextBuffer *text_buffer)
@@ -226,7 +223,7 @@ pluma_trail_save_plugin_init (PlumaTrailSavePlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaTrailSavePlugin initializing");
 
-	plugin->priv = PLUMA_TRAIL_SAVE_PLUGIN_GET_PRIVATE (plugin);
+	plugin->priv = pluma_trail_save_plugin_get_instance_private (plugin);
 }
 
 static void
@@ -295,8 +292,6 @@ pluma_trail_save_plugin_class_init (PlumaTrailSavePluginClass *klass)
 	object_class->get_property = pluma_trail_save_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_OBJECT, "object");
-
-	g_type_class_add_private (object_class, sizeof (PlumaTrailSavePluginPrivate));
 }
 
 static void
