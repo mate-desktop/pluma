@@ -47,10 +47,6 @@
 #include <pluma/pluma-debug.h>
 #include <pluma/pluma-utils.h>
 
-#define PLUMA_TIME_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-					      PLUMA_TYPE_TIME_PLUGIN, \
-					      PlumaTimePluginPrivate))
-
 #define MENU_PATH "/MenuBar/EditMenu/EditOps_4"
 
 /* GSettings keys */
@@ -174,6 +170,7 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaTimePlugin,
                                 pluma_time_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaTimePlugin)
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
                                                                peas_activatable_iface_init)
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
@@ -198,7 +195,7 @@ pluma_time_plugin_init (PlumaTimePlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaTimePlugin initializing");
 
-	plugin->priv = PLUMA_TIME_PLUGIN_GET_PRIVATE (plugin);
+	plugin->priv = pluma_time_plugin_get_instance_private (plugin);
 
 	plugin->priv->settings = g_settings_new (TIME_SCHEMA);
 }
@@ -1187,8 +1184,6 @@ pluma_time_plugin_class_init (PlumaTimePluginClass *klass)
 	object_class->get_property = pluma_time_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_OBJECT, "object");
-
-	g_type_class_add_private (object_class, sizeof (PlumaTimePluginPrivate));
 }
 
 static void
