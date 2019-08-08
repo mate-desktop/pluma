@@ -50,25 +50,12 @@
 
 #define MENU_PATH "/MenuBar/ToolsMenu/ToolsOps_1"
 
-#define PLUMA_SPELL_PLUGIN_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-					       PLUMA_TYPE_SPELL_PLUGIN, \
-					       PlumaSpellPluginPrivate))
-
 /* GSettings keys */
 #define SPELL_SCHEMA		"org.mate.pluma.plugins.spell"
 #define AUTOCHECK_TYPE_KEY	"autocheck-type"
 
 static void peas_activatable_iface_init (PeasActivatableInterface *iface);
 static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
-
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaSpellPlugin,
-                                pluma_spell_plugin,
-                                PEAS_TYPE_EXTENSION_BASE,
-                                0,
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
-                                                               peas_activatable_iface_init)
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
-                                                               peas_gtk_configurable_iface_init))
 
 enum {
 	PROP_0,
@@ -87,6 +74,16 @@ struct _PlumaSpellPluginPrivate
 
 	GSettings *settings;
 };
+
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaSpellPlugin,
+                                pluma_spell_plugin,
+                                PEAS_TYPE_EXTENSION_BASE,
+                                0,
+                                G_ADD_PRIVATE_DYNAMIC (PlumaSpellPlugin)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
+                                                               peas_activatable_iface_init)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
+                                                               peas_gtk_configurable_iface_init))
 
 static void	spell_cb	(GtkAction *action, PlumaSpellPlugin *plugin);
 static void	set_language_cb	(GtkAction *action, PlumaSpellPlugin *plugin);
@@ -165,7 +162,7 @@ pluma_spell_plugin_init (PlumaSpellPlugin *plugin)
 {
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaSpellPlugin initializing");
 
-	plugin->priv = PLUMA_SPELL_PLUGIN_GET_PRIVATE (plugin);
+	plugin->priv = pluma_spell_plugin_get_instance_private (plugin);
 
 	plugin->priv->settings = g_settings_new (SPELL_SCHEMA);
 }
@@ -1462,8 +1459,6 @@ pluma_spell_plugin_class_init (PlumaSpellPluginClass *klass)
 
 	if (check_range_id == 0)
 		check_range_id = g_quark_from_string ("CheckRangeID");
-
-	g_type_class_add_private (object_class, sizeof (PlumaSpellPluginPrivate));
 }
 
 static void
