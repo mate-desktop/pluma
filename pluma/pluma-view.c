@@ -797,8 +797,7 @@ pluma_override_font (const gchar          *item,
 		     GtkWidget            *widget,
 		     PangoFontDescription *font)
 {
-	static gboolean provider_added = FALSE;
-	static GtkCssProvider *provider; /*We need to keep this as long as Pluma is running*/
+	static GtkCssProvider *provider = NULL; /*We need to keep this as long as Pluma is running*/
 	gchar          *prov_str;
 	gchar          *css;
 	gchar          *family;
@@ -821,8 +820,21 @@ pluma_override_font (const gchar          *item,
 				pango_font_description_get_size (font) / PANGO_SCALE,
 				pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
 
-	if (!provider_added)
+	if (provider == NULL)
+	{
+		static GSettings *settings; /*We need this for the life of the provider and program*/
+
 		provider = gtk_css_provider_new ();
+		settings = g_settings_new ("org.mate.interface");
+
+		g_signal_connect (settings,
+				  "changed::" "font-name",
+				  G_CALLBACK (system_font_changed_cb), NULL);
+
+		gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
+							   GTK_STYLE_PROVIDER (provider),
+							   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	}
 
 	prov_str = gtk_css_provider_to_string (provider);
 
@@ -842,20 +854,6 @@ pluma_override_font (const gchar          *item,
 		css = g_strdup_printf ("%s { %s %s %s %s }", item, family, weight, style, size);
 
 	gtk_css_provider_load_from_data (provider, css, -1, NULL);
-
-	if (!provider_added)
-	{
-		static GSettings *settings; /*We need this for the life of the provider and program*/
-		settings = g_settings_new ("org.mate.interface");
-		g_signal_connect (settings,
-				  "changed::" "font-name",
-				  G_CALLBACK (system_font_changed_cb), NULL);
-
-		gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
-							   GTK_STYLE_PROVIDER (provider),
-							   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-		provider_added = TRUE;
-	}
 
 	g_free (css);
 	g_free (family);
