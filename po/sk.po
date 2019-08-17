@@ -18,9 +18,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-17 11:58+0100\n"
+"POT-Creation-Date: 2019-07-17 14:34+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Vendelín Slezák <klaykap@yandex.com>, 2019\n"
 "Language-Team: Slovak (https://www.transifex.com/mate/teams/13566/sk/)\n"
@@ -533,6 +533,47 @@ msgstr ""
 "zásuvných modulov. Pozrite si súbor .pluma-plugin, aby ste získali "
 "„Umiestnenie“ daného zásuvného modulu."
 
+#: ../data/org.mate.pluma.gschema.xml.in.h:93
+msgid "Draw newline"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:94
+msgid "Whether pluma should draw newlines in the editor window."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:95
+msgid "Draw nbsp"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:96
+msgid ""
+"Whether pluma should draw not breaking spaces in the editor window: 'draw-"
+"none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' "
+"drawing all spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:97
+msgid "Draw tabs"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:98
+msgid ""
+"Whether pluma should draw tabs in the editor window: 'draw-none' no drawing;"
+" 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all "
+"spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:99
+msgid "Draw spaces"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:100
+msgid ""
+"Whether pluma should draw spaces in the editor window: 'draw-none' no "
+"drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing "
+"all spaces."
+msgstr ""
+
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
 msgstr "Textový editor pre pracovné prostredie MATE"
@@ -574,23 +615,23 @@ msgstr "Úprava textových súborov"
 msgid "Pluma Text Editor"
 msgstr "Textový editor Pluma"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:136
 msgid "Log Out _without Saving"
 msgstr "Odhlásiť sa _bez uloženia"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:144
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "_Cancel Logout"
 msgstr "_Zrušiť odhlasovanie"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:147
 msgid "Close _without Saving"
 msgstr "Zatvoriť _bez uloženia"
 
 #. Add a cancel button
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
-#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-encodings-dialog.c:306
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/dialogs/pluma-preferences-dialog.c:975
 #: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
 #: ../pluma/pluma-file-chooser-dialog.c:440
 #: ../pluma/pluma-io-error-message-area.c:168
@@ -598,7 +639,10 @@ msgstr "Zatvoriť _bez uloženia"
 #: ../pluma/pluma-io-error-message-area.c:1190
 #: ../pluma/pluma-progress-message-area.c:66
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:171
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/quickopen/quickopen/popup.py:36
+#: ../plugins/snippets/snippets/Manager.py:795
+#: ../plugins/snippets/snippets/Manager.py:881
+#: ../plugins/snippets/snippets/Manager.py:920 ../plugins/sort/sort.ui.h:2
 #: ../plugins/spell/pluma-spell-language-dialog.c:132
 #: ../plugins/spell/languages-dialog.ui.h:3
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
@@ -608,20 +652,22 @@ msgid "_Cancel"
 msgstr "_Zrušiť"
 
 #. File menu
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:178
 #: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+#: ../plugins/snippets/snippets/Manager.py:882
+#: ../plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
 msgstr "_Uložiť"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:183
 msgid "Save _As"
 msgstr "Uložiť _ako..."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
 msgstr "Otázka"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:414
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -638,12 +684,12 @@ msgstr[2] ""
 msgstr[3] ""
 "Ak súbor neuložíte, zmeny z posledných %ld sekúnd budú natrvalo stratené."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr "Ak súbor neuložíte, zmeny z poslednej minúty budú natrvalo stratené."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -664,7 +710,7 @@ msgstr[3] ""
 "Ak súbor neuložíte, zmeny z poslednej minúty a %ld sekúnd budú natrvalo "
 "stratené."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -681,12 +727,12 @@ msgstr[2] ""
 msgstr[3] ""
 "Ak súbor neuložíte, zmeny z posledných %ld minút budú natrvalo stratené."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr "Ak súbor neuložíte, zmeny z poslednej hodiny budú natrvalo stratené."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -707,7 +753,7 @@ msgstr[3] ""
 "Ak súbor neuložíte, zmeny z poslednej hodiny a %d minút budú natrvalo "
 "stratené."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
@@ -722,22 +768,22 @@ msgstr[2] ""
 msgstr[3] ""
 "Ak súbor neuložíte, zmeny z posledných %d hodín budú natrvalo stratené."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "Zmeny v dokumente „%s“ budú natrvalo stratené."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Uložiť zmeny v dokumente „%s“ pred zatvorením?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:771
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr "Ukladanie bolo správcom systému zakázané."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
@@ -746,7 +792,7 @@ msgstr[1] "Zmeny v %d dokumentoch budú natrvalo stratené."
 msgstr[2] "Zmeny v %d dokumentoch budú natrvalo stratené."
 msgstr[3] "Zmeny v %d dokumentoch budú natrvalo stratené."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:728
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -765,19 +811,19 @@ msgstr[3] ""
 "Máte otvorených %d dokumentov s neuloženými zmenami. Chcete ich pred "
 "zatvorením uložiť?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
 msgstr "Dokum_enty s neuloženými zmenami:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:748
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
 msgid "S_elect the documents you want to save:"
 msgstr "Vyberte _súbory, ktoré chcete uložiť:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:773
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "Ak súbor neuložíte, všetky vaše zmeny budú trvale stratené."
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.c:307
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:133
 #: ../plugins/spell/languages-dialog.ui.h:4
@@ -787,9 +833,9 @@ msgstr "Ak súbor neuložíte, všetky vaše zmeny budú trvale stratené."
 msgid "_OK"
 msgstr "_Ok"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.c:308
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1292
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
 #: ../plugins/sort/sort.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:134
@@ -800,17 +846,17 @@ msgstr "_Ok"
 msgid "_Help"
 msgstr "_Pomocník"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:316
+#: ../pluma/dialogs/pluma-encodings-dialog.c:310
 msgid "Character Encodings"
 msgstr "Kódovania znakov"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:379
-#: ../pluma/dialogs/pluma-encodings-dialog.c:440
+#: ../pluma/dialogs/pluma-encodings-dialog.c:373
+#: ../pluma/dialogs/pluma-encodings-dialog.c:434
 msgid "_Description"
 msgstr "Popi_s"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:388
-#: ../pluma/dialogs/pluma-encodings-dialog.c:449
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Encoding"
 msgstr "_Kódovacia stránka"
 
@@ -833,56 +879,54 @@ msgid "E_ncodings shown in menu:"
 msgstr "_Kódovania zobrazené v menu:"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:39
 msgid "_Remove"
 msgstr "_Odstrániť"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:572
+#: ../pluma/dialogs/pluma-preferences-dialog.c:726
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "Kliknite na toto tlačidlo pre zvolenie písma používaného editorom"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:582
+#: ../pluma/dialogs/pluma-preferences-dialog.c:736
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "Použiť _systémové písmo s pevnou šírkou (%s)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:785
+#: ../pluma/dialogs/pluma-preferences-dialog.c:939
 msgid "The selected color scheme cannot be installed."
 msgstr "Vybraná farebná schéma nemôže byť nainštalovaná."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:863
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1017
 msgid "Add Scheme"
 msgstr "Pridať schému"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:870
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1024
 msgid "A_dd Scheme"
 msgstr "_Pridať schému"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:878
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1032
 msgid "Color Scheme Files"
 msgstr "Súbory s farebnými schémami"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1039
 #: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
 msgstr "Všetky súbory"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:930
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1084
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "Nepodarilo sa odstrániť farebnú schému „%s“."
 
-#. ex:et:ts=4:
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1291
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.c:327
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
 #: ../plugins/docinfo/docinfo.ui.h:2
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
 msgid "_Close"
 msgstr "Zat_voriť"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1294
 msgid "Pluma Preferences"
 msgstr "Nastavenia programu Pluma"
 
@@ -896,10 +940,7 @@ msgid "Text Wrapping"
 msgstr "Zalamovanie textu"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
-#: ../plugins/docinfo/docinfo.ui.h:5
-#: ../plugins/externaltools/tools/tools.ui.h:21
-#: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:5 ../plugins/time/pluma-time-dialog.ui.h:6
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
@@ -919,7 +960,7 @@ msgstr "_Nerozdeľovať slová na 2 riadky"
 msgid "Line Numbers"
 msgstr "Čísla riadkov"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2114
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2197
 msgid "_Display line numbers"
 msgstr "Zobraziť čísla ria_dkov"
 
@@ -992,56 +1033,80 @@ msgid "_minutes"
 msgstr "_minút"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+msgid "Draw spaces, tabs, newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+msgid "Draw _tabs"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+msgid "Draw _trailing tabs only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+msgid "Draw _newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+msgid "Draw _spaces"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+msgid "Draw _trailing spaces only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
 msgid "Editor"
 msgstr "Editor"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font"
 msgstr "Písmo"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Editor _font: "
 msgstr "Písmo _editora:"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:36
 msgid "Pick the editor font"
 msgstr "Vyberte písmo editora"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:37
 msgid "Color Scheme"
 msgstr "Farebná schéma"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:38
 msgid "_Add..."
 msgstr "Prid_ať.."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:40
 msgid "Font & Colors"
 msgstr "Písmo a farby"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:41
 msgid "Plugins"
 msgstr "Zásuvné moduly"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:301
+#: ../pluma/dialogs/pluma-search-dialog.c:295
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "Nahradiť"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
+#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "Nájsť"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:413
+#: ../pluma/dialogs/pluma-search-dialog.c:407
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "_Find"
 msgstr "_Nájsť"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:416
+#: ../pluma/dialogs/pluma-search-dialog.c:410
 msgid "Replace _All"
 msgstr "N_ahradiť všetko"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.c:411
 #: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr "Nah_radiť"
@@ -1284,23 +1349,23 @@ msgstr[3] ""
 msgid "_Revert"
 msgstr "O_bnoviť"
 
-#: ../pluma/pluma-commands-help.c:69
+#: ../pluma/pluma-commands-help.c:60
 msgid "MATE Documentation Team"
 msgstr "MATE Dokumentačný projekt"
 
-#: ../pluma/pluma-commands-help.c:70
+#: ../pluma/pluma-commands-help.c:61
 msgid "GNOME Documentation Team"
 msgstr "GNOME Dokumentačný tím"
 
-#: ../pluma/pluma-commands-help.c:71
+#: ../pluma/pluma-commands-help.c:62
 msgid "Sun Microsystems"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:76
+#: ../pluma/pluma-commands-help.c:67
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "Pluma je malý a ľahký textový editor pre prostredie MATE"
 
-#: ../pluma/pluma-commands-help.c:79
+#: ../pluma/pluma-commands-help.c:70
 msgid ""
 "Pluma is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -1308,7 +1373,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:74
 msgid ""
 "Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -1316,18 +1381,18 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:87
+#: ../pluma/pluma-commands-help.c:78
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:104
+#: ../pluma/pluma-commands-help.c:113
 msgid "About Pluma"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:107
+#: ../pluma/pluma-commands-help.c:116
 msgid ""
 "Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
 "Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
@@ -1338,7 +1403,7 @@ msgid ""
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:117
+#: ../pluma/pluma-commands-help.c:126
 msgid "translator-credits"
 msgstr ""
 "Stanislav Višňovský\n"
@@ -1366,7 +1431,7 @@ msgstr "Nájdený a nahradený jeden výskyt"
 msgid "\"%s\" not found"
 msgstr "„%s“ nenájdené"
 
-#: ../pluma/pluma-document.c:1141 ../pluma/pluma-document.c:1161
+#: ../pluma/pluma-document.c:1137 ../pluma/pluma-document.c:1157
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "Neuložený dokument %d"
@@ -1536,6 +1601,8 @@ msgstr "Okná"
 
 #: ../pluma/pluma-file-chooser-dialog.c:442
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+#: ../plugins/quickopen/quickopen/popup.py:37
+#: ../plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
 msgstr "_Otvoriť"
 
@@ -2472,22 +2539,22 @@ msgid "/ on %s"
 msgstr "/ na %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1352
+#: ../pluma/pluma-view.c:1435
 msgid "_Wrap Around"
 msgstr "_Pokračovať od začiatku"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1362
+#: ../pluma/pluma-view.c:1445
 msgid "Match _Entire Word Only"
 msgstr "Hľadať l_en celé slová"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1372
+#: ../pluma/pluma-view.c:1455
 msgid "_Match Case"
 msgstr "_Rozlišovať veľkosť písmen"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1382
+#: ../pluma/pluma-view.c:1465
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
@@ -2495,11 +2562,11 @@ msgstr ""
 "_Spracovať escape sekvencie (napr. \n"
 ")"
 
-#: ../pluma/pluma-view.c:1496
+#: ../pluma/pluma-view.c:1579
 msgid "String you want to search for"
 msgstr "Reťazec, ktorý chcete nájsť"
 
-#: ../pluma/pluma-view.c:1505
+#: ../pluma/pluma-view.c:1588
 msgid "Line you want to move the cursor to"
 msgstr "Riadok, na ktorý chcete presunúť kurzor"
 
@@ -2512,10 +2579,10 @@ msgstr "Použiť režim zvýrazňovania %s"
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
 #: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
-#: ../plugins/externaltools/tools/manager.py:138
-#: ../plugins/externaltools/tools/manager.py:445
-#: ../plugins/externaltools/tools/manager.py:556
-#: ../plugins/externaltools/tools/manager.py:873
+#: ../plugins/externaltools/tools/manager.py:108
+#: ../plugins/externaltools/tools/manager.py:308
+#: ../plugins/externaltools/tools/manager.py:424
+#: ../plugins/externaltools/tools/manager.py:746
 msgid "Plain Text"
 msgstr "Čistý text"
 
@@ -2668,147 +2735,147 @@ msgstr "Externé nástroje"
 msgid "Execute external commands and shell scripts."
 msgstr "Spustí externé príkazy a skripty shellu."
 
-#: ../plugins/externaltools/tools/__init__.py:175
+#: ../plugins/externaltools/tools/__init__.py:174
 msgid "Manage _External Tools..."
 msgstr "Spravovať _externé nástroje…"
 
-#: ../plugins/externaltools/tools/__init__.py:177
+#: ../plugins/externaltools/tools/__init__.py:176
 msgid "Opens the External Tools Manager"
 msgstr "Otvorí správcu externých nástrojov"
 
-#: ../plugins/externaltools/tools/__init__.py:181
+#: ../plugins/externaltools/tools/__init__.py:180
 msgid "External _Tools"
 msgstr "Externé _nástroje"
 
-#: ../plugins/externaltools/tools/__init__.py:183
+#: ../plugins/externaltools/tools/__init__.py:182
 msgid "External tools"
 msgstr "Externé nástroje"
 
-#: ../plugins/externaltools/tools/__init__.py:216
+#: ../plugins/externaltools/tools/__init__.py:215
 msgid "Shell Output"
 msgstr "Výstup príkazového riadku"
 
-#: ../plugins/externaltools/tools/capture.py:92
+#: ../plugins/externaltools/tools/capture.py:96
 #, python-format
 msgid "Could not execute command: %s"
 msgstr "Nepodarilo sa spustiť príkaz %s."
 
-#: ../plugins/externaltools/tools/functions.py:157
+#: ../plugins/externaltools/tools/functions.py:155
 msgid "You must be inside a word to run this command"
 msgstr "Aby ste mohli spustiť tento príkaz, musíte byť vnútri slova"
 
-#: ../plugins/externaltools/tools/functions.py:263
+#: ../plugins/externaltools/tools/functions.py:261
 msgid "Running tool:"
 msgstr "Spúšťa sa nástroj:"
 
-#: ../plugins/externaltools/tools/functions.py:287
+#: ../plugins/externaltools/tools/functions.py:285
 msgid "Done."
 msgstr "Hotovo."
 
-#: ../plugins/externaltools/tools/functions.py:289
+#: ../plugins/externaltools/tools/functions.py:287
 msgid "Exited"
 msgstr "Ukončené"
 
-#: ../plugins/externaltools/tools/manager.py:136
+#: ../plugins/externaltools/tools/manager.py:106
 msgid "All languages"
 msgstr "Všetky jazyky"
 
-#: ../plugins/externaltools/tools/manager.py:545
-#: ../plugins/externaltools/tools/manager.py:549
-#: ../plugins/externaltools/tools/manager.py:871
-#: ../plugins/externaltools/tools/tools.ui.h:22
+#: ../plugins/externaltools/tools/manager.py:413
+#: ../plugins/externaltools/tools/manager.py:417
+#: ../plugins/externaltools/tools/manager.py:744
+#: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "All Languages"
 msgstr "Všetky jazyky"
 
-#: ../plugins/externaltools/tools/manager.py:655
+#: ../plugins/externaltools/tools/manager.py:526
 msgid "New tool"
 msgstr "Nový nástroj"
 
-#: ../plugins/externaltools/tools/manager.py:786
+#: ../plugins/externaltools/tools/manager.py:659
 #, python-format
 msgid "This accelerator is already bound to %s"
 msgstr "Tento akcelerátor je už previazaný s %s"
 
-#: ../plugins/externaltools/tools/manager.py:837
+#: ../plugins/externaltools/tools/manager.py:710
 msgid "Type a new accelerator, or press Backspace to clear"
 msgstr "Zadajte nový akcelerátor alebo ho vymažte stlačením Backspace"
 
-#: ../plugins/externaltools/tools/manager.py:839
+#: ../plugins/externaltools/tools/manager.py:712
 msgid "Type a new accelerator"
 msgstr "Zadajte nový akcelerátor"
 
-#: ../plugins/externaltools/tools/outputpanel.py:101
+#: ../plugins/externaltools/tools/outputpanel.py:102
 msgid "Stopped."
 msgstr "Zastavené."
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
-msgid "Nothing"
-msgstr "Nič"
-
-#: ../plugins/externaltools/tools/tools.ui.h:2
-msgid "Current document"
-msgstr "Aktuálny dokument"
-
-#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
 msgstr "Všetky dokumenty"
 
-#: ../plugins/externaltools/tools/tools.ui.h:4
-msgid "Current selection"
-msgstr "Aktuálny výber"
-
-#: ../plugins/externaltools/tools/tools.ui.h:5
-msgid "Current selection (default to document)"
-msgstr "Aktuálny výber (predvolený je dokument)"
-
-#: ../plugins/externaltools/tools/tools.ui.h:6
-msgid "Current line"
-msgstr "Aktuálny riadok"
-
-#: ../plugins/externaltools/tools/tools.ui.h:7
-msgid "Current word"
-msgstr "Aktuálne slovo"
-
-#: ../plugins/externaltools/tools/tools.ui.h:8
-msgid "Display in bottom pane"
-msgstr "Zobraziť v spodnom paneli"
-
-#: ../plugins/externaltools/tools/tools.ui.h:9
-msgid "Create new document"
-msgstr "Vytvorenie nového dokumentu"
-
-#: ../plugins/externaltools/tools/tools.ui.h:10
-msgid "Append to current document"
-msgstr "Pridať k aktuálnemu dokumentu"
-
-#: ../plugins/externaltools/tools/tools.ui.h:11
-msgid "Replace current document"
-msgstr "Nahradiť aktuálny dokument"
-
-#: ../plugins/externaltools/tools/tools.ui.h:12
-msgid "Replace current selection"
-msgstr "Nahradiť aktuálny výber"
-
-#: ../plugins/externaltools/tools/tools.ui.h:13
-msgid "Insert at cursor position"
-msgstr "Vložiť na aktuálnu pozíciu kurzora"
-
-#: ../plugins/externaltools/tools/tools.ui.h:14
+#: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "All documents except untitled ones"
 msgstr "Všetky dokumenty okrem nepomenovaných"
 
-#: ../plugins/externaltools/tools/tools.ui.h:15
+#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "Local files only"
 msgstr "Iba miestne súbory"
 
-#: ../plugins/externaltools/tools/tools.ui.h:16
+#: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Remote files only"
 msgstr "Iba vzdialené súbory"
 
-#: ../plugins/externaltools/tools/tools.ui.h:17
+#: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Untitled documents only"
 msgstr "Iba nepomenované dokumenty"
+
+#: ../plugins/externaltools/tools/tools.ui.h:6
+msgid "Nothing"
+msgstr "Nič"
+
+#: ../plugins/externaltools/tools/tools.ui.h:7
+msgid "Current document"
+msgstr "Aktuálny dokument"
+
+#: ../plugins/externaltools/tools/tools.ui.h:8
+msgid "Current selection"
+msgstr "Aktuálny výber"
+
+#: ../plugins/externaltools/tools/tools.ui.h:9
+msgid "Current selection (default to document)"
+msgstr "Aktuálny výber (predvolený je dokument)"
+
+#: ../plugins/externaltools/tools/tools.ui.h:10
+msgid "Current line"
+msgstr "Aktuálny riadok"
+
+#: ../plugins/externaltools/tools/tools.ui.h:11
+msgid "Current word"
+msgstr "Aktuálne slovo"
+
+#: ../plugins/externaltools/tools/tools.ui.h:12
+msgid "Display in bottom pane"
+msgstr "Zobraziť v spodnom paneli"
+
+#: ../plugins/externaltools/tools/tools.ui.h:13
+msgid "Create new document"
+msgstr "Vytvorenie nového dokumentu"
+
+#: ../plugins/externaltools/tools/tools.ui.h:14
+msgid "Append to current document"
+msgstr "Pridať k aktuálnemu dokumentu"
+
+#: ../plugins/externaltools/tools/tools.ui.h:15
+msgid "Replace current document"
+msgstr "Nahradiť aktuálny dokument"
+
+#: ../plugins/externaltools/tools/tools.ui.h:16
+msgid "Replace current selection"
+msgstr "Nahradiť aktuálny výber"
+
+#: ../plugins/externaltools/tools/tools.ui.h:17
+msgid "Insert at cursor position"
+msgstr "Vložiť na aktuálnu pozíciu kurzora"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
@@ -2819,29 +2886,29 @@ msgid "_Tools:"
 msgstr "_Nástroje:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
-#: ../plugins/snippets/snippets/snippets.ui.h:7
-msgid "_Edit:"
-msgstr "_Upraviť:"
-
-#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
 msgstr "_Aplikovateľnosť:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:24
+#: ../plugins/externaltools/tools/tools.ui.h:21
 msgid "_Output:"
 msgstr "Vý_stup:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:25
+#: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "_Input:"
 msgstr "_Vstup:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Save:"
 msgstr "_Uložiť:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:27
+#: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Shortcut Key:"
 msgstr "_Klávesová skratka:"
+
+#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/snippets/snippets/snippets.ui.h:7
+msgid "_Edit:"
+msgstr "_Upraviť:"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
@@ -3273,16 +3340,25 @@ msgstr "Konzola pre Python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Interaktívna konzola Pythonu v spodnom paneli"
 
+#. ex:et:ts=4:
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Error color:"
+msgstr "Farba _chyby:"
+
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
 msgstr "Farba _príkazu:"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
-msgid "_Error color:"
-msgstr "Farba _chyby:"
+msgid "Use system fixed width font"
+msgstr ""
 
-#. ex:ts=8:et:
-#: ../plugins/quickopen/quickopen/popup.py:31
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:4
+msgid "Font:"
+msgstr ""
+
+#. ex:ts=4:et:
+#: ../plugins/quickopen/quickopen/popup.py:32
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
 msgstr "Rýchle otvorenie"
@@ -3301,9 +3377,9 @@ msgstr "Rýchlo otvorí súbory"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
-#: ../plugins/snippets/snippets/Document.py:53
-#: ../plugins/snippets/snippets/Document.py:193
-#: ../plugins/snippets/snippets/Document.py:614
+#: ../plugins/snippets/snippets/Document.py:51
+#: ../plugins/snippets/snippets/Document.py:189
+#: ../plugins/snippets/snippets/Document.py:618
 msgid "Snippets"
 msgstr "Útržky"
 
@@ -3324,7 +3400,7 @@ msgid "Create new snippet"
 msgstr "Vytvoriť nový útržok"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:793
+#: ../plugins/snippets/snippets/Manager.py:792
 msgid "Import snippets"
 msgstr "Importovať útržky"
 
@@ -3333,7 +3409,7 @@ msgid "Export selected snippets"
 msgstr "Exportovať vybrané útržky"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
-#: ../plugins/snippets/snippets/Manager.py:403
+#: ../plugins/snippets/snippets/Manager.py:400
 msgid "Delete selected snippet"
 msgstr "Odstrániť vybraný útržok"
 
@@ -3341,27 +3417,28 @@ msgstr "Odstrániť vybraný útržok"
 msgid "Activation"
 msgstr "Aktivácia"
 
+#: ../plugins/snippets/snippets/snippets.ui.h:9
+msgid "_Drop targets:"
+msgstr "_Vynechať ciele:"
+
 #: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "Shortcut key with which the snippet is activated"
+msgstr "Klávesová skratka, ktorou viete aktivovať útržok"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+msgid "S_hortcut key:"
+msgstr "_Klávesová skratka:"
+
+#. "tab" here means the tab key, not the notebook tab!
+#: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "_Tab trigger:"
 msgstr "_Spúšťač tabulátora"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
-#: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:682
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+#: ../plugins/snippets/snippets/Manager.py:681
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr "Jedno slovo, ktorým sa po stlačení tabulátora vloží útržok"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:12
-msgid "Shortcut key with which the snippet is activated"
-msgstr "Klávesová skratka, ktorou viete aktivovať útržok"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:13
-msgid "S_hortcut key:"
-msgstr "_Klávesová skratka:"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:14
-msgid "_Drop targets:"
-msgstr "_Vynechať ciele:"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
@@ -3383,12 +3460,12 @@ msgstr "Pridať nový útržok..."
 msgid "Global"
 msgstr "Globálny"
 
-#: ../plugins/snippets/snippets/Manager.py:400
+#: ../plugins/snippets/snippets/Manager.py:397
 msgid "Revert selected snippet"
 msgstr "Vrátiť vybraný útržok"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:675
+#: ../plugins/snippets/snippets/Manager.py:674
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
@@ -3396,30 +3473,30 @@ msgstr ""
 "Toto nie je platným tabulátorovým spúšťačom. Spúšťače môžu obsahovať buď "
 "písmená, alebo jeden nealfanumerický znak ako napr. {, [ a pod."
 
-#: ../plugins/snippets/snippets/Manager.py:772
+#: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
 msgid "The following error occurred while importing: %s"
 msgstr "Počas importovania došlo k nasledujúcej chybe: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:779
+#: ../plugins/snippets/snippets/Manager.py:778
 msgid "Import successfully completed"
 msgstr "Importovanie bolo úspešne ukončené"
 
 #: ../plugins/snippets/snippets/Manager.py:798
-#: ../plugins/snippets/snippets/Manager.py:884
-#: ../plugins/snippets/snippets/Manager.py:947
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:949
 msgid "All supported archives"
 msgstr "Všetky podporované archívy"
 
 #: ../plugins/snippets/snippets/Manager.py:799
-#: ../plugins/snippets/snippets/Manager.py:885
-#: ../plugins/snippets/snippets/Manager.py:948
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:950
 msgid "Gzip compressed archive"
 msgstr "Archívy komprimované pomocou gzip"
 
 #: ../plugins/snippets/snippets/Manager.py:800
-#: ../plugins/snippets/snippets/Manager.py:886
-#: ../plugins/snippets/snippets/Manager.py:949
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "Bzip2 compressed archive"
 msgstr "Archívy komprimované pomocou bzip2"
 
@@ -3428,8 +3505,8 @@ msgid "Single snippets file"
 msgstr "Súbor s úryvkami"
 
 #: ../plugins/snippets/snippets/Manager.py:802
-#: ../plugins/snippets/snippets/Manager.py:888
-#: ../plugins/snippets/snippets/Manager.py:951
+#: ../plugins/snippets/snippets/Manager.py:889
+#: ../plugins/snippets/snippets/Manager.py:953
 msgid "All files"
 msgstr "Všetky súbory"
 
@@ -3444,25 +3521,25 @@ msgstr "Exportovanie bolo úspešne ukončené"
 
 #. Ask if system snippets should also be exported
 #: ../plugins/snippets/snippets/Manager.py:858
-#: ../plugins/snippets/snippets/Manager.py:925
+#: ../plugins/snippets/snippets/Manager.py:927
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
 msgstr "Chcete v exporte obsiahnuť vybrané <b>systémové</b> útržky?"
 
 #: ../plugins/snippets/snippets/Manager.py:873
-#: ../plugins/snippets/snippets/Manager.py:943
+#: ../plugins/snippets/snippets/Manager.py:945
 msgid "There are no snippets selected to be exported"
 msgstr "Na export neboli vybrané žiadne útržky"
 
 #: ../plugins/snippets/snippets/Manager.py:878
-#: ../plugins/snippets/snippets/Manager.py:916
+#: ../plugins/snippets/snippets/Manager.py:917
 msgid "Export snippets"
 msgstr "Exportovať útržky"
 
-#: ../plugins/snippets/snippets/Manager.py:1056
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut, or press Backspace to clear"
 msgstr "Zadajte novú klávesovú skratku, alebo ju vymažte stlačením Backspace"
 
-#: ../plugins/snippets/snippets/Manager.py:1058
+#: ../plugins/snippets/snippets/Manager.py:1060
 msgid "Type a new shortcut"
 msgstr "Zadajte novú klávesovú skratku"
 
@@ -3513,7 +3590,7 @@ msgstr "Nasledujúce súbory sa nepodarilo importovať: %s"
 msgid "File \"%s\" is not a valid snippets archive"
 msgstr "Súbor „%s“ nie je platným archívom s útržkami"
 
-#: ../plugins/snippets/snippets/Placeholder.py:593
+#: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
@@ -3522,7 +3599,7 @@ msgstr ""
 "Vykonanie príkazu python (%s) prekročilo maximálny čas, vykonávanie bolo "
 "zrušené."
 
-#: ../plugins/snippets/snippets/Placeholder.py:601
+#: ../plugins/snippets/snippets/Placeholder.py:609
 #, python-format
 msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Vykonanie príkazu python (%s) zlyhalo: %s"

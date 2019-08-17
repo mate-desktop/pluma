@@ -15,9 +15,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-17 11:58+0100\n"
+"POT-Creation-Date: 2019-07-17 14:34+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2019\n"
 "Language-Team: Korean (https://www.transifex.com/mate/teams/13566/ko/)\n"
@@ -492,6 +492,47 @@ msgstr ""
 "활성화된 플러그인 목록. 활성화된 플러그인의 위치(\"Location\")가 들어 있습니다. 주어진 플러그인의 "
 "위치(\"Location\")를 알아보려면 .pluma-plugin 파일을 보십시오."
 
+#: ../data/org.mate.pluma.gschema.xml.in.h:93
+msgid "Draw newline"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:94
+msgid "Whether pluma should draw newlines in the editor window."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:95
+msgid "Draw nbsp"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:96
+msgid ""
+"Whether pluma should draw not breaking spaces in the editor window: 'draw-"
+"none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' "
+"drawing all spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:97
+msgid "Draw tabs"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:98
+msgid ""
+"Whether pluma should draw tabs in the editor window: 'draw-none' no drawing;"
+" 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all "
+"spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:99
+msgid "Draw spaces"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:100
+msgid ""
+"Whether pluma should draw spaces in the editor window: 'draw-none' no "
+"drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing "
+"all spaces."
+msgstr ""
+
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
 msgstr "마테 데스크톱 환경용 텍스트 에디터"
@@ -528,23 +569,23 @@ msgstr "텍스트 파일을 편집합니다"
 msgid "Pluma Text Editor"
 msgstr "플루마 문서 편집기"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:136
 msgid "Log Out _without Saving"
 msgstr "저장하지 않고 로그아웃(_W)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:144
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "_Cancel Logout"
 msgstr "로그아웃 취소(_C)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:147
 msgid "Close _without Saving"
 msgstr "저장하지 않고 닫기(_W)"
 
 #. Add a cancel button
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
-#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-encodings-dialog.c:306
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/dialogs/pluma-preferences-dialog.c:975
 #: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
 #: ../pluma/pluma-file-chooser-dialog.c:440
 #: ../pluma/pluma-io-error-message-area.c:168
@@ -552,7 +593,10 @@ msgstr "저장하지 않고 닫기(_W)"
 #: ../pluma/pluma-io-error-message-area.c:1190
 #: ../pluma/pluma-progress-message-area.c:66
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:171
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/quickopen/quickopen/popup.py:36
+#: ../plugins/snippets/snippets/Manager.py:795
+#: ../plugins/snippets/snippets/Manager.py:881
+#: ../plugins/snippets/snippets/Manager.py:920 ../plugins/sort/sort.ui.h:2
 #: ../plugins/spell/pluma-spell-language-dialog.c:132
 #: ../plugins/spell/languages-dialog.ui.h:3
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
@@ -562,20 +606,22 @@ msgid "_Cancel"
 msgstr "취소(_C)"
 
 #. File menu
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:178
 #: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+#: ../plugins/snippets/snippets/Manager.py:882
+#: ../plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
 msgstr "저장(_S)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:183
 msgid "Save _As"
 msgstr "다른 이름으로 저장(_A)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
 msgstr "질문"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:414
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -585,12 +631,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "저장하지 않으면 최근 %ld초 안에 바뀐 내용을 완전히 잃게 됩니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr "저장하지 않으면, 최근 1분동안 편집한 사항을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -600,7 +646,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "저장하지 않으면 최근 1분 %ld초 안에 바뀐 내용을 완전히 잃게 됩니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -610,12 +656,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "저장하지 않으면 최근 %ld분  안에 바뀐 내용을 완전히 잃게 됩니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr "저장하지 않으면, 최근 1시간동안 편집한 사항을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -625,7 +671,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "저장하지 않으면 최근 1시간 %d분 안에 바뀐 내용을 완전히 잃게 됩니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
@@ -633,28 +679,28 @@ msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] "저장하지 않으면 최근 %d시간 안에 바뀐 내용을 완전히 잃게 됩니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "문서 \"%s\"의 바뀐 점을 잃어버립니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "닫기 전에 문서 \"%s\"의 바뀐 사항을 저장하시겠습니까?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:771
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr "시스템 관리자가 저장을 하지 못하게 했습니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] "바뀐 문서 %d개의 내용을 완전히 잃게 됩니다."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:728
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -662,19 +708,19 @@ msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] "저장하지 않은 바뀐 문서가 %d개 있습니다. 닫기 전에 바뀐 내용을 저장하시겠습니까?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
 msgstr "저장하지 않은 내용이 있는 문서(_E):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:748
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
 msgid "S_elect the documents you want to save:"
 msgstr "저장하려는 문서를 선택하십시오(_E):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:773
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "저장하지 않으면, 바뀐 사항을 모두 잃게 됩니다."
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.c:307
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:133
 #: ../plugins/spell/languages-dialog.ui.h:4
@@ -684,9 +730,9 @@ msgstr "저장하지 않으면, 바뀐 사항을 모두 잃게 됩니다."
 msgid "_OK"
 msgstr "확인(_O)"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.c:308
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1292
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
 #: ../plugins/sort/sort.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:134
@@ -697,17 +743,17 @@ msgstr "확인(_O)"
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:316
+#: ../pluma/dialogs/pluma-encodings-dialog.c:310
 msgid "Character Encodings"
 msgstr "문자 인코딩"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:379
-#: ../pluma/dialogs/pluma-encodings-dialog.c:440
+#: ../pluma/dialogs/pluma-encodings-dialog.c:373
+#: ../pluma/dialogs/pluma-encodings-dialog.c:434
 msgid "_Description"
 msgstr "설명(_D)"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:388
-#: ../pluma/dialogs/pluma-encodings-dialog.c:449
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Encoding"
 msgstr "인코딩(_E)"
 
@@ -730,56 +776,54 @@ msgid "E_ncodings shown in menu:"
 msgstr "메뉴에 표시하는 인코딩(_N):"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:39
 msgid "_Remove"
 msgstr "제거(_R)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:572
+#: ../pluma/dialogs/pluma-preferences-dialog.c:726
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "단추를 눌러서 편집기에서 쓸 글꼴을 선택하십시오"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:582
+#: ../pluma/dialogs/pluma-preferences-dialog.c:736
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "시스템 고정폭 글꼴 (%s) 사용(_U)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:785
+#: ../pluma/dialogs/pluma-preferences-dialog.c:939
 msgid "The selected color scheme cannot be installed."
 msgstr "선택한 색상 모음을 설치할 수 없습니다."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:863
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1017
 msgid "Add Scheme"
 msgstr "색상 모음 추가"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:870
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1024
 msgid "A_dd Scheme"
 msgstr "색상 모음 추가(_D)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:878
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1032
 msgid "Color Scheme Files"
 msgstr "색상 모음 파일"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1039
 #: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
 msgstr "모든 파일"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:930
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1084
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "색상 모음 파일 \"%s\"을(를) 지울 수 없습니다."
 
-#. ex:et:ts=4:
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1291
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.c:327
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
 #: ../plugins/docinfo/docinfo.ui.h:2
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
 msgid "_Close"
 msgstr "닫기(_C)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1294
 msgid "Pluma Preferences"
 msgstr "플루마 기본 설정"
 
@@ -793,10 +837,7 @@ msgid "Text Wrapping"
 msgstr "줄 바꿈"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
-#: ../plugins/docinfo/docinfo.ui.h:5
-#: ../plugins/externaltools/tools/tools.ui.h:21
-#: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:5 ../plugins/time/pluma-time-dialog.ui.h:6
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
@@ -816,7 +857,7 @@ msgstr "단어를 여러 줄로 나누지 않기(_S)"
 msgid "Line Numbers"
 msgstr "줄 번호"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2114
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2197
 msgid "_Display line numbers"
 msgstr "줄 번호 표시(_D)"
 
@@ -889,56 +930,80 @@ msgid "_minutes"
 msgstr "분마다 저장(_M)"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+msgid "Draw spaces, tabs, newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+msgid "Draw _tabs"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+msgid "Draw _trailing tabs only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+msgid "Draw _newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+msgid "Draw _spaces"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+msgid "Draw _trailing spaces only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
 msgid "Editor"
 msgstr "편집기"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font"
 msgstr "글꼴"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Editor _font: "
 msgstr "편집기 글꼴(_F): "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:36
 msgid "Pick the editor font"
 msgstr "편집기 글꼴 고르기"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:37
 msgid "Color Scheme"
 msgstr "색상 모음"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:38
 msgid "_Add..."
 msgstr "추가(_A)..."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:40
 msgid "Font & Colors"
 msgstr "글꼴 및 색"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:41
 msgid "Plugins"
 msgstr "플러그인"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:301
+#: ../pluma/dialogs/pluma-search-dialog.c:295
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "바꾸기"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
+#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "찾기"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:413
+#: ../pluma/dialogs/pluma-search-dialog.c:407
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "_Find"
 msgstr "찾기(_F)"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:416
+#: ../pluma/dialogs/pluma-search-dialog.c:410
 msgid "Replace _All"
 msgstr "모두 바꾸기(_A)"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.c:411
 #: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr "바꾸기(_R)"
@@ -1134,23 +1199,23 @@ msgstr[0] "최근 %d시간 안에 바뀐 문서 내용을 완전히 잃게 됩�
 msgid "_Revert"
 msgstr "되돌리기(_R)"
 
-#: ../pluma/pluma-commands-help.c:69
+#: ../pluma/pluma-commands-help.c:60
 msgid "MATE Documentation Team"
 msgstr "MATE 문서 팀"
 
-#: ../pluma/pluma-commands-help.c:70
+#: ../pluma/pluma-commands-help.c:61
 msgid "GNOME Documentation Team"
 msgstr "GNOME 문서 팀"
 
-#: ../pluma/pluma-commands-help.c:71
+#: ../pluma/pluma-commands-help.c:62
 msgid "Sun Microsystems"
 msgstr "Sun Microsystems"
 
-#: ../pluma/pluma-commands-help.c:76
+#: ../pluma/pluma-commands-help.c:67
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "플루마는 마테 데스크톱을 위한 작고 가벼운 텍스트 에디터입니다."
 
-#: ../pluma/pluma-commands-help.c:79
+#: ../pluma/pluma-commands-help.c:70
 msgid ""
 "Pluma is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -1160,7 +1225,7 @@ msgstr ""
 "플루마는 자유 소프트웨어 입니다. 자유 소프트웨어 재단이 발표한 GNU 일반 공중 사용 허가서 버전 2 또는 (선택에 따라) 그 이상의 "
 "버전의 조항에 의거하여 재배포하거나 수정할 수 있습니다."
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:74
 msgid ""
 "Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -1171,7 +1236,7 @@ msgstr ""
 "묵시적인 보증을 포함한 어떠한 형태의 보증도 제공하지 않습니다. 보다 자세한 사항에 대해서는 GNU 일반 공중 사용 허가서를 참고하시기 "
 "바랍니다."
 
-#: ../pluma/pluma-commands-help.c:87
+#: ../pluma/pluma-commands-help.c:78
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
@@ -1180,11 +1245,11 @@ msgstr ""
 "GNU 일반 공중 사용 허가서 사본을 이 프로그램과 받아야 합니다. 못받으셨다면 Free Software Foundation, Inc.,"
 " 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA에 요청하세요."
 
-#: ../pluma/pluma-commands-help.c:104
+#: ../pluma/pluma-commands-help.c:113
 msgid "About Pluma"
 msgstr "플루마 소개"
 
-#: ../pluma/pluma-commands-help.c:107
+#: ../pluma/pluma-commands-help.c:116
 msgid ""
 "Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
 "Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
@@ -1202,7 +1267,7 @@ msgstr ""
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2019 MATE developers"
 
-#: ../pluma/pluma-commands-help.c:117
+#: ../pluma/pluma-commands-help.c:126
 msgid "translator-credits"
 msgstr ""
 "Elex https://launchpad.net/~mysticzizone\n"
@@ -1229,7 +1294,7 @@ msgstr "한번 발견하고 바꿨습니다"
 msgid "\"%s\" not found"
 msgstr "\"%s\"이(가) 없습니다"
 
-#: ../pluma/pluma-document.c:1141 ../pluma/pluma-document.c:1161
+#: ../pluma/pluma-document.c:1137 ../pluma/pluma-document.c:1157
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "저장하지 않은 문서 %d"
@@ -1399,6 +1464,8 @@ msgstr "창"
 
 #: ../pluma/pluma-file-chooser-dialog.c:442
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+#: ../plugins/quickopen/quickopen/popup.py:37
+#: ../plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
 msgstr "열기(_O)"
 
@@ -2298,22 +2365,22 @@ msgid "/ on %s"
 msgstr "%s의 /"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1352
+#: ../pluma/pluma-view.c:1435
 msgid "_Wrap Around"
 msgstr "끝까지 가면 처음부터(_W)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1362
+#: ../pluma/pluma-view.c:1445
 msgid "Match _Entire Word Only"
 msgstr "전체가 맞는 단어만(_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1372
+#: ../pluma/pluma-view.c:1455
 msgid "_Match Case"
 msgstr "대소문자 일치(_M)"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1382
+#: ../pluma/pluma-view.c:1465
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
@@ -2321,11 +2388,11 @@ msgstr ""
 "이스케이프 문자 해석(예 \n"
 ")"
 
-#: ../pluma/pluma-view.c:1496
+#: ../pluma/pluma-view.c:1579
 msgid "String you want to search for"
 msgstr "찾으려는 문자열"
 
-#: ../pluma/pluma-view.c:1505
+#: ../pluma/pluma-view.c:1588
 msgid "Line you want to move the cursor to"
 msgstr "커서를 옮기려는 줄 번호"
 
@@ -2338,10 +2405,10 @@ msgstr "%s 강조 모드 사용"
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
 #: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
-#: ../plugins/externaltools/tools/manager.py:138
-#: ../plugins/externaltools/tools/manager.py:445
-#: ../plugins/externaltools/tools/manager.py:556
-#: ../plugins/externaltools/tools/manager.py:873
+#: ../plugins/externaltools/tools/manager.py:108
+#: ../plugins/externaltools/tools/manager.py:308
+#: ../plugins/externaltools/tools/manager.py:424
+#: ../plugins/externaltools/tools/manager.py:746
 msgid "Plain Text"
 msgstr "일반 텍스트"
 
@@ -2492,147 +2559,147 @@ msgstr "외부 도구"
 msgid "Execute external commands and shell scripts."
 msgstr "외부 명령과 셸 스크립트를 실행합니다."
 
-#: ../plugins/externaltools/tools/__init__.py:175
+#: ../plugins/externaltools/tools/__init__.py:174
 msgid "Manage _External Tools..."
 msgstr "외부 도구 관리(_E)..."
 
-#: ../plugins/externaltools/tools/__init__.py:177
+#: ../plugins/externaltools/tools/__init__.py:176
 msgid "Opens the External Tools Manager"
 msgstr "외부 도구 관리자 열기"
 
-#: ../plugins/externaltools/tools/__init__.py:181
+#: ../plugins/externaltools/tools/__init__.py:180
 msgid "External _Tools"
 msgstr "외부 도구(_T)"
 
-#: ../plugins/externaltools/tools/__init__.py:183
+#: ../plugins/externaltools/tools/__init__.py:182
 msgid "External tools"
 msgstr "외부 도구"
 
-#: ../plugins/externaltools/tools/__init__.py:216
+#: ../plugins/externaltools/tools/__init__.py:215
 msgid "Shell Output"
 msgstr "셸 출력"
 
-#: ../plugins/externaltools/tools/capture.py:92
+#: ../plugins/externaltools/tools/capture.py:96
 #, python-format
 msgid "Could not execute command: %s"
 msgstr "명령을 실행할 수 없습니다: %s"
 
-#: ../plugins/externaltools/tools/functions.py:157
+#: ../plugins/externaltools/tools/functions.py:155
 msgid "You must be inside a word to run this command"
 msgstr "이 명령을 실행하려면 단어안에 있어야 합니다"
 
-#: ../plugins/externaltools/tools/functions.py:263
+#: ../plugins/externaltools/tools/functions.py:261
 msgid "Running tool:"
 msgstr "실행 중인 도구:"
 
-#: ../plugins/externaltools/tools/functions.py:287
+#: ../plugins/externaltools/tools/functions.py:285
 msgid "Done."
 msgstr "완료."
 
-#: ../plugins/externaltools/tools/functions.py:289
+#: ../plugins/externaltools/tools/functions.py:287
 msgid "Exited"
 msgstr "끝났음"
 
-#: ../plugins/externaltools/tools/manager.py:136
+#: ../plugins/externaltools/tools/manager.py:106
 msgid "All languages"
 msgstr "모든 언어"
 
-#: ../plugins/externaltools/tools/manager.py:545
-#: ../plugins/externaltools/tools/manager.py:549
-#: ../plugins/externaltools/tools/manager.py:871
-#: ../plugins/externaltools/tools/tools.ui.h:22
+#: ../plugins/externaltools/tools/manager.py:413
+#: ../plugins/externaltools/tools/manager.py:417
+#: ../plugins/externaltools/tools/manager.py:744
+#: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "All Languages"
 msgstr "모든 언어"
 
-#: ../plugins/externaltools/tools/manager.py:655
+#: ../plugins/externaltools/tools/manager.py:526
 msgid "New tool"
 msgstr "새 도구"
 
-#: ../plugins/externaltools/tools/manager.py:786
+#: ../plugins/externaltools/tools/manager.py:659
 #, python-format
 msgid "This accelerator is already bound to %s"
 msgstr "이 단축키는 %s에 연결되어 있습니다"
 
-#: ../plugins/externaltools/tools/manager.py:837
+#: ../plugins/externaltools/tools/manager.py:710
 msgid "Type a new accelerator, or press Backspace to clear"
 msgstr "새 단축키를 누르십시오. 지우려면 백스페이스를 누르십시오"
 
-#: ../plugins/externaltools/tools/manager.py:839
+#: ../plugins/externaltools/tools/manager.py:712
 msgid "Type a new accelerator"
 msgstr "새 단축키를 누르십시오"
 
-#: ../plugins/externaltools/tools/outputpanel.py:101
+#: ../plugins/externaltools/tools/outputpanel.py:102
 msgid "Stopped."
 msgstr "정지됨."
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
-msgid "Nothing"
-msgstr "없음"
-
-#: ../plugins/externaltools/tools/tools.ui.h:2
-msgid "Current document"
-msgstr "현재 문서"
-
-#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
 msgstr "모든 문서"
 
-#: ../plugins/externaltools/tools/tools.ui.h:4
-msgid "Current selection"
-msgstr "현재 선택한 부분"
-
-#: ../plugins/externaltools/tools/tools.ui.h:5
-msgid "Current selection (default to document)"
-msgstr "현재 선택한 부분 (문서에 대한 기본값)"
-
-#: ../plugins/externaltools/tools/tools.ui.h:6
-msgid "Current line"
-msgstr "현재 줄"
-
-#: ../plugins/externaltools/tools/tools.ui.h:7
-msgid "Current word"
-msgstr "현재 단어"
-
-#: ../plugins/externaltools/tools/tools.ui.h:8
-msgid "Display in bottom pane"
-msgstr "아래 창에 표시"
-
-#: ../plugins/externaltools/tools/tools.ui.h:9
-msgid "Create new document"
-msgstr "새 문서 만들기"
-
-#: ../plugins/externaltools/tools/tools.ui.h:10
-msgid "Append to current document"
-msgstr "현재 문서에 덧붙이기"
-
-#: ../plugins/externaltools/tools/tools.ui.h:11
-msgid "Replace current document"
-msgstr "현재 문서를 바꾸기"
-
-#: ../plugins/externaltools/tools/tools.ui.h:12
-msgid "Replace current selection"
-msgstr "현재 선택 부분을 바꾸기"
-
-#: ../plugins/externaltools/tools/tools.ui.h:13
-msgid "Insert at cursor position"
-msgstr "커서 위치에 끼워넣기"
-
-#: ../plugins/externaltools/tools/tools.ui.h:14
+#: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "All documents except untitled ones"
 msgstr "이름 없는 문서를 제외한 모든 문서"
 
-#: ../plugins/externaltools/tools/tools.ui.h:15
+#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "Local files only"
 msgstr "로컬 파일만"
 
-#: ../plugins/externaltools/tools/tools.ui.h:16
+#: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Remote files only"
 msgstr "원격 파일만"
 
-#: ../plugins/externaltools/tools/tools.ui.h:17
+#: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Untitled documents only"
 msgstr "이름 없는 문서만"
+
+#: ../plugins/externaltools/tools/tools.ui.h:6
+msgid "Nothing"
+msgstr "없음"
+
+#: ../plugins/externaltools/tools/tools.ui.h:7
+msgid "Current document"
+msgstr "현재 문서"
+
+#: ../plugins/externaltools/tools/tools.ui.h:8
+msgid "Current selection"
+msgstr "현재 선택한 부분"
+
+#: ../plugins/externaltools/tools/tools.ui.h:9
+msgid "Current selection (default to document)"
+msgstr "현재 선택한 부분 (문서에 대한 기본값)"
+
+#: ../plugins/externaltools/tools/tools.ui.h:10
+msgid "Current line"
+msgstr "현재 줄"
+
+#: ../plugins/externaltools/tools/tools.ui.h:11
+msgid "Current word"
+msgstr "현재 단어"
+
+#: ../plugins/externaltools/tools/tools.ui.h:12
+msgid "Display in bottom pane"
+msgstr "아래 창에 표시"
+
+#: ../plugins/externaltools/tools/tools.ui.h:13
+msgid "Create new document"
+msgstr "새 문서 만들기"
+
+#: ../plugins/externaltools/tools/tools.ui.h:14
+msgid "Append to current document"
+msgstr "현재 문서에 덧붙이기"
+
+#: ../plugins/externaltools/tools/tools.ui.h:15
+msgid "Replace current document"
+msgstr "현재 문서를 바꾸기"
+
+#: ../plugins/externaltools/tools/tools.ui.h:16
+msgid "Replace current selection"
+msgstr "현재 선택 부분을 바꾸기"
+
+#: ../plugins/externaltools/tools/tools.ui.h:17
+msgid "Insert at cursor position"
+msgstr "커서 위치에 끼워넣기"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
@@ -2643,29 +2710,29 @@ msgid "_Tools:"
 msgstr "도구(_T):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
-#: ../plugins/snippets/snippets/snippets.ui.h:7
-msgid "_Edit:"
-msgstr "편집(_E):"
-
-#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
 msgstr "적용 범위(_A):"
 
-#: ../plugins/externaltools/tools/tools.ui.h:24
+#: ../plugins/externaltools/tools/tools.ui.h:21
 msgid "_Output:"
 msgstr "출력(_O):"
 
-#: ../plugins/externaltools/tools/tools.ui.h:25
+#: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "_Input:"
 msgstr "입력(_I):"
 
-#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Save:"
 msgstr "저장(_S):"
 
-#: ../plugins/externaltools/tools/tools.ui.h:27
+#: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Shortcut Key:"
 msgstr "바로 가기 키(_S):"
+
+#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/snippets/snippets/snippets.ui.h:7
+msgid "_Edit:"
+msgstr "편집(_E):"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
@@ -3080,16 +3147,25 @@ msgstr "파이썬 콘솔"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "아래 패널에 파이썬 콘솔을 엽니다."
 
+#. ex:et:ts=4:
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Error color:"
+msgstr "오류 색(_E):"
+
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
 msgstr "명령어 색(_O):"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
-msgid "_Error color:"
-msgstr "오류 색(_E):"
+msgid "Use system fixed width font"
+msgstr ""
 
-#. ex:ts=8:et:
-#: ../plugins/quickopen/quickopen/popup.py:31
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:4
+msgid "Font:"
+msgstr ""
+
+#. ex:ts=4:et:
+#: ../plugins/quickopen/quickopen/popup.py:32
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
 msgstr "빠르게 열기"
@@ -3108,9 +3184,9 @@ msgstr "파일을 빠르게 엽니다"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
-#: ../plugins/snippets/snippets/Document.py:53
-#: ../plugins/snippets/snippets/Document.py:193
-#: ../plugins/snippets/snippets/Document.py:614
+#: ../plugins/snippets/snippets/Document.py:51
+#: ../plugins/snippets/snippets/Document.py:189
+#: ../plugins/snippets/snippets/Document.py:618
 msgid "Snippets"
 msgstr "관용구"
 
@@ -3131,7 +3207,7 @@ msgid "Create new snippet"
 msgstr "새 관용구 만들기"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:793
+#: ../plugins/snippets/snippets/Manager.py:792
 msgid "Import snippets"
 msgstr "관용구를 가져옵니다"
 
@@ -3140,7 +3216,7 @@ msgid "Export selected snippets"
 msgstr "선택한 관용구를 내보냅니다"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
-#: ../plugins/snippets/snippets/Manager.py:403
+#: ../plugins/snippets/snippets/Manager.py:400
 msgid "Delete selected snippet"
 msgstr "선택한 관용구를 지웁니다"
 
@@ -3148,27 +3224,28 @@ msgstr "선택한 관용구를 지웁니다"
 msgid "Activation"
 msgstr "활성화"
 
+#: ../plugins/snippets/snippets/snippets.ui.h:9
+msgid "_Drop targets:"
+msgstr "예외 대상(_D):"
+
 #: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "Shortcut key with which the snippet is activated"
+msgstr "관용구를 시작할 바로 가기 키"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+msgid "S_hortcut key:"
+msgstr "바로 가기 키(_H):"
+
+#. "tab" here means the tab key, not the notebook tab!
+#: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "_Tab trigger:"
 msgstr "탭 트리거(_T):"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
-#: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:682
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+#: ../plugins/snippets/snippets/Manager.py:681
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr "탭을 누른 다음에 관용구를 사용하게 되는 단어 한 개"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:12
-msgid "Shortcut key with which the snippet is activated"
-msgstr "관용구를 시작할 바로 가기 키"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:13
-msgid "S_hortcut key:"
-msgstr "바로 가기 키(_H):"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:14
-msgid "_Drop targets:"
-msgstr "예외 대상(_D):"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
@@ -3190,12 +3267,12 @@ msgstr "새 관용구 추가..."
 msgid "Global"
 msgstr "전체"
 
-#: ../plugins/snippets/snippets/Manager.py:400
+#: ../plugins/snippets/snippets/Manager.py:397
 msgid "Revert selected snippet"
 msgstr "선택한 관용구를 되돌립니다"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:675
+#: ../plugins/snippets/snippets/Manager.py:674
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
@@ -3203,30 +3280,30 @@ msgstr ""
 "이것은 올바른 탭 트리거가 아닙니다. 트리거는 영문자나 숫자로만 된 글자로 이루어져야 합니다 : {, [ 등의 문자는 포함될 수 "
 "없습니다."
 
-#: ../plugins/snippets/snippets/Manager.py:772
+#: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
 msgid "The following error occurred while importing: %s"
 msgstr "가져오는 동안 다음 오류가 생겼습니다: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:779
+#: ../plugins/snippets/snippets/Manager.py:778
 msgid "Import successfully completed"
 msgstr "가져오기를 성공적으로 마쳤습니다"
 
 #: ../plugins/snippets/snippets/Manager.py:798
-#: ../plugins/snippets/snippets/Manager.py:884
-#: ../plugins/snippets/snippets/Manager.py:947
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:949
 msgid "All supported archives"
 msgstr "지원되는 모든 압축 파일"
 
 #: ../plugins/snippets/snippets/Manager.py:799
-#: ../plugins/snippets/snippets/Manager.py:885
-#: ../plugins/snippets/snippets/Manager.py:948
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:950
 msgid "Gzip compressed archive"
 msgstr "Gzip 압축 파일"
 
 #: ../plugins/snippets/snippets/Manager.py:800
-#: ../plugins/snippets/snippets/Manager.py:886
-#: ../plugins/snippets/snippets/Manager.py:949
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "Bzip2 compressed archive"
 msgstr "Bzip2 압축 파일"
 
@@ -3235,8 +3312,8 @@ msgid "Single snippets file"
 msgstr "관용구 파일"
 
 #: ../plugins/snippets/snippets/Manager.py:802
-#: ../plugins/snippets/snippets/Manager.py:888
-#: ../plugins/snippets/snippets/Manager.py:951
+#: ../plugins/snippets/snippets/Manager.py:889
+#: ../plugins/snippets/snippets/Manager.py:953
 msgid "All files"
 msgstr "모든 파일"
 
@@ -3251,25 +3328,25 @@ msgstr "내보내기를 성공적으로 마쳤습니다"
 
 #. Ask if system snippets should also be exported
 #: ../plugins/snippets/snippets/Manager.py:858
-#: ../plugins/snippets/snippets/Manager.py:925
+#: ../plugins/snippets/snippets/Manager.py:927
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
 msgstr "선택한 <b>시스템</b> 관용구를 같이 내보내시겠습니까?"
 
 #: ../plugins/snippets/snippets/Manager.py:873
-#: ../plugins/snippets/snippets/Manager.py:943
+#: ../plugins/snippets/snippets/Manager.py:945
 msgid "There are no snippets selected to be exported"
 msgstr "내보낼 관용구가 선택되지 않았습니다"
 
 #: ../plugins/snippets/snippets/Manager.py:878
-#: ../plugins/snippets/snippets/Manager.py:916
+#: ../plugins/snippets/snippets/Manager.py:917
 msgid "Export snippets"
 msgstr "관용구 내보내기"
 
-#: ../plugins/snippets/snippets/Manager.py:1056
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut, or press Backspace to clear"
 msgstr "새 바로 가기 키를 누르십시오. 지우려면 백스페이스를 누르십시오"
 
-#: ../plugins/snippets/snippets/Manager.py:1058
+#: ../plugins/snippets/snippets/Manager.py:1060
 msgid "Type a new shortcut"
 msgstr "새 바로 가기 키를 누르십시오"
 
@@ -3320,14 +3397,14 @@ msgstr "다음 파일은 가져올 수 없습니다: %s"
 msgid "File \"%s\" is not a valid snippets archive"
 msgstr "\"%s\" 파일은 올바른 관용구 압축 파일이 아닙니다"
 
-#: ../plugins/snippets/snippets/Placeholder.py:593
+#: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
 "aborted."
 msgstr "파이썬 명령의 (%s) 수행 제한 시간이 최대값을 넘겼습니다, 실행을 취소합니다."
 
-#: ../plugins/snippets/snippets/Placeholder.py:601
+#: ../plugins/snippets/snippets/Placeholder.py:609
 #, python-format
 msgid "Execution of the Python command (%s) failed: %s"
 msgstr "파이썬 명령 (%s) 실행 실패했습니다: %s"

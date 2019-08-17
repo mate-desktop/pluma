@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-17 11:58+0100\n"
+"POT-Creation-Date: 2019-07-17 14:34+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Vaibhav S Dalvi <vaibhav.dlv@gmail.com>, 2018\n"
 "Language-Team: Marathi (https://www.transifex.com/mate/teams/13566/mr/)\n"
@@ -520,6 +520,47 @@ msgstr ""
 "कार्यान्वित प्लगीन्सची यादी. यात कार्यान्वित प्लगीन्सचे \"ठिकाण\" आहे. "
 "दिलेल्या प्लगीनचे \"ठिकाण\" मिळवण्यासाठी pluma-plugin ही फाइल पहा."
 
+#: ../data/org.mate.pluma.gschema.xml.in.h:93
+msgid "Draw newline"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:94
+msgid "Whether pluma should draw newlines in the editor window."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:95
+msgid "Draw nbsp"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:96
+msgid ""
+"Whether pluma should draw not breaking spaces in the editor window: 'draw-"
+"none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' "
+"drawing all spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:97
+msgid "Draw tabs"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:98
+msgid ""
+"Whether pluma should draw tabs in the editor window: 'draw-none' no drawing;"
+" 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all "
+"spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:99
+msgid "Draw spaces"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:100
+msgid ""
+"Whether pluma should draw spaces in the editor window: 'draw-none' no "
+"drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing "
+"all spaces."
+msgstr ""
+
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
 msgstr ""
@@ -552,23 +593,23 @@ msgstr "मजकूर फाइल्स् संपादीत करा"
 msgid "Pluma Text Editor"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:136
 msgid "Log Out _without Saving"
 msgstr "सुरक्षित न करता लॉग आउट करा(_w)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:144
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "_Cancel Logout"
 msgstr "बाहेर पडा (_C)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:147
 msgid "Close _without Saving"
 msgstr "सुरक्षित न करता बंद करा(_w)"
 
 #. Add a cancel button
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
-#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-encodings-dialog.c:306
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/dialogs/pluma-preferences-dialog.c:975
 #: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
 #: ../pluma/pluma-file-chooser-dialog.c:440
 #: ../pluma/pluma-io-error-message-area.c:168
@@ -576,7 +617,10 @@ msgstr "सुरक्षित न करता बंद करा(_w)"
 #: ../pluma/pluma-io-error-message-area.c:1190
 #: ../pluma/pluma-progress-message-area.c:66
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:171
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/quickopen/quickopen/popup.py:36
+#: ../plugins/snippets/snippets/Manager.py:795
+#: ../plugins/snippets/snippets/Manager.py:881
+#: ../plugins/snippets/snippets/Manager.py:920 ../plugins/sort/sort.ui.h:2
 #: ../plugins/spell/pluma-spell-language-dialog.c:132
 #: ../plugins/spell/languages-dialog.ui.h:3
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
@@ -586,20 +630,22 @@ msgid "_Cancel"
 msgstr "रद्द करा(_C)"
 
 #. File menu
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:178
 #: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+#: ../plugins/snippets/snippets/Manager.py:882
+#: ../plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
 msgstr "संचयीत करा (_S)"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:183
 msgid "Save _As"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
 msgstr "प्रश्न"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:414
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -610,14 +656,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr ""
 "जर तुम्ही सुरक्षित नाही केले, तर अखेरच्या मिनिटापासूनचे बदल कायमस्वरूपी नष्ट"
 " होतील."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -628,7 +674,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -639,12 +685,12 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr "सुरक्षित न केल्यास, अखेरच्या तासापासूनचे बदल कायमस्वरूपी नष्ट होतील."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -655,7 +701,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
@@ -664,29 +710,29 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "\"%s\" दस्तऐवजात केलेले बदल कायमस्वरूपी नष्ट होतील."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "बंद करण्यापूर्वी \"%s\" दस्तऐवजात बदल साठवायचे?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:771
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr "संययन प्रणाली प्रशासका द्वारे अकार्यान्वीत करण्यात आले."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:728
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -695,20 +741,20 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
 msgstr "असुरक्षित बदलवांसह दस्तऐवज (_e):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:748
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
 msgid "S_elect the documents you want to save:"
 msgstr "तुम्हास संचयीत करावयाचे दस्तऐवज निवडा (_e):"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:773
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr ""
 "जर तुम्ही सुरक्षित नाही केले, तर तुमचे सर्व बदल कायमस्वरूपी नष्ट होतील."
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.c:307
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:133
 #: ../plugins/spell/languages-dialog.ui.h:4
@@ -718,9 +764,9 @@ msgstr ""
 msgid "_OK"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.c:308
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1292
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
 #: ../plugins/sort/sort.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:134
@@ -731,17 +777,17 @@ msgstr ""
 msgid "_Help"
 msgstr "मदत(_H)"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:316
+#: ../pluma/dialogs/pluma-encodings-dialog.c:310
 msgid "Character Encodings"
 msgstr "अक्षर एन्कोडिंग"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:379
-#: ../pluma/dialogs/pluma-encodings-dialog.c:440
+#: ../pluma/dialogs/pluma-encodings-dialog.c:373
+#: ../pluma/dialogs/pluma-encodings-dialog.c:434
 msgid "_Description"
 msgstr "वर्णन(_D)"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:388
-#: ../pluma/dialogs/pluma-encodings-dialog.c:449
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Encoding"
 msgstr "एनकोडिंग(_E)"
 
@@ -764,56 +810,54 @@ msgid "E_ncodings shown in menu:"
 msgstr "मेनूमध्ये दर्शविलेले एनकोडिंग (_n):"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:39
 msgid "_Remove"
 msgstr "काढून टाका (_R)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:572
+#: ../pluma/dialogs/pluma-preferences-dialog.c:726
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "संपादकामध्ये वापरायचा फॉंट निवडायसाठी या बटनाला दाबा"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:582
+#: ../pluma/dialogs/pluma-preferences-dialog.c:736
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "प्रणाली करीता ठराविक रूंदीचे (%s) फॉन्ट वापरा (_U)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:785
+#: ../pluma/dialogs/pluma-preferences-dialog.c:939
 msgid "The selected color scheme cannot be installed."
 msgstr "निवडलेले रंग युजना प्रतिष्ठापतीत करण्याजोगी नाही."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:863
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1017
 msgid "Add Scheme"
 msgstr "सुत्रयोजना जोडा"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:870
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1024
 msgid "A_dd Scheme"
 msgstr "सुत्रयोजना जोडा (_d)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:878
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1032
 msgid "Color Scheme Files"
 msgstr "रंग सुत्रयोजना फाइलं"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1039
 #: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
 msgstr "सर्व फाईल्स"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:930
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1084
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "\"%s\" रंग सुत्रयोजना काढू शकली नाही."
 
-#. ex:et:ts=4:
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1291
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.c:327
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
 #: ../plugins/docinfo/docinfo.ui.h:2
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
 msgid "_Close"
 msgstr "बंद करा (_C)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1294
 msgid "Pluma Preferences"
 msgstr ""
 
@@ -827,10 +871,7 @@ msgid "Text Wrapping"
 msgstr "ओळ गुंडाळणे"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
-#: ../plugins/docinfo/docinfo.ui.h:5
-#: ../plugins/externaltools/tools/tools.ui.h:21
-#: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:5 ../plugins/time/pluma-time-dialog.ui.h:6
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
@@ -850,7 +891,7 @@ msgstr "शब्द दोन रांगांमध्ये विभाज
 msgid "Line Numbers"
 msgstr "ओळ क्रमांक"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2114
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2197
 msgid "_Display line numbers"
 msgstr "ओळ क्रमांक दाखवा (_D)"
 
@@ -923,56 +964,80 @@ msgid "_minutes"
 msgstr "मिनिटे (_m)"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+msgid "Draw spaces, tabs, newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+msgid "Draw _tabs"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+msgid "Draw _trailing tabs only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+msgid "Draw _newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+msgid "Draw _spaces"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+msgid "Draw _trailing spaces only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
 msgid "Editor"
 msgstr "संपादक"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font"
 msgstr "फॉंट"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Editor _font: "
 msgstr "संपादक फॉन्ट (_f): "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:36
 msgid "Pick the editor font"
 msgstr "संपादक फॉन्ट निवडा"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:37
 msgid "Color Scheme"
 msgstr "रंग सुत्रयोजना"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:38
 msgid "_Add..."
 msgstr "समावेश करा (_A)..."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:40
 msgid "Font & Colors"
 msgstr "फॉन्ट आणि रंग"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:41
 msgid "Plugins"
 msgstr "प्लगईन"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:301
+#: ../pluma/dialogs/pluma-search-dialog.c:295
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "बदलवा"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
+#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "शोधा"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:413
+#: ../pluma/dialogs/pluma-search-dialog.c:407
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "_Find"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-search-dialog.c:416
+#: ../pluma/dialogs/pluma-search-dialog.c:410
 msgid "Replace _All"
 msgstr "सर्व बदलवा (_A)"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.c:411
 #: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr "बदलवा (_R)"
@@ -1177,23 +1242,23 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "पूर्वस्थितीत जावे (_R)"
 
-#: ../pluma/pluma-commands-help.c:69
+#: ../pluma/pluma-commands-help.c:60
 msgid "MATE Documentation Team"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:70
+#: ../pluma/pluma-commands-help.c:61
 msgid "GNOME Documentation Team"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:71
+#: ../pluma/pluma-commands-help.c:62
 msgid "Sun Microsystems"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:76
+#: ../pluma/pluma-commands-help.c:67
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:79
+#: ../pluma/pluma-commands-help.c:70
 msgid ""
 "Pluma is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -1201,7 +1266,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:74
 msgid ""
 "Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -1209,18 +1274,18 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:87
+#: ../pluma/pluma-commands-help.c:78
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:104
+#: ../pluma/pluma-commands-help.c:113
 msgid "About Pluma"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:107
+#: ../pluma/pluma-commands-help.c:116
 msgid ""
 "Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
 "Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
@@ -1231,7 +1296,7 @@ msgid ""
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:117
+#: ../pluma/pluma-commands-help.c:126
 msgid "translator-credits"
 msgstr "भाषांतराचे श्रेय Vaibhav Dalvi<vaibhav.dlv@gmail.com> 2014"
 
@@ -1253,7 +1318,7 @@ msgstr "एक उद्भव प्राप्त आणि बदलला"
 msgid "\"%s\" not found"
 msgstr "\"%s\" आढळले नाही"
 
-#: ../pluma/pluma-document.c:1141 ../pluma/pluma-document.c:1161
+#: ../pluma/pluma-document.c:1137 ../pluma/pluma-document.c:1157
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "असुरक्षित दस्तऐवज %d"
@@ -1423,6 +1488,8 @@ msgstr "विंडोज"
 
 #: ../pluma/pluma-file-chooser-dialog.c:442
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+#: ../plugins/quickopen/quickopen/popup.py:37
+#: ../plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
 msgstr "उघडा (_O)"
 
@@ -2348,32 +2415,32 @@ msgid "/ on %s"
 msgstr "%s वरील /"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1352
+#: ../pluma/pluma-view.c:1435
 msgid "_Wrap Around"
 msgstr "घट्ट बसवा (_W)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1362
+#: ../pluma/pluma-view.c:1445
 msgid "Match _Entire Word Only"
 msgstr "फक्त संपूर्ण शब्द जोडा (_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1372
+#: ../pluma/pluma-view.c:1455
 msgid "_Match Case"
 msgstr "लिपी जुळवा (_M)"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1382
+#: ../pluma/pluma-view.c:1465
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1496
+#: ../pluma/pluma-view.c:1579
 msgid "String you want to search for"
 msgstr "तुम्ही शोधू इच्छित असलेली ओळ"
 
-#: ../pluma/pluma-view.c:1505
+#: ../pluma/pluma-view.c:1588
 msgid "Line you want to move the cursor to"
 msgstr "तुम्ही कर्सर नेऊ इच्छित असलेली लाइन"
 
@@ -2386,10 +2453,10 @@ msgstr "%s उठावदार पद्धती वापरा"
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
 #: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
-#: ../plugins/externaltools/tools/manager.py:138
-#: ../plugins/externaltools/tools/manager.py:445
-#: ../plugins/externaltools/tools/manager.py:556
-#: ../plugins/externaltools/tools/manager.py:873
+#: ../plugins/externaltools/tools/manager.py:108
+#: ../plugins/externaltools/tools/manager.py:308
+#: ../plugins/externaltools/tools/manager.py:424
+#: ../plugins/externaltools/tools/manager.py:746
 msgid "Plain Text"
 msgstr "पाठ्य"
 
@@ -2542,147 +2609,147 @@ msgstr "बाह्य साधन"
 msgid "Execute external commands and shell scripts."
 msgstr "बाह्य आदेश आणि शेल स्क्रिप्ट्स चालवा."
 
-#: ../plugins/externaltools/tools/__init__.py:175
+#: ../plugins/externaltools/tools/__init__.py:174
 msgid "Manage _External Tools..."
 msgstr "बाहेरील उपकरन व्यवस्थापीत करा (_E)..."
 
-#: ../plugins/externaltools/tools/__init__.py:177
+#: ../plugins/externaltools/tools/__init__.py:176
 msgid "Opens the External Tools Manager"
 msgstr "बाह्य साधन व्यवस्थापक उघडा"
 
-#: ../plugins/externaltools/tools/__init__.py:181
+#: ../plugins/externaltools/tools/__init__.py:180
 msgid "External _Tools"
 msgstr "बाहेरील उपकरने (_T)"
 
-#: ../plugins/externaltools/tools/__init__.py:183
+#: ../plugins/externaltools/tools/__init__.py:182
 msgid "External tools"
 msgstr "बाहेरील उपकरने"
 
-#: ../plugins/externaltools/tools/__init__.py:216
+#: ../plugins/externaltools/tools/__init__.py:215
 msgid "Shell Output"
 msgstr "शेल आउटपुट"
 
-#: ../plugins/externaltools/tools/capture.py:92
+#: ../plugins/externaltools/tools/capture.py:96
 #, python-format
 msgid "Could not execute command: %s"
 msgstr "आदेश चालवण्यास अशक्य: %s"
 
-#: ../plugins/externaltools/tools/functions.py:157
+#: ../plugins/externaltools/tools/functions.py:155
 msgid "You must be inside a word to run this command"
 msgstr "हे आदेश चालविण्याकरीता तुम्हाला शब्द प्रविष्ट करावे लागेल"
 
-#: ../plugins/externaltools/tools/functions.py:263
+#: ../plugins/externaltools/tools/functions.py:261
 msgid "Running tool:"
 msgstr "कार्यरत साधन:"
 
-#: ../plugins/externaltools/tools/functions.py:287
+#: ../plugins/externaltools/tools/functions.py:285
 msgid "Done."
 msgstr "संपन्न."
 
-#: ../plugins/externaltools/tools/functions.py:289
+#: ../plugins/externaltools/tools/functions.py:287
 msgid "Exited"
 msgstr "उत्तेजित"
 
-#: ../plugins/externaltools/tools/manager.py:136
+#: ../plugins/externaltools/tools/manager.py:106
 msgid "All languages"
 msgstr "सर्व भाषा"
 
-#: ../plugins/externaltools/tools/manager.py:545
-#: ../plugins/externaltools/tools/manager.py:549
-#: ../plugins/externaltools/tools/manager.py:871
-#: ../plugins/externaltools/tools/tools.ui.h:22
+#: ../plugins/externaltools/tools/manager.py:413
+#: ../plugins/externaltools/tools/manager.py:417
+#: ../plugins/externaltools/tools/manager.py:744
+#: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "All Languages"
 msgstr "सर्व भाषा"
 
-#: ../plugins/externaltools/tools/manager.py:655
+#: ../plugins/externaltools/tools/manager.py:526
 msgid "New tool"
 msgstr "नवे उपकरण"
 
-#: ../plugins/externaltools/tools/manager.py:786
+#: ../plugins/externaltools/tools/manager.py:659
 #, python-format
 msgid "This accelerator is already bound to %s"
 msgstr "प्रवर्गक आधिपासूनच %s करीता बांधले आहे"
 
-#: ../plugins/externaltools/tools/manager.py:837
+#: ../plugins/externaltools/tools/manager.py:710
 msgid "Type a new accelerator, or press Backspace to clear"
 msgstr "नविन प्रवर्गक टाइप करा, किंवा पुसून टाकण्याकरीता Backspace दाबा"
 
-#: ../plugins/externaltools/tools/manager.py:839
+#: ../plugins/externaltools/tools/manager.py:712
 msgid "Type a new accelerator"
 msgstr "नविन प्रवर्गक टाइप करा"
 
-#: ../plugins/externaltools/tools/outputpanel.py:101
+#: ../plugins/externaltools/tools/outputpanel.py:102
 msgid "Stopped."
 msgstr "थांबले."
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
-msgid "Nothing"
-msgstr "काहिच नाही"
-
-#: ../plugins/externaltools/tools/tools.ui.h:2
-msgid "Current document"
-msgstr "वर्तमान दस्तऐवज"
-
-#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
 msgstr "सर्व दस्तऐवज"
 
-#: ../plugins/externaltools/tools/tools.ui.h:4
-msgid "Current selection"
-msgstr "वर्तमान चयन"
-
-#: ../plugins/externaltools/tools/tools.ui.h:5
-msgid "Current selection (default to document)"
-msgstr "सध्याची नीवड (पूर्वनिर्धारीत दस्तऐवज वापरा)"
-
-#: ../plugins/externaltools/tools/tools.ui.h:6
-msgid "Current line"
-msgstr "वर्तमान ओळ"
-
-#: ../plugins/externaltools/tools/tools.ui.h:7
-msgid "Current word"
-msgstr "सध्याचे शब्द"
-
-#: ../plugins/externaltools/tools/tools.ui.h:8
-msgid "Display in bottom pane"
-msgstr "तळ पटलात दाखवा"
-
-#: ../plugins/externaltools/tools/tools.ui.h:9
-msgid "Create new document"
-msgstr "नविन दस्तऐवज बनवा"
-
-#: ../plugins/externaltools/tools/tools.ui.h:10
-msgid "Append to current document"
-msgstr "वर्तमान दस्तऐवजाशी जोडा"
-
-#: ../plugins/externaltools/tools/tools.ui.h:11
-msgid "Replace current document"
-msgstr "वर्तमान दस्तऐवज बदलवा"
-
-#: ../plugins/externaltools/tools/tools.ui.h:12
-msgid "Replace current selection"
-msgstr "वर्तमान चयन बदलवा"
-
-#: ../plugins/externaltools/tools/tools.ui.h:13
-msgid "Insert at cursor position"
-msgstr "कर्सर स्थानात अंतर्भूत करा"
-
-#: ../plugins/externaltools/tools/tools.ui.h:14
+#: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "All documents except untitled ones"
 msgstr "विनाशिर्षक वगळता सर्व दस्तऐवज"
 
-#: ../plugins/externaltools/tools/tools.ui.h:15
+#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "Local files only"
 msgstr "फक्त स्थानीय फाइल"
 
-#: ../plugins/externaltools/tools/tools.ui.h:16
+#: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Remote files only"
 msgstr "फक्त दूरस्थ फाइल"
 
-#: ../plugins/externaltools/tools/tools.ui.h:17
+#: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Untitled documents only"
 msgstr "फक्त विनाशिर्षक दस्तऐवज"
+
+#: ../plugins/externaltools/tools/tools.ui.h:6
+msgid "Nothing"
+msgstr "काहिच नाही"
+
+#: ../plugins/externaltools/tools/tools.ui.h:7
+msgid "Current document"
+msgstr "वर्तमान दस्तऐवज"
+
+#: ../plugins/externaltools/tools/tools.ui.h:8
+msgid "Current selection"
+msgstr "वर्तमान चयन"
+
+#: ../plugins/externaltools/tools/tools.ui.h:9
+msgid "Current selection (default to document)"
+msgstr "सध्याची नीवड (पूर्वनिर्धारीत दस्तऐवज वापरा)"
+
+#: ../plugins/externaltools/tools/tools.ui.h:10
+msgid "Current line"
+msgstr "वर्तमान ओळ"
+
+#: ../plugins/externaltools/tools/tools.ui.h:11
+msgid "Current word"
+msgstr "सध्याचे शब्द"
+
+#: ../plugins/externaltools/tools/tools.ui.h:12
+msgid "Display in bottom pane"
+msgstr "तळ पटलात दाखवा"
+
+#: ../plugins/externaltools/tools/tools.ui.h:13
+msgid "Create new document"
+msgstr "नविन दस्तऐवज बनवा"
+
+#: ../plugins/externaltools/tools/tools.ui.h:14
+msgid "Append to current document"
+msgstr "वर्तमान दस्तऐवजाशी जोडा"
+
+#: ../plugins/externaltools/tools/tools.ui.h:15
+msgid "Replace current document"
+msgstr "वर्तमान दस्तऐवज बदलवा"
+
+#: ../plugins/externaltools/tools/tools.ui.h:16
+msgid "Replace current selection"
+msgstr "वर्तमान चयन बदलवा"
+
+#: ../plugins/externaltools/tools/tools.ui.h:17
+msgid "Insert at cursor position"
+msgstr "कर्सर स्थानात अंतर्भूत करा"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
@@ -2693,29 +2760,29 @@ msgid "_Tools:"
 msgstr "साधन (_T):"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
-#: ../plugins/snippets/snippets/snippets.ui.h:7
-msgid "_Edit:"
-msgstr "संपादन (_E):"
-
-#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
 msgstr "वापरण (_A):"
 
-#: ../plugins/externaltools/tools/tools.ui.h:24
+#: ../plugins/externaltools/tools/tools.ui.h:21
 msgid "_Output:"
 msgstr "आउटपुट (_O):"
 
-#: ../plugins/externaltools/tools/tools.ui.h:25
+#: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "_Input:"
 msgstr "इनपुट (_I):"
 
-#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Save:"
 msgstr "संचयन (_S):"
 
-#: ../plugins/externaltools/tools/tools.ui.h:27
+#: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Shortcut Key:"
 msgstr "शार्टकट कि (_S):"
+
+#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/snippets/snippets/snippets.ui.h:7
+msgid "_Edit:"
+msgstr "संपादन (_E):"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
@@ -3143,16 +3210,25 @@ msgstr "Python कन्सोल"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr ""
 
+#. ex:et:ts=4:
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Error color:"
+msgstr "त्रुटी रंग (_E):"
+
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
 msgstr "आदेशचा रंग (_o):"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
-msgid "_Error color:"
-msgstr "त्रुटी रंग (_E):"
+msgid "Use system fixed width font"
+msgstr ""
 
-#. ex:ts=8:et:
-#: ../plugins/quickopen/quickopen/popup.py:31
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:4
+msgid "Font:"
+msgstr ""
+
+#. ex:ts=4:et:
+#: ../plugins/quickopen/quickopen/popup.py:32
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
 msgstr "पटकन उघडा"
@@ -3171,9 +3247,9 @@ msgstr "पटकन फाइल्स् उघडा"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
-#: ../plugins/snippets/snippets/Document.py:53
-#: ../plugins/snippets/snippets/Document.py:193
-#: ../plugins/snippets/snippets/Document.py:614
+#: ../plugins/snippets/snippets/Document.py:51
+#: ../plugins/snippets/snippets/Document.py:189
+#: ../plugins/snippets/snippets/Document.py:618
 msgid "Snippets"
 msgstr "भाग"
 
@@ -3194,7 +3270,7 @@ msgid "Create new snippet"
 msgstr "नविन भाग बनवा"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:793
+#: ../plugins/snippets/snippets/Manager.py:792
 msgid "Import snippets"
 msgstr "स्नीप्लेट प्राप्त करा"
 
@@ -3203,7 +3279,7 @@ msgid "Export selected snippets"
 msgstr "निवडलेले भाग पाठ्यवा"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
-#: ../plugins/snippets/snippets/Manager.py:403
+#: ../plugins/snippets/snippets/Manager.py:400
 msgid "Delete selected snippet"
 msgstr "निवडलेला भाग काढूण टाका"
 
@@ -3211,27 +3287,28 @@ msgstr "निवडलेला भाग काढूण टाका"
 msgid "Activation"
 msgstr "सक्रीयीकरण"
 
+#: ../plugins/snippets/snippets/snippets.ui.h:9
+msgid "_Drop targets:"
+msgstr "लक्ष्य वगळा (_D):"
+
 #: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "Shortcut key with which the snippet is activated"
+msgstr "भाग सक्रीय करण्याकरीता शॉर्टकट कि करीता कळ"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+msgid "S_hortcut key:"
+msgstr "शॉर्टकट कि (_h):"
+
+#. "tab" here means the tab key, not the notebook tab!
+#: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "_Tab trigger:"
 msgstr "टॅब प्रवेगक (_T):"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
-#: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:682
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+#: ../plugins/snippets/snippets/Manager.py:681
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr ""
-
-#: ../plugins/snippets/snippets/snippets.ui.h:12
-msgid "Shortcut key with which the snippet is activated"
-msgstr "भाग सक्रीय करण्याकरीता शॉर्टकट कि करीता कळ"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:13
-msgid "S_hortcut key:"
-msgstr "शॉर्टकट कि (_h):"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:14
-msgid "_Drop targets:"
-msgstr "लक्ष्य वगळा (_D):"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
@@ -3253,41 +3330,41 @@ msgstr "नविन स्निप्लेट जमा करा..."
 msgid "Global"
 msgstr "वैश्विक"
 
-#: ../plugins/snippets/snippets/Manager.py:400
+#: ../plugins/snippets/snippets/Manager.py:397
 msgid "Revert selected snippet"
 msgstr "निवडलेले भागास पुन्ह जा"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:675
+#: ../plugins/snippets/snippets/Manager.py:674
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
 msgstr ""
 
-#: ../plugins/snippets/snippets/Manager.py:772
+#: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
 msgid "The following error occurred while importing: %s"
 msgstr "नविन फाइल प्राप्त करतेवेळी त्रुटी आढळली: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:779
+#: ../plugins/snippets/snippets/Manager.py:778
 msgid "Import successfully completed"
 msgstr "आयात यशस्वीरित्या पूर्ण झाले"
 
 #: ../plugins/snippets/snippets/Manager.py:798
-#: ../plugins/snippets/snippets/Manager.py:884
-#: ../plugins/snippets/snippets/Manager.py:947
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:949
 msgid "All supported archives"
 msgstr "सर्व समर्थीत संचयन"
 
 #: ../plugins/snippets/snippets/Manager.py:799
-#: ../plugins/snippets/snippets/Manager.py:885
-#: ../plugins/snippets/snippets/Manager.py:948
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:950
 msgid "Gzip compressed archive"
 msgstr "Gzip संकुचीत संचयन"
 
 #: ../plugins/snippets/snippets/Manager.py:800
-#: ../plugins/snippets/snippets/Manager.py:886
-#: ../plugins/snippets/snippets/Manager.py:949
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "Bzip2 compressed archive"
 msgstr "Bzip2 संकुचीत संग्रह"
 
@@ -3296,8 +3373,8 @@ msgid "Single snippets file"
 msgstr "एकसंख्यीक स्निपेट फाइल"
 
 #: ../plugins/snippets/snippets/Manager.py:802
-#: ../plugins/snippets/snippets/Manager.py:888
-#: ../plugins/snippets/snippets/Manager.py:951
+#: ../plugins/snippets/snippets/Manager.py:889
+#: ../plugins/snippets/snippets/Manager.py:953
 msgid "All files"
 msgstr "सर्व फाइल"
 
@@ -3312,27 +3389,27 @@ msgstr "एक्सपोर्ट यशस्वीरित्या पू�
 
 #. Ask if system snippets should also be exported
 #: ../plugins/snippets/snippets/Manager.py:858
-#: ../plugins/snippets/snippets/Manager.py:925
+#: ../plugins/snippets/snippets/Manager.py:927
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
 msgstr ""
 "तुम्हाला निवडलेले <b>प्रणाली</b> भाग तुमच्या एक्सपोर्ट मध्ये समाविष्ट "
 "करायचे?"
 
 #: ../plugins/snippets/snippets/Manager.py:873
-#: ../plugins/snippets/snippets/Manager.py:943
+#: ../plugins/snippets/snippets/Manager.py:945
 msgid "There are no snippets selected to be exported"
 msgstr "पाठ्यविण्याकरीता भाग निवडले नाही"
 
 #: ../plugins/snippets/snippets/Manager.py:878
-#: ../plugins/snippets/snippets/Manager.py:916
+#: ../plugins/snippets/snippets/Manager.py:917
 msgid "Export snippets"
 msgstr "स्निप्लेट पाठ्यवा"
 
-#: ../plugins/snippets/snippets/Manager.py:1056
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut, or press Backspace to clear"
 msgstr "नविन जवळचा मार्ग टाइप करा, किंवा पुसून टाकण्याकरीता Backspace दाबा"
 
-#: ../plugins/snippets/snippets/Manager.py:1058
+#: ../plugins/snippets/snippets/Manager.py:1060
 msgid "Type a new shortcut"
 msgstr "नविन जगळचा मार्ग टाइप करा"
 
@@ -3383,14 +3460,14 @@ msgstr "खालील फाइल प्राप्त करू शकल�
 msgid "File \"%s\" is not a valid snippets archive"
 msgstr ""
 
-#: ../plugins/snippets/snippets/Placeholder.py:593
+#: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
 "aborted."
 msgstr ""
 
-#: ../plugins/snippets/snippets/Placeholder.py:601
+#: ../plugins/snippets/snippets/Placeholder.py:609
 #, python-format
 msgid "Execution of the Python command (%s) failed: %s"
 msgstr ""

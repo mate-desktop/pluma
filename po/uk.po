@@ -18,9 +18,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-17 11:58+0100\n"
+"POT-Creation-Date: 2019-07-17 14:34+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Микола Ткач <chistomov@gmail.com>, 2019\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
@@ -542,6 +542,47 @@ msgstr ""
 "Перелік активних втулок. Він містить \"Адресу\" активної втулки. Див. файл "
 ".pluma-plugin для отримання \"адреси\" даної втулки."
 
+#: ../data/org.mate.pluma.gschema.xml.in.h:93
+msgid "Draw newline"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:94
+msgid "Whether pluma should draw newlines in the editor window."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:95
+msgid "Draw nbsp"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:96
+msgid ""
+"Whether pluma should draw not breaking spaces in the editor window: 'draw-"
+"none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' "
+"drawing all spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:97
+msgid "Draw tabs"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:98
+msgid ""
+"Whether pluma should draw tabs in the editor window: 'draw-none' no drawing;"
+" 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all "
+"spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:99
+msgid "Draw spaces"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:100
+msgid ""
+"Whether pluma should draw spaces in the editor window: 'draw-none' no "
+"drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing "
+"all spaces."
+msgstr ""
+
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
 msgstr "Текстовий редактор для стільничного середовища МАТЕ"
@@ -582,23 +623,23 @@ msgstr "Редактор текстових файлів"
 msgid "Pluma Text Editor"
 msgstr "Текстовий редактор Pluma"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:136
 msgid "Log Out _without Saving"
 msgstr "_Вийти без збереження"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:144
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "_Cancel Logout"
 msgstr "_Скасувати вихід"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:147
 msgid "Close _without Saving"
 msgstr "Закрити _без збереження"
 
 #. Add a cancel button
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
-#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-encodings-dialog.c:306
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/dialogs/pluma-preferences-dialog.c:975
 #: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
 #: ../pluma/pluma-file-chooser-dialog.c:440
 #: ../pluma/pluma-io-error-message-area.c:168
@@ -606,7 +647,10 @@ msgstr "Закрити _без збереження"
 #: ../pluma/pluma-io-error-message-area.c:1190
 #: ../pluma/pluma-progress-message-area.c:66
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:171
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/quickopen/quickopen/popup.py:36
+#: ../plugins/snippets/snippets/Manager.py:795
+#: ../plugins/snippets/snippets/Manager.py:881
+#: ../plugins/snippets/snippets/Manager.py:920 ../plugins/sort/sort.ui.h:2
 #: ../plugins/spell/pluma-spell-language-dialog.c:132
 #: ../plugins/spell/languages-dialog.ui.h:3
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
@@ -616,20 +660,22 @@ msgid "_Cancel"
 msgstr "_Скасувати"
 
 #. File menu
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:178
 #: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+#: ../plugins/snippets/snippets/Manager.py:882
+#: ../plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
 msgstr "З_берегти"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:183
 msgid "Save _As"
 msgstr "Зберегти _як…"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
 msgstr "Запитання"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:414
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -648,13 +694,13 @@ msgstr[2] ""
 msgstr[3] ""
 "Якщо Ви не збережете, зміни за останні %ld секунд будуть остаточно втрачені."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr ""
 "Якщо Ви не збережете, зміни за останню хвилину будуть остаточно втрачені."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -675,7 +721,7 @@ msgstr[3] ""
 "Якщо Ви не збережете, зміни за останню хвилину та %ld секунд будуть "
 "остаточно втрачені."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -694,13 +740,13 @@ msgstr[2] ""
 msgstr[3] ""
 "Якщо Ви не збережете, зміни за останні %ld хвилин будуть остаточно втрачені."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr ""
 "Якщо Ви не збережете, зміни за останню годину будуть остаточно втрачені."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -721,7 +767,7 @@ msgstr[3] ""
 "Якщо Ви не збережете, зміни за останню годину та %d хвилин будуть остаточно "
 "втрачені."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
@@ -736,22 +782,22 @@ msgstr[2] ""
 msgstr[3] ""
 "Якщо Ви не збережете, зміни за останні %d годин будуть остаточно втрачені."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "Зміни, внесені у документ \"%s\", будуть остаточно втрачені."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr "Зберегти зміни у документі \"%s\" перед закриванням?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:771
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr "Збереження вимкнено системним адміністратором."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
@@ -760,7 +806,7 @@ msgstr[1] "Зміни в %d документах будуть остаточно
 msgstr[2] "Зміни в %d документах будуть остаточно втрачені."
 msgstr[3] "Зміни в %d документах будуть остаточно втрачені."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:728
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -775,19 +821,19 @@ msgstr[2] ""
 msgstr[3] ""
 "%d документів мають незбережені зміни. Зберегти зміни перед закриванням?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
 msgstr "До_кументи із незбереженими змінами:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:748
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
 msgid "S_elect the documents you want to save:"
 msgstr "_Виберіть документи, які потрібно зберегти:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:773
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "Якщо Ви не збережете, усі зміни будуть остаточно втрачені."
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.c:307
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:133
 #: ../plugins/spell/languages-dialog.ui.h:4
@@ -797,9 +843,9 @@ msgstr "Якщо Ви не збережете, усі зміни будуть о
 msgid "_OK"
 msgstr "_Так"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.c:308
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1292
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
 #: ../plugins/sort/sort.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:134
@@ -810,17 +856,17 @@ msgstr "_Так"
 msgid "_Help"
 msgstr "_Допомога"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:316
+#: ../pluma/dialogs/pluma-encodings-dialog.c:310
 msgid "Character Encodings"
 msgstr "Кодування символів"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:379
-#: ../pluma/dialogs/pluma-encodings-dialog.c:440
+#: ../pluma/dialogs/pluma-encodings-dialog.c:373
+#: ../pluma/dialogs/pluma-encodings-dialog.c:434
 msgid "_Description"
 msgstr "_Опис"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:388
-#: ../pluma/dialogs/pluma-encodings-dialog.c:449
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Encoding"
 msgstr "_Кодування"
 
@@ -843,56 +889,54 @@ msgid "E_ncodings shown in menu:"
 msgstr "Кодування в _меню:"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:39
 msgid "_Remove"
 msgstr "В_илучити"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:572
+#: ../pluma/dialogs/pluma-preferences-dialog.c:726
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "Натисніть цю кнопку для вибору шрифту редактора"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:582
+#: ../pluma/dialogs/pluma-preferences-dialog.c:736
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Використовувати системний моноширинний шрифт (%s)"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:785
+#: ../pluma/dialogs/pluma-preferences-dialog.c:939
 msgid "The selected color scheme cannot be installed."
 msgstr "Обрана схема кольорів не може бути встановлена."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:863
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1017
 msgid "Add Scheme"
 msgstr "Додати схему"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:870
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1024
 msgid "A_dd Scheme"
 msgstr "_Додати схему"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:878
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1032
 msgid "Color Scheme Files"
 msgstr "Файли схеми кольорів"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1039
 #: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
 msgstr "Усі файли"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:930
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1084
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "Не вдається вилучити схему кольорів \"%s\"."
 
-#. ex:et:ts=4:
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1291
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.c:327
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
 #: ../plugins/docinfo/docinfo.ui.h:2
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
 msgid "_Close"
 msgstr "_Закрити"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1294
 msgid "Pluma Preferences"
 msgstr "Параметри Pluma"
 
@@ -906,10 +950,7 @@ msgid "Text Wrapping"
 msgstr "Перенесення тексту"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
-#: ../plugins/docinfo/docinfo.ui.h:5
-#: ../plugins/externaltools/tools/tools.ui.h:21
-#: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:5 ../plugins/time/pluma-time-dialog.ui.h:6
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
@@ -929,7 +970,7 @@ msgstr "Н_е розривати слово між рядками"
 msgid "Line Numbers"
 msgstr "Номери рядків"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2114
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2197
 msgid "_Display line numbers"
 msgstr "Показувати _номери рядків"
 
@@ -1002,56 +1043,80 @@ msgid "_minutes"
 msgstr "_хвилин"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+msgid "Draw spaces, tabs, newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+msgid "Draw _tabs"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+msgid "Draw _trailing tabs only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+msgid "Draw _newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+msgid "Draw _spaces"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+msgid "Draw _trailing spaces only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
 msgid "Editor"
 msgstr "Редактор"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font"
 msgstr "Шрифт"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Editor _font: "
 msgstr "_Шрифт редактора: "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:36
 msgid "Pick the editor font"
 msgstr "Виберіть колір редактора"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:37
 msgid "Color Scheme"
 msgstr "Схема кольорів"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:38
 msgid "_Add..."
 msgstr "_Додати..."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:40
 msgid "Font & Colors"
 msgstr "Шрифти та кольори"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:41
 msgid "Plugins"
 msgstr "Втулки"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:301
+#: ../pluma/dialogs/pluma-search-dialog.c:295
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "Замінити"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
+#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "Знайти"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:413
+#: ../pluma/dialogs/pluma-search-dialog.c:407
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "_Find"
 msgstr "Зна_йти:"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:416
+#: ../pluma/dialogs/pluma-search-dialog.c:410
 msgid "Replace _All"
 msgstr "Замінити _усе"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.c:411
 #: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr "_Замінити..."
@@ -1296,23 +1361,23 @@ msgstr[3] ""
 msgid "_Revert"
 msgstr "П_овернути"
 
-#: ../pluma/pluma-commands-help.c:69
+#: ../pluma/pluma-commands-help.c:60
 msgid "MATE Documentation Team"
 msgstr "Команда документування MATE"
 
-#: ../pluma/pluma-commands-help.c:70
+#: ../pluma/pluma-commands-help.c:61
 msgid "GNOME Documentation Team"
 msgstr "Команда документування GNOME"
 
-#: ../pluma/pluma-commands-help.c:71
+#: ../pluma/pluma-commands-help.c:62
 msgid "Sun Microsystems"
 msgstr "Sun Microsystems"
 
-#: ../pluma/pluma-commands-help.c:76
+#: ../pluma/pluma-commands-help.c:67
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "Pluma - це маленький та легкий редактор текстів для середовища MATE"
 
-#: ../pluma/pluma-commands-help.c:79
+#: ../pluma/pluma-commands-help.c:70
 msgid ""
 "Pluma is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -1320,7 +1385,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:74
 msgid ""
 "Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -1328,18 +1393,18 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:87
+#: ../pluma/pluma-commands-help.c:78
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 msgstr ""
 
-#: ../pluma/pluma-commands-help.c:104
+#: ../pluma/pluma-commands-help.c:113
 msgid "About Pluma"
 msgstr "Про Pluma"
 
-#: ../pluma/pluma-commands-help.c:107
+#: ../pluma/pluma-commands-help.c:116
 msgid ""
 "Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
 "Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
@@ -1357,7 +1422,7 @@ msgstr ""
 "Авторське право © 2011 Perberos\n"
 "Авторське право © 2012-2019 Розробники MATE"
 
-#: ../pluma/pluma-commands-help.c:117
+#: ../pluma/pluma-commands-help.c:126
 msgid "translator-credits"
 msgstr ""
 "Yarema aka Knedlyk <yupadmin@gmail.com>,\n"
@@ -1384,7 +1449,7 @@ msgstr "Знайдено та замінено один випадок"
 msgid "\"%s\" not found"
 msgstr "Фрази \"%s\" не існує"
 
-#: ../pluma/pluma-document.c:1141 ../pluma/pluma-document.c:1161
+#: ../pluma/pluma-document.c:1137 ../pluma/pluma-document.c:1157
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "Незбережений документ %d"
@@ -1554,6 +1619,8 @@ msgstr "Вікна"
 
 #: ../pluma/pluma-file-chooser-dialog.c:442
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+#: ../plugins/quickopen/quickopen/popup.py:37
+#: ../plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
 msgstr "_Відкрити"
 
@@ -2492,32 +2559,32 @@ msgid "/ on %s"
 msgstr "/ на %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1352
+#: ../pluma/pluma-view.c:1435
 msgid "_Wrap Around"
 msgstr "_Досягнувши кінця, починати спочатку"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1362
+#: ../pluma/pluma-view.c:1445
 msgid "Match _Entire Word Only"
 msgstr "Збігається _ціле слово"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1372
+#: ../pluma/pluma-view.c:1455
 msgid "_Match Case"
 msgstr "Збігається _регістр"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1382
+#: ../pluma/pluma-view.c:1465
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr "_Розпізнавати послідовність виходу (наприклад, )"
 
-#: ../pluma/pluma-view.c:1496
+#: ../pluma/pluma-view.c:1579
 msgid "String you want to search for"
 msgstr "Рядок, який потрібно знайти"
 
-#: ../pluma/pluma-view.c:1505
+#: ../pluma/pluma-view.c:1588
 msgid "Line you want to move the cursor to"
 msgstr "Рядок, куди потрібно перемістити вказівник"
 
@@ -2530,10 +2597,10 @@ msgstr "Використовувати режим виділення синта�
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
 #: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
-#: ../plugins/externaltools/tools/manager.py:138
-#: ../plugins/externaltools/tools/manager.py:445
-#: ../plugins/externaltools/tools/manager.py:556
-#: ../plugins/externaltools/tools/manager.py:873
+#: ../plugins/externaltools/tools/manager.py:108
+#: ../plugins/externaltools/tools/manager.py:308
+#: ../plugins/externaltools/tools/manager.py:424
+#: ../plugins/externaltools/tools/manager.py:746
 msgid "Plain Text"
 msgstr "Звичайний текст"
 
@@ -2686,147 +2753,147 @@ msgstr "Зовнішні знаряддя"
 msgid "Execute external commands and shell scripts."
 msgstr "Виконати зовнішні команди і скрипти оболонки."
 
-#: ../plugins/externaltools/tools/__init__.py:175
+#: ../plugins/externaltools/tools/__init__.py:174
 msgid "Manage _External Tools..."
 msgstr "_Зовнішні знаряддя..."
 
-#: ../plugins/externaltools/tools/__init__.py:177
+#: ../plugins/externaltools/tools/__init__.py:176
 msgid "Opens the External Tools Manager"
 msgstr "Редактор зовнішніх знарядь"
 
-#: ../plugins/externaltools/tools/__init__.py:181
+#: ../plugins/externaltools/tools/__init__.py:180
 msgid "External _Tools"
 msgstr "Зовнішні _знаряддя"
 
-#: ../plugins/externaltools/tools/__init__.py:183
+#: ../plugins/externaltools/tools/__init__.py:182
 msgid "External tools"
 msgstr "Зовнішні знаряддя"
 
-#: ../plugins/externaltools/tools/__init__.py:216
+#: ../plugins/externaltools/tools/__init__.py:215
 msgid "Shell Output"
 msgstr "Вивід оболонки"
 
-#: ../plugins/externaltools/tools/capture.py:92
+#: ../plugins/externaltools/tools/capture.py:96
 #, python-format
 msgid "Could not execute command: %s"
 msgstr "Не вдалося виконати команду: %s"
 
-#: ../plugins/externaltools/tools/functions.py:157
+#: ../plugins/externaltools/tools/functions.py:155
 msgid "You must be inside a word to run this command"
 msgstr "Ви повинні бути всередині слова для запуску цієї команди"
 
-#: ../plugins/externaltools/tools/functions.py:263
+#: ../plugins/externaltools/tools/functions.py:261
 msgid "Running tool:"
 msgstr "Запускається засіб:"
 
-#: ../plugins/externaltools/tools/functions.py:287
+#: ../plugins/externaltools/tools/functions.py:285
 msgid "Done."
 msgstr "Готово."
 
-#: ../plugins/externaltools/tools/functions.py:289
+#: ../plugins/externaltools/tools/functions.py:287
 msgid "Exited"
 msgstr "Вийти"
 
-#: ../plugins/externaltools/tools/manager.py:136
+#: ../plugins/externaltools/tools/manager.py:106
 msgid "All languages"
 msgstr "Усі мови"
 
-#: ../plugins/externaltools/tools/manager.py:545
-#: ../plugins/externaltools/tools/manager.py:549
-#: ../plugins/externaltools/tools/manager.py:871
-#: ../plugins/externaltools/tools/tools.ui.h:22
+#: ../plugins/externaltools/tools/manager.py:413
+#: ../plugins/externaltools/tools/manager.py:417
+#: ../plugins/externaltools/tools/manager.py:744
+#: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "All Languages"
 msgstr "Усі мови"
 
-#: ../plugins/externaltools/tools/manager.py:655
+#: ../plugins/externaltools/tools/manager.py:526
 msgid "New tool"
 msgstr "Нове знаряддя"
 
-#: ../plugins/externaltools/tools/manager.py:786
+#: ../plugins/externaltools/tools/manager.py:659
 #, python-format
 msgid "This accelerator is already bound to %s"
 msgstr "Цей пришвидшувач вже прив’язаний до %s"
 
-#: ../plugins/externaltools/tools/manager.py:837
+#: ../plugins/externaltools/tools/manager.py:710
 msgid "Type a new accelerator, or press Backspace to clear"
 msgstr "Уведіть нове сполучення клявіш, або натисніть Backspace для очищення"
 
-#: ../plugins/externaltools/tools/manager.py:839
+#: ../plugins/externaltools/tools/manager.py:712
 msgid "Type a new accelerator"
 msgstr "Уведіть нове сполучення клявіш"
 
-#: ../plugins/externaltools/tools/outputpanel.py:101
+#: ../plugins/externaltools/tools/outputpanel.py:102
 msgid "Stopped."
 msgstr "Зупинено."
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
-msgid "Nothing"
-msgstr "Нічого"
-
-#: ../plugins/externaltools/tools/tools.ui.h:2
-msgid "Current document"
-msgstr "Поточний документ"
-
-#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
 msgstr "Усі документи"
 
-#: ../plugins/externaltools/tools/tools.ui.h:4
-msgid "Current selection"
-msgstr "Поточне виділення"
-
-#: ../plugins/externaltools/tools/tools.ui.h:5
-msgid "Current selection (default to document)"
-msgstr "Поточне виділення (типове для документу)"
-
-#: ../plugins/externaltools/tools/tools.ui.h:6
-msgid "Current line"
-msgstr "Поточний рядок"
-
-#: ../plugins/externaltools/tools/tools.ui.h:7
-msgid "Current word"
-msgstr "Поточне слово"
-
-#: ../plugins/externaltools/tools/tools.ui.h:8
-msgid "Display in bottom pane"
-msgstr "Показувати у нижній ділянці"
-
-#: ../plugins/externaltools/tools/tools.ui.h:9
-msgid "Create new document"
-msgstr "Створити новий документ"
-
-#: ../plugins/externaltools/tools/tools.ui.h:10
-msgid "Append to current document"
-msgstr "Додати до поточного документу"
-
-#: ../plugins/externaltools/tools/tools.ui.h:11
-msgid "Replace current document"
-msgstr "Замінити поточний документ"
-
-#: ../plugins/externaltools/tools/tools.ui.h:12
-msgid "Replace current selection"
-msgstr "Замінити виділений текст"
-
-#: ../plugins/externaltools/tools/tools.ui.h:13
-msgid "Insert at cursor position"
-msgstr "Вставити у поточній позиції вказівника"
-
-#: ../plugins/externaltools/tools/tools.ui.h:14
+#: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "All documents except untitled ones"
 msgstr "Усі документи з назвою"
 
-#: ../plugins/externaltools/tools/tools.ui.h:15
+#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "Local files only"
 msgstr "Лише локальні файли"
 
-#: ../plugins/externaltools/tools/tools.ui.h:16
+#: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Remote files only"
 msgstr "Лише віддалені документи"
 
-#: ../plugins/externaltools/tools/tools.ui.h:17
+#: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Untitled documents only"
 msgstr "Лише незбережені документи"
+
+#: ../plugins/externaltools/tools/tools.ui.h:6
+msgid "Nothing"
+msgstr "Нічого"
+
+#: ../plugins/externaltools/tools/tools.ui.h:7
+msgid "Current document"
+msgstr "Поточний документ"
+
+#: ../plugins/externaltools/tools/tools.ui.h:8
+msgid "Current selection"
+msgstr "Поточне виділення"
+
+#: ../plugins/externaltools/tools/tools.ui.h:9
+msgid "Current selection (default to document)"
+msgstr "Поточне виділення (типове для документу)"
+
+#: ../plugins/externaltools/tools/tools.ui.h:10
+msgid "Current line"
+msgstr "Поточний рядок"
+
+#: ../plugins/externaltools/tools/tools.ui.h:11
+msgid "Current word"
+msgstr "Поточне слово"
+
+#: ../plugins/externaltools/tools/tools.ui.h:12
+msgid "Display in bottom pane"
+msgstr "Показувати у нижній ділянці"
+
+#: ../plugins/externaltools/tools/tools.ui.h:13
+msgid "Create new document"
+msgstr "Створити новий документ"
+
+#: ../plugins/externaltools/tools/tools.ui.h:14
+msgid "Append to current document"
+msgstr "Додати до поточного документу"
+
+#: ../plugins/externaltools/tools/tools.ui.h:15
+msgid "Replace current document"
+msgstr "Замінити поточний документ"
+
+#: ../plugins/externaltools/tools/tools.ui.h:16
+msgid "Replace current selection"
+msgstr "Замінити виділений текст"
+
+#: ../plugins/externaltools/tools/tools.ui.h:17
+msgid "Insert at cursor position"
+msgstr "Вставити у поточній позиції вказівника"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
@@ -2837,29 +2904,29 @@ msgid "_Tools:"
 msgstr "_Знаряддя:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
-#: ../plugins/snippets/snippets/snippets.ui.h:7
-msgid "_Edit:"
-msgstr "_Змінити:"
-
-#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
 msgstr "_Застосовуваність:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:24
+#: ../plugins/externaltools/tools/tools.ui.h:21
 msgid "_Output:"
 msgstr "_Вивід:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:25
+#: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "_Input:"
 msgstr "_Ввід:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Save:"
 msgstr "_Зберегти:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:27
+#: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Shortcut Key:"
 msgstr "_Сполучення клявіш:"
+
+#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/snippets/snippets/snippets.ui.h:7
+msgid "_Edit:"
+msgstr "_Змінити:"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
@@ -3289,16 +3356,25 @@ msgstr "Консоль Python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Інтерактивна консоль python у нижній панелі"
 
+#. ex:et:ts=4:
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Error color:"
+msgstr "_Колір помилок:"
+
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
 msgstr "Ко_лір команд:"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
-msgid "_Error color:"
-msgstr "_Колір помилок:"
+msgid "Use system fixed width font"
+msgstr ""
 
-#. ex:ts=8:et:
-#: ../plugins/quickopen/quickopen/popup.py:31
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:4
+msgid "Font:"
+msgstr ""
+
+#. ex:ts=4:et:
+#: ../plugins/quickopen/quickopen/popup.py:32
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
 msgstr "Швидке відкриття"
@@ -3317,9 +3393,9 @@ msgstr "Швидке відкриття файлів"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
-#: ../plugins/snippets/snippets/Document.py:53
-#: ../plugins/snippets/snippets/Document.py:193
-#: ../plugins/snippets/snippets/Document.py:614
+#: ../plugins/snippets/snippets/Document.py:51
+#: ../plugins/snippets/snippets/Document.py:189
+#: ../plugins/snippets/snippets/Document.py:618
 msgid "Snippets"
 msgstr "Фрагменти тексту"
 
@@ -3340,7 +3416,7 @@ msgid "Create new snippet"
 msgstr "Створити новий фрагмент тексту"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:793
+#: ../plugins/snippets/snippets/Manager.py:792
 msgid "Import snippets"
 msgstr "Імпортувати фрагменти"
 
@@ -3349,7 +3425,7 @@ msgid "Export selected snippets"
 msgstr "Експортувати виділені фрагменти"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
-#: ../plugins/snippets/snippets/Manager.py:403
+#: ../plugins/snippets/snippets/Manager.py:400
 msgid "Delete selected snippet"
 msgstr "Вилучити виділений фрагмент тексту"
 
@@ -3357,29 +3433,30 @@ msgstr "Вилучити виділений фрагмент тексту"
 msgid "Activation"
 msgstr "Активація"
 
+#: ../plugins/snippets/snippets/snippets.ui.h:9
+msgid "_Drop targets:"
+msgstr "_Області призначення:"
+
 #: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "Shortcut key with which the snippet is activated"
+msgstr "Швидка клявіша для вставки фрагменту тексту"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+msgid "S_hortcut key:"
+msgstr "С_корочення клявішів:"
+
+#. "tab" here means the tab key, not the notebook tab!
+#: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "_Tab trigger:"
 msgstr "_Перемикач:"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
-#: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:682
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+#: ../plugins/snippets/snippets/Manager.py:681
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr ""
 "Слово, яке використовується для вставки фрагменту тексту. Фрагмент "
 "вставляється, якщо після слова натиснути Tab."
-
-#: ../plugins/snippets/snippets/snippets.ui.h:12
-msgid "Shortcut key with which the snippet is activated"
-msgstr "Швидка клявіша для вставки фрагменту тексту"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:13
-msgid "S_hortcut key:"
-msgstr "С_корочення клявішів:"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:14
-msgid "_Drop targets:"
-msgstr "_Області призначення:"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
@@ -3401,12 +3478,12 @@ msgstr "Додати новий фрагмент..."
 msgid "Global"
 msgstr "Глобальні"
 
-#: ../plugins/snippets/snippets/Manager.py:400
+#: ../plugins/snippets/snippets/Manager.py:397
 msgid "Revert selected snippet"
 msgstr "Скасувати виділений фрагмент тексту"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:675
+#: ../plugins/snippets/snippets/Manager.py:674
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
@@ -3414,30 +3491,30 @@ msgstr ""
 "Це невірний перемикач. Перемикачі можуть містити або літери, або один (не "
 "абетково-цифровий) символ, такий як {, [, тощо."
 
-#: ../plugins/snippets/snippets/Manager.py:772
+#: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
 msgid "The following error occurred while importing: %s"
 msgstr "При імпорті сталася така помилка: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:779
+#: ../plugins/snippets/snippets/Manager.py:778
 msgid "Import successfully completed"
 msgstr "Імпорт успішно закінчено"
 
 #: ../plugins/snippets/snippets/Manager.py:798
-#: ../plugins/snippets/snippets/Manager.py:884
-#: ../plugins/snippets/snippets/Manager.py:947
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:949
 msgid "All supported archives"
 msgstr "Усі підтримувані архіви"
 
 #: ../plugins/snippets/snippets/Manager.py:799
-#: ../plugins/snippets/snippets/Manager.py:885
-#: ../plugins/snippets/snippets/Manager.py:948
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:950
 msgid "Gzip compressed archive"
 msgstr "Архіви Gzip"
 
 #: ../plugins/snippets/snippets/Manager.py:800
-#: ../plugins/snippets/snippets/Manager.py:886
-#: ../plugins/snippets/snippets/Manager.py:949
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "Bzip2 compressed archive"
 msgstr "Архіви Bzip2"
 
@@ -3446,8 +3523,8 @@ msgid "Single snippets file"
 msgstr "Одинарні файли фрагментів"
 
 #: ../plugins/snippets/snippets/Manager.py:802
-#: ../plugins/snippets/snippets/Manager.py:888
-#: ../plugins/snippets/snippets/Manager.py:951
+#: ../plugins/snippets/snippets/Manager.py:889
+#: ../plugins/snippets/snippets/Manager.py:953
 msgid "All files"
 msgstr "Усі файли"
 
@@ -3462,27 +3539,27 @@ msgstr "Експорт успішно закінчено"
 
 #. Ask if system snippets should also be exported
 #: ../plugins/snippets/snippets/Manager.py:858
-#: ../plugins/snippets/snippets/Manager.py:925
+#: ../plugins/snippets/snippets/Manager.py:927
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
 msgstr ""
 "Включити виділені <b>системні</b> фрагменти тексту у експортований архів?"
 
 #: ../plugins/snippets/snippets/Manager.py:873
-#: ../plugins/snippets/snippets/Manager.py:943
+#: ../plugins/snippets/snippets/Manager.py:945
 msgid "There are no snippets selected to be exported"
 msgstr "Не вибрано фрагментів для експорту "
 
 #: ../plugins/snippets/snippets/Manager.py:878
-#: ../plugins/snippets/snippets/Manager.py:916
+#: ../plugins/snippets/snippets/Manager.py:917
 msgid "Export snippets"
 msgstr "Експортувати фрагменти"
 
-#: ../plugins/snippets/snippets/Manager.py:1056
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut, or press Backspace to clear"
 msgstr ""
 "Уведіть нове скорочення клявішів, або натисніть Backspace для очищення"
 
-#: ../plugins/snippets/snippets/Manager.py:1058
+#: ../plugins/snippets/snippets/Manager.py:1060
 msgid "Type a new shortcut"
 msgstr "Уведіть нове скорочення"
 
@@ -3533,7 +3610,7 @@ msgstr "Такі файли не вдалося імпортувати: %s"
 msgid "File \"%s\" is not a valid snippets archive"
 msgstr "Файл «%s» не є коректним архівом фрагментів тексту"
 
-#: ../plugins/snippets/snippets/Placeholder.py:593
+#: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
@@ -3542,7 +3619,7 @@ msgstr ""
 "Час виконання команди Python (%s) перевищив припустиму норму, виконання "
 "перервано."
 
-#: ../plugins/snippets/snippets/Placeholder.py:601
+#: ../plugins/snippets/snippets/Placeholder.py:609
 #, python-format
 msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Не вдалося виконати команду Python (%s): %s"

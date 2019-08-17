@@ -18,9 +18,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-17 11:58+0100\n"
+"POT-Creation-Date: 2019-07-17 14:34+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>, 2019\n"
 "Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
@@ -543,6 +543,47 @@ msgstr ""
 "Kullanılan eklentiler listesi. Kullanılan eklentilerin \"Yeri\"ni içerir. "
 "Eklentilerin \"Yeri\" için .pluma-plugins dosyasına bakın."
 
+#: ../data/org.mate.pluma.gschema.xml.in.h:93
+msgid "Draw newline"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:94
+msgid "Whether pluma should draw newlines in the editor window."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:95
+msgid "Draw nbsp"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:96
+msgid ""
+"Whether pluma should draw not breaking spaces in the editor window: 'draw-"
+"none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' "
+"drawing all spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:97
+msgid "Draw tabs"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:98
+msgid ""
+"Whether pluma should draw tabs in the editor window: 'draw-none' no drawing;"
+" 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all "
+"spaces."
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:99
+msgid "Draw spaces"
+msgstr ""
+
+#: ../data/org.mate.pluma.gschema.xml.in.h:100
+msgid ""
+"Whether pluma should draw spaces in the editor window: 'draw-none' no "
+"drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing "
+"all spaces."
+msgstr ""
+
 #: ../data/pluma.appdata.xml.in.h:1
 msgid "A Text Editor for the MATE desktop environment"
 msgstr "MATE masaüstü ortami için bir metin düzenleyicisi"
@@ -580,23 +621,23 @@ msgstr "Metin dosyalarını düzenle"
 msgid "Pluma Text Editor"
 msgstr "Pluma Metin Düzenleyici"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:136
 msgid "Log Out _without Saving"
 msgstr "Ka_ydetmeden Çıkış Yap"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:144
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "_Cancel Logout"
 msgstr "_Oturumdan Çıkışı İptal Et"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:147
 msgid "Close _without Saving"
 msgstr "Ka_ydetmeden Kapat"
 
 #. Add a cancel button
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:155
-#: ../pluma/dialogs/pluma-encodings-dialog.c:312
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:151
+#: ../pluma/dialogs/pluma-encodings-dialog.c:306
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-preferences-dialog.c:821
+#: ../pluma/dialogs/pluma-preferences-dialog.c:975
 #: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
 #: ../pluma/pluma-file-chooser-dialog.c:440
 #: ../pluma/pluma-io-error-message-area.c:168
@@ -604,7 +645,10 @@ msgstr "Ka_ydetmeden Kapat"
 #: ../pluma/pluma-io-error-message-area.c:1190
 #: ../pluma/pluma-progress-message-area.c:66
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:171
-#: ../plugins/sort/sort.ui.h:2
+#: ../plugins/quickopen/quickopen/popup.py:36
+#: ../plugins/snippets/snippets/Manager.py:795
+#: ../plugins/snippets/snippets/Manager.py:881
+#: ../plugins/snippets/snippets/Manager.py:920 ../plugins/sort/sort.ui.h:2
 #: ../plugins/spell/pluma-spell-language-dialog.c:132
 #: ../plugins/spell/languages-dialog.ui.h:3
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:3
@@ -614,20 +658,22 @@ msgid "_Cancel"
 msgstr "_Vazgeç"
 
 #. File menu
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:182
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:178
 #: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+#: ../plugins/snippets/snippets/Manager.py:882
+#: ../plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
 msgstr "_Kaydet"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:183
 msgid "Save _As"
 msgstr "F_arklı Kaydet"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
 msgstr "Soru"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:420
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:414
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld second will be permanently "
@@ -642,14 +688,14 @@ msgstr[1] ""
 "Kaydetmediğiniz takdirde, son %ld saniyede yaptığınız değişiklikler kalıcı "
 "olarak kaybolacak."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr ""
 "Kaydetmediğiniz takdirde, son bir dakika içerisinde yaptığınız değişiklikler"
 " kaybolacak."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:435
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 #, c-format
 msgid ""
 "If you don't save, changes from the last minute and %ld second will be "
@@ -664,7 +710,7 @@ msgstr[1] ""
 "Kaydetmediğiniz takdirde, son bir dakika ve %ld saniye içerisinde yaptığınız"
 " değişiklikler kalıcı olarak kaybolacak."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
 msgid ""
 "If you don't save, changes from the last %ld minute will be permanently "
@@ -679,14 +725,14 @@ msgstr[1] ""
 "Kaydetmediğiniz takdirde, son %ld dakika içerisinde yaptığınız değişiklikler"
 " kalıcı olarak kaybolacak."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr ""
 "Kaydetmediğiniz takdirde, son %d saatte yaptığınız değişiklikler kalıcı "
 "olarak kaybolacak."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:466
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 #, c-format
 msgid ""
 "If you don't save, changes from the last hour and %d minute will be "
@@ -701,7 +747,7 @@ msgstr[1] ""
 "Kaydetmediğiniz takdirde, son %d dakika içerisinde yaptığınız değişiklikler "
 "kalıcı olarak kaybolacak."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
 msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
@@ -714,31 +760,31 @@ msgstr[1] ""
 "Kaydetmediğiniz takdirde, son %d saatte yaptığınız değişiklikler kalıcı "
 "olarak kaybolacak."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
 msgstr "Belge \"%s\" içerisinde yapılan değişiklikler kaybolacak."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:532
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:526
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
 msgstr ""
 "Kapatmadan önce \"%s\" belgesinde yaptığınız değişiklikleri kaydetmek ister "
 "misiniz?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:546
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:771
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:540
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:765
 msgid "Saving has been disabled by the system administrator."
 msgstr "Sistem yöneticisi tarafından kaydetme kapatıldı."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:716
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] "%d belgede yapılan değişiklikler kalıcı olarak kaybolacak."
 msgstr[1] "%d belgede yapılan değişiklikler kalıcı olarak kaybolacak."
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:728
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
 msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
@@ -751,19 +797,19 @@ msgstr[1] ""
 "Kaydedilmemiş değişikliklerin bulunduğu %d belge var. Kapatmadan önce "
 "kaydetmek ister misiniz?"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
 msgstr "Kaydedilmemiş değişiklikleri olan _belgeler:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:748
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:742
 msgid "S_elect the documents you want to save:"
 msgstr "Kaydetmek istediğiniz _belgeleri seçin:"
 
-#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:773
+#: ../pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "Kaydetmediğiniz takdirde, yaptığınız tüm değişiklikler kaybolacak."
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:313
+#: ../pluma/dialogs/pluma-encodings-dialog.c:307
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:133
 #: ../plugins/spell/languages-dialog.ui.h:4
@@ -773,9 +819,9 @@ msgstr "Kaydetmediğiniz takdirde, yaptığınız tüm değişiklikler kaybolaca
 msgid "_OK"
 msgstr "_Tamam"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:314
+#: ../pluma/dialogs/pluma-encodings-dialog.c:308
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:2
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1138
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1292
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:2 ../pluma/pluma-ui.h:53
 #: ../plugins/sort/sort.ui.h:4
 #: ../plugins/spell/pluma-spell-language-dialog.c:134
@@ -786,17 +832,17 @@ msgstr "_Tamam"
 msgid "_Help"
 msgstr "_Yardım"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:316
+#: ../pluma/dialogs/pluma-encodings-dialog.c:310
 msgid "Character Encodings"
 msgstr "Karakter Kodlamaları"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:379
-#: ../pluma/dialogs/pluma-encodings-dialog.c:440
+#: ../pluma/dialogs/pluma-encodings-dialog.c:373
+#: ../pluma/dialogs/pluma-encodings-dialog.c:434
 msgid "_Description"
 msgstr "_Açıklama"
 
-#: ../pluma/dialogs/pluma-encodings-dialog.c:388
-#: ../pluma/dialogs/pluma-encodings-dialog.c:449
+#: ../pluma/dialogs/pluma-encodings-dialog.c:382
+#: ../pluma/dialogs/pluma-encodings-dialog.c:443
 msgid "_Encoding"
 msgstr "_Kodlama"
 
@@ -819,58 +865,56 @@ msgid "E_ncodings shown in menu:"
 msgstr "Menüde gösterilen k_odlamalar:"
 
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:8
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:39
 msgid "_Remove"
 msgstr "_Sil"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:572
+#: ../pluma/dialogs/pluma-preferences-dialog.c:726
 msgid "Click on this button to select the font to be used by the editor"
 msgstr ""
 "Düzenleyici tarafından kullanılan yazı tipini değiştirmek için bu düğmeye "
 "tıklayın"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:582
+#: ../pluma/dialogs/pluma-preferences-dialog.c:736
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Sistem eş aralıklı yazıtipini (%s) kullan"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:785
+#: ../pluma/dialogs/pluma-preferences-dialog.c:939
 msgid "The selected color scheme cannot be installed."
 msgstr "Seçilen renk şeması yüklenemedi."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:863
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1017
 msgid "Add Scheme"
 msgstr "Şema Ekle"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:870
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1024
 msgid "A_dd Scheme"
 msgstr "Şema _Ekle"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:878
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1032
 msgid "Color Scheme Files"
 msgstr "Renk Şeması Dosyalar"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:885
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1039
 #: ../pluma/pluma-file-chooser-dialog.c:54
 msgid "All Files"
 msgstr "Tüm Dosyalar"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:930
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1084
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "\"%s\" renk şeması silinemedi."
 
-#. ex:et:ts=4:
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1137
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1291
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
-#: ../pluma/dialogs/pluma-search-dialog.c:333
+#: ../pluma/dialogs/pluma-search-dialog.c:327
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
 #: ../plugins/docinfo/docinfo.ui.h:2
-#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
 msgid "_Close"
 msgstr "_Kapat"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.c:1140
+#: ../pluma/dialogs/pluma-preferences-dialog.c:1294
 msgid "Pluma Preferences"
 msgstr "Pluma Tercihleri"
 
@@ -884,10 +928,7 @@ msgid "Text Wrapping"
 msgstr "Metin Kaydırması"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:5
-#: ../plugins/docinfo/docinfo.ui.h:5
-#: ../plugins/externaltools/tools/tools.ui.h:21
-#: ../plugins/snippets/snippets/snippets.ui.h:9
-#: ../plugins/time/pluma-time-dialog.ui.h:6
+#: ../plugins/docinfo/docinfo.ui.h:5 ../plugins/time/pluma-time-dialog.ui.h:6
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:6
 msgid "    "
 msgstr "    "
@@ -907,7 +948,7 @@ msgstr "Ke_limeleri iki ayrı satıra bölme"
 msgid "Line Numbers"
 msgstr "Satır Numaraları"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2114
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2197
 msgid "_Display line numbers"
 msgstr "Satır sayılarını _göster"
 
@@ -980,56 +1021,80 @@ msgid "_minutes"
 msgstr "_dakika"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
+msgid "Draw spaces, tabs, newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+msgid "Draw _tabs"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+msgid "Draw _trailing tabs only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+msgid "Draw _newlines"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+msgid "Draw _spaces"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+msgid "Draw _trailing spaces only"
+msgstr ""
+
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
 msgid "Editor"
 msgstr "Düzenleyici"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
 msgid "Font"
 msgstr "Yazıtipi"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
 msgid "Editor _font: "
 msgstr "_Düzenleyici yazıtipi: "
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:36
 msgid "Pick the editor font"
 msgstr "Düzenleyici yazıtipi seç"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:37
 msgid "Color Scheme"
 msgstr "Renk Şeması"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:38
 msgid "_Add..."
 msgstr "_Ekle..."
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:34
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:40
 msgid "Font & Colors"
 msgstr "Yazıtipleri ve Renkler"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:35
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:41
 msgid "Plugins"
 msgstr "Eklentiler"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:301
+#: ../pluma/dialogs/pluma-search-dialog.c:295
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
 msgid "Replace"
 msgstr "Yerine Bunu Koy"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:310 ../pluma/pluma-window.c:1535
+#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1535
 msgid "Find"
 msgstr "Bul"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:413
+#: ../pluma/dialogs/pluma-search-dialog.c:407
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "_Find"
 msgstr "_Bul"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:416
+#: ../pluma/dialogs/pluma-search-dialog.c:410
 msgid "Replace _All"
 msgstr "_Tümünü Değiştir"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:417
+#: ../pluma/dialogs/pluma-search-dialog.c:411
 #: ../pluma/pluma-commands-file.c:588
 msgid "_Replace"
 msgstr "_Değiştir"
@@ -1253,23 +1318,23 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "_Geri al"
 
-#: ../pluma/pluma-commands-help.c:69
+#: ../pluma/pluma-commands-help.c:60
 msgid "MATE Documentation Team"
 msgstr "MATE Belgelendirme Projesi"
 
-#: ../pluma/pluma-commands-help.c:70
+#: ../pluma/pluma-commands-help.c:61
 msgid "GNOME Documentation Team"
 msgstr "GNOME Belgelendirme Projesi"
 
-#: ../pluma/pluma-commands-help.c:71
+#: ../pluma/pluma-commands-help.c:62
 msgid "Sun Microsystems"
 msgstr "Sun Microsystems"
 
-#: ../pluma/pluma-commands-help.c:76
+#: ../pluma/pluma-commands-help.c:67
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "Pluma MATE masaüstü için sade ve hafif bir metin düzenleyicisidir"
 
-#: ../pluma/pluma-commands-help.c:79
+#: ../pluma/pluma-commands-help.c:70
 msgid ""
 "Pluma is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -1280,7 +1345,7 @@ msgstr ""
 " Kamu Lisansının 2. sürümü veya (tercihinize bağlı) daha sonraki sürümleri "
 "altında dağıtabilir ve/veya değiştirebilirsiniz."
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:74
 msgid ""
 "Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -1291,7 +1356,7 @@ msgstr ""
 "YOKTUR; hatta ÜRÜN DEĞERİ ya da BİR AMACA UYGUNLUK gibi garantiler de "
 "vermez.  Lütfen GNU Genel Kamu Lisansını daha fazla detay için inceleyin."
 
-#: ../pluma/pluma-commands-help.c:87
+#: ../pluma/pluma-commands-help.c:78
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
@@ -1301,11 +1366,11 @@ msgstr ""
 "almadıysanız lütfen Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA  02110-1301  USA adresine yazın"
 
-#: ../pluma/pluma-commands-help.c:104
+#: ../pluma/pluma-commands-help.c:113
 msgid "About Pluma"
 msgstr "Pluma Hakkında"
 
-#: ../pluma/pluma-commands-help.c:107
+#: ../pluma/pluma-commands-help.c:116
 msgid ""
 "Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
 "Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
@@ -1323,7 +1388,7 @@ msgstr ""
 "Telif Hakkı © 2011 Perberos\n"
 "Telif Hakkı © 2012-2019 MATE geliştiricileri"
 
-#: ../pluma/pluma-commands-help.c:117
+#: ../pluma/pluma-commands-help.c:126
 msgid "translator-credits"
 msgstr ""
 "GNOME projesine katkıda bulunanlar:\n"
@@ -1355,7 +1420,7 @@ msgstr "Bir eşleşme bulundu ve değiştirildi"
 msgid "\"%s\" not found"
 msgstr "\"%s\" bulunamadı"
 
-#: ../pluma/pluma-document.c:1141 ../pluma/pluma-document.c:1161
+#: ../pluma/pluma-document.c:1137 ../pluma/pluma-document.c:1157
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "Kaydedilmemiş Belge %d"
@@ -1525,6 +1590,8 @@ msgstr "Pencereler"
 
 #: ../pluma/pluma-file-chooser-dialog.c:442
 #: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+#: ../plugins/quickopen/quickopen/popup.py:37
+#: ../plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
 msgstr "_Aç"
 
@@ -2459,22 +2526,22 @@ msgid "/ on %s"
 msgstr "%s üzerinde /"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1352
+#: ../pluma/pluma-view.c:1435
 msgid "_Wrap Around"
 msgstr "_Satır Bölme"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1362
+#: ../pluma/pluma-view.c:1445
 msgid "Match _Entire Word Only"
 msgstr "Sadece Tüm _Kelimeyi Eşleştir"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1372
+#: ../pluma/pluma-view.c:1455
 msgid "_Match Case"
 msgstr "Büyük/Küçük _Harf Eşleştir"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1382
+#: ../pluma/pluma-view.c:1465
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
@@ -2482,11 +2549,11 @@ msgstr ""
 "Kaçış dizgelerini _çözümle (mesela \n"
 ")"
 
-#: ../pluma/pluma-view.c:1496
+#: ../pluma/pluma-view.c:1579
 msgid "String you want to search for"
 msgstr "Arama yapılacak dizgi"
 
-#: ../pluma/pluma-view.c:1505
+#: ../pluma/pluma-view.c:1588
 msgid "Line you want to move the cursor to"
 msgstr "İmleci taşımak istediğiniz satır"
 
@@ -2499,10 +2566,10 @@ msgstr "%s vurgu kipini kullan"
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
 #: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
-#: ../plugins/externaltools/tools/manager.py:138
-#: ../plugins/externaltools/tools/manager.py:445
-#: ../plugins/externaltools/tools/manager.py:556
-#: ../plugins/externaltools/tools/manager.py:873
+#: ../plugins/externaltools/tools/manager.py:108
+#: ../plugins/externaltools/tools/manager.py:308
+#: ../plugins/externaltools/tools/manager.py:424
+#: ../plugins/externaltools/tools/manager.py:746
 msgid "Plain Text"
 msgstr "Düz Metin"
 
@@ -2655,148 +2722,148 @@ msgstr "Harici Araçlar"
 msgid "Execute external commands and shell scripts."
 msgstr "Harici komutları ve kabuk betik dosyalarını çalıştır."
 
-#: ../plugins/externaltools/tools/__init__.py:175
+#: ../plugins/externaltools/tools/__init__.py:174
 msgid "Manage _External Tools..."
 msgstr "_Harici Araçları Yönet..."
 
-#: ../plugins/externaltools/tools/__init__.py:177
+#: ../plugins/externaltools/tools/__init__.py:176
 msgid "Opens the External Tools Manager"
 msgstr "Harici Araçlar Yöneticisini açar"
 
-#: ../plugins/externaltools/tools/__init__.py:181
+#: ../plugins/externaltools/tools/__init__.py:180
 msgid "External _Tools"
 msgstr "_Harici Araçlar"
 
-#: ../plugins/externaltools/tools/__init__.py:183
+#: ../plugins/externaltools/tools/__init__.py:182
 msgid "External tools"
 msgstr "Harici araçlar"
 
-#: ../plugins/externaltools/tools/__init__.py:216
+#: ../plugins/externaltools/tools/__init__.py:215
 msgid "Shell Output"
 msgstr "Kabuk Çıktısı"
 
-#: ../plugins/externaltools/tools/capture.py:92
+#: ../plugins/externaltools/tools/capture.py:96
 #, python-format
 msgid "Could not execute command: %s"
 msgstr "Komut çalıştırılamadı: %s"
 
-#: ../plugins/externaltools/tools/functions.py:157
+#: ../plugins/externaltools/tools/functions.py:155
 msgid "You must be inside a word to run this command"
 msgstr "Bu komutu çalıştırmak için kelimenin içinde olmanız gerekiyor"
 
-#: ../plugins/externaltools/tools/functions.py:263
+#: ../plugins/externaltools/tools/functions.py:261
 msgid "Running tool:"
 msgstr "Çalıştırma aracı:"
 
-#: ../plugins/externaltools/tools/functions.py:287
+#: ../plugins/externaltools/tools/functions.py:285
 msgid "Done."
 msgstr "Yapıldı."
 
-#: ../plugins/externaltools/tools/functions.py:289
+#: ../plugins/externaltools/tools/functions.py:287
 msgid "Exited"
 msgstr "Çıkıldı"
 
-#: ../plugins/externaltools/tools/manager.py:136
+#: ../plugins/externaltools/tools/manager.py:106
 msgid "All languages"
 msgstr "Tüm diller"
 
-#: ../plugins/externaltools/tools/manager.py:545
-#: ../plugins/externaltools/tools/manager.py:549
-#: ../plugins/externaltools/tools/manager.py:871
-#: ../plugins/externaltools/tools/tools.ui.h:22
+#: ../plugins/externaltools/tools/manager.py:413
+#: ../plugins/externaltools/tools/manager.py:417
+#: ../plugins/externaltools/tools/manager.py:744
+#: ../plugins/externaltools/tools/tools.ui.h:25
 msgid "All Languages"
 msgstr "Tüm Diller"
 
-#: ../plugins/externaltools/tools/manager.py:655
+#: ../plugins/externaltools/tools/manager.py:526
 msgid "New tool"
 msgstr "Yeni araç"
 
-#: ../plugins/externaltools/tools/manager.py:786
+#: ../plugins/externaltools/tools/manager.py:659
 #, python-format
 msgid "This accelerator is already bound to %s"
 msgstr "Bu hızlandırıcı zaten %s ile bağlı"
 
-#: ../plugins/externaltools/tools/manager.py:837
+#: ../plugins/externaltools/tools/manager.py:710
 msgid "Type a new accelerator, or press Backspace to clear"
 msgstr ""
 "Yeni bir hızlandırıcı belirtin, ya da temizlemek için Backspace tuşuna basın"
 
-#: ../plugins/externaltools/tools/manager.py:839
+#: ../plugins/externaltools/tools/manager.py:712
 msgid "Type a new accelerator"
 msgstr "Yeni bir hızlandırıcı girin"
 
-#: ../plugins/externaltools/tools/outputpanel.py:101
+#: ../plugins/externaltools/tools/outputpanel.py:102
 msgid "Stopped."
 msgstr "Durduruldu."
 
 #. ex:ts=4:et:
 #: ../plugins/externaltools/tools/tools.ui.h:1
-msgid "Nothing"
-msgstr "Hiçbir şey"
-
-#: ../plugins/externaltools/tools/tools.ui.h:2
-msgid "Current document"
-msgstr "Güncel belge"
-
-#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "All documents"
 msgstr "Tüm belgeler"
 
-#: ../plugins/externaltools/tools/tools.ui.h:4
-msgid "Current selection"
-msgstr "Güncel seçim"
-
-#: ../plugins/externaltools/tools/tools.ui.h:5
-msgid "Current selection (default to document)"
-msgstr "Güncel seçim (belge olarak öntanımlıdır)"
-
-#: ../plugins/externaltools/tools/tools.ui.h:6
-msgid "Current line"
-msgstr "Güncel satır"
-
-#: ../plugins/externaltools/tools/tools.ui.h:7
-msgid "Current word"
-msgstr "Güncel kelime"
-
-#: ../plugins/externaltools/tools/tools.ui.h:8
-msgid "Display in bottom pane"
-msgstr "Alt panel içinde göster"
-
-#: ../plugins/externaltools/tools/tools.ui.h:9
-msgid "Create new document"
-msgstr "Yeni belge oluştur"
-
-#: ../plugins/externaltools/tools/tools.ui.h:10
-msgid "Append to current document"
-msgstr "Güncel belgeye ekle"
-
-#: ../plugins/externaltools/tools/tools.ui.h:11
-msgid "Replace current document"
-msgstr "Güncel belgenin yerine koy"
-
-#: ../plugins/externaltools/tools/tools.ui.h:12
-msgid "Replace current selection"
-msgstr " Güncel seçimin yerine koy"
-
-#: ../plugins/externaltools/tools/tools.ui.h:13
-msgid "Insert at cursor position"
-msgstr "İmlecin konumunda ekle"
-
-#: ../plugins/externaltools/tools/tools.ui.h:14
+#: ../plugins/externaltools/tools/tools.ui.h:2
 msgid "All documents except untitled ones"
 msgstr "İsimlendirilmemişler dışında tüm belgeler"
 
-#: ../plugins/externaltools/tools/tools.ui.h:15
+#: ../plugins/externaltools/tools/tools.ui.h:3
 msgid "Local files only"
 msgstr "Sadece yerel dosyalar"
 
-#: ../plugins/externaltools/tools/tools.ui.h:16
+#: ../plugins/externaltools/tools/tools.ui.h:4
 msgid "Remote files only"
 msgstr "Sadece uzaktaki dosyalar"
 
-#: ../plugins/externaltools/tools/tools.ui.h:17
+#: ../plugins/externaltools/tools/tools.ui.h:5
 msgid "Untitled documents only"
 msgstr "Sadece isimlendirilmemiş belgeler"
+
+#: ../plugins/externaltools/tools/tools.ui.h:6
+msgid "Nothing"
+msgstr "Hiçbir şey"
+
+#: ../plugins/externaltools/tools/tools.ui.h:7
+msgid "Current document"
+msgstr "Güncel belge"
+
+#: ../plugins/externaltools/tools/tools.ui.h:8
+msgid "Current selection"
+msgstr "Güncel seçim"
+
+#: ../plugins/externaltools/tools/tools.ui.h:9
+msgid "Current selection (default to document)"
+msgstr "Güncel seçim (belge olarak öntanımlıdır)"
+
+#: ../plugins/externaltools/tools/tools.ui.h:10
+msgid "Current line"
+msgstr "Güncel satır"
+
+#: ../plugins/externaltools/tools/tools.ui.h:11
+msgid "Current word"
+msgstr "Güncel kelime"
+
+#: ../plugins/externaltools/tools/tools.ui.h:12
+msgid "Display in bottom pane"
+msgstr "Alt panel içinde göster"
+
+#: ../plugins/externaltools/tools/tools.ui.h:13
+msgid "Create new document"
+msgstr "Yeni belge oluştur"
+
+#: ../plugins/externaltools/tools/tools.ui.h:14
+msgid "Append to current document"
+msgstr "Güncel belgeye ekle"
+
+#: ../plugins/externaltools/tools/tools.ui.h:15
+msgid "Replace current document"
+msgstr "Güncel belgenin yerine koy"
+
+#: ../plugins/externaltools/tools/tools.ui.h:16
+msgid "Replace current selection"
+msgstr " Güncel seçimin yerine koy"
+
+#: ../plugins/externaltools/tools/tools.ui.h:17
+msgid "Insert at cursor position"
+msgstr "İmlecin konumunda ekle"
 
 #: ../plugins/externaltools/tools/tools.ui.h:18
 msgid "External Tools Manager"
@@ -2807,29 +2874,29 @@ msgid "_Tools:"
 msgstr "_Araçlar:"
 
 #: ../plugins/externaltools/tools/tools.ui.h:20
-#: ../plugins/snippets/snippets/snippets.ui.h:7
-msgid "_Edit:"
-msgstr "_Düzenle:"
-
-#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Applicability:"
 msgstr "Ç_alıştırılabilirlik:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:24
+#: ../plugins/externaltools/tools/tools.ui.h:21
 msgid "_Output:"
 msgstr "_Çıktı:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:25
+#: ../plugins/externaltools/tools/tools.ui.h:22
 msgid "_Input:"
 msgstr "_Girdi:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/externaltools/tools/tools.ui.h:23
 msgid "_Save:"
 msgstr "_Kaydet:"
 
-#: ../plugins/externaltools/tools/tools.ui.h:27
+#: ../plugins/externaltools/tools/tools.ui.h:24
 msgid "_Shortcut Key:"
 msgstr "_Kısayol Tuşu:"
+
+#: ../plugins/externaltools/tools/tools.ui.h:26
+#: ../plugins/snippets/snippets/snippets.ui.h:7
+msgid "_Edit:"
+msgstr "_Düzenle:"
 
 #: ../plugins/externaltools/data/build.desktop.in.h:1
 msgid "Build"
@@ -3261,16 +3328,25 @@ msgstr "Python Konsolu"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Alt panelde etkileşimli Python konsolu"
 
+#. ex:et:ts=4:
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:1
+msgid "_Error color:"
+msgstr "_Hata rengi:"
+
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:2
 msgid "C_ommand color:"
 msgstr "K_omut rengi:"
 
 #: ../plugins/pythonconsole/pythonconsole/config.ui.h:3
-msgid "_Error color:"
-msgstr "_Hata rengi:"
+msgid "Use system fixed width font"
+msgstr ""
 
-#. ex:ts=8:et:
-#: ../plugins/quickopen/quickopen/popup.py:31
+#: ../plugins/pythonconsole/pythonconsole/config.ui.h:4
+msgid "Font:"
+msgstr ""
+
+#. ex:ts=4:et:
+#: ../plugins/quickopen/quickopen/popup.py:32
 #: ../plugins/quickopen/quickopen.plugin.desktop.in.h:1
 msgid "Quick Open"
 msgstr "Hızlı Aç"
@@ -3289,9 +3365,9 @@ msgstr "Dosyaları hızlıca açar"
 
 #. Do the fancy completion dialog
 #: ../plugins/snippets/snippets.plugin.desktop.in.h:1
-#: ../plugins/snippets/snippets/Document.py:53
-#: ../plugins/snippets/snippets/Document.py:193
-#: ../plugins/snippets/snippets/Document.py:614
+#: ../plugins/snippets/snippets/Document.py:51
+#: ../plugins/snippets/snippets/Document.py:189
+#: ../plugins/snippets/snippets/Document.py:618
 msgid "Snippets"
 msgstr "Parçalar"
 
@@ -3312,7 +3388,7 @@ msgid "Create new snippet"
 msgstr "Yeni bir parça oluştur"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:4
-#: ../plugins/snippets/snippets/Manager.py:793
+#: ../plugins/snippets/snippets/Manager.py:792
 msgid "Import snippets"
 msgstr "Parçaları içe aktar"
 
@@ -3321,7 +3397,7 @@ msgid "Export selected snippets"
 msgstr "Seçili bölümleri dışa aktar"
 
 #: ../plugins/snippets/snippets/snippets.ui.h:6
-#: ../plugins/snippets/snippets/Manager.py:403
+#: ../plugins/snippets/snippets/Manager.py:400
 msgid "Delete selected snippet"
 msgstr "Seçili bölümü sil"
 
@@ -3329,27 +3405,28 @@ msgstr "Seçili bölümü sil"
 msgid "Activation"
 msgstr "Etkinleştiriliş"
 
+#: ../plugins/snippets/snippets/snippets.ui.h:9
+msgid "_Drop targets:"
+msgstr "Hedefleri _bırak:"
+
 #: ../plugins/snippets/snippets/snippets.ui.h:10
+msgid "Shortcut key with which the snippet is activated"
+msgstr "Parçanın etkinleşeceği kısayol tuşu"
+
+#: ../plugins/snippets/snippets/snippets.ui.h:11
+msgid "S_hortcut key:"
+msgstr "K_ısayol tuşu:"
+
+#. "tab" here means the tab key, not the notebook tab!
+#: ../plugins/snippets/snippets/snippets.ui.h:13
 msgid "_Tab trigger:"
 msgstr "_Sekme tetikleyicisi:"
 
 #. self['hbox_tab_trigger'].set_spacing(0)
-#: ../plugins/snippets/snippets/snippets.ui.h:11
-#: ../plugins/snippets/snippets/Manager.py:682
+#: ../plugins/snippets/snippets/snippets.ui.h:14
+#: ../plugins/snippets/snippets/Manager.py:681
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr "Sekme tuşuna basıldıktan sonra parçayı etkinleştirecek kelime"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:12
-msgid "Shortcut key with which the snippet is activated"
-msgstr "Parçanın etkinleşeceği kısayol tuşu"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:13
-msgid "S_hortcut key:"
-msgstr "K_ısayol tuşu:"
-
-#: ../plugins/snippets/snippets/snippets.ui.h:14
-msgid "_Drop targets:"
-msgstr "Hedefleri _bırak:"
 
 #: ../plugins/snippets/snippets/WindowHelper.py:72
 msgid "Manage _Snippets..."
@@ -3371,12 +3448,12 @@ msgstr "Yeni bir parça ekle..."
 msgid "Global"
 msgstr "Genel"
 
-#: ../plugins/snippets/snippets/Manager.py:400
+#: ../plugins/snippets/snippets/Manager.py:397
 msgid "Revert selected snippet"
 msgstr "Seçilen bölümleri önceki haline getir"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
-#: ../plugins/snippets/snippets/Manager.py:675
+#: ../plugins/snippets/snippets/Manager.py:674
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
@@ -3384,30 +3461,30 @@ msgstr ""
 "Bu geçerli bir sekme tetikleyicisi değildir. Tetikler ya birden çok harf ya "
 "da tek, {, [ gibi (alfanumerik olmayan) harf içerir."
 
-#: ../plugins/snippets/snippets/Manager.py:772
+#: ../plugins/snippets/snippets/Manager.py:771
 #, python-format
 msgid "The following error occurred while importing: %s"
 msgstr "İçe aktarım sırasında aşağıdaki hata oluştu: %s"
 
-#: ../plugins/snippets/snippets/Manager.py:779
+#: ../plugins/snippets/snippets/Manager.py:778
 msgid "Import successfully completed"
 msgstr "İçe aktarma başarıyla tamamlandı"
 
 #: ../plugins/snippets/snippets/Manager.py:798
-#: ../plugins/snippets/snippets/Manager.py:884
-#: ../plugins/snippets/snippets/Manager.py:947
+#: ../plugins/snippets/snippets/Manager.py:885
+#: ../plugins/snippets/snippets/Manager.py:949
 msgid "All supported archives"
 msgstr "Tüm desteklenen arşivler"
 
 #: ../plugins/snippets/snippets/Manager.py:799
-#: ../plugins/snippets/snippets/Manager.py:885
-#: ../plugins/snippets/snippets/Manager.py:948
+#: ../plugins/snippets/snippets/Manager.py:886
+#: ../plugins/snippets/snippets/Manager.py:950
 msgid "Gzip compressed archive"
 msgstr "Gzip ile sıkıştırılmış arşiv"
 
 #: ../plugins/snippets/snippets/Manager.py:800
-#: ../plugins/snippets/snippets/Manager.py:886
-#: ../plugins/snippets/snippets/Manager.py:949
+#: ../plugins/snippets/snippets/Manager.py:887
+#: ../plugins/snippets/snippets/Manager.py:951
 msgid "Bzip2 compressed archive"
 msgstr "Bzip2 ile sıkıştırılmış arşiv"
 
@@ -3416,8 +3493,8 @@ msgid "Single snippets file"
 msgstr "Tek parçalar dosyası"
 
 #: ../plugins/snippets/snippets/Manager.py:802
-#: ../plugins/snippets/snippets/Manager.py:888
-#: ../plugins/snippets/snippets/Manager.py:951
+#: ../plugins/snippets/snippets/Manager.py:889
+#: ../plugins/snippets/snippets/Manager.py:953
 msgid "All files"
 msgstr "Tüm dosyalar"
 
@@ -3432,27 +3509,27 @@ msgstr "Dışa aktarma başarıyla tamamlandı"
 
 #. Ask if system snippets should also be exported
 #: ../plugins/snippets/snippets/Manager.py:858
-#: ../plugins/snippets/snippets/Manager.py:925
+#: ../plugins/snippets/snippets/Manager.py:927
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
 msgstr ""
 "Dışa aktarmanızda seçilen <b>sistem</b> parçalarını da dahil etmek ister "
 "misiniz?"
 
 #: ../plugins/snippets/snippets/Manager.py:873
-#: ../plugins/snippets/snippets/Manager.py:943
+#: ../plugins/snippets/snippets/Manager.py:945
 msgid "There are no snippets selected to be exported"
 msgstr "Dışa aktarma için hiçbir parça seçilmemiş"
 
 #: ../plugins/snippets/snippets/Manager.py:878
-#: ../plugins/snippets/snippets/Manager.py:916
+#: ../plugins/snippets/snippets/Manager.py:917
 msgid "Export snippets"
 msgstr "Parçaları dışa aktar"
 
-#: ../plugins/snippets/snippets/Manager.py:1056
+#: ../plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut, or press Backspace to clear"
 msgstr "Yeni bir kısayol yazın, ya da temizlemek için Geri Silme tuşuna basın"
 
-#: ../plugins/snippets/snippets/Manager.py:1058
+#: ../plugins/snippets/snippets/Manager.py:1060
 msgid "Type a new shortcut"
 msgstr "Yeni bir kısayol yaz"
 
@@ -3503,7 +3580,7 @@ msgstr "Bu dosyalar içe aktarılamadı: %s"
 msgid "File \"%s\" is not a valid snippets archive"
 msgstr "\"%s\" dosyası geçerli bir parça arşivi değildir"
 
-#: ../plugins/snippets/snippets/Placeholder.py:593
+#: ../plugins/snippets/snippets/Placeholder.py:601
 #, python-format
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
@@ -3512,7 +3589,7 @@ msgstr ""
 "Python komutunun (%s) çalıştırılması azami süreyi geçti, çalıştırma iptal "
 "edildi."
 
-#: ../plugins/snippets/snippets/Placeholder.py:601
+#: ../plugins/snippets/snippets/Placeholder.py:609
 #, python-format
 msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Python komutunun (%s) çalıştırılması başarısız oldu: %s"
