@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
   <enum id="org.mate.pluma.SpaceDrawer">
-    <value nick="draw-none" value="0"/>
-    <value nick="draw-trailing" value="1"/>
-    <value nick="draw-all" value="2"/>
+    <value nick="show-none" value="0"/>
+    <value nick="show-trailing" value="1"/>
+    <value nick="show-all" value="2"/>
   </enum>
   <schema id="org.mate.pluma" path="/org/mate/pluma/">
     <key name="use-default-font" type="b">
@@ -223,23 +223,23 @@
     </key>
     <key name="enable-space-drawer-newline" type="b">
       <default>false</default>
-      <summary>Draw newline</summary>
-      <description>Whether pluma should draw newlines in the editor window.</description>
+      <summary>Show newline</summary>
+      <description>Whether pluma should show newlines in the editor window.</description>
     </key>
     <key name="enable-space-drawer-nbsp" enum="org.mate.pluma.SpaceDrawer">
-      <default>'draw-none'</default>
-      <summary>Draw nbsp</summary>
-      <description>Whether pluma should draw not breaking spaces in the editor window: 'draw-none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all spaces.</description>
+      <default>'show-none'</default>
+      <summary>Show nbsp</summary>
+      <description>Whether pluma should show not breaking spaces in the editor window: 'show-none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' showing all spaces.</description>
     </key>
     <key name="enable-space-drawer-tab" enum="org.mate.pluma.SpaceDrawer">
-      <default>'draw-none'</default>
-      <summary>Draw tabs</summary>
-      <description>Whether pluma should draw tabs in the editor window: 'draw-none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all spaces.</description>
+      <default>'show-none'</default>
+      <summary>Show tabs</summary>
+      <description>Whether pluma should show tabs in the editor window: 'show-none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' showing all spaces.</description>
     </key>
     <key name="enable-space-drawer-space" enum="org.mate.pluma.SpaceDrawer">
-      <default>'draw-none'</default>
-      <summary>Draw spaces</summary>
-      <description>Whether pluma should draw spaces in the editor window: 'draw-none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all spaces.</description>
+      <default>'show-none'</default>
+      <summary>Show spaces</summary>
+      <description>Whether pluma should show spaces in the editor window: 'show-none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' showing all spaces.</description>
     </key>
   </schema>
 </schemalist>
