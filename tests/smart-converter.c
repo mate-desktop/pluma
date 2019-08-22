@@ -98,6 +98,7 @@ get_encoded_text (const gchar         *text,
 	else if (err)
 	{
 		g_printf ("** You don't care, but there was an error: %s", err->message);
+		g_free (out);
 		return NULL;
 	}
 
@@ -107,6 +108,7 @@ get_encoded_text (const gchar         *text,
 	{
 		if (!care_about_error)
 		{
+			g_free (out);
 			return NULL;
 		}
 		else
@@ -337,6 +339,9 @@ test_guessed ()
 	aux2 = do_test (aux, NULL, encs, aux_len, &guessed);
 
 	g_assert (guessed == pluma_encoding_get_from_charset ("UTF-16"));
+
+	g_free (aux);
+	g_free (aux2);
 }
 
 int main (int   argc,
