@@ -41,8 +41,6 @@ create_document (const gchar *filename,
                  const gchar *contents)
 {
 	GError *error = NULL;
-	PlumaDocument *document;
-	gchar *uri;
 
 	if (!g_file_set_contents (filename, contents, -1, &error))
 	{
