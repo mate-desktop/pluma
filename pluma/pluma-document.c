@@ -659,6 +659,8 @@ file_with_bom (GFile *file)
 	gchar    bom[3];
 	gchar   *file_path;
 
+	bom[0] = bom[1] = bom[2] = 0;
+
 	file_path = g_file_get_path (file);
 
 	testfile = fopen (file_path, "r");
