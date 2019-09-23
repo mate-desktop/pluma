@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-17 11:58+0100\n"
+"POT-Creation-Date: 2019-04-23 12:30+0200\n"
 "PO-Revision-Date: 2019-03-16 20:12+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2019\n"
 "Language-Team: Catalan (https://www.transifex.com/mate/teams/13566/ca/)\n"
@@ -226,12 +226,13 @@ msgstr "Si Pluma hauria de ressaltar la línia actual."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:36
 msgid "Highlight Matching Bracket"
-msgstr "Ressalta el claudàtor corresponent"
+msgstr "Ressalta el signe de puntuació corresponent"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:37
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr ""
-"Si Pluma hauria de ressaltar el claudàtor corresponent amb el seleccionat."
+"Si Pluma hauria de ressaltar el signe de puntuació corresponent amb el "
+"seleccionat."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:38
 msgid "Display Right Margin"
@@ -939,11 +940,11 @@ msgstr "Marge _dret a la columna:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:15
 msgid "Bracket Matching"
-msgstr "Claudàtor corresponent"
+msgstr "Signe de puntuació corresponent"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:16
 msgid "Highlight matching _bracket"
-msgstr "Ressalta el _claudàtor corresponent"
+msgstr "Ressalta el _signe de puntuació corresponent"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:17
 msgid "View"
@@ -1250,23 +1251,23 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "_Reverteix"
 
-#: ../pluma/pluma-commands-help.c:69
+#: ../pluma/pluma-commands-help.c:60
 msgid "MATE Documentation Team"
 msgstr "Equip de documentació de MATE"
 
-#: ../pluma/pluma-commands-help.c:70
+#: ../pluma/pluma-commands-help.c:61
 msgid "GNOME Documentation Team"
 msgstr "Equip de documentació de GNOME"
 
-#: ../pluma/pluma-commands-help.c:71
+#: ../pluma/pluma-commands-help.c:62
 msgid "Sun Microsystems"
 msgstr "Sun Microsystems"
 
-#: ../pluma/pluma-commands-help.c:76
+#: ../pluma/pluma-commands-help.c:67
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "Pluma és un editor de text petit i lleuger per a l'escriptori MATE"
 
-#: ../pluma/pluma-commands-help.c:79
+#: ../pluma/pluma-commands-help.c:70
 msgid ""
 "Pluma is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -1278,7 +1279,7 @@ msgstr ""
 " la Free Software Foundation, ja sigui la versió 2 de la Llicència o bé (si "
 "ho preferiu) qualsevol versió posterior."
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:74
 msgid ""
 "Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -1290,7 +1291,7 @@ msgstr ""
 "PER A CAP FINALITAT DETERMINADA. Per obtenir més informació, consulteu la "
 "Llicència Pública General de GNU."
 
-#: ../pluma/pluma-commands-help.c:87
+#: ../pluma/pluma-commands-help.c:78
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
@@ -1300,11 +1301,11 @@ msgstr ""
 " GNU; si no és així, escriviu a la Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA"
 
-#: ../pluma/pluma-commands-help.c:104
+#: ../pluma/pluma-commands-help.c:113
 msgid "About Pluma"
 msgstr "Quant a Pluma"
 
-#: ../pluma/pluma-commands-help.c:107
+#: ../pluma/pluma-commands-help.c:116
 msgid ""
 "Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
 "Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
@@ -1322,7 +1323,7 @@ msgstr ""
 "Drets d'autor © 2011 Perberos\n"
 "Drets d'autor © 2012-2019 Els desenvolupadors de MATE"
 
-#: ../pluma/pluma-commands-help.c:117
+#: ../pluma/pluma-commands-help.c:126
 msgid "translator-credits"
 msgstr "Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018, 2019"
 
@@ -4967,7 +4968,7 @@ msgstr "Bibliografia (thebibliography)"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:6
 msgid "Brackets ()"
-msgstr "Claudàtors ()"
+msgstr "Parèntesis ()"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:7
 msgid "Brackets []"
@@ -4975,11 +4976,11 @@ msgstr "Claudàtors []"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:8
 msgid "Brackets {}"
-msgstr "Claudàtors {}"
+msgstr "Claus {}"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:9
 msgid "Brackets <>"
-msgstr "Claudàtors <>"
+msgstr "Clau angular <>"
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:10
 msgid "File input"
@@ -5143,7 +5144,7 @@ msgstr "Símbol <="
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:50
 msgid "Symbol >="
-msgstr "Símbol >;="
+msgstr "Símbol >="
 
 #: ../plugins/taglist/Latex.tags.xml.in.h:51
 msgid "Symbol >>"
@@ -5295,7 +5296,7 @@ msgstr "següent-germà"
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:12
 msgid "namespace"
-msgstr "espai de nom"
+msgstr "espai de noms"
 
 #: ../plugins/taglist/XSLT.tags.xml.in.h:13
 msgid "parent"

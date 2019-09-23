@@ -1,13 +1,13 @@
 # Translators:
-# Joe Hansen <joedalton2@yahoo.dk>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Joe Hansen <joedalton2@yahoo.dk>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"POT-Creation-Date: 2019-02-09 18:43+0100\n"
+"POT-Creation-Date: 2019-04-23 12:30+0200\n"
 "PO-Revision-Date: 2019-03-16 20:14+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2019\n"
 "Language-Team: Danish (https://www.transifex.com/mate/teams/13566/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -492,7 +492,7 @@ msgstr ""
 "<application>Pluma</application>-vinduet."
 
 #. (itstool) path: info/title
-#: C/index.docbook:371 C/index.docbook:2104
+#: C/index.docbook:371 C/index.docbook:2093
 msgid "Opening a File"
 msgstr "Åbn en fil"
 
@@ -2662,7 +2662,7 @@ msgstr ""
 " du gøre følgende:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1709 C/index.docbook:1733 C/index.docbook:2162
+#: C/index.docbook:1709 C/index.docbook:1733 C/index.docbook:2151
 msgid ""
 "Choose <menuchoice> <guimenu>Edit</guimenu> "
 "<guimenuitem>Preferences</guimenuitem> </menuchoice>."
@@ -2671,7 +2671,7 @@ msgstr ""
 "<guimenuitem>Indstillinger</guimenuitem> </menuchoice>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1712 C/index.docbook:1736 C/index.docbook:2165
+#: C/index.docbook:1712 C/index.docbook:1736 C/index.docbook:2154
 msgid "Select the <guilabel>Plugins</guilabel> tab."
 msgstr "Vælg fanebladet <guilabel>Udvidelsesmoduler</guilabel>."
 
@@ -2764,11 +2764,11 @@ msgstr ""
 #: C/index.docbook:1762
 msgid ""
 "To enable and disable plugins, or see which plugins are currently enabled, "
-"use the <link linkend=\"pluma-prefs-plugins\">Plugins Preferences</link>."
+"use the <xref linkend=\"pluma-prefs-plugins\"/>."
 msgstr ""
 "For at aktivere og deaktivere udvidelsesmoduler, eller se hvilke "
-"udvidelsesmoduler der aktuelt er aktiverede, kan du bruge <link linkend"
-"=\"pluma-prefs-plugins\">indstillingerne for udvidelsesmoduler</link>."
+"udvidelsesmoduler der aktuelt er aktiverede, kan du bruge <xref linkend"
+"=\"pluma-prefs-plugins\"/>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:1763
@@ -2781,38 +2781,32 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/index.docbook:1769
 msgid ""
-"<link linkend=\"pluma-change-case-plugin\"> <application>Change "
-"Case</application> </link> allows you to change the case of the selected "
-"text."
+"<xref linkend=\"pluma-change-case-plugin\"/> allows you to change the case "
+"of the selected text."
 msgstr ""
-"<link linkend=\"pluma-change-case-plugin\"> <application>Skift "
-"bogstaver</application> </link> lader dig skifte mellem store/små bogstaver "
-"i den markerede tekst."
+"<xref linkend=\"pluma-change-case-plugin\"/> lader dig skifte mellem "
+"store/små bogstaver i den markerede tekst."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1775
+#: C/index.docbook:1774
 msgid ""
-"<application> <link linkend=\"pluma-document-statistics-plugin\">Document "
-"Statistics</link> </application> shows the number of lines, words, and "
-"characters in the document."
+"<xref linkend=\"pluma-document-statistics-plugin\"/> shows the number of "
+"lines, words, and characters in the document."
 msgstr ""
-"<application> <link linkend=\"pluma-document-statistics-"
-"plugin\">Dokumentstatistik</link> </application> viser antallet af linjer, "
-"ord og tegn i dokumentet."
+"<xref linkend=\"pluma-document-statistics-plugin\"/> viser antallet af "
+"linjer, ord og tegn i dokumentet."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1781
+#: C/index.docbook:1779
 msgid ""
-"<application> <link linkend=\"pluma-external-tools-plugin\">External "
-"Tools</link> </application> allows you to execute external commands from "
-"<application>pluma</application>."
+"<xref linkend=\"pluma-external-tools-plugin\"/> allows you to execute "
+"external commands from <application>pluma</application>."
 msgstr ""
-"<application> <link linkend=\"pluma-external-tools-plugin\">Eksterne "
-"værktøjer</link> </application> lader dig udføre eksterne kommandoer fra "
-"<application>Pluma</application>."
+"<xref linkend=\"pluma-external-tools-plugin\"/> lader dig udføre eksterne "
+"kommandoer fra <application>pluma</application>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1787
+#: C/index.docbook:1784
 msgid ""
 "<application>File Browser</application> allows you to browse your files and "
 "folders in the side pane."
@@ -2821,97 +2815,83 @@ msgstr ""
 "mapper i sidepanelet."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1791
+#: C/index.docbook:1788
 msgid ""
-"<application> <link linkend=\"pluma-indent-lines-plugin\">Indent "
-"Lines</link> </application> adds or removes indentation from the selected "
-"lines."
+"<xref linkend=\"pluma-indent-lines-plugin\"/> adds or removes indentation "
+"from the selected lines."
 msgstr ""
-"<application> <link linkend=\"pluma-indent-lines-plugin\">Indryk "
-"linjer</link> </application> tilføjer eller fjerner indrykning af markerede "
-"linjer."
+"<xref linkend=\"pluma-indent-lines-plugin\"/> tilføjer eller fjerner "
+"indrykning af markerede linjer."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1797
+#: C/index.docbook:1793
 msgid ""
-"<application> <link linkend=\"pluma-insert-date-time-plugin\">Insert "
-"Date/Time</link> </application> adds the current date and time into a "
-"document."
+"<xref linkend=\"pluma-insert-date-time-plugin\"/> adds the current date and "
+"time into a document."
 msgstr ""
-"<application> <link linkend=\"pluma-insert-date-time-plugin\">Indsæt "
-"dato/tid</link> </application> tilføjer den aktuelle dato og tid til et "
-"dokument."
+"<xref linkend=\"pluma-insert-date-time-plugin\"/> tilføjer den aktuelle dato"
+" og tid til et dokument."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1803
+#: C/index.docbook:1798
 msgid ""
-"<application> <link linkend=\"pluma-modelines-plugin\">Modelines</link> "
-"</application> allows you to set editing preferences for individual "
-"documents, and supports <application>Emacs</application>, "
-"<application>Kate</application> and <application>Vim</application>-style "
-"modelines."
+"<xref linkend=\"pluma-modelines-plugin\"/> allows you to set editing "
+"preferences for individual documents, and supports "
+"<application>Emacs</application>, <application>Kate</application> and "
+"<application>Vim</application>-style modelines."
 msgstr ""
-"<application> <link linkend=\"pluma-modelines-"
-"plugin\">Tilstandslinjer</link> </application> lader dig sætte "
+"<xref linkend=\"pluma-modelines-plugin\"/> lader dig sætte "
 "redigeringsindstillinger for individuelle dokumenter, og understøtter "
 "tilstandslinjer i stil med <application>Emacs</application>, "
 "<application>Kate</application> og <application>Vim</application>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1809
+#: C/index.docbook:1803
 msgid ""
-"<application> <link linkend=\"pluma-python-console-plugin\">Python "
-"Console</link> </application> allows you to run commands in the python "
-"programming language."
+"<xref linkend=\"pluma-python-console-plugin\"/> allows you to run commands "
+"in the python programming language."
 msgstr ""
-"<application> <link linkend=\"pluma-python-console-plugin\">Python-"
-"konsol</link> </application> lader dig køre kommandoer i "
+"<xref linkend=\"pluma-python-console-plugin\"/> lader dig køre kommandoer i "
 "programmeringssproget Python."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1815
+#: C/index.docbook:1808
 msgid ""
-"<application> <link linkend=\"pluma-snippets-plugin\">Snippets</link> "
-"</application> allows you to store frequently-used pieces of text and insert"
-" them quickly into a document."
+"<xref linkend=\"pluma-snippets-plugin\"/> allows you to store frequently-"
+"used pieces of text and insert them quickly into a document."
 msgstr ""
-"<application> <link linkend=\"pluma-snippets-plugin\">Tekststumper</link> "
-"</application> lader dig opbevare ofte-brugte stykker af tekst og indsætte "
-"dem nemt og hurtigt i et dokument."
+"<xref linkend=\"pluma-snippets-plugin\"/> lader dig opbevare ofte-brugte "
+"stykker af tekst og indsætte dem nemt og hurtigt i et dokument."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1821
+#: C/index.docbook:1813
 msgid ""
-"<application> <link linkend=\"pluma-sort-plugin\">Sort</link> </application>"
-" arranges selected lines of text into alphabetical order."
+"<xref linkend=\"pluma-sort-plugin\"/> arranges selected lines of text into "
+"alphabetical order."
 msgstr ""
-"<application> <link linkend=\"pluma-sort-plugin\">Sorter</link> "
-"</application> arrangerer markerede tekstlinjer i alfabetisk orden."
+"<xref linkend=\"pluma-sort-plugin\"/> arrangerer markerede tekstlinjer i "
+"alfabetisk orden."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1827
+#: C/index.docbook:1818
 msgid ""
-"<application> <link linkend=\"pluma-spell-checker-plugin\">Spell "
-"Checker</link> </application> corrects the spelling in the selected text, or"
-" marks errors automatically in the document."
+"<xref linkend=\"pluma-spell-checker-plugin\"/> corrects the spelling in the "
+"selected text, or marks errors automatically in the document."
 msgstr ""
-"<application> <link linkend=\"pluma-spell-checker-"
-"plugin\">Stavekontrol</link> </application> retter stavningen i den "
+"<xref linkend=\"pluma-spell-checker-plugin\"/> retter stavningen i den "
 "markerede tekst, eller markerer automatisk fejl i dokumentet."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1833
+#: C/index.docbook:1823
 msgid ""
-"<application> <link linkend=\"pluma-tag-list-plugin\">Tag List</link> "
-"</application> lets you insert commonly-used tags for HTML and other "
-"languages from a list in the side pane."
+"<xref linkend=\"pluma-tag-list-plugin\"/> lets you insert commonly-used tags"
+" for HTML and other languages from a list in the side pane."
 msgstr ""
-"<application> <link linkend=\"pluma-tag-list-plugin\">Mærkeliste</link> "
-"</application> lader dig indsætte ofte-brugte mærker for HTML og andre sprog"
-" fra en liste i sidepanelet."
+"<xref linkend=\"pluma-tag-list-plugin\"/> lader dig indsætte ofte-brugte "
+"mærker for HTML og andre sprog fra en liste i sidepanelet."
 
 #. (itstool) path: note/para
-#: C/index.docbook:1841
+#: C/index.docbook:1830
 msgid ""
 "For more information on creating plugins, see the <link "
 "xlink:href=\"http://live.gnome.org/Pluma/Plugins\"> "
@@ -2922,12 +2902,12 @@ msgstr ""
 "<application>hjemmesiden</application> for pluma</link>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:1847
+#: C/index.docbook:1836
 msgid "Change Case Plugin"
 msgstr "Udvidelsesmodulet Skift bogstaver"
 
 #. (itstool) path: section/para
-#: C/index.docbook:1849
+#: C/index.docbook:1838
 msgid ""
 "The <application>Change Case</application> plugin changes the case of the "
 "selected text."
@@ -2936,7 +2916,7 @@ msgstr ""
 "store/små bogstaver i den markerede tekst."
 
 #. (itstool) path: section/para
-#: C/index.docbook:1850
+#: C/index.docbook:1839
 msgid ""
 "The following items are added to the <guimenu>Edit</guimenu> menu when the "
 "<application>Change Case</application> plugin is enabled:"
@@ -2945,22 +2925,22 @@ msgstr ""
 "udvidelsesmodulet <application>Skift bogstaver</application> er aktiveret:"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1859
+#: C/index.docbook:1848
 msgid "Menu Item"
 msgstr "Menuelement"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1862
+#: C/index.docbook:1851
 msgid "Action"
 msgstr "Handling"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1865
+#: C/index.docbook:1854
 msgid "Example"
 msgstr "Eksempel"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1872
+#: C/index.docbook:1861
 msgid ""
 "<menuchoice> <guimenu>Edit</guimenu> <guisubmenu>Change Case</guisubmenu> "
 "<guimenuitem>All Upper Case</guimenuitem> </menuchoice>"
@@ -2970,18 +2950,18 @@ msgstr ""
 "bogstaver</guimenuitem></menuchoice>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1875
+#: C/index.docbook:1864
 msgid "Change each character to uppercase."
 msgstr "Skifter alle bogstaver til store bogstaver."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1878
+#: C/index.docbook:1867
 msgid "<literal>This text</literal> becomes <literal>THIS TEXT</literal>"
 msgstr ""
 "<literal>Denne tekst</literal> bliver til <literal>DENNE TEKST</literal>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1883
+#: C/index.docbook:1872
 msgid ""
 "<menuchoice> <guimenu>Edit</guimenu> <guisubmenu>Change Case</guisubmenu> "
 "<guimenuitem>All Lower Case</guimenuitem> </menuchoice>"
@@ -2991,18 +2971,18 @@ msgstr ""
 "bogstaver</guimenuitem></menuchoice>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1886
+#: C/index.docbook:1875
 msgid "Change each character to lowercase."
 msgstr "Skifter alle bogstaver til små bogstaver."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1889
+#: C/index.docbook:1878
 msgid "<literal>This Text</literal> becomes <literal>this text</literal>"
 msgstr ""
 "<literal>Denne Tekst</literal> bliver til <literal>denne tekst</literal>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1894
+#: C/index.docbook:1883
 msgid ""
 "<menuchoice> <guimenu>Edit</guimenu> <guisubmenu>Change Case</guisubmenu> "
 "<guimenuitem>Invert Case</guimenuitem> </menuchoice>"
@@ -3012,7 +2992,7 @@ msgstr ""
 "bogstaver</guimenuitem></menuchoice>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1897
+#: C/index.docbook:1886
 msgid ""
 "Change each lowercase character to uppercase, and change each uppercase "
 "character to lowercase."
@@ -3020,13 +3000,13 @@ msgstr ""
 "Skifter alle små bogstaver til store, og alle store bogstaver til små."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1900
+#: C/index.docbook:1889
 msgid "<literal>This Text</literal> becomes <literal>tHIS tEXT</literal>"
 msgstr ""
 "<literal>Denne Tekst</literal> bliver til <literal>dENNE tEKST</literal>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1905
+#: C/index.docbook:1894
 msgid ""
 "<menuchoice> <guimenu>Edit</guimenu> <guisubmenu>Change Case</guisubmenu> "
 "<guimenuitem>Title Case</guimenuitem> </menuchoice>"
@@ -3036,23 +3016,23 @@ msgstr ""
 " </menuchoice>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1908
+#: C/index.docbook:1897
 msgid "Change the first character of each word to uppercase."
 msgstr "Ændrer det første bogstav i hvert ord til store bogstaver."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:1911
+#: C/index.docbook:1900
 msgid "<literal>this text</literal> becomes <literal>This Text</literal>"
 msgstr ""
 "<literal>denne tekst</literal> bliver til <literal>Denne Tekst</literal>"
 
 #. (itstool) path: info/title
-#: C/index.docbook:1922
+#: C/index.docbook:1911
 msgid "Document Statistics Plugin"
 msgstr "Udvidelsesmodulet Dokumentstatistik"
 
 #. (itstool) path: section/para
-#: C/index.docbook:1925
+#: C/index.docbook:1914
 msgid ""
 "The <application>Document Statistics</application> plugin counts the number "
 "of lines, words, characters with spaces, characters without spaces, and "
@@ -3067,7 +3047,7 @@ msgstr ""
 "udvidelsesmodulet Dokumentstatistik skal du gøre følgende:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1928
+#: C/index.docbook:1917
 msgid ""
 "Choose <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Document "
 "Statistics</guimenuitem> </menuchoice> to display the <guilabel>Document "
@@ -3081,32 +3061,32 @@ msgstr ""
 "filen:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1931
+#: C/index.docbook:1920
 msgid "Number of lines in the current document."
 msgstr "Antal linjer i det aktuelle dokument."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1934
+#: C/index.docbook:1923
 msgid "Number of words in the current document."
 msgstr "Antal ord i det aktuelle dokument."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1937
+#: C/index.docbook:1926
 msgid "Number of characters, including spaces, in the current document."
 msgstr "Antal tegn, inklusive mellemrum, i det aktuelle dokument."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1940
+#: C/index.docbook:1929
 msgid "Number of characters, not including spaces, in the current document."
 msgstr "Antal tegn, ikke medregnende mellemrum, i det aktuelle dokument."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1943
+#: C/index.docbook:1932
 msgid "Number of bytes in the current document."
 msgstr "Antal bytes i det aktuelle dokument."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1948
+#: C/index.docbook:1937
 msgid ""
 "You can continue to update the <application>pluma</application> file while "
 "the <guilabel>Document Statistics</guilabel> dialog is open. To refresh the "
@@ -3120,12 +3100,12 @@ msgstr ""
 "på<guibutton>Opdater</guibutton>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:1955
+#: C/index.docbook:1944
 msgid "External Tools Plugin"
 msgstr "Udvidelsesmodulet Eksterne værktøjer"
 
 #. (itstool) path: section/para
-#: C/index.docbook:1957
+#: C/index.docbook:1946
 msgid ""
 "The <application>External Tools</application> plugin allows you to execute "
 "external commands from <application>pluma</application>. You can pipe some "
@@ -3140,7 +3120,7 @@ msgstr ""
 "eksempel, <application>make</application>)."
 
 #. (itstool) path: section/para
-#: C/index.docbook:1958
+#: C/index.docbook:1947
 msgid ""
 "Use the <guilabel>External Tools Manager</guilabel> to create and edit "
 "commands. To run an external command, choose it from the "
@@ -3151,12 +3131,12 @@ msgstr ""
 "<guimenu>Værktøjer</guimenu>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:1962
+#: C/index.docbook:1951
 msgid "Built-in Commands"
 msgstr "Indbyggede kommandoer"
 
 #. (itstool) path: section/para
-#: C/index.docbook:1964
+#: C/index.docbook:1953
 msgid ""
 "The following commands are provided with the <application>External "
 "Tools</application> plugin:"
@@ -3165,44 +3145,44 @@ msgstr ""
 "<application>Eksterne værktøjer</application>:"
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:1967
+#: C/index.docbook:1956
 msgid "Build"
 msgstr "Byg"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1969
+#: C/index.docbook:1958
 msgid ""
 "Runs <application>make</application> in the current document's directory."
 msgstr "Kører <application>make</application> i det aktuelle dokuments mappe."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:1973
+#: C/index.docbook:1962
 msgid "Directory Listing"
 msgstr "Mappeoversigt"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1975
+#: C/index.docbook:1964
 msgid ""
 "Lists the contents of the current document's directory in a new document."
 msgstr "Viser indholdet af det aktuelle dokuments mappe i et nyt dokument."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:1979
+#: C/index.docbook:1968
 msgid "Environment Variables"
 msgstr "Miljøvariable"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1981
+#: C/index.docbook:1970
 msgid "Displays the environment variables list in the bottom pane."
 msgstr "Viser listen over miljøvariable i bundpanelet."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:1985
+#: C/index.docbook:1974
 msgid "Grep"
 msgstr "Grep"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1987
+#: C/index.docbook:1976
 msgid ""
 "Searches for a term in all files in the current document directory, using "
 "pattern matching. Results are shown in the bottom pane."
@@ -3211,22 +3191,22 @@ msgstr ""
 " mønstersammenligning. Resultater vises i bundpanelet."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:1991
+#: C/index.docbook:1980
 msgid "Remove Trailing Spaces"
 msgstr "Fjern efterfølgende mellemrum"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:1993
+#: C/index.docbook:1982
 msgid "Removes all spaces from the end of lines in the document."
 msgstr "Fjerner alle mellemrum fra linjeslutningerne i dokumentet."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2001
+#: C/index.docbook:1990
 msgid "Defining a Command"
 msgstr "Definer en kommando"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2003
+#: C/index.docbook:1992
 msgid ""
 "To add an external command, choose <menuchoice> <guimenu>Tools</guimenu> "
 "<guimenuitem>External Tools</guimenuitem> </menuchoice>."
@@ -3236,7 +3216,7 @@ msgstr ""
 "</menuchoice>."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2004
+#: C/index.docbook:1993
 msgid ""
 "In the <guilabel>External Tools Manager</guilabel> window, click "
 "<guibutton>New</guibutton>. You can specify the following details for the "
@@ -3247,34 +3227,34 @@ msgstr ""
 "den nye kommando:"
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2007
+#: C/index.docbook:1996
 msgid "Description"
 msgstr "Beskrivelse"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2009
+#: C/index.docbook:1998
 msgid ""
 "This description is shown in the statusbar when the menu command is chosen."
 msgstr ""
 "Denne beskrivelse bliver vist i statuslinjen når kommandoen vælges i menuen."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2013
+#: C/index.docbook:2002
 msgid "Accelerator"
 msgstr "Genvejstast"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2015
+#: C/index.docbook:2004
 msgid "Enter a keyboard shortcut for the command."
 msgstr "Vælg en tastaturgenvej til kommandoen."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2019
+#: C/index.docbook:2008
 msgid "Commands"
 msgstr "Kommandoer"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2021
+#: C/index.docbook:2010
 msgid ""
 "The actual commands to be run. Several <application>pluma</application> "
 "environment variables can be used to pass content to these commands: see "
@@ -3286,12 +3266,12 @@ msgstr ""
 "variables\"/>."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2025
+#: C/index.docbook:2014
 msgid "Input"
 msgstr "Input"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2027
+#: C/index.docbook:2016
 msgid ""
 "The content to give to the commands (as <systemitem>stdin</systemitem>): the"
 " entire text of the current document, the current selection, line, or word."
@@ -3301,12 +3281,12 @@ msgstr ""
 "ord."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2031
+#: C/index.docbook:2020
 msgid "Output"
 msgstr "Output"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2033
+#: C/index.docbook:2022
 msgid ""
 "What to do with the output of the commands: display in the bottom pane, put "
 "in a new document, or place in the current document, at the end, at the "
@@ -3318,12 +3298,12 @@ msgstr ""
 "eller hele dokumentet."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2037
+#: C/index.docbook:2026
 msgid "Applicability"
 msgstr "Anvendelsesområde"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2039
+#: C/index.docbook:2028
 msgid ""
 "Determines which sort of documents can be affected by the command, for "
 "example whether saved or not, and local or remote."
@@ -3332,12 +3312,12 @@ msgstr ""
 "om filen skal være gemt eller ej, og om den skal være lokal eller ekstern."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2047
+#: C/index.docbook:2036
 msgid "Editing and Removing Tools"
 msgstr "Rediger og fjern værktøjer"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2049
+#: C/index.docbook:2038
 msgid ""
 "To edit a tool, select it in the list and make changes to its properties."
 msgstr ""
@@ -3345,12 +3325,12 @@ msgstr ""
 "egenskaber."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2050
+#: C/index.docbook:2039
 msgid "To rename a tool, click it again in the list."
 msgstr "For at omdøbe et værktøj skal du klikke på det igen i listen."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2051
+#: C/index.docbook:2040
 msgid ""
 "To restore a built-in tool that you have changed, press "
 "<guilabel>Revert</guilabel>."
@@ -3359,7 +3339,7 @@ msgstr ""
 "<guilabel>Forkast</guilabel>."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2052
+#: C/index.docbook:2041
 msgid ""
 "To remove a tool, select it in the list and press "
 "<guibutton>Remove</guibutton>. You can not remove built-in tools, only those"
@@ -3370,12 +3350,12 @@ msgstr ""
 "de som du selv har oprettet."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2057
+#: C/index.docbook:2046
 msgid "Variables"
 msgstr "Variabler"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2059
+#: C/index.docbook:2048
 msgid ""
 "You can use the following variables in the <guilabel>Commands</guilabel> "
 "field of the command definition:"
@@ -3384,47 +3364,47 @@ msgstr ""
 "definitionen af kommandoen:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2062
+#: C/index.docbook:2051
 msgid "PLUMA_CURRENT_DOCUMENT_URI"
 msgstr "PLUMA_CURRENT_DOCUMENT_URI"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2065
+#: C/index.docbook:2054
 msgid "PLUMA_CURRENT_DOCUMENT_NAME"
 msgstr "PLUMA_CURRENT_DOCUMENT_NAME"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2068
+#: C/index.docbook:2057
 msgid "PLUMA_CURRENT_DOCUMENT_SCHEME"
 msgstr "PLUMA_CURRENT_DOCUMENT_SCHEME"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2071
+#: C/index.docbook:2060
 msgid "PLUMA_CURRENT_DOCUMENT_PATH"
 msgstr "PLUMA_CURRENT_DOCUMENT_PATH"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2074
+#: C/index.docbook:2063
 msgid "PLUMA_CURRENT_DOCUMENT_DIR"
 msgstr "PLUMA_CURRENT_DOCUMENT_DIR"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2077
+#: C/index.docbook:2066
 msgid "PLUMA_DOCUMENTS_URI"
 msgstr "PLUMA_DOCUMENTS_URI"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2080
+#: C/index.docbook:2069
 msgid "PLUMA_DOCUMENTS_PATH"
 msgstr "PLUMA_DOCUMENTS_PATH"
 
 #. (itstool) path: info/title
-#: C/index.docbook:2088
+#: C/index.docbook:2077
 msgid "File Browser Plugin"
 msgstr "Udvidelsesmodulet Filvælger"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2090
+#: C/index.docbook:2079
 msgid ""
 "The <application>File Browser</application> Plugin shows your files and "
 "folders in the side pane, allowing you to quickly open files."
@@ -3433,7 +3413,7 @@ msgstr ""
 "mapper i sidepanelet, hvilket gør at du hurtigt og nemt kan åbne filer."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2091
+#: C/index.docbook:2080
 msgid ""
 "To view the File Browser, choose <menuchoice> <guimenu>View</guimenu> "
 "<guimenuitem>Side Pane</guimenuitem> </menuchoice> and then click on the tab"
@@ -3444,12 +3424,12 @@ msgstr ""
 "fanebladet der viser Filvælger-ikonet i bunden af sidepanelet."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2095
+#: C/index.docbook:2084
 msgid "Browsing your Files"
 msgstr "Gennemse dine filer"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2097
+#: C/index.docbook:2086
 msgid ""
 "The File Browser tab initially shows your file manager bookmarks. To browse "
 "the contents of any item, double-click it."
@@ -3458,7 +3438,7 @@ msgstr ""
 " indholdet af et element skal du dobbeltklikke på det."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2098
+#: C/index.docbook:2087
 msgid ""
 "To show a parent folder, choose from the drop-down list, or press the up "
 "arrow on the File Browser's toolbar."
@@ -3467,7 +3447,7 @@ msgstr ""
 "trykke på op-pilen i filvælgerens værktøjslinje."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2099
+#: C/index.docbook:2088
 msgid ""
 "To show the folder that contains the document you are currently working on, "
 "right-click in the file list and choose <guimenuitem>Set root to active "
@@ -3478,7 +3458,7 @@ msgstr ""
 "aktive dokument</guimenuitem>."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2106
+#: C/index.docbook:2095
 msgid ""
 "To open a file in <application>pluma</application>, double-click it in the "
 "file list."
@@ -3487,12 +3467,12 @@ msgstr ""
 "på den i fillisten."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2111
+#: C/index.docbook:2100
 msgid "Creating Files and Folders"
 msgstr "Opret filer og mapper"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2113
+#: C/index.docbook:2102
 msgid ""
 "To create a new, empty text file in the current folder shown in the browser,"
 " right-click in the file list and choose <guimenuitem>New "
@@ -3502,7 +3482,7 @@ msgstr ""
 "skal du højreklikke i fillisten og vælge <guimenuitem>Ny fil</guimenuitem>."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2114
+#: C/index.docbook:2103
 msgid ""
 "To create a new folder in the current folder shown in the browser, right-"
 "click in the file list and choose <guimenuitem>New Folder</guimenuitem>."
@@ -3511,12 +3491,12 @@ msgstr ""
 "højreklikke i fillisten og vælge <guimenuitem>Ny mappe</guimenuitem>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2120
+#: C/index.docbook:2109
 msgid "Indent Lines Plugin"
 msgstr "Udvidelsesmodulet Indryk linjer"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2122
+#: C/index.docbook:2111
 msgid ""
 "The <application>Indent Lines</application> plugin adds or removes space "
 "from the beginning of lines of text."
@@ -3525,13 +3505,13 @@ msgstr ""
 "fjerner mellemrum fra begyndelsen af tekstens linjer."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2123
+#: C/index.docbook:2112
 msgid "To indent or unindent text, perform the following steps:"
 msgstr ""
 "Udfør følgende skridt for at indrykke eller fjerne indrykning af tekst:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2126
+#: C/index.docbook:2115
 msgid ""
 "Select the lines that you want to indent. To indent or unindent a single "
 "line, place the cursor anywhere on that line."
@@ -3541,7 +3521,7 @@ msgstr ""
 "denne linje."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2131
+#: C/index.docbook:2120
 msgid ""
 "To indent the text, choose <menuchoice> <guimenu>Edit</guimenu> "
 "<guimenuitem>Indent</guimenuitem> </menuchoice>."
@@ -3551,7 +3531,7 @@ msgstr ""
 " for at indrykke teksten."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2134
+#: C/index.docbook:2123
 msgid ""
 "To remove the indentation, choose <menuchoice> <guimenu>Edit</guimenu> "
 "<guimenuitem>Unindent</guimenuitem> </menuchoice>."
@@ -3560,7 +3540,7 @@ msgstr ""
 "indrykning</guimenuitem> </menuchoice> for at fjerne indrykning."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2139
+#: C/index.docbook:2128
 msgid ""
 "The amount of space used, and whether tab character or space characters are "
 "used, depends on the <guilabel>Tab Stops</guilabel> settings in the Editor "
@@ -3572,12 +3552,12 @@ msgstr ""
 "=\"pluma-prefs-editor\"/>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2144
+#: C/index.docbook:2133
 msgid "Insert Date/Time Plugin"
 msgstr "Udvidelsesmodulet Indsæt dato/tid"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2146
+#: C/index.docbook:2135
 msgid ""
 "The <application>Insert Date/Time</application> plugin inserts the current "
 "date and time into a document. To use the Insert Date/Time plugin, perform "
@@ -3588,7 +3568,7 @@ msgstr ""
 "Indsæt dato/tid skal du gøre følgende:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2149
+#: C/index.docbook:2138
 msgid ""
 "Choose <menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Insert Date and "
 "Time</guimenuitem> </menuchoice>."
@@ -3597,7 +3577,7 @@ msgstr ""
 "tid</guimenuitem> </menuchoice>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2150
+#: C/index.docbook:2139
 msgid ""
 "If you have not configured the Insert Date/Time plugin to automatically "
 "insert the date/time without prompting you for the format, "
@@ -3616,7 +3596,7 @@ msgstr ""
 "i den aktuelle fil."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2151
+#: C/index.docbook:2140
 msgid ""
 "If you have configured <application>pluma</application> to use one "
 "particular date/time format, the <guilabel>Insert Date and Time</guilabel> "
@@ -3629,23 +3609,23 @@ msgstr ""
 " den aktuelle fil."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2157
+#: C/index.docbook:2146
 msgid "Configuring the Insert Date/Time Plugin"
 msgstr "Konfiguration af udvidelsesmodulet Indsæt dato/tid"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2159
+#: C/index.docbook:2148
 msgid "To configure the Insert Date/Time plugin, perform the following steps:"
 msgstr ""
 "For at konfigurere udvidelsesmodulet Indsæt dato/tid skal du gøre følgende:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2168
+#: C/index.docbook:2157
 msgid "Select the <guilabel>Insert Date/Time</guilabel> plugin."
 msgstr "Vælg udvidelsesmodulet <guilabel>Indsæt dato/tid</guilabel>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2171
+#: C/index.docbook:2160
 msgid ""
 "Click <guibutton>Configure Plugin</guibutton> to display the "
 "<guilabel>Configure insert date/time plugin</guilabel> dialog."
@@ -3654,12 +3634,12 @@ msgstr ""
 "dialogen <guilabel>Konfigurer indsætning af dato/tid</guilabel>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2174
+#: C/index.docbook:2163
 msgid "Select one of the options, as follows:"
 msgstr "Vælg en af følgende muligheder:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2177
+#: C/index.docbook:2166
 msgid ""
 "To specify the date/time format each time you insert the date/time, select "
 "the <guilabel>Prompt for a format</guilabel> option."
@@ -3668,7 +3648,7 @@ msgstr ""
 "vælge <guilabel>Spørg efter et format</guilabel>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2180
+#: C/index.docbook:2169
 msgid ""
 "To use the same <application>pluma</application>-provided date/time format "
 "each time you insert the date/time, select the <guilabel>Use the selected "
@@ -3687,7 +3667,7 @@ msgstr ""
 "tid...</guimenuitem></menuchoice>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2183
+#: C/index.docbook:2172
 msgid ""
 "To use the same customized date/time format each time you insert the "
 "date/time, select the <guilabel>Use custom format</guilabel> option, then "
@@ -3712,7 +3692,7 @@ msgstr ""
 "tid</guimenuitem> </menuchoice>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2194
+#: C/index.docbook:2183
 msgid ""
 "Click <guibutton>OK</guibutton> to close the <guilabel>Configure insert "
 "date/time plugin</guilabel> dialog."
@@ -3721,7 +3701,7 @@ msgstr ""
 "indsætning af dato/tid</guilabel>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2198
+#: C/index.docbook:2187
 msgid ""
 "To close the <guilabel>Preferences</guilabel> dialog, click "
 "<guibutton>Close</guibutton>."
@@ -3730,12 +3710,12 @@ msgstr ""
 "<guibutton>Luk</guibutton>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2206
+#: C/index.docbook:2195
 msgid "Modelines Plugin"
 msgstr "Udvidelsesmodulet Tilstandslinjer"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2208
+#: C/index.docbook:2197
 msgid ""
 "The <application>Modelines</application> plugin allows you to set "
 "preferences for individual documents. A <firstterm>modeline</firstterm> is a"
@@ -3749,7 +3729,7 @@ msgstr ""
 "genkender."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2209
+#: C/index.docbook:2198
 msgid ""
 "Preferences set using modelines take precedence over the ones specified in "
 "the preference dialog."
@@ -3758,37 +3738,37 @@ msgstr ""
 "dem, der angives i indstillingsdialogen."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2210
+#: C/index.docbook:2199
 msgid "You can set the following preferences with modelines:"
 msgstr "Du kan angive følgende indstillinger med tilstandslinjer:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2213
+#: C/index.docbook:2202
 msgid "Tab width"
 msgstr "Tabulatorbredde"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2216
+#: C/index.docbook:2205
 msgid "Indent width"
 msgstr "Indrykningsbredde"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2219
+#: C/index.docbook:2208
 msgid "Insert spaces instead of tabs"
 msgstr "Indsæt mellemrumstegn frem for tabulartortegn"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2222
+#: C/index.docbook:2211
 msgid "Text Wrapping"
 msgstr "Tekstombrydning"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2225
+#: C/index.docbook:2214
 msgid "Right margin width"
 msgstr "Bredde af højre margen"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2228
+#: C/index.docbook:2217
 msgid ""
 "The <application>Modelines</application> plugin supports a subset of the "
 "options used by other text editors <application>Emacs</application>, "
@@ -3800,12 +3780,12 @@ msgstr ""
 "<application>Vim</application>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2232
+#: C/index.docbook:2221
 msgid "Emacs Modelines"
 msgstr "Emacs-tilstandslinjer"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2234
+#: C/index.docbook:2223
 msgid ""
 "The first two lines of a document are scanned for "
 "<application>Emacs</application> modelines."
@@ -3814,7 +3794,7 @@ msgstr ""
 "<application>Emacs</application>-tilstandslinjer."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2235
+#: C/index.docbook:2224
 msgid ""
 "The <application>Emacs</application> options for tab-width, indent-offset, "
 "indent-tabs-mode and autowrap are supported. For more information, see the "
@@ -3830,12 +3810,12 @@ msgstr ""
 " til GNU Emacs</link>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2240
+#: C/index.docbook:2229
 msgid "Kate Modelines"
 msgstr "Kate-tilstandslinjer"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2242
+#: C/index.docbook:2231
 msgid ""
 "The first and last ten lines a document are scanned for "
 "<application>Kate</application> modelines."
@@ -3844,7 +3824,7 @@ msgstr ""
 "<application>Kate</application>-tilstandslinjer."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2243
+#: C/index.docbook:2232
 msgid ""
 "The <application>Kate</application> options for tab-width, indent-width, "
 "space-indent, word-wrap and word-wrap-column are supported. For more "
@@ -3859,12 +3839,12 @@ msgstr ""
 "editor.org/article/katepart_modelines\">websiden for Kate</link>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2248
+#: C/index.docbook:2237
 msgid "Vim Modelines"
 msgstr "Vim-tilstandslinjer"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2250
+#: C/index.docbook:2239
 msgid ""
 "The first and last three lines a document are scanned for "
 "<application>Vim</application> modelines."
@@ -3873,7 +3853,7 @@ msgstr ""
 "<application>Vim</application>-tilstandslinjer."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2251
+#: C/index.docbook:2240
 msgid ""
 "The <application>Vim</application> options for et, expandtab, ts, tabstop, "
 "sw, shiftwidth, wrap, and textwidth are supported. For more information, see"
@@ -3888,12 +3868,12 @@ msgstr ""
 " for Vim</link>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2257
+#: C/index.docbook:2246
 msgid "Python Console Plugin"
 msgstr "Udvidelsesmodulet Python-konsol"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2259
+#: C/index.docbook:2248
 msgid ""
 "The <application>Python Console</application> Plugin allows you to run "
 "commands in the python programming language from "
@@ -3907,7 +3887,7 @@ msgstr ""
 "kommandoindtastningsfelt."
 
 #. (itstool) path: caution/para
-#: C/index.docbook:2261
+#: C/index.docbook:2250
 msgid ""
 "Commands entered into the python console are not checked before they are "
 "run. It is therefore possible to hang <application>pluma</application>, for "
@@ -3918,12 +3898,12 @@ msgstr ""
 " ved, for eksempel, at indtaste en uendelig løkke."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2267
+#: C/index.docbook:2256
 msgid "Snippets Plugin"
 msgstr "Udvidelsesmodulet Tekststumper"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2269
+#: C/index.docbook:2258
 msgid ""
 "The <application>Snippets</application> plugin allows you to store "
 "frequently-used pieces of text, called <firstterm>snippets</firstterm>, and "
@@ -3934,7 +3914,7 @@ msgstr ""
 "indsætte dem hurtigt i et dokument."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2270
+#: C/index.docbook:2259
 msgid ""
 "Snippets are specific to the language syntax of the current document. For "
 "example, when you are working with an HTML document, you can choose from a "
@@ -3947,7 +3927,7 @@ msgstr ""
 "globale, således at de er tilgængelige i alle dokumenter."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2271
+#: C/index.docbook:2260
 msgid ""
 "A number of built-in snippets are installed with "
 "<application>pluma</application>, which can be modified."
@@ -3956,12 +3936,12 @@ msgstr ""
 "<application>pluma</application>, og kan redigeres."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2275
+#: C/index.docbook:2264
 msgid "Inserting Snippets"
 msgstr "Indsættelse af tekststumper"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2277
+#: C/index.docbook:2266
 msgid ""
 "To insert a snippet into a document, type its <firstterm>tab "
 "trigger</firstterm> and press <keycap>Tab</keycap>. A snippet's tab trigger "
@@ -3974,7 +3954,7 @@ msgstr ""
 "i tekststumpen, eller noget tilsvarende som er kort og nemt at huske."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2278
+#: C/index.docbook:2267
 msgid ""
 "Alternatively, press <keycombo> <keycap>Ctrl</keycap> <keycap>Space</keycap>"
 " </keycombo> to see a list of snippets you can insert."
@@ -3984,17 +3964,17 @@ msgstr ""
 "tekststumper, som kan indsættes."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2283
+#: C/index.docbook:2272
 msgid "Adding Snippets"
 msgstr "Tilføjelse af tekststumper"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2285
+#: C/index.docbook:2274
 msgid "To create a new snippet, do the following:"
 msgstr "Gør følgende for at oprette en ny tekststump:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2288
+#: C/index.docbook:2277
 msgid ""
 "Choose <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Manage "
 "Snippets</guimenuitem> </menuchoice>. The <guilabel>Snippets "
@@ -4005,7 +3985,7 @@ msgstr ""
 "<guilabel>Tekststumper</guilabel> åbnes."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2291
+#: C/index.docbook:2280
 msgid ""
 "The list of snippets is grouped by language. Select the language you want to"
 " add a snippet to, or a snippet in that language group. To add a snippet for"
@@ -4018,23 +3998,23 @@ msgstr ""
 "Syntaksen for dokumentet, du i øjeblikket arbejder med, vises som standard."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2294
+#: C/index.docbook:2283
 msgid "Click <guibutton>New</guibutton>. A new snippet appears in the list."
 msgstr ""
 "Klik på <guibutton>Ny</guibutton>. En ny tekststump vil dukke op i listen."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2297
+#: C/index.docbook:2286
 msgid "Enter the following information for the new snippet:"
 msgstr "Indtast følgende information for den nye tekststump:"
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2300
+#: C/index.docbook:2289
 msgid "Name"
 msgstr "Navn"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2302
+#: C/index.docbook:2291
 msgid ""
 "Enter a name for the snippet in the text field within the snippet list. The "
 "name of a snippet serves only as a reminder of its purpose. You can change "
@@ -4046,12 +4026,12 @@ msgstr ""
 " på det i listen."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2306
+#: C/index.docbook:2295
 msgid "Snippet text"
 msgstr "Tekststump"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2308
+#: C/index.docbook:2297
 msgid ""
 "Enter the text of the snippet in the <guilabel>Edit snippet</guilabel> text "
 "box. For special codes you can use, see <xref linkend=\"pluma-snippets-"
@@ -4062,7 +4042,7 @@ msgstr ""
 "plugin-syntax\"/>."
 
 #. (itstool) path: tip/para
-#: C/index.docbook:2310
+#: C/index.docbook:2299
 msgid ""
 "You can switch back to the document window to copy text without closing the "
 "<guilabel>Snippets Manager</guilabel> window."
@@ -4071,12 +4051,12 @@ msgstr ""
 "<guilabel>Tekststumper</guilabel>-vinduet."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2315
+#: C/index.docbook:2304
 msgid "Tab Trigger"
 msgstr "Tabulator-udløser"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2317
+#: C/index.docbook:2306
 msgid ""
 "Enter the tab trigger for the snippet. This is the text that you type before"
 " pressing <keycap>Tab</keycap> to insert the snippet."
@@ -4086,7 +4066,7 @@ msgstr ""
 "tekststumpen."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2318
+#: C/index.docbook:2307
 msgid ""
 "The tag must be either a single word comprising only letters, or any single "
 "character. The <guilabel>Tab trigger</guilabel> will highlight in red if an "
@@ -4097,22 +4077,22 @@ msgstr ""
 "rødt hvis en ugyldig tabulator-udløser anføres."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2322
+#: C/index.docbook:2311
 msgid "Shortcut key"
 msgstr "Genvejstast"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2324
+#: C/index.docbook:2313
 msgid "Type a shortcut key to use for inserting the snippet."
 msgstr "Tryk på en genvejstast der skal bruges til at indsætte tekststumpen."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2334
+#: C/index.docbook:2323
 msgid "Editing and Removing Snippets"
 msgstr "Rediger og fjern tekststumper"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2336
+#: C/index.docbook:2325
 msgid ""
 "To edit a snippet, select it in the list and make changes to its text and "
 "activation properties."
@@ -4121,12 +4101,12 @@ msgstr ""
 "ændringer i dens tekst og aktiveringsegenskaber."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2337
+#: C/index.docbook:2326
 msgid "To rename a snippet, click it again in the list."
 msgstr "Klik på tekststumpen igen i listen for at omdøbe den."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2338
+#: C/index.docbook:2327
 msgid ""
 "To restore a built-in snippet that you have changed, press "
 "<guilabel>Revert</guilabel>."
@@ -4135,7 +4115,7 @@ msgstr ""
 "gendanne en indbygget tekststump, du har redigeret."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2339
+#: C/index.docbook:2328
 msgid ""
 "To remove a snippet, select it in the list and press "
 "<guibutton>Remove</guibutton>. You can not remove built-in snippets, only "
@@ -4146,12 +4126,12 @@ msgstr ""
 "men kun dem som du selv har oprettet."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2344
+#: C/index.docbook:2333
 msgid "Snippet Substitutions"
 msgstr "Substitution i tekststumper"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2346
+#: C/index.docbook:2335
 msgid ""
 "In addition to inserting stored text, a snippet can include customizable "
 "text, or mark spaces where you can add text once the snippet is inserted in "
@@ -4162,17 +4142,17 @@ msgstr ""
 "tekstbidden er indsat i dit dokument."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2347
+#: C/index.docbook:2336
 msgid "You can use the following placeholder codes in snippet text:"
 msgstr "Du kan anvende følgende substitutionskoder i tekststumpen:"
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2350
+#: C/index.docbook:2339
 msgid "Tab placeholders"
 msgstr "Tabulatorsubstitutioner"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2352
+#: C/index.docbook:2341
 msgid ""
 "<literal>$<replaceable>n</replaceable></literal> defines a tab placeholder, "
 "where <literal>n</literal> is any number from 1 upwards."
@@ -4182,7 +4162,7 @@ msgstr ""
 "lig med 1."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2353
+#: C/index.docbook:2342
 msgid ""
 "<literal>${<replaceable>n</replaceable>:<replaceable>default</replaceable>}</literal>"
 " defines a tab placeholder with a default value."
@@ -4191,7 +4171,7 @@ msgstr ""
 " definerer en tabulatorsubstitution med en standardværdi."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2354
+#: C/index.docbook:2343
 msgid ""
 "A tab placeholder marks a place in the snippet text where you can add extra "
 "text after the snippet is inserted."
@@ -4200,7 +4180,7 @@ msgstr ""
 " ekstra tekst efter at stumpen er indsat."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2355
+#: C/index.docbook:2344
 msgid ""
 "To use tab placeholders, insert the snippet as normal. The cursor is placed "
 "at the first tab placeholder. Type text, and press <keycap>Tab</keycap> to "
@@ -4213,7 +4193,7 @@ msgstr ""
 "navigeres mellem hver af substitutionsstederne i teksten."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2356
+#: C/index.docbook:2345
 msgid ""
 "Press <keycombo> <keycap>Shift</keycap> <keycap>Tab</keycap> </keycombo> to "
 "return to the previous tab placeholder. Pressing <keycap>Tab</keycap> when "
@@ -4227,12 +4207,12 @@ msgstr ""
 "substitutionssted, hvis det findes."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2360
+#: C/index.docbook:2349
 msgid "Mirror placeholders"
 msgstr "Klonsubstitutioner"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2362
+#: C/index.docbook:2351
 msgid ""
 "A repeated tab placeholder will mirror the placeholder already defined. This"
 " allows you to type in text only once that you want to appear several times "
@@ -4243,12 +4223,12 @@ msgstr ""
 " selvom du vil have den inkluderet flere gange i tekststumpen."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2366
+#: C/index.docbook:2355
 msgid "End placeholder"
 msgstr "Slutsubstitution"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2368
+#: C/index.docbook:2357
 msgid ""
 "<literal>$0</literal> defines the end placeholder. This allows you to finish"
 " working with the snippet with the cursor at a point other than the end of "
@@ -4259,12 +4239,12 @@ msgstr ""
 "andet punkt end slutningen af tekststumpen."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2372
+#: C/index.docbook:2361
 msgid "Environmental variables"
 msgstr "Miljøvariable"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2374
+#: C/index.docbook:2363
 msgid ""
 "Environmental variable such as <literal>$PATH</literal> and "
 "<literal>$HOME</literal> are substituted in snippet text. The following "
@@ -4275,22 +4255,22 @@ msgstr ""
 "<application>pluma</application> også anvendes følgende variable:"
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2377
+#: C/index.docbook:2366
 msgid "$PLUMA_SELECTED_TEXT"
 msgstr "$PLUMA_SELECTED_TEXT"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2379
+#: C/index.docbook:2368
 msgid "The currently selected text."
 msgstr "Den aktuelt markerede tekst."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2383
+#: C/index.docbook:2372
 msgid "$PLUMA_FILENAME"
 msgstr "$PLUMA_FILENAME"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2385
+#: C/index.docbook:2374
 msgid ""
 "The full filename of the document, or an empty string if the document isn't "
 "saved yet."
@@ -4299,12 +4279,12 @@ msgstr ""
 "ikke er blevet gemt."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2389
+#: C/index.docbook:2378
 msgid "$PLUMA_BASENAME"
 msgstr "$PLUMA_BASENAME"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2391
+#: C/index.docbook:2380
 msgid ""
 "The basename of the filename of the document, or an empty string if the "
 "document isn't saved yet."
@@ -4313,12 +4293,12 @@ msgstr ""
 "gemt."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2395
+#: C/index.docbook:2384
 msgid "$PLUMA_CURRENT_WORD"
 msgstr "$PLUMA_CURRENT_WORD"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2397
+#: C/index.docbook:2386
 msgid ""
 "The word at the cursor's location in the document. When this variable is "
 "used, the current word will be replaced by the snippet text."
@@ -4327,12 +4307,12 @@ msgstr ""
 "erstattes det aktuelle ord med tekststumpen."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2404
+#: C/index.docbook:2393
 msgid "Shell placeholders"
 msgstr "Skalsubstitutioner"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2406
+#: C/index.docbook:2395
 msgid ""
 "<literal>$(<replaceable>cmd</replaceable>)</literal> is replaced by the "
 "result of executing <replaceable>cmd</replaceable> in a shell."
@@ -4342,7 +4322,7 @@ msgstr ""
 "skal."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2407
+#: C/index.docbook:2396
 msgid ""
 "<literal>$(<replaceable>n</replaceable>:<replaceable>cmd</replaceable>)</literal>"
 " allows you to give this placeholder a reference, where "
@@ -4357,12 +4337,12 @@ msgstr ""
 "en skalsubstitution som inddata til en anden."
 
 #. (itstool) path: varlistentry/term
-#: C/index.docbook:2411
+#: C/index.docbook:2400
 msgid "Python placeholders"
 msgstr "Pythonsubstitutioner"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2413
+#: C/index.docbook:2402
 msgid ""
 "<literal>$&lt;<replaceable>cmd</replaceable>&gt;</literal> is replaced by "
 "the result of evaluating <replaceable>cmd</replaceable> in the python "
@@ -4373,7 +4353,7 @@ msgstr ""
 "fortolkeren."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2414
+#: C/index.docbook:2403
 msgid ""
 "<literal>$&lt;<replaceable>a</replaceable>:<replaceable>cmd</replaceable>&gt;</literal>"
 " specifies another python placeholder as a dependency, where "
@@ -4390,7 +4370,7 @@ msgstr ""
 "<literal>$&lt;<replaceable>a</replaceable>,<replaceable>b</replaceable>:<replaceable>kmd</replaceable>&gt;</literal>"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2415
+#: C/index.docbook:2404
 msgid ""
 "To use a variable in all other python snippets, declare it as "
 "<literal>global</literal>."
@@ -4399,12 +4379,12 @@ msgstr ""
 "andre Python-tekststumper."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2424
+#: C/index.docbook:2413
 msgid "Sort Plugin"
 msgstr "Udvidelsesmodulet Sortering"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2426
+#: C/index.docbook:2415
 msgid ""
 "The <application>Sort</application> plugin arranges selected lines of text "
 "into alphabetical order."
@@ -4413,7 +4393,7 @@ msgstr ""
 "linjer af tekst i alfabetisk orden."
 
 #. (itstool) path: caution/para
-#: C/index.docbook:2428
+#: C/index.docbook:2417
 msgid ""
 "You cannot undo the Sort operation, so you should save the file before "
 "performing the sort. To revert to the saved version of the file after the "
@@ -4426,17 +4406,17 @@ msgstr ""
 "<guimenuitem>Forkast</guimenuitem> </menuchoice>."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2430
+#: C/index.docbook:2419
 msgid "To use the Sort plugin, perform the following steps:"
 msgstr "Udfør følgende trin for at anvende udvidelsesmodulet Sortering:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2433
+#: C/index.docbook:2422
 msgid "Select the lines of text you want to sort."
 msgstr "Vælg linjerne som du ønsker at sortere."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2436
+#: C/index.docbook:2425
 msgid ""
 "Choose <menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Sort</guimenuitem> "
 "</menuchoice>. The <guilabel>Sort</guilabel> dialog opens."
@@ -4446,12 +4426,12 @@ msgstr ""
 "<guilabel>Sorter</guilabel> vil blive åbnet."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2439
+#: C/index.docbook:2428
 msgid "Choose the options you want for the sort:"
 msgstr "Vælg indstillinger for sorteringen:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2442
+#: C/index.docbook:2431
 msgid ""
 "To arrange the text in reverse order, select <guilabel>Reverse "
 "order</guilabel>."
@@ -4460,7 +4440,7 @@ msgstr ""
 "rækkefølge."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2445
+#: C/index.docbook:2434
 msgid ""
 "To delete duplicate lines, select <guilabel>Remove duplicates</guilabel>."
 msgstr ""
@@ -4468,13 +4448,13 @@ msgstr ""
 "forekommer mere end en gang."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2448
+#: C/index.docbook:2437
 msgid "To ignore case sensitivity, select <guilabel>Ignore case</guilabel>."
 msgstr ""
 "Du kan eventuelt vælge <guilabel>Ignorer store/små bogstaver</guilabel>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2451
+#: C/index.docbook:2440
 msgid ""
 "To have the sort ignore the characters at the start of the lines, set the "
 "first character that should be used for sorting in the <guilabel>Start at "
@@ -4485,18 +4465,18 @@ msgstr ""
 "sorteringen i <guilabel>Begynd ved kolonne</guilabel>-rulleknappen."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2456
+#: C/index.docbook:2445
 msgid "To perform the sort operation, click <guibutton>Sort</guibutton>."
 msgstr ""
 "Klik på <guibutton>Sorter</guibutton> for at udføre sorteringsoperationen."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2463
+#: C/index.docbook:2452
 msgid "Spell Checker Plugin"
 msgstr "Udvidelsesmodulet Stavekontrol"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2465
+#: C/index.docbook:2454
 msgid ""
 "The <application>Spell Checker</application> plugin checks the spelling in "
 "the selected text. You can configure <application>pluma</application> to "
@@ -4513,7 +4493,7 @@ msgstr ""
 "bruge udvidelsesmodulet Stavekontrol, skal du gøre følgende:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2468
+#: C/index.docbook:2457
 msgid ""
 "Choose <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Set "
 "Language</guimenuitem> </menuchoice> to display the <guilabel>Set "
@@ -4527,7 +4507,7 @@ msgstr ""
 "<guibutton>O.k.</guibutton> for at lukke dialogen igen."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2471
+#: C/index.docbook:2460
 msgid ""
 "To check the spelling automatically, choose <menuchoice> "
 "<guimenu>Tools</guimenu> <guimenuitem>Autocheck Spelling</guimenuitem> "
@@ -4549,7 +4529,7 @@ msgstr ""
 "startes."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2472
+#: C/index.docbook:2461
 msgid ""
 "Unknown spellings are displayed in a different color, and underlined. Right-"
 "click on an unknown spelling, then select <guimenu>Spelling "
@@ -4560,7 +4540,7 @@ msgstr ""
 "menuen:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2475
+#: C/index.docbook:2464
 msgid ""
 "To replace the unknown spelling with another spelling in the list, select "
 "the replacement spelling from the <guimenu>Spelling Suggestions</guimenu> "
@@ -4570,7 +4550,7 @@ msgstr ""
 "du vælge stavemåden i pop op-menuen <guimenu>Stavningsforslag</guimenu>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2478
+#: C/index.docbook:2467
 msgid ""
 "To add the unknown spelling to your personal dictionary, select <menuchoice>"
 " <guimenu>Spelling Suggestions</guimenu> <guimenuitem>Add</guimenuitem> "
@@ -4581,7 +4561,7 @@ msgstr ""
 "stavemåde til din personlige ordbog."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2481
+#: C/index.docbook:2470
 msgid ""
 "To ignore all occurrences of the unknown spelling, so that they are no "
 "longer flagged as unknown but are not added to your personal dictionary, "
@@ -4597,7 +4577,7 @@ msgstr ""
 "<application>pluma</application>-session."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2486
+#: C/index.docbook:2475
 msgid ""
 "To check the spelling manually, choose <menuchoice> <guimenu>Tools</guimenu>"
 " <guimenuitem>Check Spelling</guimenuitem> </menuchoice>."
@@ -4606,7 +4586,7 @@ msgstr ""
 "stavning</guimenuitem> </menuchoice> for at kontrollere stavningen manuelt."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2487
+#: C/index.docbook:2476
 msgid ""
 "If there are no spelling errors, an <guilabel>Information</guilabel> dialog "
 "displays a message stating that the document does not contain misspelled "
@@ -4619,7 +4599,7 @@ msgstr ""
 "at lukke <guilabel>Information</guilabel>-dialogen."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2488
+#: C/index.docbook:2477
 msgid ""
 "If there are spelling errors, the <guilabel>Check Spelling</guilabel> dialog"
 " is displayed:"
@@ -4628,14 +4608,14 @@ msgstr ""
 " blive vist:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2491
+#: C/index.docbook:2480
 msgid ""
 "The <guilabel>Misspelled word</guilabel> is displayed at the top of the "
 "dialog."
 msgstr "<guilabel>Forkert stavet ord</guilabel> vises øverst i dialogen."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2494
+#: C/index.docbook:2483
 msgid ""
 "A suggested known spelling is displayed in the <guilabel>Change "
 "to</guilabel> text box. You can replace this with another known spelling by "
@@ -4649,7 +4629,7 @@ msgstr ""
 "til</guilabel>-tekstfeltet."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2497
+#: C/index.docbook:2486
 msgid ""
 "To check the spelling of the text in the <guilabel>Change to</guilabel> text"
 " box, click <guibutton>Check Word</guibutton>. If this is a known word, the "
@@ -4664,7 +4644,7 @@ msgstr ""
 "dukke op i <guilabel>Forslag</guilabel>-listen."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2500
+#: C/index.docbook:2489
 msgid ""
 "To ignore the current occurrence of the unknown word, click "
 "<guibutton>Ignore</guibutton>. To ignore all occurrences of the unknown "
@@ -4677,7 +4657,7 @@ msgstr ""
 "blive ignoreret i den aktuelle <application>pluma</application>-session."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2503
+#: C/index.docbook:2492
 msgid ""
 "To change the current occurrence of the unknown word to the text in the "
 "<guilabel>Change to</guilabel> text box, click "
@@ -4691,7 +4671,7 @@ msgstr ""
 "ukendte ord til teksten i <guilabel>Ret til</guilabel>-tekstfeltet."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2506
+#: C/index.docbook:2495
 msgid ""
 "To add the unknown word to your personal dictionary, click <guibutton>Add "
 "word</guibutton>."
@@ -4700,7 +4680,7 @@ msgstr ""
 "din personlige ordbog."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2509
+#: C/index.docbook:2498
 msgid ""
 "To close the <guilabel>Check Spelling</guilabel> dialog, click "
 "<guibutton>Close</guibutton>."
@@ -4709,12 +4689,12 @@ msgstr ""
 "<guilabel>Kontroller stavning</guilabel>."
 
 #. (itstool) path: info/title
-#: C/index.docbook:2518
+#: C/index.docbook:2507
 msgid "Tag List Plugin"
 msgstr "Udvidelsesmodulet Mærkelister"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2520
+#: C/index.docbook:2509
 msgid ""
 "The <application>Tag List</application> plugin allows you to insert common "
 "tags from a list in the side pane."
@@ -4723,12 +4703,12 @@ msgstr ""
 "almindelige mærker fra en liste i sidepanelet."
 
 #. (itstool) path: section/para
-#: C/index.docbook:2521
+#: C/index.docbook:2510
 msgid "To use the Tag List plugin, perform the following steps:"
 msgstr "For at bruge udvidelsesmodulet Mærkeliste, skal du gøre som følger:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2524
+#: C/index.docbook:2513
 msgid ""
 "Choose <menuchoice> <guimenu>View</guimenu> <guimenuitem>Side "
 "Pane</guimenuitem> </menuchoice>."
@@ -4737,7 +4717,7 @@ msgstr ""
 "<guimenuitem>Sidepanel</guimenuitem> </menuchoice>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2527
+#: C/index.docbook:2516
 msgid ""
 "By default, the side pane shows a tab containing a list of open documents. "
 "Click on the tab showing a + icon at the bottom of the side pane to show the"
@@ -4748,7 +4728,7 @@ msgstr ""
 "sidepanelet for at vise fanebladet for mærkelister."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2530
+#: C/index.docbook:2519
 msgid ""
 "Select the appropriate tag category from the drop-down list. For example, "
 "<guilabel>HTML - Tags</guilabel>."
@@ -4757,12 +4737,12 @@ msgstr ""
 "<guilabel>HTML - mærker</guilabel>."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2533
+#: C/index.docbook:2522
 msgid "Scroll through the tag list to find the required tag."
 msgstr "Rul gennem mærkelisten for at finde det påkrævede mærke."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2536
+#: C/index.docbook:2525
 msgid ""
 "To insert a tag at the cursor position in the current file, double-click on "
 "the tag in the tag list. You can also insert a tag as follows:"
@@ -4772,7 +4752,7 @@ msgstr ""
 "følger:"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2539
+#: C/index.docbook:2528
 msgid ""
 "To insert a tag in the current file and change the focus from the side pane "
 "to the display area, press <keycap>Return</keycap>."
@@ -4781,7 +4761,7 @@ msgstr ""
 "ændre fokus fra sidepanelet til visningsområdet."
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2542
+#: C/index.docbook:2531
 msgid ""
 "To insert a tag in the current file and maintain the focus on the "
 "<guilabel>Tag list plugin</guilabel> window, press <keycombo> "

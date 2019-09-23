@@ -17,15 +17,16 @@
 # liushuyu011 <liushuyu011@gmail.com>, 2019
 # Wolfgang Ulbrich <mate@raveit.de>, 2019
 # Wenbin Lv <wenbin816@gmail.com>, 2019
+# zhineng404 <zhinengge@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-17 11:58+0100\n"
+"POT-Creation-Date: 2019-04-23 12:30+0200\n"
 "PO-Revision-Date: 2019-03-16 20:12+0000\n"
-"Last-Translator: Wenbin Lv <wenbin816@gmail.com>, 2019\n"
+"Last-Translator: zhineng404 <zhinengge@gmail.com>, 2019\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -572,7 +573,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
+msgstr[0] "如果您不保存，前 %ld 秒所做的更改将永久丢失。"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:429
 msgid ""
@@ -587,7 +588,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] ""
+msgstr[0] "如果您不保存，前一分钟零 %ld 秒所做的更改将永久丢失。"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:445
 #, c-format
@@ -597,7 +598,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
+msgstr[0] "如果您不保存，前 %ld 分钟所做的更改将永久丢失。"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:460
 msgid ""
@@ -612,7 +613,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] ""
+msgstr[0] "如果您不保存，上一小时零 %d 分钟所做的更改将永久丢失。"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:481
 #, c-format
@@ -620,7 +621,7 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] ""
+msgstr[0] "如果您不保存，上 %d 小时所做的更改将永久丢失。"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
@@ -641,7 +642,7 @@ msgstr "保存已经被系统管理员禁用。"
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] ""
+msgstr[0] "对 %d 个文档所做的更改将永久丢失。"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:728
 #, c-format
@@ -649,7 +650,7 @@ msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] ""
+msgstr[0] "还有 %d 个文档已做更改但尚未保存。关闭前先保存吗？"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:746
 msgid "Docum_ents with unsaved changes:"
@@ -1026,7 +1027,7 @@ msgstr "正在载入文件“%s”..."
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] ""
+msgstr[0] "正在载入 %d 个文件..."
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: ../pluma/pluma-commands-file.c:463
@@ -1069,7 +1070,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
+msgstr[0] "前 %ld 秒内对文档所做的更改将永久丢失。"
 
 #: ../pluma/pluma-commands-file.c:1149
 msgid ""
@@ -1084,7 +1085,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] ""
+msgstr[0] "上一分钟零 %ld 秒内对文档所做的更改将永久丢失。"
 
 #: ../pluma/pluma-commands-file.c:1165
 #, c-format
@@ -1094,7 +1095,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
+msgstr[0] "在最后的%ld分钟内对文档所做的更改将永久丢失。"
 
 #: ../pluma/pluma-commands-file.c:1180
 msgid ""
@@ -1109,7 +1110,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] ""
+msgstr[0] "上一小时零 %d 分钟内对文档所做的更改将永久丢失。"
 
 #: ../pluma/pluma-commands-file.c:1201
 #, c-format
@@ -1117,29 +1118,29 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] ""
+msgstr[0] "上 %d 小时内对文档所做的更改将永久丢失。"
 
 #: ../pluma/pluma-commands-file.c:1228 ../pluma/pluma-ui.h:84
 msgid "_Revert"
 msgstr "还原(_R)"
 
-#: ../pluma/pluma-commands-help.c:69
+#: ../pluma/pluma-commands-help.c:60
 msgid "MATE Documentation Team"
 msgstr "MATE 文档团队"
 
-#: ../pluma/pluma-commands-help.c:70
+#: ../pluma/pluma-commands-help.c:61
 msgid "GNOME Documentation Team"
 msgstr "GNOME 文档团队"
 
-#: ../pluma/pluma-commands-help.c:71
+#: ../pluma/pluma-commands-help.c:62
 msgid "Sun Microsystems"
 msgstr "Sun Microsystems"
 
-#: ../pluma/pluma-commands-help.c:76
+#: ../pluma/pluma-commands-help.c:67
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "Pluma 是 MATE 桌面的小型文本编辑器"
 
-#: ../pluma/pluma-commands-help.c:79
+#: ../pluma/pluma-commands-help.c:70
 msgid ""
 "Pluma is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -1148,7 +1149,7 @@ msgid ""
 msgstr ""
 "Pluma 是自由软件；您可以按照自由软件基金会所发表的 GNU GPL 协议自由发放和/或修改它；GPL 协议应该采用第二版或以后的任何版本。"
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:74
 msgid ""
 "Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -1158,7 +1159,7 @@ msgstr ""
 "Pluma 发表的目的是希望它能够对您有用，但我们没有任何保证；对于以任何用途使用它所造成的任何直接或间接后果都不承担任何责任。请参看GNU GPL "
 "协议中的细节。"
 
-#: ../pluma/pluma-commands-help.c:87
+#: ../pluma/pluma-commands-help.c:78
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
@@ -1167,11 +1168,11 @@ msgstr ""
 "您应该在收到 Pluma 的同时收到了 GNU GPL 协议的副本；如果您没有收到的话，请给自由软件基金会写信，地址是 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 
-#: ../pluma/pluma-commands-help.c:104
+#: ../pluma/pluma-commands-help.c:113
 msgid "About Pluma"
 msgstr "关于 Pluma"
 
-#: ../pluma/pluma-commands-help.c:107
+#: ../pluma/pluma-commands-help.c:116
 msgid ""
 "Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
 "Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
@@ -1189,7 +1190,7 @@ msgstr ""
 "版权所有 © 2011 Perberos\n"
 "版权所有 © 2012-2019 MATE 开发者"
 
-#: ../pluma/pluma-commands-help.c:117
+#: ../pluma/pluma-commands-help.c:126
 msgid "translator-credits"
 msgstr ""
 "Christopher Meng <i@cicku.me>, 2012-2013\n"
@@ -1209,7 +1210,7 @@ msgstr ""
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] ""
+msgstr[0] "找到并替换了 %d 处"
 
 #: ../pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1862,7 +1863,7 @@ msgstr "  行 %d，列 %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] ""
+msgstr[0] "有%d个有错的标签"
 
 #: ../pluma/pluma-style-scheme-manager.c:213
 #, c-format

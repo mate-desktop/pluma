@@ -14,15 +14,16 @@
 # Eslam Ali <talvikahvi@gmail.com>, 2019
 # nomen omen, 2019
 # Ammuu5, 2019
+# Kimmo Kujansuu <mrkujansuu@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-17 11:58+0100\n"
+"POT-Creation-Date: 2019-04-23 12:30+0200\n"
 "PO-Revision-Date: 2019-03-16 20:12+0000\n"
-"Last-Translator: Ammuu5, 2019\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>, 2019\n"
 "Language-Team: Finnish (https://www.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,21 +65,25 @@ msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:6
 msgid "Switch tabs with [ctrl] + [tab]"
-msgstr ""
+msgstr "Vaihda välilehtiä käyttäen [ctrl] + [tab]"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:7
 msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
 msgstr ""
+"Jos tosi, se antaa mahdollisuuden vaihtaa välilehtiä [ctrl + tab] ja [ctrl +"
+" shift + tab]."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:8
 msgid "Show the first tab if there is only one tab"
-msgstr ""
+msgstr "Näytä ensimmäinen välilehti, jos siinä on vain yksi välilehti"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:9
 msgid "If false, it hides the first tab if there is only one tab."
 msgstr ""
+"Jos ei, se piilottaa ensimmäisen välilehden, jos siinä on vain yksi "
+"välilehti."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:10
 msgid "Style Scheme"
@@ -343,12 +348,14 @@ msgstr "Onko sivupaneeli muokkausikkunan vasemmalla puolella näkyvissä."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:58
 msgid "Show tabs with side pane"
-msgstr ""
+msgstr "Näytä sivupaneelin välilehdet"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:59
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
+"Jos ei, pluma ei näytä välilehtiä kannettavassa, kun sivupaneeli on "
+"aktiivinen."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:60
 msgid "Bottom Panel is Visible"
@@ -506,19 +513,19 @@ msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:87
 msgid "History for \"search for\" entries"
-msgstr ""
+msgstr "Historia hakuja varten"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:88
 msgid "List of entries in \"search for\" textbox."
-msgstr ""
+msgstr "Luettelo teksteistä, \"jotka hakevat\" tekstikenttää."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:89
 msgid "History for \"replace with\" entries"
-msgstr ""
+msgstr "Historian \"korvaaminen\" hakusanoilla"
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:90
 msgid "List of entries in \"replace with\" textbox."
-msgstr ""
+msgstr "Luettelo tekstikenttään \"korvattavista\" merkinnöistä."
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:91
 msgid "Active plugins"
@@ -548,6 +555,14 @@ msgid ""
 "comparing files, viewing CVS ChangeLogs, and adjusting indentation levels. "
 "</p>"
 msgstr ""
+"<p>Pluma on pieni, mutta tehokas tekstieditori, joka on suunniteltu "
+"erityisesti MATE-työpöydälle. Siinä on useimmat tavalliset tekstitoiminnot "
+"ja se tukee täysin kansainvälistä tekstiä Unicode. Lisäominaisuuksia ovat "
+"syntaksin korostus ja lähdekoodin automaattinen syvennys, useiden "
+"asiakirjojen tulostaminen ja muokkaaminen yhdessä ikkunassa. </p><p>Pluma on"
+" laajennettavissa plugin-järjestelmän kautta, joka sisältää tällä hetkellä "
+"tuen oikeinkirjoituksen tarkistamiseen, tiedostojen vertailuun, CVS-"
+"muutoslokien katseluun ja sisennystasojen säätämiseen.</p>"
 
 #: ../data/pluma.desktop.in.in.h:1
 msgid "Pluma"
@@ -606,7 +621,7 @@ msgstr "_Tallenna"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:187
 msgid "Save _As"
-msgstr ""
+msgstr "Tallenna nimellä"
 
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:220
 msgid "Question"
@@ -980,7 +995,7 @@ msgstr "Etsi"
 #: ../pluma/dialogs/pluma-search-dialog.c:413
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:4
 msgid "_Find"
-msgstr ""
+msgstr "_Etsi"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:416
 msgid "Replace _All"
@@ -1009,7 +1024,7 @@ msgstr "_Huomioi kirjainkoko"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:8
 msgid "Match _regular expression"
-msgstr ""
+msgstr "Yhteensopiva _säännöllinen lauseke"
 
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:9
 msgid "Match _entire word only"
@@ -1194,50 +1209,60 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "_Palauta levyltä"
 
-#: ../pluma/pluma-commands-help.c:69
+#: ../pluma/pluma-commands-help.c:60
 msgid "MATE Documentation Team"
-msgstr ""
+msgstr "MATE-dokumentointitiimi"
 
-#: ../pluma/pluma-commands-help.c:70
+#: ../pluma/pluma-commands-help.c:61
 msgid "GNOME Documentation Team"
-msgstr ""
+msgstr "GNOME-dokumentointitiimi"
 
-#: ../pluma/pluma-commands-help.c:71
+#: ../pluma/pluma-commands-help.c:62
 msgid "Sun Microsystems"
 msgstr "Sun Microsystems"
 
-#: ../pluma/pluma-commands-help.c:76
+#: ../pluma/pluma-commands-help.c:67
 msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
 msgstr "Pluma on pieni ja kevyt tekstimuokkain MATE Työpöydälle"
 
-#: ../pluma/pluma-commands-help.c:79
+#: ../pluma/pluma-commands-help.c:70
 msgid ""
 "Pluma is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"Pluma on vapaa ohjelmisto; voit jakaa sen uudelleen ja/tai muokata sitä Free"
+" Software Foundationin julkaiseman GNU General Public License -sopimuksen "
+"ehtojen mukaisesti; joko lisenssin versio 2 tai myöhempi versio."
 
-#: ../pluma/pluma-commands-help.c:83
+#: ../pluma/pluma-commands-help.c:74
 msgid ""
 "Pluma is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
+"Pluma on jaettu siinä toivossa, että se on hyödyllinen, mutta ILMAN MITÄÄN "
+"TAKUUTA; edes välillistä takuuta MYYNTIKELPOISUUDESTA tai SOPIVUUDESTA "
+"TIETTYYN TARKOITUKSEEN. Katso lisätietoja GNU yleisestä julkisesta "
+"lisenssistä."
 
-#: ../pluma/pluma-commands-help.c:87
+#: ../pluma/pluma-commands-help.c:78
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 msgstr ""
+"GNU General Public Licence -lisenssin kopion tulisi olla toimitettuna Pluman"
+" mukana. Jos näin ei ole, kirjoita Free Software Foundationille,  51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA"
 
-#: ../pluma/pluma-commands-help.c:104
+#: ../pluma/pluma-commands-help.c:113
 msgid "About Pluma"
-msgstr ""
+msgstr "Tietoja Plumasta"
 
-#: ../pluma/pluma-commands-help.c:107
+#: ../pluma/pluma-commands-help.c:116
 msgid ""
 "Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
 "Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
@@ -1247,8 +1272,15 @@ msgid ""
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2019 MATE developers"
 msgstr ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2019 MATE developers"
 
-#: ../pluma/pluma-commands-help.c:117
+#: ../pluma/pluma-commands-help.c:126
 msgid "translator-credits"
 msgstr ""
 "Tommi Vainikainen, 2005\n"
@@ -2106,7 +2138,7 @@ msgstr "Tietoja tästä ohjelmasta"
 #. Fullscreen toolbar
 #: ../pluma/pluma-ui.h:72
 msgid "_Leave Fullscreen"
-msgstr ""
+msgstr "_Lopeta kokoruutu"
 
 #: ../pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
@@ -2790,7 +2822,7 @@ msgstr "Etsi"
 
 #: ../plugins/externaltools/data/switch-c.desktop.in.h:1
 msgid "Switch onto a file .c and .h"
-msgstr ""
+msgstr "Vaihda tiedostoon .c ja .h"
 
 #: ../plugins/filebrowser/filebrowser.plugin.desktop.in.h:1
 msgid "File Browser Pane"
@@ -3477,7 +3509,7 @@ msgstr "Järjestämistä ei voi kumota"
 
 #: ../plugins/spell/org.mate.pluma.plugins.spell.gschema.xml.in.h:1
 msgid "Autocheck Type"
-msgstr ""
+msgstr "Autotarkistus tyyppi"
 
 #. Translators: Displayed in the "Check Spelling" dialog if there are no
 #. suggestions for the current misspelled word
@@ -3648,23 +3680,23 @@ msgstr "Kieli"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:1
 msgid "_Configure Spell Checker plugin..."
-msgstr ""
+msgstr "_Määritä oikeinkirjoituksen laajennus..."
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:5
 msgid "Autocheck spelling on document load..."
-msgstr ""
+msgstr "Oikeinkirjoituksen automaattinen tarkistus asiakirjan latauksessa..."
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:6
 msgid "_Never autocheck"
-msgstr ""
+msgstr "_Ei automaattitatarkastusta"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:7
 msgid "_Remember autocheck by document"
-msgstr ""
+msgstr "_Muista tarkistaa asiakirjan avulla"
 
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:8
 msgid "_Always autocheck"
-msgstr ""
+msgstr "_Aina automaattitarkistus"
 
 #: ../plugins/spell/spell.plugin.desktop.in.h:1
 msgid "Spell Checker"
@@ -5270,11 +5302,11 @@ msgstr "Lisää päiväys ja aika kohdistimen kohdalle."
 
 #: ../plugins/trailsave/trailsave.plugin.desktop.in.h:1
 msgid "Save Without Trailing Spaces"
-msgstr ""
+msgstr "Tallenna ilman tyhjiä"
 
 #: ../plugins/trailsave/trailsave.plugin.desktop.in.h:2
 msgid "Removes trailing spaces from lines before saving."
-msgstr ""
+msgstr "Poistaa jälkimmäiset välilyönnit linjoista ennen tallennusta."
 
 #: ../plugins/time/pluma-time-dialog.ui.h:1
 msgid "Insert Date and Time"
