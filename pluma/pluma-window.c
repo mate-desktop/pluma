@@ -270,7 +270,7 @@ pluma_window_window_state_event (GtkWidget           *widget,
 
 	window->priv->window_state = event->new_window_state;
 
-	return FALSE;
+	return GTK_WIDGET_CLASS (pluma_window_parent_class)->window_state_event (widget, event);
 }
 
 static gboolean 
