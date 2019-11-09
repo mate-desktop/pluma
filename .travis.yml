@@ -64,6 +64,7 @@ env:
 requires:
   archlinux:
     # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/pluma
+    - appstream-glib
     - clang
     - enchant
     - file
@@ -71,7 +72,6 @@ requires:
     - git
     - gobject-introspection
     - gtksourceview3
-    - intltool
     - iso-codes
     - itstool
     - libpeas
@@ -85,6 +85,7 @@ requires:
   debian:
     # Useful URL: https://github.com/mate-desktop/debian-packages
     # Useful URL: https://salsa.debian.org/debian-mate-team/pluma
+    - autopoint
     - clang
     - clang-tools
     - cppcheck
@@ -92,7 +93,6 @@ requires:
     - git
     - gobject-introspection
     - gtk-doc-tools
-    - intltool
     - iso-codes
     - libenchant-dev
     - libgirepository1.0-dev
@@ -121,6 +121,7 @@ requires:
     - gtk3-devel
     - gtksourceview3-devel
     - iso-codes-devel
+    - libappstream-glib-devel
     - libSM-devel
     - libpeas-devel
     - make
@@ -131,12 +132,12 @@ requires:
     - redhat-rpm-config
 
   ubuntu:
+    - autopoint
     - clang
     - clang-tools
     - git
     - gobject-introspection
     - gtk-doc-tools
-    - intltool
     - iso-codes
     - libenchant-dev
     - libgirepository1.0-dev
@@ -173,10 +174,6 @@ variables:
     -enable-checker security.insecureAPI.strcpy"'
 
 before_scripts:
-  - if [ ${DISTRO_NAME} == "debian" ];then
-  -     curl -Ls -o debian.sh https://github.com/mate-desktop/mate-dev-scripts/raw/master/travis/debian.sh
-  -     bash ./debian.sh
-  - fi
   - curl -Ls -o /usr/bin/gla11y https://github.com/hypra/gla11y/raw/v0.3/gla11y
   - chmod +x /usr/bin/gla11y
 
