@@ -1,7 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-SUBDIRS = pluma pixmaps po data plugins docs help
+SUBDIRS = po pluma pixmaps data plugins docs help
 
 if ENABLE_TESTS
     SUBDIRS += tests
@@ -11,19 +11,14 @@ distuninstallcheck_listfiles = find . -type f -print
 
 EXTRA_DIST = 			\
 	autogen.sh		\
+	its			\
 	ChangeLog		\
 	NEWS			\
 	README			\
 	xmldocs.make 		\
-	omf.make		\
-	intltool-extract.in 	\
-	intltool-merge.in 	\
-	intltool-update.in
+	omf.make
 
-DISTCLEANFILES = 		\
-	intltool-extract 	\
-	intltool-merge 		\
-	intltool-update
+DISTCLEANFILES =
 
 MAINTAINERCLEANFILES = 		\
 	aclocal.m4		\
@@ -31,9 +26,6 @@ MAINTAINERCLEANFILES = 		\
 	config.h.in		\
 	config.sub		\
 	depcomp			\
-	intltool-extract.in 	\
-	intltool-merge.in 		\
-	intltool-update.in \
 	configure \
 	INSTALL \
 	gtk-doc.make		\
@@ -45,7 +37,6 @@ MAINTAINERCLEANFILES = 		\
 	py-compile		\
 	xmldocs.make		\
 	m4/gtk-doc.m4		\
-	m4/intltool.m4		\
 	m4/libtool.m4		\
 	m4/ltoptions.m4		\
 	m4/ltsugar.m4		\

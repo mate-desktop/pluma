@@ -46,12 +46,11 @@ pluma-spell-marshal.c: pluma-spell-marshal.list $(GLIB_GENMARSHAL)
 	$(GLIB_GENMARSHAL) $< --body --prefix=pluma_marshal >> $@
 
 plugin_in_files = spell.plugin.desktop.in
-
-%.plugin: %.plugin.desktop.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
-
 plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
 
-@INTLTOOL_XML_NOMERGE_RULE@
+$(plugin_DATA): $(plugin_in_files)
+	$(AM_V_GEN) $(MSGFMT) --keyword=Name --keyword=Description --desktop --template $< -d $(top_srcdir)/po -o $@
+
 spell_gschema_in = org.mate.pluma.plugins.spell.gschema.xml.in
 gsettings_SCHEMAS = $(spell_gschema_in:.xml.in=.xml)
 @GSETTINGS_RULES@
