@@ -23,12 +23,11 @@ include $(top_srcdir)/gla11y.mk
 ui_DATA = $(ui_files)
 
 plugin_in_files = time.plugin.desktop.in
-
-%.plugin: %.plugin.desktop.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
-
 plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
 
-@INTLTOOL_XML_NOMERGE_RULE@
+$(plugin_DATA): $(plugin_in_files)
+	$(AM_V_GEN) $(MSGFMT) --keyword=Name --keyword=Description --desktop --template $< -d $(top_srcdir)/po -o $@
+
 time_gschema_in = org.mate.pluma.plugins.time.gschema.xml.in
 gsettings_SCHEMAS = $(time_gschema_in:.xml.in=.xml)
 @GSETTINGS_RULES@

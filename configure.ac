@@ -73,11 +73,13 @@ AC_SUBST(FULL_LIBEXECDIR)
 dnl ================================================================
 dnl Gettext stuff.
 dnl ================================================================
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.8])
+AM_GNU_GETTEXT([external])
 
-IT_PROG_INTLTOOL([0.50.1])
+
 GETTEXT_PACKAGE=pluma
 AC_SUBST([GETTEXT_PACKAGE])
-AM_GLIB_GNU_GETTEXT
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Define to the Gettext package name])
 
 dnl ================================================================

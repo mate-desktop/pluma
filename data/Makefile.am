@@ -1,12 +1,14 @@
 desktopdir 	 = $(datadir)/applications
 desktop_in_files = pluma.desktop.in
 desktop_DATA 	 = $(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
+$(desktop_DATA): $(desktop_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
-@INTLTOOL_XML_RULE@
 appdatadir = $(datadir)/metainfo
 appdata_in_files = pluma.appdata.xml.in
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
+$(appdata_DATA): $(appdata_in_files)
+	$(AM_V_GEN) GETTEXTDATADIRS=$(top_srcdir) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
 gsettings_SCHEMAS = org.mate.pluma.gschema.xml
 @GSETTINGS_RULES@
