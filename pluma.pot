@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-17 20:56+0200\n"
+"POT-Creation-Date: 2019-11-12 16:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -460,42 +460,42 @@ msgid ""
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:93
-msgid "Draw newline"
+msgid "Show newline"
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:94
-msgid "Whether pluma should draw newlines in the editor window."
+msgid "Whether pluma should show newlines in the editor window."
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:95
-msgid "Draw nbsp"
+msgid "Show nbsp"
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:96
 msgid ""
-"Whether pluma should draw not breaking spaces in the editor window: 'draw-"
-"none' no drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' "
-"drawing all spaces."
+"Whether pluma should show not breaking spaces in the editor window: 'show-"
+"none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
+"showing all spaces."
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:97
-msgid "Draw tabs"
+msgid "Show tabs"
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:98
 msgid ""
-"Whether pluma should draw tabs in the editor window: 'draw-none' no drawing; "
-"'draw-trailing' drawing only trailing spaces; 'draw-all' drawing all spaces."
+"Whether pluma should show tabs in the editor window: 'show-none' no showing; "
+"'show-trailing' showing only trailing spaces; 'show-all' showing all spaces."
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:99
-msgid "Draw spaces"
+msgid "Show spaces"
 msgstr ""
 
 #: ../data/org.mate.pluma.gschema.xml.in.h:100
 msgid ""
-"Whether pluma should draw spaces in the editor window: 'draw-none' no "
-"drawing; 'draw-trailing' drawing only trailing spaces; 'draw-all' drawing "
+"Whether pluma should show spaces in the editor window: 'show-none' no "
+"showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
 
@@ -894,27 +894,27 @@ msgid "_minutes"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:27
-msgid "Draw spaces, tabs, newlines"
+msgid "Show spaces, tabs, newlines"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:28
-msgid "Draw _tabs"
+msgid "Show _tabs"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:29
-msgid "Draw _trailing tabs only"
+msgid "Show _trailing tabs only"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:30
-msgid "Draw _newlines"
+msgid "Show _newlines"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:31
-msgid "Draw _spaces"
+msgid "Show _spaces"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:32
-msgid "Draw _trailing spaces only"
+msgid "Show _trailing spaces only"
 msgstr ""
 
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:33
@@ -1240,7 +1240,7 @@ msgstr ""
 msgid "\"%s\" not found"
 msgstr ""
 
-#: ../pluma/pluma-document.c:1137 ../pluma/pluma-document.c:1157
+#: ../pluma/pluma-document.c:1139 ../pluma/pluma-document.c:1159
 #, c-format
 msgid "Unsaved Document %d"
 msgstr ""
@@ -1873,9 +1873,13 @@ msgstr ""
 msgid "  Ln %d, Col %d"
 msgstr ""
 
-#: ../pluma/pluma-statusbar.c:346
-#, c-format
+#: ../pluma/pluma-statusbar.c:347
 msgid "There is a tab with errors"
+msgstr ""
+
+#: ../pluma/pluma-statusbar.c:349
+#, c-format
+msgid "There is %d tab with errors"
 msgid_plural "There are %d tabs with errors"
 msgstr[0] ""
 msgstr[1] ""
