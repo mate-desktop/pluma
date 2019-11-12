@@ -343,10 +343,14 @@ pluma_statusbar_set_window_state (PlumaStatusbar   *statusbar,
 	{
 	 	gchar *tip;
 
- 		tip = g_strdup_printf (ngettext("There is a tab with errors",
-						"There are %d tabs with errors",
-						num_of_errors),
-			       		num_of_errors);
+		if (num_of_errors == 1) {
+			tip = g_strdup (_("There is a tab with errors"));
+		} else {
+			tip = g_strdup_printf (ngettext("There is %d tab with errors",
+			                                "There are %d tabs with errors",
+			                                num_of_errors),
+			                       num_of_errors);
+		}
 
 		gtk_widget_set_tooltip_text (statusbar->priv->error_event_box,
 					     tip);
