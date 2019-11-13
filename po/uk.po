@@ -14,15 +14,16 @@
 # dsafsadf <heneral@gmail.com>, 2019
 # Wolfgang Ulbrich <mate@raveit.de>, 2019
 # Микола Ткач <chistomov@gmail.com>, 2019
+# ZenWalker <scow@riseup.net>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-17 14:34+0200\n"
+"POT-Creation-Date: 2019-08-17 20:56+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Микола Ткач <chistomov@gmail.com>, 2019\n"
+"Last-Translator: ZenWalker <scow@riseup.net>, 2019\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -611,7 +612,7 @@ msgstr ""
 msgid "Pluma"
 msgstr "Pluma"
 
-#: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:760
+#: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:754
 msgid "Text Editor"
 msgstr "Текстовий редактор"
 
@@ -641,11 +642,11 @@ msgstr "Закрити _без збереження"
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
 #: ../pluma/dialogs/pluma-preferences-dialog.c:975
 #: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
-#: ../pluma/pluma-file-chooser-dialog.c:440
+#: ../pluma/pluma-file-chooser-dialog.c:435
 #: ../pluma/pluma-io-error-message-area.c:168
 #: ../pluma/pluma-io-error-message-area.c:507
 #: ../pluma/pluma-io-error-message-area.c:1190
-#: ../pluma/pluma-progress-message-area.c:66
+#: ../pluma/pluma-progress-message-area.c:63
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:171
 #: ../plugins/quickopen/quickopen/popup.py:36
 #: ../plugins/snippets/snippets/Manager.py:795
@@ -661,7 +662,7 @@ msgstr "_Скасувати"
 
 #. File menu
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:178
-#: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+#: ../pluma/pluma-file-chooser-dialog.c:439 ../pluma/pluma-ui.h:80
 #: ../plugins/snippets/snippets/Manager.py:882
 #: ../plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
@@ -838,7 +839,7 @@ msgstr "Якщо Ви не збережете, усі зміни будуть о
 #: ../plugins/spell/pluma-spell-language-dialog.c:133
 #: ../plugins/spell/languages-dialog.ui.h:4
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
-#: ../plugins/time/pluma-time-plugin.c:923
+#: ../plugins/time/pluma-time-plugin.c:920
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:4
 msgid "_OK"
 msgstr "_Так"
@@ -919,7 +920,7 @@ msgid "Color Scheme Files"
 msgstr "Файли схеми кольорів"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:1039
-#: ../pluma/pluma-file-chooser-dialog.c:54
+#: ../pluma/pluma-file-chooser-dialog.c:52
 msgid "All Files"
 msgstr "Усі файли"
 
@@ -932,7 +933,7 @@ msgstr "Не вдається вилучити схему кольорів \"%s\
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../pluma/dialogs/pluma-search-dialog.c:327
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
-#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/docinfo/docinfo.ui.h:2 ../plugins/spell/spell-checker.ui.h:15
 msgid "_Close"
 msgstr "_Закрити"
 
@@ -970,7 +971,7 @@ msgstr "Н_е розривати слово між рядками"
 msgid "Line Numbers"
 msgstr "Номери рядків"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2197
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2191
 msgid "_Display line numbers"
 msgstr "Показувати _номери рядків"
 
@@ -1099,11 +1100,11 @@ msgid "Plugins"
 msgstr "Втулки"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:295
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1531
 msgid "Replace"
 msgstr "Замінити"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1535
+#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1529
 msgid "Find"
 msgstr "Знайти"
 
@@ -1307,7 +1308,7 @@ msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Зміни, внесені у документ за останню хвилину, будуть остаточно втрачені."
+"Зміни, внесені у документ за останню %ld хвилину, будуть остаточно втрачені."
 msgstr[1] ""
 "Зміни, внесені у документ за останні %ld хвилини, будуть остаточно втрачені."
 msgstr[2] ""
@@ -1454,12 +1455,12 @@ msgstr "Фрази \"%s\" не існує"
 msgid "Unsaved Document %d"
 msgstr "Незбережений документ %d"
 
-#: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2264 ../pluma/pluma-window.c:2269
+#: ../pluma/pluma-documents-panel.c:93 ../pluma/pluma-documents-panel.c:107
+#: ../pluma/pluma-window.c:2258 ../pluma/pluma-window.c:2263
 msgid "Read-Only"
 msgstr "Лише читання"
 
-#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3690
+#: ../pluma/pluma-documents-panel.c:703 ../pluma/pluma-window.c:3684
 msgid "Documents"
 msgstr "Документи"
 
@@ -1579,46 +1580,46 @@ msgstr "Тайські"
 msgid "Unknown"
 msgstr "Невідомий"
 
-#: ../pluma/pluma-encodings-combo-box.c:272
+#: ../pluma/pluma-encodings-combo-box.c:266
 msgid "Automatically Detected"
 msgstr "Автовизначення"
 
-#: ../pluma/pluma-encodings-combo-box.c:288
-#: ../pluma/pluma-encodings-combo-box.c:303
+#: ../pluma/pluma-encodings-combo-box.c:282
+#: ../pluma/pluma-encodings-combo-box.c:297
 #, c-format
 msgid "Current Locale (%s)"
 msgstr "Поточна локалізація (%s)"
 
-#: ../pluma/pluma-encodings-combo-box.c:353
+#: ../pluma/pluma-encodings-combo-box.c:347
 msgid "Add or Remove..."
 msgstr "Додати або вилучити..."
 
-#: ../pluma/pluma-file-chooser-dialog.c:55
+#: ../pluma/pluma-file-chooser-dialog.c:53
 msgid "All Text Files"
 msgstr "Усі текстові файли"
 
-#: ../pluma/pluma-file-chooser-dialog.c:83
+#: ../pluma/pluma-file-chooser-dialog.c:78
 msgid "C_haracter Encoding:"
 msgstr "_Кодування символів:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:148
+#: ../pluma/pluma-file-chooser-dialog.c:143
 msgid "L_ine Ending:"
 msgstr "Ко_дування рядка"
 
-#: ../pluma/pluma-file-chooser-dialog.c:167
+#: ../pluma/pluma-file-chooser-dialog.c:162
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: ../pluma/pluma-file-chooser-dialog.c:173
+#: ../pluma/pluma-file-chooser-dialog.c:168
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: ../pluma/pluma-file-chooser-dialog.c:179
+#: ../pluma/pluma-file-chooser-dialog.c:174
 msgid "Windows"
 msgstr "Вікна"
 
-#: ../pluma/pluma-file-chooser-dialog.c:442
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+#: ../pluma/pluma-file-chooser-dialog.c:437
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:808
 #: ../plugins/quickopen/quickopen/popup.py:37
 #: ../plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
@@ -1968,24 +1969,24 @@ msgstr "Перезавантажити файл?"
 msgid "_Reload"
 msgstr "_Оновити"
 
-#: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
+#: ../pluma/pluma-panel.c:316 ../pluma/pluma-panel.c:490
 msgid "Empty"
 msgstr "Порожня"
 
-#: ../pluma/pluma-panel.c:385
+#: ../pluma/pluma-panel.c:380
 msgid "Hide panel"
 msgstr "Сховати панель"
 
-#: ../pluma/pluma-print-job.c:544
+#: ../pluma/pluma-print-job.c:538
 #, c-format
 msgid "File: %s"
 msgstr "Файл: %s"
 
-#: ../pluma/pluma-print-job.c:553
+#: ../pluma/pluma-print-job.c:547
 msgid "Page %N of %Q"
 msgstr "Сторінка %N з %Q"
 
-#: ../pluma/pluma-print-job.c:810
+#: ../pluma/pluma-print-job.c:804
 msgid "Preparing..."
 msgstr "Підготовка..."
 
@@ -2037,93 +2038,93 @@ msgstr "_Номери рядків:"
 msgid "_Restore Default Fonts"
 msgstr "Відновити _початкові шрифти"
 
-#: ../pluma/pluma-print-preview.c:571
+#: ../pluma/pluma-print-preview.c:569
 msgid "Show the previous page"
 msgstr "Показати попередню сторінку"
 
-#: ../pluma/pluma-print-preview.c:584
+#: ../pluma/pluma-print-preview.c:582
 msgid "Show the next page"
 msgstr "Показати наступну сторінку"
 
-#: ../pluma/pluma-print-preview.c:600
+#: ../pluma/pluma-print-preview.c:598
 msgid "Current page (Alt+P)"
 msgstr "Поточна сторінка (Alt+P)"
 
 #. Translators: the "of" from "1 of 19" in print preview.
-#: ../pluma/pluma-print-preview.c:623
+#: ../pluma/pluma-print-preview.c:621
 msgid "of"
 msgstr "з"
 
-#: ../pluma/pluma-print-preview.c:631
+#: ../pluma/pluma-print-preview.c:629
 msgid "Page total"
 msgstr "Загалом сторінок"
 
-#: ../pluma/pluma-print-preview.c:632
+#: ../pluma/pluma-print-preview.c:630
 msgid "The total number of pages in the document"
 msgstr "Загальна кількість сторінок у документі"
 
-#: ../pluma/pluma-print-preview.c:650
+#: ../pluma/pluma-print-preview.c:648
 msgid "Show multiple pages"
 msgstr "Показувати декілька сторінок"
 
-#: ../pluma/pluma-print-preview.c:664
+#: ../pluma/pluma-print-preview.c:662
 msgid "Zoom 1:1"
 msgstr "Мірило 1:1"
 
-#: ../pluma/pluma-print-preview.c:674
+#: ../pluma/pluma-print-preview.c:672
 msgid "Zoom to fit the whole page"
 msgstr "Показувати цілу сторінку"
 
-#: ../pluma/pluma-print-preview.c:684
+#: ../pluma/pluma-print-preview.c:682
 msgid "Zoom the page in"
 msgstr "Збільшити сторінку"
 
-#: ../pluma/pluma-print-preview.c:694
+#: ../pluma/pluma-print-preview.c:692
 msgid "Zoom the page out"
 msgstr "Зменшити сторінку"
 
-#: ../pluma/pluma-print-preview.c:706
+#: ../pluma/pluma-print-preview.c:704
 msgid "_Close Preview"
 msgstr "_Закрити попередній перегляд"
 
-#: ../pluma/pluma-print-preview.c:709
+#: ../pluma/pluma-print-preview.c:707
 msgid "Close print preview"
 msgstr "Закрити попередній перегляд"
 
-#: ../pluma/pluma-print-preview.c:784
+#: ../pluma/pluma-print-preview.c:782
 #, c-format
 msgid "Page %d of %d"
 msgstr "Сторінка %d з %d"
 
-#: ../pluma/pluma-print-preview.c:965
+#: ../pluma/pluma-print-preview.c:963
 msgid "Page Preview"
 msgstr "Попередній перегляд"
 
-#: ../pluma/pluma-print-preview.c:966
+#: ../pluma/pluma-print-preview.c:964
 msgid "The preview of a page in the document to be printed"
 msgstr "Попередній перегляд сторінки, яку буде надруковано"
 
-#: ../pluma/pluma-smart-charset-converter.c:319
+#: ../pluma/pluma-smart-charset-converter.c:316
 msgid "It is not possible to detect the encoding automatically"
 msgstr "Показати перелік можливих значень параметрів кодування"
 
-#: ../pluma/pluma-statusbar.c:70 ../pluma/pluma-statusbar.c:76
+#: ../pluma/pluma-statusbar.c:66 ../pluma/pluma-statusbar.c:72
 msgid "OVR"
 msgstr "ЗАМ"
 
-#: ../pluma/pluma-statusbar.c:70 ../pluma/pluma-statusbar.c:76
+#: ../pluma/pluma-statusbar.c:66 ../pluma/pluma-statusbar.c:72
 msgid "INS"
 msgstr "ВСТ"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for
 #. "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: ../pluma/pluma-statusbar.c:251
+#: ../pluma/pluma-statusbar.c:245
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr " Ряд. %d, Ст. %d"
 
-#: ../pluma/pluma-statusbar.c:352
+#: ../pluma/pluma-statusbar.c:346
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
@@ -2140,77 +2141,77 @@ msgstr ""
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:672
+#: ../pluma/pluma-tab.c:668
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Відновлюється \"%s\" з \"%s\""
 
-#: ../pluma/pluma-tab.c:679
+#: ../pluma/pluma-tab.c:675
 #, c-format
 msgid "Reverting %s"
 msgstr "Відновлюється \"%s\""
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:695
+#: ../pluma/pluma-tab.c:691
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Завантажується \"%s\" з \"%s\""
 
-#: ../pluma/pluma-tab.c:702
+#: ../pluma/pluma-tab.c:698
 #, c-format
 msgid "Loading %s"
 msgstr "Завантажується \"%s\""
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:785
+#: ../pluma/pluma-tab.c:781
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Зберігається \"%s\" у \"%s\""
 
-#: ../pluma/pluma-tab.c:792
+#: ../pluma/pluma-tab.c:788
 #, c-format
 msgid "Saving %s"
 msgstr "Зберігається \"%s\""
 
 #. Read only
-#: ../pluma/pluma-tab.c:1668
+#: ../pluma/pluma-tab.c:1664
 msgid "RO"
 msgstr "ЛЧ"
 
-#: ../pluma/pluma-tab.c:1715
+#: ../pluma/pluma-tab.c:1711
 #, c-format
 msgid "Error opening file %s"
 msgstr "Помилка відкривання файлу \"%s\""
 
-#: ../pluma/pluma-tab.c:1720
+#: ../pluma/pluma-tab.c:1716
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Помилка відновлення файлу \"%s\""
 
-#: ../pluma/pluma-tab.c:1725
+#: ../pluma/pluma-tab.c:1721
 #, c-format
 msgid "Error saving file %s"
 msgstr "Помилка збереження файлу \"%s\""
 
-#: ../pluma/pluma-tab.c:1746
+#: ../pluma/pluma-tab.c:1742
 msgid "Unicode (UTF-8)"
 msgstr "Юнікод (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1753
+#: ../pluma/pluma-tab.c:1749
 msgid "Name:"
 msgstr "Назва:"
 
-#: ../pluma/pluma-tab.c:1754
+#: ../pluma/pluma-tab.c:1750
 msgid "MIME Type:"
 msgstr "MIME тип:"
 
-#: ../pluma/pluma-tab.c:1755
+#: ../pluma/pluma-tab.c:1751
 msgid "Encoding:"
 msgstr "Кодування:"
 
-#: ../pluma/pluma-tab-label.c:278
+#: ../pluma/pluma-tab-label.c:274
 msgid "Close document"
 msgstr "Закрити документ"
 
@@ -2252,7 +2253,7 @@ msgstr "Створити новий документ"
 msgid "_Open..."
 msgstr "_Відкрити..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1461
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1455
 msgid "Open a file"
 msgstr "Відкрити файл"
 
@@ -2367,7 +2368,7 @@ msgstr "Вставити вміст буферу обміну"
 #. Add delete button
 #: ../pluma/pluma-ui.h:102
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:182
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "_Delete"
 msgstr "В_илучити"
 
@@ -2559,36 +2560,36 @@ msgid "/ on %s"
 msgstr "/ на %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1435
+#: ../pluma/pluma-view.c:1429
 msgid "_Wrap Around"
 msgstr "_Досягнувши кінця, починати спочатку"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1445
+#: ../pluma/pluma-view.c:1439
 msgid "Match _Entire Word Only"
 msgstr "Збігається _ціле слово"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1455
+#: ../pluma/pluma-view.c:1449
 msgid "_Match Case"
 msgstr "Збігається _регістр"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1465
+#: ../pluma/pluma-view.c:1459
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr "_Розпізнавати послідовність виходу (наприклад, )"
 
-#: ../pluma/pluma-view.c:1579
+#: ../pluma/pluma-view.c:1573
 msgid "String you want to search for"
 msgstr "Рядок, який потрібно знайти"
 
-#: ../pluma/pluma-view.c:1588
+#: ../pluma/pluma-view.c:1582
 msgid "Line you want to move the cursor to"
 msgstr "Рядок, куди потрібно перемістити вказівник"
 
-#: ../pluma/pluma-window.c:1020
+#: ../pluma/pluma-window.c:1014
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Використовувати режим виділення синтаксису \"%s\""
@@ -2596,7 +2597,7 @@ msgstr "Використовувати режим виділення синта�
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
+#: ../pluma/pluma-window.c:1071 ../pluma/pluma-window.c:1959
 #: ../plugins/externaltools/tools/manager.py:108
 #: ../plugins/externaltools/tools/manager.py:308
 #: ../plugins/externaltools/tools/manager.py:424
@@ -2604,43 +2605,43 @@ msgstr "Використовувати режим виділення синта�
 msgid "Plain Text"
 msgstr "Звичайний текст"
 
-#: ../pluma/pluma-window.c:1078
+#: ../pluma/pluma-window.c:1072
 msgid "Disable syntax highlighting"
 msgstr "Вимкнути виділення синтаксису"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1360
+#: ../pluma/pluma-window.c:1354
 #, c-format
 msgid "Open '%s'"
 msgstr "Відкрити '%s'"
 
-#: ../pluma/pluma-window.c:1467
+#: ../pluma/pluma-window.c:1461
 msgid "Open a recently used file"
 msgstr "Відкрити файл, що нещодавно редагувався"
 
-#: ../pluma/pluma-window.c:1473
+#: ../pluma/pluma-window.c:1467
 msgid "Open"
 msgstr "Відкрити"
 
-#: ../pluma/pluma-window.c:1531
+#: ../pluma/pluma-window.c:1525
 msgid "Save"
 msgstr "Зберегти"
 
-#: ../pluma/pluma-window.c:1533
+#: ../pluma/pluma-window.c:1527
 msgid "Print"
 msgstr "Друк"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1690
+#: ../pluma/pluma-window.c:1684
 #, c-format
 msgid "Activate '%s'"
 msgstr "Активувати '%s'"
 
-#: ../pluma/pluma-window.c:1943
+#: ../pluma/pluma-window.c:1937
 msgid "Use Spaces"
 msgstr "Вставляти пробіли"
 
-#: ../pluma/pluma-window.c:2014
+#: ../pluma/pluma-window.c:2008
 msgid "Tab Width"
 msgstr "_Ширина табуляції"
 
@@ -2652,39 +2653,39 @@ msgstr "Заміна регістру"
 msgid "Changes the case of selected text."
 msgstr "Замінює регістр виділеного тексту."
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:246
+#: ../plugins/changecase/pluma-changecase-plugin.c:243
 msgid "C_hange Case"
 msgstr "З_мінити регістр"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:247
+#: ../plugins/changecase/pluma-changecase-plugin.c:244
 msgid "All _Upper Case"
 msgstr "Усе у _верхній регістр"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:248
+#: ../plugins/changecase/pluma-changecase-plugin.c:245
 msgid "Change selected text to upper case"
 msgstr "Змінити регістр виділеного тексту на верхній"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:250
+#: ../plugins/changecase/pluma-changecase-plugin.c:247
 msgid "All _Lower Case"
 msgstr "Усе у _нижній регістр"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:251
+#: ../plugins/changecase/pluma-changecase-plugin.c:248
 msgid "Change selected text to lower case"
 msgstr "Змінити регістр виділеного тексту на нижній"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:253
+#: ../plugins/changecase/pluma-changecase-plugin.c:250
 msgid "_Invert Case"
 msgstr "_Спротилежнити регістр"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:254
+#: ../plugins/changecase/pluma-changecase-plugin.c:251
 msgid "Invert the case of selected text"
 msgstr "Спротилежнити регістр виділеного тексту"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:256
+#: ../plugins/changecase/pluma-changecase-plugin.c:253
 msgid "_Title Case"
 msgstr "Регістр за_головку"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:257
+#: ../plugins/changecase/pluma-changecase-plugin.c:254
 msgid "Capitalize the first letter of each selected word"
 msgstr "Зробити великими перші літери слів у виділеному тексті"
 
@@ -2737,11 +2738,11 @@ msgstr "Документи"
 msgid "Selection"
 msgstr "Вибір"
 
-#: ../plugins/docinfo/pluma-docinfo-plugin.c:443
+#: ../plugins/docinfo/pluma-docinfo-plugin.c:440
 msgid "_Document Statistics"
 msgstr "Статистика _документу"
 
-#: ../plugins/docinfo/pluma-docinfo-plugin.c:445
+#: ../plugins/docinfo/pluma-docinfo-plugin.c:442
 msgid "Get statistical information on the current document"
 msgstr "Видати статистичну інформацію про поточний документ"
 
@@ -3064,63 +3065,63 @@ msgstr "Увімкнути відновлення для віддалених а
 msgid "Sets whether to enable restoring of remote locations."
 msgstr "Визначає чи вмикати відновлення віддалених адрес."
 
-#: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
+#: ../plugins/filebrowser/pluma-file-bookmarks-store.c:238
 msgid "File System"
 msgstr "Файлова система"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:576
 msgid "_Set root to active document"
 msgstr "_Встановити корінь на активний документ"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:579
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:578
 msgid "Set the root to the active document location"
 msgstr "Встановити корінь на розташування активного документу"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:584
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:583
 msgid "_Open terminal here"
 msgstr "_Відкрити термінал"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:586
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:585
 msgid "Open a terminal at the currently opened directory"
 msgstr "Відкрити термінал у поточному відкритому каталозі"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:726
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:725
 msgid "File Browser"
 msgstr "Файловий переглядач"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:874
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:870
 msgid "An error occurred while creating a new directory"
 msgstr "Помилка при створенні нового каталогу"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:877
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:873
 msgid "An error occurred while creating a new file"
 msgstr "Помилка при створенні нового файлу"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:882
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:878
 msgid "An error occurred while renaming a file or directory"
 msgstr "Помилка при перейменуванні файлу чи каталогу"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:887
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:883
 msgid "An error occurred while deleting a file or directory"
 msgstr "Помилка при вилученні файлу чи каталогу"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:888
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Помилка при відкриванні каталогу у керівнику файлами"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while setting a root directory"
 msgstr "Помилка при встановленні кореневого каталогу"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
 msgid "An error occurred while loading a directory"
 msgstr "Помилка при завантаженні каталогу"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:903
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:899
 msgid "An error occurred"
 msgstr "Виникла помилка"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1130
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1126
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3128,33 +3129,33 @@ msgstr ""
 "Не вдається перемістити файл у смітник,\n"
 "вилучити файл остаточно?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1130
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "Файл \"%s\" не вдається перемістити у смітник."
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1137
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1133
 msgid "The selected files cannot be moved to the trash."
 msgstr "Не вдається перемістити у смітник вибрані файли."
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1165
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1161
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Ви справді бажаєте остаточно вилучити файл \"%s\"?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1168
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1164
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Ви справді бажаєте остаточно вилучити виділені файли?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1171
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
 msgid "If you delete an item, it is permanently lost."
 msgstr "Якщо Ви вилучите файл, він буде остаточно втрачений."
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:1668
+#: ../plugins/filebrowser/pluma-file-browser-store.c:1662
 msgid "(Empty)"
 msgstr "(Немає вмісту)"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3224
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3218
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3164,11 +3165,11 @@ msgstr ""
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3481
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3475
 msgid "file"
 msgstr "файл"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3505
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3499
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3178,11 +3179,11 @@ msgstr ""
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3534
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3528
 msgid "directory"
 msgstr "каталог"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3554
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3548
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3190,150 +3191,150 @@ msgstr ""
 "Новий каталог наразі відфільтрований. Необхідно налаштувати фільтр, щоб "
 "зробити цей каталог видимим."
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:716
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:712
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:797
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:793
 msgid "_Filter"
 msgstr "_Фільтр"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:802
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:798
 msgid "_Move to Trash"
 msgstr "_Перемістити у смітник"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:803
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:799
 msgid "Move selected file or folder to trash"
 msgstr "Перемістити виділений файл чи каталог у смітник"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:806
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:802
 msgid "Delete selected file or folder"
 msgstr "Вилучити виділений файл чи каталог"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:813
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:809
 msgid "Open selected file"
 msgstr "Відкрити обраний файл"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:819
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:815
 msgid "Up"
 msgstr "Вгору"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:820
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "Open the parent folder"
 msgstr "Відкрити батьківську теку"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:825
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:821
 msgid "_New Folder"
 msgstr "Створити _теку"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:826
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:822
 msgid "Add new empty folder"
 msgstr "Створити нову порожню теку"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:828
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:824
 msgid "New F_ile"
 msgstr "Створити _файл"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:829
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:825
 msgid "Add new empty file"
 msgstr "Створити новий порожній файл"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:834
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:830
 msgid "_Rename"
 msgstr "Перей_менувати"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:835
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:831
 msgid "Rename selected file or folder"
 msgstr "Перейменувати виділений файл чи теку"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:841
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:837
 msgid "_Previous Location"
 msgstr "_Попередня адреса"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:843
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:839
 msgid "Go to the previous visited location"
 msgstr "Перейти до раніше відвіданого місця"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:845
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:841
 msgid "_Next Location"
 msgstr "_Наступна адреса"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:846
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:842
 msgid "Go to the next visited location"
 msgstr "Перейти до наступного відвіданого місця"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:847
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Re_fresh View"
 msgstr "_Оновити вигляд"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:848
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:844
 msgid "Refresh the view"
 msgstr "Оновити вигляд"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:849
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:867
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:845
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:863
 msgid "_View Folder"
 msgstr "Пере_глянути теку"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:850
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:868
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:846
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:864
 msgid "View folder in file manager"
 msgstr "Переглянути теку у керівнику файлами"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:857
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:853
 msgid "Show _Hidden"
 msgstr "Показувати при_ховані"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:858
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:854
 msgid "Show hidden files and folders"
 msgstr "Показувати приховані файли та теки"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:860
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "Show _Binary"
 msgstr "Показувати _двійкові"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:861
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:857
 msgid "Show binary files"
 msgstr "Показувати двійкові файли"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:994
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1007
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1033
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:990
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1003
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1029
 msgid "Previous location"
 msgstr "Попередня адреса"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1000
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:996
 msgid "Go to previous location"
 msgstr "Перейти до попередньої адреси"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1028
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:998
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1024
 msgid "Go to a previously opened location"
 msgstr "Перейти до попередньо відкритої адреси"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1020
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1016
 msgid "Next location"
 msgstr "Наступна адреса"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1026
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
 msgid "Go to next location"
 msgstr "Перейти до наступної адреси"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1238
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1234
 msgid "_Match Filename"
 msgstr "Фільтр за _назвою"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2139
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2135
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "Не знайдено об'єкт для монтування тому: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2219
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2215
 #, c-format
 msgid "Could not open media: %s"
 msgstr "Не вдається відкрити носій: \"%s\""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2266
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2262
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "Не вдається змонтувати том: \"%s\""
@@ -3624,11 +3625,11 @@ msgstr ""
 msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Не вдалося виконати команду Python (%s): %s"
 
-#: ../plugins/sort/pluma-sort-plugin.c:94
+#: ../plugins/sort/pluma-sort-plugin.c:93
 msgid "S_ort..."
 msgstr "C_ортувати..."
 
-#: ../plugins/sort/pluma-sort-plugin.c:96
+#: ../plugins/sort/pluma-sort-plugin.c:95
 msgid "Sort the current document or selection"
 msgstr "Відсортувати поточний документ чи виділену частину"
 
@@ -3743,35 +3744,35 @@ msgstr "Встановити мову"
 msgid "Languages"
 msgstr "Мови"
 
-#: ../plugins/spell/pluma-spell-plugin.c:100
+#: ../plugins/spell/pluma-spell-plugin.c:97
 msgid "_Check Spelling..."
 msgstr "Перевірити _орфографію"
 
-#: ../plugins/spell/pluma-spell-plugin.c:102
+#: ../plugins/spell/pluma-spell-plugin.c:99
 msgid "Check the current document for incorrect spelling"
 msgstr "Перевірити орфографію поточного документу"
 
-#: ../plugins/spell/pluma-spell-plugin.c:108
+#: ../plugins/spell/pluma-spell-plugin.c:105
 msgid "Set _Language..."
 msgstr "Встановити _мову..."
 
-#: ../plugins/spell/pluma-spell-plugin.c:110
+#: ../plugins/spell/pluma-spell-plugin.c:107
 msgid "Set the language of the current document"
 msgstr "Встановити мову поточного документу"
 
-#: ../plugins/spell/pluma-spell-plugin.c:119
+#: ../plugins/spell/pluma-spell-plugin.c:116
 msgid "_Autocheck Spelling"
 msgstr "_Автоматична перевірка орфографії"
 
-#: ../plugins/spell/pluma-spell-plugin.c:121
+#: ../plugins/spell/pluma-spell-plugin.c:118
 msgid "Automatically spell-check the current document"
 msgstr "Автоматично перевіряти орфографію документу"
 
-#: ../plugins/spell/pluma-spell-plugin.c:921
+#: ../plugins/spell/pluma-spell-plugin.c:918
 msgid "The document is empty."
 msgstr "Документ порожній."
 
-#: ../plugins/spell/pluma-spell-plugin.c:946
+#: ../plugins/spell/pluma-spell-plugin.c:943
 msgid "No misspelled words"
 msgstr "Немає слів з помилками"
 
@@ -3863,21 +3864,21 @@ msgstr "Перевірка орфографії"
 msgid "Checks the spelling of the current document."
 msgstr "Перевірити орфографію поточного документу."
 
-#: ../plugins/taglist/pluma-taglist-plugin.c:125
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:724
+#: ../plugins/taglist/pluma-taglist-plugin.c:124
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:707
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:722
 msgid "Tags"
 msgstr "Теґи"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:611
 msgid "Select the group of tags you want to use"
 msgstr "Вибрати групу тегів, яку Ви бажаєте використовувати"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:632
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:630
 msgid "_Preview"
 msgstr "_Попередній перегляд"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:706
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:704
 msgid "Available Tag Lists"
 msgstr "Переліки доступних тегів"
 
@@ -5437,15 +5438,15 @@ msgstr "Обраний формат"
 msgid "Custom format"
 msgstr "Власний формат"
 
-#: ../plugins/time/pluma-time-plugin.c:189
+#: ../plugins/time/pluma-time-plugin.c:186
 msgid "In_sert Date and Time..."
 msgstr "Вставити _дату й час..."
 
-#: ../plugins/time/pluma-time-plugin.c:191
+#: ../plugins/time/pluma-time-plugin.c:188
 msgid "Insert current date and time at the cursor position"
 msgstr "Вставити поточну дату й час у позицію вказівника"
 
-#: ../plugins/time/pluma-time-plugin.c:581
+#: ../plugins/time/pluma-time-plugin.c:578
 msgid "Available formats"
 msgstr "Доступні формати"
 
