@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-17 14:34+0200\n"
+"POT-Creation-Date: 2019-08-17 20:56+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: Tamil (https://www.transifex.com/mate/teams/13566/ta/)\n"
@@ -601,7 +601,7 @@ msgstr ""
 msgid "Pluma"
 msgstr ""
 
-#: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:760
+#: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:754
 msgid "Text Editor"
 msgstr "உரை தொகுப்பி"
 
@@ -631,11 +631,11 @@ msgstr "சேமிக்காமல் மூடு (_w)"
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
 #: ../pluma/dialogs/pluma-preferences-dialog.c:975
 #: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
-#: ../pluma/pluma-file-chooser-dialog.c:440
+#: ../pluma/pluma-file-chooser-dialog.c:435
 #: ../pluma/pluma-io-error-message-area.c:168
 #: ../pluma/pluma-io-error-message-area.c:507
 #: ../pluma/pluma-io-error-message-area.c:1190
-#: ../pluma/pluma-progress-message-area.c:66
+#: ../pluma/pluma-progress-message-area.c:63
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:171
 #: ../plugins/quickopen/quickopen/popup.py:36
 #: ../plugins/snippets/snippets/Manager.py:795
@@ -651,7 +651,7 @@ msgstr "ரத்து (_C)"
 
 #. File menu
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:178
-#: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+#: ../pluma/pluma-file-chooser-dialog.c:439 ../pluma/pluma-ui.h:80
 #: ../plugins/snippets/snippets/Manager.py:882
 #: ../plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
@@ -782,7 +782,7 @@ msgstr ""
 #: ../plugins/spell/pluma-spell-language-dialog.c:133
 #: ../plugins/spell/languages-dialog.ui.h:4
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
-#: ../plugins/time/pluma-time-plugin.c:923
+#: ../plugins/time/pluma-time-plugin.c:920
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:4
 msgid "_OK"
 msgstr ""
@@ -865,7 +865,7 @@ msgid "Color Scheme Files"
 msgstr "வண்ண திட்ட கோப்புகள்:"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:1039
-#: ../pluma/pluma-file-chooser-dialog.c:54
+#: ../pluma/pluma-file-chooser-dialog.c:52
 msgid "All Files"
 msgstr "அனைத்து கோப்புகள்"
 
@@ -878,7 +878,7 @@ msgstr "வண்ன திட்டம் \"%s\" ஐ நீக்க முட�
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../pluma/dialogs/pluma-search-dialog.c:327
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
-#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/docinfo/docinfo.ui.h:2 ../plugins/spell/spell-checker.ui.h:15
 msgid "_Close"
 msgstr "மூடு (_C)"
 
@@ -916,7 +916,7 @@ msgstr "_s வார்த்தையை இரண்டு வரிகளு�
 msgid "Line Numbers"
 msgstr "வரிசை எண்கள்"
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2197
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2191
 msgid "_Display line numbers"
 msgstr "_D வரிசை எண்களைக் காண்பிக்கவும்:"
 
@@ -1046,11 +1046,11 @@ msgid "Plugins"
 msgstr "சொருகுப்பொருள்கள்"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:295
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1531
 msgid "Replace"
 msgstr "இடமாற்று"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1535
+#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1529
 msgid "Find"
 msgstr "கண்டுபிடி"
 
@@ -1350,12 +1350,12 @@ msgstr "\"%s\" கண்டு பிடிக்கப் படவில்ல
 msgid "Unsaved Document %d"
 msgstr "சேமிக்கப்படாத ஆவணம் %d"
 
-#: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2264 ../pluma/pluma-window.c:2269
+#: ../pluma/pluma-documents-panel.c:93 ../pluma/pluma-documents-panel.c:107
+#: ../pluma/pluma-window.c:2258 ../pluma/pluma-window.c:2263
 msgid "Read-Only"
 msgstr "வாசிக்க மட்டும்"
 
-#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3690
+#: ../pluma/pluma-documents-panel.c:703 ../pluma/pluma-window.c:3684
 msgid "Documents"
 msgstr "ஆவணங்கள்"
 
@@ -1475,46 +1475,46 @@ msgstr "தாய்"
 msgid "Unknown"
 msgstr "தெரியாத"
 
-#: ../pluma/pluma-encodings-combo-box.c:272
+#: ../pluma/pluma-encodings-combo-box.c:266
 msgid "Automatically Detected"
 msgstr "தானாக கண்டுபிடிக்கப்பட்டது"
 
-#: ../pluma/pluma-encodings-combo-box.c:288
-#: ../pluma/pluma-encodings-combo-box.c:303
+#: ../pluma/pluma-encodings-combo-box.c:282
+#: ../pluma/pluma-encodings-combo-box.c:297
 #, c-format
 msgid "Current Locale (%s)"
 msgstr "தற்போதைய உள்ளாக்கம் (%s)"
 
-#: ../pluma/pluma-encodings-combo-box.c:353
+#: ../pluma/pluma-encodings-combo-box.c:347
 msgid "Add or Remove..."
 msgstr "சேர்க்கவும் அல்லது நீக்கவும்..."
 
-#: ../pluma/pluma-file-chooser-dialog.c:55
+#: ../pluma/pluma-file-chooser-dialog.c:53
 msgid "All Text Files"
 msgstr "அனைத்து உரை கோப்புகளும்"
 
-#: ../pluma/pluma-file-chooser-dialog.c:83
+#: ../pluma/pluma-file-chooser-dialog.c:78
 msgid "C_haracter Encoding:"
 msgstr "_h குறிமுறை எழுத்து:"
 
-#: ../pluma/pluma-file-chooser-dialog.c:148
+#: ../pluma/pluma-file-chooser-dialog.c:143
 msgid "L_ine Ending:"
 msgstr "_i வரி முடிவு"
 
-#: ../pluma/pluma-file-chooser-dialog.c:167
+#: ../pluma/pluma-file-chooser-dialog.c:162
 msgid "Unix/Linux"
 msgstr "யூனிக்ஸ்/  லீனக்ஸ்"
 
-#: ../pluma/pluma-file-chooser-dialog.c:173
+#: ../pluma/pluma-file-chooser-dialog.c:168
 msgid "Mac OS Classic"
 msgstr "மாக் இயங்கு தளம் கிளாசிக்"
 
-#: ../pluma/pluma-file-chooser-dialog.c:179
+#: ../pluma/pluma-file-chooser-dialog.c:174
 msgid "Windows"
 msgstr "சாளரங்கள்"
 
-#: ../pluma/pluma-file-chooser-dialog.c:442
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+#: ../pluma/pluma-file-chooser-dialog.c:437
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:808
 #: ../plugins/quickopen/quickopen/popup.py:37
 #: ../plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
@@ -1866,24 +1866,24 @@ msgstr "கோப்பை மீளேற்ற வேண்டுமா?"
 msgid "_Reload"
 msgstr "மீண்டும் ஏற்று (_R)"
 
-#: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
+#: ../pluma/pluma-panel.c:316 ../pluma/pluma-panel.c:490
 msgid "Empty"
 msgstr "வெற்று"
 
-#: ../pluma/pluma-panel.c:385
+#: ../pluma/pluma-panel.c:380
 msgid "Hide panel"
 msgstr "பலகத்தை மறைக்கவும்"
 
-#: ../pluma/pluma-print-job.c:544
+#: ../pluma/pluma-print-job.c:538
 #, c-format
 msgid "File: %s"
 msgstr "கோப்பு: %s"
 
-#: ../pluma/pluma-print-job.c:553
+#: ../pluma/pluma-print-job.c:547
 msgid "Page %N of %Q"
 msgstr "பக்கம் %Q இல் %N"
 
-#: ../pluma/pluma-print-job.c:810
+#: ../pluma/pluma-print-job.c:804
 msgid "Preparing..."
 msgstr "தயாராகிறது..."
 
@@ -1935,93 +1935,93 @@ msgstr "_L வரிசை எண்கள்:"
 msgid "_Restore Default Fonts"
 msgstr "_R இயல்பான எழுத்துருவை மீட்டு அமைக்கவும்"
 
-#: ../pluma/pluma-print-preview.c:571
+#: ../pluma/pluma-print-preview.c:569
 msgid "Show the previous page"
 msgstr "முந்தைய பக்கத்தை காட்டுக"
 
-#: ../pluma/pluma-print-preview.c:584
+#: ../pluma/pluma-print-preview.c:582
 msgid "Show the next page"
 msgstr "அடுத்த பக்கத்தை காட்டுக"
 
-#: ../pluma/pluma-print-preview.c:600
+#: ../pluma/pluma-print-preview.c:598
 msgid "Current page (Alt+P)"
 msgstr "நடப்பு பக்கம் (Alt+P)"
 
 #. Translators: the "of" from "1 of 19" in print preview.
-#: ../pluma/pluma-print-preview.c:623
+#: ../pluma/pluma-print-preview.c:621
 msgid "of"
 msgstr "இதில்"
 
-#: ../pluma/pluma-print-preview.c:631
+#: ../pluma/pluma-print-preview.c:629
 msgid "Page total"
 msgstr "மொத்தப் பக்கம்"
 
-#: ../pluma/pluma-print-preview.c:632
+#: ../pluma/pluma-print-preview.c:630
 msgid "The total number of pages in the document"
 msgstr "ஆவணத்திலுள்ள பக்கங்களின் எண்ணிக்கை"
 
-#: ../pluma/pluma-print-preview.c:650
+#: ../pluma/pluma-print-preview.c:648
 msgid "Show multiple pages"
 msgstr "பல பக்கங்களை காட்டு"
 
-#: ../pluma/pluma-print-preview.c:664
+#: ../pluma/pluma-print-preview.c:662
 msgid "Zoom 1:1"
 msgstr "அளவு 1:1"
 
-#: ../pluma/pluma-print-preview.c:674
+#: ../pluma/pluma-print-preview.c:672
 msgid "Zoom to fit the whole page"
 msgstr "முழுப்பக்கத்தை பொருத்த அணுகு"
 
-#: ../pluma/pluma-print-preview.c:684
+#: ../pluma/pluma-print-preview.c:682
 msgid "Zoom the page in"
 msgstr "பக்கத்தை அணுகிப் பார்க்கவும்"
 
-#: ../pluma/pluma-print-preview.c:694
+#: ../pluma/pluma-print-preview.c:692
 msgid "Zoom the page out"
 msgstr "பக்கத்தை விலகிப் பார்க்கவும்"
 
-#: ../pluma/pluma-print-preview.c:706
+#: ../pluma/pluma-print-preview.c:704
 msgid "_Close Preview"
 msgstr "_C அச்சு முன்பார்வையை மூடுக"
 
-#: ../pluma/pluma-print-preview.c:709
+#: ../pluma/pluma-print-preview.c:707
 msgid "Close print preview"
 msgstr "அச்சு முன்னோட்டத்தை மூடுக"
 
-#: ../pluma/pluma-print-preview.c:784
+#: ../pluma/pluma-print-preview.c:782
 #, c-format
 msgid "Page %d of %d"
 msgstr "பக்கம் %d இல் %d"
 
-#: ../pluma/pluma-print-preview.c:965
+#: ../pluma/pluma-print-preview.c:963
 msgid "Page Preview"
 msgstr "பக்க முன்பார்வை"
 
-#: ../pluma/pluma-print-preview.c:966
+#: ../pluma/pluma-print-preview.c:964
 msgid "The preview of a page in the document to be printed"
 msgstr "ஆவணத்திலுள்ள அச்சிடப்பட வேண்டிய பக்கத்தின் முன்பார்வை "
 
-#: ../pluma/pluma-smart-charset-converter.c:319
+#: ../pluma/pluma-smart-charset-converter.c:316
 msgid "It is not possible to detect the encoding automatically"
 msgstr "குறியீட்டை தானியங்கியாக  கண்டுபிடிக்க முடியவில்லை"
 
-#: ../pluma/pluma-statusbar.c:70 ../pluma/pluma-statusbar.c:76
+#: ../pluma/pluma-statusbar.c:66 ../pluma/pluma-statusbar.c:72
 msgid "OVR"
 msgstr "OVR"
 
-#: ../pluma/pluma-statusbar.c:70 ../pluma/pluma-statusbar.c:76
+#: ../pluma/pluma-statusbar.c:66 ../pluma/pluma-statusbar.c:72
 msgid "INS"
 msgstr "INS"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for
 #. "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: ../pluma/pluma-statusbar.c:251
+#: ../pluma/pluma-statusbar.c:245
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  %d வரி, %d பத்தி"
 
-#: ../pluma/pluma-statusbar.c:352
+#: ../pluma/pluma-statusbar.c:346
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
@@ -2036,77 +2036,77 @@ msgstr ""
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:672
+#: ../pluma/pluma-tab.c:668
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "%s  %s இலிருந்து மீட்கப்படுகிறது"
 
-#: ../pluma/pluma-tab.c:679
+#: ../pluma/pluma-tab.c:675
 #, c-format
 msgid "Reverting %s"
 msgstr "%s மீட்கப்படுகிறது"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:695
+#: ../pluma/pluma-tab.c:691
 #, c-format
 msgid "Loading %s from %s"
 msgstr "%s  %s இலிருந்து ஏற்றப்படுகிறது"
 
-#: ../pluma/pluma-tab.c:702
+#: ../pluma/pluma-tab.c:698
 #, c-format
 msgid "Loading %s"
 msgstr "%s ஐ ஏற்றுகிறது"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:785
+#: ../pluma/pluma-tab.c:781
 #, c-format
 msgid "Saving %s to %s"
 msgstr "%s ஐ %s ல் சேமிக்கிறது"
 
-#: ../pluma/pluma-tab.c:792
+#: ../pluma/pluma-tab.c:788
 #, c-format
 msgid "Saving %s"
 msgstr "%sஐ சேமிக்கிறது"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1668
+#: ../pluma/pluma-tab.c:1664
 msgid "RO"
 msgstr "RO"
 
-#: ../pluma/pluma-tab.c:1715
+#: ../pluma/pluma-tab.c:1711
 #, c-format
 msgid "Error opening file %s"
 msgstr "%s கோப்பினை திறக்கும் போது பிழை"
 
-#: ../pluma/pluma-tab.c:1720
+#: ../pluma/pluma-tab.c:1716
 #, c-format
 msgid "Error reverting file %s"
 msgstr "கோப்பு %s ஐ மீட்கையில் பிழை"
 
-#: ../pluma/pluma-tab.c:1725
+#: ../pluma/pluma-tab.c:1721
 #, c-format
 msgid "Error saving file %s"
 msgstr "கோப்பு %s ஐ சேமிக்கும் போது பிழை"
 
-#: ../pluma/pluma-tab.c:1746
+#: ../pluma/pluma-tab.c:1742
 msgid "Unicode (UTF-8)"
 msgstr "யூனிகோட் (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1753
+#: ../pluma/pluma-tab.c:1749
 msgid "Name:"
 msgstr "பெயர்:"
 
-#: ../pluma/pluma-tab.c:1754
+#: ../pluma/pluma-tab.c:1750
 msgid "MIME Type:"
 msgstr "மைம் வகை:"
 
-#: ../pluma/pluma-tab.c:1755
+#: ../pluma/pluma-tab.c:1751
 msgid "Encoding:"
 msgstr "குறிமுறையாக்கம்:"
 
-#: ../pluma/pluma-tab-label.c:278
+#: ../pluma/pluma-tab-label.c:274
 msgid "Close document"
 msgstr "ஆவணத்தை மூடுக"
 
@@ -2148,7 +2148,7 @@ msgstr "புதிய ஆவணத்தை உருவாக்கு"
 msgid "_Open..."
 msgstr "திற...(_O)"
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1461
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1455
 msgid "Open a file"
 msgstr "ஓர் கோப்பைத் திறக்கவும்"
 
@@ -2263,7 +2263,7 @@ msgstr "கிளிப்போர்டில் இருந்து ஒட�
 #. Add delete button
 #: ../pluma/pluma-ui.h:102
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:182
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "_Delete"
 msgstr "(_D)நீக்கவும்"
 
@@ -2456,36 +2456,36 @@ msgid "/ on %s"
 msgstr "/ on %s"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1435
+#: ../pluma/pluma-view.c:1429
 msgid "_Wrap Around"
 msgstr "_W மடிந்து வருதல்"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1445
+#: ../pluma/pluma-view.c:1439
 msgid "Match _Entire Word Only"
 msgstr "_E முழு சொல்லை மட்டும் ஒப்பிடு "
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1455
+#: ../pluma/pluma-view.c:1449
 msgid "_Match Case"
 msgstr "_M நிலைப் பொருத்தம்"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1465
+#: ../pluma/pluma-view.c:1459
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1579
+#: ../pluma/pluma-view.c:1573
 msgid "String you want to search for"
 msgstr "தேட வேண்டிய சரம்"
 
-#: ../pluma/pluma-view.c:1588
+#: ../pluma/pluma-view.c:1582
 msgid "Line you want to move the cursor to"
 msgstr "நிலைகாட்டியை நகர்த்த வேண்டிய வரி"
 
-#: ../pluma/pluma-window.c:1020
+#: ../pluma/pluma-window.c:1014
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s சிறப்புச் சுட்டு வகையைப் பயன்படுத்துக"
@@ -2493,7 +2493,7 @@ msgstr "%s சிறப்புச் சுட்டு வகையைப் 
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
+#: ../pluma/pluma-window.c:1071 ../pluma/pluma-window.c:1959
 #: ../plugins/externaltools/tools/manager.py:108
 #: ../plugins/externaltools/tools/manager.py:308
 #: ../plugins/externaltools/tools/manager.py:424
@@ -2501,43 +2501,43 @@ msgstr "%s சிறப்புச் சுட்டு வகையைப் 
 msgid "Plain Text"
 msgstr "வெற்று உரை"
 
-#: ../pluma/pluma-window.c:1078
+#: ../pluma/pluma-window.c:1072
 msgid "Disable syntax highlighting"
 msgstr "இலக்கண சிறப்புச் சுட்டுதலை செயல்நீக்கு"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1360
+#: ../pluma/pluma-window.c:1354
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' ஐ திற"
 
-#: ../pluma/pluma-window.c:1467
+#: ../pluma/pluma-window.c:1461
 msgid "Open a recently used file"
 msgstr "சமீபத்தில் பயன்படுத்திய கோப்பைத் திறக்கவும்"
 
-#: ../pluma/pluma-window.c:1473
+#: ../pluma/pluma-window.c:1467
 msgid "Open"
 msgstr "திறத்தல்"
 
-#: ../pluma/pluma-window.c:1531
+#: ../pluma/pluma-window.c:1525
 msgid "Save"
 msgstr "சேமி"
 
-#: ../pluma/pluma-window.c:1533
+#: ../pluma/pluma-window.c:1527
 msgid "Print"
 msgstr "அச்சிடு"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1690
+#: ../pluma/pluma-window.c:1684
 #, c-format
 msgid "Activate '%s'"
 msgstr "%s ஐ தூண்டு செய்க"
 
-#: ../pluma/pluma-window.c:1943
+#: ../pluma/pluma-window.c:1937
 msgid "Use Spaces"
 msgstr "இடைவெளிகளை பயன்படுத்து"
 
-#: ../pluma/pluma-window.c:2014
+#: ../pluma/pluma-window.c:2008
 msgid "Tab Width"
 msgstr "தத்தல் அகலம்"
 
@@ -2549,39 +2549,39 @@ msgstr "நிலையை மாற்றுக"
 msgid "Changes the case of selected text."
 msgstr "தேர்ந்தெடுத்த உரையில் நிலையை மாற்றுகிறது"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:246
+#: ../plugins/changecase/pluma-changecase-plugin.c:243
 msgid "C_hange Case"
 msgstr "_h எழுத்து நிலை மாற்றம்"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:247
+#: ../plugins/changecase/pluma-changecase-plugin.c:244
 msgid "All _Upper Case"
 msgstr "_U அனைத்தையும் மேல் நிலை எழுத்தாக்குக"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:248
+#: ../plugins/changecase/pluma-changecase-plugin.c:245
 msgid "Change selected text to upper case"
 msgstr "தேர்ந்தெடுத்த உரையை அனைத்தையும் மேல் நிலை எழுத்தாக்குக"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:250
+#: ../plugins/changecase/pluma-changecase-plugin.c:247
 msgid "All _Lower Case"
 msgstr "_L அனைத்தையும் கீழ் நிலை எழுத்தாக்குக"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:251
+#: ../plugins/changecase/pluma-changecase-plugin.c:248
 msgid "Change selected text to lower case"
 msgstr "தேர்ந்தெடுத்த உரையை அனைத்தையும் கீழ் நிலை எழுத்தாக்குக"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:253
+#: ../plugins/changecase/pluma-changecase-plugin.c:250
 msgid "_Invert Case"
 msgstr "_I தலைகீழ் நிலை"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:254
+#: ../plugins/changecase/pluma-changecase-plugin.c:251
 msgid "Invert the case of selected text"
 msgstr "தேர்ந்தெடுத்த உரையை அனைத்தையும் நிலை மாற்றுக"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:256
+#: ../plugins/changecase/pluma-changecase-plugin.c:253
 msgid "_Title Case"
 msgstr "_T முதலெழுத்து பெரிய எழுத்தாக"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:257
+#: ../plugins/changecase/pluma-changecase-plugin.c:254
 msgid "Capitalize the first letter of each selected word"
 msgstr ""
 "ஒவ்வொரு தேர்ந்தெடுத்த வார்த்தையின் முதல் எழுத்தையும் மேல் நிலை எழுத்தாக்குக"
@@ -2635,11 +2635,11 @@ msgstr "ஆவணம்"
 msgid "Selection"
 msgstr "தேர்வுகள்"
 
-#: ../plugins/docinfo/pluma-docinfo-plugin.c:443
+#: ../plugins/docinfo/pluma-docinfo-plugin.c:440
 msgid "_Document Statistics"
 msgstr "_D ஆவண புள்ளி விவரம்"
 
-#: ../plugins/docinfo/pluma-docinfo-plugin.c:445
+#: ../plugins/docinfo/pluma-docinfo-plugin.c:442
 msgid "Get statistical information on the current document"
 msgstr "தற்போதைய ஆவணத்தின் புள்ளி விவரங்களை பெறவும்"
 
@@ -2966,63 +2966,63 @@ msgstr "தொலை இடங்களின் மீட்டமைப்ப�
 msgid "Sets whether to enable restoring of remote locations."
 msgstr "தொலைநிலை இடங்களை மீட்பதை இயலுமைபடுத்துவதா என அமைக்கிறது."
 
-#: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
+#: ../plugins/filebrowser/pluma-file-bookmarks-store.c:238
 msgid "File System"
 msgstr "கோப்பு முறைமை"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:576
 msgid "_Set root to active document"
 msgstr "_S ரூட்டினை செயலிலுள்ள ஆவணத்திற்கு அமைக்கவும் "
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:579
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:578
 msgid "Set the root to the active document location"
 msgstr "ரூட்டினை செயலிலுள்ள ஆவண இடத்திற்கு அமைக்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:584
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:583
 msgid "_Open terminal here"
 msgstr "_O இங்கு முனையத்தை திறக்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:586
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:585
 msgid "Open a terminal at the currently opened directory"
 msgstr "தற்போது திறக்கப்பட்ட அடைவில் ஒரு முனையத்தை திறக்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:726
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:725
 msgid "File Browser"
 msgstr "கோப்பு உலாவி"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:874
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:870
 msgid "An error occurred while creating a new directory"
 msgstr "ஒரு புதிய அடைவினை உருவாக்கும் போது பிழை ஏற்பட்டுள்ளது"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:877
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:873
 msgid "An error occurred while creating a new file"
 msgstr "ஒரு புதிய கோப்பினை உருவாக்கும் போது பிழை ஏற்பட்டுள்ளது"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:882
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:878
 msgid "An error occurred while renaming a file or directory"
 msgstr "ஒரு கோப்பு அல்லது அடைவினை மறுபெயரிடும் போது பிழை ஏற்பட்டுள்ளது"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:887
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:883
 msgid "An error occurred while deleting a file or directory"
 msgstr "ஒரு கோப்பு அல்லது அடைவினை நீக்கும் போது பிழை ஏற்பட்டுள்ளது"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:888
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "கோப்பு மேலாளரில் ஒரு அடைவினை திறக்கும் போது ஒரு பிழை ஏற்பட்டுள்ளது"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while setting a root directory"
 msgstr "ஒரு ரூட் அடைவினை அமைக்கும் போது பிழை ஏற்பட்டுள்ளது"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
 msgid "An error occurred while loading a directory"
 msgstr "ஒரு அடைவினை ஏற்றும் போது பிழை ஏற்பட்டுள்ளது"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:903
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:899
 msgid "An error occurred"
 msgstr "ஒரு பிழை ஏற்பட்டுள்ளது"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1130
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1126
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3030,33 +3030,33 @@ msgstr ""
 "குப்பை தொட்டிக்கு கோப்பினை நகர்த்த முடியாது, \n"
 "முழுமையாக அழிக்க வேண்டுமா?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1130
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "கோப்பு \"%s\" ஐ குப்பை தொட்டிக்கு நகர்த்த முடியாது"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1137
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1133
 msgid "The selected files cannot be moved to the trash."
 msgstr "தேர்ந்தெடுத்த கோப்புக்களை குப்பை தொட்டிக்கு நகர்த்த முடியாது."
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1165
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1161
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "\"%s\" ஐ அவசியம் நிரந்தரமாக நீக்க வேண்டுமா?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1168
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1164
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "நீங்கள் தேர்ந்தெடுத்த கோப்புக்களை நிரந்தரமாக அழிக்க வேண்டுமா?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1171
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
 msgid "If you delete an item, it is permanently lost."
 msgstr "உருப்படியை நீக்கினால் அதை  நிரந்தரமாக இழக்க நேரும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:1668
+#: ../plugins/filebrowser/pluma-file-browser-store.c:1662
 msgid "(Empty)"
 msgstr "(வெற்று)"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3224
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3218
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3066,11 +3066,11 @@ msgstr ""
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3481
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3475
 msgid "file"
 msgstr "கோப்பு"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3505
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3499
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3080,11 +3080,11 @@ msgstr ""
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3534
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3528
 msgid "directory"
 msgstr "அடைவு"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3554
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3548
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3092,151 +3092,151 @@ msgstr ""
 "புதிய அடைவு தற்போது வடிகட்டப்பட்டது. அடைவைப் பார்க்க நீங்கள் வடிகட்டி "
 "அமைப்பை மாற்ற வேண்டும்."
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:716
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:712
 msgid "Bookmarks"
 msgstr "புத்தககுறிகள்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:797
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:793
 msgid "_Filter"
 msgstr "_வடிப்பி"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:802
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:798
 msgid "_Move to Trash"
 msgstr "_M குப்பை தொட்டிக்கு நகர்த்தவும் "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:803
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:799
 msgid "Move selected file or folder to trash"
 msgstr ""
 "தேர்ந்தெடுக்கப்பட்ட கோப்பு அல்லது அடைவினை குப்பை தொட்டிக்கு நகர்த்தவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:806
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:802
 msgid "Delete selected file or folder"
 msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்பு அல்லது அடைவினை அழிக்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:813
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:809
 msgid "Open selected file"
 msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்பினை திறக்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:819
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:815
 msgid "Up"
 msgstr "மேல்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:820
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "Open the parent folder"
 msgstr "மூல அடைவினை திறக்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:825
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:821
 msgid "_New Folder"
 msgstr "_N புதிய அடைவு"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:826
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:822
 msgid "Add new empty folder"
 msgstr "புதிய வெற்று கோப்பினை சேர்க்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:828
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:824
 msgid "New F_ile"
 msgstr "_i புதிய கோப்பு "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:829
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:825
 msgid "Add new empty file"
 msgstr "புதிய வெற்று கோப்பினை சேர்க்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:834
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:830
 msgid "_Rename"
 msgstr "மறுபெயர் (_R)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:835
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:831
 msgid "Rename selected file or folder"
 msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்பு அல்லது அடைவின் பெயரை மாற்றவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:841
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:837
 msgid "_Previous Location"
 msgstr "_P முந்தைய இடம் "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:843
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:839
 msgid "Go to the previous visited location"
 msgstr "முந்தைய இடத்திற்குப் போகவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:845
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:841
 msgid "_Next Location"
 msgstr "_N அடுத்த இடம் "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:846
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:842
 msgid "Go to the next visited location"
 msgstr "அடுத்து போன இடத்துக்குப் போகவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:847
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Re_fresh View"
 msgstr "_f பார்வையை புதுப்பிக்கவும் "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:848
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:844
 msgid "Refresh the view"
 msgstr "பார்வையை புதுப்பிக்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:849
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:867
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:845
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:863
 msgid "_View Folder"
 msgstr "_V அடைவை காட்டுக"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:850
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:868
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:846
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:864
 msgid "View folder in file manager"
 msgstr "கோப்பு மேலாளரில் அடைவினை பார்க்கவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:857
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:853
 msgid "Show _Hidden"
 msgstr "_H மறைவானதை காட்டவும் "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:858
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:854
 msgid "Show hidden files and folders"
 msgstr "மறைவான கோப்புகள் மற்றும் அடைவுகளை காட்டவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:860
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "Show _Binary"
 msgstr "_B இருமத்தை காட்டவும் "
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:861
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:857
 msgid "Show binary files"
 msgstr "இரும கோப்புகளை காட்டவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:994
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1007
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1033
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:990
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1003
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1029
 msgid "Previous location"
 msgstr "முந்தைய இடம்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1000
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:996
 msgid "Go to previous location"
 msgstr "முந்தைய இடத்திற்கு செல்லவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1028
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:998
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1024
 msgid "Go to a previously opened location"
 msgstr "முந்தைய திறந்த ஒரு இடத்திற்கு செல்லவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1020
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1016
 msgid "Next location"
 msgstr "அடுத்த இடம்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1026
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
 msgid "Go to next location"
 msgstr "அடுத்த இடத்திற்கு செல்லவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1238
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1234
 msgid "_Match Filename"
 msgstr "_M கோப்பு பெயரை பொருத்தவும்"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2139
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2135
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "ஏற்றப்பட்ட தொகுதியில் ஏற்றும் பொருள் இல்லை: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2219
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2215
 #, c-format
 msgid "Could not open media: %s"
 msgstr "ஊடகத்தை திறக்க முடியவில்லை: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2266
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2262
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "தொகுதியை ஏற்ற முடியவில்லை: %s"
@@ -3529,11 +3529,11 @@ msgstr ""
 msgid "Execution of the Python command (%s) failed: %s"
 msgstr "பைதான் கட்டளை (%s) ஐ நிறைவேற்றுதல் தோல்வி அடைந்தது:%s"
 
-#: ../plugins/sort/pluma-sort-plugin.c:94
+#: ../plugins/sort/pluma-sort-plugin.c:93
 msgid "S_ort..."
 msgstr "_அடுக்கவும்..."
 
-#: ../plugins/sort/pluma-sort-plugin.c:96
+#: ../plugins/sort/pluma-sort-plugin.c:95
 msgid "Sort the current document or selection"
 msgstr "நடப்பு ஆவணம் அல்லது தேர்ந்தெடுத்ததை வரிசைப்படுத்துக"
 
@@ -3648,35 +3648,35 @@ msgstr "மொழியை அமைக்கவும்"
 msgid "Languages"
 msgstr "மொழிகள்"
 
-#: ../plugins/spell/pluma-spell-plugin.c:100
+#: ../plugins/spell/pluma-spell-plugin.c:97
 msgid "_Check Spelling..."
 msgstr "எழுத்துப்பிழை சரிபார் (_C)..."
 
-#: ../plugins/spell/pluma-spell-plugin.c:102
+#: ../plugins/spell/pluma-spell-plugin.c:99
 msgid "Check the current document for incorrect spelling"
 msgstr "எழுத்துப்பிழைகள் உள்ளதா என நடப்பிலுள்ள ஆவணத்தை சரிபார்க்கும்"
 
-#: ../plugins/spell/pluma-spell-plugin.c:108
+#: ../plugins/spell/pluma-spell-plugin.c:105
 msgid "Set _Language..."
 msgstr "_L மொழியை அமை... "
 
-#: ../plugins/spell/pluma-spell-plugin.c:110
+#: ../plugins/spell/pluma-spell-plugin.c:107
 msgid "Set the language of the current document"
 msgstr "இந்த ஆவணத்தின் மொழியை அமைக்கும்"
 
-#: ../plugins/spell/pluma-spell-plugin.c:119
+#: ../plugins/spell/pluma-spell-plugin.c:116
 msgid "_Autocheck Spelling"
 msgstr "_A எழுத்துபிழையை தானாகச் சரிபார்"
 
-#: ../plugins/spell/pluma-spell-plugin.c:121
+#: ../plugins/spell/pluma-spell-plugin.c:118
 msgid "Automatically spell-check the current document"
 msgstr "தற்போதைய ஆவணத்தை தானே பிழை திருத்துக"
 
-#: ../plugins/spell/pluma-spell-plugin.c:921
+#: ../plugins/spell/pluma-spell-plugin.c:918
 msgid "The document is empty."
 msgstr "வெற்று ஆவணம்."
 
-#: ../plugins/spell/pluma-spell-plugin.c:946
+#: ../plugins/spell/pluma-spell-plugin.c:943
 msgid "No misspelled words"
 msgstr "தவறான சொற்கள் இல்லை"
 
@@ -3768,21 +3768,21 @@ msgstr "சொல் திருத்தி "
 msgid "Checks the spelling of the current document."
 msgstr "இந்த ஆவண சொற்களின் எழுத்துக் கோவையை சரிபார்க்கவும்"
 
-#: ../plugins/taglist/pluma-taglist-plugin.c:125
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:724
+#: ../plugins/taglist/pluma-taglist-plugin.c:124
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:707
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:722
 msgid "Tags"
 msgstr "ஒட்டுகள் (Tags)"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:611
 msgid "Select the group of tags you want to use"
 msgstr "புழங்க விரும்பும் குறிகளை தேர்வு செய்யவும்"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:632
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:630
 msgid "_Preview"
 msgstr "முன்பார்வை (_P)"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:706
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:704
 msgid "Available Tag Lists"
 msgstr "இருக்கும் குறிகளின் பட்டியல்கள்"
 
@@ -5342,16 +5342,16 @@ msgstr ""
 msgid "Custom format"
 msgstr "தனிப்பயன் வடிவம்"
 
-#: ../plugins/time/pluma-time-plugin.c:189
+#: ../plugins/time/pluma-time-plugin.c:186
 msgid "In_sert Date and Time..."
 msgstr "_நs தேதி மற்றும் நேரத்தை நுழை..."
 
-#: ../plugins/time/pluma-time-plugin.c:191
+#: ../plugins/time/pluma-time-plugin.c:188
 msgid "Insert current date and time at the cursor position"
 msgstr ""
 "தற்போதைய தேதியையும் நேரத்தையும் நிலை காட்டி இருக்குமிடத்தில் சொருகவும்"
 
-#: ../plugins/time/pluma-time-plugin.c:581
+#: ../plugins/time/pluma-time-plugin.c:578
 msgid "Available formats"
 msgstr "புழங்கக்கூடிய வடிவங்கள்"
 

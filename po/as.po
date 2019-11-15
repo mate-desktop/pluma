@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-17 14:34+0200\n"
+"POT-Creation-Date: 2019-08-17 20:56+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: Assamese (https://www.transifex.com/mate/teams/13566/as/)\n"
@@ -582,7 +582,7 @@ msgstr ""
 msgid "Pluma"
 msgstr ""
 
-#: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:760
+#: ../data/pluma.desktop.in.in.h:2 ../pluma/pluma-print-job.c:754
 msgid "Text Editor"
 msgstr "টেক্সট এডিটার"
 
@@ -612,11 +612,11 @@ msgstr "সংৰক্ষণ নকৰি বন্ধ কৰক (_w)"
 #: ../pluma/dialogs/pluma-encodings-dialog.ui.h:3
 #: ../pluma/dialogs/pluma-preferences-dialog.c:975
 #: ../pluma/pluma-commands-file.c:583 ../pluma/pluma-commands-file.c:1223
-#: ../pluma/pluma-file-chooser-dialog.c:440
+#: ../pluma/pluma-file-chooser-dialog.c:435
 #: ../pluma/pluma-io-error-message-area.c:168
 #: ../pluma/pluma-io-error-message-area.c:507
 #: ../pluma/pluma-io-error-message-area.c:1190
-#: ../pluma/pluma-progress-message-area.c:66
+#: ../pluma/pluma-progress-message-area.c:63
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:171
 #: ../plugins/quickopen/quickopen/popup.py:36
 #: ../plugins/snippets/snippets/Manager.py:795
@@ -632,7 +632,7 @@ msgstr "বাতিল (_C)"
 
 #. File menu
 #: ../pluma/dialogs/pluma-close-confirmation-dialog.c:178
-#: ../pluma/pluma-file-chooser-dialog.c:444 ../pluma/pluma-ui.h:80
+#: ../pluma/pluma-file-chooser-dialog.c:439 ../pluma/pluma-ui.h:80
 #: ../plugins/snippets/snippets/Manager.py:882
 #: ../plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
@@ -760,7 +760,7 @@ msgstr "সংৰক্ষণ নকৰিলে সমস্ত পৰিবৰ
 #: ../plugins/spell/pluma-spell-language-dialog.c:133
 #: ../plugins/spell/languages-dialog.ui.h:4
 #: ../plugins/spell/pluma-spell-setup-dialog.ui.h:4
-#: ../plugins/time/pluma-time-plugin.c:923
+#: ../plugins/time/pluma-time-plugin.c:920
 #: ../plugins/time/pluma-time-setup-dialog.ui.h:4
 msgid "_OK"
 msgstr ""
@@ -841,7 +841,7 @@ msgid "Color Scheme Files"
 msgstr "ৰঙৰ যোজনাৰ নথিপত্ৰ"
 
 #: ../pluma/dialogs/pluma-preferences-dialog.c:1039
-#: ../pluma/pluma-file-chooser-dialog.c:54
+#: ../pluma/pluma-file-chooser-dialog.c:52
 msgid "All Files"
 msgstr "সৰ্বধৰনৰ নথিপত্ৰ"
 
@@ -854,7 +854,7 @@ msgstr "\"%s\" ৰঙৰ যোজনা আঁতৰাব পৰা ন'গ'�
 #: ../pluma/dialogs/pluma-preferences-dialog.ui.h:3
 #: ../pluma/dialogs/pluma-search-dialog.c:327
 #: ../pluma/dialogs/pluma-search-dialog.ui.h:2 ../pluma/pluma-ui.h:142
-#: ../plugins/docinfo/docinfo.ui.h:2
+#: ../plugins/docinfo/docinfo.ui.h:2 ../plugins/spell/spell-checker.ui.h:15
 msgid "_Close"
 msgstr "বন্ধ কৰক (_C)"
 
@@ -892,7 +892,7 @@ msgstr "কোনো শব্দ দুই শাৰীত বিভক্ত �
 msgid "Line Numbers"
 msgstr ""
 
-#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2197
+#: ../pluma/dialogs/pluma-preferences-dialog.ui.h:9 ../pluma/pluma-view.c:2191
 msgid "_Display line numbers"
 msgstr "শাৰী সংখ্যা প্ৰদৰ্শন কৰা হ'ব (_D)"
 
@@ -1021,11 +1021,11 @@ msgid "Plugins"
 msgstr "প্লাগ-ইন"
 
 #: ../pluma/dialogs/pluma-search-dialog.c:295
-#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1537
+#: ../pluma/dialogs/pluma-search-dialog.ui.h:1 ../pluma/pluma-window.c:1531
 msgid "Replace"
 msgstr "প্ৰতিস্থাপন"
 
-#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1535
+#: ../pluma/dialogs/pluma-search-dialog.c:304 ../pluma/pluma-window.c:1529
 msgid "Find"
 msgstr "অনুসন্ধান"
 
@@ -1326,12 +1326,12 @@ msgstr "\"%s\" পোৱা নাযায়"
 msgid "Unsaved Document %d"
 msgstr "অসংৰক্ষিত আলেখ্যন %d"
 
-#: ../pluma/pluma-documents-panel.c:97 ../pluma/pluma-documents-panel.c:111
-#: ../pluma/pluma-window.c:2264 ../pluma/pluma-window.c:2269
+#: ../pluma/pluma-documents-panel.c:93 ../pluma/pluma-documents-panel.c:107
+#: ../pluma/pluma-window.c:2258 ../pluma/pluma-window.c:2263
 msgid "Read-Only"
 msgstr ""
 
-#: ../pluma/pluma-documents-panel.c:709 ../pluma/pluma-window.c:3690
+#: ../pluma/pluma-documents-panel.c:703 ../pluma/pluma-window.c:3684
 msgid "Documents"
 msgstr "ডকুমেন্ট"
 
@@ -1451,46 +1451,46 @@ msgstr "থাই"
 msgid "Unknown"
 msgstr "অজ্ঞাত"
 
-#: ../pluma/pluma-encodings-combo-box.c:272
+#: ../pluma/pluma-encodings-combo-box.c:266
 msgid "Automatically Detected"
 msgstr ""
 
-#: ../pluma/pluma-encodings-combo-box.c:288
-#: ../pluma/pluma-encodings-combo-box.c:303
+#: ../pluma/pluma-encodings-combo-box.c:282
+#: ../pluma/pluma-encodings-combo-box.c:297
 #, c-format
 msgid "Current Locale (%s)"
 msgstr "বৰ্ত্তমান লোকেইল (%s)"
 
-#: ../pluma/pluma-encodings-combo-box.c:353
+#: ../pluma/pluma-encodings-combo-box.c:347
 msgid "Add or Remove..."
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:55
+#: ../pluma/pluma-file-chooser-dialog.c:53
 msgid "All Text Files"
 msgstr "সমস্ত টেক্সট নথিপত্ৰ"
 
-#: ../pluma/pluma-file-chooser-dialog.c:83
+#: ../pluma/pluma-file-chooser-dialog.c:78
 msgid "C_haracter Encoding:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:148
+#: ../pluma/pluma-file-chooser-dialog.c:143
 msgid "L_ine Ending:"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:167
+#: ../pluma/pluma-file-chooser-dialog.c:162
 msgid "Unix/Linux"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:173
+#: ../pluma/pluma-file-chooser-dialog.c:168
 msgid "Mac OS Classic"
 msgstr ""
 
-#: ../pluma/pluma-file-chooser-dialog.c:179
+#: ../pluma/pluma-file-chooser-dialog.c:174
 msgid "Windows"
 msgstr "সংযোগক্ষেত্ৰ"
 
-#: ../pluma/pluma-file-chooser-dialog.c:442
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:812
+#: ../pluma/pluma-file-chooser-dialog.c:437
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:808
 #: ../plugins/quickopen/quickopen/popup.py:37
 #: ../plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
@@ -1828,24 +1828,24 @@ msgstr "নথিপত্ৰ পুনঃ লোড কৰা হ'ব নেক
 msgid "_Reload"
 msgstr "পুনৰায় লোড (_R)"
 
-#: ../pluma/pluma-panel.c:320 ../pluma/pluma-panel.c:495
+#: ../pluma/pluma-panel.c:316 ../pluma/pluma-panel.c:490
 msgid "Empty"
 msgstr "ফাঁকা"
 
-#: ../pluma/pluma-panel.c:385
+#: ../pluma/pluma-panel.c:380
 msgid "Hide panel"
 msgstr "পেনেল আড়াল কৰা হ'ব"
 
-#: ../pluma/pluma-print-job.c:544
+#: ../pluma/pluma-print-job.c:538
 #, c-format
 msgid "File: %s"
 msgstr "নথিপত্ৰ: %s"
 
-#: ../pluma/pluma-print-job.c:553
+#: ../pluma/pluma-print-job.c:547
 msgid "Page %N of %Q"
 msgstr "পৃষ্ঠা %N, সৰ্বমোট %Q"
 
-#: ../pluma/pluma-print-job.c:810
+#: ../pluma/pluma-print-job.c:804
 msgid "Preparing..."
 msgstr "প্ৰস্তুত কৰা হৈছে..."
 
@@ -1897,93 +1897,93 @@ msgstr "শাৰী সংখ্যা: (_L)"
 msgid "_Restore Default Fonts"
 msgstr "অবিকল্পিত আখৰ পুনঃ স্থাপন কৰা হ'ব (_R)"
 
-#: ../pluma/pluma-print-preview.c:571
+#: ../pluma/pluma-print-preview.c:569
 msgid "Show the previous page"
 msgstr "পূৰ্ববৰ্তী পৃষ্ঠা প্ৰদৰ্শন কৰা হ'ব"
 
-#: ../pluma/pluma-print-preview.c:584
+#: ../pluma/pluma-print-preview.c:582
 msgid "Show the next page"
 msgstr "পৰবৰ্তী পৃষ্ঠা প্ৰদৰ্শন কৰা হ'ব"
 
-#: ../pluma/pluma-print-preview.c:600
+#: ../pluma/pluma-print-preview.c:598
 msgid "Current page (Alt+P)"
 msgstr "বৰ্ত্তমান পৃষ্ঠা (Alt+P)"
 
 #. Translators: the "of" from "1 of 19" in print preview.
-#: ../pluma/pluma-print-preview.c:623
+#: ../pluma/pluma-print-preview.c:621
 msgid "of"
 msgstr "সৰ্বমোট"
 
-#: ../pluma/pluma-print-preview.c:631
+#: ../pluma/pluma-print-preview.c:629
 msgid "Page total"
 msgstr "সৰ্বমোট পৃষ্ঠা"
 
-#: ../pluma/pluma-print-preview.c:632
+#: ../pluma/pluma-print-preview.c:630
 msgid "The total number of pages in the document"
 msgstr "আলেখ্যনৰ সৰ্বমোট পৃষ্ঠা সংখ্যা"
 
-#: ../pluma/pluma-print-preview.c:650
+#: ../pluma/pluma-print-preview.c:648
 msgid "Show multiple pages"
 msgstr "একাধিক পৃষ্ঠা প্ৰদৰ্শন কৰা হ'ব"
 
-#: ../pluma/pluma-print-preview.c:664
+#: ../pluma/pluma-print-preview.c:662
 msgid "Zoom 1:1"
 msgstr "প্ৰদৰ্শনৰ মাত্ৰা ১:১"
 
-#: ../pluma/pluma-print-preview.c:674
+#: ../pluma/pluma-print-preview.c:672
 msgid "Zoom to fit the whole page"
 msgstr "সম্পূৰ্ণ পৃষ্ঠাৰ মাপ অনুযায়ী প্ৰদৰ্শন"
 
-#: ../pluma/pluma-print-preview.c:684
+#: ../pluma/pluma-print-preview.c:682
 msgid "Zoom the page in"
 msgstr "পৃষ্ঠা ডাঙৰ কৰি প্ৰদৰ্শন"
 
-#: ../pluma/pluma-print-preview.c:694
+#: ../pluma/pluma-print-preview.c:692
 msgid "Zoom the page out"
 msgstr "পৃষ্ঠা প্ৰদৰ্শনৰ মাত্ৰা হ্ৰাস কৰা হ'ব"
 
-#: ../pluma/pluma-print-preview.c:706
+#: ../pluma/pluma-print-preview.c:704
 msgid "_Close Preview"
 msgstr "মূদ্ৰণৰ পূৰ্বৰূপ বন্ধ কৰক (_C)"
 
-#: ../pluma/pluma-print-preview.c:709
+#: ../pluma/pluma-print-preview.c:707
 msgid "Close print preview"
 msgstr "মূদ্ৰণৰ পূৰ্বৰূপ বন্ধ কৰক"
 
-#: ../pluma/pluma-print-preview.c:784
+#: ../pluma/pluma-print-preview.c:782
 #, c-format
 msgid "Page %d of %d"
 msgstr "পৃষ্ঠা %d, %d -ৰ"
 
-#: ../pluma/pluma-print-preview.c:965
+#: ../pluma/pluma-print-preview.c:963
 msgid "Page Preview"
 msgstr "পৃষ্ঠাৰ পূৰ্বৰূপ"
 
-#: ../pluma/pluma-print-preview.c:966
+#: ../pluma/pluma-print-preview.c:964
 msgid "The preview of a page in the document to be printed"
 msgstr "মূদ্ৰণ কৰাৰ বাবে চিহ্নিত পৃষ্ঠাৰ পূৰ্বৰূপ"
 
-#: ../pluma/pluma-smart-charset-converter.c:319
+#: ../pluma/pluma-smart-charset-converter.c:316
 msgid "It is not possible to detect the encoding automatically"
 msgstr ""
 
-#: ../pluma/pluma-statusbar.c:70 ../pluma/pluma-statusbar.c:76
+#: ../pluma/pluma-statusbar.c:66 ../pluma/pluma-statusbar.c:72
 msgid "OVR"
 msgstr "OVR"
 
-#: ../pluma/pluma-statusbar.c:70 ../pluma/pluma-statusbar.c:76
+#: ../pluma/pluma-statusbar.c:66 ../pluma/pluma-statusbar.c:72
 msgid "INS"
 msgstr "INS"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for
 #. "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: ../pluma/pluma-statusbar.c:251
+#: ../pluma/pluma-statusbar.c:245
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  শাৰী %d, স্তম্ভ %d"
 
-#: ../pluma/pluma-statusbar.c:352
+#: ../pluma/pluma-statusbar.c:346
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
@@ -1997,77 +1997,77 @@ msgstr "'%s' পঞ্জিকা সৃষ্ কৰিব পৰা ন'গ'�
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:672
+#: ../pluma/pluma-tab.c:668
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "%s, %sৰ পৰা প্ৰত্যাবৰ্তন কৰা হৈছে"
 
-#: ../pluma/pluma-tab.c:679
+#: ../pluma/pluma-tab.c:675
 #, c-format
 msgid "Reverting %s"
 msgstr "%s প্ৰত্যাবৰ্তন কৰা হৈছে"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:695
+#: ../pluma/pluma-tab.c:691
 #, c-format
 msgid "Loading %s from %s"
 msgstr "%s, %sৰ পৰা লোড কৰা হৈছে"
 
-#: ../pluma/pluma-tab.c:702
+#: ../pluma/pluma-tab.c:698
 #, c-format
 msgid "Loading %s"
 msgstr "%s লোড কৰা হৈছে"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: ../pluma/pluma-tab.c:785
+#: ../pluma/pluma-tab.c:781
 #, c-format
 msgid "Saving %s to %s"
 msgstr "%s, %s'এ সংৰক্ষণ কৰা হৈছে"
 
-#: ../pluma/pluma-tab.c:792
+#: ../pluma/pluma-tab.c:788
 #, c-format
 msgid "Saving %s"
 msgstr "%s সংৰক্ষণ কৰা হৈছে"
 
 #. Read only
-#: ../pluma/pluma-tab.c:1668
+#: ../pluma/pluma-tab.c:1664
 msgid "RO"
 msgstr "RO"
 
-#: ../pluma/pluma-tab.c:1715
+#: ../pluma/pluma-tab.c:1711
 #, c-format
 msgid "Error opening file %s"
 msgstr "নথিপত্ৰ %s লোড কৰোঁতে সমস্যা"
 
-#: ../pluma/pluma-tab.c:1720
+#: ../pluma/pluma-tab.c:1716
 #, c-format
 msgid "Error reverting file %s"
 msgstr "%s নথিপত্ৰ প্ৰত্যাবৰ্তন কৰোঁতে সমস্যা"
 
-#: ../pluma/pluma-tab.c:1725
+#: ../pluma/pluma-tab.c:1721
 #, c-format
 msgid "Error saving file %s"
 msgstr "%s নথিপত্ৰ সংৰক্ষণ কৰোঁতে সমস্যা"
 
-#: ../pluma/pluma-tab.c:1746
+#: ../pluma/pluma-tab.c:1742
 msgid "Unicode (UTF-8)"
 msgstr "Unicode (UTF-8)"
 
-#: ../pluma/pluma-tab.c:1753
+#: ../pluma/pluma-tab.c:1749
 msgid "Name:"
 msgstr "নাম"
 
-#: ../pluma/pluma-tab.c:1754
+#: ../pluma/pluma-tab.c:1750
 msgid "MIME Type:"
 msgstr "MIME-ৰ প্ৰকৃতি:"
 
-#: ../pluma/pluma-tab.c:1755
+#: ../pluma/pluma-tab.c:1751
 msgid "Encoding:"
 msgstr "এনকোডিং:"
 
-#: ../pluma/pluma-tab-label.c:278
+#: ../pluma/pluma-tab-label.c:274
 msgid "Close document"
 msgstr "আলেখ্যন বন্ধ কৰক"
 
@@ -2109,7 +2109,7 @@ msgstr "নতুন আলেখ্যন নিৰ্মাণ কৰক"
 msgid "_Open..."
 msgstr "খোলক(_O)..."
 
-#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1461
+#: ../pluma/pluma-ui.h:59 ../pluma/pluma-window.c:1455
 msgid "Open a file"
 msgstr "নথিপত্ৰ খোলো"
 
@@ -2224,7 +2224,7 @@ msgstr "ক্লিপ-বোৰ্ডৰ পৰা পেস্ট কৰক"
 #. Add delete button
 #: ../pluma/pluma-ui.h:102
 #: ../plugins/filebrowser/pluma-file-browser-utils.c:182
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:805
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "_Delete"
 msgstr "মুছে ফেলুন (_D)"
 
@@ -2416,36 +2416,36 @@ msgid "/ on %s"
 msgstr "/ %s ৰ ওপৰত"
 
 #. create "Wrap Around" menu item.
-#: ../pluma/pluma-view.c:1435
+#: ../pluma/pluma-view.c:1429
 msgid "_Wrap Around"
 msgstr "বিভাজন কৰা হ'ব (_W)"
 
 #. create "Match Entire Word Only" menu item.
-#: ../pluma/pluma-view.c:1445
+#: ../pluma/pluma-view.c:1439
 msgid "Match _Entire Word Only"
 msgstr "অকল সম্পূৰ্ণ শব্দ অনুসন্ধান কৰা হ'ব (_E)"
 
 #. create "Match Case" menu item.
-#: ../pluma/pluma-view.c:1455
+#: ../pluma/pluma-view.c:1449
 msgid "_Match Case"
 msgstr "হৰফেৰ কেছ মিলোৱা হ'ব (_M)"
 
 #. create "Parse escapes" menu item.
-#: ../pluma/pluma-view.c:1465
+#: ../pluma/pluma-view.c:1459
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
 
-#: ../pluma/pluma-view.c:1579
+#: ../pluma/pluma-view.c:1573
 msgid "String you want to search for"
 msgstr "অনুসন্ধানৰ উদ্দেশ্যে শাৰী"
 
-#: ../pluma/pluma-view.c:1588
+#: ../pluma/pluma-view.c:1582
 msgid "Line you want to move the cursor to"
 msgstr "কাৰ্ছাৰ স্থানান্তৰণৰ বাবে চিহ্নিত শাৰী সংখ্যা"
 
-#: ../pluma/pluma-window.c:1020
+#: ../pluma/pluma-window.c:1014
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s উজ্জ্বলতাৰ ধৰণ ব্যৱহাৰ কৰা হ'ব"
@@ -2453,7 +2453,7 @@ msgstr "%s উজ্জ্বলতাৰ ধৰণ ব্যৱহাৰ কৰ
 #. add the "Plain Text" item before all the others
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: ../pluma/pluma-window.c:1077 ../pluma/pluma-window.c:1965
+#: ../pluma/pluma-window.c:1071 ../pluma/pluma-window.c:1959
 #: ../plugins/externaltools/tools/manager.py:108
 #: ../plugins/externaltools/tools/manager.py:308
 #: ../plugins/externaltools/tools/manager.py:424
@@ -2461,43 +2461,43 @@ msgstr "%s উজ্জ্বলতাৰ ধৰণ ব্যৱহাৰ কৰ
 msgid "Plain Text"
 msgstr "উকা টেক্সট  "
 
-#: ../pluma/pluma-window.c:1078
+#: ../pluma/pluma-window.c:1072
 msgid "Disable syntax highlighting"
 msgstr "শব্দবিন্যাসৰ বিভিন্ন অংশ পৃথকৰূপে প্ৰদৰ্শন কৰা ন'হ'ব"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1360
+#: ../pluma/pluma-window.c:1354
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' খোলক"
 
-#: ../pluma/pluma-window.c:1467
+#: ../pluma/pluma-window.c:1461
 msgid "Open a recently used file"
 msgstr "সম্প্ৰতি ব্যৱহৃত কোনো নথিপত্ৰ খোলক"
 
-#: ../pluma/pluma-window.c:1473
+#: ../pluma/pluma-window.c:1467
 msgid "Open"
 msgstr "খোলক"
 
-#: ../pluma/pluma-window.c:1531
+#: ../pluma/pluma-window.c:1525
 msgid "Save"
 msgstr "সংৰক্ষণ"
 
-#: ../pluma/pluma-window.c:1533
+#: ../pluma/pluma-window.c:1527
 msgid "Print"
 msgstr "প্ৰিন্ট কৰক"
 
 #. Translators: %s is a URI
-#: ../pluma/pluma-window.c:1690
+#: ../pluma/pluma-window.c:1684
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' সক্ৰিয় কৰক"
 
-#: ../pluma/pluma-window.c:1943
+#: ../pluma/pluma-window.c:1937
 msgid "Use Spaces"
 msgstr "শূণ্যস্থান ব্যৱহাৰ কৰক"
 
-#: ../pluma/pluma-window.c:2014
+#: ../pluma/pluma-window.c:2008
 msgid "Tab Width"
 msgstr "টেবৰ প্ৰস্থ"
 
@@ -2509,39 +2509,39 @@ msgstr "হৰফেৰ কেছ পৰিবৰ্তন কৰক"
 msgid "Changes the case of selected text."
 msgstr "নিৰ্বাচিত টেক্সটৰ হৰফেৰ কেছ পৰিবৰ্তন কৰোঁতে ব্যৱহৃত হয়  ।"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:246
+#: ../plugins/changecase/pluma-changecase-plugin.c:243
 msgid "C_hange Case"
 msgstr "হৰফেৰ কেছ পৰিবৰ্তন কৰক (_h)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:247
+#: ../plugins/changecase/pluma-changecase-plugin.c:244
 msgid "All _Upper Case"
 msgstr "অকল ডাঙৰ কেছ ব্যৱহাৰ কৰা হ'ব (_U)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:248
+#: ../plugins/changecase/pluma-changecase-plugin.c:245
 msgid "Change selected text to upper case"
 msgstr "নিৰ্বাচিত টেক্সটৰ হৰফ ডাঙৰ কেছে পৰিবৰ্তন কৰক"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:250
+#: ../plugins/changecase/pluma-changecase-plugin.c:247
 msgid "All _Lower Case"
 msgstr "অকল ছোট কেছেৰ হৰফ ব্যৱহাৰ কৰা হ'ব (_L)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:251
+#: ../plugins/changecase/pluma-changecase-plugin.c:248
 msgid "Change selected text to lower case"
 msgstr "নিৰ্বাচিত টেক্সটৰ হৰফ ছোট কেছে পৰিবৰ্তন কৰক"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:253
+#: ../plugins/changecase/pluma-changecase-plugin.c:250
 msgid "_Invert Case"
 msgstr "হৰফেৰ বিপৰীত কেছ ব্যৱহাৰ কৰা হ'ব (_I)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:254
+#: ../plugins/changecase/pluma-changecase-plugin.c:251
 msgid "Invert the case of selected text"
 msgstr "নিৰ্বাচিত টেক্সটৰ হৰফ বিপৰীত কেছে পৰিবৰ্তন কৰক"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:256
+#: ../plugins/changecase/pluma-changecase-plugin.c:253
 msgid "_Title Case"
 msgstr "শিৰোনামেৰ হৰফেৰ কেছ (_T)"
 
-#: ../plugins/changecase/pluma-changecase-plugin.c:257
+#: ../plugins/changecase/pluma-changecase-plugin.c:254
 msgid "Capitalize the first letter of each selected word"
 msgstr "প্ৰতি নিৰ্বাচিত শব্দেৰ অধ্যাক্ষৰ ডাঙৰ কেছে পৰিবৰ্তন কৰক"
 
@@ -2594,11 +2594,11 @@ msgstr "ডকুমেন্ট"
 msgid "Selection"
 msgstr "নিৰ্বাচন"
 
-#: ../plugins/docinfo/pluma-docinfo-plugin.c:443
+#: ../plugins/docinfo/pluma-docinfo-plugin.c:440
 msgid "_Document Statistics"
 msgstr "আলেখ্যন সংক্ৰান্ত পৰিসংখ্যান (_D)"
 
-#: ../plugins/docinfo/pluma-docinfo-plugin.c:445
+#: ../plugins/docinfo/pluma-docinfo-plugin.c:442
 msgid "Get statistical information on the current document"
 msgstr ""
 
@@ -2921,63 +2921,63 @@ msgstr ""
 "দূৰবৰ্তী অৱস্থান পুনৰুদ্ধাৰৰ বৈশিষ্ট্য সক্ৰিয় কৰা হ'ব নে নহয়  সেইটো "
 "নিৰ্ধাৰিত হয়  ।"
 
-#: ../plugins/filebrowser/pluma-file-bookmarks-store.c:240
+#: ../plugins/filebrowser/pluma-file-bookmarks-store.c:238
 msgid "File System"
 msgstr "ফাইল সিস্টেম"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:577
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:576
 msgid "_Set root to active document"
 msgstr "সক্ৰিয় আলেখ্যন অনুসাৰে root ধাৰ্য কৰা হ'ব (_S"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:579
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:578
 msgid "Set the root to the active document location"
 msgstr "বৰ্ত্তমানে সক্ৰিয় অৱস্থানত root নিৰ্ধাৰণ কৰা হ'ব"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:584
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:583
 msgid "_Open terminal here"
 msgstr "এই স্থানত টাৰ্মিনাল খোলা হ'ব (_O)"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:586
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:585
 msgid "Open a terminal at the currently opened directory"
 msgstr "বৰ্ত্তমানে খোলা পঞ্জিকাতে টাৰ্মিনাল খোলা হ'ব"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:726
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:725
 msgid "File Browser"
 msgstr "নথিপত্ৰ ব্ৰাউজাৰ"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:874
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:870
 msgid "An error occurred while creating a new directory"
 msgstr "নতুন পঞ্জিকা নিৰ্মাণৰ সময় ত্ৰু উৎ‌পন্ন হৈছে  ।"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:877
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:873
 msgid "An error occurred while creating a new file"
 msgstr "নতুন নথিপত্ৰ নিৰ্ব্বাচনৰ সময় ত্ৰু উৎ‌পন্ন হৈছে  ।"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:882
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:878
 msgid "An error occurred while renaming a file or directory"
 msgstr "নিৰ্বাচিত আদেশ চালানোৰ সময় ত্ৰু উৎ‌পন্ন হৈছে  ।"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:887
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:883
 msgid "An error occurred while deleting a file or directory"
 msgstr "নথিপত্ৰ বা পঞ্জিকা আঁতৰুৱা ফেলাৰ সময় ত্ৰু উৎ‌পন্ন হৈছে  ।"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:888
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "নথিপত্ৰ পৰিচালনব্যৱস্থাত এটা পঞ্জিকা খোলাৰ সময় সমস্যা উৎপন্ন হৈছে"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while setting a root directory"
 msgstr "প্ৰধান পঞ্জিকা (root) সময় ত্ৰু উৎ‌পন্ন হৈছে  ।"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:896
 msgid "An error occurred while loading a directory"
 msgstr "পঞ্জিকা লোড কৰাৰ সময় সমস্যা উৎপন্ন হৈছে"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:903
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:899
 msgid "An error occurred"
 msgstr "সমস্যা উৎপন্ন হৈছে"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1130
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1126
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -2985,33 +2985,33 @@ msgstr ""
 "আবৰ্জনাৰ বাক্সে নথিপত্ৰ সৰিয়ে নেওয়া নাযায়,\n"
 "এই মুহূৰ্তে আঁতৰুৱা ফেলতে ইচ্ছুক কি?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1130
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "\"%s\" নথিপত্ৰ আবৰ্জনাৰ বাক্সে সৰিয়ে নেওয়া সম্ভৱ নহয়  ।"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1137
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1133
 msgid "The selected files cannot be moved to the trash."
 msgstr "নিৰ্বাচিত নথিপত্ৰসমূহ আবৰ্জনাৰ বাক্সে সৰিয়ে নেওয়া সম্ভৱ নহয়  ।"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1165
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1161
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "আপকি \"%s\" আঁতৰাবলৈ নিশ্চিত নে ?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1168
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1164
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "নিৰ্বাচিত নথিপত্ৰ স্থায়ীভাবো আঁতৰাবলৈ আপুনি নিশ্চিত নে ?"
 
-#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1171
+#: ../plugins/filebrowser/pluma-file-browser-plugin.c:1167
 msgid "If you delete an item, it is permanently lost."
 msgstr "If you delete an item, it is permanently lost."
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:1668
+#: ../plugins/filebrowser/pluma-file-browser-store.c:1662
 msgid "(Empty)"
 msgstr "ফাঁকা"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3224
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3218
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3021,11 +3021,11 @@ msgstr ""
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3481
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3475
 msgid "file"
 msgstr "ফাইল: [1]"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3505
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3499
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3035,11 +3035,11 @@ msgstr ""
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3534
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3528
 msgid "directory"
 msgstr "পঞ্জিকা"
 
-#: ../plugins/filebrowser/pluma-file-browser-store.c:3554
+#: ../plugins/filebrowser/pluma-file-browser-store.c:3548
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3047,150 +3047,150 @@ msgstr ""
 "নতুন পঞ্জিকা বৰ্ত্তমানে ফিল্টাৰ কৰা হৈছে  । পঞ্জিকা প্ৰদৰ্শন কৰাৰ বাবে "
 "আপোনাৰ ফিল্টাৰৰ বৈশিষ্ট্য পৰিবৰ্তন কৰক"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:716
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:712
 msgid "Bookmarks"
 msgstr "পত্ৰচিহ্নসমূহ"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:797
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:793
 msgid "_Filter"
 msgstr "ফিল্টাৰ (_F)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:802
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:798
 msgid "_Move to Trash"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:803
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:799
 msgid "Move selected file or folder to trash"
 msgstr "নিৰ্বাচিত নথিপত্ৰ বা ফোল্ডাৰ আবৰ্জনাৰ বাক্সে স্থানান্তৰ কৰা হ'ব"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:806
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:802
 msgid "Delete selected file or folder"
 msgstr "নিৰ্বাচিত নথিপত্ৰ বা ফোল্ডাৰ আঁতৰুৱা ফেলুন"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:813
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:809
 msgid "Open selected file"
 msgstr ""
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:819
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:815
 msgid "Up"
 msgstr "ওপৰত"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:820
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "Open the parent folder"
 msgstr "ঊৰ্ধ্বস্থ ফোল্ডাৰ খোলক"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:825
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:821
 msgid "_New Folder"
 msgstr "নতুন ফোল্ডাৰ (_N)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:826
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:822
 msgid "Add new empty folder"
 msgstr "এটা নতুন ফাঁকা ফোল্ডাৰ যোগ কৰক"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:828
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:824
 msgid "New F_ile"
 msgstr "নতুন নথিপত্ৰ (_i)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:829
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:825
 msgid "Add new empty file"
 msgstr "এটা নতুন ফাঁকা নথিপত্ৰ যোগ কৰক"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:834
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:830
 msgid "_Rename"
 msgstr "নাম পৰিবৰ্তন (_R)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:835
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:831
 msgid "Rename selected file or folder"
 msgstr "নিৰ্বাচিত নথিপত্ৰ বা ফোল্ডাৰৰ নাম পৰিবৰ্তন কৰক"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:841
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:837
 msgid "_Previous Location"
 msgstr "পূৰ্ববৰ্তী অৱস্থান (_P)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:843
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:839
 msgid "Go to the previous visited location"
 msgstr "পূৰ্বে প্ৰদৰ্শিত অবস্থানে চলুন"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:845
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:841
 msgid "_Next Location"
 msgstr "পৰবৰ্তী অৱস্থান (_N)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:846
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:842
 msgid "Go to the next visited location"
 msgstr "পৰবৰ্তী প্ৰদৰ্শিত অবস্থানে চলুন"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:847
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Re_fresh View"
 msgstr "নতুন কৰি প্ৰদৰ্শন (_f)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:848
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:844
 msgid "Refresh the view"
 msgstr "নতুন কৰি প্ৰদৰ্শন"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:849
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:867
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:845
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:863
 msgid "_View Folder"
 msgstr "ফোল্ডাৰ প্ৰদৰ্শন (_V)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:850
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:868
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:846
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:864
 msgid "View folder in file manager"
 msgstr "নথিপত্ৰ পৰিচালন ব্যৱস্থায় ফোল্ডাৰ প্ৰদৰ্শন কৰা হ'ব"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:857
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:853
 msgid "Show _Hidden"
 msgstr "আড়াল কৰা নথিপত্ৰ আৰু পঞ্জিকা প্ৰদৰ্শন (_H)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:858
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:854
 msgid "Show hidden files and folders"
 msgstr "আড়াল কৰা নথিপত্ৰ আৰু ফোল্ডাৰ প্ৰদৰ্শন কৰা হ'ব"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:860
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "Show _Binary"
 msgstr "বাইনাৰি নথিপত্ৰ আৰু পঞ্জিকা প্ৰদৰ্শন (_B)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:861
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:857
 msgid "Show binary files"
 msgstr "বাইনাৰি নথিপত্ৰ আৰু পঞ্জিকা প্ৰদৰ্শন কৰা হ'ব"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:994
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1007
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1033
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:990
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1003
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1029
 msgid "Previous location"
 msgstr "পূৰ্ববৰ্তী অৱস্থান"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1000
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:996
 msgid "Go to previous location"
 msgstr "পূৰ্ববৰ্তী অৱস্থানত চলুন"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1002
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1028
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:998
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1024
 msgid "Go to a previously opened location"
 msgstr "পূৰ্বে পৰিদৰ্শিত অৱস্থানত চলুন"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1020
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1016
 msgid "Next location"
 msgstr "পৰবৰ্তী অৱস্থান"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1026
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1022
 msgid "Go to next location"
 msgstr "পৰবৰ্তী অৱস্থানত চলুন"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:1238
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:1234
 msgid "_Match Filename"
 msgstr "নথিপত্ৰৰ নাম মিলোৱা হ'ব (_M)"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2139
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2135
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "তুলি লোৱা আয়তনৰ কাৰণো কোনো তুলি লোৱা বস্তু নাই: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2219
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2215
 #, c-format
 msgid "Could not open media: %s"
 msgstr "মিডিয়া খুলিব নোৱাৰি: %s"
 
-#: ../plugins/filebrowser/pluma-file-browser-widget.c:2266
+#: ../plugins/filebrowser/pluma-file-browser-widget.c:2262
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "আয়তন তুলি ল'ব নোৱাৰি: %s"
@@ -3475,11 +3475,11 @@ msgstr ""
 msgid "Execution of the Python command (%s) failed: %s"
 msgstr ""
 
-#: ../plugins/sort/pluma-sort-plugin.c:94
+#: ../plugins/sort/pluma-sort-plugin.c:93
 msgid "S_ort..."
 msgstr "ক্ৰমবিন্যাস (_o)..."
 
-#: ../plugins/sort/pluma-sort-plugin.c:96
+#: ../plugins/sort/pluma-sort-plugin.c:95
 msgid "Sort the current document or selection"
 msgstr "বৰ্ত্তমান আলেখ্যন বা নিৰ্বাচিত অংশ ক্ৰমানুযায়ী বিন্যাস কৰক  ।"
 
@@ -3594,35 +3594,35 @@ msgstr "ভাষা নিৰ্ধাৰণ কৰক"
 msgid "Languages"
 msgstr "ভাষা"
 
-#: ../plugins/spell/pluma-spell-plugin.c:100
+#: ../plugins/spell/pluma-spell-plugin.c:97
 msgid "_Check Spelling..."
 msgstr "বানান পৰীক্ষা কৰক (_C)..."
 
-#: ../plugins/spell/pluma-spell-plugin.c:102
+#: ../plugins/spell/pluma-spell-plugin.c:99
 msgid "Check the current document for incorrect spelling"
 msgstr "বৰ্ত্তমান আলেখ্যনত ভুল বানানৰ উপস্থিতি পৰীক্ষা কৰক"
 
-#: ../plugins/spell/pluma-spell-plugin.c:108
+#: ../plugins/spell/pluma-spell-plugin.c:105
 msgid "Set _Language..."
 msgstr "ভাষা নিৰ্ধাৰণ কৰক...(_L)"
 
-#: ../plugins/spell/pluma-spell-plugin.c:110
+#: ../plugins/spell/pluma-spell-plugin.c:107
 msgid "Set the language of the current document"
 msgstr "বৰ্ত্তমান আলেখ্যনত ব্যৱহৃত ভাষা নিৰ্ধাৰণ কৰক"
 
-#: ../plugins/spell/pluma-spell-plugin.c:119
+#: ../plugins/spell/pluma-spell-plugin.c:116
 msgid "_Autocheck Spelling"
 msgstr "স্বয়ংক্ৰিয় বানান পৰীক্ষণ ব্যৱস্থা (_A)"
 
-#: ../plugins/spell/pluma-spell-plugin.c:121
+#: ../plugins/spell/pluma-spell-plugin.c:118
 msgid "Automatically spell-check the current document"
 msgstr "স্বয়ংক্ৰিয়ভাবে বৰ্ত্তমান আলেখ্যনৰ বানান পৰীক্ষা কৰা হ'ব"
 
-#: ../plugins/spell/pluma-spell-plugin.c:921
+#: ../plugins/spell/pluma-spell-plugin.c:918
 msgid "The document is empty."
 msgstr "আলেখ্যন ফাঁকা  ।"
 
-#: ../plugins/spell/pluma-spell-plugin.c:946
+#: ../plugins/spell/pluma-spell-plugin.c:943
 msgid "No misspelled words"
 msgstr "ভুল বানান নাই"
 
@@ -3714,21 +3714,21 @@ msgstr "বানান সংশোধন"
 msgid "Checks the spelling of the current document."
 msgstr "বৰ্ত্তমান আলেখ্যনত বানান পৰীক্ষা কৰক  ।"
 
-#: ../plugins/taglist/pluma-taglist-plugin.c:125
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:709
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:724
+#: ../plugins/taglist/pluma-taglist-plugin.c:124
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:707
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:722
 msgid "Tags"
 msgstr "ট্যাগ"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:613
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:611
 msgid "Select the group of tags you want to use"
 msgstr "আপুনি যি ট্যাগসমূহ ব্যৱহাৰ কৰিব বিচাৰে নে  সেইসমূহ নিৰ্ব্বাচন কৰক"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:632
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:630
 msgid "_Preview"
 msgstr "পূৰ্বৰূপ (_P)"
 
-#: ../plugins/taglist/pluma-taglist-plugin-panel.c:706
+#: ../plugins/taglist/pluma-taglist-plugin-panel.c:704
 msgid "Available Tag Lists"
 msgstr "উপলব্ধ ট্যাগেৰ তালিকা"
 
@@ -5286,15 +5286,15 @@ msgstr ""
 msgid "Custom format"
 msgstr "স্বনিৰ্বাচিত বিন্যাস"
 
-#: ../plugins/time/pluma-time-plugin.c:189
+#: ../plugins/time/pluma-time-plugin.c:186
 msgid "In_sert Date and Time..."
 msgstr "সময় আৰু তাৰিখ সন্নিবেশ কৰা হ'ব (_s)..."
 
-#: ../plugins/time/pluma-time-plugin.c:191
+#: ../plugins/time/pluma-time-plugin.c:188
 msgid "Insert current date and time at the cursor position"
 msgstr "কাৰ্ছাৰৰ অৱস্থানত বৰ্ত্তমান তাৰিখ আৰু সময় সন্নিবেশ কৰক"
 
-#: ../plugins/time/pluma-time-plugin.c:581
+#: ../plugins/time/pluma-time-plugin.c:578
 msgid "Available formats"
 msgstr "উপলব্ধ বিন্যাস"
 
