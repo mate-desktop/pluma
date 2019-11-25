@@ -120,6 +120,11 @@ parse_tag_group (TagGroup *tg, const gchar* fn, xmlDocPtr doc,
 
 	while (cur != NULL)
 	{
+		if (xmlStrcmp (cur->name, (const xmlChar *) "comment") == 0)
+		{
+			cur = cur->next;
+		}
+
 		if ((xmlStrcmp (cur->name, (const xmlChar *) "Tag")) || (cur->ns != ns))
 		{
 			g_warning ("The tag list file '%s' is of the wrong type, "
