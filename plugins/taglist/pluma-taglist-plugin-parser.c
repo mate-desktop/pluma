@@ -139,7 +139,7 @@ parse_tag_group (TagGroup *tg, const gchar* fn, xmlDocPtr doc,
 			tag = g_new0 (Tag, 1);
 
 			/* Get Tag name */
-			tag->name = xmlGetProp (cur, (const xmlChar *) "name");
+			tag->name = (xmlChar*)gettext((const char*)xmlGetProp (cur, (const xmlChar *) "name"));
 
 			if (tag->name == NULL)
 			{
@@ -195,7 +195,7 @@ get_tag_group (const gchar* filename, xmlDocPtr doc,
 	tag_group = g_new0 (TagGroup, 1);
 
 	/* Get TagGroup name */
-	tag_group->name = xmlGetProp (cur, (const xmlChar *) "name");
+	tag_group->name = (xmlChar*)gettext((const char*)xmlGetProp (cur, (const xmlChar *) "name"));
 
 	sort_str = xmlGetProp (cur, (const xmlChar *) "sort");
 
