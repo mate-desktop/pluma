@@ -46,6 +46,7 @@
 #include "pluma-debug.h"
 #include "pluma-prefs-manager.h"
 #include "pluma-prefs-manager-app.h"
+#include "pluma-prefs-manager-private.h"
 #include "pluma-marshal.h"
 #include "pluma-utils.h"
 
@@ -682,19 +683,15 @@ pluma_view_scroll_to_cursor (PlumaView *view)
 static PangoFontDescription* get_system_font (void)
 {
 	PangoFontDescription *desc = NULL;
-	GSettings *settings;
 	char *name;
 
-	settings = g_settings_new ("org.mate.interface");
-	name = g_settings_get_string (settings, "font-name");
+	name = g_settings_get_string (pluma_prefs_manager->interface_settings, "font-name");
 
 	if (name)
 	{
 		desc = pango_font_description_from_string (name);
 		g_free (name);
 	}
-
-	g_object_unref (settings);
 
 	return desc;
 }
@@ -743,12 +740,9 @@ pluma_override_font (const gchar          *item,
 
 	if (provider == NULL)
 	{
-		static GSettings *settings; /*We need this for the life of the provider and program*/
-
 		provider = gtk_css_provider_new ();
-		settings = g_settings_new ("org.mate.interface");
 
-		g_signal_connect (settings,
+		g_signal_connect (pluma_prefs_manager->interface_settings,
 				  "changed::" "font-name",
 				  G_CALLBACK (system_font_changed_cb), NULL);
 
