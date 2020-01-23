@@ -159,7 +159,7 @@ msgstr "<primary>pluma</primary>"
 #. (itstool) path: article/indexterm
 #: C/index.docbook:219
 msgid "<primary>text editor</primary>"
-msgstr ""
+msgstr "<primary>penyunting teks</primary>"
 
 #. (itstool) path: info/title
 #: C/index.docbook:227
@@ -991,6 +991,10 @@ msgid ""
 "with <guilabel>Match case</guilabel> selected, \"TEXT\" will not match "
 "\"text\"."
 msgstr ""
+"Pilih pilihan <guilabel>Padan kata</guilabel> untuk hanya mencari kejadian "
+"rentetan yang sepadan dengan perkataan yang anda taip. Contohnya, "
+"<guilabel>Padan kata</guilabel> yang dipilih, \"TEXT\" tidak akan sepadan "
+"dengan \"text\"."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:572
@@ -1000,6 +1004,10 @@ msgid ""
 "type. For example, with <guilabel>Match entire word only</guilabel> "
 "selected, \"text\" will not match \"texture\"."
 msgstr ""
+"Pilih pilihan <guilabel>Padan keseluruhan kata</guilabel> untuk hanya "
+"mencari kejadian rentetan yang sepadan dengan keseluruhan perkataan yang "
+"anda taip. Contohnya, <guilabel>Padan keseluruhan kata</guilabel> yang "
+"dipilih, \"text\" tidak akan sepadan dengan \"texture\"."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:575
@@ -1007,6 +1015,8 @@ msgid ""
 "Select the <guilabel>Search backwards</guilabel> option to search backwards "
 "towards the beginning of the document."
 msgstr ""
+"Pilih pilihan <guilabel>Gelintar mengundur</guilabel> untuk menggelintar "
+"secara mengundur ke permulaan dokumen."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:578
@@ -1014,11 +1024,14 @@ msgid ""
 "Select the <guilabel>Wrap around</guilabel> option to search to one end of "
 "the document and then continue the search from the other end of the file."
 msgstr ""
+"Pilih pilihan <guilabel>Lilit sekeliling</guilabel> untuk menggelintar "
+"sehingga ke penghujung dokumen dan kemudian terus menggelintar dari bahagian"
+" akhir fail."
 
 #. (itstool) path: info/title
 #: C/index.docbook:586
 msgid "Special Characters"
-msgstr ""
+msgstr "Aksara Khas"
 
 #. (itstool) path: section/para
 #: C/index.docbook:589
@@ -1026,31 +1039,33 @@ msgid ""
 "You can include the following escape sequences in the text to find or "
 "replace to represent special characters:"
 msgstr ""
+"Anda boleh sertakan jujukan escape berikut di dalam teks untuk mencari dan "
+"menggantikan bagi aksara khas yang tunjukkan:"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:592
 msgid "<literal>\\n</literal>"
-msgstr ""
+msgstr "<literal>\\n</literal>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:596
 msgid "Specifies a new line."
-msgstr ""
+msgstr "Nyatakan satu baris baharu."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:600
 msgid "<literal>\\t</literal>"
-msgstr ""
+msgstr "<literal>\\t</literal>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:604
 msgid "Specifies a tab character."
-msgstr ""
+msgstr "Menyatakan satu aksara tab."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:608
 msgid "<literal>\\r</literal>"
-msgstr ""
+msgstr "<literal>\\r</literal>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:612
@@ -1060,7 +1075,7 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:616
 msgid "<literal>\\\\</literal>"
-msgstr ""
+msgstr "<literal>\\\\</literal>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:620
@@ -1102,12 +1117,12 @@ msgstr ""
 #. (itstool) path: info/title
 #: C/index.docbook:643
 msgid "Printing"
-msgstr ""
+msgstr "Percetakan"
 
 #. (itstool) path: info/title
 #: C/index.docbook:649
 msgid "Setting the Page Options"
-msgstr ""
+msgstr "Menetapkan Pilihan Halaman"
 
 #. (itstool) path: section/para
 #: C/index.docbook:652
@@ -1116,6 +1131,9 @@ msgid ""
 "<guimenuitem>Page Setup</guimenuitem> </menuchoice> to display the "
 "<guilabel>Page Setup</guilabel> dialog."
 msgstr ""
+"Untuk menetapkan pilihan halaman, pilih <menuchoice> <guimenu>Fail</guimenu>"
+" <guimenuitem>Persediaan Halaman</guimenuitem> </menuchoice> untuk "
+"memaparkan dialog <guilabel>Persediaan Halaman</guilabel>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:654
@@ -1123,16 +1141,18 @@ msgid ""
 "The <guilabel>Page Setup</guilabel> dialog enables you to specify the "
 "following print options:"
 msgstr ""
+"Dialog <guilabel>Persediaan Halaman</guilabel>  membolehkan anda nyatakan "
+"piihan cetak berikut:"
 
 #. (itstool) path: info/title
 #: C/index.docbook:658
 msgid "General Tabbed Section"
-msgstr ""
+msgstr "Seksyen Bertab Am"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:662
 msgid "<guilabel>Print syntax highlighting</guilabel>"
-msgstr ""
+msgstr "<guilabel>Cetak penyorotan sintaks</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:666
@@ -1140,11 +1160,14 @@ msgid ""
 "Select this option to print syntax highlighting. For more information about "
 "syntax highlighting, see <xref linkend=\"pluma-set-highlightmode\"/>."
 msgstr ""
+"Pilih pilihan ini untuk mencetak penyorotan sintaks. Untuk maklumat lanjut "
+"berkenaan penyorotan sintaks, sila rujuk <xref linkend=\"pluma-set-"
+"highlightmode\"/>."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:670
 msgid "<guilabel>Print page headers</guilabel>"
-msgstr ""
+msgstr "<guilabel>Cetak pengepala halaman</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:674
@@ -1152,11 +1175,13 @@ msgid ""
 "Select this option to include a header on each page that you print. You "
 "cannot configure the header."
 msgstr ""
+"Pilih pilihan ini untuk menyertakan satu pengepala untuk setiap halaman yang"
+" dicetak. Anda tidak boleh mengkonfigur pengepala tersebut."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:678 C/index.docbook:1556
 msgid "<guilabel>Line Numbers</guilabel>"
-msgstr ""
+msgstr "<guilabel>Nombor Baris</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:682
@@ -1164,6 +1189,8 @@ msgid ""
 "Select the <guilabel>Print line numbers</guilabel> option to include line "
 "numbers when you print a file."
 msgstr ""
+"Pilih pilihan <guilabel>Cetak nombor baris</guilabel> untuk sertakan nombor "
+"baris ketika anda mencetak satu fail."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:683
@@ -1172,11 +1199,14 @@ msgid ""
 " often to print the line numbers, for example every 5 lines, every 10 lines,"
 " and so on."
 msgstr ""
+"Guna kotak angka <guilabel>Nomborkan setiap ...baris</guilabel> untuk "
+"menyatakan berapa kekerapan cetak nombor baris, contohnya setiap 5 baris, "
+"setiap 10 baris, dan selanjutnya."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:687 C/index.docbook:1547
 msgid "<guilabel>Text Wrapping</guilabel>"
-msgstr ""
+msgstr "<guilabel>Pelilitan Teks</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:691
@@ -1185,6 +1215,10 @@ msgid ""
 "onto the next line, at a character level, when you print a file. The "
 "application counts wrapped lines as one line for line numbering purposes."
 msgstr ""
+"Pilih pilihan <guilabel>Benarkan pelilitan teks</guilabel> untuk melilit "
+"teks ke baris berikutnya, pada aras satu aksara, ketika anda mencetak satu "
+"fail. Aplikasi mengira baris terlilit sebagai satu baris untuk tujuan "
+"pernomboran baris."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:692
@@ -1192,6 +1226,9 @@ msgid ""
 "Select the <guilabel>Do not split words over two lines</guilabel> option to "
 "wrap text onto the next line, at a word level, when you print a file."
 msgstr ""
+"Pilih pilihan <guilabel>Jangan pisahkan perkataan kepada dua "
+"baris</guilabel> untuk melilit teks ke baris berikutnya, pada aras satu "
+"perkataan ketika anda mencetak satu fail."
 
 #. (itstool) path: info/title
 #: C/index.docbook:700
@@ -1201,7 +1238,7 @@ msgstr "Fon"
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:704
 msgid "<guilabel>Body</guilabel>"
-msgstr ""
+msgstr "<guilabel>Badan</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:708
@@ -1209,21 +1246,25 @@ msgid ""
 "Click on this button to select the font used to print the body text of a "
 "file."
 msgstr ""
+"Klik pada butang ini untuk memilih fon yang digunakan untuk mencetak teks "
+"badan sesebuah fail."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:712
 msgid "<guilabel>Line numbers</guilabel>"
-msgstr ""
+msgstr "<guilabel>Nombor baris</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:716
 msgid "Click on this button to select the font used to print line numbers."
 msgstr ""
+"Klik pada butang ini untuk memilih fon yang digunakan untuk mencetak nombor "
+"baris."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:720
 msgid "<guilabel>Headers and footers</guilabel>"
-msgstr ""
+msgstr "<guilabel>Pengepala dan pengaki</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:724
@@ -1231,6 +1272,8 @@ msgid ""
 "Click on this button to select the font to use to print the headers and "
 "footers in a file."
 msgstr ""
+"Klik pada butang ini untuk memilih fon yang digunakan untuk mencetak "
+"pengepala dan pengaki dalam sesebuah fail."
 
 #. (itstool) path: section/para
 #: C/index.docbook:728
@@ -1243,7 +1286,7 @@ msgstr ""
 #. (itstool) path: info/title
 #: C/index.docbook:735
 msgid "Printing a Document"
-msgstr ""
+msgstr "Mencetak satu Dokumen"
 
 #. (itstool) path: section/para
 #: C/index.docbook:737
@@ -1251,16 +1294,18 @@ msgid ""
 "You can use <application>pluma</application> to perform the following print "
 "operations:"
 msgstr ""
+"Anda boleh menggunakan <application>pluma</application> untuk membuat "
+"operasi-operasi cetak berikut:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:740
 msgid "Print a document to a printer."
-msgstr ""
+msgstr "Cetak satu dokumen dengan pencetak."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:743
 msgid "Print the output of the print command to a file."
-msgstr ""
+msgstr "Cetak output perintah cetak ke sebuah fail."
 
 #. (itstool) path: section/para
 #: C/index.docbook:746
@@ -1269,6 +1314,9 @@ msgid ""
 " the file to a pre-press format file. The most common pre-press formats are "
 "PostScript and Portable Document Format (PDF)."
 msgstr ""
+"Jika anda mencetak ke sebuah fail, <application>pluma</application> dapat "
+"menghantar output fail ke fail format pra-cetakan. Kebanyakan format-format "
+"pra-cetak adalah PostScript dan Format Dokumen Mudah Alih (PDF)."
 
 #. (itstool) path: section/para
 #: C/index.docbook:747
@@ -1277,6 +1325,9 @@ msgid ""
 "<guimenu>File</guimenu> <guimenuitem>Print Preview</guimenuitem> "
 "</menuchoice>."
 msgstr ""
+"Untuk melihat pratonton halaman yang mahu dicetak, pilih <menuchoice> "
+"<guimenu>Fail</guimenu> <guimenuitem>Pratonton Cetak</guimenuitem> "
+"</menuchoice>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:748
@@ -1285,6 +1336,9 @@ msgid ""
 "<guimenu>File</guimenu> <guimenuitem>Print</guimenuitem> </menuchoice> to "
 "display the <guilabel>Print</guilabel> dialog."
 msgstr ""
+"Untuk mencetak fail semasa dengan pencetak atau menjadi sebuah fail, pilih "
+"<menuchoice> <guimenu>Fail</guimenu> <guimenuitem>Cetak</guimenuitem> "
+"</menuchoice> untuk memaparkan dialog <guilabel>Cetak</guilabel>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:749
@@ -1292,11 +1346,13 @@ msgid ""
 "The <guilabel>Print</guilabel> dialog enables you to specify the following "
 "print options:"
 msgstr ""
+"Dialog <guilabel>Cetak</guilabel> membolehkan anda nyatakan pilihan-pilihan "
+"cetak berikut:"
 
 #. (itstool) path: info/title
 #: C/index.docbook:753
 msgid "Job Tabbed Section"
-msgstr ""
+msgstr "Seksyen Bertab Kerja"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:757
@@ -1319,12 +1375,12 @@ msgstr "<guilabel>Semua</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:767
 msgid "Select this option to print all the pages in the file."
-msgstr ""
+msgstr "Pilih pilihan ini untuk mencetak semua halaman di dalam fail."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:770
 msgid "<guilabel>Lines</guilabel>"
-msgstr ""
+msgstr "<guilabel>Baris</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:773
@@ -1333,11 +1389,14 @@ msgid ""
 "<guilabel>From</guilabel> and <guilabel>To</guilabel> spin boxes to specify "
 "the line range."
 msgstr ""
+"Pilih pilihan ini untuk mencetak baris-baris yang dinyatakan sahaja. Guna "
+"kotak angka <guilabel>Dari</guilabel> dan <guilabel>Hingga</guilabel> untuk "
+"menyatakan julat baris."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:776
 msgid "<guilabel>Selection</guilabel>"
-msgstr ""
+msgstr "<guilabel>Pemilihan</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:779
@@ -1345,11 +1404,13 @@ msgid ""
 "Select this option to print the selected text only. This option is only "
 "available if you select text."
 msgstr ""
+"Pilih pilihan ini untuk mencetak teks terpilih sahaja. Pilihan ini hanya "
+"tersedia jika anda memilih teks."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:785
 msgid "<guilabel>Copies</guilabel>"
-msgstr ""
+msgstr "<guilabel>Salinan</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:789
@@ -1357,6 +1418,8 @@ msgid ""
 "Use the <guilabel>Number of copies</guilabel> spin box to specify the number"
 " of copies of the file that you want to print."
 msgstr ""
+"Guna kotak angka <guilabel>Bilangan salinan</guilabel> untuk menyatakan "
+"bilangan salinan fail yang mahu dicetakkan."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:790
@@ -1364,11 +1427,13 @@ msgid ""
 "If you print multiple copies of the file, select the "
 "<guilabel>Collate</guilabel> option to collate the printed copies."
 msgstr ""
+"Jika anda mencetak salinan berbilang sesebuah fail, pilih pilihan "
+"<guilabel>Kumpul Semak</guilabel> untuk mengumpul semak salinan bercetak."
 
 #. (itstool) path: info/title
 #: C/index.docbook:798
 msgid "Printer Tabbed Section"
-msgstr ""
+msgstr "Seksyen Bertab Pencetak"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:803
@@ -1381,6 +1446,7 @@ msgid ""
 "Use this drop-down list to select the printer to which you want to print the"
 " file."
 msgstr ""
+"Guna senarai tarik-turun ini untuk memilih pencetak yang anda mahu gunakan."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:811
@@ -1424,7 +1490,7 @@ msgstr "<guilabel>CUPS</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:831
 msgid "Print the file to a CUPS printer."
-msgstr ""
+msgstr "Cetak fail dengan pencetak CUPS."
 
 #. (itstool) path: note/para
 #: C/index.docbook:833
@@ -1443,7 +1509,7 @@ msgstr "<guilabel>lpr</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:842
 msgid "Print the file to a printer."
-msgstr ""
+msgstr "Cetak fail dengan pencetak."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:846
@@ -1453,7 +1519,7 @@ msgstr "<guilabel>Fail</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:850
 msgid "Print the file to a PostScript file."
-msgstr ""
+msgstr "Cetak fail dengan fail PostScript."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:851
@@ -1472,7 +1538,7 @@ msgstr "<guilabel>Suai</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:859
 msgid "Use the specified command to print the file."
-msgstr ""
+msgstr "Guna perintah yang dinyatakan untuk mencetak fail."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:860
@@ -1491,7 +1557,7 @@ msgstr "<guilabel>Keadaan</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:871 C/index.docbook:879 C/index.docbook:887
 msgid "This functionality is not supported in this version of pluma."
-msgstr ""
+msgstr "Kefungsian ini tidak disokong dalam versi pluma ini."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:875
@@ -1506,7 +1572,7 @@ msgstr "<guilabel>Ulasan</guilabel>"
 #. (itstool) path: info/title
 #: C/index.docbook:895
 msgid "Paper Tabbed Section"
-msgstr ""
+msgstr "Seksyen Bertab Kertas"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:900
@@ -1519,6 +1585,8 @@ msgid ""
 "Use this drop-down list to select the size of the paper to which you want to"
 " print the file."
 msgstr ""
+"Guna senarai tarik-turun ini untuk memilih saiz kertas yang mahu digunakan "
+"untuk cetakan dokumen."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:908
@@ -1586,7 +1654,7 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:948
 msgid "<guilabel>Paper tray</guilabel>"
-msgstr ""
+msgstr "<guilabel>Talam kertas</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:952
@@ -1596,7 +1664,7 @@ msgstr "Guna senarai tarik-turun ini untuk memilih talam kertas."
 #. (itstool) path: info/title
 #: C/index.docbook:962
 msgid "Programming Features"
-msgstr ""
+msgstr "Fitur-Fitur Pengaturcaraan"
 
 #. (itstool) path: section/para
 #: C/index.docbook:964
@@ -1606,6 +1674,11 @@ msgid ""
 "commonly-used tags for different markup languages: see <xref linkend"
 "=\"pluma-tag-list-plugin\"/>."
 msgstr ""
+"Terdapat beberapa fitur <application>pluma</application> untuk tujuan "
+"pengaturcaraan yang disediakan melalui pemalam. Sebagai contoh, pemalam "
+"Senarai Tag menyediakan satu senarai tag-tag umum-digunakan bagi bahasa-"
+"bahasa penanda yang berbeza: sila rujuk <xref linkend=\"pluma-tag-list-"
+"plugin\"/>."
 
 #. (itstool) path: info/title
 #: C/index.docbook:969
@@ -1618,6 +1691,8 @@ msgid ""
 "Syntax highlighting makes source code easier to read by showing different "
 "parts of the text in different colors."
 msgstr ""
+"Penyorotan sintaks memudahkan pembacaan kod sumber dengan memaparkan "
+"bahagian-bahagian berbeza teks dalam warna-warna berlainan."
 
 #. (itstool) path: section/para
 #: C/index.docbook:973
@@ -1628,21 +1703,26 @@ msgid ""
 "Mode</guimenuitem> </menuchoice>, then choose one of the following menu "
 "items:"
 msgstr ""
+"<application>pluma</application> memilih satu mod penyorotan sintaks yang "
+"sesuai berdasarkan jenis dokumen. Untuk membatalkan mod penyorotan sintaks, "
+"pilih <menuchoice> <guimenu>Lihat</guimenu> <guimenuitem>Mod "
+"Sorot</guimenuitem> </menuchoice>, kemudian pilih salah satu dari item-item "
+"menu berikut:"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:976
 msgid "<guimenuitem>Normal</guimenuitem>"
-msgstr ""
+msgstr "<guimenuitem>Biasa</guimenuitem>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:980
 msgid "Do not display any syntax highlighting."
-msgstr ""
+msgstr "Jangan papar apa-apa penyorotan sintaks."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:984
 msgid "<guisubmenu>Sources</guisubmenu>"
-msgstr ""
+msgstr "<guisubmenu>Sumber</guisubmenu>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:988
@@ -1650,11 +1730,13 @@ msgid ""
 "Display syntax highlighting to edit source code. Use the "
 "<guisubmenu>Sources</guisubmenu> submenu to select the source code type."
 msgstr ""
+"Papar penyorotan sintaks untuk menyunting kod sumber. Guna submenu "
+"<guisubmenu>Sumber</guisubmenu> untuk meilih jenis kod sumber."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:992
 msgid "<guisubmenu>Markup</guisubmenu>"
-msgstr ""
+msgstr "<guisubmenu>Penanda</guisubmenu>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:996
@@ -1662,11 +1744,13 @@ msgid ""
 "Display syntax highlighting to edit markup code. Use the "
 "<guisubmenu>Markup</guisubmenu> submenu to select the markup code type."
 msgstr ""
+"Papar penyorotan sintaks untuk menyunting kod penanda. Guna submenu "
+"<guisubmenu>Penanda</guisubmenu> untuk meilih jenis kod penanda."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1000
 msgid "<guisubmenu>Scripts</guisubmenu>"
-msgstr ""
+msgstr "<guisubmenu>Skrip</guisubmenu>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1004
@@ -1674,11 +1758,13 @@ msgid ""
 "Display syntax highlighting to edit script code. Use the "
 "<guisubmenu>Scripts</guisubmenu> submenu to select the script code type."
 msgstr ""
+"Papar penyorotan sintaks untuk menyunting kod skrip. Guna submenu "
+"<guisubmenu>Skrip</guisubmenu> untuk meilih jenis kod skrip."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1008
 msgid "<guisubmenu>Others</guisubmenu>"
-msgstr ""
+msgstr "<guisubmenu>Lain-lain</guisubmenu>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1012
@@ -1686,11 +1772,13 @@ msgid ""
 "Display syntax highlighting to edit other types of code. Use the "
 "<guisubmenu>Others</guisubmenu> submenu to select the code type."
 msgstr ""
+"Papar penyorotan sintaks untuk menyunting kod lain-lain. Guna submenu "
+"<guisubmenu>Lain-lain</guisubmenu> untuk meilih jenis kod lain-lain."
 
 #. (itstool) path: info/title
 #: C/index.docbook:1021
 msgid "Piping the Output of a Command to a File"
-msgstr ""
+msgstr "Paipkan Output satu Perintah bagi sesebuah Fail"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1023
