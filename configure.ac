@@ -279,6 +279,8 @@ Configuration:
 
 	Source code location:	${srcdir}
 	Compiler:		${CC}
+	Compiler flags:		${CFLAGS}
+	Warning flags:		${WARN_CFLAGS}
 	Spell Plugin enabled:	$enable_enchant
 	Gvfs metadata enabled:	$enable_gvfs_metadata
 	GObject Introspection:	${have_introspection}
