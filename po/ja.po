@@ -16,6 +16,7 @@
 # ABE Tsunehiko, 2019
 # Wolfgang Ulbrich <mate@raveit.de>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# FuRuYa7 <goo.sirocat47@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -23,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2020-01-13 17:23+0100\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: FuRuYa7 <goo.sirocat47@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,21 +64,21 @@ msgstr "編集領域で使用するカスタムフォントを指定します。
 
 #: data/org.mate.pluma.gschema.xml.in:21
 msgid "Switch tabs with [ctrl] + [tab]"
-msgstr ""
+msgstr "[ctrl] + [tab]でタブを切り替えます"
 
 #: data/org.mate.pluma.gschema.xml.in:22
 msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
-msgstr ""
+msgstr "trueの場合、[ctrl + tab]および[ctrl + shift + tab]を使用してタブを切り替えることができます。"
 
 #: data/org.mate.pluma.gschema.xml.in:26
 msgid "Show the first tab if there is only one tab"
-msgstr ""
+msgstr "タブが1つしかない場合は最初のタブを表示します"
 
 #: data/org.mate.pluma.gschema.xml.in:27
 msgid "If false, it hides the first tab if there is only one tab."
-msgstr ""
+msgstr "falseの場合、タブが1つしかない場合は最初のタブを非表示にします。"
 
 #: data/org.mate.pluma.gschema.xml.in:31
 msgid "Style Scheme"
@@ -122,11 +123,11 @@ msgstr "変更したファイルを pluma が自動的に保存するまでの�
 
 #: data/org.mate.pluma.gschema.xml.in:51
 msgid "Show save confirmation"
-msgstr ""
+msgstr "保存確認を表示"
 
 #: data/org.mate.pluma.gschema.xml.in:52
 msgid "Show save confirmation if the files have changes."
-msgstr ""
+msgstr "ファイルに変更がある場合は、保存の確認を表示します。"
 
 #: data/org.mate.pluma.gschema.xml.in:56
 msgid "Writable VFS schemes"
@@ -324,12 +325,12 @@ msgstr "編集ウィンドウの左側にサイドペインを表示するかど
 
 #: data/org.mate.pluma.gschema.xml.in:151
 msgid "Show tabs with side pane"
-msgstr ""
+msgstr "サイドペインでタブを表示します"
 
 #: data/org.mate.pluma.gschema.xml.in:152
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
-msgstr ""
+msgstr "falseの場合、Plumaはサイドペインがアクティブなノートにタブを表示しません。"
 
 #: data/org.mate.pluma.gschema.xml.in:156
 msgid "Bottom Panel is Visible"
@@ -503,15 +504,15 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "Show newline"
-msgstr ""
+msgstr "改行を表示"
 
 #: data/org.mate.pluma.gschema.xml.in:227
 msgid "Whether pluma should show newlines in the editor window."
-msgstr ""
+msgstr "plumaがエディターウィンドウに改行を表示するかどうかの設定。"
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "Show nbsp"
-msgstr ""
+msgstr "空白の＆nbspを表示"
 
 #: data/org.mate.pluma.gschema.xml.in:232
 msgid ""
@@ -519,10 +520,12 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
+"plumaがエディターウィンドウでスペースを分割しないように表示するかどうかの設定： 「show-none」は表示なし。「show-"
+"trailing」は末尾のスペースのみを表示。「show-all」はすべてのスペースを表示します。"
 
 #: data/org.mate.pluma.gschema.xml.in:236
 msgid "Show tabs"
-msgstr ""
+msgstr "タブを表示"
 
 #: data/org.mate.pluma.gschema.xml.in:237
 msgid ""
@@ -530,10 +533,12 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
+"plumaがエディターウィンドウにタブを表示するかどうかの設定： 「show-none」は表示なし。「show-"
+"trailing」は末尾のスペースのみを表示。「show-all」はすべてのスペースを表示します。"
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Show spaces"
-msgstr ""
+msgstr "空白を表示"
 
 #: data/org.mate.pluma.gschema.xml.in:242
 msgid ""
@@ -626,7 +631,7 @@ msgstr "キャンセル(_C)"
 #: plugins/snippets/snippets/Manager.py:882
 #: plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
-msgstr "サーバ(_S)"
+msgstr "保存 (_S)"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:183
 msgid "Save _As"
