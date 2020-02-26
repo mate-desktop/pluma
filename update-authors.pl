@@ -63,5 +63,9 @@ sub GetNewAuthors {
 
 my @A = GetCurrentAuthors;
 my @B = GetNewAuthors;
+for (@B) {
+  s/<\d+\+(.+?)%users\.noreply\.github\.com>/<$1%users\.noreply\.github\.com>/;
+  s/<(.+?)%users\.noreply\.github\.com>/https:\/\/github.com\/$1/;
+}
 my @merged = sort { $a cmp $b } keys %{{map {($_ => 1)} (@A, @B)}};
 print join(';',@merged) . ';';
