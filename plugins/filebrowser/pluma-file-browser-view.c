@@ -379,8 +379,7 @@ activate_selected_files (PlumaFileBrowserView *view) {
 			g_signal_emit (view, signals[DIRECTORY_ACTIVATED], 0, &iter);
 	}
 
-	g_list_foreach (rows, (GFunc)gtk_tree_path_free, NULL);
-	g_list_free (rows);
+	g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
 }
 
 static void

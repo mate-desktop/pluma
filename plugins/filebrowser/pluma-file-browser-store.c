@@ -3253,8 +3253,7 @@ async_data_free (AsyncData * data)
 {
 	g_object_unref (data->cancellable);
 
-	g_list_foreach (data->files, (GFunc)g_object_unref, NULL);
-	g_list_free (data->files);
+	g_list_free_full (data->files, g_object_unref);
 
 	if (!data->removed)
 		data->model->priv->async_handles = g_slist_remove (data->model->priv->async_handles, data);
@@ -3444,8 +3443,7 @@ pluma_file_browser_store_delete (PlumaFileBrowserStore * model,
 	rows = g_list_append(NULL, pluma_file_browser_store_get_path_real (model, node));
 	result = pluma_file_browser_store_delete_all (model, rows, trash);
 
-	g_list_foreach (rows, (GFunc)gtk_tree_path_free, NULL);
-	g_list_free (rows);
+	g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
 
 	return result;
 }

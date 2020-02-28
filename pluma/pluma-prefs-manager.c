@@ -703,8 +703,7 @@ pluma_prefs_manager_get_auto_detected_encodings (void)
 		      tmp = g_slist_next (tmp);
 		}
 
-		g_slist_foreach (strings, (GFunc) g_free, NULL);
-		g_slist_free (strings);
+		g_slist_free_full (strings, g_free);
 
 	 	res = g_slist_reverse (res);
 	}
@@ -753,8 +752,7 @@ pluma_prefs_manager_get_shown_in_menu_encodings (void)
 		      tmp = g_slist_next (tmp);
 		}
 
-		g_slist_foreach (strings, (GFunc) g_free, NULL);
-		g_slist_free (strings);
+		g_slist_free_full (strings, g_free);
 
 	 	res = g_slist_reverse (res);
 	}

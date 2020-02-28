@@ -226,8 +226,7 @@ pluma_history_entry_save_history (PlumaHistoryEntry *entry)
 			      entry->priv->history_id,
 			      settings_items);
 
-	g_slist_foreach (settings_items, (GFunc) g_free, NULL);
-	g_slist_free (settings_items);
+	g_slist_free_full (settings_items, g_free);
 }
 
 static gboolean
@@ -373,8 +372,7 @@ pluma_history_entry_load_history (PlumaHistoryEntry *entry)
 				    -1);
 	}
 
-	g_slist_foreach (settings_items, (GFunc) g_free, NULL);
-	g_slist_free (settings_items);
+	g_slist_free_full (settings_items, g_free);
 }
 
 void

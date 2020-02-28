@@ -158,17 +158,9 @@ message_free (Message *message)
 	g_free (message->method);
 	g_free (message->object_path);
 
-	g_list_foreach (message->listeners, (GFunc)listener_free, NULL);
-	g_list_free (message->listeners);
+	g_list_free_full (message->listeners, (GDestroyNotify) listener_free);
 
 	g_free (message);
-}
-
-static void
-message_queue_free (GList *queue)
-{
-	g_list_foreach (queue, (GFunc)g_object_unref, NULL);
-	g_list_free (queue);
 }
 
 static void
@@ -179,7 +171,7 @@ pluma_message_bus_finalize (GObject *object)
 	if (bus->priv->idle_id != 0)
 		g_source_remove (bus->priv->idle_id);
 
-	message_queue_free (bus->priv->message_queue);
+	g_list_free_full (bus->priv->message_queue, g_object_unref);
 
 	g_hash_table_destroy (bus->priv->messages);
 	g_hash_table_destroy (bus->priv->idmap);
@@ -432,7 +424,7 @@ idle_dispatch (PlumaMessageBus *bus)
 		dispatch_message (bus, msg);
 	}
 
-	message_queue_free (list);
+	g_list_free_full (list, g_object_unref);
 	return FALSE;
 }
 

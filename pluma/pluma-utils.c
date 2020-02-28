@@ -102,8 +102,7 @@ pluma_utils_uri_has_writable_scheme (const gchar *uri)
 				    scheme,
 				    (GCompareFunc)strcmp) != NULL);
 
-	g_slist_foreach (writable_schemes, (GFunc)g_free, NULL);
-	g_slist_free (writable_schemes);
+	g_slist_free_full (writable_schemes, g_free);
 
 	g_free (scheme);
 

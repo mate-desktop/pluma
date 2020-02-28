@@ -370,8 +370,7 @@ init_drives (PlumaFileBookmarksStore *model)
 	drives = g_volume_monitor_get_connected_drives (model->priv->volume_monitor);
 
 	g_list_foreach (drives, (GFunc)process_drive_cb, model);
-	g_list_foreach (drives, (GFunc)g_object_unref, NULL);
-	g_list_free (drives);
+	g_list_free_full (drives, g_object_unref);
 }
 
 static void
@@ -399,8 +398,7 @@ init_volumes (PlumaFileBookmarksStore *model)
 	volumes = g_volume_monitor_get_volumes (model->priv->volume_monitor);
 
 	g_list_foreach (volumes, (GFunc)process_volume_nodrive_cb, model);
-	g_list_foreach (volumes, (GFunc)g_object_unref, NULL);
-	g_list_free (volumes);
+	g_list_free_full (volumes, g_object_unref);
 }
 
 static void
@@ -430,8 +428,7 @@ init_mounts (PlumaFileBookmarksStore *model)
 	mounts = g_volume_monitor_get_mounts (model->priv->volume_monitor);
 
 	g_list_foreach (mounts, (GFunc)process_mount_novolume_cb, model);
-	g_list_foreach (mounts, (GFunc)g_object_unref, NULL);
-	g_list_free (mounts);
+	g_list_free_full (mounts, g_object_unref);
 }
 
 static void

@@ -426,8 +426,7 @@ pluma_spell_checker_dialog_set_misspelled_word (PlumaSpellCheckerDialog *dlg,
 	update_suggestions_list_model (dlg, sug);
 
 	/* free the suggestion list */
-	g_slist_foreach (sug, (GFunc)g_free, NULL);
-	g_slist_free (sug);
+	g_slist_free_full (sug, g_free);
 
 	gtk_widget_set_sensitive (dlg->ignore_button, TRUE);
 	gtk_widget_set_sensitive (dlg->ignore_all_button, TRUE);
@@ -578,8 +577,7 @@ check_word_button_clicked_handler (GtkButton *button, PlumaSpellCheckerDialog *d
 		update_suggestions_list_model (dlg, sug);
 
 		/* free the suggestion list */
-		g_slist_foreach (sug, (GFunc)g_free, NULL);
-		g_slist_free (sug);
+		g_slist_free_full (sug, g_free);
 	}
 }
 

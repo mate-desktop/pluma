@@ -296,8 +296,7 @@ load_uri_list (PlumaWindow         *window,
 
 	ret = load_file_list (window, files, encoding, line_pos, create);
 
-	g_slist_foreach (files, (GFunc) g_object_unref, NULL);
-	g_slist_free (files);
+	g_slist_free_full (files, g_object_unref);
 
 	return ret;
 }
@@ -433,8 +432,7 @@ open_dialog_response_cb (PlumaFileChooserDialog *dialog,
 				   encoding,
 				   0);
 
-	g_slist_foreach (files, (GFunc) g_object_unref, NULL);
-	g_slist_free (files);
+	g_slist_free_full (files, g_object_unref);
 }
 
 void
