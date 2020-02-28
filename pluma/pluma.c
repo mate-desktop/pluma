@@ -128,8 +128,7 @@ static const GOptionEntry options [] =
 static void
 free_command_line_data (void)
 {
-	g_slist_foreach (file_list, (GFunc) g_object_unref, NULL);
-	g_slist_free (file_list);
+	g_slist_free_full (file_list, g_object_unref);
 	file_list = NULL;
 
 	g_strfreev (remaining_args);

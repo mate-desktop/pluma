@@ -154,7 +154,8 @@ track_row_lookup (WindowData  *data,
 }
 
 static void
-message_cache_data_free (MessageCacheData *data)
+message_cache_data_free (MessageCacheData *data,
+                         GClosure         *closure)
 {
 	g_object_unref (data->message);
 	g_slice_free (MessageCacheData, data);

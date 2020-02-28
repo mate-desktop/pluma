@@ -1386,8 +1386,7 @@ update_recent_files_menu (PlumaWindow *window)
 
 	g_list_free (filtered_items);
 
-	g_list_foreach (items, (GFunc) gtk_recent_info_unref, NULL);
-	g_list_free (items);
+	g_list_free_full (items, (GDestroyNotify) gtk_recent_info_unref);
 }
 
 static void
