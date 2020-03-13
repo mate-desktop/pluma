@@ -27,6 +27,7 @@ requires:
     # Useful URL: https://github.com/mate-desktop/debian-packages
     # Useful URL: https://salsa.debian.org/debian-mate-team/pluma
     - autopoint
+    - autoconf-archive
     - clang
     - clang-tools
     - cppcheck
@@ -52,6 +53,7 @@ requires:
 
   fedora:
     # Useful URL: https://src.fedoraproject.org/cgit/rpms/pluma.git
+    - autoconf-archive
     - clang
     - clang-analyzer
     - cppcheck-htmlreport
@@ -74,6 +76,7 @@ requires:
 
   ubuntu:
     - autopoint
+    - autoconf-archive
     - clang
     - clang-tools
     - git
@@ -119,8 +122,8 @@ before_scripts:
   - chmod +x /usr/bin/gla11y
 
 build_scripts:
-  - ./autogen.sh
-  - scan-build $CHECKERS ./configure
+  - ./autogen.sh --enable-compile-warnings=maximum
+  - scan-build $CHECKERS ./configure --enable-compile-warnings=maximum
   - if [ $CPU_COUNT -gt 1 ]; then
   -     scan-build $CHECKERS --keep-cc -o html-report make -j $CPU_COUNT
   - else
