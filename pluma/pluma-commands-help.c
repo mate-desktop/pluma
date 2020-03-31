@@ -64,7 +64,7 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 	};
 
 	static const gchar comments[] = \
-		N_("Pluma is a small and lightweight text editor for the MATE Desktop");
+		N_("Pluma is a small and lightweight text editor for the MATE Desktop Environment.");
 
 	static const gchar *license[] ={
 		N_("Pluma is free software; you can redistribute it and/or modify "
