@@ -378,13 +378,16 @@ on_message_received (const char *message,
 	if (!gtk_widget_get_realized (GTK_WIDGET (window)))
 		gtk_widget_realize (GTK_WIDGET (window));
 
-	if (startup_timestamp <= 0)
-		startup_timestamp = gdk_x11_get_server_time (gtk_widget_get_window (GTK_WIDGET (window)));
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	{
+		if (startup_timestamp <= 0)
+			startup_timestamp = gdk_x11_get_server_time (gtk_widget_get_window (GTK_WIDGET (window)));
 
-	gdk_x11_window_set_user_time (gtk_widget_get_window (GTK_WIDGET (window)),
-				      startup_timestamp);
-
-	gtk_window_present (GTK_WINDOW (window));
+		gdk_x11_window_set_user_time (gtk_widget_get_window (GTK_WIDGET (window)), startup_timestamp);
+		gtk_window_present (GTK_WINDOW (window));
+	}
+	else
+		gtk_window_present_with_time (GTK_WINDOW (window), GPOINTER_TO_UINT (data));
 
  out:
 	g_strfreev (commands);
@@ -421,7 +424,11 @@ send_bacon_message (void)
 	display = gdk_screen_get_display (screen);
 
 	display_name = gdk_display_get_name (display);
-	screen_number = gdk_x11_screen_get_screen_number (screen);
+
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+		screen_number = gdk_x11_screen_get_screen_number (screen);
+	else
+		screen_number = 0;
 
 	pluma_debug_message (DEBUG_APP, "Display: %s", display_name);
 	pluma_debug_message (DEBUG_APP, "Screen: %d", screen_number);
@@ -514,8 +521,6 @@ main (int argc, char *argv[])
 	g_free (dir);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
-
-	gdk_set_allowed_backends ("x11");
 
 	startup_timestamp = get_startup_timestamp();
 

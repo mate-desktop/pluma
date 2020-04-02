@@ -36,8 +36,8 @@
 #include <unistd.h>
 
 #include <glib/gi18n.h>
+#include <gdk/gdk.h>
 #include <gdk/gdkx.h>
-
 #include "pluma-app.h"
 #include "pluma-prefs-manager-app.h"
 #include "pluma-commands.h"
@@ -653,8 +653,15 @@ is_in_viewport (PlumaWindow  *window,
 	x += vp_x;
 	y += vp_y;
 
-	sc_width = WidthOfScreen (gdk_x11_screen_get_xscreen (screen));
-	sc_height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen));
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	{
+		sc_width = WidthOfScreen (gdk_x11_screen_get_xscreen (screen));
+		sc_height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen));
+	}
+	else
+	{
+		return TRUE;
+	}
 
 	return x + width * .25 >= viewport_x &&
 	       x + width * .75 <= viewport_x + sc_width &&

@@ -31,8 +31,8 @@
 #include <unistd.h>
 
 #include <glib/gi18n.h>
-#include <gdk/gdkx.h>
 #include <gtk/gtk.h>
+#include <gdk/gdkx.h>
 
 struct EggDesktopFile {
   GKeyFile           *key_file;
@@ -919,8 +919,7 @@ start_startup_notification (GdkDisplay     *display,
 {
   static int sequence = 0;
   char *startup_id;
-  char *description, *wmclass;
-  char *screen_str, *workspace_str;
+  char *wmclass;
 
   if (g_key_file_has_key (desktop_file->key_file,
 			  EGG_DESKTOP_FILE_GROUP,
@@ -944,8 +943,14 @@ start_startup_notification (GdkDisplay     *display,
 	return NULL;
     }
 
-  if (launch_time == (guint32)-1)
-    launch_time = gdk_x11_display_get_user_time (display);
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+  {
+    if (launch_time == (guint32)-1)
+      launch_time = gdk_x11_display_get_user_time (display);
+  }
+  else if (launch_time == (guint32)-1)
+    launch_time = g_get_monotonic_time () / 1000;
+
   startup_id = g_strdup_printf ("%s-%lu-%s-%s-%d_TIME%lu",
 				g_get_prgname (),
 				(unsigned long)getpid (),
@@ -954,25 +959,29 @@ start_startup_notification (GdkDisplay     *display,
 				sequence++,
 				(unsigned long)launch_time);
 
-  description = g_strdup_printf (_("Starting %s"), desktop_file->name);
-  screen_str = g_strdup_printf ("%d", screen);
-  workspace_str = workspace == -1 ? NULL : g_strdup_printf ("%d", workspace);
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+  {
+    char *description = g_strdup_printf (_("Starting %s"), desktop_file->name);
+    char *screen_str = g_strdup_printf ("%d", screen);
+    char *workspace_str = workspace == -1 ? NULL : g_strdup_printf ("%d", workspace);
 
-  gdk_x11_display_broadcast_startup_message (display, "new",
-					     "ID", startup_id,
-					     "NAME", desktop_file->name,
-					     "SCREEN", screen_str,
-					     "BIN", argv0,
-					     "ICON", desktop_file->icon,
-					     "DESKTOP", workspace_str,
-					     "DESCRIPTION", description,
-					     "WMCLASS", wmclass,
-					     NULL);
+    gdk_x11_display_broadcast_startup_message (display, "new",
+					       "ID", startup_id,
+					       "NAME", desktop_file->name,
+					       "SCREEN", screen_str,
+					       "BIN", argv0,
+					       "ICON", desktop_file->icon,
+					       "DESKTOP", workspace_str,
+					       "DESCRIPTION", description,
+					       "WMCLASS", wmclass,
+					       NULL);
 
-  g_free (description);
+    g_free (description);
+    g_free (screen_str);
+    g_free (workspace_str);
+  }
+
   g_free (wmclass);
-  g_free (screen_str);
-  g_free (workspace_str);
 
   return startup_id;
 }
@@ -981,9 +990,12 @@ static void
 end_startup_notification (GdkDisplay *display,
 			  const char *startup_id)
 {
-  gdk_x11_display_broadcast_startup_message (display, "remove",
-					     "ID", startup_id,
-					     NULL);
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+  {
+    gdk_x11_display_broadcast_startup_message (display, "remove",
+					       "ID", startup_id,
+					       NULL);
+  }
 }
 
 #define EGG_DESKTOP_FILE_SN_TIMEOUT_LENGTH (30 /* seconds */)
@@ -1184,7 +1196,11 @@ egg_desktop_file_launchv (EggDesktopFile *desktop_file,
       display = gdk_display_get_default ();
       screen = gdk_display_get_default_screen (display);
     }
-  screen_num = gdk_x11_screen_get_screen_number (screen);
+
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+    screen_num = gdk_x11_screen_get_screen_number (screen);
+  else
+    screen_num = 0;
 
   translated_documents = translate_document_list (desktop_file, documents);
   docs = translated_documents;
