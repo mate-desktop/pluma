@@ -20,6 +20,7 @@
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Enter the _location of the file (URI) you would like to open:</property>
             <property name="use_underline">True</property>
+            <property name="mnemonic_widget">main_vbox</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -46,8 +47,9 @@
           <object class="GtkLabel" id="encoding_label">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">_Character Encoding:</property>
+            <property name="label" translatable="yes">Ch_aracter Encoding:</property>
             <property name="use_underline">True</property>
+            <property name="mnemonic_widget">encoding_hbox</property>
           </object>
           <packing>
             <property name="expand">False</property>
