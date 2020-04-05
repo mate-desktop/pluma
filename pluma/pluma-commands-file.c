@@ -48,10 +48,11 @@
 #include "pluma-utils.h"
 #include "pluma-file-chooser-dialog.h"
 #include "dialogs/pluma-close-confirmation-dialog.h"
-
+#include "dialogs/pluma-open-location-dialog.h"
 
 /* Defined constants */
 #define PLUMA_OPEN_DIALOG_KEY 		"pluma-open-dialog-key"
+#define PLUMA_OPEN_LOCATION_DIALOG_KEY  "pluma-open-location-dialog-key"
 #define PLUMA_TAB_TO_SAVE_AS  		"pluma-tab-to-save-as"
 #define PLUMA_LIST_OF_TABS_TO_SAVE_AS   "pluma-list-of-tabs-to-save-as"
 #define PLUMA_IS_CLOSING_ALL            "pluma-is-closing-all"
@@ -510,6 +511,97 @@ _pluma_cmd_file_open (GtkAction   *action,
 			  window);
 
 	gtk_widget_show (open_dialog);
+}
+
+static void
+open_location_dialog_destroyed (PlumaWindow *window,
+				gpointer     data)
+{
+	pluma_debug (DEBUG_COMMANDS);
+
+	g_object_set_data (G_OBJECT (window),
+			   PLUMA_OPEN_LOCATION_DIALOG_KEY,
+			   NULL);
+}
+
+static void
+open_location_dialog_response_cb (PlumaOpenLocationDialog *dlg,
+				  gint                    response_id,
+				  PlumaWindow             *window)
+{
+	GFile *location;
+	const PlumaEncoding *encoding;
+	GSList *uris = NULL;
+
+	pluma_debug (DEBUG_COMMANDS);
+
+	if (response_id != GTK_RESPONSE_OK)
+	{
+		gtk_widget_destroy (GTK_WIDGET (dlg));
+
+		return;
+	}
+
+	location = pluma_open_location_dialog_get_location (dlg);
+	encoding = pluma_open_location_dialog_get_encoding (dlg);
+
+	if (location != NULL)
+	{
+		uris = g_slist_prepend (uris, g_file_get_uri (location));
+
+		g_object_unref (location);
+	}
+
+	gtk_widget_destroy (GTK_WIDGET (dlg));
+
+	if (uris != NULL)
+	{
+		pluma_commands_load_uris (window,
+					  uris,
+					  encoding,
+					  0);
+
+		g_slist_foreach (uris, (GFunc) g_free, NULL);
+		g_slist_free (uris);
+	}
+}
+
+void
+_pluma_cmd_file_open_uri (GtkAction   *action,
+			  PlumaWindow *window)
+{
+	GtkWidget *dlg;
+	gpointer   data;
+
+	pluma_debug (DEBUG_COMMANDS);
+
+	data = g_object_get_data (G_OBJECT (window), PLUMA_OPEN_LOCATION_DIALOG_KEY);
+
+	if (data != NULL)
+	{
+		g_return_if_fail (PLUMA_IS_OPEN_LOCATION_DIALOG (data));
+
+		gtk_window_present (GTK_WINDOW (data));
+
+		return;
+	}
+
+	dlg = pluma_open_location_dialog_new (GTK_WINDOW (window));
+
+	g_object_set_data (G_OBJECT (window),
+			   PLUMA_OPEN_LOCATION_DIALOG_KEY,
+			   dlg);
+
+	g_object_weak_ref (G_OBJECT (dlg),
+			   (GWeakNotify) open_location_dialog_destroyed,
+			   window);
+
+	g_signal_connect (dlg,
+			  "response",
+			  G_CALLBACK (open_location_dialog_response_cb),
+			  window);
+
+	gtk_widget_show (dlg);
 }
 
 /* File saving */

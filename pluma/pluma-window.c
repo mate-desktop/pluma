@@ -2552,6 +2552,11 @@ set_sensitivity_according_to_window_state (PlumaWindow *window)
 	gtk_action_set_sensitive (action,
 				  !(window->priv->state & PLUMA_WINDOW_STATE_SAVING_SESSION));
 
+	action = gtk_action_group_get_action (window->priv->always_sensitive_action_group,
+						      "FileOpenURI");
+	gtk_action_set_sensitive (action,
+				  !(window->priv->state & PLUMA_WINDOW_STATE_SAVING_SESSION));
+
 	gtk_action_group_set_sensitive (window->priv->recents_action_group,
 					!(window->priv->state & PLUMA_WINDOW_STATE_SAVING_SESSION));
 

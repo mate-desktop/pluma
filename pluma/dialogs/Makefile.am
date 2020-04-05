@@ -17,12 +17,15 @@ libdialogs_la_SOURCES = 			\
 	pluma-close-confirmation-dialog.h 	\
 	pluma-encodings-dialog.c		\
 	pluma-encodings-dialog.h		\
+	pluma-open-location-dialog.c		\
+	pluma-open-location-dialog.h		\
 	pluma-search-dialog.h			\
 	pluma-search-dialog.c
 
 ui_files =					\
 	pluma-encodings-dialog.ui		\
 	pluma-preferences-dialog.ui		\
+	pluma-open-location-dialog.ui		\
 	pluma-search-dialog.ui
 
 include $(top_srcdir)/gla11y.mk
