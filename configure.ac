@@ -26,6 +26,8 @@ AM_INIT_AUTOMAKE([1.10 dist-xz no-dist-gzip -Wno-portability check-news])
 AM_MAINTAINER_MODE
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
+MATE_COMPILE_WARNINGS
+
 # Checks for programs
 AC_PROG_CC
 AC_PROG_INSTALL
@@ -205,8 +207,6 @@ dnl Misc
 dnl ================================================================
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 AC_PATH_PROG(GLIB_MKENUMS, glib-mkenums)
-
-MATE_COMPILE_WARNINGS(yes)
 
 AC_ARG_ENABLE([tests],
 	AS_HELP_STRING([--enable-tests], [Enable the tests]),
