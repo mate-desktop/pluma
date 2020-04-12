@@ -140,6 +140,7 @@ GSList *                pluma_settings_get_writable_vfs_schemes (GSettings *sett
 #define PLUMA_SETTINGS_DRAWER_TAB                   "enable-space-drawer-tab"
 #define PLUMA_SETTINGS_DRAWER_NEWLINE               "enable-space-drawer-newline"
 #define PLUMA_SETTINGS_DRAWER_NBSP                  "enable-space-drawer-nbsp"
+#define PLUMA_SETTINGS_DISPLAY_OVERVIEW_MAP         "display-overview-map"
 
 /* White list of writable mate-vfs methods */
 #define PLUMA_SETTINGS_WRITABLE_VFS_SCHEMES         "writable-vfs-schemes"
