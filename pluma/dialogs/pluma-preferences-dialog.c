@@ -130,6 +130,9 @@ struct _PlumaPreferencesDialogPrivate
 	/* Highlight matching bracket */
 	GtkWidget	*bracket_matching_checkbutton;
 
+	/* Display overview map */
+	GtkWidget	*display_overview_map_checkbutton;
+
 	/* Right margin */
 	GtkWidget	*right_margin_checkbutton;
 	GtkWidget	*right_margin_position_spinbutton;
@@ -527,6 +530,11 @@ setup_view_page (PlumaPreferencesDialog *dlg)
 			 PLUMA_SETTINGS_AUTO_SAVE_INTERVAL,
 			 dlg->priv->auto_save_spinbutton,
 			 "value",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
+	g_settings_bind (dlg->priv->editor_settings,
+			 PLUMA_SETTINGS_DISPLAY_OVERVIEW_MAP,
+			 dlg->priv->display_overview_map_checkbutton,
+			 "active",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 
 	g_signal_connect (dlg->priv->wrap_text_checkbutton,
@@ -1222,6 +1230,7 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 		"display_line_numbers_checkbutton", &dlg->priv->display_line_numbers_checkbutton,
 		"highlight_current_line_checkbutton", &dlg->priv->highlight_current_line_checkbutton,
 		"bracket_matching_checkbutton", &dlg->priv->bracket_matching_checkbutton,
+		"display_overview_map_checkbutton", &dlg->priv->display_overview_map_checkbutton,
 		"wrap_text_checkbutton", &dlg->priv->wrap_text_checkbutton,
 		"split_checkbutton", &dlg->priv->split_checkbutton,
 

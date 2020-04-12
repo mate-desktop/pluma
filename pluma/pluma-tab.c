@@ -52,8 +52,10 @@ struct _PlumaTabPrivate
 	GSettings	       *editor_settings;
 	PlumaTabState	        state;
 
+	GtkWidget	       *overlay;
 	GtkWidget	       *view;
 	GtkWidget	       *view_scrolled_window;
+	GtkWidget	       *view_map_frame;
 
 	GtkWidget	       *message_area;
 	GtkWidget	       *print_preview;
@@ -406,11 +408,15 @@ pluma_tab_set_state (PlumaTab      *tab,
 	    (state == PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW))
 	{
 		gtk_widget_hide (tab->priv->view_scrolled_window);
+		gtk_widget_hide (tab->priv->overlay);
 	}
 	else
 	{
 		if (tab->priv->print_preview == NULL)
+		{
 			gtk_widget_show (tab->priv->view_scrolled_window);
+			gtk_widget_show (tab->priv->overlay);
+		}
 	}
 
 	set_cursor_according_to_state (GTK_TEXT_VIEW (tab->priv->view),
@@ -1489,6 +1495,8 @@ tab_mount_operation_factory (PlumaDocument *doc,
 static void
 pluma_tab_init (PlumaTab *tab)
 {
+	GtkWidget *hbox;
+	GtkWidget *map;
 	GtkWidget *sw;
 	PlumaDocument *doc;
 	PlumaLockdownMask lockdown;
@@ -1546,11 +1554,45 @@ pluma_tab_init (PlumaTab *tab)
 	gtk_widget_show (tab->priv->view);
 	g_object_set_data (G_OBJECT (tab->priv->view), PLUMA_TAB_KEY, tab);
 
-	gtk_box_pack_end (GTK_BOX (tab), sw, TRUE, TRUE, 0);
 	gtk_container_add (GTK_CONTAINER (sw), tab->priv->view);
 	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (sw),
 					     GTK_SHADOW_IN);
 	gtk_widget_show (sw);
+
+	/* Create the minimap overlay */
+	tab->priv->overlay = gtk_overlay_new ();
+	tab->priv->view_map_frame = gtk_frame_new (NULL);
+	map = gtk_source_map_new();
+
+	GtkCssProvider *provider = gtk_css_provider_new ();
+	gtk_css_provider_load_from_data (provider,
+					 "textview { font-family: Monospace; font-size: 1pt; }",
+					 -1,
+					 NULL);
+	gtk_style_context_add_provider (gtk_widget_get_style_context (map),
+					GTK_STYLE_PROVIDER (provider),
+					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	g_object_unref (provider);
+
+	gtk_source_map_set_view (GTK_SOURCE_MAP(map), GTK_SOURCE_VIEW(tab->priv->view));
+	gtk_container_add (GTK_CONTAINER(tab->priv->view_map_frame), map);
+	gtk_widget_show (tab->priv->view_map_frame);
+
+	/* Start packing */
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+	gtk_box_pack_start (GTK_BOX (hbox), sw, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (hbox), tab->priv->view_map_frame, FALSE, FALSE, 0);
+	gtk_container_add (GTK_CONTAINER(tab->priv->overlay), hbox);
+	gtk_box_pack_end (GTK_BOX (tab), tab->priv->overlay, TRUE, TRUE, 0);
+
+	gtk_widget_show (hbox);
+	gtk_widget_show (tab->priv->overlay);
+
+	g_settings_bind (tab->priv->editor_settings,
+			 PLUMA_SETTINGS_DISPLAY_OVERVIEW_MAP,
+			 tab->priv->view_map_frame,
+			 "visible",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_signal_connect (doc,
 			  "notify::uri",
