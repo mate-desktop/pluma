@@ -619,6 +619,7 @@ main (int argc, char *argv[])
 
 		pluma_debug_message (DEBUG_APP, "Create main window");
 		window = pluma_app_create_window (app, NULL);
+		gtk_widget_set_size_request (GTK_WIDGET (window), 250, 250);
 
 		if (file_list != NULL)
 		{
