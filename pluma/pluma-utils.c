@@ -1573,7 +1573,7 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 	gboolean found;
 
 	match_string = "";
-	compile_flags = 0;
+	compile_flags = G_REGEX_OPTIMIZE | G_REGEX_MULTILINE;
 
 	if ((flags & GTK_TEXT_SEARCH_CASE_INSENSITIVE) != 0)
 		compile_flags |= G_REGEX_CASELESS;
