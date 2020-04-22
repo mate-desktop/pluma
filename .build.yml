@@ -137,7 +137,7 @@ build_scripts:
   -     cppcheck --enable=warning,style,performance,portability,information,missingInclude .
   - fi
 
-  - ./autogen.sh
+  - NOCONFIGURE=1 ./autogen.sh
   - scan-build $CHECKERS ./configure --enable-compile-warnings=maximum
   - if [ $CPU_COUNT -gt 1 ]; then
   -     if [ ${DISTRO_NAME} == "debian" ];then
