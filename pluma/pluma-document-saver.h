@@ -85,7 +85,7 @@ struct _PlumaDocumentSaverClass
 
 	/* VTable */
 	void			(* save)		(PlumaDocumentSaver *saver,
-							 GTimeVal           *old_mtime);
+							 gint64             *old_mtime);
 	goffset			(* get_file_size)	(PlumaDocumentSaver *saver);
 	goffset			(* get_bytes_written)	(PlumaDocumentSaver *saver);
 };
@@ -106,7 +106,7 @@ void			 pluma_document_saver_saving		(PlumaDocumentSaver *saver,
 								 gboolean            completed,
 								 GError             *error);
 void			 pluma_document_saver_save		(PlumaDocumentSaver  *saver,
-								 GTimeVal            *old_mtime);
+								 gint64              *old_mtime);
 
 #if 0
 void			 pluma_document_saver_cancel		(PlumaDocumentSaver  *saver);

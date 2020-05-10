@@ -55,10 +55,11 @@ typedef struct
 } AsyncData;
 
 #define REMOTE_QUERY_ATTRIBUTES G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE "," \
-				G_FILE_ATTRIBUTE_TIME_MODIFIED
+				G_FILE_ATTRIBUTE_TIME_MODIFIED "," \
+				G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC
 
-static void	     pluma_gio_document_saver_save		    (PlumaDocumentSaver *saver,
-								     GTimeVal           *old_mtime);
+static void          pluma_gio_document_saver_save                  (PlumaDocumentSaver *saver,
+                                                                     gint64             *old_mtime);
 static goffset	     pluma_gio_document_saver_get_file_size	    (PlumaDocumentSaver *saver);
 static goffset	     pluma_gio_document_saver_get_bytes_written	    (PlumaDocumentSaver *saver);
 
@@ -67,7 +68,7 @@ static void 	    check_modified_async 			    (AsyncData          *async);
 
 struct _PlumaGioDocumentSaverPrivate
 {
-	GTimeVal		  old_mtime;
+	gint64			  old_mtime;
 
 	goffset			  size;
 	goffset			  bytes_written;
@@ -673,16 +674,24 @@ check_modification_callback (GFile        *source,
 
 	/* check if the mtime is > what we know about it (if we have it) */
 	if (info != NULL && g_file_info_has_attribute (info,
-				       G_FILE_ATTRIBUTE_TIME_MODIFIED))
+	                                               G_FILE_ATTRIBUTE_TIME_MODIFIED))
 	{
-		GTimeVal mtime;
-		GTimeVal old_mtime;
+		guint64 mtime;
+		gint64 old_mtime;
 
-		g_file_info_get_modification_time (info, &mtime);
+		mtime = g_file_info_get_attribute_uint64 (info,
+		                                          G_FILE_ATTRIBUTE_TIME_MODIFIED) * G_USEC_PER_SEC;
+		if (g_file_info_has_attribute (info,
+		                               G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC))
+		{
+			guint32 usec = g_file_info_get_attribute_uint32 (info,
+			                                                 G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC);
+			mtime += (guint64) usec;
+		}
+
 		old_mtime = gvsaver->priv->old_mtime;
 
-		if ((old_mtime.tv_sec > 0 || old_mtime.tv_usec > 0) &&
-		    (mtime.tv_sec != old_mtime.tv_sec || mtime.tv_usec != old_mtime.tv_usec) &&
+		if ((old_mtime > 0 || ((gint64) mtime) > 0) && (((gint64) mtime) != old_mtime) &&
 		    (PLUMA_DOCUMENT_SAVER (gvsaver)->flags & PLUMA_DOCUMENT_SAVE_IGNORE_MTIME) == 0)
 		{
 			pluma_debug_message (DEBUG_SAVER, "File is externally modified");
@@ -711,7 +720,7 @@ check_modified_async (AsyncData *async)
 	pluma_debug_message (DEBUG_SAVER, "Check externally modified");
 
 	g_file_query_info_async (async->saver->priv->gfile,
-				 G_FILE_ATTRIBUTE_TIME_MODIFIED,
+				 G_FILE_ATTRIBUTE_TIME_MODIFIED "," G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC,
 				 G_FILE_QUERY_INFO_NONE,
 				 G_PRIORITY_HIGH,
 				 async->cancellable,
@@ -739,7 +748,7 @@ save_remote_file_real (PlumaGioDocumentSaver *gvsaver)
 
 static void
 pluma_gio_document_saver_save (PlumaDocumentSaver *saver,
-			       GTimeVal           *old_mtime)
+                               gint64             *old_mtime)
 {
 	PlumaGioDocumentSaver *gvsaver = PLUMA_GIO_DOCUMENT_SAVER (saver);
 

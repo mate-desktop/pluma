@@ -109,8 +109,8 @@ struct _PlumaDocumentPrivate
 
 	gchar	    *content_type;
 
-	GTimeVal     mtime;
-	GTimeVal     time_of_last_save_or_load;
+	gint64       mtime;
+	gint64       time_of_last_save_or_load;
 
 	guint        search_flags;
 	gchar       *search_text;
@@ -939,10 +939,9 @@ pluma_document_init (PlumaDocument *doc)
 
 	doc->priv->dispose_has_run = FALSE;
 
-	doc->priv->mtime.tv_sec = 0;
-	doc->priv->mtime.tv_usec = 0;
+	doc->priv->mtime = 0;
 
-	g_get_current_time (&doc->priv->time_of_last_save_or_load);
+	doc->priv->time_of_last_save_or_load = g_get_real_time ();
 
 	doc->priv->encoding = pluma_encoding_get_utf8 ();
 
@@ -1270,10 +1269,11 @@ _pluma_document_check_externally_modified (PlumaDocument *doc)
 
 	gfile = g_file_new_for_uri (doc->priv->uri);
 	info = g_file_query_info (gfile,
-				  G_FILE_ATTRIBUTE_TIME_MODIFIED "," \
-				  G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE,
-				  G_FILE_QUERY_INFO_NONE,
-				  NULL, NULL);
+	                          G_FILE_ATTRIBUTE_TIME_MODIFIED "," \
+	                          G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC "," \
+	                          G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE,
+	                          G_FILE_QUERY_INFO_NONE,
+	                          NULL, NULL);
 	g_object_unref (gfile);
 
 	if (info != NULL)
@@ -1291,14 +1291,20 @@ _pluma_document_check_externally_modified (PlumaDocument *doc)
 
 		if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_TIME_MODIFIED))
 		{
-			GTimeVal timeval;
+			guint64 timeval;
 
-			g_file_info_get_modification_time (info, &timeval);
+			timeval = g_file_info_get_attribute_uint64 (info, G_FILE_ATTRIBUTE_TIME_MODIFIED) * G_USEC_PER_SEC;
+			if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC))
+			{
+				guint32 usec;
+
+				usec = g_file_info_get_attribute_uint32 (info,
+				                                         G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC);
+				timeval += (guint64) usec;
+			}
 			g_object_unref (info);
 
-			return (timeval.tv_sec > doc->priv->mtime.tv_sec) ||
-			       (timeval.tv_sec == doc->priv->mtime.tv_sec &&
-			       timeval.tv_usec > doc->priv->mtime.tv_usec);
+			return (((gint64) timeval) > doc->priv->mtime);
 		}
 	}
 
@@ -1330,7 +1336,7 @@ document_loader_loaded (PlumaDocumentLoader *loader,
 		GFileInfo *info;
 		const gchar *content_type = NULL;
 		gboolean read_only = FALSE;
-		GTimeVal mtime = {0, 0};
+		guint64 mtime = 0;
 
 		info = pluma_document_loader_get_info (loader);
 
@@ -1341,18 +1347,28 @@ document_loader_loaded (PlumaDocumentLoader *loader,
 										 G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE);
 
 			if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_TIME_MODIFIED))
-				g_file_info_get_modification_time (info, &mtime);
+				mtime = g_file_info_get_attribute_uint64 (info,
+				                                          G_FILE_ATTRIBUTE_TIME_MODIFIED) * G_USEC_PER_SEC;
+
+			if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC))
+			{
+				guint32 usec;
+
+				usec = g_file_info_get_attribute_uint32 (info,
+				                                         G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC);
+				mtime += (guint64) usec;
+			}
 
 			if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE))
 				read_only = !g_file_info_get_attribute_boolean (info,
 										G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE);
 		}
 
-		doc->priv->mtime = mtime;
+		doc->priv->mtime = (gint64) mtime;
 
 		set_readonly (doc, read_only);
 
-		g_get_current_time (&doc->priv->time_of_last_save_or_load);
+		doc->priv->time_of_last_save_or_load = g_get_real_time ();
 
 		set_encoding (doc,
 			      pluma_document_loader_get_encoding (loader),
@@ -1545,7 +1561,7 @@ document_saver_saving (PlumaDocumentSaver *saver,
 		{
 			const gchar *uri;
 			const gchar *content_type = NULL;
-			GTimeVal mtime = {0, 0};
+			guint64 mtime = 0;
 			GFileInfo *info;
 
 			uri = pluma_document_saver_get_uri (saver);
@@ -1560,13 +1576,23 @@ document_saver_saving (PlumaDocumentSaver *saver,
 											 G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE);
 
 				if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_TIME_MODIFIED))
-					g_file_info_get_modification_time (info, &mtime);
+					mtime = g_file_info_get_attribute_uint64 (info,
+					                                          G_FILE_ATTRIBUTE_TIME_MODIFIED) * G_USEC_PER_SEC;
+
+				if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC))
+				{
+					guint32 usec;
+
+					usec = g_file_info_get_attribute_uint32 (info,
+					                                         G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC);
+					mtime += (guint64) usec;
+				}
 			}
 
 			set_content_type (doc, content_type);
-			doc->priv->mtime = mtime;
+			doc->priv->mtime = (gint64) mtime;
 
-			g_get_current_time (&doc->priv->time_of_last_save_or_load);
+			doc->priv->time_of_last_save_or_load = g_get_real_time ();
 
 			_pluma_document_set_readonly (doc, FALSE);
 
@@ -2314,15 +2340,11 @@ pluma_document_get_encoding (PlumaDocument *doc)
 glong
 _pluma_document_get_seconds_since_last_save_or_load (PlumaDocument *doc)
 {
-	GTimeVal current_time;
-
 	pluma_debug (DEBUG_DOCUMENT);
 
 	g_return_val_if_fail (PLUMA_IS_DOCUMENT (doc), -1);
 
-	g_get_current_time (&current_time);
-
-	return (current_time.tv_sec - doc->priv->time_of_last_save_or_load.tv_sec);
+	return ((g_get_real_time () - doc->priv->time_of_last_save_or_load) / G_USEC_PER_SEC);
 }
 
 static void

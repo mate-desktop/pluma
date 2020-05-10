@@ -293,7 +293,7 @@ pluma_document_saver_saving (PlumaDocumentSaver *saver,
 
 void
 pluma_document_saver_save (PlumaDocumentSaver     *saver,
-			   GTimeVal               *old_mtime)
+                           gint64                 *old_mtime)
 {
 	pluma_debug (DEBUG_SAVER);
 

@@ -448,14 +448,10 @@ window_destroy (PlumaWindow *window,
 static gchar *
 gen_role (void)
 {
-	GTimeVal result;
 	static gint serial;
 
-	g_get_current_time (&result);
-
-	return g_strdup_printf ("pluma-window-%ld-%ld-%d-%s",
-				result.tv_sec,
-				result.tv_usec,
+	return g_strdup_printf ("pluma-window-%" G_GINT64_FORMAT "-%d-%s",
+				g_get_real_time (),
 				serial++,
 				g_get_host_name ());
 }
