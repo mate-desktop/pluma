@@ -81,6 +81,9 @@ GType		 pluma_preferences_dialog_get_type	(void) G_GNUC_CONST;
 
 void		 pluma_show_preferences_dialog		(PlumaWindow *parent);
 
+static       gboolean pluma_preferences_dialog_page_scroll_event_cb (GtkWidget      *notebook,
+                                                                     GdkEventScroll *event);
+
 G_END_DECLS
 
 #endif /* __PLUMA_PREFERENCES_DIALOG_H__ */
