@@ -141,6 +141,8 @@ struct _PlumaPreferencesDialogPrivate
 
 G_DEFINE_TYPE_WITH_PRIVATE (PlumaPreferencesDialog, pluma_preferences_dialog, GTK_TYPE_DIALOG)
 
+static       gboolean pluma_preferences_dialog_page_scroll_event_cb (GtkWidget      *notebook,
+                                                                     GdkEventScroll *event);
 
 static void
 pluma_preferences_dialog_class_init (PlumaPreferencesDialogClass *klass)
@@ -1367,6 +1369,12 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 	g_object_unref (dlg->priv->notebook);
 	gtk_container_set_border_width (GTK_CONTAINER (dlg->priv->notebook), 5);
 
+    gtk_widget_add_events (dlg->priv->notebook, GDK_SCROLL_MASK);
+    g_signal_connect (dlg->priv->notebook,
+                      "scroll-event",
+                      G_CALLBACK (pluma_preferences_dialog_page_scroll_event_cb),
+                      NULL);
+
 	setup_editor_page (dlg);
 	setup_view_page (dlg);
 	setup_font_colors_page (dlg);
@@ -1396,4 +1404,48 @@ pluma_show_preferences_dialog (PlumaWindow *parent)
 	}
 
 	gtk_window_present (GTK_WINDOW (preferences_dialog));
+}
+
+static gboolean
+pluma_preferences_dialog_page_scroll_event_cb (GtkWidget        *widget,
+                                               GdkEventScroll   *event)
+
+{
+    GtkNotebook *notebook = GTK_NOTEBOOK (widget);
+    GtkWidget *child, *event_widget, *action_widget;
+
+    child = gtk_notebook_get_nth_page (notebook, gtk_notebook_get_current_page (notebook));
+    if (child == NULL)
+        return FALSE;
+
+    event_widget = gtk_get_event_widget ((GdkEvent*) event);
+
+    /* Ignore scroll events from the content of the page */
+    if (event_widget == NULL || event_widget == child || gtk_widget_is_ancestor (event_widget, child))
+        return FALSE;
+
+    /* And also from the action widgets */
+    action_widget = gtk_notebook_get_action_widget (notebook, GTK_PACK_START);
+    if (event_widget == action_widget || (action_widget != NULL && gtk_widget_is_ancestor (event_widget, action_widget)))
+        return FALSE;
+
+    action_widget = gtk_notebook_get_action_widget (notebook, GTK_PACK_END);
+    if (event_widget == action_widget || (action_widget != NULL && gtk_widget_is_ancestor (event_widget, action_widget)))
+        return FALSE;
+
+    switch (event->direction)
+    {
+        case GDK_SCROLL_RIGHT:
+        case GDK_SCROLL_DOWN:
+            gtk_notebook_next_page (notebook);
+            break;
+        case GDK_SCROLL_LEFT:
+        case GDK_SCROLL_UP:
+            gtk_notebook_prev_page (notebook);
+            break;
+        case GDK_SCROLL_SMOOTH:
+            break;
+    }
+
+    return TRUE;
 }
