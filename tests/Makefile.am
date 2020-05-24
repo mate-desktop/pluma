@@ -26,3 +26,5 @@ document_saver_LDADD		= $(progs_ldadd)
 TESTS = $(TEST_PROGS)
 
 EXTRA_DIST = setup-document-saver.sh
+
+-include $(top_srcdir)/git.mk
