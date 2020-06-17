@@ -42,7 +42,6 @@
 #define UNOWNED_LOCAL_DIRECTORY "/tmp/pluma-document-saver-unowned"
 #define UNOWNED_LOCAL_URI "/tmp/pluma-document-saver-unowned/pluma-document-saver-test.txt"
 
-#define UNOWNED_REMOTE_DIRECTORY "sftp://localhost/tmp/pluma-document-saver-unowned"
 #define UNOWNED_REMOTE_URI "sftp://localhost/tmp/pluma-document-saver-unowned/pluma-document-saver-test.txt"
 
 #define UNOWNED_GROUP_LOCAL_URI "/tmp/pluma-document-saver-unowned-group.txt"

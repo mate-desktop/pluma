@@ -40,8 +40,6 @@
 #include <pluma/pluma-prefs-manager.h>
 #include <pluma/dialogs/pluma-encodings-dialog.h>
 
-#define ENCODING_KEY "Enconding"
-
 struct _PlumaEncodingsComboBoxPrivate
 {
 	GtkListStore *store;
