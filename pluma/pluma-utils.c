@@ -57,8 +57,6 @@
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
 
-#define STDIN_DELAY_MICROSECONDS 100000
-
 /**
  * pluma_utils_uris_has_file_scheme
  *
