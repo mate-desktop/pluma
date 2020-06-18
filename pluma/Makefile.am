@@ -1,5 +1,5 @@
 ## Process this file with automake to produce Makefile.in
-SUBDIRS = dialogs smclient
+SUBDIRS = dialogs mate-submodules
 
 bin_PROGRAMS = pluma
 
@@ -8,7 +8,7 @@ noinst_LTLIBRARIES = libpluma.la
 AM_CPPFLAGS =								\
 	-I$(top_srcdir)							\
 	-I$(srcdir)							\
-	-I$(srcdir)/smclient						\
+	-I$(srcdir)/mate-submodules/libegg \
 	$(PLUMA_CFLAGS)							\
 	$(WARN_CFLAGS)							\
 	$(INTROSPECTION_CFLAGS)						\
@@ -19,7 +19,7 @@ AM_CPPFLAGS =								\
 pluma_SOURCES = \
 	pluma.c
 
-pluma_LDADD = libpluma.la $(PLUMA_LIBS) $(EGG_SMCLIENT_LIBS) $(INTROSPECTION_LIBS)
+pluma_LDADD = libpluma.la $(PLUMA_LIBS) $(LIBEGG_LIBS) $(INTROSPECTION_LIBS)
 
 pluma_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[[^_]].*"
 
@@ -27,7 +27,7 @@ libpluma_la_LDFLAGS = -export-dynamic -no-undefined -export-symbols-regex "^[[^_
 
 libpluma_la_LIBADD = \
 	dialogs/libdialogs.la		\
-	smclient/libeggsmclient.la
+	mate-submodules/libegg/libegg.la
 
 # PLUMA_LIBS must be the last to ensure correct order on some platforms
 libpluma_la_LIBADD += $(PLUMA_LIBS) -lICE

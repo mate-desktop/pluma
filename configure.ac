@@ -179,10 +179,10 @@ PLUMA_LIBS="$PLUMA_LIBS $X11_LIBS"
 AC_SUBST(PLUMA_CFLAGS)
 AC_SUBST(PLUMA_LIBS)
 
-PKG_CHECK_MODULES(EGG_SMCLIENT, [sm >= 1.0.0])
+PKG_CHECK_MODULES(LIBEGG, [sm >= 1.0.0 ice >= 1.0.0 gtk+-3.0])
 
-AC_SUBST(EGG_SMCLIENT_CFLAGS)
-AC_SUBST(EGG_SMCLIENT_LIBS)
+AC_SUBST(LIBEGG_CFLAGS)
+AC_SUBST(LIBEGG_LIBS)
 
 # Introspection
 GOBJECT_INTROSPECTION_CHECK([0.9.3])
@@ -237,7 +237,8 @@ data/Makefile
 docs/Makefile
 docs/reference/Makefile
 pluma/dialogs/Makefile
-pluma/smclient/Makefile
+pluma/mate-submodules/Makefile
+pluma/mate-submodules/libegg/Makefile
 pluma/Makefile
 help/Makefile
 pixmaps/Makefile
