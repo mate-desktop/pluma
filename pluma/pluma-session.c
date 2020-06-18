@@ -52,7 +52,7 @@
 #include "pluma-app.h"
 #include "pluma-commands.h"
 #include "dialogs/pluma-close-confirmation-dialog.h"
-#include "smclient/eggsmclient.h"
+#include "eggsmclient.h"
 
 /* The master client we use for SM */
 static EggSMClient *master_client = NULL;
