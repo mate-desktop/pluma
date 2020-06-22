@@ -23,6 +23,7 @@
 
 import sys
 import re
+import io
 
 class DeepnessException(Exception):
     def __init__(self):
@@ -64,13 +65,13 @@ def _subvar(match, macros):
     return val
 
 def process(infile = sys.stdin, outfile = sys.stdout, macros = {}):
-    if not isinstance(infile, file):
+    if not isinstance(infile, io.IOBase):
         infile = open(infile, mode = 'r')
         close_infile = True
     else:
         close_infile = False
 
-    if not isinstance(outfile, file):
+    if not isinstance(outfile, io.IOBase):
         outfile = open(outfile, mode = 'w')
         close_outfile = True
     else:
