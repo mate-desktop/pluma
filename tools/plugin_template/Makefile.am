@@ -21,11 +21,12 @@ lib##(PLUGIN_MODULE)_la_LIBADD  = $(PLUMA_LIBS)
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/##(PLUGIN_MODULE)
 ui_DATA =
 
-plugin_in_files = ##(PLUGIN_MODULE).pluma-plugin.desktop.in
-plugin_DATA = $(plugin_in_files:.pluma-plugin.desktop.in=.pluma-plugin)
+plugin_DATA = ##(PLUGIN_MODULE).plugin
+plugin_in_files = $(plugin_DATA:.plugin=.plugin.desktop.in)
+plugin_in_in_files = $(plugin_in_files:.plugin.desktop.in=.plugin.desktop.in.in)
 
 $(plugin_DATA): $(plugin_in_files)
-	$(AM_V_GEN) $(MSGFMT) --keyword=Description --desktop --template $< -d $(top_srcdir)/po -o $@
+	$(AM_V_GEN) $(MSGFMT) --keyword=Name --keyword=Description --desktop --template $< -d $(top_srcdir)/po -o $@
 
 EXTRA_DIST = $(plugin_in_files)
 
