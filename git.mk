@@ -298,6 +298,7 @@ $(srcdir)/.gitignore: Makefile.am $(top_srcdir)/git.mk $(top_srcdir)/configure.a
 				po/stamp-po \
 				po/.intltool-merge-cache \
 				"po/*.gmo" \
+				"po/*.po" \
 				"po/*.header" \
 				"po/*.mo" \
 				"po/*.sed" \
