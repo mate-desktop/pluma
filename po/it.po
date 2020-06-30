@@ -4,15 +4,12 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Martin Wimpress <code@flexion.org>, 2018
+# Marco Z. <minaz666@gmail.com>, 2018
 # Simone Centonze <mypythonit@gmail.com>, 2018
 # Dario Di Nucci <linkin88mail@gmail.com>, 2018
 # l3nn4rt, 2018
-# Marco Z. <minaz666@gmail.com>, 2018
-# talorno <giovanni.talorno@gmail.com>, 2019
+# Giuseppe Pignataro <rogepix@gmail.com>, 2018
 # andrea pittaro <transifex@andreapittaro.it>, 2019
-# Giuseppe Pignataro <rogepix@gmail.com>, 2019
-# ZenWalker <scow@riseup.net>, 2019
 # Wolfgang Ulbrich <mate@raveit.de>, 2019
 # LuKePicci <luca.piccirillo@gmail.com>, 2019
 # Marco Bartolucci <nap.84@live.it>, 2019
@@ -47,9 +44,9 @@ msgid ""
 msgstr ""
 "Indica se attivare l'uso del carattere a spaziatura fissa predefinito del "
 "sistema per la modifica del testo invece di un carattere specifico di pluma."
-" Se questa opzione è disabilitata, allora il carattere indicato per mezzo "
-"dell'opzione «Carattere dell'editor» verrà utilizzato invece del carattere "
-"di sistema."
+" Se questa opzione è disabilitata, invece del carattere di sistema, verrà "
+"utilizzato il carattere indicato per mezzo dell'opzione «Carattere "
+"dell'editor»."
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgctxt "editor-font"
@@ -65,21 +62,21 @@ msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
 msgstr ""
-"Un carattere scelto dall'utente che verrà utilizzato nell'area di modifica. "
+"Un carattere personalizzato che verrà utilizzato nell'area di modifica. "
 "Verrà utilizzato soltanto se l'opzione \"Usa il carattere predefinito\" è "
 "disabilitata."
 
 #: data/org.mate.pluma.gschema.xml.in:21
 msgid "Switch tabs with [ctrl] + [tab]"
-msgstr "Cambia schede con [ctrl] + [tab]"
+msgstr "Alterna schede con [ctrl] + [tab]"
 
 #: data/org.mate.pluma.gschema.xml.in:22
 msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
 msgstr ""
-"Se vero, attiva la possibilità di cambiare tab usando [ctrl + tab] e [ctrl +"
-" shift + tab]. "
+"Se \"vero\", attiva la possibilità di cambiare scheda utilizzando le "
+"combinazioni di tasti [ctrl + tab] e [ctrl + shift + tab]. "
 
 #: data/org.mate.pluma.gschema.xml.in:26
 msgid "Show the first tab if there is only one tab"
@@ -87,15 +84,16 @@ msgstr "Mostra la prima scheda se è l'unica aperta"
 
 #: data/org.mate.pluma.gschema.xml.in:27
 msgid "If false, it hides the first tab if there is only one tab."
-msgstr "Se falso, nasconde la scheda quando è l'unica presente."
+msgstr "Se \"falso\", nasconde la scheda quando è l'unica presente."
 
 #: data/org.mate.pluma.gschema.xml.in:31
 msgid "Style Scheme"
-msgstr "Schema stile"
+msgstr "Schema di stile"
 
 #: data/org.mate.pluma.gschema.xml.in:32
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
-msgstr "L'ID di uno schema stile GtkSourceView usato per colorare il testo."
+msgstr ""
+"L'ID di uno schema di stile GtkSourceView impiegato per colorare il testo."
 
 #: data/org.mate.pluma.gschema.xml.in:36
 msgid "Create Backup Copies"
@@ -143,7 +141,7 @@ msgstr "Mostra conferma di salvataggio"
 
 #: data/org.mate.pluma.gschema.xml.in:52
 msgid "Show save confirmation if the files have changes."
-msgstr "Mostra conferma di salvataggio se i file contengono modifiche."
+msgstr "Mostra una conferma del salvataggio se i file contengono modifiche."
 
 #: data/org.mate.pluma.gschema.xml.in:56
 msgid "Writable VFS schemes"
@@ -154,8 +152,8 @@ msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
 msgstr ""
-"Elenco degli schemi VFS supportati. Lo schema \"file\" è abilitato alla "
-"scrittura in modo predefinito."
+"Elenco degli schemi VFS supportati per la scrittura. Lo schema \"file\" è "
+"abilitato alla scrittura in modo predefinito."
 
 #: data/org.mate.pluma.gschema.xml.in:61
 msgid "Maximum Number of Undo Actions"
@@ -166,7 +164,7 @@ msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
 msgstr ""
-"Numero massimo di azioni che sarà possibile annullare e ripetere. Usare "
+"Numero massimo di azioni che sarà possibile annullare o ripetere. Usare "
 "\"-1\" per un numero illimitato di azioni."
 
 #: data/org.mate.pluma.gschema.xml.in:66
@@ -185,13 +183,13 @@ msgstr ""
 "nell'area di modifica. Usare \"GTK_WRAP_NONE\" per evitare l'a capo "
 "automatico, \"GTK_WRAP_WORD\" per effettuarlo in base alle singole parole e "
 "\"GTK_WRAP_CHAR\" per effettuarlo in base ai singoli caratteri. Prestare "
-"attenzione al fatto che i valori sono sensibili all'uso di "
-"maiuscolo/minuscolo, per cui è necessario digitarli esattamente come "
-"appaiono scritti qui sopra."
+"attenzione al fatto che i valori sono sensibili all'uso di maiuscole e "
+"minuscole, per cui è necessario digitarli esattamente come appaiono scritti "
+"qui sopra."
 
 #: data/org.mate.pluma.gschema.xml.in:71
 msgid "Tab Size"
-msgstr "Dimensione della scheda"
+msgstr "Ampiezza di tabulazione"
 
 #: data/org.mate.pluma.gschema.xml.in:72
 msgid ""
@@ -208,7 +206,7 @@ msgstr "Inserisci spazi"
 #: data/org.mate.pluma.gschema.xml.in:77
 msgid "Whether pluma should insert spaces instead of tabs."
 msgstr ""
-"Indica se il programma deve inserire spazi al posto delle tabulazioni."
+"Indica se il programma debba inserire spazi al posto delle tabulazioni."
 
 #: data/org.mate.pluma.gschema.xml.in:81
 msgid "Automatic indent"
@@ -216,7 +214,7 @@ msgstr "Rientro automatico"
 
 #: data/org.mate.pluma.gschema.xml.in:82
 msgid "Whether pluma should enable automatic indentation."
-msgstr "Indica se il programma deve attivare il rientro automatico."
+msgstr "Indica se il programma debba attivare il rientro automatico."
 
 #: data/org.mate.pluma.gschema.xml.in:86
 msgid "Display Line Numbers"
@@ -225,7 +223,7 @@ msgstr "Mostra i numeri di riga"
 #: data/org.mate.pluma.gschema.xml.in:87
 msgid "Whether pluma should display line numbers in the editing area."
 msgstr ""
-"Indica se il programma deve visualizzare i numeri di riga nell'area di "
+"Indica se il programma debba visualizzare i numeri di riga nell'area di "
 "modifica."
 
 #: data/org.mate.pluma.gschema.xml.in:91
@@ -234,17 +232,17 @@ msgstr "Evidenzia riga corrente"
 
 #: data/org.mate.pluma.gschema.xml.in:92
 msgid "Whether pluma should highlight the current line."
-msgstr "Indica se il programma deve evidenziare la riga corrente."
+msgstr "Indica se il programma debba evidenziare la riga corrente."
 
 #: data/org.mate.pluma.gschema.xml.in:96
 msgid "Highlight Matching Bracket"
-msgstr "Evidenzia parentesi corrispondente"
+msgstr "Evidenzia la parentesi corrispondente"
 
 #: data/org.mate.pluma.gschema.xml.in:97
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr ""
-"Indica se il programma deve evidenziare la parentesi corrispondente a quella"
-" selezionata."
+"Indica se il programma debba evidenziare la parentesi corrispondente a "
+"quella selezionata."
 
 #: data/org.mate.pluma.gschema.xml.in:101
 msgid "Display Right Margin"
@@ -253,7 +251,7 @@ msgstr "Mostra il margine destro"
 #: data/org.mate.pluma.gschema.xml.in:102
 msgid "Whether pluma should display the right margin in the editing area."
 msgstr ""
-"Indica se il programma deve mostrare il margine destro nell'area di "
+"Indica se il programma debba mostrare il margine destro nell'area di "
 "modifica."
 
 #: data/org.mate.pluma.gschema.xml.in:106
@@ -280,9 +278,9 @@ msgid ""
 msgstr ""
 "Specifica il movimento del cursore alla pressione dei tasti Inizio e Fine. "
 "Usare \"DISABLED\" per muovere sempre all'inizio/fine della riga, \"AFTER\" "
-"per muovere all'inizio/fine della riga alla prima pressione e "
-"all'inizio/fine del testo, esclusi gli spazi, alla seconda pressione. Usare "
-"\"BEFORE\" per muovere all'inizio/fine del testo prima di muovere "
+"per muovere all'inizio/fine della riga alla prima pressione di questi tasti "
+"e all'inizio/fine del testo, esclusi gli spazi, alla seconda pressione. "
+"Usare \"BEFORE\" per muovere all'inizio/fine del testo prima di muovere "
 "all'inizio/fine della riga e \"ALWAYS\" per muovere sempre all'inizio/fine "
 "del testo invece che della riga."
 
@@ -306,7 +304,7 @@ msgstr "Attiva l'evidenziazione del testo cercato"
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
 msgstr ""
-"Indica se il programma deve evidenziare tutte le occorrenze del testo "
+"Indica se il programma debba evidenziare tutte le occorrenze del testo "
 "cercato."
 
 #: data/org.mate.pluma.gschema.xml.in:126
@@ -316,7 +314,7 @@ msgstr "Attiva l'evidenziazione della sintassi"
 #: data/org.mate.pluma.gschema.xml.in:127
 msgid "Whether pluma should enable syntax highlighting."
 msgstr ""
-"Indica se il programma deve abilitare l'evidenziazione della sintassi."
+"Indica se il programma debba attivare l'evidenziazione della sintassi."
 
 #: data/org.mate.pluma.gschema.xml.in:131
 msgid "Toolbar is Visible"
@@ -341,14 +339,12 @@ msgid ""
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
 msgstr ""
-"Stile dei pulsanti della barra degli strumenti. I valori consentiti sono "
-"\"PLUMA_TOOLBAR_SYSTEM\" per utilizzare lo stile predefinito del sistema, "
-"\"PLUMA_TOOLBAR_ICONS\" per visualizzare soltanto le icone,  "
-"\"PLUMA_TOOLBAR_ICONS_AND_TEXT\" per visualizzare le icone e le relative "
-"didascalie allo stesso tempo, \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" per "
-"mostrare le didascalie accanto alle icone. Prestare attenzione al fatto che "
-"i valori sono sensibili all'uso di maiuscolo/minuscolo, per cui è necessario"
-" digitarli esattamente come appaiono scritti qui sopra."
+"Lo stile dei pulsanti della barra degli strumenti. I valori consentiti sono \n"
+"\"PLUMA_TOOLBAR_SYSTEM\" per utilizzare lo stile predefinito del sistema, \n"
+"\"PLUMA_TOOLBAR_ICONS\" per visualizzare soltanto le icone, \n"
+"\"PLUMA_TOOLBAR_ICONS_AND_TEXT\" per visualizzare le icone e le dascalie, \n"
+"\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" per mostrare le didascalie accanto alle icone. \n"
+"Prestare attenzione al fatto che i valori sono sensibili all'uso delle maiuscole e minuscole, per cui è necessario digitarli esattamente come appaiono scritti qui sopra."
 
 #: data/org.mate.pluma.gschema.xml.in:141
 msgid "Status Bar is Visible"
@@ -358,8 +354,7 @@ msgstr "La barra di stato è visibile"
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr ""
-"Indica se rendere visibile o meno la barra di stato in fondo alle finestre "
-"di modifica."
+"Indica se visualizzare la barra di stato in fondo alle finestre di modifica."
 
 #: data/org.mate.pluma.gschema.xml.in:146
 msgid "Side Pane is Visible"
@@ -369,18 +364,18 @@ msgstr "Il riquadro laterale è visibile"
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
 msgstr ""
-"Indica se rendere visibile o meno il riquadro laterale alla sinistra della "
-"finestra di modifica."
+"Indica se visualizzare il riquadro laterale alla sinistra della finestra di "
+"modifica."
 
 #: data/org.mate.pluma.gschema.xml.in:151
 msgid "Show tabs with side pane"
-msgstr "Mostra schede con riquadro laterale"
+msgstr "Mostra le schede con il riquadro laterale"
 
 #: data/org.mate.pluma.gschema.xml.in:152
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
-"Se disattivato, Pluma non mostra le schede nel quaderno con il riquadro "
+"Se \"falso\", pluma non mostra le schede nel quaderno con il riquadro "
 "laterale attivo."
 
 #: data/org.mate.pluma.gschema.xml.in:156
@@ -391,8 +386,8 @@ msgstr "Il pannello inferiore è visibile"
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
 msgstr ""
-"Indica se rendere visibile o meno il pannello inferiore situato in fondo "
-"alle finestre di modifica."
+"Indica se visualizzare il pannello inferiore in fondo alle finestre di "
+"modifica."
 
 #: data/org.mate.pluma.gschema.xml.in:161
 msgid "Maximum Recent Files"
@@ -414,8 +409,8 @@ msgstr "Stampa l'evidenziazione della sintassi"
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
 msgstr ""
-"Indica se il programma deve abilitare l'evidenziazione della sintassi nella "
-"stampa."
+"Indica se il programma debba abilitare l'evidenziazione della sintassi nella"
+" stampa."
 
 #: data/org.mate.pluma.gschema.xml.in:171
 msgid "Print Header"
@@ -425,7 +420,7 @@ msgstr "Intestazione di stampa"
 msgid ""
 "Whether pluma should include a document header when printing documents."
 msgstr ""
-"Indica se il programma deve creare un'intestazione per i documenti che "
+"Indica se il programma debba creare un'intestazione per i documenti che "
 "verranno stampati."
 
 #: data/org.mate.pluma.gschema.xml.in:176
@@ -444,9 +439,9 @@ msgstr ""
 "stampa. Usare \"GTK_WRAP_NONE\" per evitare l'a capo automatico, "
 "\"GTK_WRAP_WORD\" per effettuarlo in base alle singole parole e "
 "\"GTK_WRAP_CHAR\" per effettuarlo in base ai singoli caratteri. Prestare "
-"attenzione al fatto che i valori sono sensibili all'uso di "
-"maiuscolo/minuscolo, per cui è necessario digitarli esattamente come "
-"appaiono scritti qui sopra."
+"attenzione al fatto che i valori sono sensibili all'uso di maiuscole e "
+"minuscole, per cui è necessario digitarli esattamente come appaiono scritti "
+"qui sopra."
 
 #: data/org.mate.pluma.gschema.xml.in:181
 msgid "Print Line Numbers"
@@ -458,10 +453,9 @@ msgid ""
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
 msgstr ""
-"Se questo valore è pari a 0, allora i numeri di riga non verranno inseriti "
-"al momento della stampa di un documento. In caso contrario, verranno "
-"stampati i numeri di riga ogni n righe, dove n corrisponde al valore "
-"indicato."
+"Se questo valore è 0, allora i numeri di riga non verranno inseriti al "
+"momento della stampa di un documento. In caso contrario, verranno stampati i"
+" numeri di riga ogni n righe, dove n corrisponde al valore indicato."
 
 #: data/org.mate.pluma.gschema.xml.in:185
 msgctxt "print-font-body-pango"
@@ -476,8 +470,8 @@ msgstr "Carattere del corpo del testo per la stampa"
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
 msgstr ""
-"Specifica il carattere usato per il corpo del testo di un documento al "
-"momento della stampa."
+"Specifica il carattere impiegato per il corpo del testo al momento della "
+"stampa di un documento."
 
 #: data/org.mate.pluma.gschema.xml.in:190
 msgctxt "print-font-header-pango"
@@ -493,9 +487,9 @@ msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
 msgstr ""
-"Specifica il carattere da usare per le intestazioni di pagina al momento "
-"della stampa. Verrà utilizzato soltanto se l'opzione «Intestazione di "
-"stampa» è abilitata."
+"Specifica il carattere da utilizzare per le intestazioni di pagina al "
+"momento della stampa. Verrà utilizzato soltanto se l'opzione «Intestazione "
+"di stampa» è abilitata."
 
 #: data/org.mate.pluma.gschema.xml.in:195
 msgctxt "print-font-numbers-pango"
@@ -511,8 +505,8 @@ msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
 msgstr ""
-"Specifica il carattere da usare per i numeri di riga al momento della "
-"stampa. Verrà utilizzato soltanto se il valore impostato per l'opzione "
+"Specifica il carattere da utilizzare per i numeri di riga al momento della "
+"stampa. Verrà impiegato soltanto se il valore impostato per l'opzione "
 "«Stampa i numeri di riga» è diverso da zero."
 
 #: data/org.mate.pluma.gschema.xml.in:200
@@ -577,9 +571,9 @@ msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
 msgstr ""
-"Elenco dei plugin attivi. Contiene la \"Collocazione\" dei plugin attivi. "
-"Consultare il file .pluma-plugin per conoscere la \"Collocazione\" di un "
-"dato plugin."
+"Elenco dei plugin attivi. Contiene la \"Posizione\" dei plugin attivi. "
+"Consultare il file .pluma-plugin per conoscere la \"Posizione\" di un dato "
+"plugin."
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "Show newline"
@@ -587,7 +581,8 @@ msgstr "Mostra nuova riga"
 
 #: data/org.mate.pluma.gschema.xml.in:227
 msgid "Whether pluma should show newlines in the editor window."
-msgstr "Mostra o meno le nuove righe a capo nella finestra dell'editor."
+msgstr ""
+"Indica se visualizzare i caratteri 'newline' nella finestra dell'editor."
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "Show nbsp"
@@ -599,13 +594,13 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
-"Mostra o meno gli spazi di separazione nella finestra dell'editor: 'nessuno'"
-" non li mostra; 'solo finali' mostra solo gli quelli finali; 'tutti' li "
-"mostra tutti."
+"Indica se mostrare i caratteri di spaziatura nella finestra dell'editor: "
+"'nessuno' non li mostra; 'solo finali' mostra solo gli quelli finali; "
+"'tutti' li mostra tutti."
 
 #: data/org.mate.pluma.gschema.xml.in:236
 msgid "Show tabs"
-msgstr "Mostra tab"
+msgstr "Mostra tabulazioni"
 
 #: data/org.mate.pluma.gschema.xml.in:237
 msgid ""
@@ -613,8 +608,9 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
-"Mostra o meno i tab nella finestra dell'editor: 'nessuno' non li mostra; "
-"'solo finali' mostra solo gli quelli finali; 'tutti' li mostra tutti."
+"Indica se mostare i caratteri di tabulazione nella finestra dell'editor: "
+"'nessuno' non li mostra; 'solo finali' mostra solo gli quelli finali; "
+"'tutti' li mostra tutti."
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Show spaces"
@@ -626,8 +622,9 @@ msgid ""
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
-"Mostra o meno gli spazi nella finestra dell'editor: 'nessuno' non li mostra;"
-" 'solo finali' mostra solo gli quelli finali; 'tutti' li mostra tutti."
+"Indica se mostrare gli spazi nella finestra dell'editor: 'nessuno' non li "
+"mostra; 'solo finali' mostra solo gli quelli finali; 'tutti' li mostra "
+"tutti."
 
 #: data/pluma.appdata.xml.in:7 data/pluma.desktop.in.in:3
 msgid "Pluma"
@@ -681,8 +678,7 @@ msgstr "accessories-text-editor"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/pluma.desktop.in.in:15
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
-msgstr ""
-"testo;blocco;note;MATE;schede;evidenzia;programmazione;codice;multipli;file;"
+msgstr "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:136
 msgid "Log Out _without Saving"
@@ -690,7 +686,7 @@ msgstr "Termina senza sal_vare"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:140
 msgid "_Cancel Logout"
-msgstr "_Annulla termina sessione"
+msgstr "_Annulla termine sessione"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:147
 msgid "Close _without Saving"
@@ -753,8 +749,7 @@ msgstr[1] ""
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr ""
-"Se non si salva, le modifiche apportate nell'ultimo minuto andranno perse "
-"per sempre."
+"Se non si salva, le modifiche apportate nell'ultimo minuto andranno perse."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:429
 #, c-format
@@ -766,10 +761,10 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] ""
 "Se non si salva, le modifiche apportate nell'ultimo minuto e %ld secondo "
-"andranno perse per sempre."
+"andranno perse."
 msgstr[1] ""
 "Se non si salva, le modifiche apportate nell'ultimo minuto e %ld secondi "
-"andranno perse per sempre."
+"andranno perse."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
@@ -780,18 +775,17 @@ msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Se non si salva, le modifiche apportate nell'ultimo %ld minuto saranno perse"
-" per sempre."
+"Se non si salva, le modifiche apportate nell'ultimo %ld minuto saranno "
+"perse."
 msgstr[1] ""
 "Se non si salva, le modifiche apportate negli ultimi %ld minuti saranno "
-"perse per sempre."
+"perse."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr ""
-"Se non si salva, le modifiche apportate nell'ultima ora andranno perse per "
-"sempre."
+"Se non si salva, le modifiche apportate nell'ultima ora andranno perse."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:460
 #, c-format
@@ -803,10 +797,10 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] ""
 "Se non si salva, le modifiche apportate nell'ultima ora e %d minuto andranno"
-" perse per sempre."
+" perse."
 msgstr[1] ""
 "Se non si salva, le modifiche apportate nell'ultima ora e %d minuti andranno"
-" perse per sempre."
+" perse."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
@@ -815,16 +809,14 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
-"Se non si salva, le modifiche apportate nell'ultima %d ora andranno perse "
-"per sempre."
+"Se non si salva, le modifiche apportate nell'ultima %d ora andranno perse."
 msgstr[1] ""
-"Se non si salva, le modifiche apportate nelle ultime %d ore andranno perse "
-"per sempre."
+"Se non si salva, le modifiche apportate nelle ultime %d ore andranno perse."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
-msgstr "Le modifiche apportate al documento «%s» andranno perse per sempre."
+msgstr "Le modifiche apportate al documento «%s» andranno perse."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:526
 #, c-format
@@ -840,8 +832,8 @@ msgstr "Il salvataggio è stato disabilitato dall'amministratore di sistema."
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "Le modifiche apportate a %d documento andranno perse per sempre."
-msgstr[1] "Le modifiche apportate a %d documenti andranno perse per sempre."
+msgstr[0] "Le modifiche apportate a %d documento andranno perse."
+msgstr[1] "Le modifiche apportate a %d documenti andranno perse."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
@@ -866,7 +858,7 @@ msgstr "S_eleziona i documenti da salvare:"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "Se non si salva, tutte le modifiche andranno perse per sempre."
+msgstr "Se non si salva, tutte le modifiche andranno perse."
 
 #: pluma/dialogs/pluma-encodings-dialog.c:307
 #: pluma/dialogs/pluma-encodings-dialog.ui:72
@@ -939,7 +931,7 @@ msgstr "_Usa il carattere a spaziatura fissa di sistema (%s)"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:939
 msgid "The selected color scheme cannot be installed."
-msgstr "Lo schema colore selezionato non può essere installato."
+msgstr "Lo schema di colore selezionato non può essere installato."
 
 #: pluma/dialogs/pluma-preferences-dialog.c:1017
 msgid "Add Scheme"
@@ -951,7 +943,7 @@ msgstr "A_ggiungi schema"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:1032
 msgid "Color Scheme Files"
-msgstr "File schema colore"
+msgstr "File schema di colore"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:1039
 #: pluma/pluma-file-chooser-dialog.c:52
@@ -961,7 +953,7 @@ msgstr "Tutti i file"
 #: pluma/dialogs/pluma-preferences-dialog.c:1084
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
-msgstr "Impossibile rimuovere lo schema colore «%s»."
+msgstr "Impossibile rimuovere lo schema di colore «%s»."
 
 #: pluma/dialogs/pluma-preferences-dialog.c:1291
 #: pluma/dialogs/pluma-preferences-dialog.ui:74
@@ -1088,7 +1080,7 @@ msgstr "Crea una copia di _backup dei file prima di salvare"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:838
 msgid "_Autosave files every"
-msgstr "Salva _automaticamente del file corrente ogni"
+msgstr "Salva _automaticamente i file ogni"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:869
 msgid "_minutes"
@@ -1100,11 +1092,11 @@ msgstr "Mostra spazi, schede e nuove linee"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:953
 msgid "Show _tabs"
-msgstr "Mostra _tab"
+msgstr "Mostra _tabulazioni"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1003
 msgid "Show _trailing tabs only"
-msgstr "Mostra solo _tab finali"
+msgstr "Mostra solo _tabulazioni finali"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1041
 msgid "Show _newlines"
@@ -1132,7 +1124,7 @@ msgstr "_Carattere dell'editor:"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1275
 msgid "Pick the editor font"
-msgstr "Scelta del carattere dell'editor"
+msgstr "Scegli il carattere dell'editor"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1323
 msgid "Color Scheme"
@@ -1187,7 +1179,7 @@ msgstr "S_ostituisci con:"
 
 #: pluma/dialogs/pluma-search-dialog.ui:181
 msgid "_Match case"
-msgstr "_Maiuscole/Minuscole"
+msgstr "distingui _Maiuscole/Minuscole"
 
 #: pluma/dialogs/pluma-search-dialog.ui:197
 msgid "Match _regular expression"
@@ -1280,7 +1272,7 @@ msgstr "File aperti"
 #: pluma/pluma-commands-file.c:574
 #, c-format
 msgid "The file \"%s\" is read-only."
-msgstr "Il file «%s» è in modalità sola lettura."
+msgstr "Il file «%s» è in modalità di sola lettura."
 
 #: pluma/pluma-commands-file.c:579
 msgid "Do you want to try to replace it with the one you are saving?"
@@ -1314,18 +1306,15 @@ msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
-"Le modifiche apportate al documento nell'ultimo %ld secondo andranno perse "
-"per sempre."
+"Le modifiche apportate al documento nell'ultimo %ld secondo andranno perse."
 msgstr[1] ""
-"Le modifiche apportate al documento negli ultimi %ld secondi andranno perse "
-"per sempre."
+"Le modifiche apportate al documento negli ultimi %ld secondi andranno perse."
 
 #: pluma/pluma-commands-file.c:1149
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
-"Le modifiche apportate al documento nell'ultimo minuto andranno perse per "
-"sempre."
+"Le modifiche apportate al documento nell'ultimo minuto andranno perse."
 
 #: pluma/pluma-commands-file.c:1155
 #, c-format
@@ -1340,7 +1329,7 @@ msgstr[0] ""
 "andranno perse per sempre."
 msgstr[1] ""
 "Le modifiche apportate al documento nell'ultimo minuto e %ld secondi "
-"andranno perse per sempre."
+"andranno perse."
 
 #: pluma/pluma-commands-file.c:1165
 #, c-format
@@ -1354,15 +1343,12 @@ msgstr[0] ""
 "Le modifiche apportate al documento nell'ultimo %ld minuto andranno perse "
 "per sempre."
 msgstr[1] ""
-"Le modifiche apportate al documento negli ultimi %ld minuti andranno perse "
-"per sempre."
+"Le modifiche apportate al documento negli ultimi %ld minuti andranno perse."
 
 #: pluma/pluma-commands-file.c:1180
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
-msgstr ""
-"Le modifiche apportate al documento nell'ultima ora andranno perse per "
-"sempre."
+msgstr "Le modifiche apportate al documento nell'ultima ora andranno perse."
 
 #: pluma/pluma-commands-file.c:1186
 #, c-format
@@ -1377,7 +1363,7 @@ msgstr[0] ""
 "perse per sempre."
 msgstr[1] ""
 "Le modifiche apportate al documento nell'ultima ora e %d minuti andranno "
-"perse per sempre."
+"perse."
 
 #: pluma/pluma-commands-file.c:1201
 #, c-format
@@ -1389,8 +1375,7 @@ msgstr[0] ""
 "Le modifiche apportate al documento nell'ultima %d ora andranno perse per "
 "sempre."
 msgstr[1] ""
-"Le modifiche apportate al documento nelle ultime %d ore andranno perse per "
-"sempre."
+"Le modifiche apportate al documento nelle ultime %d ore andranno perse."
 
 #: pluma/pluma-commands-file.c:1228 pluma/pluma-ui.h:84
 msgid "_Revert"
@@ -1398,11 +1383,11 @@ msgstr "_Ripristina"
 
 #: pluma/pluma-commands-help.c:60
 msgid "MATE Documentation Team"
-msgstr "Team Documentazione MATE"
+msgstr "Team Documentazione di MATE"
 
 #: pluma/pluma-commands-help.c:61
 msgid "GNOME Documentation Team"
-msgstr "Team Documentazione GNOME"
+msgstr "Team Documentazione di GNOME"
 
 #: pluma/pluma-commands-help.c:62
 msgid "Sun Microsystems"
@@ -1432,9 +1417,9 @@ msgid ""
 "details."
 msgstr ""
 "Pluma viene distribuito nella speranza che sia utile, ma SENZA ALCUNA "
-"GARANZIA; senza nemmeno la garanzia implicita di COMMERCIABILITÀ o "
-"FUNZIONALITÀ PER UNO SCOPO PRECISO. Guarda la licenza GNU GPL per maggiori "
-"dettagli."
+"GARANZIA; senza nemmeno la garanzia implicita di COMMERCIABILITÀ o  "
+"APPLICABILITÀ PER UNO SCOPO PRECISO. Consultare la licenza GNU GPL per "
+"maggiori dettagli."
 
 #: pluma/pluma-commands-help.c:78
 msgid ""
@@ -1470,7 +1455,9 @@ msgstr ""
 
 #: pluma/pluma-commands-help.c:126
 msgid "translator-credits"
-msgstr "Enrico Bella, 2019"
+msgstr ""
+"Enrico Bella, 2019\n"
+"Alessandro Volturno, 2020"
 
 #: pluma/pluma-commands-search.c:112
 #, c-format
@@ -1481,7 +1468,7 @@ msgstr[1] "Trovate e sostituite %d occorrenze"
 
 #: pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
-msgstr "Trovata e sostituita una occorrenza."
+msgstr "Trovata e sostituita una occorrenza"
 
 #. Translators: %s is replaced by the text
 #. entered by the user in the search box
@@ -1564,7 +1551,7 @@ msgstr "Celtico"
 
 #: pluma/pluma-encodings.c:177
 msgid "Romanian"
-msgstr "Romeno"
+msgstr "Rumeno"
 
 #: pluma/pluma-encodings.c:195
 msgid "Armenian"
@@ -1627,7 +1614,7 @@ msgstr "Riconoscimento automatico"
 #: pluma/pluma-encodings-combo-box.c:282 pluma/pluma-encodings-combo-box.c:297
 #, c-format
 msgid "Current Locale (%s)"
-msgstr "Locale attuale (%s)"
+msgstr "Localizzazione attuale (%s)"
 
 #: pluma/pluma-encodings-combo-box.c:347
 msgid "Add or Remove..."
@@ -1655,7 +1642,7 @@ msgstr "Mac OS Classic"
 
 #: pluma/pluma-file-chooser-dialog.c:174
 msgid "Windows"
-msgstr "Finestre"
+msgstr "Windows"
 
 #: pluma/pluma-file-chooser-dialog.c:437
 #: plugins/filebrowser/pluma-file-browser-widget.c:808
@@ -1671,7 +1658,7 @@ msgstr "Si è verificato un errore nel mostrare l'aiuto."
 #: pluma/pluma-io-error-message-area.c:183
 #: pluma/pluma-io-error-message-area.c:485
 msgid "_Retry"
-msgstr "_Riprova"
+msgstr "_Ritenta"
 
 #: pluma/pluma-io-error-message-area.c:204
 #, c-format
@@ -1682,13 +1669,13 @@ msgstr "Impossibile trovare il file «%s»."
 #: pluma/pluma-io-error-message-area.c:245
 #: pluma/pluma-io-error-message-area.c:252
 msgid "Please check that you typed the location correctly and try again."
-msgstr "Controlla di aver digitato correttamente la posizione e riprovare."
+msgstr "Controllate di aver digitato correttamente la posizione e riprovare."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: pluma/pluma-io-error-message-area.c:221
 #, c-format
 msgid "pluma cannot handle %s locations."
-msgstr "Il programma non è in grado di gestire posizioni %s."
+msgstr "Il programma non è in grado di gestire %s posizioni."
 
 #: pluma/pluma-io-error-message-area.c:227
 msgid "pluma cannot handle this location."
@@ -1719,8 +1706,8 @@ msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr ""
-"Non è stato trovato alcun host «%s». Controllare che le impostazioni del "
-"proxy siano corrette e riprovare."
+"Non è stato trovato l'host «%s». Verificare che le impostazioni del proxy "
+"siano corrette e riprovare."
 
 #: pluma/pluma-io-error-message-area.c:293
 msgid ""
@@ -1733,11 +1720,11 @@ msgstr ""
 #: pluma/pluma-io-error-message-area.c:301
 #, c-format
 msgid "%s is not a regular file."
-msgstr "%s non è un file normale."
+msgstr "%s non è un file regolare."
 
 #: pluma/pluma-io-error-message-area.c:306
 msgid "Connection timed out. Please try again."
-msgstr "Connessione scaduta. Riprova."
+msgstr "Connessione scaduta. Per favore riprovare."
 
 #: pluma/pluma-io-error-message-area.c:329
 msgid "The file is too big."
@@ -1780,8 +1767,8 @@ msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr ""
-"Il numero di collegamenti da seguire è limitato e non è possibile trovare il"
-" file con questo limite."
+"Il numero di collegamenti da seguire è limitato e non è stato possibile "
+"trovare il file entro questo limite."
 
 #: pluma/pluma-io-error-message-area.c:601
 msgid "You do not have the permissions necessary to open the file."
@@ -1799,7 +1786,7 @@ msgstr "Assicurati che il file non sia un file binario."
 
 #: pluma/pluma-io-error-message-area.c:610
 msgid "Select a character encoding from the menu and try again."
-msgstr "Seleziona una codifica dei caratteri dal menù e riprova."
+msgstr "Seleziona una codifica dei caratteri dal menù e riprovare"
 
 #: pluma/pluma-io-error-message-area.c:616
 #, c-format
@@ -1812,11 +1799,11 @@ msgid ""
 "this file you could make this document useless."
 msgstr ""
 "Il file aperto contiene alcuni caratteri non validi. Se si continua a "
-"modificare il file, lo stesso potrebbe diventare inutilizzabile."
+"modificare il file, questo potrebbe diventare inutilizzabile."
 
 #: pluma/pluma-io-error-message-area.c:621
 msgid "You can also choose another character encoding and try again."
-msgstr "Puoi scegliere una codifica dei caratteri diversa e riprovare."
+msgstr "Potete scegliere una diversa codifica dei caratteri e riprovare."
 
 #: pluma/pluma-io-error-message-area.c:628
 #, c-format
@@ -1901,10 +1888,10 @@ msgid ""
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
 msgstr ""
-"Impossibile creare un backup della vecchia versione del file prima del "
-"salvataggio di quella corrente. Salvare il file ignorando questo messaggio "
-"può portare alla perdita della vecchia versione del file in caso di errori. "
-"Salvare lo stesso?"
+"Non è stato possibile creare una copia di backup della vecchia versione del "
+"file prima di salvare quella nuova. Si può ignorare questo avviso e salvare "
+"il file, ma in caso di errore la vecchia copia potrebbe andare persa. "
+"Salvare ugualmente?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: pluma/pluma-io-error-message-area.c:1061
@@ -1913,16 +1900,16 @@ msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr ""
-"Impossibile gestire posizioni «%s» in modalità scrittura. Assicurarsi di "
-"aver digitato correttamente la posizione e riprovare."
+"Impossibile gestire «%s» posizioni nella modalità di scrittura. Assicurarsi "
+"di aver digitato correttamente la posizione e riprovare."
 
 #: pluma/pluma-io-error-message-area.c:1069
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr ""
-"Impossibile gestire questo tipo di posizioni in modalità scrittura. "
-"Assicurarsi di aver digitato correttamente la posizione e riprovare."
+"Impossibile gestire questo posizione in modalità di scrittura. Assicurarsi "
+"di aver digitato correttamente la posizione e riprovare."
 
 #: pluma/pluma-io-error-message-area.c:1078
 #, c-format
@@ -1938,8 +1925,8 @@ msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
 msgstr ""
-"Permessi per salvare il file insufficienti. Assicurarsi di aver digitato "
-"correttamente la posizione e riprovare."
+"Non si dispone dei permessi necessari a salvare il file. Assicurarsi di aver"
+" digitato correttamente la posizione e riprovare."
 
 #: pluma/pluma-io-error-message-area.c:1090
 msgid ""
@@ -1954,7 +1941,7 @@ msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr ""
-"Si sta cercando di salvare un file su di un disco a sola lettura. "
+"Si sta cercando di salvare un file su di un disco di sola lettura. "
 "Assicurarsi di aver digitato correttamente la posizione e riprovare."
 
 #: pluma/pluma-io-error-message-area.c:1101
@@ -1966,9 +1953,8 @@ msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
 msgstr ""
-"Il disco sul quale si sta cercando di salvare il file presenta una "
-"limitazione per quanto riguarda la lunghezza dei nomi dei file. Usare un "
-"nome più corto."
+"Il disco sul quale si sta cercando di salvare il file presenta un limite "
+"sulla lunghezza dei nomi dei file. Utilizzare un nome più corto."
 
 #: pluma/pluma-io-error-message-area.c:1113
 msgid ""
@@ -1976,9 +1962,9 @@ msgid ""
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr ""
-"Il disco sul quale si sta cercando di salvare il file presenta una "
-"limitazione per quanto riguarda le dimensioni dei file. Salvare un file più "
-"piccolo, oppure salvare il file su un disco che non ha questa limitazione."
+"Il disco sul quale si sta cercando di salvare il file presenta un limite "
+"sulle dimensioni dei file. Salvare un file più piccolo, oppure salvare il "
+"file su un disco che non ha questa limitazione."
 
 #: pluma/pluma-io-error-message-area.c:1129
 #, c-format
@@ -1992,7 +1978,7 @@ msgstr "Il file «%s» è stato modificato."
 
 #: pluma/pluma-io-error-message-area.c:1178
 msgid "Do you want to drop your changes and reload the file?"
-msgstr "Tralasciare i cambiamenti apportati e caricare nuovamente il file?"
+msgstr "Ignorare le modifiche apportate e caricare nuovamente il file?"
 
 #: pluma/pluma-io-error-message-area.c:1180
 msgid "Do you want to reload the file?"
@@ -2029,15 +2015,15 @@ msgstr "finestra1"
 
 #: pluma/pluma-print-preferences.ui:39
 msgid "Syntax Highlighting"
-msgstr "Evidenziazione sintassi"
+msgstr "Evidenziazione della sintassi"
 
 #: pluma/pluma-print-preferences.ui:52
 msgid "Print synta_x highlighting"
-msgstr "Stampa _evidenziazione sintassi"
+msgstr "Stampa _evidenziazione della sintassi"
 
 #: pluma/pluma-print-preferences.ui:105
 msgid "Print line nu_mbers"
-msgstr "Stampa numeri di _riga"
+msgstr "Stampa i numeri di _riga"
 
 #. 'Number every' from 'Number every 3 lines' in the 'Text Editor' tab of the
 #. print preferences.
@@ -2077,7 +2063,7 @@ msgstr "_Numeri di riga:"
 
 #: pluma/pluma-print-preferences.ui:463
 msgid "_Restore Default Fonts"
-msgstr "_Ripristina caratteri predefiniti"
+msgstr "_Ripristina i tipi di carattere predefiniti"
 
 #: pluma/pluma-print-preview.c:569
 msgid "Show the previous page"
@@ -2089,7 +2075,7 @@ msgstr "Mostra la pagina successiva"
 
 #: pluma/pluma-print-preview.c:598
 msgid "Current page (Alt+P)"
-msgstr "Pagina attuale (Alt+P)"
+msgstr "Pagina corrente (Alt+P)"
 
 #. Translators: the "of" from "1 of 19" in print preview.
 #: pluma/pluma-print-preview.c:621
@@ -2102,7 +2088,7 @@ msgstr "Pagine totali"
 
 #: pluma/pluma-print-preview.c:630
 msgid "The total number of pages in the document"
-msgstr "Numero totale delle pagine del documento"
+msgstr "Il numero totale delle pagine del documento"
 
 #: pluma/pluma-print-preview.c:648
 msgid "Show multiple pages"
@@ -2118,11 +2104,11 @@ msgstr "Adatta alla pagina"
 
 #: pluma/pluma-print-preview.c:682
 msgid "Zoom the page in"
-msgstr "Ingrandisci"
+msgstr "Aumenta ingrandimento"
 
 #: pluma/pluma-print-preview.c:692
 msgid "Zoom the page out"
-msgstr "Riduci"
+msgstr "Riduci ingrandimento"
 
 #: pluma/pluma-print-preview.c:704
 msgid "_Close Preview"
@@ -2130,7 +2116,7 @@ msgstr "_Chiudi anteprima di stampa"
 
 #: pluma/pluma-print-preview.c:707
 msgid "Close print preview"
-msgstr "Chiude l'anteprima di stampa"
+msgstr "Chiudi l'anteprima di stampa"
 
 #: pluma/pluma-print-preview.c:782
 #, c-format
@@ -2139,11 +2125,11 @@ msgstr "Pagina %d di %d"
 
 #: pluma/pluma-print-preview.c:963
 msgid "Page Preview"
-msgstr "Anteprima di stampa"
+msgstr "Anteprima della pagina"
 
 #: pluma/pluma-print-preview.c:964
 msgid "The preview of a page in the document to be printed"
-msgstr "L'anteprima di stampa di una pagina del documento da stampare"
+msgstr "L'anteprima di una pagina del documento da stampare"
 
 #: pluma/pluma-smart-charset-converter.c:316
 msgid "It is not possible to detect the encoding automatically"
@@ -2163,7 +2149,7 @@ msgstr "INS"
 #: pluma/pluma-statusbar.c:245
 #, c-format
 msgid "  Ln %d, Col %d"
-msgstr "  Rg %d, Col %d"
+msgstr "  Riga %d, Col %d"
 
 #: pluma/pluma-statusbar.c:346
 #, c-format
@@ -2252,7 +2238,7 @@ msgstr "Codifica:"
 
 #: pluma/pluma-tab-label.c:274
 msgid "Close document"
-msgstr "Chiude il documento"
+msgstr "Chiudi il documento"
 
 #: pluma/pluma-ui.h:47
 msgid "_File"
@@ -2308,7 +2294,7 @@ msgstr "_Sommario"
 
 #: pluma/pluma-ui.h:67
 msgid "Open the pluma manual"
-msgstr "Apre il manuale del programma"
+msgstr "Apri il manuale del programma"
 
 #: pluma/pluma-ui.h:68
 msgid "_About"
@@ -2324,7 +2310,7 @@ msgstr "_Esci da schermo intero"
 
 #: pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
-msgstr "Esce dalla modalità a schermo intero"
+msgstr "Esci dalla modalità a schermo intero"
 
 #: pluma/pluma-ui.h:81
 msgid "Save the current file"
@@ -2340,7 +2326,7 @@ msgstr "Salva il file attuale con un nome diverso"
 
 #: pluma/pluma-ui.h:85
 msgid "Revert to a saved version of the file"
-msgstr "Ripristina alla versione salvata del file"
+msgstr "Ripristina a una versione salvata del file"
 
 #: pluma/pluma-ui.h:86
 msgid "Print Previe_w"
@@ -2356,7 +2342,7 @@ msgstr "Stam_pa..."
 
 #: pluma/pluma-ui.h:89
 msgid "Print the current page"
-msgstr "Stampa il file corrente"
+msgstr "Stampa la pagina corrente"
 
 #: pluma/pluma-ui.h:92
 msgid "_Undo"
@@ -2593,19 +2579,17 @@ msgstr "_Ricomincia dall'inizio"
 
 #: pluma/pluma-view.c:1433
 msgid "Match _Entire Word Only"
-msgstr "Solo parole int_ere "
+msgstr "Corrispondenza solo per la parola _intera "
 
 #: pluma/pluma-view.c:1443
 msgid "_Match Case"
-msgstr "_Maiuscole/Minuscole"
+msgstr "Corrispondenza _Maiuscole/Minuscole"
 
 #: pluma/pluma-view.c:1453
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
-msgstr ""
-"Analizza le sequenze di esca_pe (es. \n"
-")"
+msgstr "Analizza le sequenze di esca_pe (es. \\n)"
 
 #: pluma/pluma-view.c:1567
 msgid "String you want to search for"
@@ -2632,7 +2616,7 @@ msgstr "Testo semplice"
 
 #: pluma/pluma-window.c:1070
 msgid "Disable syntax highlighting"
-msgstr "Disattiva evidenziazione sintassi"
+msgstr "Disattiva l'evidenziazione della sintassi"
 
 #. Translators: %s is a URI
 #: pluma/pluma-window.c:1352
@@ -2680,7 +2664,7 @@ msgstr "Cambia le lettere maiuscole/minuscole del testo selezionato"
 
 #: plugins/changecase/pluma-changecase-plugin.c:243
 msgid "C_hange Case"
-msgstr "_Modifica maiuscole/minuscole"
+msgstr "Cambia maiuscole/minuscole"
 
 #: plugins/changecase/pluma-changecase-plugin.c:244
 msgid "All _Upper Case"
@@ -2768,7 +2752,7 @@ msgstr "Statistiche sul _documento"
 
 #: plugins/docinfo/pluma-docinfo-plugin.c:442
 msgid "Get statistical information on the current document"
-msgstr "Generazione di informazioni statistiche riguardo il documento"
+msgstr "Generazione di informazioni statistiche sul documento corrente"
 
 #: plugins/externaltools/externaltools.plugin.desktop.in:6
 msgid "External Tools"
@@ -2780,7 +2764,7 @@ msgstr "Esegue comandi esterni e script della shell."
 
 #: plugins/externaltools/tools/__init__.py:174
 msgid "Manage _External Tools..."
-msgstr "Gestione strumenti _esterni..."
+msgstr "Gestire strumenti _esterni..."
 
 #: plugins/externaltools/tools/__init__.py:176
 msgid "Opens the External Tools Manager"
@@ -2805,7 +2789,7 @@ msgstr "Impossibile eseguire il comando: %s"
 
 #: plugins/externaltools/tools/functions.py:155
 msgid "You must be inside a word to run this command"
-msgstr "È necessario essere su una parola per eseguire questo comando"
+msgstr "È necessario trovarsi dentro una parola per eseguire questo comando"
 
 #: plugins/externaltools/tools/functions.py:261
 msgid "Running tool:"
@@ -2837,7 +2821,7 @@ msgstr "Nuovo strumento"
 #: plugins/externaltools/tools/manager.py:659
 #, python-format
 msgid "This accelerator is already bound to %s"
-msgstr "Questa scorciatoia è associata con %s"
+msgstr "Questa scorciatoia è associata a %s"
 
 #: plugins/externaltools/tools/manager.py:710
 msgid "Type a new accelerator, or press Backspace to clear"
@@ -2858,7 +2842,7 @@ msgstr "Tutti i documenti"
 
 #: plugins/externaltools/tools/tools.ui:21
 msgid "All documents except untitled ones"
-msgstr "Tutti i documenti esclusi quelli non salvati"
+msgstr "Tutti i documenti esclusi quelli senza nome"
 
 #: plugins/externaltools/tools/tools.ui:25
 msgid "Local files only"
@@ -2901,7 +2885,7 @@ msgstr "Parola corrente"
 
 #: plugins/externaltools/tools/tools.ui:85
 msgid "Display in bottom pane"
-msgstr "Visualizza nel pannello inferiore"
+msgstr "Visualizza nel riquadro inferiore"
 
 #: plugins/externaltools/tools/tools.ui:89
 msgid "Create new document"
@@ -2966,11 +2950,11 @@ msgstr "Esegue «make» nella cartella del documento"
 
 #: plugins/externaltools/data/open-terminal-here.desktop.in:3
 msgid "Open terminal here"
-msgstr "Apri terminale qui"
+msgstr "Apri un terminale qui"
 
 #: plugins/externaltools/data/open-terminal-here.desktop.in:4
 msgid "Open a terminal in the document location"
-msgstr "Apre un terminale nella directory attualmente aperta"
+msgstr "Apre un terminale nella directory del documento attuale"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
 msgid "Remove trailing spaces"
@@ -2999,7 +2983,7 @@ msgstr "Passa tra file .c e .h"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:6
 msgid "File Browser Pane"
-msgstr "Esplorazione file"
+msgstr "Riquadro di esplorazione file"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
 msgid "Easy file access from the side pane"
@@ -3022,14 +3006,13 @@ msgid ""
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
 msgstr ""
-"Se VERO il plugin dell'esplorazione file visualizza la directory del primo "
-"documento aperto non ancora utilizzato (generalmente si applica "
-"nell'apertura di un documento dalla riga di comando o tramite il gestore di "
-"file)."
+"Se \"vero\" il plugin \"esplorazione file\" visualizza la directory del "
+"primo documento aperto non ancora utilizzato (generalmente si applica "
+"nell'apertura di un documento dalla riga di comando o tramite Caja, etc)"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:11
 msgid "File Browser Filter Mode"
-msgstr "Modalità di filtro dell'esplorazione file"
+msgstr "Modalità filtro di esplorazione file"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:12
 msgid ""
@@ -3039,13 +3022,13 @@ msgid ""
 "files)."
 msgstr ""
 "Questo valore determina quali file vengono filtrati dall'esplorazione dei "
-"file. Valori possibili sono: none (non filtra nulla), hidden (filtra i file "
-"nascosti), binary (filtra i file binari) e hidden_and_binary (filtra sia i "
-"file nascosti che quelli binari)."
+"file. Valori possibili sono: 'none' (non filtra nulla), hidden (filtra i "
+"file nascosti), 'binary' (filtra i file binari) e 'hidden_and_binary' "
+"(filtra sia i file nascosti che quelli binari)."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:16
 msgid "File Browser Filter Pattern"
-msgstr "Modello di filtro dell'esplorazione file"
+msgstr "Modello del filtro di esplorazione file"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:17
 msgid ""
@@ -3077,7 +3060,7 @@ msgid ""
 "and onload/tree_view is TRUE."
 msgstr ""
 "La directory radice da usare all'avvio del plugin dell'esplorazione file se "
-"onload/tree_view è VERO."
+"onload/tree_view è \"vero\"."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:34
 msgid "File Browser Virtual Root Directory"
@@ -3090,8 +3073,8 @@ msgid ""
 " the actual root."
 msgstr ""
 "Directory radice virtuale da usare all'avvio del plugin dell'esplorazione "
-"file quando onload/tree_view è VERO. Deve essere sempre un livello più sotto"
-" della directory principale."
+"file quando onload/tree_view è \"vero\". Deve essere sempre un livello più "
+"basso della directory principale."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:39
 msgid "Enable Restore of Remote Locations"
@@ -3099,7 +3082,7 @@ msgstr "Abilita il ripristino delle posizioni remote"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:40
 msgid "Sets whether to enable restoring of remote locations."
-msgstr "Indica se abilitare il ripristino di posizioni remote."
+msgstr "Indica se abilitare il ripristino delle posizioni remote."
 
 #: plugins/filebrowser/pluma-file-bookmarks-store.c:238
 msgid "File System"
@@ -3107,7 +3090,7 @@ msgstr "File system"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:576
 msgid "_Set root to active document"
-msgstr "Impo_sta il documento attivo come radice"
+msgstr "Impo_sta radice sul documento attivo"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:578
 msgid "Set the root to the active document location"
@@ -3185,7 +3168,7 @@ msgstr "Eliminare definitivamente i file selezionati?"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:1167
 msgid "If you delete an item, it is permanently lost."
-msgstr "Se si elimina un oggetto sarà perso per sempre."
+msgstr "Se si elimina un oggetto, questo sarà definitivamente perso."
 
 #: plugins/filebrowser/pluma-file-browser-store.c:1662
 msgid "(Empty)"
@@ -3241,11 +3224,11 @@ msgstr "_Sposta nel cestino"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:799
 msgid "Move selected file or folder to trash"
-msgstr "Sposta il file o la directory selezionati nel cestino"
+msgstr "Sposta il file o la directory selezionata nel cestino"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:802
 msgid "Delete selected file or folder"
-msgstr "Elimina il file o la directory selezionati"
+msgstr "Elimina il file o la directory selezionata"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:809
 msgid "Open selected file"
@@ -3281,7 +3264,7 @@ msgstr "_Rinomina"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:831
 msgid "Rename selected file or folder"
-msgstr "Rinomina il file o la directory selezionati"
+msgstr "Rinomina il file o la directory selezionata"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:837
 msgid "_Previous Location"
@@ -3341,7 +3324,7 @@ msgstr "Posizione precedente"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:996
 msgid "Go to previous location"
-msgstr "Va alla posizione precedente"
+msgstr "Vai alla posizione precedente"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:998
 #: plugins/filebrowser/pluma-file-browser-widget.c:1024
@@ -3358,7 +3341,7 @@ msgstr "Va alla posizione successiva"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:1234
 msgid "_Match Filename"
-msgstr "Nome del file _corrispondente"
+msgstr "Corrispondenza con il nome del file"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:2135
 #, c-format
@@ -3400,11 +3383,11 @@ msgstr "text-x-python"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
-msgstr "Colore dell'_errore:"
+msgstr "Colore di un _errore:"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:59
 msgid "C_ommand color:"
-msgstr "Colore del c_omando:"
+msgstr "Colore di un c_omando:"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
@@ -3412,24 +3395,24 @@ msgstr "Usa larghezza del font di sistema"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
-msgstr "Carattere:"
+msgstr "Tipo di carattere:"
 
 #: plugins/quickopen/quickopen/popup.py:32
 #: plugins/quickopen/quickopen.plugin.desktop.in:6
 msgid "Quick Open"
-msgstr "Apri velocemente"
+msgstr "Apertura rapida"
 
 #: plugins/quickopen/quickopen/windowhelper.py:65
 msgid "Quick open"
-msgstr "Apri velocemente"
+msgstr "Apertura rapida"
 
 #: plugins/quickopen/quickopen/windowhelper.py:66
 msgid "Quickly open documents"
-msgstr "Apre velocemente i documenti"
+msgstr "Apri velocemente i documenti"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
-msgstr "Apre velocemente i file"
+msgstr "Apri velocemente i file"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
@@ -3458,7 +3441,7 @@ msgstr "_Snippet:"
 
 #: plugins/snippets/snippets/snippets.ui:165
 msgid "Create new snippet"
-msgstr "Crea nuova snippet"
+msgstr "Crea nuovo snippet"
 
 #: plugins/snippets/snippets/snippets.ui:186
 #: plugins/snippets/snippets/Manager.py:792
@@ -3493,7 +3476,7 @@ msgstr "Tasto _scorciatoia:"
 #. "tab" here means the tab key, not the notebook tab!
 #: plugins/snippets/snippets/snippets.ui:424
 msgid "_Tab trigger:"
-msgstr "_Tab trigger:"
+msgstr "Attivatore _tab:"
 
 #: plugins/snippets/snippets/snippets.ui:446
 #: plugins/snippets/snippets/Manager.py:681
@@ -3531,8 +3514,8 @@ msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
 msgstr ""
-"Non è un tab trigger valido. I trigger possono contenere lettere o un "
-"carattere singolo (non alfanumerico) come {, [, ecc..."
+"Questo non è un attivatore tab valido. Gli attivatori possono contenere "
+"lettere o un carattere singolo (ma non alfanumerico) come: {. [, ecc..."
 
 #: plugins/snippets/snippets/Manager.py:771
 #, python-format
@@ -3563,7 +3546,7 @@ msgstr "Archivio compresso con bzip2"
 
 #: plugins/snippets/snippets/Manager.py:801
 msgid "Single snippets file"
-msgstr "File snippet singola"
+msgstr "File snippet singolo"
 
 #: plugins/snippets/snippets/Manager.py:802
 #: plugins/snippets/snippets/Manager.py:889
@@ -3597,7 +3580,7 @@ msgstr "Esporta snippet"
 
 #: plugins/snippets/snippets/Manager.py:1058
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr "Inserire una nuova scorciatoia o premere Backspace per pulire"
+msgstr "Inserire una nuova scorciatoia o premere Backspace per annullare"
 
 #: plugins/snippets/snippets/Manager.py:1060
 msgid "Type a new shortcut"
@@ -3657,7 +3640,7 @@ msgid ""
 "aborted."
 msgstr ""
 "L'esecuzione del comando Python (%s) ha superato il tempo massimo, verrà "
-"terminata."
+"terminato."
 
 #: plugins/snippets/snippets/Placeholder.py:609
 #, python-format
@@ -3692,7 +3675,7 @@ msgstr "_Ordina"
 
 #: plugins/sort/sort.ui:114
 msgid "_Reverse order"
-msgstr "Ordine inve_rtito"
+msgstr "Ordine inve_rso"
 
 #: plugins/sort/sort.ui:129
 msgid "R_emove duplicates"
@@ -3726,7 +3709,7 @@ msgstr "(nessuna parola suggerita)"
 
 #: plugins/spell/pluma-automatic-spell-checker.c:444
 msgid "_More..."
-msgstr "_Ancora..."
+msgstr "_Altro..."
 
 #: plugins/spell/pluma-automatic-spell-checker.c:499
 msgid "_Ignore All"
@@ -3770,7 +3753,7 @@ msgstr "%s (%s)"
 #, c-format
 msgctxt "language"
 msgid "Unknown (%s)"
-msgstr "Sconosciuta (%s)"
+msgstr "Sconosciuto (%s)"
 
 #. Translators: this refers the Default language used by the
 #. * spell checker
@@ -3934,7 +3917,7 @@ msgstr "Elenco dei tag disponibili"
 
 #: plugins/taglist/HTML.tags.xml.in:3
 msgid "XHTML 1.0 - Tags"
-msgstr "XHTML 1.0 - Tag"
+msgstr "Tag - XHTML 1.0"
 
 #: plugins/taglist/HTML.tags.xml.in:5 plugins/taglist/HTML.tags.xml.in:1132
 msgid "Abbreviated form"
@@ -3974,7 +3957,7 @@ msgstr "Ancoraggio"
 
 #: plugins/taglist/HTML.tags.xml.in:51
 msgid "Applet class file code (deprecated)"
-msgstr "File codice classe applet (deprecato)"
+msgstr "Codice file di classe applet (deprecato)"
 
 #: plugins/taglist/HTML.tags.xml.in:56 plugins/taglist/HTML.tags.xml.in:1184
 msgid "Associated information"
@@ -4022,7 +4005,7 @@ msgstr "Centra (deprecato)"
 
 #: plugins/taglist/HTML.tags.xml.in:115 plugins/taglist/HTML.tags.xml.in:1235
 msgid "Character encoding of linked resource"
-msgstr "Codifica dei caratteri di una risorsa esterna"
+msgstr "Codifica dei caratteri di una risorsa collegata"
 
 #: plugins/taglist/HTML.tags.xml.in:120
 msgid "Checked state"
@@ -4046,7 +4029,7 @@ msgstr "Elenco classi"
 
 #: plugins/taglist/HTML.tags.xml.in:144 plugins/taglist/HTML.tags.xml.in:1260
 msgid "Clear text flow control"
-msgstr "Cancella controllo flusso testo"
+msgstr "Cancella controllo flusso di testo"
 
 #: plugins/taglist/HTML.tags.xml.in:149 plugins/taglist/HTML.tags.xml.in:1264
 msgid "Code content type"
@@ -4058,7 +4041,7 @@ msgstr "Colore collegamenti selezionati (deprecato)"
 
 #: plugins/taglist/HTML.tags.xml.in:160 plugins/taglist/HTML.tags.xml.in:1272
 msgid "Column span"
-msgstr "Larghezza in colonne"
+msgstr "Larghezza di una colonna"
 
 #: plugins/taglist/HTML.tags.xml.in:165 plugins/taglist/HTML.tags.xml.in:1276
 msgid "Columns"
@@ -4095,7 +4078,7 @@ msgstr "Attributo defer"
 
 #: plugins/taglist/HTML.tags.xml.in:208 plugins/taglist/HTML.tags.xml.in:1322
 msgid "Definition description"
-msgstr "Descrizione definizione"
+msgstr "Descrizione di definizione"
 
 #: plugins/taglist/HTML.tags.xml.in:213 plugins/taglist/HTML.tags.xml.in:1327
 msgid "Definition list"
@@ -4103,7 +4086,7 @@ msgstr "Elenco di definizioni"
 
 #: plugins/taglist/HTML.tags.xml.in:218 plugins/taglist/HTML.tags.xml.in:1332
 msgid "Definition term"
-msgstr "Termine definizione"
+msgstr "Fine di definizione"
 
 #: plugins/taglist/HTML.tags.xml.in:223 plugins/taglist/HTML.tags.xml.in:1337
 msgid "Deleted text"
@@ -4168,11 +4151,11 @@ msgstr "Nome del carattere (deprecato)"
 
 #: plugins/taglist/HTML.tags.xml.in:298 plugins/taglist/HTML.tags.xml.in:1423
 msgid "For label"
-msgstr "Per etichetta"
+msgstr "For label"
 
 #: plugins/taglist/HTML.tags.xml.in:303 plugins/taglist/HTML.tags.xml.in:1427
 msgid "Forced line break"
-msgstr "Ritorno a capo"
+msgstr "Ritorno a capo forzato"
 
 #: plugins/taglist/HTML.tags.xml.in:307 plugins/taglist/HTML.tags.xml.in:1431
 msgid "Form action handler"
@@ -4188,7 +4171,7 @@ msgstr "Etichetta di campo del form"
 
 #: plugins/taglist/HTML.tags.xml.in:322 plugins/taglist/HTML.tags.xml.in:1445
 msgid "Form input type"
-msgstr "Input del form con tipo"
+msgstr "Tipo di input del form"
 
 #: plugins/taglist/HTML.tags.xml.in:327 plugins/taglist/HTML.tags.xml.in:1449
 msgid "Form input"
@@ -4341,7 +4324,7 @@ msgstr "Definizione di istanza"
 
 #: plugins/taglist/HTML.tags.xml.in:515 plugins/taglist/HTML.tags.xml.in:1633
 msgid "Italic text"
-msgstr "Corsivo"
+msgstr "Testo in corsivo"
 
 #: plugins/taglist/HTML.tags.xml.in:521
 msgid "Java applet (deprecated)"
@@ -4354,7 +4337,7 @@ msgstr "Etichetta"
 #: plugins/taglist/HTML.tags.xml.in:531 plugins/taglist/HTML.tags.xml.in:536
 #: plugins/taglist/HTML.tags.xml.in:1647 plugins/taglist/HTML.tags.xml.in:1651
 msgid "Language code"
-msgstr "Codice lingua"
+msgstr "Codice di linguaggio"
 
 #: plugins/taglist/HTML.tags.xml.in:541 plugins/taglist/HTML.tags.xml.in:1655
 msgid "Large text style"
@@ -4454,7 +4437,7 @@ msgstr "Niente a capo automatico (deprecato)"
 
 #: plugins/taglist/HTML.tags.xml.in:666
 msgid "Object applet file (deprecated)"
-msgstr "File dell'applet di un oggetto (deprecato)"
+msgstr "File di un oggetto applet (deprecato)"
 
 #: plugins/taglist/HTML.tags.xml.in:671 plugins/taglist/HTML.tags.xml.in:1809
 msgid "Object data reference"
@@ -4550,11 +4533,11 @@ msgstr "Elenco numerato"
 
 #: plugins/taglist/HTML.tags.xml.in:786 plugins/taglist/HTML.tags.xml.in:1904
 msgid "Paragraph class"
-msgstr "Paragrafo con classe"
+msgstr "Classe di paragrafo"
 
 #: plugins/taglist/HTML.tags.xml.in:791 plugins/taglist/HTML.tags.xml.in:1909
 msgid "Paragraph style"
-msgstr "Paragrafo con stile"
+msgstr "Stile di paragrafo"
 
 #: plugins/taglist/HTML.tags.xml.in:796 plugins/taglist/HTML.tags.xml.in:1914
 msgid "Paragraph"
@@ -4574,7 +4557,7 @@ msgstr "Pulsante"
 
 #: plugins/taglist/HTML.tags.xml.in:816 plugins/taglist/HTML.tags.xml.in:1950
 msgid "ReadOnly text and password"
-msgstr "Testo e password di sola lettura"
+msgstr "Testo di sola lettura e password"
 
 #: plugins/taglist/HTML.tags.xml.in:821
 msgid "Reduced spacing (deprecated)"
@@ -4594,7 +4577,7 @@ msgstr "Separatori tra righe e colonne"
 
 #: plugins/taglist/HTML.tags.xml.in:840 plugins/taglist/HTML.tags.xml.in:1974
 msgid "Sample program output, scripts"
-msgstr "Output di esempio di programmi e script"
+msgstr "Output di programmi di esempio, script"
 
 #: plugins/taglist/HTML.tags.xml.in:845 plugins/taglist/HTML.tags.xml.in:1979
 msgid "Scope covered by header cells"
@@ -4602,7 +4585,7 @@ msgstr "Ambito delle celle di intestazione"
 
 #: plugins/taglist/HTML.tags.xml.in:851 plugins/taglist/HTML.tags.xml.in:1983
 msgid "Script language name"
-msgstr "Linguaggio dello script"
+msgstr "Nome del linguaggio dello script"
 
 #: plugins/taglist/HTML.tags.xml.in:856 plugins/taglist/HTML.tags.xml.in:1987
 msgid "Script statements"
@@ -4630,7 +4613,7 @@ msgstr "Forma"
 
 #: plugins/taglist/HTML.tags.xml.in:885 plugins/taglist/HTML.tags.xml.in:2012
 msgid "Short inline quotation"
-msgstr "Citazione breve in linea"
+msgstr "Citazione breve in-linea"
 
 #: plugins/taglist/HTML.tags.xml.in:891
 msgid "Size (deprecated)"
@@ -4658,7 +4641,7 @@ msgstr "Margine interno delle celle"
 
 #: plugins/taglist/HTML.tags.xml.in:921 plugins/taglist/HTML.tags.xml.in:2058
 msgid "Span"
-msgstr "Esteso"
+msgstr "Span"
 
 #: plugins/taglist/HTML.tags.xml.in:926 plugins/taglist/HTML.tags.xml.in:2066
 msgid "Standby load message"
@@ -4755,7 +4738,7 @@ msgstr "Destinazione - Top"
 
 #: plugins/taglist/HTML.tags.xml.in:1049 plugins/taglist/HTML.tags.xml.in:2186
 msgid "Teletype or monospace text style"
-msgstr "Carattere a spaziatura fissa (telescrivente)"
+msgstr "Telescrivnte o carattere a spaziatura fissa"
 
 #: plugins/taglist/HTML.tags.xml.in:1055 plugins/taglist/HTML.tags.xml.in:1061
 msgid "Text color (deprecated)"
@@ -4803,7 +4786,7 @@ msgstr "Spaziatura verticale (deprecato)"
 
 #: plugins/taglist/HTML.tags.xml.in:1118
 msgid "Visited link color (deprecated)"
-msgstr "Colore collegamento visitati (deprecato)"
+msgstr "Colore collegamenti visitati (deprecato)"
 
 #: plugins/taglist/HTML.tags.xml.in:1123 plugins/taglist/HTML.tags.xml.in:2259
 msgid "Width"
@@ -4811,7 +4794,7 @@ msgstr "Larghezza"
 
 #: plugins/taglist/HTML.tags.xml.in:1130
 msgid "HTML - Tags"
-msgstr "HTML - Tag"
+msgstr "Tag - HTML"
 
 #: plugins/taglist/HTML.tags.xml.in:1141
 msgid "Above"
@@ -4819,7 +4802,7 @@ msgstr "Sopra"
 
 #: plugins/taglist/HTML.tags.xml.in:1176
 msgid "Applet class file code"
-msgstr "File codice classe applet"
+msgstr "Codice file di classe applet"
 
 #: plugins/taglist/HTML.tags.xml.in:1180
 msgid "Array"
@@ -4831,7 +4814,7 @@ msgstr "Colore di sfondo"
 
 #: plugins/taglist/HTML.tags.xml.in:1201
 msgid "Background texture tile"
-msgstr "File di immagine di sfondo"
+msgstr "File di tassello immagine di sfondo"
 
 #: plugins/taglist/HTML.tags.xml.in:1205
 msgid "Base font"
@@ -4931,7 +4914,7 @@ msgstr "Elenco"
 
 #: plugins/taglist/HTML.tags.xml.in:1700
 msgid "Mail link"
-msgstr "Collegamento di posta"
+msgstr "Collegamento di posta elettronica"
 
 #: plugins/taglist/HTML.tags.xml.in:1712
 msgid "Marquee"
@@ -5475,7 +5458,7 @@ msgstr "ÿ"
 
 #: plugins/taglist/Latex.tags.xml.in:3
 msgid "Latex - Tags"
-msgstr "Latex - Tag"
+msgstr "Tag - Latex"
 
 #: plugins/taglist/Latex.tags.xml.in:4
 msgid "Bibliography (cite)"
