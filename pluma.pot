@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-07-02 17:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -403,7 +403,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:201
@@ -530,11 +530,6 @@ msgstr ""
 msgid "Edit text files"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/pluma.desktop.in.in:15
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
@@ -555,8 +550,8 @@ msgstr ""
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:151
 #: pluma/dialogs/pluma-encodings-dialog.c:306
 #: pluma/dialogs/pluma-encodings-dialog.ui:56
-#: pluma/dialogs/pluma-preferences-dialog.c:975 pluma/pluma-commands-file.c:583
-#: pluma/pluma-commands-file.c:1223 pluma/pluma-file-chooser-dialog.c:435
+#: pluma/dialogs/pluma-preferences-dialog.c:974 pluma/pluma-commands-file.c:581
+#: pluma/pluma-commands-file.c:1221 pluma/pluma-file-chooser-dialog.c:435
 #: pluma/pluma-io-error-message-area.c:168
 #: pluma/pluma-io-error-message-area.c:507
 #: pluma/pluma-io-error-message-area.c:1190
@@ -703,7 +698,7 @@ msgstr ""
 
 #: pluma/dialogs/pluma-encodings-dialog.c:308
 #: pluma/dialogs/pluma-encodings-dialog.ui:40
-#: pluma/dialogs/pluma-preferences-dialog.c:1292
+#: pluma/dialogs/pluma-preferences-dialog.c:1350
 #: pluma/dialogs/pluma-preferences-dialog.ui:58 pluma/pluma-ui.h:53
 #: plugins/sort/sort.ui:77 plugins/spell/pluma-spell-language-dialog.c:134
 #: plugins/spell/languages-dialog.ui:40
@@ -749,42 +744,42 @@ msgstr ""
 msgid "_Remove"
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:726
+#: pluma/dialogs/pluma-preferences-dialog.c:725
 msgid "Click on this button to select the font to be used by the editor"
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:736
+#: pluma/dialogs/pluma-preferences-dialog.c:735
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:939
+#: pluma/dialogs/pluma-preferences-dialog.c:938
 msgid "The selected color scheme cannot be installed."
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1017
+#: pluma/dialogs/pluma-preferences-dialog.c:1016
 msgid "Add Scheme"
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1024
+#: pluma/dialogs/pluma-preferences-dialog.c:1023
 msgid "A_dd Scheme"
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1032
+#: pluma/dialogs/pluma-preferences-dialog.c:1031
 msgid "Color Scheme Files"
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1039
+#: pluma/dialogs/pluma-preferences-dialog.c:1038
 #: pluma/pluma-file-chooser-dialog.c:52
 msgid "All Files"
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1084
+#: pluma/dialogs/pluma-preferences-dialog.c:1083
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1291
+#: pluma/dialogs/pluma-preferences-dialog.c:1349
 #: pluma/dialogs/pluma-preferences-dialog.ui:74
 #: pluma/dialogs/pluma-search-dialog.c:327
 #: pluma/dialogs/pluma-search-dialog.ui:60 pluma/pluma-ui.h:142
@@ -792,7 +787,7 @@ msgstr ""
 msgid "_Close"
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1294
+#: pluma/dialogs/pluma-preferences-dialog.c:1352
 msgid "Pluma Preferences"
 msgstr ""
 
@@ -973,11 +968,11 @@ msgstr ""
 
 #: pluma/dialogs/pluma-search-dialog.c:295
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1529
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1528
 msgid "Replace"
 msgstr ""
 
-#: pluma/dialogs/pluma-search-dialog.c:304 pluma/pluma-window.c:1527
+#: pluma/dialogs/pluma-search-dialog.c:304 pluma/pluma-window.c:1526
 msgid "Find"
 msgstr ""
 
@@ -990,7 +985,7 @@ msgstr ""
 msgid "Replace _All"
 msgstr ""
 
-#: pluma/dialogs/pluma-search-dialog.c:411 pluma/pluma-commands-file.c:588
+#: pluma/dialogs/pluma-search-dialog.c:411 pluma/pluma-commands-file.c:586
 msgid "_Replace"
 msgstr ""
 
@@ -1060,16 +1055,16 @@ msgstr ""
 msgid "[FILE...]"
 msgstr ""
 
-#: pluma/pluma.c:178
+#: pluma/pluma.c:177
 #, c-format
 msgid "%s: invalid encoding.\n"
 msgstr ""
 
-#: pluma/pluma.c:524
+#: pluma/pluma.c:528
 msgid "- Edit text files"
 msgstr ""
 
-#: pluma/pluma.c:535
+#: pluma/pluma.c:539
 #, c-format
 msgid ""
 "%s\n"
@@ -1089,39 +1084,39 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
-#: pluma/pluma-commands-file.c:463
+#: pluma/pluma-commands-file.c:461
 msgid "Open Files"
 msgstr ""
 
-#: pluma/pluma-commands-file.c:574
+#: pluma/pluma-commands-file.c:572
 #, c-format
 msgid "The file \"%s\" is read-only."
 msgstr ""
 
-#: pluma/pluma-commands-file.c:579
+#: pluma/pluma-commands-file.c:577
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr ""
 
-#: pluma/pluma-commands-file.c:649 pluma/pluma-commands-file.c:872
+#: pluma/pluma-commands-file.c:647 pluma/pluma-commands-file.c:870
 #, c-format
 msgid "Saving file '%s'…"
 msgstr ""
 
-#: pluma/pluma-commands-file.c:757
+#: pluma/pluma-commands-file.c:755
 msgid "Save As…"
 msgstr ""
 
-#: pluma/pluma-commands-file.c:1086
+#: pluma/pluma-commands-file.c:1084
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr ""
 
-#: pluma/pluma-commands-file.c:1131
+#: pluma/pluma-commands-file.c:1129
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr ""
 
-#: pluma/pluma-commands-file.c:1140
+#: pluma/pluma-commands-file.c:1138
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -1131,12 +1126,12 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: pluma/pluma-commands-file.c:1149
+#: pluma/pluma-commands-file.c:1147
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 
-#: pluma/pluma-commands-file.c:1155
+#: pluma/pluma-commands-file.c:1153
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -1147,7 +1142,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: pluma/pluma-commands-file.c:1165
+#: pluma/pluma-commands-file.c:1163
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -1157,11 +1152,11 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: pluma/pluma-commands-file.c:1180
+#: pluma/pluma-commands-file.c:1178
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 
-#: pluma/pluma-commands-file.c:1186
+#: pluma/pluma-commands-file.c:1184
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -1172,7 +1167,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: pluma/pluma-commands-file.c:1201
+#: pluma/pluma-commands-file.c:1199
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -1181,7 +1176,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: pluma/pluma-commands-file.c:1228 pluma/pluma-ui.h:84
+#: pluma/pluma-commands-file.c:1226 pluma/pluma-ui.h:84
 msgid "_Revert"
 msgstr ""
 
@@ -1198,7 +1193,9 @@ msgid "Sun Microsystems"
 msgstr ""
 
 #: pluma/pluma-commands-help.c:67
-msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
+msgid ""
+"Pluma is a small and lightweight text editor for the MATE Desktop "
+"Environment."
 msgstr ""
 
 #: pluma/pluma-commands-help.c:70
@@ -1261,17 +1258,17 @@ msgstr ""
 msgid "\"%s\" not found"
 msgstr ""
 
-#: pluma/pluma-document.c:1139 pluma/pluma-document.c:1159
+#: pluma/pluma-document.c:1138 pluma/pluma-document.c:1158
 #, c-format
 msgid "Unsaved Document %d"
 msgstr ""
 
 #: pluma/pluma-documents-panel.c:93 pluma/pluma-documents-panel.c:107
-#: pluma/pluma-window.c:2256 pluma/pluma-window.c:2261
+#: pluma/pluma-window.c:2255 pluma/pluma-window.c:2260
 msgid "Read-Only"
 msgstr ""
 
-#: pluma/pluma-documents-panel.c:703 pluma/pluma-window.c:3677
+#: pluma/pluma-documents-panel.c:703 pluma/pluma-window.c:3676
 msgid "Documents"
 msgstr ""
 
@@ -1391,16 +1388,16 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: pluma/pluma-encodings-combo-box.c:266
+#: pluma/pluma-encodings-combo-box.c:264
 msgid "Automatically Detected"
 msgstr ""
 
-#: pluma/pluma-encodings-combo-box.c:282 pluma/pluma-encodings-combo-box.c:297
+#: pluma/pluma-encodings-combo-box.c:280 pluma/pluma-encodings-combo-box.c:295
 #, c-format
 msgid "Current Locale (%s)"
 msgstr ""
 
-#: pluma/pluma-encodings-combo-box.c:347
+#: pluma/pluma-encodings-combo-box.c:345
 msgid "Add or Remove..."
 msgstr ""
 
@@ -1429,7 +1426,7 @@ msgid "Windows"
 msgstr ""
 
 #: pluma/pluma-file-chooser-dialog.c:437
-#: plugins/filebrowser/pluma-file-browser-widget.c:808
+#: plugins/filebrowser/pluma-file-browser-widget.c:807
 #: plugins/quickopen/quickopen/popup.py:37
 #: plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
@@ -2013,7 +2010,7 @@ msgstr ""
 msgid "_Open..."
 msgstr ""
 
-#: pluma/pluma-ui.h:59 pluma/pluma-window.c:1453
+#: pluma/pluma-ui.h:59 pluma/pluma-window.c:1452
 msgid "Open a file"
 msgstr ""
 
@@ -2122,7 +2119,7 @@ msgid "Paste the clipboard"
 msgstr ""
 
 #: pluma/pluma-ui.h:102 plugins/filebrowser/pluma-file-browser-utils.c:182
-#: plugins/filebrowser/pluma-file-browser-widget.c:801
+#: plugins/filebrowser/pluma-file-browser-widget.c:800
 msgid "_Delete"
 msgstr ""
 
@@ -2290,22 +2287,22 @@ msgstr ""
 msgid "Show or hide the bottom pane in the current window"
 msgstr ""
 
-#: pluma/pluma-utils.c:1074
+#: pluma/pluma-utils.c:1075
 msgid "Please check your installation."
 msgstr ""
 
-#: pluma/pluma-utils.c:1147
+#: pluma/pluma-utils.c:1148
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr ""
 
-#: pluma/pluma-utils.c:1167
+#: pluma/pluma-utils.c:1168
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr ""
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1327
+#: pluma/pluma-utils.c:1328
 #, c-format
 msgid "/ on %s"
 msgstr ""
@@ -2343,7 +2340,7 @@ msgstr ""
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1069 pluma/pluma-window.c:1957
+#: pluma/pluma-window.c:1069 pluma/pluma-window.c:1956
 #: plugins/externaltools/tools/manager.py:108
 #: plugins/externaltools/tools/manager.py:308
 #: plugins/externaltools/tools/manager.py:424
@@ -2361,33 +2358,33 @@ msgstr ""
 msgid "Open '%s'"
 msgstr ""
 
-#: pluma/pluma-window.c:1459
+#: pluma/pluma-window.c:1458
 msgid "Open a recently used file"
 msgstr ""
 
-#: pluma/pluma-window.c:1465
+#: pluma/pluma-window.c:1464
 msgid "Open"
 msgstr ""
 
-#: pluma/pluma-window.c:1523
+#: pluma/pluma-window.c:1522
 msgid "Save"
 msgstr ""
 
-#: pluma/pluma-window.c:1525
+#: pluma/pluma-window.c:1524
 msgid "Print"
 msgstr ""
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1682
+#: pluma/pluma-window.c:1681
 #, c-format
 msgid "Activate '%s'"
 msgstr ""
 
-#: pluma/pluma-window.c:1935
+#: pluma/pluma-window.c:1934
 msgid "Use Spaces"
 msgstr ""
 
-#: pluma/pluma-window.c:2006
+#: pluma/pluma-window.c:2005
 msgid "Tab Width"
 msgstr ""
 
@@ -2723,11 +2720,6 @@ msgstr ""
 msgid "Easy file access from the side pane"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr ""
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr ""
@@ -2896,171 +2888,171 @@ msgid ""
 msgstr ""
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/pluma-file-browser-store.c:3475
+#: plugins/filebrowser/pluma-file-browser-store.c:3473
 msgid "file"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-store.c:3499
+#: plugins/filebrowser/pluma-file-browser-store.c:3497
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/pluma-file-browser-store.c:3528
+#: plugins/filebrowser/pluma-file-browser-store.c:3526
 msgid "directory"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-store.c:3548
+#: plugins/filebrowser/pluma-file-browser-store.c:3546
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:712
+#: plugins/filebrowser/pluma-file-browser-widget.c:711
 msgid "Bookmarks"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:793
+#: plugins/filebrowser/pluma-file-browser-widget.c:792
 msgid "_Filter"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:798
+#: plugins/filebrowser/pluma-file-browser-widget.c:797
 msgid "_Move to Trash"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:799
+#: plugins/filebrowser/pluma-file-browser-widget.c:798
 msgid "Move selected file or folder to trash"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:802
+#: plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "Delete selected file or folder"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:809
+#: plugins/filebrowser/pluma-file-browser-widget.c:808
 msgid "Open selected file"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:815
+#: plugins/filebrowser/pluma-file-browser-widget.c:814
 msgid "Up"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:816
+#: plugins/filebrowser/pluma-file-browser-widget.c:815
 msgid "Open the parent folder"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:821
+#: plugins/filebrowser/pluma-file-browser-widget.c:820
 msgid "_New Folder"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:822
+#: plugins/filebrowser/pluma-file-browser-widget.c:821
 msgid "Add new empty folder"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:824
+#: plugins/filebrowser/pluma-file-browser-widget.c:823
 msgid "New F_ile"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:825
+#: plugins/filebrowser/pluma-file-browser-widget.c:824
 msgid "Add new empty file"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:830
+#: plugins/filebrowser/pluma-file-browser-widget.c:829
 msgid "_Rename"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:831
+#: plugins/filebrowser/pluma-file-browser-widget.c:830
 msgid "Rename selected file or folder"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:837
+#: plugins/filebrowser/pluma-file-browser-widget.c:836
 msgid "_Previous Location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:839
+#: plugins/filebrowser/pluma-file-browser-widget.c:838
 msgid "Go to the previous visited location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:841
+#: plugins/filebrowser/pluma-file-browser-widget.c:840
 msgid "_Next Location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:842
+#: plugins/filebrowser/pluma-file-browser-widget.c:841
 msgid "Go to the next visited location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:843
+#: plugins/filebrowser/pluma-file-browser-widget.c:842
 msgid "Re_fresh View"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:844
+#: plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Refresh the view"
+msgstr ""
+
+#: plugins/filebrowser/pluma-file-browser-widget.c:844
+#: plugins/filebrowser/pluma-file-browser-widget.c:862
+msgid "_View Folder"
 msgstr ""
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:845
 #: plugins/filebrowser/pluma-file-browser-widget.c:863
-msgid "_View Folder"
-msgstr ""
-
-#: plugins/filebrowser/pluma-file-browser-widget.c:846
-#: plugins/filebrowser/pluma-file-browser-widget.c:864
 msgid "View folder in file manager"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:853
+#: plugins/filebrowser/pluma-file-browser-widget.c:852
 msgid "Show _Hidden"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:854
+#: plugins/filebrowser/pluma-file-browser-widget.c:853
 msgid "Show hidden files and folders"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:856
+#: plugins/filebrowser/pluma-file-browser-widget.c:855
 msgid "Show _Binary"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:857
+#: plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "Show binary files"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:990
-#: plugins/filebrowser/pluma-file-browser-widget.c:1003
-#: plugins/filebrowser/pluma-file-browser-widget.c:1029
+#: plugins/filebrowser/pluma-file-browser-widget.c:989
+#: plugins/filebrowser/pluma-file-browser-widget.c:1002
+#: plugins/filebrowser/pluma-file-browser-widget.c:1028
 msgid "Previous location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:996
+#: plugins/filebrowser/pluma-file-browser-widget.c:995
 msgid "Go to previous location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:998
-#: plugins/filebrowser/pluma-file-browser-widget.c:1024
+#: plugins/filebrowser/pluma-file-browser-widget.c:997
+#: plugins/filebrowser/pluma-file-browser-widget.c:1023
 msgid "Go to a previously opened location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:1016
+#: plugins/filebrowser/pluma-file-browser-widget.c:1015
 msgid "Next location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:1022
+#: plugins/filebrowser/pluma-file-browser-widget.c:1021
 msgid "Go to next location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:1234
+#: plugins/filebrowser/pluma-file-browser-widget.c:1233
 msgid "_Match Filename"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:2135
+#: plugins/filebrowser/pluma-file-browser-widget.c:2130
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:2215
+#: plugins/filebrowser/pluma-file-browser-widget.c:2209
 #, c-format
 msgid "Could not open media: %s"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:2262
+#: plugins/filebrowser/pluma-file-browser-widget.c:2256
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr ""
@@ -3080,11 +3072,6 @@ msgstr ""
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
 msgid "Interactive Python console standing in the bottom panel"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
 msgstr ""
 
 #: plugins/pythonconsole/pythonconsole/config.ui:20
@@ -3118,11 +3105,6 @@ msgstr ""
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
 msgstr ""
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
@@ -3362,11 +3344,6 @@ msgstr ""
 msgid "Sorts a document or selected text."
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr ""
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr ""
@@ -3399,7 +3376,7 @@ msgstr ""
 #. Translators: Displayed in the "Check Spelling" dialog if there are no suggestions
 #. * for the current misspelled word
 #: plugins/spell/pluma-automatic-spell-checker.c:420
-#: plugins/spell/pluma-spell-checker-dialog.c:458
+#: plugins/spell/pluma-spell-checker-dialog.c:457
 msgid "(no suggested words)"
 msgstr ""
 
@@ -3424,11 +3401,11 @@ msgid "Suggestions"
 msgstr ""
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word isn't misspelled
-#: plugins/spell/pluma-spell-checker-dialog.c:565
+#: plugins/spell/pluma-spell-checker-dialog.c:564
 msgid "(correct spelling)"
 msgstr ""
 
-#: plugins/spell/pluma-spell-checker-dialog.c:712
+#: plugins/spell/pluma-spell-checker-dialog.c:710
 msgid "Completed spell checking"
 msgstr ""
 
@@ -3587,11 +3564,6 @@ msgstr ""
 
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
 msgstr ""
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
@@ -6270,11 +6242,6 @@ msgstr ""
 
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
 msgstr ""
 
 #: plugins/time/pluma-time-dialog.ui:19
