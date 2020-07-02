@@ -6,18 +6,20 @@
 # Translators:
 # Christopher M <i@cicku.me>, 2018
 # Dianjin Wang <1132321739qq@gmail.com>, 2018
-# 玉堂白鹤 <yjwork@qq.com>, 2018
 # Martin Wimpress <code@flexion.org>, 2018
 # gtrslower, 2018
 # Mingcong Bai <jeffbai@aosc.xyz>, 2018
 # Mingye Wang <arthur200126@gmail.com>, 2018
-# liushuyu011 <liushuyu011@gmail.com>, 2018
+# shuyu liu <liushuyu011@gmail.com>, 2018
 # CNAmira <forucial@icloud.com>, 2019
 # Wenbin Lv <wenbin816@gmail.com>, 2019
-# Wylmer Wang, 2019
+# e0c668032ced196bd60f2b6a070d982d_8f72ae0, 2019
 # Wolfgang Ulbrich <mate@raveit.de>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Mingtian Yang <i@skylee.xyz>, 2020
+# 敏超 马 <mcjoys@163.com>, 2020
+# 玉堂白鹤 <yjwork@qq.com>, 2020
+# 邢家朋 <xingjiapeng10@163.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -25,7 +27,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2020-01-13 17:23+0100\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Mingtian Yang <i@skylee.xyz>, 2020\n"
+"Last-Translator: 邢家朋 <xingjiapeng10@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -263,11 +265,11 @@ msgstr "pluma 是否应该突出显示被搜索文本的全部出现。"
 
 #: data/org.mate.pluma.gschema.xml.in:126
 msgid "Enable Syntax Highlighting"
-msgstr "启用语法突出显示"
+msgstr "启用语法高亮显示"
 
 #: data/org.mate.pluma.gschema.xml.in:127
 msgid "Whether pluma should enable syntax highlighting."
-msgstr "pluma 是否启用语法突出显示。"
+msgstr "pluma 是否启用语法高亮显示。"
 
 #: data/org.mate.pluma.gschema.xml.in:131
 msgid "Toolbar is Visible"
@@ -340,12 +342,12 @@ msgstr "设定最近打开文件数的最大值，这个将在“最近打开过
 
 #: data/org.mate.pluma.gschema.xml.in:166
 msgid "Print Syntax Highlighting"
-msgstr "打印语法突出显示"
+msgstr "打印语法高亮显示"
 
 #: data/org.mate.pluma.gschema.xml.in:167
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
-msgstr "pluma 是否在打印文档时打印语法突出显示。"
+msgstr "pluma 是否在打印文档时打印语法高亮显示。"
 
 #: data/org.mate.pluma.gschema.xml.in:171
 msgid "Print Header"
@@ -950,27 +952,27 @@ msgstr "分钟(_M)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:919
 msgid "Show spaces, tabs, newlines"
-msgstr ""
+msgstr "显示空格、制表符、换行符"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:953
 msgid "Show _tabs"
-msgstr ""
+msgstr "显示制表符"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1003
 msgid "Show _trailing tabs only"
-msgstr ""
+msgstr "仅显示尾随选项卡"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1041
 msgid "Show _newlines"
-msgstr ""
+msgstr "显示换行符"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1082
 msgid "Show _spaces"
-msgstr ""
+msgstr "显示空格"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1132
 msgid "Show _trailing spaces only"
-msgstr ""
+msgstr "仅显示尾随空格"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1175
 msgid "Editor"
@@ -1802,7 +1804,7 @@ msgstr "正在准备..."
 
 #: pluma/pluma-print-preferences.ui:15
 msgid "window1"
-msgstr ""
+msgstr "窗口1"
 
 #: pluma/pluma-print-preferences.ui:39
 msgid "Syntax Highlighting"
@@ -2191,7 +2193,7 @@ msgstr "选中整个文档"
 
 #: pluma/pluma-ui.h:108
 msgid "_Highlight Mode"
-msgstr "突出显示模式(_H)"
+msgstr "语法高亮模式(_H)"
 
 #: pluma/pluma-ui.h:111
 msgid "_Find..."
@@ -2392,7 +2394,7 @@ msgstr "您想要将光标移动到的行"
 #: pluma/pluma-window.c:1012
 #, c-format
 msgid "Use %s highlight mode"
-msgstr "使用 %s 突出显示模式"
+msgstr "使用 %s 语法高亮模式"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
@@ -2406,7 +2408,7 @@ msgstr "纯文本"
 
 #: pluma/pluma-window.c:1070
 msgid "Disable syntax highlighting"
-msgstr "禁用语法突出显示"
+msgstr "禁用语法高亮显示"
 
 #. Translators: %s is a URI
 #: pluma/pluma-window.c:1352
@@ -2780,7 +2782,7 @@ msgstr "从侧边栏轻松访问文件"
 #. file name)!
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:9
 msgid "system-file-manager"
-msgstr ""
+msgstr "系统文件管理器"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
@@ -3146,7 +3148,7 @@ msgstr "位于底部面板中的交互式 Python 控制台"
 #. file name)!
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
 msgid "text-x-python"
-msgstr ""
+msgstr "text-x-python"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
@@ -3158,11 +3160,11 @@ msgstr "命令颜色(_O)："
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
-msgstr ""
+msgstr "使用系统的等宽字体"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
-msgstr ""
+msgstr "字体："
 
 #: plugins/quickopen/quickopen/popup.py:32
 #: plugins/quickopen/quickopen.plugin.desktop.in:6
@@ -4819,7 +4821,7 @@ msgstr "无间距空格"
 
 #: plugins/taglist/HTML.tags.xml.in:2271
 msgid "Soft hyphen­"
-msgstr ""
+msgstr "软连字符"
 
 #: plugins/taglist/HTML.tags.xml.in:2275
 msgid "&quot;"
@@ -5251,7 +5253,7 @@ msgstr "大括号 {}"
 
 #: plugins/taglist/Latex.tags.xml.in:39
 msgid "Brackets &lt;&gt;"
-msgstr ""
+msgstr "尖括号 <> "
 
 #: plugins/taglist/Latex.tags.xml.in:44
 msgid "File input"
@@ -5407,19 +5409,19 @@ msgstr "引用 ref"
 
 #: plugins/taglist/Latex.tags.xml.in:225
 msgid "Symbol &lt;&lt;"
-msgstr ""
+msgstr "符号<<"
 
 #: plugins/taglist/Latex.tags.xml.in:229
 msgid "Symbol &lt;="
-msgstr ""
+msgstr "符号<="
 
 #: plugins/taglist/Latex.tags.xml.in:233
 msgid "Symbol &gt;="
-msgstr ""
+msgstr "符号>="
 
 #: plugins/taglist/Latex.tags.xml.in:237
 msgid "Symbol &gt;&gt;"
-msgstr ""
+msgstr "符号 >>"
 
 #: plugins/taglist/Latex.tags.xml.in:241
 msgid "Symbol and"
@@ -5525,11 +5527,11 @@ msgstr "XSLT - 元素"
 
 #: plugins/taglist/XSLT.tags.xml.in:8
 msgid "apply-imports"
-msgstr ""
+msgstr "应用导入"
 
 #: plugins/taglist/XSLT.tags.xml.in:12
 msgid "apply-templates"
-msgstr ""
+msgstr "应用-模板"
 
 #: plugins/taglist/XSLT.tags.xml.in:16 plugins/taglist/XSLT.tags.xml.in:303
 msgid "attribute"
@@ -5537,7 +5539,7 @@ msgstr "attribute"
 
 #: plugins/taglist/XSLT.tags.xml.in:20
 msgid "attribute-set"
-msgstr ""
+msgstr "属性-设置"
 
 #: plugins/taglist/XSLT.tags.xml.in:24
 msgid "call-template"
@@ -5545,15 +5547,15 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"
-msgstr ""
+msgstr "选择"
 
 #: plugins/taglist/XSLT.tags.xml.in:32 plugins/taglist/XSLT.tags.xml.in:150
 msgid "comment"
-msgstr ""
+msgstr "注释"
 
 #: plugins/taglist/XSLT.tags.xml.in:36
 msgid "copy"
-msgstr ""
+msgstr "复制"
 
 #: plugins/taglist/XSLT.tags.xml.in:39
 msgid "copy-of"
@@ -5978,7 +5980,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:143
 msgid "image"
-msgstr ""
+msgstr "image"
 
 #: plugins/taglist/XUL.tags.xml.in:151
 msgid "keyset"
@@ -6266,11 +6268,11 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:494
 msgid "treeitem"
-msgstr ""
+msgstr "第三的"
 
 #: plugins/taglist/XUL.tags.xml.in:499
 msgid "treerow"
-msgstr ""
+msgstr "树"
 
 #: plugins/taglist/XUL.tags.xml.in:504
 msgid "treeseparator"
@@ -6278,7 +6280,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:509
 msgid "triple"
-msgstr ""
+msgstr "三倍的"
 
 #: plugins/taglist/XUL.tags.xml.in:514
 msgid "vbox"
@@ -6286,15 +6288,15 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:519
 msgid "window"
-msgstr ""
+msgstr "窗口"
 
 #: plugins/taglist/XUL.tags.xml.in:525
 msgid "wizard"
-msgstr ""
+msgstr "向导"
 
 #: plugins/taglist/XUL.tags.xml.in:530
 msgid "wizardpage"
-msgstr ""
+msgstr "向导页"
 
 #: plugins/time/org.mate.pluma.plugins.time.gschema.xml.in:12
 msgid "Prompt type"
