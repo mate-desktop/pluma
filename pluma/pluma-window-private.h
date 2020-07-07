@@ -34,8 +34,8 @@
 #include <libpeas/peas-extension-set.h>
 
 #include "pluma/pluma-window.h"
-#include "pluma-prefs-manager.h"
 #include "pluma-message-bus.h"
+#include "pluma-settings.h"
 
 G_BEGIN_DECLS
 
@@ -43,6 +43,8 @@ G_BEGIN_DECLS
 
 struct _PlumaWindowPrivate
 {
+	GSettings      *editor_settings;
+
 	GtkWidget      *notebook;
 
 	GtkWidget      *side_panel;

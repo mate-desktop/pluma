@@ -41,7 +41,7 @@
       <summary>Autosave</summary>
       <description>Whether pluma should automatically save modified files after a time interval.  You can set the time interval with the "Autosave Interval" option.</description>
     </key>
-    <key name="auto-save-interval" type="i">
+    <key name="auto-save-interval" type="u">
       <default>10</default>
       <summary>Autosave Interval</summary>
       <description>Number of minutes after which pluma will automatically save modified files.  This will only take effect if the "Autosave" option is turned on.</description>
@@ -56,7 +56,7 @@
       <summary>Writable VFS schemes</summary>
       <description>List of VFS schemes pluma supports in write mode. The 'file' scheme is writable by default.</description>
     </key>
-    <key name="max-undo-actions" type="i">
+    <key name="max-undo-actions" type="u">
       <default>2000</default>
       <summary>Maximum Number of Undo Actions</summary>
       <description>Maximum number of actions that pluma will be able to undo or redo. Use "-1" for unlimited number of actions.</description>
@@ -66,7 +66,7 @@
       <summary>Line Wrapping Mode</summary>
       <description>Specifies how to wrap long lines in the editing area. Use "GTK_WRAP_NONE" for no wrapping, "GTK_WRAP_WORD" for wrapping at word boundaries, and "GTK_WRAP_CHAR" for wrapping at individual character boundaries.  Note that the values are case-sensitive, so make sure they appear exactly as mentioned here.</description>
     </key>
-    <key name="tabs-size" type="i">
+    <key name="tabs-size" type="u">
       <default>4</default>
       <summary>Tab Size</summary>
       <description>Specifies the number of spaces that should be displayed instead of Tab characters.</description>
@@ -101,7 +101,7 @@
       <summary>Display Right Margin</summary>
       <description>Whether pluma should display the right margin in the editing area.</description>
     </key>
-    <key name="right-margin-position" type="i">
+    <key name="right-margin-position" type="u">
       <default>80</default>
       <summary>Right Margin Position</summary>
       <description>Specifies the position of the right margin.</description>
@@ -116,12 +116,12 @@
       <summary>Restore Previous Cursor Position</summary>
       <description>Whether pluma should restore the previous cursor position when a file is loaded.</description>
     </key>
-    <key name="enable-search-highlighting" type="b">
+    <key name="search-highlighting" type="b">
       <default>true</default>
       <summary>Enable Search Highlighting</summary>
       <description>Whether pluma should highlight all the occurrences of the searched text.</description>
     </key>
-    <key name="enable-syntax-highlighting" type="b">
+    <key name="syntax-highlighting" type="b">
       <default>true</default>
       <summary>Enable Syntax Highlighting</summary>
       <description>Whether pluma should enable syntax highlighting.</description>
@@ -156,7 +156,7 @@
       <summary>Bottom Panel is Visible</summary>
       <description>Whether the bottom panel at the bottom of editing windows should be visible.</description>
     </key>
-    <key name="max-recents" type="i">
+    <key name="max-recents" type="u">
       <default>5</default>
       <summary>Maximum Recent Files</summary>
       <description>Specifies the maximum number of recently opened files that will be displayed in the "Recent Files" submenu.</description>
@@ -176,7 +176,7 @@
       <summary>Printing Line Wrapping Mode</summary>
       <description>Specifies how to wrap long lines for printing.  Use "GTK_WRAP_NONE" for no wrapping, "GTK_WRAP_WORD" for wrapping at word boundaries, and "GTK_WRAP_CHAR" for wrapping at individual character boundaries.  Note that the values are case-sensitive, so make sure they appear exactly as mentioned here.</description>
     </key>
-    <key name="print-line-numbers" type="i">
+    <key name="print-line-numbers" type="u">
       <default>0</default>
       <summary>Print Line Numbers</summary>
       <description>If this value is 0, then no line numbers will be inserted when printing a document.  Otherwise, pluma will print line numbers every such number of lines.</description>
@@ -240,6 +240,41 @@
       <default>'show-none'</default>
       <summary>Show spaces</summary>
       <description>Whether pluma should show spaces in the editor window: 'show-none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' showing all spaces.</description>
+    </key>
+    <key name="state" type="i">
+      <default>0</default>
+      <summary>state</summary>
+      <description>The pluma window state</description>
+    </key>
+    <key name="size" type="(ii)">
+      <default>(650, 500)</default>
+      <summary>size</summary>
+      <description>The pluma window size</description>
+    </key>
+    <key name="side-panel-size" type="i">
+      <default>200</default>
+      <summary>side-panel-size</summary>
+      <description>The pluma side-panel-size</description>
+    </key>
+    <key name="side-panel-active-page" type="i">
+      <default>0</default>
+      <summary>side-panel-active-page</summary>
+      <description>The pluma side-panel-active-page</description>
+    </key>
+    <key name="bottom-panel-size" type="i">
+      <default>140</default>
+      <summary>bottom-panel-size</summary>
+      <description>The pluma bottom-panel-size</description>
+    </key>
+    <key name="bottom-panel-active-page" type="i">
+      <default>0</default>
+      <summary>bottom-panel-active-page</summary>
+      <description>The pluma bottom-panel-active-page</description>
+    </key>
+    <key name="filter-id" type="i">
+      <default>0</default>
+      <summary>filter-id</summary>
+      <description>The pluma filter-id</description>
     </key>
   </schema>
 </schemalist>

@@ -48,14 +48,15 @@
 #include "pluma-tab-label.h"
 #include "pluma-marshal.h"
 #include "pluma-window.h"
-#include "pluma-prefs-manager.h"
-#include "pluma-prefs-manager-private.h"
+#include "pluma-settings.h"
 
 #define AFTER_ALL_TABS -1
 #define NOT_IN_APP_WINDOWS -2
 
 struct _PlumaNotebookPrivate
 {
+	GSettings     *editor_settings;
+
 	GList         *focused_pages;
 	gulong         motion_notify_handler_id;
 	gint           x_start;
@@ -67,8 +68,6 @@ struct _PlumaNotebookPrivate
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (PlumaNotebook, pluma_notebook, GTK_TYPE_NOTEBOOK)
-
-static void pluma_notebook_finalize (GObject *object);
 
 static gboolean pluma_notebook_change_current_page (GtkNotebook *notebook,
 						    gint         offset);
@@ -98,6 +97,16 @@ enum
 static guint signals[LAST_SIGNAL] = { 0 };
 
 static void
+pluma_notebook_finalize (GObject *object)
+{
+	PlumaNotebook *notebook = PLUMA_NOTEBOOK (object);
+
+	g_list_free (notebook->priv->focused_pages);
+
+	G_OBJECT_CLASS (pluma_notebook_parent_class)->finalize (object);
+}
+
+static void
 pluma_notebook_dispose (GObject *object)
 {
 	PlumaNotebook *notebook = PLUMA_NOTEBOOK (object);
@@ -117,6 +126,8 @@ pluma_notebook_dispose (GObject *object)
 		g_list_free (children);
 		notebook->priv->destroy_has_run = TRUE;
 	}
+
+	g_clear_object (&notebook->priv->editor_settings);
 
 	G_OBJECT_CLASS (pluma_notebook_parent_class)->dispose (object);
 }
@@ -786,13 +797,15 @@ update_tabs_visibility (PlumaNotebook *nb)
 
 	num = gtk_notebook_get_n_pages (GTK_NOTEBOOK (nb));
 
-	show_tabs = (g_settings_get_boolean (pluma_prefs_manager->settings, "show-single-tab") || num > 1);
+	show_tabs = (g_settings_get_boolean (nb->priv->editor_settings, PLUMA_SETTINGS_SHOW_SINGLE_TAB) || (num > 1));
 
-	if (g_settings_get_boolean (pluma_prefs_manager->settings, "show-tabs-with-side-pane"))
+	if (g_settings_get_boolean (nb->priv->editor_settings, PLUMA_SETTINGS_SHOW_TABS_WITH_SIDE_PANE))
 		gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), show_tabs);
 	else
 	{
-		if (pluma_prefs_manager_get_side_pane_visible ())
+		gboolean visible = g_settings_get_boolean (nb->priv->editor_settings, PLUMA_SETTINGS_SIDE_PANE_VISIBLE);
+
+		if (visible)
 			gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), FALSE);
 		else
 			gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), show_tabs);
@@ -803,6 +816,8 @@ static void
 pluma_notebook_init (PlumaNotebook *notebook)
 {
 	notebook->priv = pluma_notebook_get_instance_private (notebook);
+
+	notebook->priv->editor_settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	notebook->priv->close_buttons_sensitive = TRUE;
 	notebook->priv->tab_drag_and_drop_enabled = TRUE;
@@ -843,16 +858,6 @@ pluma_notebook_init (PlumaNotebook *notebook)
 				"switch_page",
                                 G_CALLBACK (pluma_notebook_switch_page_cb),
                                 NULL);
-}
-
-static void
-pluma_notebook_finalize (GObject *object)
-{
-	PlumaNotebook *notebook = PLUMA_NOTEBOOK (object);
-
-	g_list_free (notebook->priv->focused_pages);
-
-	G_OBJECT_CLASS (pluma_notebook_parent_class)->finalize (object);
 }
 
 /*

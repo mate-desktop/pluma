@@ -38,24 +38,27 @@ G_BEGIN_DECLS
 
 typedef struct _PlumaEncoding PlumaEncoding;
 
-#define PLUMA_TYPE_ENCODING     (pluma_encoding_get_type ())
+#define PLUMA_TYPE_ENCODING (pluma_encoding_get_type ())
 
-GType              	 pluma_encoding_get_type (void) G_GNUC_CONST;
+GType                    pluma_encoding_get_type (void) G_GNUC_CONST;
 
-const PlumaEncoding	*pluma_encoding_get_from_charset (const gchar         *charset);
-const PlumaEncoding	*pluma_encoding_get_from_index	 (gint                 index);
+const PlumaEncoding     *pluma_encoding_get_from_charset (const gchar *charset);
+const PlumaEncoding     *pluma_encoding_get_from_index   (gint         index);
 
-gchar 			*pluma_encoding_to_string	 (const PlumaEncoding *enc);
+gchar                   *pluma_encoding_to_string        (const PlumaEncoding *enc);
 
-const gchar		*pluma_encoding_get_name	 (const PlumaEncoding *enc);
-const gchar		*pluma_encoding_get_charset	 (const PlumaEncoding *enc);
+const gchar             *pluma_encoding_get_name         (const PlumaEncoding *enc);
+const gchar             *pluma_encoding_get_charset      (const PlumaEncoding *enc);
 
-const PlumaEncoding 	*pluma_encoding_get_utf8	 (void);
-const PlumaEncoding 	*pluma_encoding_get_current	 (void);
+const PlumaEncoding     *pluma_encoding_get_utf8         (void);
+const PlumaEncoding     *pluma_encoding_get_current      (void);
 
 /* These should not be used, they are just to make python bindings happy */
-PlumaEncoding		*pluma_encoding_copy		 (const PlumaEncoding *enc);
-void               	 pluma_encoding_free		 (PlumaEncoding       *enc);
+PlumaEncoding           *pluma_encoding_copy             (const PlumaEncoding *enc);
+void                     pluma_encoding_free             (PlumaEncoding       *enc);
+
+GSList                 *_pluma_encoding_strv_to_list     (const gchar * const *enc_str);
+gchar                 **_pluma_encoding_list_to_strv     (const GSList        *enc);
 
 G_END_DECLS
 

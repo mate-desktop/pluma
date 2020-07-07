@@ -38,15 +38,16 @@
 
 #include "pluma-print-job.h"
 #include "pluma-debug.h"
-#include "pluma-prefs-manager.h"
 #include "pluma-print-preview.h"
 #include "pluma-marshal.h"
 #include "pluma-utils.h"
 #include "pluma-dirs.h"
-
+#include "pluma-settings.h"
 
 struct _PlumaPrintJobPrivate
 {
+	GSettings                *print_settings;
+
 	PlumaView                *view;
 	PlumaDocument            *doc;
 
@@ -164,6 +165,16 @@ pluma_print_job_finalize (GObject *object)
 }
 
 static void
+pluma_print_job_dispose (GObject *object)
+{
+	PlumaPrintJob *job = PLUMA_PRINT_JOB (object);
+
+	g_clear_object (&job->priv->print_settings);
+
+	G_OBJECT_CLASS (pluma_print_job_parent_class)->dispose (object);
+}
+
+static void
 pluma_print_job_class_init (PlumaPrintJobClass *klass)
 {
 	GObjectClass *object_class;
@@ -173,6 +184,7 @@ pluma_print_job_class_init (PlumaPrintJobClass *klass)
 	object_class->get_property = pluma_print_job_get_property;
 	object_class->set_property = pluma_print_job_set_property;
 	object_class->finalize = pluma_print_job_finalize;
+	object_class->dispose = pluma_print_job_dispose;
 
 	g_object_class_install_property (object_class,
 					 PROP_VIEW,
@@ -223,15 +235,8 @@ static void
 line_numbers_checkbutton_toggled (GtkToggleButton *button,
 				  PlumaPrintJob   *job)
 {
-	if (gtk_toggle_button_get_active (button))
-	{
-		gtk_widget_set_sensitive (job->priv->line_numbers_hbox,
-					  pluma_prefs_manager_print_line_numbers_can_set ());
-	}
-	else
-	{
-		gtk_widget_set_sensitive (job->priv->line_numbers_hbox, FALSE);
-	}
+	gtk_widget_set_sensitive (job->priv->line_numbers_hbox,
+				  gtk_toggle_button_get_active (button));
 }
 
 static void
@@ -261,41 +266,27 @@ restore_button_clicked (GtkButton     *button,
 			PlumaPrintJob *job)
 
 {
-	if (pluma_prefs_manager_print_font_body_can_set ())
-	{
-		gchar *font;
+	gchar *body, *header, *numbers;
 
-		font = pluma_prefs_manager_get_default_print_font_body ();
+	body = g_settings_get_string (job->priv->print_settings,
+				      PLUMA_SETTINGS_PRINT_FONT_BODY_PANGO);
+	header = g_settings_get_string (job->priv->print_settings,
+					PLUMA_SETTINGS_PRINT_FONT_HEADER_PANGO);
+	numbers = g_settings_get_string (job->priv->print_settings,
+					 PLUMA_SETTINGS_PRINT_FONT_NUMBERS_PANGO);
 
-		gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->body_fontbutton),
-					   font);
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->body_fontbutton),
+				   body);
 
-		g_free (font);
-	}
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->headers_fontbutton),
+				   header);
 
-	if (pluma_prefs_manager_print_font_header_can_set ())
-	{
-		gchar *font;
+	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->numbers_fontbutton),
+				   numbers);
 
-		font = pluma_prefs_manager_get_default_print_font_header ();
-
-		gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->headers_fontbutton),
-					   font);
-
-		g_free (font);
-	}
-
-	if (pluma_prefs_manager_print_font_numbers_can_set ())
-	{
-		gchar *font;
-
-		font = pluma_prefs_manager_get_default_print_font_numbers ();
-
-		gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->numbers_fontbutton),
-					   font);
-
-		g_free (font);
-	}
+	g_free (body);
+	g_free (header);
+	g_free (numbers);
 }
 
 static GObject *
@@ -305,11 +296,12 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 	gboolean ret;
 	GtkWidget *widget;
 	GtkWidget *error_widget;
-	gchar *font;
-	gint line_numbers;
-	gboolean can_set;
+	guint line_numbers;
 	GtkWrapMode wrap_mode;
 	gchar *file;
+	gboolean syntax_hl;
+	gboolean print_header;
+	gchar *font_body, *font_header, *font_numbers;
 	gchar *root_objects[] = {
 		"adjustment1",
 		"contents",
@@ -344,31 +336,38 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 		return G_OBJECT (error_widget);
 	}
 
+	/* Get all settings values */
+	syntax_hl = g_settings_get_boolean (job->priv->print_settings,
+					    PLUMA_SETTINGS_PRINT_SYNTAX_HIGHLIGHTING);
+	print_header = g_settings_get_boolean (job->priv->print_settings,
+					       PLUMA_SETTINGS_PRINT_HEADER);
+	line_numbers = g_settings_get_uint (job->priv->print_settings, PLUMA_SETTINGS_PRINT_LINE_NUMBERS);
+
+	font_body = g_settings_get_string (job->priv->print_settings,
+					   PLUMA_SETTINGS_PRINT_FONT_BODY_PANGO);
+	font_header = g_settings_get_string (job->priv->print_settings,
+					     PLUMA_SETTINGS_PRINT_FONT_HEADER_PANGO);
+	font_numbers = g_settings_get_string (job->priv->print_settings,
+					      PLUMA_SETTINGS_PRINT_FONT_NUMBERS_PANGO);
+
 	/* Print syntax */
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (job->priv->syntax_checkbutton),
-				      pluma_prefs_manager_get_print_syntax_hl ());
-	gtk_widget_set_sensitive (job->priv->syntax_checkbutton,
-				  pluma_prefs_manager_print_syntax_hl_can_set ());
+				      syntax_hl);
 
 	/* Print page headers */
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (job->priv->page_header_checkbutton),
-				      pluma_prefs_manager_get_print_header ());
-	gtk_widget_set_sensitive (job->priv->page_header_checkbutton,
-				  pluma_prefs_manager_print_header_can_set ());
+				      print_header);
+
 
 	/* Line numbers */
-	line_numbers =  pluma_prefs_manager_get_print_line_numbers ();
-	can_set = pluma_prefs_manager_print_line_numbers_can_set ();
-
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (job->priv->line_numbers_checkbutton),
 				      line_numbers > 0);
-	gtk_widget_set_sensitive (job->priv->line_numbers_checkbutton, can_set);
 
 	if (line_numbers > 0)
 	{
 		gtk_spin_button_set_value (GTK_SPIN_BUTTON (job->priv->line_numbers_spinbutton),
 					   (guint) line_numbers);
-		gtk_widget_set_sensitive (job->priv->line_numbers_hbox, can_set);
+		gtk_widget_set_sensitive (job->priv->line_numbers_hbox, TRUE);
 	}
 	else
 	{
@@ -378,7 +377,8 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 	}
 
 	/* Text wrapping */
-	wrap_mode = pluma_prefs_manager_get_print_wrap_mode ();
+	wrap_mode = pluma_settings_get_wrap_mode (job->priv->print_settings,
+						  PLUMA_SETTINGS_WRAP_MODE);
 
 	switch (wrap_mode)
 	{
@@ -401,39 +401,21 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 				GTK_TOGGLE_BUTTON (job->priv->do_not_split_checkbutton), TRUE);
 	}
 
-	can_set = pluma_prefs_manager_print_wrap_mode_can_set ();
-
-	gtk_widget_set_sensitive (job->priv->text_wrapping_checkbutton, can_set);
 	gtk_widget_set_sensitive (job->priv->do_not_split_checkbutton,
-				  can_set && (wrap_mode != GTK_WRAP_NONE));
+				  (wrap_mode != GTK_WRAP_NONE));
 
 	/* Set initial values */
-	font = pluma_prefs_manager_get_print_font_body ();
 	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->body_fontbutton),
-				   font);
-	g_free (font);
+				       font_body);
+	g_free (font_body);
 
-	font = pluma_prefs_manager_get_print_font_header ();
 	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->headers_fontbutton),
-				   font);
-	g_free (font);
+				       font_header);
+	g_free (font_header);
 
-	font = pluma_prefs_manager_get_print_font_numbers ();
 	gtk_font_chooser_set_font (GTK_FONT_CHOOSER (job->priv->numbers_fontbutton),
-				   font);
-	g_free (font);
-
-	can_set = pluma_prefs_manager_print_font_body_can_set ();
-	gtk_widget_set_sensitive (job->priv->body_fontbutton, can_set);
-	gtk_widget_set_sensitive (job->priv->body_font_label, can_set);
-
-	can_set = pluma_prefs_manager_print_font_header_can_set ();
-	gtk_widget_set_sensitive (job->priv->headers_fontbutton, can_set);
-	gtk_widget_set_sensitive (job->priv->headers_font_label, can_set);
-
-	can_set = pluma_prefs_manager_print_font_numbers_can_set ();
-	gtk_widget_set_sensitive (job->priv->numbers_fontbutton, can_set);
-	gtk_widget_set_sensitive (job->priv->numbers_font_label, can_set);
+				       font_numbers);
+	g_free (font_numbers);
 
 	g_signal_connect (job->priv->line_numbers_checkbutton,
 			  "toggled",
@@ -460,39 +442,63 @@ custom_widget_apply_cb (GtkPrintOperation *operation,
 			GtkWidget         *widget,
 			PlumaPrintJob     *job)
 {
-	pluma_prefs_manager_set_print_syntax_hl (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (job->priv->syntax_checkbutton)));
+	gboolean syntax, page_header;
+	const gchar *body, *header, *numbers;
 
-	pluma_prefs_manager_set_print_header (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (job->priv->page_header_checkbutton)));
+	syntax = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (job->priv->syntax_checkbutton));
+	page_header = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (job->priv->page_header_checkbutton));
+	body = gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->body_fontbutton));
+	header = gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->headers_fontbutton));
+	numbers = gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->numbers_fontbutton));
+
+	g_settings_set_boolean (job->priv->print_settings,
+				PLUMA_SETTINGS_PRINT_SYNTAX_HIGHLIGHTING, syntax);
+	g_settings_set_boolean (job->priv->print_settings, PLUMA_SETTINGS_PRINT_HEADER,
+				page_header);
+	g_settings_set_string (job->priv->print_settings, PLUMA_SETTINGS_PRINT_FONT_BODY_PANGO,
+			       body);
+	g_settings_set_string (job->priv->print_settings, PLUMA_SETTINGS_PRINT_FONT_HEADER_PANGO,
+			       header);
+	g_settings_set_string (job->priv->print_settings, PLUMA_SETTINGS_PRINT_FONT_NUMBERS_PANGO,
+			       numbers);
+
 
 	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (job->priv->line_numbers_checkbutton)))
 	{
-		pluma_prefs_manager_set_print_line_numbers (
-			MAX (1, gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (job->priv->line_numbers_spinbutton))));
+		g_settings_set_uint (job->priv->print_settings,
+				     PLUMA_SETTINGS_PRINT_LINE_NUMBERS,
+				     MAX (1, gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (job->priv->line_numbers_spinbutton))));
+
 	}
 	else
 	{
-		pluma_prefs_manager_set_print_line_numbers (0);
+		g_settings_set_uint (job->priv->print_settings,
+				     PLUMA_SETTINGS_PRINT_LINE_NUMBERS, 0);
 	}
 
 	if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (job->priv->text_wrapping_checkbutton)))
 	{
-		pluma_prefs_manager_set_print_wrap_mode (GTK_WRAP_NONE);
+		pluma_settings_set_wrap_mode (job->priv->print_settings,
+					      PLUMA_SETTINGS_PRINT_WRAP_MODE,
+					      GTK_WRAP_NONE);
 	}
 	else
 	{
 		if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (job->priv->do_not_split_checkbutton)))
 		{
-			pluma_prefs_manager_set_print_wrap_mode (GTK_WRAP_WORD);
+			pluma_settings_set_wrap_mode (job->priv->print_settings,
+						      PLUMA_SETTINGS_PRINT_WRAP_MODE,
+						      GTK_WRAP_WORD);
+
 		}
 		else
 		{
-			pluma_prefs_manager_set_print_wrap_mode (GTK_WRAP_CHAR);
+			pluma_settings_set_wrap_mode (job->priv->print_settings,
+						      PLUMA_SETTINGS_PRINT_WRAP_MODE,
+						      GTK_WRAP_CHAR);
+
 		}
 	}
-
-	pluma_prefs_manager_set_print_font_body (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->body_fontbutton)));
-	pluma_prefs_manager_set_print_font_header (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->headers_fontbutton)));
-	pluma_prefs_manager_set_print_font_numbers (gtk_font_chooser_get_font (GTK_FONT_CHOOSER (job->priv->numbers_fontbutton)));
 }
 
 static void
@@ -501,21 +507,40 @@ create_compositor (PlumaPrintJob *job)
 	gchar *print_font_body;
 	gchar *print_font_header;
 	gchar *print_font_numbers;
+	gboolean syntax_hl;
+	GtkWrapMode wrap_mode;
+	guint print_line_numbers;
+	gboolean print_header;
+
 
 	/* Create and initialize print compositor */
-	print_font_body = pluma_prefs_manager_get_print_font_body ();
-	print_font_header = pluma_prefs_manager_get_print_font_header ();
-	print_font_numbers = pluma_prefs_manager_get_print_font_numbers ();
+	print_font_body = g_settings_get_string (job->priv->print_settings,
+						 PLUMA_SETTINGS_PRINT_FONT_BODY_PANGO);
+	print_font_header = g_settings_get_string (job->priv->print_settings,
+						   PLUMA_SETTINGS_PRINT_FONT_HEADER_PANGO);
+	print_font_numbers = g_settings_get_string (job->priv->print_settings,
+						    PLUMA_SETTINGS_PRINT_FONT_NUMBERS_PANGO);
+	syntax_hl = g_settings_get_boolean (job->priv->print_settings,
+					    PLUMA_SETTINGS_PRINT_SYNTAX_HIGHLIGHTING);
+	print_line_numbers = g_settings_get_uint (job->priv->print_settings, PLUMA_SETTINGS_PRINT_LINE_NUMBERS);
+	print_header = g_settings_get_boolean (job->priv->print_settings,
+					       PLUMA_SETTINGS_PRINT_HEADER);
+	wrap_mode = pluma_settings_get_wrap_mode (job->priv->print_settings,
+						  PLUMA_SETTINGS_WRAP_MODE);
+
 
 	job->priv->compositor = GTK_SOURCE_PRINT_COMPOSITOR (
 					g_object_new (GTK_SOURCE_TYPE_PRINT_COMPOSITOR,
 						     "buffer", GTK_SOURCE_BUFFER (job->priv->doc),
 						     "tab-width", gtk_source_view_get_tab_width (GTK_SOURCE_VIEW (job->priv->view)),
 						     "highlight-syntax", gtk_source_buffer_get_highlight_syntax (GTK_SOURCE_BUFFER (job->priv->doc)) &&
-					   				 pluma_prefs_manager_get_print_syntax_hl (),
-						     "wrap-mode", pluma_prefs_manager_get_print_wrap_mode (),
-						     "print-line-numbers", pluma_prefs_manager_get_print_line_numbers (),
-						     "print-header", pluma_prefs_manager_get_print_header (),
+					   				 syntax_hl,
+						     "wrap-mode", wrap_mode,
+						     "print-line-numbers", print_line_numbers,
+						     "print-header", print_header,
+						     "print-footer", FALSE,
+						     "body-font-name", print_font_body,
+						     "line-numbers-font-name", print_font_numbers,
 						     "print-footer", FALSE,
 						     "body-font-name", print_font_body,
 						     "line-numbers-font-name", print_font_numbers,
@@ -526,7 +551,7 @@ create_compositor (PlumaPrintJob *job)
 	g_free (print_font_header);
 	g_free (print_font_numbers);
 
-	if (pluma_prefs_manager_get_print_header ())
+	if (print_header)
 	{
 		gchar *doc_name;
 		gchar *name_to_display;
@@ -798,6 +823,8 @@ static void
 pluma_print_job_init (PlumaPrintJob *job)
 {
 	job->priv = pluma_print_job_get_instance_private (job);
+
+	job->priv->print_settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	job->priv->status = PLUMA_PRINT_JOB_STATUS_INIT;
 

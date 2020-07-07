@@ -52,10 +52,10 @@
 #include "pluma-dirs.h"
 #include "pluma-encodings.h"
 #include "pluma-plugins-engine.h"
-#include "pluma-prefs-manager-app.h"
 #include "pluma-session.h"
 #include "pluma-utils.h"
 #include "pluma-window.h"
+#include "pluma-settings.h"
 
 #include "eggsmclient.h"
 #include "eggdesktopfile.h"
@@ -599,10 +599,6 @@ main (int argc, char *argv[])
 	/* Set the associated .desktop file */
 	egg_set_desktop_file (DATADIR "/applications/pluma.desktop");
 
-	/* Load user preferences */
-	pluma_debug_message (DEBUG_APP, "Init prefs manager");
-	pluma_prefs_manager_app_init ();
-
 	/* Init plugins engine */
 	pluma_debug_message (DEBUG_APP, "Init plugins");
 	engine = pluma_plugins_engine_get_default ();
@@ -661,7 +657,8 @@ main (int argc, char *argv[])
 	 * finalize it properly.
 	 */
 	g_object_unref (engine);
-	pluma_prefs_manager_app_shutdown ();
+
+	pluma_settings_unref_singleton ();
 
 #ifndef ENABLE_GVFS_METADATA
 	pluma_metadata_manager_shutdown ();

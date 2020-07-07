@@ -19,14 +19,15 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#include "modeline-parser.h"
+
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <gtk/gtk.h>
 #include <pluma/pluma-language-manager.h>
-#include <pluma/pluma-prefs-manager.h>
 #include <pluma/pluma-debug.h>
-#include "modeline-parser.h"
+#include <pluma/pluma-settings.h>
 
 #define MODELINES_LANGUAGE_MAPPINGS_FILE "language-mappings"
 
@@ -675,6 +676,8 @@ modeline_parser_apply_modeline (GtkSourceView *view)
 	GtkTextBuffer *buffer;
 	GtkTextIter iter, liter;
 	gint line_count;
+	/* FIXME: avoid making a new gsettings variable */
+	GSettings *settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	options.language_id = NULL;
 	options.set = MODELINE_SET_NONE;
@@ -766,13 +769,13 @@ modeline_parser_apply_modeline (GtkSourceView *view)
 	if (has_option (&options, MODELINE_SET_INSERT_SPACES))
 	{
 		gtk_source_view_set_insert_spaces_instead_of_tabs
-							(view, options.insert_spaces);
+		                                (view, options.insert_spaces);
 	}
 	else if (check_previous (view, previous, MODELINE_SET_INSERT_SPACES))
 	{
 		gtk_source_view_set_insert_spaces_instead_of_tabs
-							(view,
-							 pluma_prefs_manager_get_insert_spaces ());
+		         (view,
+		         g_settings_get_boolean (settings, PLUMA_SETTINGS_INSERT_SPACES));
 	}
 
 	if (has_option (&options, MODELINE_SET_TAB_WIDTH))
@@ -782,7 +785,7 @@ modeline_parser_apply_modeline (GtkSourceView *view)
 	else if (check_previous (view, previous, MODELINE_SET_TAB_WIDTH))
 	{
 		gtk_source_view_set_tab_width (view,
-		                               pluma_prefs_manager_get_tabs_size ());
+		                               g_settings_get_uint (settings, PLUMA_SETTINGS_TABS_SIZE));
 	}
 
 	if (has_option (&options, MODELINE_SET_INDENT_WIDTH))
@@ -801,7 +804,7 @@ modeline_parser_apply_modeline (GtkSourceView *view)
 	else if (check_previous (view, previous, MODELINE_SET_WRAP_MODE))
 	{
 		gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (view),
-		                             pluma_prefs_manager_get_wrap_mode ());
+		                             g_settings_get_enum (settings, PLUMA_SETTINGS_WRAP_MODE));
 	}
 
 	if (has_option (&options, MODELINE_SET_RIGHT_MARGIN_POSITION))
@@ -811,7 +814,7 @@ modeline_parser_apply_modeline (GtkSourceView *view)
 	else if (check_previous (view, previous, MODELINE_SET_RIGHT_MARGIN_POSITION))
 	{
 		gtk_source_view_set_right_margin_position (view,
-		                                           pluma_prefs_manager_get_right_margin_position ());
+		                                           g_settings_get_uint (settings, PLUMA_SETTINGS_RIGHT_MARGIN_POSITION));
 	}
 
 	if (has_option (&options, MODELINE_SET_SHOW_RIGHT_MARGIN))
@@ -821,7 +824,7 @@ modeline_parser_apply_modeline (GtkSourceView *view)
 	else if (check_previous (view, previous, MODELINE_SET_SHOW_RIGHT_MARGIN))
 	{
 		gtk_source_view_set_show_right_margin (view,
-		                                       pluma_prefs_manager_get_display_right_margin ());
+		                                       g_settings_get_boolean (settings, PLUMA_SETTINGS_DISPLAY_RIGHT_MARGIN));
 	}
 
 	if (previous)
@@ -842,6 +845,7 @@ modeline_parser_apply_modeline (GtkSourceView *view)
 	}
 
 	g_free (options.language_id);
+	g_object_unref (settings);
 }
 
 void

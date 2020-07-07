@@ -47,8 +47,8 @@
 
 #include "pluma-utils.h"
 
+#include "pluma-settings.h"
 #include "pluma-document.h"
-#include "pluma-prefs-manager.h"
 #include "pluma-debug.h"
 
 /* For the workspace/viewport stuff */
@@ -79,11 +79,14 @@ pluma_utils_uri_has_file_scheme (const gchar *uri)
 gboolean
 pluma_utils_uri_has_writable_scheme (const gchar *uri)
 {
+	/* FIXME: Avoid making a new settings variable here. */
+	GSettings *settings;
 	GFile *gfile;
 	gchar *scheme;
 	GSList *writable_schemes;
 	gboolean res;
 
+	settings = g_settings_new (PLUMA_SCHEMA_ID);
 	gfile = g_file_new_for_uri (uri);
 	scheme = g_file_get_uri_scheme (gfile);
 
@@ -91,7 +94,7 @@ pluma_utils_uri_has_writable_scheme (const gchar *uri)
 
 	g_object_unref (gfile);
 
-	writable_schemes = pluma_prefs_manager_get_writable_vfs_schemes ();
+	writable_schemes = pluma_settings_get_writable_vfs_schemes (settings);
 
 	/* CHECK: should we use g_ascii_strcasecmp? - Paolo (Nov 6, 2005) */
 	res = (g_slist_find_custom (writable_schemes,
@@ -101,6 +104,7 @@ pluma_utils_uri_has_writable_scheme (const gchar *uri)
 	g_slist_free_full (writable_schemes, g_free);
 
 	g_free (scheme);
+	g_object_unref (settings);
 
 	return res;
 }
@@ -1694,3 +1698,4 @@ pluma_image_menu_item_new_from_pixbuf (GdkPixbuf   *icon_pixbuf,
 
 	return menuitem;
 }
+

@@ -41,7 +41,6 @@
 #include <gtk/gtk.h>
 
 #include "pluma-style-scheme-manager.h"
-#include "pluma-prefs-manager.h"
 #include "pluma-dirs.h"
 
 static GtkSourceStyleSchemeManager *style_scheme_manager = NULL;

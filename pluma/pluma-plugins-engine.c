@@ -40,8 +40,8 @@
 #include "pluma-plugins-engine.h"
 #include "pluma-debug.h"
 #include "pluma-app.h"
-#include "pluma-prefs-manager.h"
 #include "pluma-dirs.h"
+#include "pluma-settings.h"
 
 struct _PlumaPluginsEnginePrivate
 {
@@ -64,7 +64,7 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 
 	engine->priv = pluma_plugins_engine_get_instance_private (engine);
 
-	engine->priv->plugin_settings = g_settings_new (PLUMA_SCHEMA);
+	engine->priv->plugin_settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	/* This should be moved to libpeas */
 	if (!g_irepository_require (g_irepository_get_default (),
@@ -104,7 +104,7 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 	                             pluma_dirs_get_pluma_plugins_data_dir ());
 
 	g_settings_bind (engine->priv->plugin_settings,
-	                 GPM_ACTIVE_PLUGINS,
+	                 PLUMA_SETTINGS_ACTIVE_PLUGINS,
 	                 engine,
 	                 "loaded-plugins",
 	                 G_SETTINGS_BIND_DEFAULT);

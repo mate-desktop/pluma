@@ -54,20 +54,22 @@
 #include "pluma-commands.h"
 #include "pluma-debug.h"
 #include "pluma-language-manager.h"
-#include "pluma-prefs-manager-app.h"
-#include "pluma-prefs-manager-private.h"
 #include "pluma-panel.h"
 #include "pluma-documents-panel.h"
 #include "pluma-plugins-engine.h"
 #include "pluma-enum-types.h"
 #include "pluma-dirs.h"
 #include "pluma-status-combo-box.h"
+#include "pluma-settings.h"
 
 #define LANGUAGE_NONE (const gchar *)"LangNone"
 #define PLUMA_UIFILE "pluma-ui.xml"
 #define TAB_WIDTH_DATA "PlumaWindowTabWidthData"
 #define LANGUAGE_DATA "PlumaWindowLanguageData"
 #define FULLSCREEN_ANIMATION_SPEED 4
+
+#define PLUMA_WINDOW_DEFAULT_WIDTH       650
+#define PLUMA_WINDOW_DEFAULT_HEIGHT      500
 
 /* Local variables */
 static gboolean cansave = TRUE;
@@ -128,32 +130,32 @@ save_panes_state (PlumaWindow *window)
 
 	pluma_debug (DEBUG_WINDOW);
 
-	if (pluma_prefs_manager_window_size_can_set ())
-		pluma_prefs_manager_set_window_size (window->priv->width,
-						     window->priv->height);
+	g_settings_set (window->priv->editor_settings, PLUMA_SETTINGS_WINDOW_SIZE,
+			"(ii)",	window->priv->width, window->priv->height);
 
-	if (pluma_prefs_manager_window_state_can_set ())
-		pluma_prefs_manager_set_window_state (window->priv->window_state);
+	g_settings_set_int (window->priv->editor_settings, PLUMA_SETTINGS_WINDOW_STATE,
+			    window->priv->window_state);
 
-	if ((window->priv->side_panel_size > 0) &&
-	    pluma_prefs_manager_side_panel_size_can_set ())
-		pluma_prefs_manager_set_side_panel_size	(
-					window->priv->side_panel_size);
+	if (window->priv->side_panel_size > 0)
+		g_settings_set_int (window->priv->editor_settings,
+				    PLUMA_SETTINGS_SIDE_PANEL_SIZE,
+				    window->priv->side_panel_size);
 
 	pane_page = _pluma_panel_get_active_item_id (PLUMA_PANEL (window->priv->side_panel));
-	if (pane_page != 0 &&
-	    pluma_prefs_manager_side_panel_active_page_can_set ())
-		pluma_prefs_manager_set_side_panel_active_page (pane_page);
+	if (pane_page != 0)
+		g_settings_set_int (window->priv->editor_settings,
+				    PLUMA_SETTINGS_SIDE_PANEL_ACTIVE_PAGE,
+				    pane_page);
 
-	if ((window->priv->bottom_panel_size > 0) &&
-	    pluma_prefs_manager_bottom_panel_size_can_set ())
-		pluma_prefs_manager_set_bottom_panel_size (
-					window->priv->bottom_panel_size);
+	if (window->priv->bottom_panel_size > 0)
+		g_settings_set_int (window->priv->editor_settings,
+				    PLUMA_SETTINGS_BOTTOM_PANEL_SIZE,
+				    window->priv->bottom_panel_size);
 
 	pane_page = _pluma_panel_get_active_item_id (PLUMA_PANEL (window->priv->bottom_panel));
-	if (pane_page != 0 &&
-	    pluma_prefs_manager_bottom_panel_active_page_can_set ())
-		pluma_prefs_manager_set_bottom_panel_active_page (pane_page);
+	if (pane_page != 0)
+		g_settings_set_int (window->priv->editor_settings,
+				    PLUMA_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE, pane_page);
 }
 
 static void
@@ -236,6 +238,9 @@ pluma_window_dispose (GObject *object)
 		window->priv->window_group = NULL;
 	}
 
+	/* We must free the settings after saving the panels */
+	g_clear_object (&window->priv->editor_settings);
+
 	/* Now that there have broken some reference loops,
 	 * force collection again.
 	 */
@@ -297,6 +302,8 @@ pluma_window_key_press_event (GtkWidget   *widget,
 	static gpointer grand_parent_class = NULL;
 	GtkWindow *window = GTK_WINDOW (widget);
 	gboolean handled = FALSE;
+	/* FIXME: avoid making a new gsettings variable here */
+	GSettings *settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	if (event->state & GDK_CONTROL_MASK)
 	{
@@ -304,7 +311,7 @@ pluma_window_key_press_event (GtkWidget   *widget,
 		gchar     *tempsize;
 		gint       nsize;
 
-		font = g_settings_get_string (pluma_prefs_manager->settings, "editor-font");
+		font = g_settings_get_string (settings, PLUMA_SETTINGS_EDITOR_FONT);
 		tempsize = g_strdup (font);
 
 		g_strreverse (tempsize);
@@ -322,10 +329,10 @@ pluma_window_key_press_event (GtkWidget   *widget,
 			nsize = nsize + 1;
 			sprintf (tempsize, "%d", nsize);
 
-			if (!g_settings_get_boolean (pluma_prefs_manager->settings, "use-default-font") && (nsize < 73))
+			if (!g_settings_get_boolean (settings, PLUMA_SETTINGS_USE_DEFAULT_FONT) && (nsize < 73))
 			{
 				gchar *tmp = g_strconcat (tempfont, tempsize, NULL);
-				g_settings_set_string (pluma_prefs_manager->settings, "editor-font", tmp);
+				g_settings_set_string (settings, PLUMA_SETTINGS_EDITOR_FONT, tmp);
 				g_free (tmp);
 			}
 		}
@@ -334,15 +341,15 @@ pluma_window_key_press_event (GtkWidget   *widget,
 			nsize = nsize - 1;
 			sprintf (tempsize, "%d", nsize);
 
-			if (!g_settings_get_boolean (pluma_prefs_manager->settings, "use-default-font") && (nsize > 5))
+			if (!g_settings_get_boolean (settings, PLUMA_SETTINGS_USE_DEFAULT_FONT) && (nsize > 5))
 			{
 				gchar *tmp = g_strconcat (tempfont, tempsize, NULL);
-				g_settings_set_string (pluma_prefs_manager->settings, "editor-font", tmp);
+				g_settings_set_string (settings, PLUMA_SETTINGS_EDITOR_FONT, tmp);
 				g_free (tmp);
 			}
 		}
 
-		if (g_settings_get_boolean (pluma_prefs_manager->settings, "ctrl-tab-switch-tabs"))
+		if (g_settings_get_boolean (settings, PLUMA_SETTINGS_CTRL_TABS_SWITCH_TABS))
 		{
 			GtkNotebook *notebook = GTK_NOTEBOOK (_pluma_window_get_notebook (PLUMA_WINDOW (window)));
 
@@ -370,6 +377,8 @@ pluma_window_key_press_event (GtkWidget   *widget,
 		g_free (font);
 		g_free (tempsize);
 	}
+
+	g_object_unref (settings);
 
 	if (grand_parent_class == NULL)
 		grand_parent_class = g_type_class_peek_parent (pluma_window_parent_class);
@@ -574,7 +583,8 @@ set_toolbar_style (PlumaWindow *window,
 	GtkAction *action;
 
 	if (origin == NULL)
-		visible = pluma_prefs_manager_get_toolbar_visible ();
+		visible = g_settings_get_boolean (window->priv->editor_settings,
+						  PLUMA_SETTINGS_TOOLBAR_VISIBLE);
 	else
 		visible = gtk_widget_get_visible (origin->priv->toolbar);
 
@@ -592,9 +602,16 @@ set_toolbar_style (PlumaWindow *window,
 
 	/* Set style */
 	if (origin == NULL)
-		style = pluma_prefs_manager_get_toolbar_buttons_style ();
+	{
+		PlumaSettings *settings;
+
+		settings = _pluma_settings_get_singleton ();
+		style = pluma_settings_get_toolbar_style (settings);
+	}
 	else
+	{
 		style = origin->priv->toolbar_style;
+	}
 
 	window->priv->toolbar_style = style;
 
@@ -730,10 +747,14 @@ set_sensitivity_according_to_tab (PlumaWindow *window,
 	PlumaTabState  state;
 	GtkClipboard  *clipboard;
 	PlumaLockdownMask lockdown;
+	gboolean       enable_syntax_highlighting;
 
 	g_return_if_fail (PLUMA_TAB (tab));
 
 	pluma_debug (DEBUG_WINDOW);
+
+	enable_syntax_highlighting = g_settings_get_boolean (window->priv->editor_settings,
+							     PLUMA_SETTINGS_SYNTAX_HIGHLIGHTING);
 
 	lockdown = pluma_app_get_lockdown (pluma_app_get_default ());
 
@@ -896,7 +917,7 @@ set_sensitivity_according_to_tab (PlumaWindow *window,
 					      "ViewHighlightMode");
 	gtk_action_set_sensitive (action,
 				  (state != PLUMA_TAB_STATE_CLOSING) &&
-				  pluma_prefs_manager_get_enable_syntax_highlighting ());
+				  enable_syntax_highlighting);
 
 	update_next_prev_doc_sensitivity (window, tab);
 
@@ -1263,14 +1284,14 @@ update_recent_files_menu (PlumaWindow *window)
 {
 	PlumaWindowPrivate *p = window->priv;
 	GtkRecentManager *recent_manager;
-	gint max_recents;
+	guint max_recents;
 	GList *actions, *l, *items;
 	GList *filtered_items = NULL;
 	gint i;
 
 	pluma_debug (DEBUG_WINDOW);
 
-	max_recents = pluma_prefs_manager_get_max_recents ();
+	max_recents = g_settings_get_uint (window->priv->editor_settings, PLUMA_SETTINGS_MAX_RECENTS);
 
 	g_return_if_fail (p->recents_action_group != NULL);
 
@@ -1404,8 +1425,8 @@ toolbar_visibility_changed (GtkWidget   *toolbar,
 
 	visible = gtk_widget_get_visible (toolbar);
 
-	if (pluma_prefs_manager_toolbar_visible_can_set ())
-		pluma_prefs_manager_set_toolbar_visible (visible);
+	g_settings_set_boolean (window->priv->editor_settings,
+				PLUMA_SETTINGS_TOOLBAR_VISIBLE, visible);
 
 	action = gtk_action_group_get_action (window->priv->always_sensitive_action_group,
 					      "ViewToolbar");
@@ -1423,8 +1444,11 @@ setup_toolbar_open_button (PlumaWindow *window,
 	GtkWidget *toolbar_recent_menu;
 	GtkToolItem *open_button;
 	GtkAction *action;
+	guint max_recents;
 
 	recent_manager = gtk_recent_manager_get_default ();
+
+	max_recents = g_settings_get_uint (window->priv->editor_settings, PLUMA_SETTINGS_MAX_RECENTS);
 
 	/* recent files menu tool button */
 	toolbar_recent_menu = gtk_recent_chooser_menu_new_for_manager (recent_manager);
@@ -1434,7 +1458,7 @@ setup_toolbar_open_button (PlumaWindow *window,
 	gtk_recent_chooser_set_sort_type (GTK_RECENT_CHOOSER (toolbar_recent_menu),
 					  GTK_RECENT_SORT_MRU);
 	gtk_recent_chooser_set_limit (GTK_RECENT_CHOOSER (toolbar_recent_menu),
-				      pluma_prefs_manager_get_max_recents ());
+				      max_recents);
 
 	filter = gtk_recent_filter_new ();
 	gtk_recent_filter_add_group (filter, "pluma");
@@ -1792,11 +1816,11 @@ set_statusbar_style (PlumaWindow *window,
 		     PlumaWindow *origin)
 {
 	GtkAction *action;
-
 	gboolean visible;
 
 	if (origin == NULL)
-		visible = pluma_prefs_manager_get_statusbar_visible ();
+		visible = g_settings_get_boolean (window->priv->editor_settings,
+						  PLUMA_SETTINGS_STATUSBAR_VISIBLE);
 	else
 		visible = gtk_widget_get_visible (origin->priv->statusbar);
 
@@ -1823,8 +1847,8 @@ statusbar_visibility_changed (GtkWidget   *statusbar,
 
 	visible = gtk_widget_get_visible (statusbar);
 
-	if (pluma_prefs_manager_statusbar_visible_can_set ())
-		pluma_prefs_manager_set_statusbar_visible (visible);
+	g_settings_set_boolean (window->priv->editor_settings,
+				PLUMA_SETTINGS_STATUSBAR_VISIBLE, visible);
 
 	action = gtk_action_group_get_action (window->priv->always_sensitive_action_group,
 					      "ViewStatusbar");
@@ -2063,7 +2087,7 @@ clone_window (PlumaWindow *origin)
 	{
 		gint w, h;
 
-		pluma_prefs_manager_get_default_window_size (&w, &h);
+		_pluma_window_get_default_size (&w, &h);
 		gtk_window_set_default_size (GTK_WINDOW (window), w, h);
 		gtk_window_maximize (GTK_WINDOW (window));
 	}
@@ -2611,7 +2635,8 @@ _pluma_window_set_lockdown (PlumaWindow       *window,
 	gboolean autosave;
 
 	/* start/stop autosave in each existing tab */
-	autosave = pluma_prefs_manager_get_auto_save ();
+	autosave = g_settings_get_boolean (window->priv->editor_settings,
+					   PLUMA_SETTINGS_AUTO_SAVE);
 	gtk_container_foreach (GTK_CONTAINER (window->priv->notebook),
 			       update_tab_autosave,
 			       &autosave);
@@ -3618,22 +3643,23 @@ side_panel_visibility_changed (GtkWidget   *side_panel,
 
 	visible = gtk_widget_get_visible (side_panel);
 
-	if (!g_settings_get_boolean (pluma_prefs_manager->settings, "show-tabs-with-side-pane"))
+	if (!g_settings_get_boolean (window->priv->editor_settings, "show-tabs-with-side-pane"))
 	{
 		if (visible)
 			gtk_notebook_set_show_tabs (GTK_NOTEBOOK (window->priv->notebook), FALSE);
 		else
 			gtk_notebook_set_show_tabs (GTK_NOTEBOOK (window->priv->notebook),
-						    g_settings_get_boolean (pluma_prefs_manager->settings, "show-single-tab") ||
+						    g_settings_get_boolean (window->priv->editor_settings, "show-single-tab") ||
 						    (gtk_notebook_get_n_pages (GTK_NOTEBOOK (window->priv->notebook)) > 1));
 	}
 	else
 		gtk_notebook_set_show_tabs (GTK_NOTEBOOK (window->priv->notebook),
-					    g_settings_get_boolean (pluma_prefs_manager->settings, "show-single-tab") ||
+					    g_settings_get_boolean (window->priv->editor_settings, "show-single-tab") ||
 					    (gtk_notebook_get_n_pages (GTK_NOTEBOOK (window->priv->notebook)) > 1));
 
-	if (pluma_prefs_manager_side_pane_visible_can_set ())
-		pluma_prefs_manager_set_side_pane_visible (visible);
+	g_settings_set_boolean (window->priv->editor_settings,
+				PLUMA_SETTINGS_SIDE_PANE_VISIBLE,
+				visible);
 
 	action = gtk_action_group_get_action (window->priv->panes_action_group,
 	                                      "ViewSidePane");
@@ -3686,8 +3712,9 @@ bottom_panel_visibility_changed (PlumaPanel  *bottom_panel,
 
 	visible = gtk_widget_get_visible (GTK_WIDGET (bottom_panel));
 
-	if (pluma_prefs_manager_bottom_panel_visible_can_set ())
-		pluma_prefs_manager_set_bottom_panel_visible (visible);
+	g_settings_set_boolean (window->priv->editor_settings,
+				PLUMA_SETTINGS_BOTTOM_PANE_VISIBLE,
+				visible);
 
 	action = gtk_action_group_get_action (window->priv->panes_action_group,
 					      "ViewBottomPane");
@@ -3766,15 +3793,24 @@ static void
 init_panels_visibility (PlumaWindow *window)
 {
 	gint active_page;
+	gboolean side_pane_visible;
+	gboolean bottom_pane_visible;
 
 	pluma_debug (DEBUG_WINDOW);
 
 	/* side pane */
-	active_page = pluma_prefs_manager_get_side_panel_active_page ();
+	active_page = g_settings_get_int (window->priv->editor_settings,
+					  PLUMA_SETTINGS_SIDE_PANEL_ACTIVE_PAGE);
 	_pluma_panel_set_active_item_by_id (PLUMA_PANEL (window->priv->side_panel),
 					    active_page);
 
-	if (pluma_prefs_manager_get_side_pane_visible ())
+	side_pane_visible = g_settings_get_boolean (window->priv->editor_settings,
+						    PLUMA_SETTINGS_SIDE_PANE_VISIBLE);
+	bottom_pane_visible = g_settings_get_boolean (window->priv->editor_settings,
+						      PLUMA_SETTINGS_BOTTOM_PANE_VISIBLE);
+
+	if (side_pane_visible)
+
 	{
 		gtk_widget_show (window->priv->side_panel);
 	}
@@ -3782,11 +3818,12 @@ init_panels_visibility (PlumaWindow *window)
 	/* bottom pane, it can be empty */
 	if (pluma_panel_get_n_items (PLUMA_PANEL (window->priv->bottom_panel)) > 0)
 	{
-		active_page = pluma_prefs_manager_get_bottom_panel_active_page ();
+		active_page = g_settings_get_int (window->priv->editor_settings,
+						  PLUMA_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE);
 		_pluma_panel_set_active_item_by_id (PLUMA_PANEL (window->priv->bottom_panel),
 						    active_page);
 
-		if (pluma_prefs_manager_get_bottom_panel_visible ())
+		if (bottom_pane_visible)
 		{
 			gtk_widget_show (window->priv->bottom_panel);
 		}
@@ -3965,6 +4002,7 @@ pluma_window_init (PlumaWindow *window)
 	window->priv->dispose_has_run = FALSE;
 	window->priv->fullscreen_controls = NULL;
 	window->priv->fullscreen_animation_timeout_id = 0;
+	window->priv->editor_settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	window->priv->message_bus = pluma_message_bus_new ();
 
@@ -4011,8 +4049,10 @@ pluma_window_init (PlumaWindow *window)
 
 	/* panes' state must be restored after panels have been mapped,
 	 * since the bottom pane position depends on the size of the vpaned. */
-	window->priv->side_panel_size = pluma_prefs_manager_get_side_panel_size ();
-	window->priv->bottom_panel_size = pluma_prefs_manager_get_bottom_panel_size ();
+	window->priv->side_panel_size = g_settings_get_int (window->priv->editor_settings,
+							    PLUMA_SETTINGS_SIDE_PANEL_SIZE);
+	window->priv->bottom_panel_size = g_settings_get_int (window->priv->editor_settings,
+							      PLUMA_SETTINGS_BOTTOM_PANEL_SIZE);
 
 	g_signal_connect_after (window->priv->hpaned,
 				"map",
@@ -4797,3 +4837,13 @@ pluma_window_get_message_bus (PlumaWindow *window)
 
 	return window->priv->message_bus;
 }
+
+void
+_pluma_window_get_default_size (gint *width, gint *height)
+{
+	g_return_if_fail (width != NULL && height != NULL);
+
+	*width = PLUMA_WINDOW_DEFAULT_WIDTH;
+	*height = PLUMA_WINDOW_DEFAULT_HEIGHT;
+}
+

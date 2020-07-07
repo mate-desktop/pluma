@@ -32,7 +32,6 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include "pluma-language-manager.h"
-#include "pluma-prefs-manager.h"
 #include "pluma-utils.h"
 #include "pluma-debug.h"
 

@@ -96,6 +96,7 @@ PlumaWindow	*pluma_app_create_window		(PlumaApp  *app,
 							 GdkScreen *screen);
 
 const GList	*pluma_app_get_windows			(PlumaApp *app);
+
 PlumaWindow	*pluma_app_get_active_window		(PlumaApp *app);
 
 /* Returns a newly allocated list with all the documents */

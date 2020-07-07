@@ -36,7 +36,6 @@
 
 #include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
-#include <pluma/pluma-prefs-manager.h>
 #include <pluma/pluma-statusbar.h>
 #include <pluma/pluma-utils.h>
 
