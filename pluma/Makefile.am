@@ -48,8 +48,6 @@ NOINST_H_FILES =			\
 	pluma-document-saver.h		\
 	pluma-documents-panel.h		\
 	pluma-file-chooser-dialog.h	\
-	pluma-gio-document-loader.h	\
-	pluma-gio-document-saver.h	\
 	pluma-history-entry.h		\
 	pluma-io-error-message-area.h	\
 	pluma-language-manager.h	\
@@ -113,9 +111,7 @@ libpluma_c_files = 			\
 	pluma-document-input-stream.c	\
 	pluma-document-loader.c		\
 	pluma-document-output-stream.c	\
-	pluma-gio-document-loader.c	\
 	pluma-document-saver.c		\
-	pluma-gio-document-saver.c	\
 	pluma-documents-panel.c		\
 	pluma-encodings.c		\
 	pluma-encodings-combo-box.c	\

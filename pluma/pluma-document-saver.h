@@ -46,6 +46,9 @@ G_BEGIN_DECLS
 #define PLUMA_IS_DOCUMENT_SAVER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), PLUMA_TYPE_DOCUMENT_SAVER))
 #define PLUMA_DOCUMENT_SAVER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS((obj), PLUMA_TYPE_DOCUMENT_SAVER, PlumaDocumentSaverClass))
 
+/* Private structure type */
+typedef struct _PlumaDocumentSaverPrivate PlumaDocumentSaverPrivate;
+
 /*
  * Main object structure
  */
@@ -54,19 +57,7 @@ typedef struct _PlumaDocumentSaver PlumaDocumentSaver;
 struct _PlumaDocumentSaver
 {
 	GObject object;
-
-	/*< private >*/
-	GFileInfo		 *info;
-	PlumaDocument		 *document;
-	gboolean		  used;
-
-	gchar			 *uri;
-	const PlumaEncoding      *encoding;
-	PlumaDocumentNewlineType  newline_type;
-
-	PlumaDocumentSaveFlags    flags;
-
-	gboolean		  keep_backup;
+	PlumaDocumentSaverPrivate *priv;
 };
 
 /*
@@ -79,15 +70,9 @@ struct _PlumaDocumentSaverClass
 	GObjectClass parent_class;
 
 	/* Signals */
-	void (* saving) (PlumaDocumentSaver *saver,
+	void (* saving) (PlumaDocumentSaver  *saver,
 			 gboolean             completed,
 			 const GError        *error);
-
-	/* VTable */
-	void			(* save)		(PlumaDocumentSaver *saver,
-							 gint64             *old_mtime);
-	goffset			(* get_file_size)	(PlumaDocumentSaver *saver);
-	goffset			(* get_bytes_written)	(PlumaDocumentSaver *saver);
 };
 
 /*

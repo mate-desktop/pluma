@@ -57,16 +57,7 @@ typedef struct _PlumaDocumentLoader PlumaDocumentLoader;
 struct _PlumaDocumentLoader
 {
 	GObject object;
-
-	PlumaDocument		 *document;
-	gboolean		  used;
-
-	/* Info on the current file */
-	GFileInfo		 *info;
-	gchar			 *uri;
-	const PlumaEncoding	 *encoding;
-	const PlumaEncoding	 *auto_detected_encoding;
-	PlumaDocumentNewlineType  auto_detected_newline_type;
+	PlumaDocumentLoaderPrivate *priv;
 };
 
 /*
@@ -82,11 +73,6 @@ struct _PlumaDocumentLoaderClass
 	void (* loading) (PlumaDocumentLoader *loader,
 			  gboolean             completed,
 			  const GError        *error);
-
-	/* VTable */
-	void			(* load)		(PlumaDocumentLoader *loader);
-	gboolean		(* cancel)		(PlumaDocumentLoader *loader);
-	goffset			(* get_bytes_read)	(PlumaDocumentLoader *loader);
 };
 
 /*

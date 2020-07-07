@@ -20,7 +20,7 @@
  * Boston, MA  02110-1301  USA
  */
 
-#include "pluma-gio-document-loader.h"
+#include "pluma-document-loader.h"
 #include "pluma-prefs-manager-app.h"
 #include <gio/gio.h>
 #include <gtk/gtk.h>
