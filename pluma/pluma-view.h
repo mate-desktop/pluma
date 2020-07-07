@@ -99,8 +99,8 @@ void		 pluma_view_select_all		(PlumaView       *view);
 
 void		 pluma_view_scroll_to_cursor 	(PlumaView       *view);
 
-void		 pluma_override_font		(const gchar          *item,
-						 GtkWidget            *widget,
+void		 pluma_override_font		(PlumaView            *view,
+						 const gchar          *item,
 						 PangoFontDescription *font);
 
 void 		 pluma_view_set_font		(PlumaView       *view,

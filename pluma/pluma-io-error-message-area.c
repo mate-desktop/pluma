@@ -42,10 +42,10 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
+#include "pluma-settings.h"
 #include "pluma-utils.h"
 #include "pluma-document.h"
 #include "pluma-io-error-message-area.h"
-#include "pluma-prefs-manager.h"
 #include <pluma/pluma-encodings-combo-box.h>
 
 #define MAX_URI_IN_DIALOG_LENGTH 50
@@ -933,6 +933,8 @@ pluma_no_backup_saving_error_message_area_new (const gchar  *uri,
 	gchar *full_formatted_uri;
 	gchar *uri_for_display;
 	gchar *temp_uri_for_display;
+	gboolean create_backup_copy;
+	GSettings *editor_settings;
 
 	g_return_val_if_fail (uri != NULL, NULL);
 	g_return_val_if_fail (error != NULL, NULL);
@@ -976,9 +978,14 @@ pluma_no_backup_saving_error_message_area_new (const gchar  *uri,
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
 
-	// FIXME: review this messages
+	editor_settings = g_settings_new (PLUMA_SCHEMA_ID);
 
-	if (pluma_prefs_manager_get_create_backup_copy ())
+	create_backup_copy = g_settings_get_boolean (editor_settings,
+						     PLUMA_SETTINGS_CREATE_BACKUP_COPY);
+	g_object_unref (editor_settings);
+
+	// FIXME: review this messages
+	if (create_backup_copy)
 		primary_text = g_strdup_printf (_("Could not create a backup file while saving %s"),
 						uri_for_display);
 	else

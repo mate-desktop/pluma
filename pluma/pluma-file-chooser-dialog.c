@@ -44,16 +44,18 @@
 #include "pluma-file-chooser-dialog.h"
 #include "pluma-encodings-combo-box.h"
 #include "pluma-language-manager.h"
-#include "pluma-prefs-manager-app.h"
 #include "pluma-debug.h"
 #include "pluma-enum-types.h"
 #include "pluma-utils.h"
+#include "pluma-settings.h"
 
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
 
 struct _PlumaFileChooserDialogPrivate
 {
+	GSettings *filter_settings;
+
 	GtkWidget *option_menu;
 	GtkWidget *extra_widget;
 
@@ -65,8 +67,21 @@ struct _PlumaFileChooserDialogPrivate
 G_DEFINE_TYPE_WITH_PRIVATE (PlumaFileChooserDialog, pluma_file_chooser_dialog, GTK_TYPE_FILE_CHOOSER_DIALOG)
 
 static void
+pluma_file_chooser_dialog_dispose (GObject *object)
+{
+	PlumaFileChooserDialog *dialog = PLUMA_FILE_CHOOSER_DIALOG (object);
+
+	g_clear_object (&dialog->priv->filter_settings);
+
+	G_OBJECT_CLASS (pluma_file_chooser_dialog_parent_class)->dispose (object);
+}
+
+static void
 pluma_file_chooser_dialog_class_init (PlumaFileChooserDialogClass *klass)
 {
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	object_class->dispose = pluma_file_chooser_dialog_dispose;
 }
 
 static void
@@ -247,9 +262,6 @@ filter_changed (PlumaFileChooserDialog *dialog,
 {
 	GtkFileFilter *filter;
 
-	if (!pluma_prefs_manager_active_file_filter_can_set ())
-		return;
-
 	filter = gtk_file_chooser_get_filter (GTK_FILE_CHOOSER (dialog));
 	if (filter != NULL)
 	{
@@ -264,7 +276,9 @@ filter_changed (PlumaFileChooserDialog *dialog,
 
 		pluma_debug_message (DEBUG_COMMANDS, "Active filter: %s (%d)", name, id);
 
-		pluma_prefs_manager_set_active_file_filter (id);
+		g_settings_set_int (dialog->priv->filter_settings,
+				    PLUMA_SETTINGS_ACTIVE_FILE_FILTER, id);
+
 	}
 }
 
@@ -350,6 +364,8 @@ static void
 pluma_file_chooser_dialog_init (PlumaFileChooserDialog *dialog)
 {
 	dialog->priv = pluma_file_chooser_dialog_get_instance_private (dialog);
+
+	dialog->priv->filter_settings = g_settings_new (PLUMA_SCHEMA_ID);
 }
 
 static GtkWidget *
@@ -387,7 +403,8 @@ pluma_file_chooser_dialog_new_valist (const gchar          *title,
 				PLUMA_ENCODINGS_COMBO_BOX (PLUMA_FILE_CHOOSER_DIALOG (result)->priv->option_menu),
 				encoding);
 
-	active_filter = pluma_prefs_manager_get_active_file_filter ();
+	active_filter = g_settings_get_int (PLUMA_FILE_CHOOSER_DIALOG (result)->priv->filter_settings,
+					    PLUMA_SETTINGS_ACTIVE_FILE_FILTER);
 	pluma_debug_message (DEBUG_COMMANDS, "Active filter: %d", active_filter);
 
 	/* Filters */

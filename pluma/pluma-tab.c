@@ -42,14 +42,14 @@
 #include "pluma-print-preview.h"
 #include "pluma-progress-message-area.h"
 #include "pluma-debug.h"
-#include "pluma-prefs-manager-app.h"
-#include "pluma-prefs-manager-private.h"
 #include "pluma-enum-types.h"
+#include "pluma-settings.h"
 
 #define PLUMA_TAB_KEY "PLUMA_TAB_KEY"
 
 struct _PlumaTabPrivate
 {
+	GSettings	       *editor_settings;
 	PlumaTabState	        state;
 
 	GtkWidget	       *view;
@@ -240,6 +240,10 @@ pluma_tab_finalize (GObject *object)
 		tab->priv->idle_scroll = 0;
 	}
 
+	/* settings must be cleared in finalize and not in dispose to prevent
+	a warning when trying to close pluma while print-preview is active */
+	g_clear_object (&tab->priv->editor_settings);
+
 	G_OBJECT_CLASS (pluma_tab_parent_class)->finalize (object);
 }
 
@@ -364,6 +368,10 @@ set_view_properties_according_to_state (PlumaTab      *tab,
 					PlumaTabState  state)
 {
 	gboolean val;
+	gboolean hl_current_line;
+
+	hl_current_line = g_settings_get_boolean (tab->priv->editor_settings,
+						  PLUMA_SETTINGS_HIGHLIGHT_CURRENT_LINE);
 
 	val = ((state == PLUMA_TAB_STATE_NORMAL) &&
 	       (tab->priv->print_preview == NULL) &&
@@ -376,7 +384,7 @@ set_view_properties_according_to_state (PlumaTab      *tab,
 
 	val = ((state != PLUMA_TAB_STATE_LOADING) &&
 	       (state != PLUMA_TAB_STATE_CLOSING) &&
-	       (pluma_prefs_manager_get_highlight_current_line ()));
+	       hl_current_line);
 	gtk_source_view_set_highlight_current_line (GTK_SOURCE_VIEW (tab->priv->view), val);
 }
 
@@ -1484,8 +1492,12 @@ pluma_tab_init (PlumaTab *tab)
 	GtkWidget *sw;
 	PlumaDocument *doc;
 	PlumaLockdownMask lockdown;
+	gboolean auto_save;
+	gint auto_save_interval;
 
 	tab->priv = pluma_tab_get_instance_private (tab);
+
+	tab->priv->editor_settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	tab->priv->state = PLUMA_TAB_STATE_NORMAL;
 
@@ -1507,14 +1519,19 @@ pluma_tab_init (PlumaTab *tab)
 					GTK_POLICY_AUTOMATIC);
 
 	/* Manage auto save data */
+	auto_save = g_settings_get_boolean (tab->priv->editor_settings,
+					    PLUMA_SETTINGS_AUTO_SAVE);
+	auto_save_interval = g_settings_get_uint (tab->priv->editor_settings, PLUMA_SETTINGS_AUTO_SAVE_INTERVAL);
+
 	lockdown = pluma_app_get_lockdown (pluma_app_get_default ());
-	tab->priv->auto_save = pluma_prefs_manager_get_auto_save () &&
+	tab->priv->auto_save = auto_save &&
 			       !(lockdown & PLUMA_LOCKDOWN_SAVE_TO_DISK);
 	tab->priv->auto_save = (tab->priv->auto_save != FALSE);
 
-	tab->priv->auto_save_interval = pluma_prefs_manager_get_auto_save_interval ();
+	tab->priv->auto_save_interval = auto_save_interval;
+	/*FIXME
 	if (tab->priv->auto_save_interval <= 0)
-		tab->priv->auto_save_interval = GPM_DEFAULT_AUTO_SAVE_INTERVAL;
+		tab->priv->auto_save_interval = GPM_DEFAULT_AUTO_SAVE_INTERVAL;*/
 
 	/* Create the view */
 	doc = pluma_document_new ();
@@ -2617,7 +2634,7 @@ _pluma_tab_can_close (PlumaTab *tab)
 	    (ts == PLUMA_TAB_STATE_REVERTING)       ||
 	    (ts == PLUMA_TAB_STATE_REVERTING_ERROR) || /* CHECK: I'm not sure this is the right behavior for REVERTING ERROR */
 	    (!gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc))) ||
-	    (!g_settings_get_boolean (pluma_prefs_manager->settings, "show-save-confirmation")))
+	    (!g_settings_get_boolean (tab->priv->editor_settings, PLUMA_SETTINGS_SHOW_SAVE_CONFIRMATION)))
 		return TRUE;
 
 	/* Do not close tab with saving errors */

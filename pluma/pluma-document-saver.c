@@ -38,11 +38,11 @@
 
 #include "pluma-document-saver.h"
 #include "pluma-document-input-stream.h"
-#include "pluma-prefs-manager.h"
 #include "pluma-debug.h"
 #include "pluma-marshal.h"
 #include "pluma-utils.h"
 #include "pluma-enum-types.h"
+#include "pluma-settings.h"
 
 #define WRITE_CHUNK_SIZE 8192
 
@@ -85,6 +85,8 @@ static void check_modified_async (AsyncData *async);
 
 struct _PlumaDocumentSaverPrivate
 {
+    GSettings                *editor_settings;
+
     GFileInfo                *info;
     PlumaDocument            *document;
     gboolean                  used;
@@ -223,6 +225,8 @@ pluma_document_saver_dispose (GObject *object)
         priv->info = NULL;
     }
 
+    g_clear_object (&priv->editor_settings);
+
     G_OBJECT_CLASS (pluma_document_saver_parent_class)->dispose (object);
 }
 
@@ -340,6 +344,7 @@ pluma_document_saver_init (PlumaDocumentSaver *saver)
     saver->priv->cancellable = g_cancellable_new ();
     saver->priv->error = NULL;
     saver->priv->used = FALSE;
+    saver->priv->editor_settings = g_settings_new (PLUMA_SCHEMA_ID);
 }
 
 PlumaDocumentSaver *
@@ -945,7 +950,8 @@ pluma_document_saver_save (PlumaDocumentSaver     *saver,
     if ((saver->priv->flags & PLUMA_DOCUMENT_SAVE_PRESERVE_BACKUP) != 0)
         saver->priv->keep_backup = FALSE;
     else
-        saver->priv->keep_backup = pluma_prefs_manager_get_create_backup_copy ();
+        saver->priv->keep_backup = g_settings_get_boolean (saver->priv->editor_settings,
+                                                           PLUMA_SETTINGS_CREATE_BACKUP_COPY);
 
     saver->priv->old_mtime = *old_mtime;
     saver->priv->gfile = g_file_new_for_uri (saver->priv->uri);

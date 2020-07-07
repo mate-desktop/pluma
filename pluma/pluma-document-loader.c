@@ -40,12 +40,12 @@
 #include "pluma-document-loader.h"
 #include "pluma-document-output-stream.h"
 #include "pluma-smart-charset-converter.h"
-#include "pluma-prefs-manager.h"
 #include "pluma-debug.h"
 #include "pluma-metadata-manager.h"
 #include "pluma-utils.h"
 #include "pluma-marshal.h"
 #include "pluma-enum-types.h"
+#include "pluma-settings.h"
 
 #ifndef ENABLE_GVFS_METADATA
 #include "pluma-metadata-manager.h"
@@ -92,6 +92,8 @@ static void open_async_read (AsyncData *async);
 
 struct _PlumaDocumentLoaderPrivate
 {
+    GSettings                   *enc_settings;
+
     PlumaDocument               *document;
     gboolean                     used;
 
@@ -234,6 +236,8 @@ pluma_document_loader_dispose (GObject *object)
         priv->info = NULL;
     }
 
+    g_clear_object (&priv->enc_settings);
+
     G_OBJECT_CLASS (pluma_document_loader_parent_class)->dispose (object);
 }
 
@@ -309,6 +313,7 @@ pluma_document_loader_init (PlumaDocumentLoader *loader)
     loader->priv->auto_detected_newline_type = PLUMA_DOCUMENT_NEWLINE_TYPE_DEFAULT;
     loader->priv->converter = NULL;
     loader->priv->error = NULL;
+    loader->priv->enc_settings = g_settings_new (PLUMA_SCHEMA_ID);
 }
 
 PlumaDocumentLoader *
@@ -585,9 +590,14 @@ static GSList *
 get_candidate_encodings (PlumaDocumentLoader *loader)
 {
     const PlumaEncoding *metadata;
-    GSList *encodings = NULL;
+    GSList *encodings;
+    gchar **enc_strv;
 
-    encodings = pluma_prefs_manager_get_auto_detected_encodings ();
+    enc_strv = g_settings_get_strv (loader->priv->enc_settings,
+                                    PLUMA_SETTINGS_ENCODING_AUTO_DETECTED);
+
+    encodings = _pluma_encoding_strv_to_list ((const gchar * const *)enc_strv);
+    g_strfreev (enc_strv);
 
     metadata = get_metadata_encoding (loader);
     if (metadata != NULL)

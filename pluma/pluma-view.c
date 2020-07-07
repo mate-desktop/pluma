@@ -44,11 +44,9 @@
 
 #include "pluma-view.h"
 #include "pluma-debug.h"
-#include "pluma-prefs-manager.h"
-#include "pluma-prefs-manager-app.h"
-#include "pluma-prefs-manager-private.h"
 #include "pluma-marshal.h"
 #include "pluma-utils.h"
+#include "pluma-settings.h"
 
 #define PLUMA_VIEW_SCROLL_MARGIN 0.02
 #define PLUMA_VIEW_SEARCH_DIALOG_TIMEOUT (30*1000) /* 30 seconds */
@@ -71,6 +69,9 @@ enum
 
 struct _PlumaViewPrivate
 {
+	GSettings   *editor_settings;
+	GSettings   *interface_settings;
+
 	SearchMode   search_mode;
 
 	GtkTextIter  start_search_iter;
@@ -376,15 +377,14 @@ pluma_set_source_space_drawer_by_level (GtkSourceView *view,
                                         GtkSourceSpaceTypeFlags type)
 {
 	GtkSourceSpaceLocationFlags locs[] = {GTK_SOURCE_SPACE_LOCATION_LEADING,
-	                                      GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT,
-	                                      GTK_SOURCE_SPACE_LOCATION_TRAILING};
+					      GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT,
+					      GTK_SOURCE_SPACE_LOCATION_TRAILING};
 	/* this array links the level to the location */
-	GtkSourceSpaceLocationFlags levels[] = {
-	                                        0,
-	                                        GTK_SOURCE_SPACE_LOCATION_TRAILING,
-	                                        GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT |
-	                                        	GTK_SOURCE_SPACE_LOCATION_TRAILING |
-	                                        	GTK_SOURCE_SPACE_LOCATION_LEADING
+	GtkSourceSpaceLocationFlags levels[] = {0,
+						GTK_SOURCE_SPACE_LOCATION_TRAILING,
+						GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT |
+						GTK_SOURCE_SPACE_LOCATION_TRAILING |
+						GTK_SOURCE_SPACE_LOCATION_LEADING
 	};
 
 	gint i;
@@ -409,42 +409,42 @@ pluma_set_source_space_drawer_by_level (GtkSourceView *view,
 
 #ifdef GTK_SOURCE_VERSION_3_24
 static void
-pluma_set_source_space_drawer (GtkSourceView *view)
+pluma_set_source_space_drawer (GSettings *settings, GtkSourceView *view)
 {
 	pluma_set_source_space_drawer_by_level (view,
-	                                        pluma_prefs_manager_get_draw_spaces (),
-	                                        GTK_SOURCE_SPACE_TYPE_SPACE);
+						g_settings_get_enum (settings, PLUMA_SETTINGS_DRAWER_SPACE),
+						GTK_SOURCE_SPACE_TYPE_SPACE);
 	pluma_set_source_space_drawer_by_level (view,
-	                                        pluma_prefs_manager_get_draw_tabs (),
-	                                        GTK_SOURCE_SPACE_TYPE_TAB);
+						g_settings_get_enum (settings, PLUMA_SETTINGS_DRAWER_TAB),
+						GTK_SOURCE_SPACE_TYPE_TAB);
 	pluma_set_source_space_drawer_by_level (view,
-	                                        pluma_prefs_manager_get_draw_newlines () ? 2 : 0,
-	                                        GTK_SOURCE_SPACE_TYPE_NEWLINE);
+						g_settings_get_boolean (settings, PLUMA_SETTINGS_DRAWER_NEWLINE) ? 2 : 0,
+						GTK_SOURCE_SPACE_TYPE_NEWLINE);
 	pluma_set_source_space_drawer_by_level (view,
-	                                        pluma_prefs_manager_get_draw_nbsp (),
-	                                        GTK_SOURCE_SPACE_TYPE_NBSP);
+						g_settings_get_enum (settings, PLUMA_SETTINGS_DRAWER_NBSP),
+						GTK_SOURCE_SPACE_TYPE_NBSP);
 	gtk_source_space_drawer_set_enable_matrix (gtk_source_view_get_space_drawer (view),
-	                                           TRUE);
+						   TRUE);
 
 }
 #else
 static void
-pluma_set_source_space_drawer (GtkSourceView *view)
+pluma_set_source_space_drawer (GSettings *settings, GtkSourceView *view)
 {
 	GtkSourceDrawSpacesFlags flags = 0;
 
-	if (pluma_prefs_manager_get_draw_spaces () > 0)
+	if (g_settings_get_enum (settings, PLUMA_SETTINGS_DRAWER_SPACE) > 0)
 		flags |= GTK_SOURCE_DRAW_SPACES_SPACE;
-	if (pluma_prefs_manager_get_draw_tabs () > 0)
+	if (g_settings_get_enum (settings, PLUMA_SETTINGS_DRAWER_TAB) > 0)
 		flags |= GTK_SOURCE_DRAW_SPACES_TAB;
-	if (pluma_prefs_manager_get_draw_newlines ())
+	if (g_settings_get_boolean (settings, PLUMA_SETTINGS_DRAWER_NEWLINE))
 		flags |= GTK_SOURCE_DRAW_SPACES_NEWLINE;
-	if (pluma_prefs_manager_get_draw_nbsp () > 0)
+	if (g_settings_get_enum (settings, PLUMA_SETTINGS_DRAWER_NBSP) > 0)
 		flags |= GTK_SOURCE_DRAW_SPACES_NBSP;
 
 	flags |= GTK_SOURCE_DRAW_SPACES_TRAILING |
-		GTK_SOURCE_DRAW_SPACES_TEXT |
-		GTK_SOURCE_DRAW_SPACES_LEADING;
+		 GTK_SOURCE_DRAW_SPACES_TEXT |
+		 GTK_SOURCE_DRAW_SPACES_LEADING;
 
 	gtk_source_view_set_draw_spaces (view, flags);
 }
@@ -453,21 +453,42 @@ pluma_set_source_space_drawer (GtkSourceView *view)
 static void
 pluma_view_init (PlumaView *view)
 {
+	PlumaSettings *settings;
 	GtkTargetList *tl;
+	gboolean use_default_font;
+	gboolean display_line_numbers;
+	gboolean auto_indent;
+	gboolean insert_spaces;
+	gboolean display_right_margin;
+	gboolean hl_current_line;
+	guint tabs_size;
+	guint right_margin_position;
+	GtkWrapMode wrap_mode;
+	GtkSourceSmartHomeEndType smart_home_end;
 
 	pluma_debug (DEBUG_VIEW);
 
 	view->priv = pluma_view_get_instance_private (view);
 
+	settings = _pluma_settings_get_singleton ();
+	view->priv->editor_settings = g_settings_new (PLUMA_SCHEMA_ID);
+	view->priv->interface_settings = g_settings_new ("org.mate.interface");
+
+	/* Get setting values */
+	use_default_font = g_settings_get_boolean (view->priv->editor_settings,
+						   PLUMA_SETTINGS_USE_DEFAULT_FONT);
+
 	/*
 	 *  Set tab, fonts, wrap mode, colors, etc. according
 	 *  to preferences
 	 */
-	if (!pluma_prefs_manager_get_use_default_font ())
+	if (!use_default_font)
 	{
 		gchar *editor_font;
 
-		editor_font = pluma_prefs_manager_get_editor_font ();
+		editor_font = g_settings_get_string (view->priv->editor_settings,
+						     PLUMA_SETTINGS_EDITOR_FONT);
+
 
 		pluma_view_set_font (view, FALSE, editor_font);
 
@@ -478,20 +499,39 @@ pluma_view_init (PlumaView *view)
 		pluma_view_set_font (view, TRUE, NULL);
 	}
 
+	display_line_numbers = g_settings_get_boolean (view->priv->editor_settings,
+						       PLUMA_SETTINGS_DISPLAY_LINE_NUMBERS);
+	auto_indent = g_settings_get_boolean (view->priv->editor_settings,
+					      PLUMA_SETTINGS_AUTO_INDENT);
+	tabs_size = g_settings_get_uint (view->priv->editor_settings, PLUMA_SETTINGS_TABS_SIZE);
+	insert_spaces = g_settings_get_boolean (view->priv->editor_settings,
+						PLUMA_SETTINGS_INSERT_SPACES);
+	display_right_margin = g_settings_get_boolean (view->priv->editor_settings,
+						       PLUMA_SETTINGS_DISPLAY_RIGHT_MARGIN);
+	right_margin_position = g_settings_get_uint (view->priv->editor_settings,
+						     PLUMA_SETTINGS_RIGHT_MARGIN_POSITION);
+	hl_current_line = g_settings_get_boolean (view->priv->editor_settings,
+						  PLUMA_SETTINGS_HIGHLIGHT_CURRENT_LINE);
+
+	wrap_mode = pluma_settings_get_wrap_mode (view->priv->editor_settings,
+						  PLUMA_SETTINGS_WRAP_MODE);
+
+	smart_home_end = pluma_settings_get_smart_home_end (settings);
+
 	g_object_set (G_OBJECT (view),
-		      "wrap_mode", pluma_prefs_manager_get_wrap_mode (),
-		      "show_line_numbers", pluma_prefs_manager_get_display_line_numbers (),
-		      "auto_indent", pluma_prefs_manager_get_auto_indent (),
-		      "tab_width", pluma_prefs_manager_get_tabs_size (),
-		      "insert_spaces_instead_of_tabs", pluma_prefs_manager_get_insert_spaces (),
-		      "show_right_margin", pluma_prefs_manager_get_display_right_margin (),
-		      "right_margin_position", pluma_prefs_manager_get_right_margin_position (),
-		      "highlight_current_line", pluma_prefs_manager_get_highlight_current_line (),
-		      "smart_home_end", pluma_prefs_manager_get_smart_home_end (),
+		      "wrap_mode", wrap_mode,
+		      "show_line_numbers", display_line_numbers,
+		      "auto_indent", auto_indent,
+		      "tab_width", tabs_size,
+		      "insert_spaces_instead_of_tabs", insert_spaces,
+		      "show_right_margin", display_right_margin,
+		      "right_margin_position", right_margin_position,
+		      "highlight_current_line", hl_current_line,
+		      "smart_home_end", smart_home_end,
 		      "indent_on_tab", TRUE,
 		      NULL);
 
-	pluma_set_source_space_drawer (GTK_SOURCE_VIEW (view));
+	pluma_set_source_space_drawer (view->priv->editor_settings, GTK_SOURCE_VIEW (view));
 
 	view->priv->typeselect_flush_timeout = 0;
 	view->priv->wrap_around = TRUE;
@@ -528,6 +568,9 @@ pluma_view_dispose (GObject *object)
 			view->priv->typeselect_flush_timeout = 0;
 		}
 	}
+
+	g_clear_object (&view->priv->editor_settings);
+	g_clear_object (&view->priv->interface_settings);
 
 	/* Disconnect notify buffer because the destroy of the textview will
 	   set the buffer to NULL, and we call get_buffer in the notify which
@@ -759,12 +802,12 @@ pluma_view_scroll_to_cursor (PlumaView *view)
 				      0.0);
 }
 
-static PangoFontDescription* get_system_font (void)
+static PangoFontDescription* get_system_font (GSettings *settings)
 {
 	PangoFontDescription *desc = NULL;
 	char *name;
 
-	name = g_settings_get_string (pluma_prefs_manager->interface_settings, "font-name");
+	name = g_settings_get_string (settings, "font-name");
 
 	if (name)
 	{
@@ -781,18 +824,18 @@ system_font_changed_cb (GSettings *settings,
 			gpointer   user_data)
 {
 	PangoFontDescription *sys_font_desc = NULL;
-	sys_font_desc = get_system_font ();
+	sys_font_desc = get_system_font (settings);
 	if (sys_font_desc)
 	{
-		pluma_override_font ("label", NULL, sys_font_desc);
+		pluma_override_font (NULL, "label", sys_font_desc);
 		pango_font_description_free (sys_font_desc);
 	}
 }
 
 void
-pluma_override_font (const gchar          *item,
-		     GtkWidget            *widget,
-		     PangoFontDescription *font)
+pluma_override_font (PlumaView            *view,
+                     const gchar          *item,
+                     PangoFontDescription *font)
 {
 	static GtkCssProvider *provider = NULL; /*We need to keep this as long as Pluma is running*/
 	gchar          *prov_str;
@@ -821,11 +864,11 @@ pluma_override_font (const gchar          *item,
 	{
 		provider = gtk_css_provider_new ();
 
-		g_signal_connect (pluma_prefs_manager->interface_settings,
+		g_signal_connect (view->priv->interface_settings,
 				  "changed::" "font-name",
 				  G_CALLBACK (system_font_changed_cb), NULL);
 
-		gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
+		gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (GTK_WIDGET(view)),
 							   GTK_STYLE_PROVIDER (provider),
 							   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	}
@@ -880,9 +923,11 @@ pluma_view_set_font (PlumaView   *view,
 
 	if (def)
 	{
+		PlumaSettings *settings;
 		gchar *font;
 
-		font = pluma_prefs_manager_get_system_font ();
+		settings = _pluma_settings_get_singleton ();
+		font = pluma_settings_get_system_font (settings);
 		font_desc = pango_font_description_from_string (font);
 		g_free (font);
 	}
@@ -895,11 +940,11 @@ pluma_view_set_font (PlumaView   *view,
 
 	g_return_if_fail (font_desc != NULL);
 
-	pluma_override_font ("textview", GTK_WIDGET (view), font_desc);
+	pluma_override_font (view, "textview", font_desc);
 
-	sys_font_desc = get_system_font ();
+	sys_font_desc = get_system_font (view->priv->interface_settings);
 	if (sys_font_desc) {
-		pluma_override_font ("label", GTK_WIDGET (view), sys_font_desc);
+		pluma_override_font (view, "label", sys_font_desc);
 		pango_font_description_free (sys_font_desc);
 	}
 
@@ -2163,17 +2208,6 @@ pluma_view_drag_drop (GtkWidget      *widget,
 	return result;
 }
 
-static void
-show_line_numbers_toggled (GtkMenu   *menu,
-			   PlumaView *view)
-{
-	gboolean show;
-
-	show = gtk_check_menu_item_get_active (GTK_CHECK_MENU_ITEM (menu));
-
-	pluma_prefs_manager_set_display_line_numbers (show);
-}
-
 static GtkWidget *
 create_line_numbers_menu (GtkWidget *view)
 {
@@ -2185,8 +2219,13 @@ create_line_numbers_menu (GtkWidget *view)
 	item = gtk_check_menu_item_new_with_mnemonic (_("_Display line numbers"));
 	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item),
 					gtk_source_view_get_show_line_numbers (GTK_SOURCE_VIEW (view)));
-	g_signal_connect (item, "toggled",
-			  G_CALLBACK (show_line_numbers_toggled), view);
+
+	g_settings_bind (PLUMA_VIEW (view)->priv->editor_settings,
+			 "active",
+			 item,
+			 PLUMA_SETTINGS_DISPLAY_LINE_NUMBERS,
+			 G_SETTINGS_BIND_SET);
+
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
 
 	gtk_widget_show_all (menu);

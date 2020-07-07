@@ -37,6 +37,7 @@
 #include <gtk/gtk.h>
 #include <atk/atk.h>
 #include <pluma/pluma-encodings.h>
+#include <gtksourceview/gtksource.h>
 
 G_BEGIN_DECLS
 
@@ -163,4 +164,3 @@ pluma_image_menu_item_new_from_pixbuf (GdkPixbuf   *icon_pixbuf,
 G_END_DECLS
 
 #endif /* __PLUMA_UTILS_H__ */
-

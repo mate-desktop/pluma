@@ -52,10 +52,10 @@ NOINST_H_FILES =			\
 	pluma-io-error-message-area.h	\
 	pluma-language-manager.h	\
 	pluma-plugins-engine.h		\
-	pluma-prefs-manager-private.h	\
 	pluma-print-job.h		\
 	pluma-print-preview.h		\
 	pluma-session.h			\
+	pluma-settings.h		\
 	pluma-smart-charset-converter.h	\
 	pluma-style-scheme-manager.h	\
 	pluma-tab-label.h		\
@@ -76,8 +76,6 @@ INST_H_FILES =				\
 	pluma-message.h			\
 	pluma-notebook.h		\
 	pluma-panel.h			\
-	pluma-prefs-manager-app.h	\
-	pluma-prefs-manager.h		\
 	pluma-progress-message-area.h	\
 	pluma-statusbar.h		\
 	pluma-status-combo-box.h	\
@@ -126,13 +124,11 @@ libpluma_c_files = 			\
 	pluma-notebook.c		\
 	pluma-panel.c			\
 	pluma-plugins-engine.c		\
-	pluma-prefs-manager-app.c	\
-	pluma-prefs-manager.c		\
-	pluma-prefs-manager-private.h	\
 	pluma-print-job.c		\
 	pluma-print-preview.c		\
 	pluma-progress-message-area.c	\
 	pluma-session.c			\
+	pluma-settings.c		\
 	pluma-smart-charset-converter.c	\
 	pluma-statusbar.c		\
 	pluma-status-combo-box.c	\

@@ -37,11 +37,14 @@
 #include <gtk/gtk.h>
 
 #include <pluma/pluma-encodings-combo-box.h>
-#include <pluma/pluma-prefs-manager.h>
 #include <pluma/dialogs/pluma-encodings-dialog.h>
+#include "pluma-settings.h"
+#include "pluma-utils.h"
 
 struct _PlumaEncodingsComboBoxPrivate
 {
+	GSettings *enc_settings;
+
 	GtkListStore *store;
 	glong changed_id;
 
@@ -122,6 +125,8 @@ pluma_encodings_combo_box_dispose (GObject *object)
 		g_object_unref (combo->priv->store);
 		combo->priv->store = NULL;
 	}
+
+	g_clear_object (&combo->priv->enc_settings);
 
 	G_OBJECT_CLASS (pluma_encodings_combo_box_parent_class)->dispose (object);
 }
@@ -245,6 +250,7 @@ update_menu (PlumaEncodingsComboBox *menu)
 	gchar *str;
 	const PlumaEncoding *utf8_encoding;
 	const PlumaEncoding *current_encoding;
+	gchar **enc_strv;
 
 	store = menu->priv->store;
 
@@ -305,7 +311,11 @@ update_menu (PlumaEncodingsComboBox *menu)
 		g_free (str);
 	}
 
-	encodings = pluma_prefs_manager_get_shown_in_menu_encodings ();
+	enc_strv = g_settings_get_strv (menu->priv->enc_settings,
+					PLUMA_SETTINGS_ENCODING_SHOWN_IN_MENU);
+
+	encodings = _pluma_encoding_strv_to_list ((const gchar * const *)enc_strv);
+	g_strfreev (enc_strv);
 
 	for (l = encodings; l != NULL; l = g_slist_next (l))
 	{
@@ -330,23 +340,20 @@ update_menu (PlumaEncodingsComboBox *menu)
 
 	g_slist_free (encodings);
 
-	if (pluma_prefs_manager_shown_in_menu_encodings_can_set ())
-	{
-		gtk_list_store_append (store, &iter);
-		/* separator */
-		gtk_list_store_set (store, &iter,
-				    NAME_COLUMN, "",
-				    ENCODING_COLUMN, NULL,
-				    ADD_COLUMN, FALSE,
-				    -1);
+	gtk_list_store_append (store, &iter);
+	/* separator */
+	gtk_list_store_set (store, &iter,
+			    NAME_COLUMN, "",
+			    ENCODING_COLUMN, NULL,
+			    ADD_COLUMN, FALSE,
+			    -1);
 
-		gtk_list_store_append (store, &iter);
-		gtk_list_store_set (store, &iter,
-				    NAME_COLUMN, _("Add or Remove..."),
-				    ENCODING_COLUMN, NULL,
-				    ADD_COLUMN, TRUE,
-				    -1);
-	}
+	gtk_list_store_append (store, &iter);
+	gtk_list_store_set (store, &iter,
+			    NAME_COLUMN, _("Add or Remove..."),
+			    ENCODING_COLUMN, NULL,
+			    ADD_COLUMN, TRUE,
+			    -1);
 
 	/* set the model back */
 	gtk_combo_box_set_model (GTK_COMBO_BOX (menu),
@@ -362,6 +369,8 @@ pluma_encodings_combo_box_init (PlumaEncodingsComboBox *menu)
 	GtkCellRenderer *text_renderer;
 
 	menu->priv = pluma_encodings_combo_box_get_instance_private (menu);
+
+	menu->priv->enc_settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	menu->priv->store = gtk_list_store_new (N_COLUMNS,
 						G_TYPE_STRING,

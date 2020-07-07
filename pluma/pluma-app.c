@@ -39,13 +39,13 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include "pluma-app.h"
-#include "pluma-prefs-manager-app.h"
 #include "pluma-commands.h"
 #include "pluma-notebook.h"
 #include "pluma-debug.h"
 #include "pluma-utils.h"
 #include "pluma-enum-types.h"
 #include "pluma-dirs.h"
+#include "pluma-settings.h"
 
 #define PLUMA_PAGE_SETUP_FILE		"pluma-page-setup"
 #define PLUMA_PRINT_SETTINGS_FILE	"pluma-print-settings"
@@ -66,6 +66,8 @@ struct _PlumaAppPrivate
 
 	GtkPageSetup      *page_setup;
 	GtkPrintSettings  *print_settings;
+
+	GSettings         *window_settings;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (PlumaApp, pluma_app, G_TYPE_OBJECT)
@@ -84,6 +86,17 @@ pluma_app_finalize (GObject *object)
 
 	G_OBJECT_CLASS (pluma_app_parent_class)->finalize (object);
 }
+
+static void
+pluma_app_dispose (GObject *object)
+{
+	PlumaApp *app = PLUMA_APP (object);
+
+	g_clear_object (&app->priv->window_settings);
+
+	G_OBJECT_CLASS (pluma_app_parent_class)->dispose (object);
+}
+
 
 static void
 pluma_app_get_property (GObject    *object,
@@ -110,6 +123,7 @@ pluma_app_class_init (PlumaAppClass *klass)
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
 	object_class->finalize = pluma_app_finalize;
+	object_class->dispose = pluma_app_dispose;
 	object_class->get_property = pluma_app_get_property;
 
 	g_object_class_install_property (object_class,
@@ -326,12 +340,18 @@ save_print_settings (PlumaApp *app)
 static void
 pluma_app_init (PlumaApp *app)
 {
+	PlumaSettings *settings;
+
 	app->priv = pluma_app_get_instance_private (app);
 
 	load_accels ();
 
+	/* Load/init settings */
+	settings = _pluma_settings_get_singleton ();
+	app->priv->window_settings = g_settings_new (PLUMA_SCHEMA_ID);
+
 	/* initial lockdown state */
-	app->priv->lockdown = pluma_prefs_manager_get_lockdown ();
+	app->priv->lockdown = pluma_settings_get_lockdown (settings);
 }
 
 static void
@@ -504,17 +524,20 @@ pluma_app_create_window_real (PlumaApp    *app,
 		GdkWindowState state;
 		gint w, h;
 
-		state = pluma_prefs_manager_get_window_state ();
+		state = g_settings_get_int (app->priv->window_settings,
+					    PLUMA_SETTINGS_WINDOW_STATE);
 
 		if ((state & GDK_WINDOW_STATE_MAXIMIZED) != 0)
 		{
-			pluma_prefs_manager_get_default_window_size (&w, &h);
+			_pluma_window_get_default_size (&w, &h);
 			gtk_window_set_default_size (GTK_WINDOW (window), w, h);
 			gtk_window_maximize (GTK_WINDOW (window));
 		}
 		else
 		{
-			pluma_prefs_manager_get_window_size (&w, &h);
+			g_settings_get (app->priv->window_settings,
+					PLUMA_SETTINGS_WINDOW_SIZE,
+					"(ii)", &w, &h);
 			gtk_window_set_default_size (GTK_WINDOW (window), w, h);
 			gtk_window_unmaximize (GTK_WINDOW (window));
 		}

@@ -40,7 +40,7 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include "pluma-prefs-manager-app.h"
+#include "pluma-settings.h"
 #include "pluma-document.h"
 #include "pluma-debug.h"
 #include "pluma-utils.h"
@@ -99,6 +99,8 @@ static void	delete_range_cb 		(PlumaDocument *doc,
 
 struct _PlumaDocumentPrivate
 {
+	GSettings   *editor_settings;
+
 	gchar	    *uri;
 	gint 	     untitled_number;
 	gchar       *short_name;
@@ -278,6 +280,8 @@ pluma_document_dispose (GObject *object)
 		g_object_unref (doc->priv->metadata_info);
 		doc->priv->metadata_info = NULL;
 	}
+
+	g_clear_object (&doc->priv->editor_settings);
 
 	doc->priv->dispose_has_run = TRUE;
 
@@ -720,8 +724,15 @@ set_language (PlumaDocument     *doc,
 		gtk_source_buffer_set_language (GTK_SOURCE_BUFFER (doc), lang);
 
 	if (lang != NULL)
+	{
+		gboolean syntax_hl;
+
+		syntax_hl = g_settings_get_boolean (doc->priv->editor_settings,
+						    PLUMA_SETTINGS_SYNTAX_HIGHLIGHTING);
+
 		gtk_source_buffer_set_highlight_syntax (GTK_SOURCE_BUFFER (doc),
-				 pluma_prefs_manager_get_enable_syntax_highlighting ());
+							syntax_hl);
+	}
 	else
 		gtk_source_buffer_set_highlight_syntax (GTK_SOURCE_BUFFER (doc),
 				 FALSE);
@@ -764,14 +775,14 @@ set_encoding (PlumaDocument       *doc,
 }
 
 static GtkSourceStyleScheme *
-get_default_style_scheme (void)
+get_default_style_scheme (GSettings *editor_settings)
 {
 	gchar *scheme_id;
 	GtkSourceStyleScheme *def_style;
 	GtkSourceStyleSchemeManager *manager;
 
 	manager = pluma_get_style_scheme_manager ();
-	scheme_id = pluma_prefs_manager_get_source_style_scheme ();
+	scheme_id = g_settings_get_string (editor_settings, PLUMA_SETTINGS_COLOR_SCHEME);
 	def_style = gtk_source_style_scheme_manager_get_scheme (manager,
 								scheme_id);
 
@@ -918,10 +929,15 @@ static void
 pluma_document_init (PlumaDocument *doc)
 {
 	GtkSourceStyleScheme *style_scheme;
+	gint undo_actions;
+	gboolean bracket_matching;
+	gboolean search_hl;
 
 	pluma_debug (DEBUG_DOCUMENT);
 
 	doc->priv = pluma_document_get_instance_private (doc);
+
+	doc->priv->editor_settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	doc->priv->uri = NULL;
 	doc->priv->untitled_number = get_untitled_number ();
@@ -947,16 +963,23 @@ pluma_document_init (PlumaDocument *doc)
 
 	doc->priv->newline_type = PLUMA_DOCUMENT_NEWLINE_TYPE_DEFAULT;
 
+	undo_actions = g_settings_get_uint (doc->priv->editor_settings, PLUMA_SETTINGS_MAX_UNDO_ACTIONS);
+
+	bracket_matching = g_settings_get_boolean (doc->priv->editor_settings,
+						   PLUMA_SETTINGS_BRACKET_MATCHING);
+	search_hl = g_settings_get_boolean (doc->priv->editor_settings,
+					    PLUMA_SETTINGS_SEARCH_HIGHLIGHTING);
+
 	gtk_source_buffer_set_max_undo_levels (GTK_SOURCE_BUFFER (doc),
-					       pluma_prefs_manager_get_undo_actions_limit ());
+					       undo_actions);
 
 	gtk_source_buffer_set_highlight_matching_brackets (GTK_SOURCE_BUFFER (doc),
-							   pluma_prefs_manager_get_bracket_matching ());
+							   bracket_matching);
 
-	pluma_document_set_enable_search_highlighting (doc,
-						       pluma_prefs_manager_get_enable_search_highlighting ());
+	pluma_document_set_enable_search_highlighting (doc, search_hl);
 
-	style_scheme = get_default_style_scheme ();
+
+	style_scheme = get_default_style_scheme (doc->priv->editor_settings);
 	if (style_scheme != NULL)
 		gtk_source_buffer_set_style_scheme (GTK_SOURCE_BUFFER (doc),
 						    style_scheme);
@@ -1334,6 +1357,7 @@ document_loader_loaded (PlumaDocumentLoader *loader,
 	{
 		GtkTextIter iter;
 		GFileInfo *info;
+		gboolean restore_cursor;
 		const gchar *content_type = NULL;
 		gboolean read_only = FALSE;
 		guint64 mtime = 0;
@@ -1379,6 +1403,9 @@ document_loader_loaded (PlumaDocumentLoader *loader,
 		pluma_document_set_newline_type (doc,
 		                                 pluma_document_loader_get_newline_type (loader));
 
+		restore_cursor = g_settings_get_boolean (doc->priv->editor_settings,
+							 PLUMA_SETTINGS_RESTORE_CURSOR_POSITION);
+
 		/* move the cursor at the requested line if any */
 		if (doc->priv->requested_line_pos > 0)
 		{
@@ -1388,7 +1415,7 @@ document_loader_loaded (PlumaDocumentLoader *loader,
 							  doc->priv->requested_line_pos - 1);
 		}
 		/* else, if enabled, to the position stored in the metadata */
-		else if (pluma_prefs_manager_get_restore_cursor_position ())
+		else if (restore_cursor)
 		{
 			gchar *pos;
 			gint offset;

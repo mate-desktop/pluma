@@ -40,14 +40,16 @@
 
 #include "pluma-encodings-dialog.h"
 #include "pluma-encodings.h"
-#include "pluma-prefs-manager.h"
 #include "pluma-utils.h"
 #include "pluma-debug.h"
 #include "pluma-help.h"
 #include "pluma-dirs.h"
+#include "pluma-settings.h"
 
 struct _PlumaEncodingsDialogPrivate
 {
+	GSettings	*enc_settings;
+
 	GtkListStore	*available_liststore;
 	GtkListStore	*displayed_liststore;
 	GtkWidget	*available_treeview;
@@ -63,11 +65,21 @@ G_DEFINE_TYPE_WITH_PRIVATE (PlumaEncodingsDialog, pluma_encodings_dialog, GTK_TY
 static void
 pluma_encodings_dialog_finalize (GObject *object)
 {
-	PlumaEncodingsDialogPrivate *priv = PLUMA_ENCODINGS_DIALOG (object)->priv;
+	PlumaEncodingsDialogPrivate *priv = pluma_encodings_dialog_get_instance_private (PLUMA_ENCODINGS_DIALOG(object));
 
 	g_slist_free (priv->show_in_menu_list);
 
 	G_OBJECT_CLASS (pluma_encodings_dialog_parent_class)->finalize (object);
+}
+
+static void
+pluma_encodings_dialog_dispose (GObject *object)
+{
+	PlumaEncodingsDialogPrivate *priv = pluma_encodings_dialog_get_instance_private (PLUMA_ENCODINGS_DIALOG(object));
+
+	g_clear_object (&priv->enc_settings);
+
+	G_OBJECT_CLASS (pluma_encodings_dialog_parent_class)->dispose (object);
 }
 
 static void
@@ -76,6 +88,7 @@ pluma_encodings_dialog_class_init (PlumaEncodingsDialogClass *klass)
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
 	object_class->finalize = pluma_encodings_dialog_finalize;
+	object_class->dispose = pluma_encodings_dialog_dispose;
 }
 
 enum {
@@ -232,14 +245,16 @@ static void
 init_shown_in_menu_tree_model (PlumaEncodingsDialog *dialog)
 {
 	GtkTreeIter iter;
+	gchar **enc_strv;
 	GSList *list, *tmp;
 
 	/* add data to the list store */
-	list = pluma_prefs_manager_get_shown_in_menu_encodings ();
+	enc_strv = g_settings_get_strv (dialog->priv->enc_settings,
+					PLUMA_SETTINGS_ENCODING_SHOWN_IN_MENU);
 
-	tmp = list;
+	list = _pluma_encoding_strv_to_list ((const gchar * const *)enc_strv);
 
-	while (tmp != NULL)
+	for (tmp = list; tmp != NULL; tmp = g_slist_next (tmp))
 	{
 		const PlumaEncoding *enc;
 
@@ -256,10 +271,9 @@ init_shown_in_menu_tree_model (PlumaEncodingsDialog *dialog)
 				    pluma_encoding_get_charset (enc),
 				    COLUMN_NAME,
 				    pluma_encoding_get_name (enc), -1);
-
-		tmp = g_slist_next (tmp);
 	}
 
+	g_strfreev (enc_strv);
 	g_slist_free (list);
 }
 
@@ -277,8 +291,15 @@ response_handler (GtkDialog            *dialog,
 
 	if (response_id == GTK_RESPONSE_OK)
 	{
-		g_return_if_fail (pluma_prefs_manager_shown_in_menu_encodings_can_set ());
-		pluma_prefs_manager_set_shown_in_menu_encodings (dlg->priv->show_in_menu_list);
+		gchar **encs;
+
+		encs = _pluma_encoding_list_to_strv (dlg->priv->show_in_menu_list);
+
+		g_settings_set_strv (dlg->priv->enc_settings,
+				     PLUMA_SETTINGS_ENCODING_SHOWN_IN_MENU,
+				     (const gchar * const *)encs);
+
+		g_strfreev (encs);
 	}
 }
 
@@ -302,6 +323,8 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 	};
 
 	dlg->priv = pluma_encodings_dialog_get_instance_private (dlg);
+
+	dlg->priv->enc_settings = g_settings_new (PLUMA_SCHEMA_ID);
 
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
 	pluma_dialog_add_button (GTK_DIALOG (dlg), _("_OK"), "gtk-ok", GTK_RESPONSE_OK);

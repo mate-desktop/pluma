@@ -46,7 +46,6 @@
 
 #include "pluma-debug.h"
 #include "pluma-plugins-engine.h"
-#include "pluma-prefs-manager-app.h"
 #include "pluma-metadata-manager.h"
 #include "pluma-window.h"
 #include "pluma-app.h"

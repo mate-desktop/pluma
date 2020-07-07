@@ -38,7 +38,7 @@
 #include <gio/gio.h>
 
 #include "pluma-history-entry.h"
-#include "pluma-prefs-manager.h"
+#include "pluma-settings.h"
 
 enum {
 	PROP_0,
@@ -125,7 +125,7 @@ pluma_history_entry_finalize (GObject *object)
 {
 	PlumaHistoryEntryPrivate *priv;
 
-	priv = PLUMA_HISTORY_ENTRY (object)->priv;
+	priv = pluma_history_entry_get_instance_private (PLUMA_HISTORY_ENTRY(object));
 
 	g_free (priv->history_id);
 
@@ -222,9 +222,9 @@ pluma_history_entry_save_history (PlumaHistoryEntry *entry)
 
 	settings_items = get_history_list (entry);
 
-	pluma_prefs_manager_set_gslist (entry->priv->settings,
-			      entry->priv->history_id,
-			      settings_items);
+	pluma_settings_set_list (entry->priv->settings,
+				 entry->priv->history_id,
+				 settings_items);
 
 	g_slist_free_full (settings_items, g_free);
 }
@@ -355,8 +355,8 @@ pluma_history_entry_load_history (PlumaHistoryEntry *entry)
 
 	store = get_history_store (entry);
 
-	settings_items = pluma_prefs_manager_get_gslist (entry->priv->settings,
-					     entry->priv->history_id);
+	settings_items = pluma_settings_get_list (entry->priv->settings,
+						  entry->priv->history_id);
 
 	gtk_list_store_clear (store);
 
@@ -401,7 +401,7 @@ pluma_history_entry_init (PlumaHistoryEntry *entry)
 
 	priv->completion = NULL;
 
-	priv->settings = g_settings_new (PLUMA_SCHEMA);
+	priv->settings = g_settings_new (PLUMA_SCHEMA_ID);
 }
 
 void
