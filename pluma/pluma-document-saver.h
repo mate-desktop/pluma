@@ -56,8 +56,8 @@ typedef struct _PlumaDocumentSaver PlumaDocumentSaver;
 
 struct _PlumaDocumentSaver
 {
-	GObject object;
-	PlumaDocumentSaverPrivate *priv;
+    GObject object;
+    PlumaDocumentSaverPrivate *priv;
 };
 
 /*
@@ -67,51 +67,51 @@ typedef struct _PlumaDocumentSaverClass PlumaDocumentSaverClass;
 
 struct _PlumaDocumentSaverClass
 {
-	GObjectClass parent_class;
+    GObjectClass parent_class;
 
-	/* Signals */
-	void (* saving) (PlumaDocumentSaver  *saver,
-			 gboolean             completed,
-			 const GError        *error);
+    /* Signals */
+    void (* saving) (PlumaDocumentSaver  *saver,
+                     gboolean             completed,
+                     const GError        *error);
 };
 
 /*
  * Public methods
  */
-GType 		 	 pluma_document_saver_get_type		(void) G_GNUC_CONST;
+GType                   pluma_document_saver_get_type             (void) G_GNUC_CONST;
 
 /* If enconding == NULL, the encoding will be autodetected */
-PlumaDocumentSaver 	*pluma_document_saver_new 		(PlumaDocument           *doc,
-								 const gchar             *uri,
-								 const PlumaEncoding     *encoding,
-								 PlumaDocumentNewlineType newline_type,
-								 PlumaDocumentSaveFlags   flags);
+PlumaDocumentSaver     *pluma_document_saver_new                  (PlumaDocument           *doc,
+                                                                   const gchar             *uri,
+                                                                   const PlumaEncoding     *encoding,
+                                                                   PlumaDocumentNewlineType newline_type,
+                                                                   PlumaDocumentSaveFlags   flags);
 
-void			 pluma_document_saver_saving		(PlumaDocumentSaver *saver,
-								 gboolean            completed,
-								 GError             *error);
-void			 pluma_document_saver_save		(PlumaDocumentSaver  *saver,
-								 gint64              *old_mtime);
+void                    pluma_document_saver_saving               (PlumaDocumentSaver *saver,
+                                                                   gboolean            completed,
+                                                                   GError             *error);
+void                    pluma_document_saver_save                 (PlumaDocumentSaver  *saver,
+                                                                   gint64              *old_mtime);
 
 #if 0
-void			 pluma_document_saver_cancel		(PlumaDocumentSaver  *saver);
+void                    pluma_document_saver_cancel               (PlumaDocumentSaver  *saver);
 #endif
 
-PlumaDocument		*pluma_document_saver_get_document	(PlumaDocumentSaver  *saver);
+PlumaDocument           *pluma_document_saver_get_document        (PlumaDocumentSaver  *saver);
 
-const gchar		*pluma_document_saver_get_uri		(PlumaDocumentSaver  *saver);
+const gchar             *pluma_document_saver_get_uri             (PlumaDocumentSaver  *saver);
 
 /* If backup_uri is NULL no backup will be made */
-const gchar		*pluma_document_saver_get_backup_uri	(PlumaDocumentSaver  *saver);
-void			*pluma_document_saver_set_backup_uri	(PlumaDocumentSaver  *saver,
-							 	 const gchar         *backup_uri);
+const gchar             *pluma_document_saver_get_backup_uri      (PlumaDocumentSaver  *saver);
+void                    *pluma_document_saver_set_backup_uri      (PlumaDocumentSaver  *saver,
+                                                                   const gchar         *backup_uri);
 
 /* Returns 0 if file size is unknown */
-goffset			 pluma_document_saver_get_file_size	(PlumaDocumentSaver  *saver);
+goffset                 pluma_document_saver_get_file_size        (PlumaDocumentSaver  *saver);
 
-goffset			 pluma_document_saver_get_bytes_written	(PlumaDocumentSaver  *saver);
+goffset                 pluma_document_saver_get_bytes_written    (PlumaDocumentSaver  *saver);
 
-GFileInfo		*pluma_document_saver_get_info		(PlumaDocumentSaver  *saver);
+GFileInfo              *pluma_document_saver_get_info             (PlumaDocumentSaver  *saver);
 
 G_END_DECLS
 
