@@ -534,6 +534,10 @@ async_read_cb (GInputStream *stream,
     /* end of the file, we are done! */
     if (async->read == 0)
     {
+        g_output_stream_flush (loader->priv->output,
+                               NULL,
+                               &loader->priv->error);
+
         loader->priv->auto_detected_encoding =
             pluma_smart_charset_converter_get_guessed (loader->priv->converter);
 
