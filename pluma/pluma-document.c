@@ -699,7 +699,12 @@ set_language (PlumaDocument     *doc,
               gboolean           set_by_user)
 {
 	GtkSourceLanguage *old_lang;
-	const gchar       *bom_langs;
+	const gchar       *new_lang_id;
+	const gchar       *bom_langs[] = {
+		"asp", "dtl", "docbook", "html", "mxml", "mallard", "markdown",
+		"mediawiki", "php", "tera", "xml", "xslt", NULL
+	};
+	gboolean is_bom_lang = FALSE;
 
 	pluma_debug (DEBUG_DOCUMENT);
 
@@ -708,9 +713,11 @@ set_language (PlumaDocument     *doc,
 	if (old_lang == lang)
 		return;
 
-	bom_langs = "asp,dtl,docbook,html,mxml,mallard,markdown,mediawiki,php,tera,xml,xslt";
+	new_lang_id = gtk_source_language_get_id (lang);
+	if (new_lang_id)
+		is_bom_lang = g_strv_contains (bom_langs, new_lang_id);
 
-	if (g_strrstr (bom_langs, gtk_source_language_get_id (lang)))
+	if (is_bom_lang)
 	{
 		GFile *file;
 
