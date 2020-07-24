@@ -56,17 +56,8 @@ typedef struct _PlumaDocumentLoader PlumaDocumentLoader;
 
 struct _PlumaDocumentLoader
 {
-	GObject object;
-
-	PlumaDocument		 *document;
-	gboolean		  used;
-
-	/* Info on the current file */
-	GFileInfo		 *info;
-	gchar			 *uri;
-	const PlumaEncoding	 *encoding;
-	const PlumaEncoding	 *auto_detected_encoding;
-	PlumaDocumentNewlineType  auto_detected_newline_type;
+    GObject object;
+    PlumaDocumentLoaderPrivate *priv;
 };
 
 /*
@@ -76,54 +67,49 @@ typedef struct _PlumaDocumentLoaderClass PlumaDocumentLoaderClass;
 
 struct _PlumaDocumentLoaderClass
 {
-	GObjectClass parent_class;
+    GObjectClass parent_class;
 
-	/* Signals */
-	void (* loading) (PlumaDocumentLoader *loader,
-			  gboolean             completed,
-			  const GError        *error);
-
-	/* VTable */
-	void			(* load)		(PlumaDocumentLoader *loader);
-	gboolean		(* cancel)		(PlumaDocumentLoader *loader);
-	goffset			(* get_bytes_read)	(PlumaDocumentLoader *loader);
+    /* Signals */
+    void (* loading) (PlumaDocumentLoader *loader,
+                      gboolean             completed,
+                      const GError        *error);
 };
 
 /*
  * Public methods
  */
-GType 		 	 pluma_document_loader_get_type		(void) G_GNUC_CONST;
+GType                       pluma_document_loader_get_type (void) G_GNUC_CONST;
 
 /* If enconding == NULL, the encoding will be autodetected */
-PlumaDocumentLoader 	*pluma_document_loader_new 		(PlumaDocument       *doc,
-								 const gchar         *uri,
-								 const PlumaEncoding *encoding);
+PlumaDocumentLoader         *pluma_document_loader_new (PlumaDocument       *doc,
+                                                        const gchar         *uri,
+                                                        const PlumaEncoding *encoding);
 
-void			 pluma_document_loader_loading		(PlumaDocumentLoader *loader,
-								 gboolean             completed,
-								 GError              *error);
+void                         pluma_document_loader_loading (PlumaDocumentLoader *loader,
+                                                            gboolean             completed,
+                                                            GError              *error);
 
-void			 pluma_document_loader_load		(PlumaDocumentLoader *loader);
+void                         pluma_document_loader_load (PlumaDocumentLoader *loader);
 #if 0
-gboolean		 pluma_document_loader_load_from_stdin	(PlumaDocumentLoader *loader);
+gboolean                     pluma_document_loader_load_from_stdin (PlumaDocumentLoader *loader);
 #endif
-gboolean		 pluma_document_loader_cancel		(PlumaDocumentLoader *loader);
+gboolean                     pluma_document_loader_cancel (PlumaDocumentLoader *loader);
 
-PlumaDocument		*pluma_document_loader_get_document	(PlumaDocumentLoader *loader);
+PlumaDocument               *pluma_document_loader_get_document (PlumaDocumentLoader *loader);
 
 /* Returns STDIN_URI if loading from stdin */
 #define STDIN_URI "stdin:"
-const gchar		*pluma_document_loader_get_uri		(PlumaDocumentLoader *loader);
+const gchar                 *pluma_document_loader_get_uri (PlumaDocumentLoader *loader);
 
-const PlumaEncoding	*pluma_document_loader_get_encoding	(PlumaDocumentLoader *loader);
+const PlumaEncoding         *pluma_document_loader_get_encoding (PlumaDocumentLoader *loader);
 
-PlumaDocumentNewlineType pluma_document_loader_get_newline_type (PlumaDocumentLoader *loader);
+PlumaDocumentNewlineType     pluma_document_loader_get_newline_type (PlumaDocumentLoader *loader);
 
-goffset			 pluma_document_loader_get_bytes_read	(PlumaDocumentLoader *loader);
+goffset                      pluma_document_loader_get_bytes_read (PlumaDocumentLoader *loader);
 
 /* You can get from the info: content_type, time_modified, standard_size, access_can_write
    and also the metadata*/
-GFileInfo		*pluma_document_loader_get_info		(PlumaDocumentLoader *loader);
+GFileInfo                   *pluma_document_loader_get_info (PlumaDocumentLoader *loader);
 
 G_END_DECLS
 
