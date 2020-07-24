@@ -713,12 +713,17 @@ set_language (PlumaDocument     *doc,
 	if (g_strrstr (bom_langs, gtk_source_language_get_id (lang)))
 	{
 		GFile *file;
+
 		file = pluma_document_get_location (doc);
+		if (file)
+		{
+			if (!file_with_bom (file))
+				gtk_source_buffer_set_language (GTK_SOURCE_BUFFER (doc), lang);
 
-		if (!file_with_bom (file))
+			g_object_unref (file);
+		}
+		else
 			gtk_source_buffer_set_language (GTK_SOURCE_BUFFER (doc), lang);
-
-		g_object_unref (file);
 	}
 	else
 		gtk_source_buffer_set_language (GTK_SOURCE_BUFFER (doc), lang);
