@@ -935,10 +935,11 @@ pluma_document_saver_save (PlumaDocumentSaver     *saver,
     g_return_if_fail (saver->priv->used == FALSE);
     saver->priv->used = TRUE;
 
-    // CHECK:
-    // - sanity check a max len for the uri?
-    // report async (in an idle handler) or sync (bool ret)
-    // async is extra work here, sync is special casing in the caller
+    /* CHECK:
+     * - sanity check a max len for the uri?
+     * report async (in an idle handler) or sync (bool ret)
+     * async is extra work here, sync is special casing in the caller
+     */
 
     /* never keep backup of autosaves */
     if ((saver->priv->flags & PLUMA_DOCUMENT_SAVE_PRESERVE_BACKUP) != 0)
