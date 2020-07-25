@@ -103,6 +103,15 @@ static const GtkActionEntry pluma_menu_entries[] =
 	  N_("Delete the selected text"), G_CALLBACK (_pluma_cmd_edit_delete) },
 	{ "EditSelectAll", "edit-select-all", N_("Select _All"), "<control>A",
 	  N_("Select the entire document"), G_CALLBACK (_pluma_cmd_edit_select_all) },
+	{ "ChangeCase", NULL, N_("C_hange Case"), NULL, NULL, NULL },
+	{ "UpperCase", NULL, N_("All _Upper Case"), NULL,
+	  N_("Change selected text to upper case"), G_CALLBACK (_pluma_cmd_edit_upper_case) },
+	{ "LowerCase", NULL, N_("All _Lower Case"), NULL,
+	  N_("Change selected text to lower case"), G_CALLBACK (_pluma_cmd_edit_lower_case) },
+	{ "InvertCase", NULL, N_("_Invert Case"), NULL,
+	  N_("Invert the case of selected text"), G_CALLBACK (_pluma_cmd_edit_invert_case) },
+	{ "TitleCase", NULL, N_("_Title Case"), NULL,
+	  N_("Capitalize the first letter of each selected word"), G_CALLBACK (_pluma_cmd_edit_title_case) },
 
 	/* View menu */
 	{ "ViewHighlightMode", NULL, N_("_Highlight Mode") },

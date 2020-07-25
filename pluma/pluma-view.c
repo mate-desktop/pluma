@@ -323,6 +323,27 @@ pluma_view_class_init (PlumaViewClass *klass)
 				      "delete_from_cursor", 2,
 				      G_TYPE_ENUM, GTK_DELETE_PARAGRAPHS,
 				      G_TYPE_INT, 1);
+
+	gtk_binding_entry_add_signal (binding_set,
+	                              GDK_KEY_u,
+	                              GDK_CONTROL_MASK,
+	                              "change_case", 1,
+	                              G_TYPE_ENUM, GTK_SOURCE_CHANGE_CASE_UPPER);
+	gtk_binding_entry_add_signal (binding_set,
+	                              GDK_KEY_l,
+	                              GDK_CONTROL_MASK,
+	                              "change_case", 1,
+	                              G_TYPE_ENUM, GTK_SOURCE_CHANGE_CASE_LOWER);
+	gtk_binding_entry_add_signal (binding_set,
+	                              GDK_KEY_u,
+	                              GDK_MOD1_MASK,
+	                              "change_case", 1,
+	                              G_TYPE_ENUM, GTK_SOURCE_CHANGE_CASE_TOGGLE);
+	gtk_binding_entry_add_signal (binding_set,
+	                              GDK_KEY_l,
+	                              GDK_MOD1_MASK,
+	                              "change_case", 1,
+	                              G_TYPE_ENUM, GTK_SOURCE_CHANGE_CASE_TITLE);
 }
 
 static void
@@ -751,6 +772,82 @@ pluma_view_delete_selection (PlumaView *view)
 				      FALSE,
 				      0.0,
 				      0.0);
+}
+
+void
+pluma_view_upper_case_selection (PlumaView *view)
+{
+        GtkTextBuffer *buffer = NULL;
+        GtkTextIter start, end;
+
+        pluma_debug (DEBUG_VIEW);
+
+        g_return_if_fail (PLUMA_IS_VIEW (view));
+
+        buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
+        g_return_if_fail (buffer != NULL);
+
+        if (gtk_text_buffer_get_selection_bounds (buffer, &start, &end))
+        {
+                gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_UPPER, &start, &end);
+        }
+}
+
+void
+pluma_view_lower_case_selection (PlumaView *view)
+{
+        GtkTextBuffer *buffer = NULL;
+        GtkTextIter start, end;
+
+        pluma_debug (DEBUG_VIEW);
+
+        g_return_if_fail (PLUMA_IS_VIEW (view));
+
+        buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
+        g_return_if_fail (buffer != NULL);
+
+        if (gtk_text_buffer_get_selection_bounds (buffer, &start, &end))
+        {
+                gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_LOWER, &start, &end);
+        }
+}
+
+void
+pluma_view_invert_case_selection (PlumaView *view)
+{
+        GtkTextBuffer *buffer = NULL;
+        GtkTextIter start, end;
+
+        pluma_debug (DEBUG_VIEW);
+
+        g_return_if_fail (PLUMA_IS_VIEW (view));
+
+        buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
+        g_return_if_fail (buffer != NULL);
+
+        if (gtk_text_buffer_get_selection_bounds (buffer, &start, &end))
+        {
+                gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_TOGGLE, &start, &end);
+        }
+}
+
+void
+pluma_view_title_case_selection (PlumaView *view)
+{
+        GtkTextBuffer *buffer = NULL;
+        GtkTextIter start, end;
+
+        pluma_debug (DEBUG_VIEW);
+
+        g_return_if_fail (PLUMA_IS_VIEW (view));
+
+        buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
+        g_return_if_fail (buffer != NULL);
+
+        if (gtk_text_buffer_get_selection_bounds (buffer, &start, &end))
+        {
+                gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_TITLE, &start, &end);
+        }
 }
 
 /**

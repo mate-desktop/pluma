@@ -103,6 +103,14 @@ void		_pluma_cmd_edit_paste			(GtkAction   *action,
 							 PlumaWindow *window);
 void		_pluma_cmd_edit_delete			(GtkAction   *action,
 							 PlumaWindow *window);
+void            _pluma_cmd_edit_upper_case              (GtkAction   *action,
+                                                         PlumaWindow *window);
+void            _pluma_cmd_edit_lower_case              (GtkAction   *action,
+                                                         PlumaWindow *window);
+void            _pluma_cmd_edit_invert_case             (GtkAction   *action,
+                                                         PlumaWindow *window);
+void            _pluma_cmd_edit_title_case              (GtkAction   *action,
+                                                         PlumaWindow *window);
 void		_pluma_cmd_edit_select_all		(GtkAction   *action,
 							 PlumaWindow *window);
 void		_pluma_cmd_edit_preferences		(GtkAction   *action,
