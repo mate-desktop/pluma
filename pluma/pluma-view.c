@@ -531,6 +531,12 @@ pluma_view_init (PlumaView *view)
 		      "indent_on_tab", TRUE,
 		      NULL);
 
+	g_settings_bind (view->priv->editor_settings,
+	                 PLUMA_SETTINGS_BACKGROUND_PATTERN,
+	                 view,
+	                 "background-pattern",
+	                 G_SETTINGS_BIND_DEFAULT);
+
 	pluma_set_source_space_drawer (view->priv->editor_settings, GTK_SOURCE_VIEW (view));
 
 	view->priv->typeselect_flush_timeout = 0;

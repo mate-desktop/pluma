@@ -5,6 +5,10 @@
     <value nick="show-trailing" value="1"/>
     <value nick="show-all" value="2"/>
   </enum>
+  <enum id="org.mate.pluma.BackgroundPatternType">
+    <value nick="none" value="0"/>
+    <value nick="grid" value="1"/>
+  </enum>
   <schema id="org.mate.pluma" path="/org/mate/pluma/">
     <key name="use-default-font" type="b">
       <default>true</default>
@@ -105,6 +109,11 @@
       <default>80</default>
       <summary>Right Margin Position</summary>
       <description>Specifies the position of the right margin.</description>
+    </key>
+    <key name="background-pattern" enum="org.mate.pluma.BackgroundPatternType">
+      <default>'none'</default>
+      <summary>Document background pattern type</summary>
+      <description>Whether the document will get a background pattern painted.</description>
     </key>
      <key name="display-overview-map" type="b">
       <default>false</default>

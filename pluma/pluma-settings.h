@@ -141,6 +141,7 @@ GSList *                pluma_settings_get_writable_vfs_schemes (GSettings *sett
 #define PLUMA_SETTINGS_DRAWER_NEWLINE               "enable-space-drawer-newline"
 #define PLUMA_SETTINGS_DRAWER_NBSP                  "enable-space-drawer-nbsp"
 #define PLUMA_SETTINGS_DISPLAY_OVERVIEW_MAP         "display-overview-map"
+#define PLUMA_SETTINGS_BACKGROUND_PATTERN           "background-pattern"
 
 /* White list of writable mate-vfs methods */
 #define PLUMA_SETTINGS_WRITABLE_VFS_SCHEMES         "writable-vfs-schemes"
