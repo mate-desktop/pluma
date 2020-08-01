@@ -130,6 +130,9 @@ struct _PlumaPreferencesDialogPrivate
 	/* Highlight matching bracket */
 	GtkWidget	*bracket_matching_checkbutton;
 
+	/* Display grid pattern */
+	GtkWidget       *display_grid_checkbutton;
+
 	/* Display overview map */
 	GtkWidget	*display_overview_map_checkbutton;
 
@@ -464,9 +467,24 @@ right_margin_checkbutton_toggled (GtkToggleButton        *button,
 }
 
 static void
+grid_checkbutton_toggled (GtkToggleButton        *button,
+                          PlumaPreferencesDialog *dlg)
+{
+	GtkSourceBackgroundPatternType background_type;
+
+	background_type = gtk_toggle_button_get_active (button) ?
+	                  GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID :
+		          GTK_SOURCE_BACKGROUND_PATTERN_TYPE_NONE;
+	g_settings_set_enum (dlg->priv->editor_settings,
+	                     PLUMA_SETTINGS_BACKGROUND_PATTERN,
+	                     background_type);
+}
+
+static void
 setup_view_page (PlumaPreferencesDialog *dlg)
 {
 	GtkWrapMode wrap_mode;
+	GtkSourceBackgroundPatternType background_pattern;
 	gboolean display_right_margin;
 
 	pluma_debug (DEBUG_PREFS);
@@ -478,6 +496,9 @@ setup_view_page (PlumaPreferencesDialog *dlg)
 	/* Set initial state */
 	wrap_mode = pluma_settings_get_wrap_mode (dlg->priv->editor_settings,
 						  PLUMA_SETTINGS_WRAP_MODE);
+
+	background_pattern = g_settings_get_enum (dlg->priv->editor_settings,
+	                                          PLUMA_SETTINGS_BACKGROUND_PATTERN);
 
 	switch (wrap_mode)
 	{
@@ -505,6 +526,10 @@ setup_view_page (PlumaPreferencesDialog *dlg)
 
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dlg->priv->right_margin_checkbutton),
 				      display_right_margin);
+
+	gtk_toggle_button_set_active (
+		GTK_TOGGLE_BUTTON (dlg->priv->display_grid_checkbutton),
+		background_pattern == GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID);
 
 	/* Set widgets sensitivity */
 	gtk_widget_set_sensitive (dlg->priv->split_checkbutton, (wrap_mode != GTK_WRAP_NONE));
@@ -548,6 +573,10 @@ setup_view_page (PlumaPreferencesDialog *dlg)
 	g_signal_connect (dlg->priv->right_margin_checkbutton,
 			  "toggled",
 			  G_CALLBACK (right_margin_checkbutton_toggled),
+			  dlg);
+	g_signal_connect (dlg->priv->display_grid_checkbutton,
+			  "toggled",
+			  G_CALLBACK (grid_checkbutton_toggled),
 			  dlg);
 }
 
@@ -1231,6 +1260,7 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 		"highlight_current_line_checkbutton", &dlg->priv->highlight_current_line_checkbutton,
 		"bracket_matching_checkbutton", &dlg->priv->bracket_matching_checkbutton,
 		"display_overview_map_checkbutton", &dlg->priv->display_overview_map_checkbutton,
+		"display_grid_checkbutton", &dlg->priv->display_grid_checkbutton,
 		"wrap_text_checkbutton", &dlg->priv->wrap_text_checkbutton,
 		"split_checkbutton", &dlg->priv->split_checkbutton,
 
