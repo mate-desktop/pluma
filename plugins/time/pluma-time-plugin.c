@@ -31,7 +31,6 @@
 #endif
 
 #include <string.h>
-#include <time.h>
 
 #include "pluma-time-plugin.h"
 #include <pluma/pluma-help.h>
@@ -87,9 +86,7 @@ static const gchar *formats[] =
 	"%I.%M %p",
 	"%d/%m/%Y %H:%M:%S",
 	"%d/%m/%y %H:%M:%S",
-#if __GLIBC__ >= 2
 	"%a, %d %b %Y %H:%M:%S %z",
-#endif
 	NULL
 };
 
@@ -406,50 +403,21 @@ set_custom_format (GSettings *settings,
 static gchar *
 get_time (const gchar* format)
 {
-  	gchar *out = NULL;
-	gchar *out_utf8 = NULL;
-  	time_t clock;
-  	struct tm *now;
-  	size_t out_length = 0;
-	gchar *locale_format;
+        gchar *out;
+        GDateTime *now;
 
-	pluma_debug (DEBUG_PLUGINS);
+        pluma_debug (DEBUG_PLUGINS);
 
-	g_return_val_if_fail (format != NULL, NULL);
+        g_return_val_if_fail (format != NULL, NULL);
 
-	if (strlen (format) == 0)
-		return g_strdup (" ");
+        if (*format == '\0')
+                return g_strdup (" ");
 
-	locale_format = g_locale_from_utf8 (format, -1, NULL, NULL, NULL);
-	if (locale_format == NULL)
-		return g_strdup (" ");
+        now = g_date_time_new_now_local ();
+        out = g_date_time_format (now, format);
+        g_date_time_unref (now);
 
-  	clock = time (NULL);
-  	now = localtime (&clock);
-
-	do
-	{
-		out_length += 255;
-		out = g_realloc (out, out_length);
-	}
-  	while (strftime (out, out_length, locale_format, now) == 0);
-
-	g_free (locale_format);
-
-	if (g_utf8_validate (out, -1, NULL))
-	{
-		out_utf8 = out;
-	}
-	else
-	{
-		out_utf8 = g_locale_to_utf8 (out, -1, NULL, NULL, NULL);
-		g_free (out);
-
-		if (out_utf8 == NULL)
-			out_utf8 = g_strdup (" ");
-	}
-
-  	return out_utf8;
+        return out;
 }
 
 static void
