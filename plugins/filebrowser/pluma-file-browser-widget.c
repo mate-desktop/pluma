@@ -789,7 +789,7 @@ create_combo (PlumaFileBrowserWidget * obj)
 
 static GtkActionEntry toplevel_actions[] =
 {
-	{"FilterMenuAction", NULL, N_("_Filter")}
+	{"FilterMenuAction", NULL, N_("_Filter"), NULL, NULL, NULL}
 };
 
 static const GtkActionEntry tree_actions_selection[] =

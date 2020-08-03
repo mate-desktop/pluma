@@ -44,13 +44,13 @@ G_BEGIN_DECLS
 static const GtkActionEntry pluma_always_sensitive_menu_entries[] =
 {
 	/* Toplevel */
-	{ "File", NULL, N_("_File") },
-	{ "Edit", NULL, N_("_Edit") },
-	{ "View", NULL, N_("_View") },
-	{ "Search", NULL, N_("_Search") },
-	{ "Tools", NULL, N_("_Tools") },
-	{ "Documents", NULL, N_("_Documents") },
-	{ "Help", NULL, N_("_Help") },
+	{ "File", NULL, N_("_File"), NULL, NULL, NULL },
+	{ "Edit", NULL, N_("_Edit"), NULL, NULL, NULL },
+	{ "View", NULL, N_("_View"), NULL, NULL, NULL },
+	{ "Search", NULL, N_("_Search"), NULL, NULL, NULL },
+	{ "Tools", NULL, N_("_Tools"), NULL, NULL, NULL },
+	{ "Documents", NULL, N_("_Documents"), NULL, NULL, NULL },
+	{ "Help", NULL, N_("_Help"), NULL, NULL, NULL },
 
 	/* File menu */
 	{ "FileNew", "document-new", N_("_New"), "<control>N",
@@ -114,7 +114,7 @@ static const GtkActionEntry pluma_menu_entries[] =
 	  N_("Capitalize the first letter of each selected word"), G_CALLBACK (_pluma_cmd_edit_title_case) },
 
 	/* View menu */
-	{ "ViewHighlightMode", NULL, N_("_Highlight Mode") },
+	{ "ViewHighlightMode", NULL, N_("_Highlight Mode"), NULL, NULL, NULL },
 
 	/* Search menu */
 	{ "SearchFind", "edit-find", N_("_Find..."), "<control>F",
