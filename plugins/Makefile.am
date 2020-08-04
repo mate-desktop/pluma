@@ -11,6 +11,7 @@ DIST_SUBDIRS =		\
 	spell 		\
 	taglist 	\
 	time		\
+	terminal	\
 	trailsave
 
 SUBDIRS = 		\
@@ -25,6 +26,7 @@ SUBDIRS = 		\
 	sort		\
 	taglist		\
 	time		\
+	terminal	\
 	trailsave
 
 if ENABLE_ENCHANT

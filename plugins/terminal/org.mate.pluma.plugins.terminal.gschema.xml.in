@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<schemalist>
+  <enum id='org.mate.pluma.plugins.terminal.VteTerminalCursorBlinkMode'>
+    <value nick='system' value='0'/>
+    <value nick='on' value='1'/>
+    <value nick='off' value='2'/>
+  </enum>
+  <enum id='org.mate.pluma.plugins.terminal.VteTerminalCursorShape'>
+    <value nick='block' value='0'/>
+    <value nick='ibeam' value='1'/>
+    <value nick='underline' value='2'/>
+  </enum>
+
+  <schema gettext-domain="pluma-plugins" id="org.mate.pluma.plugins.terminal" path="/org/mate/pluma/plugins/terminal/">
+    <key name="silent-bell" type="b">
+      <default>true</default>
+      <summary>Whether to silence terminal bell</summary>
+      <description>
+        If true, don’t make a noise when applications send the
+        escape sequence for the terminal bell.
+      </description>
+    </key>
+    <key name="scrollback-lines" type="i">
+      <default>100</default>
+      <summary>Number of lines to keep in scrollback</summary>
+      <description>
+        Number of scrollback lines to keep around. You can
+        scroll back in the terminal by this number of lines;
+        lines that don’t fit in the scrollback are discarded.
+        If scrollback-unlimited is true, this value is ignored.
+      </description>
+    </key>
+    <key name="scrollback-unlimited" type="b">
+      <default>false</default>
+      <summary>
+        Whether an unlimited number of lines should be kept in scrollback
+      </summary>
+      <description>
+        If true, scrollback lines will never be discarded.  The scrollback
+        history is stored on disk temporarily, so this may cause the system
+        to run out of disk space if there is a lot of output to the
+        terminal.
+      </description>
+    </key>
+    <key name="scroll-on-keystroke" type="b">
+      <default>true</default>
+      <summary>Whether to scroll to the bottom when a key is pressed</summary>
+      <description>
+        If true, pressing a key jumps the scrollbar to the bottom.
+      </description>
+    </key>
+    <key name="scroll-on-output" type="b">
+      <default>false</default>
+      <summary>Whether to scroll to the bottom when there’s new output</summary>
+      <description>
+        If true, whenever there’s new output the terminal will scroll
+        to the bottom.
+      </description>
+    </key>
+    <key name="foreground-color" type="s">
+      <default>'#000000'</default>
+      <summary>Default color of text in the terminal</summary>
+      <description>
+        Default color of text in the terminal, as a color
+        specification (can be HTML-style hex digits, or
+        a color name such as “red”).
+      </description>
+    </key>
+    <key name="background-color" type="s">
+      <default>'#FFFFDD'</default>
+      <summary>Default color of terminal background</summary>
+      <description>
+        Default color of terminal background, as a color
+        specification (can be HTML-style hex digits, or
+        a color name such as “red”).
+      </description>
+    </key>
+    <key name="palette" type="s">
+      <default>'#2E2E34343636:#CCCC00000000:#4E4E9A9A0606:#C4C4A0A00000:#34346565A4A4:#757550507B7B:#060698209A9A:#D3D3D7D7CFCF:#555557575353:#EFEF29292929:#8A8AE2E23434:#FCFCE9E94F4F:#72729F9FCFCF:#ADAD7F7FA8A8:#3434E2E2E2E2:#EEEEEEEEECEC'</default>
+      <summary>Palette for terminal applications</summary>
+      <description>Terminals have a 16-color palette that applications inside the terminal can use. This is that palette, in the form of a colon-separated list of color names. Color names should be in hex format e.g. "#FF00FF"</description>
+    </key>
+    <key name="use-theme-colors" type="b">
+      <default>true</default>
+      <summary>
+        Whether to use the colors from the theme for the terminal widget
+      </summary>
+      <description>
+        If true, the theme color scheme used for text entry boxes will
+        be used for the terminal, instead of colors provided by the user.
+      </description>
+    </key>
+    <key name="cursor-blink-mode" enum="org.mate.pluma.plugins.terminal.VteTerminalCursorBlinkMode">
+      <default>'system'</default>
+      <summary>Whether to blink the cursor</summary>
+      <description>
+        The possible values are “system” to use the global cursor blinking
+        settings, or “on” or “off” to set the mode explicitly.
+      </description>
+    </key>
+    <key name="cursor-shape" enum="org.mate.pluma.plugins.terminal.VteTerminalCursorShape">
+      <default>'block'</default>
+      <summary>The cursor appearance</summary>
+      <description>
+        The possible values are “block” to use a block cursor, “ibeam” to
+        use a vertical line cursor, or “underline” to use an underline cursor.
+      </description>
+    </key>
+    <key name="use-system-font" type="b">
+      <default>true</default>
+      <summary>Whether to use the system font</summary>
+      <description>
+        If true, the terminal will use the desktop-global standard
+        font if it’s monospace (and the most similar font it can
+        come up with otherwise).
+      </description>
+    </key>
+    <key name="font" type="s">
+      <default>'Monospace 10'</default>
+      <summary>Font</summary>
+      <description>
+        A Pango font name. Examples are “Sans 12” or “Monospace Bold 14”.
+      </description>
+    </key>
+  </schema>
+</schemalist>

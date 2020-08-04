@@ -267,6 +267,8 @@ plugins/spell/org.mate.pluma.plugins.spell.gschema.xml
 plugins/taglist/Makefile
 plugins/time/Makefile
 plugins/time/org.mate.pluma.plugins.time.gschema.xml
+plugins/terminal/Makefile
+plugins/terminal/org.mate.pluma.plugins.terminal.gschema.xml
 plugins/trailsave/Makefile
 po/Makefile.in
 tests/Makefile
