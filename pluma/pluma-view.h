@@ -95,6 +95,12 @@ void		 pluma_view_cut_clipboard 	(PlumaView       *view);
 void		 pluma_view_copy_clipboard 	(PlumaView       *view);
 void		 pluma_view_paste_clipboard	(PlumaView       *view);
 void		 pluma_view_delete_selection	(PlumaView       *view);
+
+void		 pluma_view_upper_case_selection	(PlumaView       *view);
+void		 pluma_view_lower_case_selection	(PlumaView       *view);
+void		 pluma_view_invert_case_selection	(PlumaView       *view);
+void		 pluma_view_title_case_selection	(PlumaView       *view);
+
 void		 pluma_view_select_all		(PlumaView       *view);
 
 void		 pluma_view_scroll_to_cursor 	(PlumaView       *view);
