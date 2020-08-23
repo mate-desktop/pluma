@@ -13,14 +13,16 @@
 # Bar Boko <bokodev@outlook.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2020
+# Omer I.S., 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-07-02 17:38+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>, 2020\n"
+"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2020\n"
 "Language-Team: Hebrew (https://www.transifex.com/mate/teams/13566/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +49,7 @@ msgstr ""
 #: data/org.mate.pluma.gschema.xml.in:15
 msgctxt "editor-font"
 msgid "'Monospace 12'"
-msgstr ""
+msgstr "\"Monospace 12\""
 
 #: data/org.mate.pluma.gschema.xml.in:16
 msgid "Editor Font"
@@ -354,7 +356,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:156
 msgid "Bottom Panel is Visible"
-msgstr "Bottom Panel is Visible"
+msgstr "הלוח התחתון גלוי"
 
 #: data/org.mate.pluma.gschema.xml.in:157
 msgid ""
@@ -477,7 +479,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:201
@@ -612,12 +614,6 @@ msgstr "עורך טקסט"
 msgid "Edit text files"
 msgstr "עריכת קובצי טקסט"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr "accessories-text-editor"
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/pluma.desktop.in.in:15
@@ -639,8 +635,8 @@ msgstr "_סגירה ללא שמירה"
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:151
 #: pluma/dialogs/pluma-encodings-dialog.c:306
 #: pluma/dialogs/pluma-encodings-dialog.ui:56
-#: pluma/dialogs/pluma-preferences-dialog.c:975
-#: pluma/pluma-commands-file.c:583 pluma/pluma-commands-file.c:1223
+#: pluma/dialogs/pluma-preferences-dialog.c:974
+#: pluma/pluma-commands-file.c:581 pluma/pluma-commands-file.c:1221
 #: pluma/pluma-file-chooser-dialog.c:435
 #: pluma/pluma-io-error-message-area.c:168
 #: pluma/pluma-io-error-message-area.c:507
@@ -806,7 +802,7 @@ msgstr "_אישור"
 
 #: pluma/dialogs/pluma-encodings-dialog.c:308
 #: pluma/dialogs/pluma-encodings-dialog.ui:40
-#: pluma/dialogs/pluma-preferences-dialog.c:1292
+#: pluma/dialogs/pluma-preferences-dialog.c:1350
 #: pluma/dialogs/pluma-preferences-dialog.ui:58 pluma/pluma-ui.h:53
 #: plugins/sort/sort.ui:77 plugins/spell/pluma-spell-language-dialog.c:134
 #: plugins/spell/languages-dialog.ui:40
@@ -852,42 +848,42 @@ msgstr "ק_ידודים המוצגים בתפריט:"
 msgid "_Remove"
 msgstr "ה_סרה"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:726
+#: pluma/dialogs/pluma-preferences-dialog.c:725
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "יש ללחוץ על כפתור זה כדי לבחור גופן לשימוש על־ידי העורך"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:736
+#: pluma/dialogs/pluma-preferences-dialog.c:735
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "יש ל_השתמש בגופן המערכת בעל רוחב קבוע (%s)"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:939
+#: pluma/dialogs/pluma-preferences-dialog.c:938
 msgid "The selected color scheme cannot be installed."
 msgstr "לא ניתן להתקין את סכימת הצבעים שנבחרה."
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1017
+#: pluma/dialogs/pluma-preferences-dialog.c:1016
 msgid "Add Scheme"
 msgstr "הוספת סכימה"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1024
+#: pluma/dialogs/pluma-preferences-dialog.c:1023
 msgid "A_dd Scheme"
 msgstr "ה_וספת סכימה"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1032
+#: pluma/dialogs/pluma-preferences-dialog.c:1031
 msgid "Color Scheme Files"
 msgstr "קובצי סכימת צבעים"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1039
+#: pluma/dialogs/pluma-preferences-dialog.c:1038
 #: pluma/pluma-file-chooser-dialog.c:52
 msgid "All Files"
 msgstr "כל הקבצים"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1084
+#: pluma/dialogs/pluma-preferences-dialog.c:1083
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "לא ניתן להסיר את סכימת הצבעים \"%s\"."
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1291
+#: pluma/dialogs/pluma-preferences-dialog.c:1349
 #: pluma/dialogs/pluma-preferences-dialog.ui:74
 #: pluma/dialogs/pluma-search-dialog.c:327
 #: pluma/dialogs/pluma-search-dialog.ui:60 pluma/pluma-ui.h:142
@@ -895,7 +891,7 @@ msgstr "לא ניתן להסיר את סכימת הצבעים \"%s\"."
 msgid "_Close"
 msgstr "_סגור"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1294
+#: pluma/dialogs/pluma-preferences-dialog.c:1352
 msgid "Pluma Preferences"
 msgstr "העדפות Pluma"
 
@@ -1076,11 +1072,11 @@ msgstr "תוספים"
 
 #: pluma/dialogs/pluma-search-dialog.c:295
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1529
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1528
 msgid "Replace"
 msgstr "החלפה"
 
-#: pluma/dialogs/pluma-search-dialog.c:304 pluma/pluma-window.c:1527
+#: pluma/dialogs/pluma-search-dialog.c:304 pluma/pluma-window.c:1526
 msgid "Find"
 msgstr "חיפוש"
 
@@ -1093,7 +1089,7 @@ msgstr "_חיפוש"
 msgid "Replace _All"
 msgstr "החלפה ב_כול"
 
-#: pluma/dialogs/pluma-search-dialog.c:411 pluma/pluma-commands-file.c:588
+#: pluma/dialogs/pluma-search-dialog.c:411 pluma/pluma-commands-file.c:586
 msgid "_Replace"
 msgstr "ה_חלפה"
 
@@ -1165,16 +1161,16 @@ msgstr "Create a new document in an existing instance of pluma"
 msgid "[FILE...]"
 msgstr "[FILE...]"
 
-#: pluma/pluma.c:178
+#: pluma/pluma.c:177
 #, c-format
 msgid "%s: invalid encoding.\n"
 msgstr "%s: invalid encoding.\n"
 
-#: pluma/pluma.c:524
+#: pluma/pluma.c:528
 msgid "- Edit text files"
 msgstr "- Edit text files"
 
-#: pluma/pluma.c:535
+#: pluma/pluma.c:539
 #, c-format
 msgid ""
 "%s\n"
@@ -1198,39 +1194,39 @@ msgstr[2] "נטענים %d קבצים…"
 msgstr[3] "נטענים %d קבצים…"
 
 #. Translators: "Open Files" is the title of the file chooser window
-#: pluma/pluma-commands-file.c:463
+#: pluma/pluma-commands-file.c:461
 msgid "Open Files"
 msgstr "קבצים פתוחים"
 
-#: pluma/pluma-commands-file.c:574
+#: pluma/pluma-commands-file.c:572
 #, c-format
 msgid "The file \"%s\" is read-only."
 msgstr "הקובץ \"%s\" הנו לקריאה בלבד."
 
-#: pluma/pluma-commands-file.c:579
+#: pluma/pluma-commands-file.c:577
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "האם ברצונך לנסות להחליפו עם הקובץ שנשמר?"
 
-#: pluma/pluma-commands-file.c:649 pluma/pluma-commands-file.c:872
+#: pluma/pluma-commands-file.c:647 pluma/pluma-commands-file.c:870
 #, c-format
 msgid "Saving file '%s'…"
 msgstr "נשמר קובץ  '%s'…"
 
-#: pluma/pluma-commands-file.c:757
+#: pluma/pluma-commands-file.c:755
 msgid "Save As…"
 msgstr "שמירה בשם…"
 
-#: pluma/pluma-commands-file.c:1086
+#: pluma/pluma-commands-file.c:1084
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr "המסמך '%s' משוחזר…"
 
-#: pluma/pluma-commands-file.c:1131
+#: pluma/pluma-commands-file.c:1129
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr "האם לבטל את השינויים שלא נשמרו במסמך '%s'?"
 
-#: pluma/pluma-commands-file.c:1140
+#: pluma/pluma-commands-file.c:1138
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently "
@@ -1243,12 +1239,12 @@ msgstr[1] "שינויים שנערכו במסמך ב־%ld השניות האחר�
 msgstr[2] "שינויים שנערכו במסמך ב־%ld השניות האחרונות יאבדו לחלוטין."
 msgstr[3] "שינויים שנערכו במסמך ב־%ld השניות האחרונות יאבדו לחלוטין."
 
-#: pluma/pluma-commands-file.c:1149
+#: pluma/pluma-commands-file.c:1147
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "השינויים שנערכו במסמך בדקה האחרונה יאבדו."
 
-#: pluma/pluma-commands-file.c:1155
+#: pluma/pluma-commands-file.c:1153
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -1261,7 +1257,7 @@ msgstr[1] "שינויים שנערכו במסמך בדקה ו־%ld השניות 
 msgstr[2] "שינויים שנערכו במסמך בדקה ו־%ld השניות האחרונות יאבדו לחלוטין."
 msgstr[3] "שינויים שנערכו במסמך בדקה ו־%ld השניות האחרונות יאבדו לחלוטין."
 
-#: pluma/pluma-commands-file.c:1165
+#: pluma/pluma-commands-file.c:1163
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently "
@@ -1274,12 +1270,12 @@ msgstr[1] "שינויים שנערכו במסמך ב־%ld הדקות האחרו�
 msgstr[2] "שינויים שנערכו במסמך ב־%ld הדקות האחרונות יאבדו לחלוטין."
 msgstr[3] "שינויים שנערכו במסמך ב־%ld הדקות האחרונות יאבדו לחלוטין."
 
-#: pluma/pluma-commands-file.c:1180
+#: pluma/pluma-commands-file.c:1178
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
 msgstr "השינויים שנערכו במסמך בשעה האחרונה יאבדו."
 
-#: pluma/pluma-commands-file.c:1186
+#: pluma/pluma-commands-file.c:1184
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -1287,23 +1283,23 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "שינויים שנערכו במסמך בשעה והדקה האחרונות יאבדו לחלוטין."
-msgstr[1] "שינויים שנערכו במסמך בשעה ו־%ld הדקות האחרונות יאבדו לחלוטין."
-msgstr[2] "שינויים שנערכו במסמך בשעה ו־%ld הדקות האחרונות יאבדו לחלוטין."
-msgstr[3] "שינויים שנערכו במסמך בשעה ו־%ld הדקות האחרונות יאבדו לחלוטין."
+msgstr[0] "שינויים שנערכו במסמך בשעה %d והדקה האחרונות יאבדו לחלוטין."
+msgstr[1] "שינויים שנערכו במסמך בשעה ו־%d הדקות האחרונות יאבדו לחלוטין."
+msgstr[2] "שינויים שנערכו במסמך בשעה ו־%d הדקות האחרונות יאבדו לחלוטין."
+msgstr[3] "שינויים שנערכו במסמך בשעה ו־%d הדקות האחרונות יאבדו לחלוטין."
 
-#: pluma/pluma-commands-file.c:1201
+#: pluma/pluma-commands-file.c:1199
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "שינויים שנערכו במסמך בשעה האחרונה יאבדו לחלוטין."
-msgstr[1] "שינויים שנערכו במסמך בשעתיים האחרונות יאבדו לחלוטין."
-msgstr[2] "שינויים שנערכו במסמך ב־%ld השעות האחרונות יאבדו לחלוטין."
-msgstr[3] "שינויים שנערכו במסמך ב־%ld השעות האחרונות יאבדו לחלוטין."
+msgstr[0] "שינויים שנערכו במסמך %d בשעה האחרונה יאבדו לחלוטין."
+msgstr[1] "שינויים שנערכו במסמך %d בשעתיים האחרונות יאבדו לחלוטין."
+msgstr[2] "שינויים שנערכו במסמך ב־%d השעות האחרונות יאבדו לחלוטין."
+msgstr[3] "שינויים שנערכו במסמך ב־%d השעות האחרונות יאבדו לחלוטין."
 
-#: pluma/pluma-commands-file.c:1228 pluma/pluma-ui.h:84
+#: pluma/pluma-commands-file.c:1226 pluma/pluma-ui.h:84
 msgid "_Revert"
 msgstr "_החזר"
 
@@ -1320,8 +1316,10 @@ msgid "Sun Microsystems"
 msgstr "סאן מיקרוסיסטמס"
 
 #: pluma/pluma-commands-help.c:67
-msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
-msgstr "Pluma הוא עורך טקסט קטן וקליל עבור סביבת שולחן העבודה MATE."
+msgid ""
+"Pluma is a small and lightweight text editor for the MATE Desktop "
+"Environment."
+msgstr ""
 
 #: pluma/pluma-commands-help.c:70
 msgid ""
@@ -1366,6 +1364,13 @@ msgid ""
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"זכויות יוצרים © 1998-2000 Evan Lawrence, Alex Robert\n"
+"זכויות יוצרים © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"זכויות יוצרים © 2003-2006 Paolo Maggi\n"
+"זכויות יוצרים © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"זכויות יוצרים © 2011 Perberos\n"
+"זכויות יוצרים © 2012-2020 מפתחי MATE"
 
 #: pluma/pluma-commands-help.c:126
 msgid "translator-credits"
@@ -1391,17 +1396,17 @@ msgstr "מופע אחד נמצא והוחלף"
 msgid "\"%s\" not found"
 msgstr "‏\"%s\" לא נמצא"
 
-#: pluma/pluma-document.c:1139 pluma/pluma-document.c:1159
+#: pluma/pluma-document.c:1138 pluma/pluma-document.c:1158
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "מסמך שלא נשמר %d"
 
 #: pluma/pluma-documents-panel.c:93 pluma/pluma-documents-panel.c:107
-#: pluma/pluma-window.c:2256 pluma/pluma-window.c:2261
+#: pluma/pluma-window.c:2255 pluma/pluma-window.c:2260
 msgid "Read-Only"
 msgstr "(קריאה בלבד)"
 
-#: pluma/pluma-documents-panel.c:703 pluma/pluma-window.c:3677
+#: pluma/pluma-documents-panel.c:703 pluma/pluma-window.c:3676
 msgid "Documents"
 msgstr "מסמכים"
 
@@ -1521,16 +1526,16 @@ msgstr "תאית"
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: pluma/pluma-encodings-combo-box.c:266
+#: pluma/pluma-encodings-combo-box.c:264
 msgid "Automatically Detected"
 msgstr "זיהוי אוטומטי"
 
-#: pluma/pluma-encodings-combo-box.c:282 pluma/pluma-encodings-combo-box.c:297
+#: pluma/pluma-encodings-combo-box.c:280 pluma/pluma-encodings-combo-box.c:295
 #, c-format
 msgid "Current Locale (%s)"
 msgstr "מיקום נוכחי (%s)"
 
-#: pluma/pluma-encodings-combo-box.c:347
+#: pluma/pluma-encodings-combo-box.c:345
 msgid "Add or Remove..."
 msgstr "הוספה או הסרה..."
 
@@ -1559,7 +1564,7 @@ msgid "Windows"
 msgstr "חלונות"
 
 #: pluma/pluma-file-chooser-dialog.c:437
-#: plugins/filebrowser/pluma-file-browser-widget.c:808
+#: plugins/filebrowser/pluma-file-browser-widget.c:807
 #: plugins/quickopen/quickopen/popup.py:37
 #: plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
@@ -2177,7 +2182,7 @@ msgstr "יצירת מסמך חדש"
 msgid "_Open..."
 msgstr "_פתיחה..."
 
-#: pluma/pluma-ui.h:59 pluma/pluma-window.c:1453
+#: pluma/pluma-ui.h:59 pluma/pluma-window.c:1452
 msgid "Open a file"
 msgstr "פתיחת קובץ"
 
@@ -2286,7 +2291,7 @@ msgid "Paste the clipboard"
 msgstr "הדבקת תוכן לוח הגזירים"
 
 #: pluma/pluma-ui.h:102 plugins/filebrowser/pluma-file-browser-utils.c:182
-#: plugins/filebrowser/pluma-file-browser-widget.c:801
+#: plugins/filebrowser/pluma-file-browser-widget.c:800
 msgid "_Delete"
 msgstr "מ_חיקה"
 
@@ -2454,22 +2459,22 @@ msgstr "חלונית _תחתונה"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "הצגה או הסתרה של החלונית התחתונה בחלון הנוכחי"
 
-#: pluma/pluma-utils.c:1074
+#: pluma/pluma-utils.c:1075
 msgid "Please check your installation."
 msgstr "נא לבדוק את ההתקנה שלך."
 
-#: pluma/pluma-utils.c:1147
+#: pluma/pluma-utils.c:1148
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "לא ניתן לפתוח את קובץ המנשק %s. שגיאה: %s"
 
-#: pluma/pluma-utils.c:1167
+#: pluma/pluma-utils.c:1168
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "לא ניתן למצוא את הפריט '%s' בתוך הקובץ %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1327
+#: pluma/pluma-utils.c:1328
 #, c-format
 msgid "/ on %s"
 msgstr "/ תחת %s"
@@ -2507,7 +2512,7 @@ msgstr "שימוש במצב הדגשה %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1069 pluma/pluma-window.c:1957
+#: pluma/pluma-window.c:1069 pluma/pluma-window.c:1956
 #: plugins/externaltools/tools/manager.py:108
 #: plugins/externaltools/tools/manager.py:308
 #: plugins/externaltools/tools/manager.py:424
@@ -2525,33 +2530,33 @@ msgstr "_ביטול הדגשת תחביר"
 msgid "Open '%s'"
 msgstr "פתיחת '%s'"
 
-#: pluma/pluma-window.c:1459
+#: pluma/pluma-window.c:1458
 msgid "Open a recently used file"
 msgstr "פתיחת קובץ שהיה בשימוש לאחרונה"
 
-#: pluma/pluma-window.c:1465
+#: pluma/pluma-window.c:1464
 msgid "Open"
 msgstr "פתיחה"
 
-#: pluma/pluma-window.c:1523
+#: pluma/pluma-window.c:1522
 msgid "Save"
 msgstr "שמירה"
 
-#: pluma/pluma-window.c:1525
+#: pluma/pluma-window.c:1524
 msgid "Print"
 msgstr "הדפס"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1682
+#: pluma/pluma-window.c:1681
 #, c-format
 msgid "Activate '%s'"
 msgstr "הפעלת '%s'"
 
-#: pluma/pluma-window.c:1935
+#: pluma/pluma-window.c:1934
 msgid "Use Spaces"
 msgstr "שימוש ברווחים"
 
-#: pluma/pluma-window.c:2006
+#: pluma/pluma-window.c:2005
 msgid "Tab Width"
 msgstr "רוחב טאב"
 
@@ -2889,12 +2894,6 @@ msgstr "חלונית סייר הקבצים"
 msgid "Easy file access from the side pane"
 msgstr "גישה קלה לקבצים מחלונית הצד"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Set Location to First Document"
@@ -3085,11 +3084,11 @@ msgstr ""
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: plugins/filebrowser/pluma-file-browser-store.c:3475
+#: plugins/filebrowser/pluma-file-browser-store.c:3473
 msgid "file"
 msgstr "קובץ"
 
-#: plugins/filebrowser/pluma-file-browser-store.c:3499
+#: plugins/filebrowser/pluma-file-browser-store.c:3497
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3099,11 +3098,11 @@ msgstr ""
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: plugins/filebrowser/pluma-file-browser-store.c:3528
+#: plugins/filebrowser/pluma-file-browser-store.c:3526
 msgid "directory"
 msgstr "תיקייה"
 
-#: plugins/filebrowser/pluma-file-browser-store.c:3548
+#: plugins/filebrowser/pluma-file-browser-store.c:3546
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3111,150 +3110,150 @@ msgstr ""
 "התיקייה החדשה לא נכללת עקב סינון. יהיה עליך להתאים את הגדרות המסנן שלך כך "
 "שהתיקייה תופיע"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:712
+#: plugins/filebrowser/pluma-file-browser-widget.c:711
 msgid "Bookmarks"
 msgstr "סימניות"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:793
+#: plugins/filebrowser/pluma-file-browser-widget.c:792
 msgid "_Filter"
 msgstr "_מסנן"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:798
+#: plugins/filebrowser/pluma-file-browser-widget.c:797
 msgid "_Move to Trash"
 msgstr "העברה ל_אשפה"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:799
+#: plugins/filebrowser/pluma-file-browser-widget.c:798
 msgid "Move selected file or folder to trash"
 msgstr "העברת הקובץ או התיקייה הנבחרים לאשפה"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:802
+#: plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "Delete selected file or folder"
 msgstr "מחיקת הקובץ או התיקייה הנבחרים"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:809
+#: plugins/filebrowser/pluma-file-browser-widget.c:808
 msgid "Open selected file"
 msgstr "פתיחת הקובץ הנבחר"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:815
+#: plugins/filebrowser/pluma-file-browser-widget.c:814
 msgid "Up"
 msgstr "למעלה"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:816
+#: plugins/filebrowser/pluma-file-browser-widget.c:815
 msgid "Open the parent folder"
 msgstr "פתיחת תיקיית ההורה"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:821
+#: plugins/filebrowser/pluma-file-browser-widget.c:820
 msgid "_New Folder"
 msgstr "_תיקייה חדשה"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:822
+#: plugins/filebrowser/pluma-file-browser-widget.c:821
 msgid "Add new empty folder"
 msgstr "הוספת תיקייה ריקה"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:824
+#: plugins/filebrowser/pluma-file-browser-widget.c:823
 msgid "New F_ile"
 msgstr "_קובץ חדש"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:825
+#: plugins/filebrowser/pluma-file-browser-widget.c:824
 msgid "Add new empty file"
 msgstr "הוספת קובץ ריק"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:830
+#: plugins/filebrowser/pluma-file-browser-widget.c:829
 msgid "_Rename"
 msgstr "_שינוי שם"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:831
+#: plugins/filebrowser/pluma-file-browser-widget.c:830
 msgid "Rename selected file or folder"
 msgstr "שינוי שם הקובץ או התיקייה שנבחרו"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:837
+#: plugins/filebrowser/pluma-file-browser-widget.c:836
 msgid "_Previous Location"
 msgstr "המיקום ה_קודם"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:839
+#: plugins/filebrowser/pluma-file-browser-widget.c:838
 msgid "Go to the previous visited location"
 msgstr "מעבר למקום הקודם בו ביקרת"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:841
+#: plugins/filebrowser/pluma-file-browser-widget.c:840
 msgid "_Next Location"
 msgstr "המיקום ה_בא"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:842
+#: plugins/filebrowser/pluma-file-browser-widget.c:841
 msgid "Go to the next visited location"
 msgstr "מעבר למקום הבא בו ביקרת"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:843
+#: plugins/filebrowser/pluma-file-browser-widget.c:842
 msgid "Re_fresh View"
 msgstr "ר_ענון התצוגה"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:844
+#: plugins/filebrowser/pluma-file-browser-widget.c:843
 msgid "Refresh the view"
 msgstr "רענון התצוגה"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:845
-#: plugins/filebrowser/pluma-file-browser-widget.c:863
+#: plugins/filebrowser/pluma-file-browser-widget.c:844
+#: plugins/filebrowser/pluma-file-browser-widget.c:862
 msgid "_View Folder"
 msgstr "_הצגת תיקיה"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:846
-#: plugins/filebrowser/pluma-file-browser-widget.c:864
+#: plugins/filebrowser/pluma-file-browser-widget.c:845
+#: plugins/filebrowser/pluma-file-browser-widget.c:863
 msgid "View folder in file manager"
 msgstr "הצגת התיקייה במנהל הקבצים"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:853
+#: plugins/filebrowser/pluma-file-browser-widget.c:852
 msgid "Show _Hidden"
 msgstr "הצגת _נסתרים"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:854
+#: plugins/filebrowser/pluma-file-browser-widget.c:853
 msgid "Show hidden files and folders"
 msgstr "הצגת קבצים ותיקיות נסתרים"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:856
+#: plugins/filebrowser/pluma-file-browser-widget.c:855
 msgid "Show _Binary"
 msgstr "הצגה _בינרית"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:857
+#: plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "Show binary files"
 msgstr "הצגת קבצים בינריים"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:990
-#: plugins/filebrowser/pluma-file-browser-widget.c:1003
-#: plugins/filebrowser/pluma-file-browser-widget.c:1029
+#: plugins/filebrowser/pluma-file-browser-widget.c:989
+#: plugins/filebrowser/pluma-file-browser-widget.c:1002
+#: plugins/filebrowser/pluma-file-browser-widget.c:1028
 msgid "Previous location"
 msgstr "המיקום הקודם"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:996
+#: plugins/filebrowser/pluma-file-browser-widget.c:995
 msgid "Go to previous location"
 msgstr "מעבר למיקום הקודם"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:998
-#: plugins/filebrowser/pluma-file-browser-widget.c:1024
+#: plugins/filebrowser/pluma-file-browser-widget.c:997
+#: plugins/filebrowser/pluma-file-browser-widget.c:1023
 msgid "Go to a previously opened location"
 msgstr "מעבר למיקום שנפתח בעבר"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:1016
+#: plugins/filebrowser/pluma-file-browser-widget.c:1015
 msgid "Next location"
 msgstr "המיקום הבא"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:1022
+#: plugins/filebrowser/pluma-file-browser-widget.c:1021
 msgid "Go to next location"
 msgstr "מעבר למיקום הבא"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:1234
+#: plugins/filebrowser/pluma-file-browser-widget.c:1233
 msgid "_Match Filename"
 msgstr "הת_אמת שם קובץ"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:2135
+#: plugins/filebrowser/pluma-file-browser-widget.c:2130
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "אין פריט עגינה עבור הכרך שעוגן: %s"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:2215
+#: plugins/filebrowser/pluma-file-browser-widget.c:2209
 #, c-format
 msgid "Could not open media: %s"
 msgstr "לא ניתן לפתוח את המדיה: %s"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:2262
+#: plugins/filebrowser/pluma-file-browser-widget.c:2256
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "לא ניתן לעגון את הכרך: %s"
@@ -3275,12 +3274,6 @@ msgstr "מסוף Pyhton"
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "מסוף Pyhton אינטראקטיבי הנמצא בלוח התחתון"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr "text-x-python"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
@@ -3314,12 +3307,6 @@ msgstr "פתיחת מסמכים במהירות"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "פתיחת קבצים במהירות"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr "document-open"
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3560,12 +3547,6 @@ msgstr "מיון"
 msgid "Sorts a document or selected text."
 msgstr "ממיין מסמך או טקסט מסומן."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr "view-sort-ascending"
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_מיון"
@@ -3600,7 +3581,7 @@ msgstr "סוג בדיקה אוטומטית"
 #. suggestions
 #. * for the current misspelled word
 #: plugins/spell/pluma-automatic-spell-checker.c:420
-#: plugins/spell/pluma-spell-checker-dialog.c:458
+#: plugins/spell/pluma-spell-checker-dialog.c:457
 msgid "(no suggested words)"
 msgstr "(אין מילים מוצעות)"
 
@@ -3626,11 +3607,11 @@ msgstr "הצעות"
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word
 #. isn't misspelled
-#: plugins/spell/pluma-spell-checker-dialog.c:565
+#: plugins/spell/pluma-spell-checker-dialog.c:564
 msgid "(correct spelling)"
 msgstr "(איות נכון)"
 
-#: plugins/spell/pluma-spell-checker-dialog.c:712
+#: plugins/spell/pluma-spell-checker-dialog.c:710
 msgid "Completed spell checking"
 msgstr "בדיקת האיות הסתיימה"
 
@@ -3787,12 +3768,6 @@ msgstr "בודק איות"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "בדיקת האיות במסמך הנוכחי."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr "tools-check-spelling"
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -6114,7 +6089,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:143
 msgid "image"
-msgstr ""
+msgstr "תמונה"
 
 #: plugins/taglist/XUL.tags.xml.in:151
 msgid "keyset"
@@ -6471,12 +6446,6 @@ msgstr "לשמור ללא רווחים עוקבים"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "מסיר רווחים עוקבים מהשורות בטרם השמירה."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr "edit-cut"
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"
