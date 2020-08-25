@@ -1,14 +1,17 @@
+# 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Микола Ткач <chistomov@gmail.com>, 2019
-# Wolfgang Ulbrich <mate@raveit.de>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Микола Ткач <chistomov@gmail.com>, 2020
+# Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-07-17 14:34+0200\n"
-"PO-Revision-Date: 2018-09-23 11:08+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2019\n"
+"PO-Revision-Date: 2020-02-16 17:48+0000\n"
+"Last-Translator: Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +24,7 @@ msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Yarema aka Knedlyk <yupadmin@gmail.com>,\n"
-"Микола Ткач <znadibnyk@gmail.com>,\n"
+"Микола Ткач <Stuartlittle1970@gmail.com>,\n"
 "Oleh Tsyupka <myr4yk@gmail.com>"
 
 #. (itstool) path: info/title
@@ -72,7 +75,7 @@ msgstr ""
 #. (itstool) path: affiliation/orgname
 #: C/index.docbook:79
 msgid "Sun Microsystems"
-msgstr "Sun Microsystems"
+msgstr "Сун Мікросістемс"
 
 #. (itstool) path: othercredit/contrib
 #: C/index.docbook:98
@@ -94,7 +97,7 @@ msgstr ""
 #: C/index.docbook:150 C/index.docbook:158 C/index.docbook:166
 #: C/index.docbook:174 C/index.docbook:182
 msgid "Sun GNOME Documentation Team"
-msgstr "Сан Команда Документування GNOME "
+msgstr "Сан Команда документування GNOME "
 
 #. (itstool) path: revision/date
 #: C/index.docbook:132
@@ -188,10 +191,10 @@ msgid ""
 "<firstterm>plugins</firstterm>, allowing a variety of tasks related to text-"
 "editing."
 msgstr ""
-"Мета <application>pluma</application> быть простым и лёгким в использовании "
-"текстовым редактором. Его функциональность можно расширить с помощью "
-"различных плагинов, реализующих большое разнообразие задач, касающихся "
-"редактирования текстов."
+"Мета <application>pluma</application> бути простим і легким у використанні "
+"текстовим редактором. Його функціональність можна розширити за допомогою "
+"різноманітних <firstterm>втулоків</firstterm>, що зреалізовують велике "
+"розмаїття задач, що стосуються редагування текстів."
 
 #. (itstool) path: info/title
 #: C/index.docbook:238
@@ -1141,7 +1144,7 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:757
 msgid "<guilabel>Print range</guilabel>"
-msgstr ""
+msgstr "<guilabel>Діапазон</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:761
@@ -1231,6 +1234,8 @@ msgstr "<guilabel>Налаштування</guilabel>"
 #: C/index.docbook:815
 msgid "Use this drop-down list to select the printer settings."
 msgstr ""
+"Оберіть параметри друкарки у цьому розкриваному переліку.\n"
+" "
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:816
@@ -1239,6 +1244,10 @@ msgid ""
 "example, you can enable or disable duplex printing, or schedule delayed "
 "printing, if this functionality is supported by the printer."
 msgstr ""
+"Аби налаштувати друкарку, натисніть кнопку "
+"<guibutton>Налаштувати</guibutton>. Наприклад, можна увімкнути або "
+"відімкнути двобічний друк або запланувати відкладений друк, якщо друкарка "
+"підтримує відповідну функцію."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:820
@@ -1250,11 +1259,12 @@ msgstr "<guilabel>Розташування</guilabel>"
 msgid ""
 "Use this drop-down list to select one of the following print destinations:"
 msgstr ""
+"Оберіть одне з наступних розташувань друку у цьому розкриваному переліку:"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:827
 msgid "<guilabel>CUPS</guilabel>"
-msgstr ""
+msgstr "<guilabel>CUPS</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:831
@@ -1267,11 +1277,13 @@ msgid ""
 "If the selected printer is a CUPS printer, <guilabel>CUPS</guilabel> is the "
 "only entry in this drop-down list."
 msgstr ""
+"Якщо обрана друкарка підтримує CUPS, у розкриваному переліку буде лише один "
+"варіант — <guilabel>CUPS</guilabel>."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:838
 msgid "<guilabel>lpr</guilabel>"
-msgstr ""
+msgstr "<guilabel>lpr</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:842
@@ -1294,6 +1306,8 @@ msgid ""
 "Click <guibutton>Save As</guibutton> to display a dialog where you specify "
 "the name and location of the PostScript file."
 msgstr ""
+"Натисніть кнопку <guibutton>Зберегти як</guibutton>, аби відкрити діалог, у "
+"якому можна вказати назву та розташування файлу PostScript."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:855
@@ -1311,11 +1325,13 @@ msgid ""
 "Type the name of the command in the text box. Include all command-line "
 "arguments."
 msgstr ""
+"Уведіть назву команди у текстовому полі. Увімкніть усі потрібні аргументи "
+"командного рядка."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:867
 msgid "<guilabel>State</guilabel>"
-msgstr ""
+msgstr "<guilabel>Стан</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:871 C/index.docbook:879 C/index.docbook:887
@@ -1330,7 +1346,7 @@ msgstr "<guilabel>Тип</guilabel>"
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:883
 msgid "<guilabel>Comment</guilabel>"
-msgstr ""
+msgstr "<guilabel>Коментар</guilabel>"
 
 #. (itstool) path: info/title
 #: C/index.docbook:895
@@ -1360,6 +1376,8 @@ msgid ""
 "Use this spin box to specify the width of the paper. Use the adjacent drop-"
 "down list to change the measurement unit."
 msgstr ""
+"Використовуйте цей лічильник для вказування ширини паперу. У розташованому "
+"поруч розкриваному переліку можна змінити одиниці виміру."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:916
@@ -1369,12 +1387,12 @@ msgstr "<guilabel>Висота</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:920
 msgid "Use this spin box to specify the height of the paper."
-msgstr ""
+msgstr "Використовуйте цей лічильник для вказування висоти паперу."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:924
 msgid "<guilabel>Feed orientation</guilabel>"
-msgstr ""
+msgstr "<guilabel>Орієнтація паперу</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:928
@@ -1398,7 +1416,7 @@ msgstr "Використовуйте цей випадний перелік, щ�
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:940
 msgid "<guilabel>Layout</guilabel>"
-msgstr ""
+msgstr "<guilabel>Розташування</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:944
@@ -1406,6 +1424,9 @@ msgid ""
 "Use this drop-down list to select the page layout. A preview of each layout "
 "that you select is displayed in the <guilabel>Preview</guilabel> area."
 msgstr ""
+"Використовуйте цей розкриваний перелік для вибору розташування сторінок. "
+"Попередній перегляд результату виконується у ділянці "
+"<guilabel>Передогляд</guilabel>."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:948
@@ -1502,7 +1523,7 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1008
 msgid "<guisubmenu>Others</guisubmenu>"
-msgstr "<guisubmenu>Инші</guisubmenu>"
+msgstr "<guisubmenu>Інші</guisubmenu>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1012
@@ -1542,7 +1563,7 @@ msgstr ""
 #. (itstool) path: info/title
 #: C/index.docbook:1032
 msgid "Shortcut Keys"
-msgstr "Швидкі клавіші"
+msgstr "Сполучення клавіш"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1034
@@ -2367,7 +2388,7 @@ msgstr ""
 #. (itstool) path: info/title
 #: C/index.docbook:1752
 msgid "Plugins"
-msgstr "Втулоки"
+msgstr "Втулки"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1757
@@ -2545,7 +2566,7 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:1869
 msgid "Change each character to uppercase."
-msgstr "Змінити кожен символ у верхньому регістрі."
+msgstr "Зміна кожного символу у верхньому регістрі."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1872
@@ -4034,8 +4055,8 @@ msgid ""
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Цей посібник є частиною збірки документації MATE, яка розповсюджується на "
-"умовах ліцензії GFDL. Якщо ви бажаєте розповсюджувати цей посібник окремо "
+"Цей посібник є частиною збірки документації MATE, яка розповсюджується за "
+"умовами ліцензії GFDL. Якщо ви бажаєте розповсюджувати цей посібник окремо "
 "від збірки, можете це зробити додавши до нього копію ліцензії, як описано в "
 "пункті 6 ліцензії."
 

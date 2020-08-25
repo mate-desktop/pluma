@@ -4,19 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roman Horník <roman.hornik@debian-linux.cz>, 2018
-# Michal Procházka <mich.procha@seznam.cz>, 2018
-# Honza K. <honza889@gmail.com>, 2018
-# Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2018
-# Michal <sinope@seznam.cz>, 2018
-# Andy Andy <nd76er@gmail.com>, 2018
-# LiberteCzech <liberte.czech@gmail.com>, 2018
-# Stanislav Kučera <inactive+kacernator@transifex.com>, 2018
-# Lucas Lommer <drom@kdyne.net>, 2019
-# Ondřej Kolín <ondrej.kolin@gmail.com>, 2019
-# huskyviking <husky.viking@seznam.cz>, 2019
-# Wolfgang Ulbrich <mate@raveit.de>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Michal Procházka <mich.procha@seznam.cz>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Ondřej Kolín <ondrej.kolin@gmail.com>, 2020
+# Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2020
+# Lucas Lommer <drom@kdyne.net>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# huskyviking <husky.viking@seznam.cz>, 2020
+# 6e833d5535e2fe0dd9dfa7fe5bf473f2_d78f422 <64c38a0ff10419c64e8e03d54c72b3bd_352524>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Honza K. <honza889@gmail.com>, 2020
+# Michal <sinope@seznam.cz>, 2020
+# Andy Andy <nd76er@gmail.com>, 2020
+# LiberteCzech <liberte.czech@gmail.com>, 2020
+# Roman Horník <roman.hornik@debian-linux.cz>, 2020
 # ToMáš Marný, 2020
 # 
 msgid ""
@@ -24,7 +25,7 @@ msgstr ""
 "Project-Id-Version: pluma 1.23.2\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2020-01-13 17:23+0100\n"
-"PO-Revision-Date: 2018-03-12 09:49+0000\n"
+"PO-Revision-Date: 2020-02-16 17:47+0000\n"
 "Last-Translator: ToMáš Marný, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -547,7 +548,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "Show newline"
-msgstr ""
+msgstr "Zobrazit nový řádek"
 
 #: data/org.mate.pluma.gschema.xml.in:227
 msgid "Whether pluma should show newlines in the editor window."
@@ -555,7 +556,7 @@ msgstr "Zda má pluma zobrazit nové řádky v okně editoru."
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "Show nbsp"
-msgstr ""
+msgstr "Zobrazit nbsp"
 
 #: data/org.mate.pluma.gschema.xml.in:232
 msgid ""
@@ -577,7 +578,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Show spaces"
-msgstr ""
+msgstr "Zobrazit mezery"
 
 #: data/org.mate.pluma.gschema.xml.in:242
 msgid ""
@@ -679,7 +680,7 @@ msgstr "Uložit _jako"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
-msgstr "Otázka"
+msgstr "Dotaz"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:414
 #, c-format
@@ -689,18 +690,10 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
-"Pokud je neuložíte, budou změny provedené za poslední %ld sekundu navždy "
-"ztraceny."
-msgstr[1] ""
-"Pokud je neuložíte, budou změny provedené za poslední %ld sekundy navždy "
-"ztraceny."
-msgstr[2] ""
-"Pokud je neuložíte, budou změny provedené za posledních %ld sekund navždy "
-"ztraceny."
-msgstr[3] ""
-"Pokud je neuložíte, budou změny provedené za posledních %ld sekund navždy "
-"ztraceny."
+msgstr[0] "Neuložíte-li, změny za poslední %d sekundu budou trvale ztraceny."
+msgstr[1] "Neuložíte-li, změny za poslední %d sekundy budou trvale ztraceny."
+msgstr[2] "Neuložíte-li, změny za posledních %d sekund budou trvale ztraceny."
+msgstr[3] "Neuložíte-li, změny za posledních %d sekund budou trvale ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
@@ -718,17 +711,9 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
-"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekundu "
-"navždy ztraceny."
 msgstr[1] ""
-"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekundy "
-"navždy ztraceny."
 msgstr[2] ""
-"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekund "
-"navždy ztraceny."
 msgstr[3] ""
-"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekund "
-"navždy ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
@@ -739,17 +724,9 @@ msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Pokud je neuložíte, budou změny provedené za poslední %ld minutu navždy "
-"ztraceny."
 msgstr[1] ""
-"Pokud je neuložíte, budou změny provedené za poslední %ld minuty navždy "
-"ztraceny."
 msgstr[2] ""
-"Pokud je neuložíte, budou změny provedené za posledních %ld minut navždy "
-"ztraceny."
 msgstr[3] ""
-"Pokud je neuložíte, budou změny provedené za posledních %ld minut navždy "
-"ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
@@ -767,17 +744,9 @@ msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minutu "
-"navždy ztraceny."
 msgstr[1] ""
-"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minuty "
-"navždy ztraceny."
 msgstr[2] ""
-"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minut "
-"navždy ztraceny."
 msgstr[3] ""
-"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minut "
-"navždy ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
@@ -786,17 +755,9 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
-"Pokud je neuložíte, budou změny provedené za poslední %d hodinu navždy "
-"ztraceny."
 msgstr[1] ""
-"Pokud je neuložíte, budou změny provedené za poslední %d hodiny navždy "
-"ztraceny."
 msgstr[2] ""
-"Pokud je neuložíte, budou změny provedené za posledních %d hodin navždy "
-"ztraceny."
 msgstr[3] ""
-"Pokud je neuložíte, budou změny provedené za posledních %d hodin navždy "
-"ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
@@ -817,10 +778,10 @@ msgstr "Ukládání bylo administrátorem systému zakázáno."
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "Změny v %d dokumentu budou navždy ztraceny."
-msgstr[1] "Změny ve %d dokumentech budou navždy ztraceny."
-msgstr[2] "Změny v %d dokumentech budou navždy ztraceny."
-msgstr[3] "Změny v %d dokumentech budou navždy ztraceny."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
@@ -828,10 +789,10 @@ msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "V %d dokumentu jsou neuložené změny. Uložit změny před zavřením?"
-msgstr[1] "V %d dokumentech jsou neuložené změny. Uložit změny před zavřením?"
-msgstr[2] "V %d dokumentech jsou neuložené změny. Uložit změny před zavřením?"
-msgstr[3] "V %d dokumentech jsou neuložené změny. Uložit změny před zavřením?"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
@@ -946,7 +907,7 @@ msgstr "Nelze odstranit schéma barev „%s“."
 #: pluma/dialogs/pluma-search-dialog.ui:60 pluma/pluma-ui.h:142
 #: plugins/docinfo/docinfo.ui:35 plugins/spell/spell-checker.ui:375
 msgid "_Close"
-msgstr "Zavřít"
+msgstr "_Zavřít"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:1294
 msgid "Pluma Preferences"
@@ -1073,7 +1034,7 @@ msgstr "_minut"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:919
 msgid "Show spaces, tabs, newlines"
-msgstr ""
+msgstr "Zobrazit mezery, tabulátory, nové řádky"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:953
 msgid "Show _tabs"
@@ -1085,11 +1046,11 @@ msgstr ""
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1041
 msgid "Show _newlines"
-msgstr ""
+msgstr "Zobrazit _nové řádky"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1082
 msgid "Show _spaces"
-msgstr ""
+msgstr "Zobrazit _mezery"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1132
 msgid "Show _trailing spaces only"
@@ -1117,7 +1078,7 @@ msgstr "Barevné schéma"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1390
 msgid "_Add..."
-msgstr "Přid_at..."
+msgstr "Přid_at…"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1454
 msgid "Font & Colors"
@@ -1246,15 +1207,15 @@ msgstr "Načítání souboru „%s“…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "Načítání %d souboru…"
-msgstr[1] "Načítání %d souborů…"
-msgstr[2] "Načítání %d souborů…"
-msgstr[3] "Načítání %d souborů…"
+msgstr[0] "Načítá se %d soubor…"
+msgstr[1] "Načítají se %d soubory…"
+msgstr[2] "Načítá se %d souborů…"
+msgstr[3] "Načítá se %d souborů…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:463
 msgid "Open Files"
-msgstr "Otevřít soubory"
+msgstr "Otevřené soubory"
 
 #: pluma/pluma-commands-file.c:574
 #, c-format
@@ -1292,14 +1253,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
-"Změny provedené v dokumentu za poslední %ld sekundu budou navždy ztraceny."
-msgstr[1] ""
-"Změny provedené v dokumentu za poslední %ld sekundy budou navždy ztraceny."
-msgstr[2] ""
-"Změny provedené v dokumentu za posledních %ld sekund budou navždy ztraceny."
-msgstr[3] ""
-"Změny provedené v dokumentu za posledních %ld sekund budou navždy ztraceny."
+msgstr[0] "Změny v dokumentu za poslední %d sekundu budou trvale ztraceny."
+msgstr[1] "Změny v dokumentu za poslední %d sekundy budou trvale ztraceny."
+msgstr[2] "Změny v dokumentu za posledních %d sekund budou trvale ztraceny."
+msgstr[3] "Změny v dokumentu za posledních %d sekund budou trvale ztraceny."
 
 #: pluma/pluma-commands-file.c:1149
 msgid ""
@@ -1315,17 +1272,13 @@ msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
-"Změny provedené v dokumentu za poslední minutu a %ld sekundu budou navždy "
-"ztraceny."
+"Změny v dokumentu za poslední minutu a %d sekundu budou trvale ztraceny."
 msgstr[1] ""
-"Změny provedené v dokumentu za poslední minutu a %ld sekundy budou navždy "
-"ztraceny."
+"Změny v dokumentu za poslední minutu a %d sekundy budou trvale ztraceny."
 msgstr[2] ""
-"Změny provedené v dokumentu za poslední minutu a %ld sekund budou navždy "
-"ztraceny."
+"Změny v dokumentu za poslední minutu a %d sekund budou trvale ztraceny."
 msgstr[3] ""
-"Změny provedené v dokumentu za poslední minutu a %ld sekund budou navždy "
-"ztraceny."
+"Změny v dokumentu za poslední minutu a %d sekund budou trvale ztraceny."
 
 #: pluma/pluma-commands-file.c:1165
 #, c-format
@@ -1335,14 +1288,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
-"Změny provedené v dokumentu za poslední %ld minutu budou navždy ztraceny."
-msgstr[1] ""
-"Změny provedené v dokumentu za poslední %ld minuty budou navždy ztraceny."
-msgstr[2] ""
-"Změny provedené v dokumentu za posledních %ld minut budou navždy ztraceny."
-msgstr[3] ""
-"Změny provedené v dokumentu za posledních %ld minut budou navždy ztraceny."
+msgstr[0] "Změny v dokumentu za poslední %d minutu budou trvale ztraceny."
+msgstr[1] "Změny v dokumentu za poslední %d minuty budou trvale ztraceny."
+msgstr[2] "Změny v dokumentu za posledních %d minut budou trvale ztraceny."
+msgstr[3] "Změny v dokumentu za posledních %d minut budou trvale ztraceny."
 
 #: pluma/pluma-commands-file.c:1180
 msgid ""
@@ -1358,17 +1307,13 @@ msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"Změny provedené v dokumentu za poslední hodinu a %d minutu budou navždy "
-"ztraceny."
+"Změny v dokumentu za poslední hodinu a %d minutu budou trvale ztraceny."
 msgstr[1] ""
-"Změny provedené v dokumentu za poslední hodinu a %d minuty budou navždy "
-"ztraceny."
+"Změny v dokumentu za poslední hodinu a %d minuty budou trvale ztraceny."
 msgstr[2] ""
-"Změny provedené v dokumentu za poslední hodinu a %d minut budou navždy "
-"ztraceny."
+"Změny v dokumentu za poslední hodinu a %d minut budou trvale ztraceny."
 msgstr[3] ""
-"Změny provedené v dokumentu za poslední hodinu a %d minut budou navždy "
-"ztraceny."
+"Změny v dokumentu za poslední hodinu a %d minut budou trvale ztraceny."
 
 #: pluma/pluma-commands-file.c:1201
 #, c-format
@@ -1376,14 +1321,10 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] ""
-"Změny provedené v dokumentu za poslední %d hodinu budou navždy ztraceny."
-msgstr[1] ""
-"Změny provedené v dokumentu za poslední %d hodiny budou navždy ztraceny."
-msgstr[2] ""
-"Změny provedené v dokumentu za posledních %d hodin budou navždy ztraceny."
-msgstr[3] ""
-"Změny provedené v dokumentu za posledních %d hodin budou navždy ztraceny."
+msgstr[0] "Změny v dokumentu za poslední %d hodinu budou trvale ztraceny."
+msgstr[1] "Změny v dokumentu za poslední %d hodiny budou trvale ztraceny."
+msgstr[2] "Změny v dokumentu za posledních %d hodin budou trvale ztraceny."
+msgstr[3] "Změny v dokumentu za posledních %d hodin budou trvale ztraceny."
 
 #: pluma/pluma-commands-file.c:1228 pluma/pluma-ui.h:84
 msgid "_Revert"
@@ -1413,6 +1354,10 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"Editor Pluma je svobodný software; můžete jej dále distribuovat a/nebo "
+"upravovat podle podmínek GNU General Public License zveřejněné nadací Free "
+"Software Foundation; buď verze 2 této licence, nebo (podle vaší volby) "
+"jakékoli pozdější verze."
 
 #: pluma/pluma-commands-help.c:74
 msgid ""
@@ -1421,6 +1366,9 @@ msgid ""
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
+"Editor Pluma je šířen ve víře, že bude užitečný, ale BEZ JAKÉKOLI ZÁRUKY; a "
+"to i bez předpokládané záruky PRODEJNOSTI nebo VHODNOST PRO KONKRÉTNÍ ÚČEL. "
+"Další podrobnosti naleznete přímo v licenci GNU General Public License."
 
 #: pluma/pluma-commands-help.c:78
 msgid ""
@@ -1428,6 +1376,9 @@ msgid ""
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 msgstr ""
+"Spolu s Plumou byste měli obdržet kopii GNU General Public License; pokud "
+"ne, napište Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,"
+" Boston, MA 02110-1301 USA"
 
 #: pluma/pluma-commands-help.c:113
 msgid "About Pluma"
@@ -1443,6 +1394,13 @@ msgid ""
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2020 Vývojáři MATE"
 
 #: pluma/pluma-commands-help.c:126
 msgid "translator-credits"
@@ -1452,8 +1410,12 @@ msgstr ""
 "Miloslav Trmač <mitr@volny.cz>\n"
 "Petr Tomeš <ptomes@gmail.com>\n"
 "Jakub Friedl <jfriedl@suse.cz>\n"
-"Lucas Lommer <drom@kdyne.net>\n"
+"Petr Tomeš <ptomes@gmail.com>\n"
+"Lukáš Novotný <lukasnov@cvs.gnome.org>\n"
+"Kamil Páral <ripper42@gmail.com>\n"
 "Petr Kovář <pknbe@volny.cz>\n"
+"Lucas Lommer <drom@kdyne.net>\n"
+"Tomas Bzatek <tbzatek@redhat.com>\n"
 "Roman Horník <roman.hornik@debian-linux.cz>"
 
 #: pluma/pluma-commands-search.c:112
@@ -1641,7 +1603,7 @@ msgstr "Mac OS Classic"
 
 #: pluma/pluma-file-chooser-dialog.c:174
 msgid "Windows"
-msgstr "Windows"
+msgstr "Okna"
 
 #: pluma/pluma-file-chooser-dialog.c:437
 #: plugins/filebrowser/pluma-file-browser-widget.c:808
@@ -1977,7 +1939,7 @@ msgstr "Chcete soubor znovu načíst?"
 
 #: pluma/pluma-io-error-message-area.c:1185
 msgid "_Reload"
-msgstr "_Znovu načíst"
+msgstr "_Obnovit"
 
 #: pluma/pluma-panel.c:316 pluma/pluma-panel.c:490
 msgid "Empty"
@@ -2146,8 +2108,8 @@ msgstr "  Ř %d, Slo %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "V kartě je chyba"
-msgstr[1] "Ve %d kartách jsou chyby"
+msgstr[0] "V jedné kartě jsou chyby"
+msgstr[1] "V %d kartách jsou chyby"
 msgstr[2] "V %d kartách jsou chyby"
 msgstr[3] "V %d kartách jsou chyby"
 
@@ -2309,7 +2271,7 @@ msgstr "Uloží současný soubor"
 
 #: pluma/pluma-ui.h:82
 msgid "Save _As..."
-msgstr "Uloži_t jako..."
+msgstr "Uloži_t jako…"
 
 #: pluma/pluma-ui.h:83
 msgid "Save the current file with a different name"
@@ -2386,7 +2348,7 @@ msgstr "Smazat vybraný text"
 
 #: pluma/pluma-ui.h:104
 msgid "Select _All"
-msgstr "Vybrat _vše"
+msgstr "Vybr_at vše"
 
 #: pluma/pluma-ui.h:105
 msgid "Select the entire document"
@@ -2498,7 +2460,7 @@ msgstr "Zavře současný soubor"
 
 #: pluma/pluma-ui.h:149
 msgid "_Quit"
-msgstr "_Ukončit"
+msgstr "U_končit"
 
 #: pluma/pluma-ui.h:150
 msgid "Quit the program"
@@ -2506,7 +2468,7 @@ msgstr "Ukončit program"
 
 #: pluma/pluma-ui.h:155
 msgid "_Toolbar"
-msgstr "_Lišta nástrojů"
+msgstr "_Nástrojová lišta"
 
 #: pluma/pluma-ui.h:156
 msgid "Show or hide the toolbar in the current window"
@@ -2530,7 +2492,7 @@ msgstr "Upravovat text v režimu celé obrazovky"
 
 #: pluma/pluma-ui.h:169
 msgid "Side _Pane"
-msgstr "_Postranní lišta"
+msgstr "Postranní _panel"
 
 #: pluma/pluma-ui.h:170
 msgid "Show or hide the side pane in the current window"
@@ -3234,7 +3196,7 @@ msgstr "Výš"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "Open the parent folder"
-msgstr "Otevřít rodičovskou složku"
+msgstr "Otevřít nadřazenou složku"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:821
 msgid "_New Folder"
@@ -3373,7 +3335,7 @@ msgstr "Interaktivní konzole pythonu v dolním panelu"
 #. file name)!
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
 msgid "text-x-python"
-msgstr ""
+msgstr "text-x-python"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
@@ -3385,7 +3347,7 @@ msgstr "_Barva příkazu:"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
-msgstr ""
+msgstr "Použít systémové písmo s pevnou šířkou"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
@@ -3544,7 +3506,7 @@ msgstr "Soubor úryvků"
 #: plugins/snippets/snippets/Manager.py:889
 #: plugins/snippets/snippets/Manager.py:953
 msgid "All files"
-msgstr "Všechny soubor"
+msgstr "Všechny soubory"
 
 #: plugins/snippets/snippets/Manager.py:814
 #, python-format
@@ -4095,7 +4057,7 @@ msgstr "Směrovost (zastaralé)"
 
 #: plugins/taglist/HTML.tags.xml.in:239 plugins/taglist/HTML.tags.xml.in:1355
 msgid "Disabled"
-msgstr "Zakázáno"
+msgstr "Vypnuto"
 
 #: plugins/taglist/HTML.tags.xml.in:243 plugins/taglist/HTML.tags.xml.in:1359
 msgid "DIV container"
@@ -4743,7 +4705,7 @@ msgstr "Text zadaný uživatelem"
 
 #: plugins/taglist/HTML.tags.xml.in:1071 plugins/taglist/HTML.tags.xml.in:2208
 msgid "Title"
-msgstr "Název"
+msgstr "Nadpis"
 
 #: plugins/taglist/HTML.tags.xml.in:1076 plugins/taglist/HTML.tags.xml.in:2216
 msgid "Underlined text style"
@@ -5051,403 +5013,403 @@ msgstr "Nedělitelná mezera"
 
 #: plugins/taglist/HTML.tags.xml.in:2271
 msgid "Soft hyphen­"
-msgstr ""
+msgstr "Měkký spojovník"
 
 #: plugins/taglist/HTML.tags.xml.in:2275
 msgid "&quot;"
-msgstr ""
+msgstr "&quot;"
 
 #: plugins/taglist/HTML.tags.xml.in:2279
 msgid "&amp;"
-msgstr ""
+msgstr "&amp;"
 
 #: plugins/taglist/HTML.tags.xml.in:2283
 msgid "¡"
-msgstr ""
+msgstr "¡"
 
 #: plugins/taglist/HTML.tags.xml.in:2287
 msgid "¦"
-msgstr ""
+msgstr "¦"
 
 #: plugins/taglist/HTML.tags.xml.in:2291
 msgid "¨"
-msgstr ""
+msgstr "¨"
 
 #: plugins/taglist/HTML.tags.xml.in:2295
 msgid "¯"
-msgstr ""
+msgstr "¯"
 
 #: plugins/taglist/HTML.tags.xml.in:2299
 msgid "´"
-msgstr ""
+msgstr "´"
 
 #: plugins/taglist/HTML.tags.xml.in:2303
 msgid "¸"
-msgstr ""
+msgstr "¸"
 
 #: plugins/taglist/HTML.tags.xml.in:2307
 msgid "&lt;"
-msgstr ""
+msgstr "&lt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2311
 msgid "&gt;"
-msgstr ""
+msgstr "&gt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2315
 msgid "±"
-msgstr ""
+msgstr "±"
 
 #: plugins/taglist/HTML.tags.xml.in:2319
 msgid "«"
-msgstr ""
+msgstr "«"
 
 #: plugins/taglist/HTML.tags.xml.in:2323
 msgid "»"
-msgstr ""
+msgstr "»"
 
 #: plugins/taglist/HTML.tags.xml.in:2327
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: plugins/taglist/HTML.tags.xml.in:2331
 msgid "÷"
-msgstr ""
+msgstr "÷"
 
 #: plugins/taglist/HTML.tags.xml.in:2335
 msgid "¢"
-msgstr ""
+msgstr "¢"
 
 #: plugins/taglist/HTML.tags.xml.in:2339
 msgid "£"
-msgstr ""
+msgstr "£"
 
 #: plugins/taglist/HTML.tags.xml.in:2343
 msgid "€"
-msgstr ""
+msgstr "€"
 
 #: plugins/taglist/HTML.tags.xml.in:2347
 msgid "¤"
-msgstr ""
+msgstr "¤"
 
 #: plugins/taglist/HTML.tags.xml.in:2351
 msgid "¥"
-msgstr ""
+msgstr "¥"
 
 #: plugins/taglist/HTML.tags.xml.in:2355
 msgid "§"
-msgstr ""
+msgstr "§"
 
 #: plugins/taglist/HTML.tags.xml.in:2359
 msgid "©"
-msgstr ""
+msgstr "©"
 
 #: plugins/taglist/HTML.tags.xml.in:2363
 msgid "¬"
-msgstr ""
+msgstr "¬"
 
 #: plugins/taglist/HTML.tags.xml.in:2367
 msgid "®"
-msgstr ""
+msgstr "®"
 
 #: plugins/taglist/HTML.tags.xml.in:2371
 msgid "™"
-msgstr ""
+msgstr "™"
 
 #: plugins/taglist/HTML.tags.xml.in:2375
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #: plugins/taglist/HTML.tags.xml.in:2379
 msgid "µ"
-msgstr ""
+msgstr "µ"
 
 #: plugins/taglist/HTML.tags.xml.in:2383
 msgid "¶"
-msgstr ""
+msgstr "¶"
 
 #: plugins/taglist/HTML.tags.xml.in:2387
 msgid "·"
-msgstr ""
+msgstr "·"
 
 #: plugins/taglist/HTML.tags.xml.in:2391
 msgid "¼"
-msgstr ""
+msgstr "¼"
 
 #: plugins/taglist/HTML.tags.xml.in:2395
 msgid "½"
-msgstr ""
+msgstr "½"
 
 #: plugins/taglist/HTML.tags.xml.in:2399
 msgid "¾"
-msgstr ""
+msgstr "¾"
 
 #: plugins/taglist/HTML.tags.xml.in:2403
 msgid "¹"
-msgstr ""
+msgstr "¹"
 
 #: plugins/taglist/HTML.tags.xml.in:2407
 msgid "²"
-msgstr ""
+msgstr "²"
 
 #: plugins/taglist/HTML.tags.xml.in:2411
 msgid "³"
-msgstr ""
+msgstr "³"
 
 #: plugins/taglist/HTML.tags.xml.in:2415
 msgid "á"
-msgstr ""
+msgstr "á"
 
 #: plugins/taglist/HTML.tags.xml.in:2419
 msgid "Á"
-msgstr ""
+msgstr "Á"
 
 #: plugins/taglist/HTML.tags.xml.in:2423
 msgid "â"
-msgstr ""
+msgstr "â"
 
 #: plugins/taglist/HTML.tags.xml.in:2427
 msgid "Â"
-msgstr ""
+msgstr "Â"
 
 #: plugins/taglist/HTML.tags.xml.in:2431
 msgid "à"
-msgstr ""
+msgstr "à"
 
 #: plugins/taglist/HTML.tags.xml.in:2435
 msgid "À"
-msgstr ""
+msgstr "À"
 
 #: plugins/taglist/HTML.tags.xml.in:2439
 msgid "å"
-msgstr ""
+msgstr "å"
 
 #: plugins/taglist/HTML.tags.xml.in:2443
 msgid "Å"
-msgstr ""
+msgstr "Å"
 
 #: plugins/taglist/HTML.tags.xml.in:2447
 msgid "ã"
-msgstr ""
+msgstr "ã"
 
 #: plugins/taglist/HTML.tags.xml.in:2451
 msgid "Ã"
-msgstr ""
+msgstr "Ã"
 
 #: plugins/taglist/HTML.tags.xml.in:2455
 msgid "ä"
-msgstr ""
+msgstr "ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2459
 msgid "Ä"
-msgstr ""
+msgstr "Ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2463
 msgid "ª"
-msgstr ""
+msgstr "ª"
 
 #: plugins/taglist/HTML.tags.xml.in:2467
 msgid "æ"
-msgstr ""
+msgstr "æ"
 
 #: plugins/taglist/HTML.tags.xml.in:2471
 msgid "Æ"
-msgstr ""
+msgstr "Æ"
 
 #: plugins/taglist/HTML.tags.xml.in:2475
 msgid "ç"
-msgstr ""
+msgstr "ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2479
 msgid "Ç"
-msgstr ""
+msgstr "Ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2483
 msgid "Ð"
-msgstr ""
+msgstr "Ð"
 
 #: plugins/taglist/HTML.tags.xml.in:2487
 msgid "ð"
-msgstr ""
+msgstr "ð"
 
 #: plugins/taglist/HTML.tags.xml.in:2491
 msgid "é"
-msgstr ""
+msgstr "é"
 
 #: plugins/taglist/HTML.tags.xml.in:2495
 msgid "É"
-msgstr ""
+msgstr "É"
 
 #: plugins/taglist/HTML.tags.xml.in:2499
 msgid "ê"
-msgstr ""
+msgstr "ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2503
 msgid "Ê"
-msgstr ""
+msgstr "Ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2507
 msgid "è"
-msgstr ""
+msgstr "è"
 
 #: plugins/taglist/HTML.tags.xml.in:2511
 msgid "È"
-msgstr ""
+msgstr "È"
 
 #: plugins/taglist/HTML.tags.xml.in:2515
 msgid "ë"
-msgstr ""
+msgstr "ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2519
 msgid "Ë"
-msgstr ""
+msgstr "Ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2523
 msgid "í"
-msgstr ""
+msgstr "í"
 
 #: plugins/taglist/HTML.tags.xml.in:2527
 msgid "Í"
-msgstr ""
+msgstr "Í"
 
 #: plugins/taglist/HTML.tags.xml.in:2531
 msgid "î"
-msgstr ""
+msgstr "î"
 
 #: plugins/taglist/HTML.tags.xml.in:2535
 msgid "Î"
-msgstr ""
+msgstr "Î"
 
 #: plugins/taglist/HTML.tags.xml.in:2539
 msgid "ì"
-msgstr ""
+msgstr "ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2543
 msgid "Ì"
-msgstr ""
+msgstr "Ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2547
 msgid "ï"
-msgstr ""
+msgstr "ï"
 
 #: plugins/taglist/HTML.tags.xml.in:2551
 msgid "Ï"
-msgstr ""
+msgstr "Ï"
 
 #: plugins/taglist/HTML.tags.xml.in:2555
 msgid "ñ"
-msgstr ""
+msgstr "ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2559
 msgid "Ñ"
-msgstr ""
+msgstr "Ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2563
 msgid "ó"
-msgstr ""
+msgstr "ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2567
 msgid "Ó"
-msgstr ""
+msgstr "Ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2571
 msgid "ô"
-msgstr ""
+msgstr "ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2575
 msgid "Ô"
-msgstr ""
+msgstr "Ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2579
 msgid "ò"
-msgstr ""
+msgstr "ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2583
 msgid "Ò"
-msgstr ""
+msgstr "Ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2587
 msgid "º"
-msgstr ""
+msgstr "º"
 
 #: plugins/taglist/HTML.tags.xml.in:2591
 msgid "ø"
-msgstr ""
+msgstr "ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2595
 msgid "Ø"
-msgstr ""
+msgstr "Ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2599
 msgid "õ"
-msgstr ""
+msgstr "õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2603
 msgid "Õ"
-msgstr ""
+msgstr "Õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2607
 msgid "ö"
-msgstr ""
+msgstr "ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2611
 msgid "Ö"
-msgstr ""
+msgstr "Ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2615
 msgid "ß"
-msgstr ""
+msgstr "ß"
 
 #: plugins/taglist/HTML.tags.xml.in:2619
 msgid "þ"
-msgstr ""
+msgstr "þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2623
 msgid "Þ"
-msgstr ""
+msgstr "Þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2627
 msgid "ú"
-msgstr ""
+msgstr "ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2631
 msgid "Ú"
-msgstr ""
+msgstr "Ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2635
 msgid "û"
-msgstr ""
+msgstr "û"
 
 #: plugins/taglist/HTML.tags.xml.in:2639
 msgid "Û"
-msgstr ""
+msgstr "Û"
 
 #: plugins/taglist/HTML.tags.xml.in:2643
 msgid "ù"
-msgstr ""
+msgstr "ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2647
 msgid "Ù"
-msgstr ""
+msgstr "Ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2651
 msgid "ü"
-msgstr ""
+msgstr "ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2655
 msgid "Ü"
-msgstr ""
+msgstr "Ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2659
 msgid "ý"
-msgstr ""
+msgstr "ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2663
 msgid "Ý"
-msgstr ""
+msgstr "Ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2667
 msgid "ÿ"
-msgstr ""
+msgstr "ÿ"
 
 #: plugins/taglist/Latex.tags.xml.in:3
 msgid "Latex - Tags"
@@ -5483,7 +5445,7 @@ msgstr "Závorky {}"
 
 #: plugins/taglist/Latex.tags.xml.in:39
 msgid "Brackets &lt;&gt;"
-msgstr ""
+msgstr "Závorky &lt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:44
 msgid "File input"
@@ -5639,19 +5601,19 @@ msgstr "Odkaz ref"
 
 #: plugins/taglist/Latex.tags.xml.in:225
 msgid "Symbol &lt;&lt;"
-msgstr ""
+msgstr "Symbol &lt;&lt;"
 
 #: plugins/taglist/Latex.tags.xml.in:229
 msgid "Symbol &lt;="
-msgstr ""
+msgstr "Symbol &lt;="
 
 #: plugins/taglist/Latex.tags.xml.in:233
 msgid "Symbol &gt;="
-msgstr ""
+msgstr "Symbol &gt;="
 
 #: plugins/taglist/Latex.tags.xml.in:237
 msgid "Symbol &gt;&gt;"
-msgstr ""
+msgstr "Symbol &gt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:241
 msgid "Symbol and"
