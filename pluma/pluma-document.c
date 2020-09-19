@@ -650,6 +650,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      GTK_TYPE_TEXT_ITER | G_SIGNAL_TYPE_STATIC_SCOPE);
 }
 
+#if !GTK_SOURCE_CHECK_VERSION (3, 24, 11)
 static gboolean
 file_with_bom (GFile *file)
 {
@@ -692,6 +693,7 @@ file_with_bom (GFile *file)
 	else
 		return FALSE;
 }
+#endif
 
 static void
 set_language (PlumaDocument     *doc,
@@ -699,12 +701,15 @@ set_language (PlumaDocument     *doc,
               gboolean           set_by_user)
 {
 	GtkSourceLanguage *old_lang;
+
+#if !GTK_SOURCE_CHECK_VERSION (3, 24, 11)
 	const gchar       *new_lang_id;
 	const gchar       *bom_langs[] = {
 		"asp", "dtl", "docbook", "html", "mxml", "mallard", "markdown",
 		"mediawiki", "php", "tera", "xml", "xslt", NULL
 	};
 	gboolean is_bom_lang = FALSE;
+#endif
 
 	pluma_debug (DEBUG_DOCUMENT);
 
@@ -713,6 +718,7 @@ set_language (PlumaDocument     *doc,
 	if (old_lang == lang)
 		return;
 
+#if !GTK_SOURCE_CHECK_VERSION (3, 24, 11)
 	new_lang_id = gtk_source_language_get_id (lang);
 	if (new_lang_id)
 		is_bom_lang = g_strv_contains (bom_langs, new_lang_id);
@@ -733,6 +739,7 @@ set_language (PlumaDocument     *doc,
 			gtk_source_buffer_set_language (GTK_SOURCE_BUFFER (doc), lang);
 	}
 	else
+#endif
 		gtk_source_buffer_set_language (GTK_SOURCE_BUFFER (doc), lang);
 
 	if (lang != NULL)
