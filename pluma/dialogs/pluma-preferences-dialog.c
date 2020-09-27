@@ -119,7 +119,6 @@ struct _PlumaPreferencesDialogPrivate
 	GtkWidget	*backup_copy_checkbutton;
 	GtkWidget	*auto_save_checkbutton;
 	GtkWidget	*auto_save_spinbutton;
-	GtkWidget	*autosave_hbox;
 
 	/* Line numbers */
 	GtkWidget	*display_line_numbers_checkbutton;
@@ -139,7 +138,6 @@ struct _PlumaPreferencesDialogPrivate
 	/* Right margin */
 	GtkWidget	*right_margin_checkbutton;
 	GtkWidget	*right_margin_position_spinbutton;
-	GtkWidget	*right_margin_position_hbox;
 
 	/* Plugins manager */
 	GtkWidget	*plugin_manager_place_holder;
@@ -345,24 +343,25 @@ setup_editor_page (PlumaPreferencesDialog *dlg)
 			 "active",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 	g_settings_bind (dlg->priv->editor_settings,
-			 PLUMA_SETTINGS_AUTO_SAVE_INTERVAL,
-			 dlg->priv->auto_save_spinbutton,
-			 "value",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_signal_connect (dlg->priv->editor_settings,
-			  "changed::auto-save",
-			  G_CALLBACK (on_auto_save_changed),
-			  dlg);
-	g_settings_bind (dlg->priv->editor_settings,
 			 PLUMA_SETTINGS_AUTO_SAVE,
 			 dlg->priv->auto_save_checkbutton,
 			 "active",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 	g_settings_bind (dlg->priv->editor_settings,
+			 PLUMA_SETTINGS_AUTO_SAVE_INTERVAL,
+			 dlg->priv->auto_save_spinbutton,
+			 "value",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET | G_SETTINGS_BIND_NO_SENSITIVITY);
+	g_settings_bind (dlg->priv->editor_settings,
 			 PLUMA_SETTINGS_DRAWER_NEWLINE,
 			 dlg->priv->draw_newlines_checkbutton,
 			 "active",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
+
+	g_signal_connect (dlg->priv->editor_settings,
+			  "changed::auto-save",
+			  G_CALLBACK (on_auto_save_changed),
+			  dlg);
 
 	gint draw_spaces = g_settings_get_enum (dlg->priv->editor_settings, PLUMA_SETTINGS_DRAWER_SPACE);
 	gint draw_tabs = g_settings_get_enum (dlg->priv->editor_settings, PLUMA_SETTINGS_DRAWER_TAB);
@@ -462,7 +461,7 @@ right_margin_checkbutton_toggled (GtkToggleButton        *button,
 				active);
 
 
-	gtk_widget_set_sensitive (dlg->priv->right_margin_position_hbox,
+	gtk_widget_set_sensitive (dlg->priv->right_margin_position_spinbutton,
 				  active);
 }
 
@@ -534,7 +533,7 @@ setup_view_page (PlumaPreferencesDialog *dlg)
 	/* Set widgets sensitivity */
 	gtk_widget_set_sensitive (dlg->priv->split_checkbutton, (wrap_mode != GTK_WRAP_NONE));
 
-	gtk_widget_set_sensitive (dlg->priv->right_margin_position_hbox, display_right_margin);
+	gtk_widget_set_sensitive (dlg->priv->right_margin_position_spinbutton, display_right_margin);
 
 	g_settings_bind (dlg->priv->editor_settings,
 			 PLUMA_SETTINGS_DISPLAY_LINE_NUMBERS,
@@ -550,12 +549,7 @@ setup_view_page (PlumaPreferencesDialog *dlg)
 			 PLUMA_SETTINGS_RIGHT_MARGIN_POSITION,
 			 dlg->priv->right_margin_position_spinbutton,
 			 "value",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->priv->editor_settings,
-			 PLUMA_SETTINGS_AUTO_SAVE_INTERVAL,
-			 dlg->priv->auto_save_spinbutton,
-			 "value",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET | G_SETTINGS_BIND_NO_SENSITIVITY);
 	g_settings_bind (dlg->priv->editor_settings,
 			 PLUMA_SETTINGS_DISPLAY_OVERVIEW_MAP,
 			 dlg->priv->display_overview_map_checkbutton,
@@ -1266,7 +1260,6 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 
 		"right_margin_checkbutton", &dlg->priv->right_margin_checkbutton,
 		"right_margin_position_spinbutton", &dlg->priv->right_margin_position_spinbutton,
-		"right_margin_position_hbox", &dlg->priv->right_margin_position_hbox,
 
 		"tabs_width_spinbutton", &dlg->priv->tabs_width_spinbutton,
 		"tabs_width_hbox", &dlg->priv->tabs_width_hbox,
@@ -1280,7 +1273,6 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 		"draw_trailing_tabs_checkbutton", &dlg->priv->draw_trailing_tabs_checkbutton,
 		"draw_newlines_checkbutton", &dlg->priv->draw_newlines_checkbutton,
 
-		"autosave_hbox", &dlg->priv->autosave_hbox,
 		"backup_copy_checkbutton", &dlg->priv->backup_copy_checkbutton,
 		"auto_save_checkbutton", &dlg->priv->auto_save_checkbutton,
 		"auto_save_spinbutton", &dlg->priv->auto_save_spinbutton,
