@@ -2140,8 +2140,6 @@ update_cursor_position_statusbar (GtkTextBuffer *buffer,
 {
 	gint row, col;
 	GtkTextIter iter;
-	GtkTextIter start;
-	guint tab_size;
 	PlumaView *view;
 
 	pluma_debug (DEBUG_WINDOW);
@@ -2157,23 +2155,7 @@ update_cursor_position_statusbar (GtkTextBuffer *buffer,
 
 	row = gtk_text_iter_get_line (&iter);
 
-	start = iter;
-	gtk_text_iter_set_line_offset (&start, 0);
-	col = 0;
-
-	tab_size = gtk_source_view_get_tab_width (GTK_SOURCE_VIEW (view));
-
-	while (!gtk_text_iter_equal (&start, &iter))
-	{
-		/* FIXME: Are we Unicode compliant here? */
-		if (gtk_text_iter_get_char (&start) == '\t')
-
-			col += (tab_size - (col  % tab_size));
-		else
-			++col;
-
-		gtk_text_iter_forward_char (&start);
-	}
+	col = gtk_source_view_get_visual_column (GTK_SOURCE_VIEW(view), &iter);
 
 	pluma_statusbar_set_cursor_position (
 				PLUMA_STATUSBAR (window->priv->statusbar),
