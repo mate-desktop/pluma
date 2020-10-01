@@ -14,7 +14,7 @@ EXTRA_DIST = 			\
 	its			\
 	ChangeLog		\
 	NEWS			\
-	README			\
+	README.md		\
 	xmldocs.make 		\
 	omf.make
 
