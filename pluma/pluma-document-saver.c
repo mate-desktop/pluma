@@ -39,7 +39,6 @@
 #include "pluma-document-saver.h"
 #include "pluma-document-input-stream.h"
 #include "pluma-debug.h"
-#include "pluma-marshal.h"
 #include "pluma-utils.h"
 #include "pluma-enum-types.h"
 #include "pluma-settings.h"
@@ -328,8 +327,7 @@ pluma_document_saver_class_init (PlumaDocumentSaverClass *klass)
                       G_OBJECT_CLASS_TYPE (object_class),
                       G_SIGNAL_RUN_LAST,
                       G_STRUCT_OFFSET (PlumaDocumentSaverClass, saving),
-                      NULL, NULL,
-                      pluma_marshal_VOID__BOOLEAN_POINTER,
+                      NULL, NULL, NULL,
                       G_TYPE_NONE,
                       2,
                       G_TYPE_BOOLEAN,

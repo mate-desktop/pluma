@@ -7,10 +7,6 @@ AM_CPPFLAGS = 							\
 	$(ENCHANT_CFLAGS)					\
 	$(WARN_CFLAGS)
 
-BUILT_SOURCES = 					\
-	pluma-spell-marshal.c				\
-	pluma-spell-marshal.h
-
 plugin_LTLIBRARIES = libspell.la
 
 libspell_la_SOURCES = \
@@ -28,22 +24,15 @@ libspell_la_SOURCES = \
 	pluma-automatic-spell-checker.h			\
 	pluma-spell-utils.c				\
 	pluma-spell-utils.h				\
-	$(BUILT_SOURCES)			
+	$(BUILT_SOURCES)
 
-libspell_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS) 
+libspell_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
 libspell_la_LIBADD  = $(PLUMA_LIBS) $(ENCHANT_LIBS)
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/spell
 ui_files = spell-checker.ui languages-dialog.ui pluma-spell-setup-dialog.ui
 include $(top_srcdir)/gla11y.mk
 ui_DATA = $(ui_files)
-
-pluma-spell-marshal.h: pluma-spell-marshal.list $(GLIB_GENMARSHAL)
-	$(AM_V_GEN) $(GLIB_GENMARSHAL) $< --header --prefix=pluma_marshal > $@
-
-pluma-spell-marshal.c: pluma-spell-marshal.list $(GLIB_GENMARSHAL)
-	$(AM_V_GEN) echo "#include \"pluma-spell-marshal.h\"" > $@ && \
-	$(GLIB_GENMARSHAL) $< --body --prefix=pluma_marshal >> $@
 
 plugin_in_files = spell.plugin.desktop.in
 plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
@@ -59,7 +48,6 @@ gsettings_SCHEMAS = $(spell_gschema_in:.xml.in=.xml)
 EXTRA_DIST = 					\
 	$(ui_DATA)				\
 	$(plugin_in_files)			\
-	pluma-spell-marshal.list    	        \
 	$(spell_gschema_in)			\
 	ui-a11y.suppr
 

@@ -46,7 +46,6 @@
 #include "pluma-notebook.h"
 #include "pluma-tab.h"
 #include "pluma-tab-label.h"
-#include "pluma-marshal.h"
 #include "pluma-window.h"
 #include "pluma-settings.h"
 
@@ -148,8 +147,7 @@ pluma_notebook_class_init (PlumaNotebookClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (PlumaNotebookClass, tab_added),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__OBJECT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_TAB);
@@ -158,8 +156,7 @@ pluma_notebook_class_init (PlumaNotebookClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (PlumaNotebookClass, tab_removed),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__OBJECT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_TAB);
@@ -168,8 +165,7 @@ pluma_notebook_class_init (PlumaNotebookClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (PlumaNotebookClass, tab_detached),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__OBJECT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_TAB);
@@ -178,8 +174,7 @@ pluma_notebook_class_init (PlumaNotebookClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (PlumaNotebookClass, tabs_reordered),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__VOID,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      0);
 	signals[TAB_CLOSE_REQUEST] =
@@ -187,8 +182,7 @@ pluma_notebook_class_init (PlumaNotebookClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaNotebookClass, tab_close_request),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__OBJECT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_TAB);

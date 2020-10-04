@@ -39,7 +39,6 @@
 #include "pluma-print-job.h"
 #include "pluma-debug.h"
 #include "pluma-print-preview.h"
-#include "pluma-marshal.h"
 #include "pluma-utils.h"
 #include "pluma-dirs.h"
 #include "pluma-settings.h"
@@ -201,8 +200,7 @@ pluma_print_job_class_init (PlumaPrintJobClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaPrintJobClass, printing),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__UINT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      G_TYPE_UINT);
@@ -212,8 +210,7 @@ pluma_print_job_class_init (PlumaPrintJobClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaPrintJobClass, show_preview),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__OBJECT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      GTK_TYPE_WIDGET);
@@ -223,8 +220,7 @@ pluma_print_job_class_init (PlumaPrintJobClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaPrintJobClass, done),
-			      NULL, NULL,
-			      pluma_marshal_VOID__UINT_POINTER,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      2,
 			      G_TYPE_UINT,

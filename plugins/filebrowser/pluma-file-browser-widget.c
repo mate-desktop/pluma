@@ -39,7 +39,6 @@
 #include "pluma-file-browser-view.h"
 #include "pluma-file-browser-store.h"
 #include "pluma-file-bookmarks-store.h"
-#include "pluma-file-browser-marshal.h"
 #include "pluma-file-browser-enum-types.h"
 
 #define XML_UI_FILE "pluma-file-browser-widget-ui.xml"
@@ -435,26 +434,22 @@ pluma_file_browser_widget_class_init (PlumaFileBrowserWidgetClass * klass)
 	    g_signal_new ("uri-activated",
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserWidgetClass,
-					   uri_activated), NULL, NULL,
-			  g_cclosure_marshal_VOID__STRING, G_TYPE_NONE, 1,
+			  G_STRUCT_OFFSET (PlumaFileBrowserWidgetClass, uri_activated),
+			  NULL, NULL, NULL,
+			  G_TYPE_NONE, 1,
 			  G_TYPE_STRING);
 	signals[ERROR] =
 	    g_signal_new ("error", G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserWidgetClass,
-					   error), NULL, NULL,
-			  pluma_file_browser_marshal_VOID__UINT_STRING,
+			  G_STRUCT_OFFSET (PlumaFileBrowserWidgetClass, error),
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE, 2, G_TYPE_UINT, G_TYPE_STRING);
 
 	signals[CONFIRM_DELETE] =
 	    g_signal_new ("confirm-delete", G_OBJECT_CLASS_TYPE (object_class),
 	                  G_SIGNAL_RUN_LAST,
-	                  G_STRUCT_OFFSET (PlumaFileBrowserWidgetClass,
-	                                   confirm_delete),
-	                  g_signal_accumulator_true_handled,
-	                  NULL,
-	                  pluma_file_browser_marshal_BOOLEAN__OBJECT_POINTER,
+	                  G_STRUCT_OFFSET (PlumaFileBrowserWidgetClass, confirm_delete),
+	                  g_signal_accumulator_true_handled, NULL, NULL,
 	                  G_TYPE_BOOLEAN,
 	                  2,
 	                  G_TYPE_OBJECT,
@@ -463,11 +458,8 @@ pluma_file_browser_widget_class_init (PlumaFileBrowserWidgetClass * klass)
 	signals[CONFIRM_NO_TRASH] =
 	    g_signal_new ("confirm-no-trash", G_OBJECT_CLASS_TYPE (object_class),
 	                  G_SIGNAL_RUN_LAST,
-	                  G_STRUCT_OFFSET (PlumaFileBrowserWidgetClass,
-	                                   confirm_no_trash),
-	                  g_signal_accumulator_true_handled,
-	                  NULL,
-	                  pluma_file_browser_marshal_BOOLEAN__POINTER,
+	                  G_STRUCT_OFFSET (PlumaFileBrowserWidgetClass, confirm_no_trash),
+	                  g_signal_accumulator_true_handled, NULL, NULL,
 	                  G_TYPE_BOOLEAN,
 	                  1,
 	                  G_TYPE_POINTER);

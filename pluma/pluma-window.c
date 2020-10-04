@@ -426,8 +426,7 @@ pluma_window_class_init (PlumaWindowClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (PlumaWindowClass, tab_added),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__OBJECT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_TAB);
@@ -436,8 +435,7 @@ pluma_window_class_init (PlumaWindowClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (PlumaWindowClass, tab_removed),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__OBJECT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_TAB);
@@ -446,8 +444,7 @@ pluma_window_class_init (PlumaWindowClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (PlumaWindowClass, tabs_reordered),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__VOID,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      0);
 	signals[ACTIVE_TAB_CHANGED] =
@@ -455,8 +452,7 @@ pluma_window_class_init (PlumaWindowClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (PlumaWindowClass, active_tab_changed),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__OBJECT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_TAB);
@@ -465,8 +461,7 @@ pluma_window_class_init (PlumaWindowClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
 			      G_STRUCT_OFFSET (PlumaWindowClass, active_tab_state_changed),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__VOID,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      0);
 

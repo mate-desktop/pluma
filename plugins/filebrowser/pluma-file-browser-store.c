@@ -28,7 +28,6 @@
 #include <gio/gio.h>
 
 #include "pluma-file-browser-store.h"
-#include "pluma-file-browser-marshal.h"
 #include "pluma-file-browser-enum-types.h"
 #include "pluma-file-browser-error.h"
 #include "pluma-file-browser-utils.h"
@@ -356,67 +355,60 @@ pluma_file_browser_store_class_init (PlumaFileBrowserStoreClass * klass)
 	    g_signal_new ("begin-loading",
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass,
-					   begin_loading), NULL, NULL,
-			  g_cclosure_marshal_VOID__BOXED, G_TYPE_NONE, 1,
-			  GTK_TYPE_TREE_ITER);
+			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass, begin_loading),
+			  NULL, NULL, NULL,
+			  G_TYPE_NONE, 1, GTK_TYPE_TREE_ITER);
 	model_signals[END_LOADING] =
 	    g_signal_new ("end-loading",
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass,
-					   end_loading), NULL, NULL,
-			  g_cclosure_marshal_VOID__BOXED, G_TYPE_NONE, 1,
+			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass, end_loading),
+			  NULL, NULL, NULL,
+			  G_TYPE_NONE, 1,
 			  GTK_TYPE_TREE_ITER);
 	model_signals[ERROR] =
 	    g_signal_new ("error", G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass,
-					   error), NULL, NULL,
-			  pluma_file_browser_marshal_VOID__UINT_STRING,
+			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass, error),
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE, 2, G_TYPE_UINT, G_TYPE_STRING);
 	model_signals[NO_TRASH] =
 	    g_signal_new ("no-trash", G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass,
-					   no_trash), g_signal_accumulator_true_handled, NULL,
-			  pluma_file_browser_marshal_BOOLEAN__POINTER,
+			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass, no_trash),
+			  g_signal_accumulator_true_handled, NULL, NULL,
 			  G_TYPE_BOOLEAN, 1, G_TYPE_POINTER);
 	model_signals[RENAME] =
 	    g_signal_new ("rename",
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass,
-					   rename), NULL, NULL,
-			  pluma_file_browser_marshal_VOID__STRING_STRING,
+			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass, rename),
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE, 2,
 			  G_TYPE_STRING,
 			  G_TYPE_STRING);
 	model_signals[BEGIN_REFRESH] =
 	    g_signal_new ("begin-refresh",
-	    		  G_OBJECT_CLASS_TYPE (object_class),
-	    		  G_SIGNAL_RUN_LAST,
-	    		  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass,
-	    		  		   begin_refresh), NULL, NULL,
-	    		  g_cclosure_marshal_VOID__VOID,
-	    		  G_TYPE_NONE, 0);
+			  G_OBJECT_CLASS_TYPE (object_class),
+			  G_SIGNAL_RUN_LAST,
+			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass, begin_refresh),
+			  NULL, NULL, NULL,
+			  G_TYPE_NONE, 0);
 	model_signals[END_REFRESH] =
 	    g_signal_new ("end-refresh",
-	    		  G_OBJECT_CLASS_TYPE (object_class),
-	    		  G_SIGNAL_RUN_LAST,
-	    		  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass,
-	    		  		   end_refresh), NULL, NULL,
-	    		  g_cclosure_marshal_VOID__VOID,
-	    		  G_TYPE_NONE, 0);
+			  G_OBJECT_CLASS_TYPE (object_class),
+			  G_SIGNAL_RUN_LAST,
+			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass, end_refresh),
+			  NULL, NULL, NULL,
+			  G_TYPE_NONE, 0);
 	model_signals[UNLOAD] =
 	    g_signal_new ("unload",
-	    		  G_OBJECT_CLASS_TYPE (object_class),
-	    		  G_SIGNAL_RUN_LAST,
-	    		  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass,
-	    		  		   unload), NULL, NULL,
-	    		  g_cclosure_marshal_VOID__STRING,
-	    		  G_TYPE_NONE, 1,
-	    		  G_TYPE_STRING);
+			  G_OBJECT_CLASS_TYPE (object_class),
+			  G_SIGNAL_RUN_LAST,
+			  G_STRUCT_OFFSET (PlumaFileBrowserStoreClass, unload),
+			  NULL, NULL, NULL,
+			  G_TYPE_NONE, 1,
+			  G_TYPE_STRING);
 }
 
 static void

@@ -36,7 +36,6 @@
 #include <gtk/gtk.h>
 #include <pluma/pluma-utils.h>
 #include "pluma-spell-checker-dialog.h"
-#include "pluma-spell-marshal.h"
 
 struct _PlumaSpellCheckerDialog
 {
@@ -142,8 +141,7 @@ pluma_spell_checker_dialog_class_init (PlumaSpellCheckerDialogClass * klass)
  			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaSpellCheckerDialogClass, ignore),
-			      NULL, NULL,
-			      pluma_marshal_VOID__STRING,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      G_TYPE_STRING);
@@ -153,8 +151,7 @@ pluma_spell_checker_dialog_class_init (PlumaSpellCheckerDialogClass * klass)
  			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaSpellCheckerDialogClass, ignore_all),
-			      NULL, NULL,
-			      pluma_marshal_VOID__STRING,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      G_TYPE_STRING);
@@ -164,8 +161,7 @@ pluma_spell_checker_dialog_class_init (PlumaSpellCheckerDialogClass * klass)
  			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaSpellCheckerDialogClass, change),
-			      NULL, NULL,
-			      pluma_marshal_VOID__STRING_STRING,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      2,
 			      G_TYPE_STRING,
@@ -176,8 +172,7 @@ pluma_spell_checker_dialog_class_init (PlumaSpellCheckerDialogClass * klass)
  			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaSpellCheckerDialogClass, change_all),
-			      NULL, NULL,
-			      pluma_marshal_VOID__STRING_STRING,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      2,
 			      G_TYPE_STRING,
@@ -188,8 +183,7 @@ pluma_spell_checker_dialog_class_init (PlumaSpellCheckerDialogClass * klass)
  			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaSpellCheckerDialogClass, add_word_to_personal),
-			      NULL, NULL,
-			      pluma_marshal_VOID__STRING,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      G_TYPE_STRING);

@@ -27,7 +27,6 @@
 #include "pluma-file-browser-store.h"
 #include "pluma-file-bookmarks-store.h"
 #include "pluma-file-browser-view.h"
-#include "pluma-file-browser-marshal.h"
 #include "pluma-file-browser-enum-types.h"
 
 struct _PlumaFileBrowserViewPrivate
@@ -876,33 +875,29 @@ pluma_file_browser_view_class_init (PlumaFileBrowserViewClass * klass)
 	    g_signal_new ("error",
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserViewClass,
-					   error), NULL, NULL,
-			  pluma_file_browser_marshal_VOID__UINT_STRING,
+			  G_STRUCT_OFFSET (PlumaFileBrowserViewClass, error),
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE, 2, G_TYPE_UINT, G_TYPE_STRING);
 	signals[FILE_ACTIVATED] =
 	    g_signal_new ("file-activated",
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserViewClass,
-					   file_activated), NULL, NULL,
-			  g_cclosure_marshal_VOID__BOXED,
+			  G_STRUCT_OFFSET (PlumaFileBrowserViewClass, file_activated),
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE, 1, GTK_TYPE_TREE_ITER);
 	signals[DIRECTORY_ACTIVATED] =
 	    g_signal_new ("directory-activated",
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserViewClass,
-					   directory_activated), NULL, NULL,
-			  g_cclosure_marshal_VOID__BOXED,
+			  G_STRUCT_OFFSET (PlumaFileBrowserViewClass, directory_activated),
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE, 1, GTK_TYPE_TREE_ITER);
 	signals[BOOKMARK_ACTIVATED] =
 	    g_signal_new ("bookmark-activated",
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
-			  G_STRUCT_OFFSET (PlumaFileBrowserViewClass,
-					   bookmark_activated), NULL, NULL,
-			  g_cclosure_marshal_VOID__BOXED,
+			  G_STRUCT_OFFSET (PlumaFileBrowserViewClass, bookmark_activated),
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE, 1, GTK_TYPE_TREE_ITER);
 }
 

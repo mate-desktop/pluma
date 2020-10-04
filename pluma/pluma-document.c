@@ -48,7 +48,6 @@
 #include "pluma-style-scheme-manager.h"
 #include "pluma-document-loader.h"
 #include "pluma-document-saver.h"
-#include "pluma-marshal.h"
 #include "pluma-enum-types.h"
 #include "plumatextregion.h"
 
@@ -535,8 +534,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaDocumentClass, cursor_moved),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__VOID,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      0);
 
@@ -555,8 +553,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaDocumentClass, load),
-			      NULL, NULL,
-			      pluma_marshal_VOID__STRING_BOXED_INT_BOOLEAN,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      4,
 			      G_TYPE_STRING,
@@ -572,8 +569,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaDocumentClass, loading),
-			      NULL, NULL,
-			      pluma_marshal_VOID__UINT64_UINT64,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      2,
 			      G_TYPE_UINT64,
@@ -584,8 +580,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaDocumentClass, loaded),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__POINTER,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      G_TYPE_POINTER);
@@ -604,8 +599,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaDocumentClass, save),
-			      NULL, NULL,
-			      pluma_marshal_VOID__STRING_BOXED_FLAGS,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      3,
 			      G_TYPE_STRING,
@@ -619,8 +613,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaDocumentClass, saving),
-			      NULL, NULL,
-			      pluma_marshal_VOID__UINT64_UINT64,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      2,
 			      G_TYPE_UINT64,
@@ -631,8 +624,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaDocumentClass, saved),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__POINTER,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      G_TYPE_POINTER);
@@ -642,8 +634,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaDocumentClass, search_highlight_updated),
-			      NULL, NULL,
-			      pluma_marshal_VOID__BOXED_BOXED,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      2,
 			      GTK_TYPE_TEXT_ITER | G_SIGNAL_TYPE_STATIC_SCOPE,
