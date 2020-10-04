@@ -9,9 +9,7 @@ AM_CPPFLAGS = \
 
 BUILT_SOURCES = \
 	pluma-file-browser-enum-types.h		\
-	pluma-file-browser-enum-types.c		\
-	pluma-file-browser-marshal.h 		\
-	pluma-file-browser-marshal.c
+	pluma-file-browser-enum-types.c
 
 plugin_LTLIBRARIES = libfilebrowser.la
 
@@ -57,13 +55,6 @@ pluma-file-browser-enum-types.c: pluma-file-browser-enum-types.c.template pluma-
 	$(GLIB_MKENUMS) --template pluma-file-browser-enum-types.c.template $(NOINST_H_FILES) && \
 	$(GLIB_MKENUMS) --template pluma-file-browser-enum-register.c.template $(NOINST_H_FILES)) > $@
 
-pluma-file-browser-marshal.h: pluma-file-browser-marshal.list $(GLIB_GENMARSHAL)
-	$(AM_V_GEN) $(GLIB_GENMARSHAL) $< --header --prefix=pluma_file_browser_marshal > $@
-
-pluma-file-browser-marshal.c: pluma-file-browser-marshal.list $(GLIB_GENMARSHAL)
-	$(AM_V_GEN) echo "#include \"pluma-file-browser-marshal.h\"" > $@ && \
-	$(GLIB_GENMARSHAL) $< --body --prefix=pluma_file_browser_marshal >> $@
-
 filebrowser_gschema_in = org.mate.pluma.plugins.filebrowser.gschema.xml.in
 gsettings_SCHEMAS = $(filebrowser_gschema_in:.xml.in=.xml)
 @GSETTINGS_RULES@
@@ -74,8 +65,7 @@ EXTRA_DIST = \
 	$(filebrowser_gschema_in)			\
 	pluma-file-browser-enum-types.h.template	\
 	pluma-file-browser-enum-types.c.template	\
-	pluma-file-browser-enum-register.c.template	\
-	pluma-file-browser-marshal.list
+	pluma-file-browser-enum-register.c.template
 
 CLEANFILES = \
 	$(plugin_DATA)		\

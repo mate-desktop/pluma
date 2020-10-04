@@ -205,8 +205,7 @@ pluma_message_bus_class_init (PlumaMessageBusClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaMessageBusClass, dispatch),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__OBJECT,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_MESSAGE);
@@ -225,8 +224,7 @@ pluma_message_bus_class_init (PlumaMessageBusClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaMessageBusClass, registered),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__BOXED,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_MESSAGE_TYPE);
@@ -245,8 +243,7 @@ pluma_message_bus_class_init (PlumaMessageBusClass *klass)
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
 			      G_STRUCT_OFFSET (PlumaMessageBusClass, unregistered),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__BOXED,
+			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      1,
 			      PLUMA_TYPE_MESSAGE_TYPE);

@@ -43,7 +43,6 @@
 #include "pluma-debug.h"
 #include "pluma-metadata-manager.h"
 #include "pluma-utils.h"
-#include "pluma-marshal.h"
 #include "pluma-enum-types.h"
 #include "pluma-settings.h"
 
@@ -296,8 +295,7 @@ pluma_document_loader_class_init (PlumaDocumentLoaderClass *klass)
                       G_OBJECT_CLASS_TYPE (object_class),
                       G_SIGNAL_RUN_LAST,
                       G_STRUCT_OFFSET (PlumaDocumentLoaderClass, loading),
-                      NULL, NULL,
-                      pluma_marshal_VOID__BOOLEAN_POINTER,
+                      NULL, NULL, NULL,
                       G_TYPE_NONE,
                       2,
                       G_TYPE_BOOLEAN,

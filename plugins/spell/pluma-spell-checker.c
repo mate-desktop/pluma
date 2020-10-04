@@ -40,7 +40,6 @@
 
 #include "pluma-spell-checker.h"
 #include "pluma-spell-utils.h"
-#include "pluma-spell-marshal.h"
 
 struct _PlumaSpellChecker
 {
@@ -152,8 +151,7 @@ pluma_spell_checker_class_init (PlumaSpellCheckerClass * klass)
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
 			  G_STRUCT_OFFSET (PlumaSpellCheckerClass, add_word_to_personal),
-			  NULL, NULL,
-			  pluma_marshal_VOID__STRING_INT,
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE,
 			  2,
 			  G_TYPE_STRING,
@@ -164,8 +162,7 @@ pluma_spell_checker_class_init (PlumaSpellCheckerClass * klass)
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
 			  G_STRUCT_OFFSET (PlumaSpellCheckerClass, add_word_to_session),
-			  NULL, NULL,
-			  pluma_marshal_VOID__STRING_INT,
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE,
 			  2,
 			  G_TYPE_STRING,
@@ -176,8 +173,7 @@ pluma_spell_checker_class_init (PlumaSpellCheckerClass * klass)
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
 			  G_STRUCT_OFFSET (PlumaSpellCheckerClass, set_language),
-			  NULL, NULL,
-			  pluma_marshal_VOID__POINTER,
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE,
 			  1,
 			  G_TYPE_POINTER);
@@ -187,8 +183,7 @@ pluma_spell_checker_class_init (PlumaSpellCheckerClass * klass)
 			  G_OBJECT_CLASS_TYPE (object_class),
 			  G_SIGNAL_RUN_LAST,
 			  G_STRUCT_OFFSET (PlumaSpellCheckerClass, clear_session),
-			  NULL, NULL,
-			  pluma_marshal_VOID__VOID,
+			  NULL, NULL, NULL,
 			  G_TYPE_NONE,
 			  0);
 }

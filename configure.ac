@@ -205,7 +205,6 @@ GLIB_GSETTINGS
 dnl ================================================================
 dnl Misc
 dnl ================================================================
-AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 AC_PATH_PROG(GLIB_MKENUMS, glib-mkenums)
 
 AC_ARG_ENABLE([tests],

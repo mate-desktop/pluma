@@ -34,10 +34,7 @@ libpluma_la_LIBADD += $(PLUMA_LIBS) -lICE
 
 BUILT_SOURCES = 			\
 	pluma-enum-types.c		\
-	pluma-enum-types.h		\
-	pluma-marshal.c			\
-	pluma-marshal.h
-
+	pluma-enum-types.h
 
 NOINST_H_FILES =			\
 	pluma-close-button.h		\
@@ -158,13 +155,6 @@ pluma-enum-types.h: pluma-enum-types.h.template $(INST_H_FILES) $(GLIB_MKENUMS)
 pluma-enum-types.c: pluma-enum-types.c.template $(INST_H_FILES) $(GLIB_MKENUMS)
 	$(AM_V_GEN) (cd $(srcdir) && $(GLIB_MKENUMS) --template pluma-enum-types.c.template $(INST_H_FILES)) > $@
 
-pluma-marshal.h: pluma-marshal.list $(GLIB_GENMARSHAL)
-	$(AM_V_GEN) $(GLIB_GENMARSHAL) $< --header --prefix=pluma_marshal > $@
-
-pluma-marshal.c: pluma-marshal.list $(GLIB_GENMARSHAL)
-	$(AM_V_GEN) echo "#include \"pluma-marshal.h\"" > $@ && \
-	$(GLIB_GENMARSHAL) $< --body --prefix=pluma_marshal >> $@
-
 aboutdir = $(datadir)/pluma/
 about_DATA =				\
 	pluma.about			\
@@ -182,7 +172,6 @@ EXTRA_DIST = 				\
 	$(about_DATA)			\
 	pluma-enum-types.h.template	\
 	pluma-enum-types.c.template	\
-	pluma-marshal.list		\
 	pluma.rc			\
 	ui-a11y.suppr
 
