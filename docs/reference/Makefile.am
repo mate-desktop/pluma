@@ -100,6 +100,8 @@ include $(top_srcdir)/gtk-doc.make
 # Other files to distribute
 # e.g. EXTRA_DIST += version.xml.in
 
+DISTCLEANFILES = $(DOC_MODULE).actions
+
 regenerate-types:
 	grep _get_type $(DOC_SOURCE_DIR)/pluma-*.h | grep -oR '^.*\.h' | sort | uniq - | sed -r 's/^.*\.h$/#include "\0"/' > pluma.types
 	grep _get_type $(DOC_SOURCE_DIR)/pluma-*.h | grep -oR '^.*\.h' | sort | uniq - | sed -re 'y/-/_/' -e 's/^(.*)\.h$/\1_get_type/' >> pluma.types.new
