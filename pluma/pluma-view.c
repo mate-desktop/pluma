@@ -44,6 +44,7 @@
 
 #include "pluma-view.h"
 #include "pluma-debug.h"
+#include "pluma-pango.h"
 #include "pluma-prefs-manager.h"
 #include "pluma-prefs-manager-app.h"
 #include "pluma-prefs-manager-private.h"
@@ -97,6 +98,9 @@ struct _PlumaViewPrivate
 	gboolean     disable_popdown;
 
 	GtkTextBuffer *current_buffer;
+
+	GtkCssProvider       *css_provider;
+	PangoFontDescription *font_desc;
 };
 
 /* The search entry completion is shared among all the views */
@@ -454,6 +458,7 @@ static void
 pluma_view_init (PlumaView *view)
 {
 	GtkTargetList *tl;
+	GtkStyleContext *context;
 
 	pluma_debug (DEBUG_VIEW);
 
@@ -463,6 +468,13 @@ pluma_view_init (PlumaView *view)
 	 *  Set tab, fonts, wrap mode, colors, etc. according
 	 *  to preferences
 	 */
+	view->priv->css_provider = gtk_css_provider_new ();
+	context = gtk_widget_get_style_context (GTK_WIDGET (view));
+	gtk_style_context_add_class (context, "pluma-view");
+
+	gtk_style_context_add_provider (context,
+					GTK_STYLE_PROVIDER (view->priv->css_provider),
+					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	if (!pluma_prefs_manager_get_use_default_font ())
 	{
 		gchar *editor_font;
@@ -534,6 +546,9 @@ pluma_view_dispose (GObject *object)
 	   would reinstate a GtkTextBuffer which we don't want */
 	current_buffer_removed (view);
 	g_signal_handlers_disconnect_by_func (view, on_notify_buffer_cb, NULL);
+
+	g_clear_object (&view->priv->css_provider);
+	g_clear_pointer (&view->priv->font_desc, pango_font_description_free);
 
 	(* G_OBJECT_CLASS (pluma_view_parent_class)->dispose) (object);
 }
@@ -759,101 +774,21 @@ pluma_view_scroll_to_cursor (PlumaView *view)
 				      0.0);
 }
 
-static PangoFontDescription* get_system_font (void)
-{
-	PangoFontDescription *desc = NULL;
-	char *name;
-
-	name = g_settings_get_string (pluma_prefs_manager->interface_settings, "font-name");
-
-	if (name)
-	{
-		desc = pango_font_description_from_string (name);
-		g_free (name);
-	}
-
-	return desc;
-}
-
 static void
-system_font_changed_cb (GSettings *settings,
-			gchar     *key,
-			gpointer   user_data)
+update_css_provider (PlumaView *view)
 {
-	PangoFontDescription *sys_font_desc = NULL;
-	sys_font_desc = get_system_font ();
-	if (sys_font_desc)
-	{
-		pluma_override_font ("label", NULL, sys_font_desc);
-		pango_font_description_free (sys_font_desc);
-	}
-}
+	gchar *str;
+	gchar *css;
 
-void
-pluma_override_font (const gchar          *item,
-		     GtkWidget            *widget,
-		     PangoFontDescription *font)
-{
-	static GtkCssProvider *provider = NULL; /*We need to keep this as long as Pluma is running*/
-	gchar          *prov_str;
-	gchar          *css;
-	gchar          *family;
-	gchar          *weight;
-	const gchar    *style;
-	gchar          *size;
+	g_assert (PLUMA_IS_VIEW (view));
+	g_assert (view->priv->font_desc != NULL);
 
-	family = g_strdup_printf ("font-family: %s;", pango_font_description_get_family (font));
-
-	weight = g_strdup_printf ("font-weight: %d;", pango_font_description_get_weight (font));
-
-	if (pango_font_description_get_style (font) == PANGO_STYLE_NORMAL)
-		style = "font-style: normal;";
-	else if (pango_font_description_get_style (font) == PANGO_STYLE_ITALIC)
-		style = "font-style: italic;";
-	else
-		style = "font-style: oblique;";
-
-	size = g_strdup_printf ("font-size: %d%s;",
-				pango_font_description_get_size (font) / PANGO_SCALE,
-				pango_font_description_get_size_is_absolute (font) ? "px" : "pt");
-
-	if (provider == NULL)
-	{
-		provider = gtk_css_provider_new ();
-
-		g_signal_connect (pluma_prefs_manager->interface_settings,
-				  "changed::" "font-name",
-				  G_CALLBACK (system_font_changed_cb), NULL);
-
-		gtk_style_context_add_provider_for_screen (gtk_widget_get_screen (widget),
-							   GTK_STYLE_PROVIDER (provider),
-							   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-	}
-
-	prov_str = gtk_css_provider_to_string (provider);
-
-	if (g_str_has_prefix (prov_str, "textview") && g_str_has_prefix (item, "label"))
-	{
-		if (strstr (prov_str, "label"))
-		{
-			g_strdelimit (prov_str, "}", '\0');
-			gchar *prov_new_str = g_strdup_printf ("%s}", prov_str);
-			css = g_strdup_printf ("%s %s { %s %s %s %s }", prov_new_str, item, family, weight, style, size);
-			g_free (prov_new_str);
-		}
-		else
-			css = g_strdup_printf ("%s %s { %s %s %s %s }", prov_str, item, family, weight, style, size);
-	}
-	else
-		css = g_strdup_printf ("%s { %s %s %s %s }", item, family, weight, style, size);
-
-	gtk_css_provider_load_from_data (provider, css, -1, NULL);
+	str = pluma_pango_font_description_to_css (view->priv->font_desc);
+	css = g_strdup_printf ("textview { %s }", str ? str : "");
+	gtk_css_provider_load_from_data (view->priv->css_provider, css, -1, NULL);
 
 	g_free (css);
-	g_free (family);
-	g_free (weight);
-	g_free (size);
-	g_free (prov_str);
+	g_free (str);
 }
 
 /* FIXME this is an issue for introspection */
@@ -871,10 +806,9 @@ pluma_view_set_font (PlumaView   *view,
 		     gboolean     def,
 		     const gchar *font_name)
 {
-	PangoFontDescription *font_desc = NULL;
-	PangoFontDescription *sys_font_desc = NULL;
-
 	pluma_debug (DEBUG_VIEW);
+
+	g_clear_pointer (&view->priv->font_desc, pango_font_description_free);
 
 	g_return_if_fail (PLUMA_IS_VIEW (view));
 
@@ -883,27 +817,19 @@ pluma_view_set_font (PlumaView   *view,
 		gchar *font;
 
 		font = pluma_prefs_manager_get_system_font ();
-		font_desc = pango_font_description_from_string (font);
+		view->priv->font_desc = pango_font_description_from_string (font);
 		g_free (font);
 	}
 	else
 	{
 		g_return_if_fail (font_name != NULL);
 
-		font_desc = pango_font_description_from_string (font_name);
+		view->priv->font_desc = pango_font_description_from_string (font_name);
 	}
 
-	g_return_if_fail (font_desc != NULL);
+	g_return_if_fail (view->priv->font_desc != NULL);
 
-	pluma_override_font ("textview", GTK_WIDGET (view), font_desc);
-
-	sys_font_desc = get_system_font ();
-	if (sys_font_desc) {
-		pluma_override_font ("label", GTK_WIDGET (view), sys_font_desc);
-		pango_font_description_free (sys_font_desc);
-	}
-
-	pango_font_description_free (font_desc);
+	update_css_provider (view);
 }
 
 static void
