@@ -53,6 +53,7 @@ NOINST_H_FILES =			\
 	pluma-history-entry.h		\
 	pluma-io-error-message-area.h	\
 	pluma-language-manager.h	\
+	pluma-pango.h		\
 	pluma-plugins-engine.h		\
 	pluma-prefs-manager-private.h	\
 	pluma-print-job.h		\
@@ -129,6 +130,7 @@ libpluma_c_files = 			\
 	pluma-message.c			\
 	pluma-notebook.c		\
 	pluma-panel.c			\
+	pluma-pango.c			\
 	pluma-plugins-engine.c		\
 	pluma-prefs-manager-app.c	\
 	pluma-prefs-manager.c		\
