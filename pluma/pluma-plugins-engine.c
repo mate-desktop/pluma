@@ -71,16 +71,14 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 	                            "Peas", "1.0", 0, &error))
 	{
 		g_warning ("Could not load Peas repository: %s", error->message);
-		g_error_free (error);
-		error = NULL;
+		g_clear_error (&error);
 	}
 
 	if (!g_irepository_require (g_irepository_get_default (),
 	                            "PeasGtk", "1.0", 0, &error))
 	{
 		g_warning ("Could not load PeasGtk repository: %s", error->message);
-		g_error_free (error);
-		error = NULL;
+		g_clear_error (&error);
 	}
 
 	private_path = g_build_filename (LIBDIR, "girepository-1.0", NULL);
@@ -89,8 +87,7 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 	                                    private_path, "Pluma", "1.0", 0, &error))
 	{
 		g_warning ("Could not load Pluma repository: %s", error->message);
-		g_error_free (error);
-		error = NULL;
+		g_clear_error (&error);
 	}
 
 	g_free (private_path);

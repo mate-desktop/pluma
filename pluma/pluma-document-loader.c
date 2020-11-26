@@ -223,11 +223,7 @@ pluma_document_loader_dispose (GObject *object)
         priv->gfile = NULL;
     }
 
-    if (priv->error != NULL)
-    {
-        g_error_free (priv->error);
-        priv->error = NULL;
-    }
+    g_clear_error (&priv->error);
 
     if (priv->info != NULL)
     {
