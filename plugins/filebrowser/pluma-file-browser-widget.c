@@ -2459,8 +2459,7 @@ directory_open (PlumaFileBrowserWidget *obj,
 				       PLUMA_FILE_BROWSER_ERROR_OPEN_DIRECTORY,
 				       error->message);
 
-			g_error_free (error);
-			error = NULL;
+			g_clear_error (&error);
 		}
 	}
 
