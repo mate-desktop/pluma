@@ -210,7 +210,7 @@ set_value_real (GValue 	     *to,
 	return TRUE;
 }
 
-inline static GValue *
+static inline GValue *
 value_lookup (PlumaMessage *message,
 	      const gchar  *key,
 	      gboolean	    create)
