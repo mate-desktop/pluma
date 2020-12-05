@@ -23,8 +23,7 @@ libspell_la_SOURCES = \
 	pluma-automatic-spell-checker.c			\
 	pluma-automatic-spell-checker.h			\
 	pluma-spell-utils.c				\
-	pluma-spell-utils.h				\
-	$(BUILT_SOURCES)
+	pluma-spell-utils.h
 
 libspell_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
 libspell_la_LIBADD  = $(PLUMA_LIBS) $(ENCHANT_LIBS)
@@ -51,9 +50,6 @@ EXTRA_DIST = 					\
 	$(spell_gschema_in)			\
 	ui-a11y.suppr
 
-CLEANFILES = $(BUILT_SOURCES) $(plugin_DATA) $(gsettings_SCHEMAS)
-
-dist-hook:
-	cd $(distdir); rm -f $(BUILT_SOURCES)
+CLEANFILES = $(plugin_DATA) $(gsettings_SCHEMAS)
 
 -include $(top_srcdir)/git.mk
