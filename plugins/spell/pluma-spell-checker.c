@@ -247,15 +247,17 @@ lazy_init (PlumaSpellChecker               *spell,
 
 	/* Second try to get a default language */
 	if (spell->active_lang == NULL)
+	{
 		spell->active_lang = pluma_spell_checker_language_from_key ("en_US");
 
-	/* Last try to get a default language */
-	if (spell->active_lang == NULL)
-	{
-		const GSList *langs;
-		langs = pluma_spell_checker_get_available_languages ();
-		if (langs != NULL)
-			spell->active_lang = (const PlumaSpellCheckerLanguage *)langs->data;
+		/* Last try to get a default language */
+		if (spell->active_lang == NULL)
+		{
+			const GSList *langs;
+			langs = pluma_spell_checker_get_available_languages ();
+			if (langs != NULL)
+				spell->active_lang = (const PlumaSpellCheckerLanguage *)langs->data;
+		}
 	}
 
 	if (spell->active_lang != NULL)
