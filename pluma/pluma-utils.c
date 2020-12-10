@@ -1420,8 +1420,8 @@ null_ptr (gchar **ptr)
  * @scheme: (allow-none): return value pointer for the uri's
  * scheme (e.g. http, sftp, ...), or %NULL
  * @user: (allow-none): return value pointer for the uri user info, or %NULL
- * @port: (allow-none): return value pointer for the uri port, or %NULL
  * @host: (allow-none): return value pointer for the uri host, or %NULL
+ * @port: (allow-none): return value pointer for the uri port, or %NULL
  * @path: (allow-none): return value pointer for the uri path, or %NULL
  *
  * Parse and break an uri apart in its individual components like the uri

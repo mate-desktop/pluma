@@ -138,8 +138,8 @@ gchar           *pluma_utils_basename_for_display	(const gchar *uri);
 gboolean	 pluma_utils_decode_uri 		(const gchar *uri,
 							 gchar **scheme,
 							 gchar **user,
-							 gchar **port,
 							 gchar **host,
+							 gchar **port,
 							 gchar **path);
 
 
