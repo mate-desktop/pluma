@@ -348,6 +348,10 @@ pluma_window_key_press_event (GtkWidget   *widget,
 				g_free (tmp);
 			}
 		}
+		else if (event->keyval == GDK_KEY_y)
+		{
+			g_settings_set_boolean (settings, PLUMA_SETTINGS_DISPLAY_LINE_NUMBERS, !g_settings_get_boolean (settings, PLUMA_SETTINGS_DISPLAY_LINE_NUMBERS));
+		}
 
 		if (g_settings_get_boolean (settings, PLUMA_SETTINGS_CTRL_TABS_SWITCH_TABS))
 		{
