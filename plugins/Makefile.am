@@ -1,4 +1,5 @@
 DIST_SUBDIRS =		\
+	changecase	\
 	docinfo 	\
 	externaltools	\
 	filebrowser 	\
@@ -13,6 +14,7 @@ DIST_SUBDIRS =		\
 	trailsave
 
 SUBDIRS = 		\
+	changecase	\
 	docinfo		\
 	externaltools	\
 	filebrowser	\

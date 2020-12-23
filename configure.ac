@@ -242,6 +242,7 @@ pluma/Makefile
 help/Makefile
 pixmaps/Makefile
 plugins/Makefile
+plugins/changecase/Makefile
 plugins/docinfo/Makefile
 plugins/externaltools/data/Makefile
 plugins/externaltools/Makefile
