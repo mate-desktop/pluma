@@ -1670,32 +1670,34 @@ free_resources:
 	return found;
 }
 
+/* code from https://developer.gnome.org/gtk3/stable/GtkImageMenuItem.html */
 GtkWidget *
 pluma_image_menu_item_new_from_pixbuf (GdkPixbuf   *icon_pixbuf,
-				       const gchar *label_name)
+                                       const gchar *label_text)
 {
-	gchar *concat;
+	GtkWidget *box;
 	GtkWidget *icon;
-	GtkWidget *box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+	GtkWidget *label;
+	GtkWidget *menu_item;
+
+	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 
 	if (icon_pixbuf)
 		icon = gtk_image_new_from_pixbuf (icon_pixbuf);
 	else
 		icon = gtk_image_new ();
 
-	concat = g_strconcat (label_name, "     ", NULL);
+	label = gtk_label_new (NULL);
+	gtk_label_set_text (GTK_LABEL (label), label_text);
+	gtk_label_set_xalign (GTK_LABEL (label), 0.0);
 
-	GtkWidget *label_menu = gtk_label_new (concat);
-	GtkWidget *menuitem = gtk_menu_item_new ();
+	menu_item = gtk_menu_item_new ();
 
 	gtk_container_add (GTK_CONTAINER (box), icon);
-	gtk_container_add (GTK_CONTAINER (box), label_menu);
+	gtk_container_add (GTK_CONTAINER (box), label);
+	gtk_container_add (GTK_CONTAINER (menu_item), box);
 
-	gtk_container_add (GTK_CONTAINER (menuitem), box);
-	gtk_widget_show_all (menuitem);
+	gtk_widget_show_all (menu_item);
 
-	g_free (concat);
-
-	return menuitem;
+	return menu_item;
 }
-
