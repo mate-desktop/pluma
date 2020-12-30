@@ -1514,39 +1514,57 @@ get_topmost_file (GFile * file)
 }
 
 static GtkWidget *
-create_goto_menu_item (PlumaFileBrowserWidget * obj, GList * item,
-		       GdkPixbuf * icon)
+create_goto_menu_item (PlumaFileBrowserWidget *obj,
+                       GList                  *item,
+                       GdkPixbuf              *icon)
 {
-	GtkWidget *result;
-	gchar *unescape;
+	GtkWidget *menu_item;
+	gchar     *label_text;
 	GdkPixbuf *pixbuf = NULL;
-	Location *loc;
+	Location  *loc;
 
 	loc = (Location *) (item->data);
 
-	if (!get_from_bookmark_file (obj, loc->virtual_root, &unescape, &pixbuf)) {
-		unescape = pluma_file_browser_utils_file_basename (loc->virtual_root);
+	if (!get_from_bookmark_file (obj, loc->virtual_root, &label_text, &pixbuf)) {
+		label_text = pluma_file_browser_utils_file_basename (loc->virtual_root);
 
 		if (icon)
 			pixbuf = g_object_ref (icon);
 	}
 
 	if (pixbuf) {
-		result = pluma_image_menu_item_new_from_pixbuf (pixbuf, unescape);
+		/* code based on https://developer.gnome.org/gtk3/stable/GtkImageMenuItem.html */
+		GtkWidget *box;
+		GtkWidget *icon;
+		GtkWidget *label;
+
+		box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+
+		icon = gtk_image_new_from_pixbuf (pixbuf);
+
+		label = gtk_label_new (NULL);
+		gtk_label_set_text (GTK_LABEL (label), label_text);
+		gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+
+		menu_item = gtk_menu_item_new ();
+		gtk_container_add (GTK_CONTAINER (box), icon);
+		gtk_container_add (GTK_CONTAINER (box), label);
+		gtk_container_add (GTK_CONTAINER (menu_item), box);
+
 		g_object_unref (pixbuf);
 	} else {
-		result = gtk_menu_item_new_with_label (unescape);
+		menu_item = gtk_menu_item_new_with_label (label_text);
 	}
 
-	g_object_set_data (G_OBJECT (result), LOCATION_DATA_KEY, item);
-	g_signal_connect (result, "activate",
-			  G_CALLBACK (on_location_jump_activate), obj);
+	g_object_set_data (G_OBJECT (menu_item), LOCATION_DATA_KEY, item);
+	g_signal_connect (menu_item, "activate",
+	                  G_CALLBACK (on_location_jump_activate), obj);
 
-	gtk_widget_show (result);
+	gtk_widget_show_all (menu_item);
 
-	g_free (unescape);
+	g_free (label_text);
 
-	return result;
+	return menu_item;
 }
 
 static GList *

@@ -157,10 +157,6 @@ pluma_gtk_text_iter_regex_search (const GtkTextIter *iter,
 				  gboolean forward_search,
 				  gchar            **replace_text);
 
-GtkWidget *
-pluma_image_menu_item_new_from_pixbuf (GdkPixbuf   *icon_pixbuf,
-				       const gchar *label_name);
-
 G_END_DECLS
 
 #endif /* __PLUMA_UTILS_H__ */
