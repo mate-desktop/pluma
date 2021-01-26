@@ -4,16 +4,16 @@ plugindir = $(PLUMA_PLUGINS_LIBS_DIR)
 taglistdir = $(PLUMA_PLUGINS_DATA_DIR)/taglist
 
 taglist_in_files = \
-	HTML.tags.xml.in	\
-	Latex.tags.xml.in	\
-	XSLT.tags.xml.in \
+	HTML.tags.xml.in		\
+	Latex.tags.xml.in		\
+	XSLT.tags.xml.in		\
 	XUL.tags.xml.in
 
 taglist_DATA = $(taglist_in_files:.tags.xml.in=.tags.gz)
 
-AM_CPPFLAGS = 							\
-	-I$(top_srcdir) 					\
-	$(PLUMA_CFLAGS) 					\
+AM_CPPFLAGS = \
+	-I$(top_srcdir) 		\
+	$(PLUMA_CFLAGS)			\
 	$(WARN_CFLAGS)
 
 plugin_LTLIBRARIES = libtaglist.la
@@ -29,8 +29,9 @@ libtaglist_la_SOURCES = \
 libtaglist_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
 libtaglist_la_LIBADD  = $(PLUMA_LIBS)
 
-plugin_in_files = taglist.plugin.desktop.in
-plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
+plugin_DATA = taglist.plugin
+plugin_in_files = $(plugin_DATA:.plugin=.plugin.desktop.in)
+plugin_in_in_files = $(plugin_in_files:.plugin.desktop.in=.plugin.desktop.in.in)
 
 $(plugin_DATA): $(plugin_in_files)
 	$(AM_V_GEN) $(MSGFMT) --keyword=Name --keyword=Description --desktop --template $< -d $(top_srcdir)/po -o $@
@@ -42,17 +43,14 @@ GZIP_ENV = -9
 	GZIP=$(GZIP_ENV) gzip -n -f $(@:.gz=)
 
 EXTRA_DIST = \
-	$(taglist_in_files) $(taglist_DATA)	\
-	$(plugin_in_files) $(plugin_DATA)
+	$(taglist_in_files) \
+	$(plugin_in_in_files)
 
 CLEANFILES = \
 	$(taglist_DATA)	\
 	$(plugin_DATA)
+
 DISTCLEANFILES = \
-	$(taglist_DATA)	\
-	$(plugin_DATA)
-
-
-
+	$(plugin_in_files)
 
 -include $(top_srcdir)/git.mk
