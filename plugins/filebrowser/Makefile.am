@@ -3,8 +3,8 @@
 plugindir = $(PLUMA_PLUGINS_LIBS_DIR)
 
 AM_CPPFLAGS = \
-	-I$(top_srcdir) 						\
-	$(PLUMA_CFLAGS) 						\
+	-I$(top_srcdir)				\
+	$(PLUMA_CFLAGS) 			\
 	$(WARN_CFLAGS)
 
 BUILT_SOURCES = \
@@ -41,8 +41,9 @@ libfilebrowser_la_LIBADD = $(PLUMA_LIBS)
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/filebrowser
 ui_DATA = pluma-file-browser-widget-ui.xml
 
-plugin_in_files = filebrowser.plugin.desktop.in
-plugin_DATA = $(plugin_in_files:.plugin.desktop.in=.plugin)
+plugin_DATA = filebrowser.plugin
+plugin_in_files = $(plugin_DATA:.plugin=.plugin.desktop.in)
+plugin_in_in_files = $(plugin_in_files:.plugin.desktop.in=.plugin.desktop.in.in)
 
 $(plugin_DATA): $(plugin_in_files)
 	$(AM_V_GEN) $(MSGFMT) --keyword=Name --keyword=Description --desktop --template $< -d $(top_srcdir)/po -o $@
@@ -61,20 +62,20 @@ gsettings_SCHEMAS = $(filebrowser_gschema_in:.xml.in=.xml)
 
 EXTRA_DIST = \
 	$(ui_DATA)					\
-	$(plugin_in_files)				\
+	$(plugin_in_in_files)				\
 	$(filebrowser_gschema_in)			\
 	pluma-file-browser-enum-types.h.template	\
 	pluma-file-browser-enum-types.c.template	\
 	pluma-file-browser-enum-register.c.template
 
 CLEANFILES = \
-	$(plugin_DATA)		\
+	$(plugin_DATA)			\
 	$(gsettings_SCHEMAS_in)		\
 	$(gsettings_SCHEMAS)		\
 	$(BUILT_SOURCES)
 
 DISTCLEANFILES = \
-	$(plugin_DATA)		\
+	$(plugin_in_files)		\
 	$(gsettings_SCHEMAS_in)		\
 	$(gsettings_SCHEMAS)		\
 	$(BUILT_SOURCES)

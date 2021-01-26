@@ -32,7 +32,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-	#include <config.h>
+#include <config.h>
 #endif
 
 #include <glib.h>
@@ -125,7 +125,7 @@ void _pluma_cmd_help_about(GtkAction* action, PlumaWindow* window)
 		"logo_icon_name", "accessories-text-editor",
 		"translator-credits", _("translator-credits"),
 		"version", VERSION,
-		"website", "http://mate-desktop.org",
+		"website", PACKAGE_URL,
 		NULL);
 
 	g_strfreev (authors);
