@@ -273,8 +273,10 @@ tests/Makefile
 AC_OUTPUT
 
 echo "
+Configure summary:
 
-Configuration:
+	${PACKAGE_STRING}
+	`echo $PACKAGE_STRING | sed "s/./=/g"`
 
 	Source code location:	${srcdir}
 	Compiler:		${CC}
