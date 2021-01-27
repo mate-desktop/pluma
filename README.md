@@ -59,16 +59,22 @@ Simple install procedure:
 
 ```
 $ git submodule update --init --recursive   # Init git submodules
-$ ./autogen.sh                              # Build configuration
+$ NOCONFIGURE=1 ./autogen.sh                # Copy configuration requirements
+$ ./configure                               # Build configuration
 $ make                                      # Build
 [ Become root if necessary ]
 $ make install                              # Installation
 ```
-For installation to a separate prefix change the above `make install` command to
+For installation to a separate prefix change the above `./configure` command to
 
 ```
-$ make install --prefix /an/other/path
+$ ./configure --prefix=/an/other/path
 ```
+To get more information type the command below:
+```
+$ ./configure --help
+```
+
 
 ## Running Tests
 
