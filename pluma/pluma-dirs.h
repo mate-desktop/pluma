@@ -36,8 +36,6 @@ gchar		*pluma_dirs_get_user_plugins_dir	(void);
 
 gchar		*pluma_dirs_get_user_accels_file	(void);
 
-gchar		*pluma_dirs_get_pluma_locale_dir	(void);
-
 G_END_DECLS
 
 #endif /* __PLUMA_DIRS_H__ */

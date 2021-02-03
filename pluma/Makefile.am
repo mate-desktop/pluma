@@ -14,6 +14,7 @@ AM_CPPFLAGS =								\
 	$(INTROSPECTION_CFLAGS)						\
 	-DDATADIR=\""$(datadir)"\"					\
 	-DPLUMA_DATADIR=\""$(datadir)/pluma"\"				\
+	-DPLUMA_LOCALEDIR=\""$(datadir)/locale/"\"			\
 	-DLIBDIR=\""$(libdir)"\"
 
 pluma_SOURCES = \
