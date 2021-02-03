@@ -71,21 +71,3 @@ gchar* pluma_dirs_get_pluma_locale_dir(void)
 {
 	return g_build_filename(DATADIR, "locale", NULL);
 }
-
-gchar* pluma_dirs_get_pluma_lib_dir(void)
-{
-	return g_build_filename(LIBDIR, "pluma", NULL);
-}
-
-gchar* pluma_dirs_get_pluma_plugins_dir(void)
-{
-	gchar* lib_dir;
-	gchar* plugin_dir;
-
-	lib_dir = pluma_dirs_get_pluma_lib_dir();
-
-	plugin_dir = g_build_filename(lib_dir, "plugins", NULL);
-	g_free(lib_dir);
-
-	return plugin_dir;
-}
