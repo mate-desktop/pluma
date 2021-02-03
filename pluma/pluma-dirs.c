@@ -67,11 +67,6 @@ gchar* pluma_dirs_get_user_accels_file(void)
 	return accels;
 }
 
-gchar* pluma_dirs_get_pluma_data_dir(void)
-{
-	return g_build_filename(PLUMA_DATADIR, NULL);
-}
-
 gchar* pluma_dirs_get_pluma_locale_dir(void)
 {
 	return g_build_filename(DATADIR, "locale", NULL);
@@ -97,13 +92,5 @@ gchar* pluma_dirs_get_pluma_plugins_dir(void)
 
 gchar* pluma_dirs_get_pluma_plugins_data_dir(void)
 {
-	gchar* data_dir;
-	gchar* plugin_data_dir;
-
-	data_dir = pluma_dirs_get_pluma_data_dir();
-
-	plugin_data_dir = g_build_filename(data_dir, "plugins", NULL);
-	g_free(data_dir);
-
-	return plugin_data_dir;
+	return g_build_filename (PLUMA_DATADIR, "plugins", NULL);
 }
