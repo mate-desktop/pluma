@@ -15,7 +15,8 @@ AM_CPPFLAGS =								\
 	-DDATADIR=\""$(datadir)"\"					\
 	-DPLUMA_DATADIR=\""$(datadir)/pluma"\"				\
 	-DPLUMA_LOCALEDIR=\""$(datadir)/locale/"\"			\
-	-DLIBDIR=\""$(libdir)"\"
+	-DLIBDIR=\""$(libdir)"\"					\
+	-DPLUMA_LIBDIR=\""$(libdir)/pluma"\"
 
 pluma_SOURCES = \
 	pluma.c
