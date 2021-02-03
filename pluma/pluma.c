@@ -507,8 +507,6 @@ main (int argc, char *argv[])
 	gboolean restored = FALSE;
 	GError *error = NULL;
 	gchar *dir;
-	gchar *icon_dir;
-
 
 	/* Setup debugging */
 	pluma_debug_init ();
@@ -585,16 +583,8 @@ main (int argc, char *argv[])
 	}
 
 	pluma_debug_message (DEBUG_APP, "Set icon");
-
-	dir = pluma_dirs_get_pluma_data_dir ();
-	icon_dir = g_build_filename (dir,
-				     "icons",
-				     NULL);
-	g_free (dir);
-
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
-					   icon_dir);
-	g_free (icon_dir);
+					   PLUMA_DATADIR "/icons");
 
 	/* Set the associated .desktop file */
 	egg_set_desktop_file (DATADIR "/applications/pluma.desktop");
