@@ -294,7 +294,6 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 	GtkWidget *error_widget;
 	guint line_numbers;
 	GtkWrapMode wrap_mode;
-	gchar *file;
 	gboolean syntax_hl;
 	gboolean print_header;
 	gchar *font_body, *font_header, *font_numbers;
@@ -304,8 +303,7 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 		NULL
 	};
 
-	file = pluma_dirs_get_ui_file ("pluma-print-preferences.ui");
-	ret = pluma_utils_get_ui_objects (file,
+	ret = pluma_utils_get_ui_objects (PLUMA_DATADIR "/ui/pluma-print-preferences.ui",
 					  root_objects,
 					  &error_widget,
 					  "contents", &widget,
@@ -325,7 +323,6 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 					  "numbers_fontbutton", &job->priv->numbers_fontbutton,
 					  "restore_button", &job->priv->restore_button,
 					  NULL);
-	g_free (file);
 
 	if (!ret)
 	{
