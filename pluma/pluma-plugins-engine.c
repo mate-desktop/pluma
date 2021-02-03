@@ -93,7 +93,7 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 	                             pluma_dirs_get_user_plugins_dir ());
 
 	peas_engine_add_search_path (PEAS_ENGINE (engine),
-	                             LIBDIR "/pluma/plugins",
+	                             PLUMA_LIBDIR "/plugins",
 	                             PLUMA_DATADIR "/plugins");
 
 	g_settings_bind (engine->priv->plugin_settings,
