@@ -55,7 +55,6 @@ PlumaPluginsEngine *default_engine = NULL;
 static void
 pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 {
-	gchar *private_path;
 	GError *error = NULL;
 
 	pluma_debug (DEBUG_PLUGINS);
@@ -81,16 +80,13 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 		g_clear_error (&error);
 	}
 
-	private_path = g_build_filename (LIBDIR, "girepository-1.0", NULL);
-
 	if (!g_irepository_require_private (g_irepository_get_default (),
-	                                    private_path, "Pluma", "1.0", 0, &error))
+	                                    LIBDIR "/girepository-1.0",
+	                                    "Pluma", "1.0", 0, &error))
 	{
 		g_warning ("Could not load Pluma repository: %s", error->message);
 		g_clear_error (&error);
 	}
-
-	g_free (private_path);
 
 	peas_engine_add_search_path (PEAS_ENGINE (engine),
 	                             pluma_dirs_get_user_plugins_dir (),
