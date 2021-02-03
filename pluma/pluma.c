@@ -506,7 +506,6 @@ main (int argc, char *argv[])
 	PlumaApp *app;
 	gboolean restored = FALSE;
 	GError *error = NULL;
-	gchar *dir;
 
 	/* Setup debugging */
 	pluma_debug_init ();
@@ -514,9 +513,7 @@ main (int argc, char *argv[])
 
 	setlocale (LC_ALL, "");
 
-	dir = pluma_dirs_get_pluma_locale_dir ();
-	bindtextdomain (GETTEXT_PACKAGE, dir);
-	g_free (dir);
+	bindtextdomain (GETTEXT_PACKAGE, PLUMA_LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
