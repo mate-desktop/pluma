@@ -89,8 +89,3 @@ gchar* pluma_dirs_get_pluma_plugins_dir(void)
 
 	return plugin_dir;
 }
-
-gchar* pluma_dirs_get_pluma_plugins_data_dir(void)
-{
-	return g_build_filename (PLUMA_DATADIR, "plugins", NULL);
-}

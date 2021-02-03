@@ -42,8 +42,6 @@ gchar		*pluma_dirs_get_pluma_lib_dir		(void);
 
 gchar		*pluma_dirs_get_pluma_plugins_dir	(void);
 
-gchar		*pluma_dirs_get_pluma_plugins_data_dir	(void);
-
 G_END_DECLS
 
 #endif /* __PLUMA_DIRS_H__ */
