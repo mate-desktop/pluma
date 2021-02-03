@@ -311,7 +311,6 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	GtkWidget *content;
 	GtkWidget *error_widget;
 	gboolean ret;
-	gchar *file;
 	gchar *root_objects[] = {
 		"search_dialog_content",
 		NULL
@@ -329,9 +328,7 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))),
 			     2); /* 2 * 5 + 2 = 12 */
 
-	file = pluma_dirs_get_ui_file ("pluma-search-dialog.ui");
-
-	ret = pluma_utils_get_ui_objects (file,
+	ret = pluma_utils_get_ui_objects (PLUMA_DATADIR "/ui/pluma-search-dialog.ui",
 					  root_objects,
 					  &error_widget,
 					  "search_dialog_content", &content,
@@ -345,7 +342,6 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 					  "wrap_around_checkbutton", &dlg->priv->wrap_around_checkbutton,
 					  "parse_escapes_checkbutton", &dlg->priv->parse_escapes_checkbutton,
 					  NULL);
-	g_free (file);
 
 	if (!ret)
 	{

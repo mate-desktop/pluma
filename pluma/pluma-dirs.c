@@ -107,17 +107,3 @@ gchar* pluma_dirs_get_pluma_plugins_data_dir(void)
 
 	return plugin_data_dir;
 }
-
-gchar* pluma_dirs_get_ui_file(const gchar* file)
-{
-	gchar* datadir;
-	gchar* ui_file;
-
-	g_return_val_if_fail(file != NULL, NULL);
-
-	datadir = pluma_dirs_get_pluma_data_dir();
-	ui_file = g_build_filename(datadir, "ui", file, NULL);
-	g_free(datadir);
-
-	return ui_file;
-}

@@ -1211,7 +1211,6 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 {
 	GtkWidget *error_widget;
 	gboolean ret;
-	gchar *file;
 	gchar *root_objects[] = {
 		"notebook",
 		"adjustment1",
@@ -1243,8 +1242,7 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 			  G_CALLBACK (dialog_response_handler),
 			  NULL);
 
-	file = pluma_dirs_get_ui_file ("pluma-preferences-dialog.ui");
-	ret = pluma_utils_get_ui_objects (file,
+	ret = pluma_utils_get_ui_objects (PLUMA_DATADIR "/ui/pluma-preferences-dialog.ui",
 		root_objects,
 		&error_widget,
 
@@ -1288,7 +1286,6 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 		"plugin_manager_place_holder", &dlg->priv->plugin_manager_place_holder,
 
 		NULL);
-	g_free (file);
 
 	if (!ret)
 	{

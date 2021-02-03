@@ -316,7 +316,6 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 	GtkWidget *error_widget;
 	int i;
 	gboolean ret;
-	gchar *file;
 	gchar *root_objects[] = {
 		"encodings-dialog-contents",
 		NULL
@@ -346,8 +345,7 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 			  G_CALLBACK (response_handler),
 			  dlg);
 
-	file = pluma_dirs_get_ui_file ("pluma-encodings-dialog.ui");
-	ret = pluma_utils_get_ui_objects (file,
+	ret = pluma_utils_get_ui_objects (PLUMA_DATADIR "/ui/pluma-encodings-dialog.ui",
 					  root_objects,
 					  &error_widget,
 					  "encodings-dialog-contents", &content,
@@ -356,7 +354,6 @@ pluma_encodings_dialog_init (PlumaEncodingsDialog *dlg)
 					  "available-treeview", &dlg->priv->available_treeview,
 					  "displayed-treeview", &dlg->priv->displayed_treeview,
 					  NULL);
-	g_free (file);
 
 	if (!ret)
 	{

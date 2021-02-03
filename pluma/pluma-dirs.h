@@ -46,8 +46,6 @@ gchar		*pluma_dirs_get_pluma_plugins_dir	(void);
 
 gchar		*pluma_dirs_get_pluma_plugins_data_dir	(void);
 
-gchar		*pluma_dirs_get_ui_file			(const gchar *file);
-
 G_END_DECLS
 
 #endif /* __PLUMA_DIRS_H__ */

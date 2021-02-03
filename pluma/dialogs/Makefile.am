@@ -1,12 +1,13 @@
 uidir = $(datadir)/pluma/ui/
 
-AM_CPPFLAGS = 							\
-	-I$(top_srcdir)						\
-	-I$(top_builddir)					\
-	-I$(top_srcdir)/pluma 					\
-	-I$(top_builddir)/pluma					\
-	$(PLUMA_CFLAGS) 					\
-	$(WARN_CFLAGS)
+AM_CPPFLAGS = 					\
+	-I$(top_srcdir)				\
+	-I$(top_builddir)			\
+	-I$(top_srcdir)/pluma 			\
+	-I$(top_builddir)/pluma			\
+	$(PLUMA_CFLAGS) 			\
+	$(WARN_CFLAGS)				\
+	-DPLUMA_DATADIR=\""$(datadir)/pluma"\"
 
 noinst_LTLIBRARIES = libdialogs.la
 
