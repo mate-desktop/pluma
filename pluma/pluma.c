@@ -83,7 +83,7 @@ show_version_and_quit (void)
 {
 	g_print ("%s - Version %s\n", g_get_application_name (), VERSION);
 
-	exit (0);
+	exit (EXIT_SUCCESS);
 }
 
 static void
@@ -99,7 +99,7 @@ list_encodings_and_quit (void)
 		++i;
 	}
 
-	exit (0);
+	exit (EXIT_SUCCESS);
 }
 
 static const GOptionEntry options [] =
@@ -568,7 +568,7 @@ main (int argc, char *argv[])
 
 			bacon_message_connection_free (connection);
 
-			exit (0);
+			exit (EXIT_SUCCESS);
 		}
 		else
 		{
@@ -664,6 +664,6 @@ main (int argc, char *argv[])
 	pluma_metadata_manager_shutdown ();
 #endif
 
-	return 0;
+	return EXIT_SUCCESS;
 }
 
