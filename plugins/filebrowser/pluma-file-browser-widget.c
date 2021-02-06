@@ -1516,7 +1516,7 @@ get_topmost_file (GFile * file)
 static GtkWidget *
 create_goto_menu_item (PlumaFileBrowserWidget *obj,
                        GList                  *item,
-                       GdkPixbuf              *icon)
+                       GdkPixbuf              *icon_pixbuf)
 {
 	GtkWidget *menu_item;
 	gchar     *label_text;
@@ -1528,8 +1528,8 @@ create_goto_menu_item (PlumaFileBrowserWidget *obj,
 	if (!get_from_bookmark_file (obj, loc->virtual_root, &label_text, &pixbuf)) {
 		label_text = pluma_file_browser_utils_file_basename (loc->virtual_root);
 
-		if (icon)
-			pixbuf = g_object_ref (icon);
+		if (icon_pixbuf)
+			pixbuf = g_object_ref (icon_pixbuf);
 	}
 
 	if (pixbuf) {
