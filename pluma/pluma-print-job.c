@@ -374,7 +374,7 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 
 	/* Text wrapping */
 	wrap_mode = pluma_settings_get_wrap_mode (job->priv->print_settings,
-						  PLUMA_SETTINGS_WRAP_MODE);
+						  PLUMA_SETTINGS_PRINT_WRAP_MODE);
 
 	switch (wrap_mode)
 	{
@@ -522,7 +522,7 @@ create_compositor (PlumaPrintJob *job)
 	print_header = g_settings_get_boolean (job->priv->print_settings,
 					       PLUMA_SETTINGS_PRINT_HEADER);
 	wrap_mode = pluma_settings_get_wrap_mode (job->priv->print_settings,
-						  PLUMA_SETTINGS_WRAP_MODE);
+						  PLUMA_SETTINGS_PRINT_WRAP_MODE);
 
 
 	job->priv->compositor = GTK_SOURCE_PRINT_COMPOSITOR (
