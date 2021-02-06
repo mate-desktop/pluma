@@ -416,7 +416,7 @@ selected_group_changed (GtkComboBox             *combo,
 
 	group_name = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT (combo));
 
-	if ((group_name == NULL) || (strlen (group_name) <= 0))
+	if ((group_name == NULL) || (*group_name == '\0'))
 	{
 		g_free (group_name);
 		return;
