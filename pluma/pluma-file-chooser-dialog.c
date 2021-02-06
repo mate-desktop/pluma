@@ -300,7 +300,7 @@ all_text_files_filter (const GtkFileFilterInfo *filter_info,
 
 		while ((languages != NULL) && (*languages != NULL))
 		{
-			gchar **mime_types;
+			gchar **mime_types_srtv;
 			gint i;
 			GtkSourceLanguage *lang;
 
@@ -308,24 +308,24 @@ all_text_files_filter (const GtkFileFilterInfo *filter_info,
 			g_return_val_if_fail (GTK_SOURCE_IS_LANGUAGE (lang), FALSE);
 			++languages;
 
-			mime_types = gtk_source_language_get_mime_types (lang);
-			if (mime_types == NULL)
+			mime_types_srtv = gtk_source_language_get_mime_types (lang);
+			if (mime_types_srtv == NULL)
 				continue;
 
-			for (i = 0; mime_types[i] != NULL; i++)
+			for (i = 0; mime_types_srtv[i] != NULL; i++)
 			{
-				if (!g_content_type_is_a (mime_types[i], "text/plain"))
+				if (!g_content_type_is_a (mime_types_srtv[i], "text/plain"))
 				{
 					pluma_debug_message (DEBUG_COMMANDS,
 							     "Mime-type %s is not related to text/plain",
-							     mime_types[i]);
+							     mime_types_srtv[i]);
 
 					known_mime_types = g_slist_prepend (known_mime_types,
-									    g_strdup (mime_types[i]));
+									    g_strdup (mime_types_srtv[i]));
 				}
 			}
 
-			g_strfreev (mime_types);
+			g_strfreev (mime_types_srtv);
 		}
 
 		/* known_mime_types always has "text/plain" as first item" */
