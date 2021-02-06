@@ -897,7 +897,6 @@ document_loaded (PlumaDocument *document,
 		 const GError  *error,
 		 PlumaTab      *tab)
 {
-	GtkWidget *emsg;
 	GFile *location;
 	gchar *uri;
 
@@ -921,6 +920,8 @@ document_loaded (PlumaDocument *document,
 	if (error != NULL &&
 	    (error->domain != PLUMA_DOCUMENT_ERROR || error->code != PLUMA_DOCUMENT_ERROR_CONVERSION_FALLBACK))
 	{
+		GtkWidget *emsg;
+
 		if (tab->priv->state == PLUMA_TAB_STATE_LOADING)
 			pluma_tab_set_state (tab, PLUMA_TAB_STATE_LOADING_ERROR);
 		else
