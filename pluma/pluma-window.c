@@ -41,7 +41,6 @@
 #include <gio/gio.h>
 #include <gtk/gtk.h>
 #include <gtksourceview/gtksource.h>
-#include <libpeas/peas-activatable.h>
 #include <libpeas/peas-extension-set.h>
 
 #include "pluma-ui.h"
@@ -57,6 +56,7 @@
 #include "pluma-panel.h"
 #include "pluma-documents-panel.h"
 #include "pluma-plugins-engine.h"
+#include "pluma-window-activatable.h"
 #include "pluma-enum-types.h"
 #include "pluma-dirs.h"
 #include "pluma-status-combo-box.h"
@@ -920,7 +920,7 @@ set_sensitivity_according_to_tab (PlumaWindow *window,
 
 	update_next_prev_doc_sensitivity (window, tab);
 
-	peas_extension_set_call (window->priv->extensions, "update_state", window);
+	peas_extension_set_call (window->priv->extensions, "update_state");
 }
 
 static void
@@ -2771,7 +2771,7 @@ sync_name (PlumaTab    *tab,
 	g_free (escaped_name);
 	g_free (tip);
 
-	peas_extension_set_call (window->priv->extensions, "update_state", window);
+	peas_extension_set_call (window->priv->extensions, "update_state");
 }
 
 static PlumaWindow *
@@ -3167,7 +3167,7 @@ selection_changed (PlumaDocument *doc,
 				  editable &&
 				  gtk_text_buffer_get_has_selection (GTK_TEXT_BUFFER (doc)));
 
-	peas_extension_set_call (window->priv->extensions, "update_state", window);
+	peas_extension_set_call (window->priv->extensions, "update_state");
 }
 
 static void
@@ -3176,7 +3176,7 @@ sync_languages_menu (PlumaDocument *doc,
 		     PlumaWindow   *window)
 {
 	update_languages_menu (window);
-	peas_extension_set_call (window->priv->extensions, "update_state", window);
+	peas_extension_set_call (window->priv->extensions, "update_state");
 }
 
 static void
@@ -3188,7 +3188,7 @@ readonly_changed (PlumaDocument *doc,
 
 	sync_name (window->priv->active_tab, NULL, window);
 
-	peas_extension_set_call (window->priv->extensions, "update_state", window);
+	peas_extension_set_call (window->priv->extensions, "update_state");
 }
 
 static void
@@ -3196,7 +3196,7 @@ editable_changed (PlumaView  *view,
                   GParamSpec  *arg1,
                   PlumaWindow *window)
 {
-	peas_extension_set_call (window->priv->extensions, "update_state", window);
+	peas_extension_set_call (window->priv->extensions, "update_state");
 }
 
 static void
@@ -3408,7 +3408,7 @@ notebook_tab_removed (PlumaNotebook *notebook,
 
 	if (window->priv->num_tabs == 0)
 	{
-		peas_extension_set_call (window->priv->extensions, "update_state", window);
+		peas_extension_set_call (window->priv->extensions, "update_state");
 	}
 
 	update_window_state (window);
@@ -4096,9 +4096,10 @@ pluma_window_init (PlumaWindow *window)
 	pluma_debug_message (DEBUG_WINDOW, "Update plugins ui");
 
 	window->priv->extensions = peas_extension_set_new (PEAS_ENGINE (pluma_plugins_engine_get_default ()),
-	                                                   PEAS_TYPE_ACTIVATABLE, "object", window, NULL);
-
-	peas_extension_set_call (window->priv->extensions, "activate");
+                                                       PLUMA_TYPE_WINDOW_ACTIVATABLE,
+                                                       "window",
+                                                       window,
+                                                       NULL);
 
 	g_signal_connect (window->priv->extensions,
 	                  "extension-added",
@@ -4109,8 +4110,10 @@ pluma_window_init (PlumaWindow *window)
 	                  G_CALLBACK (on_extension_removed),
 	                  window);
 
-	/* set visibility of panes.
-	 * This needs to be done after plugins activatation */
+	peas_extension_set_call (window->priv->extensions, "activate");
+
+	 /* set visibility of panes.
+	  This needs to be done after plugins activatation */
 	init_panels_visibility (window);
 
 	update_sensitivity_according_to_open_tabs (window);

@@ -55,12 +55,23 @@ PlumaPluginsEngine *default_engine = NULL;
 static void
 pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 {
-	gchar *private_path;
+    gchar *typelib_dir;
 	GError *error = NULL;
 
 	pluma_debug (DEBUG_PLUGINS);
 
 	peas_engine_enable_loader (PEAS_ENGINE (engine), "python3");
+
+    typelib_dir = g_build_filename (pluma_dirs_get_pluma_lib_dir (), "girepository-1.0", NULL);
+
+    if (!g_irepository_require_private (g_irepository_get_default (), typelib_dir, "Pluma", "1.0", 0, &error))
+    {
+        g_warning ("Could not load Pluma repository: %s", error->message);
+        g_error_free (error);
+        error = NULL;
+    }
+
+    g_free (typelib_dir);
 
 	engine->priv = pluma_plugins_engine_get_instance_private (engine);
 
@@ -80,17 +91,6 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 		g_warning ("Could not load PeasGtk repository: %s", error->message);
 		g_clear_error (&error);
 	}
-
-	private_path = g_build_filename (LIBDIR, "girepository-1.0", NULL);
-
-	if (!g_irepository_require_private (g_irepository_get_default (),
-	                                    private_path, "Pluma", "1.0", 0, &error))
-	{
-		g_warning ("Could not load Pluma repository: %s", error->message);
-		g_clear_error (&error);
-	}
-
-	g_free (private_path);
 
 	peas_engine_add_search_path (PEAS_ENGINE (engine),
 	                             pluma_dirs_get_user_plugins_dir (),
@@ -132,12 +132,11 @@ pluma_plugins_engine_class_init (PlumaPluginsEngineClass *klass)
 PlumaPluginsEngine *
 pluma_plugins_engine_get_default (void)
 {
-	if (default_engine != NULL)
-		return default_engine;
-
-	default_engine = PLUMA_PLUGINS_ENGINE (g_object_new (PLUMA_TYPE_PLUGINS_ENGINE, NULL));
-	g_object_add_weak_pointer (G_OBJECT (default_engine),
-	                           (gpointer) &default_engine);
+	if (default_engine == NULL)
+    {
+    	default_engine = PLUMA_PLUGINS_ENGINE (g_object_new (PLUMA_TYPE_PLUGINS_ENGINE, NULL));
+    	g_object_add_weak_pointer (G_OBJECT (default_engine), (gpointer) &default_engine);
+    }
 
 	return default_engine;
 }
