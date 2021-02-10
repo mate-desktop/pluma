@@ -224,6 +224,28 @@ AC_SUBST(PLUMA_PLUGINS_DATA_DIR)
 PLUMA_PLUGINS_LIBS_DIR="$libdir/pluma/plugins"
 AC_SUBST(PLUMA_PLUGINS_LIBS_DIR)
 
+# **********************
+# GLIB_COMPILE_RESOURCES
+# **********************
+AC_ARG_VAR([GLIB_COMPILE_RESOURCES],[glib-compile-resources bin])
+AC_PATH_PROG([GLIB_COMPILE_RESOURCES],[glib-compile-resources],[])
+if test -z "$GLIB_COMPILE_RESOURCES"; then
+  AC_MSG_ERROR([glib-compile-resources not found])
+fi
+
+# *******
+# XMLLINT
+# *******
+AC_ARG_VAR([XMLLINT],[xmllint bin])
+AC_PATH_PROG([XMLLINT],[xmllint],[])
+if test -z "$XMLLINT"; then
+  AC_MSG_ERROR([xmllint not found])
+fi
+
+dnl ###########################################################################
+dnl Documentation
+dnl ###########################################################################
+
 YELP_HELP_INIT
 
 AC_CONFIG_FILES([

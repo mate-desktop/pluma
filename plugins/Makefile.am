@@ -1,32 +1,7 @@
 DIST_SUBDIRS =		\
-	docinfo 	\
-	externaltools	\
-	filebrowser 	\
-	modelines	\
-	pythonconsole	\
-	quickopen	\
-	snippets	\
-	sort 		\
-	spell 		\
-	taglist 	\
-	time		\
-	trailsave
+	docinfo
 
 SUBDIRS = 		\
-	docinfo		\
-	externaltools	\
-	filebrowser	\
-	modelines	\
-	pythonconsole	\
-	quickopen	\
-	snippets	\
-	sort		\
-	taglist		\
-	time		\
-	trailsave
-
-if ENABLE_ENCHANT
-SUBDIRS      += spell
-endif
+	docinfo
 
 -include $(top_srcdir)/git.mk
