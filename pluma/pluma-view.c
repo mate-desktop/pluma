@@ -39,10 +39,13 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
+#include <libpeas/peas-extension-set.h>
 
 #include <glib/gi18n.h>
 
 #include "pluma-view.h"
+#include "pluma-view-activatable.h"
+#include "pluma-plugins-engine.h"
 #include "pluma-debug.h"
 #include "pluma-pango.h"
 #include "pluma-utils.h"
@@ -101,22 +104,29 @@ struct _PlumaViewPrivate
 
 	GtkCssProvider       *css_provider;
 	PangoFontDescription *font_desc;
+
+    PeasExtensionSet *extensions;
 };
 
 /* The search entry completion is shared among all the views */
 GtkListStore *search_completion_model = NULL;
 
 static void	pluma_view_dispose		(GObject          *object);
+
 static void	pluma_view_finalize		(GObject          *object);
+
 static gint     pluma_view_focus_out		(GtkWidget        *widget,
 						 GdkEventFocus    *event);
+
 static gboolean pluma_view_scroll_event         (GtkWidget        *widget,
                                                  GdkEventScroll   *event);
+
 static gboolean pluma_view_drag_motion		(GtkWidget        *widget,
 						 GdkDragContext   *context,
 						 gint              x,
 						 gint              y,
 						 guint             timestamp);
+
 static void     pluma_view_drag_data_received   (GtkWidget        *widget,
 						 GdkDragContext   *context,
 						 gint              x,
@@ -124,21 +134,30 @@ static void     pluma_view_drag_data_received   (GtkWidget        *widget,
 						 GtkSelectionData *selection_data,
 						 guint             info,
 						 guint             timestamp);
+
 static gboolean pluma_view_drag_drop		(GtkWidget        *widget,
 	      					 GdkDragContext   *context,
 	      					 gint              x,
 	      					 gint              y,
 	      					 guint             timestamp);
 
+static void	pluma_view_realize		(GtkWidget *widget);
+
+static void	pluma_view_unrealize		(GtkWidget *widget);
+
 static gboolean	pluma_view_button_press_event	(GtkWidget        *widget,
 						 GdkEventButton   *event);
+
 static gboolean	pluma_view_button_release_event	(GtkWidget        *widget,
 						 GdkEventButton   *event);
+
 static void	pluma_view_populate_popup	(GtkTextView      *text_view,
 						 GtkWidget        *widget);
 
 static gboolean start_interactive_search	(PlumaView        *view);
+
 static gboolean start_interactive_goto_line	(PlumaView        *view);
+
 static gboolean reset_searched_text		(PlumaView        *view);
 
 static void	hide_search_window 		(PlumaView        *view,
@@ -146,6 +165,7 @@ static void	hide_search_window 		(PlumaView        *view,
 
 static gboolean	pluma_view_draw		 	(GtkWidget        *widget,
 						 cairo_t          *cr);
+
 static void 	search_highlight_updated_cb	(PlumaDocument    *doc,
 						 GtkTextIter      *start,
 						 GtkTextIter      *end,
@@ -251,6 +271,10 @@ pluma_view_class_init (PlumaViewClass *klass)
 	widget_class->drag_drop = pluma_view_drag_drop;
 	widget_class->button_press_event = pluma_view_button_press_event;
 	widget_class->button_release_event = pluma_view_button_release_event;
+
+ 	widget_class->realize = pluma_view_realize;
+	widget_class->unrealize = pluma_view_unrealize;
+
 	text_view_class->populate_popup = pluma_view_populate_popup;
 	klass->start_interactive_search = start_interactive_search;
 	klass->start_interactive_goto_line = start_interactive_goto_line;
@@ -388,6 +412,11 @@ on_notify_buffer_cb (PlumaView  *view,
 			  "search_highlight_updated",
 			  G_CALLBACK (search_highlight_updated_cb),
 			  view);
+
+    /* We only activate the extensions when the right buffer is set,
+	 * because most plugins will expect this behaviour, and we won't
+	 * change the buffer later anyway. */
+	peas_extension_set_call (view->priv->extensions, "activate", view);
 }
 
 #ifdef GTK_SOURCE_VERSION_3_24
@@ -578,6 +607,12 @@ pluma_view_init (PlumaView *view)
 	if (tl != NULL)
 		gtk_target_list_add_uri_targets (tl, TARGET_URI_LIST);
 
+	view->priv->extensions =
+			peas_extension_set_new (PEAS_ENGINE (pluma_plugins_engine_get_default ()),
+							     PLUMA_TYPE_VIEW_ACTIVATABLE,
+							     "view", view,
+							     NULL);
+
 	/* Act on buffer change */
 	g_signal_connect (view,
 			  "notify::buffer",
@@ -591,6 +626,12 @@ pluma_view_dispose (GObject *object)
 	PlumaView *view;
 
 	view = PLUMA_VIEW (object);
+
+    if (view->priv->extensions != NULL)
+    {
+        g_object_unref (view->priv->extensions);
+        view->priv->extensions = NULL;
+    }
 
 	if (view->priv->search_window != NULL)
 	{
@@ -1278,6 +1319,66 @@ search_window_button_press_event (GtkWidget      *widget,
 	gtk_propagate_event (GTK_WIDGET (view), (GdkEvent *)event);
 
 	return FALSE;
+}
+
+static void
+extension_added (PeasExtensionSet *extensions,
+		 PeasPluginInfo   *info,
+		 PeasExtension    *exten,
+		 PlumaView        *view)
+{
+	pluma_view_activatable_activate (PLUMA_VIEW_ACTIVATABLE (exten));
+}
+
+static void
+extension_removed (PeasExtensionSet *extensions,
+		   PeasPluginInfo   *info,
+		   PeasExtension    *exten,
+		   PlumaView        *view)
+{
+	pluma_view_activatable_deactivate (PLUMA_VIEW_ACTIVATABLE (exten));
+}
+
+static void
+pluma_view_realize (GtkWidget *widget)
+{
+	PlumaView *view = PLUMA_VIEW (widget);
+
+	GTK_WIDGET_CLASS (pluma_view_parent_class)->realize (widget);
+
+	g_signal_connect (view->priv->extensions,
+	                  "extension-added",
+	                  G_CALLBACK (extension_added),
+	                  view);
+	g_signal_connect (view->priv->extensions,
+	                  "extension-removed",
+	                  G_CALLBACK (extension_removed),
+	                  view);
+
+	/* We only activate the extensions when the view is realized,
+	 * because most plugins will expect this behaviour, and we won't
+	 * change the buffer later anyway. */
+	peas_extension_set_foreach (view->priv->extensions,
+	                            (PeasExtensionSetForeachFunc) extension_added,
+	                            view);
+}
+
+static void
+pluma_view_unrealize (GtkWidget *widget)
+{
+	PlumaView *view = PLUMA_VIEW (widget);
+
+	g_signal_handlers_disconnect_by_func (view->priv->extensions, extension_added, view);
+	g_signal_handlers_disconnect_by_func (view->priv->extensions, extension_removed, view);
+
+	/* We need to deactivate the extension on unrealize because it is not
+	   mandatory that a view has been realized when we dispose it, leading
+	   to deactivating the plugin without being activated */
+	peas_extension_set_foreach (view->priv->extensions,
+	                            (PeasExtensionSetForeachFunc) extension_removed,
+	                            view);
+
+	GTK_WIDGET_CLASS (pluma_view_parent_class)->unrealize (widget);
 }
 
 static void

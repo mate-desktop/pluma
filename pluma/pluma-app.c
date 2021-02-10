@@ -36,8 +36,10 @@
 #include <unistd.h>
 
 #include <glib/gi18n.h>
+#include <libpeas/peas-extension-set.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
+
 #include "pluma-app.h"
 #include "pluma-commands.h"
 #include "pluma-notebook.h"
@@ -46,6 +48,8 @@
 #include "pluma-enum-types.h"
 #include "pluma-dirs.h"
 #include "pluma-settings.h"
+#include "pluma-app-activatable.h"
+#include "pluma-plugins-engine.h"
 
 #define PLUMA_PAGE_SETUP_FILE		"pluma-page-setup"
 #define PLUMA_PRINT_SETTINGS_FILE	"pluma-print-settings"
@@ -68,6 +72,8 @@ struct _PlumaAppPrivate
 	GtkPrintSettings  *print_settings;
 
 	GSettings         *window_settings;
+
+	PeasExtensionSet  *extensions;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (PlumaApp, pluma_app, G_TYPE_OBJECT)
@@ -93,6 +99,7 @@ pluma_app_dispose (GObject *object)
 	PlumaApp *app = PLUMA_APP (object);
 
 	g_clear_object (&app->priv->window_settings);
+    g_clear_object (&app->priv->extensions);
 
 	G_OBJECT_CLASS (pluma_app_parent_class)->dispose (object);
 }
@@ -338,6 +345,25 @@ save_print_settings (PlumaApp *app)
 }
 
 static void
+extension_added (PeasExtensionSet *extensions,
+		 PeasPluginInfo   *info,
+		 PeasExtension    *exten,
+		 PlumaApp         *app)
+{
+	peas_extension_call (exten, "activate");
+}
+
+static void
+extension_removed (PeasExtensionSet *extensions,
+		   PeasPluginInfo   *info,
+		   PeasExtension    *exten,
+		   PlumaApp         *app)
+{
+	peas_extension_call (exten, "deactivate");
+}
+
+
+static void
 pluma_app_init (PlumaApp *app)
 {
 	PlumaSettings *settings;
@@ -352,13 +378,23 @@ pluma_app_init (PlumaApp *app)
 
 	/* initial lockdown state */
 	app->priv->lockdown = pluma_settings_get_lockdown (settings);
-}
 
-static void
-app_weak_notify (gpointer data,
-		 GObject *where_the_app_was)
-{
-	gtk_main_quit ();
+	app->priv->extensions = peas_extension_set_new (PEAS_ENGINE (pluma_plugins_engine_get_default ()),
+							PLUMA_TYPE_APP_ACTIVATABLE,
+							"app", app,
+							NULL);
+
+	g_signal_connect (app->priv->extensions,
+ 		  "extension-added",
+			  G_CALLBACK (extension_added),
+			  app);
+
+	g_signal_connect (app->priv->extensions,
+			  "extension-removed",
+			  G_CALLBACK (extension_removed),
+			  app);
+
+	peas_extension_set_call (app->priv->extensions, "activate");
 }
 
 /**
@@ -381,9 +417,6 @@ pluma_app_get_default (void)
 
 	g_object_add_weak_pointer (G_OBJECT (app),
 				   (gpointer) &app);
-	g_object_weak_ref (G_OBJECT (app),
-			   app_weak_notify,
-			   NULL);
 
 	return app;
 }
@@ -460,7 +493,7 @@ window_destroy (PlumaWindow *window,
 		save_page_setup (app);
 		save_print_settings (app);
 
-		g_object_unref (app);
+		gtk_main_quit ();
 	}
 }
 
