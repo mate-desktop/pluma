@@ -29,33 +29,33 @@
 
 G_BEGIN_DECLS
 
-#define PLUMA_TYPE_DOCINFO_PLUGIN		(pluma_docinfo_plugin_get_type ())
-#define PLUMA_DOCINFO_PLUGIN(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), PLUMA_TYPE_DOCINFO_PLUGIN, PlumaDocinfoPlugin))
-#define PLUMA_DOCINFO_PLUGIN_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), PLUMA_TYPE_DOCINFO_PLUGIN, PlumaDocinfoPluginClass))
-#define PLUMA_IS_DOCINFO_PLUGIN(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), PLUMA_TYPE_DOCINFO_PLUGIN))
-#define PLUMA_IS_DOCINFO_PLUGIN_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), PLUMA_TYPE_DOCINFO_PLUGIN))
-#define PLUMA_DOCINFO_PLUGIN_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), PLUMA_TYPE_DOCINFO_PLUGIN, PlumaDocinfoPluginClass))
+#define PLUMA_TYPE_DOCINFO_PLUGIN           (pluma_docinfo_plugin_get_type ())
+#define PLUMA_DOCINFO_PLUGIN(o)             (G_TYPE_CHECK_INSTANCE_CAST ((o), PLUMA_TYPE_DOCINFO_PLUGIN, PlumaDocinfoPlugin))
+#define PLUMA_DOCINFO_PLUGIN_CLASS(k)       (G_TYPE_CHECK_CLASS_CAST((k), PLUMA_TYPE_DOCINFO_PLUGIN, PlumaDocinfoPluginClass))
+#define PLUMA_IS_DOCINFO_PLUGIN(o)          (G_TYPE_CHECK_INSTANCE_TYPE ((o), PLUMA_TYPE_DOCINFO_PLUGIN))
+#define PLUMA_IS_DOCINFO_PLUGIN_CLASS(k)    (G_TYPE_CHECK_CLASS_TYPE ((k), PLUMA_TYPE_DOCINFO_PLUGIN))
+#define PLUMA_DOCINFO_PLUGIN_GET_CLASS(o)   (G_TYPE_INSTANCE_GET_CLASS ((o), PLUMA_TYPE_DOCINFO_PLUGIN, PlumaDocinfoPluginClass))
 
-typedef struct _PlumaDocinfoPlugin	PlumaDocinfoPlugin;
-typedef struct _PlumaDocinfoPluginPrivate	PlumaDocinfoPluginPrivate;
-typedef struct _PlumaDocinfoPluginClass	PlumaDocinfoPluginClass;
+typedef struct _PlumaDocinfoPlugin          PlumaDocinfoPlugin;
+typedef struct _PlumaDocinfoPluginPrivate   PlumaDocinfoPluginPrivate;
+typedef struct _PlumaDocinfoPluginClass     PlumaDocinfoPluginClass;
 
 struct _PlumaDocinfoPlugin
 {
-	PeasExtensionBase parent;
+    PeasExtensionBase parent;
 
-	/*< private >*/
-	PlumaDocinfoPluginPrivate *priv;
+    /*< private >*/
+    PlumaDocinfoPluginPrivate *priv;
 };
 
 struct _PlumaDocinfoPluginClass
 {
-	PeasExtensionBaseClass parent_class;
+    PeasExtensionBaseClass parent_class;
 };
 
-GType	pluma_docinfo_plugin_get_type		(void) G_GNUC_CONST;
+GType                pluma_docinfo_plugin_get_type  (void) G_GNUC_CONST;
 
-G_MODULE_EXPORT void peas_register_types (PeasObjectModule *module);
+G_MODULE_EXPORT void peas_register_types            (PeasObjectModule *module);
 
 G_END_DECLS
 
