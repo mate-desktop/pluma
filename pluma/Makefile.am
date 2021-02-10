@@ -8,7 +8,7 @@ noinst_LTLIBRARIES = libpluma.la
 AM_CPPFLAGS =								\
 	-I$(top_srcdir)							\
 	-I$(srcdir)							\
-	-I$(srcdir)/mate-submodules/libegg \
+	-I$(srcdir)/mate-submodules/libegg				\
 	$(PLUMA_CFLAGS)							\
 	$(WARN_CFLAGS)							\
 	$(INTROSPECTION_CFLAGS)						\
@@ -65,6 +65,7 @@ NOINST_H_FILES =			\
 
 INST_H_FILES =				\
 	pluma-app.h			\
+	pluma-app-activatable.h 	\
 	pluma-commands.h		\
 	pluma-debug.h			\
 	pluma-document.h 		\
@@ -82,7 +83,9 @@ INST_H_FILES =				\
 	pluma-tab.h 			\
 	pluma-utils.h 			\
 	pluma-view.h 			\
-	pluma-window.h
+	pluma-view-activatable.h 	\
+	pluma-window.h			\
+	pluma-window-activatable.h
 
 if !ENABLE_GVFS_METADATA
 INST_H_FILES += pluma-metadata-manager.h
@@ -95,6 +98,7 @@ header_DATA = 				\
 
 libpluma_c_files = 			\
 	pluma-app.c			\
+	pluma-app-activatable.c 	\
 	pluma-close-button.c		\
 	pluma-commands-documents.c	\
 	pluma-commands-edit.c		\
@@ -138,12 +142,16 @@ libpluma_c_files = 			\
 	pluma-tab-label.c		\
 	pluma-utils.c 			\
 	pluma-view.c 			\
+	pluma-view-activatable.c 	\
 	pluma-window.c			\
+	pluma-window-activatable.c 	\
 	plumatextregion.c
+
+nodist_libpluma_la_SOURCES = 		\
+	$(BUILT_SOURCES)
 
 libpluma_la_SOURCES = 			\
 	$(libpluma_c_files)		\
-	$(BUILT_SOURCES)		\
 	$(BACON_FILES)			\
 	$(POSIXIO_FILES)		\
 	$(NOINST_H_FILES)		\
@@ -187,11 +195,11 @@ INTROSPECTION_GIRS = Pluma-1.0.gir
 INTROSPECTION_SCANNER_ARGS = -I$(top_srcdir) --warn-all
 
 Pluma-1.0.gir: pluma
-Pluma_1_0_gir_INCLUDES = Gtk-3.0 GtkSource-3.0
-Pluma_1_0_gir_FILES = $(INST_H_FILES) $(libpluma_c_files) $(BUILT_SOURCES)
+Pluma_1_0_gir_NAMESPACE = Pluma
 Pluma_1_0_gir_VERSION = 1.0
 Pluma_1_0_gir_PROGRAM = $(builddir)/pluma
-Pluma_1_0_gir_NAMESPACE = Pluma
+Pluma_1_0_gir_FILES = $(INST_H_FILES) $(libpluma_c_files) $(BUILT_SOURCES)
+Pluma_1_0_gir_INCLUDES = Gtk-3.0 GtkSource-3.0
 
 girdir = $(datadir)/gir-1.0
 gir_DATA = $(INTROSPECTION_GIRS)
@@ -201,9 +209,6 @@ typelib_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
 
 CLEANFILES += $(gir_DATA) $(typelib_DATA)
 endif
-
-dist-hook:
-	cd $(distdir); rm -f $(BUILT_SOURCES)
 
 BACON_DIR=$(srcdir)/../../libbacon/src/
 BACON_FILES=bacon-message-connection.h bacon-message-connection.c
