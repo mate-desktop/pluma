@@ -2,6 +2,7 @@ DIST_SUBDIRS =		\
 	docinfo			\
 	externaltools	\
 	filebrowser		\
+	modelines		\
 	pythonconsole	\
 	taglist			\
 	time			\
@@ -15,6 +16,7 @@ SUBDIRS = 			\
 	docinfo			\
 	externaltools	\
 	filebrowser		\
+	modelines		\
 	pythonconsole	\
 	taglist			\
 	time			\
