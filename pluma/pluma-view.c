@@ -115,6 +115,10 @@ static void    pluma_view_dispose               (GObject          *object);
 
 static void    pluma_view_finalize              (GObject          *object);
 
+static void    pluma_view_realize               (GtkWidget *widget);
+
+static void    pluma_view_unrealize             (GtkWidget *widget);
+
 static gint    pluma_view_focus_out             (GtkWidget        *widget,
                                                  GdkEventFocus    *event);
 
@@ -422,15 +426,16 @@ pluma_set_source_space_drawer_by_level (GtkSourceView *view,
                                         GtkSourceSpaceTypeFlags type)
 {
     GtkSourceSpaceLocationFlags locs[] = {GTK_SOURCE_SPACE_LOCATION_LEADING,
-                          GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT,
-                          GTK_SOURCE_SPACE_LOCATION_TRAILING};
+                                          GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT,
+                                          GTK_SOURCE_SPACE_LOCATION_TRAILING};
     /* this array links the level to the location */
-    GtkSourceSpaceLocationFlags levels[] = {0,
-                        GTK_SOURCE_SPACE_LOCATION_TRAILING,
-                        GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT |
-                        GTK_SOURCE_SPACE_LOCATION_TRAILING |
-                        GTK_SOURCE_SPACE_LOCATION_LEADING
-    };
+    GtkSourceSpaceLocationFlags levels[] =
+                                {0,
+                                 GTK_SOURCE_SPACE_LOCATION_TRAILING,
+                                 GTK_SOURCE_SPACE_LOCATION_INSIDE_TEXT |
+                                 GTK_SOURCE_SPACE_LOCATION_TRAILING    |
+                                 GTK_SOURCE_SPACE_LOCATION_LEADING
+                                };
 
     gint i;
 
@@ -441,8 +446,7 @@ pluma_set_source_space_drawer_by_level (GtkSourceView *view,
 
     for (i = 0 ; i < G_N_ELEMENTS(locs) ; i++ ) {
         GtkSourceSpaceTypeFlags f;
-        f = gtk_source_space_drawer_get_types_for_locations (drawer,
-                                                             locs[i]);
+        f = gtk_source_space_drawer_get_types_for_locations (drawer, locs[i]);
         if (locs[i] & levels[level])
             f |= type;
         else
@@ -488,8 +492,8 @@ pluma_set_source_space_drawer (GSettings *settings, GtkSourceView *view)
         flags |= GTK_SOURCE_DRAW_SPACES_NBSP;
 
     flags |= GTK_SOURCE_DRAW_SPACES_TRAILING |
-         GTK_SOURCE_DRAW_SPACES_TEXT |
-         GTK_SOURCE_DRAW_SPACES_LEADING;
+             GTK_SOURCE_DRAW_SPACES_TEXT     |
+             GTK_SOURCE_DRAW_SPACES_LEADING;
 
     gtk_source_view_set_draw_spaces (view, flags);
 }
@@ -658,11 +662,11 @@ pluma_view_unrealize (GtkWidget *widget)
     g_signal_handlers_disconnect_by_func (view->priv->extensions, extension_removed, view);
 
     /* We need to deactivate the extension on unrealize because it is not
-   mandatory that a view has been realized when we dispose it, leading
+       mandatory that a view has been realized when we dispose it, leading
        to deactivating the plugin without being activated */
     peas_extension_set_foreach (view->priv->extensions,
                                 (PeasExtensionSetForeachFunc) extension_removed,
-                            view);
+                                view);
 
     GTK_WIDGET_CLASS (pluma_view_parent_class)->unrealize (widget);
 }
@@ -778,8 +782,7 @@ pluma_view_cut_clipboard (PlumaView *view)
     buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
     g_return_if_fail (buffer != NULL);
 
-    clipboard = gtk_widget_get_clipboard (GTK_WIDGET (view),
-                          GDK_SELECTION_CLIPBOARD);
+    clipboard = gtk_widget_get_clipboard (GTK_WIDGET (view), GDK_SELECTION_CLIPBOARD);
 
     /* FIXME: what is default editability of a buffer? */
       gtk_text_buffer_cut_clipboard (buffer,
@@ -831,9 +834,9 @@ pluma_view_paste_clipboard (PlumaView *view)
 
     /* FIXME: what is default editability of a buffer? */
     gtk_text_buffer_paste_clipboard (buffer,
-                                       clipboard,
-                                       NULL,
-                                       !pluma_document_get_readonly (PLUMA_DOCUMENT (buffer)));
+                                     clipboard,
+                                     NULL,
+                                     !pluma_document_get_readonly (PLUMA_DOCUMENT (buffer)));
 
     gtk_text_view_scroll_to_mark (GTK_TEXT_VIEW (view),
                                   gtk_text_buffer_get_insert (buffer),
@@ -890,7 +893,7 @@ pluma_view_upper_case_selection (PlumaView *view)
 
     if (gtk_text_buffer_get_selection_bounds (buffer, &start, &end))
     {
-            gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_UPPER, &start, &end);
+        gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_UPPER, &start, &end);
     }
 }
 
@@ -909,7 +912,7 @@ pluma_view_lower_case_selection (PlumaView *view)
 
     if (gtk_text_buffer_get_selection_bounds (buffer, &start, &end))
     {
-            gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_LOWER, &start, &end);
+        gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_LOWER, &start, &end);
     }
 }
 
@@ -928,7 +931,7 @@ pluma_view_invert_case_selection (PlumaView *view)
 
     if (gtk_text_buffer_get_selection_bounds (buffer, &start, &end))
     {
-            gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_TOGGLE, &start, &end);
+        gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_TOGGLE, &start, &end);
     }
 }
 
@@ -947,7 +950,7 @@ pluma_view_title_case_selection (PlumaView *view)
 
     if (gtk_text_buffer_get_selection_bounds (buffer, &start, &end))
     {
-            gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_TITLE, &start, &end);
+        gtk_source_buffer_change_case (GTK_SOURCE_BUFFER (buffer), GTK_SOURCE_CHANGE_CASE_TITLE, &start, &end);
     }
 }
 
@@ -1089,21 +1092,21 @@ add_search_completion_entry (const gchar *str)
     while (valid)
     {
         /* Walk through the list, reading each row */
-             gchar *str_data;
+        gchar *str_data;
 
         gtk_tree_model_get (model,
-                    &iter,
-                                  0,
-                                  &str_data,
-                                  -1);
+                            &iter,
+                            0,
+                            &str_data,
+                            -1);
 
         if (strcmp (text, str_data) == 0)
         {
             g_free (text);
             g_free (str_data);
             gtk_list_store_move_after (GTK_LIST_STORE (model),
-                           &iter,
-                           NULL);
+                                       &iter,
+                                       NULL);
 
             return;
         }
@@ -1244,13 +1247,11 @@ run_search (PlumaView        *view,
     {
         pluma_view_scroll_to_cursor (view);
 
-        set_entry_state (view->priv->search_entry,
-                         PLUMA_SEARCH_ENTRY_NORMAL);
+        set_entry_state (view->priv->search_entry, PLUMA_SEARCH_ENTRY_NORMAL);
     }
     else
     {
-        set_entry_state (view->priv->search_entry,
-                         PLUMA_SEARCH_ENTRY_NOT_FOUND);
+        set_entry_state (view->priv->search_entry, PLUMA_SEARCH_ENTRY_NOT_FOUND);
     }
 
     return found;
@@ -1509,7 +1510,7 @@ match_entire_word_menu_item_toggled (GtkCheckMenuItem *checkmenuitem,
                                      PlumaView        *view)
 {
     PLUMA_SEARCH_SET_ENTIRE_WORD (view->priv->search_flags,
-                      gtk_check_menu_item_get_active (checkmenuitem));
+                                  gtk_check_menu_item_get_active (checkmenuitem));
 }
 
 static void
@@ -1517,7 +1518,7 @@ match_case_menu_item_toggled (GtkCheckMenuItem *checkmenuitem,
                               PlumaView        *view)
 {
     PLUMA_SEARCH_SET_CASE_SENSITIVE (view->priv->search_flags,
-                     gtk_check_menu_item_get_active (checkmenuitem));
+                                     gtk_check_menu_item_get_active (checkmenuitem));
 }
 
 static void
@@ -1525,7 +1526,7 @@ parse_escapes_menu_item_toggled (GtkCheckMenuItem *checkmenuitem,
                                  PlumaView        *view)
 {
     PLUMA_SEARCH_SET_PARSE_ESCAPES (view->priv->search_flags,
-                    gtk_check_menu_item_get_active (checkmenuitem));
+                                    gtk_check_menu_item_get_active (checkmenuitem));
 }
 
 static gboolean
@@ -1563,7 +1564,7 @@ search_entry_populate_popup (GtkEntry  *entry,
 
     view->priv->disable_popdown = TRUE;
     g_signal_connect (menu, "hide",
-                  G_CALLBACK (search_enable_popdown), view);
+                      G_CALLBACK (search_enable_popdown), view);
 
     if (view->priv->search_mode == GOTO_LINE)
         return;
@@ -2367,8 +2368,7 @@ pluma_view_button_press_event (GtkWidget *widget, GdkEventButton *event)
         gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY), primtxt, strlen (primtxt));
 
     if ((event->type == GDK_BUTTON_PRESS) &&
-        (event->window == gtk_text_view_get_window (GTK_TEXT_VIEW (widget),
-                                                    GTK_TEXT_WINDOW_LEFT)))
+        (event->window == gtk_text_view_get_window (GTK_TEXT_VIEW (widget), GTK_TEXT_WINDOW_LEFT)))
     {
         if (event->button == 3)
             show_line_numbers_menu (widget, event);
