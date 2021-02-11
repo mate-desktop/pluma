@@ -1,6 +1,7 @@
 DIST_SUBDIRS =		\
 	docinfo			\
 	filebrowser		\
+	pythonconsole	\
 	time			\
 	trailsave		\
 	sort			\
@@ -9,6 +10,7 @@ DIST_SUBDIRS =		\
 SUBDIRS = 			\
 	docinfo			\
 	filebrowser		\
+	pythonconsole	\
 	time			\
 	trailsave		\
 	sort			\
