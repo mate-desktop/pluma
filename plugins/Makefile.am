@@ -1,9 +1,11 @@
 DIST_SUBDIRS =		\
-	docinfo	\
-	filebrowser
+	docinfo			\
+	filebrowser		\
+	trailsave
 
-SUBDIRS = 		\
-	docinfo	\
-	filebrowser
+SUBDIRS = 			\
+	docinfo			\
+	filebrowser		\
+	trailsave
 
 -include $(top_srcdir)/git.mk
