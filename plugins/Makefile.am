@@ -7,7 +7,8 @@ DIST_SUBDIRS =		\
 	time			\
 	trailsave		\
 	sort			\
-	spell
+	spell			\
+	quickopen
 
 SUBDIRS = 			\
 	docinfo			\
@@ -18,6 +19,7 @@ SUBDIRS = 			\
 	time			\
 	trailsave		\
 	sort			\
-	spell
+	spell			\
+	quickopen
 
 -include $(top_srcdir)/git.mk
