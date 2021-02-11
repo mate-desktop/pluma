@@ -23,10 +23,10 @@ from .Library import Library
 from .Manager import Manager
 from .comment import toggle_lines
 
-class SnippetsPlugin(GObject.Object, Peas.Activatable):
+class SnippetsPlugin(GObject.Object, Pluma.WindowActivatable):
     __gtype_name__ = "SnippetsPlugin"
 
-    object = GObject.Property(type=GObject.Object)
+    window = GObject.Property(type=Pluma.Window)
 
     def __init__(self):
         GObject.Object.__init__(self)
@@ -59,8 +59,7 @@ class SnippetsPlugin(GObject.Object, Peas.Activatable):
 
         self._helper = WindowHelper(self)
 
-        window = self.object
-        self._helper.run(window)
+        self._helper.run(self.window)
 
     def do_deactivate(self):
         library = Library()

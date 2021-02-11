@@ -6,6 +6,7 @@ DIST_SUBDIRS =		\
 	taglist			\
 	time			\
 	trailsave		\
+	snippets		\
 	sort			\
 	spell			\
 	quickopen
@@ -18,6 +19,7 @@ SUBDIRS = 			\
 	taglist			\
 	time			\
 	trailsave		\
+	snippets		\
 	sort			\
 	spell			\
 	quickopen
