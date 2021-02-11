@@ -267,6 +267,10 @@ pluma_view_class_init (PlumaViewClass *klass)
     widget_class->drag_drop = pluma_view_drag_drop;
     widget_class->button_press_event = pluma_view_button_press_event;
     widget_class->button_release_event = pluma_view_button_release_event;
+
+    widget_class->realize = pluma_view_realize;
+    widget_class->unrealize = pluma_view_unrealize;
+
     text_view_class->populate_popup = pluma_view_populate_popup;
     klass->start_interactive_search = start_interactive_search;
     klass->start_interactive_goto_line = start_interactive_goto_line;
@@ -376,24 +380,6 @@ current_buffer_removed (PlumaView *view)
         g_object_unref (view->priv->current_buffer);
         view->priv->current_buffer = NULL;
     }
-}
-
-static void
-extension_added (PeasExtensionSet *extensions,
-                 PeasPluginInfo   *info,
-                 PeasExtension    *exten,
-                 PlumaView        *view)
-{
-    peas_extension_call (exten, "activate");
-}
-
-static void
-extension_removed (PeasExtensionSet *extensions,
-                   PeasPluginInfo   *info,
-                   PeasExtension    *exten,
-                   PlumaView        *view)
-{
-    peas_extension_call (exten, "deactivate");
 }
 
 static void
@@ -610,7 +596,41 @@ pluma_view_init (PlumaView *view)
         gtk_target_list_add_uri_targets (tl, TARGET_URI_LIST);
 
     view->priv->extensions = peas_extension_set_new (PEAS_ENGINE (pluma_plugins_engine_get_default ()),
-                                                     PLUMA_TYPE_VIEW_ACTIVATABLE, "view", view, NULL);
+                                                     PLUMA_TYPE_VIEW_ACTIVATABLE,
+                                                     "view", view,
+                                                     NULL);
+
+    /* Act on buffer change */
+    g_signal_connect (view,
+                      "notify::buffer",
+                      G_CALLBACK (on_notify_buffer_cb),
+                      NULL);
+}
+
+static void
+extension_added (PeasExtensionSet *extensions,
+                 PeasPluginInfo   *info,
+                 PeasExtension    *exten,
+                 PlumaView        *view)
+{
+    pluma_view_activatable_activate (PLUMA_VIEW_ACTIVATABLE (exten));
+}
+
+static void
+extension_removed (PeasExtensionSet *extensions,
+                   PeasPluginInfo   *info,
+                   PeasExtension    *exten,
+                   PlumaView        *view)
+{
+    pluma_view_activatable_deactivate (PLUMA_VIEW_ACTIVATABLE (exten));
+}
+
+static void
+pluma_view_realize (GtkWidget *widget)
+{
+     PlumaView *view = PLUMA_VIEW (widget);
+
+     GTK_WIDGET_CLASS (pluma_view_parent_class)->realize (widget);
 
     g_signal_connect (view->priv->extensions,
                       "extension-added",
@@ -621,11 +641,30 @@ pluma_view_init (PlumaView *view)
                       G_CALLBACK (extension_removed),
                       view);
 
-    /* Act on buffer change */
-    g_signal_connect (view,
-                      "notify::buffer",
-                      G_CALLBACK (on_notify_buffer_cb),
-                      NULL);
+    /* We only activate the extensions when the view is realized,
+     * because most plugins will expect this behaviour, and we won't
+     * change the buffer later anyway. */
+    peas_extension_set_foreach (view->priv->extensions,
+                                (PeasExtensionSetForeachFunc) extension_added,
+                                view);
+}
+
+static void
+pluma_view_unrealize (GtkWidget *widget)
+{
+    PlumaView *view = PLUMA_VIEW (widget);
+
+    g_signal_handlers_disconnect_by_func (view->priv->extensions, extension_added, view);
+    g_signal_handlers_disconnect_by_func (view->priv->extensions, extension_removed, view);
+
+    /* We need to deactivate the extension on unrealize because it is not
+   mandatory that a view has been realized when we dispose it, leading
+       to deactivating the plugin without being activated */
+    peas_extension_set_foreach (view->priv->extensions,
+                                (PeasExtensionSetForeachFunc) extension_removed,
+                            view);
+
+    GTK_WIDGET_CLASS (pluma_view_parent_class)->unrealize (widget);
 }
 
 static void
