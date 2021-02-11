@@ -1,5 +1,6 @@
 DIST_SUBDIRS =		\
 	docinfo			\
+	externaltools	\
 	filebrowser		\
 	pythonconsole	\
 	taglist			\
@@ -10,6 +11,7 @@ DIST_SUBDIRS =		\
 
 SUBDIRS = 			\
 	docinfo			\
+	externaltools	\
 	filebrowser		\
 	pythonconsole	\
 	taglist			\
