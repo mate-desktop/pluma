@@ -32,33 +32,29 @@ from .config import PythonConsoleConfig
 
 PYTHON_ICON = 'text-x-python'
 
-class PythonConsolePlugin(GObject.Object, Peas.Activatable, PeasGtk.Configurable):
+class PythonConsolePlugin(GObject.Object, Pluma.WindowActivatable, PeasGtk.Configurable):
     __gtype_name__ = "PythonConsolePlugin"
 
-    object = GObject.Property(type=GObject.Object)
+    window = GObject.Property(type=Pluma.Window)
 
     def __init__(self):
         GObject.Object.__init__(self)
         self.config_widget = None
 
     def do_activate(self):
-        window = self.object
-
         self._console = PythonConsole(namespace = {'__builtins__' : __builtins__,
                                              'pluma' : Pluma,
-                                             'window' : window})
+                                             'window' : self.window})
         self._console.eval('print("You can access the main window through ' \
                            '\'window\' :\\n%s" % window)', False)
-        bottom = window.get_bottom_panel()
+        bottom = self.window.get_bottom_panel()
         image = Gtk.Image()
         image.set_from_icon_name(PYTHON_ICON, Gtk.IconSize.MENU)
         bottom.add_item(self._console, _('Python Console'), image)
 
     def do_deactivate(self):
-        window = self.object
-
         self._console.stop()
-        bottom = window.get_bottom_panel()
+        bottom = self.window.get_bottom_panel()
         bottom.remove_item(self._console)
 
     def do_create_configure_widget(self):

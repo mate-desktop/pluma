@@ -17,13 +17,13 @@
 #  Foundation, Inc., 51 Franklin St, Fifth Floor,
 #  Boston, MA 02110-1301, USA.
 
-from gi.repository import GObject, Peas
+from gi.repository import GObject, Peas, Pluma
 from .windowhelper import WindowHelper
 
-class QuickOpenPlugin(GObject.Object, Peas.Activatable):
+class QuickOpenPlugin(GObject.Object, Pluma.WindowActivatable):
     __gtype_name__ = "QuickOpenPlugin"
 
-    object = GObject.Property(type=GObject.Object)
+    window = GObject.Property(type=Pluma.Window)
 
     def __init__(self):
         GObject.Object.__init__(self)
@@ -31,8 +31,7 @@ class QuickOpenPlugin(GObject.Object, Peas.Activatable):
         self._popup_size = (450, 300)
 
     def do_activate(self):
-        window = self.object
-        self._helper = WindowHelper(window, self)
+        self._helper = WindowHelper(self.window, self)
 
     def do_deactivate(self):
         self._helper.deactivate()

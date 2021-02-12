@@ -31,9 +31,9 @@
 
 #include <glib/gi18n.h>
 #include <gmodule.h>
-#include <libpeas/peas-activatable.h>
 #include <libpeas-gtk/peas-gtk-configurable.h>
 
+#include <pluma/pluma-window-activatable.h>
 #include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 #include <pluma/pluma-statusbar.h>
@@ -53,17 +53,17 @@
 #define SPELL_SCHEMA		"org.mate.pluma.plugins.spell"
 #define AUTOCHECK_TYPE_KEY	"autocheck-type"
 
-static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+static void pluma_window_activatable_iface_init (PlumaWindowActivatableInterface *iface);
 static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
 
 enum {
 	PROP_0,
-	PROP_OBJECT
+	PROP_WINDOW
 };
 
 struct _PlumaSpellPluginPrivate
 {
-	GtkWidget *window;
+	PlumaWindow *window;
 
 	GtkActionGroup *action_group;
 	guint           ui_id;
@@ -79,8 +79,8 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaSpellPlugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
                                 G_ADD_PRIVATE_DYNAMIC (PlumaSpellPlugin)
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
-                                                               peas_activatable_iface_init)
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PLUMA_TYPE_WINDOW_ACTIVATABLE,
+                                                               pluma_window_activatable_iface_init)
                                 G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
                                                                peas_gtk_configurable_iface_init))
 
@@ -1258,7 +1258,7 @@ tab_removed_cb (PlumaWindow *window,
 }
 
 static void
-pluma_spell_plugin_activate (PeasActivatable *activatable)
+pluma_spell_plugin_activate (PlumaWindowActivatable *activatable)
 {
 	PlumaSpellPlugin *plugin;
 	PlumaSpellPluginPrivate *data;
@@ -1346,7 +1346,7 @@ pluma_spell_plugin_activate (PeasActivatable *activatable)
 }
 
 static void
-pluma_spell_plugin_deactivate (PeasActivatable *activatable)
+pluma_spell_plugin_deactivate (PlumaWindowActivatable *activatable)
 {
 	PlumaSpellPluginPrivate *data;
 	PlumaWindow *window;
@@ -1367,7 +1367,7 @@ pluma_spell_plugin_deactivate (PeasActivatable *activatable)
 }
 
 static void
-pluma_spell_plugin_update_state (PeasActivatable *activatable)
+pluma_spell_plugin_update_state (PlumaWindowActivatable *activatable)
 {
 	pluma_debug (DEBUG_PLUGINS);
 
@@ -1384,8 +1384,8 @@ pluma_spell_plugin_set_property (GObject      *object,
 
 	switch (prop_id)
 	{
-		case PROP_OBJECT:
-			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+		case PROP_WINDOW:
+			plugin->priv->window = PLUMA_WINDOW (g_value_dup_object (value));
 			break;
 
 		default:
@@ -1404,7 +1404,7 @@ pluma_spell_plugin_get_property (GObject    *object,
 
 	switch (prop_id)
 	{
-		case PROP_OBJECT:
+		case PROP_WINDOW:
 			g_value_set_object (value, plugin->priv->window);
 			break;
 
@@ -1451,7 +1451,7 @@ pluma_spell_plugin_class_init (PlumaSpellPluginClass *klass)
 	object_class->set_property = pluma_spell_plugin_set_property;
 	object_class->get_property = pluma_spell_plugin_get_property;
 
-	g_object_class_override_property (object_class, PROP_OBJECT, "object");
+	g_object_class_override_property (object_class, PROP_WINDOW, "window");
 
 	if (spell_checker_id == 0)
 		spell_checker_id = g_quark_from_string ("PlumaSpellCheckerID");
@@ -1467,7 +1467,7 @@ pluma_spell_plugin_class_finalize (PlumaSpellPluginClass *klass)
 }
 
 static void
-peas_activatable_iface_init (PeasActivatableInterface *iface)
+pluma_window_activatable_iface_init (PlumaWindowActivatableInterface *iface)
 {
 	iface->activate = pluma_spell_plugin_activate;
 	iface->deactivate = pluma_spell_plugin_deactivate;
@@ -1486,7 +1486,7 @@ peas_register_types (PeasObjectModule *module)
 	pluma_spell_plugin_register_type (G_TYPE_MODULE (module));
 
 	peas_object_module_register_extension_type (module,
-	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_WINDOW_ACTIVATABLE,
 	                                            PLUMA_TYPE_SPELL_PLUGIN);
 
 	peas_object_module_register_extension_type (module,
