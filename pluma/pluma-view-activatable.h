@@ -28,11 +28,9 @@ G_BEGIN_DECLS
 /*
  * Type checking and casting macros
  */
-#define PLUMA_TYPE_VIEW_ACTIVATABLE             (pluma_view_activatable_get_type ())
-#define PLUMA_VIEW_ACTIVATABLE(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj),    PLUMA_TYPE_VIEW_ACTIVATABLE, PlumaViewActivatable))
-#define PLUMA_VIEW_ACTIVATABLE_IFACE(obj)       (G_TYPE_CHECK_CLASS_CAST ((obj),       PLUMA_TYPE_VIEW_ACTIVATABLE, PlumaViewActivatableInterface))
-#define PLUMA_IS_VIEW_ACTIVATABLE(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj),    PLUMA_TYPE_VIEW_ACTIVATABLE))
-#define PLUMA_VIEW_ACTIVATABLE_GET_IFACE(obj)   (G_TYPE_INSTANCE_GET_INTERFACE ((obj), PLUMA_TYPE_VIEW_ACTIVATABLE, PlumaViewActivatableInterface))
+#define PLUMA_TYPE_VIEW_ACTIVATABLE (pluma_view_activatable_get_type ())
+
+G_DECLARE_INTERFACE (PlumaViewActivatable, pluma_view_activatable, PLUMA, VIEW_ACTIVATABLE, GObject)
 
 typedef struct _PlumaViewActivatable           PlumaViewActivatable; /* dummy typedef */
 typedef struct _PlumaViewActivatableInterface  PlumaViewActivatableInterface;
@@ -49,8 +47,6 @@ struct _PlumaViewActivatableInterface
 /*
  * Public methods
  */
-GType    pluma_view_activatable_get_type    (void)  G_GNUC_CONST;
-
 void     pluma_view_activatable_activate    (PlumaViewActivatable *activatable);
 void     pluma_view_activatable_deactivate  (PlumaViewActivatable *activatable);
 

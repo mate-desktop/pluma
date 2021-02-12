@@ -26,14 +26,9 @@
 
 G_BEGIN_DECLS
 
-/*
- * Type checking and casting macros
- */
-#define PLUMA_TYPE_APP_ACTIVATABLE           (pluma_app_activatable_get_type ())
-#define PLUMA_APP_ACTIVATABLE(obj)           (G_TYPE_CHECK_INSTANCE_CAST ((obj),    PLUMA_TYPE_APP_ACTIVATABLE, PlumaAppActivatable))
-#define PLUMA_APP_ACTIVATABLE_IFACE(obj)     (G_TYPE_CHECK_CLASS_CAST ((obj),       PLUMA_TYPE_APP_ACTIVATABLE, PlumaAppActivatableInterface))
-#define PLUMA_IS_APP_ACTIVATABLE(obj)        (G_TYPE_CHECK_INSTANCE_TYPE ((obj),    PLUMA_TYPE_APP_ACTIVATABLE))
-#define PLUMA_APP_ACTIVATABLE_GET_IFACE(obj) (G_TYPE_INSTANCE_GET_INTERFACE ((obj), PLUMA_TYPE_APP_ACTIVATABLE, PlumaAppActivatableInterface))
+#define PLUMA_TYPE_APP_ACTIVATABLE (pluma_app_activatable_get_type ())
+
+G_DECLARE_INTERFACE (PlumaAppActivatable, pluma_app_activatable, PLUMA, APP_ACTIVATABLE, GObject)
 
 typedef struct _PlumaAppActivatable           PlumaAppActivatable; /* dummy typedef */
 typedef struct _PlumaAppActivatableInterface  PlumaAppActivatableInterface;
@@ -50,8 +45,6 @@ struct _PlumaAppActivatableInterface
 /*
  * Public methods
  */
-GType    pluma_app_activatable_get_type     (void)  G_GNUC_CONST;
-
 void     pluma_app_activatable_activate     (PlumaAppActivatable *activatable);
 void     pluma_app_activatable_deactivate   (PlumaAppActivatable *activatable);
 

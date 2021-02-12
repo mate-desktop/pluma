@@ -28,11 +28,9 @@ G_BEGIN_DECLS
 /*
  * Type checking and casting macros
  */
-#define PLUMA_TYPE_WINDOW_ACTIVATABLE           (pluma_window_activatable_get_type ())
-#define PLUMA_WINDOW_ACTIVATABLE(obj)           (G_TYPE_CHECK_INSTANCE_CAST ((obj),    PLUMA_TYPE_WINDOW_ACTIVATABLE, PlumaWindowActivatable))
-#define PLUMA_WINDOW_ACTIVATABLE_IFACE(obj)     (G_TYPE_CHECK_CLASS_CAST ((obj),       PLUMA_TYPE_WINDOW_ACTIVATABLE, PlumaWindowActivatableInterface))
-#define PLUMA_IS_WINDOW_ACTIVATABLE(obj)        (G_TYPE_CHECK_INSTANCE_TYPE ((obj),    PLUMA_TYPE_WINDOW_ACTIVATABLE))
-#define PLUMA_WINDOW_ACTIVATABLE_GET_IFACE(obj) (G_TYPE_INSTANCE_GET_INTERFACE ((obj), PLUMA_TYPE_WINDOW_ACTIVATABLE, PlumaWindowActivatableInterface))
+#define PLUMA_TYPE_WINDOW_ACTIVATABLE (pluma_window_activatable_get_type ())
+
+G_DECLARE_INTERFACE (PlumaWindowActivatable, pluma_window_activatable, PLUMA, WINDOW_ACTIVATABLE, GObject)
 
 typedef struct _PlumaWindowActivatable           PlumaWindowActivatable; /* dummy typedef */
 typedef struct _PlumaWindowActivatableInterface  PlumaWindowActivatableInterface;
@@ -50,8 +48,6 @@ struct _PlumaWindowActivatableInterface
 /*
  * Public methods
  */
-GType    pluma_window_activatable_get_type      (void)  G_GNUC_CONST;
-
 void     pluma_window_activatable_activate      (PlumaWindowActivatable *activatable);
 void     pluma_window_activatable_deactivate    (PlumaWindowActivatable *activatable);
 void     pluma_window_activatable_update_state  (PlumaWindowActivatable *activatable);
