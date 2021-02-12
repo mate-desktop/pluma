@@ -37,34 +37,34 @@
 
 #include <glib/gi18n-lib.h>
 #include <gmodule.h>
-#include <libpeas/peas-activatable.h>
 
+#include <pluma/pluma-window-activatable.h>
 #include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 
 struct _PlumaTaglistPluginPrivate
 {
-	GtkWidget *window;
+	PlumaWindow *window;
 
 	GtkWidget *taglist_panel;
 };
 
-static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+static void pluma_window_activatable_iface_init (PlumaWindowActivatableInterface *iface);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaTaglistPlugin,
                                 pluma_taglist_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
                                 G_ADD_PRIVATE_DYNAMIC (PlumaTaglistPlugin)
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
-                                                               peas_activatable_iface_init) \
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PLUMA_TYPE_WINDOW_ACTIVATABLE,
+                                                               pluma_window_activatable_iface_init) \
                                                                                             \
                                 _pluma_taglist_plugin_panel_register_type (type_module);    \
 )
 
 enum {
 	PROP_0,
-	PROP_OBJECT
+	PROP_WINDOW
 };
 
 static void
@@ -102,7 +102,7 @@ pluma_taglist_plugin_finalize (GObject *object)
 }
 
 static void
-pluma_taglist_plugin_activate (PeasActivatable *activatable)
+pluma_taglist_plugin_activate (PlumaWindowActivatable *activatable)
 {
 	PlumaTaglistPluginPrivate *priv;
 	PlumaWindow *window;
@@ -126,7 +126,7 @@ pluma_taglist_plugin_activate (PeasActivatable *activatable)
 }
 
 static void
-pluma_taglist_plugin_deactivate (PeasActivatable *activatable)
+pluma_taglist_plugin_deactivate (PlumaWindowActivatable *activatable)
 {
 	PlumaTaglistPluginPrivate *priv;
 	PlumaWindow *window;
@@ -143,7 +143,7 @@ pluma_taglist_plugin_deactivate (PeasActivatable *activatable)
 }
 
 static void
-pluma_taglist_plugin_update_state (PeasActivatable *activatable)
+pluma_taglist_plugin_update_state (PlumaWindowActivatable *activatable)
 {
 	PlumaTaglistPluginPrivate *priv;
 	PlumaWindow *window;
@@ -170,8 +170,8 @@ pluma_taglist_plugin_set_property (GObject      *object,
 
 	switch (prop_id)
 	{
-		case PROP_OBJECT:
-			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+		case PROP_WINDOW:
+			plugin->priv->window = PLUMA_WINDOW (g_value_dup_object (value));
 			break;
 
 		default:
@@ -190,7 +190,7 @@ pluma_taglist_plugin_get_property (GObject    *object,
 
 	switch (prop_id)
 	{
-		case PROP_OBJECT:
+		case PROP_WINDOW:
 			g_value_set_object (value, plugin->priv->window);
 			break;
 
@@ -210,7 +210,7 @@ pluma_taglist_plugin_class_init (PlumaTaglistPluginClass *klass)
 	object_class->set_property = pluma_taglist_plugin_set_property;
 	object_class->get_property = pluma_taglist_plugin_get_property;
 
-	g_object_class_override_property (object_class, PROP_OBJECT, "object");
+	g_object_class_override_property (object_class, PROP_WINDOW, "window");
 }
 
 static void
@@ -220,7 +220,7 @@ pluma_taglist_plugin_class_finalize (PlumaTaglistPluginClass *klass)
 }
 
 static void
-peas_activatable_iface_init (PeasActivatableInterface *iface)
+pluma_window_activatable_iface_init (PlumaWindowActivatableInterface *iface)
 {
 	iface->activate = pluma_taglist_plugin_activate;
 	iface->deactivate = pluma_taglist_plugin_deactivate;
@@ -233,6 +233,6 @@ peas_register_types (PeasObjectModule *module)
 	pluma_taglist_plugin_register_type (G_TYPE_MODULE (module));
 
 	peas_object_module_register_extension_type (module,
-	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_WINDOW_ACTIVATABLE,
 	                                            PLUMA_TYPE_TAGLIST_PLUGIN);
 }

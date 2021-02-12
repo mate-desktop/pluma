@@ -149,10 +149,10 @@ class ToolMenu(object):
                 action.set_visible(states[action._tool_item.applicability] and
                                    self.filter_language(language, action._tool_item))
 
-class ExternalToolsPlugin(GObject.Object, Peas.Activatable):
+class ExternalToolsPlugin(GObject.Object, Pluma.WindowActivatable):
     __gtype_name__ = "ExternalToolsPlugin"
 
-    object = GObject.Property(type=GObject.Object)
+    window = GObject.Property(type=Pluma.Window)
 
     def __init__(self):
         GObject.Object.__init__(self)
@@ -164,8 +164,7 @@ class ExternalToolsPlugin(GObject.Object, Peas.Activatable):
         self._library = ToolLibrary()
         self._library.set_locations(os.path.join(self.plugin_info.get_data_dir(), 'tools'))
 
-        window = self.object
-        manager = window.get_ui_manager()
+        manager = self.window.get_ui_manager()
 
         self._action_group = Gtk.ActionGroup('ExternalToolsPluginActions')
         self._action_group.set_translation_domain('pluma')
@@ -204,34 +203,31 @@ class ExternalToolsPlugin(GObject.Object, Peas.Activatable):
         self._merge_id = manager.add_ui_from_string(ui_string)
 
         # Create output console
-        self._output_buffer = OutputPanel(self.plugin_info.get_data_dir(), window)
+        self._output_buffer = OutputPanel(self.plugin_info.get_data_dir(), self.window)
 
-        self.menu = ToolMenu(self._library, window, self._output_buffer, self,
+        self.menu = ToolMenu(self._library, self.window, self._output_buffer, self,
                              "/MenuBar/ToolsMenu/ToolsOps_4/ExternalToolsMenu/ExternalToolPlaceholder")
         manager.ensure_update()
 
-        bottom = window.get_bottom_panel()
+        bottom = self.window.get_bottom_panel()
         bottom.add_item_with_icon(self._output_buffer.panel,
                                   _("Shell Output"),
                                   "system-run")
 
     def do_deactivate(self):
-        window = self.object
-        manager = window.get_ui_manager()
+        manager = self.window.get_ui_manager()
 
         self.menu.deactivate()
         manager.remove_ui(self._merge_id)
         manager.remove_action_group(self._action_group)
         manager.ensure_update()
 
-        bottom = window.get_bottom_panel()
+        bottom = self.window.get_bottom_panel()
         bottom.remove_item(self._output_buffer.panel)
 
     def do_update_state(self):
-        window = self.object
-
-        self.menu.filter(window.get_active_document())
-        window.get_ui_manager().ensure_update()
+        self.menu.filter(self.window.get_active_document())
+        self.window.get_ui_manager().ensure_update()
 
     def open_dialog(self):
         if not self._manager:

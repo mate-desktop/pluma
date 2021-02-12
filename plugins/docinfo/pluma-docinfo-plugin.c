@@ -31,15 +31,15 @@
 #include <glib/gi18n-lib.h>
 #include <pango/pango-break.h>
 #include <gmodule.h>
-#include <libpeas/peas-activatable.h>
 
+#include <pluma/pluma-window-activatable.h>
 #include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
 #include <pluma/pluma-utils.h>
 
 #define MENU_PATH "/MenuBar/ToolsMenu/ToolsOps_2"
 
-static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+static void pluma_window_activatable_iface_init (PlumaWindowActivatableInterface *iface);
 
 typedef struct
 {
@@ -60,7 +60,7 @@ typedef struct
 
 struct _PlumaDocInfoPluginPrivate
 {
-	GtkWidget *window;
+	PlumaWindow *window;
 
 	GtkActionGroup *ui_action_group;
 	guint ui_id;
@@ -73,12 +73,12 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaDocInfoPlugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
                                 G_ADD_PRIVATE_DYNAMIC (PlumaDocInfoPlugin)
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
-                                                               peas_activatable_iface_init))
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PLUMA_TYPE_WINDOW_ACTIVATABLE,
+                                                               pluma_window_activatable_iface_init))
 
 enum {
 	PROP_0,
-	PROP_OBJECT
+	PROP_WINDOW
 };
 
 static void docinfo_dialog_response_cb (GtkDialog   *widget,
@@ -505,8 +505,8 @@ pluma_docinfo_plugin_set_property (GObject      *object,
 
 	switch (prop_id)
 	{
-		case PROP_OBJECT:
-			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+		case PROP_WINDOW:
+			plugin->priv->window = PLUMA_WINDOW (g_value_dup_object (value));
 			break;
 
 		default:
@@ -525,7 +525,7 @@ pluma_docinfo_plugin_get_property (GObject    *object,
 
 	switch (prop_id)
 	{
-		case PROP_OBJECT:
+		case PROP_WINDOW:
 			g_value_set_object (value, plugin->priv->window);
 			break;
 
@@ -536,7 +536,7 @@ pluma_docinfo_plugin_get_property (GObject    *object,
 }
 
 static void
-pluma_docinfo_plugin_activate (PeasActivatable *activatable)
+pluma_docinfo_plugin_activate (PlumaWindowActivatable *activatable)
 {
 	PlumaDocInfoPlugin *plugin;
 	PlumaDocInfoPluginPrivate *data;
@@ -578,7 +578,7 @@ pluma_docinfo_plugin_activate (PeasActivatable *activatable)
 }
 
 static void
-pluma_docinfo_plugin_deactivate (PeasActivatable *activatable)
+pluma_docinfo_plugin_deactivate (PlumaWindowActivatable *activatable)
 {
 	PlumaDocInfoPluginPrivate *data;
 	PlumaWindow *window;
@@ -598,7 +598,7 @@ pluma_docinfo_plugin_deactivate (PeasActivatable *activatable)
 }
 
 static void
-pluma_docinfo_plugin_update_state (PeasActivatable *activatable)
+pluma_docinfo_plugin_update_state (PlumaWindowActivatable *activatable)
 {
 	pluma_debug (DEBUG_PLUGINS);
 
@@ -614,7 +614,7 @@ pluma_docinfo_plugin_class_init (PlumaDocInfoPluginClass *klass)
 	object_class->set_property = pluma_docinfo_plugin_set_property;
 	object_class->get_property = pluma_docinfo_plugin_get_property;
 
-	g_object_class_override_property (object_class, PROP_OBJECT, "object");
+	g_object_class_override_property (object_class, PROP_WINDOW, "window");
 }
 
 static void
@@ -624,7 +624,7 @@ pluma_docinfo_plugin_class_finalize (PlumaDocInfoPluginClass *klass)
 }
 
 static void
-peas_activatable_iface_init (PeasActivatableInterface *iface)
+pluma_window_activatable_iface_init (PlumaWindowActivatableInterface *iface)
 {
 	iface->activate = pluma_docinfo_plugin_activate;
 	iface->deactivate = pluma_docinfo_plugin_deactivate;
@@ -637,6 +637,6 @@ peas_register_types (PeasObjectModule *module)
 	pluma_docinfo_plugin_register_type (G_TYPE_MODULE (module));
 
 	peas_object_module_register_extension_type (module,
-	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_WINDOW_ACTIVATABLE,
 	                                            PLUMA_TYPE_DOCINFO_PLUGIN);
 }

@@ -25,18 +25,17 @@
 
 #include <glib/gi18n-lib.h>
 #include <gmodule.h>
-#include <libpeas/peas-activatable.h>
-#include "pluma-modeline-plugin.h"
-#include "modeline-parser.h"
-
+#include <pluma/pluma-window-activatable.h>
 #include <pluma/pluma-window.h>
 #include <pluma/pluma-debug.h>
+#include "pluma-modeline-plugin.h"
+#include "modeline-parser.h"
 
 #define DOCUMENT_DATA_KEY "PlumaModelinePluginDocumentData"
 
 struct _PlumaModelinePluginPrivate
 {
-	GtkWidget *window;
+	PlumaWindow *window;
 
 	gulong tab_added_handler_id;
 	gulong tab_removed_handler_id;
@@ -50,18 +49,18 @@ typedef struct
 
 enum {
 	PROP_0,
-	PROP_OBJECT
+	PROP_WINDOW
 };
 
-static void peas_activatable_iface_init (PeasActivatableInterface *iface);
+static void pluma_window_activatable_iface_init (PlumaWindowActivatableInterface *iface);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaModelinePlugin,
                                 pluma_modeline_plugin,
                                 PEAS_TYPE_EXTENSION_BASE,
                                 0,
                                 G_ADD_PRIVATE_DYNAMIC (PlumaModelinePlugin)
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_TYPE_ACTIVATABLE,
-                                                               peas_activatable_iface_init))
+                                G_IMPLEMENT_INTERFACE_DYNAMIC (PLUMA_TYPE_WINDOW_ACTIVATABLE,
+                                                               pluma_window_activatable_iface_init))
 
 static void
 document_data_free (DocumentData *ddata)
@@ -127,8 +126,8 @@ pluma_modeline_plugin_set_property (GObject      *object,
 
 	switch (prop_id)
 	{
-		case PROP_OBJECT:
-			plugin->priv->window = GTK_WIDGET (g_value_dup_object (value));
+		case PROP_WINDOW:
+			plugin->priv->window = PLUMA_WINDOW (g_value_dup_object (value));
 			break;
 
 		default:
@@ -147,7 +146,7 @@ pluma_modeline_plugin_get_property (GObject    *object,
 
 	switch (prop_id)
 	{
-		case PROP_OBJECT:
+		case PROP_WINDOW:
 			g_value_set_object (value, plugin->priv->window);
 			break;
 
@@ -228,7 +227,7 @@ on_window_tab_removed (PlumaWindow *window,
 }
 
 static void
-pluma_modeline_plugin_activate (PeasActivatable *activatable)
+pluma_modeline_plugin_activate (PlumaWindowActivatable *activatable)
 {
 	PlumaModelinePluginPrivate *data;
 	PlumaWindow *window;
@@ -258,7 +257,7 @@ pluma_modeline_plugin_activate (PeasActivatable *activatable)
 }
 
 static void
-pluma_modeline_plugin_deactivate (PeasActivatable *activatable)
+pluma_modeline_plugin_deactivate (PlumaWindowActivatable *activatable)
 {
 	PlumaModelinePluginPrivate *data;
 	PlumaWindow *window;
@@ -296,7 +295,7 @@ pluma_modeline_plugin_class_init (PlumaModelinePluginClass *klass)
 	object_class->set_property = pluma_modeline_plugin_set_property;
 	object_class->get_property = pluma_modeline_plugin_get_property;
 
-	g_object_class_override_property (object_class, PROP_OBJECT, "object");
+	g_object_class_override_property (object_class, PROP_WINDOW, "window");
 }
 
 static void
@@ -306,7 +305,7 @@ pluma_modeline_plugin_class_finalize (PlumaModelinePluginClass *klass)
 }
 
 static void
-peas_activatable_iface_init (PeasActivatableInterface *iface)
+pluma_window_activatable_iface_init (PlumaWindowActivatableInterface *iface)
 {
 	iface->activate = pluma_modeline_plugin_activate;
 	iface->deactivate = pluma_modeline_plugin_deactivate;
@@ -318,6 +317,6 @@ peas_register_types (PeasObjectModule *module)
 	pluma_modeline_plugin_register_type (G_TYPE_MODULE (module));
 
 	peas_object_module_register_extension_type (module,
-	                                            PEAS_TYPE_ACTIVATABLE,
+	                                            PLUMA_TYPE_WINDOW_ACTIVATABLE,
 	                                            PLUMA_TYPE_MODELINE_PLUGIN);
 }
