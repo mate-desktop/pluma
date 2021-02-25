@@ -9,19 +9,18 @@
 # Marko Šterman <marko.chamillionaire@gmail.com>, 2018
 # worm <thewormhole@gmail.com>, 2018
 # jetomit <timotej.lazar@araneo.si>, 2018
-# Damir Jerovšek <jierro@windowslive.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Arnold Marko <arnold.marko@gmail.com>, 2020
 # Helena S <ele@tutamail.com>, 2020
-# Nejc Bertoncelj <nbert@siol.net>, 2020
+# Arnold Marko <arnold.marko@gmail.com>, 2020
+# Damir Jerovšek <jierro@windowslive.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.25.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2021-01-16 12:13+0100\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Nejc Bertoncelj <nbert@siol.net>, 2020\n"
+"Last-Translator: Damir Jerovšek <jierro@windowslive.com>, 2021\n"
 "Language-Team: Slovenian (https://www.transifex.com/mate/teams/13566/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,11 +28,11 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: data/org.mate.pluma.gschema.xml.in:11
+#: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
 msgstr "Uporabi privzeto pisavo"
 
-#: data/org.mate.pluma.gschema.xml.in:12
+#: data/org.mate.pluma.gschema.xml.in:16
 msgid ""
 "Whether to use the system's default fixed width font for editing text "
 "instead of a font specific to pluma. If this option is turned off, then the "
@@ -45,16 +44,16 @@ msgstr ""
 " bo namesto sistemske pisave uporabljena pisava, ki je navedena kot \"Pisava"
 " urejevalnika\"."
 
-#: data/org.mate.pluma.gschema.xml.in:15
+#: data/org.mate.pluma.gschema.xml.in:19
 msgctxt "editor-font"
 msgid "'Monospace 12'"
 msgstr "'Monospace 12'"
 
-#: data/org.mate.pluma.gschema.xml.in:16
+#: data/org.mate.pluma.gschema.xml.in:20
 msgid "Editor Font"
 msgstr "Pisava urejevalnika"
 
-#: data/org.mate.pluma.gschema.xml.in:17
+#: data/org.mate.pluma.gschema.xml.in:21
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
@@ -62,11 +61,11 @@ msgstr ""
 "Prilagojena pisava, ki bo uporabljena za izpis besedila. Uporabljena bo le v"
 " primeru, da je možnost \"Uporabi privzeto pisavo\" onemogočena."
 
-#: data/org.mate.pluma.gschema.xml.in:21
+#: data/org.mate.pluma.gschema.xml.in:25
 msgid "Switch tabs with [ctrl] + [tab]"
 msgstr "Preklopi med zavihki s [ctrl] + [tab]"
 
-#: data/org.mate.pluma.gschema.xml.in:22
+#: data/org.mate.pluma.gschema.xml.in:26
 msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
@@ -74,28 +73,28 @@ msgstr ""
 "Izbrana možnost omogoča preklope med zavihki z uporabo [ctrl+tab] in "
 "[ctrl+shift+tab]."
 
-#: data/org.mate.pluma.gschema.xml.in:26
+#: data/org.mate.pluma.gschema.xml.in:30
 msgid "Show the first tab if there is only one tab"
 msgstr "Prikaži prvi zavihek, če obstaja le en zavihek"
 
-#: data/org.mate.pluma.gschema.xml.in:27
+#: data/org.mate.pluma.gschema.xml.in:31
 msgid "If false, it hides the first tab if there is only one tab."
 msgstr "Če temu ni tako, v primeru da obstaja le en zavihek, skrije prvega."
 
-#: data/org.mate.pluma.gschema.xml.in:31
+#: data/org.mate.pluma.gschema.xml.in:35
 msgid "Style Scheme"
 msgstr "Shema sloga"
 
-#: data/org.mate.pluma.gschema.xml.in:32
+#: data/org.mate.pluma.gschema.xml.in:36
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
 msgstr ""
 "ID GtkSourceView slogovne oblike, ki je uporabljena za obarvanje besedila."
 
-#: data/org.mate.pluma.gschema.xml.in:36
+#: data/org.mate.pluma.gschema.xml.in:40
 msgid "Create Backup Copies"
 msgstr "Ustvari varnostne kopije"
 
-#: data/org.mate.pluma.gschema.xml.in:37
+#: data/org.mate.pluma.gschema.xml.in:41
 msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
@@ -104,11 +103,11 @@ msgstr ""
 "varnostnih datotek lahko nastavite z možnostjo \"Pripona varnostnih kopij "
 "datotek\"."
 
-#: data/org.mate.pluma.gschema.xml.in:41
+#: data/org.mate.pluma.gschema.xml.in:45
 msgid "Autosave"
 msgstr "Samodejno shranjevanje"
 
-#: data/org.mate.pluma.gschema.xml.in:42
+#: data/org.mate.pluma.gschema.xml.in:46
 msgid ""
 "Whether pluma should automatically save modified files after a time "
 "interval. You can set the time interval with the \"Autosave Interval\" "
@@ -117,11 +116,11 @@ msgstr ""
 "Ali naj pluma samodejno shrani spremenjene datoteke po določenem času. Čas "
 "lahko nastavite z možnostjo \"Časovni razmik samodejnega shranjevanja\"."
 
-#: data/org.mate.pluma.gschema.xml.in:46
+#: data/org.mate.pluma.gschema.xml.in:50
 msgid "Autosave Interval"
 msgstr "Časovni razmik samodejnega shranjevanja"
 
-#: data/org.mate.pluma.gschema.xml.in:47
+#: data/org.mate.pluma.gschema.xml.in:51
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
@@ -130,19 +129,19 @@ msgstr ""
 "Upoštevano bo le v primeru, da je možnost \"Samodejno shranjevanje\" "
 "omogočena."
 
-#: data/org.mate.pluma.gschema.xml.in:51
+#: data/org.mate.pluma.gschema.xml.in:55
 msgid "Show save confirmation"
 msgstr "Prikaži potrditev za shranjevanje"
 
-#: data/org.mate.pluma.gschema.xml.in:52
+#: data/org.mate.pluma.gschema.xml.in:56
 msgid "Show save confirmation if the files have changes."
 msgstr "Ob spremembah datotek, prikaži potrditev za shranjevanje."
 
-#: data/org.mate.pluma.gschema.xml.in:56
+#: data/org.mate.pluma.gschema.xml.in:60
 msgid "Writable VFS schemes"
 msgstr "Zapisljive sheme VFS"
 
-#: data/org.mate.pluma.gschema.xml.in:57
+#: data/org.mate.pluma.gschema.xml.in:61
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
@@ -150,11 +149,11 @@ msgstr ""
 "Seznam shem VFS, ki jih pluma podpira v pisnem načinu. Shema 'datoteka "
 "(file)' je privzeto zapisljiva."
 
-#: data/org.mate.pluma.gschema.xml.in:61
+#: data/org.mate.pluma.gschema.xml.in:65
 msgid "Maximum Number of Undo Actions"
 msgstr "Največje število razveljavitev"
 
-#: data/org.mate.pluma.gschema.xml.in:62
+#: data/org.mate.pluma.gschema.xml.in:66
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
@@ -162,11 +161,11 @@ msgstr ""
 "Največje število dejanj, ki jih pluma lahko razveljavi ali obnovi. Uporabite"
 " \"-1\" za neomejeno število dejanj."
 
-#: data/org.mate.pluma.gschema.xml.in:66
+#: data/org.mate.pluma.gschema.xml.in:70
 msgid "Line Wrapping Mode"
 msgstr "Način preloma vrstic"
 
-#: data/org.mate.pluma.gschema.xml.in:67
+#: data/org.mate.pluma.gschema.xml.in:71
 msgid ""
 "Specifies how to wrap long lines in the editing area. Use \"GTK_WRAP_NONE\" "
 "for no wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -179,11 +178,11 @@ msgstr ""
 "besedah in \"GTK_WRAP_CHAR\" za lomljenje po posameznih znakih. Te vrednosti"
 " so občutljive na velikost črk, zato bodite pazljivi."
 
-#: data/org.mate.pluma.gschema.xml.in:71
+#: data/org.mate.pluma.gschema.xml.in:75
 msgid "Tab Size"
 msgstr "Velikost zamika"
 
-#: data/org.mate.pluma.gschema.xml.in:72
+#: data/org.mate.pluma.gschema.xml.in:76
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
@@ -191,67 +190,83 @@ msgstr ""
 "Določa število presledkov, ki naj bodo prikazani namesto znaka za zamik "
 "(tab)."
 
-#: data/org.mate.pluma.gschema.xml.in:76
+#: data/org.mate.pluma.gschema.xml.in:80
 msgid "Insert spaces"
 msgstr "Vstavi presledke"
 
-#: data/org.mate.pluma.gschema.xml.in:77
+#: data/org.mate.pluma.gschema.xml.in:81
 msgid "Whether pluma should insert spaces instead of tabs."
 msgstr "Ali naj pluma vstavlja presledke namesto zamikov (tabulatorjev)."
 
-#: data/org.mate.pluma.gschema.xml.in:81
+#: data/org.mate.pluma.gschema.xml.in:85
 msgid "Automatic indent"
 msgstr "Samodejno zamikanje"
 
-#: data/org.mate.pluma.gschema.xml.in:82
+#: data/org.mate.pluma.gschema.xml.in:86
 msgid "Whether pluma should enable automatic indentation."
 msgstr "Ali naj pluma omogoči samodejno zamikanje."
 
-#: data/org.mate.pluma.gschema.xml.in:86
+#: data/org.mate.pluma.gschema.xml.in:90
 msgid "Display Line Numbers"
 msgstr "Pokaži številke vrstic"
 
-#: data/org.mate.pluma.gschema.xml.in:87
+#: data/org.mate.pluma.gschema.xml.in:91
 msgid "Whether pluma should display line numbers in the editing area."
 msgstr "Ali naj pluma pokaže številke vrstic v urejevalni površini."
 
-#: data/org.mate.pluma.gschema.xml.in:91
+#: data/org.mate.pluma.gschema.xml.in:95
 msgid "Highlight Current Line"
 msgstr "Poudari trenutno vrstico"
 
-#: data/org.mate.pluma.gschema.xml.in:92
+#: data/org.mate.pluma.gschema.xml.in:96
 msgid "Whether pluma should highlight the current line."
 msgstr "Ali naj pluma poudari trenutno vrstico."
 
-#: data/org.mate.pluma.gschema.xml.in:96
+#: data/org.mate.pluma.gschema.xml.in:100
 msgid "Highlight Matching Bracket"
 msgstr "Poudari pripadajoče oklepaje"
 
-#: data/org.mate.pluma.gschema.xml.in:97
+#: data/org.mate.pluma.gschema.xml.in:101
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr "Ali naj pluma poudari oklepaj, ki pripada dvojici izbranega oklepaja."
 
-#: data/org.mate.pluma.gschema.xml.in:101
+#: data/org.mate.pluma.gschema.xml.in:105
 msgid "Display Right Margin"
 msgstr "Pokaži desni rob"
 
-#: data/org.mate.pluma.gschema.xml.in:102
+#: data/org.mate.pluma.gschema.xml.in:106
 msgid "Whether pluma should display the right margin in the editing area."
 msgstr "Ali naj pluma v urejevalni površini pokaže desni odmik."
 
-#: data/org.mate.pluma.gschema.xml.in:106
+#: data/org.mate.pluma.gschema.xml.in:110
 msgid "Right Margin Position"
 msgstr "Položaj desnega odmika"
 
-#: data/org.mate.pluma.gschema.xml.in:107
+#: data/org.mate.pluma.gschema.xml.in:111
 msgid "Specifies the position of the right margin."
 msgstr "Določa položaj desnega robu"
 
-#: data/org.mate.pluma.gschema.xml.in:111
+#: data/org.mate.pluma.gschema.xml.in:115
+msgid "Document background pattern type"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:116
+msgid "Whether the document will get a background pattern painted."
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:120
+msgid "Display Overview Map"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:121
+msgid "Whether pluma should display the overview map for the document."
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:125
 msgid "Smart Home End"
 msgstr "Pametni tipki HOME in END"
 
-#: data/org.mate.pluma.gschema.xml.in:112
+#: data/org.mate.pluma.gschema.xml.in:126
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "\"DISABLED\" to always move at the start/end of the line, \"AFTER\" to move "
@@ -269,46 +284,46 @@ msgstr ""
 " pred premikanjem na začetek in konec vrstice in možnost \"VEDNO\" za premik"
 " na začetek in konec besedila namesto na začetek in konec vrstice."
 
-#: data/org.mate.pluma.gschema.xml.in:116
+#: data/org.mate.pluma.gschema.xml.in:130
 msgid "Restore Previous Cursor Position"
 msgstr "Povrni prejšnji položaj kazalca"
 
-#: data/org.mate.pluma.gschema.xml.in:117
+#: data/org.mate.pluma.gschema.xml.in:131
 msgid ""
 "Whether pluma should restore the previous cursor position when a file is "
 "loaded."
 msgstr "Ali naj pluma povrne prejšnji položaj kazalca, ko se datoteka naloži."
 
-#: data/org.mate.pluma.gschema.xml.in:121
+#: data/org.mate.pluma.gschema.xml.in:135
 msgid "Enable Search Highlighting"
 msgstr "Omogoči poudarjanje zadetkov"
 
-#: data/org.mate.pluma.gschema.xml.in:122
+#: data/org.mate.pluma.gschema.xml.in:136
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
 msgstr "Ali naj pluma poudari pojavljanje iskanega besedila."
 
-#: data/org.mate.pluma.gschema.xml.in:126
+#: data/org.mate.pluma.gschema.xml.in:140
 msgid "Enable Syntax Highlighting"
 msgstr "Omogoči poudarjanje skladnje"
 
-#: data/org.mate.pluma.gschema.xml.in:127
+#: data/org.mate.pluma.gschema.xml.in:141
 msgid "Whether pluma should enable syntax highlighting."
 msgstr "Ali naj pluma omogoči poudarjanje skladnje."
 
-#: data/org.mate.pluma.gschema.xml.in:131
+#: data/org.mate.pluma.gschema.xml.in:145
 msgid "Toolbar is Visible"
 msgstr "Orodna vrstica je vidna"
 
-#: data/org.mate.pluma.gschema.xml.in:132
+#: data/org.mate.pluma.gschema.xml.in:146
 msgid "Whether the toolbar should be visible in editing windows."
 msgstr "Ali naj bo orodna vrstica vidna v urejevalnih oknih."
 
-#: data/org.mate.pluma.gschema.xml.in:136
+#: data/org.mate.pluma.gschema.xml.in:150
 msgid "Toolbar Buttons Style"
 msgstr "Slog gumbov orodne vrstice"
 
-#: data/org.mate.pluma.gschema.xml.in:137
+#: data/org.mate.pluma.gschema.xml.in:151
 msgid ""
 "Style for the toolbar buttons. Possible values are \"PLUMA_TOOLBAR_SYSTEM\" "
 "to use the system's default style, \"PLUMA_TOOLBAR_ICONS\" to display icons "
@@ -324,47 +339,49 @@ msgstr ""
 "besedilo ob ikonah. Te vrednosti so občutljive na velikost črk, zato bodite "
 "pazljivi."
 
-#: data/org.mate.pluma.gschema.xml.in:141
+#: data/org.mate.pluma.gschema.xml.in:155
 msgid "Status Bar is Visible"
 msgstr "Vrstica stanja je vidna"
 
-#: data/org.mate.pluma.gschema.xml.in:142
+#: data/org.mate.pluma.gschema.xml.in:156
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "Ali naj bo vrstica stanja na dnu urejevalnega okna vidna."
 
-#: data/org.mate.pluma.gschema.xml.in:146
+#: data/org.mate.pluma.gschema.xml.in:160
 msgid "Side Pane is Visible"
 msgstr "Stranski pladenj je viden"
 
-#: data/org.mate.pluma.gschema.xml.in:147
+#: data/org.mate.pluma.gschema.xml.in:161
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
 msgstr "Ali naj bo stranski pladenj na levi strani urejevalnega okna viden."
 
-#: data/org.mate.pluma.gschema.xml.in:151
+#: data/org.mate.pluma.gschema.xml.in:165
 msgid "Show tabs with side pane"
 msgstr "Prikaži zavihke s stranskim panojem"
 
-#: data/org.mate.pluma.gschema.xml.in:152
+#: data/org.mate.pluma.gschema.xml.in:166
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
+"Če ni resnično, pluma ne prikaže tabulatorjev v beležnici z aktivnim "
+"stranskim panojem."
 
-#: data/org.mate.pluma.gschema.xml.in:156
+#: data/org.mate.pluma.gschema.xml.in:170
 msgid "Bottom Panel is Visible"
 msgstr "Spodnji pladenj je viden"
 
-#: data/org.mate.pluma.gschema.xml.in:157
+#: data/org.mate.pluma.gschema.xml.in:171
 msgid ""
 "Whether the bottom panel at the bottom of editing windows should be visible."
 msgstr "Ali naj bo spodnji pladenj pod urejevalnim oknom viden."
 
-#: data/org.mate.pluma.gschema.xml.in:161
+#: data/org.mate.pluma.gschema.xml.in:175
 msgid "Maximum Recent Files"
 msgstr "Največ nedavnih datotek"
 
-#: data/org.mate.pluma.gschema.xml.in:162
+#: data/org.mate.pluma.gschema.xml.in:176
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
@@ -372,29 +389,29 @@ msgstr ""
 "Določa največje število nedavno odprtih datotek, ki bodo prikazane v "
 "podmeniju \"Nedavne datoteke\"."
 
-#: data/org.mate.pluma.gschema.xml.in:166
+#: data/org.mate.pluma.gschema.xml.in:180
 msgid "Print Syntax Highlighting"
 msgstr "Natisni poudarjanje skladnje"
 
-#: data/org.mate.pluma.gschema.xml.in:167
+#: data/org.mate.pluma.gschema.xml.in:181
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
 msgstr "Ali naj pluma poudari skladnjo dokumentov med tiskanjem."
 
-#: data/org.mate.pluma.gschema.xml.in:171
+#: data/org.mate.pluma.gschema.xml.in:185
 msgid "Print Header"
 msgstr "Natisni glave strani"
 
-#: data/org.mate.pluma.gschema.xml.in:172
+#: data/org.mate.pluma.gschema.xml.in:186
 msgid ""
 "Whether pluma should include a document header when printing documents."
 msgstr "Ali naj pluma vključi glavo dokumenta pri tiskanju."
 
-#: data/org.mate.pluma.gschema.xml.in:176
+#: data/org.mate.pluma.gschema.xml.in:190
 msgid "Printing Line Wrapping Mode"
 msgstr "Tiskanje v načinu preloma vrstic"
 
-#: data/org.mate.pluma.gschema.xml.in:177
+#: data/org.mate.pluma.gschema.xml.in:191
 msgid ""
 "Specifies how to wrap long lines for printing. Use \"GTK_WRAP_NONE\" for no "
 "wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -407,11 +424,11 @@ msgstr ""
 "\"GTK_WRAP_CHAR\" za lomljenje po posameznih znakih. Te vrednosti so "
 "občutljive na velikost črk, zato bodite pazljivi."
 
-#: data/org.mate.pluma.gschema.xml.in:181
+#: data/org.mate.pluma.gschema.xml.in:195
 msgid "Print Line Numbers"
 msgstr "Natisni številke vrstic"
 
-#: data/org.mate.pluma.gschema.xml.in:182
+#: data/org.mate.pluma.gschema.xml.in:196
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
@@ -421,30 +438,30 @@ msgstr ""
 "bodo izpisane. V nasprotnem primeru bo Pluma vsakih toliko vrstic izpisoval "
 "številke vrstic."
 
-#: data/org.mate.pluma.gschema.xml.in:185
+#: data/org.mate.pluma.gschema.xml.in:199
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
 msgstr "'Monospace 9'"
 
-#: data/org.mate.pluma.gschema.xml.in:186
+#: data/org.mate.pluma.gschema.xml.in:200
 msgid "Body Font for Printing"
 msgstr "Pisava telesa za tiskanje"
 
-#: data/org.mate.pluma.gschema.xml.in:187
+#: data/org.mate.pluma.gschema.xml.in:201
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
 msgstr "Določa pisavo, ki se uporabi za telo dokumenta pri tiskanju."
 
-#: data/org.mate.pluma.gschema.xml.in:190
+#: data/org.mate.pluma.gschema.xml.in:204
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
 msgstr "'Sans 11'"
 
-#: data/org.mate.pluma.gschema.xml.in:191
+#: data/org.mate.pluma.gschema.xml.in:205
 msgid "Header Font for Printing"
 msgstr "Pisava glave za tiskanje"
 
-#: data/org.mate.pluma.gschema.xml.in:192
+#: data/org.mate.pluma.gschema.xml.in:206
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
@@ -452,16 +469,16 @@ msgstr ""
 "Določa pisavo, ki se uporabi za glave strani pri tiskanju. Uporabljena je le"
 " v primeru, da je možnost \"Natisni glave\" omogočena."
 
-#: data/org.mate.pluma.gschema.xml.in:195
+#: data/org.mate.pluma.gschema.xml.in:209
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
 msgstr "'Sans 8'"
 
-#: data/org.mate.pluma.gschema.xml.in:196
+#: data/org.mate.pluma.gschema.xml.in:210
 msgid "Line Number Font for Printing"
 msgstr "Pisava številk vrstic za tiskanje"
 
-#: data/org.mate.pluma.gschema.xml.in:197
+#: data/org.mate.pluma.gschema.xml.in:211
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
@@ -469,16 +486,16 @@ msgstr ""
 "Določa pisavo, ki se uporabi za številke vrstic pri tiskanju. Uporabljena je"
 " le v primeru, da je možnost \"Natisni številke vrstic\" različna od nič."
 
-#: data/org.mate.pluma.gschema.xml.in:200
+#: data/org.mate.pluma.gschema.xml.in:214
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8','CURRENT','ISO-8859-15','UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
-#: data/org.mate.pluma.gschema.xml.in:201
+#: data/org.mate.pluma.gschema.xml.in:215
 msgid "Automatically Detected Encodings"
 msgstr "Samodejno zaznan nabor z nakov"
 
-#: data/org.mate.pluma.gschema.xml.in:202
+#: data/org.mate.pluma.gschema.xml.in:216
 msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
@@ -488,16 +505,16 @@ msgstr ""
 "kodiranja datoteke. \"CURRENT\" predstavlja trenutno kodiranje jezikovnega "
 "okolja. Uporabljena so le prepoznana kodiranja."
 
-#: data/org.mate.pluma.gschema.xml.in:205
+#: data/org.mate.pluma.gschema.xml.in:219
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
 msgstr "[ 'ISO-8859-15' ]"
 
-#: data/org.mate.pluma.gschema.xml.in:206
+#: data/org.mate.pluma.gschema.xml.in:220
 msgid "Encodings shown in menu"
 msgstr "Kodiranja prikazana v meniju"
 
-#: data/org.mate.pluma.gschema.xml.in:207
+#: data/org.mate.pluma.gschema.xml.in:221
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
@@ -506,27 +523,27 @@ msgstr ""
 "odpiranje in shranjevanje datotek. Uporabljena so le prepoznani nabori "
 "znakov."
 
-#: data/org.mate.pluma.gschema.xml.in:211
+#: data/org.mate.pluma.gschema.xml.in:225
 msgid "History for \"search for\" entries"
 msgstr "Zgodovina za vnose \"poišči\""
 
-#: data/org.mate.pluma.gschema.xml.in:212
+#: data/org.mate.pluma.gschema.xml.in:226
 msgid "List of entries in \"search for\" textbox."
 msgstr "Seznam vnosov v besedilnem polju \"poišči\"."
 
-#: data/org.mate.pluma.gschema.xml.in:216
+#: data/org.mate.pluma.gschema.xml.in:230
 msgid "History for \"replace with\" entries"
 msgstr "Zgodovina za vnose \"zamenjaj z\""
 
-#: data/org.mate.pluma.gschema.xml.in:217
+#: data/org.mate.pluma.gschema.xml.in:231
 msgid "List of entries in \"replace with\" textbox."
 msgstr "Seznam vnosov v besedilnem polju \"zamenjaj z\"."
 
-#: data/org.mate.pluma.gschema.xml.in:221
+#: data/org.mate.pluma.gschema.xml.in:235
 msgid "Active plugins"
 msgstr "Dejavni vstavki"
 
-#: data/org.mate.pluma.gschema.xml.in:222
+#: data/org.mate.pluma.gschema.xml.in:236
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
@@ -534,45 +551,101 @@ msgstr ""
 "Seznam dejavnih vstavkov. Vsebuje \"Mesto\" dejavnih vstavkov. Glejte "
 "datoteko .pluma-plugin za pridobitev \"Mesta\" danega vstavka."
 
-#: data/org.mate.pluma.gschema.xml.in:226
+#: data/org.mate.pluma.gschema.xml.in:240
 msgid "Show newline"
-msgstr ""
+msgstr "Prikaži nove vrstice"
 
-#: data/org.mate.pluma.gschema.xml.in:227
+#: data/org.mate.pluma.gschema.xml.in:241
 msgid "Whether pluma should show newlines in the editor window."
-msgstr ""
+msgstr "Ali naj pluma prikaže nove vrstice v oknu urejevalnika."
 
-#: data/org.mate.pluma.gschema.xml.in:231
+#: data/org.mate.pluma.gschema.xml.in:245
 msgid "Show nbsp"
-msgstr ""
+msgstr "Prikaži nbsp"
 
-#: data/org.mate.pluma.gschema.xml.in:232
+#: data/org.mate.pluma.gschema.xml.in:246
 msgid ""
 "Whether pluma should show not breaking spaces in the editor window: 'show-"
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:236
+#: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
-msgstr ""
+msgstr "Prikaži tabulatorje"
 
-#: data/org.mate.pluma.gschema.xml.in:237
+#: data/org.mate.pluma.gschema.xml.in:251
 msgid ""
 "Whether pluma should show tabs in the editor window: 'show-none' no showing;"
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:241
+#: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show spaces"
-msgstr ""
+msgstr "Prikaži presledke"
 
-#: data/org.mate.pluma.gschema.xml.in:242
+#: data/org.mate.pluma.gschema.xml.in:256
 msgid ""
 "Whether pluma should show spaces in the editor window: 'show-none' no "
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:260
+msgid "state"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:261
+msgid "The pluma window state"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:265
+msgid "size"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:266
+msgid "The pluma window size"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:270
+msgid "side-panel-size"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:271
+msgid "The pluma side-panel-size"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:275
+msgid "side-panel-active-page"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:276
+msgid "The pluma side-panel-active-page"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:280
+msgid "bottom-panel-size"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:281
+msgid "The pluma bottom-panel-size"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:285
+msgid "bottom-panel-active-page"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:286
+msgid "The pluma bottom-panel-active-page"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:290
+msgid "filter-id"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:291
+msgid "The pluma filter-id"
 msgstr ""
 
 #: data/pluma.appdata.xml.in:7 data/pluma.desktop.in.in:3
@@ -591,6 +664,11 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
+"Pluma je majhen a zmogljiv urejevalnik besedil, ustvarjen posebej za MATE "
+"namzje. Ima najbolj standardne funkcije za urejanje besedil in polno podporo"
+" za mednarodna besedila v Unicode obliki. Napredne funkcije vključujejo "
+"poudarjanje skladnje, samodejno zamikanje izvorne kode, tiskanje in urejanje"
+" več dokumentov v enem oknu."
 
 #: data/pluma.appdata.xml.in:17
 msgid ""
@@ -598,8 +676,11 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
+"Pluma je razširljiva preko sistema vtičnikov, ki trenutno vključuje podporo "
+"za črkovalnik, primerjanje datotek, prikaz CVS dnevnikov sprememb in "
+"prilagajanje zamikov."
 
-#: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:754
+#: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:775
 msgid "Text Editor"
 msgstr "Urejevalnik besedil"
 
@@ -607,17 +688,13 @@ msgstr "Urejevalnik besedil"
 msgid "Edit text files"
 msgstr "Urejanje besedilnih datotek"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/pluma.desktop.in.in:15
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
 msgstr ""
+"text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;besedilo, "
+"tabulator;poudarjanje;koda;datoteke;"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:136
 msgid "Log Out _without Saving"
@@ -632,14 +709,14 @@ msgid "Close _without Saving"
 msgstr "Zapri _brez shranjevanja"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:151
-#: pluma/dialogs/pluma-encodings-dialog.c:306
+#: pluma/dialogs/pluma-encodings-dialog.c:329
 #: pluma/dialogs/pluma-encodings-dialog.ui:56
-#: pluma/dialogs/pluma-preferences-dialog.c:975
-#: pluma/pluma-commands-file.c:583 pluma/pluma-commands-file.c:1223
-#: pluma/pluma-file-chooser-dialog.c:435
+#: pluma/dialogs/pluma-preferences-dialog.c:848
+#: pluma/pluma-commands-file.c:581 pluma/pluma-commands-file.c:1221
+#: pluma/pluma-file-chooser-dialog.c:452
 #: pluma/pluma-io-error-message-area.c:168
 #: pluma/pluma-io-error-message-area.c:507
-#: pluma/pluma-io-error-message-area.c:1190
+#: pluma/pluma-io-error-message-area.c:1197
 #: pluma/pluma-progress-message-area.c:63
 #: plugins/filebrowser/pluma-file-browser-utils.c:171
 #: plugins/quickopen/quickopen/popup.py:36
@@ -655,7 +732,7 @@ msgid "_Cancel"
 msgstr "_Prekliči"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:178
-#: pluma/pluma-file-chooser-dialog.c:439 pluma/pluma-ui.h:80
+#: pluma/pluma-file-chooser-dialog.c:456 pluma/pluma-ui.h:80
 #: plugins/snippets/snippets/Manager.py:882
 #: plugins/snippets/snippets/Manager.py:921
 msgid "_Save"
@@ -663,7 +740,7 @@ msgstr "_Shrani"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:183
 msgid "Save _As"
-msgstr ""
+msgstr "Shr_ani kot"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
@@ -677,10 +754,10 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Če ne shranite, bodo spremembe zadnje %ld sekunde izgubljene."
+msgstr[1] "Če ne shranite, bodo spremembe zadnjih %ld sekund izgubljene."
+msgstr[2] "Če ne shranite, bodo spremembe zadnjih %ld sekund izgubljene."
+msgstr[3] "Če ne shranite, bodo spremembe zadnjih %ld sekund izgubljene."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
@@ -697,9 +774,13 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"Če ne shranite, bodo spremembe zadnje minute in %ld sekunde izgubljene."
 msgstr[1] ""
+"Če ne shranite, bodo spremembe zadnje minute in %ld sekund izgubljene."
 msgstr[2] ""
+"Če ne shranite, bodo spremembe zadnje minute in %ld sekund izgubljene."
 msgstr[3] ""
+"Če ne shranite, bodo spremembe zadnje minute in %ld sekund izgubljene."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
@@ -709,10 +790,10 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Če ne shranite, bodo spremembe zadnje %ld minute izgubljene."
+msgstr[1] "Če ne shranite, bodo spremembe zadnjih %ld minut izgubljene."
+msgstr[2] "Če ne shranite, bodo spremembe zadnjih %ld minut izgubljene."
+msgstr[3] "Če ne shranite, bodo spremembe zadnjih %ld minut izgubljene."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
@@ -790,19 +871,19 @@ msgstr "_Izberite dokumente, ki jih želite shraniti: "
 msgid "If you don't save, all your changes will be permanently lost."
 msgstr "V kolikor sprememb ne shranite, bodo trajno izgubljene."
 
-#: pluma/dialogs/pluma-encodings-dialog.c:307
+#: pluma/dialogs/pluma-encodings-dialog.c:330
 #: pluma/dialogs/pluma-encodings-dialog.ui:72
 #: plugins/spell/pluma-spell-language-dialog.c:133
 #: plugins/spell/languages-dialog.ui:72
 #: plugins/spell/pluma-spell-setup-dialog.ui:71
-#: plugins/time/pluma-time-plugin.c:920
+#: plugins/time/pluma-time-plugin.c:888
 #: plugins/time/pluma-time-setup-dialog.ui:71
 msgid "_OK"
 msgstr "_V redu"
 
-#: pluma/dialogs/pluma-encodings-dialog.c:308
+#: pluma/dialogs/pluma-encodings-dialog.c:331
 #: pluma/dialogs/pluma-encodings-dialog.ui:40
-#: pluma/dialogs/pluma-preferences-dialog.c:1292
+#: pluma/dialogs/pluma-preferences-dialog.c:1231
 #: pluma/dialogs/pluma-preferences-dialog.ui:58 pluma/pluma-ui.h:53
 #: plugins/sort/sort.ui:77 plugins/spell/pluma-spell-language-dialog.c:134
 #: plugins/spell/languages-dialog.ui:40
@@ -812,17 +893,17 @@ msgstr "_V redu"
 msgid "_Help"
 msgstr "_Pomoč"
 
-#: pluma/dialogs/pluma-encodings-dialog.c:310
+#: pluma/dialogs/pluma-encodings-dialog.c:333
 msgid "Character Encodings"
 msgstr "Nabori znakov"
 
-#: pluma/dialogs/pluma-encodings-dialog.c:373
-#: pluma/dialogs/pluma-encodings-dialog.c:434
+#: pluma/dialogs/pluma-encodings-dialog.c:396
+#: pluma/dialogs/pluma-encodings-dialog.c:457
 msgid "_Description"
 msgstr "_Opis"
 
-#: pluma/dialogs/pluma-encodings-dialog.c:382
-#: pluma/dialogs/pluma-encodings-dialog.c:443
+#: pluma/dialogs/pluma-encodings-dialog.c:405
+#: pluma/dialogs/pluma-encodings-dialog.c:466
 msgid "_Encoding"
 msgstr "_Nabor znakov"
 
@@ -844,54 +925,54 @@ msgid "E_ncodings shown in menu:"
 msgstr "Nabori _prikazani v meniju:"
 
 #: pluma/dialogs/pluma-encodings-dialog.ui:228
-#: pluma/dialogs/pluma-preferences-dialog.ui:1405
+#: pluma/dialogs/pluma-preferences-dialog.ui:1007
 msgid "_Remove"
 msgstr "_Odstrani"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:726
+#: pluma/dialogs/pluma-preferences-dialog.c:602
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "Pritisnite ta gumb za izbiro pisave, ki naj jo uporablja urejevalnik"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:736
+#: pluma/dialogs/pluma-preferences-dialog.c:617
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Uporabi pisavo sistema s stalno širino (%s)"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:939
+#: pluma/dialogs/pluma-preferences-dialog.c:811
 msgid "The selected color scheme cannot be installed."
 msgstr "Izbrane barvne sheme ni mogoče namestiti."
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1017
+#: pluma/dialogs/pluma-preferences-dialog.c:890
 msgid "Add Scheme"
 msgstr "Dodaj shemo"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1024
+#: pluma/dialogs/pluma-preferences-dialog.c:897
 msgid "A_dd Scheme"
 msgstr "_Dodaj shemo"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1032
+#: pluma/dialogs/pluma-preferences-dialog.c:905
 msgid "Color Scheme Files"
 msgstr "Datoteke barvnih shem"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1039
+#: pluma/dialogs/pluma-preferences-dialog.c:912
 #: pluma/pluma-file-chooser-dialog.c:52
 msgid "All Files"
 msgstr "Vse datoteke"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1084
+#: pluma/dialogs/pluma-preferences-dialog.c:957
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
 msgstr "Ni mogoče odstraniti barvne sheme \"%s\"."
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1291
+#: pluma/dialogs/pluma-preferences-dialog.c:1230
 #: pluma/dialogs/pluma-preferences-dialog.ui:74
-#: pluma/dialogs/pluma-search-dialog.c:327
-#: pluma/dialogs/pluma-search-dialog.ui:60 pluma/pluma-ui.h:142
+#: pluma/dialogs/pluma-search-dialog.c:325
+#: pluma/dialogs/pluma-search-dialog.ui:60 pluma/pluma-ui.h:151
 #: plugins/docinfo/docinfo.ui:35 plugins/spell/spell-checker.ui:375
 msgid "_Close"
 msgstr "_Zapri"
 
-#: pluma/dialogs/pluma-preferences-dialog.c:1294
+#: pluma/dialogs/pluma-preferences-dialog.c:1233
 msgid "Pluma Preferences"
 msgstr "Možnosti programa Pluma"
 
@@ -904,192 +985,169 @@ msgstr "Možnosti"
 msgid "Text Wrapping"
 msgstr "Prelom besedila"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:138
-#: pluma/dialogs/pluma-preferences-dialog.ui:233
-#: pluma/dialogs/pluma-preferences-dialog.ui:313
-#: pluma/dialogs/pluma-preferences-dialog.ui:393
-#: pluma/dialogs/pluma-preferences-dialog.ui:515
-#: pluma/dialogs/pluma-preferences-dialog.ui:614
-#: pluma/dialogs/pluma-preferences-dialog.ui:735
-#: pluma/dialogs/pluma-preferences-dialog.ui:802
-#: pluma/dialogs/pluma-preferences-dialog.ui:943
-#: pluma/dialogs/pluma-preferences-dialog.ui:981
-#: pluma/dialogs/pluma-preferences-dialog.ui:993
-#: pluma/dialogs/pluma-preferences-dialog.ui:1031
-#: pluma/dialogs/pluma-preferences-dialog.ui:1072
-#: pluma/dialogs/pluma-preferences-dialog.ui:1110
-#: pluma/dialogs/pluma-preferences-dialog.ui:1122
-#: pluma/dialogs/pluma-preferences-dialog.ui:1219
-#: pluma/dialogs/pluma-preferences-dialog.ui:1342
-#: plugins/docinfo/docinfo.ui:106 plugins/time/pluma-time-dialog.ui:166
-#: plugins/time/pluma-time-setup-dialog.ui:125
-#: plugins/time/pluma-time-setup-dialog.ui:188
-msgid "    "
-msgstr "    "
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:154
+#: pluma/dialogs/pluma-preferences-dialog.ui:139
 #: pluma/pluma-print-preferences.ui:215
 msgid "Enable text _wrapping"
 msgstr "Omogoči _prelom besedila"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:169
+#: pluma/dialogs/pluma-preferences-dialog.ui:154
 #: pluma/pluma-print-preferences.ui:235
 msgid "Do not _split words over two lines"
 msgstr "Ne _deli besed preko dveh vrstic"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:214
-#: pluma/pluma-print-preferences.ui:85
-msgid "Line Numbers"
-msgstr "Številke vrstic"
+#: pluma/dialogs/pluma-preferences-dialog.ui:193
+msgid "Highlighting"
+msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:249 pluma/pluma-view.c:2185
-msgid "_Display line numbers"
-msgstr "_Pokaži številke vrstic"
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:294
-msgid "Current Line"
-msgstr "Trenutna vrstica"
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:329
+#: pluma/dialogs/pluma-preferences-dialog.ui:213
 msgid "Highlight current _line"
 msgstr "Poudari _trenutno vrstico"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:374
-msgid "Right Margin"
-msgstr "Desni odmik"
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:409
-msgid "Display right _margin"
-msgstr "Pokaži desni _rob"
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:432
-msgid "_Right margin at column:"
-msgstr "_Desni odmik pri stolpcu:"
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:496
-msgid "Bracket Matching"
-msgstr "Ujemanje oklepajev"
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:531
+#: pluma/dialogs/pluma-preferences-dialog.ui:228
 msgid "Highlight matching _bracket"
 msgstr "Poudari pripadajoče _oklepaje"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:571
+#: pluma/dialogs/pluma-preferences-dialog.ui:266
+msgid "Display"
+msgstr "Prikaz"
+
+#: pluma/dialogs/pluma-preferences-dialog.ui:286 pluma/pluma-view.c:2245
+msgid "_Display line numbers"
+msgstr "_Pokaži številke vrstic"
+
+#: pluma/dialogs/pluma-preferences-dialog.ui:306
+msgid "Display right _margin at column"
+msgstr ""
+
+#: pluma/dialogs/pluma-preferences-dialog.ui:349
+msgid "Display _grid pattern"
+msgstr ""
+
+#: pluma/dialogs/pluma-preferences-dialog.ui:364
+msgid "Display _overview map"
+msgstr ""
+
+#: pluma/dialogs/pluma-preferences-dialog.ui:397
 msgid "View"
 msgstr "Pogled"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:595
+#: pluma/dialogs/pluma-preferences-dialog.ui:421
 msgid "Tab Stops"
 msgstr "Mesta tabulatorjev"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:637
+#: pluma/dialogs/pluma-preferences-dialog.ui:448
 msgid "_Tab width:"
 msgstr "Širina _tabulatorja:"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:671
+#: pluma/dialogs/pluma-preferences-dialog.ui:463
+#: pluma/dialogs/pluma-preferences-dialog.ui:637
+msgid "8"
+msgstr "8"
+
+#: pluma/dialogs/pluma-preferences-dialog.ui:484
 msgid "Insert _spaces instead of tabs"
 msgstr "Vstavi _presledke namesto tabulatorjev"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:716
+#: pluma/dialogs/pluma-preferences-dialog.ui:522
 msgid "Automatic Indentation"
 msgstr "Samodejno zamikanje"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:745
+#: pluma/dialogs/pluma-preferences-dialog.ui:542
 msgid "_Enable automatic indentation"
 msgstr "Vključi s_amodejno zamikanje"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:783
+#: pluma/dialogs/pluma-preferences-dialog.ui:580
 msgid "File Saving"
 msgstr "Shranjevanje datotek"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:818
+#: pluma/dialogs/pluma-preferences-dialog.ui:600
 msgid "Create a _backup copy of files before saving"
 msgstr "Ustvari _varnostne kopije datotek pred shranjevanjem"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:838
+#: pluma/dialogs/pluma-preferences-dialog.ui:620
 msgid "_Autosave files every"
 msgstr "Samodejno _shrani datoteke vsakih"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:869
+#: pluma/dialogs/pluma-preferences-dialog.ui:653
 msgid "_minutes"
 msgstr "_minut"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:919
-msgid "Show spaces, tabs, newlines"
+#: pluma/dialogs/pluma-preferences-dialog.ui:696
+msgid "Show Spaces, Tabs, Newlines"
 msgstr ""
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:953
-msgid "Show _tabs"
-msgstr ""
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:1003
-msgid "Show _trailing tabs only"
-msgstr ""
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:1041
-msgid "Show _newlines"
-msgstr ""
-
-#: pluma/dialogs/pluma-preferences-dialog.ui:1082
+#: pluma/dialogs/pluma-preferences-dialog.ui:717
 msgid "Show _spaces"
-msgstr ""
+msgstr "Prikaži pre_sledke"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:1132
+#: pluma/dialogs/pluma-preferences-dialog.ui:732
 msgid "Show _trailing spaces only"
-msgstr ""
+msgstr "Prikaži zgolj _zadnje presledke"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:1175
+#: pluma/dialogs/pluma-preferences-dialog.ui:748
+msgid "Show _tabs"
+msgstr "Prikaži _tabulatorje"
+
+#: pluma/dialogs/pluma-preferences-dialog.ui:763
+msgid "Show _trailing tabs only"
+msgstr "Prikaži zgolj zadnje _tabulatorje"
+
+#: pluma/dialogs/pluma-preferences-dialog.ui:779
+msgid "Show _newlines"
+msgstr "Prikaži _nove vrstice"
+
+#: pluma/dialogs/pluma-preferences-dialog.ui:815
 msgid "Editor"
 msgstr "Urejevalnik"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:1200
+#: pluma/dialogs/pluma-preferences-dialog.ui:840
 msgid "Font"
 msgstr "Pisava"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:1258
+#: pluma/dialogs/pluma-preferences-dialog.ui:883
 msgid "Editor _font: "
 msgstr "_Pisava urejevalnika:"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:1275
+#: pluma/dialogs/pluma-preferences-dialog.ui:900
 msgid "Pick the editor font"
 msgstr "Izbor pisave urejevalnika"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:1323
+#: pluma/dialogs/pluma-preferences-dialog.ui:941
 msgid "Color Scheme"
 msgstr "Barvna shema"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:1390
+#: pluma/dialogs/pluma-preferences-dialog.ui:992
 msgid "_Add..."
 msgstr "_Dodaj ..."
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:1454
+#: pluma/dialogs/pluma-preferences-dialog.ui:1049
 msgid "Font & Colors"
 msgstr "Pisave in barve"
 
-#: pluma/dialogs/pluma-preferences-dialog.ui:1479
+#: pluma/dialogs/pluma-preferences-dialog.ui:1074
 msgid "Plugins"
 msgstr "Vtičniki"
 
-#: pluma/dialogs/pluma-search-dialog.c:295
+#: pluma/dialogs/pluma-search-dialog.c:293
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1529
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1551
 msgid "Replace"
 msgstr "Zamenjaj"
 
-#: pluma/dialogs/pluma-search-dialog.c:304 pluma/pluma-window.c:1527
+#: pluma/dialogs/pluma-search-dialog.c:302 pluma/pluma-window.c:1549
 msgid "Find"
 msgstr "Najdi"
 
-#: pluma/dialogs/pluma-search-dialog.c:407
+#: pluma/dialogs/pluma-search-dialog.c:405
 #: pluma/dialogs/pluma-search-dialog.ui:106
 msgid "_Find"
 msgstr "_Najdi"
 
-#: pluma/dialogs/pluma-search-dialog.c:410
+#: pluma/dialogs/pluma-search-dialog.c:408
 msgid "Replace _All"
 msgstr "Zamenjaj _vse"
 
-#: pluma/dialogs/pluma-search-dialog.c:411 pluma/pluma-commands-file.c:588
+#: pluma/dialogs/pluma-search-dialog.c:409 pluma/pluma-commands-file.c:586
 msgid "_Replace"
 msgstr "_Zamenjaj"
 
@@ -1161,16 +1219,16 @@ msgstr "Ustvari nov dokument v obstoječem primerku pluma"
 msgid "[FILE...]"
 msgstr "[DATOTEKA ...]"
 
-#: pluma/pluma.c:178
+#: pluma/pluma.c:177
 #, c-format
 msgid "%s: invalid encoding.\n"
 msgstr "%s: neveljavno kodiranje.\n"
 
-#: pluma/pluma.c:524
+#: pluma/pluma.c:528
 msgid "- Edit text files"
 msgstr "- Urejanje datotek z besedili"
 
-#: pluma/pluma.c:535
+#: pluma/pluma.c:539
 #, c-format
 msgid ""
 "%s\n"
@@ -1194,39 +1252,39 @@ msgstr[2] ""
 msgstr[3] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
-#: pluma/pluma-commands-file.c:463
+#: pluma/pluma-commands-file.c:461
 msgid "Open Files"
 msgstr "Odpri datoteke"
 
-#: pluma/pluma-commands-file.c:574
+#: pluma/pluma-commands-file.c:572
 #, c-format
 msgid "The file \"%s\" is read-only."
 msgstr "Datoteka \"%s\" je le berljiva."
 
-#: pluma/pluma-commands-file.c:579
+#: pluma/pluma-commands-file.c:577
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Jo želite poskusiti nadomestiti s to, ki jo shranjujete?"
 
-#: pluma/pluma-commands-file.c:649 pluma/pluma-commands-file.c:872
+#: pluma/pluma-commands-file.c:647 pluma/pluma-commands-file.c:870
 #, c-format
 msgid "Saving file '%s'…"
 msgstr "Shranjevanje datoteke '%s' ..."
 
-#: pluma/pluma-commands-file.c:757
+#: pluma/pluma-commands-file.c:755
 msgid "Save As…"
 msgstr "Shrani kot …"
 
-#: pluma/pluma-commands-file.c:1086
+#: pluma/pluma-commands-file.c:1084
 #, c-format
 msgid "Reverting the document '%s'…"
 msgstr "Povračanje dokumenta '%s' ..."
 
-#: pluma/pluma-commands-file.c:1131
+#: pluma/pluma-commands-file.c:1129
 #, c-format
 msgid "Revert unsaved changes to document '%s'?"
 msgstr "Povrni neshranjene spremembe dokumentu '%s'?"
 
-#: pluma/pluma-commands-file.c:1140
+#: pluma/pluma-commands-file.c:1138
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently "
@@ -1239,12 +1297,12 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: pluma/pluma-commands-file.c:1149
+#: pluma/pluma-commands-file.c:1147
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "Spremembe dokumenta narejene v zadnji minuti bodo trajno izgubljene."
 
-#: pluma/pluma-commands-file.c:1155
+#: pluma/pluma-commands-file.c:1153
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -1257,7 +1315,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: pluma/pluma-commands-file.c:1165
+#: pluma/pluma-commands-file.c:1163
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently "
@@ -1270,12 +1328,12 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: pluma/pluma-commands-file.c:1180
+#: pluma/pluma-commands-file.c:1178
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
 msgstr "Spremembe dokumenta narejene v zadnji uri bodo trajno izgubljene."
 
-#: pluma/pluma-commands-file.c:1186
+#: pluma/pluma-commands-file.c:1184
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -1288,7 +1346,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: pluma/pluma-commands-file.c:1201
+#: pluma/pluma-commands-file.c:1199
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -1299,7 +1357,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: pluma/pluma-commands-file.c:1228 pluma/pluma-ui.h:84
+#: pluma/pluma-commands-file.c:1226 pluma/pluma-ui.h:84
 msgid "_Revert"
 msgstr "Pov_rni"
 
@@ -1316,8 +1374,10 @@ msgid "Sun Microsystems"
 msgstr "Sun Microsystems"
 
 #: pluma/pluma-commands-help.c:67
-msgid "Pluma is a small and lightweight text editor for the MATE Desktop"
-msgstr "Pluma je majhen in lahek urejevalnik besedil za namizje MATE"
+msgid ""
+"Pluma is a small and lightweight text editor for the MATE Desktop "
+"Environment."
+msgstr ""
 
 #: pluma/pluma-commands-help.c:70
 msgid ""
@@ -1326,6 +1386,10 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"Pluma spada med prosto programje; lahko ga razširjate in/ali spreminjate pod"
+" pogoji Splošnega dovoljenja GNU (GNU General PublicLicense), kot ga je "
+"objavila ustanova Free Software Foundation; ali različice 2 ali (po vaši "
+"izbiri) katerekoli poznejše različice."
 
 #: pluma/pluma-commands-help.c:74
 msgid ""
@@ -1334,6 +1398,9 @@ msgid ""
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
+"Pluma se razširja v upanju, da bo uporaben, vendar BREZ VSAKRŠNEGA JAMSTVA; "
+"tudi brez posredne zagotovitve CENOVNE VREDNOSTI ali PRIMERNOSTI ZA DOLOČEN "
+"NAMEN.  Za podrobnosti glejte besedilo GNU General Public License."
 
 #: pluma/pluma-commands-help.c:78
 msgid ""
@@ -1341,10 +1408,13 @@ msgid ""
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 msgstr ""
+"Skupaj s Plumo bi morali prejeti kopijo GNU Splošne javne licence. V "
+"primeru, da je niste, pišite na Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA"
 
 #: pluma/pluma-commands-help.c:113
 msgid "About Pluma"
-msgstr ""
+msgstr "O programu Pluma"
 
 #: pluma/pluma-commands-help.c:116
 msgid ""
@@ -1354,7 +1424,7 @@ msgid ""
 "Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
 "Steve Frécinaux, Ignacio Casal Quinteiro\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2020 MATE developers"
+"Copyright © 2012-2021 MATE developers"
 msgstr ""
 
 #: pluma/pluma-commands-help.c:126
@@ -1381,17 +1451,17 @@ msgstr "Najden in zamenjan en niz"
 msgid "\"%s\" not found"
 msgstr "\"%s\" ni mogoče najti"
 
-#: pluma/pluma-document.c:1139 pluma/pluma-document.c:1159
+#: pluma/pluma-document.c:1171 pluma/pluma-document.c:1191
 #, c-format
 msgid "Unsaved Document %d"
 msgstr "dokument %d"
 
 #: pluma/pluma-documents-panel.c:93 pluma/pluma-documents-panel.c:107
-#: pluma/pluma-window.c:2256 pluma/pluma-window.c:2261
+#: pluma/pluma-window.c:2260 pluma/pluma-window.c:2265
 msgid "Read-Only"
 msgstr "Le za branje"
 
-#: pluma/pluma-documents-panel.c:703 pluma/pluma-window.c:3677
+#: pluma/pluma-documents-panel.c:703 pluma/pluma-window.c:3683
 msgid "Documents"
 msgstr "Dokumenti"
 
@@ -1511,16 +1581,16 @@ msgstr "Tajski"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: pluma/pluma-encodings-combo-box.c:266
+#: pluma/pluma-encodings-combo-box.c:270
 msgid "Automatically Detected"
 msgstr "Samodejno zaznano"
 
-#: pluma/pluma-encodings-combo-box.c:282 pluma/pluma-encodings-combo-box.c:297
+#: pluma/pluma-encodings-combo-box.c:286 pluma/pluma-encodings-combo-box.c:301
 #, c-format
 msgid "Current Locale (%s)"
 msgstr "Trenutne jezikovne nastivitve (%s)"
 
-#: pluma/pluma-encodings-combo-box.c:347
+#: pluma/pluma-encodings-combo-box.c:353
 msgid "Add or Remove..."
 msgstr "Dodaj ali odstrani ..."
 
@@ -1528,28 +1598,28 @@ msgstr "Dodaj ali odstrani ..."
 msgid "All Text Files"
 msgstr "Vse datoteke z besedilom"
 
-#: pluma/pluma-file-chooser-dialog.c:78
+#: pluma/pluma-file-chooser-dialog.c:93
 msgid "C_haracter Encoding:"
 msgstr "_Kodni nabor znakov:"
 
-#: pluma/pluma-file-chooser-dialog.c:143
+#: pluma/pluma-file-chooser-dialog.c:158
 msgid "L_ine Ending:"
 msgstr "_Konec vrstice:"
 
-#: pluma/pluma-file-chooser-dialog.c:162
+#: pluma/pluma-file-chooser-dialog.c:177
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: pluma/pluma-file-chooser-dialog.c:168
+#: pluma/pluma-file-chooser-dialog.c:183
 msgid "Mac OS Classic"
 msgstr "Mac OS"
 
-#: pluma/pluma-file-chooser-dialog.c:174
+#: pluma/pluma-file-chooser-dialog.c:189
 msgid "Windows"
 msgstr "Okna"
 
-#: pluma/pluma-file-chooser-dialog.c:437
-#: plugins/filebrowser/pluma-file-browser-widget.c:808
+#: pluma/pluma-file-chooser-dialog.c:454
+#: plugins/filebrowser/pluma-file-browser-widget.c:799
 #: plugins/quickopen/quickopen/popup.py:37
 #: plugins/snippets/snippets/Manager.py:796
 msgid "_Open"
@@ -1749,12 +1819,12 @@ msgstr ""
 "želite vseeno urejati?"
 
 #: pluma/pluma-io-error-message-area.c:864
-#: pluma/pluma-io-error-message-area.c:960
+#: pluma/pluma-io-error-message-area.c:962
 msgid "S_ave Anyway"
 msgstr "_Vseeno shrani"
 
 #: pluma/pluma-io-error-message-area.c:868
-#: pluma/pluma-io-error-message-area.c:964
+#: pluma/pluma-io-error-message-area.c:966
 msgid "D_on't Save"
 msgstr "_Ne shrani"
 
@@ -1770,18 +1840,18 @@ msgstr ""
 "V primeru, da datoteko shranite, bodo vse zunanje spremembe izgubljene. Ali "
 "jo želite vseeno shraniti?"
 
-#: pluma/pluma-io-error-message-area.c:982
+#: pluma/pluma-io-error-message-area.c:989
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr "Ni mogoče ustvariti varnostne kopije datoteke med shranjevanjem %s"
 
-#: pluma/pluma-io-error-message-area.c:985
+#: pluma/pluma-io-error-message-area.c:992
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr ""
 "Ni mogoče ustvariti začasne varnostne kopije datoteke med shranjevanjem %s"
 
-#: pluma/pluma-io-error-message-area.c:1001
+#: pluma/pluma-io-error-message-area.c:1008
 msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
@@ -1793,7 +1863,7 @@ msgstr ""
 "Ali želite datoteko vseeno shraniti?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: pluma/pluma-io-error-message-area.c:1061
+#: pluma/pluma-io-error-message-area.c:1068
 #, c-format
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
@@ -1802,7 +1872,7 @@ msgstr ""
 "pluma ne more obravnavati mest %s v pisnem načinu. Preverite, ali ste "
 "pravilno vpisali mesto in poskusite ponovno."
 
-#: pluma/pluma-io-error-message-area.c:1069
+#: pluma/pluma-io-error-message-area.c:1076
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
@@ -1810,7 +1880,7 @@ msgstr ""
 "pluma ne more obravnavati tega mesta v pisnem načinu. Preverite, ali ste "
 "mesto pravilno vtipkali in poskusite znova."
 
-#: pluma/pluma-io-error-message-area.c:1078
+#: pluma/pluma-io-error-message-area.c:1085
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
@@ -1819,7 +1889,7 @@ msgstr ""
 "%s ni veljavno mesto. Preverite, ali ste mesto pravilno vtipkali in "
 "poskusite znova."
 
-#: pluma/pluma-io-error-message-area.c:1084
+#: pluma/pluma-io-error-message-area.c:1091
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
@@ -1827,7 +1897,7 @@ msgstr ""
 "Za shranjevanje datoteke nimate ustreznih dovoljenj. Preverite, ali ste "
 "pravilno vtipkali mesto in poskusite znova."
 
-#: pluma/pluma-io-error-message-area.c:1090
+#: pluma/pluma-io-error-message-area.c:1097
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
@@ -1835,7 +1905,7 @@ msgstr ""
 "Na disku ni dovolj prostora, da bi lahko shranili datoteko. Sprostite nekaj "
 "prostora na disku in poskusite znova."
 
-#: pluma/pluma-io-error-message-area.c:1095
+#: pluma/pluma-io-error-message-area.c:1102
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
@@ -1843,11 +1913,11 @@ msgstr ""
 "Datoteko poskušate shraniti na disk, ki je le za branje. Preverite, ali je "
 "mesto pravilno vpisano in poskusite znova."
 
-#: pluma/pluma-io-error-message-area.c:1101
+#: pluma/pluma-io-error-message-area.c:1108
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Datoteka z enakim imenom že obstaja. Uporabite drugo ime."
 
-#: pluma/pluma-io-error-message-area.c:1106
+#: pluma/pluma-io-error-message-area.c:1113
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
@@ -1855,7 +1925,7 @@ msgstr ""
 "Disk, na katerega želite shraniti datoteko, ima omejitev dolžine imen "
 "datotek. Uporabite krajše ime."
 
-#: pluma/pluma-io-error-message-area.c:1113
+#: pluma/pluma-io-error-message-area.c:1120
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
@@ -1865,25 +1935,25 @@ msgstr ""
 "Poskušajte shraniti manjšo datoteko ali pa jo shranite na disk, ki nima "
 "takšnih omejitev."
 
-#: pluma/pluma-io-error-message-area.c:1129
+#: pluma/pluma-io-error-message-area.c:1136
 #, c-format
 msgid "Could not save the file %s."
 msgstr "Ni mogoče shraniti datoteke %s."
 
-#: pluma/pluma-io-error-message-area.c:1173
+#: pluma/pluma-io-error-message-area.c:1180
 #, c-format
 msgid "The file %s changed on disk."
 msgstr "Datoteka %s se je spremenila na disku."
 
-#: pluma/pluma-io-error-message-area.c:1178
+#: pluma/pluma-io-error-message-area.c:1185
 msgid "Do you want to drop your changes and reload the file?"
 msgstr "Ali želite zavreči spremembe in ponovno naložiti datoteko?"
 
-#: pluma/pluma-io-error-message-area.c:1180
+#: pluma/pluma-io-error-message-area.c:1187
 msgid "Do you want to reload the file?"
 msgstr "Ali želite ponovno naložiti datoteko?"
 
-#: pluma/pluma-io-error-message-area.c:1185
+#: pluma/pluma-io-error-message-area.c:1192
 msgid "_Reload"
 msgstr "_Ponovno naloži"
 
@@ -1895,22 +1965,22 @@ msgstr "Prazno"
 msgid "Hide panel"
 msgstr "Skrij pladenj"
 
-#: pluma/pluma-print-job.c:538
+#: pluma/pluma-print-job.c:559
 #, c-format
 msgid "File: %s"
 msgstr "Datoteka: %s"
 
-#: pluma/pluma-print-job.c:547
+#: pluma/pluma-print-job.c:568
 msgid "Page %N of %Q"
 msgstr "Stran %N od %Q"
 
-#: pluma/pluma-print-job.c:804
+#: pluma/pluma-print-job.c:827
 msgid "Preparing..."
 msgstr "Pripravljanje ..."
 
 #: pluma/pluma-print-preferences.ui:15
 msgid "window1"
-msgstr ""
+msgstr "okno1"
 
 #: pluma/pluma-print-preferences.ui:39
 msgid "Syntax Highlighting"
@@ -1919,6 +1989,10 @@ msgstr "Poudarjanje skladnje"
 #: pluma/pluma-print-preferences.ui:52
 msgid "Print synta_x highlighting"
 msgstr "Natisni poudarjanje _skladnje"
+
+#: pluma/pluma-print-preferences.ui:85
+msgid "Line Numbers"
+msgstr "Številke vrstic"
 
 #: pluma/pluma-print-preferences.ui:105
 msgid "Print line nu_mbers"
@@ -2059,79 +2133,79 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: pluma/pluma-style-scheme-manager.c:213
+#: pluma/pluma-style-scheme-manager.c:212
 #, c-format
 msgid "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
 msgstr "Mape '%s' ni mogoče ustvariti: g_mkdir_with_parents() napaka: %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: pluma/pluma-tab.c:669
+#: pluma/pluma-tab.c:683
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Povrnitev datoteke %s iz %s"
 
-#: pluma/pluma-tab.c:676
+#: pluma/pluma-tab.c:690
 #, c-format
 msgid "Reverting %s"
 msgstr "Povrnitev %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: pluma/pluma-tab.c:692
+#: pluma/pluma-tab.c:706
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Nalaganje datoteke %s iz %s"
 
-#: pluma/pluma-tab.c:699
+#: pluma/pluma-tab.c:713
 #, c-format
 msgid "Loading %s"
 msgstr "Nalaganje %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: pluma/pluma-tab.c:782
+#: pluma/pluma-tab.c:796
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Shranjevanje datoteke %s v %s"
 
-#: pluma/pluma-tab.c:789
+#: pluma/pluma-tab.c:803
 #, c-format
 msgid "Saving %s"
 msgstr "Shranjevanje %s"
 
-#: pluma/pluma-tab.c:1665
+#: pluma/pluma-tab.c:1724
 msgid "RO"
 msgstr "Le beri"
 
-#: pluma/pluma-tab.c:1712
+#: pluma/pluma-tab.c:1771
 #, c-format
 msgid "Error opening file %s"
 msgstr "Napaka med odpiranjem datoteke %s"
 
-#: pluma/pluma-tab.c:1717
+#: pluma/pluma-tab.c:1776
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Napaka med povračanjem datoteke %s"
 
-#: pluma/pluma-tab.c:1722
+#: pluma/pluma-tab.c:1781
 #, c-format
 msgid "Error saving file %s"
 msgstr "Napaka med shranjevanjem datoteke %s"
 
-#: pluma/pluma-tab.c:1743
+#: pluma/pluma-tab.c:1802
 msgid "Unicode (UTF-8)"
 msgstr "Unicode (UTF-8)"
 
-#: pluma/pluma-tab.c:1750
+#: pluma/pluma-tab.c:1809
 msgid "Name:"
 msgstr "Ime:"
 
-#: pluma/pluma-tab.c:1751
+#: pluma/pluma-tab.c:1810
 msgid "MIME Type:"
 msgstr "Vrsta MIME:"
 
-#: pluma/pluma-tab.c:1752
+#: pluma/pluma-tab.c:1811
 msgid "Encoding:"
 msgstr "Nabor znakov:"
 
@@ -2175,7 +2249,7 @@ msgstr "Ustvari nov dokument"
 msgid "_Open..."
 msgstr "_Odpri ..."
 
-#: pluma/pluma-ui.h:59 pluma/pluma-window.c:1453
+#: pluma/pluma-ui.h:59 pluma/pluma-window.c:1475
 msgid "Open a file"
 msgstr "Odpri datoteko"
 
@@ -2205,7 +2279,7 @@ msgstr "O programu"
 
 #: pluma/pluma-ui.h:72
 msgid "_Leave Fullscreen"
-msgstr ""
+msgstr "Zapusti celozaslonski način"
 
 #: pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
@@ -2284,7 +2358,7 @@ msgid "Paste the clipboard"
 msgstr "Prilepi iz odložišča"
 
 #: pluma/pluma-ui.h:102 plugins/filebrowser/pluma-file-browser-utils.c:182
-#: plugins/filebrowser/pluma-file-browser-widget.c:801
+#: plugins/filebrowser/pluma-file-browser-widget.c:792
 msgid "_Delete"
 msgstr "_Izbriši"
 
@@ -2300,191 +2374,227 @@ msgstr "Izberi _vse"
 msgid "Select the entire document"
 msgstr "Izberi celoten dokument"
 
+#: pluma/pluma-ui.h:106
+msgid "C_hange Case"
+msgstr "Spreme_ni velikost črk"
+
+#: pluma/pluma-ui.h:107
+msgid "All _Upper Case"
+msgstr "Vse _velike črke"
+
 #: pluma/pluma-ui.h:108
+msgid "Change selected text to upper case"
+msgstr "Spremeni izbrano besedilo v velike črke"
+
+#: pluma/pluma-ui.h:109
+msgid "All _Lower Case"
+msgstr "Vse _male črke"
+
+#: pluma/pluma-ui.h:110
+msgid "Change selected text to lower case"
+msgstr "Spremeni izbrano besedilo v male črke"
+
+#: pluma/pluma-ui.h:111
+msgid "_Invert Case"
+msgstr "_Obrni velikost črk"
+
+#: pluma/pluma-ui.h:112
+msgid "Invert the case of selected text"
+msgstr "Obrni velikost črk v izbranem besedilu"
+
+#: pluma/pluma-ui.h:113
+msgid "_Title Case"
+msgstr "_Velike prve črke besed"
+
+#: pluma/pluma-ui.h:114
+msgid "Capitalize the first letter of each selected word"
+msgstr "Naj bo prva črka vsake besede velika"
+
+#: pluma/pluma-ui.h:117
 msgid "_Highlight Mode"
 msgstr "Način _poudarjanja"
 
-#: pluma/pluma-ui.h:111
+#: pluma/pluma-ui.h:120
 msgid "_Find..."
 msgstr "_Najdi ..."
 
-#: pluma/pluma-ui.h:112
+#: pluma/pluma-ui.h:121
 msgid "Search for text"
 msgstr "Poišči besedilo"
 
-#: pluma/pluma-ui.h:113
+#: pluma/pluma-ui.h:122
 msgid "Find Ne_xt"
 msgstr "Najdi naslednje"
 
-#: pluma/pluma-ui.h:114
+#: pluma/pluma-ui.h:123
 msgid "Search forwards for the same text"
 msgstr "Poišči niz naprej po besedilu"
 
-#: pluma/pluma-ui.h:115
+#: pluma/pluma-ui.h:124
 msgid "Find Pre_vious"
 msgstr "Najdi _predhodne"
 
-#: pluma/pluma-ui.h:116
+#: pluma/pluma-ui.h:125
 msgid "Search backwards for the same text"
 msgstr "Niz poišči nazaj po besedilu"
 
-#: pluma/pluma-ui.h:117
+#: pluma/pluma-ui.h:126
 msgid "_Replace..."
 msgstr "_Zamenjaj ..."
 
-#: pluma/pluma-ui.h:118
+#: pluma/pluma-ui.h:127
 msgid "Search for and replace text"
 msgstr "Poišči in zamenjaj besedilo"
 
-#: pluma/pluma-ui.h:119
+#: pluma/pluma-ui.h:128
 msgid "_Clear Highlight"
 msgstr "_Počisti poudarjanje"
 
-#: pluma/pluma-ui.h:120
+#: pluma/pluma-ui.h:129
 msgid "Clear highlighting of search matches"
 msgstr "Počisti poudarjanje iskanih zadetkov"
 
-#: pluma/pluma-ui.h:121
+#: pluma/pluma-ui.h:130
 msgid "Go to _Line..."
 msgstr "Skoči v _vrstico ..."
 
-#: pluma/pluma-ui.h:122
+#: pluma/pluma-ui.h:131
 msgid "Go to a specific line"
 msgstr "Pojdi na določeno vrstico"
 
-#: pluma/pluma-ui.h:123
+#: pluma/pluma-ui.h:132
 msgid "_Incremental Search..."
 msgstr "_Postopno iskanje ..."
 
-#: pluma/pluma-ui.h:124
+#: pluma/pluma-ui.h:133
 msgid "Incrementally search for text"
 msgstr "Postopno iskanje besedila"
 
-#: pluma/pluma-ui.h:127
+#: pluma/pluma-ui.h:136
 msgid "_Save All"
 msgstr "Shrani _vse"
 
-#: pluma/pluma-ui.h:128
+#: pluma/pluma-ui.h:137
 msgid "Save all open files"
 msgstr "Shrani vse odprte datoteke"
 
-#: pluma/pluma-ui.h:129
+#: pluma/pluma-ui.h:138
 msgid "_Close All"
 msgstr "Zapri _vse"
 
-#: pluma/pluma-ui.h:130
+#: pluma/pluma-ui.h:139
 msgid "Close all open files"
 msgstr "Zapri vse odprte datoteke"
 
-#: pluma/pluma-ui.h:131
+#: pluma/pluma-ui.h:140
 msgid "_Previous Document"
 msgstr "_Predhodni dokument"
 
-#: pluma/pluma-ui.h:132
+#: pluma/pluma-ui.h:141
 msgid "Activate previous document"
 msgstr "Pokaži prejšnji dokument"
 
-#: pluma/pluma-ui.h:133
+#: pluma/pluma-ui.h:142
 msgid "_Next Document"
 msgstr "N_aslednji dokument"
 
-#: pluma/pluma-ui.h:134
+#: pluma/pluma-ui.h:143
 msgid "Activate next document"
 msgstr "Pokaži naslednji dokument"
 
-#: pluma/pluma-ui.h:135
+#: pluma/pluma-ui.h:144
 msgid "_Move to New Window"
 msgstr "_Prestavi na naslednje okno"
 
-#: pluma/pluma-ui.h:136
+#: pluma/pluma-ui.h:145
 msgid "Move the current document to a new window"
 msgstr "Prestavi trenutni dokument v novo okno"
 
-#: pluma/pluma-ui.h:143
+#: pluma/pluma-ui.h:152
 msgid "Close the current file"
 msgstr "Zapri trenutno datoteko"
 
-#: pluma/pluma-ui.h:149
+#: pluma/pluma-ui.h:158
 msgid "_Quit"
 msgstr "_Končaj"
 
-#: pluma/pluma-ui.h:150
+#: pluma/pluma-ui.h:159
 msgid "Quit the program"
 msgstr "Končaj program"
 
-#: pluma/pluma-ui.h:155
+#: pluma/pluma-ui.h:164
 msgid "_Toolbar"
 msgstr "_Orodna vrstica"
 
-#: pluma/pluma-ui.h:156
+#: pluma/pluma-ui.h:165
 msgid "Show or hide the toolbar in the current window"
 msgstr "Pokaži ali skrij orodno vrstico v trenutnem oknu"
 
-#: pluma/pluma-ui.h:158
+#: pluma/pluma-ui.h:167
 msgid "_Statusbar"
 msgstr "_Vrstica stanja"
 
-#: pluma/pluma-ui.h:159
+#: pluma/pluma-ui.h:168
 msgid "Show or hide the statusbar in the current window"
 msgstr "Pokaži ali skrij vrstico stanja v trenutnem oknu"
 
-#: pluma/pluma-ui.h:161
+#: pluma/pluma-ui.h:170
 msgid "_Fullscreen"
 msgstr "_Celozaslonski način"
 
-#: pluma/pluma-ui.h:162
+#: pluma/pluma-ui.h:171
 msgid "Edit text in fullscreen"
 msgstr "Urejaj v celozaslonskem načinu"
 
-#: pluma/pluma-ui.h:169
+#: pluma/pluma-ui.h:178
 msgid "Side _Pane"
 msgstr "_Stranski pladenj"
 
-#: pluma/pluma-ui.h:170
+#: pluma/pluma-ui.h:179
 msgid "Show or hide the side pane in the current window"
 msgstr "Pokaži ali skrij stranski pladenj v trenutnem oknu"
 
-#: pluma/pluma-ui.h:172
+#: pluma/pluma-ui.h:181
 msgid "_Bottom Pane"
 msgstr "_Spodnji pladenj"
 
-#: pluma/pluma-ui.h:173
+#: pluma/pluma-ui.h:182
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Pokaži ali skrij spodnji pladenj v trenutnem oknu"
 
-#: pluma/pluma-utils.c:1074
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Preverite namestitev."
 
-#: pluma/pluma-utils.c:1147
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "Ni mogoče odpreti vmesniške datoteke %s. Napaka: %s"
 
-#: pluma/pluma-utils.c:1167
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "Ni mogoče najti predmeta '%s' v datoteki %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1327
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ na %s"
 
-#: pluma/pluma-view.c:1423
+#: pluma/pluma-view.c:1494
 msgid "_Wrap Around"
 msgstr "_Prelomi vrstice"
 
-#: pluma/pluma-view.c:1433
+#: pluma/pluma-view.c:1504
 msgid "Match _Entire Word Only"
 msgstr "Poišči le _cele besede"
 
-#: pluma/pluma-view.c:1443
+#: pluma/pluma-view.c:1514
 msgid "_Match Case"
 msgstr "_Upoštevaj velikost črk"
 
-#: pluma/pluma-view.c:1453
+#: pluma/pluma-view.c:1524
 msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
@@ -2492,22 +2602,22 @@ msgstr ""
 "_Razčleni ubežna zaporedja (npr.\n"
 ")"
 
-#: pluma/pluma-view.c:1567
+#: pluma/pluma-view.c:1638
 msgid "String you want to search for"
 msgstr "Niz, ki ga želite poiskati"
 
-#: pluma/pluma-view.c:1576
+#: pluma/pluma-view.c:1647
 msgid "Line you want to move the cursor to"
 msgstr "Vrstica, na katero želite premakniti kazalec"
 
-#: pluma/pluma-window.c:1012
+#: pluma/pluma-window.c:1032
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Uporabi način poudarjanje %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1069 pluma/pluma-window.c:1957
+#: pluma/pluma-window.c:1089 pluma/pluma-window.c:1979
 #: plugins/externaltools/tools/manager.py:108
 #: plugins/externaltools/tools/manager.py:308
 #: plugins/externaltools/tools/manager.py:424
@@ -2515,89 +2625,45 @@ msgstr "Uporabi način poudarjanje %s"
 msgid "Plain Text"
 msgstr "Običajno besedilo"
 
-#: pluma/pluma-window.c:1070
+#: pluma/pluma-window.c:1090
 msgid "Disable syntax highlighting"
 msgstr "Onemogoči poudarjanje skladnje"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1352
+#: pluma/pluma-window.c:1372
 #, c-format
 msgid "Open '%s'"
 msgstr "Odpri '%s'"
 
-#: pluma/pluma-window.c:1459
+#: pluma/pluma-window.c:1481
 msgid "Open a recently used file"
 msgstr "Odpri nedavno uporabljeno datoteko"
 
-#: pluma/pluma-window.c:1465
+#: pluma/pluma-window.c:1487
 msgid "Open"
 msgstr "Odpri"
 
-#: pluma/pluma-window.c:1523
+#: pluma/pluma-window.c:1545
 msgid "Save"
 msgstr "Shrani"
 
-#: pluma/pluma-window.c:1525
+#: pluma/pluma-window.c:1547
 msgid "Print"
 msgstr "Natisni"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1682
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "Pokaži \"%s\""
 
-#: pluma/pluma-window.c:1935
+#: pluma/pluma-window.c:1957
 msgid "Use Spaces"
 msgstr "Uporabi presledke"
 
-#: pluma/pluma-window.c:2006
+#: pluma/pluma-window.c:2028
 msgid "Tab Width"
 msgstr "Širina tabulatorja"
-
-#: plugins/changecase/changecase.plugin.desktop.in:5
-msgid "Change Case"
-msgstr "Spremeni velikost črk"
-
-#: plugins/changecase/changecase.plugin.desktop.in:6
-msgid "Changes the case of selected text."
-msgstr "Spremeni velikost črk izbranega besedila."
-
-#: plugins/changecase/pluma-changecase-plugin.c:243
-msgid "C_hange Case"
-msgstr "Spreme_ni velikost črk"
-
-#: plugins/changecase/pluma-changecase-plugin.c:244
-msgid "All _Upper Case"
-msgstr "Vse _velike črke"
-
-#: plugins/changecase/pluma-changecase-plugin.c:245
-msgid "Change selected text to upper case"
-msgstr "Spremeni izbrano besedilo v velike črke"
-
-#: plugins/changecase/pluma-changecase-plugin.c:247
-msgid "All _Lower Case"
-msgstr "Vse _male črke"
-
-#: plugins/changecase/pluma-changecase-plugin.c:248
-msgid "Change selected text to lower case"
-msgstr "Spremeni izbrano besedilo v male črke"
-
-#: plugins/changecase/pluma-changecase-plugin.c:250
-msgid "_Invert Case"
-msgstr "_Obrni velikost črk"
-
-#: plugins/changecase/pluma-changecase-plugin.c:251
-msgid "Invert the case of selected text"
-msgstr "Obrni velikost črk v izbranem besedilu"
-
-#: plugins/changecase/pluma-changecase-plugin.c:253
-msgid "_Title Case"
-msgstr "_Velike prve črke besed"
-
-#: plugins/changecase/pluma-changecase-plugin.c:254
-msgid "Capitalize the first letter of each selected word"
-msgstr "Naj bo prva črka vsake besede velika"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5 plugins/docinfo/docinfo.ui:19
 msgid "Document Statistics"
@@ -2618,6 +2684,12 @@ msgstr "Poso_dobi"
 #: plugins/docinfo/docinfo.ui:84
 msgid "File Name"
 msgstr "Ime datoteke"
+
+#: plugins/docinfo/docinfo.ui:106 plugins/time/pluma-time-dialog.ui:166
+#: plugins/time/pluma-time-setup-dialog.ui:125
+#: plugins/time/pluma-time-setup-dialog.ui:188
+msgid "    "
+msgstr "    "
 
 #: plugins/docinfo/docinfo.ui:127
 msgid "Bytes"
@@ -2889,12 +2961,6 @@ msgstr "Pladenj pregledovalnika datotek"
 msgid "Easy file access from the side pane"
 msgstr "Enostaven dostop do datotek iz stranskega pladnja"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Nastavi mesto na prvi dokument"
@@ -3071,11 +3137,11 @@ msgstr "Ali ste prepričani, da želite trajno izbrisati izbrane datoteke?"
 msgid "If you delete an item, it is permanently lost."
 msgstr "V kolikor predmet izbrišete, bo trajno izgubljen."
 
-#: plugins/filebrowser/pluma-file-browser-store.c:1662
+#: plugins/filebrowser/pluma-file-browser-store.c:1654
 msgid "(Empty)"
 msgstr "(Prazno)"
 
-#: plugins/filebrowser/pluma-file-browser-store.c:3218
+#: plugins/filebrowser/pluma-file-browser-store.c:3210
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3085,11 +3151,11 @@ msgstr ""
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
-#: plugins/filebrowser/pluma-file-browser-store.c:3475
+#: plugins/filebrowser/pluma-file-browser-store.c:3465
 msgid "file"
 msgstr "datoteka"
 
-#: plugins/filebrowser/pluma-file-browser-store.c:3499
+#: plugins/filebrowser/pluma-file-browser-store.c:3489
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3099,11 +3165,11 @@ msgstr ""
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
-#: plugins/filebrowser/pluma-file-browser-store.c:3528
+#: plugins/filebrowser/pluma-file-browser-store.c:3518
 msgid "directory"
 msgstr "mapa"
 
-#: plugins/filebrowser/pluma-file-browser-store.c:3548
+#: plugins/filebrowser/pluma-file-browser-store.c:3538
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3111,150 +3177,150 @@ msgstr ""
 "Nova mapa je zaradi filtriranja trenutno nevidna. Nastaviti morate "
 "nastavitve filtriranja, da bo mapa spet postala vidna."
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:712
+#: plugins/filebrowser/pluma-file-browser-widget.c:703
 msgid "Bookmarks"
 msgstr "Zaznamki"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:793
+#: plugins/filebrowser/pluma-file-browser-widget.c:784
 msgid "_Filter"
 msgstr "_Filter"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:798
+#: plugins/filebrowser/pluma-file-browser-widget.c:789
 msgid "_Move to Trash"
 msgstr "Premakni v _smeti"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:799
+#: plugins/filebrowser/pluma-file-browser-widget.c:790
 msgid "Move selected file or folder to trash"
 msgstr "Premakne izbrano datoteko ali mapo v smeti"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:802
+#: plugins/filebrowser/pluma-file-browser-widget.c:793
 msgid "Delete selected file or folder"
 msgstr "Izbriše izbrano datoteko ali mapo"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:809
+#: plugins/filebrowser/pluma-file-browser-widget.c:800
 msgid "Open selected file"
 msgstr "Odpri izbrano datoteko"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:815
+#: plugins/filebrowser/pluma-file-browser-widget.c:806
 msgid "Up"
 msgstr "Gor"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:816
+#: plugins/filebrowser/pluma-file-browser-widget.c:807
 msgid "Open the parent folder"
 msgstr "Odpri nadrejeno mapo"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:821
+#: plugins/filebrowser/pluma-file-browser-widget.c:812
 msgid "_New Folder"
 msgstr "Nova _mapa"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:822
+#: plugins/filebrowser/pluma-file-browser-widget.c:813
 msgid "Add new empty folder"
 msgstr "Doda novo prazno mapo"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:824
+#: plugins/filebrowser/pluma-file-browser-widget.c:815
 msgid "New F_ile"
 msgstr "Nova _datoteka"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:825
+#: plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "Add new empty file"
 msgstr "Doda novo prazno datoteko"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:830
+#: plugins/filebrowser/pluma-file-browser-widget.c:821
 msgid "_Rename"
 msgstr "P_reimenuj"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:831
+#: plugins/filebrowser/pluma-file-browser-widget.c:822
 msgid "Rename selected file or folder"
 msgstr "Preimenuje izbrano datoteko ali mapo"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:837
+#: plugins/filebrowser/pluma-file-browser-widget.c:828
 msgid "_Previous Location"
 msgstr "_Prejšnje mesto"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:839
+#: plugins/filebrowser/pluma-file-browser-widget.c:830
 msgid "Go to the previous visited location"
 msgstr "Pojdi na predhodno obiskano mesto"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:841
+#: plugins/filebrowser/pluma-file-browser-widget.c:832
 msgid "_Next Location"
 msgstr "_Naslednje mesto"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:842
+#: plugins/filebrowser/pluma-file-browser-widget.c:833
 msgid "Go to the next visited location"
 msgstr "Pojdi na naslednje obiskano mesto"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:843
+#: plugins/filebrowser/pluma-file-browser-widget.c:834
 msgid "Re_fresh View"
 msgstr "O_sveži pogled"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:844
+#: plugins/filebrowser/pluma-file-browser-widget.c:835
 msgid "Refresh the view"
 msgstr "Osveži pogled"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:845
-#: plugins/filebrowser/pluma-file-browser-widget.c:863
+#: plugins/filebrowser/pluma-file-browser-widget.c:836
+#: plugins/filebrowser/pluma-file-browser-widget.c:854
 msgid "_View Folder"
 msgstr "_Poglej mapo"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:846
-#: plugins/filebrowser/pluma-file-browser-widget.c:864
+#: plugins/filebrowser/pluma-file-browser-widget.c:837
+#: plugins/filebrowser/pluma-file-browser-widget.c:855
 msgid "View folder in file manager"
 msgstr "Pogled mape v upravljalniku datotek"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:853
+#: plugins/filebrowser/pluma-file-browser-widget.c:844
 msgid "Show _Hidden"
 msgstr "Pokaži _skrite"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:854
+#: plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "Show hidden files and folders"
 msgstr "Pokaže skrite datoteke in mape"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:856
+#: plugins/filebrowser/pluma-file-browser-widget.c:847
 msgid "Show _Binary"
 msgstr "Pokaži _binarne"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:857
+#: plugins/filebrowser/pluma-file-browser-widget.c:848
 msgid "Show binary files"
 msgstr "Pokaži binarne datoteke"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:990
-#: plugins/filebrowser/pluma-file-browser-widget.c:1003
-#: plugins/filebrowser/pluma-file-browser-widget.c:1029
+#: plugins/filebrowser/pluma-file-browser-widget.c:981
+#: plugins/filebrowser/pluma-file-browser-widget.c:994
+#: plugins/filebrowser/pluma-file-browser-widget.c:1020
 msgid "Previous location"
 msgstr "Prejšnje mesto"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:996
+#: plugins/filebrowser/pluma-file-browser-widget.c:987
 msgid "Go to previous location"
 msgstr "Pojdi na prejšnje mesto"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:998
-#: plugins/filebrowser/pluma-file-browser-widget.c:1024
+#: plugins/filebrowser/pluma-file-browser-widget.c:989
+#: plugins/filebrowser/pluma-file-browser-widget.c:1015
 msgid "Go to a previously opened location"
 msgstr "Pojdi na prej odprto mesto"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:1016
+#: plugins/filebrowser/pluma-file-browser-widget.c:1007
 msgid "Next location"
 msgstr "Naslednje mesto"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:1022
+#: plugins/filebrowser/pluma-file-browser-widget.c:1013
 msgid "Go to next location"
 msgstr "Pojdi na naslednje mesto"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:1234
+#: plugins/filebrowser/pluma-file-browser-widget.c:1225
 msgid "_Match Filename"
 msgstr "_Skladanje imen datotek"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:2135
+#: plugins/filebrowser/pluma-file-browser-widget.c:2122
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "Ni priklopnega predmeta za priklopljen pogon: %s"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:2215
+#: plugins/filebrowser/pluma-file-browser-widget.c:2201
 #, c-format
 msgid "Could not open media: %s"
 msgstr "Ni mogoče odpreti medija: %s"
 
-#: plugins/filebrowser/pluma-file-browser-widget.c:2262
+#: plugins/filebrowser/pluma-file-browser-widget.c:2248
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "Ni mogoče priklopiti pogona: %s"
@@ -3276,12 +3342,6 @@ msgstr "Konzola python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Vzajemna konzola python v spodnjem pladnju"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr ""
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "Barva _napake:"
@@ -3292,11 +3352,11 @@ msgstr "Barva _ukaza:"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
-msgstr ""
+msgstr "Uporabi sistemsko pisavo s fiksno širino"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
-msgstr ""
+msgstr "Pisava:"
 
 #: plugins/quickopen/quickopen/popup.py:32
 #: plugins/quickopen/quickopen.plugin.desktop.in:6
@@ -3314,12 +3374,6 @@ msgstr "Hitro odpiranje dokumentov"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Hitro odpiranje datotek"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr ""
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3562,12 +3616,6 @@ msgstr "Razvrsti"
 msgid "Sorts a document or selected text."
 msgstr "Razvrsti izbran dokument ali besedilo."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr ""
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_Razvrsti"
@@ -3594,7 +3642,7 @@ msgstr "Dejanja razvrščanja ni mogoče razveljaviti"
 
 #: plugins/spell/org.mate.pluma.plugins.spell.gschema.xml.in:11
 msgid "Autocheck Type"
-msgstr ""
+msgstr "Samodejno preveri vrsto"
 
 #. Translators: Displayed in the "Check Spelling" dialog if there are no
 #. suggestions for the current misspelled word
@@ -3602,7 +3650,7 @@ msgstr ""
 #. suggestions
 #. * for the current misspelled word
 #: plugins/spell/pluma-automatic-spell-checker.c:420
-#: plugins/spell/pluma-spell-checker-dialog.c:458
+#: plugins/spell/pluma-spell-checker-dialog.c:451
 msgid "(no suggested words)"
 msgstr "(ni predlaganih besed)"
 
@@ -3618,21 +3666,21 @@ msgstr "_Prezri vse"
 msgid "_Spelling Suggestions..."
 msgstr "Črkovalni _predlogi ..."
 
-#: plugins/spell/pluma-spell-checker-dialog.c:270
+#: plugins/spell/pluma-spell-checker-dialog.c:264
 msgid "Check Spelling"
 msgstr "Preveri črkovanje"
 
-#: plugins/spell/pluma-spell-checker-dialog.c:281
+#: plugins/spell/pluma-spell-checker-dialog.c:275
 msgid "Suggestions"
 msgstr "Predlogi"
 
 #. Translators: Displayed in the "Check Spelling" dialog if the current word
 #. isn't misspelled
-#: plugins/spell/pluma-spell-checker-dialog.c:565
+#: plugins/spell/pluma-spell-checker-dialog.c:558
 msgid "(correct spelling)"
 msgstr "(pravilno črkovanje)"
 
-#: plugins/spell/pluma-spell-checker-dialog.c:712
+#: plugins/spell/pluma-spell-checker-dialog.c:704
 msgid "Completed spell checking"
 msgstr "Preverjanje črkovanja je končano"
 
@@ -3670,35 +3718,35 @@ msgstr "Nastavitev jezika"
 msgid "Languages"
 msgstr "Jeziki"
 
-#: plugins/spell/pluma-spell-plugin.c:97
+#: plugins/spell/pluma-spell-plugin.c:96
 msgid "_Check Spelling..."
 msgstr "_Preveri črkovanje ..."
 
-#: plugins/spell/pluma-spell-plugin.c:99
+#: plugins/spell/pluma-spell-plugin.c:98
 msgid "Check the current document for incorrect spelling"
 msgstr "Preveri pravilnost črkovanja v trenutnem dokumentu ..."
 
-#: plugins/spell/pluma-spell-plugin.c:105
+#: plugins/spell/pluma-spell-plugin.c:104
 msgid "Set _Language..."
 msgstr "Nastavi _jezik ..."
 
-#: plugins/spell/pluma-spell-plugin.c:107
+#: plugins/spell/pluma-spell-plugin.c:106
 msgid "Set the language of the current document"
 msgstr "Nastavi jezik trenutnega dokumenta"
 
-#: plugins/spell/pluma-spell-plugin.c:116
+#: plugins/spell/pluma-spell-plugin.c:115
 msgid "_Autocheck Spelling"
 msgstr "_Samodejno preveri črkovanje"
 
-#: plugins/spell/pluma-spell-plugin.c:118
+#: plugins/spell/pluma-spell-plugin.c:117
 msgid "Automatically spell-check the current document"
 msgstr "Samodejno preverjaj črkovanje trenutnega dokumenta"
 
-#: plugins/spell/pluma-spell-plugin.c:918
+#: plugins/spell/pluma-spell-plugin.c:917
 msgid "The document is empty."
 msgstr "Dokument je prazen."
 
-#: plugins/spell/pluma-spell-plugin.c:943
+#: plugins/spell/pluma-spell-plugin.c:942
 msgid "No misspelled words"
 msgstr "Ni napačno črkovanih besed"
 
@@ -3764,23 +3812,23 @@ msgstr "Jezik"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:23
 msgid "_Configure Spell Checker plugin..."
-msgstr ""
+msgstr "_Nastavitve vtičnika črkovalnika"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:103
 msgid "Autocheck spelling on document load..."
-msgstr ""
+msgstr "Samodejno preverjanje črkovanja ob nalaganju dokumenta..."
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:116
 msgid "_Never autocheck"
-msgstr ""
+msgstr "_Brez samodejnega preverjanja"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:133
 msgid "_Remember autocheck by document"
-msgstr ""
+msgstr "_Zapomni si samodejno preverjanje po dokumentu"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:151
 msgid "_Always autocheck"
-msgstr ""
+msgstr "Vedno s_amodejno preveri"
 
 #: plugins/spell/spell.plugin.desktop.in:5
 msgid "Spell Checker"
@@ -3789,12 +3837,6 @@ msgstr "Črkovalnik"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Preveri črkovanje trenutnega dokumenta."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr ""
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -4961,15 +5003,15 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2275
 msgid "&quot;"
-msgstr ""
+msgstr "&citat;"
 
 #: plugins/taglist/HTML.tags.xml.in:2279
 msgid "&amp;"
-msgstr ""
+msgstr "&amp;"
 
 #: plugins/taglist/HTML.tags.xml.in:2283
 msgid "¡"
-msgstr ""
+msgstr "¡"
 
 #: plugins/taglist/HTML.tags.xml.in:2287
 msgid "¦"
@@ -4977,55 +5019,55 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2291
 msgid "¨"
-msgstr ""
+msgstr "¨"
 
 #: plugins/taglist/HTML.tags.xml.in:2295
 msgid "¯"
-msgstr ""
+msgstr "¯"
 
 #: plugins/taglist/HTML.tags.xml.in:2299
 msgid "´"
-msgstr ""
+msgstr "´"
 
 #: plugins/taglist/HTML.tags.xml.in:2303
 msgid "¸"
-msgstr ""
+msgstr "¸"
 
 #: plugins/taglist/HTML.tags.xml.in:2307
 msgid "&lt;"
-msgstr ""
+msgstr "&lt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2311
 msgid "&gt;"
-msgstr ""
+msgstr "&gt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2315
 msgid "±"
-msgstr ""
+msgstr "±"
 
 #: plugins/taglist/HTML.tags.xml.in:2319
 msgid "«"
-msgstr ""
+msgstr "«"
 
 #: plugins/taglist/HTML.tags.xml.in:2323
 msgid "»"
-msgstr ""
+msgstr "»"
 
 #: plugins/taglist/HTML.tags.xml.in:2327
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: plugins/taglist/HTML.tags.xml.in:2331
 msgid "÷"
-msgstr ""
+msgstr "÷"
 
 #: plugins/taglist/HTML.tags.xml.in:2335
 msgid "¢"
-msgstr ""
+msgstr "¢"
 
 #: plugins/taglist/HTML.tags.xml.in:2339
 msgid "£"
-msgstr ""
+msgstr "£"
 
 #: plugins/taglist/HTML.tags.xml.in:2343
 msgid "€"
@@ -5037,7 +5079,7 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2351
 msgid "¥"
-msgstr ""
+msgstr "¥"
 
 #: plugins/taglist/HTML.tags.xml.in:2355
 msgid "§"
@@ -5061,11 +5103,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2375
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #: plugins/taglist/HTML.tags.xml.in:2379
 msgid "µ"
-msgstr ""
+msgstr "µ"
 
 #: plugins/taglist/HTML.tags.xml.in:2383
 msgid "¶"
@@ -5081,11 +5123,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2395
 msgid "½"
-msgstr ""
+msgstr "½"
 
 #: plugins/taglist/HTML.tags.xml.in:2399
 msgid "¾"
-msgstr ""
+msgstr "¾"
 
 #: plugins/taglist/HTML.tags.xml.in:2403
 msgid "¹"
@@ -5105,19 +5147,19 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2419
 msgid "Á"
-msgstr ""
+msgstr "Á"
 
 #: plugins/taglist/HTML.tags.xml.in:2423
 msgid "â"
-msgstr ""
+msgstr "â"
 
 #: plugins/taglist/HTML.tags.xml.in:2427
 msgid "Â"
-msgstr ""
+msgstr "Â"
 
 #: plugins/taglist/HTML.tags.xml.in:2431
 msgid "à"
-msgstr ""
+msgstr "à"
 
 #: plugins/taglist/HTML.tags.xml.in:2435
 msgid "À"
@@ -5141,7 +5183,7 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2455
 msgid "ä"
-msgstr ""
+msgstr "ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2459
 msgid "Ä"
@@ -5165,11 +5207,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2479
 msgid "Ç"
-msgstr ""
+msgstr "Ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2483
 msgid "Ð"
-msgstr ""
+msgstr "Ð"
 
 #: plugins/taglist/HTML.tags.xml.in:2487
 msgid "ð"
@@ -5181,11 +5223,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2495
 msgid "É"
-msgstr ""
+msgstr "É"
 
 #: plugins/taglist/HTML.tags.xml.in:2499
 msgid "ê"
-msgstr ""
+msgstr "ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2503
 msgid "Ê"
@@ -5201,11 +5243,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2515
 msgid "ë"
-msgstr ""
+msgstr "ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2519
 msgid "Ë"
-msgstr ""
+msgstr "Ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2523
 msgid "í"
@@ -5213,23 +5255,23 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2527
 msgid "Í"
-msgstr ""
+msgstr "Í"
 
 #: plugins/taglist/HTML.tags.xml.in:2531
 msgid "î"
-msgstr ""
+msgstr "î"
 
 #: plugins/taglist/HTML.tags.xml.in:2535
 msgid "Î"
-msgstr ""
+msgstr "Î"
 
 #: plugins/taglist/HTML.tags.xml.in:2539
 msgid "ì"
-msgstr ""
+msgstr "ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2543
 msgid "Ì"
-msgstr ""
+msgstr "Ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2547
 msgid "ï"
@@ -5237,123 +5279,123 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2551
 msgid "Ï"
-msgstr ""
+msgstr "Ï"
 
 #: plugins/taglist/HTML.tags.xml.in:2555
 msgid "ñ"
-msgstr ""
+msgstr "ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2559
 msgid "Ñ"
-msgstr ""
+msgstr "Ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2563
 msgid "ó"
-msgstr ""
+msgstr "ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2567
 msgid "Ó"
-msgstr ""
+msgstr "Ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2571
 msgid "ô"
-msgstr ""
+msgstr "ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2575
 msgid "Ô"
-msgstr ""
+msgstr "Ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2579
 msgid "ò"
-msgstr ""
+msgstr "ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2583
 msgid "Ò"
-msgstr ""
+msgstr "Ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2587
 msgid "º"
-msgstr ""
+msgstr "º"
 
 #: plugins/taglist/HTML.tags.xml.in:2591
 msgid "ø"
-msgstr ""
+msgstr "ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2595
 msgid "Ø"
-msgstr ""
+msgstr "Ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2599
 msgid "õ"
-msgstr ""
+msgstr "õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2603
 msgid "Õ"
-msgstr ""
+msgstr "Õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2607
 msgid "ö"
-msgstr ""
+msgstr "ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2611
 msgid "Ö"
-msgstr ""
+msgstr "Ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2615
 msgid "ß"
-msgstr ""
+msgstr "ß"
 
 #: plugins/taglist/HTML.tags.xml.in:2619
 msgid "þ"
-msgstr ""
+msgstr "þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2623
 msgid "Þ"
-msgstr ""
+msgstr "Þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2627
 msgid "ú"
-msgstr ""
+msgstr "ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2631
 msgid "Ú"
-msgstr ""
+msgstr "Ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2635
 msgid "û"
-msgstr ""
+msgstr "û"
 
 #: plugins/taglist/HTML.tags.xml.in:2639
 msgid "Û"
-msgstr ""
+msgstr "Û"
 
 #: plugins/taglist/HTML.tags.xml.in:2643
 msgid "ù"
-msgstr ""
+msgstr "ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2647
 msgid "Ù"
-msgstr ""
+msgstr "Ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2651
 msgid "ü"
-msgstr ""
+msgstr "ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2655
 msgid "Ü"
-msgstr ""
+msgstr "Ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2659
 msgid "ý"
-msgstr ""
+msgstr "ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2663
 msgid "Ý"
-msgstr ""
+msgstr "Ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2667
 msgid "ÿ"
-msgstr ""
+msgstr "ÿ"
 
 #: plugins/taglist/Latex.tags.xml.in:3
 msgid "Latex - Tags"
@@ -5389,7 +5431,7 @@ msgstr "Oklepaja {}"
 
 #: plugins/taglist/Latex.tags.xml.in:39
 msgid "Brackets &lt;&gt;"
-msgstr ""
+msgstr "Oklepaji &lt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:44
 msgid "File input"
@@ -5545,19 +5587,19 @@ msgstr "Vsebina navezave"
 
 #: plugins/taglist/Latex.tags.xml.in:225
 msgid "Symbol &lt;&lt;"
-msgstr ""
+msgstr "Simbol &lt;&lt;"
 
 #: plugins/taglist/Latex.tags.xml.in:229
 msgid "Symbol &lt;="
-msgstr ""
+msgstr "Simbol &lt;="
 
 #: plugins/taglist/Latex.tags.xml.in:233
 msgid "Symbol &gt;="
-msgstr ""
+msgstr "Simbol &gt;="
 
 #: plugins/taglist/Latex.tags.xml.in:237
 msgid "Symbol &gt;&gt;"
-msgstr ""
+msgstr "Simbol &gt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:241
 msgid "Symbol and"
@@ -5665,11 +5707,11 @@ msgstr "XSLT - Predmeti"
 
 #: plugins/taglist/XSLT.tags.xml.in:8
 msgid "apply-imports"
-msgstr ""
+msgstr "uporabi-uvoze"
 
 #: plugins/taglist/XSLT.tags.xml.in:12
 msgid "apply-templates"
-msgstr ""
+msgstr "uporabi-predloge"
 
 #: plugins/taglist/XSLT.tags.xml.in:16 plugins/taglist/XSLT.tags.xml.in:303
 msgid "attribute"
@@ -5677,100 +5719,100 @@ msgstr "atribut"
 
 #: plugins/taglist/XSLT.tags.xml.in:20
 msgid "attribute-set"
-msgstr ""
+msgstr "atribut-določi"
 
 #: plugins/taglist/XSLT.tags.xml.in:24
 msgid "call-template"
-msgstr ""
+msgstr "kliči-predlogo"
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"
-msgstr ""
+msgstr "izberi"
 
 #: plugins/taglist/XSLT.tags.xml.in:32 plugins/taglist/XSLT.tags.xml.in:150
 msgid "comment"
-msgstr ""
+msgstr "komentar"
 
 #: plugins/taglist/XSLT.tags.xml.in:36
 msgid "copy"
-msgstr ""
+msgstr "kopiraj"
 
 #: plugins/taglist/XSLT.tags.xml.in:39
 msgid "copy-of"
-msgstr ""
+msgstr "kopija od"
 
 #: plugins/taglist/XSLT.tags.xml.in:43
 msgid "decimal-format"
-msgstr ""
+msgstr "decimalni-zapis"
 
 #: plugins/taglist/XSLT.tags.xml.in:46
 msgid "element"
-msgstr ""
+msgstr "element"
 
 #: plugins/taglist/XSLT.tags.xml.in:50
 msgid "fallback"
-msgstr ""
+msgstr "povratek"
 
 #: plugins/taglist/XSLT.tags.xml.in:54
 msgid "for-each"
-msgstr ""
+msgstr "za-vsako"
 
 #: plugins/taglist/XSLT.tags.xml.in:58
 msgid "if"
-msgstr ""
+msgstr "če"
 
 #: plugins/taglist/XSLT.tags.xml.in:62
 msgid "import"
-msgstr ""
+msgstr "uvoz"
 
 #: plugins/taglist/XSLT.tags.xml.in:66
 msgid "include"
-msgstr ""
+msgstr "vključi"
 
 #: plugins/taglist/XSLT.tags.xml.in:70 plugins/taglist/XSLT.tags.xml.in:199
 #: plugins/taglist/XUL.tags.xml.in:147
 msgid "key"
-msgstr ""
+msgstr "ključ"
 
 #: plugins/taglist/XSLT.tags.xml.in:74
 msgid "message"
-msgstr ""
+msgstr "sporočilo"
 
 #: plugins/taglist/XSLT.tags.xml.in:78
 msgid "namespace-alias"
-msgstr ""
+msgstr "poimenovanje-vzdevek"
 
 #: plugins/taglist/XSLT.tags.xml.in:82 plugins/taglist/XSLT.tags.xml.in:233
 msgid "number"
-msgstr ""
+msgstr "številka"
 
 #: plugins/taglist/XSLT.tags.xml.in:85
 msgid "otherwise"
-msgstr ""
+msgstr "drugače"
 
 #: plugins/taglist/XSLT.tags.xml.in:89
 msgid "output"
-msgstr ""
+msgstr "izhod"
 
 #: plugins/taglist/XSLT.tags.xml.in:93
 msgid "param"
-msgstr ""
+msgstr "param"
 
 #: plugins/taglist/XSLT.tags.xml.in:97
 msgid "preserve-space"
-msgstr ""
+msgstr "ohrani-prostor"
 
 #: plugins/taglist/XSLT.tags.xml.in:101 plugins/taglist/XSLT.tags.xml.in:240
 msgid "processing-instruction"
-msgstr ""
+msgstr "navodila-obdelava"
 
 #: plugins/taglist/XSLT.tags.xml.in:105
 msgid "sort"
-msgstr ""
+msgstr "sortiranje"
 
 #: plugins/taglist/XSLT.tags.xml.in:108
 msgid "strip-space"
-msgstr ""
+msgstr "odstrani-prostor"
 
 #: plugins/taglist/XSLT.tags.xml.in:112
 msgid "stylesheet"
@@ -5778,27 +5820,27 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:116 plugins/taglist/XUL.tags.xml.in:398
 msgid "template"
-msgstr ""
+msgstr "predloga"
 
 #: plugins/taglist/XSLT.tags.xml.in:120 plugins/taglist/XSLT.tags.xml.in:280
 msgid "text"
-msgstr ""
+msgstr "besedilo"
 
 #: plugins/taglist/XSLT.tags.xml.in:123
 msgid "value-of"
-msgstr ""
+msgstr "vrednost-od"
 
 #: plugins/taglist/XSLT.tags.xml.in:127
 msgid "variable"
-msgstr ""
+msgstr "spremenljivka"
 
 #: plugins/taglist/XSLT.tags.xml.in:131
 msgid "when"
-msgstr ""
+msgstr "ko"
 
 #: plugins/taglist/XSLT.tags.xml.in:135
 msgid "with-param"
-msgstr ""
+msgstr "s-parametrom"
 
 #: plugins/taglist/XSLT.tags.xml.in:141
 msgid "XSLT - Functions"
@@ -5806,23 +5848,23 @@ msgstr "XSLT - Funkcije"
 
 #: plugins/taglist/XSLT.tags.xml.in:142
 msgid "boolean"
-msgstr ""
+msgstr "logična"
 
 #: plugins/taglist/XSLT.tags.xml.in:146
 msgid "ceiling"
-msgstr ""
+msgstr "vrh"
 
 #: plugins/taglist/XSLT.tags.xml.in:153
 msgid "concat"
-msgstr ""
+msgstr "združi"
 
 #: plugins/taglist/XSLT.tags.xml.in:157
 msgid "contains"
-msgstr ""
+msgstr "vsebuje"
 
 #: plugins/taglist/XSLT.tags.xml.in:161
 msgid "count"
-msgstr ""
+msgstr "štej"
 
 #: plugins/taglist/XSLT.tags.xml.in:165
 msgid "current"
@@ -5834,7 +5876,7 @@ msgstr "dokument"
 
 #: plugins/taglist/XSLT.tags.xml.in:172
 msgid "element-available"
-msgstr ""
+msgstr "element-na-voljo"
 
 #: plugins/taglist/XSLT.tags.xml.in:176
 msgid "false"
@@ -5842,35 +5884,35 @@ msgstr "napak"
 
 #: plugins/taglist/XSLT.tags.xml.in:179
 msgid "floor"
-msgstr ""
+msgstr "dno"
 
 #: plugins/taglist/XSLT.tags.xml.in:183
 msgid "format-number"
-msgstr ""
+msgstr "zapis-številke"
 
 #: plugins/taglist/XSLT.tags.xml.in:187
 msgid "function-available"
-msgstr ""
+msgstr "funkcija-na-voljo"
 
 #: plugins/taglist/XSLT.tags.xml.in:191
 msgid "generate-id"
-msgstr ""
+msgstr "ustvari-id"
 
 #: plugins/taglist/XSLT.tags.xml.in:195
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: plugins/taglist/XSLT.tags.xml.in:203
 msgid "lang"
-msgstr ""
+msgstr "jezik"
 
 #: plugins/taglist/XSLT.tags.xml.in:207
 msgid "last"
-msgstr ""
+msgstr "zadnje"
 
 #: plugins/taglist/XSLT.tags.xml.in:210
 msgid "local-name"
-msgstr ""
+msgstr "lokalizirano-ime"
 
 #: plugins/taglist/XSLT.tags.xml.in:214
 msgid "name"
@@ -5878,63 +5920,63 @@ msgstr "ime"
 
 #: plugins/taglist/XSLT.tags.xml.in:218
 msgid "namespace-uri"
-msgstr ""
+msgstr "poimenovanje-url"
 
 #: plugins/taglist/XSLT.tags.xml.in:222
 msgid "node"
-msgstr ""
+msgstr "vozlišče"
 
 #: plugins/taglist/XSLT.tags.xml.in:225
 msgid "normalize-space"
-msgstr ""
+msgstr "normaliziraj-presledke"
 
 #: plugins/taglist/XSLT.tags.xml.in:229
 msgid "not"
-msgstr ""
+msgstr "ne"
 
 #: plugins/taglist/XSLT.tags.xml.in:237
 msgid "position"
-msgstr ""
+msgstr "položaj"
 
 #: plugins/taglist/XSLT.tags.xml.in:244
 msgid "round"
-msgstr ""
+msgstr "zaokroženo"
 
 #: plugins/taglist/XSLT.tags.xml.in:248
 msgid "starts-with"
-msgstr ""
+msgstr "začne-z"
 
 #: plugins/taglist/XSLT.tags.xml.in:252
 msgid "string"
-msgstr ""
+msgstr "niz"
 
 #: plugins/taglist/XSLT.tags.xml.in:256
 msgid "string-length"
-msgstr ""
+msgstr "niz-dolžina"
 
 #: plugins/taglist/XSLT.tags.xml.in:260
 msgid "substring"
-msgstr ""
+msgstr "podniz"
 
 #: plugins/taglist/XSLT.tags.xml.in:264
 msgid "substring-after"
-msgstr ""
+msgstr "podniz-po"
 
 #: plugins/taglist/XSLT.tags.xml.in:268
 msgid "substring-before"
-msgstr ""
+msgstr "podniz-pred"
 
 #: plugins/taglist/XSLT.tags.xml.in:272
 msgid "sum"
-msgstr ""
+msgstr "vstoa"
 
 #: plugins/taglist/XSLT.tags.xml.in:276
 msgid "system-property"
-msgstr ""
+msgstr "sistemska-lastnost"
 
 #: plugins/taglist/XSLT.tags.xml.in:283
 msgid "translate"
-msgstr ""
+msgstr "prevedi"
 
 #: plugins/taglist/XSLT.tags.xml.in:287
 msgid "true"
@@ -5942,7 +5984,7 @@ msgstr "prav"
 
 #: plugins/taglist/XSLT.tags.xml.in:290
 msgid "unparsed-entity-uri"
-msgstr ""
+msgstr "nerazčlenjen-del-url"
 
 #: plugins/taglist/XSLT.tags.xml.in:296
 msgid "XSLT - Axes"
@@ -6002,47 +6044,47 @@ msgstr "XUL - Oznake"
 
 #: plugins/taglist/XUL.tags.xml.in:5
 msgid "action"
-msgstr ""
+msgstr "dejanje"
 
 #: plugins/taglist/XUL.tags.xml.in:10
 msgid "arrowscrollbox"
-msgstr ""
+msgstr "drsnikspuščico"
 
 #: plugins/taglist/XUL.tags.xml.in:15
 msgid "bbox"
-msgstr ""
+msgstr "bbox"
 
 #: plugins/taglist/XUL.tags.xml.in:20
 msgid "binding"
-msgstr ""
+msgstr "vezava"
 
 #: plugins/taglist/XUL.tags.xml.in:25
 msgid "bindings"
-msgstr ""
+msgstr "vezave"
 
 #: plugins/taglist/XUL.tags.xml.in:30
 msgid "box"
-msgstr ""
+msgstr "okvir"
 
 #: plugins/taglist/XUL.tags.xml.in:35
 msgid "broadcaster"
-msgstr ""
+msgstr "oddajnik"
 
 #: plugins/taglist/XUL.tags.xml.in:39
 msgid "broadcasterset"
-msgstr ""
+msgstr "nastavioddajnik"
 
 #: plugins/taglist/XUL.tags.xml.in:44
 msgid "button"
-msgstr ""
+msgstr "gumb"
 
 #: plugins/taglist/XUL.tags.xml.in:48
 msgid "browser"
-msgstr ""
+msgstr "brskalnik"
 
 #: plugins/taglist/XUL.tags.xml.in:52
 msgid "checkbox"
-msgstr ""
+msgstr "potrditveno-polje"
 
 #: plugins/taglist/XUL.tags.xml.in:56
 msgid "caption"
@@ -6050,7 +6092,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:60
 msgid "colorpicker"
-msgstr ""
+msgstr "izbirnik-barv"
 
 #: plugins/taglist/XUL.tags.xml.in:65
 msgid "column"
@@ -6448,15 +6490,15 @@ msgstr "Izbrana oblika"
 msgid "Custom format"
 msgstr "Oblika po meri"
 
-#: plugins/time/pluma-time-plugin.c:186
+#: plugins/time/pluma-time-plugin.c:183
 msgid "In_sert Date and Time..."
 msgstr "Vs_tavi datum in uro ..."
 
-#: plugins/time/pluma-time-plugin.c:188
+#: plugins/time/pluma-time-plugin.c:185
 msgid "Insert current date and time at the cursor position"
 msgstr "Vstavi trenutni datum in uro na položaju kazalca"
 
-#: plugins/time/pluma-time-plugin.c:578
+#: plugins/time/pluma-time-plugin.c:546
 msgid "Available formats"
 msgstr "Oblike na voljo"
 
@@ -6474,12 +6516,6 @@ msgstr ""
 
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
 msgstr ""
 
 #: plugins/time/pluma-time-dialog.ui:19
