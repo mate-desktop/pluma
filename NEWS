@@ -1,3 +1,44 @@
+### pluma 1.25.1
+
+  * tx: disable "he" translations
+  * build: define PLUMA_LIBDIR
+  * pluma-plugins-engine: Do not build the path to girepository-1.0
+  * Drop pluma_dirs_get_pluma_locale_dir
+  * Drop pluma_dirs_get_pluma_plugins_dir, pluma_dirs_get_pluma_plugins_dir
+  * Drop pluma_dirs_get_pluma_plugins_data_dir
+  * Drop pluma_dirs_get_pluma_data_dir
+  * pluma: Do not build the path to the icons folder
+  * Drop pluma_dirs_get_ui_file
+  * fix printing wrap mode
+  * build: Use PACKAGE_URL variable
+  * build: display package name and version in configure summary
+  * README.md: configure options
+  * filebrowser plugin: Refactor pluma_image_menu_item_new_from_pixbuf
+  * Update copyright to 2021
+  * help: add indent shortcuts
+  * add show/hide line-numbers shortcut (ctrl+y)
+  * pluma-utils: Cppcheck warning 'argument order different'
+  * cppcheck warning: The if condition is the same as the previous one
+  * spell: Remove BUILT_SOURCES variable from Makefile.am
+  * pluma-message: Fix the position of the inline keyword
+  * Use g_clear_error
+  * Fix line numbers menu: use g_settings_bind correctly
+  * pluma-view: Fix incorrect interface font
+  * Redesign Pluma Preferences Dialog
+  * Remove pluma-marshal.
+  * Update Readme
+  * Use gtk_source_view_get_visual_column
+  * pluma-document: highlighting for BOM was fixed on gtksourceview 3.24.11
+  * pluma-time-plugin: Use g_date_time_format
+  * add optional grid background pattern
+  * pluma-document: Fix BOM detection for C language
+  * pluma-document: Fix warning assertion 'G_IS_FILE (file)' failed
+  * Remove -Wmissing-field-initializers warnings
+  * Remove changecase plugin. Functionality is provided by GtkSourceView. (#565)
+  * add overview map
+  * Port main program to GSettings
+  * Merge gio document loader and saver into document loader and saver
+
 ### pluma 1.25.0
 
   * tx: disable "he" translations
