@@ -156,7 +156,7 @@ fi
 AM_CONDITIONAL(ENABLE_ENCHANT, test x"$enable_enchant" = "xyes")
 
 GTK_REQUIRED=3.22.0
-GTKSOURCEVIEW_REQUIRED=3.0.0
+GTKSOURCEVIEW_REQUIRED=4.0.2
 
 PKG_CHECK_MODULES(GMODULE,gmodule-2.0,[GMODULE_ADD="gmodule-2.0"],[GMODULE_ADD=""])
 PKG_CHECK_MODULES(PLUMA, [
@@ -166,7 +166,7 @@ PKG_CHECK_MODULES(PLUMA, [
 	gthread-2.0 >= 2.13.0
 	gio-2.0 >= 2.50.0
 	gtk+-3.0 >= $GTK_REQUIRED
-	gtksourceview-3.0 >= $GTKSOURCEVIEW_REQUIRED
+	gtksourceview-4 >= $GTKSOURCEVIEW_REQUIRED
 	libpeas-1.0 >= 1.2.0
 	libpeas-gtk-1.0 >= 1.2.0
 ])

@@ -50,7 +50,7 @@ You can download the latest Pluma tarball from:
 
 ## Build/Installation
 
-Pluma requires GTK+ (>= 3.22) and GtkSourceView (>= 3.0.0). For a complete list of dependencies see the [build.yml](https://github.com/mate-desktop/pluma/blob/master/.build.yml).
+Pluma requires GTK+ (>= 3.22) and GtkSourceView (>= 4.0.2). For a complete list of dependencies see the [build.yml](https://github.com/mate-desktop/pluma/blob/master/.build.yml).
 
 **Warning**: This procedure doesn't install in a separate prefix, so it may
 overwrite your system binaries.

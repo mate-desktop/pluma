@@ -199,7 +199,7 @@ Pluma_1_0_gir_NAMESPACE = Pluma
 Pluma_1_0_gir_VERSION = 1.0
 Pluma_1_0_gir_PROGRAM = $(builddir)/pluma
 Pluma_1_0_gir_FILES = $(INST_H_FILES) $(libpluma_c_files) $(BUILT_SOURCES)
-Pluma_1_0_gir_INCLUDES = Gtk-3.0 GtkSource-3.0
+Pluma_1_0_gir_INCLUDES = Gtk-3.0 GtkSource-4
 
 girdir = $(datadir)/gir-1.0
 gir_DATA = $(INTROSPECTION_GIRS)
