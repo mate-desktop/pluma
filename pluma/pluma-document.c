@@ -75,6 +75,14 @@ PROFILE (static GTimer *timer = NULL)
 #define PLUMA_MAX_PATH_LEN  2048
 #endif
 
+/* undo https://gitlab.gnome.org/GNOME/gtksourceview/-/commit/b3dffc39 */
+#undef GTK_SOURCE_CHECK_VERSION
+#define GTK_SOURCE_CHECK_VERSION(major, minor, micro) \
+        (GTK_SOURCE_MAJOR_VERSION > (major) || \
+        (GTK_SOURCE_MAJOR_VERSION == (major) && GTK_SOURCE_MINOR_VERSION > (minor)) || \
+        (GTK_SOURCE_MAJOR_VERSION == (major) && GTK_SOURCE_MINOR_VERSION == (minor) && \
+         GTK_SOURCE_MICRO_VERSION >= (micro)))
+
 static void	pluma_document_load_real	(PlumaDocument          *doc,
 						 const gchar            *uri,
 						 const PlumaEncoding    *encoding,
@@ -641,7 +649,7 @@ pluma_document_class_init (PlumaDocumentClass *klass)
 			      GTK_TYPE_TEXT_ITER | G_SIGNAL_TYPE_STATIC_SCOPE);
 }
 
-#if !GTK_SOURCE_CHECK_VERSION (3, 24, 11)
+#if !GTK_SOURCE_CHECK_VERSION(4, 3, 1)
 static gboolean
 file_with_bom (GFile *file)
 {
@@ -693,7 +701,7 @@ set_language (PlumaDocument     *doc,
 {
 	GtkSourceLanguage *old_lang;
 
-#if !GTK_SOURCE_CHECK_VERSION (3, 24, 11)
+#if !GTK_SOURCE_CHECK_VERSION(4, 3, 1)
 	const gchar       *new_lang_id;
 	const gchar       *bom_langs[] = {
 		"asp", "dtl", "docbook", "html", "mxml", "mallard", "markdown",
@@ -709,7 +717,7 @@ set_language (PlumaDocument     *doc,
 	if (old_lang == lang)
 		return;
 
-#if !GTK_SOURCE_CHECK_VERSION (3, 24, 11)
+#if !GTK_SOURCE_CHECK_VERSION(4, 3, 1)
 	new_lang_id = gtk_source_language_get_id (lang);
 	if (new_lang_id)
 		is_bom_lang = g_strv_contains (bom_langs, new_lang_id);
