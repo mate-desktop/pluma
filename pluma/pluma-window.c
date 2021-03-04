@@ -1496,7 +1496,6 @@ create_menu_bar_and_toolbar (PlumaWindow *window,
     GtkUIManager *manager;
     GtkRecentManager *recent_manager;
     GError *error = NULL;
-    gchar *ui_file;
 
     pluma_debug (DEBUG_WINDOW);
 
