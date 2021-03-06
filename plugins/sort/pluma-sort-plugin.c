@@ -46,34 +46,21 @@ enum {
 	PROP_WINDOW
 };
 
-typedef struct
-{
-	GtkWidget *dialog;
-	GtkWidget *col_num_spinbutton;
-	GtkWidget *reverse_order_checkbutton;
-	GtkWidget *ignore_case_checkbutton;
-	GtkWidget *remove_dups_checkbutton;
-
-	PlumaDocument *doc;
-
-	GtkTextIter start, end; /* selection */
-} SortDialog;
-
 struct _PlumaSortPluginPrivate
 {
 	PlumaWindow *window;
 
 	GtkActionGroup *ui_action_group;
 	guint ui_id;
-};
 
-typedef struct
-{
-	gboolean ignore_case;
-	gboolean reverse_order;
-	gboolean remove_duplicates;
-	gint starting_column;
-} SortInfo;
+	GtkWidget *dialog;
+	GtkWidget *col_num_spinbutton;
+	GtkWidget *reverse_order_checkbutton;
+	GtkWidget *ignore_case_checkbutton;
+	GtkWidget *remove_dups_checkbutton;
+
+	GtkTextIter start, end; /* selection */
+};
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaSortPlugin,
                                 pluma_sort_plugin,
@@ -84,7 +71,6 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (PlumaSortPlugin,
                                                                peas_activatable_iface_init))
 
 static void sort_cb (GtkAction *action, PlumaSortPlugin *plugin);
-static void sort_real (SortDialog *dialog);
 
 static const GtkActionEntry action_entries[] =
 {
@@ -97,36 +83,68 @@ static const GtkActionEntry action_entries[] =
 };
 
 static void
-sort_dialog_destroy (GObject *obj,
-		     gpointer  dialog_pointer)
+do_sort (PlumaSortPlugin *plugin)
 {
+	PlumaSortPluginPrivate *priv;
+	PlumaDocument *doc;
+	GtkSourceSortFlags sort_flags = 0;
+	gint starting_column;
+
 	pluma_debug (DEBUG_PLUGINS);
 
-	g_slice_free (SortDialog, dialog_pointer);
+	priv = plugin->priv;
+
+	doc = pluma_window_get_active_document (priv->window);
+	g_return_if_fail (doc != NULL);
+
+	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (priv->ignore_case_checkbutton)))
+	{
+		sort_flags |= GTK_SOURCE_SORT_FLAGS_CASE_SENSITIVE;
+	}
+
+	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (priv->reverse_order_checkbutton)))
+	{
+		sort_flags |= GTK_SOURCE_SORT_FLAGS_REVERSE_ORDER;
+	}
+
+	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (priv->remove_dups_checkbutton)))
+	{
+		sort_flags |= GTK_SOURCE_SORT_FLAGS_REMOVE_DUPLICATES;
+	}
+
+	starting_column = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (priv->col_num_spinbutton)) - 1;
+
+	gtk_source_buffer_sort_lines (GTK_SOURCE_BUFFER (doc),
+	                              &priv->start,
+	                              &priv->end,
+	                              sort_flags,
+	                              starting_column);
+
+	pluma_debug_message (DEBUG_PLUGINS, "Done.");
 }
 
 static void
-sort_dialog_response_handler (GtkDialog  *widget,
-			      gint       res_id,
-			      SortDialog *dialog)
+sort_dialog_response_handler (GtkDialog       *dialog,
+                              gint             res_id,
+                              PlumaSortPlugin *plugin)
 {
 	pluma_debug (DEBUG_PLUGINS);
 
 	switch (res_id)
 	{
 		case GTK_RESPONSE_OK:
-			sort_real (dialog);
-			gtk_widget_destroy (dialog->dialog);
+			do_sort (plugin);
+			gtk_widget_destroy (GTK_WIDGET(dialog));
 			break;
 
 		case GTK_RESPONSE_HELP:
-			pluma_help_display (GTK_WINDOW (widget),
+			pluma_help_display (GTK_WINDOW (dialog),
 					    NULL,
 					    "pluma-sort-plugin");
 			break;
 
 		case GTK_RESPONSE_CANCEL:
-			gtk_widget_destroy (dialog->dialog);
+			gtk_widget_destroy (GTK_WIDGET(dialog));
 			break;
 	}
 }
@@ -135,30 +153,31 @@ sort_dialog_response_handler (GtkDialog  *widget,
  * the text field (like the combo box) looses the documnent selection.
  * Storing the selection ONLY works because the dialog is modal */
 static void
-get_current_selection (PlumaWindow *window, SortDialog *dialog)
+get_current_selection (PlumaSortPlugin *plugin)
 {
+	PlumaSortPluginPrivate *priv;
 	PlumaDocument *doc;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	doc = pluma_window_get_active_document (window);
+	priv = plugin->priv;
+	doc = pluma_window_get_active_document (priv->window);
 
 	if (!gtk_text_buffer_get_selection_bounds (GTK_TEXT_BUFFER (doc),
-						   &dialog->start,
-						   &dialog->end))
+						   &priv->start,
+						   &priv->end))
 	{
 		/* No selection, get the whole document. */
 		gtk_text_buffer_get_bounds (GTK_TEXT_BUFFER (doc),
-					    &dialog->start,
-					    &dialog->end);
+					    &priv->start,
+					    &priv->end);
 	}
 }
 
-static SortDialog *
-get_sort_dialog (PlumaSortPlugin *plugin)
+static void
+create_sort_dialog (PlumaSortPlugin *plugin)
 {
-	PlumaWindow *window;
-	SortDialog *dialog;
+	PlumaSortPluginPrivate *priv;
 	GtkWidget *error_widget;
 	gboolean ret;
 	gchar *data_dir;
@@ -166,22 +185,20 @@ get_sort_dialog (PlumaSortPlugin *plugin)
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	window = PLUMA_WINDOW (plugin->priv->window);
-
-	dialog = g_slice_new (SortDialog);
+	priv = plugin->priv;
 
 	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (plugin));
 	ui_file = g_build_filename (data_dir, "sort.ui", NULL);
-	g_free (data_dir);
 	ret = pluma_utils_get_ui_objects (ui_file,
 					  NULL,
 					  &error_widget,
-					  "sort_dialog", &dialog->dialog,
-					  "reverse_order_checkbutton", &dialog->reverse_order_checkbutton,
-					  "col_num_spinbutton", &dialog->col_num_spinbutton,
-					  "ignore_case_checkbutton", &dialog->ignore_case_checkbutton,
-					  "remove_dups_checkbutton", &dialog->remove_dups_checkbutton,
+					  "sort_dialog", &priv->dialog,
+					  "reverse_order_checkbutton", &priv->reverse_order_checkbutton,
+					  "col_num_spinbutton", &priv->col_num_spinbutton,
+					  "ignore_case_checkbutton", &priv->ignore_case_checkbutton,
+					  "remove_dups_checkbutton", &priv->remove_dups_checkbutton,
 					  NULL);
+	g_free (data_dir);
 	g_free (ui_file);
 
 	if (!ret)
@@ -189,266 +206,51 @@ get_sort_dialog (PlumaSortPlugin *plugin)
 		const gchar *err_message;
 
 		err_message = gtk_label_get_label (GTK_LABEL (error_widget));
-		pluma_warning (GTK_WINDOW (window),
+		pluma_warning (GTK_WINDOW (priv->window),
 			       "%s", err_message);
 
-		g_slice_free (SortDialog, dialog);
 		gtk_widget_destroy (error_widget);
 
-		return NULL;
+		return;
 	}
 
-	gtk_dialog_set_default_response (GTK_DIALOG (dialog->dialog),
-					 GTK_RESPONSE_OK);
-
-	g_signal_connect (dialog->dialog,
+	g_signal_connect (priv->dialog,
 			  "destroy",
-			  G_CALLBACK (sort_dialog_destroy),
-			  dialog);
+			  G_CALLBACK (gtk_widget_destroyed),
+			  &priv->dialog);
 
-	g_signal_connect (dialog->dialog,
+	g_signal_connect (priv->dialog,
 			  "response",
 			  G_CALLBACK (sort_dialog_response_handler),
-			  dialog);
+			  plugin);
 
-	get_current_selection (window, dialog);
-
-	return dialog;
+	get_current_selection (plugin);
 }
 
 static void
 sort_cb (GtkAction  *action,
 	 PlumaSortPlugin *plugin)
 {
-	PlumaWindow *window;
-	PlumaDocument *doc;
+	PlumaSortPluginPrivate *priv;
 	GtkWindowGroup *wg;
-	SortDialog *dialog;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	window = PLUMA_WINDOW (plugin->priv->window);
+	priv = plugin->priv;
 
-	doc = pluma_window_get_active_document (window);
-	g_return_if_fail (doc != NULL);
+	create_sort_dialog (plugin);
 
-	dialog = get_sort_dialog (plugin);
-	g_return_if_fail (dialog != NULL);
-
-	wg = pluma_window_get_group (window);
+	wg = pluma_window_get_group (priv->window);
 	gtk_window_group_add_window (wg,
-				     GTK_WINDOW (dialog->dialog));
+				     GTK_WINDOW (priv->dialog));
 
-	dialog->doc = doc;
+	gtk_window_set_transient_for (GTK_WINDOW (priv->dialog),
+				      GTK_WINDOW (priv->window));
 
-	gtk_window_set_transient_for (GTK_WINDOW (dialog->dialog),
-				      GTK_WINDOW (window));
-
-	gtk_window_set_modal (GTK_WINDOW (dialog->dialog),
+	gtk_window_set_modal (GTK_WINDOW (priv->dialog),
 			      TRUE);
 
-	gtk_widget_show (GTK_WIDGET (dialog->dialog));
-}
-
-/* Compares two strings for the sorting algorithm. Uses the UTF-8 processing
- * functions in GLib to be as correct as possible.*/
-static gint
-compare_algorithm (gconstpointer s1,
-		   gconstpointer s2,
-		   gpointer	 data)
-{
-	gint length1, length2;
-	gint ret;
-	gchar *string1, *string2;
-	gchar *substring1, *substring2;
-	gchar *key1, *key2;
-	SortInfo *sort_info;
-
-	pluma_debug (DEBUG_PLUGINS);
-
-	sort_info = (SortInfo *) data;
-	g_return_val_if_fail (sort_info != NULL, -1);
-
-	if (!sort_info->ignore_case)
-	{
-		string1 = *((gchar **) s1);
-		string2 = *((gchar **) s2);
-	}
-	else
-	{
-		string1 = g_utf8_casefold (*((gchar **) s1), -1);
-		string2 = g_utf8_casefold (*((gchar **) s2), -1);
-	}
-
-	length1 = g_utf8_strlen (string1, -1);
-	length2 = g_utf8_strlen (string2, -1);
-
-	if ((length1 < sort_info->starting_column) &&
-	    (length2 < sort_info->starting_column))
-	{
-		ret = 0;
-	}
-	else if (length1 < sort_info->starting_column)
-	{
-		ret = -1;
-	}
-	else if (length2 < sort_info->starting_column)
-	{
-		ret = 1;
-	}
-	else if (sort_info->starting_column < 1)
-	{
-		key1 = g_utf8_collate_key (string1, -1);
-		key2 = g_utf8_collate_key (string2, -1);
-		ret = strcmp (key1, key2);
-
-		g_free (key1);
-		g_free (key2);
-	}
-	else
-	{
-		/* A character column offset is required, so figure out
-		 * the correct offset into the UTF-8 string. */
-		substring1 = g_utf8_offset_to_pointer (string1, sort_info->starting_column);
-		substring2 = g_utf8_offset_to_pointer (string2, sort_info->starting_column);
-
-		key1 = g_utf8_collate_key (substring1, -1);
-		key2 = g_utf8_collate_key (substring2, -1);
-		ret = strcmp (key1, key2);
-
-		g_free (key1);
-		g_free (key2);
-	}
-
-	/* Do the necessary cleanup. */
-	if (sort_info->ignore_case)
-	{
-		g_free (string1);
-		g_free (string2);
-	}
-
-	if (sort_info->reverse_order)
-	{
-		ret = -1 * ret;
-	}
-
-	return ret;
-}
-
-static gchar *
-get_line_slice (GtkTextBuffer *buf,
-		gint           line)
-{
-	GtkTextIter start, end;
-	char *ret;
-
-	gtk_text_buffer_get_iter_at_line (buf, &start, line);
-	end = start;
-
-	if (!gtk_text_iter_ends_line (&start))
-		gtk_text_iter_forward_to_line_end (&end);
-
-	ret= gtk_text_buffer_get_slice (buf,
-					  &start,
-					  &end,
-					  TRUE);
-
-	g_assert (ret != NULL);
-
-	return ret;
-}
-
-static void
-sort_real (SortDialog *dialog)
-{
-	PlumaDocument *doc;
-	GtkTextIter start, end;
-	gint start_line, end_line;
-	gint i;
-	gchar *last_row = NULL;
-	gint num_lines;
-	gchar **lines;
-	SortInfo *sort_info;
-
-	pluma_debug (DEBUG_PLUGINS);
-
-	doc = dialog->doc;
-	g_return_if_fail (doc != NULL);
-
-	sort_info = g_new0 (SortInfo, 1);
-	sort_info->ignore_case = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->ignore_case_checkbutton));
-	sort_info->reverse_order = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->reverse_order_checkbutton));
-	sort_info->remove_duplicates = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->remove_dups_checkbutton));
-	sort_info->starting_column = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (dialog->col_num_spinbutton)) - 1;
-
-	start = dialog->start;
-	end = dialog->end;
-	start_line = gtk_text_iter_get_line (&start);
-	end_line = gtk_text_iter_get_line (&end);
-
-	/* if we are at line start our last line is the previus one.
-	 * Otherwise the last line is the current one but we try to
-	 * move the iter after the line terminator */
-	if (gtk_text_iter_get_line_offset (&end) == 0)
-		end_line = MAX (start_line, end_line - 1);
-	else
-		gtk_text_iter_forward_line (&end);
-
-	num_lines = end_line - start_line + 1;
-	lines = g_new0 (gchar *, num_lines + 1);
-
-	pluma_debug_message (DEBUG_PLUGINS, "Building list...");
-
-	for (i = 0; i < num_lines; i++)
-	{
-		lines[i] = get_line_slice (GTK_TEXT_BUFFER (doc), start_line + i);
-	}
-
-	lines[num_lines] = NULL;
-
-	pluma_debug_message (DEBUG_PLUGINS, "Sort list...");
-
-	g_qsort_with_data (lines,
-			   num_lines,
-			   sizeof (gpointer),
-			   compare_algorithm,
-			   sort_info);
-
-	pluma_debug_message (DEBUG_PLUGINS, "Rebuilding document...");
-
-	gtk_source_buffer_begin_not_undoable_action (GTK_SOURCE_BUFFER (doc));
-
-	gtk_text_buffer_delete (GTK_TEXT_BUFFER (doc),
-				&start,
-				&end);
-
-	for (i = 0; i < num_lines; i++)
-	{
-		if (sort_info->remove_duplicates &&
-		    last_row != NULL &&
-		    (strcmp (last_row, lines[i]) == 0))
-			continue;
-
-		gtk_text_buffer_insert (GTK_TEXT_BUFFER (doc),
-					&start,
-					lines[i],
-					-1);
-
-		if (i < (num_lines - 1))
-			gtk_text_buffer_insert (GTK_TEXT_BUFFER (doc),
-						&start,
-						"\n",
-						-1);
-
-		last_row = lines[i];
-	}
-
-	gtk_source_buffer_end_not_undoable_action (GTK_SOURCE_BUFFER (doc));
-
-	g_strfreev (lines);
-	g_free (sort_info);
-
-	pluma_debug_message (DEBUG_PLUGINS, "Done.");
+	gtk_widget_show (GTK_WIDGET (priv->dialog));
 }
 
 static void
@@ -492,17 +294,15 @@ pluma_sort_plugin_get_property (GObject    *object,
 }
 
 static void
-update_ui (PlumaSortPluginPrivate *data)
+update_ui (PlumaSortPlugin *plugin)
 {
-	PlumaWindow *window;
 	PlumaView *view;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	window = PLUMA_WINDOW (data->window);
-	view = pluma_window_get_active_view (window);
+	view = pluma_window_get_active_view (plugin->priv->window);
 
-	gtk_action_group_set_sensitive (data->ui_action_group,
+	gtk_action_group_set_sensitive (plugin->priv->ui_action_group,
 					(view != NULL) &&
 					gtk_text_view_get_editable (GTK_TEXT_VIEW (view)));
 }
@@ -510,62 +310,56 @@ update_ui (PlumaSortPluginPrivate *data)
 static void
 pluma_sort_plugin_activate (PlumaWindowActivatable *activatable)
 {
-	PlumaSortPlugin *plugin;
-	PlumaSortPluginPrivate *data;
-	PlumaWindow *window;
+	PlumaSortPluginPrivate *priv;
 	GtkUIManager *manager;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	plugin = PLUMA_SORT_PLUGIN (activatable);
-	data = plugin->priv;
-	window = PLUMA_WINDOW (data->window);
+	priv = PLUMA_SORT_PLUGIN (activatable)->priv;
 
-	manager = pluma_window_get_ui_manager (window);
+	manager = pluma_window_get_ui_manager (priv->window);
 
-	data->ui_action_group = gtk_action_group_new ("PlumaSortPluginActions");
-	gtk_action_group_set_translation_domain (data->ui_action_group,
+	priv->ui_action_group = gtk_action_group_new ("PlumaSortPluginActions");
+	gtk_action_group_set_translation_domain (priv->ui_action_group,
 						 GETTEXT_PACKAGE);
-	gtk_action_group_add_actions (data->ui_action_group,
-					   action_entries,
-					   G_N_ELEMENTS (action_entries),
-					   plugin);
+	gtk_action_group_add_actions (priv->ui_action_group,
+				      action_entries,
+				      G_N_ELEMENTS (action_entries),
+				      activatable);
 
 	gtk_ui_manager_insert_action_group (manager,
-					    data->ui_action_group,
+					    priv->ui_action_group,
 					    -1);
 
-	data->ui_id = gtk_ui_manager_new_merge_id (manager);
+	priv->ui_id = gtk_ui_manager_new_merge_id (manager);
 
 	gtk_ui_manager_add_ui (manager,
-			       data->ui_id,
+			       priv->ui_id,
 			       MENU_PATH,
 			       "Sort",
 			       "Sort",
 			       GTK_UI_MANAGER_MENUITEM,
 			       FALSE);
 
-	update_ui (data);
+	update_ui (PLUMA_SORT_PLUGIN (activatable));
 }
 
 static void
 pluma_sort_plugin_deactivate (PlumaWindowActivatable *activatable)
 {
-	PlumaSortPluginPrivate *data;
-	PlumaWindow *window;
+	PlumaSortPluginPrivate *priv;
 	GtkUIManager *manager;
 
 	pluma_debug (DEBUG_PLUGINS);
 
-	data = PLUMA_SORT_PLUGIN (activatable)->priv;
-	window = PLUMA_WINDOW (data->window);
+	priv = PLUMA_SORT_PLUGIN (activatable)->priv;
 
-	manager = pluma_window_get_ui_manager (window);
+	manager = pluma_window_get_ui_manager (priv->window);
 
 	gtk_ui_manager_remove_ui (manager,
-				  data->ui_id);
+				  priv->ui_id);
 	gtk_ui_manager_remove_action_group (manager,
-					    data->ui_action_group);
+					    priv->ui_action_group);
 }
 
 static void
@@ -573,7 +367,7 @@ pluma_sort_plugin_update_state (PlumaWindowActivatable *activatable)
 {
 	pluma_debug (DEBUG_PLUGINS);
 
-	update_ui (PLUMA_SORT_PLUGIN (activatable)->priv);
+	update_ui (PLUMA_SORT_PLUGIN (activatable));
 }
 
 static void
@@ -591,17 +385,8 @@ pluma_sort_plugin_dispose (GObject *object)
 
 	pluma_debug_message (DEBUG_PLUGINS, "PlumaSortPlugin disposing");
 
-	if (plugin->priv->window != NULL)
-	{
-		g_object_unref (plugin->priv->window);
-		plugin->priv->window = NULL;
-	}
-
-	if (plugin->priv->ui_action_group)
-	{
-		g_object_unref (plugin->priv->ui_action_group);
-		plugin->priv->ui_action_group = NULL;
-	}
+	g_clear_object (&plugin->priv->window);
+	g_clear_object (&plugin->priv->ui_action_group);
 
 	G_OBJECT_CLASS (pluma_sort_plugin_parent_class)->dispose (object);
 }
