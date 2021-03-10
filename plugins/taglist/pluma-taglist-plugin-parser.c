@@ -287,8 +287,11 @@ groups_cmp (gconstpointer a, gconstpointer b)
  *  Therefore need to pick up the best lang on the current locale.
  */
 static TagList*
-lookup_best_lang (TagList *taglist, const gchar *filename,
-		xmlDocPtr doc, xmlNsPtr ns, xmlNodePtr cur)
+lookup_best_lang (TagList     *tag_list,
+                  const gchar *filename,
+                  xmlDocPtr    doc,
+                  xmlNsPtr     ns,
+                  xmlNodePtr   cur)
 {
 
 	TagGroup *best_tag_group = NULL;
@@ -310,7 +313,7 @@ lookup_best_lang (TagList *taglist, const gchar *filename,
 				   "was '%s', 'TagGroup' expected.", filename, cur->name);
 			xmlFreeDoc (doc);
 
-			return taglist;
+			return tag_list;
 		}
 		else
 		{
@@ -326,13 +329,13 @@ lookup_best_lang (TagList *taglist, const gchar *filename,
 
 			/*
 			 * When found a new TagGroup, prepend the best
-			 * tag_group to taglist. In the current intltool-merge,
+			 * tag_group to tag_list. In the current intltool-merge,
 			 * the first section is the default lang NULL.
 			 */
 			if (lang == NULL) {
 				if (best_tag_group != NULL) {
-					taglist->tag_groups =
-					g_list_prepend (taglist->tag_groups, best_tag_group);
+					tag_list->tag_groups =
+					g_list_prepend (tag_list->tag_groups, best_tag_group);
 				}
 
 				best_tag_group = NULL;
@@ -405,13 +408,13 @@ lookup_best_lang (TagList *taglist, const gchar *filename,
 
 	/* Prepend TagGroup to TagList */
 	if (best_tag_group != NULL) {
-		taglist->tag_groups =
-			g_list_prepend (taglist->tag_groups, best_tag_group);
+		tag_list->tag_groups =
+			g_list_prepend (tag_list->tag_groups, best_tag_group);
 	}
 
-	taglist->tag_groups = g_list_sort (taglist->tag_groups, groups_cmp);
+	tag_list->tag_groups = g_list_sort (tag_list->tag_groups, groups_cmp);
 
-	return taglist;
+	return tag_list;
 }
 
 static TagList *
