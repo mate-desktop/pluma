@@ -11,17 +11,16 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Marko Šterman <marko.chamillionaire@gmail.com>, 2020
 # Damir Jerovšek <jierro@windowslive.com>, 2020
-# Arnold Marko <arnold.marko@gmail.com>, 2020
 # Helena S <ele@tutamail.com>, 2020
-# Nejc Bertoncelj <nbert@siol.net>, 2020
+# Arnold Marko <arnold.marko@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
-"Last-Translator: Nejc Bertoncelj <nbert@siol.net>, 2020\n"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2020\n"
 "Language-Team: Slovenian (https://www.transifex.com/mate/teams/13566/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,8 +41,8 @@ msgid ""
 msgstr ""
 "Ali naj se uporabi privzeta sistemska pisava s stalno širino za urejanje "
 "besedila namesto pisave uporabljene v programu Pluma. V primeru, da ta "
-"možnost ni izbrana, bo namesto sistemske pisave uporabljena tista pisava, ki"
-" je imenovana kot možnost \"Pisava urejevalnika\"."
+"možnost ni izbrana, bo namesto sistemske pisave uporabljena pisava iz "
+"nastavitve \"Pisava urejevalnika\"."
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgctxt "editor-font"
@@ -59,12 +58,12 @@ msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
 msgstr ""
-"Pisava po meri, ki bo uporabljena za izpis besedila. Upoštevana bo le v "
-"primeru, da je možnost \"Uporabi privzeto pisavo\" onemogočena."
+"Prilagojena pisava, ki bo uporabljena za izpis besedila. Uporabljena bo le v"
+" primeru, da je možnost \"Uporabi privzeto pisavo\" izklopljena."
 
 #: data/org.mate.pluma.gschema.xml.in:21
 msgid "Switch tabs with [ctrl] + [tab]"
-msgstr "Preklopi med zavihki z [ctrl] + [tab]"
+msgstr "Preklopi med zavihki s [ctrl] + [tab]"
 
 #: data/org.mate.pluma.gschema.xml.in:22
 msgid ""
@@ -118,7 +117,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:46
 msgid "Autosave Interval"
-msgstr "Časovni razmik samodejnega shranjevanja"
+msgstr "Interval med samodejnim shranjevanjem"
 
 #: data/org.mate.pluma.gschema.xml.in:47
 msgid ""
@@ -200,7 +199,7 @@ msgstr "Ali naj pluma vstavlja presledke namesto zamikov (tabulatorjev)."
 
 #: data/org.mate.pluma.gschema.xml.in:81
 msgid "Automatic indent"
-msgstr "Samodejno zamikanje"
+msgstr "Samodejni zamik"
 
 #: data/org.mate.pluma.gschema.xml.in:82
 msgid "Whether pluma should enable automatic indentation."
@@ -208,7 +207,7 @@ msgstr "Ali naj pluma omogoči samodejno zamikanje."
 
 #: data/org.mate.pluma.gschema.xml.in:86
 msgid "Display Line Numbers"
-msgstr "Pokaži številke vrstic"
+msgstr "Prikaži številke vrstic"
 
 #: data/org.mate.pluma.gschema.xml.in:87
 msgid "Whether pluma should display line numbers in the editing area."
@@ -232,7 +231,7 @@ msgstr "Ali naj pluma poudari oklepaj, ki pripada dvojici izbranega oklepaja."
 
 #: data/org.mate.pluma.gschema.xml.in:101
 msgid "Display Right Margin"
-msgstr "Pokaži desni rob"
+msgstr "Prikaži desni rob"
 
 #: data/org.mate.pluma.gschema.xml.in:102
 msgid "Whether pluma should display the right margin in the editing area."
@@ -270,7 +269,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:116
 msgid "Restore Previous Cursor Position"
-msgstr "Povrni prejšnji položaj kazalca"
+msgstr "Povrni na prejšnji položaj kazalca"
 
 #: data/org.mate.pluma.gschema.xml.in:117
 msgid ""
@@ -280,12 +279,12 @@ msgstr "Ali naj pluma povrne prejšnji položaj kazalca, ko se datoteka naloži.
 
 #: data/org.mate.pluma.gschema.xml.in:121
 msgid "Enable Search Highlighting"
-msgstr "Omogoči poudarjanje zadetkov"
+msgstr "Vklopi izpostavljanje zadetkov"
 
 #: data/org.mate.pluma.gschema.xml.in:122
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
-msgstr "Ali naj pluma poudari pojavljanje iskanega besedila."
+msgstr "Ali naj pluma izpostavi pojavljanje iskanega besedila."
 
 #: data/org.mate.pluma.gschema.xml.in:126
 msgid "Enable Syntax Highlighting"
@@ -349,6 +348,8 @@ msgstr "Prikaži zavihke s stranskim panojem"
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
+"Če ni resnično, pluma ne prikaže zavihkov v beležnici z aktivnim stranskim "
+"panojem."
 
 #: data/org.mate.pluma.gschema.xml.in:156
 msgid "Bottom Panel is Visible"
@@ -470,8 +471,8 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8','CURRENT','ISO-8859-15','UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -535,15 +536,15 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "Show newline"
-msgstr ""
+msgstr "Prikaži nove vrstice"
 
 #: data/org.mate.pluma.gschema.xml.in:227
 msgid "Whether pluma should show newlines in the editor window."
-msgstr ""
+msgstr "Ali naj pluma prikaže nove vrstice v oknu urejevalnika."
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "Show nbsp"
-msgstr ""
+msgstr "Prikaži nbsp"
 
 #: data/org.mate.pluma.gschema.xml.in:232
 msgid ""
@@ -554,7 +555,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:236
 msgid "Show tabs"
-msgstr ""
+msgstr "Prikaži tabulatorje"
 
 #: data/org.mate.pluma.gschema.xml.in:237
 msgid ""
@@ -565,7 +566,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Show spaces"
-msgstr ""
+msgstr "Prikaži presledke"
 
 #: data/org.mate.pluma.gschema.xml.in:242
 msgid ""
@@ -590,6 +591,11 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
+"Pluma je majhen a zmogljiv urejevalnik besedil, ustvarjen posebej za MATE "
+"namzje. Ima najbolj standardne funkcije za urejanje besedil in polno podporo"
+" za mednarodna besedila v Unicode obliki. Napredne funkcije vključujejo "
+"poudarjanje skladnje, samodejno zamikanje izvorne kode, tiskanje in urejanje"
+" več dokumentov v enem oknu."
 
 #: data/pluma.appdata.xml.in:17
 msgid ""
@@ -597,6 +603,9 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
+"Pluma je razširljiva preko sistema vtičnikov, ki trenutno vključuje podporo "
+"za črkovalnik, primerjanje datotek, prikaz CVS dnevnikov sprememb in "
+"prilagajanje zamikov."
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:754
 msgid "Text Editor"
@@ -606,17 +615,13 @@ msgstr "Urejevalnik besedil"
 msgid "Edit text files"
 msgstr "Urejanje besedilnih datotek"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/pluma.desktop.in.in:15
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
 msgstr ""
+"text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;besedilo, "
+"tabulator;poudarjanje;koda;datoteke;"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:136
 msgid "Log Out _without Saving"
@@ -662,7 +667,7 @@ msgstr "_Shrani"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:183
 msgid "Save _As"
-msgstr ""
+msgstr "Shr_ani kot"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:216
 msgid "Question"
@@ -677,9 +682,13 @@ msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
+"Če ne shranite, bodo spremembe zadnje %ld sekunde trajno izgubljene."
 msgstr[1] ""
+"Če ne shranite, bodo spremembe zadnjih %ld sekund trajno izgubljene."
 msgstr[2] ""
+"Če ne shranite, bodo spremembe zadnjih %ld sekund trajno izgubljene."
 msgstr[3] ""
+"Če ne shranite, bodo spremembe zadnjih %ld sekund trajno izgubljene."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
@@ -696,9 +705,17 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"Če ne shranite, bodo spremembe zadnje minute in %ld sekunde trajno "
+"izgubljene."
 msgstr[1] ""
+"Če ne shranite, bodo spremembe zadnje minute in %ld sekund trajno "
+"izgubljene."
 msgstr[2] ""
+"Če ne shranite, bodo spremembe zadnje minute in %ld sekund trajno "
+"izgubljene."
 msgstr[3] ""
+"Če ne shranite, bodo spremembe zadnje minute in %ld sekund trajno "
+"izgubljene."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
@@ -709,9 +726,13 @@ msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
+"Če ne shranite, bodo spremembe zadnje %ld minute trajno izgubljene."
 msgstr[1] ""
+"Če ne shranite, bodo spremembe zadnjih %ld minut trajno izgubljene."
 msgstr[2] ""
+"Če ne shranite, bodo spremembe zadnjih %ld minut trajno izgubljene."
 msgstr[3] ""
+"Če ne shranite, bodo spremembe zadnjih %ld minut trajno izgubljene."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
@@ -727,9 +748,13 @@ msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
+"Če ne shranite, bodo spremembe zadnje ure in %d minute trajno izgubljene."
 msgstr[1] ""
+"Če ne shranite, bodo spremembe zadnje ure in %d minut trajno izgubljene."
 msgstr[2] ""
+"Če ne shranite, bodo spremembe zadnje ure in %d minut trajno izgubljene."
 msgstr[3] ""
+"Če ne shranite, bodo spremembe zadnje ure in %d minut trajno izgubljene."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
@@ -737,10 +762,10 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Če ne shranite, bodo spremembe zadnje %d ure trajno izgubljene."
+msgstr[1] "Če ne shranite, bodo spremembe zadnjih %d ur trajno izgubljene."
+msgstr[2] "Če ne shranite, bodo spremembe zadnjih%d ur trajno izgubljene."
+msgstr[3] "Če ne shranite, bodo spremembe zadnjih %d ur trajno izgubljene."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
@@ -761,10 +786,10 @@ msgstr "Skrbnik sistema je onemogočil shranjevanje."
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Spremembe %d dokumenta bodo trajno izgubljene."
+msgstr[1] "Spremembe %d dokumentov bodo trajno izgubljene."
+msgstr[2] "Spremembe %d dokumentov bodo trajno izgubljene."
+msgstr[3] "Spremembe %d dokumentov bodo trajno izgubljene."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
@@ -772,10 +797,10 @@ msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Spremembe %d dokumenta niso shranjene. Shranim pred zapiranjem?"
+msgstr[1] "Spremembe %d dokumentov niso shranjene. Shranim pred zapiranjem?"
+msgstr[2] "Spremembe %d dokumentov niso shranjene. Shranim pred zapiranjem?"
+msgstr[3] "Spremembe %d dokumentov niso shranjene. Shranim pred zapiranjem?"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
@@ -1015,27 +1040,27 @@ msgstr "_minut"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:919
 msgid "Show spaces, tabs, newlines"
-msgstr ""
+msgstr "Prikaži presledke, tabulatorje, nove vrstice"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:953
 msgid "Show _tabs"
-msgstr ""
+msgstr "Prikaži _tabulatorje"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1003
 msgid "Show _trailing tabs only"
-msgstr ""
+msgstr "Prikaži zgolj zadnje _tabulatorje"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1041
 msgid "Show _newlines"
-msgstr ""
+msgstr "Prikaži _nove vrstice"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1082
 msgid "Show _spaces"
-msgstr ""
+msgstr "Prikaži pre_sledke"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1132
 msgid "Show _trailing spaces only"
-msgstr ""
+msgstr "Prikaži zgolj _zadnje presledke"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1175
 msgid "Editor"
@@ -1187,10 +1212,10 @@ msgstr "Nalaganje datoteke '%s' ..."
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Nalaganje %d datoteke..."
+msgstr[1] "Nalaganje %d datotek..."
+msgstr[2] "Nalaganje %d datotek..."
+msgstr[3] "Nalaganje %d datotek..."
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:463
@@ -1233,10 +1258,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Spremembe dokumenta za zadnjo %ld sekundo bodo trajno izgubljene."
+msgstr[1] "Spremembe dokumenta za zadnji %ld sekundi bodo trajno izgubljene."
+msgstr[2] "Spremembe dokumenta za zadnje %ld sekunde bodo trajno izgubljene."
+msgstr[3] "Spremembe dokumenta za zadnjih %ld sekund bodo trajno izgubljene."
 
 #: pluma/pluma-commands-file.c:1149
 msgid ""
@@ -1252,9 +1277,13 @@ msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"Spremembe dokumenta za zadnjo minuto in %ld sekundo bodo trajno izgubljene."
 msgstr[1] ""
+"Spremembe dokumenta za zadnjo minuto in %ld sekundi bodo trajno izgubljene."
 msgstr[2] ""
+"Spremembe dokumenta za zadnjo minuto in %ld sekunde bodo trajno izgubljene."
 msgstr[3] ""
+"Spremembe dokumenta za zadnjo minuto in %ld sekund bodo trajno izgubljene."
 
 #: pluma/pluma-commands-file.c:1165
 #, c-format
@@ -1264,10 +1293,10 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Spremembe dokumenta za zadnjo %ld minuto bodo trajno izgubljene."
+msgstr[1] "Spremembe dokumenta za zadnji %ld minuti bodo trajno izgubljene."
+msgstr[2] "Spremembe dokumenta za zadnje %ld minute bodo trajno izgubljene."
+msgstr[3] "Spremembe dokumenta za zadnjih %ld minut bodo trajno izgubljene."
 
 #: pluma/pluma-commands-file.c:1180
 msgid ""
@@ -1283,9 +1312,13 @@ msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
+"Spremembe dokumenta za zadnjo uro in %d minuto bodo trajno izgubljene."
 msgstr[1] ""
+"Spremembe dokumenta za zadnjo uro in %d minuti bodo trajno izgubljene."
 msgstr[2] ""
+"Spremembe dokumenta za zadnjo uro in %d minute bodo trajno izgubljene."
 msgstr[3] ""
+"Spremembe dokumenta za zadnjo uro in %d minut bodo trajno izgubljene."
 
 #: pluma/pluma-commands-file.c:1201
 #, c-format
@@ -1293,10 +1326,10 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Spremembe dokumenta za zadnjo %d uro bodo trajno izgubljene."
+msgstr[1] "Spremembe dokumenta za zadnji %d uri bodo trajno izgubljene."
+msgstr[2] "Spremembe dokumenta za zadnje %d ure bodo trajno izgubljene."
+msgstr[3] "Spremembe dokumenta za zadnjih %d ur bodo trajno izgubljene."
 
 #: pluma/pluma-commands-file.c:1228 pluma/pluma-ui.h:84
 msgid "_Revert"
@@ -1325,6 +1358,10 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"Pluma spada med prosto programje; lahko ga razširjate in/ali spreminjate pod"
+" pogoji Splošnega dovoljenja GNU (GNU General PublicLicense), kot ga je "
+"objavila ustanova Free Software Foundation; ali različice 2 ali (po vaši "
+"izbiri) katerekoli poznejše različice."
 
 #: pluma/pluma-commands-help.c:74
 msgid ""
@@ -1333,6 +1370,9 @@ msgid ""
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
+"Pluma se razširja v upanju, da bo uporaben, vendar BREZ VSAKRŠNEGA JAMSTVA; "
+"tudi brez posredne zagotovitve CENOVNE VREDNOSTI ali PRIMERNOSTI ZA DOLOČEN "
+"NAMEN.  Za podrobnosti glejte besedilo GNU General Public License."
 
 #: pluma/pluma-commands-help.c:78
 msgid ""
@@ -1340,10 +1380,13 @@ msgid ""
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 msgstr ""
+"Skupaj s Plumo bi morali prejeti kopijo GNU Splošne javne licence. V "
+"primeru, da je niste, pišite na Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA"
 
 #: pluma/pluma-commands-help.c:113
 msgid "About Pluma"
-msgstr ""
+msgstr "O programu Pluma"
 
 #: pluma/pluma-commands-help.c:116
 msgid ""
@@ -1355,6 +1398,13 @@ msgid ""
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2020 MATE razvijalci"
 
 #: pluma/pluma-commands-help.c:126
 msgid "translator-credits"
@@ -1364,10 +1414,10 @@ msgstr "zasluge-prevajalcev"
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Najden in zamenjan je bil %d pojav"
+msgstr[1] "Najdena in zamenjana sta bilo %d pojava"
+msgstr[2] "Najdeni in zamenjani so bili %d pojavi"
+msgstr[3] "Najdenih in zamenjanih je bilo %d pojavov"
 
 #: pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1909,7 +1959,7 @@ msgstr "Pripravljanje ..."
 
 #: pluma/pluma-print-preferences.ui:15
 msgid "window1"
-msgstr ""
+msgstr "okno1"
 
 #: pluma/pluma-print-preferences.ui:39
 msgid "Syntax Highlighting"
@@ -2204,7 +2254,7 @@ msgstr "O programu"
 
 #: pluma/pluma-ui.h:72
 msgid "_Leave Fullscreen"
-msgstr ""
+msgstr "_Zapusti celozaslonski način"
 
 #: pluma/pluma-ui.h:73
 msgid "Leave fullscreen mode"
@@ -2888,12 +2938,6 @@ msgstr "Pladenj pregledovalnika datotek"
 msgid "Easy file access from the side pane"
 msgstr "Enostaven dostop do datotek iz stranskega pladnja"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Nastavi mesto na prvi dokument"
@@ -3275,12 +3319,6 @@ msgstr "Konzola python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Vzajemna konzola python v spodnjem pladnju"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr ""
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "Barva _napake:"
@@ -3291,11 +3329,11 @@ msgstr "Barva _ukaza:"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
-msgstr ""
+msgstr "Uporabi sistemsko pisavo s fiksno širino"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
-msgstr ""
+msgstr "Pisava:"
 
 #: plugins/quickopen/quickopen/popup.py:32
 #: plugins/quickopen/quickopen.plugin.desktop.in:6
@@ -3313,12 +3351,6 @@ msgstr "Hitro odpiranje dokumentov"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Hitro odpiranje datotek"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr ""
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3561,12 +3593,6 @@ msgstr "Razvrsti"
 msgid "Sorts a document or selected text."
 msgstr "Razvrsti izbran dokument ali besedilo."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr ""
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_Razvrsti"
@@ -3593,7 +3619,7 @@ msgstr "Dejanja razvrščanja ni mogoče razveljaviti"
 
 #: plugins/spell/org.mate.pluma.plugins.spell.gschema.xml.in:11
 msgid "Autocheck Type"
-msgstr ""
+msgstr "Samodejno preveri vrsto"
 
 #. Translators: Displayed in the "Check Spelling" dialog if there are no
 #. suggestions for the current misspelled word
@@ -3763,23 +3789,23 @@ msgstr "Jezik"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:23
 msgid "_Configure Spell Checker plugin..."
-msgstr ""
+msgstr "_Nastavitve vtičnika črkovalnika"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:103
 msgid "Autocheck spelling on document load..."
-msgstr ""
+msgstr "Samodejno preverjanje črkovanja ob nalaganju dokumenta..."
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:116
 msgid "_Never autocheck"
-msgstr ""
+msgstr "_Brez samodejnega preverjanja"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:133
 msgid "_Remember autocheck by document"
-msgstr ""
+msgstr "_Zapomni si samodejno preverjanje po dokumentu"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:151
 msgid "_Always autocheck"
-msgstr ""
+msgstr "Vedno s_amodejno preveri"
 
 #: plugins/spell/spell.plugin.desktop.in:5
 msgid "Spell Checker"
@@ -3788,12 +3814,6 @@ msgstr "Črkovalnik"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Preveri črkovanje trenutnega dokumenta."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr ""
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -4960,15 +4980,15 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2275
 msgid "&quot;"
-msgstr ""
+msgstr "&quot;"
 
 #: plugins/taglist/HTML.tags.xml.in:2279
 msgid "&amp;"
-msgstr ""
+msgstr "&amp;"
 
 #: plugins/taglist/HTML.tags.xml.in:2283
 msgid "¡"
-msgstr ""
+msgstr "¡"
 
 #: plugins/taglist/HTML.tags.xml.in:2287
 msgid "¦"
@@ -4976,55 +4996,55 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2291
 msgid "¨"
-msgstr ""
+msgstr "¨"
 
 #: plugins/taglist/HTML.tags.xml.in:2295
 msgid "¯"
-msgstr ""
+msgstr "¯"
 
 #: plugins/taglist/HTML.tags.xml.in:2299
 msgid "´"
-msgstr ""
+msgstr "´"
 
 #: plugins/taglist/HTML.tags.xml.in:2303
 msgid "¸"
-msgstr ""
+msgstr "¸"
 
 #: plugins/taglist/HTML.tags.xml.in:2307
 msgid "&lt;"
-msgstr ""
+msgstr "&lt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2311
 msgid "&gt;"
-msgstr ""
+msgstr "&gt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2315
 msgid "±"
-msgstr ""
+msgstr "±"
 
 #: plugins/taglist/HTML.tags.xml.in:2319
 msgid "«"
-msgstr ""
+msgstr "«"
 
 #: plugins/taglist/HTML.tags.xml.in:2323
 msgid "»"
-msgstr ""
+msgstr "»"
 
 #: plugins/taglist/HTML.tags.xml.in:2327
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: plugins/taglist/HTML.tags.xml.in:2331
 msgid "÷"
-msgstr ""
+msgstr "÷"
 
 #: plugins/taglist/HTML.tags.xml.in:2335
 msgid "¢"
-msgstr ""
+msgstr "¢"
 
 #: plugins/taglist/HTML.tags.xml.in:2339
 msgid "£"
-msgstr ""
+msgstr "£"
 
 #: plugins/taglist/HTML.tags.xml.in:2343
 msgid "€"
@@ -5036,7 +5056,7 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2351
 msgid "¥"
-msgstr ""
+msgstr "¥"
 
 #: plugins/taglist/HTML.tags.xml.in:2355
 msgid "§"
@@ -5060,11 +5080,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2375
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #: plugins/taglist/HTML.tags.xml.in:2379
 msgid "µ"
-msgstr ""
+msgstr "µ"
 
 #: plugins/taglist/HTML.tags.xml.in:2383
 msgid "¶"
@@ -5080,11 +5100,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2395
 msgid "½"
-msgstr ""
+msgstr "½"
 
 #: plugins/taglist/HTML.tags.xml.in:2399
 msgid "¾"
-msgstr ""
+msgstr "¾"
 
 #: plugins/taglist/HTML.tags.xml.in:2403
 msgid "¹"
@@ -5104,19 +5124,19 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2419
 msgid "Á"
-msgstr ""
+msgstr "Á"
 
 #: plugins/taglist/HTML.tags.xml.in:2423
 msgid "â"
-msgstr ""
+msgstr "â"
 
 #: plugins/taglist/HTML.tags.xml.in:2427
 msgid "Â"
-msgstr ""
+msgstr "Â"
 
 #: plugins/taglist/HTML.tags.xml.in:2431
 msgid "à"
-msgstr ""
+msgstr "à"
 
 #: plugins/taglist/HTML.tags.xml.in:2435
 msgid "À"
@@ -5140,7 +5160,7 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2455
 msgid "ä"
-msgstr ""
+msgstr "ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2459
 msgid "Ä"
@@ -5164,11 +5184,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2479
 msgid "Ç"
-msgstr ""
+msgstr "Ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2483
 msgid "Ð"
-msgstr ""
+msgstr "Ð"
 
 #: plugins/taglist/HTML.tags.xml.in:2487
 msgid "ð"
@@ -5180,11 +5200,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2495
 msgid "É"
-msgstr ""
+msgstr "É"
 
 #: plugins/taglist/HTML.tags.xml.in:2499
 msgid "ê"
-msgstr ""
+msgstr "ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2503
 msgid "Ê"
@@ -5200,11 +5220,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2515
 msgid "ë"
-msgstr ""
+msgstr "ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2519
 msgid "Ë"
-msgstr ""
+msgstr "Ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2523
 msgid "í"
@@ -5212,23 +5232,23 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2527
 msgid "Í"
-msgstr ""
+msgstr "Í"
 
 #: plugins/taglist/HTML.tags.xml.in:2531
 msgid "î"
-msgstr ""
+msgstr "î"
 
 #: plugins/taglist/HTML.tags.xml.in:2535
 msgid "Î"
-msgstr ""
+msgstr "Î"
 
 #: plugins/taglist/HTML.tags.xml.in:2539
 msgid "ì"
-msgstr ""
+msgstr "ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2543
 msgid "Ì"
-msgstr ""
+msgstr "Ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2547
 msgid "ï"
@@ -5236,123 +5256,123 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2551
 msgid "Ï"
-msgstr ""
+msgstr "Ï"
 
 #: plugins/taglist/HTML.tags.xml.in:2555
 msgid "ñ"
-msgstr ""
+msgstr "ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2559
 msgid "Ñ"
-msgstr ""
+msgstr "Ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2563
 msgid "ó"
-msgstr ""
+msgstr "ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2567
 msgid "Ó"
-msgstr ""
+msgstr "Ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2571
 msgid "ô"
-msgstr ""
+msgstr "ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2575
 msgid "Ô"
-msgstr ""
+msgstr "Ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2579
 msgid "ò"
-msgstr ""
+msgstr "ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2583
 msgid "Ò"
-msgstr ""
+msgstr "Ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2587
 msgid "º"
-msgstr ""
+msgstr "º"
 
 #: plugins/taglist/HTML.tags.xml.in:2591
 msgid "ø"
-msgstr ""
+msgstr "ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2595
 msgid "Ø"
-msgstr ""
+msgstr "Ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2599
 msgid "õ"
-msgstr ""
+msgstr "õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2603
 msgid "Õ"
-msgstr ""
+msgstr "Õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2607
 msgid "ö"
-msgstr ""
+msgstr "ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2611
 msgid "Ö"
-msgstr ""
+msgstr "Ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2615
 msgid "ß"
-msgstr ""
+msgstr "ß"
 
 #: plugins/taglist/HTML.tags.xml.in:2619
 msgid "þ"
-msgstr ""
+msgstr "þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2623
 msgid "Þ"
-msgstr ""
+msgstr "Þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2627
 msgid "ú"
-msgstr ""
+msgstr "ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2631
 msgid "Ú"
-msgstr ""
+msgstr "Ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2635
 msgid "û"
-msgstr ""
+msgstr "û"
 
 #: plugins/taglist/HTML.tags.xml.in:2639
 msgid "Û"
-msgstr ""
+msgstr "Û"
 
 #: plugins/taglist/HTML.tags.xml.in:2643
 msgid "ù"
-msgstr ""
+msgstr "ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2647
 msgid "Ù"
-msgstr ""
+msgstr "Ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2651
 msgid "ü"
-msgstr ""
+msgstr "ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2655
 msgid "Ü"
-msgstr ""
+msgstr "Ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2659
 msgid "ý"
-msgstr ""
+msgstr "ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2663
 msgid "Ý"
-msgstr ""
+msgstr "Ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2667
 msgid "ÿ"
-msgstr ""
+msgstr "ÿ"
 
 #: plugins/taglist/Latex.tags.xml.in:3
 msgid "Latex - Tags"
@@ -5388,7 +5408,7 @@ msgstr "Oklepaja {}"
 
 #: plugins/taglist/Latex.tags.xml.in:39
 msgid "Brackets &lt;&gt;"
-msgstr ""
+msgstr "Oklepaji &lt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:44
 msgid "File input"
@@ -5544,19 +5564,19 @@ msgstr "Vsebina navezave"
 
 #: plugins/taglist/Latex.tags.xml.in:225
 msgid "Symbol &lt;&lt;"
-msgstr ""
+msgstr "Simbol &lt;&lt;"
 
 #: plugins/taglist/Latex.tags.xml.in:229
 msgid "Symbol &lt;="
-msgstr ""
+msgstr "Simbol &lt;="
 
 #: plugins/taglist/Latex.tags.xml.in:233
 msgid "Symbol &gt;="
-msgstr ""
+msgstr "Simbol &gt;="
 
 #: plugins/taglist/Latex.tags.xml.in:237
 msgid "Symbol &gt;&gt;"
-msgstr ""
+msgstr "Simbol &gt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:241
 msgid "Symbol and"
@@ -5664,11 +5684,11 @@ msgstr "XSLT - Predmeti"
 
 #: plugins/taglist/XSLT.tags.xml.in:8
 msgid "apply-imports"
-msgstr ""
+msgstr "uporabi-uvoze"
 
 #: plugins/taglist/XSLT.tags.xml.in:12
 msgid "apply-templates"
-msgstr ""
+msgstr "uporabi-predloge"
 
 #: plugins/taglist/XSLT.tags.xml.in:16 plugins/taglist/XSLT.tags.xml.in:303
 msgid "attribute"
@@ -5676,100 +5696,100 @@ msgstr "atribut"
 
 #: plugins/taglist/XSLT.tags.xml.in:20
 msgid "attribute-set"
-msgstr ""
+msgstr "atribut-določitev"
 
 #: plugins/taglist/XSLT.tags.xml.in:24
 msgid "call-template"
-msgstr ""
+msgstr "kliči-predlogo"
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"
-msgstr ""
+msgstr "izberi"
 
 #: plugins/taglist/XSLT.tags.xml.in:32 plugins/taglist/XSLT.tags.xml.in:150
 msgid "comment"
-msgstr ""
+msgstr "komentar"
 
 #: plugins/taglist/XSLT.tags.xml.in:36
 msgid "copy"
-msgstr ""
+msgstr "kopija"
 
 #: plugins/taglist/XSLT.tags.xml.in:39
 msgid "copy-of"
-msgstr ""
+msgstr "kopija od"
 
 #: plugins/taglist/XSLT.tags.xml.in:43
 msgid "decimal-format"
-msgstr ""
+msgstr "decimalni-zapis"
 
 #: plugins/taglist/XSLT.tags.xml.in:46
 msgid "element"
-msgstr ""
+msgstr "element"
 
 #: plugins/taglist/XSLT.tags.xml.in:50
 msgid "fallback"
-msgstr ""
+msgstr "povratek"
 
 #: plugins/taglist/XSLT.tags.xml.in:54
 msgid "for-each"
-msgstr ""
+msgstr "za-vsako"
 
 #: plugins/taglist/XSLT.tags.xml.in:58
 msgid "if"
-msgstr ""
+msgstr "če"
 
 #: plugins/taglist/XSLT.tags.xml.in:62
 msgid "import"
-msgstr ""
+msgstr "uvoz"
 
 #: plugins/taglist/XSLT.tags.xml.in:66
 msgid "include"
-msgstr ""
+msgstr "vključi"
 
 #: plugins/taglist/XSLT.tags.xml.in:70 plugins/taglist/XSLT.tags.xml.in:199
 #: plugins/taglist/XUL.tags.xml.in:147
 msgid "key"
-msgstr ""
+msgstr "ključ"
 
 #: plugins/taglist/XSLT.tags.xml.in:74
 msgid "message"
-msgstr ""
+msgstr "sporočilo"
 
 #: plugins/taglist/XSLT.tags.xml.in:78
 msgid "namespace-alias"
-msgstr ""
+msgstr "poimenovanje-vzdevek"
 
 #: plugins/taglist/XSLT.tags.xml.in:82 plugins/taglist/XSLT.tags.xml.in:233
 msgid "number"
-msgstr ""
+msgstr "številka"
 
 #: plugins/taglist/XSLT.tags.xml.in:85
 msgid "otherwise"
-msgstr ""
+msgstr "drugače"
 
 #: plugins/taglist/XSLT.tags.xml.in:89
 msgid "output"
-msgstr ""
+msgstr "izhod"
 
 #: plugins/taglist/XSLT.tags.xml.in:93
 msgid "param"
-msgstr ""
+msgstr "param"
 
 #: plugins/taglist/XSLT.tags.xml.in:97
 msgid "preserve-space"
-msgstr ""
+msgstr "ohrani-prostor"
 
 #: plugins/taglist/XSLT.tags.xml.in:101 plugins/taglist/XSLT.tags.xml.in:240
 msgid "processing-instruction"
-msgstr ""
+msgstr "navodila-obdelava"
 
 #: plugins/taglist/XSLT.tags.xml.in:105
 msgid "sort"
-msgstr ""
+msgstr "sortiranje"
 
 #: plugins/taglist/XSLT.tags.xml.in:108
 msgid "strip-space"
-msgstr ""
+msgstr "odstrani-presledke"
 
 #: plugins/taglist/XSLT.tags.xml.in:112
 msgid "stylesheet"
@@ -5777,27 +5797,27 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:116 plugins/taglist/XUL.tags.xml.in:398
 msgid "template"
-msgstr ""
+msgstr "predloga"
 
 #: plugins/taglist/XSLT.tags.xml.in:120 plugins/taglist/XSLT.tags.xml.in:280
 msgid "text"
-msgstr ""
+msgstr "besedilo"
 
 #: plugins/taglist/XSLT.tags.xml.in:123
 msgid "value-of"
-msgstr ""
+msgstr "vrednost-od"
 
 #: plugins/taglist/XSLT.tags.xml.in:127
 msgid "variable"
-msgstr ""
+msgstr "spremenljivka"
 
 #: plugins/taglist/XSLT.tags.xml.in:131
 msgid "when"
-msgstr ""
+msgstr "ko"
 
 #: plugins/taglist/XSLT.tags.xml.in:135
 msgid "with-param"
-msgstr ""
+msgstr "s-parametrom"
 
 #: plugins/taglist/XSLT.tags.xml.in:141
 msgid "XSLT - Functions"
@@ -5805,23 +5825,23 @@ msgstr "XSLT - Funkcije"
 
 #: plugins/taglist/XSLT.tags.xml.in:142
 msgid "boolean"
-msgstr ""
+msgstr "logična"
 
 #: plugins/taglist/XSLT.tags.xml.in:146
 msgid "ceiling"
-msgstr ""
+msgstr "vrh"
 
 #: plugins/taglist/XSLT.tags.xml.in:153
 msgid "concat"
-msgstr ""
+msgstr "združi"
 
 #: plugins/taglist/XSLT.tags.xml.in:157
 msgid "contains"
-msgstr ""
+msgstr "vsebuje"
 
 #: plugins/taglist/XSLT.tags.xml.in:161
 msgid "count"
-msgstr ""
+msgstr "štej"
 
 #: plugins/taglist/XSLT.tags.xml.in:165
 msgid "current"
@@ -5833,7 +5853,7 @@ msgstr "dokument"
 
 #: plugins/taglist/XSLT.tags.xml.in:172
 msgid "element-available"
-msgstr ""
+msgstr "element-na-voljo"
 
 #: plugins/taglist/XSLT.tags.xml.in:176
 msgid "false"
@@ -5841,35 +5861,35 @@ msgstr "napak"
 
 #: plugins/taglist/XSLT.tags.xml.in:179
 msgid "floor"
-msgstr ""
+msgstr "dno"
 
 #: plugins/taglist/XSLT.tags.xml.in:183
 msgid "format-number"
-msgstr ""
+msgstr "zapis-številke"
 
 #: plugins/taglist/XSLT.tags.xml.in:187
 msgid "function-available"
-msgstr ""
+msgstr "funkcija-na-voljo"
 
 #: plugins/taglist/XSLT.tags.xml.in:191
 msgid "generate-id"
-msgstr ""
+msgstr "ustvari-id"
 
 #: plugins/taglist/XSLT.tags.xml.in:195
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: plugins/taglist/XSLT.tags.xml.in:203
 msgid "lang"
-msgstr ""
+msgstr "jezik"
 
 #: plugins/taglist/XSLT.tags.xml.in:207
 msgid "last"
-msgstr ""
+msgstr "zadnje"
 
 #: plugins/taglist/XSLT.tags.xml.in:210
 msgid "local-name"
-msgstr ""
+msgstr "lokalizirano-ime"
 
 #: plugins/taglist/XSLT.tags.xml.in:214
 msgid "name"
@@ -5877,63 +5897,63 @@ msgstr "ime"
 
 #: plugins/taglist/XSLT.tags.xml.in:218
 msgid "namespace-uri"
-msgstr ""
+msgstr "poimenovanje-url"
 
 #: plugins/taglist/XSLT.tags.xml.in:222
 msgid "node"
-msgstr ""
+msgstr "vozlišče"
 
 #: plugins/taglist/XSLT.tags.xml.in:225
 msgid "normalize-space"
-msgstr ""
+msgstr "normaliziraj-presledke"
 
 #: plugins/taglist/XSLT.tags.xml.in:229
 msgid "not"
-msgstr ""
+msgstr "ne"
 
 #: plugins/taglist/XSLT.tags.xml.in:237
 msgid "position"
-msgstr ""
+msgstr "položaj"
 
 #: plugins/taglist/XSLT.tags.xml.in:244
 msgid "round"
-msgstr ""
+msgstr "zaokroženo"
 
 #: plugins/taglist/XSLT.tags.xml.in:248
 msgid "starts-with"
-msgstr ""
+msgstr "začne-z"
 
 #: plugins/taglist/XSLT.tags.xml.in:252
 msgid "string"
-msgstr ""
+msgstr "niz"
 
 #: plugins/taglist/XSLT.tags.xml.in:256
 msgid "string-length"
-msgstr ""
+msgstr "niz-dolžina"
 
 #: plugins/taglist/XSLT.tags.xml.in:260
 msgid "substring"
-msgstr ""
+msgstr "podniz"
 
 #: plugins/taglist/XSLT.tags.xml.in:264
 msgid "substring-after"
-msgstr ""
+msgstr "podniz-po"
 
 #: plugins/taglist/XSLT.tags.xml.in:268
 msgid "substring-before"
-msgstr ""
+msgstr "podniz-pred"
 
 #: plugins/taglist/XSLT.tags.xml.in:272
 msgid "sum"
-msgstr ""
+msgstr "vsota"
 
 #: plugins/taglist/XSLT.tags.xml.in:276
 msgid "system-property"
-msgstr ""
+msgstr "sistemska-lastnost"
 
 #: plugins/taglist/XSLT.tags.xml.in:283
 msgid "translate"
-msgstr ""
+msgstr "prevedi"
 
 #: plugins/taglist/XSLT.tags.xml.in:287
 msgid "true"
@@ -5941,7 +5961,7 @@ msgstr "prav"
 
 #: plugins/taglist/XSLT.tags.xml.in:290
 msgid "unparsed-entity-uri"
-msgstr ""
+msgstr "nerazčlenjen-del-url"
 
 #: plugins/taglist/XSLT.tags.xml.in:296
 msgid "XSLT - Axes"
@@ -6001,47 +6021,47 @@ msgstr "XUL - Oznake"
 
 #: plugins/taglist/XUL.tags.xml.in:5
 msgid "action"
-msgstr ""
+msgstr "dejanje"
 
 #: plugins/taglist/XUL.tags.xml.in:10
 msgid "arrowscrollbox"
-msgstr ""
+msgstr "drsnikspuščico"
 
 #: plugins/taglist/XUL.tags.xml.in:15
 msgid "bbox"
-msgstr ""
+msgstr "bbox"
 
 #: plugins/taglist/XUL.tags.xml.in:20
 msgid "binding"
-msgstr ""
+msgstr "vezava"
 
 #: plugins/taglist/XUL.tags.xml.in:25
 msgid "bindings"
-msgstr ""
+msgstr "vezave"
 
 #: plugins/taglist/XUL.tags.xml.in:30
 msgid "box"
-msgstr ""
+msgstr "okvir"
 
 #: plugins/taglist/XUL.tags.xml.in:35
 msgid "broadcaster"
-msgstr ""
+msgstr "oddajnik"
 
 #: plugins/taglist/XUL.tags.xml.in:39
 msgid "broadcasterset"
-msgstr ""
+msgstr "nastavioddajnik"
 
 #: plugins/taglist/XUL.tags.xml.in:44
 msgid "button"
-msgstr ""
+msgstr "gumb"
 
 #: plugins/taglist/XUL.tags.xml.in:48
 msgid "browser"
-msgstr ""
+msgstr "brskalnik"
 
 #: plugins/taglist/XUL.tags.xml.in:52
 msgid "checkbox"
-msgstr ""
+msgstr "potrditvenopolje"
 
 #: plugins/taglist/XUL.tags.xml.in:56
 msgid "caption"
@@ -6049,7 +6069,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:60
 msgid "colorpicker"
-msgstr ""
+msgstr "izbirnikbarv"
 
 #: plugins/taglist/XUL.tags.xml.in:65
 msgid "column"
@@ -6473,12 +6493,6 @@ msgstr ""
 
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
 msgstr ""
 
 #: plugins/time/pluma-time-dialog.ui:19

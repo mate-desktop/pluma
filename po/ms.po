@@ -6,15 +6,15 @@
 # Translators:
 # Puretech <terjemah.puretech@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# abuyop <abuyop@gmail.com>, 2020
+# abuyop <abuyop@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
-"Last-Translator: abuyop <abuyop@gmail.com>, 2020\n"
+"Last-Translator: abuyop <abuyop@gmail.com>, 2021\n"
 "Language-Team: Malay (https://www.transifex.com/mate/teams/13566/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -470,8 +470,8 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -522,15 +522,15 @@ msgstr "Senarai masukan dalam kotak teks \"ganti dengan\"."
 
 #: data/org.mate.pluma.gschema.xml.in:221
 msgid "Active plugins"
-msgstr "Pemalam aktif"
+msgstr "Palam aktif"
 
 #: data/org.mate.pluma.gschema.xml.in:222
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
 msgstr ""
-"Senarai pemalam aktif. Ia mengandungi \"Lokasi\" bagi pemalam aktif. Rujuk "
-"fail .pluma-plugin untuk mendapatkan \"Lokasi\" pemalam yang diberi."
+"Senarai palam aktif. Ia mengandungi \"Lokasi\" bagi palam aktif. Rujuk fail "
+".pluma-plugin untuk mendapatkan \"Lokasi\" palam yang diberi."
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "Show newline"
@@ -612,8 +612,8 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
-"Pluma boleh ditambahbaik menerusi sistem pemalam, yang mana buat masa ini "
-"ada sokongan untuk penyemak ejaan, pembandingan fail, keupayaan melihat Log "
+"Pluma boleh ditambahbaik menerusi sistem palam, yang mana buat masa ini ada "
+"sokongan untuk penyemak ejaan, perbandingan fail, keupayaan melihat Log "
 "Perubahan CVS, dan pelarasan aras indentasi."
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:754
@@ -623,12 +623,6 @@ msgstr "Penyunting Teks"
 #: data/pluma.desktop.in.in:5
 msgid "Edit text files"
 msgstr "Sunting fail teks"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr "accessories-text-editor"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -1077,7 +1071,7 @@ msgstr "Fon & Warna"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1479
 msgid "Plugins"
-msgstr "Pemalam"
+msgstr "Palam"
 
 #: pluma/dialogs/pluma-search-dialog.c:295
 #: pluma/dialogs/pluma-search-dialog.ui:44
@@ -2899,12 +2893,6 @@ msgstr "Anak Tetingkap Pelayar Fail"
 msgid "Easy file access from the side pane"
 msgstr "Capai fail dengan mudah dari anak tetingkap sisi"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Tetapkan Lokasi ke Dokumen Pertama"
@@ -2916,7 +2904,7 @@ msgid ""
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
 msgstr ""
-"Jika BENAR pemalam pelayar fail akan lihat direktori dokumen yang pertama "
+"Jika BENAR palam pelayar fail akan lihat direktori dokumen yang pertama "
 "dibuka yang mana pelayar fail belum lagi digunakan. (Maka ia amnya dilaksana"
 " untuk membuka dokumen dari baris perintah atau membukanya dengan Caja, "
 "dll.)"
@@ -2958,8 +2946,8 @@ msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
 msgstr ""
-"Buka paparan pepohon bila pemalam pelayar fail dimuatkan selain dari paparan"
-" tanda buku"
+"Buka paparan pepohon bila palam pelayar fail dimuatkan selain dari paparan "
+"tanda buku"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:29
 msgid "File Browser Root Directory"
@@ -2970,7 +2958,7 @@ msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
 msgstr ""
-"Direktori root pelayar fail digunakan untuk membuatkan pemalam pelayar fail "
+"Direktori root pelayar fail digunakan untuk membuatkan palam pelayar fail "
 "dan onload/tree_view adalah BENAR."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:34
@@ -2983,7 +2971,7 @@ msgid ""
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
 msgstr ""
-"Direktori root pelayar fail digunakan untuk membuatkan pemalam pelayar fail "
+"Direktori root pelayar fail digunakan untuk membuatkan palam pelayar fail "
 "dan onload/tree_view adalah BENAR. Root maya mestilah sentiasa dibawah root "
 "sebenar."
 
@@ -3286,12 +3274,6 @@ msgstr "Konsol Python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Konsol Python interaktif berada dibahagian bawah panel"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr "text-x-python"
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "Warna _ralat:"
@@ -3324,12 +3306,6 @@ msgstr "Buka dokumen secara pantas"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Buka fail secara pantas"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr "document-open"
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3573,12 +3549,6 @@ msgstr "Isih"
 msgid "Sorts a document or selected text."
 msgstr "Isih dokumen atau teks terpilih."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr "view-sort-ascending"
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_Isih"
@@ -3775,7 +3745,7 @@ msgstr "Bahasa"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:23
 msgid "_Configure Spell Checker plugin..."
-msgstr "_Konfigur pemalam Penyemak Ejaan..."
+msgstr "_Konfigur palam Penyemak Ejaan..."
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:103
 msgid "Autocheck spelling on document load..."
@@ -3800,12 +3770,6 @@ msgstr "Pemeriksa Ejaan"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Semak ejaan bagi dokumen semasa."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr "tools-check-spelling"
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -6487,12 +6451,6 @@ msgstr "Simpan Tanpa Jarak Mengekor"
 msgid "Removes trailing spaces from lines before saving."
 msgstr "Buang jarak mengekor dari baris sebelum menyimpan."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr "edit-cut"
-
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"
 msgstr "Sisip Tarikh dan Masa"
@@ -6526,7 +6484,7 @@ msgstr "01/11/2009 17:52:00"
 
 #: plugins/time/pluma-time-setup-dialog.ui:23
 msgid "Configure date/time plugin"
-msgstr "Konfigur pemalam tarikh/masa"
+msgstr "Konfigur palam tarikh/masa"
 
 #: plugins/time/pluma-time-setup-dialog.ui:104
 msgid "When inserting date/time..."

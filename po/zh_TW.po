@@ -14,9 +14,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2020\n"
 "Language-Team: Chinese (Taiwan) (https://www.transifex.com/mate/teams/13566/zh_TW/)\n"
@@ -427,10 +427,8 @@ msgstr "指定列印時列號所用的字型。本選項只有在「列印列號
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
-"['UTF-8', 'CURRENT', 'BIG5', 'BIG5-HKSCS', 'EUC-TW', 'GB2312', 'GBK', "
-"'GB18030', 'ISO-8859-15', 'UTF-16']"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -567,12 +565,6 @@ msgstr "文字編輯器"
 msgid "Edit text files"
 msgstr "編輯文字檔"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr "accessories-text-editor"
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/pluma.desktop.in.in:15
@@ -637,7 +629,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
+msgstr[0] "如果您不儲存，最後 %ld 秒的變動將會永久遺失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
@@ -652,7 +644,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] ""
+msgstr[0] "如果您不儲存，最後 1 分 %ld 秒的變動將會永久遺失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
@@ -662,7 +654,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
+msgstr[0] "如果您不儲存，最後 %ld 分鐘的變動將會永久遺失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
@@ -677,7 +669,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] ""
+msgstr[0] "如果您不儲存，最後 1 小時 %d 分鐘的變動將會永久遺失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
@@ -685,7 +677,7 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] ""
+msgstr[0] "如果您不儲存，最後 %d 小時的變動將會永久遺失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
@@ -706,7 +698,7 @@ msgstr "儲存功能已被系統管理員禁用。"
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] ""
+msgstr[0] "%d 文件的變動將會永久遺失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
@@ -714,7 +706,7 @@ msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] ""
+msgstr[0] "有 %d 個文件有尚未儲存的變動。在關閉前先儲存變更？"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
@@ -1124,7 +1116,7 @@ msgstr "正在載入檔案‘%s’…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] ""
+msgstr[0] "正在載入 %d 個檔案……"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:463
@@ -1167,7 +1159,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
+msgstr[0] "最後 %ld 秒對文件作出的變動將會永久遺失。"
 
 #: pluma/pluma-commands-file.c:1149
 msgid ""
@@ -1182,7 +1174,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] ""
+msgstr[0] "最後 1 分 %ld 秒對文件作出的變動將會永久遺失。"
 
 #: pluma/pluma-commands-file.c:1165
 #, c-format
@@ -1192,7 +1184,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
+msgstr[0] "最後 %ld 分鐘對文件作出的變動將會永久遺失。"
 
 #: pluma/pluma-commands-file.c:1180
 msgid ""
@@ -1207,7 +1199,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] ""
+msgstr[0] "最後 1 小時 %d 分鐘對文件作出的變動將會永久遺失。"
 
 #: pluma/pluma-commands-file.c:1201
 #, c-format
@@ -1215,7 +1207,7 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] ""
+msgstr[0] "最後 %d 小時對文件作出的變動將會永久遺失。"
 
 #: pluma/pluma-commands-file.c:1228 pluma/pluma-ui.h:84
 msgid "_Revert"
@@ -1301,7 +1293,7 @@ msgstr ""
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] ""
+msgstr[0] "找到並置換了 %d 次"
 
 #: pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -1952,7 +1944,7 @@ msgstr "第 %d 列第 %d 字"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] ""
+msgstr[0] "出現 %d 個錯誤的分頁"
 
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -2782,12 +2774,6 @@ msgstr "檔案瀏覽器窗格"
 msgid "Easy file access from the side pane"
 msgstr "輕鬆地從側面窗格存取檔案"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "設定第一個文件的位置"
@@ -3150,12 +3136,6 @@ msgstr "Python 主控臺"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "在底部面板的互動式 Python 主控臺"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr "text-x-python"
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "錯誤顏色(_E)："
@@ -3188,12 +3168,6 @@ msgstr "快速開啟文件"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "快速開啟檔案"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr "document-open"
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3432,12 +3406,6 @@ msgstr "排序"
 msgid "Sorts a document or selected text."
 msgstr "將整份文件或將已選的文字排序。"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr "view-sort-ascending"
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "排序(_S)"
@@ -3659,12 +3627,6 @@ msgstr "拼字檢查程式"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "檢查目前文件中的拼字。"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr "tools-check-spelling"
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -6343,12 +6305,6 @@ msgstr "不儲存句尾空格"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "在儲存前移除句尾空格。"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr "edit-cut"
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"

@@ -20,9 +20,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
@@ -515,8 +515,8 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -668,12 +668,6 @@ msgstr "Editor di testo"
 #: data/pluma.desktop.in.in:5
 msgid "Edit text files"
 msgstr "Modifica file di testo"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr "accessories-text-editor"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -3003,12 +2997,6 @@ msgstr "Esplorazione file"
 msgid "Easy file access from the side pane"
 msgstr "Accesso semplice ai file dal riquadro laterale"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Imposta posizione al primo documento"
@@ -3390,12 +3378,6 @@ msgstr "Console Python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Console Python interattiva nel pannello inferiore"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr "text-x-python"
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "Colore dell'_errore:"
@@ -3428,12 +3410,6 @@ msgstr "Apre velocemente i documenti"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Apre velocemente i file"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr "document-open"
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3678,12 +3654,6 @@ msgstr "Ordina"
 msgid "Sorts a document or selected text."
 msgstr "Ordina un documento o il testo selezionato"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr "view-sort-ascending"
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_Ordina"
@@ -3768,7 +3738,7 @@ msgstr "%s (%s)"
 #, c-format
 msgctxt "language"
 msgid "Unknown (%s)"
-msgstr "Sconosciuta (%s)"
+msgstr "Sconosciuto (%s)"
 
 #. Translators: this refers the Default language used by the
 #. * spell checker
@@ -3905,12 +3875,6 @@ msgstr "Correttore ortografico"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Controlla l'ortografia del documento corrente."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr "tools-check-spelling"
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -6591,12 +6555,6 @@ msgstr "Salva Senza Spazi di Fine Riga"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "Rimuovi gli spazi di fine riga dalle linee prima di salvare"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr "edit-cut"
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"

@@ -5,28 +5,28 @@
 # 
 # Translators:
 # Michal Procházka <mich.procha@seznam.cz>, 2020
+# 6e833d5535e2fe0dd9dfa7fe5bf473f2_d78f422 <64c38a0ff10419c64e8e03d54c72b3bd_352524>, 2020
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2020
 # Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2020
 # Lucas Lommer <drom@kdyne.net>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # huskyviking <husky.viking@seznam.cz>, 2020
-# 6e833d5535e2fe0dd9dfa7fe5bf473f2_d78f422 <64c38a0ff10419c64e8e03d54c72b3bd_352524>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Honza K. <honza889@gmail.com>, 2020
 # Michal <sinope@seznam.cz>, 2020
 # Andy Andy <nd76er@gmail.com>, 2020
 # LiberteCzech <liberte.czech@gmail.com>, 2020
-# Roman Horník <roman.hornik@debian-linux.cz>, 2020
-# ToMáš Marný, 2020
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
+# ToMáš Marný, 2020
+# Roman Horník <roman.hornik@debian-linux.cz>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2020\n"
+"Last-Translator: Roman Horník <roman.hornik@debian-linux.cz>, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -484,8 +484,8 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -603,6 +603,11 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
+"Pluma je malý, ale mocný textový editor, zvláště navržený pro pracovní "
+"prostředí MATE. Má většinu běžných funkcí textových editorů a plně podporuje"
+" národní kódování prostřednictvím Unicode. Pokročilé funkce zahrnují "
+"zvýrazňování syntaxe a automatické odsazování zdrojového kódu, tisk i úpravu"
+" několika dokumentů v jednom okně."
 
 #: data/pluma.appdata.xml.in:17
 msgid ""
@@ -610,6 +615,9 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
+"Editor Pluma je rozšiřitelný prostřednictvím systému zásuvných modulů, který"
+" v současné době zahrnuje podporu kontroly pravopisu, porovnávání souborů, "
+"prohlížení CVS protokolů změn a úpravu úrovní odsazení."
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:754
 msgid "Text Editor"
@@ -618,12 +626,6 @@ msgstr "Textový editor"
 #: data/pluma.desktop.in.in:5
 msgid "Edit text files"
 msgstr "Úprava textových souborů"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr "accessories-text-editor"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -713,9 +715,17 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekundu "
+"navždy ztraceny."
 msgstr[1] ""
+"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekundy "
+"navždy ztraceny."
 msgstr[2] ""
+"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekund "
+"navždy ztraceny."
 msgstr[3] ""
+"Pokud je neuložíte, budou změny provedené za poslední minutu a %ld sekund "
+"navždy ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
@@ -726,9 +736,17 @@ msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
+"Pokud je neuložíte, budou změny provedené za poslední %ld minutu navždy "
+"ztraceny."
 msgstr[1] ""
+"Pokud je neuložíte, budou změny provedené za poslední %ld minuty navždy "
+"ztraceny."
 msgstr[2] ""
+"Pokud je neuložíte, budou změny provedené za posledních %ld minut navždy "
+"ztraceny."
 msgstr[3] ""
+"Pokud je neuložíte, budou změny provedené za posledních %ld minut navždy "
+"ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
@@ -746,9 +764,17 @@ msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
+"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minutu "
+"navždy ztraceny."
 msgstr[1] ""
+"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minuty "
+"navždy ztraceny."
 msgstr[2] ""
+"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minut "
+"navždy ztraceny."
 msgstr[3] ""
+"Pokud je neuložíte, budou změny provedené za poslední hodinu a %d minut "
+"navždy ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
@@ -757,9 +783,17 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
+"Pokud je neuložíte, budou změny provedené za poslední %d hodinu navždy "
+"ztraceny."
 msgstr[1] ""
+"Pokud je neuložíte, budou změny provedené za poslední %d hodiny navždy "
+"ztraceny."
 msgstr[2] ""
+"Pokud je neuložíte, budou změny provedené za posledních %d hodin navždy "
+"ztraceny."
 msgstr[3] ""
+"Pokud je neuložíte, budou změny provedené za posledních %d hodin navždy "
+"ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
@@ -780,10 +814,10 @@ msgstr "Ukládání bylo administrátorem systému zakázáno."
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Změny v %d dokumentu budou navždy ztraceny."
+msgstr[1] "Změny ve %d dokumentech budou navždy ztraceny."
+msgstr[2] "Změny v %d dokumentech budou navždy ztraceny."
+msgstr[3] "Změny v %d dokumentech budou navždy ztraceny."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
@@ -791,10 +825,11 @@ msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] ""
+msgstr[0] "V %d dokumentu jsou neuložené změny. Uložit změny před zavřením?"
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+"Ve %d dokumentech jsou neuložené změny. Uložit změny před zavřením?"
+msgstr[2] "V %d dokumentech jsou neuložené změny. Uložit změny před zavřením?"
+msgstr[3] "V %d dokumentech jsou neuložené změny. Uložit změny před zavřením?"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
@@ -1966,7 +2001,7 @@ msgstr "Příprava tisku…"
 
 #: pluma/pluma-print-preferences.ui:15
 msgid "window1"
-msgstr ""
+msgstr "window1"
 
 #: pluma/pluma-print-preferences.ui:39
 msgid "Syntax Highlighting"
@@ -2946,12 +2981,6 @@ msgstr "Panel prohlížeče souborů"
 msgid "Easy file access from the side pane"
 msgstr "Jednoduchý přístup k souborům z postranního panelu"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Nastavit umístění na první dokument"
@@ -3333,12 +3362,6 @@ msgstr "Konzole Pythonu"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Interaktivní konzole pythonu v dolním panelu"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr "text-x-python"
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "Barva ch_yby:"
@@ -3371,12 +3394,6 @@ msgstr "Rychle otevřít dokumenty"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Rychle otevřít soubory"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr ""
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3620,12 +3637,6 @@ msgstr "Řadit"
 msgid "Sorts a document or selected text."
 msgstr "Seřadí dokument nebo vybraný text."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr ""
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_Seřadit"
@@ -3847,12 +3858,6 @@ msgstr "Kontrola pravopisu"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Zkontroluje pravopis aktuálního dokumentu."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr ""
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -5723,11 +5728,11 @@ msgstr "XSLT - Elementy"
 
 #: plugins/taglist/XSLT.tags.xml.in:8
 msgid "apply-imports"
-msgstr ""
+msgstr "apply-imports"
 
 #: plugins/taglist/XSLT.tags.xml.in:12
 msgid "apply-templates"
-msgstr ""
+msgstr "apply-templates"
 
 #: plugins/taglist/XSLT.tags.xml.in:16 plugins/taglist/XSLT.tags.xml.in:303
 msgid "attribute"
@@ -5735,15 +5740,15 @@ msgstr "atribut"
 
 #: plugins/taglist/XSLT.tags.xml.in:20
 msgid "attribute-set"
-msgstr ""
+msgstr "attribute-set"
 
 #: plugins/taglist/XSLT.tags.xml.in:24
 msgid "call-template"
-msgstr ""
+msgstr "call-template"
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"
-msgstr ""
+msgstr "choose"
 
 #: plugins/taglist/XSLT.tags.xml.in:32 plugins/taglist/XSLT.tags.xml.in:150
 msgid "comment"
@@ -5755,11 +5760,11 @@ msgstr "kopírovat"
 
 #: plugins/taglist/XSLT.tags.xml.in:39
 msgid "copy-of"
-msgstr ""
+msgstr "copy-of"
 
 #: plugins/taglist/XSLT.tags.xml.in:43
 msgid "decimal-format"
-msgstr ""
+msgstr "decimal-format"
 
 #: plugins/taglist/XSLT.tags.xml.in:46
 msgid "element"
@@ -5767,28 +5772,28 @@ msgstr "prvek"
 
 #: plugins/taglist/XSLT.tags.xml.in:50
 msgid "fallback"
-msgstr ""
+msgstr "fallback"
 
 #: plugins/taglist/XSLT.tags.xml.in:54
 msgid "for-each"
-msgstr ""
+msgstr "for-each"
 
 #: plugins/taglist/XSLT.tags.xml.in:58
 msgid "if"
-msgstr ""
+msgstr "if"
 
 #: plugins/taglist/XSLT.tags.xml.in:62
 msgid "import"
-msgstr ""
+msgstr "import"
 
 #: plugins/taglist/XSLT.tags.xml.in:66
 msgid "include"
-msgstr ""
+msgstr "include"
 
 #: plugins/taglist/XSLT.tags.xml.in:70 plugins/taglist/XSLT.tags.xml.in:199
 #: plugins/taglist/XUL.tags.xml.in:147
 msgid "key"
-msgstr ""
+msgstr "key"
 
 #: plugins/taglist/XSLT.tags.xml.in:74
 msgid "message"
@@ -5796,7 +5801,7 @@ msgstr "zpráva"
 
 #: plugins/taglist/XSLT.tags.xml.in:78
 msgid "namespace-alias"
-msgstr ""
+msgstr "namespace-alias"
 
 #: plugins/taglist/XSLT.tags.xml.in:82 plugins/taglist/XSLT.tags.xml.in:233
 msgid "number"
@@ -5804,7 +5809,7 @@ msgstr "číslo"
 
 #: plugins/taglist/XSLT.tags.xml.in:85
 msgid "otherwise"
-msgstr ""
+msgstr "otherwise"
 
 #: plugins/taglist/XSLT.tags.xml.in:89
 msgid "output"
@@ -5812,15 +5817,15 @@ msgstr "výstup"
 
 #: plugins/taglist/XSLT.tags.xml.in:93
 msgid "param"
-msgstr ""
+msgstr "param"
 
 #: plugins/taglist/XSLT.tags.xml.in:97
 msgid "preserve-space"
-msgstr ""
+msgstr "preserve-space"
 
 #: plugins/taglist/XSLT.tags.xml.in:101 plugins/taglist/XSLT.tags.xml.in:240
 msgid "processing-instruction"
-msgstr ""
+msgstr "processing-instruction"
 
 #: plugins/taglist/XSLT.tags.xml.in:105
 msgid "sort"
@@ -5828,7 +5833,7 @@ msgstr "řadit"
 
 #: plugins/taglist/XSLT.tags.xml.in:108
 msgid "strip-space"
-msgstr ""
+msgstr "strip-space"
 
 #: plugins/taglist/XSLT.tags.xml.in:112
 msgid "stylesheet"
@@ -5844,7 +5849,7 @@ msgstr "text"
 
 #: plugins/taglist/XSLT.tags.xml.in:123
 msgid "value-of"
-msgstr ""
+msgstr "value-of"
 
 #: plugins/taglist/XSLT.tags.xml.in:127
 msgid "variable"
@@ -5852,11 +5857,11 @@ msgstr "proměnná"
 
 #: plugins/taglist/XSLT.tags.xml.in:131
 msgid "when"
-msgstr ""
+msgstr "when"
 
 #: plugins/taglist/XSLT.tags.xml.in:135
 msgid "with-param"
-msgstr ""
+msgstr "with-param"
 
 #: plugins/taglist/XSLT.tags.xml.in:141
 msgid "XSLT - Functions"
@@ -5864,19 +5869,19 @@ msgstr "XSLT - Funkce"
 
 #: plugins/taglist/XSLT.tags.xml.in:142
 msgid "boolean"
-msgstr ""
+msgstr "boolean"
 
 #: plugins/taglist/XSLT.tags.xml.in:146
 msgid "ceiling"
-msgstr ""
+msgstr "ceiling"
 
 #: plugins/taglist/XSLT.tags.xml.in:153
 msgid "concat"
-msgstr ""
+msgstr "concat"
 
 #: plugins/taglist/XSLT.tags.xml.in:157
 msgid "contains"
-msgstr ""
+msgstr "contains"
 
 #: plugins/taglist/XSLT.tags.xml.in:161
 msgid "count"
@@ -5892,7 +5897,7 @@ msgstr "dokument"
 
 #: plugins/taglist/XSLT.tags.xml.in:172
 msgid "element-available"
-msgstr ""
+msgstr "element-available"
 
 #: plugins/taglist/XSLT.tags.xml.in:176
 msgid "false"
@@ -5900,23 +5905,23 @@ msgstr "nepravda"
 
 #: plugins/taglist/XSLT.tags.xml.in:179
 msgid "floor"
-msgstr ""
+msgstr "floor"
 
 #: plugins/taglist/XSLT.tags.xml.in:183
 msgid "format-number"
-msgstr ""
+msgstr "format-number"
 
 #: plugins/taglist/XSLT.tags.xml.in:187
 msgid "function-available"
-msgstr ""
+msgstr "function-available"
 
 #: plugins/taglist/XSLT.tags.xml.in:191
 msgid "generate-id"
-msgstr ""
+msgstr "generate-id"
 
 #: plugins/taglist/XSLT.tags.xml.in:195
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: plugins/taglist/XSLT.tags.xml.in:203
 msgid "lang"
@@ -5924,11 +5929,11 @@ msgstr "jazyk"
 
 #: plugins/taglist/XSLT.tags.xml.in:207
 msgid "last"
-msgstr ""
+msgstr "last"
 
 #: plugins/taglist/XSLT.tags.xml.in:210
 msgid "local-name"
-msgstr ""
+msgstr "local-name"
 
 #: plugins/taglist/XSLT.tags.xml.in:214
 msgid "name"
@@ -5936,7 +5941,7 @@ msgstr "jméno"
 
 #: plugins/taglist/XSLT.tags.xml.in:218
 msgid "namespace-uri"
-msgstr ""
+msgstr "namespace-uri"
 
 #: plugins/taglist/XSLT.tags.xml.in:222
 msgid "node"
@@ -5944,11 +5949,11 @@ msgstr "uzel"
 
 #: plugins/taglist/XSLT.tags.xml.in:225
 msgid "normalize-space"
-msgstr ""
+msgstr "normalize-space"
 
 #: plugins/taglist/XSLT.tags.xml.in:229
 msgid "not"
-msgstr ""
+msgstr "not"
 
 #: plugins/taglist/XSLT.tags.xml.in:237
 msgid "position"
@@ -5956,11 +5961,11 @@ msgstr "Pozice"
 
 #: plugins/taglist/XSLT.tags.xml.in:244
 msgid "round"
-msgstr ""
+msgstr "round"
 
 #: plugins/taglist/XSLT.tags.xml.in:248
 msgid "starts-with"
-msgstr ""
+msgstr "starts-with"
 
 #: plugins/taglist/XSLT.tags.xml.in:252
 msgid "string"
@@ -5968,31 +5973,31 @@ msgstr "řetězec"
 
 #: plugins/taglist/XSLT.tags.xml.in:256
 msgid "string-length"
-msgstr ""
+msgstr "string-length"
 
 #: plugins/taglist/XSLT.tags.xml.in:260
 msgid "substring"
-msgstr ""
+msgstr "substring"
 
 #: plugins/taglist/XSLT.tags.xml.in:264
 msgid "substring-after"
-msgstr ""
+msgstr "substring-after"
 
 #: plugins/taglist/XSLT.tags.xml.in:268
 msgid "substring-before"
-msgstr ""
+msgstr "substring-before"
 
 #: plugins/taglist/XSLT.tags.xml.in:272
 msgid "sum"
-msgstr ""
+msgstr "sum"
 
 #: plugins/taglist/XSLT.tags.xml.in:276
 msgid "system-property"
-msgstr ""
+msgstr "system-property"
 
 #: plugins/taglist/XSLT.tags.xml.in:283
 msgid "translate"
-msgstr ""
+msgstr "translate"
 
 #: plugins/taglist/XSLT.tags.xml.in:287
 msgid "true"
@@ -6000,7 +6005,7 @@ msgstr "pravda"
 
 #: plugins/taglist/XSLT.tags.xml.in:290
 msgid "unparsed-entity-uri"
-msgstr ""
+msgstr "unparsed-entity-uri"
 
 #: plugins/taglist/XSLT.tags.xml.in:296
 msgid "XSLT - Axes"
@@ -6064,31 +6069,31 @@ msgstr "činnosti"
 
 #: plugins/taglist/XUL.tags.xml.in:10
 msgid "arrowscrollbox"
-msgstr ""
+msgstr "arrowscrollbox"
 
 #: plugins/taglist/XUL.tags.xml.in:15
 msgid "bbox"
-msgstr ""
+msgstr "bbox"
 
 #: plugins/taglist/XUL.tags.xml.in:20
 msgid "binding"
-msgstr ""
+msgstr "binding"
 
 #: plugins/taglist/XUL.tags.xml.in:25
 msgid "bindings"
-msgstr ""
+msgstr "bindings"
 
 #: plugins/taglist/XUL.tags.xml.in:30
 msgid "box"
-msgstr ""
+msgstr "box"
 
 #: plugins/taglist/XUL.tags.xml.in:35
 msgid "broadcaster"
-msgstr ""
+msgstr "broadcaster"
 
 #: plugins/taglist/XUL.tags.xml.in:39
 msgid "broadcasterset"
-msgstr ""
+msgstr "broadcasterset"
 
 #: plugins/taglist/XUL.tags.xml.in:44
 msgid "button"
@@ -6108,7 +6113,7 @@ msgstr "titulek"
 
 #: plugins/taglist/XUL.tags.xml.in:60
 msgid "colorpicker"
-msgstr ""
+msgstr "colorpicker"
 
 #: plugins/taglist/XUL.tags.xml.in:65
 msgid "column"
@@ -6120,7 +6125,7 @@ msgstr "sloupce"
 
 #: plugins/taglist/XUL.tags.xml.in:74
 msgid "commandset"
-msgstr ""
+msgstr "commandset"
 
 #: plugins/taglist/XUL.tags.xml.in:79
 msgid "command"
@@ -6136,7 +6141,7 @@ msgstr "obsah"
 
 #: plugins/taglist/XUL.tags.xml.in:92
 msgid "deck"
-msgstr ""
+msgstr "deck"
 
 #: plugins/taglist/XUL.tags.xml.in:97
 msgid "description"
@@ -6148,7 +6153,7 @@ msgstr "dialog"
 
 #: plugins/taglist/XUL.tags.xml.in:111
 msgid "dialogheader"
-msgstr ""
+msgstr "dialogheader"
 
 #: plugins/taglist/XUL.tags.xml.in:115
 msgid "editor"
@@ -6160,19 +6165,19 @@ msgstr "mřížka"
 
 #: plugins/taglist/XUL.tags.xml.in:124
 msgid "grippy"
-msgstr ""
+msgstr "grippy"
 
 #: plugins/taglist/XUL.tags.xml.in:129
 msgid "groupbox"
-msgstr ""
+msgstr "groupbox"
 
 #: plugins/taglist/XUL.tags.xml.in:134
 msgid "hbox"
-msgstr ""
+msgstr "hbox"
 
 #: plugins/taglist/XUL.tags.xml.in:139
 msgid "iframe"
-msgstr ""
+msgstr "iframe"
 
 #: plugins/taglist/XUL.tags.xml.in:143
 msgid "image"
@@ -6180,7 +6185,7 @@ msgstr "image"
 
 #: plugins/taglist/XUL.tags.xml.in:151
 msgid "keyset"
-msgstr ""
+msgstr "keyset"
 
 #: plugins/taglist/XUL.tags.xml.in:156
 msgid "label"
@@ -6188,31 +6193,31 @@ msgstr "popisek"
 
 #: plugins/taglist/XUL.tags.xml.in:160
 msgid "listbox"
-msgstr ""
+msgstr "listbox"
 
 #: plugins/taglist/XUL.tags.xml.in:165
 msgid "listcell"
-msgstr ""
+msgstr "listcell"
 
 #: plugins/taglist/XUL.tags.xml.in:169
 msgid "listcol"
-msgstr ""
+msgstr "listcol"
 
 #: plugins/taglist/XUL.tags.xml.in:174
 msgid "listcols"
-msgstr ""
+msgstr "listcols"
 
 #: plugins/taglist/XUL.tags.xml.in:179
 msgid "listhead"
-msgstr ""
+msgstr "listhead"
 
 #: plugins/taglist/XUL.tags.xml.in:184
 msgid "listheader"
-msgstr ""
+msgstr "listheader"
 
 #: plugins/taglist/XUL.tags.xml.in:188
 msgid "listitem"
-msgstr ""
+msgstr "listitem"
 
 #: plugins/taglist/XUL.tags.xml.in:192
 msgid "member"
@@ -6228,27 +6233,27 @@ msgstr "lišta nabídek"
 
 #: plugins/taglist/XUL.tags.xml.in:206
 msgid "menuitem"
-msgstr ""
+msgstr "menuitem"
 
 #: plugins/taglist/XUL.tags.xml.in:210
 msgid "menulist"
-msgstr ""
+msgstr "menulist"
 
 #: plugins/taglist/XUL.tags.xml.in:215
 msgid "menupopup"
-msgstr ""
+msgstr "menupopup"
 
 #: plugins/taglist/XUL.tags.xml.in:220
 msgid "menuseparator"
-msgstr ""
+msgstr "menuseparator"
 
 #: plugins/taglist/XUL.tags.xml.in:224
 msgid "observes"
-msgstr ""
+msgstr "observes"
 
 #: plugins/taglist/XUL.tags.xml.in:228
 msgid "overlay"
-msgstr ""
+msgstr "overlay"
 
 #: plugins/taglist/XUL.tags.xml.in:234
 msgid "page"
@@ -6256,15 +6261,15 @@ msgstr "stránka"
 
 #: plugins/taglist/XUL.tags.xml.in:239
 msgid "popup"
-msgstr ""
+msgstr "popup"
 
 #: plugins/taglist/XUL.tags.xml.in:244
 msgid "popupset"
-msgstr ""
+msgstr "popupset"
 
 #: plugins/taglist/XUL.tags.xml.in:249
 msgid "preference"
-msgstr ""
+msgstr "preference"
 
 #: plugins/taglist/XUL.tags.xml.in:254
 msgid "preferences"
@@ -6272,35 +6277,35 @@ msgstr "předvolby"
 
 #: plugins/taglist/XUL.tags.xml.in:259
 msgid "prefpane"
-msgstr ""
+msgstr "prefpane"
 
 #: plugins/taglist/XUL.tags.xml.in:264
 msgid "prefwindow"
-msgstr ""
+msgstr "prefwindow"
 
 #: plugins/taglist/XUL.tags.xml.in:269
 msgid "progressmeter"
-msgstr ""
+msgstr "progressmeter"
 
 #: plugins/taglist/XUL.tags.xml.in:273
 msgid "radio"
-msgstr ""
+msgstr "radio"
 
 #: plugins/taglist/XUL.tags.xml.in:277
 msgid "radiogroup"
-msgstr ""
+msgstr "radiogroup"
 
 #: plugins/taglist/XUL.tags.xml.in:282
 msgid "resizer"
-msgstr ""
+msgstr "resizer"
 
 #: plugins/taglist/XUL.tags.xml.in:287
 msgid "richlistbox"
-msgstr ""
+msgstr "richlistbox"
 
 #: plugins/taglist/XUL.tags.xml.in:292
 msgid "richlistitem"
-msgstr ""
+msgstr "richlistitem"
 
 #: plugins/taglist/XUL.tags.xml.in:297
 msgid "row"
@@ -6312,7 +6317,7 @@ msgstr "řádky"
 
 #: plugins/taglist/XUL.tags.xml.in:307
 msgid "rule"
-msgstr ""
+msgstr "rule"
 
 #: plugins/taglist/XUL.tags.xml.in:312
 msgid "script"
@@ -6324,11 +6329,11 @@ msgstr "posuvník"
 
 #: plugins/taglist/XUL.tags.xml.in:321
 msgid "scrollbox"
-msgstr ""
+msgstr "scrollbox"
 
 #: plugins/taglist/XUL.tags.xml.in:326
 msgid "scrollcorner"
-msgstr ""
+msgstr "scrollcorner"
 
 #: plugins/taglist/XUL.tags.xml.in:331
 msgid "separator"
@@ -6336,15 +6341,15 @@ msgstr "oddělovač"
 
 #: plugins/taglist/XUL.tags.xml.in:336
 msgid "spacer"
-msgstr ""
+msgstr "spacer"
 
 #: plugins/taglist/XUL.tags.xml.in:340
 msgid "splitter"
-msgstr ""
+msgstr "splitter"
 
 #: plugins/taglist/XUL.tags.xml.in:345
 msgid "stack"
-msgstr ""
+msgstr "stack"
 
 #: plugins/taglist/XUL.tags.xml.in:350
 msgid "statusbar"
@@ -6352,15 +6357,15 @@ msgstr "stavová lišta"
 
 #: plugins/taglist/XUL.tags.xml.in:355
 msgid "statusbarpanel"
-msgstr ""
+msgstr "statusbarpanel"
 
 #: plugins/taglist/XUL.tags.xml.in:360
 msgid "stringbundle"
-msgstr ""
+msgstr "stringbundle"
 
 #: plugins/taglist/XUL.tags.xml.in:364
 msgid "stringbundleset"
-msgstr ""
+msgstr "stringbundleset"
 
 #: plugins/taglist/XUL.tags.xml.in:369
 msgid "tab"
@@ -6368,19 +6373,19 @@ msgstr "karta"
 
 #: plugins/taglist/XUL.tags.xml.in:373
 msgid "tabbrowser"
-msgstr ""
+msgstr "tabbrowser"
 
 #: plugins/taglist/XUL.tags.xml.in:378
 msgid "tabbox"
-msgstr ""
+msgstr "tabbox"
 
 #: plugins/taglist/XUL.tags.xml.in:383
 msgid "tabpanel"
-msgstr ""
+msgstr "tabpanel"
 
 #: plugins/taglist/XUL.tags.xml.in:388
 msgid "tabpanels"
-msgstr ""
+msgstr "tabpanels"
 
 #: plugins/taglist/XUL.tags.xml.in:393
 msgid "tabs"
@@ -6388,15 +6393,15 @@ msgstr "karty"
 
 #: plugins/taglist/XUL.tags.xml.in:403
 msgid "textnode"
-msgstr ""
+msgstr "textnode"
 
 #: plugins/taglist/XUL.tags.xml.in:408
 msgid "textbox"
-msgstr ""
+msgstr "textbox"
 
 #: plugins/taglist/XUL.tags.xml.in:412
 msgid "titlebar"
-msgstr ""
+msgstr "titlebar"
 
 #: plugins/taglist/XUL.tags.xml.in:417
 msgid "toolbar"
@@ -6404,35 +6409,35 @@ msgstr "nástrojová lišta"
 
 #: plugins/taglist/XUL.tags.xml.in:422
 msgid "toolbarbutton"
-msgstr ""
+msgstr "toolbarbutton"
 
 #: plugins/taglist/XUL.tags.xml.in:426
 msgid "toolbargrippy"
-msgstr ""
+msgstr "toolbargrippy"
 
 #: plugins/taglist/XUL.tags.xml.in:431
 msgid "toolbaritem"
-msgstr ""
+msgstr "toolbaritem"
 
 #: plugins/taglist/XUL.tags.xml.in:436
 msgid "toolbarpalette"
-msgstr ""
+msgstr "toolbarpalette"
 
 #: plugins/taglist/XUL.tags.xml.in:441
 msgid "toolbarseparator"
-msgstr ""
+msgstr "toolbarseparator"
 
 #: plugins/taglist/XUL.tags.xml.in:446
 msgid "toolbarset"
-msgstr ""
+msgstr "toolbarset"
 
 #: plugins/taglist/XUL.tags.xml.in:451
 msgid "toolbarspacer"
-msgstr ""
+msgstr "toolbarspacer"
 
 #: plugins/taglist/XUL.tags.xml.in:456
 msgid "toolbarspring"
-msgstr ""
+msgstr "toolbarspring"
 
 #: plugins/taglist/XUL.tags.xml.in:461
 msgid "toolbox"
@@ -6440,7 +6445,7 @@ msgstr "nástroje"
 
 #: plugins/taglist/XUL.tags.xml.in:466
 msgid "tooltip"
-msgstr ""
+msgstr "tooltip"
 
 #: plugins/taglist/XUL.tags.xml.in:471
 msgid "tree"
@@ -6448,39 +6453,39 @@ msgstr "strom"
 
 #: plugins/taglist/XUL.tags.xml.in:476
 msgid "treecell"
-msgstr ""
+msgstr "treecell"
 
 #: plugins/taglist/XUL.tags.xml.in:480
 msgid "treechildren"
-msgstr ""
+msgstr "treechildren"
 
 #: plugins/taglist/XUL.tags.xml.in:485
 msgid "treecol"
-msgstr ""
+msgstr "treecol"
 
 #: plugins/taglist/XUL.tags.xml.in:489
 msgid "treecols"
-msgstr ""
+msgstr "treecols"
 
 #: plugins/taglist/XUL.tags.xml.in:494
 msgid "treeitem"
-msgstr ""
+msgstr "treeitem"
 
 #: plugins/taglist/XUL.tags.xml.in:499
 msgid "treerow"
-msgstr ""
+msgstr "treerow"
 
 #: plugins/taglist/XUL.tags.xml.in:504
 msgid "treeseparator"
-msgstr ""
+msgstr "treeseparator"
 
 #: plugins/taglist/XUL.tags.xml.in:509
 msgid "triple"
-msgstr ""
+msgstr "triple"
 
 #: plugins/taglist/XUL.tags.xml.in:514
 msgid "vbox"
-msgstr ""
+msgstr "vbox"
 
 #: plugins/taglist/XUL.tags.xml.in:519
 msgid "window"
@@ -6488,11 +6493,11 @@ msgstr "okno"
 
 #: plugins/taglist/XUL.tags.xml.in:525
 msgid "wizard"
-msgstr ""
+msgstr "wizard"
 
 #: plugins/taglist/XUL.tags.xml.in:530
 msgid "wizardpage"
-msgstr ""
+msgstr "wizardpage"
 
 #: plugins/time/org.mate.pluma.plugins.time.gschema.xml.in:12
 msgid "Prompt type"
@@ -6533,12 +6538,6 @@ msgstr "Uložit bez nadbytečných mezer"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "Odstranit z řádků nadbytečné mezery před uložením."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr "edit-cut"
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"

@@ -7,15 +7,15 @@
 # André Rivero Castillo <hab130@gmail.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2020
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
-"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2020\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2021\n"
 "Language-Team: Galician (https://www.transifex.com/mate/teams/13566/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,8 +76,8 @@ msgstr "Amosar a primeira lapela se só hai unha lapela"
 #: data/org.mate.pluma.gschema.xml.in:27
 msgid "If false, it hides the first tab if there is only one tab."
 msgstr ""
-"Se se establece a «falso» (false), agocharase a primeira lapela se so hai "
-"unha lapela."
+"Se se estabelece a falso, agocharase a primeira lapela se so hai unha "
+"lapela."
 
 #: data/org.mate.pluma.gschema.xml.in:31
 msgid "Style Scheme"
@@ -485,8 +485,8 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[«UTF-8»,«ACTUAL»,«ISO-8859-15»,«UTF-16»]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr "[«UTF-8», «GBK», «ACTUAL», «ISO-8859-15», «UTF-16»]"
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -640,12 +640,6 @@ msgstr "Editor de texto"
 msgid "Edit text files"
 msgstr "Editar ficheiros de texto"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr "accessories-text-editor"
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/pluma.desktop.in.in:15
@@ -712,16 +706,18 @@ msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
-"Se non garda, os cambios dende o último segundo perderanse permanentemente."
+"Se non os garda, os cambios dende o último segundo perderanse "
+"permanentemente."
 msgstr[1] ""
-"Se non garda, os cambios dende os últimos %ld segundos perderanse "
+"Se non os garda, os cambios dende os últimos %ld segundos perderanse "
 "permanentemente."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
 msgstr ""
-"Se non garda, os cambios dende o último minuto perderanse permanentemente."
+"Se non os garda, os cambios dende o último minuto perderanse "
+"permanentemente."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:429
 #, c-format
@@ -732,10 +728,10 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
-"Se non garda, os cambios dende o último minuto e %ld segundo perderanse "
+"Se non os garda, os cambios dende o último minuto e segundo perderanse "
 "permanentemente."
 msgstr[1] ""
-"Se non garda, os cambios dende o último minuto e %ld segundos perderanse "
+"Se non osgarda, os cambios dende o último minuto e %ld segundos perderanse "
 "permanentemente."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:439
@@ -747,16 +743,17 @@ msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Se non garda, os cambios dende o último minuto perderanse permanentemente."
+"Se non os garda, os cambios dende o último minuto perderanse "
+"permanentemente."
 msgstr[1] ""
-"Se non garda, os cambios dende os últimos %ld minutos perderanse "
+"Se non os garda, os cambios dende os últimos %ld minutos perderanse "
 "permanentemente."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
 msgstr ""
-"Se non garda, os cambios dende a última hora perderanse permanentemente."
+"Se non os garda, os cambios dende a última hora perderanse permanentemente."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:460
 #, c-format
@@ -767,10 +764,10 @@ msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"Se non garda, os cambios dende a última hora e %d minuto perderanse "
+"Se non o garda, os cambios dende a última hora e %d minuto perderanse "
 "permanentemente."
 msgstr[1] ""
-"Se non garda, os cambios dende a última hora e %d minutos perderanse "
+"Se non os garda, os cambios dende a última hora e %d minutos perderanse "
 "permanentemente."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:475
@@ -780,9 +777,9 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
-"Se non garda, os cambios dende a última hora perderanse permanentemente."
+"Se non os garda, os cambios dende a última hora perderanse permanentemente."
 msgstr[1] ""
-"Se non garda, os cambios dende as últimas %d horas perderanse "
+"Se non os garda, os cambios dende as últimas %d horas perderanse "
 "permanentemente."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:521
@@ -830,7 +827,7 @@ msgstr "S_eleccione os documentos que quere gardar:"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:767
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "Se non garda, todos os seus cambios perderanse permanentemente."
+msgstr "Se non os garda, todos os seus cambios perderanse permanentemente."
 
 #: pluma/dialogs/pluma-encodings-dialog.c:307
 #: pluma/dialogs/pluma-encodings-dialog.ui:72
@@ -1457,7 +1454,7 @@ msgstr "«%s» non foi atopado"
 #: pluma/pluma-document.c:1139 pluma/pluma-document.c:1159
 #, c-format
 msgid "Unsaved Document %d"
-msgstr "O documento %d non se gardou"
+msgstr "O documento %d non foi gardado"
 
 #: pluma/pluma-documents-panel.c:93 pluma/pluma-documents-panel.c:107
 #: pluma/pluma-window.c:2256 pluma/pluma-window.c:2261
@@ -1683,7 +1680,7 @@ msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr ""
-"Non foi posíbel atopar o host %s. Verifique que os axustes do seu proxy "
+"Non foi posíbel atopar a máquina %s. Verifique que os axustes do seu proxy "
 "sexan correctos e ténteo de novo."
 
 #: pluma/pluma-io-error-message-area.c:293
@@ -1691,8 +1688,8 @@ msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
 msgstr ""
-"O nome do host é incorrecto. Verifique que escribiu ben o enderezo e ténteo "
-"de novo."
+"O nome da máquina é incorrecto. Verifique que escribiu ben o enderezo e "
+"ténteo de novo."
 
 #: pluma/pluma-io-error-message-area.c:301
 #, c-format
@@ -2970,12 +2967,6 @@ msgstr "Panel do navegador de ficheiros"
 msgid "Easy file access from the side pane"
 msgstr "Acceso fácil a ficheiros dende o panel lateral"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Estabelecer a localización para o primeiro documento"
@@ -2987,10 +2978,10 @@ msgid ""
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
 msgstr ""
-"Se é «TRUE» (verdadeiro) o engadido do navegador de ficheiros verá o "
-"cartafol do primeiro documento aberto, xa que o navegador de ficheiros aínda"
-" non se usou (isto xeralmente aplícase cando se abre un documento dende a "
-"liña de ordes, co Caja, etc.)"
+"Se é VERDADEIRO o engadido do navegador de ficheiros verá o cartafol do "
+"primeiro documento aberto, xa que o navegador de ficheiros aínda non se usou"
+" (isto xeralmente aplícase cando se abre un documento dende a liña de ordes,"
+" co Caja, etc.)"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:11
 msgid "File Browser Filter Mode"
@@ -3042,7 +3033,7 @@ msgid ""
 "and onload/tree_view is TRUE."
 msgstr ""
 "O cartafol raíz do navegador de ficheiros que se vai usar cando se carga o "
-"engadido de navegador de ficheiros e onload/tree_view é «TRUE» (verdadeiro)."
+"engadido de navegador de ficheiros e onload/tree_view é VERDADEIRO."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:34
 msgid "File Browser Virtual Root Directory"
@@ -3055,8 +3046,8 @@ msgid ""
 " the actual root."
 msgstr ""
 "O cartafol raíz virtual do navegador de ficheiros para usar cando se carga o"
-" engadido do navegador de ficheiros e onload/tree_view é «TRUE» "
-"(verdadeiro). A raíz virtual debe estar sempre por debaixo da raíz actual."
+" engadido do navegador de ficheiros e onload/tree_view é VERDADEIRO. A raíz "
+"virtual debe estar sempre por debaixo da raíz actual."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:39
 msgid "Enable Restore of Remote Locations"
@@ -3359,12 +3350,6 @@ msgstr "Consola de Python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Consola interactiva de Python no panel inferior"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr "text-x-python"
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "Cor de _erro:"
@@ -3397,12 +3382,6 @@ msgstr "Abre os documentos rápidamente"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Abre os ficheiros rápidamente"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr "document-open"
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3646,12 +3625,6 @@ msgstr "Ordenar"
 msgid "Sorts a document or selected text."
 msgstr "Ordena un documento ou o texto seleccionado."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr "view-sort-ascending"
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_Ordenar"
@@ -3873,12 +3846,6 @@ msgstr "Corrector ortográfico"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Corrixe a ortografía do documento actual."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr "tools-check-spelling"
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -5922,7 +5889,7 @@ msgstr "element-available"
 
 #: plugins/taglist/XSLT.tags.xml.in:176
 msgid "false"
-msgstr "false"
+msgstr "falso"
 
 #: plugins/taglist/XSLT.tags.xml.in:179
 msgid "floor"
@@ -6022,7 +5989,7 @@ msgstr "translate"
 
 #: plugins/taglist/XSLT.tags.xml.in:287
 msgid "true"
-msgstr "true"
+msgstr "verdadeiro"
 
 #: plugins/taglist/XSLT.tags.xml.in:290
 msgid "unparsed-entity-uri"
@@ -6559,12 +6526,6 @@ msgstr "Gardar sen espazos finais de liña"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "Retirar os espazos finais das liñas antes de gardar."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr "edit-cut"
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"

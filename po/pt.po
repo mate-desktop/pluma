@@ -21,9 +21,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
 "Last-Translator: Guilherme Campos <guilhermemiguel97@hotmail.com>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/mate/teams/13566/pt/)\n"
@@ -489,8 +489,8 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -626,12 +626,6 @@ msgstr "Editor de Texto"
 #: data/pluma.desktop.in.in:5
 msgid "Edit text files"
 msgstr "Editar ficheiros de texto"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr "accessories-text-editor"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -2916,12 +2910,6 @@ msgstr "Painel de navegador de ficheiros"
 msgid "Easy file access from the side pane"
 msgstr "Acesso simples a ficheiros a partir do painel lateral"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Definir a localização para o primeiro documento"
@@ -3307,12 +3295,6 @@ msgstr "Consola Python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Consola Python interativa no painel inferior"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr "text-x-python"
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "Cor do _erro"
@@ -3345,12 +3327,6 @@ msgstr "Abre documentos rapidamente"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Abre ficheiros rapidamente"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr "document-open"
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3595,12 +3571,6 @@ msgstr "Ordenar"
 msgid "Sorts a document or selected text."
 msgstr "Ordena um documento ou o texto selecionado."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr "view-sort-ascending"
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "Or_denar"
@@ -3822,12 +3792,6 @@ msgstr "Corretor ortográfico"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Efetua a verificação ortográfica do documento atual."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr "tools-check-spelling"
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -5863,7 +5827,7 @@ msgstr "atual"
 
 #: plugins/taglist/XSLT.tags.xml.in:168
 msgid "document"
-msgstr ""
+msgstr "documento"
 
 #: plugins/taglist/XSLT.tags.xml.in:172
 msgid "element-available"
@@ -5891,7 +5855,7 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:195
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: plugins/taglist/XSLT.tags.xml.in:203
 msgid "lang"
@@ -5967,7 +5931,7 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:283
 msgid "translate"
-msgstr ""
+msgstr "traduzir"
 
 #: plugins/taglist/XSLT.tags.xml.in:287
 msgid "true"
@@ -6035,7 +5999,7 @@ msgstr "XUL - Etiquetas"
 
 #: plugins/taglist/XUL.tags.xml.in:5
 msgid "action"
-msgstr ""
+msgstr "acção"
 
 #: plugins/taglist/XUL.tags.xml.in:10
 msgid "arrowscrollbox"
@@ -6055,7 +6019,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:30
 msgid "box"
-msgstr ""
+msgstr "caixa"
 
 #: plugins/taglist/XUL.tags.xml.in:35
 msgid "broadcaster"
@@ -6115,11 +6079,11 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:97
 msgid "description"
-msgstr ""
+msgstr "descrição"
 
 #: plugins/taglist/XUL.tags.xml.in:102
 msgid "dialog"
-msgstr ""
+msgstr "diálogo"
 
 #: plugins/taglist/XUL.tags.xml.in:111
 msgid "dialogheader"
@@ -6239,11 +6203,11 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:249
 msgid "preference"
-msgstr ""
+msgstr "preferência"
 
 #: plugins/taglist/XUL.tags.xml.in:254
 msgid "preferences"
-msgstr ""
+msgstr "preferências"
 
 #: plugins/taglist/XUL.tags.xml.in:259
 msgid "prefpane"
@@ -6259,7 +6223,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:273
 msgid "radio"
-msgstr ""
+msgstr "rádio"
 
 #: plugins/taglist/XUL.tags.xml.in:277
 msgid "radiogroup"
@@ -6508,12 +6472,6 @@ msgstr "Guardar sem espaços à direita"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "Remover espaços no final das linhas antes de guardar."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr "edit-cut"
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"

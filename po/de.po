@@ -22,15 +22,15 @@
 # otazl <oliver.tazl@gmail.com>, 2020
 # Tobias Bannert <tobannert@gmail.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
-# Michael Hartmann, 2020
+# Winfried Frisch <frischkoenig@online.de>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
-"Last-Translator: Michael Hartmann, 2020\n"
+"Last-Translator: Winfried Frisch <frischkoenig@online.de>, 2020\n"
 "Language-Team: German (https://www.transifex.com/mate/teams/13566/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -513,8 +513,8 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8', 'AKTUELL', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -650,12 +650,6 @@ msgstr "Textbearbeitung"
 #: data/pluma.desktop.in.in:5
 msgid "Edit text files"
 msgstr "Textdateien bearbeiten"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -2973,12 +2967,6 @@ msgstr "Dateiverwaltungsleiste"
 msgid "Easy file access from the side pane"
 msgstr "Leichter Dateizugriff über die Seitenleiste"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "System-Datei-Manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Das erste Dokument als Ort festlegen"
@@ -3375,12 +3363,6 @@ msgstr "Python-Konsole"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Interaktive Python-Konsole in der Fußleiste öffnen"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr ""
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "_Fehlerfarbe:"
@@ -3413,12 +3395,6 @@ msgstr "Dokumente schnell öffnen"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Dateien schnell öffnen"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr ""
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3667,12 +3643,6 @@ msgstr "Sortieren"
 msgid "Sorts a document or selected text."
 msgstr "Ein Dokument oder den markierten Text sortieren."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr ""
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_Sortieren"
@@ -3896,12 +3866,6 @@ msgstr "Rechtschreibprüfung"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Eine Rechtschreibprüfung im momentan geöffneten Dokument durchführen."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr ""
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -5120,11 +5084,13 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2327
 msgid "×"
-msgstr ""
+msgstr "× "
 
 #: plugins/taglist/HTML.tags.xml.in:2331
 msgid "÷"
 msgstr ""
+"÷ \n"
+" "
 
 #: plugins/taglist/HTML.tags.xml.in:2335
 msgid "¢"
@@ -6584,12 +6550,6 @@ msgstr "Ohne nachfolgende Leerzeichen speichern"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "Entfernt Leerzeichen am Ende von Zeilen vor dem Speichern."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr ""
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"

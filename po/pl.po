@@ -15,7 +15,7 @@
 # Jan Bońkowski <bonkowskijan@gmail.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # elzear <babciaroziazpogwizdowa@wp.pl>, 2020
-# pietrasagh <pietrasagh@gmail.com>, 2020
+# pietrasagh <kowalik.piotr@pm.me>, 2020
 # Marcin Pianka <marcin.pianka@gmail.com>, 2020
 # Marcin Net <marcin.net@linux.pl>, 2020
 # Piotr Drąg <piotrdrag@gmail.com>, 2020
@@ -29,14 +29,15 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Marcin Kralka <marcink96@gmail.com>, 2020
 # Dominik Adrian Grzywak, 2020
+# No Ne, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
-"Last-Translator: Dominik Adrian Grzywak, 2020\n"
+"Last-Translator: No Ne, 2021\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -521,7 +522,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-2', 'WINDOWS-1250', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:201
@@ -601,6 +602,9 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
+"Określa, czy program pluma ma pokazywać twarde spacje w oknie edytora: "
+"'show-none' nie pokazuje; 'show-trailing' pokazuje tylko spacje końcowe; "
+"'show-all' pokazuje wszystkie spacje."
 
 #: data/org.mate.pluma.gschema.xml.in:236
 msgid "Show tabs"
@@ -612,6 +616,9 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
+"Określa, czy program pluma ma pokazywać tabulatory w oknie edytora: 'show-"
+"none' nie pokazuje; 'show-trailing' pokazuje tylko spacje końcowe; 'show-"
+"all' pokazuje wszystkie spacje."
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Show spaces"
@@ -623,6 +630,9 @@ msgid ""
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
+"Określa, czy program pluma ma pokazywać spacje w oknie edytora: 'show-none' "
+"nie pokazuje; 'show-trailing' pokazuje tylko spacje końcowe; 'show-all' "
+"pokazuje wszystkie spacje."
 
 #: data/pluma.appdata.xml.in:7 data/pluma.desktop.in.in:3
 msgid "Pluma"
@@ -640,6 +650,11 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
+"Pluma jest małym ale potężnym edytorem tekstu zaprojektowanym specjalnie dla"
+" środowiska MATE. Posiada większość standardowych funkcji edytorów "
+"tekstowych i w pełni wspiera tekst międzynarodowy w Unicode. Zaawansowane "
+"funkcje to podświetlanie składni i automatyczne wcinanie kodu źródłowego, "
+"drukowanie oraz edytowanie wielu dokumentów w jednym oknie."
 
 #: data/pluma.appdata.xml.in:17
 msgid ""
@@ -647,6 +662,9 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
+"Pluma jest rozszerzalna poprzez system wtyczek, który obecnie obejmuje "
+"obsługę sprawdzania pisowni, porównywania plików, przeglądania dzienników "
+"zmian CVS i dostosowywania poziomów wcięć."
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:754
 msgid "Text Editor"
@@ -656,17 +674,11 @@ msgstr "Edytor tekstu"
 msgid "Edit text files"
 msgstr "Edytor plików tekstowych"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/pluma.desktop.in.in:15
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
-msgstr ""
+msgstr "tekst;edytor;MATE;tabulatory;podświetlanie;kod;wiele;pliki;wtyczki;"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:136
 msgid "Log Out _without Saving"
@@ -727,9 +739,17 @@ msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej %ld sekundy "
+"zostaną bezpowrotnie utracone."
 msgstr[1] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld sekund zostaną"
+" bezpowrotnie utracone."
 msgstr[2] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld sekund zostaną"
+" bezpowrotnie utracone."
 msgstr[3] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld sekund zostaną"
+" bezpowrotnie utracone."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:423
 msgid ""
@@ -747,9 +767,17 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej minuty i %ld "
+"sekundy zostaną bezpowrotnie utracone."
 msgstr[1] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej minuty i %ld "
+"sekund zostaną bezpowrotnie utracone."
 msgstr[2] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej minuty i %ld "
+"sekund zostaną bezpowrotnie utracone."
 msgstr[3] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej minuty i %ld "
+"sekund zostaną bezpowrotnie utracone."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:439
 #, c-format
@@ -760,9 +788,17 @@ msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej %ld minuty zostaną"
+" bezpowrotnie utracone."
 msgstr[1] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld minut zostaną "
+"bezpowrotnie utracone."
 msgstr[2] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld minut zostaną "
+"bezpowrotnie utracone."
 msgstr[3] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %ld minut zostaną "
+"bezpowrotnie utracone."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:454
 msgid ""
@@ -780,9 +816,17 @@ msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej godziny i %d "
+"minuty zostaną bezpowrotnie utracone."
 msgstr[1] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej godziny i %d minut"
+" zostaną bezpowrotnie utracone."
 msgstr[2] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej godziny i %d minut"
+" zostaną bezpowrotnie utracone."
 msgstr[3] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej godziny i %d minut"
+" zostaną bezpowrotnie utracone."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:475
 #, c-format
@@ -791,9 +835,17 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatniej %d godziny zostaną"
+" bezpowrotnie utracone."
 msgstr[1] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %d godzin zostaną "
+"bezpowrotnie utracone."
 msgstr[2] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %d godzin zostaną "
+"bezpowrotnie utracone."
 msgstr[3] ""
+"Jeżeli dokument nie zostanie zapisany, zmiany z ostatnich %d godzin zostaną "
+"bezpowrotnie utracone."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:521
 #, c-format
@@ -814,10 +866,10 @@ msgstr "Możliwość zapisu została wyłączona przez administratora systemu."
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Zostaną bezpowrotnie utracone zmiany dokonane w %d dokumencie."
+msgstr[1] "Zostaną bezpowrotnie utracone zmiany dokonane w %d dokumentach."
+msgstr[2] "Zostaną bezpowrotnie utracone zmiany dokonane w %d dokumentach."
+msgstr[3] "Zostaną bezpowrotnie utracone zmiany dokonane w %d dokumentach."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:722
 #, c-format
@@ -826,9 +878,15 @@ msgid ""
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] ""
+"Jest %d dokument z niezapisanymi zmianami. Zapisać zmiany przed zamknięciem?"
 msgstr[1] ""
+"Są %d dokumenty z niezapisanymi zmianami. Zapisać zmiany przed zamknięciem?"
 msgstr[2] ""
+"Jest %d dokumentów z niezapisanymi zmianami. Zapisać zmiany przed "
+"zamknięciem?"
 msgstr[3] ""
+"Jest %d dokumentów z niezapisanymi zmianami. Zapisać zmiany przed "
+"zamknięciem?"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:740
 msgid "Docum_ents with unsaved changes:"
@@ -1070,15 +1128,15 @@ msgstr "mi_nut"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:919
 msgid "Show spaces, tabs, newlines"
-msgstr ""
+msgstr "Pokazuje spacje, tabulatory, konće wierszy"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:953
 msgid "Show _tabs"
-msgstr ""
+msgstr "Pokaż znaki _tabulacji"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1003
 msgid "Show _trailing tabs only"
-msgstr ""
+msgstr "Pokaż tylko _końcowe tabulatory"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1041
 msgid "Show _newlines"
@@ -1090,7 +1148,7 @@ msgstr "Pokaż _spacje"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1132
 msgid "Show _trailing spaces only"
-msgstr ""
+msgstr "Pokaż tylko _końcowe spacje"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1175
 msgid "Editor"
@@ -1242,10 +1300,10 @@ msgstr "Wczytywanie pliku \"%s\"…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Wczytywanie %d pliku…"
+msgstr[1] "Wczytywanie %d plików…"
+msgstr[2] "Wczytywanie %d plików…"
+msgstr[3] "Wczytywanie %d plików…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:463
@@ -1289,9 +1347,13 @@ msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
+"Zmiany dokonane w ciągu ostatniej %ld sekundy zostaną bezpowrotnie utracone."
 msgstr[1] ""
+"Zmiany dokonane w ciągu ostatnich %ld sekund zostaną bezpowrotnie utracone."
 msgstr[2] ""
+"Zmiany dokonane w ciągu ostatnich %ld sekund zostaną bezpowrotnie utracone."
 msgstr[3] ""
+"Zmiany dokonane w ciągu ostatnich %ld sekund zostaną bezpowrotnie utracone."
 
 #: pluma/pluma-commands-file.c:1149
 msgid ""
@@ -1308,9 +1370,17 @@ msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"Zmiany dokonane w ciągu ostatniej minuty i %ld sekundy zostaną bezpowrotnie "
+"utracone."
 msgstr[1] ""
+"Zmiany dokonane w ciągu ostatniej minuty i %ld sekund zostaną bezpowrotnie "
+"utracone."
 msgstr[2] ""
+"Zmiany dokonane w ciągu ostatniej minuty i %ld sekund zostaną bezpowrotnie "
+"utracone."
 msgstr[3] ""
+"Zmiany dokonane w ciągu ostatniej minuty i %ld sekund zostaną bezpowrotnie "
+"utracone."
 
 #: pluma/pluma-commands-file.c:1165
 #, c-format
@@ -1321,9 +1391,13 @@ msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
+"Zmiany dokonane w ciągu ostatniej %ld minuty zostaną bezpowrotnie utracone."
 msgstr[1] ""
+"Zmiany dokonane w ciągu ostatnich %ld minut zostaną bezpowrotnie utracone."
 msgstr[2] ""
+"Zmiany dokonane w ciągu ostatnich %ld minut zostaną bezpowrotnie utracone."
 msgstr[3] ""
+"Zmiany dokonane w ciągu ostatnich %ld minut zostaną bezpowrotnie utracone."
 
 #: pluma/pluma-commands-file.c:1180
 msgid ""
@@ -1340,9 +1414,17 @@ msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
+"Zmiany dokonane w ciągu ostatniej godziny i %d minuty zostaną bezpowrotnie "
+"utracone."
 msgstr[1] ""
+"Zmiany dokonane w ciągu ostatniej godziny i %d minut zostaną bezpowrotnie "
+"utracone."
 msgstr[2] ""
+"Zmiany dokonane w ciągu ostatniej godziny i %d minut zostaną bezpowrotnie "
+"utracone."
 msgstr[3] ""
+"Zmiany dokonane w ciągu ostatniej godziny i %d minut zostaną bezpowrotnie "
+"utracone."
 
 #: pluma/pluma-commands-file.c:1201
 #, c-format
@@ -1351,9 +1433,13 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] ""
+"Zmiany dokonane w ciągu ostatniej %d godziny zostaną bezpowrotnie utracone."
 msgstr[1] ""
+"Zmiany dokonane w ciągu ostatnich %d godzin zostaną bezpowrotnie utracone."
 msgstr[2] ""
+"Zmiany dokonane w ciągu ostatnich %d godzin zostaną bezpowrotnie utracone."
 msgstr[3] ""
+"Zmiany dokonane w ciągu ostatnich %d godzin zostaną bezpowrotnie utracone."
 
 #: pluma/pluma-commands-file.c:1228 pluma/pluma-ui.h:84
 msgid "_Revert"
@@ -1424,13 +1510,13 @@ msgid ""
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2020 MATE developers"
 msgstr ""
-"Prawa Autorskie © 1998-2000 Evan Lawrence, Alex Robert\n"
-"Prawa Autorskie © 2000-2002 Chema Celorio, Paolo Maggi\n"
-"Prawa Autorskie © 2003-2006 Paolo Maggi\n"
-"Prawa Autorskie © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Prawa autorskie © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Prawa autorskie © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Prawa autorskie © 2003-2006 Paolo Maggi\n"
+"Prawa autorskie © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
 "Steve Frécinaux, Ignacio Casal Quinteiro\n"
-"Prawa Autorskie © 2011 Perberos\n"
-"Prawa Autorskie © 2012-2020 Deweloperzy MATE"
+"Prawa autorskie © 2011 Perberos\n"
+"Prawa autorskie © 2012-2020 programiści MATE"
 
 #: pluma/pluma-commands-help.c:126
 msgid "translator-credits"
@@ -1450,10 +1536,10 @@ msgstr ""
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Odnaleziono i zmieniono %d wystąpienie"
+msgstr[1] "Odnaleziono i zmieniono %d wystąpienia"
+msgstr[2] "Odnaleziono i zmieniono %d wystąpień"
+msgstr[3] "Odnaleziono i zmieniono %d wystąpień"
 
 #: pluma/pluma-commands-search.c:122
 msgid "Found and replaced one occurrence"
@@ -2145,10 +2231,10 @@ msgstr "  Wrsz %d, Kol %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Jest %d karta z błędami"
+msgstr[1] "Są %d karty z błędami"
+msgstr[2] "Jest %d kart z błędami"
+msgstr[3] "Jest %d kart z błędami"
 
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -2984,12 +3070,6 @@ msgstr "Panel przeglądarki plików"
 msgid "Easy file access from the side pane"
 msgstr "Łatwy dostęp do plików z panelu bocznego"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Ustawienie położenia na pierwszy dokument"
@@ -3372,12 +3452,6 @@ msgstr "Konsola języka Python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Interaktywna konsola języka Python dostępna w panelu dolnym"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr "text-x-python"
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "Kolor _błędu:"
@@ -3410,12 +3484,6 @@ msgstr "Szybko otwiera dokumenty"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Szybko otwiera pliki"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr "document-open"
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3659,12 +3727,6 @@ msgstr "Sortowanie"
 msgid "Sorts a document or selected text."
 msgstr "Sortuje dokument lub zaznaczony tekst."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr "view-sort-ascending"
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "Po_sortuj"
@@ -3886,12 +3948,6 @@ msgstr "Sprawdzanie pisowni"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Sprawdza pisownię bieżącego dokumentu."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr "tools-check-spelling"
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -6572,12 +6628,6 @@ msgstr "Zapisz bez końcowych spacji"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "Usuwa końcowe spacje z linii przed zapisaniem"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr ""
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"

@@ -10,14 +10,15 @@
 # Egoitz Rodriguez <egoitzro@gmail.com>, 2020
 # Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Porrumentzio <porrumentzio@riseup.net>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
+"Last-Translator: Porrumentzio <porrumentzio@riseup.net>, 2020\n"
 "Language-Team: Basque (https://www.transifex.com/mate/teams/13566/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,21 +62,23 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:21
 msgid "Switch tabs with [ctrl] + [tab]"
-msgstr ""
+msgstr "Mugitu fitxetan zehar [ktrl] + [tab]"
 
 #: data/org.mate.pluma.gschema.xml.in:22
 msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
 msgstr ""
+"Egia bada, fitxetan zehar mugitzea ahalbidetuko du, [ktrl + tab] eta [ktrl +"
+" maius + tab] erabiliz."
 
 #: data/org.mate.pluma.gschema.xml.in:26
 msgid "Show the first tab if there is only one tab"
-msgstr ""
+msgstr "Erakutsi lehen fitxa bakarra baldin badago"
 
 #: data/org.mate.pluma.gschema.xml.in:27
 msgid "If false, it hides the first tab if there is only one tab."
-msgstr ""
+msgstr "Faltsua bada, lehen fitxa ezkutatuko du bakarra baldin badago."
 
 #: data/org.mate.pluma.gschema.xml.in:31
 msgid "Style Scheme"
@@ -127,11 +130,11 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:51
 msgid "Show save confirmation"
-msgstr ""
+msgstr "Erakutsi gordetze-berrespena"
 
 #: data/org.mate.pluma.gschema.xml.in:52
 msgid "Show save confirmation if the files have changes."
-msgstr ""
+msgstr "Erakutsi gordetze-berrespena fitxategia aldatu bada."
 
 #: data/org.mate.pluma.gschema.xml.in:56
 msgid "Writable VFS schemes"
@@ -352,7 +355,7 @@ msgstr "Editatzeko leihoen alboko panelak ikusgai egon behar duen ala ez."
 
 #: data/org.mate.pluma.gschema.xml.in:151
 msgid "Show tabs with side pane"
-msgstr ""
+msgstr "Erakutsi fitxak alboko panelean"
 
 #: data/org.mate.pluma.gschema.xml.in:152
 msgid ""
@@ -487,8 +490,8 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -552,15 +555,15 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "Show newline"
-msgstr ""
+msgstr "Erakutsi lerro berria"
 
 #: data/org.mate.pluma.gschema.xml.in:227
 msgid "Whether pluma should show newlines in the editor window."
-msgstr ""
+msgstr "Plumak lerro berriak erakutsi behar dituen editore-leihoan."
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "Show nbsp"
-msgstr ""
+msgstr "Erakutsi nbsp"
 
 #: data/org.mate.pluma.gschema.xml.in:232
 msgid ""
@@ -622,12 +625,6 @@ msgstr "Testu-editorea"
 #: data/pluma.desktop.in.in:5
 msgid "Edit text files"
 msgstr "Editatu testu-fitxategiak"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -2880,12 +2877,6 @@ msgstr "Fitxategi-arakatzailearen panela"
 msgid "Easy file access from the side pane"
 msgstr "Fitxategiak erraz sarbidetu albo-paneletik"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr ""
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Ezarri aurreneko dokumentuaren kokalekua"
@@ -3267,12 +3258,6 @@ msgstr "Python kontsola"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Python-en kontsola interaktiboa beheko panelean."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr ""
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "_Errore-kolorea:"
@@ -3305,12 +3290,6 @@ msgstr "Dokumentuak azkar irekitzen ditu"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Fitxategiak azkar irekitzen ditu"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr ""
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3555,12 +3534,6 @@ msgstr "Ordenatu"
 msgid "Sorts a document or selected text."
 msgstr "Dokumentua edo hautatutako testua ordenatzen du."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr ""
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_Ordenatu"
@@ -3782,12 +3755,6 @@ msgstr "Ortografia-egiaztatzailea"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Uneko dokumentuaren ortografia egiaztatzen du."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr ""
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -6468,12 +6435,6 @@ msgstr "Gorde Tarteko Zuriune Gabe"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "Lerroetatik zuriuneak kendu gorde aurretik."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr ""
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"

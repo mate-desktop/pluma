@@ -13,21 +13,21 @@
 # David D, 2020
 # Colomban Wendling <cwendling@hypra.fr>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# Tubuntu <tubuntu@testimonium.be>, 2020
+# Tubuntu, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Étienne Deparis <etienne@depar.is>, 2020
 # yoplait <yoplait@tememe.org>, 2020
-# Yoshida Shouyou <charcoalburst29@outlook.fr>, 2020
-# Jerom Turible <jeromet9208@gmail.com>, 2020
 # Laurent Napias, 2020
+# Yoan Mollard <yoan@aubrune.eu>, 2020
+# Yoshida Shouyou, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.23.2\n"
+"Project-Id-Version: pluma 1.24.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2020-01-13 17:23+0100\n"
+"POT-Creation-Date: 2020-08-25 11:44+0200\n"
 "PO-Revision-Date: 2020-02-16 17:47+0000\n"
-"Last-Translator: Laurent Napias, 2020\n"
+"Last-Translator: Yoshida Shouyou, 2021\n"
 "Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -511,8 +511,8 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgctxt "auto-detected"
-msgid "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid "Automatically Detected Encodings"
@@ -577,15 +577,16 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "Show newline"
-msgstr ""
+msgstr "Afficher les retours chariot"
 
 #: data/org.mate.pluma.gschema.xml.in:227
 msgid "Whether pluma should show newlines in the editor window."
 msgstr ""
+"S'il faut que pluma affiche les retours chariot dans la fenêtre d'édition."
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "Show nbsp"
-msgstr ""
+msgstr "Afficher les espaces insécables"
 
 #: data/org.mate.pluma.gschema.xml.in:232
 msgid ""
@@ -607,7 +608,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Show spaces"
-msgstr ""
+msgstr "Afficher les espaces"
 
 #: data/org.mate.pluma.gschema.xml.in:242
 msgid ""
@@ -647,12 +648,6 @@ msgstr "Éditeur de texte"
 #: data/pluma.desktop.in.in:5
 msgid "Edit text files"
 msgstr "Éditer des fichiers texte"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/pluma.desktop.in.in:12
-msgid "accessories-text-editor"
-msgstr "accessories-text-editor"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -1054,27 +1049,27 @@ msgstr "_minutes"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:919
 msgid "Show spaces, tabs, newlines"
-msgstr ""
+msgstr "Afficher les espaces, tabulations, retours chariot"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:953
 msgid "Show _tabs"
-msgstr ""
+msgstr "Afficher les _tabulations"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1003
 msgid "Show _trailing tabs only"
-msgstr ""
+msgstr "Afficher seulement les tabulations de _fin"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1041
 msgid "Show _newlines"
-msgstr ""
+msgstr "Afficher les _retours chariot"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1082
 msgid "Show _spaces"
-msgstr ""
+msgstr "Afficher les _espaces"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1132
 msgid "Show _trailing spaces only"
-msgstr ""
+msgstr "Afficher seulement les espaces de _fin"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1175
 msgid "Editor"
@@ -1976,7 +1971,7 @@ msgstr "Préparation..."
 
 #: pluma/pluma-print-preferences.ui:15
 msgid "window1"
-msgstr ""
+msgstr "fenêtre1"
 
 #: pluma/pluma-print-preferences.ui:39
 msgid "Syntax Highlighting"
@@ -2958,12 +2953,6 @@ msgstr "Panneau du navigateur de fichiers"
 msgid "Easy file access from the side pane"
 msgstr "Accès facile aux fichiers depuis le panneau latéral"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/filebrowser/filebrowser.plugin.desktop.in:9
-msgid "system-file-manager"
-msgstr "system-file-manager"
-
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
 msgstr "Définit l'emplacement au premier document"
@@ -3353,12 +3342,6 @@ msgstr "Console Python"
 msgid "Interactive Python console standing in the bottom panel"
 msgstr "Console interactive Python dans le panneau inférieur"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:9
-msgid "text-x-python"
-msgstr "text/x-python"
-
 #: plugins/pythonconsole/pythonconsole/config.ui:20
 msgid "_Error color:"
 msgstr "Couleur des _erreurs :"
@@ -3369,11 +3352,11 @@ msgstr "Couleur des c_ommandes :"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
-msgstr ""
+msgstr "Utiliser la police à chasse fixe du système"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
-msgstr ""
+msgstr "Police :"
 
 #: plugins/quickopen/quickopen/popup.py:32
 #: plugins/quickopen/quickopen.plugin.desktop.in:6
@@ -3391,12 +3374,6 @@ msgstr "Ouvrir rapidement des documents"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files"
 msgstr "Ouvre rapidement des fichiers"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/quickopen/quickopen.plugin.desktop.in:9
-msgid "document-open"
-msgstr ""
 
 #: plugins/snippets/snippets.plugin.desktop.in:6
 #: plugins/snippets/snippets/Document.py:51
@@ -3646,12 +3623,6 @@ msgstr "Trier"
 msgid "Sorts a document or selected text."
 msgstr "Trie un document ou le texte sélectionné."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/sort/sort.plugin.desktop.in:8
-msgid "view-sort-ascending"
-msgstr "view-sort-ascending"
-
 #: plugins/sort/sort.ui:61
 msgid "_Sort"
 msgstr "_Trier"
@@ -3873,12 +3844,6 @@ msgstr "Vérificateur orthographique"
 #: plugins/spell/spell.plugin.desktop.in:6
 msgid "Checks the spelling of the current document."
 msgstr "Vérifie l'orthographe du document actuel."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/spell/spell.plugin.desktop.in:8
-msgid "tools-check-spelling"
-msgstr "tools-check-spelling"
 
 #: plugins/taglist/pluma-taglist-plugin.c:124
 #: plugins/taglist/pluma-taglist-plugin-panel.c:707
@@ -5041,7 +5006,7 @@ msgstr "Espace insécable"
 
 #: plugins/taglist/HTML.tags.xml.in:2271
 msgid "Soft hyphen­"
-msgstr ""
+msgstr "Trait d’union virtuel"
 
 #: plugins/taglist/HTML.tags.xml.in:2275
 msgid "&quot;"
@@ -6118,7 +6083,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:44
 msgid "button"
-msgstr ""
+msgstr "Bouton"
 
 #: plugins/taglist/XUL.tags.xml.in:48
 msgid "browser"
@@ -6559,12 +6524,6 @@ msgstr "Enregistrer sans espaces en fin de ligne"
 #: plugins/trailsave/trailsave.plugin.desktop.in:6
 msgid "Removes trailing spaces from lines before saving."
 msgstr "Supprime les espaces situées en fin de ligne avant l'enregistrement."
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: plugins/trailsave/trailsave.plugin.desktop.in:8
-msgid "edit-cut"
-msgstr "edit-cut"
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"
