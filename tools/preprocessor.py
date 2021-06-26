@@ -4,6 +4,7 @@
 # This file is part of pluma
 #
 # Copyright (C) 2006 - Steve Frécinaux
+# Copyright (C) 2012-2021 MATE Developers
 #
 # pluma is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

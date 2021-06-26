@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2002-2005 - Paolo Maggi
  * Copyright (C) 2009 - Ignacio Casal Quinteiro
- * Copyright (C) 2020 - MATE Desktop Team
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * pluma is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

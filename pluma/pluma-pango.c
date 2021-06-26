@@ -3,6 +3,7 @@
  * This file is a copy of pango_font_description_to_css from gtk gtkfontbutton.c
  *
  * Copyright (C) 2016 Matthias Clasen <mclasen@redhat.com>
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

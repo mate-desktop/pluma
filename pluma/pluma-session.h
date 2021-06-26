@@ -4,6 +4,7 @@
  *
  * Copyright (C) 2002 Ximian, Inc.
  * Copyright (C) 2005 - Paolo Maggi
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * Author: Federico Mena-Quintero <federico@ximian.com>
  *

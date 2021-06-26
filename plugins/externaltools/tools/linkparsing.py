@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #    Copyright (C) 2009-2010  Per Arneng <per.arneng@anyplanet.com>
+#    Copyright (C) 2012-2021 MATE Developers
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by

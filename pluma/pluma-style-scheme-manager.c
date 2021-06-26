@@ -1,6 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
  * pluma-source-style-manager.c
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * Copyright (C) 2007 - Paolo Borelli and Paolo Maggi
  *
