@@ -17,7 +17,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-01-16 12:13+0100\n"
+"POT-Creation-Date: 2021-06-26 20:39+0200\n"
 "PO-Revision-Date: 2018-09-23 11:08+0000\n"
 "Last-Translator: OkayPJ <1535253694@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
@@ -31,18 +31,18 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Christopher Meng <i@cicku.me>, 2012-2013\n"
-"ravix <dr.neemous@gmail.com>, 2013\n"
+"Christopher Meng , 2012-2013\n"
+"ravix , 2013\n"
 "Dianjin Wang <1132321739qq@gmail.com>, 2012\n"
-"Cravix <dr.neemous@gmail.com>, 2013\n"
-"nyanyh <rebuilty@gmail.com>, 2013\n"
-"liulitchi <xingzuo88@qq.com>, 2013\n"
-"玉堂白鹤 <yjwork@qq.com>, 2015\n"
-"Mingye Wang <arthur200126@gmail.com>, 2015-2016\n"
-"白铭骢 <jeffbai@aosc.xyz>, 2015-2016\n"
-"刘子兴 <liushuyu@aosc.xyz>, 2015-2016\n"
-"比丘<shenshuaiwen@gmail.com>,2018-2019\n"
-"xingpj<xingjiapeng10@163.com>,2020"
+"Cravix , 2013\n"
+"nyanyh , 2013\n"
+"liulitchi , 2013\n"
+"玉堂白鹤 , 2015\n"
+"Mingye Wang , 2015-2016\n"
+"白铭骢 , 2015-2016\n"
+"刘子兴 , 2015-2016\n"
+"比丘 , 2018-2019\n"
+"OkayPJ , 2020"
 
 #. (itstool) path: info/title
 #: C/index.docbook:20
@@ -206,7 +206,7 @@ msgid ""
 "<firstterm>plugins</firstterm>, allowing a variety of tasks related to text-"
 "editing."
 msgstr ""
-"<application>pluma</application>的目标是做一个简单且容易的文本编辑器。更多强大的功能可以被不同的<firstterm>plugins</firstterm>，它们允许在文本编辑时执行更多的任务。"
+"<application>pluma</application>的目标是做一个简单且容易的文本编辑器。可以使用不同的<firstterm>插件</firstterm>在文本编辑时实现更多强大的功能。"
 
 #. (itstool) path: info/title
 #: C/index.docbook:238
@@ -234,8 +234,8 @@ msgid ""
 "Choose <menuchoice> <guisubmenu>Accessories</guisubmenu> <guimenuitem>Pluma "
 "Text Editor</guimenuitem> </menuchoice>."
 msgstr ""
-"选择 <menuchoice> <guisubmenu>附件</guisubmenu> "
-"<guimenuitem>Pluma文本编辑器</guimenuitem> </menuchoice>。"
+"选择 <menuchoice> <guisubmenu>附件</guisubmenu> <guimenuitem>Pluma "
+"文本编辑器</guimenuitem> </menuchoice>。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:256
@@ -585,7 +585,7 @@ msgstr ""
 #. (itstool) path: info/title
 #: C/index.docbook:413
 msgid "Working With Tabs"
-msgstr "使用标签页"
+msgstr "标签页操作"
 
 #. (itstool) path: section/para
 #: C/index.docbook:415
@@ -618,7 +618,7 @@ msgstr ""
 #. (itstool) path: info/title
 #: C/index.docbook:424
 msgid "Working with Text"
-msgstr "与文本工作"
+msgstr "文本操作"
 
 #. (itstool) path: info/title
 #: C/index.docbook:430
@@ -2367,6 +2367,8 @@ msgid ""
 "space that <application> pluma</application> inserts when you press the "
 "<keycap>Tab</keycap> key."
 msgstr ""
+"使用 <guilabel>跳格宽度</guilabel> 数字设定框以指定在按 <keycap>Tab</keycap> 键时 "
+"<application>pluma</application> 插入的空格宽度。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1676
@@ -2375,23 +2377,25 @@ msgid ""
 "specify that <application> pluma</application> inserts spaces instead of a "
 "tab character when you press the <keycap>Tab</keycap> key."
 msgstr ""
+"选择 <guilabel>插入空格代替制表符</guilabel> 选项以指定当你按 <keycap>Tab</keycap> "
+"键时，<application>pluma</application> 会插入空格而非制表符。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1680
 msgid "<guilabel>Auto Indentation</guilabel>"
-msgstr ""
+msgstr "<guilabel>自动缩进</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1684
 msgid ""
 "Select the <guilabel>Enable auto indentation</guilabel> option to specify "
 "that the next line starts at the indentation level of the current line."
-msgstr ""
+msgstr "选择 <guilabel>启用自动缩进</guilabel> 选项以指定下一行自动缩进到当前行的缩进级别。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1688
 msgid "<guilabel>File Saving</guilabel>"
-msgstr ""
+msgstr "<guilabel>文件保存</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1692
@@ -2400,6 +2404,8 @@ msgid ""
 "option to create a backup copy of a file each time you save the file. The "
 "backup copy of the file contains a ~ at the end of the filename."
 msgstr ""
+"选择 <guilabel>在保存之前创建一个备份文件</guilabel> "
+"选项，可在您每次保存文件时创建一份改文件的备份副本。备份副本文件的文件名的末尾会包含一个 ~ 符号。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1693
@@ -2408,6 +2414,7 @@ msgid ""
 "automatically save the current file at regular intervals. Use the spin box "
 "to specify how often you want to save the file."
 msgstr ""
+"选择 <guilabel>自动保存文件，每隔……分钟</guilabel>选项以定期自动保存当前文件。使用数字设定框指定您想要自动保存文件的频率。"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1701
@@ -2417,7 +2424,7 @@ msgstr "字体和颜色首选项"
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1706
 msgid "<guilabel>Font</guilabel>"
-msgstr ""
+msgstr "<guilabel>字体</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1710
@@ -2426,6 +2433,8 @@ msgid ""
 "default system font for the text in the <application>pluma</application> "
 "text window."
 msgstr ""
+"选择 <guilabel>使用默认主题字体</guilabel> 选项令 <application>pluma</application> "
+"文本窗口中的文本使用系统默认字体。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1711
@@ -2434,82 +2443,84 @@ msgid ""
 "<application>pluma</application> uses to display text. Click on the button "
 "to specify the font type, style, and size to use for text."
 msgstr ""
+"<guilabel>编辑器字体</guilabel> 字段显示 <application>pluma</application> "
+"用于显示文本的字体。点击按钮以指定文本使用的字体类型、样式和大小。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1715
 msgid "<guilabel>Color Scheme</guilabel>"
-msgstr ""
+msgstr "<guilabel>配色方案</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1719
 msgid ""
 "You can choose a color scheme from the list of color schemes. By default, "
 "the following color schemes are installed:"
-msgstr ""
+msgstr "你可以从配色方案列表中选取一个配色方案。有以下配色方案被默认安装："
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1722
 msgid "<guilabel>Classic</guilabel>"
-msgstr ""
+msgstr "<guilabel>Classic</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1726
 msgid "Classic color scheme based on the gvim color scheme."
-msgstr ""
+msgstr "Classic 配色方案基于 gvim 的配色方案创建。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1730
 msgid "<guilabel>Cobalt</guilabel>"
-msgstr ""
+msgstr "<guilabel>Cobalt</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1734
 msgid "Blue based color scheme."
-msgstr ""
+msgstr "蓝色基调的配色方案。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1738
 msgid "<guilabel>Kate</guilabel>"
-msgstr ""
+msgstr "<guilabel>Kate</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1742
 msgid "Color scheme used in the Kate text editor."
-msgstr ""
+msgstr "Kate 文本编辑器中使用的配色方案。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1746
 msgid "<guilabel>Oblivion</guilabel>"
-msgstr ""
+msgstr "<guilabel>Oblivion</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1750
 msgid "Dark color scheme using the Tango color palette."
-msgstr ""
+msgstr "使用 Tango 色调的深色配色方案。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1754
 msgid "<guilabel>Tango</guilabel>"
-msgstr ""
+msgstr "<guilabel>Tango</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1758
 msgid "Color scheme using the Tango color scheme."
-msgstr ""
+msgstr "使用 Tango 配色方案的配色方案。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1762
 msgid ""
 "You can add a new color scheme by clicking on <guilabel>Add...</guilabel>, "
 "and selecting a color scheme file"
-msgstr ""
+msgstr "您可以通过点击 <guilabel>添加...</guilabel> 并选取配色方案文件以添加一个新配色方案"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1763
 msgid ""
 "You can remove the selected color scheme by clicking on "
 "<guilabel>Remove</guilabel>"
-msgstr ""
+msgstr "您可以通过点击 <guilabel>移除</guilabel> 以移除选取的配色方案"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1771
@@ -2523,18 +2534,20 @@ msgid ""
 "information on plugins and how to use the built-in plugins, see <xref "
 "linkend=\"pluma-plugins-overview\"/>."
 msgstr ""
+"插件可以为 <application>pluma</application> 提供额外的功能。更多有关插件及如何使用内置插件的信息，请参阅<xref "
+"linkend=\"pluma-plugins-overview\"/>。"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1778
 msgid "Enabling a Plugin"
-msgstr ""
+msgstr "启用插件"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1780
 msgid ""
 "To enable a <application>pluma</application> plugin, perform the following "
 "steps:"
-msgstr ""
+msgstr "如果需要启用一个 <application>pluma</application> 插件，请按如下步骤操作："
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1783 C/index.docbook:1807 C/index.docbook:2150
@@ -2542,49 +2555,51 @@ msgid ""
 "Choose <menuchoice> <guimenu>Edit</guimenu> "
 "<guimenuitem>Preferences</guimenuitem> </menuchoice>."
 msgstr ""
+"选择 <menuchoice> <guimenu>编辑</guimenu> <guimenuitem>首选项</guimenuitem> "
+"</menuchoice>。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1786 C/index.docbook:1810 C/index.docbook:2153
 msgid "Select the <guilabel>Plugins</guilabel> tab."
-msgstr ""
+msgstr "选中 <guilabel>插件</guilabel> 标签页。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1789
 msgid ""
 "Select the check box next to the name of the plugin that you want to enable."
-msgstr ""
+msgstr "选中您想启用插件的名称一旁的复选框。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1792 C/index.docbook:1816
 msgid ""
 "Click <guibutton>Close</guibutton> to close the "
 "<guilabel>Preferences</guilabel> dialog."
-msgstr ""
+msgstr "点击 <guibutton>关闭</guibutton> 以关闭 <guilabel>首选项</guilabel> 对话框。"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1800
 msgid "Disabling a Plugin"
-msgstr ""
+msgstr "禁用插件"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1803
 msgid ""
 "A plugin remains enabled when you quit <application>pluma</application>."
-msgstr ""
+msgstr "在您退出 <application>pluma</application> 时，插件会仍旧保持启用的状态。"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1804
 msgid ""
 "To disable a <application>pluma</application> plugin, perform the following "
 "steps:"
-msgstr ""
+msgstr "如果需要禁用一个 <application>pluma</application> 插件，请按如下步骤操作："
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1813
 msgid ""
 "Deselect the check box next to the name of the plugin that you want to "
 "disable."
-msgstr ""
+msgstr "取消选中您想禁用插件的名称一旁的复选框"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1826
@@ -2594,7 +2609,7 @@ msgstr "插件"
 #. (itstool) path: info/title
 #: C/index.docbook:1831
 msgid "Working with Plugins"
-msgstr ""
+msgstr "插件操作"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1833
@@ -2604,31 +2619,34 @@ msgid ""
 "enhances the functionality of an application. Plugins add new items to the "
 "<application>pluma</application> menus for the new features they provide."
 msgstr ""
+"通过启用 <firstterm>插件</firstterm>，您可以让 <application>pluma</application> "
+"实现更多功能。插件是用于增强应用程序功能的补充程序。插件在 <application>pluma</application> "
+"的菜单中添加了可以提供提供新功能的项目。 "
 
 #. (itstool) path: section/para
 #: C/index.docbook:1835
 msgid "Several plugins come built-in with <application>pluma</application>."
-msgstr ""
+msgstr "<application>pluma</application> 本身就内置了一些插件。"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1836
 msgid ""
 "To enable and disable plugins, or see which plugins are currently enabled, "
 "use the <xref linkend=\"pluma-prefs-plugins\"/>."
-msgstr ""
+msgstr "如需启用或禁用插件，或查看插件的启用状态，请使用 <xref linkend=\"pluma-prefs-plugins\"/>。"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1837
 msgid ""
 "The following plugins come built-in with <application>pluma</application>:"
-msgstr ""
+msgstr "<application>pluma</application> 内置了以下插件："
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1843
 msgid ""
 "<xref linkend=\"pluma-document-statistics-plugin\"/> shows the number of "
 "lines, words, and characters in the document."
-msgstr ""
+msgstr "<xref linkend=\"pluma-document-statistics-plugin\"/> 可以显示文档的行数、单词数以及字符数。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1848
@@ -2636,27 +2654,29 @@ msgid ""
 "<xref linkend=\"pluma-external-tools-plugin\"/> allows you to execute "
 "external commands from <application>pluma</application>."
 msgstr ""
+"<xref linkend=\"pluma-external-tools-plugin\"/> 可以让您在 "
+"<application>pluma</application> 中执行外部命令。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1853
 msgid ""
 "<xref linkend=\"pluma-file-browser-plugin\"/> allows you to browse your "
 "files and folders in the side pane."
-msgstr ""
+msgstr "<xref linkend=\"pluma-file-browser-plugin\"/> 可以让您在侧边栏浏览文件和文件夹。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1857
 msgid ""
 "<xref linkend=\"pluma-indent-lines-plugin\"/> adds or removes indentation "
 "from the selected lines."
-msgstr ""
+msgstr "<xref linkend=\"pluma-indent-lines-plugin\"/> 可以为选中行添加或移除行首缩进。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1862
 msgid ""
 "<xref linkend=\"pluma-insert-date-time-plugin\"/> adds the current date and "
 "time into a document."
-msgstr ""
+msgstr "<xref linkend=\"pluma-insert-date-time-plugin\"/> 可以在文档中插入当前的日期与时间。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1867
@@ -2666,41 +2686,44 @@ msgid ""
 "<application>Emacs</application>, <application>Kate</application> and "
 "<application>Vim</application>-style modelines."
 msgstr ""
+"<xref linkend=\"pluma-modelines-plugin\"/> 可以让您对单个文件设置编辑偏好，并提供 "
+"<application>Emacs</application>、<application>Kate</application> 和 "
+"<application>Vim</application> 样式的模式行。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1872
 msgid ""
 "<xref linkend=\"pluma-python-console-plugin\"/> allows you to run commands "
 "in the python programming language."
-msgstr ""
+msgstr "<xref linkend=\"pluma-python-console-plugin\"/> 可以让您在 python 编程语言中运行命令。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1877
 msgid ""
 "<xref linkend=\"pluma-trailsave-plugin\"/> allows you to strip trailing "
 "whitespaces in your document after saving."
-msgstr ""
+msgstr "<xref linkend=\"pluma-trailsave-plugin\"/> 可以在保存文档时自动除去行尾多余空格。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1882
 msgid ""
 "<xref linkend=\"pluma-snippets-plugin\"/> allows you to store frequently-"
 "used pieces of text and insert them quickly into a document."
-msgstr ""
+msgstr "<xref linkend=\"pluma-snippets-plugin\"/> 可以让您存储常用的文本片段并在需要时将它们快速插入到文档中。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1887
 msgid ""
 "<xref linkend=\"pluma-sort-plugin\"/> arranges selected lines of text into "
 "alphabetical order."
-msgstr ""
+msgstr "<xref linkend=\"pluma-sort-plugin\"/> 可以将选中的行按照文本字母顺序排列。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1892
 msgid ""
 "<xref linkend=\"pluma-spell-checker-plugin\"/> corrects the spelling in the "
 "selected text, or marks errors automatically in the document."
-msgstr ""
+msgstr "<xref linkend=\"pluma-spell-checker-plugin\"/> 可以修正选中文本的拼写，或自动标记文档中的错误。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1897
@@ -2708,7 +2731,7 @@ msgid ""
 "<xref linkend=\"pluma-tag-list-plugin\"/> lets you insert commonly-used tags"
 " for HTML and other languages from a list in the side pane."
 msgstr ""
-"<xref linkend=\"pluma-tag-list-plugin\"/>允许您从侧边栏中的列表中插入用于 HTML 和其他语言的常用标记。"
+"<xref linkend=\"pluma-tag-list-plugin\"/> 允许您从侧边栏中的列表中插入用于 HTML 和其他语言的常用标记。"
 
 #. (itstool) path: note/para
 #: C/index.docbook:1904
@@ -2716,11 +2739,13 @@ msgid ""
 "For more information on creating plugins, see <link "
 "xlink:href=\"https://github.com/mate-desktop/pluma/tree/master/plugins\"/>."
 msgstr ""
+"关于创建插件的更多信息，参见 <link xlink:href=\"https://github.com/mate-"
+"desktop/pluma/tree/master/plugins\"/>。"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1910
 msgid "Document Statistics Plugin"
-msgstr ""
+msgstr "文档统计插件"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1913
@@ -2731,6 +2756,9 @@ msgid ""
 "<guilabel>Document Statistics</guilabel> dialog. To use the Document "
 "Statistics plugin, perform the following steps:"
 msgstr ""
+"<application>文档统计</application> "
+"插件可以计算当前文件中的行数、单词数、包含空格的字符数、不含空格的字符数和字节数。该插件能将上述结果展示在一个 "
+"<guilabel>文档统计</guilabel> 对话框中。如要使用文档统计插件，请按以下步骤执行："
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1916
@@ -2740,31 +2768,34 @@ msgid ""
 "Statistics</guilabel> dialog. The <guilabel>Document Statistics</guilabel> "
 "dialog displays the following information about the file:"
 msgstr ""
+"选择 <menuchoice> <guimenu>工具</guimenu> <guimenuitem>文档统计</guimenuitem> "
+"</menuchoice> 以显示 <guilabel>文档统计 </guilabel> 对话框。<guilabel>文档统计</guilabel> "
+"对话框会显示当前文件的以下信息："
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1919
 msgid "Number of lines in the current document."
-msgstr ""
+msgstr "当前文档所含行的数量。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1922
 msgid "Number of words in the current document."
-msgstr ""
+msgstr "当前文档所含单词的数量。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1925
 msgid "Number of characters, including spaces, in the current document."
-msgstr ""
+msgstr "当前文档所含字符的数量，包括空格。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1928
 msgid "Number of characters, not including spaces, in the current document."
-msgstr ""
+msgstr "当前文档所含字符的数量，不包括空格。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1931
 msgid "Number of bytes in the current document."
-msgstr ""
+msgstr "当前文档所含字节的数量。"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1936
@@ -2774,11 +2805,14 @@ msgid ""
 "contents of the <guilabel>Document Statistics</guilabel> dialog, click "
 "<guibutton>Update</guibutton>."
 msgstr ""
+"在 <guilabel>文档统计</guilabel> 对话框打开的情况下，您可以持续更新 "
+"<application>pluma</application> 中的文件。如果需要更新 <guilabel>文档统计</guilabel> "
+"对话框中的内容，点击 <guibutton>更新</guibutton>。"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1943
 msgid "External Tools Plugin"
-msgstr ""
+msgstr "外部工具插件"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1945
@@ -2789,6 +2823,10 @@ msgid ""
 "<application>sed</application>), or launch a predefined command (for "
 "example, <application>make</application>)."
 msgstr ""
+"<application>外部工具</application> 插件可以让您在 <application>pluma</application> "
+"中执行外部命令。您可以使用管道将一些信息输入到命令中，并使用它们的输出（如 "
+"<application>sed</application>），也可以启动一个已定义的命令（如 "
+"<application>make</application>）。"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1946
@@ -2797,18 +2835,20 @@ msgid ""
 "commands. To run an external command, choose it from the "
 "<guimenu>Tools</guimenu> menu."
 msgstr ""
+"使用 <guilabel>外部工具管理器</guilabel> 来创建并编辑命令。若要运行一个外部命令，请在 <guimenu>工具</guimenu>"
+" 菜单中选择它。"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1950
 msgid "Built-in Commands"
-msgstr ""
+msgstr "内建命令"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1952
 msgid ""
 "The following commands are provided with the <application>External "
 "Tools</application> plugin:"
-msgstr ""
+msgstr "以下命令会随 <application>外部工具</application> 插件提供："
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1955
@@ -2819,50 +2859,50 @@ msgstr "构建"
 #: C/index.docbook:1957
 msgid ""
 "Runs <application>make</application> in the current document's directory."
-msgstr ""
+msgstr "在当前文档所在目录运行 <application>make</application>。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1961
 msgid "Directory Listing"
-msgstr ""
+msgstr "目录列表"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1963
 msgid ""
 "Lists the contents of the current document's directory in a new document."
-msgstr ""
+msgstr "在新文档中列出当前文档的目录。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1967
 msgid "Environment Variables"
-msgstr ""
+msgstr "环境变量"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1969
 msgid "Displays the environment variables list in the bottom pane."
-msgstr ""
+msgstr "在底部面板列出环境变量。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1973
 msgid "Grep"
-msgstr ""
+msgstr "Grep"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1975
 msgid ""
 "Searches for a term in all files in the current document directory, using "
 "pattern matching. Results are shown in the bottom pane."
-msgstr ""
+msgstr "在当前文档所在目录下的每一个文档中使用模式匹配搜索特定短语。在底部面板显示结果。"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1979
 msgid "Remove Trailing Spaces"
-msgstr ""
+msgstr "移除多余空格"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1981
 msgid "Removes all spaces from the end of lines in the document."
-msgstr ""
+msgstr "移除当前文档中所有行尾空格。"
 
 #. (itstool) path: info/title
 #: C/index.docbook:1989
@@ -3842,57 +3882,48 @@ msgid ""
 "into alphabetical order."
 msgstr ""
 
-#. (itstool) path: caution/para
-#: C/index.docbook:2434
-msgid ""
-"You cannot undo the Sort operation, so you should save the file before "
-"performing the sort. To revert to the saved version of the file after the "
-"sort operation, choose <menuchoice> <guimenu>File</guimenu> "
-"<guimenuitem>Revert</guimenuitem> </menuchoice>."
-msgstr ""
-
 #. (itstool) path: section/para
-#: C/index.docbook:2436
+#: C/index.docbook:2433
 msgid "To use the Sort plugin, perform the following steps:"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2439
+#: C/index.docbook:2436
 msgid "Select the lines of text you want to sort."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2442
+#: C/index.docbook:2439
 msgid ""
 "Choose <menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Sort</guimenuitem> "
 "</menuchoice>. The <guilabel>Sort</guilabel> dialog opens."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2445
+#: C/index.docbook:2442
 msgid "Choose the options you want for the sort:"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2448
+#: C/index.docbook:2445
 msgid ""
 "To arrange the text in reverse order, select <guilabel>Reverse "
 "order</guilabel>."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2451
+#: C/index.docbook:2448
 msgid ""
 "To delete duplicate lines, select <guilabel>Remove duplicates</guilabel>."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2454
+#: C/index.docbook:2451
 msgid "To ignore case sensitivity, select <guilabel>Ignore case</guilabel>."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2457
+#: C/index.docbook:2454
 msgid ""
 "To have the sort ignore the characters at the start of the lines, set the "
 "first character that should be used for sorting in the <guilabel>Start at "
@@ -3900,17 +3931,17 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2462
+#: C/index.docbook:2459
 msgid "To perform the sort operation, click <guibutton>Sort</guibutton>."
 msgstr ""
 
 #. (itstool) path: info/title
-#: C/index.docbook:2469
+#: C/index.docbook:2466
 msgid "Spell Checker Plugin"
 msgstr ""
 
 #. (itstool) path: section/para
-#: C/index.docbook:2471
+#: C/index.docbook:2468
 msgid ""
 "The <application>Spell Checker</application> plugin checks the spelling in "
 "the selected text. You can configure <application>pluma</application> to "
@@ -3921,7 +3952,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2474
+#: C/index.docbook:2471
 msgid ""
 "Choose <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Set "
 "Language</guimenuitem> </menuchoice> to display the <guilabel>Set "
@@ -3931,7 +3962,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2477
+#: C/index.docbook:2474
 msgid ""
 "To check the spelling automatically, choose <menuchoice> "
 "<guimenu>Tools</guimenu> <guimenuitem>Autocheck Spelling</guimenuitem> "
@@ -3944,7 +3975,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2478
+#: C/index.docbook:2475
 msgid ""
 "Unknown spellings are displayed in a different color, and underlined. Right-"
 "click on an unknown spelling, then select <guimenu>Spelling "
@@ -3952,7 +3983,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2481
+#: C/index.docbook:2478
 msgid ""
 "To replace the unknown spelling with another spelling in the list, select "
 "the replacement spelling from the <guimenu>Spelling Suggestions</guimenu> "
@@ -3960,7 +3991,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2484
+#: C/index.docbook:2481
 msgid ""
 "To add the unknown spelling to your personal dictionary, select <menuchoice>"
 " <guimenu>Spelling Suggestions</guimenu> <guimenuitem>Add</guimenuitem> "
@@ -3968,7 +3999,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2487
+#: C/index.docbook:2484
 msgid ""
 "To ignore all occurrences of the unknown spelling, so that they are no "
 "longer flagged as unknown but are not added to your personal dictionary, "
@@ -3978,14 +4009,14 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2492
+#: C/index.docbook:2489
 msgid ""
 "To check the spelling manually, choose <menuchoice> <guimenu>Tools</guimenu>"
 " <guimenuitem>Check Spelling</guimenuitem> </menuchoice>."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2493
+#: C/index.docbook:2490
 msgid ""
 "If there are no spelling errors, an <guilabel>Information</guilabel> dialog "
 "displays a message stating that the document does not contain misspelled "
@@ -3994,21 +4025,21 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2494
+#: C/index.docbook:2491
 msgid ""
 "If there are spelling errors, the <guilabel>Check Spelling</guilabel> dialog"
 " is displayed:"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2497
+#: C/index.docbook:2494
 msgid ""
 "The <guilabel>Misspelled word</guilabel> is displayed at the top of the "
 "dialog."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2500
+#: C/index.docbook:2497
 msgid ""
 "A suggested known spelling is displayed in the <guilabel>Change "
 "to</guilabel> text box. You can replace this with another known spelling by "
@@ -4017,7 +4048,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2503
+#: C/index.docbook:2500
 msgid ""
 "To check the spelling of the text in the <guilabel>Change to</guilabel> text"
 " box, click <guibutton>Check Word</guibutton>. If this is a known word, the "
@@ -4027,7 +4058,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2506
+#: C/index.docbook:2503
 msgid ""
 "To ignore the current occurrence of the unknown word, click "
 "<guibutton>Ignore</guibutton>. To ignore all occurrences of the unknown "
@@ -4036,7 +4067,7 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2509
+#: C/index.docbook:2506
 msgid ""
 "To change the current occurrence of the unknown word to the text in the "
 "<guilabel>Change to</guilabel> text box, click "
@@ -4046,38 +4077,38 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2512
+#: C/index.docbook:2509
 msgid ""
 "To add the unknown word to your personal dictionary, click <guibutton>Add "
 "word</guibutton>."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2515
+#: C/index.docbook:2512
 msgid ""
 "To close the <guilabel>Check Spelling</guilabel> dialog, click "
 "<guibutton>Close</guibutton>."
 msgstr ""
 
 #. (itstool) path: info/title
-#: C/index.docbook:2524
+#: C/index.docbook:2521
 msgid "Tag List Plugin"
 msgstr ""
 
 #. (itstool) path: section/para
-#: C/index.docbook:2526
+#: C/index.docbook:2523
 msgid ""
 "The <application>Tag List</application> plugin allows you to insert common "
 "tags from a list in the side pane."
 msgstr "<application>标签列表</application>插件允许您在侧边栏中插入列表中的普通标签。"
 
 #. (itstool) path: section/para
-#: C/index.docbook:2527
+#: C/index.docbook:2524
 msgid "To use the Tag List plugin, perform the following steps:"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2530
+#: C/index.docbook:2527
 msgid ""
 "Choose <menuchoice> <guimenu>View</guimenu> <guimenuitem>Side "
 "Pane</guimenuitem> </menuchoice>."
@@ -4085,7 +4116,7 @@ msgstr ""
 "选择<menuchoice><guimenu>查看</guimenu><guimenuitem>侧边栏</guimenuitem></menuchoice>。"
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2533
+#: C/index.docbook:2530
 msgid ""
 "By default, the side pane shows a tab containing a list of open documents. "
 "Click on the tab showing a + icon at the bottom of the side pane to show the"
@@ -4093,33 +4124,33 @@ msgid ""
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2536
+#: C/index.docbook:2533
 msgid ""
 "Select the appropriate tag category from the drop-down list. For example, "
 "<guilabel>HTML - Tags</guilabel>."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2539
+#: C/index.docbook:2536
 msgid "Scroll through the tag list to find the required tag."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2542
+#: C/index.docbook:2539
 msgid ""
 "To insert a tag at the cursor position in the current file, double-click on "
 "the tag in the tag list. You can also insert a tag as follows:"
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2545
+#: C/index.docbook:2542
 msgid ""
 "To insert a tag in the current file and change the focus from the side pane "
 "to the display area, press <keycap>Return</keycap>."
 msgstr ""
 
 #. (itstool) path: listitem/para
-#: C/index.docbook:2548
+#: C/index.docbook:2545
 msgid ""
 "To insert a tag in the current file and maintain the focus on the "
 "<guilabel>Tag list plugin</guilabel> window, press <keycombo> "
