@@ -87,22 +87,13 @@ class WindowHelper:
             paths.append(gfile.get_parent())
 
         # File browser root directory
-        bus = self._window.get_message_bus()
+        settings = Gio.Settings.new('org.mate.pluma.plugins.filebrowser.on-load')
+        root = settings.get_string('virtual-root')
+        if root:
+            gfile = Gio.file_new_for_uri(root)
 
-        try:
-            msg = bus.send_sync('/plugins/filebrowser', 'get_root')
-
-            if msg:
-                uri = msg.get_value('uri')
-
-                if uri:
-                    gfile = Gio.file_new_for_uri(uri)
-
-                    if gfile and gfile.is_native():
-                        paths.append(gfile)
-
-        except Exception:
-            pass
+            if gfile and gfile.is_native():
+                paths.append(gfile)
 
         # Recent documents
         paths.append(RecentDocumentsDirectory())
