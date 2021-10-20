@@ -398,7 +398,7 @@ do_replace (PlumaSearchDialog *dialog,
 		{
 		need_refind = !g_regex_match_simple(unescaped_search_text,
 						    selected_text,
-						    match_case ? 0 : GTK_TEXT_SEARCH_CASE_INSENSITIVE ,
+						    match_case ? 0 : G_REGEX_CASELESS,
 						    0);
 		}
 	}
