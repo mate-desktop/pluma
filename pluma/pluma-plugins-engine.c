@@ -57,6 +57,7 @@ static void
 pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 {
 	GError *error = NULL;
+	char *user_plugins_dir;
 
 	pluma_debug (DEBUG_PLUGINS);
 
@@ -89,9 +90,11 @@ pluma_plugins_engine_init (PlumaPluginsEngine *engine)
 		g_clear_error (&error);
 	}
 
+	user_plugins_dir = pluma_dirs_get_user_plugins_dir ();
 	peas_engine_add_search_path (PEAS_ENGINE (engine),
-	                             pluma_dirs_get_user_plugins_dir (),
-	                             pluma_dirs_get_user_plugins_dir ());
+	                             user_plugins_dir,
+	                             user_plugins_dir);
+	g_free (user_plugins_dir);
 
 	peas_engine_add_search_path (PEAS_ENGINE (engine),
 	                             PLUMA_LIBDIR "/plugins",
