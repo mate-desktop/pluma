@@ -69,9 +69,10 @@ struct _PlumaWindowPrivate
 	GtkWidget      *statusbar;
 	guint           generic_message_cid;
 	guint           tip_message_cid;
-	guint 		tab_width_id;
-	guint 		spaces_instead_of_tabs_id;
-	guint 		language_changed_id;
+	/* The handler IDs */
+	gulong 		tab_width_id;
+	gulong 		spaces_instead_of_tabs_id;
+	gulong 		language_changed_id;
 
 	/* Menus & Toolbars */
 	GtkUIManager   *manager;
@@ -107,7 +108,7 @@ struct _PlumaWindowPrivate
 
 	PlumaWindowState state;
 
-	gint            bottom_panel_item_removed_handler_id;
+	gulong          bottom_panel_item_removed_handler_id;
 
 	GtkWindowGroup *window_group;
 
