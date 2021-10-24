@@ -192,8 +192,15 @@ on_end_loading_cb (PlumaFileBrowserStore         *store,
                    PlumaFileBrowserPluginPrivate * priv)
 {
 	/* Disconnect the signal */
-	g_signal_handler_disconnect (store, priv->end_loading_handle);
-	priv->end_loading_handle = 0;
+#if GLIB_CHECK_VERSION(2,62,0)
+	g_clear_signal_handler (&priv->end_loading_handle, store);
+#else
+	if (priv->end_loading_handle != 0) {
+		g_signal_handler_disconnect (store, priv->end_loading_handle);
+		priv->end_loading_handle = 0;
+	}
+#endif
+
 	priv->auto_root = FALSE;
 }
 
@@ -206,10 +213,14 @@ prepare_auto_root (PlumaFileBrowserPluginPrivate *priv)
 
 	store = pluma_file_browser_widget_get_browser_store (priv->tree_widget);
 
+#if GLIB_CHECK_VERSION(2,62,0)
+	g_clear_signal_handler (&priv->end_loading_handle, store);
+#else
 	if (priv->end_loading_handle != 0) {
 		g_signal_handler_disconnect (store, priv->end_loading_handle);
 		priv->end_loading_handle = 0;
 	}
+#endif
 
 	priv->end_loading_handle = g_signal_connect (store,
 	                                             "end-loading",
