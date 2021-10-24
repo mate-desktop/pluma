@@ -1226,12 +1226,17 @@ hide_search_window (PlumaView *view, gboolean cancel)
     if (view->priv->disable_popdown)
         return;
 
+#if GLIB_CHECK_VERSION(2,62,0)
+    g_clear_signal_handler (&view->priv->search_entry_changed_id,
+                            view->priv->search_entry);
+#else
     if (view->priv->search_entry_changed_id != 0)
     {
         g_signal_handler_disconnect (view->priv->search_entry,
                                      view->priv->search_entry_changed_id);
         view->priv->search_entry_changed_id = 0;
     }
+#endif
 
     if (view->priv->typeselect_flush_timeout != 0)
     {

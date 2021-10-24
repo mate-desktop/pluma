@@ -445,12 +445,17 @@ drag_stop (PlumaNotebook *notebook)
 	}
 
 	notebook->priv->drag_in_progress = FALSE;
+#if GLIB_CHECK_VERSION(2,62,0)
+	g_clear_signal_handler (&notebook->priv->motion_notify_handler_id,
+	                        notebook);
+#else
 	if (notebook->priv->motion_notify_handler_id != 0)
 	{
 		g_signal_handler_disconnect (G_OBJECT (notebook),
 					     notebook->priv->motion_notify_handler_id);
 		notebook->priv->motion_notify_handler_id = 0;
 	}
+#endif
 }
 
 /* This function is only called during dnd, we don't need to emit TABS_REORDERED
