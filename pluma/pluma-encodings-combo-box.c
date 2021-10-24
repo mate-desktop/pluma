@@ -47,7 +47,7 @@ struct _PlumaEncodingsComboBoxPrivate
 	GSettings *enc_settings;
 
 	GtkListStore *store;
-	glong changed_id;
+	gulong changed_id;
 
 	guint activated_item;
 

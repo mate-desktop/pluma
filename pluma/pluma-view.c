@@ -97,7 +97,7 @@ struct _PlumaViewPrivate
     GtkWidget   *search_entry;
 
     guint        typeselect_flush_timeout;
-    guint        search_entry_changed_id;
+    gulong       search_entry_changed_id;
 
     gboolean     disable_popdown;
 
