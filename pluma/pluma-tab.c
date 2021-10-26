@@ -1719,7 +1719,7 @@ _pluma_tab_get_name (PlumaTab *tab)
 	}
 	else
 	{
- #if 0
+#if 0
 		if (pluma_document_get_readonly (doc))
 		{
 			tab_name = g_strdup_printf ("%s [%s]", docname,
