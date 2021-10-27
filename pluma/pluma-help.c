@@ -84,10 +84,9 @@ pluma_help_display (GtkWindow   *parent,
 		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 							  "%s", error->message);
 
-		g_signal_connect (G_OBJECT (dialog),
-				  "response",
-				  G_CALLBACK (gtk_widget_destroy),
-				  NULL);
+		g_signal_connect (dialog, "response",
+		                  G_CALLBACK (gtk_widget_destroy),
+		                  NULL);
 
 		gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 

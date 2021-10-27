@@ -573,10 +573,9 @@ move_current_tab_to_another_notebook (PlumaNotebook  *src,
 
 	/* start drag handling in dest notebook */
 	dest->priv->motion_notify_handler_id =
-		g_signal_connect (G_OBJECT (dest),
-				  "motion-notify-event",
-				  G_CALLBACK (motion_notify_cb),
-				  NULL);
+		g_signal_connect (dest, "motion-notify-event",
+		                  G_CALLBACK (motion_notify_cb),
+		                  NULL);
 
 	drag_start (dest, (GdkEvent *) event);
 }
@@ -656,10 +655,9 @@ button_press_cb (PlumaNotebook  *notebook,
 		notebook->priv->y_start = event->y_root;
 
 		notebook->priv->motion_notify_handler_id =
-			g_signal_connect (G_OBJECT (notebook),
-					  "motion-notify-event",
-					  G_CALLBACK (motion_notify_cb),
-					  NULL);
+			g_signal_connect (notebook, "motion-notify-event",
+			                  G_CALLBACK (motion_notify_cb),
+			                  NULL);
 	}
 	else if ((event->type == GDK_BUTTON_PRESS) &&
 		 (event->button == 3 || event->button == 2))
@@ -821,36 +819,30 @@ pluma_notebook_init (PlumaNotebook *notebook)
 	gtk_notebook_set_show_border (GTK_NOTEBOOK (notebook), FALSE);
 	gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
 
-	g_signal_connect (notebook,
-			  "button-press-event",
+	g_signal_connect (notebook, "button-press-event",
 			  (GCallback)button_press_cb,
 			  NULL);
 
-	g_signal_connect (notebook,
-			  "button-release-event",
+	g_signal_connect (notebook, "button-release-event",
 			  (GCallback)button_release_cb,
 			  NULL);
 
-	g_signal_connect (notebook,
-			  "grab-focus",
+	g_signal_connect (notebook, "grab-focus",
 			  (GCallback)grab_focus_cb,
 			  NULL);
 
-	g_signal_connect (notebook,
-			  "focus-in-event",
+	g_signal_connect (notebook, "focus-in-event",
 			  (GCallback)focus_in_cb,
 			  NULL);
 
-	g_signal_connect (notebook,
-			  "focus-out-event",
+	g_signal_connect (notebook, "focus-out-event",
 			  (GCallback)focus_out_cb,
 			  NULL);
 
 	gtk_widget_add_events (GTK_WIDGET (notebook),
 			       GDK_BUTTON1_MOTION_MASK);
 
-	g_signal_connect_after (G_OBJECT (notebook),
-				"switch_page",
+	g_signal_connect_after (notebook, "switch_page",
                                 G_CALLBACK (pluma_notebook_switch_page_cb),
                                 NULL);
 }
