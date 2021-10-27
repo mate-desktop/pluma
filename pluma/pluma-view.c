@@ -1523,7 +1523,7 @@ search_entry_populate_popup (GtkEntry  *entry,
 
     /* create "Wrap Around" menu item. */
     menu_item = gtk_check_menu_item_new_with_mnemonic (_("_Wrap Around"));
-    g_signal_connect (G_OBJECT (menu_item), "toggled",
+    g_signal_connect (menu_item, "toggled",
                       G_CALLBACK (wrap_around_menu_item_toggled),
                       view);
     gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), menu_item);
@@ -1533,7 +1533,7 @@ search_entry_populate_popup (GtkEntry  *entry,
 
     /* create "Match Entire Word Only" menu item. */
     menu_item = gtk_check_menu_item_new_with_mnemonic (_("Match _Entire Word Only"));
-    g_signal_connect (G_OBJECT (menu_item), "toggled",
+    g_signal_connect (menu_item, "toggled",
                       G_CALLBACK (match_entire_word_menu_item_toggled),
                       view);
     gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), menu_item);
@@ -1543,7 +1543,7 @@ search_entry_populate_popup (GtkEntry  *entry,
 
     /* create "Match Case" menu item. */
     menu_item = gtk_check_menu_item_new_with_mnemonic (_("_Match Case"));
-    g_signal_connect (G_OBJECT (menu_item), "toggled",
+    g_signal_connect (menu_item, "toggled",
                       G_CALLBACK (match_case_menu_item_toggled),
                       view);
     gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), menu_item);
@@ -1553,7 +1553,7 @@ search_entry_populate_popup (GtkEntry  *entry,
 
     /* create "Parse escapes" menu item. */
     menu_item = gtk_check_menu_item_new_with_mnemonic (_("_Parse escape sequences (e.g. \n)"));
-    g_signal_connect (G_OBJECT (menu_item), "toggled",
+    g_signal_connect (menu_item, "toggled",
                       G_CALLBACK (parse_escapes_menu_item_toggled),
                       view);
     gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), menu_item);

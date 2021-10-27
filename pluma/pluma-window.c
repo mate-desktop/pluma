@@ -1665,12 +1665,10 @@ create_menu_bar_and_toolbar (PlumaWindow *window,
                            (GtkCallback)set_non_homogeneus,
                            NULL);
 
-    g_signal_connect_after (G_OBJECT (window->priv->toolbar),
-                            "show",
+    g_signal_connect_after (window->priv->toolbar, "show",
                             G_CALLBACK (toolbar_visibility_changed),
                             window);
-    g_signal_connect_after (G_OBJECT (window->priv->toolbar),
-                            "hide",
+    g_signal_connect_after (window->priv->toolbar, "hide",
                             G_CALLBACK (toolbar_visibility_changed),
                             window);
 }
@@ -2036,8 +2034,7 @@ create_statusbar (PlumaWindow *window,
 
     fill_tab_width_combo (window);
 
-    g_signal_connect (G_OBJECT (window->priv->tab_width_combo),
-                      "changed",
+    g_signal_connect (window->priv->tab_width_combo, "changed",
                       G_CALLBACK (tab_width_combo_changed),
                       window);
 
@@ -2051,17 +2048,14 @@ create_statusbar (PlumaWindow *window,
 
     fill_language_combo (window);
 
-    g_signal_connect (G_OBJECT (window->priv->language_combo),
-                      "changed",
+    g_signal_connect (window->priv->language_combo, "changed",
                       G_CALLBACK (language_combo_changed),
                       window);
 
-    g_signal_connect_after (G_OBJECT (window->priv->statusbar),
-                            "show",
+    g_signal_connect_after (window->priv->statusbar, "show",
                             G_CALLBACK (statusbar_visibility_changed),
                             window);
-    g_signal_connect_after (G_OBJECT (window->priv->statusbar),
-                            "hide",
+    g_signal_connect_after (window->priv->statusbar, "hide",
                             G_CALLBACK (statusbar_visibility_changed),
                             window);
 

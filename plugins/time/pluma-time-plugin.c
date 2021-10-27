@@ -897,10 +897,9 @@ get_choose_format_dialog (GtkWindow                 *parent,
 		gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (err_dialog))),
 				   error_widget);
 
-		g_signal_connect (G_OBJECT (err_dialog),
-				  "response",
-				  G_CALLBACK (gtk_widget_destroy),
-				  NULL);
+		g_signal_connect (err_dialog, "response",
+		                  G_CALLBACK (gtk_widget_destroy),
+		                  NULL);
 
 		gtk_widget_show_all (err_dialog);
 
