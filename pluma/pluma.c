@@ -123,7 +123,7 @@ static const GOptionEntry options [] =
 	{ G_OPTION_REMAINING, '\0', 0, G_OPTION_ARG_FILENAME_ARRAY, &remaining_args,
 	  NULL, N_("[FILE...]") }, /* collects file arguments */
 
-	{NULL}
+	{ NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL }
 };
 
 static void
