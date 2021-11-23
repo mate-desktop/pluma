@@ -413,11 +413,6 @@ on_notify_buffer_cb (PlumaView  *view,
                       "search_highlight_updated",
                       G_CALLBACK (search_highlight_updated_cb),
                       view);
-
-    /* We only activate the extensions when the right buffer is set,
-     * because most plugins will expect this behaviour, and we won't
-     * change the buffer later anyway. */
-    peas_extension_set_call (view->priv->extensions, "activate", view);
 }
 
 #ifdef GTK_SOURCE_VERSION_3_24
@@ -2320,9 +2315,9 @@ extension_removed (PeasExtensionSet *extensions,
 static void
 pluma_view_realize (GtkWidget *widget)
 {
-     PlumaView *view = PLUMA_VIEW (widget);
+    PlumaView *view = PLUMA_VIEW (widget);
 
-     GTK_WIDGET_CLASS (pluma_view_parent_class)->realize (widget);
+    GTK_WIDGET_CLASS (pluma_view_parent_class)->realize (widget);
 
     g_signal_connect (view->priv->extensions, "extension-added",
                       G_CALLBACK (extension_added),
