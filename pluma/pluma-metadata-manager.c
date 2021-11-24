@@ -32,7 +32,6 @@
 #include <config.h>
 #endif
 
-#include <time.h>
 #include <stdlib.h>
 #include <libxml/xmlreader.h>
 #include "pluma-metadata-manager.h"
@@ -53,7 +52,7 @@ typedef struct _Item Item;
 
 struct _Item
 {
-	time_t	 	 atime; /* time of last access */
+	gint64		 atime; /* time of last access */
 
 	GHashTable	*values;
 };
@@ -178,7 +177,7 @@ parseItem (xmlDocPtr doc, xmlNodePtr cur)
 
 	item = g_new0 (Item, 1);
 
-	item->atime = g_ascii_strtoull ((char *)atime, NULL, 0);
+	item->atime = g_ascii_strtoll ((char *)atime, NULL, 0);
 
 	item->values = g_hash_table_new_full (g_str_hash,
 					      g_str_equal,
@@ -331,7 +330,7 @@ pluma_metadata_manager_get (const gchar *uri,
 	if (item == NULL)
 		return NULL;
 
-	item->atime = time (NULL);
+	item->atime = g_get_real_time () / G_USEC_PER_SEC;
 
 	if (item->values == NULL)
 		return NULL;
@@ -393,7 +392,7 @@ pluma_metadata_manager_set (const gchar *uri,
 		g_hash_table_remove (item->values,
 				     key);
 
-	item->atime = time (NULL);
+	item->atime = g_get_real_time () / G_USEC_PER_SEC;
 
 	pluma_metadata_manager_arm_timeout ();
 }
@@ -453,7 +452,7 @@ save_item (const gchar *key, const gpointer *data, xmlNodePtr parent)
 	pluma_debug_message (DEBUG_METADATA, "uri: %s", key);
 #endif
 
-	atime = g_strdup_printf ("%ld", item->atime);
+	atime = g_strdup_printf ("%" G_GINT64_FORMAT, item->atime);
 	xmlSetProp (xml_node, (const xmlChar *)"atime", (const xmlChar *)atime);
 
 #ifdef PLUMA_METADATA_VERBOSE_DEBUG
