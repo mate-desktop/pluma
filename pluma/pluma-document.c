@@ -2283,8 +2283,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 							      &m_end,
 							      NULL);
 		} else {
-			if(replace_text != NULL)
-				g_free (replace_text);
+			g_free (replace_text);
 			replace_text = g_strdup (replace);
 			found = pluma_gtk_text_iter_regex_search (&iter,
 							          search_text,
@@ -2341,8 +2340,7 @@ pluma_document_replace_all (PlumaDocument       *doc,
 	pluma_document_set_enable_search_highlighting (doc, search_highliting);
 
 	g_free (search_text);
-	if(replace_text != NULL)
-		g_free (replace_text);
+	g_free (replace_text);
 
 	return cont;
 }
