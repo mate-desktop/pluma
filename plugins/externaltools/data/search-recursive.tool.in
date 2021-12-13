@@ -17,24 +17,4 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 SEARCHTEXT=`zenity --entry --title="Search text on files" --text="Text to search"`
-
-if [ ! "${#SEARCHTEXT}" = 0 ]; then
-
-    OIFS=$IFS; IFS=$'\n'  # Backup and set new IFS
-
-    for LINE in `grep -nHIirF -- "$SEARCHTEXT" ./`; do
-        primer_indice=`expr index "$LINE" :`
-        tmp=${LINE:$primer_indice}
-        segundo_indice=`expr index "$tmp" :`
-        linea_codigo=${tmp:$segundo_indice}
-        
-        # lugar donde está la palabra
-        posicion=`expr index "$tmp" "$SEARCHTEXT"`
-
-        linea_archivo=${LINE:0:$primer_indice + $segundo_indice - 1}
-
-        echo "${linea_archivo}:  ${linea_codigo}"
-    done
-    
-    IFS=$OIFS  # Restore IFS
-fi
+grep -nHIirF -- "$SEARCHTEXT" ./ | sed 's|\([^:]*:[^:]*:\)|\1  |'
