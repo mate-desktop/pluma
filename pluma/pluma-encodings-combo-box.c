@@ -87,7 +87,7 @@ pluma_encodings_combo_box_set_property (GObject    *object,
 	switch (prop_id)
 	{
 		case PROP_SAVE_MODE:
-			combo->priv->save_mode = g_value_get_boolean (value);
+			combo->priv->save_mode = (g_value_get_boolean (value) != FALSE);
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
