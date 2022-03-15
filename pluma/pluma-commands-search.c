@@ -310,7 +310,7 @@ get_selected_text (GtkTextBuffer  *doc,
 	if (!gtk_text_buffer_get_selection_bounds (doc, &start, &end))
 	{
 		if (len != NULL)
-			len = 0;
+			*len = 0;
 
 		return FALSE;
 	}
