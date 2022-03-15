@@ -1862,7 +1862,7 @@ get_selected_text (GtkTextBuffer *doc, gchar **selected_text, gint *len)
     if (!gtk_text_buffer_get_selection_bounds (doc, &start, &end))
     {
         if (len != NULL)
-            len = 0;
+            *len = 0;
 
         return FALSE;
     }
