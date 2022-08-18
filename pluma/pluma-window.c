@@ -328,7 +328,7 @@ pluma_window_key_press_event (GtkWidget   *widget,
         g_strcanon (tempsize, "1234567890", '\0');
         g_strreverse (tempsize);
 
-        gchar tempfont [strlen (font)];
+        gchar tempfont [strlen (font) + 1];
         strcpy (tempfont, font);
         tempfont [strlen (font) - strlen (tempsize)] = 0;
 
