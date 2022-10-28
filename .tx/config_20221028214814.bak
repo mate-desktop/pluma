@@ -1,0 +1,16 @@
+[main]
+host = https://www.transifex.com
+ 
+[MATE.master--pluma]
+file_filter = po/<lang>.po
+source_file = pluma.pot
+source_lang = en
+type = PO
+minimum_perc = 2
+
+[MATE.master--pluma-user-guide]
+file_filter = help/<lang>/<lang>.po
+source_file = help/pluma.pot
+source_lang = en
+type = PO
+minimum_perc = 2
