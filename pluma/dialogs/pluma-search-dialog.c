@@ -240,7 +240,7 @@ search_text_entry_changed (GtkEditable       *editable,
 	}
 }
 
-static void
+static gboolean
 response_handler (PlumaSearchDialog *dialog,
 		  gint               response_id,
 		  gpointer           data)
@@ -276,7 +276,21 @@ response_handler (PlumaSearchDialog *dialog,
 						 text);
 
 				g_free (text);
+				/* Return TRUE if the search box contains text */
+				return TRUE;
 			}
+	}
+	return FALSE;
+}
+
+static void
+search_text_entry_activated (GtkEditable       *editable,
+			     PlumaSearchDialog *dialog)
+{
+	/* Don't send response if the search box is empty */
+	if (response_handler (dialog, PLUMA_SEARCH_DIALOG_FIND_RESPONSE, NULL))
+	{
+		gtk_dialog_response (GTK_DIALOG (dialog), PLUMA_SEARCH_DIALOG_FIND_RESPONSE);
 	}
 }
 
@@ -369,8 +383,6 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	gtk_widget_set_hexpand (GTK_WIDGET (dlg->priv->search_entry), TRUE);
 	dlg->priv->search_text_entry = pluma_history_entry_get_entry
 			(PLUMA_HISTORY_ENTRY (dlg->priv->search_entry));
-	gtk_entry_set_activates_default (GTK_ENTRY (dlg->priv->search_text_entry),
-					 TRUE);
 	gtk_widget_show (dlg->priv->search_entry);
 	gtk_grid_attach_next_to (GTK_GRID (dlg->priv->grid),
 				 dlg->priv->search_entry,
@@ -386,8 +398,6 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	gtk_widget_set_hexpand (GTK_WIDGET (dlg->priv->replace_entry), TRUE);
 	dlg->priv->replace_text_entry = pluma_history_entry_get_entry
 			(PLUMA_HISTORY_ENTRY (dlg->priv->replace_entry));
-	gtk_entry_set_activates_default (GTK_ENTRY (dlg->priv->replace_text_entry),
-					 TRUE);
 	gtk_widget_show (dlg->priv->replace_entry);
 	gtk_grid_attach_next_to (GTK_GRID (dlg->priv->grid),
 				 dlg->priv->replace_entry,
@@ -449,6 +459,14 @@ pluma_search_dialog_init (PlumaSearchDialog *dlg)
 	g_signal_connect (dlg->priv->search_text_entry,
 			  "changed",
 			  G_CALLBACK (search_text_entry_changed),
+			  dlg);
+	g_signal_connect (dlg->priv->search_text_entry,
+			  "activate",
+			  G_CALLBACK (search_text_entry_activated),
+			  dlg);
+	g_signal_connect (dlg->priv->replace_text_entry,
+			  "activate",
+			  G_CALLBACK (search_text_entry_activated),
 			  dlg);
 
 	g_signal_connect (dlg,
