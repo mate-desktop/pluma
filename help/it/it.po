@@ -8,27 +8,27 @@
 # 6d1bb5d393520b00f70a137a58397ea1_b5ba1e2 <22cc5e560e0d5b6554809bfb51b90403_882095>, 2020
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Alessandro Volturno <alelvb@inwind.it>, 2021
+# Alessandro Volturno <alelvb@inwind.it>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-09-23 11:08+0000\n"
-"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2021\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Enrico Bella, 2019\n"
-"Alessandro Volturno, 2020"
+"Alessandro Volturno, 2020, 2022"
 
 #. (itstool) path: info/title
 #: C/index.docbook:20
@@ -83,12 +83,12 @@ msgstr "Sun Microsystems"
 #. (itstool) path: othercredit/contrib
 #: C/index.docbook:98
 msgid "Provided information from earlier revisions of the pluma application."
-msgstr "ha fornito informazioni sulle versioni precedenti di Pluma"
+msgstr "Ha fornito informazioni sulle versioni precedenti di Pluma."
 
 #. (itstool) path: othercredit/contrib
 #: C/index.docbook:105
 msgid "Provided information about plugins."
-msgstr "ha fornitor informazioni sui plugin"
+msgstr "Ha fornito informazioni sui plugin."
 
 #. (itstool) path: revision/date
 #: C/index.docbook:124
@@ -197,7 +197,7 @@ msgstr ""
 "Lo scopo di <application>pluma</application> è quello di essere un editor di"
 " testi semplice e facile da usare. Le funzioni più avanzate possono essere "
 "abilitate con differenti <firstterm>plugin</firstterm>, che permettono una "
-"varietà di compiti relativi alla modifica del testo.."
+"varietà di compiti relativi alla modifica del testo."
 
 #. (itstool) path: info/title
 #: C/index.docbook:238
@@ -246,7 +246,7 @@ msgid ""
 "start, and display the document."
 msgstr ""
 "Per impostazione predefinita, quando si apre un documento di testo dal "
-"gestore file viene avviato pluma che mostra il documento scelto."
+"gestore dei file viene avviato pluma che mostra il documento scelto."
 
 #. (itstool) path: info/title
 #: C/index.docbook:267
@@ -291,8 +291,8 @@ msgid ""
 "The menus on the menubar contain all the commands you need to work with "
 "files in <application>pluma</application>."
 msgstr ""
-"I menu nella barra dei menu contengono tutti i comandi di cui hai bisogno "
-"per lavorare sui file."
+"I menù nella barra dei menù contengono tutti i comandi di cui c'è bisogno "
+"per lavorare sui file in <application>pluma</application>."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:296
@@ -305,8 +305,8 @@ msgid ""
 "The toolbar contains a subset of the commands that you can access from the "
 "menubar."
 msgstr ""
-"La barra degli strimenti contiene un sottoinsieme di comandi accessibili "
-"dalla barra di menu."
+"La barra degli strumenti contiene un sottoinsieme di comandi accessibili "
+"dalla barra dei menù."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:302
@@ -333,7 +333,7 @@ msgid ""
 msgstr ""
 "La barra di stato mostra le informazioni sull'attività corrente di "
 "<application>pluma</application> e le informazioni contestuali sugli oggetti"
-" dei menu. La barra di stato mostra inoltre le seguenti informazioni:"
+" dei menù. La barra di stato mostra inoltre la seguente informazione:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:313
@@ -341,8 +341,8 @@ msgid ""
 "Cursor position: the line number and column number where the cursor is "
 "located."
 msgstr ""
-"La posizione del cursore: numero di linea e numero di colonna in cui è "
-"localizzato il cursore."
+"Posizione del cursore: numero di linea e numero di colonna in cui si trova "
+"il cursore."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:316
@@ -361,7 +361,7 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:322
 msgid "Side Pane"
-msgstr "Riquadro laterale"
+msgstr "Pannello laterale"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:324
@@ -369,7 +369,7 @@ msgid ""
 "The side pane displays a list of open documents, and other information "
 "depending on which plugins are enabled."
 msgstr ""
-"Il riquadro laterale mostra una lista dei documenti aperti e altre "
+"Il pannello laterale mostra una lista dei documenti aperti e altre "
 "informazioni a seconda di quali plugin sono attivi."
 
 #. (itstool) path: listitem/para
@@ -378,14 +378,14 @@ msgid ""
 "By default, the side pane is not shown. To show it, choose <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Side Pane</guimenuitem> </menuchoice>."
 msgstr ""
-"Per default il riquadro laterale non viene mostrato. Per visualizzarlo, "
-"selezionare <menuchoice><guimenu>Visualizza</guimenu> <guimenuitem>Riquadro "
-"Laterale</guimenuitem></menuchoice>. "
+"Per default il pannello laterale non viene mostrato. Per visualizzarlo, "
+"selezionare <menuchoice><guimenu>Visualizza</guimenu> <guimenuitem>Pannello "
+"laterale</guimenuitem></menuchoice>. "
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:329
 msgid "Bottom Pane"
-msgstr "Riquadro inferiore"
+msgstr "Pannello inferiore"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:331
@@ -393,7 +393,7 @@ msgid ""
 "The bottom pane is used by programming tools such as the <application>Python"
 " Console</application> plugin to display output."
 msgstr ""
-"Il riquadro inferiore è utilizzato dagli strumenti di programmazione come ad"
+"Il pannello inferiore è utilizzato dagli strumenti di programmazione come ad"
 " esempio il plugin <application>Console Python</application> per mostrare il"
 " loro output."
 
@@ -405,8 +405,8 @@ msgid ""
 "</menuchoice>."
 msgstr ""
 "Per Default il pannello inferiore non viene mostrato. Per visualizzarlo "
-"selezionare <menuchoice><guimenu>Visualizza</guimenu> <guimenuitem>Riquadro "
-"Inferiore</guimenuitem></menuchoice>. "
+"selezionare <menuchoice><guimenu>Visualizza</guimenu> <guimenuitem>Pannello "
+"inferiore</guimenuitem></menuchoice>. "
 
 #. (itstool) path: section/para
 #: C/index.docbook:336
@@ -429,7 +429,7 @@ msgid ""
 msgstr ""
 "Come per altre applicazioni MATE, le azioni in "
 "<application>pluma</application> possono essere eseguite in più modi: "
-"mediante il menu, dalla barra degli strumenti o via tasti scorciatoia. Le "
+"mediante il menù, dalla barra degli strumenti o via tasti scorciatoia. Le "
 "scorciatoie comuni a tutte le applicazioni sono elencate nella <link "
 "xlink:href=\"help:mate-user-guide/shortcuts-apps\">Guida Utente</link>."
 
@@ -494,7 +494,7 @@ msgid ""
 "<guimenuitem>New</guimenuitem> </menuchoice>. The application displays a new"
 " blank document in the <application>pluma</application> window."
 msgstr ""
-"Per creare un nuovo documento, selezionate "
+"Per creare un nuovo documento, selezionare "
 "<menuchoice><guimenu>File</guimenu><guimenuitem>Nuovo</guimenuitem></menuchoice>."
 " L'applicazione mostrerà un documento vuoto nella finestra principale del "
 "programma.  "
@@ -534,7 +534,7 @@ msgid ""
 "recent files."
 msgstr ""
 "L'applicazione registra i percorsi ed i nomi dei 5 file modificati più "
-"recentemente e li mostra come oggetti nel menu "
+"recentemente e li mostra come oggetti nel menù "
 "<menuchoice><guimenu>File</guimenu></menuchoice>. È anche possibile fare "
 "clic sull'icona <_:inlinemediaobject-1/> nella barra degli strumenti per "
 "visualizzare la lista dei file recenti."
@@ -558,9 +558,9 @@ msgid ""
 "<keycombo><keycap>Ctrl</keycap><keycap>l</keycap></keycombo>, "
 "<keycap>.</keycap>, <keycap>~</keycap> or <keycap>/</keycap>."
 msgstr ""
-"È possibile scrivere il percorso del file nel dialogo <guilabel>Apri "
-"File</guilabel>. Per alternare tra posizione e breadcrumbs, premere "
-"<keycombo><keycap>Ctrl</keycap> <keycap>|</keycap></keycombo>, "
+"È possibile scrivere il percorso del file nella finestra di dialogo "
+"<guilabel>Apri File</guilabel>. Per alternare tra posizione e pulsanti, "
+"premere <keycombo><keycap>Ctrl</keycap> <keycap>|</keycap></keycombo>, "
 "<keycap>.</keycap>,<keycap>~</keycap> o <keycap>/</keycap>."
 
 #. (itstool) path: info/title
@@ -711,7 +711,7 @@ msgid ""
 "To permanently delete the selected text from the file, choose <menuchoice> "
 "<guimenu>Edit</guimenu> <guimenuitem>Delete</guimenuitem> </menuchoice>."
 msgstr ""
-"Per cancellare permanentemente il testo selezionato da un file, scegliere "
+"Per cancellare permanentemente il testo selezionato da un file, selezionare "
 "<menuchoice><guimenu>Modifica</guimenu><guimenuitem>Cancella</guimenuitem></menuchoice>."
 
 #. (itstool) path: listitem/para
@@ -723,7 +723,7 @@ msgid ""
 "file, either from pluma or another application."
 msgstr ""
 "Per inserire il contenuto degli appunti alla posizione del cursore, "
-"selezionate <menuchoice> <guimenu>Modifica</guimenu> "
+"selezionare <menuchoice> <guimenu>Modifica</guimenu> "
 "<guimenuitem>Incolla</guimenuitem> </menuchoice>. Occorre tagliare o copiare"
 " del testo da un file pluma o da un'altra applicazione prima di poterlo "
 "incollare in un file."
@@ -734,7 +734,7 @@ msgid ""
 "To select all the text in a file, choose <menuchoice> "
 "<guimenu>Edit</guimenu> <guimenuitem>Select All</guimenuitem> </menuchoice>."
 msgstr ""
-"Per selezionare tutto il testo di un file, selezionate <menuchoice> "
+"Per selezionare tutto il testo di un file, selezionare <menuchoice> "
 "<guimenu>Modifica</guimenu> <guimenuitem>Seleziona tutto</guimenuitem> "
 "</menuchoice>."
 
@@ -773,7 +773,7 @@ msgstr ""
 "In <application>pluma</application>, ci sono due modi per cercare del testo "
 "in un file. Si può utilizzare la finestra di dialogo "
 "<guilabel>Trova</guilabel> per cercare uno specifico frammento di testo, "
-"oppure utilizzare <guilabel>Ricerca Incrementale</guilabel> per evidenziare "
+"oppure utilizzare <guilabel>Ricerca incrementale</guilabel> per evidenziare "
 "il testo corrispondente mentre lo si digita. "
 
 #. (itstool) path: info/title
@@ -817,11 +817,10 @@ msgid ""
 "first occurrence of the string. Other occurrences of the string are "
 "highlighted."
 msgstr ""
-"Fare clicca su <guibutton>Trova</guibutton> per cercare nel file la prima "
-"occorrenza della stringa localizzata oltre la posizione corrente del "
-"cursore. Se <application>pluma</application> trova la stringa, "
-"l'applicazione seleziona la prima occorrenza di essa. Le altre occorrenze "
-"vengono evidenziate."
+"Fare clic su <guibutton>Trova</guibutton> per cercare nel file la prima "
+"occorrenza della stringa oltre la posizione corrente del cursore. Se "
+"<application>pluma</application> trova la stringa, l'applicazione seleziona "
+"la prima occorrenza di essa. Le altre occorrenze verranno evidenziate."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:491
@@ -837,7 +836,7 @@ msgstr ""
 "<menuchoice><guimenu>Cerca</guimenu> <guimenuitem>Trova "
 "successivo</guimenuitem></menuchoice>. Per trovare l'occorrenza precedente "
 "del testo, selezionare <menuchoice><guimenu>Cerca</guimenu> "
-"<guimenuitem>Trova Precedente</guimenuitem></menuchoice>."
+"<guimenuitem>Trova precedente</guimenuitem></menuchoice>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:500
@@ -862,9 +861,9 @@ msgid ""
 "<guimenu>Search</guimenu> <guimenuitem>Clear Highlight</guimenuitem> "
 "</menuchoice>."
 msgstr ""
-"Per rimuovere l'evidenziazione dal testo, seleziona "
+"Per rimuovere l'evidenziazione dal testo, selezionare "
 "<menuchoice><guimenu>Cerca</guimenu><guimenuitem>Cancella "
-"Evidenziazione</guimenuitem></menuchoice>."
+"evidenziazione</guimenuitem></menuchoice>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:511
@@ -906,7 +905,7 @@ msgid ""
 msgstr ""
 "Per avviare una ricerca incrementale, selezionare "
 "<menuchoice><guimenu>Cerca</guimenu> <guimenuitem>Ricerca "
-"Incrementale</guimenuitem></menuchoice>. La casella di ricerca appare in "
+"incrementale</guimenuitem></menuchoice>. La casella di ricerca appare in "
 "cima all'area di visualizzazione."
 
 #. (itstool) path: section/para
@@ -928,7 +927,7 @@ msgid ""
 msgstr ""
 "Per avanzare la selezione alla successiva occorrenza mantenendo aperta la "
 "casella di ricerca incrementale, premere <keycombo><keycap>Ctrl</keycap> "
-"<keycap>G</keycap></keycombo>. Premi <keycombo><keycap>Ctrl</keycap> "
+"<keycap>G</keycap></keycombo>. Premere <keycombo><keycap>Ctrl</keycap> "
 "<keycap>Shift</keycap> <keycap>G</keycap></keycombo> per tornare indietro "
 "alla corrispondenza precedente."
 
@@ -1058,8 +1057,8 @@ msgid ""
 "Select the <guilabel>Search backwards</guilabel> option to search backwards "
 "towards the beginning of the document."
 msgstr ""
-"Selezionare l'opzione <guilabel>Cercare all'indietro</guilabel> per cercare "
-"all'indietro verso l'inizio del documento."
+"Selezionare l'opzione <guilabel>Cercare all'indietro</guilabel> per "
+"ricercare all'indietro verso l'inizio del documento."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:582
@@ -1190,7 +1189,7 @@ msgstr ""
 "Per impostare le opzioni della pagina, selezionare "
 "<menuchoice><guimenu>File</guimenu> <guimenuitem>Imposta "
 "Pagina</guimenuitem></menuchoice> per mostrare la finestra di dialogo "
-"<guilabel>Imposta Pagina</guilabel>.  "
+"<guilabel>Imposta pagina</guilabel>.  "
 
 #. (itstool) path: section/para
 #: C/index.docbook:658
@@ -1198,7 +1197,7 @@ msgid ""
 "The <guilabel>Page Setup</guilabel> dialog enables you to specify the "
 "following print options:"
 msgstr ""
-"La finestra <guilabel>Imposta Pagina</guilabel> permette di specificare le "
+"La finestra <guilabel>Imposta pagina</guilabel> permette di specificare le "
 "seguenti opzioni di stampa:"
 
 #. (itstool) path: info/title
@@ -1218,8 +1217,8 @@ msgid ""
 "syntax highlighting, see <xref linkend=\"pluma-set-highlightmode\"/>."
 msgstr ""
 "Selezionare questa opzione per stampare l'evidenziazione della sintassi. Per"
-" maggiori informazioni sull'evidenziazione sintassi, vedere <xref linkend"
-"=\"pluma-set-highlightmode\"/>."
+" maggiori informazioni sull'evidenziazione della sintassi, vedere <xref "
+"linkend=\"pluma-set-highlightmode\"/>."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:674
@@ -1263,7 +1262,7 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:691 C/index.docbook:1621
 msgid "<guilabel>Text Wrapping</guilabel>"
-msgstr "<guilabel>A capo Automatico</guilabel>"
+msgstr "<guilabel>A capo automatico</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:695
@@ -1274,7 +1273,7 @@ msgid ""
 msgstr ""
 "Selezionare l'opzione<guilabel>Abilita a capo automatico</guilabel> per "
 "mandare la riga alla linea di testo successiva a livello di caratteri, "
-"quando si stampa un file. L'applicazione conta queste linee come una "
+"quando si stampa un file. L'applicazione conterà queste linee come una "
 "soltanto dal punto di vista del computo delle righe."
 
 #. (itstool) path: listitem/para
@@ -1283,14 +1282,14 @@ msgid ""
 "Select the <guilabel>Do not split words over two lines</guilabel> option to "
 "wrap text onto the next line, at a word level, when you print a file."
 msgstr ""
-"Seleziona l'opzione <guilabel>Non dividere le parole su due righe</guilabel>"
-" per usare l'a capo automatico, a livello delle parole, quando si stampa un "
-"file."
+"Selezionare l'opzione <guilabel>Non dividere le parole su due "
+"righe</guilabel> per usare l'a capo automatico, a livello delle parole, "
+"quando si stampa un file."
 
 #. (itstool) path: info/title
 #: C/index.docbook:704
 msgid "Fonts"
-msgstr "Tipi di carattere"
+msgstr "Font"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:708
@@ -1303,25 +1302,25 @@ msgid ""
 "Click on this button to select the font used to print the body text of a "
 "file."
 msgstr ""
-"Fare clic su questo pulsante per selezionare il formato del carattere usato "
-"per stampare il corpo del testo di un file."
+"Fare clic su questo pulsante per selezionare il formato del carattere "
+"impiegato per stampare il corpo del testo di un file."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:716
 msgid "<guilabel>Line numbers</guilabel>"
-msgstr "<guilabel>Numeri di Riga</guilabel>"
+msgstr "<guilabel>Numeri di Linea</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:720
 msgid "Click on this button to select the font used to print line numbers."
 msgstr ""
-"Fare clic su questo pulsante per selezionare il formato del carattere usato "
-"per stampare i numeri di riga."
+"Fare clic su questo pulsante per selezionare il formato del carattere "
+"impiegato per stampare i numeri di riga."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:724
 msgid "<guilabel>Headers and footers</guilabel>"
-msgstr "<guilabel>Intestazioni e piè di pagine</guilabel>"
+msgstr "<guilabel>Intestazione e piè di pagina</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:728
@@ -1330,7 +1329,7 @@ msgid ""
 "footers in a file."
 msgstr ""
 "Fare clic su questo pulsante per selezionare il formato del carattere da "
-"usare per stampare le intestazioni e i piè di pagina in un file."
+"impiegare per stampare le intestazioni e i piè di pagina in un file."
 
 #. (itstool) path: section/para
 #: C/index.docbook:732
@@ -1339,9 +1338,9 @@ msgid ""
 "<application>pluma</application>, click <guibutton>Restore Default "
 "Fonts</guibutton>."
 msgstr ""
-"Per resettare al formato del carattere predefinito per la stampa di un file "
-"in <application>pluma</application>, fare clic su <guibutton>Ripristina il "
-"carattere predefinito</guibutton>"
+"Per resettare al font predefinito per la stampa di un file in "
+"<application>pluma</application>, fare clic su <guibutton>Ripristina i font "
+"predefiniti</guibutton>"
 
 #. (itstool) path: info/title
 #: C/index.docbook:739
@@ -1385,9 +1384,9 @@ msgid ""
 "<guimenu>File</guimenu> <guimenuitem>Print Preview</guimenuitem> "
 "</menuchoice>."
 msgstr ""
-"Per vedere l'anteprima delle pagine che si vogliono stampare, selezionare "
-"<menuchoice><guimenu>File</guimenu> <guimenuitem>Anteprima di "
-"Stampa</guimenuitem></menuchoice>."
+"Per visualizzare l'anteprima delle pagine che si vuole stampare, selezionare"
+" <menuchoice><guimenu>File</guimenu> <guimenuitem>Anteprima di "
+"stampa</guimenuitem></menuchoice>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:752
@@ -1478,7 +1477,7 @@ msgid ""
 "Use the <guilabel>Number of copies</guilabel> spin box to specify the number"
 " of copies of the file that you want to print."
 msgstr ""
-"Usare la il riquadro <guilabel>Numero di copie</guilabel> per indicare il "
+"Utilizzare il riquadro <guilabel>Numero di copie</guilabel> per indicare il "
 "numero di copie del file che si vuole stampare."
 
 #. (itstool) path: listitem/para
@@ -1518,7 +1517,8 @@ msgstr "<guilabel>Impostazioni</guilabel>"
 #: C/index.docbook:819
 msgid "Use this drop-down list to select the printer settings."
 msgstr ""
-"Usare questa lista a tendina per selezionare le impostazioni di stampa."
+"Utilizzare questo elenco a tendina per selezionare le impostazioni di "
+"stampa."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:820
@@ -1541,7 +1541,7 @@ msgstr "<guilabel>Posizione</guilabel>"
 msgid ""
 "Use this drop-down list to select one of the following print destinations:"
 msgstr ""
-"Utilizzare il menu a tendina per selezionare una delle destinazioni di "
+"Utilizzare l'elenco a tendina per selezionare una delle destinazioni di "
 "stampa:"
 
 #. (itstool) path: varlistentry/term
@@ -1590,7 +1590,7 @@ msgid ""
 "the name and location of the PostScript file."
 msgstr ""
 "Fare clic su<guibutton>Salva come...</guibutton> per mostrare una finestra "
-"in cui specificare il nome e la posizione del file PostScript."
+"di dialogo in cui specificare il nome e la posizione del file PostScript."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:859
@@ -1600,7 +1600,7 @@ msgstr "<guilabel>Personalizzato</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:863
 msgid "Use the specified command to print the file."
-msgstr "Usare il comando specificato per stampare il file."
+msgstr "Utilizzare il comando specificato per stampare il file."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:864
@@ -1636,12 +1636,12 @@ msgstr "<guilabel>Commento</guilabel>"
 #. (itstool) path: info/title
 #: C/index.docbook:899
 msgid "Paper Tabbed Section"
-msgstr "Sezione Scheda Carta"
+msgstr "Sezione scheda carta"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:904
 msgid "<guilabel>Paper size</guilabel>"
-msgstr "Dimensione carta"
+msgstr "<guilabel>Dimensione della carta</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:908
@@ -1649,7 +1649,7 @@ msgid ""
 "Use this drop-down list to select the size of the paper to which you want to"
 " print the file."
 msgstr ""
-"Utilizzare questa lista per selezionare la dimensione della carta su cui "
+"Utilizzare questo elenco per selezionare la dimensione della carta su cui "
 "verrà stampato il documento."
 
 #. (itstool) path: varlistentry/term
@@ -1663,8 +1663,8 @@ msgid ""
 "Use this spin box to specify the width of the paper. Use the adjacent drop-"
 "down list to change the measurement unit."
 msgstr ""
-"Usare questa casella per definire la larghezza della carta. Impiegare la "
-"lista a tendina per cambiare l'unità di misura."
+"Utilizzare questa casella per definire la larghezza della carta. Impiegare "
+"l'elenco a tendina per cambiare l'unità di misura."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:920
@@ -1674,7 +1674,7 @@ msgstr "<guilabel>Altezza</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:924
 msgid "Use this spin box to specify the height of the paper."
-msgstr "Usare la casella per specificare l'altezza della carta."
+msgstr "Utilizzare la casella per specificare l'altezza della carta."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:928
@@ -1687,18 +1687,18 @@ msgid ""
 "Use this drop-down list to select the orientation of the paper in the "
 "printer."
 msgstr ""
-"Usare questa lista per selezionare l'orientamento della carta sui cui "
+"Utilizzare questo elenco per selezionare l'orientamento della carta sui cui "
 "stampare."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:936
 msgid "<guilabel>Page orientation</guilabel>"
-msgstr "<guilabel>Orientamento pagine</guilabel>"
+msgstr "<guilabel>Orientamento delle pagine</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:940
 msgid "Use this drop-down list to select the page orientation."
-msgstr "Usare questa lista per selezionare l'orientamento delle pagine."
+msgstr "Utilizzare questo elenco per selezionare l'orientamento delle pagine."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:944
@@ -1711,19 +1711,20 @@ msgid ""
 "Use this drop-down list to select the page layout. A preview of each layout "
 "that you select is displayed in the <guilabel>Preview</guilabel> area."
 msgstr ""
-"Usare questa la lista per scegliere l'orientamento della pagina. Viene "
+"Utilizzare questo elenco per scegliere l'orientamento della pagina. Viene "
 "mostrata un'anteprima dell'orientamento selezionato nell'area "
 "<guilabel>Anteprima</guilabel> ."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:952
 msgid "<guilabel>Paper tray</guilabel>"
-msgstr "<guilabel>Vassoio carta</guilabel>"
+msgstr "<guilabel>Vassoio della carta</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:956
 msgid "Use this drop-down list to select the paper tray."
-msgstr "Usare questa lista per selezionare il vassoio sorgente della carta."
+msgstr ""
+"Utilizzare questo elenco per selezionare il vassoio sorgente della carta."
 
 #. (itstool) path: info/title
 #: C/index.docbook:966
@@ -1735,12 +1736,12 @@ msgstr "Funzionalità rivolte alla programmazione"
 msgid ""
 "Several of <application>pluma</application>'s features for programming are "
 "provided with plugins. For example, the Tag List plugin provides a list of "
-"commonly-used tags for different markup languages: see <xref linkend"
-"=\"pluma-tag-list-plugin\"/>."
+"commonly-used tags for different markup languages: see <xref "
+"linkend=\"pluma-tag-list-plugin\"/>."
 msgstr ""
 "Molte delle caratteristiche di <application>pluma</application> specifiche "
 "per la programmazione sono offerte mediante plugin. Ad esempio il plugin "
-"elenco dei tag fornisce una lista dei tag per i diversi linguaggi di markup:"
+"elenco dei tag fornisce un elenco dei tag per i diversi linguaggi di markup:"
 " vedere <xref linkend=\"pluma-tag-list-plugin\"/>."
 
 #. (itstool) path: info/title
@@ -1811,7 +1812,7 @@ msgid ""
 msgstr ""
 "Mostra l'evidenziazione della sintassi per modificare codice di markup. "
 "Utilizzare il sotto-menu <guisubmenu>Markup</guisubmenu> per selezionare il "
-"tipo di codice di markup"
+"tipo di codice di markup."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1004
@@ -1900,12 +1901,12 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:1039
 msgid ""
-"For more on shortcut keys, see the <link xlink:href=\"help:mate-user-guide"
-"/keyboard-skills\">Desktop User Guide</link>."
+"For more on shortcut keys, see the <link xlink:href=\"help:mate-user-"
+"guide/keyboard-skills\">Desktop User Guide</link>."
 msgstr ""
 "Per maggiori informazioni sui tasti scorciatoie, vedere la <link "
-"xlink:href=\"help:mate-user-guide/keyboard-skills\">Gida Utente del "
-"Desktop</link>."
+"xlink:href=\"help:mate-user-guide/keyboard-skills\">Guida "
+"dell'utente</link>."
 
 #. (itstool) path: section/bridgehead
 #: C/index.docbook:1042
@@ -1939,7 +1940,7 @@ msgstr "Ctrl + Alt + PagSu"
 #. (itstool) path: entry/para
 #: C/index.docbook:1064
 msgid "Switches to the next tab to the left."
-msgstr "Cambia visualizzazione con la successiva scheda di sinistra"
+msgstr "Sposta la visualizzazione sulla scheda di sinistra."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1069
@@ -1949,7 +1950,7 @@ msgstr "Ctrl + Alt + PagGiù"
 #. (itstool) path: entry/para
 #: C/index.docbook:1072
 msgid "Switches to the next tab to the right."
-msgstr "Cambia visualizzazione con la successiva scheda di destra."
+msgstr "Sposta la visualizzazione sulla scheda di destra."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1077 C/index.docbook:1179
@@ -2234,7 +2235,7 @@ msgstr "Shift + Tab"
 #. (itstool) path: entry/para
 #: C/index.docbook:1332
 msgid "Decrease indent of the selected lines."
-msgstr "Riduci l'indentazione delle righe selezionate."
+msgstr "Riduce l'indentazione delle righe selezionate."
 
 #. (itstool) path: section/bridgehead
 #: C/index.docbook:1340
@@ -2254,7 +2255,7 @@ msgstr "Ctrl + Y"
 #. (itstool) path: entry/para
 #: C/index.docbook:1362
 msgid "Show/hide line numbers."
-msgstr "Mostra/nascondi i numeri di linea."
+msgstr "Mostra/nasconde i numeri di linea."
 
 #. (itstool) path: section/bridgehead
 #: C/index.docbook:1370
@@ -2264,7 +2265,7 @@ msgstr "Riquadri"
 #. (itstool) path: section/para
 #: C/index.docbook:1371
 msgid "Shortcuts for showing and hiding panes:"
-msgstr "Scorciatoie per mostrare e nascondere i riquadri:"
+msgstr "Scorciatoie per mostrare e nascondere i pannelli:"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1389
@@ -2274,7 +2275,7 @@ msgstr "F9"
 #. (itstool) path: entry/para
 #: C/index.docbook:1392
 msgid "Show/hide the side pane."
-msgstr "Mostra/Nasconde il riquadro laterale."
+msgstr "Mostra/Nasconde il pannello laterale."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1397
@@ -2284,7 +2285,7 @@ msgstr "Ctrl + F9"
 #. (itstool) path: entry/para
 #: C/index.docbook:1400
 msgid "Show/hide the bottom pane."
-msgstr "Mostra/Nasconde il riquadro inferiore."
+msgstr "Mostra/Nasconde il pannello inferiore."
 
 #. (itstool) path: section/bridgehead
 #: C/index.docbook:1408
@@ -2334,7 +2335,7 @@ msgstr "Ctrl + K"
 #. (itstool) path: entry/para
 #: C/index.docbook:1454
 msgid "Interactive search."
-msgstr "Ricerca Interattiva"
+msgstr "Ricerca Interattiva."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1459
@@ -2394,7 +2395,7 @@ msgstr "Alt + F12"
 #. (itstool) path: entry/para
 #: C/index.docbook:1516
 msgid "Remove trailing spaces (with plugin)."
-msgstr "Rimuove spazi a fine riga richiede (plugin)."
+msgstr "Rimuove spazi a fine riga (richiede plugin)."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1521
@@ -2404,7 +2405,7 @@ msgstr "Ctrl + T"
 #. (itstool) path: entry/para
 #: C/index.docbook:1524
 msgid "Indent (with plugin)."
-msgstr "Aumenta rientro (richiede plugin)."
+msgstr "Aumenta indentazione (richiede plugin)."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1529
@@ -2414,7 +2415,7 @@ msgstr "Ctrl + Shift + T"
 #. (itstool) path: entry/para
 #: C/index.docbook:1532
 msgid "Remove Indent (with plugin)."
-msgstr "Togli rientro (richiede plugin)."
+msgstr "Rimuovi indentazione (richiede plugin)."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1537
@@ -2424,7 +2425,7 @@ msgstr "F8"
 #. (itstool) path: entry/para
 #: C/index.docbook:1540
 msgid "Run \"make\" in current directory (with plugin)."
-msgstr "Esegue \"make\" nella directory corrente (con plugin)."
+msgstr "Esegue \"make\" nella directory corrente (richiede plugin)."
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1545
@@ -2434,7 +2435,7 @@ msgstr "Ctrl + Shift + D"
 #. (itstool) path: entry/para
 #: C/index.docbook:1548
 msgid "Directory listing (with plugin)."
-msgstr "Elenco di una cartella (con plugin)."
+msgstr "Elenco di una cartella (richiede plugin)."
 
 #. (itstool) path: section/bridgehead
 #: C/index.docbook:1556
@@ -2498,10 +2499,10 @@ msgid ""
 "have the text wrapping option preserve whole words when flowing text to the "
 "next line. This makes text easier to read."
 msgstr ""
-"Seleziona l'opzione <guilabel>Non dividere le parole su due righe</guilabel>"
-" per fare in modo che l'a capo automatico mantenga le parole intere quando "
-"il testo scorre su una linea successiva. Questo rende il testo più semplice "
-"da leggere."
+"Selezionare l'opzione <guilabel>Non dividere le parole su due "
+"righe</guilabel> per fare in modo che l'a capo automatico mantenga le parole"
+" intere quando il testo scorre su una linea successiva. Questo rende il "
+"testo più semplice da leggere."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1634
@@ -2524,7 +2525,7 @@ msgid ""
 "Select the <guilabel>Highlight current line</guilabel> option to highlight "
 "the line where the cursor is placed."
 msgstr ""
-"Seleziona l'opzione<guilabel>Evidenzia riga corrente</guilabel>per "
+"Selezionare l'opzione<guilabel>Evidenzia riga corrente</guilabel>per "
 "evidenziare la riga su cui si trova il cursore."
 
 #. (itstool) path: varlistentry/term
@@ -2547,13 +2548,13 @@ msgid ""
 "Use the <guilabel>Right margin at column</guilabel> spin box to specify the "
 "location of the vertical line."
 msgstr ""
-"Usare il riquadro <guilabel>Margine destro alla colonna</guilabel> per "
+"Utilizzare la casella <guilabel>Margine destro alla colonna</guilabel> per "
 "specificare la posizione della linea verticale."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1655
 msgid "<guilabel>Bracket Matching</guilabel>"
-msgstr "<guilabel>Parentesi corrispondenti</guilabel>"
+msgstr "<guilabel>Parentesi corrispondente</guilabel>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1659
@@ -2585,7 +2586,7 @@ msgid ""
 msgstr ""
 "Utilizzare la casella <guilabel>Larghezza di tabulazione</guilabel> per "
 "specificare l'ampiezza dello spazio che <application>pluma</application> "
-"inserisce quando si pressa il tasto<keycap>Tab</keycap>."
+"inserisce quando si preme il tasto<keycap>Tab</keycap>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1676
@@ -2660,7 +2661,7 @@ msgid ""
 "default system font for the text in the <application>pluma</application> "
 "text window."
 msgstr ""
-"Selezionare l'opzione <guilabel>Usare il carattere del tema "
+"Selezionare l'opzione <guilabel>Utilizzare il carattere del tema "
 "predefinito</guilabel> per utilizzare il carattere predefinito di sistema "
 "per il testo nella finestra principale di <application>pluma</application>."
 
@@ -2671,10 +2672,10 @@ msgid ""
 "<application>pluma</application> uses to display text. Click on the button "
 "to specify the font type, style, and size to use for text."
 msgstr ""
-"Il campo<guilabel>Carattere dell'editor</guilabel> mostra il carattere che "
+"Il campo <guilabel>font dell'editor</guilabel> mostra il font che "
 "<application>pluma</application> utilizza per gestire il testo. Fare clic "
-"sul pulsante per specificare il tipo di carattere, lo stile e la dimensione "
-"del carattere da utilizzare per il testo. "
+"sul pulsante per specificare il font, lo stile e la dimensione del carattere"
+" da utilizzare per il testo. "
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1715
@@ -2718,7 +2719,7 @@ msgstr "<guilabel>Kate</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:1742
 msgid "Color scheme used in the Kate text editor."
-msgstr "Schema colore utilizzato nell'editor Kate."
+msgstr "Schema di colore utilizzato nell'editor Kate."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1746
@@ -2728,7 +2729,7 @@ msgstr "<guilabel>Oblivion</guilabel>"
 #. (itstool) path: listitem/para
 #: C/index.docbook:1750
 msgid "Dark color scheme using the Tango color palette."
-msgstr "Schema colori scuro che utilizza i colori del tema Tango."
+msgstr "Schema di colore scuro che utilizza i colori del tema Tango."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1754
@@ -2746,8 +2747,9 @@ msgid ""
 "You can add a new color scheme by clicking on <guilabel>Add...</guilabel>, "
 "and selecting a color scheme file"
 msgstr ""
-"È possibile aggiungere nuovi schemi colore cliccando su <guilabel>Aggiungi "
-"...</guilabel> e selezionando un file di schema di colore."
+"È possibile aggiungere nuovi schemi colore facendo clic su "
+"<guilabel>Aggiungi ...</guilabel> e selezionando un file di schema di "
+"colore."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1763
@@ -2770,7 +2772,7 @@ msgid ""
 "information on plugins and how to use the built-in plugins, see <xref "
 "linkend=\"pluma-plugins-overview\"/>."
 msgstr ""
-"I plugin aggiungono funzionalità aggiuntive a "
+"I plugin forniscono funzionalità aggiuntive a "
 "<application>pluma</application>. Per maggiori informazioni sui plugin e su "
 "come utilizzare quelli predefiniti, vedere <xref linkend=\"pluma-plugins-"
 "overview\"/>."
@@ -2877,7 +2879,8 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:1835
 msgid "Several plugins come built-in with <application>pluma</application>."
-msgstr "Diversi plugin sono inclusi in <application>pluma</application>."
+msgstr ""
+"Diversi plugin sono preinstallati in <application>pluma</application>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:1836
@@ -2886,7 +2889,7 @@ msgid ""
 "use the <xref linkend=\"pluma-prefs-plugins\"/>."
 msgstr ""
 "Per abilitare e disabilitare i plugin o per vedere quali plugin sono "
-"attualmente attivi, usare <xref linkend=\"pluma-prefs-plugins\"/>."
+"attualmente attivi, utilizzare <xref linkend=\"pluma-prefs-plugins\"/>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:1837
@@ -2921,7 +2924,7 @@ msgid ""
 "files and folders in the side pane."
 msgstr ""
 "<xref linkend=\"pluma-file-browser-plugin\"/> permette di esplorare i vostri"
-" file e cartelle nel riquadro laterale."
+" file e cartelle nel pannello laterale."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1857
@@ -2996,7 +2999,7 @@ msgid ""
 "selected text, or marks errors automatically in the document."
 msgstr ""
 "<xref linkend=\"pluma-spell-checker-plugin\"/> corregge la sintassi delle "
-"parole nel testo selezionato o marca gli errori nel documento in modo "
+"parole nel testo selezionato o segna gli errori nel documento in modo "
 "automatico."
 
 #. (itstool) path: listitem/para
@@ -3006,7 +3009,7 @@ msgid ""
 " for HTML and other languages from a list in the side pane."
 msgstr ""
 "<xref linkend=\"pluma-tag-list-plugin\"/> permette di inserire tag HTML o di"
-" altri linguaggi di markup da una lista  nel riquadro laterale."
+" altri linguaggi di markup da una lista nel pannello laterale."
 
 #. (itstool) path: note/para
 #: C/index.docbook:1904
@@ -3015,7 +3018,7 @@ msgid ""
 "xlink:href=\"https://github.com/mate-desktop/pluma/tree/master/plugins\"/>."
 msgstr ""
 "Per maggiori informazioni su come creare un plugin, vedere <link "
-"xlink:href=\"https://github.com/mate-desktop/pluma/tree/master/plugins\"/>.-"
+"xlink:href=\"https://github.com/mate-desktop/pluma/tree/master/plugins\"/>."
 
 #. (itstool) path: info/title
 #: C/index.docbook:1910
@@ -3033,8 +3036,8 @@ msgid ""
 msgstr ""
 "Il plugin <application>Statistiche sul documento</application> conta il "
 "numero di righe, parole, caratteri, caratteri totali, caratteri esclusi gli "
-"spazi, e numero di byte del file corrente. Il risultato viene mostrato in "
-"una finestra di dialogo <guilabel>Statistiche del Documento</guilabel>. Per "
+"spazi, e numero di byte del file corrente. Il risultato viene mostrato nella"
+" finestra di dialogo <guilabel>Statistiche del Documento</guilabel>. Per "
 "utilizzare il plugin Statistiche del Documento procedere come segue:"
 
 #. (itstool) path: listitem/para
@@ -3063,12 +3066,12 @@ msgstr "Numero di parole nel documento corrente."
 #. (itstool) path: listitem/para
 #: C/index.docbook:1925
 msgid "Number of characters, including spaces, in the current document."
-msgstr "Numero di caratteri, inclusi gli spazi, del documento corrente."
+msgstr "Numero di caratteri, inclusi gli spazi, nel documento corrente."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1928
 msgid "Number of characters, not including spaces, in the current document."
-msgstr "Numero di caratteri, non inclusi gli spazi, del documento corrente."
+msgstr "Numero di caratteri, esclusi gli spazi, nel documento corrente."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1931
@@ -3083,10 +3086,10 @@ msgid ""
 "contents of the <guilabel>Document Statistics</guilabel> dialog, click "
 "<guibutton>Update</guibutton>."
 msgstr ""
-"È possibile aggiornare il file <application>pluma</application> mentre la "
-"finestra di dialogo <guilabel>Statistiche del Documento</guilabel> è aperta."
-" Per aggiornarne il contenuto della finestra <guilabel>Statistiche del "
-"Documento</guilabel>, fare clic sul pulsante "
+"È possibile aggiornare il file in <application>pluma</application> mentre la"
+" finestra di dialogo <guilabel>Statistiche del Documento</guilabel> è ancora"
+" aperta. Per aggiornarne il contenuto della finestra <guilabel>Statistiche "
+"del Documento</guilabel>, fare clic sul pulsante "
 "<guibutton>Aggiorna</guibutton>."
 
 #. (itstool) path: info/title
@@ -3116,7 +3119,7 @@ msgid ""
 "commands. To run an external command, choose it from the "
 "<guimenu>Tools</guimenu> menu."
 msgstr ""
-"Si utilizzi <guilabel>Gestore degli Strumenti Esterni</guilabel> per creare "
+"Utilizzarei <guilabel>Gestore degli Strumenti Esterni</guilabel> per creare "
 "e modificare i comandi. Per eseguire un comando esterno selezionarlo dal "
 "menu <guimenu>Strumenti</guimenu>."
 
@@ -3144,7 +3147,7 @@ msgstr "Build"
 msgid ""
 "Runs <application>make</application> in the current document's directory."
 msgstr ""
-"Esegue <application>make</application> nellla directori del documento "
+"Esegue <application>make</application> nella directory del documento "
 "corrente."
 
 #. (itstool) path: varlistentry/term
@@ -3157,18 +3160,18 @@ msgstr "Elenco della cartella"
 msgid ""
 "Lists the contents of the current document's directory in a new document."
 msgstr ""
-"Elenca il contenuto della directory del documento corrente in un nuovo "
-"documento "
+"Elenca il contenuto della directory che contiene il documento corrente "
+"creando un nuovo documento "
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1967
 msgid "Environment Variables"
-msgstr "Variabili di Ambiente"
+msgstr "Variabili di ambiente"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1969
 msgid "Displays the environment variables list in the bottom pane."
-msgstr "Mostra le variabili di ambiente nel riquadro inferiore."
+msgstr "Mostra le variabili di ambiente nel pannello inferiore."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1973
@@ -3182,13 +3185,13 @@ msgid ""
 "pattern matching. Results are shown in the bottom pane."
 msgstr ""
 "Cerca un termine in tutti i file della directory del documento corrente "
-"utilizzando il \"pattern matching\" I risultati sono mostrati nel riquadro "
+"utilizzando il \"pattern matching\". I risultati sono mostrati nel pannello "
 "inferiore."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1979
 msgid "Remove Trailing Spaces"
-msgstr "Elimina Spazi a Fine Riga"
+msgstr "Elimina gli spazi a fine riga"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1981
@@ -3209,7 +3212,7 @@ msgid ""
 msgstr ""
 "Per aggiungere un comando esterno, selezionare "
 "<menuchoice><guimenu>Strumenti</guimenu> <guimenuitem>Strumenti "
-"Esterni</guimenuitem></menuchoice>."
+"esterni</guimenuitem></menuchoice>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:1992
@@ -3218,7 +3221,7 @@ msgid ""
 "<guibutton>New</guibutton>. You can specify the following details for the "
 "new command:"
 msgstr ""
-"Nella finestra del <guilabel>Gestore degli Strumenti Esterni</guilabel>, "
+"Nella finestra del <guilabel>Gestore degli Strumenti esterni</guilabel>, "
 "fare clic su <guibutton>Nuovo</guibutton>. È possibile specificare i "
 "seguenti dettagli per un nuovo comando:"
 
@@ -3257,7 +3260,7 @@ msgid ""
 "environment variables can be used to pass content to these commands: see "
 "<xref linkend=\"pluma-external-tools-plugin-variables\"/>."
 msgstr ""
-"Gli attuali comandi da eseguire. Diverse variabili di ambiente di "
+"I comandi attuali da eseguire. Diverse variabili di ambiente di "
 "<application>pluma</application>  possono essere utilizzate per passare del "
 "contenuto a questi comandi. Vedere <xref linkend=\"pluma-external-tools-"
 "plugin-variables\"/>."
@@ -3289,7 +3292,7 @@ msgid ""
 "in a new document, or place in the current document, at the end, at the "
 "cursor position, or replacing the selection or the entire document."
 msgstr ""
-"Cosa fare con l'output dei comandi: mostrarlo nel riquadro inferiore o "
+"Cosa fare con l'output dei comandi: mostrarlo nel pannello inferiore o "
 "piazzarlo nel documento corrente, alla fine, alla posizione del cursore o "
 "sostituire il testo selezionato o l'intero documento."
 
@@ -3305,12 +3308,12 @@ msgid ""
 "example whether saved or not, and local or remote."
 msgstr ""
 "Determina che tipo di documenti possono essere bersaglio del comando, ad "
-"esempio documenti salvati o no, e documenti locali o remoti."
+"esempio i documenti, salvati o non salvati, quelli locali o remoti."
 
 #. (itstool) path: info/title
 #: C/index.docbook:2035
 msgid "Editing and Removing Tools"
-msgstr "Modificare e rimuovere strumenti"
+msgstr "Modificare e rimuovere gli strumenti"
 
 #. (itstool) path: section/para
 #: C/index.docbook:2037
@@ -3323,7 +3326,8 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:2038
 msgid "To rename a tool, click it again in the list."
-msgstr "Per rinominare uno strumento cliccarlo nuovamente nella lista."
+msgstr ""
+"Per rinominare uno strumento fare nuovamente clic su di esso nella lista."
 
 #. (itstool) path: section/para
 #: C/index.docbook:2039
@@ -3397,7 +3401,7 @@ msgstr "PLUMA_DOCUMENTS_PATH"
 #. (itstool) path: info/title
 #: C/index.docbook:2076
 msgid "File Browser Pane Plugin"
-msgstr "Plugin Riquadro esplora file"
+msgstr "Plugin Pannello esplorazione dei file"
 
 #. (itstool) path: section/para
 #: C/index.docbook:2078
@@ -3405,8 +3409,8 @@ msgid ""
 "The <application>File Browser Pane</application> Plugin shows your files and"
 " folders in the side pane, allowing you to quickly open files."
 msgstr ""
-"il plugin <application>Riquadro esplora file</application> mostra i vostri "
-"file e cartelle nel riquadro laterale, consentendo di aprirli più "
+"il plugin <application>Pannello esplorazione dei file</application> mostra i"
+" vostri file e cartelle nel pannello laterale, consentendo di aprirli più "
 "velocemente."
 
 #. (itstool) path: section/para
@@ -3417,9 +3421,10 @@ msgid ""
 " showing the File Browser icon at the bottom of the side pane."
 msgstr ""
 "Per mostrare l'esploratore dei file, selezionare "
-"<menuchoice><guimenu>Visualizza</guimenu> <guimenuitem>Riquadro "
+"<menuchoice><guimenu>Visualizza</guimenu> <guimenuitem>Pannello "
 "laterale</guimenuitem></menuchoice> e in seguito fare clic sulla scheda che "
-"mostra l'icona di Esplorazione File situata in fondo al pannello laterale."
+"mostra l'icona di Esplorazione dei file situata in fondo al pannello "
+"laterale."
 
 #. (itstool) path: info/title
 #: C/index.docbook:2083
@@ -3432,9 +3437,9 @@ msgid ""
 "The File Browser tab initially shows your file manager bookmarks. To browse "
 "the contents of any item, double-click it."
 msgstr ""
-"L'esploratore dei File inizialmente mostra i vostri segnalibri del vostro "
-"file manager. Per sfogliare i contenuti di ogni oggetto della lista, "
-"cliccare due volte su di esso."
+"L'esploratore dei file inizialmente mostra i segnalibri del vostro file "
+"manager. Per sfogliare i contenuti di ogni oggetto della lista, fare due "
+"volte clic su di esso."
 
 #. (itstool) path: section/para
 #: C/index.docbook:2086
@@ -3442,9 +3447,9 @@ msgid ""
 "To show a parent folder, choose from the drop-down list, or press the up "
 "arrow on the File Browser's toolbar."
 msgstr ""
-"Per selezionare una directory superiore, sceglietela dal menu a tendina o "
+"Per selezionare una directory superiore, selezionarla dal menu a tendina o "
 "premete la freccia rivolta verso l'alto sulla barra degli strumenti del "
-"plugin Esplorazione File."
+"plugin Esplorazione dei file."
 
 #. (itstool) path: section/para
 #: C/index.docbook:2087
@@ -3489,7 +3494,7 @@ msgid ""
 "click in the file list and choose <guimenuitem>New Folder</guimenuitem>."
 msgstr ""
 "Per creare una nuova cartella nella directory corrente mostrata "
-"nell'esploratore dei file, fare click col pulsante destro del mouse e "
+"nell'esploratore dei file, fare clic col pulsante destro del mouse e "
 "selezionare <guimenuitem>Nuova cartella</guimenuitem>."
 
 #. (itstool) path: info/title
@@ -3503,8 +3508,8 @@ msgid ""
 "The <application>Indent Lines</application> plugin adds or removes space "
 "from the beginning of lines of text."
 msgstr ""
-"Il plugin <application>Indenta righe</application> rimuove o aggiunge "
-"caratteri spazio all'inizio delle righe di testo."
+"Il plugin <application>Indenta righe</application> aggiunge o rimuove i "
+"caratteri di spazio all'inizio delle righe di testo."
 
 #. (itstool) path: section/para
 #: C/index.docbook:2111
@@ -3547,7 +3552,7 @@ msgid ""
 "used, depends on the <guilabel>Tab Stops</guilabel> settings in the Editor "
 "Preferences: see <xref linkend=\"pluma-prefs-editor\"/>."
 msgstr ""
-"La quantità di spazi bianchi inseriti e se utilizzare il carattere di "
+"La quantità di spazi bianchi inseriti e l'utilizzazione del carattere di "
 "tabulazione o quello di spazio, dipendono dalle impostazioni di "
 "<guilabel>tabulazione</guilabel> nella scheda Editor delle preferenze: "
 "vedere <xref linkend=\"pluma-prefs-editor\"/>."
@@ -3592,9 +3597,9 @@ msgstr ""
 "data e l'ora automaticamente senza chiedervi il formato da utilizzare, "
 "<application>pluma</application> mostra la finestra di dialogo "
 "<guilabel>Inserisci data e ora</guilabel>.  Selezionare il formato "
-"data/orario dalla lista  e fare clic su <guibutton>Inserisci</guibutton> per"
-" chiudere la finestra di dialogo <guilabel>Inserisci data e ora</guilabel>. "
-"<application>Pluma</application> inserisce la data e l'ora alla posizione "
+"data/orario dalla lista e fare clic su <guibutton>Inserisci</guibutton> per "
+"chiudere la finestra di dialogo <guilabel>Inserisci data e ora</guilabel>. "
+"<application>pluma</application> inserisce la data e l'ora alla posizione "
 "corrente del cursore."
 
 #. (itstool) path: listitem/para
@@ -3664,7 +3669,7 @@ msgstr ""
 "Per utilizzare sempre lo stesso formato di data e ora tra quelli forniti da "
 "<application>pluma</application>, selezionare l'opzione <guilabel>Usa il "
 "formato selezionato</guilabel>e quindi scegliere il formato appropriato "
-"dalla lista. Se si sceglie questa opzione, <application>pluma</application> "
+"dall'elenco. Se si sceglie questa opzione, <application>pluma</application> "
 "non chiederà il formato di data e ora da utilizzare quando si seleziona "
 "<menuchoice><guimenu>Modifica</guimenu> <guimenuitem>Inserisci data e "
 "ora</guimenuitem></menuchoice>."
@@ -3700,7 +3705,7 @@ msgid ""
 "Click <guibutton>OK</guibutton> to close the <guilabel>Configure insert "
 "date/time plugin</guilabel> dialog."
 msgstr ""
-"Fare click su <guibutton>Chiudi</guibutton> per chiudere la finestra di "
+"Fare clic su <guibutton>Chiudi</guibutton> per chiudere la finestra di "
 "dialogo <guilabel>Configura plugin Inserisci data e ora</guilabel>."
 
 #. (itstool) path: listitem/para
@@ -3709,7 +3714,7 @@ msgid ""
 "To close the <guilabel>Preferences</guilabel> dialog, click "
 "<guibutton>Close</guibutton>."
 msgstr ""
-" Per chiudere la finestra di dialogo <guilabel>Preferenze</guilabel>, fare "
+"Per chiudere la finestra di dialogo <guilabel>Preferenze</guilabel>, fare "
 "clic su <guibutton>Chudi</guibutton>."
 
 #. (itstool) path: info/title
@@ -3727,7 +3732,7 @@ msgid ""
 msgstr ""
 "Il plugin <application>Modeline</application> permette di impostare le "
 "preferenze per documenti individuali. Una <firstterm>modeline</firstterm> è "
-"una linea di testo all'inizio del documento con le impostazioni che "
+"una linea di testo all'inizio del documento con impostazioni che "
 "<application>pluma</application> riconosce."
 
 #. (itstool) path: section/para
@@ -3832,9 +3837,10 @@ msgid ""
 "editor.org/article/katepart_modelines\">Kate website</link>."
 msgstr ""
 "Sono supportate le opzioni per specificare  l'ampiezza di tabulazione, "
-"l'ampiezza del rientro, l'indentazione con spazi e l'a capo automatico di "
-"Kate. Per ulteriori informazioni vedere il <link xlink:href=\"http://www"
-".kate-editor.org/article/katepart_modelines\">sito web di Kate</link>."
+"l'ampiezza del rientro, l'indentazione con spazi, l'a-capo automatico e la "
+"colonna per l'a-capo automatico. Per ulteriori informazioni vedere il <link "
+"xlink:href=\"http://www.kate-editor.org/article/katepart_modelines\">sito "
+"web di Kate</link>."
 
 #. (itstool) path: info/title
 #: C/index.docbook:2236
@@ -3879,7 +3885,7 @@ msgid ""
 msgstr ""
 "Il plugin <application>Console Python</application> permette di eseguire in "
 "<application>pluma</application>comandi nel linguaggio di programmazione "
-"python. Abilitando questo plugin  verrà aggiunta una scheda nel riquadro "
+"python. Abilitando questo plugin verrà aggiunta una scheda nel pannello "
 "inferiore che mostrerà l'output dei comandi recenti e un prompt dei comandi."
 
 #. (itstool) path: caution/para
@@ -3958,7 +3964,7 @@ msgid ""
 "list of snippets that are useful for HTML. In addition, some snippets are "
 "global, and are available in all documents."
 msgstr ""
-"Gli snippet sono specifici alla sintassi del linguaggio del documemnto "
+"Gli snippet sono specifici alla sintassi del linguaggio del documento "
 "corrente. Ad esempio, se si lavora con un documento HTML,  si può scegliere "
 "tra un elenco di snippet utili per l'HTML. In aggiunta, alcuni snippet sono "
 "globali e sono resi disponibili in tutti i documenti."
@@ -3985,8 +3991,8 @@ msgid ""
 "is usually the first few letters of the snippet, or something else that is "
 "short and easy to remember."
 msgstr ""
-"Per inserire uno snippet in un documento, digitate il suo <firstterm>tab "
-"trigger</firstterm> e premete il tasto <keycap>Tab</keycap>.  Il tab trigger"
+"Per inserire uno snippet in un documento, digitare il suo <firstterm>tab "
+"trigger</firstterm> e premere il tasto <keycap>Tab</keycap>.  Il tab trigger"
 " di uno snippet è il suo nome o le prime lettere di esso, o qualcos'altro "
 "che sia breve e facile da ricordare."
 
@@ -4018,8 +4024,8 @@ msgid ""
 "Manager</guilabel> window opens."
 msgstr ""
 "Selezionare <menuchoice><guimenu>Strumenti</guimenu> "
-"<guimenuitem>Preferenze</guimenuitem></menuchoice>. Si aprirà la finestra "
-"<guilabel>Gestore Snippet</guilabel>."
+"<guimenuitem>Preferenze</guimenuitem></menuchoice>. Si aprirà la finestra di"
+" dialogo <guilabel>Gestore degli Snippet</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2297
@@ -4029,7 +4035,7 @@ msgid ""
 " all languages, choose Global at the top of the list. The syntax of the "
 "document you are currently working with is shown by default."
 msgstr ""
-"L'elenco degli snippet è raggruppato per linguaggio. Selezionate il "
+"L'elenco degli snippet è raggruppato per linguaggio. Selezionare il "
 "linguaggio a cui aggiungere uno snippet, o uno snippet esistente in quel "
 "gruppo. Per aggiungere uno snippet per tutti i linguaggi, selezionare "
 "Globale in cima alla lista. Viene mostrato per default la sintassi del "
@@ -4062,12 +4068,12 @@ msgstr ""
 "Inserire il nome da usare per lo snippet nella casella di testo contenuta "
 "nella lista degli snippet. Il nome dello snippet serve solo per promemoria "
 "del suo scopo. Si può cambiare il nome ad uno snippet che avete creato "
-"cliccando su di esso nella lista."
+"facendo clic su di esso nella lista."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:2312
 msgid "Snippet text"
-msgstr "Testo Snippet"
+msgstr "Testo dello Snippet"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2314
@@ -4087,7 +4093,8 @@ msgid ""
 "<guilabel>Snippets Manager</guilabel> window."
 msgstr ""
 "È possibile tornare alla finestra del documento per copiare il testo dello "
-"snippet senza chiudere la finestra <guilabel>Gestore Snippet</guilabel>."
+"snippet senza chiudere la finestra <guilabel>Gestore degli "
+"Snippet</guilabel>."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:2321
@@ -4100,7 +4107,7 @@ msgid ""
 "Enter the tab trigger for the snippet. This is the text that you type before"
 " pressing <keycap>Tab</keycap> to insert the snippet."
 msgstr ""
-"Inserite il tab trigger per lo snippet. Questo sarà il testo che scriverete "
+"Inserire il tab trigger per lo snippet. Questo sarà il testo che scriverete "
 "prima di premere <keycap>Tab</keycap> per inserire lo snippet vero e "
 "proprio."
 
@@ -4137,13 +4144,14 @@ msgid ""
 "activation properties."
 msgstr ""
 "Per modificare uno snippet, selezionarlo dalla lista e apportare i "
-"cambiamenti al suo testo e allle sue proprietà di attivazione."
+"cambiamenti al suo testo e alle sue proprietà di attivazione."
 
 #. (itstool) path: section/para
 #: C/index.docbook:2343
 msgid "To rename a snippet, click it again in the list."
 msgstr ""
-"Per modificare il nome di uno snippet, cliccarlo nuovamente nella lista"
+"Per modificare il nome di uno snippet, fare nuovamente clic su di esso nella"
+" lista"
 
 #. (itstool) path: section/para
 #: C/index.docbook:2344
@@ -4208,7 +4216,7 @@ msgid ""
 " defines a tab placeholder with a default value."
 msgstr ""
 "<literal>${<replaceable>n</replaceable>:<replaceable>default</replaceable>}</literal>"
-" definisce un segnaposto di tabulazione con un valore pre-definito.."
+" definisce un segnaposto di tabulazione con un valore pre-definito."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2360
@@ -4282,7 +4290,7 @@ msgstr ""
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:2378
 msgid "Environmental variables"
-msgstr "Variabili di Ambiente"
+msgstr "Variabili di ambiente"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2380
@@ -4346,7 +4354,7 @@ msgid ""
 "used, the current word will be replaced by the snippet text."
 msgstr ""
 "La parola alla posizione del cursore. Quando questa variabile è utilizzata, "
-"la parola corrente verrà sostituita con il testo snippet."
+"la parola corrente verrà sostituita con il testo dello snippet."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:2410
@@ -4360,8 +4368,7 @@ msgid ""
 "result of executing <replaceable>cmd</replaceable> in a shell."
 msgstr ""
 "<literal>$(<replaceable>cmd</replaceable>)</literal> viene sostituito con il"
-" risultato dell'esecuzione di  <replaceable>cmd</replaceable> in una "
-"console."
+" risultato dell'esecuzione di <replaceable>cmd</replaceable> in una console."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2413
@@ -4374,7 +4381,7 @@ msgid ""
 msgstr ""
 "<literal>$(<replaceable>n</replaceable>:<replaceable>cmd</replaceable>)</literal>"
 " permette di assegnare a questo segnaposto un riferimento, dove "
-"<replaceable>n</replaceable> is un numero da 1 in su. Utilizzare "
+"<replaceable>n</replaceable> is un numero da 1 a salire. Utilizzare "
 "<literal>$<replaceable>n</replaceable></literal> per fornire l'output da un "
 "segnaposto di console come input ad un altro."
 
@@ -4405,9 +4412,10 @@ msgid ""
 msgstr ""
 "<literal>$&lt;<replaceable>a</replaceable>:<replaceable>cmd</replaceable>&gt;</literal>"
 " specifica un altro segnaposto python come dipendenza, dove "
-"<replaceable>a</replaceable> indica il suo ordine nello snippet Ciò consente"
-" di usare funzioni python definite in un altro snippet. Per specificare "
-"diverse dipendenze, separate i numeri con delle virgole in questo modo: "
+"<replaceable>a</replaceable> indica il suo ordine nello snippet. Ciò "
+"consente di usare funzioni python definite in un altro snippet. Per "
+"specificare diverse dipendenze, separate i numeri con delle virgole in "
+"questo modo: "
 "<literal>$&lt;<replaceable>a</replaceable>,<replaceable>b</replaceable>:<replaceable>cmd</replaceable>&gt;</literal>"
 
 #. (itstool) path: listitem/para
@@ -4450,7 +4458,7 @@ msgid ""
 "</menuchoice>. The <guilabel>Sort</guilabel> dialog opens."
 msgstr ""
 "Selezionare <menuchoice><guimenu>Modifica</guimenu> "
-"<guimenuitem>Ordina</guimenuitem></menuchoice>. Si apre la finestra di "
+"<guimenuitem>Ordina</guimenuitem></menuchoice>. Si aprirà la finestra di "
 "dialogo <guilabel>Ordina</guilabel>."
 
 #. (itstool) path: listitem/para
@@ -4480,7 +4488,7 @@ msgstr ""
 msgid "To ignore case sensitivity, select <guilabel>Ignore case</guilabel>."
 msgstr ""
 "Per ignorare maiuscole e minuscole, selezionare <guilabel>Ignora "
-"maiuscole/minuscole</guilabel>."
+"Maiuscole/minuscole</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2454
@@ -4533,10 +4541,10 @@ msgid ""
 "language</guilabel> dialog."
 msgstr ""
 "Selezionare <menuchoice><guimenu>Strumenti</guimenu> <guimenuitem>Configura "
-"lingua...</guimenuitem></menuchoice> per mostrare la finestra di dialogo "
-"<guilabel>Configura lingua</guilabel>. Selezionare la lingua appropriata "
+"la lingua</guimenuitem></menuchoice> per mostrare la finestra di dialogo "
+"<guilabel>Configura la lingua</guilabel>. Selezionare la lingua appropriata "
 "dall'elenco. Fare clic su <guibutton>OK</guibutton> per chiudere la "
-"finestra<guilabel>Configura lingua</guilabel>."
+"finestra<guilabel>Configura la lingua</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2474
@@ -4556,9 +4564,9 @@ msgstr ""
 "ortografico automatico, selezionare nuovamente "
 "<menuchoice><guimenu>Strumenti</guimenu> Controllo ortografico "
 "automatico<guimenuitem></guimenuitem></menuchoice>. Quando il controllo "
-"ortografico è attivo, compare un'icona accanto all'oggetto menu "
+"ortografico è attivo, compare un'icona accanto all'oggetto di menù "
 "<guimenuitem>Controllo ortografico automatico</guimenuitem>. Il controllo "
-"ortografico automatico è disabilitato per default ogni volta che viene "
+"ortografico automatico è disabilitato per default, ogni volta che viene "
 "avviato <application>pluma</application>."
 
 #. (itstool) path: listitem/para
@@ -4570,7 +4578,7 @@ msgid ""
 msgstr ""
 "Le ortografie sconosciute vengono mostrate in un altro colore, e "
 "sottolineate. Fare clic con il pulsante destro su una parola sconosciuta, e "
-"selezionare <guimenu>Suggerimenti ortografici</guimenu> dal menu a "
+"selezionare <guimenu>Suggerimenti ortografici</guimenu> dal menù a "
 "comparsa::"
 
 #. (itstool) path: listitem/para
@@ -4581,7 +4589,7 @@ msgid ""
 "popup menu."
 msgstr ""
 "Per sostituire l'ortografia sconosciuta con un'altra ortografia presente "
-"nell'elenco, selezionare la parola sostitutiva dal menu a comparsa "
+"nell'elenco, selezionare la parola sostitutiva dal menù a comparsa "
 "<guimenu>Suggerimenti ortografici</guimenu>."
 
 #. (itstool) path: listitem/para
@@ -4632,7 +4640,7 @@ msgstr ""
 "Se non sono presenti errori ortografici, una finestra di dialogo di "
 "<guilabel>Informazione</guilabel> mostrerà un messaggio in cui si afferma "
 "che il documento non contiene parole errate. Fare clic su "
-"<guibutton>OK</guibutton> per chiudere la finestra di dialogo "
+"<guibutton>OK</guibutton> per chiudere la finestra di dialogo di "
 "<guilabel>Informazione</guilabel>."
 
 #. (itstool) path: listitem/para
@@ -4641,8 +4649,8 @@ msgid ""
 "If there are spelling errors, the <guilabel>Check Spelling</guilabel> dialog"
 " is displayed:"
 msgstr ""
-"Se sono presenti errori di scrittura, verrà mostrata la finestra di dialogo "
-"<guilabel>Controllo Ortografico</guilabel>."
+"Se sono presenti errori di ortografia, verrà mostrata la finestra di dialogo"
+" <guilabel>Controllo Ortografico</guilabel>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2494
@@ -4650,7 +4658,8 @@ msgid ""
 "The <guilabel>Misspelled word</guilabel> is displayed at the top of the "
 "dialog."
 msgstr ""
-"La parola scritta in modo errato viene mostrata in cima alla finestra."
+"La parola scritta in modo errato viene mostrata in cima alla finestra di "
+"dialogo."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2497
@@ -4676,7 +4685,7 @@ msgid ""
 " appear in the <guilabel>Suggestions</guilabel> list."
 msgstr ""
 "Per controllare l'ortografia della parola scritta nella casella di testo "
-"<guilabel>Sostituisci con</guilabel>, fare clic su <guibutton>Controlla "
+"<guilabel>Sostituisci con</guilabel>, fare clic su <guibutton>Controlla la "
 "parola</guibutton>. Se questa è una parola conosciuta, l'elenco "
 "<guilabel>Suggerimenti</guilabel> sarà sostituito dal testo "
 "<literal>(ortografia corretta)</literal>.  Se la parola è sconosciuta, nella"
@@ -4690,9 +4699,9 @@ msgid ""
 "word, click <guibutton>Ignore All</guibutton>. The unknown word is ignored "
 "in the current <application>pluma</application> session only."
 msgstr ""
-"Per ignorare l'occorrenza corrente della parola sconosciuta, cliccare "
+"Per ignorare l'occorrenza corrente della parola sconosciuta, fare clic su "
 "<guibutton>Ignora</guibutton>. Per ignorare tutte le occorrenze della parola"
-" sconosciuta, cliccare <guibutton>Ignora tutto</guibutton>. La parola "
+" sconosciuta, fare clic su <guibutton>Ignora tutto</guibutton>. La parola "
 "sconosciuta sarà ignorata solo nella sessione corrente di "
 "<application>pluma</application>."
 
@@ -4718,8 +4727,8 @@ msgid ""
 "To add the unknown word to your personal dictionary, click <guibutton>Add "
 "word</guibutton>."
 msgstr ""
-"Per aggiungere la parola sconosciuta al vostro dizionario personale, "
-"cliccare <guibutton>Aggiungi parola</guibutton>."
+"Per aggiungere la parola sconosciuta al vostro dizionario personale, fare "
+"clic su <guibutton>Aggiungi parola</guibutton>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2512
@@ -4742,7 +4751,7 @@ msgid ""
 "tags from a list in the side pane."
 msgstr ""
 "Il plugin <application>Elenco dei tag</application> consente di inserire tag"
-" comuni da una lista elencata nel riquadro laterale."
+" comuni da una elenco visualizzato nel pannello laterale."
 
 #. (itstool) path: section/para
 #: C/index.docbook:2524
@@ -4755,8 +4764,8 @@ msgid ""
 "Choose <menuchoice> <guimenu>View</guimenu> <guimenuitem>Side "
 "Pane</guimenuitem> </menuchoice>."
 msgstr ""
-"Selezionare <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Riquadro"
-" Laterale</guimenuitem> </menuchoice>."
+"Selezionare <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Pannello"
+" laterale</guimenuitem> </menuchoice>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2530
@@ -4765,10 +4774,10 @@ msgid ""
 "Click on the tab showing a + icon at the bottom of the side pane to show the"
 " tag list tab."
 msgstr ""
-"Per impostazione predefinita, il riquadro laterale mostra una scheda con la "
-"lista dei documenti aperti. Fare clic sulla scheda contrassegnata dall'icona"
-" a forma di croce + in basso al riquadro laterale per mostrare la scheda "
-"elenco tag."
+"Per impostazione predefinita, il pannello laterale mostra una scheda con "
+"l'elenco dei documenti aperti. Fare clic sulla scheda contrassegnata "
+"dall'icona a forma di + in basso al pannello laterale per mostrare la scheda"
+" elenco dei tag."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2533
@@ -4791,7 +4800,7 @@ msgid ""
 "the tag in the tag list. You can also insert a tag as follows:"
 msgstr ""
 "Per inserire un tag nel file alla posizione corrente del cursore, fare "
-"doppio click sul tag richiesto. È possibile inserire un tag anche nei "
+"doppio clic sul tag richiesto. È possibile inserire un tag anche nei "
 "seguenti modi:"
 
 #. (itstool) path: listitem/para
@@ -4800,7 +4809,7 @@ msgid ""
 "To insert a tag in the current file and change the focus from the side pane "
 "to the display area, press <keycap>Return</keycap>."
 msgstr ""
-"Per inserire un tag nel file corrente e spostare il focus dal riquadro "
+"Per inserire un tag nel file corrente e spostare il focus dal pannello "
 "laterale all'area di visualizzazione del documento, premere "
 "<keycap>Invio</keycap>."
 
@@ -4828,9 +4837,9 @@ msgid ""
 msgstr ""
 "Questo documento può essere copiato, distribuito e/o modificato in "
 "conformità con i termini della GNU Free Documentation License (GFDL) "
-"Versione 1.1 o delle versioni successive pubblicate dalla Free Software "
-"Foundation senza sezioni invariabili, frontespizi e testi di copertina. Una "
-"copia della GFDL è disponibile a questo <link "
+"Versione 1.1 o una qualsiasi versione successiva pubblicata dalla Free "
+"Software Foundation senza sezioni invariabili, frontespizi e testi di "
+"copertina. Una copia della GFDL è disponibile a questo <link "
 "xlink:href=\"https://www.gnu.org/licenses/fdl-1.1.html\">collegamento</link>"
 " o nel file COPYING-DOCS distribuito con questo manuale."
 
@@ -4890,7 +4899,7 @@ msgstr ""
 "COLLABORATORI). QUESTA LIMITAZIONE DELLA GARANZIA COSTITUISCE PARTE "
 "ESSENZIALE DELLA LICENZA. L'USO DEL DOCUMENTO O DELLE SUE VERSIONI "
 "MODIFICATE È CONSENTITO SOLO ENTRO I TERMINI DI QUESTA LIMITAZIONE DELLA "
-"GARANZIA;"
+"GARANZIA; E"
 
 #. (itstool) path: listitem/para
 #: C/legal.xml:57

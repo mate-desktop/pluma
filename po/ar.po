@@ -14,14 +14,16 @@
 # Wolfgang Ulbrich <mate@raveit.de>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # مهدي السطيفي <chinoune.mehdi@gmail.com>, 2021
+# Ahmd go <go.allen@protonmail.com>, 2021
+# 7f91df02564a1feba5fdc4d7b990b7f2_5fb95ff, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: مهدي السطيفي <chinoune.mehdi@gmail.com>, 2021\n"
+"Last-Translator: 7f91df02564a1feba5fdc4d7b990b7f2_5fb95ff, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/mate/teams/13566/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +33,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
-msgstr "استخدم الخطّ الإفتراضي"
+msgstr "اِستخدام الخطّ الافتراضي"
 
 #: data/org.mate.pluma.gschema.xml.in:16
 msgid ""
@@ -63,7 +65,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:25
 msgid "Switch tabs with [ctrl] + [tab]"
-msgstr ""
+msgstr "التبديل بين التبويبات بواسطة [ctrl] + [tab]"
 
 #: data/org.mate.pluma.gschema.xml.in:26
 msgid ""
@@ -1116,11 +1118,11 @@ msgstr "الإضافات"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "استبدل"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "ابحث"
 
@@ -1359,11 +1361,11 @@ msgstr "ا_عكس"
 
 #: pluma/pluma-commands-help.c:61
 msgid "MATE Documentation Team"
-msgstr ""
+msgstr "فريق متّة التوثيقي "
 
 #: pluma/pluma-commands-help.c:62
 msgid "GNOME Documentation Team"
-msgstr ""
+msgstr "فريق جنوم للتوثيق"
 
 #: pluma/pluma-commands-help.c:63
 msgid "Sun Microsystems"
@@ -1447,11 +1449,11 @@ msgid "Unsaved Document %d"
 msgstr "مستند غير محفوظ %Id"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "للقراءة فقط"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "مستندات"
 
@@ -2225,7 +2227,7 @@ msgstr "أنشئ مستندًا جديدًا"
 msgid "_Open..."
 msgstr "ا_فتح..."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "افتح ملفًا"
 
@@ -2538,22 +2540,22 @@ msgstr "اللوحة ال_سفلية"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "أظهر أو اخف اللوحة السفلية في النافذة الحالية "
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "تأكد رجاءً من تثبيتك."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "غير قادر على فتح ملف الواجهة %s. خطأ: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "غير قادر على إيجاد الكائن '%s' ضمن الملف %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ على %s"
@@ -2586,14 +2588,14 @@ msgstr "السلسة التي تريد البحث عنها"
 msgid "Line you want to move the cursor to"
 msgstr "السطر الذي تريد تحريك المؤشّر إليه"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "استخدم نمط الإبراز %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2601,43 +2603,43 @@ msgstr "استخدم نمط الإبراز %s"
 msgid "Plain Text"
 msgstr "نص صِرف"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "عطّل إبراز البُنية"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "افتح '%s'"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "افتح ملفًا مُستخدمٍ مؤخرًا"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "افتح"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "احفظ"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "اطبع"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "نشّط '%s'"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "استخدم المسافات"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "عرض Tab"
 
@@ -3026,59 +3028,59 @@ msgstr "يحدّد ما إذا يتم تفعيل استعادة الأماكن �
 msgid "File System"
 msgstr "نظام الملفات"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "_حدد جذر المستند النشِط"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "حدد جذر موقع المستند النشِط"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "ا_فتح طرفية هنا"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "افتح طرفية عند الدّليل المفتوح حاليًا"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "متصفح الملفات"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "حدث خطأ أثناء إنشاء دليل جديد"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "حدث خطأ أثناء إنشاء ملف جديد"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "حدث خطأ أثناء تغيير اسم دليل أو ملف"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "حدث خطأ أثناء حذف دليل أو ملف"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "حدث خطأ أثناء فتح دليل في مدير الملفات"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "حدث خطأ أثناء تحديد الدليل الجذر"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "حدث خطأ أثناء تحميل دليل"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "حدث خطأ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3086,25 +3088,25 @@ msgstr ""
 "لا يمكن نقل الملف إلى المهملات،\n"
 "أتريد حذفه نهائيًا؟"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "لا يمكن نقل الملف \"%s\" إلى سلة المهملات."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "لا يمكن نقل الملف المختار إلى المهملات."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "أمتأكد أنك تريد حذف \"%s\" نهائيًا؟"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "أمتأكّدٌ أنّك تريد حذف الملفات المختارة نهائيًا؟"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "إذا حذفت عنصرا، سيضيع نهائيا."
 

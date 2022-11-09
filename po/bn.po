@@ -9,9 +9,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
 "Language-Team: Bengali (https://www.transifex.com/mate/teams/13566/bn/)\n"
@@ -1104,11 +1104,11 @@ msgstr "প্লাগ-ইন"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "প্রতিস্থাপন"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "খোঁজো"
 
@@ -1417,11 +1417,11 @@ msgid "Unsaved Document %d"
 msgstr "অসংরক্ষিত নথি %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "শুধুমাত্র পাঠযোগ্য"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "নথি"
 
@@ -2210,7 +2210,7 @@ msgstr "নতুন নথি নির্মাণ করুন"
 msgid "_Open..."
 msgstr "খুলুন...(_O)"
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "ফাইল খুলুন"
 
@@ -2524,22 +2524,22 @@ msgstr "নিম্নবর্তী পেন (_B)"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "বর্তমান উইন্ডোর মধ্যে নিম্নবর্তী পেন প্রদর্শন অথবা আড়াল করা হবে"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "অনুগ্রহ করে ইনস্টলেশন পরীক্ষা করুন।"
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "ui ফাইল %s খুলতে ব্যর্থ। ত্রুটি: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "'%1$s' বস্তুটি %2$s ফাইলের মধ্যে পাওয়া যায়নি।"
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ %s-এর উপর"
@@ -2570,14 +2570,14 @@ msgstr "অনুসন্ধানের উদ্দেশ্যে স্ট�
 msgid "Line you want to move the cursor to"
 msgstr "কার্সার স্থানান্তরণের জন্য চিহ্নিত স্ট্রিং সংখ্যা"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s উজ্জ্বলতার মোড ব্যবহার করা হবে"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2585,43 +2585,43 @@ msgstr "%s উজ্জ্বলতার মোড ব্যবহার কর
 msgid "Plain Text"
 msgstr "বিন্যাসবিহীন লেখা"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "সিনট্যাক্স হাইলাইটিং নিস্ক্রিয় করা হবে"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' খুলুন"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "সম্প্রতি ব্যবহৃত কোনো ফাইল খুলুন"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "খুলুন"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "সংরক্ষণ করুন"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "মুদ্রণ"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' সক্রিয় করুন"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "শূণ্যস্থান প্রয়োগ করুন"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "ট্যাবের দৈর্ঘ্য"
 
@@ -3016,60 +3016,60 @@ msgstr ""
 msgid "File System"
 msgstr "ফাইল-সিস্টেম"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "সক্রিয় ডকুমেন্ট অনুসারে মূল ধার্য করা হবে (_S)"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "বর্তমানে সক্রিয় অবস্থানে মূল নির্ধারণ করা হবে"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "এই স্থানে টার্মিনাল খোলা হবে (_O)"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "বর্তমানে খোলা ডিরেক্টরিতে টার্মিনাল খোলা হবে"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "ফাইল ব্রাউজার"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "নতুন ডিরেক্টরি নির্মাণের সময় ত্রুটি উৎ‌পন্ন হয়েছে।"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "নতুন ফাইল নির্বাচনের সময় ত্রুটি উৎ‌পন্ন হয়েছে।"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "নির্বাচিত কমান্ড চালানোর সময় ত্রুটি উৎ‌পন্ন হয়েছে।"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "ফাইল অথবা ডিরেক্টরি মুছে ফেলার সময় ত্রুটি উৎ‌পন্ন হয়েছে।"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr ""
 "ফাইল পরিচালনব্যবস্থার মধ্যে একটি ডিরেক্টরি খোলার সময় সমস্যা উৎপন্ন হয়েছে"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "মূল ডিরেক্টরি সেটিং এর সময় ত্রুটি উৎ‌পন্ন হয়েছে।"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "ডিরেক্টরি লোড করার সময় সমস্যা উৎপন্ন হয়েছে"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "সমস্যা উৎপন্ন হয়েছে"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3077,25 +3077,25 @@ msgstr ""
 "আবর্জনার বাক্সে ফাইল সরিয়ে নেওয়া যায়নি,\n"
 "এই মুহূর্তে কি মুছে ফেলতে ইচ্ছুক?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "\"%s\" ফাইল আবর্জনার বাক্সে সরিয়ে নেওয়া সম্ভব নয়।"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "নির্বাচিত ফাইলগুলো আবর্জনার বাক্সে সরিয়ে নেওয়া সম্ভব নয়।"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "আপনি নি নিশ্চিত যে আপনি স্থায়ীভাবে \"%s\" মুছে ফেলতে চান?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "আপনি কি নিশ্চিতরূপে নির্বাচিত ফাইলগুলি স্থায়ীভাবে মুছে ফেলতে ইচ্ছুক?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "যদি আপনি একটি আইটেম মুছে ফেলেন, এটি স্থায়ীভাবে হারিয়ে যাবে।"
 

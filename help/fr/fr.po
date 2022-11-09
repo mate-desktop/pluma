@@ -20,7 +20,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-09-23 11:08+0000\n"
 "Last-Translator: Tubuntu, 2021\n"
 "Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -349,8 +349,8 @@ msgid ""
 msgstr ""
 "La barre d'état contient des informations sur l'activité en cours dans "
 "<application>pluma</application> ainsi que des informations contextuelles "
-"sur les éléments de menu. Elle affiche également les informations suivantes "
-":"
+"sur les éléments de menu. Elle affiche également les informations "
+"suivantes :"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:313
@@ -774,8 +774,8 @@ msgid ""
 msgstr ""
 "Saisissez la chaîne de caractères à rechercher dans le champ "
 "<guilabel>Rechercher</guilabel>. Des caractères spéciaux comme le retour "
-"chariot ou la tabulation peuvent être introduits. Voir : <xref linkend"
-"=\"pluma-find-escapes\"/>."
+"chariot ou la tabulation peuvent être introduits. Voir : <xref "
+"linkend=\"pluma-find-escapes\"/>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:488
@@ -912,8 +912,8 @@ msgid ""
 msgstr ""
 "Saisissez la chaîne de caractères à rechercher dans le champ "
 "<guilabel>Rechercher</guilabel>. Il est possible d'y inclure des caractères "
-"spéciaux tels que le retour chariot ou la tabulation. Voir : <xref linkend"
-"=\"pluma-find-escapes\"/>."
+"spéciaux tels que le retour chariot ou la tabulation. Voir : <xref "
+"linkend=\"pluma-find-escapes\"/>."
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:556
@@ -1067,8 +1067,8 @@ msgid ""
 " double the number of searched backslashes."
 msgstr ""
 "La barre oblique inverse elle-même doit être échappée si elle est "
-"recherchée. Par exemple, si vous recherchez le terme « "
-"<literal>\\n</literal> », vous devrez saisir « \\\\n » dans le champ "
+"recherchée. Par exemple, si vous recherchez le terme "
+"« <literal>\\n</literal> », vous devrez saisir « \\\\n » dans le champ "
 "<guilabel>Rechercher</guilabel>. Ou si vous recherchez une suite de barres "
 "obliques inverses, vous devrez en doubler le nombre."
 
@@ -1127,8 +1127,8 @@ msgid ""
 "The <guilabel>Page Setup</guilabel> dialog enables you to specify the "
 "following print options:"
 msgstr ""
-"Cette boîte de dialogue permet d'indiquer les options d'impression suivantes"
-" :"
+"Cette boîte de dialogue permet d'indiquer les options d'impression "
+"suivantes :"
 
 #. (itstool) path: info/title
 #: C/index.docbook:662
@@ -1657,8 +1657,8 @@ msgstr ""
 msgid ""
 "Several of <application>pluma</application>'s features for programming are "
 "provided with plugins. For example, the Tag List plugin provides a list of "
-"commonly-used tags for different markup languages: see <xref linkend"
-"=\"pluma-tag-list-plugin\"/>."
+"commonly-used tags for different markup languages: see <xref "
+"linkend=\"pluma-tag-list-plugin\"/>."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -1808,8 +1808,8 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:1039
 msgid ""
-"For more on shortcut keys, see the <link xlink:href=\"help:mate-user-guide"
-"/keyboard-skills\">Desktop User Guide</link>."
+"For more on shortcut keys, see the <link xlink:href=\"help:mate-user-"
+"guide/keyboard-skills\">Desktop User Guide</link>."
 msgstr ""
 
 #. (itstool) path: section/bridgehead
@@ -2513,9 +2513,9 @@ msgid ""
 "Select the <guilabel>Enable auto indentation</guilabel> option to specify "
 "that the next line starts at the indentation level of the current line."
 msgstr ""
-"Cochez l'option « <guilabel>Activer l'indentation automatique</guilabel> » "
-"pour indiquer que la prochaine ligne doit commencer au niveau d'indentation "
-"de la ligne actuelle."
+"Cochez l'option « <guilabel>Activer l'indentation "
+"automatique</guilabel> » pour indiquer que la prochaine ligne doit commencer"
+" au niveau d'indentation de la ligne actuelle."
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1688
@@ -2649,9 +2649,9 @@ msgid ""
 "You can add a new color scheme by clicking on <guilabel>Add...</guilabel>, "
 "and selecting a color scheme file"
 msgstr ""
-"Vous pouvez ajouter un nouveau jeu de couleurs en cliquant sur « "
-"<guilabel>Ajouter</guilabel> » et en sélectionnant un fichier de jeu de "
-"couleurs"
+"Vous pouvez ajouter un nouveau jeu de couleurs en cliquant "
+"sur « <guilabel>Ajouter</guilabel> » et en sélectionnant un fichier de jeu "
+"de couleurs"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:1763
@@ -2659,8 +2659,8 @@ msgid ""
 "You can remove the selected color scheme by clicking on "
 "<guilabel>Remove</guilabel>"
 msgstr ""
-"Vous pouvez supprimer le jeu de couleurs sélectionné en cliquant sur « "
-"<guilabel>Enlever</guilabel> » "
+"Vous pouvez supprimer le jeu de couleurs sélectionné en cliquant "
+"sur « <guilabel>Enlever</guilabel> » "
 
 #. (itstool) path: info/title
 #: C/index.docbook:1771

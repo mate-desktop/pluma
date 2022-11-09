@@ -8,18 +8,18 @@
 # Martin Wimpress <code@flexion.org>, 2018
 # Inpresentia I., 2018
 # sorinn <nemes.sorin@gmail.com>, 2018
-# sidro <slacky2005@gmail.com>, 2018
-# corneliu.e <corneliueva@yahoo.com>, 2018
+# 3d5ab56b1b83fefceeab671c39a98a6d_999ae54, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Daniel <danny3@tutanota.com>, 2021
+# sidro <slacky2005@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Daniel <danny3@tutanota.com>, 2021\n"
+"Last-Translator: sidro <slacky2005@gmail.com>, 2021\n"
 "Language-Team: Romanian (https://www.transifex.com/mate/teams/13566/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -513,7 +513,7 @@ msgstr ""
 #: data/org.mate.pluma.gschema.xml.in:214
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
+msgstr "[ „UTF-8”, „ACTUAL”, „ISO-8859-15”, „UTF-16” ]"
 
 #: data/org.mate.pluma.gschema.xml.in:215
 msgid "Automatically Detected Encodings"
@@ -577,15 +577,15 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:240
 msgid "Show newline"
-msgstr ""
+msgstr "Arata linie noua"
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Whether pluma should show newlines in the editor window."
-msgstr ""
+msgstr "Dacă pluma ar trebui să afișeze linii noi în fereastra editorului."
 
 #: data/org.mate.pluma.gschema.xml.in:245
 msgid "Show nbsp"
-msgstr ""
+msgstr "Nu arata spatiile de delimitare"
 
 #: data/org.mate.pluma.gschema.xml.in:246
 msgid ""
@@ -596,7 +596,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
-msgstr ""
+msgstr "Arata filele"
 
 #: data/org.mate.pluma.gschema.xml.in:251
 msgid ""
@@ -607,7 +607,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show spaces"
-msgstr ""
+msgstr "Arata spatiul"
 
 #: data/org.mate.pluma.gschema.xml.in:256
 msgid ""
@@ -754,7 +754,7 @@ msgstr "_Salvează"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:184
 msgid "Save _As"
-msgstr ""
+msgstr "Salveaza _Ca"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:217
 msgid "Question"
@@ -885,7 +885,7 @@ msgstr "Dacă nu salvați, toate modificările aduse vor fi pierdute definitiv."
 #: plugins/time/pluma-time-plugin.c:889
 #: plugins/time/pluma-time-setup-dialog.ui:71
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: pluma/dialogs/pluma-encodings-dialog.c:331
 #: pluma/dialogs/pluma-encodings-dialog.ui:40
@@ -1094,7 +1094,7 @@ msgstr ""
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:748
 msgid "Show _tabs"
-msgstr ""
+msgstr "Arata filele"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:763
 msgid "Show _trailing tabs only"
@@ -1138,18 +1138,18 @@ msgstr "Module"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "Înlocuiește"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "Căutare"
 
 #: pluma/dialogs/pluma-search-dialog.c:402
 #: pluma/dialogs/pluma-search-dialog.ui:106
 msgid "_Find"
-msgstr ""
+msgstr "_Caută…"
 
 #: pluma/dialogs/pluma-search-dialog.c:405
 msgid "Replace _All"
@@ -1368,7 +1368,7 @@ msgstr "Restaurea_ză"
 
 #: pluma/pluma-commands-help.c:61
 msgid "MATE Documentation Team"
-msgstr ""
+msgstr "Echipa de documentare MATE"
 
 #: pluma/pluma-commands-help.c:62
 msgid "GNOME Documentation Team"
@@ -1376,7 +1376,7 @@ msgstr ""
 
 #: pluma/pluma-commands-help.c:63
 msgid "Sun Microsystems"
-msgstr ""
+msgstr "Sun Microsystems"
 
 #: pluma/pluma-commands-help.c:68
 msgid ""
@@ -1409,7 +1409,7 @@ msgstr ""
 
 #: pluma/pluma-commands-help.c:114
 msgid "About Pluma"
-msgstr ""
+msgstr "Despre pluma"
 
 #: pluma/pluma-commands-help.c:117
 msgid ""
@@ -1451,11 +1451,11 @@ msgid "Unsaved Document %d"
 msgstr "Document nesalvat %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "Doar citire"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "Documente"
 
@@ -1978,7 +1978,7 @@ msgstr "Se pregătește..."
 
 #: pluma/pluma-print-preferences.ui:15
 msgid "window1"
-msgstr ""
+msgstr "fereasta1"
 
 #: pluma/pluma-print-preferences.ui:39
 msgid "Syntax Highlighting"
@@ -2246,7 +2246,7 @@ msgstr "Creează un document nou"
 msgid "_Open..."
 msgstr "_Deschide..."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "Deschide un fișier"
 
@@ -2276,7 +2276,7 @@ msgstr "Despre această aplicație"
 
 #: pluma/pluma-ui.h:73
 msgid "_Leave Fullscreen"
-msgstr ""
+msgstr "_Paraseste ecran complet"
 
 #: pluma/pluma-ui.h:74
 msgid "Leave fullscreen mode"
@@ -2559,24 +2559,24 @@ msgstr "Panou _inferior"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Arată sau ascunde panoul inferior în fereastra actuală"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Verificați instalarea."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr ""
 "Nu s-a putut deschide fișierul %s din interfața pentru utilizator. Eroare: "
 "%s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "Nu s-a putut găsi obiectul „%s” în fișierul %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ la %s"
@@ -2607,14 +2607,14 @@ msgstr "Șirul pe care doriți să-l căutați"
 msgid "Line you want to move the cursor to"
 msgstr "Rândul la care doriți să mutați cursorul"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Utilizează modul de evidențiere %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2622,43 +2622,43 @@ msgstr "Utilizează modul de evidențiere %s"
 msgid "Plain Text"
 msgstr "Text simplu"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "Dezactivează evidențierea sintaxei"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "Deschide „%s”"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "Deschide un fișier recent utilizat"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "Deschide"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "Salvează"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "Tipărește"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "Activează „%s”"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "Folosește spații"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "Lățime tab"
 
@@ -3058,61 +3058,61 @@ msgstr "Stabilește activarea restaurării locațiilor de la distanță."
 msgid "File System"
 msgstr "Sistem de fișiere"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "_Definește rădăcina la documentul activ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "Definește rădăcina la locația documentului activ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "_Deschide un terminal aici"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "Deschide un terminal în dosarul actual"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "Navigator fișiere"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "A intervenit o eroare la crearea unui dosar nou"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "A intervenit o eroare la crearea unui fișier nou"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "A intervenit o eroare la redenumirea unui fișier sau a unui dosar"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "A intervenit o eroare la ștergerea unui fișier sau a unui dosar"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr ""
 "A intervenit o eroare la deschiderea unui dosar în administratorul de "
 "fișiere"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "A intervenit o eroare la definirea unui dosar rădăcină"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "A intervenit o eroare la încărcarea unui dosar"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "A intervenit o eroare"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3120,25 +3120,25 @@ msgstr ""
 "Fișierul nu poate fi mutat la gunoi;\n"
 "doriți să îl ștergeți definitiv?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "Fișierul „%s” nu poate fi mutat la gunoi."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "Fișierele selectate nu pot fi mutate la gunoi."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Sigur doriți să ștergeți permanent „%s”?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Sigur doriți ștergerea definitivă a fișierelor selectate?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "Dacă ștergeți un element, nu îl veți mai putea recupera."
 
@@ -3362,7 +3362,7 @@ msgstr ""
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
-msgstr ""
+msgstr "Font"
 
 #: plugins/quickopen/quickopen/popup.py:33
 #: plugins/quickopen/quickopen.plugin.desktop.in.in:6
@@ -5003,7 +5003,7 @@ msgstr "Spațiu inseparabil"
 
 #: plugins/taglist/HTML.tags.xml.in:2271
 msgid "Soft hyphen­"
-msgstr ""
+msgstr "Cratima"
 
 #: plugins/taglist/HTML.tags.xml.in:2275
 msgid "&quot;"
@@ -5015,15 +5015,15 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2283
 msgid "¡"
-msgstr ""
+msgstr "i"
 
 #: plugins/taglist/HTML.tags.xml.in:2287
 msgid "¦"
-msgstr ""
+msgstr "¦"
 
 #: plugins/taglist/HTML.tags.xml.in:2291
 msgid "¨"
-msgstr ""
+msgstr "¨"
 
 #: plugins/taglist/HTML.tags.xml.in:2295
 msgid "¯"

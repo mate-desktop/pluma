@@ -12,9 +12,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Sai Vinoba <saivinoba@sumati.net>, 2021\n"
 "Language-Team: Kannada (https://www.transifex.com/mate/teams/13566/kn/)\n"
@@ -1099,11 +1099,11 @@ msgstr "ಪ್ಲಗ್ಇನ್‌ಗಳು"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "ಬದಲಿಸು"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "ಪತ್ತೆ ಹಚ್ಚು"
 
@@ -1406,11 +1406,11 @@ msgid "Unsaved Document %d"
 msgstr "ಉಳಿಸದೆ ಇರುವ ದಸ್ತಾವೇಜು %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "ಓದಲು-ಮಾತ್ರ"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "ದಸ್ತಾವೇಜುಗಳು"
 
@@ -2199,7 +2199,7 @@ msgstr "ಹೊಸ ದಸ್ತಾವೇಜನ್ನು ರಚಿಸು"
 msgid "_Open..."
 msgstr "ತೆರೆ(_O)..."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "ಕಡತವನ್ನು ತೆಗೆ"
 
@@ -2512,22 +2512,22 @@ msgstr "ಕೆಳಗಿನ ಫಲಕ(_B)"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "ಪ್ರಸಕ್ತ ವಿಂಡೋವಿನಲ್ಲಿ ಕೆಳಗಿನ ಫಲಕವನ್ನು ಕಾಣಿಸು ಅಥವ ಅಡಗಿಸು"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಅನುಸ್ಥಾಪನೆಯನ್ನು ಪರೀಕ್ಷಿಸಿ."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "ui ಕಡತ %s ಅನ್ನು ತೆರೆಯಲಾಗಿಲ್ಲ. ದೋಷ: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "ವಸ್ತು '%s' ಕಡತ %s ದಲ್ಲಿ ಪತ್ತೆ ಮಾಡಲಾಗಿಲ್ಲ."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ %s ನಲ್ಲಿ"
@@ -2558,14 +2558,14 @@ msgstr "ನೀವು ಹುಡುಕಬೇಕಿರುವ ವಾಕ್ಯ"
 msgid "Line you want to move the cursor to"
 msgstr "ತೆರೆಸೂಚಕವನ್ನು ನೀವು ಜರುಗಿಸಬೇಕಿರುವ ಸಾಲು"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s ಹೈಲೈಟ್ ವಿಧಾನ ಬಳಸು"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2573,43 +2573,43 @@ msgstr "%s ಹೈಲೈಟ್ ವಿಧಾನ ಬಳಸು"
 msgid "Plain Text"
 msgstr "ಸರಳ ಪಠ್ಯ"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "ವಾಕ್ಯರಚನೆಯ ಹೈಲೈಟಿಂಗನ್ನು ಅಶಕ್ತಗೊಳಿಸು"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' ಅನ್ನು ತೆಗೆ"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "ಇತ್ತೀಚೆಗೆ ಬಳಸಲಾದ ಒಂದು ಕಡತವನ್ನು ತೆಗೆ"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "ತೆರೆ"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "ಉಳಿಸು"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "ಮುದ್ರಿಸು"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' ವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "ಜಾಗಗಳನ್ನು(spaces) ಬಳಸು"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "ಟ್ಯಾಬ್‍ನ ಅಗಲ"
 
@@ -3007,59 +3007,59 @@ msgstr "ದೂರದ ತಾಣಗಳನ್ನು ಪುನರ್ ಸ್ಥಾಪ
 msgid "File System"
 msgstr "ಕಡತ ವ್ಯವಸ್ಥೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "ಸಕ್ರಿಯ ದಸ್ತಾವೇಜಿಗೆ ಮೂಲವನ್ನು ಹೊಂದಿಸು(_S)"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "ಸಕ್ರಿಯ ದಸ್ತಾವೇಜಿನ ತಾಣಕ್ಕೆ ಮೂಲವನ್ನು ಹೊಂದಿಸು"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "ಟರ್ಮಿನಲ್ಲನ್ನು ಇಲ್ಲಿ ತೆರೆ(_O)"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "ಪ್ರಸ್ತುತ ತೆರೆಯಲಾಗಿರುವ ಕೋಶದಲ್ಲಿ ಒಂದು ಟರ್ಮಿನಲ್ಲನ್ನು ತೆರೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "ಕಡತ ವೀಕ್ಷಕ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "ಒಂದು ಹೊಸ ಕಡತಕೋಶವನ್ನು ರಚಿಸುವಾಗ ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "ಒಂದು ಹೊಸ ಕಡತವನ್ನು ರಚಿಸುವಾಗ ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "ಒಂದು ಕಡತ ಅಥವ ಕಡತಕೋಶವನ್ನು ಪುನರ್ ಹೆಸರಿಸುವಾಗ ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "ಒಂದು ಕಡತ ಅಥವ ಕಡತಕೋಶವನ್ನು ಅಳಿಸುವಾಗ ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "ಒಂದು ಕಡತಕೋಶವನ್ನು ಕಡತ ವ್ಯವಸ್ಥಾಪಕದಲ್ಲಿ ತೆರೆಯುವಾಗ ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "ಒಂದು ಮೂಲ ಕಡತ ಕೋಶವನ್ನು ಸಂಯೋಜಿಸುವಾಗ ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "ಒಂದು ಕಡತ ಕೋಶವನ್ನು ಲೋಡ್ ಮಾಡುವಾಗ ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "ಒಂದು ದೋಷ ಉಂಟಾಗಿದೆ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3067,25 +3067,25 @@ msgstr ""
 "ಕಡತವನ್ನು ಕಸದಬುಟ್ಟಿಗೆ ಸ್ಥಳಾಂತರಿಸಲಾಗುತ್ತಿಲ್ಲ,\n"
 "ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಿಹಾಕಲು ನೀವು ಬಯಸುತ್ತೀರೆ?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "ಕಡತ \"%s\" ಅನ್ನು ಕಸದಬುಟ್ಟಿಗೆ ಸ್ಥಳಾಂತರಿಸಲಾಗುತ್ತಿಲ್ಲ."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "ಆರಿಸಿದ ಕಡತಗಳನ್ನು ಕಸದಬುಟ್ಟಿಗೆ ಸ್ಥಳಾಂತರಿಸಲಾಗುತ್ತಿಲ್ಲ."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "\"%s\" ಅನ್ನು ನೀವು ಖಚಿತವಾಗಿಯೂ ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಹಾಕಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "ಆರಿಸಿದ ಕಡತಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಿ ಹಾಕಬೇಕೆಂದು ನೀವು ಖಾತ್ರಿಯೆ?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "ನೀವು ಒಂದು ಅಂಶವನ್ನು ಅಳಿಸಿ ಹಾಕಿದರೆ, ಅದು ಶಾಶ್ವತವಾಗಿ ಕಾಣೆಯಾಗುತ್ತದೆ."
 

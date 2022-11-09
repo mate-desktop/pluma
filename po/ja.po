@@ -9,23 +9,23 @@
 # Ikuru K <kanumaiku@gmail.com>, 2018
 # ABE Tsunehiko, 2018
 # あわしろいくや <ikunya@gmail.com>, 2018
-# Mika Kobayashi, 2018
+# fbc955180bc2b956cb4ef52d00eb80a0_91487f8, 2018
 # shinmili <rmsk.pl.ur.lpt@gmail.com>, 2018
 # semicolon <mail@semicln.com>, 2018
 # c7a0a66e0476db158663636124cfb54f_370a183, 2018
 # FuRuYa7 <goo.sirocat47@gmail.com>, 2020
 # pivo thusr, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Green, 2021
 # Wolfgang Ulbrich <mate@raveit.de>, 2021
+# Green, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2021\n"
+"Last-Translator: Green, 2022\n"
 "Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +45,7 @@ msgid ""
 "font."
 msgstr ""
 "Pluma "
-"で指定したフォントの代わりに、システムのデフォルトの固定幅フォントを編集で使用するかどうかを指定します。このオプションをOFFにした場合、システムフォントではなく"
+"で指定したフォントの代わりに、システム標準の固定幅フォントを編集で使用するかどうかを指定します。このオプションをOFFにした場合、システムフォントではなく"
 " \"エディターのフォント\" オプションで指定したフォントが使用されます。"
 
 #: data/org.mate.pluma.gschema.xml.in:19
@@ -61,7 +61,7 @@ msgstr "エディタのフォント"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "編集領域で使用するカスタムフォントを指定します。これは \"デフォルトのフォントを使う\" オプションを無効にしている場合にのみ効果があります。"
+msgstr "編集領域で使用するカスタムフォントを指定します。これは \"標準のフォントを使う\" オプションを無効にしている場合にのみ効果があります。"
 
 #: data/org.mate.pluma.gschema.xml.in:25
 msgid "Switch tabs with [ctrl] + [tab]"
@@ -651,7 +651,7 @@ msgstr ""
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:773
 msgid "Text Editor"
-msgstr "テキストエディター"
+msgstr "テキストエディタ"
 
 #: data/pluma.desktop.in.in:5
 msgid "Edit text files"
@@ -872,7 +872,7 @@ msgstr "削除(_R)"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:603
 msgid "Click on this button to select the font to be used by the editor"
-msgstr "エディターで使用するフォントを選択する場合は、このボタンをクリックしてください"
+msgstr "エディタで使用するフォントを選択する場合は、このボタンをクリックしてください"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:618
 #, c-format
@@ -1071,11 +1071,11 @@ msgstr "プラグイン"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "置換"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "検索"
 
@@ -1393,11 +1393,11 @@ msgid "Unsaved Document %d"
 msgstr "編集中の文書 %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "読み取りのみ"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "文書"
 
@@ -2148,7 +2148,7 @@ msgstr "新しい文書を作成します"
 msgid "_Open..."
 msgstr "開く(_O).."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "ファイルを開きます"
 
@@ -2461,22 +2461,22 @@ msgstr "ボトムペイン(_B)"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "このウィンドウでボトムペインの表示/非表示を切り替えます"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Pluma のインストールを確認してください。"
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "UI ファイル %s を開けません。エラー: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "オブジェクトの '%s' は %s というファイルの中にありませんでした。"
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "%s の / (ルート)"
@@ -2509,14 +2509,14 @@ msgstr "検索する文字列"
 msgid "Line you want to move the cursor to"
 msgstr "カーソルを移動する行を入力してください"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s 用の強調表示モードにします"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2524,43 +2524,43 @@ msgstr "%s 用の強調表示モードにします"
 msgid "Plain Text"
 msgstr "なし"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "構文の強調表示を無効にします"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' を開きます"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "最近使用したファイルを開きます"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "開く"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "保存"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "印刷"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' に切り替えます"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "空白にする"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "タブの幅:"
 
@@ -2944,59 +2944,59 @@ msgstr "リモートの場所でのリストア機能を有効にするかどう
 msgid "File System"
 msgstr "ファイルシステム"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "文書のルートにする(_S)"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "文書を格納しているルートフォルダーに指定します"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "端末を開く(_O)"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "このフォルダーで端末を開きます"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
-msgstr "ファイルブラウザー"
+msgstr "ファイルブラウザ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "新しいフォルダーを生成する際にエラーが発生しました"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "新しいファイルを生成する際にエラーが発生しました"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "ファイルまたはフォルダーの名前を変更する際にエラーが発生しました"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "ファイルまたはフォルダーを削除する際にエラーが発生しました"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "ファイル参照ペインの中でフォルダーを開く際にエラーが発生しました"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "ルートフォルダーを設定する際にエラーが発生しました"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "フォルダーを読み込む際にエラーが発生しました"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "エラーが発生しました"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3004,25 +3004,25 @@ msgstr ""
 "ファイルをゴミ箱へ移動できません。\n"
 "今すぐファイルを削除しますか?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "ファイル \"%s\" をゴミ箱へ移動できません。"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "選択したファイルをゴミ箱へ移動できません。"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "\"%s\" を完全に削除しますか？"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "選択したファイルを完全に削除してもよろしいですか?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "削除すると、二度と復活できません。"
 
@@ -3074,11 +3074,11 @@ msgstr "ゴミ箱へ移動(_M)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:791
 msgid "Move selected file or folder to trash"
-msgstr "選択したファイルやフォルダーをゴミ箱へ移動します"
+msgstr "選択したファイルやフォルダをゴミ箱へ移動します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:794
 msgid "Delete selected file or folder"
-msgstr "選択したファイルやフォルダーを削除します"
+msgstr "選択したファイルやフォルダを削除します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "Open selected file"
@@ -3090,15 +3090,15 @@ msgstr "上へ"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:808
 msgid "Open the parent folder"
-msgstr "親フォルダーを開きます"
+msgstr "親フォルダを開きます"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:813
 msgid "_New Folder"
-msgstr "新しいフォルダー(_N)"
+msgstr "新しいフォルダ(_N)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:814
 msgid "Add new empty folder"
-msgstr "新しい空のフォルダーを追加します"
+msgstr "新しい空のフォルダを追加します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "New F_ile"
@@ -3114,7 +3114,7 @@ msgstr "名前の変更(_R)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:823
 msgid "Rename selected file or folder"
-msgstr "選択したファイルやフォルダーの名前を変更します"
+msgstr "選択したファイルやフォルダの名前を変更します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:829
 msgid "_Previous Location"
@@ -3143,12 +3143,12 @@ msgstr "表示をリフレッシュします"
 #: plugins/filebrowser/pluma-file-browser-widget.c:837
 #: plugins/filebrowser/pluma-file-browser-widget.c:855
 msgid "_View Folder"
-msgstr "フォルダーを開く(_V)"
+msgstr "フォルダを開く(_V)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:838
 #: plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "View folder in file manager"
-msgstr "指定したフォルダーをファイルマネージャで開きます"
+msgstr "指定したフォルダをファイルマネージャで開きます"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "Show _Hidden"
@@ -3156,7 +3156,7 @@ msgstr "隠しファイル(_H)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Show hidden files and folders"
-msgstr "隠しファイルやフォルダーを表示します"
+msgstr "隠しファイルやフォルダを表示します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:848
 msgid "Show _Binary"
@@ -5574,7 +5574,7 @@ msgstr "タグの一覧"
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
-msgstr "よく利用するタグや文字列をキーボードを使わずにドキュメントに挿入する機能を提供します。"
+msgstr "よく利用するタグや文字列をキーボードを使わずに文書に挿入する機能を提供します。"
 
 #: plugins/taglist/XSLT.tags.xml.in:7
 msgid "XSLT - Elements"

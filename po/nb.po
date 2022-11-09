@@ -16,9 +16,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: heskjestad <cato@heskjestad.xyz>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/mate/teams/13566/nb/)\n"
@@ -413,10 +413,10 @@ msgid ""
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
 msgstr ""
-"Spesifiserer hvordan linjer skal brytes ved utskrift. Bruk «GTK_WRAP_NONE» "
-"hvis du ikke ønsker bryting, «GTK_WRAP_WORD» hvis du ønsker bryting ved "
-"ordgrenser og GTK_WRAP_CHAR hvis du ønsker bryting på tegnnivå. Merk at det "
-"skilles mellom store og små bokstaver."
+"Spesifiserer hvordan linjer skal brytes ved utskrift. Bruk "
+"«GTK_WRAP_NONE» hvis du ikke ønsker bryting, «GTK_WRAP_WORD» hvis du ønsker "
+"bryting ved ordgrenser og GTK_WRAP_CHAR hvis du ønsker bryting på tegnnivå. "
+"Merk at det skilles mellom store og små bokstaver."
 
 #: data/org.mate.pluma.gschema.xml.in:195
 msgid "Print Line Numbers"
@@ -518,19 +518,19 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:225
 msgid "History for \"search for\" entries"
-msgstr "Historikk for \"søk etter\" oppføringer"
+msgstr "Historikk for «søk etter»-oppføringer"
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "List of entries in \"search for\" textbox."
-msgstr "Liste over oppføringer i \"søk etter\"-tekstboksen."
+msgstr "Liste over oppføringer i «søk etter»-tekstboksen."
 
 #: data/org.mate.pluma.gschema.xml.in:230
 msgid "History for \"replace with\" entries"
-msgstr "Historikk for oppføringene \"erstatt med\""
+msgstr "Historikk for «erstatt med»-oppføringer"
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "List of entries in \"replace with\" textbox."
-msgstr "Liste over oppføringer i tekstboksen \"erstatt med\"."
+msgstr "Liste over oppføringer i tekstboksen «erstatt med»."
 
 #: data/org.mate.pluma.gschema.xml.in:235
 msgid "Active plugins"
@@ -1130,11 +1130,11 @@ msgstr "Programtillegg"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "Erstatt"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "Finn"
 
@@ -1464,11 +1464,11 @@ msgid "Unsaved Document %d"
 msgstr "Ikke-lagret dokument %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "Skrivebeskyttet"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "Dokumenter"
 
@@ -2139,8 +2139,7 @@ msgstr[1] "Det er %d faner med feil"
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
 msgid "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
-msgstr ""
-"Kunne ikke opprette katalog «%s»: g_mkdir_with_parents() mislyktes: %s"
+msgstr "Kunne ikke opprette mappe «%s»: g_mkdir_with_parents() mislyktes: %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
@@ -2253,7 +2252,7 @@ msgstr "Opprett et nytt dokument"
 msgid "_Open..."
 msgstr "_Åpne …"
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "Åpne en fil"
 
@@ -2566,22 +2565,22 @@ msgstr "_Bunnpanel"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Vis eller skjul bunnpanelet i dette vinduet"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Sjekk installasjonen din"
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "Kunne ikke åpne fil for brukergrensesnitt %s. Feil: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "Kunne ikke finne objekt «%s» i fil %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ på %s"
@@ -2614,14 +2613,14 @@ msgstr "Streng du vil søke etter"
 msgid "Line you want to move the cursor to"
 msgstr "Linje du vil flytte pekeren til"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Bruk uthevingsmodus %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2629,43 +2628,43 @@ msgstr "Bruk uthevingsmodus %s"
 msgid "Plain Text"
 msgstr "Vanlig tekst"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "Deaktiver syntaksutheving"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "Åpne «%s»"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "Åpne nylig brukt fil"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "Åpne"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "Lagre"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "Skriv ut"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktiver «%s»"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "Bruk mellomrom"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "Tabulatorbredde"
 
@@ -2932,7 +2931,7 @@ msgstr "Åpne terminal her"
 
 #: plugins/externaltools/data/open-terminal-here.desktop.in:4
 msgid "Open a terminal in the document location"
-msgstr "Åpne en terminal i dokumentkatalogen"
+msgstr "Åpne en terminal i dokumentmappa"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
 msgid "Remove trailing spaces"
@@ -2960,7 +2959,7 @@ msgstr "Bytt til en fil .c og .h"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in.in:6
 msgid "File Browser Pane"
-msgstr "Filhåndtererområde"
+msgstr "Filutforskerområde"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in.in:7
 msgid "Easy file access from the side pane"
@@ -2977,14 +2976,13 @@ msgid ""
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
 msgstr ""
-"Hvis denne er satt til TRUE vil fillesertillegget vise katalogen til det "
-"første åpnede dokumentet gitt at filleseren ikke har blitt brukt ennå. "
-"(Dette er mest relevant når man åpner et dokument fra kommandolinjen eller "
-"med caja)."
+"Hvis denne er satt til TRUE vil fillesertillegget vise mappen til det første"
+" åpnede dokumentet gitt at filleseren ikke har blitt brukt ennå. (Dette er "
+"mest relevant når man åpner et dokument fra kommandolinjen eller med caja)."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:11
 msgid "File Browser Filter Mode"
-msgstr "Filtermodus for filhåndterer"
+msgstr "Filtermodus for filutforsker"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:12
 msgid ""
@@ -3000,7 +2998,7 @@ msgstr ""
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:16
 msgid "File Browser Filter Pattern"
-msgstr "Filtermønster for filhåndterer"
+msgstr "Filtermønster for filutforsker"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:17
 msgid ""
@@ -3019,24 +3017,24 @@ msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
 msgstr ""
-"Åpne trevisning når filhåndterertillegget lastes i stedet for "
+"Åpne trevisning når tillegg for filutforsking lastes i stedet for "
 "bokmerkevisning."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:29
 msgid "File Browser Root Directory"
-msgstr "Rotkatalog for filhåndterer"
+msgstr "Rotmappe for filutforsker"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:30
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
 msgstr ""
-"Rotkatalog som brukes når fillesertillegget lastes og onload/tree_view er "
+"Rotmappe som brukes når fillesertillegget lastes og onload/tree_view er "
 "TRUE."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:34
 msgid "File Browser Virtual Root Directory"
-msgstr "Virtuell rotkatalog for filhåndterer"
+msgstr "Virtuell rotmappe for filutforsker"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:35
 msgid ""
@@ -3044,7 +3042,7 @@ msgid ""
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
 msgstr ""
-"Virtuell rotkatalog som brukes når fillesertillegget og onload/tree_view er "
+"Virtuell rotmappe som brukes når fillesertillegget og onload/tree_view er "
 "TRUE. Virtuell rot må alltid være under faktisk rot."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:39
@@ -3059,59 +3057,59 @@ msgstr "Bestemmer om gjenoppretting fra eksterne plasseringer skal aktiveres."
 msgid "File System"
 msgstr "Filsystem"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "_Sett rot til aktivt dokument"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "Sett roten til plasseringen for aktivt dokument"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "_Åpne terminal her"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
-msgstr "Åpne en terminal i katalogen som er åpen"
+msgstr "Åpne en terminal i mappa som er åpen"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "Filutforsker"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
-msgstr "En feil oppsto ved oppretting av ny katalog"
+msgstr "En feil oppsto ved oppretting av ny mappe"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "En feil oppsto ved oppretting av en ny fil"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
-msgstr "En feil oppsto ved endring av navn på en fil eller katalog"
+msgstr "En feil oppsto ved endring av navn på en fil eller mappe"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
-msgstr "En feil oppsto ved sletting av en fil eller katalog"
-
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
-msgid "An error occurred while opening a directory in the file manager"
-msgstr "En feil oppsto ved åpning av en katalog i filhåndtereren"
-
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
-msgid "An error occurred while setting a root directory"
-msgstr "En feil oppsto ved forsøk på å sette rotkatalogen"
-
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
-msgid "An error occurred while loading a directory"
-msgstr "En feil oppsto ved lasting av en katalog"
+msgstr "En feil oppsto ved sletting av en fil eller mappe"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:907
+msgid "An error occurred while opening a directory in the file manager"
+msgstr "En feil oppsto ved åpning av en mappe i filbehandleren"
+
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
+msgid "An error occurred while setting a root directory"
+msgstr "En feil oppsto ved forsøk på å velge rotmappe"
+
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
+msgid "An error occurred while loading a directory"
+msgstr "En feil oppsto ved lasting av en mappe"
+
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "En feil oppsto"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3119,25 +3117,25 @@ msgstr ""
 "Kan ikke flytte filen til papirkurven.\n"
 "Vil du slette den permanent?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "Filen «%s» kan ikke flyttes til papirkurven."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "Valgte filer kan ikke flyttes til papirkurven."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Bekreft permanent sletting av «%s»."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Er du sikker på at du vil slette valgte filer permanent?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "Hvis du sletter et element, går det tapt."
 
@@ -3171,14 +3169,14 @@ msgstr ""
 #. file browser pane.
 #: plugins/filebrowser/pluma-file-browser-store.c:3519
 msgid "directory"
-msgstr "katalog"
+msgstr "mappe"
 
 #: plugins/filebrowser/pluma-file-browser-store.c:3539
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr ""
-"Den nye katalogen er filtrert ut. Du må justere filterinnstillingene for å "
+"Den nye mappen er filtrert ut. Du må justere filterinnstillingene for å "
 "gjøre den synlig"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:704
@@ -3269,7 +3267,7 @@ msgstr "_Vis mappe"
 #: plugins/filebrowser/pluma-file-browser-widget.c:838
 #: plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "View folder in file manager"
-msgstr "Vis mappe i filhåndterer"
+msgstr "Vis mappe i filbehandler"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "Show _Hidden"
@@ -3427,11 +3425,11 @@ msgstr "Mål for slipp:"
 
 #: plugins/snippets/snippets/snippets.ui:392
 msgid "Shortcut key with which the snippet is activated"
-msgstr "Snarveitast som aktiverer tekstblokker"
+msgstr "Hurtigtast som aktiverer tekstblokker"
 
 #: plugins/snippets/snippets/snippets.ui:411
 msgid "S_hortcut key:"
-msgstr "S_narveitast:"
+msgstr "_Hurtigtast:"
 
 #. "tab" here means the tab key, not the notebook tab!
 #: plugins/snippets/snippets/snippets.ui:424
@@ -3445,7 +3443,7 @@ msgstr "Enkelt ord som aktiverer tekstblokker etter å trykke tabulator"
 
 #: plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage _Snippets..."
-msgstr "Behandle _tekstblokker…"
+msgstr "Behandle _tekstblokker …"
 
 #: plugins/snippets/snippets/WindowHelper.py:74
 msgid "Manage snippets"
@@ -3557,7 +3555,7 @@ msgstr "Målmappa «%s» finnes ikke"
 #: plugins/snippets/snippets/Exporter.py:85
 #, python-format
 msgid "Target directory \"%s\" is not a valid directory"
-msgstr "Målkatalog «%s» er ikke en gyldig katalog"
+msgstr "Målmappa «%s» er ikke en gyldig mappe"
 
 #: plugins/snippets/snippets/Importer.py:29
 #: plugins/snippets/snippets/Importer.py:83
@@ -4169,7 +4167,7 @@ msgstr "Rammeavstand"
 
 #: plugins/taglist/HTML.tags.xml.in:396 plugins/taglist/HTML.tags.xml.in:1509
 msgid "Generic embedded object"
-msgstr "Genrelt innebygd objekt"
+msgstr "Generelt innebygd objekt"
 
 #: plugins/taglist/HTML.tags.xml.in:401 plugins/taglist/HTML.tags.xml.in:1513
 msgid "Generic metainformation"
@@ -4390,75 +4388,75 @@ msgstr "Forskyvning for justeringstegn"
 
 #: plugins/taglist/HTML.tags.xml.in:681 plugins/taglist/HTML.tags.xml.in:1817
 msgid "OnBlur event"
-msgstr "OnBlur hendelse"
+msgstr "OnBlur-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:686 plugins/taglist/HTML.tags.xml.in:1821
 msgid "OnChange event"
-msgstr "OnChange hendelse"
+msgstr "OnChange-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:691 plugins/taglist/HTML.tags.xml.in:1825
 msgid "OnClick event"
-msgstr "OnClick hendelse"
+msgstr "OnClick-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:696 plugins/taglist/HTML.tags.xml.in:1829
 msgid "OnDblClick event"
-msgstr "OnDblClick hendelse"
+msgstr "OnDblClick-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:701 plugins/taglist/HTML.tags.xml.in:1833
 msgid "OnFocus event"
-msgstr "OnFocus hendelse"
+msgstr "OnFocus-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:706 plugins/taglist/HTML.tags.xml.in:1837
 msgid "OnKeyDown event"
-msgstr "OnKeyDown hendelse"
+msgstr "OnKeyDown-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:711 plugins/taglist/HTML.tags.xml.in:1841
 msgid "OnKeyPress event"
-msgstr "OnKeyPress hendelse"
+msgstr "OnKeyPress-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:716 plugins/taglist/HTML.tags.xml.in:1845
 msgid "OnKeyUp event"
-msgstr "OnKeyUp hendelse"
+msgstr "OnKeyUp-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:721 plugins/taglist/HTML.tags.xml.in:1849
 msgid "OnLoad event"
-msgstr "OnLoad hendelse"
+msgstr "OnLoad-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:726 plugins/taglist/HTML.tags.xml.in:1853
 msgid "OnMouseDown event"
-msgstr "OnMouseDown hendelse"
+msgstr "OnMouseDown-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:731 plugins/taglist/HTML.tags.xml.in:1857
 msgid "OnMouseMove event"
-msgstr "OnMouseMove hendelse"
+msgstr "OnMouseMove-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:736 plugins/taglist/HTML.tags.xml.in:1861
 msgid "OnMouseOut event"
-msgstr "OnMouseOut hendelse"
+msgstr "OnMouseOut-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:741 plugins/taglist/HTML.tags.xml.in:1865
 msgid "OnMouseOver event"
-msgstr "OnMouseOver hendelse"
+msgstr "OnMouseOver-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:746 plugins/taglist/HTML.tags.xml.in:1869
 msgid "OnMouseUp event"
-msgstr "OnMouseUp hendelse"
+msgstr "OnMouseUp-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:751 plugins/taglist/HTML.tags.xml.in:1873
 msgid "OnReset event"
-msgstr "OnReset hendelse"
+msgstr "OnReset-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:756 plugins/taglist/HTML.tags.xml.in:1877
 msgid "OnSelect event"
-msgstr "OnSelect hendelse"
+msgstr "OnSelect-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:761 plugins/taglist/HTML.tags.xml.in:1881
 msgid "OnSubmit event"
-msgstr "OnSubmit hendelse"
+msgstr "OnSubmit-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:766 plugins/taglist/HTML.tags.xml.in:1885
 msgid "OnUnload event"
-msgstr "OnUnload hendelse"
+msgstr "OnUnload-hendelse"
 
 #: plugins/taglist/HTML.tags.xml.in:771 plugins/taglist/HTML.tags.xml.in:1889
 msgid "Option group"
@@ -4795,7 +4793,7 @@ msgstr "Retning"
 
 #: plugins/taglist/HTML.tags.xml.in:1350
 msgid "Directory list"
-msgstr "Katalogliste"
+msgstr "Mappeliste"
 
 #: plugins/taglist/HTML.tags.xml.in:1396
 msgid "HTML version"
@@ -6488,7 +6486,7 @@ msgstr "Valgt format"
 
 #: plugins/time/org.mate.pluma.plugins.time.gschema.xml.in:20
 msgid "Custom format"
-msgstr "Brukerdefinert format"
+msgstr "Selvvalgt format"
 
 #: plugins/time/pluma-time-plugin.c:184
 msgid "In_sert Date and Time..."
@@ -6512,7 +6510,7 @@ msgstr "Setter inn dagens dato og klokkeslett i pekerposisjonen."
 
 #: plugins/trailsave/trailsave.plugin.desktop.in.in:5
 msgid "Save Without Trailing Spaces"
-msgstr "LAgre uten etterfølgende mellomrom"
+msgstr "Lagre uten etterfølgende mellomrom"
 
 #: plugins/trailsave/trailsave.plugin.desktop.in.in:6
 msgid "Removes trailing spaces from lines before saving."
@@ -6551,7 +6549,7 @@ msgstr "01.11.2009 17.52.00"
 
 #: plugins/time/pluma-time-setup-dialog.ui:23
 msgid "Configure date/time plugin"
-msgstr "Konfigurer tillegg for dato/klokkeslett"
+msgstr "Sett opp tillegg for dato/klokkeslett"
 
 #: plugins/time/pluma-time-setup-dialog.ui:104
 msgid "When inserting date/time..."
