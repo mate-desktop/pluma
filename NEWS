@@ -1,3 +1,28 @@
+### pluma 1.27.0
+
+  * tx: sync with transifex
+  * tx: update resource
+  * tx: migrate config file
+  * Fix out-of-bounds write
+  * pluma-view: 'len' is assigned a value that is never used
+  * pluma-commands-search: 'len' is assigned a value that is never used
+  * filebrowser: fix warning -Wincompatible-pointer-types
+  * pluma-metadata-manager: remove time.h
+  * pluma: fix build warning about missing field initializer
+  * pluma-document: Redundant null check
+  * pluma-encodings-combo-box: implicit conversion changes signedness
+  * Increase POSIX compliance and simplify.  Remove bashisms and non-POSIX expr(1) usage.
+  * Revert the shebang changes for /bin/sh (9a99c3c7b).  See also issue 640:
+  * filebrowser: use GLib's new g_clear_signal_handler() function
+  * Unnecessary G_OBJECT cast when calling signal connect function
+  * pluma-commands-search: fix warning -Wenum-conversion
+  * ci: drop -Wunused-parameter compiler cflag from debian build
+  * pluma: handler IDs are gulong, not guint
+  * pluma: use GLib's new g_clear_signal_handler() function
+  * pluma-plugins-engine: fix memory leak
+  * Fix double activation of extensions
+  * pluma-tab: remove a whitespace before #if
+
 ### pluma 1.26.0
 
   * Translations update
