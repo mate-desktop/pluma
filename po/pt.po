@@ -4,34 +4,34 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Martin Wimpress <code@flexion.org>, 2018
-# Luis Neves <luisjneves@gmail.com>, 2018
-# Manuela Silva <mmsrs@sky.com>, 2018
-# fc2d9c36d73e741383fbbf46a4aac49f_013445b, 2018
-# Luis Filipe Teixeira <lufilte@gmail.com>, 2018
-# Manel Tinoco <maneltinoco@gmail.com>, 2018
-# José Vieira <jvieira33@sapo.pt>, 2018
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019
-# Sérgio Marques <smarquespt@gmail.com>, 2019
-# Carlos Moreira, 2019
-# Wolfgang Ulbrich <mate@raveit.de>, 2019
-# Guilherme Campos <guilhermemiguel97@hotmail.com>, 2020
+# Manel Tinoco <maneltinoco@gmail.com>, 2021
+# Luis Neves <luisjneves@gmail.com>, 2021
+# Wolfgang Ulbrich <mate@raveit.de>, 2021
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2021
+# fc2d9c36d73e741383fbbf46a4aac49f_013445b, 2021
+# Martin Wimpress <code@flexion.org>, 2021
+# Manuela Silva <mmsrs@sky.com>, 2021
+# Guilherme Campos <guilhermemiguel97@hotmail.com>, 2021
+# Sérgio Marques <smarquespt@gmail.com>, 2021
+# Carlos Moreira, 2021
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Rui <xymarior@yandex.com>, 2021
+# Luis Filipe Teixeira <lufilte@gmail.com>, 2021
+# José Vieira <jvieira33@sapo.pt>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: pluma 1.25.3\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2021-06-26 20:39+0200\n"
-"PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Rui <xymarior@yandex.com>, 2021\n"
-"Language-Team: Portuguese (https://www.transifex.com/mate/teams/13566/pt/)\n"
+"PO-Revision-Date: 2021-09-24 09:02+0000\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>, 2021\n"
+"Language-Team: Portuguese (https://app.transifex.com/mate/teams/13566/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
@@ -764,11 +764,8 @@ msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
-"Se não guardar, as alterações que fez no último %ld segundo serão perdidas "
-"permanentemente."
 msgstr[1] ""
-"Se não guardar, as alterações que fez nos últimos %ld segundos serão "
-"perdidas permanentemente."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:424
 msgid ""
@@ -786,11 +783,8 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
-"Se não guardar, as alterações do último minuto e %ld segundo serão "
-"permanentemente perdidas."
 msgstr[1] ""
-"Se não guardar, as alterações do último minuto e %ld segundos serão "
-"permanentemente perdidas."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:440
 #, c-format
@@ -801,11 +795,8 @@ msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Se não guardar, as alterações do último %ld minuto serão permanentemente "
-"perdidas."
 msgstr[1] ""
-"Se não guardar, as alterações dos últimos %ld minutos serão permanentemente "
-"perdidas."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:455
 msgid ""
@@ -822,11 +813,8 @@ msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"Se não guardar, as alterações da última hora e %d minuto serão "
-"permanentemente perdidas."
 msgstr[1] ""
-"Se não guardar, as alterações da última hora e %d minutos serão "
-"permanentemente perdidas."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:476
 #, c-format
@@ -835,11 +823,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
-"Se não guardar, as alterações da última %d hora serão permanentemente "
-"perdidas."
 msgstr[1] ""
-"Se não guardar, as alterações das últimas %d horas serão permanentemente "
-"perdidas."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
@@ -862,9 +847,8 @@ msgstr "O administrador do sistema desativou a funcionalidade de guardar."
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] ""
-"As alterações efetuadas a %d documento serão permanentemente perdidas."
 msgstr[1] ""
-"As alterações efetuadas a %d documentos serão permanentemente perdidas."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
@@ -873,11 +857,8 @@ msgid ""
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] ""
-"Existe %d documento com alterações por guardar. Guardar as alterações antes "
-"de fechar?"
 msgstr[1] ""
-"Existem %d documentos com alterações por guardar. Guardar as alterações "
-"antes de fechar?"
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
@@ -911,7 +892,7 @@ msgstr "_OK"
 #: plugins/time/pluma-time-dialog.ui:36
 #: plugins/time/pluma-time-setup-dialog.ui:39
 msgid "_Help"
-msgstr "A_juda"
+msgstr "_Ajuda"
 
 #: pluma/dialogs/pluma-encodings-dialog.c:333
 msgid "Character Encodings"
@@ -1267,8 +1248,9 @@ msgstr "A carregar \"%s'\""
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "A carregar %d ficheiro…"
-msgstr[1] "A carregar %d ficheiros…"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:462
@@ -1312,11 +1294,8 @@ msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
-"As alterações efetuadas ao documento no último %ld segundo serão "
-"permanentemente perdidas."
 msgstr[1] ""
-"As alterações efetuadas ao documento nos últimos %ld segundos serão "
-"permanentemente perdidas."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1148
 msgid ""
@@ -1334,11 +1313,8 @@ msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
-"As alterações efetuadas ao documento no último minuto e %ld segundo serão "
-"permanentemente perdidas."
 msgstr[1] ""
-"As alterações efetuadas ao documento no último minuto e %ld segundos serão "
-"permanentemente perdidas."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1164
 #, c-format
@@ -1349,11 +1325,8 @@ msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"As alterações efetuadas ao documento no último %ld minuto serão "
-"permanentemente perdidas."
 msgstr[1] ""
-"As alterações efetuadas ao documento nos últimos %ld minutos serão "
-"permanentemente perdidas."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1179
 msgid ""
@@ -1371,11 +1344,8 @@ msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"As alterações efetuadas ao documento na última hora e %d minuto serão "
-"permanentemente perdidas."
 msgstr[1] ""
-"As alterações efetuadas ao documento na última hora e %d minutos serão "
-"permanentemente perdidas."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1384,11 +1354,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] ""
-"As alterações efetuadas ao documento na última %d hora serão permanentemente"
-" perdidas."
 msgstr[1] ""
-"As alterações efetuadas ao documento nas últimas %d horas serão "
-"permanentemente perdidas."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1227 pluma/pluma-ui.h:85
 msgid "_Revert"
@@ -1463,14 +1430,17 @@ msgstr ""
 
 #: pluma/pluma-commands-help.c:127
 msgid "translator-credits"
-msgstr "Hugo Carvalho <hugokarvalho@gmail.com>"
+msgstr ""
+"Hugo Carvalho <hugokarvalho@hotmail.com>, 2018\n"
+"José Vieira <jvieira33@sapo.pt>, 2021"
 
 #: pluma/pluma-commands-search.c:113
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "Encontrada e substituída %d ocorrência"
-msgstr[1] "Encontradas e substituídas %d ocorrências"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: pluma/pluma-commands-search.c:123
 msgid "Found and replaced one occurrence"
@@ -2168,8 +2138,9 @@ msgstr "  Ln %d, Col %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "Existe 1 separador com erros"
-msgstr[1] "Existem %d separadores com erros"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -2311,7 +2282,7 @@ msgstr "Abrir o manual do pluma"
 
 #: pluma/pluma-ui.h:69
 msgid "_About"
-msgstr "_Sobre"
+msgstr "_Acerca"
 
 #: pluma/pluma-ui.h:70
 msgid "About this application"
@@ -6171,7 +6142,7 @@ msgstr "descrição"
 
 #: plugins/taglist/XUL.tags.xml.in:102
 msgid "dialog"
-msgstr ""
+msgstr "diálogo"
 
 #: plugins/taglist/XUL.tags.xml.in:111
 msgid "dialogheader"

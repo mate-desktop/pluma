@@ -4,37 +4,36 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# jeremy shields <jeremy.shields@orange.fr>, 2018
-# Benjamin Teissier <enatheme@enatheme.org>, 2018
-# mauron, 2018
-# Tubuntu, 2018
-# Charles Monzat <c.monzat@laposte.net>, 2018
-# Nicolas Dobigeon <dobigeon@gmail.com>, 2018
-# yoplait <yoplait@tememe.org>, 2018
-# Guillaume Fayard <guillaume2.fayard@wanadoo.fr>, 2018
-# Étienne Deparis <etienne@depar.is>, 2019
-# Wolfgang Ulbrich <mate@raveit.de>, 2019
-# Colomban Wendling <cwendling@hypra.fr>, 2020
-# Laurent Napias, 2020
-# Yoan Mollard <yoan@aubrune.eu>, 2020
+# jeremy shields <jeremy.shields@orange.fr>, 2021
+# Wolfgang Ulbrich <mate@raveit.de>, 2021
+# Laurent Napias <tamplan+transifex@free.fr>, 2021
 # Yoshida Shouyou, 2021
-# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Yoan Mollard <yoan@aubrune.eu>, 2021
+# mauron, 2021
 # clefebvre <clement.lefebvre@linuxmint.com>, 2021
+# Charles Monzat <c.monzat@laposte.net>, 2021
+# Nicolas Dobigeon <dobigeon@gmail.com>, 2021
 # David D, 2021
+# Colomban Wendling <cwendling@hypra.fr>, 2021
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Tubuntu, 2021
+# Étienne Deparis <etienne@depar.is>, 2021
+# yoplait <yoplait@tememe.org>, 2021
+# Laurent Napias, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: pluma 1.25.3\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2021-06-26 20:39+0200\n"
-"PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: David D, 2021\n"
-"Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
+"PO-Revision-Date: 2021-09-24 09:02+0000\n"
+"Last-Translator: Laurent Napias, 2021\n"
+"Language-Team: French (https://app.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
@@ -296,14 +295,14 @@ msgid ""
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
 msgstr ""
-"Indique comment le curseur se déplace quand les touches « Origine » et « Fin"
-" » sont appuyées. Utilisez « DISABLED » (désactivé) pour toujours aller au "
-"début/fin de la ligne, « AFTER » (après) pour aller au début/fin de la ligne"
-" la première fois que les touches sont appuyées et au début/fin du texte en "
-"ignorant les espaces, la seconde fois que les touches sont appuyées, « "
-"BEFORE » (avant) pour aller au début/fin du texte avant de se déplacer au "
-"début/fin de la ligne et « ALWAYS » (toujours) pour toujours aller au "
-"début/fin du texte au lieu du début/fin de la ligne."
+"Indique comment le curseur se déplace quand les touches « Origine » et "
+"« Fin » sont appuyées. Utilisez « DISABLED » (désactivé) pour toujours aller"
+" au début/fin de la ligne, « AFTER » (après) pour aller au début/fin de la "
+"ligne la première fois que les touches sont appuyées et au début/fin du "
+"texte en ignorant les espaces, la seconde fois que les touches sont "
+"appuyées, « BEFORE » (avant) pour aller au début/fin du texte avant de se "
+"déplacer au début/fin de la ligne et « ALWAYS » (toujours) pour toujours "
+"aller au début/fin du texte au lieu du début/fin de la ligne."
 
 #: data/org.mate.pluma.gschema.xml.in:130
 msgid "Restore Previous Cursor Position"
@@ -357,11 +356,11 @@ msgid ""
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
 msgstr ""
-"Style pour les boutons de la barre d'outils. Les valeurs possibles sont « "
-"PLUMA_TOOLBAR_SYSTEM » pour utiliser le style par défaut du système, « "
-"PLUMA_TOOLBAR_ICONS » pour n'afficher que les icônes et « "
-"PLUMA_TOOLBAR_ICONS_AND_TEXT » pour afficher les icônes et le texte. Notez "
-"que ces valeurs sont sensibles à la casse, faites en sorte qu'elles "
+"Style pour les boutons de la barre d'outils. Les valeurs possibles sont "
+"« PLUMA_TOOLBAR_SYSTEM » pour utiliser le style par défaut du système, "
+"« PLUMA_TOOLBAR_ICONS » pour n'afficher que les icônes et "
+"« PLUMA_TOOLBAR_ICONS_AND_TEXT » pour afficher les icônes et le texte. Notez"
+" que ces valeurs sont sensibles à la casse, faites en sorte qu'elles "
 "apparaissent exactement comme mentionnées ici."
 
 #: data/org.mate.pluma.gschema.xml.in:155
@@ -738,7 +737,7 @@ msgstr "A_nnuler la demande de clôture de session"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:148
 msgid "Close _without Saving"
-msgstr "Fermer _sans enregistrer"
+msgstr "Fermer sans enregistrer"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:152
 #: pluma/dialogs/pluma-encodings-dialog.c:329
@@ -787,11 +786,8 @@ msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
-"Si vous n'enregistrez pas, les modifications de la %ld dernière seconde "
-"seront définitivement perdues."
 msgstr[1] ""
-"Si vous n'enregistrez pas, les modifications des %ld dernières secondes "
-"seront définitivement perdues."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:424
 msgid ""
@@ -809,11 +805,8 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
-"Si vous n'enregistrez pas, les modifications effectuées depuis une minute et"
-" %ld seconde seront définitivement perdues."
 msgstr[1] ""
-"Si vous n'enregistrez pas, les modifications effectuées depuis une minute et"
-" %ld secondes seront définitivement perdues."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:440
 #, c-format
@@ -824,11 +817,8 @@ msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Si vous n'enregistrez pas, les modifications effectuées depuis %ld minute "
-"seront définitivement perdues."
 msgstr[1] ""
-"Si vous n'enregistrez pas, les modifications effectuées depuis %ld minutes "
-"seront définitivement perdues."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:455
 msgid ""
@@ -846,11 +836,8 @@ msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"Si vous n'enregistrez pas, les modifications effectuées depuis une heure et "
-"%d minute seront définitivement perdues."
 msgstr[1] ""
-"Si vous n'enregistrez pas, les modifications effectuées depuis une heure et "
-"%d minutes seront définitivement perdues."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:476
 #, c-format
@@ -859,11 +846,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
-"Si vous n'enregistrez pas, les modifications effectuées depuis %d heure "
-"seront définitivement perdues."
 msgstr[1] ""
-"Si vous n'enregistrez pas, les modifications effectuées depuis %d heures "
-"seront définitivement perdues."
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
@@ -890,8 +874,9 @@ msgstr ""
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "Les modifications de %d document seront définitivement perdues."
-msgstr[1] "Les modifications de %d documents seront définitivement perdues."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
@@ -900,11 +885,8 @@ msgid ""
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] ""
-"Il y a %d document avec des modifications non enregistrées. Voulez-vous "
-"enregistrer les modifications avant de fermer ?"
 msgstr[1] ""
-"Il y a %d documents avec des modifications non enregistrées. Voulez-vous "
-"enregistrer les modifications avant de fermer ?"
+msgstr[2] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
@@ -940,7 +922,7 @@ msgstr "_OK"
 #: plugins/time/pluma-time-dialog.ui:36
 #: plugins/time/pluma-time-setup-dialog.ui:39
 msgid "_Help"
-msgstr "Aid_e"
+msgstr "Aide"
 
 #: pluma/dialogs/pluma-encodings-dialog.c:333
 msgid "Character Encodings"
@@ -967,7 +949,7 @@ msgstr "Encodages _disponibles :"
 #: pluma/dialogs/pluma-encodings-dialog.ui:150
 #: plugins/spell/pluma-automatic-spell-checker.c:515
 msgid "_Add"
-msgstr "A_jouter"
+msgstr "_Ajouter"
 
 #: pluma/dialogs/pluma-encodings-dialog.ui:190
 msgid "E_ncodings shown in menu:"
@@ -976,7 +958,7 @@ msgstr "_Encodages affichés dans le menu :"
 #: pluma/dialogs/pluma-encodings-dialog.ui:228
 #: pluma/dialogs/pluma-preferences-dialog.ui:1007
 msgid "_Remove"
-msgstr "_Enlever"
+msgstr "Enleve_r"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:603
 msgid "Click on this button to select the font to be used by the editor"
@@ -1032,7 +1014,7 @@ msgstr "Préférences"
 #: pluma/dialogs/pluma-preferences-dialog.ui:119
 #: pluma/pluma-print-preferences.ui:195
 msgid "Text Wrapping"
-msgstr "Longues lignes"
+msgstr "Renvoi automatique à la ligne"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:139
 #: pluma/pluma-print-preferences.ui:215
@@ -1298,8 +1280,9 @@ msgstr "Chargement du fichier « %s »…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "Chargement de %d fichier…"
-msgstr[1] "Chargement de %d fichiers…"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:462
@@ -1343,11 +1326,8 @@ msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
-"Les modifications effectuées au document depuis %ld seconde seront "
-"définitivement perdues."
 msgstr[1] ""
-"Les modifications effectuées au document depuis %ld secondes seront "
-"définitivement perdues."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1148
 msgid ""
@@ -1365,11 +1345,8 @@ msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
-"Les modifications effectuées au document depuis une minute et %ld seconde "
-"seront définitivement perdues."
 msgstr[1] ""
-"Les modifications effectuées au document depuis une minute et %ld secondes "
-"seront définitivement perdues."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1164
 #, c-format
@@ -1380,11 +1357,8 @@ msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Les modifications effectuées au document depuis %ld minute seront "
-"définitivement perdues."
 msgstr[1] ""
-"Les modifications effectuées au document depuis %ld minutes seront "
-"définitivement perdues."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1179
 msgid ""
@@ -1402,11 +1376,8 @@ msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"Les modifications effectuées au document depuis une heure et %d minute "
-"seront définitivement perdues."
 msgstr[1] ""
-"Les modifications effectuées au document depuis une heure et %d minutes "
-"seront définitivement perdues."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1415,11 +1386,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] ""
-"Les modifications effectuées au document durant la dernière %d heure seront "
-"définitivement perdues."
 msgstr[1] ""
-"Les modifications effectuées au document durant les %d dernières heures "
-"seront définitivement perdues."
+msgstr[2] ""
 
 #: pluma/pluma-commands-file.c:1227 pluma/pluma-ui.h:85
 msgid "_Revert"
@@ -1497,7 +1465,7 @@ msgstr ""
 #: pluma/pluma-commands-help.c:127
 msgid "translator-credits"
 msgstr ""
-"Contributeurs au projet MATE :\n"
+"Contributeurs au projet MATE :\n"
 "Voir https://www.transifex.com/mate/teams/13566/fr/\n"
 "\n"
 "Contributeurs au projet GNOME :\n"
@@ -1516,8 +1484,9 @@ msgstr ""
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "%d occurrence trouvée et remplacée"
-msgstr[1] "%d occurrences trouvées et remplacées"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: pluma/pluma-commands-search.c:123
 msgid "Found and replaced one occurrence"
@@ -2217,8 +2186,9 @@ msgstr "  Lig %d, Col %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "Un onglet contient des erreurs"
-msgstr[1] "Il y a %d onglets avec des erreurs"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -2308,11 +2278,11 @@ msgstr "_Fichier"
 
 #: pluma/pluma-ui.h:49
 msgid "_Edit"
-msgstr "_Édition"
+msgstr "Édit_er"
 
 #: pluma/pluma-ui.h:50
 msgid "_View"
-msgstr "_Affichage"
+msgstr "Affichage"
 
 #: pluma/pluma-ui.h:51
 msgid "_Search"
@@ -2352,7 +2322,7 @@ msgstr "Configure l'application"
 
 #: pluma/pluma-ui.h:67
 msgid "_Contents"
-msgstr "_Sommaire"
+msgstr "Sommaire"
 
 #: pluma/pluma-ui.h:68
 msgid "Open the pluma manual"
@@ -2416,7 +2386,7 @@ msgstr "Annuler la dernière action"
 
 #: pluma/pluma-ui.h:95
 msgid "_Redo"
-msgstr "_Restaurer"
+msgstr "_Recommencer"
 
 #: pluma/pluma-ui.h:96
 msgid "Redo the last undone action"
@@ -2613,7 +2583,7 @@ msgstr "Quitte le programme"
 
 #: pluma/pluma-ui.h:165
 msgid "_Toolbar"
-msgstr "Barre d'_outils"
+msgstr "Barre d'ou_tils"
 
 #: pluma/pluma-ui.h:166
 msgid "Show or hide the toolbar in the current window"
@@ -2637,7 +2607,7 @@ msgstr "Modifie le texte en plein écran"
 
 #: pluma/pluma-ui.h:179
 msgid "Side _Pane"
-msgstr "Panneau _latéral"
+msgstr "_Panneau latéral"
 
 #: pluma/pluma-ui.h:180
 msgid "Show or hide the side pane in the current window"
@@ -2769,7 +2739,7 @@ msgstr ""
 
 #: plugins/docinfo/docinfo.ui:51
 msgid "_Update"
-msgstr "_Mettre à jour"
+msgstr "Mettre à jo_ur"
 
 #: plugins/docinfo/docinfo.ui:84
 msgid "File Name"
@@ -3083,8 +3053,8 @@ msgid ""
 msgstr ""
 "Cette valeur détermine quels fichiers du gestionnaire de fichiers seront "
 "filtrés. Les valeurs possibles sont : « none » (ne filtre rien), « hidden » "
-"(filtre les fichiers cachés), « binary » (filtre les fichiers binaires) et «"
-" hidden_and_binary » (filtre à la fois les fichiers cachés et binaires)."
+"(filtre les fichiers cachés), « binary » (filtre les fichiers binaires) et "
+"« hidden_and_binary » (filtre à la fois les fichiers cachés et binaires)."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:16
 msgid "File Browser Filter Pattern"
