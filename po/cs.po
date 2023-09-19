@@ -17,7 +17,7 @@
 # Lukáš Lommer <drom@kdyne.net>, 2020
 # Michal <sinope@seznam.cz>, 2021
 # Roman Horník <roman.hornik@debian-linux.cz>, 2021
-# ToMáš Marný, 2021
+# ToMáš Marný, 2023
 # 
 msgid ""
 msgstr ""
@@ -25,8 +25,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: ToMáš Marný, 2021\n"
-"Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
+"Last-Translator: ToMáš Marný, 2023\n"
+"Language-Team: Czech (https://app.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -187,14 +187,14 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:75
 msgid "Tab Size"
-msgstr "Velikost tabelátoru"
+msgstr "Velikost tabulátoru"
 
 #: data/org.mate.pluma.gschema.xml.in:76
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr ""
-"Udává počet mezerníků, které by se měly zobrazovat místo znaků tabelátoru."
+"Udává počet mezerníků, které by se měly zobrazovat místo znaků tabulátoru."
 
 #: data/org.mate.pluma.gschema.xml.in:80
 msgid "Insert spaces"
@@ -202,7 +202,7 @@ msgstr "Vložit mezery"
 
 #: data/org.mate.pluma.gschema.xml.in:81
 msgid "Whether pluma should insert spaces instead of tabs."
-msgstr "Jestli má pluma vkládat mezery místo tabelátorů."
+msgstr "Jestli má pluma vkládat mezery místo tabulátorů."
 
 #: data/org.mate.pluma.gschema.xml.in:85
 msgid "Automatic indent"
@@ -579,6 +579,9 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
+"Zda má pluma v okně editoru zobrazovat nedělitelné mezery: „show-none“ "
+"nezobrazuje se; „show-trailing“ zobrazují se pouze koncové mezery; „show-"
+"all“ zobrazují se všechny mezery."
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
@@ -590,6 +593,9 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
+"Zda má pluma zobrazovat tabulátory v okně editoru: „show-none“ nezobrazuje "
+"se; „show-trailing“ zobrazují se pouze koncové tabulátory; „show-all“ "
+"zobrazují se všechny tabulátory."
 
 #: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show spaces"
@@ -601,6 +607,9 @@ msgid ""
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
+"Zda má pluma zobrazovat mezery v okně editoru: „show-none“ nezobrazuje se; "
+"„show-trailing“ zobrazují se pouze koncové mezery; „show-all“ zobrazují se "
+"všechny mezery."
 
 #: data/org.mate.pluma.gschema.xml.in:260
 msgid "state"
@@ -624,7 +633,7 @@ msgstr "side-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:271
 msgid "The pluma side-panel-size"
-msgstr ""
+msgstr "Velikost bočního panelu aplikace Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:275
 msgid "side-panel-active-page"
@@ -632,7 +641,7 @@ msgstr "side-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:276
 msgid "The pluma side-panel-active-page"
-msgstr ""
+msgstr "Aktivní stránka postranního panelu aplikace Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:280
 msgid "bottom-panel-size"
@@ -640,7 +649,7 @@ msgstr "bottom-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:281
 msgid "The pluma bottom-panel-size"
-msgstr ""
+msgstr "Velikost spodního panelu aplikace Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:285
 msgid "bottom-panel-active-page"
@@ -648,7 +657,7 @@ msgstr "bottom-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:286
 msgid "The pluma bottom-panel-active-page"
-msgstr ""
+msgstr "Aktivní stránka spodního panelu aplikace Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:290
 msgid "filter-id"
@@ -1059,7 +1068,7 @@ msgstr "Zvýrazňovat _odpovídající závorku"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:266
 msgid "Display"
-msgstr "Zobrazit"
+msgstr "Zobrazování"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:286 pluma/pluma-view.c:2274
 msgid "_Display line numbers"
@@ -1079,15 +1088,15 @@ msgstr "Zobrazovat přehled_ovou mapu"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:397
 msgid "View"
-msgstr "Zobrazit"
+msgstr "Zobrazování"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:421
 msgid "Tab Stops"
-msgstr "Tabelátory"
+msgstr "tabulátory"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:448
 msgid "_Tab width:"
-msgstr "Šířka _tabelátorů:"
+msgstr "Šířka _tabulátorů:"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:463
 #: pluma/dialogs/pluma-preferences-dialog.ui:637
@@ -1096,7 +1105,7 @@ msgstr "8"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:484
 msgid "Insert _spaces instead of tabs"
-msgstr "Vkládat _mezery místo tabelátorů"
+msgstr "Vkládat _mezery místo tabulátorů"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:522
 msgid "Automatic Indentation"
@@ -1124,27 +1133,27 @@ msgstr "_minut"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:696
 msgid "Show Spaces, Tabs, Newlines"
-msgstr "Zobrazit mezery, tabulátory, nové řádky"
+msgstr "Zobrazování mezer, tabulátorů, nových řádků"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:717
 msgid "Show _spaces"
-msgstr "Zobrazit _mezery"
+msgstr "Zobrazovat _mezery"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:732
 msgid "Show _trailing spaces only"
-msgstr "Zobrazit pouze _koncové mezery"
+msgstr "Zobrazovat pouze _koncové mezery"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:748
 msgid "Show _tabs"
-msgstr "Zobrazit _karty"
+msgstr "Zobrazovat _tabulátory"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:763
 msgid "Show _trailing tabs only"
-msgstr ""
+msgstr "Zobrazovat pouze koncové tabulátory"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:779
 msgid "Show _newlines"
-msgstr "Zobrazit _nové řádky"
+msgstr "Zobrazovat _nové řádky"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:815
 msgid "Editor"
@@ -2756,7 +2765,7 @@ msgstr "Použít mezery"
 
 #: pluma/pluma-window.c:2027
 msgid "Tab Width"
-msgstr "Šířka tabelátoru"
+msgstr "Šířka tabulátoru"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in.in:5
 #: plugins/docinfo/docinfo.ui:19
@@ -3242,7 +3251,7 @@ msgid ""
 "settings to make the file visible"
 msgstr ""
 "Přejmenovaný soubor je nyní odfiltrován. Aby byl viditelný, musíte upravit "
-"své nastavení filtrování."
+"své nastavení filtrování"
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -3256,7 +3265,7 @@ msgid ""
 "settings to make the file visible"
 msgstr ""
 "Nový soubor je nyní odfiltrován. Aby byl viditelný, musíte upravit své "
-"nastavení filtrování."
+"nastavení filtrování"
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -3270,7 +3279,7 @@ msgid ""
 "settings to make the directory visible"
 msgstr ""
 "Nový adresář je nyní odfiltrován. Aby byl viditelný, musíte upravit své "
-"nastavení filtrování."
+"nastavení filtrování"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:704
 msgid "Bookmarks"

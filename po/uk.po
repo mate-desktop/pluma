@@ -5,18 +5,17 @@
 # 
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
-# Bohdan Kovalchuk <neostanniy@gmail.com>, 2018
 # Rax Garfield <admin@dvizho.ks.ua>, 2018
 # Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# zubr139, 2018
 # 8368efb4263ae7005ba7cc0c0f943bdd_16f29c1, 2018
 # ZenWalker <scow@riseup.net>, 2019
-# zubr139, 2019
-# Wolfgang Ulbrich <mate@raveit.de>, 2019
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
 # Микола Ткач <chistomov@gmail.com>, 2021
 # Taras Panchenko <top39@ukr.net>, 2021
 # Sergiy <sergiy@gorichenko.com>, 2022
+# Anton Gladky <gladk@debian.org>, 2022
 # 
 msgid ""
 msgstr ""
@@ -24,8 +23,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Sergiy <sergiy@gorichenko.com>, 2022\n"
-"Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
+"Last-Translator: Anton Gladky <gladk@debian.org>, 2022\n"
+"Language-Team: Ukrainian (https://app.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,7 +72,7 @@ msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
 msgstr ""
-"Якщо позначено, вмикає можливість перемикання між вкладками за за допомогою "
+"Якщо обрано, вмикає можливість перемикання між вкладками за за допомогою "
 "сполучення клавіш [ctrl + tab] та [ctrl + shift + tab]."
 
 #: data/org.mate.pluma.gschema.xml.in:30
@@ -82,7 +81,7 @@ msgstr "Показувати першу вкладку, якщо є лише о�
 
 #: data/org.mate.pluma.gschema.xml.in:31
 msgid "If false, it hides the first tab if there is only one tab."
-msgstr "Якщо це хибно, це приховує першу вкладку, якщо є лише одна вкладка."
+msgstr "Якщо вимкнено, це приховує першу вкладку, якщо є лише одна вкладка."
 
 #: data/org.mate.pluma.gschema.xml.in:35
 msgid "Style Scheme"
@@ -229,7 +228,7 @@ msgstr "Чи виділяти кольором поточний рядок."
 
 #: data/org.mate.pluma.gschema.xml.in:100
 msgid "Highlight Matching Bracket"
-msgstr "Підкреслювати відповідні дужки"
+msgstr "Виділяти кольором відповідні дужки"
 
 #: data/org.mate.pluma.gschema.xml.in:101
 msgid "Whether pluma should highlight the bracket matching the selected one."
@@ -320,15 +319,15 @@ msgstr "Чи вмикати виділення синтаксису."
 
 #: data/org.mate.pluma.gschema.xml.in:145
 msgid "Toolbar is Visible"
-msgstr "Панель знарядь видима"
+msgstr "Панель інструментів видима"
 
 #: data/org.mate.pluma.gschema.xml.in:146
 msgid "Whether the toolbar should be visible in editing windows."
-msgstr "Чи показувати панель знарядь у вікнах редагування."
+msgstr "Чи показувати панель інструментів у вікнах редагування."
 
 #: data/org.mate.pluma.gschema.xml.in:150
 msgid "Toolbar Buttons Style"
-msgstr "Стиль кнопок панелі знарядь"
+msgstr "Стиль кнопок панелі інструментів"
 
 #: data/org.mate.pluma.gschema.xml.in:151
 msgid ""
@@ -339,7 +338,7 @@ msgid ""
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
 msgstr ""
-"Визначає стиль для кнопок панелі знарядь. Можливі варіанти: "
+"Визначає стиль для кнопок панелі інструментів. Можливі варіанти: "
 "\"PLUMA_TOOLBAR_SYSTEM\" для використання системних значень, "
 "\"PLUMA_TOOLBAR_ICONS\" для відображення лише піктограм і "
 "\"PLUMA_TOOLBAR_ICONS_AND_TEXT\" для відображення піктограм і тексту, "
@@ -395,7 +394,7 @@ msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
 msgstr ""
-"Визначає кількість нещодавно використаних файлів, які відображатимуться у "
+"Визначає кількість нещодавно відкритих файлів, які відображатимуться у "
 "підменю \"Нещодавні файли\"."
 
 #: data/org.mate.pluma.gschema.xml.in:180
@@ -410,7 +409,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:185
 msgid "Print Header"
-msgstr "Друкувати заголовки сторінок"
+msgstr "Друкувати заголовки"
 
 #: data/org.mate.pluma.gschema.xml.in:186
 msgid ""
@@ -451,7 +450,7 @@ msgstr ""
 #: data/org.mate.pluma.gschema.xml.in:199
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
-msgstr "'Моноширинний 9'"
+msgstr "Monospace 9"
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgid "Body Font for Printing"
@@ -465,7 +464,7 @@ msgstr "Визначає шрифт, що використовується дл�
 #: data/org.mate.pluma.gschema.xml.in:204
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
-msgstr "'Без засічок 11'"
+msgstr "'Sans 11'"
 
 #: data/org.mate.pluma.gschema.xml.in:205
 msgid "Header Font for Printing"
@@ -482,7 +481,7 @@ msgstr ""
 #: data/org.mate.pluma.gschema.xml.in:209
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
-msgstr "'Без засічок 8'"
+msgstr "'Sans 8'"
 
 #: data/org.mate.pluma.gschema.xml.in:210
 msgid "Line Number Font for Printing"
@@ -511,7 +510,7 @@ msgid ""
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
 msgstr ""
-"Ґатункований перелік кодувань, що використовує редактор для визначення "
+"Сортований перелік кодувань, що використовує редактор для визначення "
 "кодування файлу. \"CURRENT\" - поточне кодування локалі. Використовуються "
 "лише підтримувані кодування."
 
@@ -534,7 +533,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:225
 msgid "History for \"search for\" entries"
-msgstr "Дієпис записів у \"знайти\""
+msgstr "Історія записів у \"знайти\""
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "List of entries in \"search for\" textbox."
@@ -542,7 +541,7 @@ msgstr "Перелік записів у текстовому полі \"зна�
 
 #: data/org.mate.pluma.gschema.xml.in:230
 msgid "History for \"replace with\" entries"
-msgstr "Дієпис записів у \"замінити на\""
+msgstr "Історія записів у \"замінити на\""
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "List of entries in \"replace with\" textbox."
@@ -550,15 +549,15 @@ msgstr "Перелік записів у текстовому полі \"зам�
 
 #: data/org.mate.pluma.gschema.xml.in:235
 msgid "Active plugins"
-msgstr "Активні втулки"
+msgstr "Активні плагіни"
 
 #: data/org.mate.pluma.gschema.xml.in:236
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
 msgstr ""
-"Перелік активних втулків. Він містить \"Адресу\" активного втулка. Див. файл"
-" .pluma-plugin для отримання \"адреси\" даного втулка."
+"Перелік активних плагинів. Він містить \"Адресу\" активного плагіна. Див. "
+"файл .pluma-plugin для отримання \"адреси\" даного плагіна."
 
 #: data/org.mate.pluma.gschema.xml.in:240
 msgid "Show newline"
@@ -694,7 +693,7 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
-"Pluma можна розширити за допомогою модульної системи, яка зараз включає "
+"Pluma можна розширити за допомогою системи плагінів, яка зараз включає "
 "підтримку перевірки правопису, порівняння файлів, перегляд журналів змін CVS"
 " та налаштування рівнів відступу."
 
@@ -883,7 +882,7 @@ msgstr "Зберегти зміни у документі \"%s\" перед за
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:541
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:766
 msgid "Saving has been disabled by the system administrator."
-msgstr "Збереження вимкнено системним розпорядником."
+msgstr "Збереження вимкнено системним адміністратором."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:717
 #, c-format
@@ -972,7 +971,7 @@ msgstr "Д_одати"
 
 #: pluma/dialogs/pluma-encodings-dialog.ui:190
 msgid "E_ncodings shown in menu:"
-msgstr "Кодування в _меню:"
+msgstr "Показані в меню _кодування:"
 
 #: pluma/dialogs/pluma-encodings-dialog.ui:228
 #: pluma/dialogs/pluma-preferences-dialog.ui:1007
@@ -1047,7 +1046,7 @@ msgstr "Н_е розривати слово між рядками"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:193
 msgid "Highlighting"
-msgstr "Виділення"
+msgstr "Виділення кольором"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:213
 msgid "Highlight current _line"
@@ -1160,7 +1159,7 @@ msgstr "_Шрифт редактора: "
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:900
 msgid "Pick the editor font"
-msgstr "Виберіть колір редактора"
+msgstr "Виберіть шрифт редактора"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:941
 msgid "Color Scheme"
@@ -1176,7 +1175,7 @@ msgstr "Шрифти та кольори"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:1074
 msgid "Plugins"
-msgstr "Втулки"
+msgstr "Плагіни"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
@@ -1450,7 +1449,7 @@ msgstr "Команда документування GNOME"
 
 #: pluma/pluma-commands-help.c:63
 msgid "Sun Microsystems"
-msgstr "Сун Мікросістемс"
+msgstr "Sun Microsystems"
 
 #: pluma/pluma-commands-help.c:68
 msgid ""
@@ -1521,7 +1520,8 @@ msgstr ""
 "Yarema aka Knedlyk <yupadmin@gmail.com>,\n"
 "Микола Ткач <Stuartlittle1970@gmail.com>,\n"
 "Oleh Tsyupka <myr4yk@gmail.com>,\n"
-"Serhii Horichenko aka sgg <mail@sgg.im>"
+"Serhii Horichenko aka sgg <mail@sgg.im>\n"
+"Anton Gladky <gladk@debian.org>"
 
 #: pluma/pluma-commands-search.c:113
 #, c-format
@@ -1650,11 +1650,11 @@ msgstr "Спрощене китайське"
 
 #: pluma/pluma-encodings.c:223
 msgid "Georgian"
-msgstr "Сакартвело(грузинське)"
+msgstr "Грузинське"
 
 #: pluma/pluma-encodings.c:234 pluma/pluma-encodings.c:275
 msgid "Hebrew"
-msgstr "Гебрейське"
+msgstr "Іврит"
 
 #: pluma/pluma-encodings.c:251
 msgid "Cyrillic/Ukrainian"
@@ -1848,7 +1848,7 @@ msgstr "Не вдається визначити кодування символ
 #: pluma/pluma-io-error-message-area.c:610
 #: pluma/pluma-io-error-message-area.c:632
 msgid "Please check that you are not trying to open a binary file."
-msgstr "Напевно, Ви намагаєтеся відкрити файл з двійковими даними."
+msgstr "Переконайтеся, що Ви не намагаєтеся відкрити бінарний файл."
 
 #: pluma/pluma-io-error-message-area.c:611
 msgid "Select a character encoding from the menu and try again."
@@ -2101,7 +2101,7 @@ msgstr "_Нумерувати кожен"
 #. preferences.
 #: pluma/pluma-print-preferences.ui:155
 msgid "lines"
-msgstr "рядків"
+msgstr "рядки"
 
 #: pluma/pluma-print-preferences.ui:281
 msgid "Page header"
@@ -2162,7 +2162,7 @@ msgstr "Показувати декілька сторінок"
 
 #: pluma/pluma-print-preview.c:663
 msgid "Zoom 1:1"
-msgstr "Мірило 1:1"
+msgstr "Масштаб 1:1"
 
 #: pluma/pluma-print-preview.c:673
 msgid "Zoom to fit the whole page"
@@ -2325,7 +2325,7 @@ msgstr "_Шукати"
 
 #: pluma/pluma-ui.h:52
 msgid "_Tools"
-msgstr "Зна_ряддя"
+msgstr "Інст_рументи"
 
 #: pluma/pluma-ui.h:53
 msgid "_Documents"
@@ -2806,7 +2806,7 @@ msgstr "Рядки"
 
 #: plugins/docinfo/docinfo.ui:257
 msgid "Document"
-msgstr "Документи"
+msgstr "Документ"
 
 #: plugins/docinfo/docinfo.ui:290
 msgid "Selection"
@@ -2822,7 +2822,7 @@ msgstr "Видати статистичну інформацію про пото
 
 #: plugins/externaltools/externaltools.plugin.desktop.in.in:6
 msgid "External Tools"
-msgstr "Зовнішні знаряддя"
+msgstr "Зовнішні інструменти"
 
 #: plugins/externaltools/externaltools.plugin.desktop.in.in:7
 msgid "Execute external commands and shell scripts."
@@ -2830,19 +2830,19 @@ msgstr "Виконати зовнішні команди і скрипти об�
 
 #: plugins/externaltools/tools/__init__.py:174
 msgid "Manage _External Tools..."
-msgstr "_Зовнішні знаряддя..."
+msgstr "Керувати з_овнішніми інструментами..."
 
 #: plugins/externaltools/tools/__init__.py:176
 msgid "Opens the External Tools Manager"
-msgstr "Редактор зовнішніх знарядь"
+msgstr "Відкрити керівник зовнішніх інструментів"
 
 #: plugins/externaltools/tools/__init__.py:180
 msgid "External _Tools"
-msgstr "Зовнішні _знаряддя"
+msgstr "Зовнішні _інструменти"
 
 #: plugins/externaltools/tools/__init__.py:182
 msgid "External tools"
-msgstr "Зовнішні знаряддя"
+msgstr "Зовнішні інструменти"
 
 #: plugins/externaltools/tools/__init__.py:215
 msgid "Shell Output"
@@ -2882,7 +2882,7 @@ msgstr "Усі мови"
 
 #: plugins/externaltools/tools/manager.py:527
 msgid "New tool"
-msgstr "Нове знаряддя"
+msgstr "Новий інструмент"
 
 #: plugins/externaltools/tools/manager.py:660
 #, python-format
@@ -2908,7 +2908,7 @@ msgstr "Усі документи"
 
 #: plugins/externaltools/tools/tools.ui:21
 msgid "All documents except untitled ones"
-msgstr "Усі документи з назвою"
+msgstr "Усі документи, крім безіменних"
 
 #: plugins/externaltools/tools/tools.ui:25
 msgid "Local files only"
@@ -2975,11 +2975,11 @@ msgstr "Вставити у поточній позиції вказівника
 
 #: plugins/externaltools/tools/tools.ui:134
 msgid "External Tools Manager"
-msgstr "Керування зовнішніми знаряддями"
+msgstr "Керівник зовнішніх інструментів"
 
 #: plugins/externaltools/tools/tools.ui:240
 msgid "_Tools:"
-msgstr "_Знаряддя:"
+msgstr "_Інструменти"
 
 #: plugins/externaltools/tools/tools.ui:355
 msgid "_Applicability:"
@@ -3083,8 +3083,8 @@ msgid ""
 msgstr ""
 "Значення визначає які файли відфільтровуються при перегляді файлів. "
 "Припустимі значення: none (нічого не фільтрується), hidden (фільтруються "
-"приховані файли), binary (фільтруються двійкові файли) та hidden_and_binary "
-"(фільтруються як приховані так і двійкові файли)."
+"приховані файли), binary (фільтруються бінарні файли) та hidden_and_binary "
+"(фільтруються як приховані так і бінарні файли)."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:16
 msgid "File Browser Filter Pattern"
@@ -3105,7 +3105,7 @@ msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
 msgstr ""
-"При завантаженні втулка перегляду файлів, відкривати перегляд дерева, а не "
+"При завантаженні плагіну перегляду файлів, відкривати перегляд дерева, а не "
 "перегляд закладок"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:29
@@ -3118,7 +3118,7 @@ msgid ""
 "and onload/tree_view is TRUE."
 msgstr ""
 "Кореневий каталог перегляду файлів, що використовується при завантаженні "
-"втулка перегляду файлів та onload/tree_view має значення TRUE."
+"плагіну перегляду файлів та onload/tree_view має значення TRUE."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:34
 msgid "File Browser Virtual Root Directory"
@@ -3131,8 +3131,8 @@ msgid ""
 " the actual root."
 msgstr ""
 "Віртуальний каталог перегляду файлів, що використовується при завантаженні "
-"втулка перегляду файлів коли onload/tree_view має значення TRUE. Віртуальний"
-" корінь завжди має бути нижче фактичного кореню."
+"плагіну перегляду файлів, коли onload/tree_view має значення TRUE. "
+"Віртуальний корінь завжди має бути нижче фактичного кореню."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:39
 msgid "Enable Restore of Remote Locations"
@@ -3156,7 +3156,7 @@ msgstr "Встановити корінь на розташування акти
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
-msgstr "_Відкрити термінал"
+msgstr "_Відкрити термінал тут"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
@@ -3226,11 +3226,11 @@ msgstr "Ви справді бажаєте остаточно вилучити �
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
-msgstr "Якщо Ви вилучите файл, він буде остаточно втрачений."
+msgstr "Якщо Ви вилучите елемент, він буде остаточно втрачений."
 
 #: plugins/filebrowser/pluma-file-browser-store.c:1655
 msgid "(Empty)"
-msgstr "(Немає вмісту)"
+msgstr "(Порожнє)"
 
 #: plugins/filebrowser/pluma-file-browser-store.c:3211
 msgid ""
@@ -3326,7 +3326,7 @@ msgstr "Перейменувати виділений файл чи теку"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:829
 msgid "_Previous Location"
-msgstr "_Попередня адреса"
+msgstr "_Попереднє розташування"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:831
 msgid "Go to the previous visited location"
@@ -3368,11 +3368,11 @@ msgstr "Показувати приховані файли та теки"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:848
 msgid "Show _Binary"
-msgstr "Показувати _двійкові"
+msgstr "Показувати _бінарні"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:849
 msgid "Show binary files"
-msgstr "Показувати двійкові файли"
+msgstr "Показувати бінарні файли"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:982
 #: plugins/filebrowser/pluma-file-browser-widget.c:995
@@ -3382,20 +3382,20 @@ msgstr "Попередня адреса"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:988
 msgid "Go to previous location"
-msgstr "Перейти до попередньої адреси"
+msgstr "Перейти до попереднього розташування"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:990
 #: plugins/filebrowser/pluma-file-browser-widget.c:1016
 msgid "Go to a previously opened location"
-msgstr "Перейти до попередньо відкритої адреси"
+msgstr "Перейти до попереднього відвіданого місця"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:1008
 msgid "Next location"
-msgstr "Наступна адреса"
+msgstr "Наступне розташуваня"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:1014
 msgid "Go to next location"
-msgstr "Перейти до наступної адреси"
+msgstr "Перейти до наступного розташування"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:1226
 msgid "_Match Filename"
@@ -3471,7 +3471,7 @@ msgstr "Швидке відкриття файлів"
 #: plugins/snippets/snippets/Document.py:190
 #: plugins/snippets/snippets/Document.py:619
 msgid "Snippets"
-msgstr "Фрагменти тексту"
+msgstr "Фрагменти"
 
 #: plugins/snippets/snippets.plugin.desktop.in.in:7
 msgid "Insert often-used pieces of text in a fast way"
@@ -3487,7 +3487,7 @@ msgstr "_Фрагменти:"
 
 #: plugins/snippets/snippets/snippets.ui:165
 msgid "Create new snippet"
-msgstr "Створити новий фрагмент тексту"
+msgstr "Створити новий фрагмент"
 
 #: plugins/snippets/snippets/snippets.ui:186
 #: plugins/snippets/snippets/Manager.py:793
@@ -3501,7 +3501,7 @@ msgstr "Експортувати виділені фрагменти"
 #: plugins/snippets/snippets/snippets.ui:229
 #: plugins/snippets/snippets/Manager.py:401
 msgid "Delete selected snippet"
-msgstr "Вилучити виділений фрагмент тексту"
+msgstr "Вилучити виділений фрагмент"
 
 #: plugins/snippets/snippets/snippets.ui:335
 msgid "Activation"
@@ -3509,11 +3509,11 @@ msgstr "Активація"
 
 #: plugins/snippets/snippets/snippets.ui:379
 msgid "_Drop targets:"
-msgstr "_Області призначення:"
+msgstr "_Вставити як:"
 
 #: plugins/snippets/snippets/snippets.ui:392
 msgid "Shortcut key with which the snippet is activated"
-msgstr "Швидка клавіша для вставки фрагменту тексту"
+msgstr "Швидка клавіша для вставки фрагменту"
 
 #: plugins/snippets/snippets/snippets.ui:411
 msgid "S_hortcut key:"
@@ -3522,14 +3522,14 @@ msgstr "С_корочення клавіш:"
 #. "tab" here means the tab key, not the notebook tab!
 #: plugins/snippets/snippets/snippets.ui:424
 msgid "_Tab trigger:"
-msgstr "_Перемикач:"
+msgstr "_Тригер табуляції:"
 
 #: plugins/snippets/snippets/snippets.ui:446
 #: plugins/snippets/snippets/Manager.py:682
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr ""
-"Слово, яке використовується для вставки фрагменту тексту. Фрагмент "
-"вставляється, якщо після слова натиснути Tab."
+"Слово, яке використовується для вставки фрагменту. Фрагмент вставляється, "
+"якщо після слова натиснути Tab."
 
 #: plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage _Snippets..."
@@ -3553,15 +3553,15 @@ msgstr "Глобальні"
 
 #: plugins/snippets/snippets/Manager.py:398
 msgid "Revert selected snippet"
-msgstr "Скасувати виділений фрагмент тексту"
+msgstr "Скасувати виділений фрагмент"
 
 #: plugins/snippets/snippets/Manager.py:675
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
 msgstr ""
-"Це невірний перемикач. Перемикачі можуть містити або літери, або один (не "
-"абетково-цифровий) символ, такий як {, [, тощо."
+"Значення не є правильним Tab-тригером. Тригери можуть або містити літери або"
+" один не алфавітно-цифровий символ, такий як {, [, тощо."
 
 #: plugins/snippets/snippets/Manager.py:772
 #, python-format
@@ -3607,13 +3607,12 @@ msgstr "При експорті сталася така помилка: %s"
 
 #: plugins/snippets/snippets/Manager.py:819
 msgid "Export successfully completed"
-msgstr "Експорт успішно закінчено"
+msgstr "Експорт успішно завершено"
 
 #: plugins/snippets/snippets/Manager.py:859
 #: plugins/snippets/snippets/Manager.py:928
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
-msgstr ""
-"Включити виділені <b>системні</b> фрагменти тексту у експортований архів?"
+msgstr "Включити виділені <b>системні</b> фрагменти у експорт?"
 
 #: plugins/snippets/snippets/Manager.py:874
 #: plugins/snippets/snippets/Manager.py:946
@@ -3657,7 +3656,7 @@ msgstr "Файлу «%s» не існує"
 #: plugins/snippets/snippets/Importer.py:32
 #, python-format
 msgid "File \"%s\" is not a valid snippets file"
-msgstr "Файл «%s» не містить фрагментів тексту"
+msgstr "Файл «%s» не містить фрагментів"
 
 #: plugins/snippets/snippets/Importer.py:42
 #, python-format
@@ -3667,7 +3666,7 @@ msgstr "Імпортований файл «%s» не містить корек�
 #: plugins/snippets/snippets/Importer.py:52
 #, python-format
 msgid "The archive \"%s\" could not be extracted"
-msgstr "Не вдалося видобути вміст архіву «%s»"
+msgstr "Не вдалося розпакувати вміст архіву «%s»"
 
 #: plugins/snippets/snippets/Importer.py:70
 #, python-format
@@ -3678,7 +3677,7 @@ msgstr "Такі файли не вдалося імпортувати: %s"
 #: plugins/snippets/snippets/Importer.py:99
 #, python-format
 msgid "File \"%s\" is not a valid snippets archive"
-msgstr "Файл «%s» не є коректним архівом фрагментів тексту"
+msgstr "Файл «%s» не є коректним архівом фрагментів"
 
 #: plugins/snippets/snippets/Placeholder.py:602
 #, python-format
@@ -3696,23 +3695,23 @@ msgstr "Не вдалося виконати команду Python (%s): %s"
 
 #: plugins/sort/pluma-sort-plugin.c:79
 msgid "S_ort..."
-msgstr "Ґа_тункувати..."
+msgstr "Со_ртувати..."
 
 #: plugins/sort/pluma-sort-plugin.c:81
 msgid "Sort the current document or selection"
-msgstr "Відґатункувати поточний документ чи виділену частину"
+msgstr "Відсортувати поточний документ чи виділену частину"
 
 #: plugins/sort/sort.plugin.desktop.in.in:5 plugins/sort/sort.ui:29
 msgid "Sort"
-msgstr "Ґатункування"
+msgstr "Сортування"
 
 #: plugins/sort/sort.plugin.desktop.in.in:6
 msgid "Sorts a document or selected text."
-msgstr "Ґатункує поточний документ чи виділений текст."
+msgstr "Сортує поточний документ чи виділений текст."
 
 #: plugins/sort/sort.ui:62
 msgid "_Sort"
-msgstr "Ґа_тункувати"
+msgstr "_Сортувати"
 
 #: plugins/sort/sort.ui:110
 msgid "_Reverse order"
@@ -3854,7 +3853,7 @@ msgstr "Слово з помилкою:"
 
 #: plugins/spell/spell-checker.ui:66
 msgid "word"
-msgstr "Слово"
+msgstr "слово"
 
 #: plugins/spell/spell-checker.ui:84
 msgid "Change _to:"
@@ -3902,7 +3901,7 @@ msgstr "Мова"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:23
 msgid "_Configure Spell Checker plugin..."
-msgstr "_Налаштування втулка перевірки ортографії..."
+msgstr "_Налаштування плагіна перевірки ортографії..."
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:103
 msgid "Autocheck spelling on document load..."
@@ -3932,11 +3931,11 @@ msgstr "Перевірити ортографію поточного докум�
 #: plugins/taglist/pluma-taglist-plugin-panel.c:708
 #: plugins/taglist/pluma-taglist-plugin-panel.c:723
 msgid "Tags"
-msgstr "Теґи"
+msgstr "Теги"
 
 #: plugins/taglist/pluma-taglist-plugin-panel.c:612
 msgid "Select the group of tags you want to use"
-msgstr "Вибрати групу теґів, яку Ви бажаєте використовувати"
+msgstr "Вибрати групу тегів, яку Ви бажаєте використовувати"
 
 #: plugins/taglist/pluma-taglist-plugin-panel.c:631
 msgid "_Preview"
@@ -3944,7 +3943,7 @@ msgstr "_Передогляд"
 
 #: plugins/taglist/pluma-taglist-plugin-panel.c:705
 msgid "Available Tag Lists"
-msgstr "Переліки доступних теґів"
+msgstr "Переліки доступних тегів"
 
 #: plugins/taglist/HTML.tags.xml.in:3
 msgid "XHTML 1.0 - Tags"
@@ -4000,7 +3999,7 @@ msgstr "Про автора"
 
 #: plugins/taglist/HTML.tags.xml.in:66 plugins/taglist/HTML.tags.xml.in:1193
 msgid "Axis related headers"
-msgstr "Заголовки пов'язані з напрямком"
+msgstr "Заголовки, пов'язані з віссю"
 
 #: plugins/taglist/HTML.tags.xml.in:72
 msgid "Background color (deprecated)"
@@ -4032,7 +4031,7 @@ msgstr "Об'єднання комірок"
 
 #: plugins/taglist/HTML.tags.xml.in:110
 msgid "Center (deprecated)"
-msgstr "За центром(застарілий)"
+msgstr "За центром (застарілий)"
 
 #: plugins/taglist/HTML.tags.xml.in:115 plugins/taglist/HTML.tags.xml.in:1235
 msgid "Character encoding of linked resource"
@@ -4101,7 +4100,7 @@ msgstr "Дата та час зміни"
 
 #: plugins/taglist/HTML.tags.xml.in:197 plugins/taglist/HTML.tags.xml.in:1311
 msgid "Declare flag"
-msgstr "Опис прапора"
+msgstr "Опис ознаки"
 
 #: plugins/taglist/HTML.tags.xml.in:204 plugins/taglist/HTML.tags.xml.in:1318
 msgid "Defer attribute"
@@ -4157,7 +4156,7 @@ msgstr "Заголовок документу"
 
 #: plugins/taglist/HTML.tags.xml.in:268 plugins/taglist/HTML.tags.xml.in:1383
 msgid "Element ID"
-msgstr "Ідентифікатор"
+msgstr "Елемент ID"
 
 #: plugins/taglist/HTML.tags.xml.in:273 plugins/taglist/HTML.tags.xml.in:1387
 msgid "Document title"
@@ -4206,7 +4205,7 @@ msgstr "Тип вводу форми"
 
 #: plugins/taglist/HTML.tags.xml.in:327 plugins/taglist/HTML.tags.xml.in:1449
 msgid "Form input"
-msgstr "Ввід форми"
+msgstr "Введення форми"
 
 #: plugins/taglist/HTML.tags.xml.in:331 plugins/taglist/HTML.tags.xml.in:336
 #: plugins/taglist/HTML.tags.xml.in:1453 plugins/taglist/HTML.tags.xml.in:1457
@@ -4223,23 +4222,23 @@ msgstr "Посилання вперед"
 
 #: plugins/taglist/HTML.tags.xml.in:351 plugins/taglist/HTML.tags.xml.in:1470
 msgid "Frame render parts"
-msgstr "Частини унаочнення области"
+msgstr "Частини візуалізації області"
 
 #: plugins/taglist/HTML.tags.xml.in:356 plugins/taglist/HTML.tags.xml.in:1474
 msgid "Frame source"
-msgstr "Джерело области"
+msgstr "Джерело області"
 
 #: plugins/taglist/HTML.tags.xml.in:361 plugins/taglist/HTML.tags.xml.in:1478
 msgid "Frame target"
-msgstr "Призначення области"
+msgstr "Призначення області"
 
 #: plugins/taglist/HTML.tags.xml.in:366 plugins/taglist/HTML.tags.xml.in:1482
 msgid "Frame"
-msgstr "Назва:"
+msgstr "Область:"
 
 #: plugins/taglist/HTML.tags.xml.in:371
 msgid "Frame border"
-msgstr "Межа области"
+msgstr "Межа області"
 
 #: plugins/taglist/HTML.tags.xml.in:376 plugins/taglist/HTML.tags.xml.in:1490
 msgid "Frameset columns"
@@ -4271,7 +4270,7 @@ msgstr "Звичайний діапазон"
 
 #: plugins/taglist/HTML.tags.xml.in:411 plugins/taglist/HTML.tags.xml.in:1522
 msgid "Header cell IDs"
-msgstr "Комірка заголовку ідентифікатора"
+msgstr "Ідентифікатори клітинок заголовка"
 
 #: plugins/taglist/HTML.tags.xml.in:416 plugins/taglist/HTML.tags.xml.in:1526
 msgid "Heading 1"
@@ -4323,7 +4322,7 @@ msgstr "Назва заголовку HTTP"
 
 #: plugins/taglist/HTML.tags.xml.in:475 plugins/taglist/HTML.tags.xml.in:1586
 msgid "I18N BiDi override"
-msgstr "Перевизначення напрямку тексту"
+msgstr "Перевизначення I18N BiDi"
 
 #: plugins/taglist/HTML.tags.xml.in:480 plugins/taglist/HTML.tags.xml.in:1591
 msgid "Image map area"
@@ -4416,7 +4415,7 @@ msgstr "Щонайбільша довжина текстового поля"
 
 #: plugins/taglist/HTML.tags.xml.in:599 plugins/taglist/HTML.tags.xml.in:1721
 msgid "Output media"
-msgstr "Кінцеве медія"
+msgstr "Кінцеве медіа"
 
 #: plugins/taglist/HTML.tags.xml.in:606 plugins/taglist/HTML.tags.xml.in:1725
 msgid "Media-independent link"
@@ -4432,7 +4431,7 @@ msgstr "Багаторядкове текстове поле"
 
 #: plugins/taglist/HTML.tags.xml.in:622 plugins/taglist/HTML.tags.xml.in:1744
 msgid "Multiple"
-msgstr "Складний"
+msgstr "Множинний"
 
 #: plugins/taglist/HTML.tags.xml.in:626 plugins/taglist/HTML.tags.xml.in:1748
 msgid "Name"
@@ -4460,7 +4459,7 @@ msgstr "Без тіні (застарілий)"
 
 #: plugins/taglist/HTML.tags.xml.in:655 plugins/taglist/HTML.tags.xml.in:1792
 msgid "No URI"
-msgstr "Немає ідентифікатора URI"
+msgstr "Немає URI"
 
 #: plugins/taglist/HTML.tags.xml.in:661
 msgid "No word wrap (deprecated)"
@@ -4560,7 +4559,7 @@ msgstr "Вибір параметрів"
 
 #: plugins/taglist/HTML.tags.xml.in:781 plugins/taglist/HTML.tags.xml.in:1899
 msgid "Ordered list"
-msgstr "Замовлений перелік"
+msgstr "Упорядкований список"
 
 #: plugins/taglist/HTML.tags.xml.in:786 plugins/taglist/HTML.tags.xml.in:1904
 msgid "Paragraph class"
@@ -4616,11 +4615,11 @@ msgstr "Ділянка видимости, яка зайнята комірка�
 
 #: plugins/taglist/HTML.tags.xml.in:851 plugins/taglist/HTML.tags.xml.in:1983
 msgid "Script language name"
-msgstr "Назва мови сценаріїв"
+msgstr "Назва мови скрипта"
 
 #: plugins/taglist/HTML.tags.xml.in:856 plugins/taglist/HTML.tags.xml.in:1987
 msgid "Script statements"
-msgstr "Оператори сценарію"
+msgstr "Оператори скрипта"
 
 #: plugins/taglist/HTML.tags.xml.in:861 plugins/taglist/HTML.tags.xml.in:1992
 msgid "Scrollbar"
@@ -4825,7 +4824,7 @@ msgstr "Ширина"
 
 #: plugins/taglist/HTML.tags.xml.in:1130
 msgid "HTML - Tags"
-msgstr "HTML теґи"
+msgstr "HTML теги"
 
 #: plugins/taglist/HTML.tags.xml.in:1141
 msgid "Above"
@@ -4861,7 +4860,7 @@ msgstr "Рамка"
 
 #: plugins/taglist/HTML.tags.xml.in:1230
 msgid "Center"
-msgstr "За центром"
+msgstr "По центру"
 
 #: plugins/taglist/HTML.tags.xml.in:1239
 msgid "Checked (state)"
@@ -5041,7 +5040,7 @@ msgstr "Квадратний корінь"
 
 #: plugins/taglist/HTML.tags.xml.in:2070
 msgid "Starting sequence number"
-msgstr "Перше число послідовности"
+msgstr "Початкове число послідовности"
 
 #: plugins/taglist/HTML.tags.xml.in:2074
 msgid "Strike-through text style"
@@ -5489,7 +5488,7 @@ msgstr "ÿ"
 
 #: plugins/taglist/Latex.tags.xml.in:3
 msgid "Latex - Tags"
-msgstr "Latex - Теґи"
+msgstr "Latex - Теги"
 
 #: plugins/taglist/Latex.tags.xml.in:4
 msgid "Bibliography (cite)"
@@ -5781,14 +5780,14 @@ msgstr "Виноска"
 
 #: plugins/taglist/taglist.plugin.desktop.in.in:5
 msgid "Tag list"
-msgstr "Перелік теґів"
+msgstr "Перелік тегів"
 
 #: plugins/taglist/taglist.plugin.desktop.in.in:6
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
 msgstr ""
-"Надає можливість простого вставляння у документ теґів чи рядків, що часто "
+"Надає можливість простого вставляння у документ тегів чи рядків, що часто "
 "використовуються, без потреби набирати їх."
 
 #: plugins/taglist/XSLT.tags.xml.in:7
@@ -5809,11 +5808,11 @@ msgstr "ознака"
 
 #: plugins/taglist/XSLT.tags.xml.in:20
 msgid "attribute-set"
-msgstr "attribute-set"
+msgstr "набір ознак"
 
 #: plugins/taglist/XSLT.tags.xml.in:24
 msgid "call-template"
-msgstr "call-template"
+msgstr "застосувати-шаблони"
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"
@@ -5857,7 +5856,7 @@ msgstr "імпорт"
 
 #: plugins/taglist/XSLT.tags.xml.in:66
 msgid "include"
-msgstr "include"
+msgstr "вставити"
 
 #: plugins/taglist/XSLT.tags.xml.in:70 plugins/taglist/XSLT.tags.xml.in:199
 #: plugins/taglist/XUL.tags.xml.in:147
@@ -5870,7 +5869,7 @@ msgstr "повідомлення"
 
 #: plugins/taglist/XSLT.tags.xml.in:78
 msgid "namespace-alias"
-msgstr "namespace-alias"
+msgstr "простір імен"
 
 #: plugins/taglist/XSLT.tags.xml.in:82 plugins/taglist/XSLT.tags.xml.in:233
 msgid "number"
@@ -5970,7 +5969,7 @@ msgstr "element-available"
 
 #: plugins/taglist/XSLT.tags.xml.in:176
 msgid "false"
-msgstr "ні"
+msgstr "false"
 
 #: plugins/taglist/XSLT.tags.xml.in:179
 msgid "floor"
@@ -6006,7 +6005,7 @@ msgstr "local-name"
 
 #: plugins/taglist/XSLT.tags.xml.in:214
 msgid "name"
-msgstr "ім’я"
+msgstr "name"
 
 #: plugins/taglist/XSLT.tags.xml.in:218
 msgid "namespace-uri"
@@ -6026,7 +6025,7 @@ msgstr "not"
 
 #: plugins/taglist/XSLT.tags.xml.in:237
 msgid "position"
-msgstr "положення"
+msgstr "position"
 
 #: plugins/taglist/XSLT.tags.xml.in:244
 msgid "round"
@@ -6038,7 +6037,7 @@ msgstr "starts-with"
 
 #: plugins/taglist/XSLT.tags.xml.in:252
 msgid "string"
-msgstr "рядок"
+msgstr "string"
 
 #: plugins/taglist/XSLT.tags.xml.in:256
 msgid "string-length"
@@ -6066,11 +6065,11 @@ msgstr "system-property"
 
 #: plugins/taglist/XSLT.tags.xml.in:283
 msgid "translate"
-msgstr "переклад"
+msgstr "translate"
 
 #: plugins/taglist/XSLT.tags.xml.in:287
 msgid "true"
-msgstr "так"
+msgstr "true"
 
 #: plugins/taglist/XSLT.tags.xml.in:290
 msgid "unparsed-entity-uri"
@@ -6078,31 +6077,31 @@ msgstr "unparsed-entity-uri"
 
 #: plugins/taglist/XSLT.tags.xml.in:296
 msgid "XSLT - Axes"
-msgstr "XSLT - Вісі"
+msgstr "XSLT - Axes"
 
 #: plugins/taglist/XSLT.tags.xml.in:297
 msgid "ancestor"
-msgstr "пращур"
+msgstr "ancestor"
 
 #: plugins/taglist/XSLT.tags.xml.in:300
 msgid "ancestor-or-self"
-msgstr "пращур або ж цей самий об'єкт"
+msgstr "ancestor-or-self"
 
 #: plugins/taglist/XSLT.tags.xml.in:306
 msgid "child"
-msgstr "дочірній об'єкт"
+msgstr "child"
 
 #: plugins/taglist/XSLT.tags.xml.in:309
 msgid "descendant"
-msgstr "нащадок"
+msgstr "descendant"
 
 #: plugins/taglist/XSLT.tags.xml.in:312
 msgid "descendant-or-self"
-msgstr "нащадок або ж цей самий об'єкт"
+msgstr "descendant-or-self"
 
 #: plugins/taglist/XSLT.tags.xml.in:315
 msgid "following"
-msgstr "наступний"
+msgstr "following"
 
 #: plugins/taglist/XSLT.tags.xml.in:318
 msgid "following-sibling"
@@ -6110,31 +6109,31 @@ msgstr "наступна вершина"
 
 #: plugins/taglist/XSLT.tags.xml.in:321
 msgid "namespace"
-msgstr "простір імен"
+msgstr "namespace"
 
 #: plugins/taglist/XSLT.tags.xml.in:324
 msgid "parent"
-msgstr "батько"
+msgstr "parent"
 
 #: plugins/taglist/XSLT.tags.xml.in:327
 msgid "preceding"
-msgstr "попередній"
+msgstr "preceding"
 
 #: plugins/taglist/XSLT.tags.xml.in:330
 msgid "preceding-sibling"
-msgstr "попередня вершина"
+msgstr "preceding-sibling"
 
 #: plugins/taglist/XSLT.tags.xml.in:333
 msgid "self"
-msgstr "поточний"
+msgstr "self"
 
 #: plugins/taglist/XUL.tags.xml.in:3
 msgid "XUL - Tags"
-msgstr "XUL - Теґи"
+msgstr "XUL - Теги"
 
 #: plugins/taglist/XUL.tags.xml.in:5
 msgid "action"
-msgstr "дія"
+msgstr "action"
 
 #: plugins/taglist/XUL.tags.xml.in:10
 msgid "arrowscrollbox"
@@ -6166,11 +6165,11 @@ msgstr "broadcasterset"
 
 #: plugins/taglist/XUL.tags.xml.in:44
 msgid "button"
-msgstr "кнопка"
+msgstr "button"
 
 #: plugins/taglist/XUL.tags.xml.in:48
 msgid "browser"
-msgstr "бровзер"
+msgstr "browser"
 
 #: plugins/taglist/XUL.tags.xml.in:52
 msgid "checkbox"
@@ -6178,7 +6177,7 @@ msgstr "checkbox"
 
 #: plugins/taglist/XUL.tags.xml.in:56
 msgid "caption"
-msgstr "підпис"
+msgstr "caption"
 
 #: plugins/taglist/XUL.tags.xml.in:60
 msgid "colorpicker"
@@ -6186,11 +6185,11 @@ msgstr "colorpicker"
 
 #: plugins/taglist/XUL.tags.xml.in:65
 msgid "column"
-msgstr "стовпчик"
+msgstr "column"
 
 #: plugins/taglist/XUL.tags.xml.in:69
 msgid "columns"
-msgstr "стовпчиків"
+msgstr "columns"
 
 #: plugins/taglist/XUL.tags.xml.in:74
 msgid "commandset"
@@ -6198,7 +6197,7 @@ msgstr "commandset"
 
 #: plugins/taglist/XUL.tags.xml.in:79
 msgid "command"
-msgstr "команда"
+msgstr "command"
 
 #: plugins/taglist/XUL.tags.xml.in:83
 msgid "conditions"
@@ -6214,11 +6213,11 @@ msgstr "deck"
 
 #: plugins/taglist/XUL.tags.xml.in:97
 msgid "description"
-msgstr "опис"
+msgstr "description"
 
 #: plugins/taglist/XUL.tags.xml.in:102
 msgid "dialog"
-msgstr "діалог"
+msgstr "dialog"
 
 #: plugins/taglist/XUL.tags.xml.in:111
 msgid "dialogheader"
@@ -6226,7 +6225,7 @@ msgstr "dialogheader"
 
 #: plugins/taglist/XUL.tags.xml.in:115
 msgid "editor"
-msgstr "редактор"
+msgstr "editor"
 
 #: plugins/taglist/XUL.tags.xml.in:119
 msgid "grid"
@@ -6250,7 +6249,7 @@ msgstr "iframe"
 
 #: plugins/taglist/XUL.tags.xml.in:143
 msgid "image"
-msgstr "зображення"
+msgstr "image"
 
 #: plugins/taglist/XUL.tags.xml.in:151
 msgid "keyset"
@@ -6258,7 +6257,7 @@ msgstr "keyset"
 
 #: plugins/taglist/XUL.tags.xml.in:156
 msgid "label"
-msgstr "позначка"
+msgstr "label"
 
 #: plugins/taglist/XUL.tags.xml.in:160
 msgid "listbox"
@@ -6290,15 +6289,15 @@ msgstr "listitem"
 
 #: plugins/taglist/XUL.tags.xml.in:192
 msgid "member"
-msgstr "член"
+msgstr "member"
 
 #: plugins/taglist/XUL.tags.xml.in:196
 msgid "menu"
-msgstr "меню"
+msgstr "menu"
 
 #: plugins/taglist/XUL.tags.xml.in:201
 msgid "menubar"
-msgstr "рядок меню"
+msgstr "menubar"
 
 #: plugins/taglist/XUL.tags.xml.in:206
 msgid "menuitem"
@@ -6326,7 +6325,7 @@ msgstr "overlay"
 
 #: plugins/taglist/XUL.tags.xml.in:234
 msgid "page"
-msgstr "сторінка"
+msgstr "page"
 
 #: plugins/taglist/XUL.tags.xml.in:239
 msgid "popup"
@@ -6342,7 +6341,7 @@ msgstr "preference"
 
 #: plugins/taglist/XUL.tags.xml.in:254
 msgid "preferences"
-msgstr "уподобання"
+msgstr "preferences"
 
 #: plugins/taglist/XUL.tags.xml.in:259
 msgid "prefpane"
@@ -6358,7 +6357,7 @@ msgstr "progressmeter"
 
 #: plugins/taglist/XUL.tags.xml.in:273
 msgid "radio"
-msgstr "радіо"
+msgstr "radio"
 
 #: plugins/taglist/XUL.tags.xml.in:277
 msgid "radiogroup"
@@ -6382,7 +6381,7 @@ msgstr "row"
 
 #: plugins/taglist/XUL.tags.xml.in:302
 msgid "rows"
-msgstr "рядків"
+msgstr "rows"
 
 #: plugins/taglist/XUL.tags.xml.in:307
 msgid "rule"
@@ -6390,15 +6389,15 @@ msgstr "rule"
 
 #: plugins/taglist/XUL.tags.xml.in:312
 msgid "script"
-msgstr "сценарій"
+msgstr "script"
 
 #: plugins/taglist/XUL.tags.xml.in:317
 msgid "scrollbar"
-msgstr "смуга прокрутки"
+msgstr "scrollbar"
 
 #: plugins/taglist/XUL.tags.xml.in:321
 msgid "scrollbox"
-msgstr "поле прокрутки"
+msgstr "scrollbox"
 
 #: plugins/taglist/XUL.tags.xml.in:326
 msgid "scrollcorner"
@@ -6406,11 +6405,11 @@ msgstr "scrollcorner"
 
 #: plugins/taglist/XUL.tags.xml.in:331
 msgid "separator"
-msgstr "сепаратор"
+msgstr "separator"
 
 #: plugins/taglist/XUL.tags.xml.in:336
 msgid "spacer"
-msgstr "розпірка"
+msgstr "spacer"
 
 #: plugins/taglist/XUL.tags.xml.in:340
 msgid "splitter"
@@ -6422,7 +6421,7 @@ msgstr "stack"
 
 #: plugins/taglist/XUL.tags.xml.in:350
 msgid "statusbar"
-msgstr "рядок стану"
+msgstr "statusbar"
 
 #: plugins/taglist/XUL.tags.xml.in:355
 msgid "statusbarpanel"
@@ -6438,7 +6437,7 @@ msgstr "stringbundleset"
 
 #: plugins/taglist/XUL.tags.xml.in:369
 msgid "tab"
-msgstr "вкладка"
+msgstr "tab"
 
 #: plugins/taglist/XUL.tags.xml.in:373
 msgid "tabbrowser"
@@ -6474,7 +6473,7 @@ msgstr "titlebar"
 
 #: plugins/taglist/XUL.tags.xml.in:417
 msgid "toolbar"
-msgstr "панель інструментів"
+msgstr "toolbar"
 
 #: plugins/taglist/XUL.tags.xml.in:422
 msgid "toolbarbutton"
@@ -6518,7 +6517,7 @@ msgstr "tooltip"
 
 #: plugins/taglist/XUL.tags.xml.in:471
 msgid "tree"
-msgstr "дерево"
+msgstr "tree"
 
 #: plugins/taglist/XUL.tags.xml.in:476
 msgid "treecell"
@@ -6558,7 +6557,7 @@ msgstr "vbox"
 
 #: plugins/taglist/XUL.tags.xml.in:519
 msgid "window"
-msgstr "вікно"
+msgstr "window"
 
 #: plugins/taglist/XUL.tags.xml.in:525
 msgid "wizard"
@@ -6594,7 +6593,7 @@ msgstr "Доступні формати"
 
 #: plugins/time/time.plugin.desktop.in.in:5
 msgid "Insert Date/Time"
-msgstr "Вставити час або дату"
+msgstr "Вставити дату/час"
 
 #: plugins/time/time.plugin.desktop.in.in:6
 msgid "Inserts current date and time at the cursor position."
@@ -6641,11 +6640,11 @@ msgstr "01/11/2009 17:52:00"
 
 #: plugins/time/pluma-time-setup-dialog.ui:23
 msgid "Configure date/time plugin"
-msgstr "Налаштування втулка вставлення дати й часу"
+msgstr "Налаштування плагіну дати й часу"
 
 #: plugins/time/pluma-time-setup-dialog.ui:104
 msgid "When inserting date/time..."
-msgstr "Налаштування втулка вставлення дати й часу..."
+msgstr "Під час вставлення дати й часу..."
 
 #: plugins/time/pluma-time-setup-dialog.ui:143
 msgid "_Prompt for a format"
