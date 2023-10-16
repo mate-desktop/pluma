@@ -43,6 +43,7 @@ struct _PlumaDocumentInputStreamPrivate
 	gint           bytes_partial;
 
 	PlumaDocumentNewlineType newline_type;
+	gboolean add_trailing_newline;
 
 	guint newline_added : 1;
 	guint is_initialized : 1;
@@ -54,7 +55,8 @@ enum
 {
 	PROP_0,
 	PROP_BUFFER,
-	PROP_NEWLINE_TYPE
+	PROP_NEWLINE_TYPE,
+	PROP_ADD_TRAILING_NEWLINE,
 };
 
 static gssize     pluma_document_input_stream_read     (GInputStream      *stream,
@@ -84,6 +86,10 @@ pluma_document_input_stream_set_property (GObject      *object,
 			stream->priv->newline_type = g_value_get_enum (value);
 			break;
 
+		case PROP_ADD_TRAILING_NEWLINE:
+			stream->priv->add_trailing_newline = g_value_get_boolean (value);
+			break;
+
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 			break;
@@ -106,6 +112,10 @@ pluma_document_input_stream_get_property (GObject    *object,
 
 		case PROP_NEWLINE_TYPE:
 			g_value_set_enum (value, stream->priv->newline_type);
+			break;
+
+		case PROP_ADD_TRAILING_NEWLINE:
+			g_value_set_boolean (value, stream->priv->add_trailing_newline);
 			break;
 
 		default:
@@ -152,6 +162,16 @@ pluma_document_input_stream_class_init (PlumaDocumentInputStreamClass *klass)
 							    G_PARAM_STATIC_NAME |
 							    G_PARAM_STATIC_BLURB |
 							    G_PARAM_CONSTRUCT_ONLY));
+	
+	g_object_class_install_property (gobject_class,
+	                                 PROP_ADD_TRAILING_NEWLINE,
+	                                 g_param_spec_boolean ("add-trailing-newline",
+	                                                       "Add Trailing Newline",
+	                                                        "Automatically add a trailing newline to the file contents?",
+	                                                        TRUE,
+	                                                        G_PARAM_READWRITE |
+	                                                        G_PARAM_STATIC_STRINGS |
+	                                                        G_PARAM_CONSTRUCT));
 }
 
 static void
@@ -428,30 +448,33 @@ pluma_document_input_stream_read (GInputStream  *stream,
 		space_left -= n;
 	} while (space_left > 0 && n != 0 && dstream->priv->bytes_partial == 0);
 
-	/* Make sure that non-empty files are always terminated with \n (see bug #95676).
-	 * Note that we strip the trailing \n when loading the file */
-	gtk_text_buffer_get_iter_at_mark (dstream->priv->buffer,
-					  &iter,
-					  dstream->priv->pos);
-
-	if (gtk_text_iter_is_end (&iter) &&
-	    !gtk_text_iter_is_start (&iter))
+	if (dstream->priv->add_trailing_newline)
 	{
-		gssize newline_size;
+		/* Make sure that non-empty files are always terminated with \n (see bug #95676).
+		 * Note that we strip the trailing \n when loading the file */
+		gtk_text_buffer_get_iter_at_mark (dstream->priv->buffer,
+						  &iter,
+						  dstream->priv->pos);
 
-		newline_size = get_new_line_size (dstream);
-
-		if (space_left >= newline_size &&
-		    !dstream->priv->newline_added)
+		if (gtk_text_iter_is_end (&iter) &&
+		    !gtk_text_iter_is_start (&iter))
 		{
-			const gchar *newline;
+			gssize newline_size;
 
-			newline = get_new_line (dstream);
+			newline_size = get_new_line_size (dstream);
 
-			memcpy ((void *) ((gsize) buffer + read), newline, newline_size);
+			if (space_left >= newline_size &&
+			    !dstream->priv->newline_added)
+			{
+				const gchar *newline;
 
-			read += newline_size;
-			dstream->priv->newline_added = TRUE;
+				newline = get_new_line (dstream);
+
+				memcpy ((void *) ((gsize) buffer + read), newline, newline_size);
+
+				read += newline_size;
+				dstream->priv->newline_added = TRUE;
+			}
 		}
 	}
 

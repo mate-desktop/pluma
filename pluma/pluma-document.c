@@ -1724,6 +1724,10 @@ pluma_document_save_real (PlumaDocument          *doc,
 			  G_CALLBACK (document_saver_saving),
 			  doc);
 
+	g_object_set (G_OBJECT (doc->priv->saver),
+	              "add-trailing-newline", doc->priv->hide_trailing_newline,
+	              NULL);
+
 	doc->priv->requested_encoding = encoding;
 
 	pluma_document_saver_save (doc->priv->saver,
