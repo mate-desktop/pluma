@@ -45,6 +45,8 @@ struct _PlumaDocumentOutputStreamPrivate
 	gchar *buffer;
 	gsize buflen;
 
+	gboolean trim_trailing_newline;
+
 	guint is_initialized : 1;
 	guint is_closed : 1;
 };
@@ -52,7 +54,8 @@ struct _PlumaDocumentOutputStreamPrivate
 enum
 {
 	PROP_0,
-	PROP_DOCUMENT
+	PROP_DOCUMENT,
+	PROP_TRIM_TRAILING_NEWLINE,
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (PlumaDocumentOutputStream, pluma_document_output_stream, G_TYPE_OUTPUT_STREAM)
@@ -85,6 +88,10 @@ pluma_document_output_stream_set_property (GObject      *object,
 			stream->priv->doc = PLUMA_DOCUMENT (g_value_get_object (value));
 			break;
 
+		case PROP_TRIM_TRAILING_NEWLINE:
+			stream->priv->trim_trailing_newline = g_value_get_boolean (value);
+			break;
+
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 			break;
@@ -103,6 +110,10 @@ pluma_document_output_stream_get_property (GObject    *object,
 	{
 		case PROP_DOCUMENT:
 			g_value_set_object (value, stream->priv->doc);
+			break;
+
+		case PROP_TRIM_TRAILING_NEWLINE:
+			g_value_set_boolean (value, stream->priv->trim_trailing_newline);
 			break;
 
 		default:
@@ -166,6 +177,16 @@ pluma_document_output_stream_class_init (PlumaDocumentOutputStreamClass *klass)
 							      PLUMA_TYPE_DOCUMENT,
 							      G_PARAM_READWRITE |
 							      G_PARAM_CONSTRUCT_ONLY));
+
+	g_object_class_install_property (object_class,
+					 PROP_TRIM_TRAILING_NEWLINE,
+					 g_param_spec_boolean ("trim-trailing-newline",
+							       "Trim Trailing Newline",
+							       "Remove the final received newline from the document buffer?",
+							       TRUE,
+							       G_PARAM_READWRITE |
+							       G_PARAM_STATIC_STRINGS |
+							       G_PARAM_CONSTRUCT));
 }
 
 static void
@@ -270,7 +291,10 @@ remove_ending_newline (PlumaDocumentOutputStream *stream)
 static void
 end_append_text_to_document (PlumaDocumentOutputStream *stream)
 {
-	remove_ending_newline (stream);
+	if (stream->priv->trim_trailing_newline)
+	{
+		remove_ending_newline (stream);
+	}
 
 	gtk_text_buffer_set_modified (GTK_TEXT_BUFFER (stream->priv->doc),
 				      FALSE);
