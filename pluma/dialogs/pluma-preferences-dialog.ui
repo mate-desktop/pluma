@@ -422,6 +422,10 @@
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
+                        <accessibility>
+                          <relation type="label-for" target="tabs_width_hbox"/>
+                          <relation type="label-for" target="insert_spaces_checkbutton"/>
+                        </accessibility>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -472,6 +476,9 @@
                                 <property name="position">1</property>
                               </packing>
                             </child>
+                            <accessibility>
+                              <relation type="labelled-by" target="tab_stops_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -487,6 +494,9 @@
                             <property name="receives-default">False</property>
                             <property name="use-underline">True</property>
                             <property name="draw-indicator">True</property>
+                            <accessibility>
+                              <relation type="labelled-by" target="tab_stops_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -523,6 +533,9 @@
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
+                        <accessibility>
+                          <relation type="label-for" target="auto_indent_checkbutton"/>
+                        </accessibility>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -545,6 +558,9 @@
                             <property name="receives-default">False</property>
                             <property name="use-underline">True</property>
                             <property name="draw-indicator">True</property>
+                            <accessibility>
+                              <relation type="labelled-by" target="automatic_indentation_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -581,6 +597,10 @@
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
+                        <accessibility>
+                          <relation type="label-for" target="backup_copy_checkbutton"/>
+                          <relation type="label-for" target="autosave_hbox"/>
+                        </accessibility>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -603,6 +623,9 @@
                             <property name="receives-default">False</property>
                             <property name="use-underline">True</property>
                             <property name="draw-indicator">True</property>
+                            <accessibility>
+                              <relation type="labelled-by" target="file_saving_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -661,6 +684,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <accessibility>
+                              <relation type="labelled-by" target="file_saving_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -696,6 +722,9 @@
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
+                        <accessibility>
+                          <relation type="label-for" target="hide_trailing_newline_checkbutton"/>
+                        </accessibility>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -718,6 +747,9 @@
                             <property name="tooltip-text" translatable="yes">Hide the final newline in opened files if one was present when loading the file. Enabling this will also cause newly created files to be saved with a trailing newline by default.</property>
                             <property name="use-underline">True</property>
                             <property name="draw-indicator">True</property>
+                            <accessibility>
+                              <relation type="labelled-by" target="file_format_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -754,6 +786,13 @@
                         <attributes>
                           <attribute name="weight" value="bold"/>
                         </attributes>
+                        <accessibility>
+                          <relation type="label-for" target="draw_spaces_checkbutton"/>
+                          <relation type="label-for" target="draw_trailing_spaces_checkbutton"/>
+                          <relation type="label-for" target="draw_tabs_checkbutton"/>
+                          <relation type="label-for" target="draw_trailing_tabs_checkbutton"/>
+                          <relation type="label-for" target="draw_newlines_checkbutton"/>
+                        </accessibility>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -777,6 +816,9 @@
                             <property name="receives-default">False</property>
                             <property name="use-underline">True</property>
                             <property name="draw-indicator">True</property>
+                            <accessibility>
+                              <relation type="labelled-by" target="show_spaces_tabs_newlines_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -793,6 +835,9 @@
                             <property name="margin-start">12</property>
                             <property name="use-underline">True</property>
                             <property name="draw-indicator">True</property>
+                            <accessibility>
+                              <relation type="labelled-by" target="show_spaces_tabs_newlines_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -808,6 +853,9 @@
                             <property name="receives-default">False</property>
                             <property name="use-underline">True</property>
                             <property name="draw-indicator">True</property>
+                            <accessibility>
+                              <relation type="labelled-by" target="show_spaces_tabs_newlines_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -824,6 +872,9 @@
                             <property name="margin-start">12</property>
                             <property name="use-underline">True</property>
                             <property name="draw-indicator">True</property>
+                            <accessibility>
+                              <relation type="labelled-by" target="show_spaces_tabs_newlines_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -839,6 +890,9 @@
                             <property name="receives-default">False</property>
                             <property name="use-underline">True</property>
                             <property name="draw-indicator">True</property>
+                            <accessibility>
+                              <relation type="labelled-by" target="show_spaces_tabs_newlines_label"/>
+                            </accessibility>
                           </object>
                           <packing>
                             <property name="expand">False</property>
