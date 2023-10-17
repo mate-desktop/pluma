@@ -399,6 +399,10 @@ pluma_document_set_property (GObject      *object,
 			break;
 		case PROP_HIDE_TRAILING_NEWLINE:
 			doc->priv->hide_trailing_newline = g_value_get_boolean (value);
+			/* XXX: This should also change whether newline is visible to the user
+			        or not (ie: add or remove the newline from the buffer). Not
+			        really important unless this property is actually exposed in
+			        the user interface though. */
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1446,6 +1450,33 @@ document_loader_loaded (PlumaDocumentLoader *loader,
 
 		pluma_document_set_newline_type (doc,
 		                                 pluma_document_loader_get_newline_type (loader));
+
+		if (doc->priv->hide_trailing_newline)
+		{
+			gboolean trimmed_trailing_newline;
+			gint doc_char_count;
+
+			g_object_get (loader,
+			              "trimmed-trailing-newline", &trimmed_trailing_newline,
+			              NULL);
+
+			doc_char_count = gtk_text_buffer_get_char_count (GTK_TEXT_BUFFER (doc));
+
+			if (!trimmed_trailing_newline && doc_char_count > 0)
+			{
+				/* Document did not contain any trailing newline, so we want to
+				   change hide-trailing-newline to FALSE so that saving the
+				   document doesn’t automatically add a trailing newline if it
+				   wasn’t previously present. */
+				/* Note that we special-case empty documents here as these never
+				   contain a trailing newline, so we cannot make any assumptions
+				   on whether the omission of the trailing newline was intentional
+				   or not. */
+				g_object_set (doc,
+				              "hide-trailing-newline", FALSE,
+				              NULL);
+			}
+		}
 
 		restore_cursor = g_settings_get_boolean (doc->priv->editor_settings,
 							 PLUMA_SETTINGS_RESTORE_CURSOR_POSITION);

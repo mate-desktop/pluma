@@ -78,6 +78,7 @@ enum
     PROP_ENCODING,
     PROP_NEWLINE_TYPE,
     PROP_TRIM_TRAILING_NEWLINE,
+    PROP_TRIMMED_TRAILING_NEWLINE,
 };
 
 #define READ_CHUNK_SIZE 8192
@@ -179,6 +180,20 @@ pluma_document_loader_get_property (GObject    *object,
             break;
         case PROP_TRIM_TRAILING_NEWLINE:
             g_value_set_boolean (value, loader->priv->trim_trailing_newline);
+            break;
+        case PROP_TRIMMED_TRAILING_NEWLINE:
+            if (loader->priv->output != NULL)
+            {
+                gboolean trimmed_trailing_newline;
+                g_object_get (loader->priv->output,
+                              "trimmed-trailing-newline", &trimmed_trailing_newline,
+                              NULL);
+                g_value_set_boolean (value, trimmed_trailing_newline);
+            }
+            else
+            {
+                g_value_set_boolean (value, FALSE);
+            }
             break;
         default:
             G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -293,6 +308,15 @@ pluma_document_loader_class_init (PlumaDocumentLoaderClass *klass)
                                                            G_PARAM_READWRITE |
                                                            G_PARAM_STATIC_STRINGS |
                                                            G_PARAM_CONSTRUCT));
+
+    g_object_class_install_property (object_class,
+                                     PROP_TRIMMED_TRAILING_NEWLINE,
+                                     g_param_spec_boolean ("trimmed-trailing-newline",
+                                                           "Trailing Newline Trimmed",
+                                                           "Was the final received newline removed from the document buffer?",
+                                                           FALSE,
+                                                           G_PARAM_READABLE |
+                                                           G_PARAM_STATIC_STRINGS));
 
     signals[LOADING] =
         g_signal_new ("loading",
