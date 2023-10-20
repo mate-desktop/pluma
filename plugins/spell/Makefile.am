@@ -5,6 +5,7 @@ AM_CPPFLAGS = 							\
 	-I$(top_srcdir)						\
 	$(PLUMA_CFLAGS) 					\
 	$(ENCHANT_CFLAGS)					\
+	$(MATE_DESKTOP_CFLAGS)					\
 	$(WARN_CFLAGS)
 
 plugin_LTLIBRARIES = libspell.la
@@ -26,7 +27,10 @@ libspell_la_SOURCES = \
 	pluma-spell-utils.h
 
 libspell_la_LDFLAGS = $(PLUGIN_LIBTOOL_FLAGS)
-libspell_la_LIBADD  = $(PLUMA_LIBS) $(ENCHANT_LIBS)
+libspell_la_LIBADD  = \
+	$(PLUMA_LIBS) \
+	$(ENCHANT_LIBS) \
+	$(MATE_DESKTOP_LIBS)
 
 uidir = $(PLUMA_PLUGINS_DATA_DIR)/spell
 ui_files = spell-checker.ui languages-dialog.ui pluma-spell-setup-dialog.ui
