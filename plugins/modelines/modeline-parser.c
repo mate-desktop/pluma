@@ -329,7 +329,8 @@ parse_vim_modeline (gchar           *s,
 
 			options->set |= MODELINE_SET_WRAP_MODE;
 		}
-		else if (strcmp (key->str, "textwidth") == 0)
+		else if (strcmp (key->str, "tw") == 0 ||
+			 strcmp (key->str, "textwidth") == 0)
 		{
 			intval = atoi (value->str);
 
