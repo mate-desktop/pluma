@@ -9,12 +9,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: samson <sambelet@yahoo.com>, 2021\n"
-"Language-Team: Amharic (https://www.transifex.com/mate/teams/13566/am/)\n"
+"Language-Team: Amharic (https://app.transifex.com/mate/teams/13566/am/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1035,11 +1035,11 @@ msgstr "ተሰኪዎች "
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "መቀየሪያ"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "መፈለጎያ "
 
@@ -1336,11 +1336,11 @@ msgid "Unsaved Document %d"
 msgstr "ያልተቀመጠ ሰነድ %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "ለንባብ-ብቻ"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "ሰነዶች"
 
@@ -2098,7 +2098,7 @@ msgstr "አዲስ ሰነድ መፍጠሪያ"
 msgid "_Open..."
 msgstr "_መክፈቻ..."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "ፋይል መክፈቻ"
 
@@ -2411,22 +2411,22 @@ msgstr "_የትች ክፍል"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "በ አሁኑ መስኮት ውስጥ የ ታች ክፍል ማሳያ ወይንም መደበቂያ"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "እባክዎን አገጣጠሞን ይመርምሩ"
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "የ UI ፋይል መክፈት አልተቻለም %s. ስህተት: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "እቃውን ማግኘት አልተቻለም '%s' ፋይል ውስጥ %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ በ %s"
@@ -2459,14 +2459,14 @@ msgstr "እርስዎ የሚፈልጉት ሀረግ ከ"
 msgid "Line you want to move the cursor to"
 msgstr "መጠቆሚያውን ወደ የትኛው መስመር ነው ማንቀሳቀስ የሚፈልጉት"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "ይጠቀሙ %s ማድመቂያ ዘዴ"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2474,43 +2474,43 @@ msgstr "ይጠቀሙ %s ማድመቂያ ዘዴ"
 msgid "Plain Text"
 msgstr "መደበኛ ጽሁፍ"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "የ አገባብ ማድመቂያ ማሰናከያ"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "መክፈቻ '%s'"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "በቅርብ ጊዜ የተጠቀሙበትን ፋይል መክፈቻ "
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "መክፈቻ"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "ማስቀመጫ"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "ማተሚያ"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "ማስነሻ '%s'"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "ክፍተት መጠቀሚያ"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "የ ማስረጊያ ስፋት"
 
@@ -2886,59 +2886,59 @@ msgstr "የ ሩቅ አካባቢ እንደ ነበር መመለሻ ማስቻያ �
 msgid "File System"
 msgstr "የ ስርአቱ ፋይል"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "_ማሰናጃ ለ root ለ ንቁ ሰነድ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "ተርሚናል እዚህ _መክፈቻ "
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "ተርሚናል መክፈቻ አሁን በ ተከፈተው ዳይሬክቶሪ ውስጥ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "ፋይል መቃኛ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "ስህተት ተፍጥሯል አዲስ ዳይሬክቶሪ በ መፍጠር ላይ እንዳለ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "ስህተት ተፍጥሯል አዲስ ፋይል በ መፍጠር ላይ እንዳለ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "ስህተት ተፍጥሯል ፋይል እንደገና በ መሰየም ላይ እንዳለ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "ስህተት ተፍጥሯል ፋይል ወይንም ዳይሬክቶሪ በ ማጥፋት ላይ እንዳለ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "ስህተት ተፍጥሯል ዳይሬክቶሪ በ መክፈት ላይ እንዳለ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "ስህተት ተፍጥሯል የ root ዳይሬክቶሪ በማሰናዳት ላይ እንዳለ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "ስህተት ተፍጥሯል ዳይሬክቶሪ በ መጫን ላይ እንዳለ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "ስህተት ተፈጥሯል"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -2946,25 +2946,25 @@ msgstr ""
 "ፋይሉን ወደ ቆሻሻ ማንቀሳቀስ አልተቻለም:\n"
 "እርስዎ በ እርግጥ በ ቋሚነት ማጥፋት ይፈልጋሉ?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "ፋይሉን \"%s\" ወደ ቆሻሻ ማንቀሳቀስ አልተቻለም"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "የ ተመረጠውን ፋይል ወደ ቆሻሻ ማንቀሳቀስ አልተቻለም"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "እርስዎ በ እርግጥ በ ቋሚነት ማጥፋት ይፈልጋሉ \"%s\"?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "የ ተመረጡትን ፋይሎች በ እርግጥ በ ቋሚነት ማጥፋት ይፈልጋሉ"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "እርስዎ እቃ ካጠፉ በቋሚነት ይጠፋል"
 

@@ -7,17 +7,17 @@
 # Louis Tim Larsen <louis@louis.dk>, 2018
 # Allan Nordhøy <epost@anotheragency.no>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Aputsiak Niels Janussen <aj@isit.gl>, 2021
-# Joe Hansen <joedalton2@yahoo.dk>, 2021
+# Aputsiak Niels Janussen <aputtu@gmail.com>, 2021
+# Joe Hansen <joedalton2@yahoo.dk>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2021\n"
-"Language-Team: Danish (https://www.transifex.com/mate/teams/13566/da/)\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>, 2022\n"
+"Language-Team: Danish (https://app.transifex.com/mate/teams/13566/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -356,7 +356,7 @@ msgstr "Vis faneblade med sidepanel"
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
-"Hvis falsk (false) så viser Pluma ikke faneblade i notebogen med sidepanel "
+"Hvis falsk (false) så viser Pluma ikke faneblade i notesbogen med sidepanel "
 "aktiv."
 
 #: data/org.mate.pluma.gschema.xml.in:170
@@ -1127,11 +1127,11 @@ msgstr "Udvidelsesmoduler"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "Erstat"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "Find"
 
@@ -1440,10 +1440,10 @@ msgstr ""
 #: pluma/pluma-commands-help.c:127
 msgid "translator-credits"
 msgstr ""
-"\"Joe Hansen, 2012, 2013, 2014, 2015, 2016, 2017, 2018.\\n\"\n"
-"\"\\n\"\n"
-"\"Dansk-gruppen <dansk@dansk-gruppen.dk>\\n\"\n"
-"\"Mere info: http://www.dansk-gruppen.dk\""
+"Joe Hansen 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.\n"
+"\n"
+"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
+"Mere info: http://www.dansk-gruppen.dk"
 
 #: pluma/pluma-commands-search.c:113
 #, c-format
@@ -1469,11 +1469,11 @@ msgid "Unsaved Document %d"
 msgstr "Ugemt dokument %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "Skrivebeskyttet"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "Dokumenter"
 
@@ -2259,7 +2259,7 @@ msgstr "Opret et nyt dokument"
 msgid "_Open..."
 msgstr "_Åbn …"
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "Åbn en fil"
 
@@ -2572,22 +2572,22 @@ msgstr "_Bundpanel"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Vis eller skjul bundpanelet i det aktuelle vindue"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Kontroller din installation."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "Kunne ikke åbne grænsefladefil %s. Fejl: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "Kan ikke finde objektet »%s« inden i filen %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ på %s"
@@ -2620,14 +2620,14 @@ msgstr "Tekst der skal søges efter"
 msgid "Line you want to move the cursor to"
 msgstr "Linje som markøren skal flyttes til"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Benyt fremhævningstilstanden %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2635,43 +2635,43 @@ msgstr "Benyt fremhævningstilstanden %s"
 msgid "Plain Text"
 msgstr "Almindelig tekst"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "Deaktiver syntaksfremhævning"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "Åbn »%s«"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "Åbn en senest benyttet fil"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "Åbn"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "Gem"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "Udskriv"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktiver »%s«"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "Brug mellemrum"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "Tabulatorbredde"
 
@@ -3066,59 +3066,59 @@ msgstr "Indstiller om det skal være muligt at gendanne på eksterne steder."
 msgid "File System"
 msgstr "Filsystem"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "_Sæt rod til aktive dokument"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "Sæt roden til stedet hvor det aktive dokument findes"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "_Åbn terminal her"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "Åbn en terminal i den mappe som er åben nu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "Filbrowser"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "Der opstod en fejl ved oprettelsen af en ny mappe"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "Der opstod en fejl ved oprettelsen af en ny fil"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "Der opstod en fejl ved omdøbningen af en fil eller mappe"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "Der opstod en fejl ved sletningen af en fil eller mappe"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Der opstod en fejl ved at åbne en mappe i filvælgeren"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "Der opstod en fejl ved indstilling af rodmappen"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "Der opstod en fejl ved indlæsningen af en mappe"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "Der opstod en fejl"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3126,25 +3126,25 @@ msgstr ""
 "Filen kan ikke flyttes til papirkurven,\n"
 "ønsker du at slette den permanent?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "Filen »%s« kan ikke flyttes til papirkurven."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "De valgte filer kan ikke flyttes til papirkurven."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Er du sikker på, at du permanent vil slette »%s«?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Er du sikker på, at du permanent vil slette de valgte filer?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "Hvis du sletter et objekt, er det permanent tabt."
 

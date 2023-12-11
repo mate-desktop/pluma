@@ -41,6 +41,8 @@
 
 #include <glib/gi18n.h>
 
+#include <libmate-desktop/mate-image-menu-item.h>
+
 #include "pluma-automatic-spell-checker.h"
 #include "pluma-spell-utils.h"
 
@@ -497,8 +499,8 @@ build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word)
 	gtk_menu_shell_append (GTK_MENU_SHELL (topmenu), mi);
 
 	/* Ignore all */
-	mi = gtk_image_menu_item_new_with_mnemonic (_("_Ignore All"));
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
+	mi = mate_image_menu_item_new_with_mnemonic (_("_Ignore All"));
+	mate_image_menu_item_set_image (MATE_IMAGE_MENU_ITEM (mi),
 				       gtk_image_new_from_icon_name ("go-bottom",
 					       			     GTK_ICON_SIZE_MENU));
 
@@ -512,8 +514,8 @@ build_suggestion_menu (PlumaAutomaticSpellChecker *spell, const gchar *word)
 	gtk_menu_shell_append (GTK_MENU_SHELL (topmenu), mi);
 
 	/* + Add to Dictionary */
-	mi = gtk_image_menu_item_new_with_mnemonic (_("_Add"));
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi),
+	mi = mate_image_menu_item_new_with_mnemonic (_("_Add"));
+	mate_image_menu_item_set_image (MATE_IMAGE_MENU_ITEM (mi),
 				       gtk_image_new_from_icon_name ("list-add",
 					       			     GTK_ICON_SIZE_MENU));
 
@@ -551,8 +553,8 @@ populate_popup (GtkTextView *textview, GtkMenu *menu, PlumaAutomaticSpellChecker
 
 	/* then, on top of it, the suggestions menu. */
 	img = gtk_image_new_from_icon_name ("tools-check-spelling", GTK_ICON_SIZE_MENU);
-	mi = gtk_image_menu_item_new_with_mnemonic (_("_Spelling Suggestions..."));
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (mi), img);
+	mi = mate_image_menu_item_new_with_mnemonic (_("_Spelling Suggestions..."));
+	mate_image_menu_item_set_image (MATE_IMAGE_MENU_ITEM (mi), img);
 
 	word = gtk_text_buffer_get_text (GTK_TEXT_BUFFER (spell->doc), &start, &end, FALSE);
 	gtk_menu_item_set_submenu (GTK_MENU_ITEM (mi),

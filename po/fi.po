@@ -19,12 +19,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: nomen omen, 2021\n"
-"Language-Team: Finnish (https://www.transifex.com/mate/teams/13566/fi/)\n"
+"Language-Team: Finnish (https://app.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1137,11 +1137,11 @@ msgstr "Liitännäiset"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "Korvaa"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "Etsi"
 
@@ -1479,11 +1479,11 @@ msgid "Unsaved Document %d"
 msgstr "Tallentamaton asiakirja %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "Vain luku"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "Asiakirjat"
 
@@ -2270,7 +2270,7 @@ msgstr "Luo uusi asiakirja"
 msgid "_Open..."
 msgstr "_Avaa…"
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "Avaa tiedosto"
 
@@ -2583,22 +2583,22 @@ msgstr "_Alapaneeli"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Näytä tai piilota alapaneeli nykyisessä ikkunassa"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Tarkista asennuksesi."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "Ei voitu avata käyttöliittymätiedostoa %s. Virhe: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "Kohdetta ”%s” ei löydy tiedostosta %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ levyjaossa %s"
@@ -2631,14 +2631,14 @@ msgstr "Etsittävä merkkijono"
 msgid "Line you want to move the cursor to"
 msgstr "Rivi, jolle haluat siirtää kursorin"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Käytä %s-väritystä"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2646,43 +2646,43 @@ msgstr "Käytä %s-väritystä"
 msgid "Plain Text"
 msgstr "Raakateksti"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "Älä käytä syntaksiväritystä"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "Avaa ”%s”"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "Avaa äskettäin käytetty tiedosto"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "Avaa"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "Tallenna"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "Tulosta"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "Avaa ”%s”"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "Käytä välilyöntejä"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "Sarkaimen leveys"
 
@@ -3077,59 +3077,59 @@ msgstr "Käytetäänkö etäsijaintien palautusta."
 msgid "File System"
 msgstr "Tiedostojärjestelmä"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "_Aseta juuri aktiivinen asiakirjan sijaintiin"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "Aseta juurikansioksi aktiivisen asiakirjan sijainti"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "_Avaa pääte tähän"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "Avaa pääte nyt valittuun kansioon"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "Tiedostoselain"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "Virhe luotaessa uutta kansiota"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "Virhe luotaessa uutta tiedostoa"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "Virhe nimettäessä tiedostoa tai kansiota uudestaan"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "Virhe poistettaessa tiedostoa tai kansiota"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Virhe avattaessa kansiota tiedostonhalintaan"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "Virhe asetettaessa juurikansiota"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "Virhe ladattaessa kansiota"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "Tapahtui virhe"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3137,25 +3137,25 @@ msgstr ""
 "Tiedostoa ei voi siirtää roskakoriin.\n"
 "Haluatko poistaa sen pysyvästi?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "Tiedostoa ”%s” ei voi siirtää roskakoriin."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "Valittuja tiedostoja ei voi siirtää roskakoriin."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Haluatko varmasti poistaa pysyvästi kohteen ”%s”?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Haluatko varmasti poistaa valitut tiedostot pysyvästi?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "Jos poistat kohdan, se hukataan pysyvästi."
 

@@ -4,9 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Christopher M <i@cicku.me>, 2018
+# ᴄʜʀɪsᴛᴏᴘʜᴇʀ ᴍᴇɴɢ, 2018
 # Dianjin Wang <1132321739qq@gmail.com>, 2018
-# Martin Wimpress <code@flexion.org>, 2018
 # gtrslower, 2018
 # e0c668032ced196bd60f2b6a070d982d_8f72ae0, 2018
 # Mingcong Bai <jeffbai@aosc.xyz>, 2018
@@ -14,23 +13,22 @@
 # shuyu liu <liushuyu011@gmail.com>, 2018
 # Wolfgang Ulbrich <mate@raveit.de>, 2019
 # CNAmira <forucial@icloud.com>, 2019
-# Wenbin Lv <wenbin816@gmail.com>, 2019
-# Skylee Ming-Tian Yang <i@skylee.xyz>, 2020
+# Skylee Ming-Tian Yang <i@skylee.xyz>, 2019
 # 敏超 马 <mcjoys@163.com>, 2020
 # 玉堂白鹤 <yjwork@qq.com>, 2020
 # a73a47e368cc011d8f94528bd9d5d3f1_91fccdf <1b07f49e2a323989c85dd26d526f7bb9_871526>, 2020
-# liulitchi <xingzuo88@qq.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# OkayPJ <1535253694@qq.com>, 2021
+# OkayPJ <1535253694@qq.com>, 2022
+# Wenbin Lv <wenbin816@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: OkayPJ <1535253694@qq.com>, 2021\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
+"Last-Translator: Wenbin Lv <wenbin816@gmail.com>, 2022\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,7 +50,7 @@ msgstr "是否要为编辑文本指定不同于系统默认字体的字体。如
 #: data/org.mate.pluma.gschema.xml.in:19
 msgctxt "editor-font"
 msgid "'Monospace 12'"
-msgstr "'等宽 12'"
+msgstr "'Monospace 12'"
 
 #: data/org.mate.pluma.gschema.xml.in:20
 msgid "Editor Font"
@@ -72,7 +70,7 @@ msgstr "使用 [ctrl] + [tab] 切换标签页"
 msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
-msgstr "如果选中，您将可以使用 [ctrl + tab] 和 [ctrl + shift + tab] 切换标签页"
+msgstr "如果为 true，您将可以使用 [ctrl + tab] 和 [ctrl + shift + tab] 切换标签页。"
 
 #: data/org.mate.pluma.gschema.xml.in:30
 msgid "Show the first tab if there is only one tab"
@@ -84,11 +82,11 @@ msgstr "如果设置为 false，只有一个标签页时隐藏第一个标签页
 
 #: data/org.mate.pluma.gschema.xml.in:35
 msgid "Style Scheme"
-msgstr "风格大纲"
+msgstr "样式方案"
 
 #: data/org.mate.pluma.gschema.xml.in:36
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
-msgstr "用于文本颜色的 GtkSourceView 样式主题 ID。"
+msgstr "用于文本颜色的 GtkSourceView 样式方案 ID。"
 
 #: data/org.mate.pluma.gschema.xml.in:40
 msgid "Create Backup Copies"
@@ -141,17 +139,17 @@ msgstr "列出 pluma 在写入模式中支持的 VFS 大纲。“file”大纲�
 
 #: data/org.mate.pluma.gschema.xml.in:65
 msgid "Maximum Number of Undo Actions"
-msgstr "撤消操作的最多数量"
+msgstr "撤销操作的最大次数"
 
 #: data/org.mate.pluma.gschema.xml.in:66
 msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
-msgstr "pluma 撤消或重做操作的最多次数。使用“-1”代表无限制。"
+msgstr "pluma 撤销或重做操作的最大次数。使用“-1”代表无限制。"
 
 #: data/org.mate.pluma.gschema.xml.in:70
 msgid "Line Wrapping Mode"
-msgstr "自动换行模式"
+msgstr "换行模式"
 
 #: data/org.mate.pluma.gschema.xml.in:71
 msgid ""
@@ -161,7 +159,7 @@ msgid ""
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
 msgstr ""
-"指定编辑区域中如何将长行折断。使用“GTK_WRAP_NONE”代表不换行，“GTK_WRAP_WORD”代表按单词换行，而“GTK_WRAP_CHAR”代表按字符换行。请注意，这些值是区分大小写的，所以请确定必须按照这里说明的大小写出现。"
+"指定编辑区域中如何换行。使用“GTK_WRAP_NONE”代表不换行，“GTK_WRAP_WORD”代表在单词边界换行，而“GTK_WRAP_CHAR”代表按字符换行。请注意，这些值是区分大小写的，所以请务必按照这里给出的大小写填写。"
 
 #: data/org.mate.pluma.gschema.xml.in:75
 msgid "Tab Size"
@@ -179,7 +177,7 @@ msgstr "插入空格"
 
 #: data/org.mate.pluma.gschema.xml.in:81
 msgid "Whether pluma should insert spaces instead of tabs."
-msgstr "pluma 是否要插入空格代替制表符。"
+msgstr "pluma 是否要插入空格，而不是制表符。"
 
 #: data/org.mate.pluma.gschema.xml.in:85
 msgid "Automatic indent"
@@ -215,19 +213,19 @@ msgstr "pluma 是否应该突出显示和选择的括号所匹配的括号。"
 
 #: data/org.mate.pluma.gschema.xml.in:105
 msgid "Display Right Margin"
-msgstr "显示右边距"
+msgstr "显示右边缘"
 
 #: data/org.mate.pluma.gschema.xml.in:106
 msgid "Whether pluma should display the right margin in the editing area."
-msgstr "pluma 是否在编辑区域显示右边距。"
+msgstr "pluma 是否在编辑区域显示右边缘。"
 
 #: data/org.mate.pluma.gschema.xml.in:110
 msgid "Right Margin Position"
-msgstr "右边距位置"
+msgstr "右边缘位置"
 
 #: data/org.mate.pluma.gschema.xml.in:111
 msgid "Specifies the position of the right margin."
-msgstr "指定右边距的位置。"
+msgstr "指定右边缘的位置。"
 
 #: data/org.mate.pluma.gschema.xml.in:115
 msgid "Document background pattern type"
@@ -274,20 +272,20 @@ msgstr "在载入文件时 pluma 是否应恢复上次的光标位置。"
 
 #: data/org.mate.pluma.gschema.xml.in:135
 msgid "Enable Search Highlighting"
-msgstr "启用搜索突出显示"
+msgstr "启用搜索高亮"
 
 #: data/org.mate.pluma.gschema.xml.in:136
 msgid ""
 "Whether pluma should highlight all the occurrences of the searched text."
-msgstr "pluma 是否应该突出显示被搜索文本的全部出现。"
+msgstr "pluma 是否应该高亮显示被搜索文本的全部出现。"
 
 #: data/org.mate.pluma.gschema.xml.in:140
 msgid "Enable Syntax Highlighting"
-msgstr "启用语法高亮显示"
+msgstr "启用语法高亮"
 
 #: data/org.mate.pluma.gschema.xml.in:141
 msgid "Whether pluma should enable syntax highlighting."
-msgstr "pluma 是否启用语法高亮显示。"
+msgstr "pluma 是否启用语法高亮。"
 
 #: data/org.mate.pluma.gschema.xml.in:145
 msgid "Toolbar is Visible"
@@ -310,7 +308,7 @@ msgid ""
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
 msgstr ""
-"工具栏按钮的风格。可供选择的值包括：“PLUMA_TOOLBAR_SYSTEM”代表使用系统默认风格，“PLUMA_TOOLBAR_ICONS”代表只显示图标，“PLUMA_TOOLBAR_AND_TEXT”代表同时显示图标和文字，而“PLUMA_TOOLBAR_ICONS_BOTH_HORIZ”代表在图标旁边显示文字。请注意，这些值是区分大小写的，所以请确定必须按照这里说明的大小写出现。"
+"工具栏按钮的风格。可供选择的值包括：“PLUMA_TOOLBAR_SYSTEM”代表使用系统默认风格，“PLUMA_TOOLBAR_ICONS”代表只显示图标，“PLUMA_TOOLBAR_AND_TEXT”代表同时显示图标和文字，而“PLUMA_TOOLBAR_ICONS_BOTH_HORIZ”代表在图标旁边显示文字。请注意，这些值是区分大小写的，所以请务必按照这里给出的大小写填写。"
 
 #: data/org.mate.pluma.gschema.xml.in:155
 msgid "Status Bar is Visible"
@@ -337,7 +335,7 @@ msgstr "与侧边栏一同显示标签页"
 #: data/org.mate.pluma.gschema.xml.in:166
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
-msgstr "如果为 False，Pluma 将在侧边栏激活时不在笔记本中显示标签页。"
+msgstr "如果为 false，pluma 将在侧边栏激活时不在笔记本中显示标签页。"
 
 #: data/org.mate.pluma.gschema.xml.in:170
 msgid "Bottom Panel is Visible"
@@ -350,7 +348,7 @@ msgstr "是否显示编辑窗口底部的面板。"
 
 #: data/org.mate.pluma.gschema.xml.in:175
 msgid "Maximum Recent Files"
-msgstr "最大当前文件数"
+msgstr "最大最近文件数"
 
 #: data/org.mate.pluma.gschema.xml.in:176
 msgid ""
@@ -360,12 +358,12 @@ msgstr "设定最近打开文件数的最大值，这个将在“最近打开过
 
 #: data/org.mate.pluma.gschema.xml.in:180
 msgid "Print Syntax Highlighting"
-msgstr "打印语法高亮显示"
+msgstr "打印语法高亮"
 
 #: data/org.mate.pluma.gschema.xml.in:181
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
-msgstr "pluma 是否在打印文档时打印语法高亮显示。"
+msgstr "pluma 是否在打印文档时打印语法高亮。"
 
 #: data/org.mate.pluma.gschema.xml.in:185
 msgid "Print Header"
@@ -374,11 +372,11 @@ msgstr "打印页眉"
 #: data/org.mate.pluma.gschema.xml.in:186
 msgid ""
 "Whether pluma should include a document header when printing documents."
-msgstr "pluma 是否在打印文档时包含文档头。"
+msgstr "pluma 是否在打印文档时包含文档页眉。"
 
 #: data/org.mate.pluma.gschema.xml.in:190
 msgid "Printing Line Wrapping Mode"
-msgstr "打印时换行模式"
+msgstr "打印时的换行模式"
 
 #: data/org.mate.pluma.gschema.xml.in:191
 msgid ""
@@ -388,7 +386,7 @@ msgid ""
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
 msgstr ""
-"指定打印时如何将长行折断。使用“GTK_WRAP_NONE”代表不换行，“GTK_WRAP_WORD”代表按单词换行，而“GTK_WRAP_CHAR”代表按字符换行。请注意，这些值是区分大小写的，所以请确定必须按照这里说明的大小写出现。"
+"指定打印时如何换行。使用“GTK_WRAP_NONE”代表不换行，“GTK_WRAP_WORD”代表在单词边界换行，而“GTK_WRAP_CHAR”代表按字符换行。请注意，这些值是区分大小写的，所以请务必按照这里给出的大小写填写。"
 
 #: data/org.mate.pluma.gschema.xml.in:195
 msgid "Print Line Numbers"
@@ -399,26 +397,26 @@ msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
-msgstr "如果该值(N)为0，则在打印文档时不插入行号；否则，pluma 将每隔 N 行插入行号。"
+msgstr "如果该值为 0，则在打印文档时不插入行号；否则，pluma 将每隔这么多行插入行号。"
 
 #: data/org.mate.pluma.gschema.xml.in:199
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
-msgstr "'等宽 9'"
+msgstr "'Monospace 9'"
 
 #: data/org.mate.pluma.gschema.xml.in:200
 msgid "Body Font for Printing"
-msgstr "打印时文档主体所用字体"
+msgstr "打印时文档正文所用字体"
 
 #: data/org.mate.pluma.gschema.xml.in:201
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
-msgstr "设定打印时文档主体所用的字体。"
+msgstr "设定打印时文档正文所用的字体。"
 
 #: data/org.mate.pluma.gschema.xml.in:204
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
-msgstr "'无衬线 11'"
+msgstr "'Sans 11'"
 
 #: data/org.mate.pluma.gschema.xml.in:205
 msgid "Header Font for Printing"
@@ -433,7 +431,7 @@ msgstr "设定打印时页眉所用的字体。只有当“打印页眉”选项
 #: data/org.mate.pluma.gschema.xml.in:209
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
-msgstr "'无衬线 8'"
+msgstr "'Sans 8'"
 
 #: data/org.mate.pluma.gschema.xml.in:210
 msgid "Line Number Font for Printing"
@@ -448,7 +446,8 @@ msgstr "设定打印时行号所用的字体。只有当“打印行号”选项
 #: data/org.mate.pluma.gschema.xml.in:214
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
+msgstr ""
+"[ 'UTF-8', 'GB18030', 'GBK', 'GB2312', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:215
 msgid "Automatically Detected Encodings"
@@ -459,12 +458,12 @@ msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
-msgstr "pluma 自动检测文件编码时所用的编码清单。“CURRENT”为当前区域编码。只能使用可识别的编码。"
+msgstr "pluma 自动检测文件编码时所用的编码列表。“CURRENT”表示当前区域设置的编码。只会使用可识别的编码。"
 
 #: data/org.mate.pluma.gschema.xml.in:219
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
-msgstr "[ 'ISO-8859-15' ]"
+msgstr "[ 'GB18030', 'GBK', 'GB2312', 'ISO-8859-15' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:220
 msgid "Encodings shown in menu"
@@ -474,7 +473,7 @@ msgstr "菜单中显示的编码"
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
-msgstr "在打开/保存文件选择器中的字符代码菜单中显示的编码列表。只使用可识别的编码。"
+msgstr "在打开/保存文件选择器中的字符编码菜单中显示的编码列表。只会使用可识别的编码。"
 
 #: data/org.mate.pluma.gschema.xml.in:225
 msgid "History for \"search for\" entries"
@@ -494,7 +493,7 @@ msgstr "“替换为”文本框的记录列表。"
 
 #: data/org.mate.pluma.gschema.xml.in:235
 msgid "Active plugins"
-msgstr "激活插件"
+msgstr "激活的插件"
 
 #: data/org.mate.pluma.gschema.xml.in:236
 msgid ""
@@ -520,8 +519,8 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
-"pluma 是否应在编辑器窗口中显示不换行空格：'show-none'不显示； 'show-trailing'仅显示尾随空格； 'show-"
-"all'显示所有空格。"
+"pluma 是否应在编辑器窗口中显示不换行空格：“show-none”不显示；“show-trailing”仅显示行尾空格；“show-"
+"all”显示所有空格。"
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
@@ -533,8 +532,8 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
-"pluma 是否应在编辑器窗口中显示制表符：'show-none'不显示； 'show-trailing'仅显示尾随空格； 'show-"
-"all'显示所有空格。"
+"pluma 是否应在编辑器窗口中显示制表符：“show-none”不显示；“show-trailing”仅显示行尾空格；“show-"
+"all”显示所有空格。"
 
 #: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show spaces"
@@ -546,8 +545,7 @@ msgid ""
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
-"pluma 是否应在编辑器窗口中显示空格：'show-none' 不显示； 'show-trailing' 仅显示尾随空格； 'show-all' "
-"显示所有空格。"
+"pluma 是否应在编辑器窗口中显示空格：“show-none”不显示；“show-trailing”仅显示行尾空格；“show-all”显示所有空格。"
 
 #: data/org.mate.pluma.gschema.xml.in:260
 msgid "state"
@@ -621,15 +619,15 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
-"Pluma 是一个小型但功能强大的文本编辑器，专门为 MATE 桌面设计。它具有大多数标准的文本编辑器功能，并且完全支持 Unicode "
-"中的国际文本。高级功能包括语法高亮显示和源代码自动缩进，在一个窗口中打印和编辑多个文档。"
+"Pluma 是一个小型但功能强大的文本编辑器，专门为 MATE 桌面设计。它具有大多数标准的文本编辑器功能，并且完全支持以 Unicode "
+"编码的国际文本。高级功能包括语法高亮显示、源代码自动缩进、在一个窗口中打印和编辑多个文档。"
 
 #: data/pluma.appdata.xml.in.in:17
 msgid ""
 "Pluma is extensible through a plugin system, which currently includes "
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
-msgstr "Pluma 可通过插件系统扩展，该插件系统当前包括对拼写检查、比较文件、查看CVS更改日志以及调整缩进级别的支持。"
+msgstr "Pluma 可通过插件系统扩展，该插件系统当前包括对拼写检查、比较文件、查看 CVS 更改日志以及调整缩进级别的支持。"
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:773
 msgid "Text Editor"
@@ -643,11 +641,12 @@ msgstr "编辑文本文件"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/pluma.desktop.in.in:15
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
-msgstr "文本;编辑器;MATE;标签页;突出显示;编码;多种;文件;可以插件的;"
+msgstr ""
+"text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;文本;编辑器;标签页;高亮;编码;代码;多个;文件;插件;"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:137
 msgid "Log Out _without Saving"
-msgstr "注销而不保存(_W)"
+msgstr "注销且不保存(_W)"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:141
 msgid "_Cancel Logout"
@@ -703,12 +702,12 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "如果您不保存，前 %ld 秒所做的更改将永久丢失。"
+msgstr[0] "如果您不保存，前 %ld 秒内所做的更改将永久丢失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:424
 msgid ""
 "If you don't save, changes from the last minute will be permanently lost."
-msgstr "如果您不保存，上一分钟所做的更改将永久丢失。"
+msgstr "如果您不保存，前 1 分钟内所做的更改将永久丢失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:430
 #, c-format
@@ -718,7 +717,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "如果您不保存，前一分钟零 %ld 秒所做的更改将永久丢失。"
+msgstr[0] "如果您不保存，前 1 分钟 %ld 秒内所做的更改将永久丢失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:440
 #, c-format
@@ -728,12 +727,12 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "如果您不保存，前 %ld 分钟所做的更改将永久丢失。"
+msgstr[0] "如果您不保存，前 %ld 分钟内所做的更改将永久丢失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:455
 msgid ""
 "If you don't save, changes from the last hour will be permanently lost."
-msgstr "如果您不保存，上 %d 小时所做的更改将永久丢失。"
+msgstr "如果您不保存，前 1 小时内所做的更改将永久丢失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:461
 #, c-format
@@ -743,7 +742,7 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "如果您不保存，上一小时零 %d 分钟所做的更改将永久丢失。"
+msgstr[0] "如果您不保存，前 1 小时 %d 分钟内所做的更改将永久丢失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:476
 #, c-format
@@ -751,17 +750,17 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] "如果您不保存，上 %d 小时所做的更改将永久丢失。"
+msgstr[0] "如果您不保存，前 %d 小时内所做的更改将永久丢失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
 msgid "Changes to document \"%s\" will be permanently lost."
-msgstr "对文档“%s”所作的更改将永久丢失。"
+msgstr "对文档“%s”所做的更改将永久丢失。"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:527
 #, c-format
 msgid "Save changes to document \"%s\" before closing?"
-msgstr "在关闭前先将更改保存到文档 \"%s\" 吗？"
+msgstr "在关闭前先将更改保存到文档“%s”吗？"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:541
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:766
@@ -780,7 +779,7 @@ msgid ""
 "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] "还有 %d 个文档已做更改但尚未保存。关闭前先保存吗？"
+msgstr[0] "还有 %d 个文档有未保存的更改。关闭前先保存吗？"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
@@ -792,7 +791,7 @@ msgstr "选择您想要保存的文档(_E)："
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:768
 msgid "If you don't save, all your changes will be permanently lost."
-msgstr "如果您不保存，您所做的全部更改都将永久丢失。"
+msgstr "如果您不保存，您所做的全部更改将永久丢失。"
 
 #: pluma/dialogs/pluma-encodings-dialog.c:330
 #: pluma/dialogs/pluma-encodings-dialog.ui:72
@@ -802,7 +801,7 @@ msgstr "如果您不保存，您所做的全部更改都将永久丢失。"
 #: plugins/time/pluma-time-plugin.c:889
 #: plugins/time/pluma-time-setup-dialog.ui:71
 msgid "_OK"
-msgstr "确定 (_O)"
+msgstr "确定(_O)"
 
 #: pluma/dialogs/pluma-encodings-dialog.c:331
 #: pluma/dialogs/pluma-encodings-dialog.ui:40
@@ -859,7 +858,7 @@ msgstr "按下此按钮可以选择编辑器所用的字体"
 #: pluma/dialogs/pluma-preferences-dialog.c:618
 #, c-format
 msgid "_Use the system fixed width font (%s)"
-msgstr "使用系统等宽字体(_U)(%s)"
+msgstr "使用系统等宽字体（%s）(_U)"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:812
 msgid "The selected color scheme cannot be installed."
@@ -906,7 +905,7 @@ msgstr "首选项"
 #: pluma/dialogs/pluma-preferences-dialog.ui:119
 #: pluma/pluma-print-preferences.ui:195
 msgid "Text Wrapping"
-msgstr "文字折行"
+msgstr "自动换行"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:139
 #: pluma/pluma-print-preferences.ui:215
@@ -920,15 +919,15 @@ msgstr "不将一个单词拆在两行(_S)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:193
 msgid "Highlighting"
-msgstr "突出显示"
+msgstr "高亮"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:213
 msgid "Highlight current _line"
-msgstr "突出显示当前行(_L)"
+msgstr "高亮当前行(_L)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:228
 msgid "Highlight matching _bracket"
-msgstr "突出显示匹配的括号(_B)"
+msgstr "高亮匹配的括号(_B)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:266
 msgid "Display"
@@ -940,11 +939,11 @@ msgstr "显示行号(_D)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:306
 msgid "Display right _margin at column"
-msgstr "显示列中右侧留白(_M)"
+msgstr "显示右边缘，位于列(_M)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:349
 msgid "Display _grid pattern"
-msgstr "显示坐标网格(_G)"
+msgstr "显示logr图案(_G)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:364
 msgid "Display _overview map"
@@ -960,7 +959,7 @@ msgstr "制表位"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:448
 msgid "_Tab width:"
-msgstr "跳格宽度(_T)："
+msgstr "制表符宽度(_T)："
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:463
 #: pluma/dialogs/pluma-preferences-dialog.ui:637
@@ -997,27 +996,27 @@ msgstr "分钟(_M)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:696
 msgid "Show Spaces, Tabs, Newlines"
-msgstr "显示空格、制表符、换行标识"
+msgstr "显示空格、制表符、换行符"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:717
 msgid "Show _spaces"
-msgstr "显示空格"
+msgstr "显示空格(_S)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:732
 msgid "Show _trailing spaces only"
-msgstr "仅显示尾随空格"
+msgstr "仅显示行尾空格(_T)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:748
 msgid "Show _tabs"
-msgstr "显示制表符"
+msgstr "显示制表符(_T)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:763
 msgid "Show _trailing tabs only"
-msgstr "仅显示尾随标签页"
+msgstr "仅显示行尾制表符(_T)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:779
 msgid "Show _newlines"
-msgstr "显示换行符"
+msgstr "显示换行符(_N)"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:815
 msgid "Editor"
@@ -1053,11 +1052,11 @@ msgstr "插件"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "替换"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "查找"
 
@@ -1068,11 +1067,11 @@ msgstr "查找(_F)"
 
 #: pluma/dialogs/pluma-search-dialog.c:405
 msgid "Replace _All"
-msgstr "全部替换 (_A)"
+msgstr "全部替换(_A)"
 
 #: pluma/dialogs/pluma-search-dialog.c:406 pluma/pluma-commands-file.c:587
 msgid "_Replace"
-msgstr "替换 (_R)"
+msgstr "替换(_R)"
 
 #: pluma/dialogs/pluma-search-dialog.ui:76
 msgid "Replace All"
@@ -1096,7 +1095,7 @@ msgstr "使用正则表达式匹配(_R)"
 
 #: pluma/dialogs/pluma-search-dialog.ui:213
 msgid "Match _entire word only"
-msgstr "匹配整个单词(_E)"
+msgstr "仅匹配整个单词(_E)"
 
 #: pluma/dialogs/pluma-search-dialog.ui:229
 msgid "Search _backwards"
@@ -1104,15 +1103,15 @@ msgstr "反向搜索(_B)"
 
 #: pluma/dialogs/pluma-search-dialog.ui:245
 msgid "_Wrap around"
-msgstr "回到文档头部继续搜索(_W)"
+msgstr "在首末处绕回(_W)"
 
 #: pluma/dialogs/pluma-search-dialog.ui:262
 msgid "_Parse escape sequences (e.g. \\n)"
-msgstr "解析转义字符(如 \\n)(_P)"
+msgstr "解析转义字符（如 \\n）(_P)"
 
 #: pluma/pluma.c:109
 msgid "Show the application's version"
-msgstr "显示应用程序版本"
+msgstr "显示此应用程序的版本"
 
 #: pluma/pluma.c:112
 msgid ""
@@ -1130,7 +1129,7 @@ msgstr "显示可使用的编码选项列表"
 
 #: pluma/pluma.c:118
 msgid "Create a new top-level window in an existing instance of pluma"
-msgstr "在已存在的 pluma 实例中创建一个最上层窗口"
+msgstr "在已存在的 pluma 实例中创建一个顶级窗口"
 
 #: pluma/pluma.c:121
 msgid "Create a new document in an existing instance of pluma"
@@ -1156,7 +1155,7 @@ msgid ""
 "Run '%s --help' to see a full list of available command line options.\n"
 msgstr ""
 "%s\n"
-"运行“%s --help”可查看可用的命令行选项的完整列表。\n"
+"运行 \"%s --help\" 可查看可用的命令行选项的完整列表。\n"
 
 #: pluma/pluma-commands-file.c:251
 #, c-format
@@ -1172,7 +1171,7 @@ msgstr[0] "正在载入 %d 个文件..."
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:462
 msgid "Open Files"
-msgstr "打开的文件"
+msgstr "打开文件"
 
 #: pluma/pluma-commands-file.c:573
 #, c-format
@@ -1181,21 +1180,21 @@ msgstr "文件“%s”为只读。"
 
 #: pluma/pluma-commands-file.c:578
 msgid "Do you want to try to replace it with the one you are saving?"
-msgstr "您想要试着将其替换为您正在保存的文件吗？"
+msgstr "您想要尝试将其替换为您正在保存的文件吗？"
 
 #: pluma/pluma-commands-file.c:648 pluma/pluma-commands-file.c:871
 #, c-format
 msgid "Saving file '%s'…"
-msgstr "正在保存文件“%s”..."
+msgstr "正在保存文件“%s”…"
 
 #: pluma/pluma-commands-file.c:756
 msgid "Save As…"
-msgstr "另存为..."
+msgstr "另存为…"
 
 #: pluma/pluma-commands-file.c:1085
 #, c-format
 msgid "Reverting the document '%s'…"
-msgstr "正在还原文档“%s”..."
+msgstr "正在还原文档“%s”…"
 
 #: pluma/pluma-commands-file.c:1130
 #, c-format
@@ -1215,7 +1214,7 @@ msgstr[0] "前 %ld 秒内对文档所做的更改将永久丢失。"
 #: pluma/pluma-commands-file.c:1148
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
-msgstr "上一分钟内对文档所做的更改将永久丢失。"
+msgstr "前 1 分钟内对文档所做的更改将永久丢失。"
 
 #: pluma/pluma-commands-file.c:1154
 #, c-format
@@ -1225,7 +1224,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "上一分钟零 %ld 秒内对文档所做的更改将永久丢失。"
+msgstr[0] "前 1 分钟 %ld 秒内对文档所做的更改将永久丢失。"
 
 #: pluma/pluma-commands-file.c:1164
 #, c-format
@@ -1240,7 +1239,7 @@ msgstr[0] "前 %ld 分钟内对文档所做的更改将永久丢失。"
 #: pluma/pluma-commands-file.c:1179
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
-msgstr "上 %d 小时内对文档所做的更改将永久丢失。"
+msgstr "前 1 小时内对文档所做的更改将永久丢失。"
 
 #: pluma/pluma-commands-file.c:1185
 #, c-format
@@ -1250,7 +1249,7 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "上一小时零 %d 分钟内对文档所做的更改将永久丢失。"
+msgstr[0] "前 1 小时 %d 分钟内对文档所做的更改将永久丢失。"
 
 #: pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1258,7 +1257,7 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "上 %d 小时内对文档所做的更改将永久丢失。"
+msgstr[0] "前 %d 小时内对文档所做的更改将永久丢失。"
 
 #: pluma/pluma-commands-file.c:1227 pluma/pluma-ui.h:85
 msgid "_Revert"
@@ -1280,7 +1279,7 @@ msgstr "Sun Microsystems"
 msgid ""
 "Pluma is a small and lightweight text editor for the MATE Desktop "
 "Environment."
-msgstr "Pluma 是为 MATE 桌面设计的轻量文本编辑器。"
+msgstr "Pluma 是为 MATE 桌面环境设计的小而轻量的文本编辑器。"
 
 #: pluma/pluma-commands-help.c:71
 msgid ""
@@ -1289,7 +1288,8 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
-"Pluma 是自由软件；您可以按照自由软件基金会所发表的 GNU GPL 协议自由发放和/或修改它；GPL 协议应该采用第二版或以后的任何版本。"
+"Pluma 是自由软件；您可以按照自由软件基金会所发布的 GNU "
+"通用公共许可证再分发和/或修改它；您可以使用此许可证的第二版或（依您所愿）任何更新的版本。"
 
 #: pluma/pluma-commands-help.c:75
 msgid ""
@@ -1298,8 +1298,7 @@ msgid ""
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
-"Pluma 发表的目的是希望它能够对您有用，但我们没有任何保证；对于以任何用途使用它所造成的任何直接或间接后果都不承担任何责任。请参看GNU GPL "
-"协议中的细节。"
+"分发 Pluma 的目的是希望它对您有用，但没有任何保证；甚至没有对适销性或特定用途适用性的默示保证。请阅读 GNU 通用公共许可证以了解更多细节。"
 
 #: pluma/pluma-commands-help.c:79
 msgid ""
@@ -1307,8 +1306,8 @@ msgid ""
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 msgstr ""
-"您应该在收到 Pluma 的同时收到了 GNU GPL 协议的副本；如果您没有收到的话，请给自由软件基金会写信，地址是 51 Franklin "
-"Street, Fifth Floor, Boston, MA 02110-1301 USA"
+"您应该在收到 Pluma 的同时也收到了 GNU 通用公共许可证的副本；如果没有收到该许可证的话，您可以写信给自由软件基金会，地址是：51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA"
 
 #: pluma/pluma-commands-help.c:114
 msgid "About Pluma"
@@ -1330,7 +1329,7 @@ msgstr ""
 "Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
 "Steve Frécinaux, Ignacio Casal Quinteiro\n"
 "Copyright © 2011 Perberos\n"
-"Copyright © 2012-2021 MATE 开发团队"
+"Copyright © 2012-2021 MATE 开发者"
 
 #: pluma/pluma-commands-help.c:127
 msgid "translator-credits"
@@ -1345,7 +1344,9 @@ msgstr ""
 "Mingye Wang <arthur200126@gmail.com>, 2015-2016\n"
 "白铭骢 <jeffbai@aosc.xyz>, 2015-2016\n"
 "刘子兴 <liushuyu@aosc.xyz>, 2015-2016\n"
-"Mingtian Yang <i@skylee.xyz>, 2020"
+"Mingtian Yang <i@skylee.xyz>, 2020\n"
+"OkayPJ <okaythepj@outlook.com>, 2020\n"
+"Wenbin Lv <wenbin816@gmail.com>, 2021-2022"
 
 #: pluma/pluma-commands-search.c:113
 #, c-format
@@ -1370,11 +1371,11 @@ msgid "Unsaved Document %d"
 msgstr "未保存文档 %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "只读"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "文档"
 
@@ -1501,7 +1502,7 @@ msgstr "自动检测"
 #: pluma/pluma-encodings-combo-box.c:287 pluma/pluma-encodings-combo-box.c:302
 #, c-format
 msgid "Current Locale (%s)"
-msgstr "当前语系(%s)"
+msgstr "当前区域设置（%s）"
 
 #: pluma/pluma-encodings-combo-box.c:354
 msgid "Add or Remove..."
@@ -1517,7 +1518,7 @@ msgstr "字符编码(_H)："
 
 #: pluma/pluma-file-chooser-dialog.c:159
 msgid "L_ine Ending:"
-msgstr "行尾(_I)"
+msgstr "行尾(_I)："
 
 #: pluma/pluma-file-chooser-dialog.c:178
 msgid "Unix/Linux"
@@ -1525,11 +1526,11 @@ msgstr "Unix/Linux"
 
 #: pluma/pluma-file-chooser-dialog.c:184
 msgid "Mac OS Classic"
-msgstr "Mac 操作系统风格"
+msgstr "Mac OS Classic"
 
 #: pluma/pluma-file-chooser-dialog.c:190
 msgid "Windows"
-msgstr "窗口"
+msgstr "Windows"
 
 #: pluma/pluma-file-chooser-dialog.c:455
 #: plugins/filebrowser/pluma-file-browser-widget.c:800
@@ -1556,7 +1557,7 @@ msgstr "找不到文件 %s。"
 #: pluma/pluma-io-error-message-area.c:246
 #: pluma/pluma-io-error-message-area.c:253
 msgid "Please check that you typed the location correctly and try again."
-msgstr "请检查键入的位置是否正确，然后重试。"
+msgstr "请检查输入的位置是否正确，然后重试。"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: pluma/pluma-io-error-message-area.c:222
@@ -1574,17 +1575,17 @@ msgstr "文件的位置无法挂载。"
 
 #: pluma/pluma-io-error-message-area.c:240
 msgid "The location of the file cannot be accessed because it is not mounted."
-msgstr "文件的位置无法访问，原因是未挂载。"
+msgstr "文件的位置无法访问，因为它未被挂载。"
 
 #: pluma/pluma-io-error-message-area.c:244
 #, c-format
 msgid "%s is a directory."
-msgstr "%s 是目录。"
+msgstr "%s 是一个目录。"
 
 #: pluma/pluma-io-error-message-area.c:251
 #, c-format
 msgid "%s is not a valid location."
-msgstr "%s 不是有效的位置"
+msgstr "%s 不是有效的位置。"
 
 #: pluma/pluma-io-error-message-area.c:281
 #, c-format
@@ -1597,7 +1598,7 @@ msgstr "找不到主机 %s。请检查您的代理服务器设置是否正确，
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and"
 " try again."
-msgstr "主机名无效。请检查键入的位置是否正确，然后重试。"
+msgstr "主机名无效。请检查输入的位置是否正确，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:302
 #, c-format
@@ -1606,7 +1607,7 @@ msgstr "%s 不是普通文件。"
 
 #: pluma/pluma-io-error-message-area.c:307
 msgid "Connection timed out. Please try again."
-msgstr "连接超时。请再试一次。"
+msgstr "连接超时。请重试。"
 
 #: pluma/pluma-io-error-message-area.c:330
 msgid "The file is too big."
@@ -1619,7 +1620,7 @@ msgstr "意外错误：%s"
 
 #: pluma/pluma-io-error-message-area.c:407
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
-msgstr "pluma 找不到文件。可能它已被删除。"
+msgstr "pluma 找不到此文件。可能它刚被删除。"
 
 #: pluma/pluma-io-error-message-area.c:417
 #, c-format
@@ -1642,17 +1643,17 @@ msgstr "仍然编辑(_W)"
 #: pluma/pluma-io-error-message-area.c:500
 #: pluma/pluma-io-error-message-area.c:777
 msgid "D_on't Edit"
-msgstr "放弃编辑(_O)"
+msgstr "不编辑(_O)"
 
 #: pluma/pluma-io-error-message-area.c:598
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
-msgstr "达到了跟随链接的层数极限，在此极限内找不到真实文件。"
+msgstr "达到了跟随链接的层数极限，仍未找到实际的文件。"
 
 #: pluma/pluma-io-error-message-area.c:602
 msgid "You do not have the permissions necessary to open the file."
-msgstr "您没有打开文件所需的权限。"
+msgstr "您没有打开此文件所需的权限。"
 
 #: pluma/pluma-io-error-message-area.c:608
 msgid "pluma has not been able to detect the character encoding."
@@ -1661,11 +1662,11 @@ msgstr "pluma 无法检测字符编码。"
 #: pluma/pluma-io-error-message-area.c:610
 #: pluma/pluma-io-error-message-area.c:632
 msgid "Please check that you are not trying to open a binary file."
-msgstr "请检查您是否正在尝试打开一个二进制文件。"
+msgstr "请确认您正在尝试打开的文件不是二进制文件。"
 
 #: pluma/pluma-io-error-message-area.c:611
 msgid "Select a character encoding from the menu and try again."
-msgstr "从菜单中选择一种字符编码，然后再试一次。"
+msgstr "从菜单中选择一种字符编码，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:617
 #, c-format
@@ -1676,21 +1677,21 @@ msgstr "在打开文件 %s 的时候出现问题。"
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
-msgstr "您打开的文件有一些非法字符。如果您继续编辑这个文件，这个文件有可能不能使用。"
+msgstr "您打开的文件包含一些无效字符。如果您继续编辑这个文件，可能导致这个文件无法使用。"
 
 #: pluma/pluma-io-error-message-area.c:622
 msgid "You can also choose another character encoding and try again."
-msgstr "您可以选择另外一种字符编码，然后再试一次。"
+msgstr "您也可以选择另外一种字符编码，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:629
 #, c-format
 msgid "Could not open the file %s using the %s character encoding."
-msgstr "无法使用编码 %2$s 编码打开文件 %1$s。"
+msgstr "无法使用 %2$s 字符编码打开文件 %1$s。"
 
 #: pluma/pluma-io-error-message-area.c:633
 #: pluma/pluma-io-error-message-area.c:708
 msgid "Select a different character encoding from the menu and try again."
-msgstr "从菜单中选择一种不同的字符编码，然后再试一次。"
+msgstr "从菜单中选择另外一种字符编码，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:643
 #, c-format
@@ -1706,18 +1707,18 @@ msgstr "无法使用 %2$s 字符编码保存文件 %1$s。"
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
-msgstr "文档包含无法使用指定字符编码表示的一个或多个字符。"
+msgstr "文档中的一个或多个字符无法使用指定的字符编码表示。"
 
 #: pluma/pluma-io-error-message-area.c:792
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
-msgstr "此文件（%s）已经在另外的 pluma 窗口中打开。"
+msgstr "此文件（%s）已经在另一个 pluma 窗口中打开。"
 
 #: pluma/pluma-io-error-message-area.c:806
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
-msgstr "pluma 已经在非编辑方式中打开了此文件的其它实例。您是否想要仍然编辑？"
+msgstr "pluma 已经以不可编辑模式打开了此文件。您仍然想要编辑它吗？"
 
 #: pluma/pluma-io-error-message-area.c:865
 #: pluma/pluma-io-error-message-area.c:963
@@ -1732,12 +1733,12 @@ msgstr "不保存(_O)"
 #: pluma/pluma-io-error-message-area.c:887
 #, c-format
 msgid "The file %s has been modified since reading it."
-msgstr "文件 %s 自上次读取之后发生了修改。"
+msgstr "文件 %s 自上次读取之后已被修改。"
 
 #: pluma/pluma-io-error-message-area.c:902
 msgid ""
 "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr "如果您保存的话，外部的所有更改都将丢失。仍然保存吗？"
+msgstr "如果您保存的话，外部程序所做的所有更改都将丢失。仍然保存吗？"
 
 #: pluma/pluma-io-error-message-area.c:990
 #, c-format
@@ -1754,8 +1755,7 @@ msgid ""
 "pluma could not back up the old copy of the file before saving the new one. "
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
-msgstr ""
-"pluma 无法在保存新文件时备份文件的旧副本。您可以忽略此警告，仍然进行保存，但是如果是在保存中发生了错误，您可能会丢失文件的旧副本。仍然保存吗？"
+msgstr "pluma 无法在保存新文件前备份旧文件。您可以忽略此警告，仍然进行保存，但是如果在保存过程中发生了错误，您可能会丢失旧文件。仍然保存吗？"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: pluma/pluma-io-error-message-area.c:1069
@@ -1763,38 +1763,38 @@ msgstr ""
 msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
-msgstr "pluma 无法以写入模式处理 %s 位置。请检查键入的位置是否正确，然后重试。"
+msgstr "pluma 无法以写入模式处理 %s 位置。请检查输入的位置是否正确，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:1077
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
-msgstr "pluma 无法以写入模式处理此位置。请检查键入的位置是否正确，然后重试。"
+msgstr "pluma 无法以写入模式处理此位置。请检查输入的位置是否正确，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:1086
 #, c-format
 msgid ""
 "%s is not a valid location. Please check that you typed the location "
 "correctly and try again."
-msgstr "%s 不是有效的位置。请检查键入的位置是否正确，然后重试。"
+msgstr "%s 不是有效的位置。请检查输入的位置是否正确，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:1092
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
-msgstr "您没有权限保存文件。请检查键入的位置是否正确，然后重试。"
+msgstr "您没有保存此文件所必需的权限。请检查输入的位置是否正确，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:1098
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space"
 " and try again."
-msgstr "没有足够的磁盘空间用于保存文件。请释放一些磁盘空间，然后重试。"
+msgstr "没有足够的磁盘空间保存此文件。请释放一些磁盘空间，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:1103
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
-msgstr "您试图将文件保存至只读磁盘。请检查键入的位置是否正确，然后重试。"
+msgstr "您正在尝试将文件保存至只读磁盘。请检查输入的位置是否正确，然后重试。"
 
 #: pluma/pluma-io-error-message-area.c:1109
 msgid "A file with the same name already exists. Please use a different name."
@@ -1804,14 +1804,14 @@ msgstr "已经存在同名文件。请使用不同的名称。"
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
-msgstr "您试图用来保存文件的磁盘有文件名长度的限制。请使用较短的名称。"
+msgstr "您正在尝试将文件保存到一个对文件名长度有限制的磁盘。请使用更短的名称。"
 
 #: pluma/pluma-io-error-message-area.c:1121
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
-msgstr "磁盘有文件大小的限制，请保存较小的文件或者将文件保存到没有此限制的磁盘上。"
+msgstr "您正在尝试将文件保存到一个对文件大小有限制的磁盘，请尝试减小文件的大小，或者将文件保存到没有此限制的磁盘上。"
 
 #: pluma/pluma-io-error-message-area.c:1137
 #, c-format
@@ -1825,7 +1825,7 @@ msgstr "文件 %s 已在磁盘上更改。"
 
 #: pluma/pluma-io-error-message-area.c:1186
 msgid "Do you want to drop your changes and reload the file?"
-msgstr "您是想要丢弃您的更改还是重新载入文件？"
+msgstr "您是否想要丢弃您的更改并重新载入文件？"
 
 #: pluma/pluma-io-error-message-area.c:1188
 msgid "Do you want to reload the file?"
@@ -1850,7 +1850,7 @@ msgstr "文件：%s"
 
 #: pluma/pluma-print-job.c:566
 msgid "Page %N of %Q"
-msgstr "第 %N 页共 %Q 页"
+msgstr "第 %N 页，共 %Q 页"
 
 #: pluma/pluma-print-job.c:825
 msgid "Preparing..."
@@ -1866,7 +1866,7 @@ msgstr "语法高亮"
 
 #: pluma/pluma-print-preferences.ui:52
 msgid "Print synta_x highlighting"
-msgstr "打印语法突出显示(_X)"
+msgstr "打印语法高亮(_X)"
 
 #: pluma/pluma-print-preferences.ui:85
 msgid "Line Numbers"
@@ -1902,7 +1902,7 @@ msgstr "字体"
 
 #: pluma/pluma-print-preferences.ui:369
 msgid "_Body:"
-msgstr "主体(_B)："
+msgstr "正文(_B)："
 
 #: pluma/pluma-print-preferences.ui:425
 msgid "He_aders and footers:"
@@ -1926,7 +1926,7 @@ msgstr "显示下一页"
 
 #: pluma/pluma-print-preview.c:599
 msgid "Current page (Alt+P)"
-msgstr "当前页面(Alt+P)"
+msgstr "当前页面（Alt+P）"
 
 #. Translators: the "of" from "1 of 19" in print preview.
 #: pluma/pluma-print-preview.c:622
@@ -1943,11 +1943,11 @@ msgstr "文档的总页数"
 
 #: pluma/pluma-print-preview.c:649
 msgid "Show multiple pages"
-msgstr "显示多页"
+msgstr "显示多个页面"
 
 #: pluma/pluma-print-preview.c:663
 msgid "Zoom 1:1"
-msgstr "缩放至原大"
+msgstr "缩放至 1:1"
 
 #: pluma/pluma-print-preview.c:673
 msgid "Zoom to fit the whole page"
@@ -1955,7 +1955,7 @@ msgstr "缩放至适合整个页面"
 
 #: pluma/pluma-print-preview.c:683
 msgid "Zoom the page in"
-msgstr "缩小页面"
+msgstr "放大页面"
 
 #: pluma/pluma-print-preview.c:693
 msgid "Zoom the page out"
@@ -1980,11 +1980,11 @@ msgstr "页面预览"
 
 #: pluma/pluma-print-preview.c:965
 msgid "The preview of a page in the document to be printed"
-msgstr "要打印文档中页面的预览"
+msgstr "要打印的文档的页面预览"
 
 #: pluma/pluma-smart-charset-converter.c:317
 msgid "It is not possible to detect the encoding automatically"
-msgstr "不能自动检测编码"
+msgstr "无法自动检测编码"
 
 #: pluma/pluma-statusbar.c:67 pluma/pluma-statusbar.c:73
 msgid "OVR"
@@ -2006,7 +2006,7 @@ msgstr "  行 %d，列 %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] "有%d个有错的标签"
+msgstr[0] "有 %d 个有错误的标签"
 
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -2018,36 +2018,36 @@ msgstr "无法创建目录“%s”：g_mkdir_with_parents() 失败：%s"
 #: pluma/pluma-tab.c:684
 #, c-format
 msgid "Reverting %s from %s"
-msgstr "从 %2$s 还原 %1$s"
+msgstr "正在从 %2$s 还原 %1$s"
 
 #: pluma/pluma-tab.c:691
 #, c-format
 msgid "Reverting %s"
-msgstr "还原 %s"
+msgstr "正在还原 %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
 #: pluma/pluma-tab.c:707
 #, c-format
 msgid "Loading %s from %s"
-msgstr "从 %2$s 载入 %1$s"
+msgstr "正在从 %2$s 载入 %1$s"
 
 #: pluma/pluma-tab.c:714
 #, c-format
 msgid "Loading %s"
-msgstr "载入 %s"
+msgstr "正在载入 %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
 #: pluma/pluma-tab.c:797
 #, c-format
 msgid "Saving %s to %s"
-msgstr "将 %s 保存到 %s"
+msgstr "正在将 %s 保存到 %s"
 
 #: pluma/pluma-tab.c:804
 #, c-format
 msgid "Saving %s"
-msgstr "保存 %s"
+msgstr "正在保存 %s"
 
 #: pluma/pluma-tab.c:1726
 msgid "RO"
@@ -2070,7 +2070,7 @@ msgstr "保存文件 %s 出错"
 
 #: pluma/pluma-tab.c:1804
 msgid "Unicode (UTF-8)"
-msgstr "Unicode (UTF-8)"
+msgstr "Unicode（UTF-8）"
 
 #: pluma/pluma-tab.c:1811
 msgid "Name:"
@@ -2090,7 +2090,7 @@ msgstr "关闭文档"
 
 #: pluma/pluma-ui.h:48
 msgid "_File"
-msgstr "文件 (_F)"
+msgstr "文件(_F)"
 
 #: pluma/pluma-ui.h:49
 msgid "_Edit"
@@ -2098,7 +2098,7 @@ msgstr "编辑(_E)"
 
 #: pluma/pluma-ui.h:50
 msgid "_View"
-msgstr "视图(_V)"
+msgstr "查看(_V)"
 
 #: pluma/pluma-ui.h:51
 msgid "_Search"
@@ -2124,7 +2124,7 @@ msgstr "新建一个文档"
 msgid "_Open..."
 msgstr "打开(_O)..."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "打开文件"
 
@@ -2194,11 +2194,11 @@ msgstr "打印当前文件"
 
 #: pluma/pluma-ui.h:93
 msgid "_Undo"
-msgstr "撤消(_U)"
+msgstr "撤销(_U)"
 
 #: pluma/pluma-ui.h:94
 msgid "Undo the last action"
-msgstr "撤消上次操作"
+msgstr "撤销上次操作"
 
 #: pluma/pluma-ui.h:95
 msgid "_Redo"
@@ -2206,7 +2206,7 @@ msgstr "重做(_R)"
 
 #: pluma/pluma-ui.h:96
 msgid "Redo the last undone action"
-msgstr "重做上次撤消的操作"
+msgstr "重做上次撤销的操作"
 
 #: pluma/pluma-ui.h:97
 msgid "Cu_t"
@@ -2327,7 +2327,7 @@ msgstr "清除高亮(_C)"
 
 #: pluma/pluma-ui.h:130
 msgid "Clear highlighting of search matches"
-msgstr "清除搜索匹配项的突出显示"
+msgstr "清除搜索匹配项的高亮"
 
 #: pluma/pluma-ui.h:131
 msgid "Go to _Line..."
@@ -2403,7 +2403,7 @@ msgstr "工具栏(_T)"
 
 #: pluma/pluma-ui.h:166
 msgid "Show or hide the toolbar in the current window"
-msgstr "当前窗口中显示或隐藏工具栏"
+msgstr "在当前窗口中显示或隐藏工具栏"
 
 #: pluma/pluma-ui.h:168
 msgid "_Statusbar"
@@ -2411,7 +2411,7 @@ msgstr "状态栏(_S)"
 
 #: pluma/pluma-ui.h:169
 msgid "Show or hide the statusbar in the current window"
-msgstr "在当前窗口中显示或隐藏显示状态栏"
+msgstr "在当前窗口中显示或隐藏状态栏"
 
 #: pluma/pluma-ui.h:171
 msgid "_Fullscreen"
@@ -2419,7 +2419,7 @@ msgstr "全屏(_F)"
 
 #: pluma/pluma-ui.h:172
 msgid "Edit text in fullscreen"
-msgstr "全屏编辑文本文件"
+msgstr "全屏编辑文本"
 
 #: pluma/pluma-ui.h:179
 msgid "Side _Pane"
@@ -2437,29 +2437,29 @@ msgstr "底部面板(_B)"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "在当前窗口中显示或隐藏底部面板"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "请检查您的安装。"
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
-msgstr "无法打开界面文件 %s。错误：%s"
+msgstr "无法打开 UI 文件 %s。错误：%s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
-msgstr "在文件 %s 中找不到所需的对象“%s”。"
+msgstr "在文件 %2$s 中找不到对象“%1$s”。"
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "%s 上的 /"
 
 #: pluma/pluma-view.c:1525
 msgid "_Wrap Around"
-msgstr "回到文档头部继续搜索(_W)"
+msgstr "在首末处绕回(_W)"
 
 #: pluma/pluma-view.c:1535
 msgid "Match _Entire Word Only"
@@ -2474,8 +2474,8 @@ msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
-"解析转义序列(如\n"
-")(_P)"
+"解析转义序列（如\n"
+"）(_P)"
 
 #: pluma/pluma-view.c:1669
 msgid "String you want to search for"
@@ -2485,14 +2485,14 @@ msgstr "您想要搜索的字符串"
 msgid "Line you want to move the cursor to"
 msgstr "您想要将光标移动到的行"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "使用 %s 语法高亮模式"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2500,45 +2500,45 @@ msgstr "使用 %s 语法高亮模式"
 msgid "Plain Text"
 msgstr "纯文本"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
-msgstr "禁用语法高亮显示"
+msgstr "禁用语法高亮"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "打开“%s”"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
-msgstr "打开最近用过的文件"
+msgstr "打开最近使用的文件"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "打开"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "保存"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "打印"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "激活“%s”"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "使用空格"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
-msgstr "跳格宽度"
+msgstr "制表符宽度"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in.in:5
 #: plugins/docinfo/docinfo.ui:19
@@ -2571,11 +2571,11 @@ msgstr "字节数"
 
 #: plugins/docinfo/docinfo.ui:153
 msgid "Characters (no spaces)"
-msgstr "字符数(不含空格)"
+msgstr "字符数（不含空格）"
 
 #: plugins/docinfo/docinfo.ui:179
 msgid "Characters (with spaces)"
-msgstr "字符数(含空格)"
+msgstr "字符数（含空格）"
 
 #: plugins/docinfo/docinfo.ui:218
 msgid "Words"
@@ -2607,7 +2607,7 @@ msgstr "外部工具"
 
 #: plugins/externaltools/externaltools.plugin.desktop.in.in:7
 msgid "Execute external commands and shell scripts."
-msgstr "执行外部命令和 Shell 脚本。"
+msgstr "执行外部命令和 shell 脚本。"
 
 #: plugins/externaltools/tools/__init__.py:174
 msgid "Manage _External Tools..."
@@ -2672,11 +2672,11 @@ msgstr "此快捷键已绑定到 %s"
 
 #: plugins/externaltools/tools/manager.py:711
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr "键入新的快捷键，或按 Backspace 清空"
+msgstr "输入新的快捷键，或按 Backspace 清空"
 
 #: plugins/externaltools/tools/manager.py:713
 msgid "Type a new accelerator"
-msgstr "键入新的快捷键"
+msgstr "输入新的快捷键"
 
 #: plugins/externaltools/tools/outputpanel.py:103
 msgid "Stopped."
@@ -2805,11 +2805,11 @@ msgstr "在文档所在位置打开终端"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
 msgid "Remove trailing spaces"
-msgstr "移除尾随空白"
+msgstr "移除行尾空白"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:4
 msgid "Remove useless trailing spaces in your file"
-msgstr "删除文件中无用的尾随空白"
+msgstr "删除文件中无用的行尾空白"
 
 #: plugins/externaltools/data/run-command.desktop.in:3
 msgid "Run command"
@@ -2817,7 +2817,7 @@ msgstr "运行命令"
 
 #: plugins/externaltools/data/run-command.desktop.in:4
 msgid "Execute a custom command and put its output in a new document"
-msgstr "执行自定义命令并将其输出写入到新文档"
+msgstr "执行自定义命令并将输出写入到新文档"
 
 #: plugins/externaltools/data/search-recursive.desktop.in:3
 msgid "Search"
@@ -2829,7 +2829,7 @@ msgstr "切换到一个 .c 或 .h 文件"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in.in:6
 msgid "File Browser Pane"
-msgstr "文件浏览器面板"
+msgstr "文件浏览器侧边栏"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in.in:7
 msgid "Easy file access from the side pane"
@@ -2846,7 +2846,7 @@ msgid ""
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
 msgstr ""
-"如果为 TRUE，则文件浏览器插件将查看第一个打开的文件所在目录，如果文件浏览器没有使用过的话。(这种情况通常出现在从命令行或者 Caja 打开文档)"
+"如果为 TRUE，则文件浏览器插件将查看第一个打开的文件所在目录，如果文件浏览器没有使用过的话。（这种情况通常出现在从命令行或者 Caja 打开文档）"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:11
 msgid "File Browser Filter Mode"
@@ -2859,8 +2859,8 @@ msgid ""
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
 msgstr ""
-"此值决定了文件浏览器过滤文件的方式。可供选择的值有：none (不进行过滤)，hidden (过滤隐藏文件)，binary (过滤二进制文件)和 "
-"hidden_and_binary (过滤隐藏文件和二进制文件)"
+"此值决定了哪些文件会被文件浏览器过滤掉。可供选择的值有：none（不进行过滤），hidden（过滤隐藏文件），binary（过滤二进制文件）和 "
+"hidden_and_binary（过滤隐藏文件和二进制文件）。"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:16
 msgid "File Browser Filter Pattern"
@@ -2890,7 +2890,7 @@ msgstr "文件浏览器根目录"
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "当 onload/tree_view 为 TRUE 时，文件浏览器插件载入将使用此值作为文件浏览器的根目录。"
+msgstr "当 onload/tree_view 为 TRUE 时，文件浏览器插件载入时将使用此值作为文件浏览器的根目录。"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:34
 msgid "File Browser Virtual Root Directory"
@@ -2902,7 +2902,7 @@ msgid ""
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
 msgstr ""
-"当 onload/tree_view 为 TRUE 时，文件浏览器插件载入将使用此值作为文件浏览器的虚拟根目录。虚拟根目录必须位于实际根目录之下。"
+"当 onload/tree_view 为 TRUE 时，文件浏览器插件载入时将使用此值作为文件浏览器的虚拟根目录。虚拟根目录必须位于实际根目录之下。"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:39
 msgid "Enable Restore of Remote Locations"
@@ -2916,95 +2916,97 @@ msgstr "设定是否允许恢复远程位置。"
 msgid "File System"
 msgstr "文件系统"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "将根设定为当前文档(_S)"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "将根设定为当前文档的位置"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "在此打开终端(_O)"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
-msgstr "在目前打开的目录中打开终端"
+msgstr "在当前打开的目录中打开终端"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "文件浏览器"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "创建新目录时发生了错误"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "创建新文件时发生了错误"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "重命名文件或目录时发生了错误"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "删除文件或目录时发生了错误"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
-msgstr "在文件管理其中打开目录时发生了错误"
+msgstr "在文件管理器中打开目录时发生了错误"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "设定根目录时发生了错误"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "载入目录时发生了错误"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "发生了错误"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr "无法将文件移动到回收站，您是否想要永久删除？"
+msgstr ""
+"无法将文件移动到回收站，您是否\n"
+"想要永久删除？"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "无法将文件“%s”移动到回收站。"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
-msgstr "无法将选中文件移动到回收站。"
+msgstr "无法将选中的文件移动到回收站。"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "您确定要永久删除“%s”吗？"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
-msgstr "您确定想要永久删除选中文件吗？"
+msgstr "您确定想要永久删除选中的文件吗？"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
-msgstr "如果您删除一项，它将永久丢失。"
+msgstr "如果您删除一个项目，它将永久丢失。"
 
 #: plugins/filebrowser/pluma-file-browser-store.c:1655
 msgid "(Empty)"
-msgstr "(空)"
+msgstr "（空）"
 
 #: plugins/filebrowser/pluma-file-browser-store.c:3211
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "重命名的文件现在已被过滤掉。您需要调整您的过滤器设置才能看到文件"
+msgstr "重命名的文件当前已被过滤掉。您需要调整您的过滤器设置才能看到该文件"
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -3016,7 +3018,7 @@ msgstr "文件"
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
-msgstr "新文件现在已被过滤掉。您需要调整您的过滤器设置才能看到文件"
+msgstr "新文件当前已被过滤掉。您需要调整您的过滤器设置才能看到该文件"
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -3028,7 +3030,7 @@ msgstr "目录"
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
-msgstr "新目录现在已被过滤掉。您需要调整您的过滤器设置才能看到文件"
+msgstr "新目录当前已被过滤掉。您需要调整您的过滤器设置才能看到该目录"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:704
 msgid "Bookmarks"
@@ -3044,7 +3046,7 @@ msgstr "移动到回收站(_M)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:791
 msgid "Move selected file or folder to trash"
-msgstr "将选中文件或文件夹移动到回收站"
+msgstr "将选中的文件或文件夹移动到回收站"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:794
 msgid "Delete selected file or folder"
@@ -3052,7 +3054,7 @@ msgstr "删除选中的文件或文件夹"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "Open selected file"
-msgstr "打开选中文件"
+msgstr "打开选中的文件"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:807
 msgid "Up"
@@ -3068,7 +3070,7 @@ msgstr "新建文件夹(_N)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:814
 msgid "Add new empty folder"
-msgstr "添加新的空文件夹"
+msgstr "新建空文件夹"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "New F_ile"
@@ -3076,7 +3078,7 @@ msgstr "新建文件(_I)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:817
 msgid "Add new empty file"
-msgstr "添加新的空文件"
+msgstr "新建空文件"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:822
 msgid "_Rename"
@@ -3171,7 +3173,7 @@ msgstr "挂载的卷没有挂载对象：%s"
 #: plugins/filebrowser/pluma-file-browser-widget.c:2220
 #, c-format
 msgid "Could not open media: %s"
-msgstr "无法打开介质：%s。"
+msgstr "无法打开介质：%s"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:2267
 #, c-format
@@ -3205,7 +3207,7 @@ msgstr "命令颜色(_O)："
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
-msgstr "使用系统的等宽字体"
+msgstr "使用系统等宽字体"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
@@ -3233,37 +3235,37 @@ msgstr "快速地打开文件"
 #: plugins/snippets/snippets/Document.py:190
 #: plugins/snippets/snippets/Document.py:619
 msgid "Snippets"
-msgstr "片断"
+msgstr "片段"
 
 #: plugins/snippets/snippets.plugin.desktop.in.in:7
 msgid "Insert often-used pieces of text in a fast way"
-msgstr "快速插入最常使用的文本片断"
+msgstr "快速插入最常使用的文本片段"
 
 #: plugins/snippets/snippets/snippets.ui:40
 msgid "Snippets Manager"
-msgstr "片断管理器"
+msgstr "片段管理器"
 
 #: plugins/snippets/snippets/snippets.ui:144
 msgid "_Snippets:"
-msgstr "片断(_S)："
+msgstr "片段(_S)："
 
 #: plugins/snippets/snippets/snippets.ui:165
 msgid "Create new snippet"
-msgstr "创建新片断"
+msgstr "创建新片段"
 
 #: plugins/snippets/snippets/snippets.ui:186
 #: plugins/snippets/snippets/Manager.py:793
 msgid "Import snippets"
-msgstr "导入片断"
+msgstr "导入片段"
 
 #: plugins/snippets/snippets/snippets.ui:207
 msgid "Export selected snippets"
-msgstr "导出选中片断"
+msgstr "导出选中片段"
 
 #: plugins/snippets/snippets/snippets.ui:229
 #: plugins/snippets/snippets/Manager.py:401
 msgid "Delete selected snippet"
-msgstr "删除选中的片断"
+msgstr "删除选中的片段"
 
 #: plugins/snippets/snippets/snippets.ui:335
 msgid "Activation"
@@ -3275,7 +3277,7 @@ msgstr "拖放目标(_D)："
 
 #: plugins/snippets/snippets/snippets.ui:392
 msgid "Shortcut key with which the snippet is activated"
-msgstr "此片断的快捷键已经激活"
+msgstr "激活此片段的快捷键"
 
 #: plugins/snippets/snippets/snippets.ui:411
 msgid "S_hortcut key:"
@@ -3289,23 +3291,23 @@ msgstr "_Tab 触发器："
 #: plugins/snippets/snippets/snippets.ui:446
 #: plugins/snippets/snippets/Manager.py:682
 msgid "Single word the snippet is activated with after pressing Tab"
-msgstr "按下 Tab 键后和片断一起激活的单字"
+msgstr "在此单词后按下 Tab 键可以激活此片段"
 
 #: plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage _Snippets..."
-msgstr "管理片断(_S)..."
+msgstr "管理片段(_S)..."
 
 #: plugins/snippets/snippets/WindowHelper.py:74
 msgid "Manage snippets"
-msgstr "管理片断"
+msgstr "管理片段"
 
 #: plugins/snippets/snippets/Manager.py:42
 msgid "Snippets archive"
-msgstr "片断存档"
+msgstr "片段存档"
 
 #: plugins/snippets/snippets/Manager.py:67
 msgid "Add a new snippet..."
-msgstr "添加新片断..."
+msgstr "添加新片段..."
 
 #: plugins/snippets/snippets/Manager.py:118
 msgid "Global"
@@ -3313,13 +3315,13 @@ msgstr "全局"
 
 #: plugins/snippets/snippets/Manager.py:398
 msgid "Revert selected snippet"
-msgstr "还原选中的片断"
+msgstr "还原选中的片段"
 
 #: plugins/snippets/snippets/Manager.py:675
 msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
-msgstr "这不是有效的跳格触发器。触发器必须是包含包含字母或者单个非字母字符，比如 { 或 [ 等等。"
+msgstr "这不是有效的 Tab 触发器。触发器必须包含字母或者是单个非字母字符，比如 { 或 [ 等等。"
 
 #: plugins/snippets/snippets/Manager.py:772
 #, python-format
@@ -3350,7 +3352,7 @@ msgstr "Bzip2 压缩的归档"
 
 #: plugins/snippets/snippets/Manager.py:802
 msgid "Single snippets file"
-msgstr "单个片断文件"
+msgstr "单个片段文件"
 
 #: plugins/snippets/snippets/Manager.py:803
 #: plugins/snippets/snippets/Manager.py:890
@@ -3370,21 +3372,21 @@ msgstr "导出成功完成"
 #: plugins/snippets/snippets/Manager.py:859
 #: plugins/snippets/snippets/Manager.py:928
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
-msgstr "您是否想要在导出时包含选中的<b>系统</b>片断？"
+msgstr "您是否想要在导出时包含选中的<b>系统</b>片段？"
 
 #: plugins/snippets/snippets/Manager.py:874
 #: plugins/snippets/snippets/Manager.py:946
 msgid "There are no snippets selected to be exported"
-msgstr "没有选中要导出的片断"
+msgstr "没有选中要导出的片段"
 
 #: plugins/snippets/snippets/Manager.py:879
 #: plugins/snippets/snippets/Manager.py:918
 msgid "Export snippets"
-msgstr "导出片断"
+msgstr "导出片段"
 
 #: plugins/snippets/snippets/Manager.py:1059
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr "输入新快捷键或按退格键 (Backspace) 清除"
+msgstr "输入新快捷键，或按 Backspace 清除"
 
 #: plugins/snippets/snippets/Manager.py:1061
 msgid "Type a new shortcut"
@@ -3414,12 +3416,12 @@ msgstr "文件“%s”不存在"
 #: plugins/snippets/snippets/Importer.py:32
 #, python-format
 msgid "File \"%s\" is not a valid snippets file"
-msgstr "文件“%s”不是有效的片断文件"
+msgstr "文件“%s”不是有效的片段文件"
 
 #: plugins/snippets/snippets/Importer.py:42
 #, python-format
 msgid "Imported file \"%s\" is not a valid snippets file"
-msgstr "导入的文件“%s”不是有效的片断文件"
+msgstr "导入的文件“%s”不是有效的片段文件"
 
 #: plugins/snippets/snippets/Importer.py:52
 #, python-format
@@ -3435,19 +3437,19 @@ msgstr "无法导入下列文件：%s"
 #: plugins/snippets/snippets/Importer.py:99
 #, python-format
 msgid "File \"%s\" is not a valid snippets archive"
-msgstr "文件“%s”不是有效的片断归档文件"
+msgstr "文件“%s”不是有效的片段归档文件"
 
 #: plugins/snippets/snippets/Placeholder.py:602
 #, python-format
 msgid ""
 "Execution of the Python command (%s) exceeds the maximum time, execution "
 "aborted."
-msgstr "执行 Python 命令(%s)超过最长时间，执行被中止。"
+msgstr "执行 Python 命令（%s）超过最长时间，执行被中止。"
 
 #: plugins/snippets/snippets/Placeholder.py:610
 #, python-format
 msgid "Execution of the Python command (%s) failed: %s"
-msgstr "执行 Python 命令(%s)失败：%s"
+msgstr "执行 Python 命令（%s）失败：%s"
 
 #: plugins/sort/pluma-sort-plugin.c:79
 msgid "S_ort..."
@@ -3523,11 +3525,11 @@ msgstr "建议"
 #. isn't misspelled
 #: plugins/spell/pluma-spell-checker-dialog.c:559
 msgid "(correct spelling)"
-msgstr "（正确的拼写）"
+msgstr "（拼写正确）"
 
 #: plugins/spell/pluma-spell-checker-dialog.c:705
 msgid "Completed spell checking"
-msgstr "完成拼写检查"
+msgstr "拼写检查已完成"
 
 #. Translators: the first %s is the language name, and
 #. * the second %s is the locale name. Example:
@@ -3661,7 +3663,7 @@ msgstr "配置拼写检查器插件(_C)…"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:103
 msgid "Autocheck spelling on document load..."
-msgstr "载入文档时自动检查拼写…"
+msgstr "载入文档时自动检查拼写..."
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:116
 msgid "_Never autocheck"
@@ -3691,7 +3693,7 @@ msgstr "标签"
 
 #: plugins/taglist/pluma-taglist-plugin-panel.c:612
 msgid "Select the group of tags you want to use"
-msgstr "选择您想使用的标记组"
+msgstr "选择您想使用的标签组合"
 
 #: plugins/taglist/pluma-taglist-plugin-panel.c:631
 msgid "_Preview"
@@ -3699,15 +3701,15 @@ msgstr "预览(_P)"
 
 #: plugins/taglist/pluma-taglist-plugin-panel.c:705
 msgid "Available Tag Lists"
-msgstr "可用的标记列表"
+msgstr "可用的标签列表"
 
 #: plugins/taglist/HTML.tags.xml.in:3
 msgid "XHTML 1.0 - Tags"
-msgstr "XHTML 1.0 - 标记"
+msgstr "XHTML 1.0 - 标签"
 
 #: plugins/taglist/HTML.tags.xml.in:5 plugins/taglist/HTML.tags.xml.in:1132
 msgid "Abbreviated form"
-msgstr "缩写格式"
+msgstr "缩写形式"
 
 #: plugins/taglist/HTML.tags.xml.in:10 plugins/taglist/HTML.tags.xml.in:1137
 msgid "Abbreviation"
@@ -3715,11 +3717,11 @@ msgstr "缩写"
 
 #: plugins/taglist/HTML.tags.xml.in:15 plugins/taglist/HTML.tags.xml.in:1145
 msgid "Accessibility key character"
-msgstr "辅助字符"
+msgstr "辅助功能键字符"
 
 #: plugins/taglist/HTML.tags.xml.in:20 plugins/taglist/HTML.tags.xml.in:1149
 msgid "Acronym"
-msgstr "缩写"
+msgstr " 首字母缩略词"
 
 #: plugins/taglist/HTML.tags.xml.in:25 plugins/taglist/HTML.tags.xml.in:1154
 msgid "Align"
@@ -3743,7 +3745,7 @@ msgstr "锚点"
 
 #: plugins/taglist/HTML.tags.xml.in:51
 msgid "Applet class file code (deprecated)"
-msgstr "小程序类文件代码(已废弃)"
+msgstr "小程序类文件代码（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:56 plugins/taglist/HTML.tags.xml.in:1184
 msgid "Associated information"
@@ -3759,15 +3761,15 @@ msgstr "与轴相关的页眉"
 
 #: plugins/taglist/HTML.tags.xml.in:72
 msgid "Background color (deprecated)"
-msgstr "背景颜色(已废弃)"
+msgstr "背景颜色（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:78
 msgid "Background texture tile (deprecated)"
-msgstr "背景纹理平铺(已废弃)"
+msgstr "背景纹理平铺（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:84
 msgid "Base font (deprecated)"
-msgstr "基本字体(已废弃)"
+msgstr "基本字体（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:88 plugins/taglist/HTML.tags.xml.in:1209
 msgid "Base URI"
@@ -3779,7 +3781,7 @@ msgstr "粗体"
 
 #: plugins/taglist/HTML.tags.xml.in:99
 msgid "Border (deprecated)"
-msgstr "边框(已废弃)"
+msgstr "边框（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:104 plugins/taglist/HTML.tags.xml.in:1226
 msgid "Cell rowspan"
@@ -3787,7 +3789,7 @@ msgstr "单元格跨行"
 
 #: plugins/taglist/HTML.tags.xml.in:110
 msgid "Center (deprecated)"
-msgstr "居中(已废弃)"
+msgstr "居中（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:115 plugins/taglist/HTML.tags.xml.in:1235
 msgid "Character encoding of linked resource"
@@ -3803,7 +3805,7 @@ msgstr "引用"
 
 #: plugins/taglist/HTML.tags.xml.in:129 plugins/taglist/HTML.tags.xml.in:1248
 msgid "Cite reason for change"
-msgstr "更改的引用原因"
+msgstr "引用的更改原因"
 
 #: plugins/taglist/HTML.tags.xml.in:134 plugins/taglist/HTML.tags.xml.in:1252
 msgid "Class implementation ID"
@@ -3823,7 +3825,7 @@ msgstr "代码内容类型"
 
 #: plugins/taglist/HTML.tags.xml.in:155
 msgid "Color of selected links (deprecated)"
-msgstr "选中链接的颜色(已废弃)"
+msgstr "选中链接的颜色（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:160 plugins/taglist/HTML.tags.xml.in:1272
 msgid "Column span"
@@ -3836,7 +3838,7 @@ msgstr "列"
 #: plugins/taglist/HTML.tags.xml.in:170 plugins/taglist/HTML.tags.xml.in:1280
 #: plugins/taglist/HTML.tags.xml.in:1285
 msgid "Comment"
-msgstr "评论"
+msgstr "注释"
 
 #: plugins/taglist/HTML.tags.xml.in:175 plugins/taglist/HTML.tags.xml.in:1290
 msgid "Computer code fragment"
@@ -3844,7 +3846,7 @@ msgstr "计算机代码段"
 
 #: plugins/taglist/HTML.tags.xml.in:182
 msgid "Content type (deprecated)"
-msgstr "内容类型(已废弃)"
+msgstr "内容类型（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:187 plugins/taglist/HTML.tags.xml.in:1303
 msgid "Coordinates"
@@ -3860,7 +3862,7 @@ msgstr "声明标志"
 
 #: plugins/taglist/HTML.tags.xml.in:204 plugins/taglist/HTML.tags.xml.in:1318
 msgid "Defer attribute"
-msgstr "延期属性"
+msgstr "延迟属性"
 
 #: plugins/taglist/HTML.tags.xml.in:208 plugins/taglist/HTML.tags.xml.in:1322
 msgid "Definition description"
@@ -3872,7 +3874,7 @@ msgstr "定义列表"
 
 #: plugins/taglist/HTML.tags.xml.in:218 plugins/taglist/HTML.tags.xml.in:1332
 msgid "Definition term"
-msgstr "定义条款"
+msgstr "定义项"
 
 #: plugins/taglist/HTML.tags.xml.in:223 plugins/taglist/HTML.tags.xml.in:1337
 msgid "Deleted text"
@@ -3884,7 +3886,7 @@ msgstr "方向性"
 
 #: plugins/taglist/HTML.tags.xml.in:234
 msgid "Directionality (deprecated)"
-msgstr "方向性(已废弃)"
+msgstr "方向性（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:239 plugins/taglist/HTML.tags.xml.in:1355
 msgid "Disabled"
@@ -3900,7 +3902,7 @@ msgstr "DIV 样式容器"
 
 #: plugins/taglist/HTML.tags.xml.in:253 plugins/taglist/HTML.tags.xml.in:1369
 msgid "Document base"
-msgstr "文档基础"
+msgstr "文档基"
 
 #: plugins/taglist/HTML.tags.xml.in:258 plugins/taglist/HTML.tags.xml.in:1373
 msgid "Document body"
@@ -3933,7 +3935,7 @@ msgstr "编码类型"
 
 #: plugins/taglist/HTML.tags.xml.in:293
 msgid "Font face (deprecated)"
-msgstr "字体族(已废弃)"
+msgstr "字体族（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:298 plugins/taglist/HTML.tags.xml.in:1423
 msgid "For label"
@@ -3966,7 +3968,7 @@ msgstr "表单输入"
 #: plugins/taglist/HTML.tags.xml.in:331 plugins/taglist/HTML.tags.xml.in:336
 #: plugins/taglist/HTML.tags.xml.in:1453 plugins/taglist/HTML.tags.xml.in:1457
 msgid "Form method"
-msgstr "表单方式"
+msgstr "表单方法"
 
 #: plugins/taglist/HTML.tags.xml.in:341 plugins/taglist/HTML.tags.xml.in:1461
 msgid "Form"
@@ -3978,7 +3980,7 @@ msgstr "转发链接"
 
 #: plugins/taglist/HTML.tags.xml.in:351 plugins/taglist/HTML.tags.xml.in:1470
 msgid "Frame render parts"
-msgstr "边框渲染部件"
+msgstr "框架渲染部件"
 
 #: plugins/taglist/HTML.tags.xml.in:356 plugins/taglist/HTML.tags.xml.in:1474
 msgid "Frame source"
@@ -4014,15 +4016,15 @@ msgstr "框架间距"
 
 #: plugins/taglist/HTML.tags.xml.in:396 plugins/taglist/HTML.tags.xml.in:1509
 msgid "Generic embedded object"
-msgstr "通用嵌入对象"
+msgstr "一般嵌入对象"
 
 #: plugins/taglist/HTML.tags.xml.in:401 plugins/taglist/HTML.tags.xml.in:1513
 msgid "Generic metainformation"
-msgstr "通用元信息"
+msgstr "一般元信息"
 
 #: plugins/taglist/HTML.tags.xml.in:406 plugins/taglist/HTML.tags.xml.in:1517
 msgid "Generic span"
-msgstr "通用 span"
+msgstr "一般 span"
 
 #: plugins/taglist/HTML.tags.xml.in:411 plugins/taglist/HTML.tags.xml.in:1522
 msgid "Header cell IDs"
@@ -4030,27 +4032,27 @@ msgstr "表头单元格 ID"
 
 #: plugins/taglist/HTML.tags.xml.in:416 plugins/taglist/HTML.tags.xml.in:1526
 msgid "Heading 1"
-msgstr "一级标题"
+msgstr "标题 1"
 
 #: plugins/taglist/HTML.tags.xml.in:421 plugins/taglist/HTML.tags.xml.in:1531
 msgid "Heading 2"
-msgstr "二级标题"
+msgstr "标题 2"
 
 #: plugins/taglist/HTML.tags.xml.in:426 plugins/taglist/HTML.tags.xml.in:1536
 msgid "Heading 3"
-msgstr "三级标题"
+msgstr "标题 3"
 
 #: plugins/taglist/HTML.tags.xml.in:431 plugins/taglist/HTML.tags.xml.in:1541
 msgid "Heading 4"
-msgstr "四级标题"
+msgstr "标题 4"
 
 #: plugins/taglist/HTML.tags.xml.in:436 plugins/taglist/HTML.tags.xml.in:1546
 msgid "Heading 5"
-msgstr "五级标题"
+msgstr "标题 5"
 
 #: plugins/taglist/HTML.tags.xml.in:441 plugins/taglist/HTML.tags.xml.in:1551
 msgid "Heading 6"
-msgstr "六级标题"
+msgstr "标题 6"
 
 #: plugins/taglist/HTML.tags.xml.in:446 plugins/taglist/HTML.tags.xml.in:1561
 msgid "Height"
@@ -4062,7 +4064,7 @@ msgstr "水平线"
 
 #: plugins/taglist/HTML.tags.xml.in:455
 msgid "Horizontal space (deprecated)"
-msgstr "水平间距(已废弃)"
+msgstr "水平间距（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:460 plugins/taglist/HTML.tags.xml.in:1573
 msgid "HREF URI"
@@ -4114,7 +4116,7 @@ msgstr "斜体文字"
 
 #: plugins/taglist/HTML.tags.xml.in:521
 msgid "Java applet (deprecated)"
-msgstr "Java 小程序(已废弃)"
+msgstr "Java 小程序（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:526 plugins/taglist/HTML.tags.xml.in:1643
 msgid "Label"
@@ -4131,7 +4133,7 @@ msgstr "大文本样式"
 
 #: plugins/taglist/HTML.tags.xml.in:547
 msgid "Link color (deprecated)"
-msgstr "链接颜色(已废弃)"
+msgstr "链接颜色（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:552 plugins/taglist/HTML.tags.xml.in:1668
 msgid "List item"
@@ -4139,11 +4141,11 @@ msgstr "列表项目"
 
 #: plugins/taglist/HTML.tags.xml.in:557 plugins/taglist/HTML.tags.xml.in:1673
 msgid "List of MIME types for file upload"
-msgstr "列出上传文件的 MIME 类型"
+msgstr "上传文件的 MIME 类型列表"
 
 #: plugins/taglist/HTML.tags.xml.in:562 plugins/taglist/HTML.tags.xml.in:1677
 msgid "List of supported character sets"
-msgstr "列出可接受的字符集"
+msgstr "可接受的字符集列表"
 
 #: plugins/taglist/HTML.tags.xml.in:567 plugins/taglist/HTML.tags.xml.in:1686
 msgid "Local change to font"
@@ -4171,7 +4173,7 @@ msgstr "文本框的最大长度"
 
 #: plugins/taglist/HTML.tags.xml.in:599 plugins/taglist/HTML.tags.xml.in:1721
 msgid "Output media"
-msgstr "输出介质"
+msgstr "输出媒体"
 
 #: plugins/taglist/HTML.tags.xml.in:606 plugins/taglist/HTML.tags.xml.in:1725
 msgid "Media-independent link"
@@ -4179,7 +4181,7 @@ msgstr "独立于媒体的链接"
 
 #: plugins/taglist/HTML.tags.xml.in:612
 msgid "Menu list (deprecated)"
-msgstr "菜单列表(已废弃)"
+msgstr "菜单列表（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:617 plugins/taglist/HTML.tags.xml.in:1739
 msgid "Multi-line text field"
@@ -4211,7 +4213,7 @@ msgstr "无脚本"
 
 #: plugins/taglist/HTML.tags.xml.in:651
 msgid "No shade (deprecated)"
-msgstr "无阴影(已废弃)"
+msgstr "无阴影（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:655 plugins/taglist/HTML.tags.xml.in:1792
 msgid "No URI"
@@ -4219,11 +4221,11 @@ msgstr "无 URI"
 
 #: plugins/taglist/HTML.tags.xml.in:661
 msgid "No word wrap (deprecated)"
-msgstr "无换行(已废弃)"
+msgstr "无换行（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:666
 msgid "Object applet file (deprecated)"
-msgstr "对象小程序文件(已废弃)"
+msgstr "对象小程序文件（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:671 plugins/taglist/HTML.tags.xml.in:1809
 msgid "Object data reference"
@@ -4231,7 +4233,7 @@ msgstr "对象数据引用"
 
 #: plugins/taglist/HTML.tags.xml.in:676 plugins/taglist/HTML.tags.xml.in:1813
 msgid "Offset for alignment character"
-msgstr "对齐字符的偏移"
+msgstr "对齐字符的偏移量"
 
 #: plugins/taglist/HTML.tags.xml.in:681 plugins/taglist/HTML.tags.xml.in:1817
 msgid "OnBlur event"
@@ -4307,11 +4309,11 @@ msgstr "OnUnload 事件"
 
 #: plugins/taglist/HTML.tags.xml.in:771 plugins/taglist/HTML.tags.xml.in:1889
 msgid "Option group"
-msgstr "Option group"
+msgstr "选项组"
 
 #: plugins/taglist/HTML.tags.xml.in:776 plugins/taglist/HTML.tags.xml.in:1894
 msgid "Option selector"
-msgstr "Option selector"
+msgstr "选项选择器"
 
 #: plugins/taglist/HTML.tags.xml.in:781 plugins/taglist/HTML.tags.xml.in:1899
 msgid "Ordered list"
@@ -4347,11 +4349,11 @@ msgstr "只读文字和密码"
 
 #: plugins/taglist/HTML.tags.xml.in:821
 msgid "Reduced spacing (deprecated)"
-msgstr "减少间距(已废弃)"
+msgstr "减少间距（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:825 plugins/taglist/HTML.tags.xml.in:1958
 msgid "Reverse link"
-msgstr "保留链接"
+msgstr "反向链接"
 
 #: plugins/taglist/HTML.tags.xml.in:830 plugins/taglist/HTML.tags.xml.in:1966
 msgid "Rows"
@@ -4359,11 +4361,11 @@ msgstr "行"
 
 #: plugins/taglist/HTML.tags.xml.in:835 plugins/taglist/HTML.tags.xml.in:1970
 msgid "Rulings between rows and columns"
-msgstr "行列刻度"
+msgstr "行列线"
 
 #: plugins/taglist/HTML.tags.xml.in:840 plugins/taglist/HTML.tags.xml.in:1974
 msgid "Sample program output, scripts"
-msgstr "示例程序输出，脚本"
+msgstr "示例程序输出、脚本"
 
 #: plugins/taglist/HTML.tags.xml.in:845 plugins/taglist/HTML.tags.xml.in:1979
 msgid "Scope covered by header cells"
@@ -4403,7 +4405,7 @@ msgstr "短嵌入引用"
 
 #: plugins/taglist/HTML.tags.xml.in:891
 msgid "Size (deprecated)"
-msgstr "大小(已废弃)"
+msgstr "大小（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:896 plugins/taglist/HTML.tags.xml.in:2025
 msgid "Small text style"
@@ -4415,7 +4417,7 @@ msgstr "源"
 
 #: plugins/taglist/HTML.tags.xml.in:906 plugins/taglist/HTML.tags.xml.in:2042
 msgid "Space-separated archive list"
-msgstr "以空格分隔的存档列表"
+msgstr "空格分隔的存档列表"
 
 #: plugins/taglist/HTML.tags.xml.in:911 plugins/taglist/HTML.tags.xml.in:2050
 msgid "Spacing between cells"
@@ -4427,7 +4429,7 @@ msgstr "单元格内间距"
 
 #: plugins/taglist/HTML.tags.xml.in:921 plugins/taglist/HTML.tags.xml.in:2058
 msgid "Span"
-msgstr "适合宽度"
+msgstr "Span"
 
 #: plugins/taglist/HTML.tags.xml.in:926 plugins/taglist/HTML.tags.xml.in:2066
 msgid "Standby load message"
@@ -4435,15 +4437,15 @@ msgstr "等候载入信息"
 
 #: plugins/taglist/HTML.tags.xml.in:932
 msgid "Starting sequence number (deprecated)"
-msgstr "起始序列号(已废弃)"
+msgstr "起始序列号（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:938
 msgid "Strike-through text style (deprecated)"
-msgstr "删除线文字样式(已废弃)"
+msgstr "删除线文字样式（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:944
 msgid "Strike-through text (deprecated)"
-msgstr "删除线文字(已废弃)"
+msgstr "删除线文字（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:949 plugins/taglist/HTML.tags.xml.in:2084
 msgid "Strong emphasis"
@@ -4488,7 +4490,7 @@ msgstr "表脚"
 
 #: plugins/taglist/HTML.tags.xml.in:1004 plugins/taglist/HTML.tags.xml.in:2142
 msgid "Table header cell"
-msgstr "表头元素"
+msgstr "表头单元格"
 
 #: plugins/taglist/HTML.tags.xml.in:1009 plugins/taglist/HTML.tags.xml.in:2147
 msgid "Table header"
@@ -4528,7 +4530,7 @@ msgstr "电传或等宽文字样式"
 
 #: plugins/taglist/HTML.tags.xml.in:1055 plugins/taglist/HTML.tags.xml.in:1061
 msgid "Text color (deprecated)"
-msgstr "文本颜色(已废弃)"
+msgstr "文本颜色（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:1066 plugins/taglist/HTML.tags.xml.in:2199
 msgid "Text entered by user"
@@ -4564,15 +4566,15 @@ msgstr "变量或程序参数"
 
 #: plugins/taglist/HTML.tags.xml.in:1106 plugins/taglist/HTML.tags.xml.in:2247
 msgid "Vertical cell alignment"
-msgstr "单元格垂直对齐"
+msgstr "垂直对齐单元格"
 
 #: plugins/taglist/HTML.tags.xml.in:1112
 msgid "Vertical space (deprecated)"
-msgstr "垂直间距(已废弃)"
+msgstr "垂直间距（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:1118
 msgid "Visited link color (deprecated)"
-msgstr "已浏览的链接颜色(已废弃)"
+msgstr "已浏览的链接颜色（已废弃）"
 
 #: plugins/taglist/HTML.tags.xml.in:1123 plugins/taglist/HTML.tags.xml.in:2259
 msgid "Width"
@@ -4584,7 +4586,7 @@ msgstr "HTML - 标记"
 
 #: plugins/taglist/HTML.tags.xml.in:1141
 msgid "Above"
-msgstr "以上"
+msgstr "在上方"
 
 #: plugins/taglist/HTML.tags.xml.in:1176
 msgid "Applet class file code"
@@ -4620,7 +4622,7 @@ msgstr "居中"
 
 #: plugins/taglist/HTML.tags.xml.in:1239
 msgid "Checked (state)"
-msgstr "已选中(状态)"
+msgstr "已选中（状态）"
 
 #: plugins/taglist/HTML.tags.xml.in:1268
 msgid "Color of selected links"
@@ -4700,7 +4702,7 @@ msgstr "列表"
 
 #: plugins/taglist/HTML.tags.xml.in:1700
 msgid "Mail link"
-msgstr "邮寄链接"
+msgstr "邮件链接"
 
 #: plugins/taglist/HTML.tags.xml.in:1712
 msgid "Marquee"
@@ -4716,7 +4718,7 @@ msgstr "多列"
 
 #: plugins/taglist/HTML.tags.xml.in:1756
 msgid "Next ID"
-msgstr "下一 ID"
+msgstr "下一个 ID"
 
 #: plugins/taglist/HTML.tags.xml.in:1760
 msgid "No embedded objects"
@@ -5248,19 +5250,19 @@ msgstr "Latex - 标记"
 
 #: plugins/taglist/Latex.tags.xml.in:4
 msgid "Bibliography (cite)"
-msgstr "文献引用(cite)"
+msgstr "文献引用（cite）"
 
 #: plugins/taglist/Latex.tags.xml.in:9
 msgid "Bibliography (item)"
-msgstr "文献项目(item)"
+msgstr "文献项目（item）"
 
 #: plugins/taglist/Latex.tags.xml.in:14
 msgid "Bibliography (shortcite)"
-msgstr "文献短引(shortcite)"
+msgstr "文献短引（shortcite）"
 
 #: plugins/taglist/Latex.tags.xml.in:19
 msgid "Bibliography (thebibliography)"
-msgstr "文献嵌套引用(thebibliography)"
+msgstr "文献嵌套引用（thebibliography）"
 
 #: plugins/taglist/Latex.tags.xml.in:24
 msgid "Brackets ()"
@@ -5336,39 +5338,39 @@ msgstr "希腊字母 Tau"
 
 #: plugins/taglist/Latex.tags.xml.in:107
 msgid "Header 0 (chapter)"
-msgstr "零级标题(chapter)"
+msgstr "零级标题（chapter）"
 
 #: plugins/taglist/Latex.tags.xml.in:112
 msgid "Header 0 (chapter*)"
-msgstr "零级标题(chapter*)"
+msgstr "零级标题（chapter*）"
 
 #: plugins/taglist/Latex.tags.xml.in:117
 msgid "Header 1 (section)"
-msgstr "一级标题(section)"
+msgstr "一级标题（section）"
 
 #: plugins/taglist/Latex.tags.xml.in:122
 msgid "Header 1 (section*)"
-msgstr "一级标题(section*)"
+msgstr "一级标题（section*）"
 
 #: plugins/taglist/Latex.tags.xml.in:127
 msgid "Header 2 (subsection)"
-msgstr "二级标题(subsection)"
+msgstr "二级标题（subsection）"
 
 #: plugins/taglist/Latex.tags.xml.in:132
 msgid "Header 2 (subsection*)"
-msgstr "二级标题(subsection*)"
+msgstr "二级标题（subsection*）"
 
 #: plugins/taglist/Latex.tags.xml.in:137
 msgid "Header 3 (subsubsection)"
-msgstr "三级标题(subsubsection)"
+msgstr "三级标题（subsubsection）"
 
 #: plugins/taglist/Latex.tags.xml.in:142
 msgid "Header 3 (subsubsection*)"
-msgstr "三级标题(subsubsection*)"
+msgstr "三级标题（subsubsection*）"
 
 #: plugins/taglist/Latex.tags.xml.in:147
 msgid "Header 4 (paragraph)"
-msgstr "四级标题(paragraph)"
+msgstr "四级标题（paragraph）"
 
 #: plugins/taglist/Latex.tags.xml.in:152
 msgid "Header appendix"
@@ -5396,11 +5398,11 @@ msgstr "项目"
 
 #: plugins/taglist/Latex.tags.xml.in:180
 msgid "Maths (display)"
-msgstr "数学(显示)"
+msgstr "数学（显示）"
 
 #: plugins/taglist/Latex.tags.xml.in:185
 msgid "Maths (inline)"
-msgstr "数学(嵌入)"
+msgstr "数学（嵌入）"
 
 #: plugins/taglist/Latex.tags.xml.in:190
 msgid "Operator fraction"
@@ -5408,19 +5410,19 @@ msgstr "分数运算符"
 
 #: plugins/taglist/Latex.tags.xml.in:195
 msgid "Operator integral (display)"
-msgstr "整数运算符(显示)"
+msgstr "整数运算符（显示）"
 
 #: plugins/taglist/Latex.tags.xml.in:200
 msgid "Operator integral (inline)"
-msgstr "整数运算符(嵌入)"
+msgstr "整数运算符（嵌入）"
 
 #: plugins/taglist/Latex.tags.xml.in:205
 msgid "Operator sum (display)"
-msgstr "加法运算符(显示)"
+msgstr "加法运算符（显示）"
 
 #: plugins/taglist/Latex.tags.xml.in:210
 msgid "Operator sum (inline)"
-msgstr "加法运算符(嵌入)"
+msgstr "加法运算符（嵌入）"
 
 #: plugins/taglist/Latex.tags.xml.in:215
 msgid "Reference label"
@@ -6355,11 +6357,11 @@ msgstr "在光标处插入当前的日期和时间。"
 
 #: plugins/trailsave/trailsave.plugin.desktop.in.in:5
 msgid "Save Without Trailing Spaces"
-msgstr "保存时不附带尾随空白"
+msgstr "保存时不附带行尾空白"
 
 #: plugins/trailsave/trailsave.plugin.desktop.in.in:6
 msgid "Removes trailing spaces from lines before saving."
-msgstr "保存前删除文件中的尾随空格。"
+msgstr "保存前删除文件中的行尾空白。"
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"
@@ -6383,14 +6385,14 @@ msgstr "使用自定义格式(_U)"
 #: plugins/time/pluma-time-dialog.ui:244
 #: plugins/time/pluma-time-setup-dialog.ui:265
 msgid "%d/%m/%Y %H:%M:%S"
-msgstr "%Y/%m/%d %H:%M:%S"
+msgstr "%Y-%m-%d %H:%M:%S"
 
 #. Translators: This example should follow the date format defined in the
 #. entry above
 #: plugins/time/pluma-time-dialog.ui:264
 #: plugins/time/pluma-time-setup-dialog.ui:285
 msgid "01/11/2009 17:52:00"
-msgstr "2009/01/11 17:52:00"
+msgstr "2009-01-11 17:52:00"
 
 #: plugins/time/pluma-time-setup-dialog.ui:23
 msgid "Configure date/time plugin"
@@ -6402,4 +6404,4 @@ msgstr "在插入日期/时间时..."
 
 #: plugins/time/pluma-time-setup-dialog.ui:143
 msgid "_Prompt for a format"
-msgstr "提示可使用的格式(_P)"
+msgstr "询问格式(_P)"

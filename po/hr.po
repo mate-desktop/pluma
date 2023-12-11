@@ -14,12 +14,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
 "Last-Translator: Tomislav Krznar <tomislav.krznar@gmail.com>, 2021\n"
-"Language-Team: Croatian (https://www.transifex.com/mate/teams/13566/hr/)\n"
+"Language-Team: Croatian (https://app.transifex.com/mate/teams/13566/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1092,11 +1092,11 @@ msgstr "Priključci"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "Zamijeni"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "Nađi"
 
@@ -1428,11 +1428,11 @@ msgid "Unsaved Document %d"
 msgstr "Dokument \"%d\" nije spremljen"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "Samo za čitanje"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "Dokumenti"
 
@@ -2200,7 +2200,7 @@ msgstr "Napravi novi dokument"
 msgid "_Open..."
 msgstr "_Otvori..."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "Otvori datoteku"
 
@@ -2513,22 +2513,22 @@ msgstr "Donja ploča"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Pokaži ili ukloni donju ploču u trenutnom prozoru"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Molim, provjerite instalaciju programa."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "Nije moguće otvoriti UI datoteku %s. Greška: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "NIje moguće naći objekt '%s' unutar datoteke %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ na %s"
@@ -2559,14 +2559,14 @@ msgstr "Niz znakova koji se pretražuje"
 msgid "Line you want to move the cursor to"
 msgstr "Linija na koju želite pomaknuti kursor"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Koristi %s način isticanja"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2574,43 +2574,43 @@ msgstr "Koristi %s način isticanja"
 msgid "Plain Text"
 msgstr "Obični tekst"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "Isključi isticanje sintakse"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "Otvori '%s'"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "Otvori nedavno korištenu datoteku"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "Otvori"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "Spremi"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "Ispis"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktiviraj '%s'"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "Koristi razmake"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "Dužina kartice"
 
@@ -2989,60 +2989,60 @@ msgstr ""
 msgid "File System"
 msgstr "Datotečni sustav"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "_Otvori terminal ovdje"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "Otvori terminal u trenutno otvorenom direktoriju"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "Preglednik datoteka"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "Došlo je do greške prilikom stavarnja novoga direktorija"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "Došlo je do greške prilikom stavarnja nove datoteke"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "Došlo je do greške prilikom preimenovanja datoteke ili direktorija"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "Došlo je do greške prilikom brisanja datoteke ili direktorija"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr ""
 "Došlo je do greške prilikom otvaranja direktorija u upravitelju datotekama"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr ""
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "Došlo je do greške prilikom učitavanja direktorija"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "Došlo je do greške"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3050,25 +3050,25 @@ msgstr ""
 "Ne mogu premjestiti datoteku u smeće, želite li\n"
 "trajno izbrisati?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "Datoteka \"%s\" ne može biti premještena u smeće."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "Odabrane datoteke ne mogu biti premještene u smeće."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Želiš li doista trajno izbrisati \"%s\"?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Jeste li sigurni da želite trajno izbrisati odabrane datoteke?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "Ako izbrišeš stavku, ona je trajno izgubljena."
 

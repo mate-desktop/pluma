@@ -3,7 +3,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.63.2)
 
 m4_define(pluma_major_version, 1)
-m4_define(pluma_minor_version, 26)
+m4_define(pluma_minor_version, 27)
 m4_define(pluma_micro_version, 0)
 m4_define(pluma_version, pluma_major_version.pluma_minor_version.pluma_micro_version)
 
@@ -157,6 +157,7 @@ AM_CONDITIONAL(ENABLE_ENCHANT, test x"$enable_enchant" = "xyes")
 
 GTK_REQUIRED=3.22.0
 GTKSOURCEVIEW_REQUIRED=4.0.2
+MATE_DESKTOP_REQUIRED=1.27.1
 
 PKG_CHECK_MODULES(GMODULE,gmodule-2.0,[GMODULE_ADD="gmodule-2.0"],[GMODULE_ADD=""])
 PKG_CHECK_MODULES(PLUMA, [
@@ -170,6 +171,10 @@ PKG_CHECK_MODULES(PLUMA, [
 	libpeas-1.0 >= 1.2.0
 	libpeas-gtk-1.0 >= 1.2.0
 ])
+
+PKG_CHECK_MODULES(MATE_DESKTOP, mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED)
+AC_SUBST(MATE_DESKTOP_CFLAGS)
+AC_SUBST(MATE_DESKTOP_LIBS)
 
 PKG_CHECK_MODULES(X11, [x11])
 

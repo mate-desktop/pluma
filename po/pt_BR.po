@@ -34,20 +34,22 @@
 # 18ab4449a00621534598e84a949423ea, 2020
 # gustavo s, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Vitor Henrique, 2022
+# Luciano Luck, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
+"Last-Translator: Luciano Luck, 2022\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/mate/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
@@ -270,19 +272,19 @@ msgstr "Posição da margem direita."
 
 #: data/org.mate.pluma.gschema.xml.in:115
 msgid "Document background pattern type"
-msgstr ""
+msgstr "Tipo de padrão de fundo do documento"
 
 #: data/org.mate.pluma.gschema.xml.in:116
 msgid "Whether the document will get a background pattern painted."
-msgstr ""
+msgstr "Se o documento vai ter um fundo pintado."
 
 #: data/org.mate.pluma.gschema.xml.in:120
 msgid "Display Overview Map"
-msgstr ""
+msgstr "Mostrar mapa de visão geral"
 
 #: data/org.mate.pluma.gschema.xml.in:121
 msgid "Whether pluma should display the overview map for the document."
-msgstr ""
+msgstr "Se pluma deve mostrar o mapa de visão geral para o documento"
 
 #: data/org.mate.pluma.gschema.xml.in:125
 msgid "Smart Home End"
@@ -510,7 +512,7 @@ msgstr ""
 #: data/org.mate.pluma.gschema.xml.in:214
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
+msgstr "[ 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:215
 msgid "Automatically Detected Encodings"
@@ -575,15 +577,15 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:240
 msgid "Show newline"
-msgstr ""
+msgstr "Mostrar nova linha"
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Whether pluma should show newlines in the editor window."
-msgstr ""
+msgstr "Se pluma deve mostrar novas linhas na janela do editor."
 
 #: data/org.mate.pluma.gschema.xml.in:245
 msgid "Show nbsp"
-msgstr ""
+msgstr "Mostrar nbsp"
 
 #: data/org.mate.pluma.gschema.xml.in:246
 msgid ""
@@ -591,6 +593,9 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
+"Se o pluma não deve mostrar espaços quebrados na janela do editor: \n"
+"'show-none' não aparece; 'show-trailing' mostrando apenas espaços à \n"
+"direita; 'show-all' mostrando todos os espaços."
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
@@ -616,19 +621,19 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:260
 msgid "state"
-msgstr ""
+msgstr "estado"
 
 #: data/org.mate.pluma.gschema.xml.in:261
 msgid "The pluma window state"
-msgstr ""
+msgstr "O estado da janela de pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:265
 msgid "size"
-msgstr ""
+msgstr "tamanho"
 
 #: data/org.mate.pluma.gschema.xml.in:266
 msgid "The pluma window size"
-msgstr ""
+msgstr "O tamanho da janela de pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:270
 msgid "side-panel-size"
@@ -772,6 +777,9 @@ msgstr[0] ""
 msgstr[1] ""
 "Se você não salvar, as alterações feitas nos últimos %ld segundos serão "
 "permanentemente perdidas."
+msgstr[2] ""
+"Se você não salvar, as alterações feitas nos últimos %ld segundos serão "
+"permanentemente perdidas."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:424
 msgid ""
@@ -794,6 +802,9 @@ msgstr[0] ""
 msgstr[1] ""
 "Se você não salvar, as alterações feitas no último minuto e %ld segundos "
 "serão permanentemente perdidas."
+msgstr[2] ""
+"Se você não salvar, as alterações feitas no último minuto e %ld segundos "
+"serão permanentemente perdidas."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:440
 #, c-format
@@ -807,6 +818,9 @@ msgstr[0] ""
 "Se você não salvar, as alterações feitas no último %ld minuto serão "
 "permanentemente perdidas."
 msgstr[1] ""
+"Se você não salvar, as alterações feitas nos últimos %ld minutos serão "
+"permanentemente perdidas."
+msgstr[2] ""
 "Se você não salvar, as alterações feitas nos últimos %ld minutos serão "
 "permanentemente perdidas."
 
@@ -831,6 +845,9 @@ msgstr[0] ""
 msgstr[1] ""
 "Se você não salvar, as alterações feitas na última hora e %dminutos serão "
 "permanentemente perdidas."
+msgstr[2] ""
+"Se você não salvar, as alterações feitas na última hora e %dminutos serão "
+"permanentemente perdidas."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:476
 #, c-format
@@ -842,6 +859,9 @@ msgstr[0] ""
 "Se você não salvar, as alterações feitas na última %d hora serão "
 "permanentemente perdidas."
 msgstr[1] ""
+"Se você não salvar, as alterações feitas nas últimas %d horas serão "
+"permanentemente perdidas."
+msgstr[2] ""
 "Se você não salvar, as alterações feitas nas últimas %d horas serão "
 "permanentemente perdidas."
 
@@ -868,6 +888,8 @@ msgstr[0] ""
 "As alterações feitas em %d documento serão permanentemente perdidas."
 msgstr[1] ""
 "As alterações feitas em %d documentos serão permanentemente perdidas."
+msgstr[2] ""
+"As alterações feitas em %d documentos serão permanentemente perdidas."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
@@ -879,6 +901,9 @@ msgstr[0] ""
 "Existe %d documento com alterações não salvas. Salvar as alterações antes de"
 " fechar?"
 msgstr[1] ""
+"Existem %d documentos com alterações não salvas. Salvar as alterações antes "
+"de fechar?"
+msgstr[2] ""
 "Existem %d documentos com alterações não salvas. Salvar as alterações antes "
 "de fechar?"
 
@@ -1154,11 +1179,11 @@ msgstr "Plugins"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "Substituir"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "Localizar"
 
@@ -1272,6 +1297,7 @@ msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "Carregando %d arquivo..."
 msgstr[1] "Carregando %d arquivos..."
+msgstr[2] "Carregando %d arquivos..."
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:462
@@ -1320,6 +1346,9 @@ msgstr[0] ""
 msgstr[1] ""
 "Alterações feitas no documento nos últimos %ld segundos serão "
 "permanentemente perdidas."
+msgstr[2] ""
+"Alterações feitas no documento nos últimos %ld segundos serão "
+"permanentemente perdidas."
 
 #: pluma/pluma-commands-file.c:1148
 msgid ""
@@ -1342,6 +1371,9 @@ msgstr[0] ""
 msgstr[1] ""
 "Alterações feitas no documento no último minuto e %ld segundos serão "
 "permanentemente perdidas."
+msgstr[2] ""
+"Alterações feitas no documento no último minuto e %ld segundos serão "
+"permanentemente perdidas."
 
 #: pluma/pluma-commands-file.c:1164
 #, c-format
@@ -1355,6 +1387,9 @@ msgstr[0] ""
 "Alterações feitas no documento no último %ld minuto serão permanentemente "
 "perdidas."
 msgstr[1] ""
+"Alterações feitas no documento nos últimos %ld minutos serão permanentemente"
+" perdidas."
+msgstr[2] ""
 "Alterações feitas no documento nos últimos %ld minutos serão permanentemente"
 " perdidas."
 
@@ -1379,6 +1414,9 @@ msgstr[0] ""
 msgstr[1] ""
 "Alterações feitas no documento na última hora e %d minutos serão "
 "permanentemente perdidas."
+msgstr[2] ""
+"Alterações feitas no documento na última hora e %d minutos serão "
+"permanentemente perdidas."
 
 #: pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1390,6 +1428,9 @@ msgstr[0] ""
 "Alterações feitas no documento na última %d hora serão permanentemente "
 "perdidas."
 msgstr[1] ""
+"Alterações feitas no documento nas últimas %d horas serão permanentemente "
+"perdidas."
+msgstr[2] ""
 "Alterações feitas no documento nas últimas %d horas serão permanentemente "
 "perdidas."
 
@@ -1484,6 +1525,7 @@ msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
 msgstr[0] "%d ocorrência foi encontrada e substituída"
 msgstr[1] "%d ocorrências foram encontradas e substituídas"
+msgstr[2] "%d ocorrências foram encontradas e substituídas"
 
 #: pluma/pluma-commands-search.c:123
 msgid "Found and replaced one occurrence"
@@ -1502,11 +1544,11 @@ msgid "Unsaved Document %d"
 msgstr "Documento não-salvo %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "Somente leitura"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "Documentos"
 
@@ -2184,6 +2226,7 @@ msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
 msgstr[0] "Existe uma aba com erros"
 msgstr[1] "Existem %d abas com erros"
+msgstr[2] "Existem %d abas com erros"
 
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -2303,7 +2346,7 @@ msgstr "Cria um novo documento"
 msgid "_Open..."
 msgstr "_Abrir..."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "Abrir um arquivo"
 
@@ -2616,22 +2659,22 @@ msgstr "_Painel inferior"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Mostra ou oculta o painel inferior na janela atual"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Verifique sua instalação."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "Não foi possível abrir o arquivo de interface de usuário %s. Erro: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "Não foi possível localizar o objeto \\\"%s\\\" dentro do arquivo %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ em %s"
@@ -2664,14 +2707,14 @@ msgstr "Expressão que você deseja pesquisar"
 msgid "Line you want to move the cursor to"
 msgstr "Linha para a qual que você deseja mover o cursor"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Usa modo de destaque %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2679,43 +2722,43 @@ msgstr "Usa modo de destaque %s"
 msgid "Plain Text"
 msgstr "Texto sem formatação"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "Desabilita destaque de sintaxe"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "Abrir \\\"%s\\\""
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "Abre um arquivo recentemente usado"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "Abrir"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "Salvar"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "Imprimir"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "Ativar \\\"%s\\\""
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "Usar espaços"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "Largura das tabulações"
 
@@ -3111,59 +3154,59 @@ msgstr "Define se habilita ou não a restauração de localizações remotas."
 msgid "File System"
 msgstr "Sistema de arquivos"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "_Definir raiz para documento ativo"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "Define o diretório raiz como o mesmo local do documento ativo"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "_Abrir terminal aqui"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "Abre um terminal no diretório aberto atualmente"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "Navegador de Arquivos"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "Ocorreu um erro ao criar um novo diretório"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "Ocorreu um erro ao criar um novo arquivo"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "Ocorreu um erro ao renomear um arquivo ou diretório"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "Ocorreu um erro ao excluir um arquivo ou diretório"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Ocorreu um erro ao abrir um diretório no gerenciador de arquivos"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "Ocorreu um erro ao definir um diretório raiz"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "Ocorreu um erro ao carregar um diretório"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "Ocorreu um erro"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3171,27 +3214,27 @@ msgstr ""
 "Não foi possível mover o arquivo para \n"
 "a lixeira; você deseja excluí-lo permanentemente?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "O arquivo \"%s\" não pôde ser movido para a lixeira."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "Os arquivos selecionados não podem ser movidos para a lixeira."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Você tem certeza de que deseja excluir \"%s\" permanentemente?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr ""
 "Você tem certeza de que quer excluir permanentemente os arquivos "
 "selecionados?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "Se você excluir um item, ele será perdido permanentemente."
 
@@ -5126,7 +5169,7 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2343
 msgid "€"
-msgstr ""
+msgstr "€ "
 
 #: plugins/taglist/HTML.tags.xml.in:2347
 msgid "¤"
@@ -5778,7 +5821,7 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:24
 msgid "call-template"
-msgstr ""
+msgstr "modelo de chamada"
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"

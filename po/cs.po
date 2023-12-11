@@ -8,7 +8,7 @@
 # Honza K. <honza889@gmail.com>, 2018
 # Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2018
 # Andy Andy <nd76er@gmail.com>, 2018
-# LiberteCzech <liberte.czech@gmail.com>, 2018
+# LiberteCzech <martin.kriz.czech@gmail.com>, 2018
 # 6e833d5535e2fe0dd9dfa7fe5bf473f2_d78f422 <64c38a0ff10419c64e8e03d54c72b3bd_352524>, 2018
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2019
 # huskyviking <husky.viking@seznam.cz>, 2019
@@ -17,16 +17,16 @@
 # Lukáš Lommer <drom@kdyne.net>, 2020
 # Michal <sinope@seznam.cz>, 2021
 # Roman Horník <roman.hornik@debian-linux.cz>, 2021
-# ToMáš Marný, 2021
+# ToMáš Marný, 2023
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: ToMáš Marný, 2021\n"
-"Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
+"Last-Translator: ToMáš Marný, 2023\n"
+"Language-Team: Czech (https://app.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -187,14 +187,14 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:75
 msgid "Tab Size"
-msgstr "Velikost tabelátoru"
+msgstr "Velikost tabulátoru"
 
 #: data/org.mate.pluma.gschema.xml.in:76
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr ""
-"Udává počet mezerníků, které by se měly zobrazovat místo znaků tabelátoru."
+"Udává počet mezerníků, které by se měly zobrazovat místo znaků tabulátoru."
 
 #: data/org.mate.pluma.gschema.xml.in:80
 msgid "Insert spaces"
@@ -202,7 +202,7 @@ msgstr "Vložit mezery"
 
 #: data/org.mate.pluma.gschema.xml.in:81
 msgid "Whether pluma should insert spaces instead of tabs."
-msgstr "Jestli má pluma vkládat mezery místo tabelátorů."
+msgstr "Jestli má pluma vkládat mezery místo tabulátorů."
 
 #: data/org.mate.pluma.gschema.xml.in:85
 msgid "Automatic indent"
@@ -579,6 +579,9 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
+"Zda má pluma v okně editoru zobrazovat nedělitelné mezery: „show-none“ "
+"nezobrazuje se; „show-trailing“ zobrazují se pouze koncové mezery; „show-"
+"all“ zobrazují se všechny mezery."
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
@@ -590,6 +593,9 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
+"Zda má pluma zobrazovat tabulátory v okně editoru: „show-none“ nezobrazuje "
+"se; „show-trailing“ zobrazují se pouze koncové tabulátory; „show-all“ "
+"zobrazují se všechny tabulátory."
 
 #: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show spaces"
@@ -601,6 +607,9 @@ msgid ""
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
+"Zda má pluma zobrazovat mezery v okně editoru: „show-none“ nezobrazuje se; "
+"„show-trailing“ zobrazují se pouze koncové mezery; „show-all“ zobrazují se "
+"všechny mezery."
 
 #: data/org.mate.pluma.gschema.xml.in:260
 msgid "state"
@@ -624,7 +633,7 @@ msgstr "side-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:271
 msgid "The pluma side-panel-size"
-msgstr ""
+msgstr "Velikost bočního panelu aplikace Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:275
 msgid "side-panel-active-page"
@@ -632,7 +641,7 @@ msgstr "side-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:276
 msgid "The pluma side-panel-active-page"
-msgstr ""
+msgstr "Aktivní stránka postranního panelu aplikace Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:280
 msgid "bottom-panel-size"
@@ -640,7 +649,7 @@ msgstr "bottom-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:281
 msgid "The pluma bottom-panel-size"
-msgstr ""
+msgstr "Velikost spodního panelu aplikace Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:285
 msgid "bottom-panel-active-page"
@@ -648,7 +657,7 @@ msgstr "bottom-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:286
 msgid "The pluma bottom-panel-active-page"
-msgstr ""
+msgstr "Aktivní stránka spodního panelu aplikace Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:290
 msgid "filter-id"
@@ -1059,7 +1068,7 @@ msgstr "Zvýrazňovat _odpovídající závorku"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:266
 msgid "Display"
-msgstr "Zobrazit"
+msgstr "Zobrazování"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:286 pluma/pluma-view.c:2274
 msgid "_Display line numbers"
@@ -1079,15 +1088,15 @@ msgstr "Zobrazovat přehled_ovou mapu"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:397
 msgid "View"
-msgstr "Zobrazit"
+msgstr "Zobrazování"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:421
 msgid "Tab Stops"
-msgstr "Tabelátory"
+msgstr "tabulátory"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:448
 msgid "_Tab width:"
-msgstr "Šířka _tabelátorů:"
+msgstr "Šířka _tabulátorů:"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:463
 #: pluma/dialogs/pluma-preferences-dialog.ui:637
@@ -1096,7 +1105,7 @@ msgstr "8"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:484
 msgid "Insert _spaces instead of tabs"
-msgstr "Vkládat _mezery místo tabelátorů"
+msgstr "Vkládat _mezery místo tabulátorů"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:522
 msgid "Automatic Indentation"
@@ -1124,27 +1133,27 @@ msgstr "_minut"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:696
 msgid "Show Spaces, Tabs, Newlines"
-msgstr "Zobrazit mezery, tabulátory, nové řádky"
+msgstr "Zobrazování mezer, tabulátorů, nových řádků"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:717
 msgid "Show _spaces"
-msgstr "Zobrazit _mezery"
+msgstr "Zobrazovat _mezery"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:732
 msgid "Show _trailing spaces only"
-msgstr "Zobrazit pouze _koncové mezery"
+msgstr "Zobrazovat pouze _koncové mezery"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:748
 msgid "Show _tabs"
-msgstr "Zobrazit _karty"
+msgstr "Zobrazovat _tabulátory"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:763
 msgid "Show _trailing tabs only"
-msgstr ""
+msgstr "Zobrazovat pouze koncové tabulátory"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:779
 msgid "Show _newlines"
-msgstr "Zobrazit _nové řádky"
+msgstr "Zobrazovat _nové řádky"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:815
 msgid "Editor"
@@ -1180,11 +1189,11 @@ msgstr "Zásuvné moduly"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "Nahradit"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "Hledat"
 
@@ -1551,11 +1560,11 @@ msgid "Unsaved Document %d"
 msgstr "Neuložený dokument %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "Pouze ke čtení"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "Dokumenty"
 
@@ -2342,7 +2351,7 @@ msgstr "Vytvořit nový dokument"
 msgid "_Open..."
 msgstr "_Otevřít…"
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "Otevřít soubor"
 
@@ -2655,22 +2664,22 @@ msgstr "_Spodní panel"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Zobrazit nebo skrýt spodní panel v aktuálním okně"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Zkontrolujte prosím svou instalaci."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "Nelze otevřít soubor „%s“ s uživatelským rozhraním. Chyba: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "Nelze najít objekt „%s“ uvnitř souboru %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ na %s"
@@ -2703,14 +2712,14 @@ msgstr "Řetězec, který chcete hledat"
 msgid "Line you want to move the cursor to"
 msgstr "Řádek, na který chcete přesunout kurzor"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Použít režim zvýrazňování %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2718,45 +2727,45 @@ msgstr "Použít režim zvýrazňování %s"
 msgid "Plain Text"
 msgstr "Prostý text"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "Zakázat zvýrazňování syntaxe"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "Otevřít „%s“"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "Otevřít nedávno používaný soubor"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "Otevřít"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "Uložit"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "Tisk"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktivovat „%s“"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "Použít mezery"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
-msgstr "Šířka tabelátoru"
+msgstr "Šířka tabulátoru"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in.in:5
 #: plugins/docinfo/docinfo.ui:19
@@ -3150,59 +3159,59 @@ msgstr "Nastavuje, zda je povolena obnova vzdálených umístění."
 msgid "File System"
 msgstr "Souborový systém"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "_Nastavit kořen podle aktivního dokumentu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "Nastavit kořen podle umístění aktivního dokumentu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "_Otevřít zde terminál"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "Otevřít terminál v aktuálně otevřeném adresáři"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "Správce souborů"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "Během vytváření nového adresáře došlo k chybě"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "Během vytváření nového souboru došlo k chybě"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "Během přejmenovávání souboru či adresáře došlo k chybě"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "Během mazání souboru či adresáře došlo k chybě"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Během otevírání adresáře ve správci souborů došlo k chybě"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "Během nastavování kořenového adresáře došlo k chybě"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "Během načítání adresáře došlo k chybě"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "Vyskytla se chyba"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3210,25 +3219,25 @@ msgstr ""
 "Soubor nelze přesunout do koše,\n"
 "chcete ho trvale smazat?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "Soubor „%s“ nelze přesunout do koše."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "Vybrané soubory nelze přesunout do koše."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Opravdu chcete trvale smazat „%s“?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Opravdu chcete trvale smazat vybrané soubory?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "Pokud položku smažete, bude nenávratně ztracena."
 
@@ -3242,7 +3251,7 @@ msgid ""
 "settings to make the file visible"
 msgstr ""
 "Přejmenovaný soubor je nyní odfiltrován. Aby byl viditelný, musíte upravit "
-"své nastavení filtrování."
+"své nastavení filtrování"
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -3256,7 +3265,7 @@ msgid ""
 "settings to make the file visible"
 msgstr ""
 "Nový soubor je nyní odfiltrován. Aby byl viditelný, musíte upravit své "
-"nastavení filtrování."
+"nastavení filtrování"
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -3270,7 +3279,7 @@ msgid ""
 "settings to make the directory visible"
 msgstr ""
 "Nový adresář je nyní odfiltrován. Aby byl viditelný, musíte upravit své "
-"nastavení filtrování."
+"nastavení filtrování"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:704
 msgid "Bookmarks"

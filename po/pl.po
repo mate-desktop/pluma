@@ -22,21 +22,22 @@
 # Piotr Drąg <piotrdrag@gmail.com>, 2018
 # Marcin GTriderXC <gtriderxc@yahoo.com>, 2019
 # pietrasagh <kowalik.piotr@pm.me>, 2019
-# Marcin Net <marcin.net@linux.pl>, 2019
+# 7d927f1adaae02ae3120b2ceacc1eadf_34fcd4b <964145c7ac0e6f1856853edaa15b3982_834090>, 2019
 # Marcin Kralka <marcink96@gmail.com>, 2019
 # Dominik Adrian Grzywak, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# No Ne, 2021
+# Marek Adamski, 2021
 # Daniel Tokarzewski <bezimo@gmail.com>, 2021
+# f91d578b5f6d79f8731c18a004205359_9ca50b9, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Daniel Tokarzewski <bezimo@gmail.com>, 2021\n"
-"Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
+"Last-Translator: f91d578b5f6d79f8731c18a004205359_9ca50b9, 2022\n"
+"Language-Team: Polish (https://app.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -658,7 +659,7 @@ msgstr "Stan okna plumy"
 
 #: data/org.mate.pluma.gschema.xml.in:265
 msgid "size"
-msgstr ""
+msgstr "rozmiar"
 
 #: data/org.mate.pluma.gschema.xml.in:266
 msgid "The pluma window size"
@@ -1231,11 +1232,11 @@ msgstr "Wtyczki"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "Zmień"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "Znajdź"
 
@@ -1612,11 +1613,11 @@ msgid "Unsaved Document %d"
 msgstr "Niezapisany dokument %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "Tylko do odczytu"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "Dokumenty"
 
@@ -2412,7 +2413,7 @@ msgstr "Tworzy nowy dokument"
 msgid "_Open..."
 msgstr "_Otwórz..."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "Otwarcie pliku"
 
@@ -2725,22 +2726,22 @@ msgstr "Panel _dolny"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Przełącza wyświetlanie panelu dolnego w bieżącym oknie"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Proszę sprawdzić poprawność instalacji."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "Nie można otworzyć pliku interfejsu użytkownika %s. Błąd: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "Nie można odnaleźć obiektu \"%s\" w pliku %s."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "/ na %s"
@@ -2773,14 +2774,14 @@ msgstr "Poszukiwane wyrażenie"
 msgid "Line you want to move the cursor to"
 msgstr "Numer wiersza, do którego ma zostać przeniesiony kursor"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "Używa trybu wyróżniania elementów składni %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2788,43 +2789,43 @@ msgstr "Używa trybu wyróżniania elementów składni %s"
 msgid "Plain Text"
 msgstr "Zwykły tekst"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "Wyłącza wyróżnianie elementów składni"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "Otwórz \"%s\""
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "Otwiera ostatnio używany plik"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "Otwórz"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "Zapisz"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "Wydrukuj"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "Aktywuje \"%s\""
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "Używaj spacji"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "Szerokość tabulacji"
 
@@ -3221,59 +3222,59 @@ msgstr "Przełącza możliwość przywracania zdalnych położeń."
 msgid "File System"
 msgstr "System plików"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "U_staw położenie bieżącego dokumentu jako katalog główny"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "Ustawia położenie bieżącego dokumentu jako ścieżkę katalogu głównego"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "_Otwórz terminal w tym miejscu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "Otwiera terminal w obecnie otwartym katalogu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "Przeglądarka plików"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "Wystąpił błąd podczas tworzenia nowego katalogu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "Wystąpił błąd podczas tworzenia nowego pliku"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "Wystąpił błąd podczas zmieniania nazwy pliku lub katalogu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "Wystąpił błąd podczas usuwania pliku lub katalogu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Wystąpił błąd podczas otwierania katalogu w menedżerze plików"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "Wystąpił błąd podczas ustawiania katalogu głównego"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "Wystąpił błąd podczas wczytywania katalogu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "Wystąpił błąd"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3281,25 +3282,25 @@ msgstr ""
 "Nie można przenieść pliku do kosza.\n"
 "Usunąć go trwale?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "Plik \"%s\" nie może zostać przeniesiony do kosza."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "Zaznaczone pliki nie mogą być przeniesione do kosza."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "Czy na pewno chcesz trwale usunąć \"%s\"?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Trwale usunąć zaznaczone pliki?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "W wypadku usunięcia elementu zostanie on nieodwracalnie utracony."
 
@@ -5988,7 +5989,7 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:120 plugins/taglist/XSLT.tags.xml.in:280
 msgid "text"
-msgstr ""
+msgstr "tekst"
 
 #: plugins/taglist/XSLT.tags.xml.in:123
 msgid "value-of"
@@ -5996,11 +5997,11 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:127
 msgid "variable"
-msgstr ""
+msgstr "zmienna"
 
 #: plugins/taglist/XSLT.tags.xml.in:131
 msgid "when"
-msgstr ""
+msgstr "kiedy"
 
 #: plugins/taglist/XSLT.tags.xml.in:135
 msgid "with-param"
@@ -6036,7 +6037,7 @@ msgstr "natężenie prądu"
 
 #: plugins/taglist/XSLT.tags.xml.in:168
 msgid "document"
-msgstr ""
+msgstr "dokument"
 
 #: plugins/taglist/XSLT.tags.xml.in:172
 msgid "element-available"
@@ -6632,7 +6633,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:519
 msgid "window"
-msgstr ""
+msgstr "okno"
 
 #: plugins/taglist/XUL.tags.xml.in:525
 msgid "wizard"

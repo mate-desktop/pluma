@@ -103,9 +103,7 @@ pluma_pango_font_description_to_css (const PangoFontDescription *desc)
   set = pango_font_description_get_set_fields (desc);
   if (set & PANGO_FONT_MASK_FAMILY)
     {
-      g_string_append (s, "font-family: ");
-      g_string_append (s, pango_font_description_get_family (desc));
-      g_string_append (s, "; ");
+      g_string_append_printf (s, "font-family: \"%s\"; ", pango_font_description_get_family (desc));
     }
   if (set & PANGO_FONT_MASK_STYLE)
     {

@@ -6,23 +6,24 @@
 # Translators:
 # Martin Wimpress <code@flexion.org>, 2018
 # Umut Barış GÖKMEN <umtbrsgkmn@gmail.com>, 2018
-# Mehmet, 2018
 # Emre <fthsrh17@gmail.com>, 2018
+# Mehmet, 2018
 # tarakbumba <tarakbumba@gmail.com>, 2018
 # Butterfly <gokhanlnx@gmail.com>, 2018
 # Sabri Ünal <yakushabb@gmail.com>, 2019
 # mauron, 2019
 # Emre FIRAT <emrefirat93@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Sabri Ünal <libreajans@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.25.3\n"
+"Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2021-06-26 20:39+0200\n"
+"POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
-"Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2023\n"
+"Language-Team: Turkish (https://app.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,7 +48,7 @@ msgstr ""
 #: data/org.mate.pluma.gschema.xml.in:19
 msgctxt "editor-font"
 msgid "'Monospace 12'"
-msgstr "Karakterler Arasındaki Uzaklik 12"
+msgstr "'Monospace 12'"
 
 #: data/org.mate.pluma.gschema.xml.in:20
 msgid "Editor Font"
@@ -79,7 +80,8 @@ msgstr "Sadece tek bir sekme varsa ilk sekmeyi göster"
 
 #: data/org.mate.pluma.gschema.xml.in:31
 msgid "If false, it hides the first tab if there is only one tab."
-msgstr "Yanlış ise, sadece tek bir sekme olduğunda ilk sekmeyi saklar."
+msgstr ""
+"Eğer false (yanlış) ise, sadece tek bir sekme olduğunda ilk sekmeyi saklar."
 
 #: data/org.mate.pluma.gschema.xml.in:35
 msgid "Style Scheme"
@@ -88,7 +90,7 @@ msgstr "Biçem Şeması"
 #: data/org.mate.pluma.gschema.xml.in:36
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
 msgstr ""
-"Metni renklendirmek için kullanılan GtkSourceView Tarz Şemasının kimliği "
+"Metni renklendirmek için kullanılan GtkSourceView Biçem Şemasının kimliği "
 "(ID)."
 
 #: data/org.mate.pluma.gschema.xml.in:40
@@ -251,19 +253,19 @@ msgstr "Sağ kenar boşluğunun konumunu belirtir."
 
 #: data/org.mate.pluma.gschema.xml.in:115
 msgid "Document background pattern type"
-msgstr ""
+msgstr "Belge arka plan deseni türü"
 
 #: data/org.mate.pluma.gschema.xml.in:116
 msgid "Whether the document will get a background pattern painted."
-msgstr ""
+msgstr "Belgenin boyanmış bir arka plan deseni alıp almayacağı."
 
 #: data/org.mate.pluma.gschema.xml.in:120
 msgid "Display Overview Map"
-msgstr ""
+msgstr "Genel Bakış Harikatısını Göster"
 
 #: data/org.mate.pluma.gschema.xml.in:121
 msgid "Whether pluma should display the overview map for the document."
-msgstr ""
+msgstr "Pluma'nın belge için genel bakış haritasını gösterme durumu."
 
 #: data/org.mate.pluma.gschema.xml.in:125
 msgid "Smart Home End"
@@ -392,7 +394,7 @@ msgid ""
 " in the \"Recent Files\" submenu."
 msgstr ""
 "\"Son Dosyalar \" altmenüsünde görüntülenecek olan en son açılmış dosyaların"
-" en yüksek sayısını belirtir."
+" azami sayısını belirtir."
 
 #: data/org.mate.pluma.gschema.xml.in:180
 msgid "Print Syntax Highlighting"
@@ -497,7 +499,7 @@ msgstr ""
 #: data/org.mate.pluma.gschema.xml.in:214
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:215
 msgid "Automatically Detected Encodings"
@@ -564,11 +566,11 @@ msgstr "Yeni Satırı Göster"
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Whether pluma should show newlines in the editor window."
-msgstr ""
+msgstr "Pluma'nın düzenleyici penceresinde yeni satırları gösterme durumu."
 
 #: data/org.mate.pluma.gschema.xml.in:245
 msgid "Show nbsp"
-msgstr ""
+msgstr "nbsp göster"
 
 #: data/org.mate.pluma.gschema.xml.in:246
 msgid ""
@@ -576,10 +578,13 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
+"Pluma'nın editör penceresinde bölünmez boşluk gösterme durumu: 'show-none' "
+"gösterim yok; 'show-trailing' yalnızca sondaki boşlukları göster; 'show-all'"
+" tüm boşlukları göster."
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
-msgstr ""
+msgstr "Sekmeleri göster"
 
 #: data/org.mate.pluma.gschema.xml.in:251
 msgid ""
@@ -587,6 +592,9 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
+"Pluma'nın editör penceresinde sekme gösterme durumu: 'show-none' gösterim "
+"yok; 'show-trailing' yalnızca sondaki boşlukları göster; 'show-all' tüm "
+"boşlukları göster."
 
 #: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show spaces"
@@ -598,62 +606,65 @@ msgid ""
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
+"Pluma'nın editör penceresinde boşluk gösterme durumu: 'show-none' gösterim "
+"yok; 'show-trailing' yalnızca sondaki boşlukları göster; 'show-all' tüm "
+"boşlukları göster."
 
 #: data/org.mate.pluma.gschema.xml.in:260
 msgid "state"
-msgstr ""
+msgstr "durum"
 
 #: data/org.mate.pluma.gschema.xml.in:261
 msgid "The pluma window state"
-msgstr ""
+msgstr "Pluma pencere durumu"
 
 #: data/org.mate.pluma.gschema.xml.in:265
 msgid "size"
-msgstr ""
+msgstr "boyut"
 
 #: data/org.mate.pluma.gschema.xml.in:266
 msgid "The pluma window size"
-msgstr ""
+msgstr "Pluma pencere boyutu"
 
 #: data/org.mate.pluma.gschema.xml.in:270
 msgid "side-panel-size"
-msgstr ""
+msgstr "side-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:271
 msgid "The pluma side-panel-size"
-msgstr ""
+msgstr "Pluma side-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:275
 msgid "side-panel-active-page"
-msgstr ""
+msgstr "side-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:276
 msgid "The pluma side-panel-active-page"
-msgstr ""
+msgstr "Pluma side-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:280
 msgid "bottom-panel-size"
-msgstr ""
+msgstr "bottom-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:281
 msgid "The pluma bottom-panel-size"
-msgstr ""
+msgstr "Pluma bottom-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:285
 msgid "bottom-panel-active-page"
-msgstr ""
+msgstr "bottom-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:286
 msgid "The pluma bottom-panel-active-page"
-msgstr ""
+msgstr "Pluma bottom-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:290
 msgid "filter-id"
-msgstr ""
+msgstr "filter-id"
 
 #: data/org.mate.pluma.gschema.xml.in:291
 msgid "The pluma filter-id"
-msgstr ""
+msgstr "Pluma filter-id"
 
 #: data/pluma.appdata.xml.in.in:7 data/pluma.desktop.in.in:3
 msgid "Pluma"
@@ -671,6 +682,12 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
+"Pluma, özellikle MATE masaüstü için tasarlanmış küçük ama güçlü bir metin "
+"düzenleyicidir. Çoğu standart metin düzenleyici işlevine sahiptir ve "
+"Unicode'daki uluslararası metinleri tam olarak destekler. Gelişmiş "
+"özellikler, sözdizimi vurgulamayı ve kaynak kodun otomatik girintisini, "
+"birden çok belgenin tek bir pencerede yazdırılmasını ve düzenlenmesini "
+"içerir."
 
 #: data/pluma.appdata.xml.in.in:17
 msgid ""
@@ -678,6 +695,9 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
+"Pluma, şu anda yazım denetimi, dosyaların karşılaştırılması, CVS "
+"ChangeLogs'un görüntülenmesi ve girinti düzeylerinin ayarlanması için destek"
+" içeren eklenti sistemi aracılığıyla genişletilebilir."
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:773
 msgid "Text Editor"
@@ -692,14 +712,15 @@ msgstr "Metin dosyalarını düzenle"
 #: data/pluma.desktop.in.in:15
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
 msgstr ""
+"metin;editör;düzenleyici;MATE;sekmeler;vurgu;vurgulama;kod;çoklu;dosyalar;eklenti;eklentiler;"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:137
 msgid "Log Out _without Saving"
-msgstr "Ka_ydetmeden Çıkış Yap"
+msgstr "Ka_ydetmeden Oturumu Kapat"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:141
 msgid "_Cancel Logout"
-msgstr "_Oturumdan Çıkışı İptal Et"
+msgstr "_Oturum Kapatmayı İptal Et"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:148
 msgid "Close _without Saving"
@@ -935,7 +956,7 @@ msgstr "Menüde gösterilen k_odlamalar:"
 #: pluma/dialogs/pluma-encodings-dialog.ui:228
 #: pluma/dialogs/pluma-preferences-dialog.ui:1007
 msgid "_Remove"
-msgstr "_Sil"
+msgstr "_Kaldır"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:603
 msgid "Click on this button to select the font to be used by the editor"
@@ -972,7 +993,7 @@ msgstr "Tüm Dosyalar"
 #: pluma/dialogs/pluma-preferences-dialog.c:958
 #, c-format
 msgid "Could not remove color scheme \"%s\"."
-msgstr "\"%s\" renk şeması silinemedi."
+msgstr "\"%s\" renk şeması kaldırılamadı."
 
 #: pluma/dialogs/pluma-preferences-dialog.c:1230
 #: pluma/dialogs/pluma-preferences-dialog.ui:74
@@ -1007,7 +1028,7 @@ msgstr "Ke_limeleri iki ayrı satıra bölme"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:193
 msgid "Highlighting"
-msgstr ""
+msgstr "Vurgulama"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:213
 msgid "Highlight current _line"
@@ -1027,15 +1048,15 @@ msgstr "Satır sayılarını _göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:306
 msgid "Display right _margin at column"
-msgstr ""
+msgstr "Sağ kenar boşluğunu sütunda _göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:349
 msgid "Display _grid pattern"
-msgstr ""
+msgstr "Izgara _deseni göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:364
 msgid "Display _overview map"
-msgstr ""
+msgstr "_Genel bakış haritasını göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:397
 msgid "View"
@@ -1084,27 +1105,27 @@ msgstr "_dakika"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:696
 msgid "Show Spaces, Tabs, Newlines"
-msgstr ""
+msgstr "Boşlukları, Sekmeleri, Yeni Satırları Göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:717
 msgid "Show _spaces"
-msgstr ""
+msgstr "_Boşlukları göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:732
 msgid "Show _trailing spaces only"
-msgstr ""
+msgstr "Yalnızca _sondaki boşlukları göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:748
 msgid "Show _tabs"
-msgstr ""
+msgstr "_Sekmeleri göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:763
 msgid "Show _trailing tabs only"
-msgstr ""
+msgstr "Yalnızca _sondaki sekmeleri göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:779
 msgid "Show _newlines"
-msgstr ""
+msgstr "_Yeni satırları göster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:815
 msgid "Editor"
@@ -1140,11 +1161,11 @@ msgstr "Eklentiler"
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1542
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
 msgid "Replace"
 msgstr "Yerine Bunu Koy"
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1540
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
 msgid "Find"
 msgstr "Bul"
 
@@ -1221,7 +1242,7 @@ msgstr "Mevcut bir pluma durumunda yeni üst-düzey pencere oluştur"
 
 #: pluma/pluma.c:121
 msgid "Create a new document in an existing instance of pluma"
-msgstr "Pluma'nın mevcut durumuna yeni bir belge yarat"
+msgstr "Pluma'nın mevcut durumuna yeni belge oluştur"
 
 #: pluma/pluma.c:124
 msgid "[FILE...]"
@@ -1396,6 +1417,7 @@ msgid ""
 "Pluma is a small and lightweight text editor for the MATE Desktop "
 "Environment."
 msgstr ""
+"Pluma MATE Masaüstü Ortamı için sade ve hafif bir metin düzenleyicisidir"
 
 #: pluma/pluma-commands-help.c:71
 msgid ""
@@ -1443,6 +1465,13 @@ msgid ""
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Telif Hakkı © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Telif Hakkı © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Telif Hakkı © 2003-2006 Paolo Maggi\n"
+"Telif Hakkı © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Telif Hakkı © 2011 Perberos\n"
+"Telif Hakkı © 2012-2021 MATE geliştiricileri"
 
 #: pluma/pluma-commands-help.c:127
 msgid "translator-credits"
@@ -1482,11 +1511,11 @@ msgid "Unsaved Document %d"
 msgstr "Kaydedilmemiş Belge %d"
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2245 pluma/pluma-window.c:2250
+#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
 msgid "Read-Only"
 msgstr "Salt-Okunur"
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3651
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
 msgid "Documents"
 msgstr "Belgeler"
 
@@ -2005,7 +2034,7 @@ msgstr "Hazırlanıyor..."
 
 #: pluma/pluma-print-preferences.ui:15
 msgid "window1"
-msgstr ""
+msgstr "window1"
 
 #: pluma/pluma-print-preferences.ui:39
 msgid "Syntax Highlighting"
@@ -2017,7 +2046,7 @@ msgstr "Vurgulanan sözdizimini _yazdır"
 
 #: pluma/pluma-print-preferences.ui:85
 msgid "Line Numbers"
-msgstr "Satır Numaraları"
+msgstr "Satır Sayıları"
 
 #: pluma/pluma-print-preferences.ui:105
 msgid "Print line nu_mbers"
@@ -2057,7 +2086,7 @@ msgstr "B_aşlıklar ve dipnotlar:"
 
 #: pluma/pluma-print-preferences.ui:439
 msgid "_Line numbers:"
-msgstr "_Satır numarası:"
+msgstr "_Satır sayıları:"
 
 #: pluma/pluma-print-preferences.ui:463
 msgid "_Restore Default Fonts"
@@ -2272,7 +2301,7 @@ msgstr "Yeni bir belge oluştur"
 msgid "_Open..."
 msgstr "_Aç..."
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1467
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
 msgstr "Bir dosya aç"
 
@@ -2585,22 +2614,22 @@ msgstr "_Alt Panel"
 msgid "Show or hide the bottom pane in the current window"
 msgstr "Geçerli penceredeki alt paneli göster ya da gizle"
 
-#: pluma/pluma-utils.c:1080
+#: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr "Lütfen kurulumunuzu kontrol edin."
 
-#: pluma/pluma-utils.c:1153
+#: pluma/pluma-utils.c:1152
 #, c-format
 msgid "Unable to open UI file %s. Error: %s"
 msgstr "%s arayüz dosyası açılamadı: %s"
 
-#: pluma/pluma-utils.c:1173
+#: pluma/pluma-utils.c:1172
 #, c-format
 msgid "Unable to find the object '%s' inside file %s."
 msgstr "'%s' nesnesi %s dosyası içerisinde bulunamadı."
 
 #. Translators: '/ on <remote-share>'
-#: pluma/pluma-utils.c:1333
+#: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
 msgstr "%s üzerinde /"
@@ -2633,14 +2662,14 @@ msgstr "Arama yapılacak dizgi"
 msgid "Line you want to move the cursor to"
 msgstr "İmleci taşımak istediğiniz satır"
 
-#: pluma/pluma-window.c:1026
+#: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
 msgstr "%s vurgu kipini kullan"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1083 pluma/pluma-window.c:1970
+#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2648,43 +2677,43 @@ msgstr "%s vurgu kipini kullan"
 msgid "Plain Text"
 msgstr "Düz Metin"
 
-#: pluma/pluma-window.c:1084
+#: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
 msgstr "Sözdizimi vurgulamayı kapat"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1364
+#: pluma/pluma-window.c:1374
 #, c-format
 msgid "Open '%s'"
 msgstr "'%s' adresini aç"
 
-#: pluma/pluma-window.c:1473
+#: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
 msgstr "En son kullanılan dosyayı aç"
 
-#: pluma/pluma-window.c:1479
+#: pluma/pluma-window.c:1489
 msgid "Open"
 msgstr "Aç"
 
-#: pluma/pluma-window.c:1536
+#: pluma/pluma-window.c:1546
 msgid "Save"
 msgstr "Kaydet"
 
-#: pluma/pluma-window.c:1538
+#: pluma/pluma-window.c:1548
 msgid "Print"
 msgstr "Yazdır"
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1696
+#: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
 msgstr "'%s' etkinleştir"
 
-#: pluma/pluma-window.c:1948
+#: pluma/pluma-window.c:1956
 msgid "Use Spaces"
 msgstr "Boşlukları Kullan"
 
-#: pluma/pluma-window.c:2019
+#: pluma/pluma-window.c:2027
 msgid "Tab Width"
 msgstr "Sekme Genişliği"
 
@@ -2956,11 +2985,11 @@ msgstr "Belge konumunda bir uçbirim aç"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
 msgid "Remove trailing spaces"
-msgstr "Sondaki boşlukları sil"
+msgstr "Sondaki boşlukları kaldır"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:4
 msgid "Remove useless trailing spaces in your file"
-msgstr "Dosyanızın sonundaki gereksiz boşlukları siler"
+msgstr "Dosyanızın sonundaki gereksiz boşlukları kaldırır"
 
 #: plugins/externaltools/data/run-command.desktop.in:3
 msgid "Run command"
@@ -3080,59 +3109,59 @@ msgstr "Uzaktaki konumların ilk haline getirilmesinin etkinliğini atar."
 msgid "File System"
 msgstr "Dosya Sistemi"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:578
+#: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
 msgstr "_Başlangıcı aktif belge olarak ata"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:580
+#: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
 msgstr "Başlangıcı aktif belgenin konumu olarak ata"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:585
+#: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
 msgstr "_Burada uçbirim aç"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:587
+#: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
 msgstr "Mevcut açık dizinde bir uçbirim açar"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:730
+#: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
 msgstr "Dosya Tarayıcı"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:878
+#: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
 msgstr "Yeni bir dizin oluşturulurken bir hata oluştu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:881
+#: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
 msgstr "Yeni bir dosya oluşturulurken bir hata oluştu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:886
+#: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr "Bir dosyanın ya da dizinin adı değiştirilirken hata oluştu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:891
+#: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr "Bir dosya ya da dizin silinirken hata oluştu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:896
+#: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Bir dizin dosya yöneticisinde açılırken hata oluştu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:900
+#: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr "Başlangıç dizini atanırken bir hata oluştu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:904
+#: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
 msgstr "Bir dizin yüklenirken hata oluştu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:907
+#: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
 msgstr "Bir hata oluştu"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1134
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1145
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3140,25 +3169,25 @@ msgstr ""
 "Dosya çöpe taşınamıyor, \n"
 " kalıcı olarak silmek ister misiniz?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1138
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
 msgstr "Dosya \"%s\" çöpe taşınamıyor."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1141
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
 msgstr "Seçilen dosyalar çöpe taşınamıyor."
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1169
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
 msgid "Are you sure you want to permanently delete \"%s\"?"
 msgstr "\"%s\" unsurunu kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1172
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Seçili dosyaları kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: plugins/filebrowser/pluma-file-browser-plugin.c:1175
+#: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
 msgstr "Bir unsuru silerseniz, o kalıcı olarak kaybolur."
 
@@ -3216,11 +3245,11 @@ msgstr "_Çöpe Taşı"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:791
 msgid "Move selected file or folder to trash"
-msgstr "Seçili dosyayı ya da dizini çöpe taşı"
+msgstr "Seçili dosyayı ya da klasörü çöpe taşı"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:794
 msgid "Delete selected file or folder"
-msgstr "Seçilen dosyayı ya da dizini sil"
+msgstr "Seçilen dosyayı ya da klasörü sil"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "Open selected file"
@@ -3232,15 +3261,15 @@ msgstr "Üst"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:808
 msgid "Open the parent folder"
-msgstr "Üst dizini aç"
+msgstr "Üst klasörü aç"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:813
 msgid "_New Folder"
-msgstr "_Yeni Dizin"
+msgstr "_Yeni Klasör"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:814
 msgid "Add new empty folder"
-msgstr "Yeni boş dizin ekle"
+msgstr "Yeni boş klasör ekle"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "New F_ile"
@@ -3256,7 +3285,7 @@ msgstr "_Yeniden Adlandır"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:823
 msgid "Rename selected file or folder"
-msgstr "Seçilen dosyayı ya da dizini yeniden adlandır"
+msgstr "Seçilen dosyayı ya da klasörü yeniden adlandır"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:829
 msgid "_Previous Location"
@@ -3285,12 +3314,12 @@ msgstr "Görünümü yenile"
 #: plugins/filebrowser/pluma-file-browser-widget.c:837
 #: plugins/filebrowser/pluma-file-browser-widget.c:855
 msgid "_View Folder"
-msgstr "_Dizini Görüntüle"
+msgstr "_Klasörü Görüntüle"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:838
 #: plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "View folder in file manager"
-msgstr "Dizini dosya yöneticisinde göster"
+msgstr "Klasörü dosya yöneticisinde göster"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "Show _Hidden"
@@ -3298,7 +3327,7 @@ msgstr "_Gizlileri Göster"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Show hidden files and folders"
-msgstr "Gizli dosyaları ve dizinleri göster"
+msgstr "Gizli dosyaları ve kalsörleri göster"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:848
 msgid "Show _Binary"
@@ -3377,11 +3406,11 @@ msgstr "K_omut rengi:"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
-msgstr ""
+msgstr "Sistem sabit genişlikli yazıtipini kullan"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
-msgstr "Yazi Tipi:"
+msgstr "Yazitipi:"
 
 #: plugins/quickopen/quickopen/popup.py:33
 #: plugins/quickopen/quickopen.plugin.desktop.in.in:6
@@ -3413,7 +3442,7 @@ msgstr "Sık kullanılan metin parçalarını çabucak ekleyin"
 
 #: plugins/snippets/snippets/snippets.ui:40
 msgid "Snippets Manager"
-msgstr "Bölüm Yöneticisi"
+msgstr "Parça Yöneticisi"
 
 #: plugins/snippets/snippets/snippets.ui:144
 msgid "_Snippets:"
@@ -3421,7 +3450,7 @@ msgstr "_Parçalar:"
 
 #: plugins/snippets/snippets/snippets.ui:165
 msgid "Create new snippet"
-msgstr "Yeni bir parça oluştur"
+msgstr "Yeni parça oluştur"
 
 #: plugins/snippets/snippets/snippets.ui:186
 #: plugins/snippets/snippets/Manager.py:793
@@ -3430,12 +3459,12 @@ msgstr "Parçaları içe aktar"
 
 #: plugins/snippets/snippets/snippets.ui:207
 msgid "Export selected snippets"
-msgstr "Seçili bölümleri dışa aktar"
+msgstr "Seçili parçaları dışa aktar"
 
 #: plugins/snippets/snippets/snippets.ui:229
 #: plugins/snippets/snippets/Manager.py:401
 msgid "Delete selected snippet"
-msgstr "Seçili bölümü sil"
+msgstr "Seçili parçayı sil"
 
 #: plugins/snippets/snippets/snippets.ui:335
 msgid "Activation"
@@ -3477,7 +3506,7 @@ msgstr "Parçalar arşivi"
 
 #: plugins/snippets/snippets/Manager.py:67
 msgid "Add a new snippet..."
-msgstr "Yeni bir parça ekle..."
+msgstr "Yeni parça ekle..."
 
 #: plugins/snippets/snippets/Manager.py:118
 msgid "Global"
@@ -3485,7 +3514,7 @@ msgstr "Genel"
 
 #: plugins/snippets/snippets/Manager.py:398
 msgid "Revert selected snippet"
-msgstr "Seçilen bölümleri önceki haline getir"
+msgstr "Seçilen parçaları önceki haline getir"
 
 #: plugins/snippets/snippets/Manager.py:675
 msgid ""
@@ -3945,7 +3974,7 @@ msgstr "Arkaplan dokusu döşemesi (kullanılmıyor)"
 
 #: plugins/taglist/HTML.tags.xml.in:84
 msgid "Base font (deprecated)"
-msgstr "Temel yazı tipi (kullanılmıyor)"
+msgstr "Temel yazıtipi (kullanılmıyor)"
 
 #: plugins/taglist/HTML.tags.xml.in:88 plugins/taglist/HTML.tags.xml.in:1209
 msgid "Base URI"
@@ -4074,7 +4103,7 @@ msgstr "DIV kutusu"
 
 #: plugins/taglist/HTML.tags.xml.in:248 plugins/taglist/HTML.tags.xml.in:1364
 msgid "DIV Style container"
-msgstr "DIV biçim kutusu"
+msgstr "DIV Biçem kutusu"
 
 #: plugins/taglist/HTML.tags.xml.in:253 plugins/taglist/HTML.tags.xml.in:1369
 msgid "Document base"
@@ -4111,7 +4140,7 @@ msgstr "Kodlama tipi"
 
 #: plugins/taglist/HTML.tags.xml.in:293
 msgid "Font face (deprecated)"
-msgstr "Yazı tipi yüzü (kullanılmıyor)"
+msgstr "Yazıtipi yüzü (kullanılmıyor)"
 
 #: plugins/taglist/HTML.tags.xml.in:298 plugins/taglist/HTML.tags.xml.in:1423
 msgid "For label"
@@ -4305,7 +4334,7 @@ msgstr "Dil kodu"
 
 #: plugins/taglist/HTML.tags.xml.in:541 plugins/taglist/HTML.tags.xml.in:1655
 msgid "Large text style"
-msgstr "Büyük metin biçimi"
+msgstr "Büyük metin biçemi"
 
 #: plugins/taglist/HTML.tags.xml.in:547
 msgid "Link color (deprecated)"
@@ -4345,7 +4374,7 @@ msgstr "Nokta olarak yatay sınır"
 
 #: plugins/taglist/HTML.tags.xml.in:594 plugins/taglist/HTML.tags.xml.in:1717
 msgid "Maximum length of text field"
-msgstr "Metin alanı için en yüksek genişlik"
+msgstr "Metin alanı için azami genişlik"
 
 #: plugins/taglist/HTML.tags.xml.in:599 plugins/taglist/HTML.tags.xml.in:1721
 msgid "Output media"
@@ -4485,11 +4514,11 @@ msgstr "OnUnload olayı"
 
 #: plugins/taglist/HTML.tags.xml.in:771 plugins/taglist/HTML.tags.xml.in:1889
 msgid "Option group"
-msgstr "Option olayı"
+msgstr "Option grubu"
 
 #: plugins/taglist/HTML.tags.xml.in:776 plugins/taglist/HTML.tags.xml.in:1894
 msgid "Option selector"
-msgstr "Seçenek seçici"
+msgstr "Option seçici"
 
 #: plugins/taglist/HTML.tags.xml.in:781 plugins/taglist/HTML.tags.xml.in:1899
 msgid "Ordered list"
@@ -4501,7 +4530,7 @@ msgstr "Paragraf sınıfı"
 
 #: plugins/taglist/HTML.tags.xml.in:791 plugins/taglist/HTML.tags.xml.in:1909
 msgid "Paragraph style"
-msgstr "Paragraf biçimi"
+msgstr "Paragraf biçemi"
 
 #: plugins/taglist/HTML.tags.xml.in:796 plugins/taglist/HTML.tags.xml.in:1914
 msgid "Paragraph"
@@ -4630,7 +4659,7 @@ msgstr "Güçlü vurgu"
 #: plugins/taglist/HTML.tags.xml.in:954 plugins/taglist/HTML.tags.xml.in:959
 #: plugins/taglist/HTML.tags.xml.in:2089 plugins/taglist/HTML.tags.xml.in:2094
 msgid "Style info"
-msgstr "Biçim bilgisi"
+msgstr "Biçem bilgisi"
 
 #: plugins/taglist/HTML.tags.xml.in:964 plugins/taglist/HTML.tags.xml.in:2098
 msgid "Subscript"
@@ -4782,7 +4811,7 @@ msgstr "Arkaplan dokusu döşemesi"
 
 #: plugins/taglist/HTML.tags.xml.in:1205
 msgid "Base font"
-msgstr "Temel yazı tipi"
+msgstr "Temel yazıtipi"
 
 #: plugins/taglist/HTML.tags.xml.in:1218
 msgid "Border color"
@@ -5022,15 +5051,15 @@ msgstr "Bölünmeyen boşluk"
 
 #: plugins/taglist/HTML.tags.xml.in:2271
 msgid "Soft hyphen­"
-msgstr ""
+msgstr "Yumuşak tire"
 
 #: plugins/taglist/HTML.tags.xml.in:2275
 msgid "&quot;"
-msgstr ""
+msgstr "&quot;"
 
 #: plugins/taglist/HTML.tags.xml.in:2279
 msgid "&amp;"
-msgstr ""
+msgstr "&amp;"
 
 #: plugins/taglist/HTML.tags.xml.in:2283
 msgid "¡"
@@ -5058,367 +5087,367 @@ msgstr "¸"
 
 #: plugins/taglist/HTML.tags.xml.in:2307
 msgid "&lt;"
-msgstr ""
+msgstr "&lt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2311
 msgid "&gt;"
-msgstr ""
+msgstr "&gt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2315
 msgid "±"
-msgstr ""
+msgstr "±"
 
 #: plugins/taglist/HTML.tags.xml.in:2319
 msgid "«"
-msgstr ""
+msgstr "«"
 
 #: plugins/taglist/HTML.tags.xml.in:2323
 msgid "»"
-msgstr ""
+msgstr "»"
 
 #: plugins/taglist/HTML.tags.xml.in:2327
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: plugins/taglist/HTML.tags.xml.in:2331
 msgid "÷"
-msgstr ""
+msgstr "÷"
 
 #: plugins/taglist/HTML.tags.xml.in:2335
 msgid "¢"
-msgstr ""
+msgstr "¢"
 
 #: plugins/taglist/HTML.tags.xml.in:2339
 msgid "£"
-msgstr ""
+msgstr "£"
 
 #: plugins/taglist/HTML.tags.xml.in:2343
 msgid "€"
-msgstr ""
+msgstr "€"
 
 #: plugins/taglist/HTML.tags.xml.in:2347
 msgid "¤"
-msgstr ""
+msgstr "¤"
 
 #: plugins/taglist/HTML.tags.xml.in:2351
 msgid "¥"
-msgstr ""
+msgstr "¥"
 
 #: plugins/taglist/HTML.tags.xml.in:2355
 msgid "§"
-msgstr ""
+msgstr "§"
 
 #: plugins/taglist/HTML.tags.xml.in:2359
 msgid "©"
-msgstr ""
+msgstr "©"
 
 #: plugins/taglist/HTML.tags.xml.in:2363
 msgid "¬"
-msgstr ""
+msgstr "¬"
 
 #: plugins/taglist/HTML.tags.xml.in:2367
 msgid "®"
-msgstr ""
+msgstr "®"
 
 #: plugins/taglist/HTML.tags.xml.in:2371
 msgid "™"
-msgstr ""
+msgstr "™"
 
 #: plugins/taglist/HTML.tags.xml.in:2375
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #: plugins/taglist/HTML.tags.xml.in:2379
 msgid "µ"
-msgstr ""
+msgstr "µ"
 
 #: plugins/taglist/HTML.tags.xml.in:2383
 msgid "¶"
-msgstr ""
+msgstr "¶"
 
 #: plugins/taglist/HTML.tags.xml.in:2387
 msgid "·"
-msgstr ""
+msgstr "·"
 
 #: plugins/taglist/HTML.tags.xml.in:2391
 msgid "¼"
-msgstr ""
+msgstr "¼"
 
 #: plugins/taglist/HTML.tags.xml.in:2395
 msgid "½"
-msgstr ""
+msgstr "½"
 
 #: plugins/taglist/HTML.tags.xml.in:2399
 msgid "¾"
-msgstr ""
+msgstr "¾"
 
 #: plugins/taglist/HTML.tags.xml.in:2403
 msgid "¹"
-msgstr ""
+msgstr "¹"
 
 #: plugins/taglist/HTML.tags.xml.in:2407
 msgid "²"
-msgstr ""
+msgstr "²"
 
 #: plugins/taglist/HTML.tags.xml.in:2411
 msgid "³"
-msgstr ""
+msgstr "³"
 
 #: plugins/taglist/HTML.tags.xml.in:2415
 msgid "á"
-msgstr ""
+msgstr "á"
 
 #: plugins/taglist/HTML.tags.xml.in:2419
 msgid "Á"
-msgstr ""
+msgstr "Á"
 
 #: plugins/taglist/HTML.tags.xml.in:2423
 msgid "â"
-msgstr ""
+msgstr "â"
 
 #: plugins/taglist/HTML.tags.xml.in:2427
 msgid "Â"
-msgstr ""
+msgstr "Â"
 
 #: plugins/taglist/HTML.tags.xml.in:2431
 msgid "à"
-msgstr ""
+msgstr "à"
 
 #: plugins/taglist/HTML.tags.xml.in:2435
 msgid "À"
-msgstr ""
+msgstr "À"
 
 #: plugins/taglist/HTML.tags.xml.in:2439
 msgid "å"
-msgstr ""
+msgstr "å"
 
 #: plugins/taglist/HTML.tags.xml.in:2443
 msgid "Å"
-msgstr ""
+msgstr "Å"
 
 #: plugins/taglist/HTML.tags.xml.in:2447
 msgid "ã"
-msgstr ""
+msgstr "ã"
 
 #: plugins/taglist/HTML.tags.xml.in:2451
 msgid "Ã"
-msgstr ""
+msgstr "Ã"
 
 #: plugins/taglist/HTML.tags.xml.in:2455
 msgid "ä"
-msgstr ""
+msgstr "ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2459
 msgid "Ä"
-msgstr ""
+msgstr "Ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2463
 msgid "ª"
-msgstr ""
+msgstr "ª"
 
 #: plugins/taglist/HTML.tags.xml.in:2467
 msgid "æ"
-msgstr ""
+msgstr "æ"
 
 #: plugins/taglist/HTML.tags.xml.in:2471
 msgid "Æ"
-msgstr ""
+msgstr "Æ"
 
 #: plugins/taglist/HTML.tags.xml.in:2475
 msgid "ç"
-msgstr ""
+msgstr "ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2479
 msgid "Ç"
-msgstr ""
+msgstr "Ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2483
 msgid "Ð"
-msgstr ""
+msgstr "Ð"
 
 #: plugins/taglist/HTML.tags.xml.in:2487
 msgid "ð"
-msgstr ""
+msgstr "ð"
 
 #: plugins/taglist/HTML.tags.xml.in:2491
 msgid "é"
-msgstr ""
+msgstr "é"
 
 #: plugins/taglist/HTML.tags.xml.in:2495
 msgid "É"
-msgstr ""
+msgstr "É"
 
 #: plugins/taglist/HTML.tags.xml.in:2499
 msgid "ê"
-msgstr ""
+msgstr "ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2503
 msgid "Ê"
-msgstr ""
+msgstr "Ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2507
 msgid "è"
-msgstr ""
+msgstr "è"
 
 #: plugins/taglist/HTML.tags.xml.in:2511
 msgid "È"
-msgstr ""
+msgstr "È"
 
 #: plugins/taglist/HTML.tags.xml.in:2515
 msgid "ë"
-msgstr ""
+msgstr "ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2519
 msgid "Ë"
-msgstr ""
+msgstr "Ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2523
 msgid "í"
-msgstr ""
+msgstr "í"
 
 #: plugins/taglist/HTML.tags.xml.in:2527
 msgid "Í"
-msgstr ""
+msgstr "Í"
 
 #: plugins/taglist/HTML.tags.xml.in:2531
 msgid "î"
-msgstr ""
+msgstr "î"
 
 #: plugins/taglist/HTML.tags.xml.in:2535
 msgid "Î"
-msgstr ""
+msgstr "Î"
 
 #: plugins/taglist/HTML.tags.xml.in:2539
 msgid "ì"
-msgstr ""
+msgstr "ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2543
 msgid "Ì"
-msgstr ""
+msgstr "Ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2547
 msgid "ï"
-msgstr ""
+msgstr "ï"
 
 #: plugins/taglist/HTML.tags.xml.in:2551
 msgid "Ï"
-msgstr ""
+msgstr "Ï"
 
 #: plugins/taglist/HTML.tags.xml.in:2555
 msgid "ñ"
-msgstr ""
+msgstr "ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2559
 msgid "Ñ"
-msgstr ""
+msgstr "Ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2563
 msgid "ó"
-msgstr ""
+msgstr "ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2567
 msgid "Ó"
-msgstr ""
+msgstr "Ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2571
 msgid "ô"
-msgstr ""
+msgstr "ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2575
 msgid "Ô"
-msgstr ""
+msgstr "Ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2579
 msgid "ò"
-msgstr ""
+msgstr "ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2583
 msgid "Ò"
-msgstr ""
+msgstr "Ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2587
 msgid "º"
-msgstr ""
+msgstr "º"
 
 #: plugins/taglist/HTML.tags.xml.in:2591
 msgid "ø"
-msgstr ""
+msgstr "ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2595
 msgid "Ø"
-msgstr ""
+msgstr "Ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2599
 msgid "õ"
-msgstr ""
+msgstr "õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2603
 msgid "Õ"
-msgstr ""
+msgstr "Õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2607
 msgid "ö"
-msgstr ""
+msgstr "ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2611
 msgid "Ö"
-msgstr ""
+msgstr "Ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2615
 msgid "ß"
-msgstr ""
+msgstr "ß"
 
 #: plugins/taglist/HTML.tags.xml.in:2619
 msgid "þ"
-msgstr ""
+msgstr "þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2623
 msgid "Þ"
-msgstr ""
+msgstr "Þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2627
 msgid "ú"
-msgstr ""
+msgstr "ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2631
 msgid "Ú"
-msgstr ""
+msgstr "Ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2635
 msgid "û"
-msgstr ""
+msgstr "û"
 
 #: plugins/taglist/HTML.tags.xml.in:2639
 msgid "Û"
-msgstr ""
+msgstr "Û"
 
 #: plugins/taglist/HTML.tags.xml.in:2643
 msgid "ù"
-msgstr ""
+msgstr "ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2647
 msgid "Ù"
-msgstr ""
+msgstr "Ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2651
 msgid "ü"
-msgstr ""
+msgstr "ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2655
 msgid "Ü"
-msgstr ""
+msgstr "Ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2659
 msgid "ý"
-msgstr ""
+msgstr "ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2663
 msgid "Ý"
-msgstr ""
+msgstr "Ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2667
 msgid "ÿ"
-msgstr ""
+msgstr "ÿ"
 
 #: plugins/taglist/Latex.tags.xml.in:3
 msgid "Latex - Tags"
@@ -5454,7 +5483,7 @@ msgstr "{} parantezleri"
 
 #: plugins/taglist/Latex.tags.xml.in:39
 msgid "Brackets &lt;&gt;"
-msgstr ""
+msgstr "Parantezler &lt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:44
 msgid "File input"
@@ -5610,19 +5639,19 @@ msgstr "Referans ref"
 
 #: plugins/taglist/Latex.tags.xml.in:225
 msgid "Symbol &lt;&lt;"
-msgstr ""
+msgstr "Sembol &lt;&lt;"
 
 #: plugins/taglist/Latex.tags.xml.in:229
 msgid "Symbol &lt;="
-msgstr ""
+msgstr "Sembol &lt;="
 
 #: plugins/taglist/Latex.tags.xml.in:233
 msgid "Symbol &gt;="
-msgstr ""
+msgstr "Sembol &gt;="
 
 #: plugins/taglist/Latex.tags.xml.in:237
 msgid "Symbol &gt;&gt;"
-msgstr ""
+msgstr "Sembol &gt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:241
 msgid "Symbol and"
@@ -5730,11 +5759,11 @@ msgstr "XSLT - Öğeler"
 
 #: plugins/taglist/XSLT.tags.xml.in:8
 msgid "apply-imports"
-msgstr ""
+msgstr "apply-imports"
 
 #: plugins/taglist/XSLT.tags.xml.in:12
 msgid "apply-templates"
-msgstr ""
+msgstr "apply-templates"
 
 #: plugins/taglist/XSLT.tags.xml.in:16 plugins/taglist/XSLT.tags.xml.in:303
 msgid "attribute"
@@ -5742,108 +5771,108 @@ msgstr "attribute"
 
 #: plugins/taglist/XSLT.tags.xml.in:20
 msgid "attribute-set"
-msgstr ""
+msgstr "attribute-set"
 
 #: plugins/taglist/XSLT.tags.xml.in:24
 msgid "call-template"
-msgstr ""
+msgstr "call-template"
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"
-msgstr ""
+msgstr "choose"
 
 #: plugins/taglist/XSLT.tags.xml.in:32 plugins/taglist/XSLT.tags.xml.in:150
 msgid "comment"
-msgstr ""
+msgstr "comment"
 
 #: plugins/taglist/XSLT.tags.xml.in:36
 msgid "copy"
-msgstr ""
+msgstr "copy"
 
 #: plugins/taglist/XSLT.tags.xml.in:39
 msgid "copy-of"
-msgstr ""
+msgstr "copy-of"
 
 #: plugins/taglist/XSLT.tags.xml.in:43
 msgid "decimal-format"
-msgstr ""
+msgstr "decimal-format"
 
 #: plugins/taglist/XSLT.tags.xml.in:46
 msgid "element"
-msgstr ""
+msgstr "element"
 
 #: plugins/taglist/XSLT.tags.xml.in:50
 msgid "fallback"
-msgstr ""
+msgstr "fallback"
 
 #: plugins/taglist/XSLT.tags.xml.in:54
 msgid "for-each"
-msgstr ""
+msgstr "for-each"
 
 #: plugins/taglist/XSLT.tags.xml.in:58
 msgid "if"
-msgstr ""
+msgstr "if"
 
 #: plugins/taglist/XSLT.tags.xml.in:62
 msgid "import"
-msgstr ""
+msgstr "import"
 
 #: plugins/taglist/XSLT.tags.xml.in:66
 msgid "include"
-msgstr ""
+msgstr "include"
 
 #: plugins/taglist/XSLT.tags.xml.in:70 plugins/taglist/XSLT.tags.xml.in:199
 #: plugins/taglist/XUL.tags.xml.in:147
 msgid "key"
-msgstr ""
+msgstr "key"
 
 #: plugins/taglist/XSLT.tags.xml.in:74
 msgid "message"
-msgstr ""
+msgstr "message"
 
 #: plugins/taglist/XSLT.tags.xml.in:78
 msgid "namespace-alias"
-msgstr ""
+msgstr "namespace-alias"
 
 #: plugins/taglist/XSLT.tags.xml.in:82 plugins/taglist/XSLT.tags.xml.in:233
 msgid "number"
-msgstr ""
+msgstr "number"
 
 #: plugins/taglist/XSLT.tags.xml.in:85
 msgid "otherwise"
-msgstr ""
+msgstr "otherwise"
 
 #: plugins/taglist/XSLT.tags.xml.in:89
 msgid "output"
-msgstr ""
+msgstr "output"
 
 #: plugins/taglist/XSLT.tags.xml.in:93
 msgid "param"
-msgstr ""
+msgstr "param"
 
 #: plugins/taglist/XSLT.tags.xml.in:97
 msgid "preserve-space"
-msgstr ""
+msgstr "preserve-space"
 
 #: plugins/taglist/XSLT.tags.xml.in:101 plugins/taglist/XSLT.tags.xml.in:240
 msgid "processing-instruction"
-msgstr ""
+msgstr "processing-instruction"
 
 #: plugins/taglist/XSLT.tags.xml.in:105
 msgid "sort"
-msgstr ""
+msgstr "sort"
 
 #: plugins/taglist/XSLT.tags.xml.in:108
 msgid "strip-space"
-msgstr ""
+msgstr "strip-space"
 
 #: plugins/taglist/XSLT.tags.xml.in:112
 msgid "stylesheet"
-msgstr ""
+msgstr "stylesheet"
 
 #: plugins/taglist/XSLT.tags.xml.in:116 plugins/taglist/XUL.tags.xml.in:398
 msgid "template"
-msgstr ""
+msgstr "template"
 
 #: plugins/taglist/XSLT.tags.xml.in:120 plugins/taglist/XSLT.tags.xml.in:280
 msgid "text"
@@ -5851,7 +5880,7 @@ msgstr "metin"
 
 #: plugins/taglist/XSLT.tags.xml.in:123
 msgid "value-of"
-msgstr ""
+msgstr "value-of"
 
 #: plugins/taglist/XSLT.tags.xml.in:127
 msgid "variable"
@@ -5859,11 +5888,11 @@ msgstr "değişken"
 
 #: plugins/taglist/XSLT.tags.xml.in:131
 msgid "when"
-msgstr ""
+msgstr "when"
 
 #: plugins/taglist/XSLT.tags.xml.in:135
 msgid "with-param"
-msgstr ""
+msgstr "with-param"
 
 #: plugins/taglist/XSLT.tags.xml.in:141
 msgid "XSLT - Functions"
@@ -5871,23 +5900,23 @@ msgstr "XSLT - İşlevler"
 
 #: plugins/taglist/XSLT.tags.xml.in:142
 msgid "boolean"
-msgstr ""
+msgstr "boolean"
 
 #: plugins/taglist/XSLT.tags.xml.in:146
 msgid "ceiling"
-msgstr ""
+msgstr "ceiling"
 
 #: plugins/taglist/XSLT.tags.xml.in:153
 msgid "concat"
-msgstr ""
+msgstr "concat"
 
 #: plugins/taglist/XSLT.tags.xml.in:157
 msgid "contains"
-msgstr ""
+msgstr "contains"
 
 #: plugins/taglist/XSLT.tags.xml.in:161
 msgid "count"
-msgstr ""
+msgstr "count"
 
 #: plugins/taglist/XSLT.tags.xml.in:165
 msgid "current"
@@ -5895,11 +5924,11 @@ msgstr "güncel"
 
 #: plugins/taglist/XSLT.tags.xml.in:168
 msgid "document"
-msgstr ""
+msgstr "document"
 
 #: plugins/taglist/XSLT.tags.xml.in:172
 msgid "element-available"
-msgstr ""
+msgstr "element-available"
 
 #: plugins/taglist/XSLT.tags.xml.in:176
 msgid "false"
@@ -5907,35 +5936,35 @@ msgstr "yanlış"
 
 #: plugins/taglist/XSLT.tags.xml.in:179
 msgid "floor"
-msgstr ""
+msgstr "floor"
 
 #: plugins/taglist/XSLT.tags.xml.in:183
 msgid "format-number"
-msgstr ""
+msgstr "format-number"
 
 #: plugins/taglist/XSLT.tags.xml.in:187
 msgid "function-available"
-msgstr ""
+msgstr "function-available"
 
 #: plugins/taglist/XSLT.tags.xml.in:191
 msgid "generate-id"
-msgstr ""
+msgstr "generate-id"
 
 #: plugins/taglist/XSLT.tags.xml.in:195
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: plugins/taglist/XSLT.tags.xml.in:203
 msgid "lang"
-msgstr ""
+msgstr "lang"
 
 #: plugins/taglist/XSLT.tags.xml.in:207
 msgid "last"
-msgstr ""
+msgstr "last"
 
 #: plugins/taglist/XSLT.tags.xml.in:210
 msgid "local-name"
-msgstr ""
+msgstr "local-name"
 
 #: plugins/taglist/XSLT.tags.xml.in:214
 msgid "name"
@@ -5943,63 +5972,63 @@ msgstr "isim"
 
 #: plugins/taglist/XSLT.tags.xml.in:218
 msgid "namespace-uri"
-msgstr ""
+msgstr "namespace-uri"
 
 #: plugins/taglist/XSLT.tags.xml.in:222
 msgid "node"
-msgstr ""
+msgstr "node"
 
 #: plugins/taglist/XSLT.tags.xml.in:225
 msgid "normalize-space"
-msgstr ""
+msgstr "normalize-space"
 
 #: plugins/taglist/XSLT.tags.xml.in:229
 msgid "not"
-msgstr ""
+msgstr "not"
 
 #: plugins/taglist/XSLT.tags.xml.in:237
 msgid "position"
-msgstr ""
+msgstr "position"
 
 #: plugins/taglist/XSLT.tags.xml.in:244
 msgid "round"
-msgstr ""
+msgstr "round"
 
 #: plugins/taglist/XSLT.tags.xml.in:248
 msgid "starts-with"
-msgstr ""
+msgstr "starts-with"
 
 #: plugins/taglist/XSLT.tags.xml.in:252
 msgid "string"
-msgstr ""
+msgstr "string"
 
 #: plugins/taglist/XSLT.tags.xml.in:256
 msgid "string-length"
-msgstr ""
+msgstr "string-length"
 
 #: plugins/taglist/XSLT.tags.xml.in:260
 msgid "substring"
-msgstr ""
+msgstr "substring"
 
 #: plugins/taglist/XSLT.tags.xml.in:264
 msgid "substring-after"
-msgstr ""
+msgstr "substring-after"
 
 #: plugins/taglist/XSLT.tags.xml.in:268
 msgid "substring-before"
-msgstr ""
+msgstr "substring-before"
 
 #: plugins/taglist/XSLT.tags.xml.in:272
 msgid "sum"
-msgstr ""
+msgstr "sum"
 
 #: plugins/taglist/XSLT.tags.xml.in:276
 msgid "system-property"
-msgstr ""
+msgstr "system-property"
 
 #: plugins/taglist/XSLT.tags.xml.in:283
 msgid "translate"
-msgstr ""
+msgstr "translate"
 
 #: plugins/taglist/XSLT.tags.xml.in:287
 msgid "true"
@@ -6007,7 +6036,7 @@ msgstr "doğru"
 
 #: plugins/taglist/XSLT.tags.xml.in:290
 msgid "unparsed-entity-uri"
-msgstr ""
+msgstr "unparsed-entity-uri"
 
 #: plugins/taglist/XSLT.tags.xml.in:296
 msgid "XSLT - Axes"
@@ -6043,11 +6072,11 @@ msgstr "following-sibling"
 
 #: plugins/taglist/XSLT.tags.xml.in:321
 msgid "namespace"
-msgstr "isim uzayı"
+msgstr "namespace"
 
 #: plugins/taglist/XSLT.tags.xml.in:324
 msgid "parent"
-msgstr "üst"
+msgstr "parent"
 
 #: plugins/taglist/XSLT.tags.xml.in:327
 msgid "preceding"
@@ -6067,55 +6096,55 @@ msgstr "XUL - Etiketler"
 
 #: plugins/taglist/XUL.tags.xml.in:5
 msgid "action"
-msgstr ""
+msgstr "action"
 
 #: plugins/taglist/XUL.tags.xml.in:10
 msgid "arrowscrollbox"
-msgstr ""
+msgstr "arrowscrollbox"
 
 #: plugins/taglist/XUL.tags.xml.in:15
 msgid "bbox"
-msgstr ""
+msgstr "bbox"
 
 #: plugins/taglist/XUL.tags.xml.in:20
 msgid "binding"
-msgstr ""
+msgstr "binding"
 
 #: plugins/taglist/XUL.tags.xml.in:25
 msgid "bindings"
-msgstr ""
+msgstr "bindings"
 
 #: plugins/taglist/XUL.tags.xml.in:30
 msgid "box"
-msgstr ""
+msgstr "box"
 
 #: plugins/taglist/XUL.tags.xml.in:35
 msgid "broadcaster"
-msgstr ""
+msgstr "broadcaster"
 
 #: plugins/taglist/XUL.tags.xml.in:39
 msgid "broadcasterset"
-msgstr ""
+msgstr "broadcasterset"
 
 #: plugins/taglist/XUL.tags.xml.in:44
 msgid "button"
-msgstr ""
+msgstr "button"
 
 #: plugins/taglist/XUL.tags.xml.in:48
 msgid "browser"
-msgstr ""
+msgstr "browser"
 
 #: plugins/taglist/XUL.tags.xml.in:52
 msgid "checkbox"
-msgstr ""
+msgstr "checkbox"
 
 #: plugins/taglist/XUL.tags.xml.in:56
 msgid "caption"
-msgstr ""
+msgstr "caption"
 
 #: plugins/taglist/XUL.tags.xml.in:60
 msgid "colorpicker"
-msgstr ""
+msgstr "colorpicker"
 
 #: plugins/taglist/XUL.tags.xml.in:65
 msgid "column"
@@ -6127,67 +6156,67 @@ msgstr "sütun"
 
 #: plugins/taglist/XUL.tags.xml.in:74
 msgid "commandset"
-msgstr ""
+msgstr "commandset"
 
 #: plugins/taglist/XUL.tags.xml.in:79
 msgid "command"
-msgstr ""
+msgstr "command"
 
 #: plugins/taglist/XUL.tags.xml.in:83
 msgid "conditions"
-msgstr ""
+msgstr "conditions"
 
 #: plugins/taglist/XUL.tags.xml.in:88
 msgid "content"
-msgstr ""
+msgstr "content"
 
 #: plugins/taglist/XUL.tags.xml.in:92
 msgid "deck"
-msgstr ""
+msgstr "deck"
 
 #: plugins/taglist/XUL.tags.xml.in:97
 msgid "description"
-msgstr ""
+msgstr "description"
 
 #: plugins/taglist/XUL.tags.xml.in:102
 msgid "dialog"
-msgstr ""
+msgstr "dialog"
 
 #: plugins/taglist/XUL.tags.xml.in:111
 msgid "dialogheader"
-msgstr ""
+msgstr "dialogheader"
 
 #: plugins/taglist/XUL.tags.xml.in:115
 msgid "editor"
-msgstr ""
+msgstr "editor"
 
 #: plugins/taglist/XUL.tags.xml.in:119
 msgid "grid"
-msgstr ""
+msgstr "grid"
 
 #: plugins/taglist/XUL.tags.xml.in:124
 msgid "grippy"
-msgstr ""
+msgstr "grippy"
 
 #: plugins/taglist/XUL.tags.xml.in:129
 msgid "groupbox"
-msgstr ""
+msgstr "groupbox"
 
 #: plugins/taglist/XUL.tags.xml.in:134
 msgid "hbox"
-msgstr ""
+msgstr "hbox"
 
 #: plugins/taglist/XUL.tags.xml.in:139
 msgid "iframe"
-msgstr ""
+msgstr "iframe"
 
 #: plugins/taglist/XUL.tags.xml.in:143
 msgid "image"
-msgstr ""
+msgstr "image"
 
 #: plugins/taglist/XUL.tags.xml.in:151
 msgid "keyset"
-msgstr ""
+msgstr "keyset"
 
 #: plugins/taglist/XUL.tags.xml.in:156
 msgid "label"
@@ -6195,39 +6224,39 @@ msgstr "etiket"
 
 #: plugins/taglist/XUL.tags.xml.in:160
 msgid "listbox"
-msgstr ""
+msgstr "listbox"
 
 #: plugins/taglist/XUL.tags.xml.in:165
 msgid "listcell"
-msgstr ""
+msgstr "listcell"
 
 #: plugins/taglist/XUL.tags.xml.in:169
 msgid "listcol"
-msgstr ""
+msgstr "listcol"
 
 #: plugins/taglist/XUL.tags.xml.in:174
 msgid "listcols"
-msgstr ""
+msgstr "listcols"
 
 #: plugins/taglist/XUL.tags.xml.in:179
 msgid "listhead"
-msgstr ""
+msgstr "listhead"
 
 #: plugins/taglist/XUL.tags.xml.in:184
 msgid "listheader"
-msgstr ""
+msgstr "listheader"
 
 #: plugins/taglist/XUL.tags.xml.in:188
 msgid "listitem"
-msgstr ""
+msgstr "listitem"
 
 #: plugins/taglist/XUL.tags.xml.in:192
 msgid "member"
-msgstr ""
+msgstr "member"
 
 #: plugins/taglist/XUL.tags.xml.in:196
 msgid "menu"
-msgstr ""
+msgstr "menu"
 
 #: plugins/taglist/XUL.tags.xml.in:201
 msgid "menubar"
@@ -6235,27 +6264,27 @@ msgstr "menü çubuğu"
 
 #: plugins/taglist/XUL.tags.xml.in:206
 msgid "menuitem"
-msgstr ""
+msgstr "menuitem"
 
 #: plugins/taglist/XUL.tags.xml.in:210
 msgid "menulist"
-msgstr ""
+msgstr "menulist"
 
 #: plugins/taglist/XUL.tags.xml.in:215
 msgid "menupopup"
-msgstr ""
+msgstr "menupopup"
 
 #: plugins/taglist/XUL.tags.xml.in:220
 msgid "menuseparator"
-msgstr ""
+msgstr "menuseparator"
 
 #: plugins/taglist/XUL.tags.xml.in:224
 msgid "observes"
-msgstr ""
+msgstr "observes"
 
 #: plugins/taglist/XUL.tags.xml.in:228
 msgid "overlay"
-msgstr ""
+msgstr "overlay"
 
 #: plugins/taglist/XUL.tags.xml.in:234
 msgid "page"
@@ -6263,55 +6292,55 @@ msgstr "sayfa"
 
 #: plugins/taglist/XUL.tags.xml.in:239
 msgid "popup"
-msgstr ""
+msgstr "popup"
 
 #: plugins/taglist/XUL.tags.xml.in:244
 msgid "popupset"
-msgstr ""
+msgstr "popupset"
 
 #: plugins/taglist/XUL.tags.xml.in:249
 msgid "preference"
-msgstr ""
+msgstr "preference"
 
 #: plugins/taglist/XUL.tags.xml.in:254
 msgid "preferences"
-msgstr ""
+msgstr "preferences"
 
 #: plugins/taglist/XUL.tags.xml.in:259
 msgid "prefpane"
-msgstr ""
+msgstr "prefpane"
 
 #: plugins/taglist/XUL.tags.xml.in:264
 msgid "prefwindow"
-msgstr ""
+msgstr "prefwindow"
 
 #: plugins/taglist/XUL.tags.xml.in:269
 msgid "progressmeter"
-msgstr ""
+msgstr "progressmeter"
 
 #: plugins/taglist/XUL.tags.xml.in:273
 msgid "radio"
-msgstr ""
+msgstr "radio"
 
 #: plugins/taglist/XUL.tags.xml.in:277
 msgid "radiogroup"
-msgstr ""
+msgstr "radiogroup"
 
 #: plugins/taglist/XUL.tags.xml.in:282
 msgid "resizer"
-msgstr ""
+msgstr "resizer"
 
 #: plugins/taglist/XUL.tags.xml.in:287
 msgid "richlistbox"
-msgstr ""
+msgstr "richlistbox"
 
 #: plugins/taglist/XUL.tags.xml.in:292
 msgid "richlistitem"
-msgstr ""
+msgstr "richlistitem"
 
 #: plugins/taglist/XUL.tags.xml.in:297
 msgid "row"
-msgstr ""
+msgstr "row"
 
 #: plugins/taglist/XUL.tags.xml.in:302
 msgid "rows"
@@ -6319,187 +6348,187 @@ msgstr "satır"
 
 #: plugins/taglist/XUL.tags.xml.in:307
 msgid "rule"
-msgstr ""
+msgstr "rule"
 
 #: plugins/taglist/XUL.tags.xml.in:312
 msgid "script"
-msgstr ""
+msgstr "script"
 
 #: plugins/taglist/XUL.tags.xml.in:317
 msgid "scrollbar"
-msgstr ""
+msgstr "scrollbar"
 
 #: plugins/taglist/XUL.tags.xml.in:321
 msgid "scrollbox"
-msgstr ""
+msgstr "scrollbox"
 
 #: plugins/taglist/XUL.tags.xml.in:326
 msgid "scrollcorner"
-msgstr ""
+msgstr "scrollcorner"
 
 #: plugins/taglist/XUL.tags.xml.in:331
 msgid "separator"
-msgstr ""
+msgstr "separator"
 
 #: plugins/taglist/XUL.tags.xml.in:336
 msgid "spacer"
-msgstr ""
+msgstr "spacer"
 
 #: plugins/taglist/XUL.tags.xml.in:340
 msgid "splitter"
-msgstr ""
+msgstr "splitter"
 
 #: plugins/taglist/XUL.tags.xml.in:345
 msgid "stack"
-msgstr ""
+msgstr "stack"
 
 #: plugins/taglist/XUL.tags.xml.in:350
 msgid "statusbar"
-msgstr "durum çubuğu"
+msgstr "statusbar"
 
 #: plugins/taglist/XUL.tags.xml.in:355
 msgid "statusbarpanel"
-msgstr ""
+msgstr "statusbarpanel"
 
 #: plugins/taglist/XUL.tags.xml.in:360
 msgid "stringbundle"
-msgstr ""
+msgstr "stringbundle"
 
 #: plugins/taglist/XUL.tags.xml.in:364
 msgid "stringbundleset"
-msgstr ""
+msgstr "stringbundleset"
 
 #: plugins/taglist/XUL.tags.xml.in:369
 msgid "tab"
-msgstr ""
+msgstr "tab"
 
 #: plugins/taglist/XUL.tags.xml.in:373
 msgid "tabbrowser"
-msgstr ""
+msgstr "tabbrowser"
 
 #: plugins/taglist/XUL.tags.xml.in:378
 msgid "tabbox"
-msgstr ""
+msgstr "tabbox"
 
 #: plugins/taglist/XUL.tags.xml.in:383
 msgid "tabpanel"
-msgstr ""
+msgstr "tabpanel"
 
 #: plugins/taglist/XUL.tags.xml.in:388
 msgid "tabpanels"
-msgstr ""
+msgstr "tabpanels"
 
 #: plugins/taglist/XUL.tags.xml.in:393
 msgid "tabs"
-msgstr ""
+msgstr "tabs"
 
 #: plugins/taglist/XUL.tags.xml.in:403
 msgid "textnode"
-msgstr ""
+msgstr "textnode"
 
 #: plugins/taglist/XUL.tags.xml.in:408
 msgid "textbox"
-msgstr ""
+msgstr "textbox"
 
 #: plugins/taglist/XUL.tags.xml.in:412
 msgid "titlebar"
-msgstr ""
+msgstr "titlebar"
 
 #: plugins/taglist/XUL.tags.xml.in:417
 msgid "toolbar"
-msgstr "araç çubuğu"
+msgstr "toolbar"
 
 #: plugins/taglist/XUL.tags.xml.in:422
 msgid "toolbarbutton"
-msgstr ""
+msgstr "toolbarbutton"
 
 #: plugins/taglist/XUL.tags.xml.in:426
 msgid "toolbargrippy"
-msgstr ""
+msgstr "toolbargrippy"
 
 #: plugins/taglist/XUL.tags.xml.in:431
 msgid "toolbaritem"
-msgstr ""
+msgstr "toolbaritem"
 
 #: plugins/taglist/XUL.tags.xml.in:436
 msgid "toolbarpalette"
-msgstr ""
+msgstr "toolbarpalette"
 
 #: plugins/taglist/XUL.tags.xml.in:441
 msgid "toolbarseparator"
-msgstr ""
+msgstr "toolbarseparator"
 
 #: plugins/taglist/XUL.tags.xml.in:446
 msgid "toolbarset"
-msgstr ""
+msgstr "toolbarset"
 
 #: plugins/taglist/XUL.tags.xml.in:451
 msgid "toolbarspacer"
-msgstr ""
+msgstr "toolbarspacer"
 
 #: plugins/taglist/XUL.tags.xml.in:456
 msgid "toolbarspring"
-msgstr ""
+msgstr "toolbarspring"
 
 #: plugins/taglist/XUL.tags.xml.in:461
 msgid "toolbox"
-msgstr ""
+msgstr "toolbox"
 
 #: plugins/taglist/XUL.tags.xml.in:466
 msgid "tooltip"
-msgstr ""
+msgstr "tooltip"
 
 #: plugins/taglist/XUL.tags.xml.in:471
 msgid "tree"
-msgstr ""
+msgstr "tree"
 
 #: plugins/taglist/XUL.tags.xml.in:476
 msgid "treecell"
-msgstr ""
+msgstr "treecell"
 
 #: plugins/taglist/XUL.tags.xml.in:480
 msgid "treechildren"
-msgstr ""
+msgstr "treechildren"
 
 #: plugins/taglist/XUL.tags.xml.in:485
 msgid "treecol"
-msgstr ""
+msgstr "treecol"
 
 #: plugins/taglist/XUL.tags.xml.in:489
 msgid "treecols"
-msgstr ""
+msgstr "treecols"
 
 #: plugins/taglist/XUL.tags.xml.in:494
 msgid "treeitem"
-msgstr ""
+msgstr "treeitem"
 
 #: plugins/taglist/XUL.tags.xml.in:499
 msgid "treerow"
-msgstr ""
+msgstr "treerow"
 
 #: plugins/taglist/XUL.tags.xml.in:504
 msgid "treeseparator"
-msgstr ""
+msgstr "treeseparator"
 
 #: plugins/taglist/XUL.tags.xml.in:509
 msgid "triple"
-msgstr ""
+msgstr "triple"
 
 #: plugins/taglist/XUL.tags.xml.in:514
 msgid "vbox"
-msgstr ""
+msgstr "vbox"
 
 #: plugins/taglist/XUL.tags.xml.in:519
 msgid "window"
-msgstr ""
+msgstr "window"
 
 #: plugins/taglist/XUL.tags.xml.in:525
 msgid "wizard"
-msgstr ""
+msgstr "wizard"
 
 #: plugins/taglist/XUL.tags.xml.in:530
 msgid "wizardpage"
-msgstr ""
+msgstr "wizardpage"
 
 #: plugins/time/org.mate.pluma.plugins.time.gschema.xml.in:12
 msgid "Prompt type"
@@ -6539,7 +6568,7 @@ msgstr "Sondaki Boşluklar Olmadan Kaydetmek"
 
 #: plugins/trailsave/trailsave.plugin.desktop.in.in:6
 msgid "Removes trailing spaces from lines before saving."
-msgstr "Kaydetmeden önce , sondaki boşluklari kaldirir."
+msgstr "Kaydetmeden önce, sondaki boşlukları kaldırır."
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"
