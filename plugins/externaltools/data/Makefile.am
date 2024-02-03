@@ -6,7 +6,7 @@ tools_in_files = \
 	remove-trailing-spaces.tool.in \
 	run-command.tool.in \
 	search-recursive.tool.in \
-	switch-c.tool.in
+	switch-source-header.tool.in
 
 install_tools_in_files = $(tools_in_files)
 
