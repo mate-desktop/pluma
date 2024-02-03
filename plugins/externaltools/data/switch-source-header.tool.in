@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # Copyright © 2011 Perberos
-# Copyright (C) 2012-2021 MATE Developers
+# Copyright (C) 2012-2024 MATE Developers
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as published by the
@@ -19,20 +19,33 @@
 
 import os
 import subprocess
+import sys
+
+EXTENSIONS = {
+    '.cc':  '.hh',
+    '.c':   '.h',
+    '.C':   '.H',
+    '.c++': '.h++',
+    '.cp':  '.hp',
+    '.cpp': '.hpp',
+    '.CPP': '.HPP',
+    '.cxx': '.hxx',
+    '.h':   '.c',
+    '.H':   '.C',
+    '.h++': '.c++',
+    '.hh':  '.cc',
+    '.hp':  '.cp',
+    '.hpp': '.cpp',
+    '.HPP': '.CPP',
+    '.hxx': '.cxx'
+}
 
 try:
-    name = os.environ["PLUMA_CURRENT_DOCUMENT_NAME"]
+    path = os.environ["PLUMA_CURRENT_DOCUMENT_PATH"]
 except KeyError:
-    exit(1)
+    sys.exit()
 
-f, ext = os.path.splitext(name)
-nxt = ''
-
-if ext == '.c':
-    nxt = '.h'
-
-if ext == '.h':
-    nxt = '.c'
-
-if nxt:
-    subprocess.call(['/usr/bin/pluma', f+nxt])
+root, ext = os.path.splitext(path)
+new_ext = EXTENSIONS.get(ext)
+if new_ext is not None:
+    subprocess.run(['/usr/bin/pluma', root + new_ext])
