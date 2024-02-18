@@ -1,0 +1,421 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - pluma</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(cb) {
+        var elements = document.querySelectorAll("." + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("id-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleSeverity(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".sev_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("severity-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleTool(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+
+        var elements;
+        if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+        else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("tool-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll(".idToggle");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var changed = elements[i].checked != elements[0].checked;
+          if (changed) {
+            elements[i].checked = elements[0].checked;
+            toggleDisplay(elements[i]);
+          }
+        }
+      }
+
+      function filterFile(filter) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector("tr").querySelector("td").textContent.toLowerCase().includes(filter.toLowerCase());
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+      }
+
+      function filterText(text) {
+        filter = text.toLowerCase();
+        var elements = document.querySelectorAll(".issue");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = false;
+          var fields = elements[i].querySelectorAll("td");
+          for (var n = 0, num = fields.length; n < num; n++) {
+            if (fields[n].textContent.toLowerCase().includes(filter)) {
+              visible = true;
+              break;
+            }
+          }
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+
+        updateFileRows();
+      }
+
+      function updateFileRows(element) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector(".issue:not(.id-filtered):not(.severity-filtered):not(.tool-filtered):not(.text-filtered)");
+          elements[i].classList.toggle("file-filtered", !visible);
+        }
+      }
+
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+    <div id="header" class="header">
+      <h1>Cppcheck report - pluma</h1>
+      <div id="filters">
+
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="error"checked/>error</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="warning"disabled/>warning</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="portability"checked/>portability</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="performance"disabled/>performance</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="style"checked/>style</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="information"checked/>information</label>
+        | 
+        <label class="checkBtn"><input type="checkbox" onclick="toggleTool(this)" id="cppcheck"checked/>cppcheck</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleTool(this)" id="clang-tidy"disabled/>clang-tidy</label>
+        | 
+        <label class="severityHeader">File: <input type="text" oninput="filterFile(this.value)"/></label>
+        <label class="severityHeader">Filter: <input type="text" oninput="filterText(this.value)"/></label>
+      </div>
+
+    </div>
+
+    <div id="menu_index">
+     <p><a href="index.html">Defect summary</a> </p>
+
+       <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unknownMacro" name="unknownMacro" checked></td><td>42</td><td>unknownMacro</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>28</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="syntaxError" name="syntaxError" checked></td><td>7</td><td>syntaxError</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameter" name="constParameter" checked></td><td>4</td><td>constParameter</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>3</td><td>unreadVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="uninitvar" name="uninitvar" checked></td><td>2</td><td>uninitvar</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedStructMember" name="unusedStructMember" checked></td><td>2</td><td>unusedStructMember</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="varFuncNullUB" name="varFuncNullUB" checked></td><td>2</td><td>varFuncNullUB</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="missingInclude" name="missingInclude" checked></td><td>1</td><td>missingInclude</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unknownEvaluationOrder" name="unknownEvaluationOrder" checked></td><td>1</td><td>unknownEvaluationOrder</td></tr>
+           <tr><td></td><td>92</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table class="summaryTable">
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="64.html"></a></td></tr>
+         <tr class="missingInclude sev_information issue"><td></td><td>missingInclude</td><td></td><td>information</td><td>Cppcheck cannot find all the include files (use --check-config for details)</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="0.html">plugins/docinfo/pluma-docinfo-plugin.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="0.html#line-76">76</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_ADD_PRIVATE_DYNAMIC is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="1.html">plugins/filebrowser/pluma-file-bookmarks-store.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="1.html#line-55">55</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_DYNAMIC_TYPE_EXTENDED is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="2.html">plugins/filebrowser/pluma-file-browser-messages.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="2.html#line-224">224</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;store&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="3.html">plugins/filebrowser/pluma-file-browser-plugin.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="3.html#line-114">114</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_DYNAMIC_TYPE_EXTENDED is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="4.html">plugins/filebrowser/pluma-file-browser-store.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="4.html#line-198">198</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_ADD_PRIVATE_DYNAMIC is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="5.html">plugins/filebrowser/pluma-file-browser-view.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="5.html#line-84">84</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_DYNAMIC_TYPE_EXTENDED is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="6.html">plugins/filebrowser/pluma-file-browser-widget.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="6.html#line-234">234</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_DYNAMIC_TYPE_EXTENDED is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="7.html">plugins/modelines/pluma-modeline-plugin.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="7.html#line-58">58</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_DYNAMIC_TYPE_EXTENDED is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="8.html">plugins/sort/pluma-sort-plugin.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="8.html#line-65">65</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_DYNAMIC_TYPE_EXTENDED is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="9.html">plugins/spell/pluma-automatic-spell-checker.c</a></td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="9.html#line-272">272</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;mark&apos; can be declared as pointer to const</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="9.html#line-408">408</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;label_text&apos; can be reduced.</td></tr>
+         <tr class="unknownEvaluationOrder sev_error issue"><td><a href="9.html#line-720">720</a></td><td>unknownEvaluationOrder</td><td><a href="https://cwe.mitre.org/data/definitions/768.html">768</a></td><td>error</td><td class="error">Expression &apos;(spell=pluma_automatic_spell_checker_get_from_document(doc))==NULL,spell&apos; depends on order of evaluation of side effects</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="10.html">plugins/spell/pluma-spell-checker-dialog.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="10.html#line-109">109</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="11.html">plugins/spell/pluma-spell-checker.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="11.html#line-72">72</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="12.html">plugins/spell/pluma-spell-language-dialog.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="12.html#line-59">59</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="13.html">plugins/spell/pluma-spell-plugin.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="13.html#line-78">78</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_DYNAMIC_TYPE_EXTENDED is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="14.html">plugins/taglist/pluma-taglist-plugin-panel.c</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="14.html#line-176">176</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;sel&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="14.html#line-194">194</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;sel&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="15.html">plugins/taglist/pluma-taglist-plugin-parser.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="15.html#line-601">601</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;pdir&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="16.html">plugins/taglist/pluma-taglist-plugin.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="16.html#line-61">61</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If ; is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="17.html">plugins/time/pluma-time-plugin.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="17.html#line-167">167</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_DYNAMIC_TYPE_EXTENDED is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="18.html">plugins/trailsave/pluma-trail-save-plugin.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="18.html#line-43">43</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_DYNAMIC_TYPE_EXTENDED is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="19.html">pluma/bacon-message-connection.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="19.html#line-228">228</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;newfile&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="20.html">pluma/dialogs/pluma-close-confirmation-dialog.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="20.html#line-85">85</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="21.html">pluma/dialogs/pluma-encodings-dialog.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="21.html#line-64">64</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="22.html">pluma/dialogs/pluma-preferences-dialog.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="22.html#line-147">147</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="23.html">pluma/mate-submodules/libegg/eggdesktopfile.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="23.html#line-497">497</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;try_exec&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="23.html#line-497">497</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;found_program&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="23.html#line-498">498</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;only_show_in&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="23.html#line-498">498</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;not_show_in&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="23.html#line-500">500</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="23.html#line-622">622</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;p&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="24.html">pluma/mate-submodules/libegg/eggsmclient-xsmp.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="24.html#line-182">182</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="25.html">pluma/mate-submodules/libegg/eggsmclient.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="25.html#line-48">48</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="26.html">pluma/mate-submodules/libegg/eggtreemultidnd.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="26.html#line-46">46</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_TreeViewDragInfo::source_target_list&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="26.html#line-49">49</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;_TreeViewDragInfo::dest_target_list&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="27.html">pluma/pluma-app.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="27.html#line-80">80</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="28.html">pluma/pluma-commands-file.c</a></td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="28.html#line-467">467</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="28.html#line-761">761</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="29.html">pluma/pluma-document-loader.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="29.html#line-120">120</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="30.html">pluma/pluma-document-output-stream.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="30.html#line-58">58</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="31.html">pluma/pluma-document-saver.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="31.html#line-115">115</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="32.html">pluma/pluma-document.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="32.html#line-185">185</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="33.html">pluma/pluma-documents-panel.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-150">150</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;selection&apos; can be reduced.</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="33.html#line-491">491</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;event&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="33.html#line-550">550</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;treeview&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="34.html">pluma/pluma-encodings-combo-box.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="34.html#line-73">73</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="35.html">pluma/pluma-encodings.c</a></td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="35.html#line-448">448</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;enc&apos; can be declared as pointer to const</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="35.html#line-494">494</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;enc&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="36.html">pluma/pluma-file-chooser-dialog.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="36.html#line-68">68</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="37.html">pluma/pluma-history-entry.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="37.html#line-64">64</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="38.html">pluma/pluma-io-error-message-area.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="38.html#line-117">117</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;secondary_markup&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="38.html#line-119">119</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;secondary_label&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="38.html#line-213">213</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;scheme_markup&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="38.html#line-479">479</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;secondary_markup&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="38.html#line-481">481</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;secondary_label&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="38.html#line-1036">1036</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;scheme_string&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="38.html#line-1037">1037</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;scheme_markup&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="39.html">pluma/pluma-message-bus.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="39.html#line-144">144</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="40.html">pluma/pluma-message.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="40.html#line-38">38</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="41.html">pluma/pluma-notebook.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="41.html#line-70">70</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="42.html">pluma/pluma-panel.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="42.html#line-87">87</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="43.html">pluma/pluma-plugins-engine.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="43.html#line-52">52</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="44.html">pluma/pluma-print-job.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="44.html#line-104">104</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="45.html">pluma/pluma-print-preview.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="45.html#line-87">87</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="46.html">pluma/pluma-progress-message-area.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="46.html#line-56">56</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="47.html">pluma/pluma-session.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="47.html#line-137">137</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;group_name&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="48.html">pluma/pluma-settings.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="48.html#line-53">53</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="49.html">pluma/pluma-smart-charset-converter.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="49.html#line-44">44</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_CODE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="50.html">pluma/pluma-status-combo-box.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="50.html#line-58">58</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="51.html">pluma/pluma-statusbar.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="51.html#line-61">61</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="52.html">pluma/pluma-tab-label.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="52.html#line-61">61</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="53.html">pluma/pluma-tab.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="53.html#line-747">747</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;to_markup&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="53.html#line-1274">1274</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;emsg&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="54.html">pluma/pluma-utils.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="54.html#line-648">648</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;valid_bytes&apos; can be reduced.</td></tr>
+         <tr class="uninitvar sev_error issue"><td><a href="54.html#line-870">870</a></td><td>uninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: current_desktop</td></tr>
+         <tr class="uninitvar sev_error issue"><td><a href="54.html#line-923">923</a></td><td>uninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: workspace</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="54.html#line-1447">1447</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;in&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="54.html#line-1448">1448</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;out&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="54.html#line-1449">1449</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;c&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="54.html#line-1501">1501</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;userinfo_start&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="55.html">pluma/pluma-view.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="55.html#line-2218">2218</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;uri_list&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="56.html">pluma/pluma-window.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="56.html#line-101">101</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="57.html">pluma/plumatextregion.c</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="57.html#line-332">332</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;start_node&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="58.html">tests/document-input-stream.c</a></td></tr>
+         <tr class="syntaxError sev_error issue"><td><a href="58.html#line-57">57</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">syntax error</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="59.html">tests/document-loader.c</a></td></tr>
+         <tr class="syntaxError sev_error issue"><td><a href="59.html#line-83">83</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">syntax error</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="60.html">tests/document-output-stream.c</a></td></tr>
+         <tr class="syntaxError sev_error issue"><td><a href="60.html#line-54">54</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">syntax error</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="61.html">tests/document-saver.c</a></td></tr>
+         <tr class="syntaxError sev_error issue"><td><a href="61.html#line-136">136</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">syntax error</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="62.html">tests/smart-converter.c</a></td></tr>
+         <tr class="syntaxError sev_error issue"><td><a href="62.html#line-251">251</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">syntax error</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="63.html">tools/plugin_template/pluma-plugin.c</a></td></tr>
+         <tr class="syntaxError sev_error issue"><td><a href="63.html#line-37">37</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">Unmatched &apos;)&apos;. Configuration: &apos;&apos;.</td></tr>
+         <tr class="syntaxError sev_error issue"><td><a href="63.html#line-37">37</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">Unmatched &apos;)&apos;. Configuration: &apos;HAVE_CONFIG_H&apos;.</td></tr>
+      </tbody>
+       </table>
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Created by Cppcheck 2.9 (<a href="https://cppcheck.sourceforge.io">Sourceforge</a>, <a href="irc://irc.freenode.net/cppcheck">IRC</a>)
+      </p>
+    </div>
+    </div>
+  </body>
+</html>
