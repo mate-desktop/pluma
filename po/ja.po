@@ -17,7 +17,7 @@
 # pivo thusr, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Wolfgang Ulbrich <mate@raveit.de>, 2021
-# Green <usergreen@users.osdn.me>, 2023
+# Green <usergreen@users.osdn.me>, 2024
 # 
 msgid ""
 msgstr ""
@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Green <usergreen@users.osdn.me>, 2023\n"
+"Last-Translator: Green <usergreen@users.osdn.me>, 2024\n"
 "Language-Team: Japanese (https://app.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -138,7 +138,7 @@ msgstr "書き込み可能な VFS スキーム"
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
-msgstr "Pluma が書き込みモードでサポートする VFS の並びです。'file' のスキームはデフォルトで書き込み可能です。"
+msgstr "Pluma が書き込みモードでサポートする VFS の並びです。'file' のスキームは既定で書き込み可能です。"
 
 #: data/org.mate.pluma.gschema.xml.in:65
 msgid "Maximum Number of Undo Actions"
@@ -316,7 +316,7 @@ msgid ""
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
 msgstr ""
-"ツールバーボタンのスタイルを指定します。可能な値はシステムのデフォルトスタイルを使う \"PLUMA_TOOLBAR_SYSTEM\" "
+"ツールバーボタンのスタイルを指定します。可能な値はシステム既定のスタイルを使う \"PLUMA_TOOLBAR_SYSTEM\" "
 "とアイコンのみを表示する \"PLUMA_TOOLBAR_ICONS\"、アイコンとテキスト両方を表示する "
 "\"PLUMA_TOOLBAR_ICONS_AND_TEXT\"、そしてアイコンのそばに優先的なテキストを表示する "
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" "
@@ -1602,7 +1602,7 @@ msgstr "ファイルが格納されている場所がマウントされていな
 #: pluma/pluma-io-error-message-area.c:244
 #, c-format
 msgid "%s is a directory."
-msgstr "%s はフォルダーです。"
+msgstr "%s はディレクトリです。"
 
 #: pluma/pluma-io-error-message-area.c:251
 #, c-format
@@ -1938,7 +1938,7 @@ msgstr "行番号(_L):"
 
 #: pluma/pluma-print-preferences.ui:463
 msgid "_Restore Default Fonts"
-msgstr "デフォルトに戻す(_R)"
+msgstr "既定に戻す(_R)"
 
 #: pluma/pluma-print-preview.c:570
 msgid "Show the previous page"
@@ -2102,7 +2102,7 @@ msgstr "名前:"
 
 #: pluma/pluma-tab.c:1812
 msgid "MIME Type:"
-msgstr "MIME 型:"
+msgstr "MIME タイプ:"
 
 #: pluma/pluma-tab.c:1813
 msgid "Encoding:"
@@ -2744,7 +2744,7 @@ msgstr "現在の選択"
 
 #: plugins/externaltools/tools/tools.ui:59
 msgid "Current selection (default to document)"
-msgstr "現在の選択範囲 (デフォルトでは文書になります)"
+msgstr "現在の選択範囲 (既定では文書になります)"
 
 #: plugins/externaltools/tools/tools.ui:63
 msgid "Current line"
@@ -2821,11 +2821,11 @@ msgstr "文書のあるディレクトリで \"make\" を実行"
 
 #: plugins/externaltools/data/open-terminal-here.desktop.in:3
 msgid "Open terminal here"
-msgstr "端末をここで開く"
+msgstr "ここで端末を開く"
 
 #: plugins/externaltools/data/open-terminal-here.desktop.in:4
 msgid "Open a terminal in the document location"
-msgstr "文書のあるフォルダで端末を開く"
+msgstr "文書のある場所で端末を開く"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
 msgid "Remove trailing spaces"
@@ -2871,7 +2871,7 @@ msgid ""
 "with Caja, etc.)"
 msgstr ""
 "TRUE "
-"にすると、初めて開いた文書があるフォルダーで、ファイル参照プラグインがまだ使われたことがないディレクトリを表示します。(すなわち、この機能は一般的にコマンドラインから文書を開く場合や"
+"にすると、初めて開いた文書があるフォルダで、ファイル参照プラグインがまだ使われたことがないディレクトリを表示します。(すなわち、この機能は一般的にコマンドラインから文書を開く場合や"
 " Caja などから文書を開く際に動作します。)"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:11
@@ -2911,17 +2911,17 @@ msgstr "ファイル参照プラグインを読み込んだ際に、ブックマ
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:29
 msgid "File Browser Root Directory"
-msgstr "ファイル参照ペインのルートフォルダー"
+msgstr "ファイルブラウザのルートディレクトリ"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:30
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr "ファイル参照プラグインを読み込んで onload/tree_view が TRUE の場合のファイル参照ブラウザのルートフォルダー"
+msgstr "ファイルブラウザプラグインを読み込んで onload/tree_view が TRUE の場合のファイルブラウザのルートディレクトリ"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:34
 msgid "File Browser Virtual Root Directory"
-msgstr "ファイル参照ペインの仮想的なルートフォルダー"
+msgstr "ファイルブラウザの仮想ルートディレクトリ"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:35
 msgid ""
@@ -2929,8 +2929,8 @@ msgid ""
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
 msgstr ""
-"ファイル参照プラグインを読み込んで onload/tree_view が TRUE "
-"の場合にファイル参照ブラウザが参照する仮想的なルートフォルダーを指定します。この仮想フォルダーは必ず実際のルートよりも下層にあるフォルダーを指定してください。"
+"onload/tree_view が TRUE "
+"の場合に、ファイルブラウザプラグインを読み込むときのファイルブラウザ仮想ルートディレクトリです。この仮想ルートは常に実際のルートよりも下層にあるように指定してください。"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:39
 msgid "Enable Restore of Remote Locations"
@@ -2950,15 +2950,15 @@ msgstr "文書のルートにする(_S)"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
-msgstr "文書を格納しているルートフォルダーに指定します"
+msgstr "ルートをアクティブな文書の場所に設定します"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
-msgstr "端末を開く(_O)"
+msgstr "ここで端末を開く(_O)"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
-msgstr "このフォルダーで端末を開きます"
+msgstr "現在のディレクトリで端末を開きます"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
@@ -2966,7 +2966,7 @@ msgstr "ファイルブラウザ"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
-msgstr "新しいフォルダーを生成する際にエラーが発生しました"
+msgstr "新しいディレクトリを作成する際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
@@ -2974,23 +2974,23 @@ msgstr "新しいファイルを生成する際にエラーが発生しました
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
-msgstr "ファイルまたはフォルダーの名前を変更する際にエラーが発生しました"
+msgstr "ファイルまたはディレクトリの名前を変更する際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
-msgstr "ファイルまたはフォルダーを削除する際にエラーが発生しました"
+msgstr "ファイルまたはディレクトリを削除する際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
-msgstr "ファイル参照ペインの中でフォルダーを開く際にエラーが発生しました"
+msgstr "ファイルマネージャでディレクトリを開く際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
-msgstr "ルートフォルダーを設定する際にエラーが発生しました"
+msgstr "ルートディレクトリを設定する際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
-msgstr "フォルダーを読み込む際にエラーが発生しました"
+msgstr "ディレクトリを読み込む際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
@@ -3584,7 +3584,7 @@ msgstr "不明 (%s)"
 #: plugins/spell/pluma-spell-checker-language.c:407
 msgctxt "language"
 msgid "Default"
-msgstr "デフォルト"
+msgstr "既定"
 
 #: plugins/spell/pluma-spell-language-dialog.c:137
 #: plugins/spell/languages-dialog.ui:24
@@ -3673,7 +3673,7 @@ msgstr "すべて変更(_L)"
 
 #: plugins/spell/spell-checker.ui:273
 msgid "User dictionary:"
-msgstr "ユーザー辞書:"
+msgstr "ユーザ辞書:"
 
 #: plugins/spell/spell-checker.ui:292
 msgid "Add w_ord"
