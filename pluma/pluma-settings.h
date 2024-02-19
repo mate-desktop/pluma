@@ -103,6 +103,7 @@ GSList *                pluma_settings_get_writable_vfs_schemes (GSettings *sett
 #define PLUMA_SETTINGS_CREATE_BACKUP_COPY           "create-backup-copy"
 #define PLUMA_SETTINGS_AUTO_SAVE                    "auto-save"
 #define PLUMA_SETTINGS_AUTO_SAVE_INTERVAL           "auto-save-interval"
+#define PLUMA_SETTINGS_HIDE_TRAILING_NEWLINE        "hide-trailing-newline"
 #define PLUMA_SETTINGS_MAX_UNDO_ACTIONS             "max-undo-actions"
 #define PLUMA_SETTINGS_WRAP_MODE                    "wrap-mode"
 #define PLUMA_SETTINGS_TABS_SIZE                    "tabs-size"
