@@ -9,11 +9,12 @@
 # Martin Wimpress <code@flexion.org>, 2021
 # Bar Boko <bokodev@outlook.com>, 2021
 # בר בוכובזה <bokovzabox@gmail.com>, 2021
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2021
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Dave Save <davesave@gmail.com>, 2021
 # haxoc c11 <haxoc112@disroot.org>, 2021
 # 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2024
+# Wolfgang Ulbrich <mate@raveit.de>, 2024
 # 
 msgid ""
 msgstr ""
@@ -21,13 +22,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2021-06-26 20:39+0200\n"
 "PO-Revision-Date: 2021-09-24 09:02+0000\n"
-"Last-Translator: 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021\n"
+"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2024\n"
 "Language-Team: Hebrew (https://app.transifex.com/mate/teams/13566/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
@@ -752,7 +753,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:424
 msgid ""
@@ -770,7 +770,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:440
 #, c-format
@@ -783,7 +782,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:455
 msgid ""
@@ -801,7 +799,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:476
 #, c-format
@@ -812,7 +809,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
@@ -836,7 +832,6 @@ msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
@@ -847,7 +842,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
@@ -1236,10 +1230,9 @@ msgstr "נטען הקובץ  '%s'…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "קובץ אחד נטען…"
+msgstr[1] "נטענים %d קבצים…"
+msgstr[2] "נטענים %d קבצים…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:462
@@ -1282,10 +1275,9 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "שינויים שנערכו במסמך בשנייה האחרונה האחרונות יאבדו לחלוטין."
+msgstr[1] "שינויים שנערכו במסמך ב־%ld השניות האחרונות יאבדו לחלוטין."
+msgstr[2] "שינויים שנערכו במסמך ב־%ld השניות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1148
 msgid ""
@@ -1300,10 +1292,9 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "שינויים שנערכו במסמך בדקה והשנייה האחרונות יאבדו לחלוטין."
+msgstr[1] "שינויים שנערכו במסמך בדקה ו־%ld השניות האחרונות יאבדו לחלוטין."
+msgstr[2] "שינויים שנערכו במסמך בדקה ו־%ld השניות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1164
 #, c-format
@@ -1313,10 +1304,9 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "שינויים שנערכו במסמך בדקה האחרונה האחרונות יאבדו לחלוטין."
+msgstr[1] "שינויים שנערכו במסמך ב־%ld הדקות האחרונות יאבדו לחלוטין."
+msgstr[2] "שינויים שנערכו במסמך ב־%ld הדקות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1179
 msgid ""
@@ -1331,10 +1321,9 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "שינויים שנערכו במסמך בשעה %d והדקה האחרונות יאבדו לחלוטין."
+msgstr[1] "שינויים שנערכו במסמך בשעה ו־%d הדקות האחרונות יאבדו לחלוטין."
+msgstr[2] "שינויים שנערכו במסמך בשעה ו־%d הדקות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1342,10 +1331,9 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "שינויים שנערכו במסמך %d בשעה האחרונה יאבדו לחלוטין."
+msgstr[1] "שינויים שנערכו במסמך %d בשעתיים האחרונות יאבדו לחלוטין."
+msgstr[2] "שינויים שנערכו במסמך ב־%d השעות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1227 pluma/pluma-ui.h:85
 msgid "_Revert"
@@ -1426,7 +1414,6 @@ msgid_plural "Found and replaced %d occurrences"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/pluma-commands-search.c:123
 msgid "Found and replaced one occurrence"
@@ -2111,7 +2098,6 @@ msgid_plural "There are %d tabs with errors"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
