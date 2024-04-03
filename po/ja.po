@@ -8,6 +8,7 @@
 # Ikuru K <kanumaiku@gmail.com>, 2021
 # c7a0a66e0476db158663636124cfb54f_370a183, 2021
 # d6170a00d05f3d9fb2ee36b64ce8db85_b78b25d, 2021
+# clefebvre <clement.lefebvre@linuxmint.com>, 2021
 # Martin Wimpress <code@flexion.org>, 2021
 # shinmili <rmsk.pl.ur.lpt@gmail.com>, 2021
 # Rockers <sumorock@hotmail.com>, 2021
@@ -17,7 +18,7 @@
 # あわしろいくや <ikunya@gmail.com>, 2021
 # fbc955180bc2b956cb4ef52d00eb80a0_91487f8, 2021
 # semicolon <mail@semicln.com>, 2021
-# Green <usergreen@users.osdn.me>, 2024
+# Green <usergreen@users.osdn.me>, 2021
 # 
 msgid ""
 msgstr ""
@@ -25,7 +26,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2021-06-26 20:39+0200\n"
 "PO-Revision-Date: 2021-09-24 09:02+0000\n"
-"Last-Translator: Green <usergreen@users.osdn.me>, 2024\n"
+"Last-Translator: Green <usergreen@users.osdn.me>, 2021\n"
 "Language-Team: Japanese (https://app.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,8 +46,8 @@ msgid ""
 "font."
 msgstr ""
 "Pluma "
-"で指定したフォントの代わりに、システム既定の固定幅フォントを編集で使用するかどうかを指定します。このオプションをOFFにした場合、システムフォントではなく"
-" \"エディタのフォント\" オプションで指定したフォントが使用されます。"
+"で指定したフォントの代わりに、システムのデフォルトの固定幅フォントを編集で使用するかどうかを指定します。このオプションをOFFにした場合、システムフォントではなく"
+" \"エディターのフォント\" オプションで指定したフォントが使用されます。"
 
 #: data/org.mate.pluma.gschema.xml.in:19
 msgctxt "editor-font"
@@ -61,7 +62,7 @@ msgstr "エディタのフォント"
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
-msgstr "編集領域で使用するカスタムフォントを指定します。これは \"既定のフォントを使う\" オプションを無効にしている場合にのみ効果があります。"
+msgstr "編集領域で使用するカスタムフォントを指定します。これは \"デフォルトのフォントを使う\" オプションを無効にしている場合にのみ効果があります。"
 
 #: data/org.mate.pluma.gschema.xml.in:25
 msgid "Switch tabs with [ctrl] + [tab]"
@@ -138,7 +139,7 @@ msgstr "書き込み可能な VFS スキーム"
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
-msgstr "Pluma が書き込みモードでサポートする VFS のリストです。'file' のスキームは既定で書き込み可能です。"
+msgstr "Pluma が書き込みモードでサポートする VFS の並びです。'file' のスキームはデフォルトで書き込み可能です。"
 
 #: data/org.mate.pluma.gschema.xml.in:65
 msgid "Maximum Number of Undo Actions"
@@ -316,7 +317,7 @@ msgid ""
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
 msgstr ""
-"ツールバーボタンのスタイルを指定します。可能な値はシステムの既定スタイルを使う \"PLUMA_TOOLBAR_SYSTEM\" "
+"ツールバーボタンのスタイルを指定します。可能な値はシステムのデフォルトスタイルを使う \"PLUMA_TOOLBAR_SYSTEM\" "
 "とアイコンのみを表示する \"PLUMA_TOOLBAR_ICONS\"、アイコンとテキスト両方を表示する "
 "\"PLUMA_TOOLBAR_ICONS_AND_TEXT\"、そしてアイコンのそばに優先的なテキストを表示する "
 "\"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" "
@@ -1602,7 +1603,7 @@ msgstr "ファイルが格納されている場所がマウントされていな
 #: pluma/pluma-io-error-message-area.c:244
 #, c-format
 msgid "%s is a directory."
-msgstr "%s はディレクトリです。"
+msgstr "%s はフォルダーです。"
 
 #: pluma/pluma-io-error-message-area.c:251
 #, c-format
@@ -1938,7 +1939,7 @@ msgstr "行番号(_L):"
 
 #: pluma/pluma-print-preferences.ui:463
 msgid "_Restore Default Fonts"
-msgstr "既定に戻す(_R)"
+msgstr "デフォルトに戻す(_R)"
 
 #: pluma/pluma-print-preview.c:570
 msgid "Show the previous page"
@@ -2102,7 +2103,7 @@ msgstr "名前:"
 
 #: pluma/pluma-tab.c:1812
 msgid "MIME Type:"
-msgstr "MIME タイプ:"
+msgstr "MIME 型:"
 
 #: pluma/pluma-tab.c:1813
 msgid "Encoding:"
@@ -2744,7 +2745,7 @@ msgstr "現在の選択"
 
 #: plugins/externaltools/tools/tools.ui:59
 msgid "Current selection (default to document)"
-msgstr "現在の選択範囲 (既定では文書になります)"
+msgstr "現在の選択範囲 (デフォルトでは文書になります)"
 
 #: plugins/externaltools/tools/tools.ui:63
 msgid "Current line"
@@ -2825,7 +2826,7 @@ msgstr "ここで端末を開く"
 
 #: plugins/externaltools/data/open-terminal-here.desktop.in:4
 msgid "Open a terminal in the document location"
-msgstr "文書のある場所で端末を開く"
+msgstr "文書のあるフォルダで端末を開く"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
 msgid "Remove trailing spaces"
@@ -2871,7 +2872,7 @@ msgid ""
 "with Caja, etc.)"
 msgstr ""
 "TRUE "
-"にすると、ファイルブラウザ・プラグインは、以前ファイルブラウザで開かなかった、最初に開いた文書が存在するディレクトリを表示します。(すなわち、この機能は一般的にコマンドラインから文書を開く場合や"
+"にすると、初めて開いた文書があるフォルダーで、ファイル参照プラグインがまだ使われたことがないディレクトリを表示します。(すなわち、この機能は一般的にコマンドラインから文書を開く場合や"
 " Caja などから文書を開く際に動作します。)"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:11
@@ -2911,19 +2912,17 @@ msgstr "ファイル参照プラグインを読み込んだ際に、ブックマ
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:29
 msgid "File Browser Root Directory"
-msgstr "ファイルブラウザのルートディレクトリ"
+msgstr "ファイル参照ペインのルートフォルダー"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:30
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
-msgstr ""
-"ファイルブラウザ・プラグインをロードする時に使用する、ファイルブラウザのルートディレクトリで、 onload/tree_view が TRUE "
-"の場合です。"
+msgstr "ファイル参照プラグインを読み込んで onload/tree_view が TRUE の場合のファイル参照ブラウザのルートフォルダー"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:34
 msgid "File Browser Virtual Root Directory"
-msgstr "ファイルブラウザの仮想ルートディレクトリ"
+msgstr "ファイル参照ペインの仮想的なルートフォルダー"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:35
 msgid ""
@@ -2931,8 +2930,8 @@ msgid ""
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
 msgstr ""
-"onload/tree_view が TRUE "
-"の場合で、ファイルブラウザ・プラグインをロードする際に使用する、ファイルブラウザ仮想ルートディレクトリです。この仮想フォルダは常に実際のルートよりも下層にあるフォルダを指定してください。"
+"ファイル参照プラグインを読み込んで onload/tree_view が TRUE "
+"の場合にファイル参照ブラウザが参照する仮想的なルートフォルダーを指定します。この仮想フォルダーは必ず実際のルートよりも下層にあるフォルダーを指定してください。"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:39
 msgid "Enable Restore of Remote Locations"
@@ -2952,15 +2951,15 @@ msgstr "文書のルートにする(_S)"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:580
 msgid "Set the root to the active document location"
-msgstr "ルートをアクティブな文書の場所に設定します"
+msgstr "文書を格納しているルートフォルダーに指定します"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:585
 msgid "_Open terminal here"
-msgstr "ここで端末を開く(_O)"
+msgstr "端末を開く(_O)"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:587
 msgid "Open a terminal at the currently opened directory"
-msgstr "現在のディレクトリで端末を開きます"
+msgstr "このフォルダーで端末を開きます"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:730
 msgid "File Browser"
@@ -2968,7 +2967,7 @@ msgstr "ファイルブラウザー"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:878
 msgid "An error occurred while creating a new directory"
-msgstr "新しいディレクトリを生成する際にエラーが発生しました"
+msgstr "新しいフォルダーを生成する際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:881
 msgid "An error occurred while creating a new file"
@@ -2976,23 +2975,23 @@ msgstr "新しいファイルを生成する際にエラーが発生しました
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:886
 msgid "An error occurred while renaming a file or directory"
-msgstr "ファイルまたはディレクトリの名前を変更する際にエラーが発生しました"
+msgstr "ファイルまたはフォルダーの名前を変更する際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:891
 msgid "An error occurred while deleting a file or directory"
-msgstr "ファイルまたはディレクトリを削除する際にエラーが発生しました"
+msgstr "ファイルまたはフォルダーを削除する際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:896
 msgid "An error occurred while opening a directory in the file manager"
-msgstr "ファイルマネージャでディレクトリを開く際にエラーが発生しました"
+msgstr "ファイル参照ペインの中でフォルダーを開く際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:900
 msgid "An error occurred while setting a root directory"
-msgstr "ルートディレクトリを設定する際にエラーが発生しました"
+msgstr "ルートフォルダーを設定する際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:904
 msgid "An error occurred while loading a directory"
-msgstr "ディレクトリを読み込む際にエラーが発生しました"
+msgstr "フォルダーを読み込む際にエラーが発生しました"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred"
@@ -3076,11 +3075,11 @@ msgstr "ゴミ箱へ移動(_M)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:791
 msgid "Move selected file or folder to trash"
-msgstr "選択したファイルやフォルダをゴミ箱へ移動します"
+msgstr "選択したファイルやフォルダーをゴミ箱へ移動します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:794
 msgid "Delete selected file or folder"
-msgstr "選択したファイルやフォルダを削除します"
+msgstr "選択したファイルやフォルダーを削除します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "Open selected file"
@@ -3092,15 +3091,15 @@ msgstr "上へ"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:808
 msgid "Open the parent folder"
-msgstr "親フォルダを開きます"
+msgstr "親フォルダーを開きます"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:813
 msgid "_New Folder"
-msgstr "新しいフォルダ(_N)"
+msgstr "新しいフォルダー(_N)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:814
 msgid "Add new empty folder"
-msgstr "新しい空のフォルダを追加します"
+msgstr "新しい空のフォルダーを追加します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "New F_ile"
@@ -3116,7 +3115,7 @@ msgstr "名前の変更(_R)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:823
 msgid "Rename selected file or folder"
-msgstr "選択したファイルやフォルダの名前を変更します"
+msgstr "選択したファイルやフォルダーの名前を変更します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:829
 msgid "_Previous Location"
@@ -3145,12 +3144,12 @@ msgstr "表示をリフレッシュします"
 #: plugins/filebrowser/pluma-file-browser-widget.c:837
 #: plugins/filebrowser/pluma-file-browser-widget.c:855
 msgid "_View Folder"
-msgstr "フォルダを開く(_V)"
+msgstr "フォルダーを開く(_V)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:838
 #: plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "View folder in file manager"
-msgstr "フォルダをファイルマネージャで開きます"
+msgstr "指定したフォルダーをファイルマネージャで開きます"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "Show _Hidden"
@@ -3158,7 +3157,7 @@ msgstr "隠しファイル(_H)"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Show hidden files and folders"
-msgstr "隠しファイルと隠しフォルダを表示します"
+msgstr "隠しファイルやフォルダーを表示します"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:848
 msgid "Show _Binary"
@@ -3586,7 +3585,7 @@ msgstr "不明 (%s)"
 #: plugins/spell/pluma-spell-checker-language.c:407
 msgctxt "language"
 msgid "Default"
-msgstr "既定"
+msgstr "デフォルト"
 
 #: plugins/spell/pluma-spell-language-dialog.c:137
 #: plugins/spell/languages-dialog.ui:24
@@ -3675,7 +3674,7 @@ msgstr "すべて変更(_L)"
 
 #: plugins/spell/spell-checker.ui:273
 msgid "User dictionary:"
-msgstr "ユーザ辞書:"
+msgstr "ユーザー辞書:"
 
 #: plugins/spell/spell-checker.ui:292
 msgid "Add w_ord"
@@ -5576,7 +5575,7 @@ msgstr "タグの一覧"
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
-msgstr "よく利用するタグや文字列をキーボードを使わずに文書に挿入する機能を提供します。"
+msgstr "よく利用するタグや文字列をキーボードを使わずにドキュメントに挿入する機能を提供します。"
 
 #: plugins/taglist/XSLT.tags.xml.in:7
 msgid "XSLT - Elements"
