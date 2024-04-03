@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_PREREQ(2.63.2)
+AC_PREREQ(2.63.3)
 
 m4_define(pluma_major_version, 1)
 m4_define(pluma_minor_version, 26)
