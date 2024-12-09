@@ -133,10 +133,33 @@ pluma_encodings_combo_box_dispose (GObject *object)
 }
 
 static void
+pluma_encodings_combo_box_constructed (GObject *object)
+{
+	PlumaEncodingsComboBox *combo = PLUMA_ENCODINGS_COMBO_BOX (object);
+	GtkCellRenderer *text_renderer;
+
+	G_OBJECT_CLASS (pluma_encodings_combo_box_parent_class)->constructed (object);
+
+		/* Setup up the cells */
+		text_renderer = gtk_cell_renderer_text_new ();
+		gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (combo),
+					  text_renderer, TRUE);
+
+		gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combo),
+						text_renderer,
+						"text",
+						NAME_COLUMN,
+						NULL);
+
+	update_menu (combo);
+}
+
+static void
 pluma_encodings_combo_box_class_init (PlumaEncodingsComboBoxClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
+	object_class->constructed = pluma_encodings_combo_box_constructed;
 	object_class->set_property = pluma_encodings_combo_box_set_property;
 	object_class->get_property = pluma_encodings_combo_box_get_property;
 	object_class->dispose = pluma_encodings_combo_box_dispose;
@@ -367,8 +390,6 @@ update_menu (PlumaEncodingsComboBox *menu)
 static void
 pluma_encodings_combo_box_init (PlumaEncodingsComboBox *menu)
 {
-	GtkCellRenderer *text_renderer;
-
 	menu->priv = pluma_encodings_combo_box_get_instance_private (menu);
 
 	menu->priv->enc_settings = g_settings_new (PLUMA_SCHEMA_ID);
@@ -377,17 +398,6 @@ pluma_encodings_combo_box_init (PlumaEncodingsComboBox *menu)
 						G_TYPE_STRING,
 						G_TYPE_POINTER,
 						G_TYPE_BOOLEAN);
-
-	/* Setup up the cells */
-	text_renderer = gtk_cell_renderer_text_new ();
-	gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (menu),
-				  text_renderer, TRUE);
-
-	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (menu),
-					text_renderer,
-					"text",
-					NAME_COLUMN,
-					NULL);
 
 	gtk_combo_box_set_row_separator_func (GTK_COMBO_BOX (menu),
 					      separator_func, NULL,
