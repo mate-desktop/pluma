@@ -291,8 +291,7 @@ pluma_window_configure_event (GtkWidget         *widget,
 {
     PlumaWindow *window = PLUMA_WINDOW (widget);
 
-    window->priv->width = event->width;
-    window->priv->height = event->height;
+    gtk_window_get_size(GTK_WINDOW (widget), &window->priv->width, &window->priv->height);
 
     return GTK_WIDGET_CLASS (pluma_window_parent_class)->configure_event (widget, event);
 }
