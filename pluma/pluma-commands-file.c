@@ -1740,6 +1740,7 @@ _pluma_cmd_file_close (GtkAction   *action,
 
 	if (active_tab == NULL)
 	{
+		gtk_widget_destroy (GTK_WIDGET (window));
 		return;
 	}
 

@@ -2530,6 +2530,10 @@ set_sensitivity_according_to_window_state (PlumaWindow *window)
                                     !(window->priv->state & PLUMA_WINDOW_STATE_SAVING) &&
                                     !(window->priv->state & PLUMA_WINDOW_STATE_PRINTING));
 
+    gtk_action_group_set_sensitive (window->priv->close_action_group,
+                                    !(window->priv->state & PLUMA_WINDOW_STATE_SAVING) &&
+                                    !(window->priv->state & PLUMA_WINDOW_STATE_PRINTING));
+
     action = gtk_action_group_get_action (window->priv->action_group,
                                           "FileCloseAll");
     gtk_action_set_sensitive (action,
@@ -3199,9 +3203,6 @@ update_sensitivity_according_to_open_tabs (PlumaWindow *window)
     action = gtk_action_group_get_action (window->priv->action_group,
                                           "DocumentsMoveToNewWindow");
     gtk_action_set_sensitive (action, window->priv->num_tabs > 1);
-
-    gtk_action_group_set_sensitive (window->priv->close_action_group,
-                                    window->priv->num_tabs != 0);
 }
 
 static void
