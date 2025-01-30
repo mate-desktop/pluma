@@ -159,7 +159,7 @@ class SubstitutionParser:
         return match.group(1), tokens[match.end():]
 
     def _condition_value(self, tokens):
-        match = re.match('\\\\?%s\s*' % self.REG_GROUP, tokens)
+        match = re.match('\\\\?%s\\s*' % self.REG_GROUP, tokens)
 
         if not match:
             return None, tokens
