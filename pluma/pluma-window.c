@@ -68,9 +68,6 @@
 #define LANGUAGE_DATA "PlumaWindowLanguageData"
 #define FULLSCREEN_ANIMATION_SPEED 4
 
-#define PLUMA_WINDOW_DEFAULT_WIDTH 650
-#define PLUMA_WINDOW_DEFAULT_HEIGHT 500
-
 /* Local variables */
 static gboolean cansave = TRUE;
 
@@ -130,8 +127,9 @@ save_panes_state (PlumaWindow *window)
 
     pluma_debug (DEBUG_WINDOW);
 
-    g_settings_set (window->priv->editor_settings, PLUMA_SETTINGS_WINDOW_SIZE,
-                    "(ii)", window->priv->width, window->priv->height);
+    if ((window->priv->window_state & GDK_WINDOW_STATE_MAXIMIZED) == 0)
+        g_settings_set (window->priv->editor_settings, PLUMA_SETTINGS_WINDOW_SIZE,
+                        "(ii)", window->priv->width, window->priv->height);
 
     g_settings_set_int (window->priv->editor_settings, PLUMA_SETTINGS_WINDOW_STATE,
                         window->priv->window_state);
@@ -2076,22 +2074,14 @@ clone_window (PlumaWindow *origin)
     screen = gtk_window_get_screen (GTK_WINDOW (origin));
     window = pluma_app_create_window (app, screen);
 
+    gtk_window_set_default_size (GTK_WINDOW (window),
+                                 origin->priv->width,
+                                 origin->priv->height);
+
     if ((origin->priv->window_state & GDK_WINDOW_STATE_MAXIMIZED) != 0)
-    {
-        gint w, h;
-
-        _pluma_window_get_default_size (&w, &h);
-        gtk_window_set_default_size (GTK_WINDOW (window), w, h);
         gtk_window_maximize (GTK_WINDOW (window));
-    }
     else
-    {
-        gtk_window_set_default_size (GTK_WINDOW (window),
-                                     origin->priv->width,
-                                     origin->priv->height);
-
         gtk_window_unmaximize (GTK_WINDOW (window));
-    }
 
     if ((origin->priv->window_state & GDK_WINDOW_STATE_STICKY ) != 0)
         gtk_window_stick (GTK_WINDOW (window));
@@ -4801,14 +4791,5 @@ pluma_window_get_message_bus (PlumaWindow *window)
     g_return_val_if_fail (PLUMA_IS_WINDOW (window), NULL);
 
     return window->priv->message_bus;
-}
-
-void
-_pluma_window_get_default_size (gint *width, gint *height)
-{
-    g_return_if_fail (width != NULL && height != NULL);
-
-    *width = PLUMA_WINDOW_DEFAULT_WIDTH;
-    *height = PLUMA_WINDOW_DEFAULT_HEIGHT;
 }
 

@@ -188,9 +188,6 @@ void		 _pluma_recent_add			(PlumaWindow	     *window,
 void		 _pluma_recent_remove			(PlumaWindow         *window,
 							 const gchar         *uri);
 
-void		 _pluma_window_get_default_size		(gint                *width,
-							 gint                *height);
-
 G_END_DECLS
 
 #endif  /* __PLUMA_WINDOW_H__  */
