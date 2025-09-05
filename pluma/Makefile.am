@@ -66,6 +66,7 @@ NOINST_H_FILES =			\
 INST_H_FILES =				\
 	pluma-app.h			\
 	pluma-app-activatable.h 	\
+	pluma-application.h		\
 	pluma-commands.h		\
 	pluma-debug.h			\
 	pluma-document.h 		\
@@ -99,6 +100,7 @@ header_DATA = 				\
 libpluma_c_files = 			\
 	pluma-app.c			\
 	pluma-app-activatable.c 	\
+	pluma-application.c		\
 	pluma-close-button.c		\
 	pluma-commands-documents.c	\
 	pluma-commands-edit.c		\

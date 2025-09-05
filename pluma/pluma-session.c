@@ -392,7 +392,9 @@ client_quit_cb (EggSMClient *client, gpointer data)
 	pluma_debug_message (DEBUG_FILE, "Unref pluma_app_server: DONE");
 #endif
 
-	gtk_main_quit ();
+	GApplication *app = g_application_get_default ();
+	if (app)
+		g_application_quit (app);
 }
 
 /**

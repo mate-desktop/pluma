@@ -71,7 +71,7 @@ typedef struct _PlumaWindow PlumaWindow;
 
 struct _PlumaWindow
 {
-	GtkWindow window;
+	GtkApplicationWindow window;
 
 	/*< private > */
 	PlumaWindowPrivate *priv;
@@ -84,7 +84,7 @@ typedef struct _PlumaWindowClass PlumaWindowClass;
 
 struct _PlumaWindowClass
 {
-	GtkWindowClass parent_class;
+	GtkApplicationWindowClass parent_class;
 
 	/* Signals */
 	void	 (* tab_added)      	(PlumaWindow *window,
