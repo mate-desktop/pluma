@@ -489,7 +489,10 @@ window_destroy (PlumaWindow *window,
         save_page_setup (app);
         save_print_settings (app);
 
-        gtk_main_quit ();
+        /* Exit the application when no windows remain */
+        GApplication *app = g_application_get_default ();
+        if (app)
+            g_application_quit (app);
     }
 }
 

@@ -48,6 +48,7 @@
 #endif
 
 #include "pluma-app.h"
+#include "pluma-application.h"
 #include "pluma-commands.h"
 #include "pluma-debug.h"
 #include "pluma-dirs.h"
@@ -502,11 +503,9 @@ int
 main (int argc, char *argv[])
 {
 	GOptionContext *context;
-	PlumaPluginsEngine *engine;
-	PlumaWindow *window;
-	PlumaApp *app;
-	gboolean restored = FALSE;
+	PlumaApplication *application;
 	GError *error = NULL;
+	int status;
 
 	/* Setup debugging */
 	pluma_debug_init ();
@@ -541,6 +540,8 @@ main (int argc, char *argv[])
 
 	g_option_context_free (context);
 
+	pluma_get_command_line_data ();
+
 	pluma_debug_message (DEBUG_APP, "Create bacon connection");
 
 	connection = bacon_message_connection_new ("pluma");
@@ -550,8 +551,6 @@ main (int argc, char *argv[])
 		if (!bacon_message_connection_get_is_server (connection))
 		{
 			pluma_debug_message (DEBUG_APP, "I'm a client");
-
-			pluma_get_command_line_data ();
 
 			send_bacon_message ();
 
@@ -580,78 +579,21 @@ main (int argc, char *argv[])
 		g_warning ("Cannot create the 'pluma' connection.");
 	}
 
-	pluma_debug_message (DEBUG_APP, "Set icon");
-	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
-					   PLUMA_DATADIR "/icons");
+	/* Only the server reaches this point - now use GtkApplication */
+	application = pluma_application_new ();
 
-	/* Set the associated .desktop file */
-	egg_set_desktop_file (DATADIR "/applications/pluma.desktop");
+	/* Send parsed command line data to application */
+	pluma_application_set_command_line_options (application,
+	                                            line_position,
+	                                            encoding_charset,
+	                                            new_window_option,
+	                                            new_document_option,
+	                                            file_list);
 
-	/* Init plugins engine */
-	pluma_debug_message (DEBUG_APP, "Init plugins");
-	engine = pluma_plugins_engine_get_default ();
-
-	/* Initialize session management */
-	pluma_debug_message (DEBUG_APP, "Init session manager");
-	pluma_session_init ();
-
-	if (pluma_session_is_restored ())
-		restored = pluma_session_load ();
-
-	if (!restored)
-	{
-		pluma_debug_message (DEBUG_APP, "Analyze command line data");
-		pluma_get_command_line_data ();
-
-		pluma_debug_message (DEBUG_APP, "Get default app");
-		app = pluma_app_get_default ();
-
-		pluma_debug_message (DEBUG_APP, "Create main window");
-		window = pluma_app_create_window (app, NULL);
-		gtk_widget_set_size_request (GTK_WIDGET (window), 250, 250);
-
-		if (file_list != NULL)
-		{
-			const PlumaEncoding *encoding = NULL;
-
-			if (encoding_charset)
-				encoding = pluma_encoding_get_from_charset (encoding_charset);
-
-			pluma_debug_message (DEBUG_APP, "Load files");
-			_pluma_cmd_load_files_from_prompt (window,
-							   file_list,
-							   encoding,
-							   line_position);
-		}
-		else
-		{
-			pluma_debug_message (DEBUG_APP, "Create tab");
-			pluma_window_create_tab (window, TRUE);
-		}
-
-		pluma_debug_message (DEBUG_APP, "Show window");
-		gtk_widget_show (GTK_WIDGET (window));
-
-		free_command_line_data ();
-	}
-
-	pluma_debug_message (DEBUG_APP, "Start gtk-main");
-
-	gtk_main();
+	status = g_application_run (G_APPLICATION (application), argc, argv);
+	g_object_unref (application);
 
 	bacon_message_connection_free (connection);
 
-	/* We kept the original engine reference here. So let's unref it to
-	 * finalize it properly.
-	 */
-	g_object_unref (engine);
-
-	pluma_settings_unref_singleton ();
-
-#ifndef ENABLE_GVFS_METADATA
-	pluma_metadata_manager_shutdown ();
-#endif
-
-	return EXIT_SUCCESS;
+	return status;
 }
-

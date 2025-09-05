@@ -95,7 +95,7 @@ enum
     TARGET_URI_LIST = 100
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (PlumaWindow, pluma_window, GTK_TYPE_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (PlumaWindow, pluma_window, GTK_TYPE_APPLICATION_WINDOW)
 
 static void    recent_manager_changed    (GtkRecentManager *manager,
                                           PlumaWindow      *window);
@@ -3010,7 +3010,7 @@ fullscreen_controls_build (PlumaWindow *window)
     priv->fullscreen_controls = gtk_window_new (GTK_WINDOW_POPUP);
 
     gtk_window_set_transient_for (GTK_WINDOW (priv->fullscreen_controls),
-                                  &window->window);
+                                  GTK_WINDOW (&window->window));
 
     /* popup toolbar */
     toolbar = gtk_ui_manager_get_widget (priv->manager, "/FullscreenToolBar");
@@ -4655,7 +4655,7 @@ _pluma_window_fullscreen (PlumaWindow *window)
         return;
 
     /* Go to fullscreen mode and hide bars */
-    gtk_window_fullscreen (&window->window);
+    gtk_window_fullscreen (GTK_WINDOW (&window->window));
     gtk_notebook_set_show_tabs (GTK_NOTEBOOK (window->priv->notebook), FALSE);
     g_signal_connect (window->priv->notebook, "notify::show-tabs",
                       G_CALLBACK (hide_notebook_tabs_on_fullscreen), window);
@@ -4688,7 +4688,7 @@ _pluma_window_unfullscreen (PlumaWindow *window)
         return;
 
     /* Unfullscreen and show bars */
-    gtk_window_unfullscreen (&window->window);
+    gtk_window_unfullscreen (GTK_WINDOW (&window->window));
     g_signal_handlers_disconnect_by_func (window->priv->notebook,
                                           hide_notebook_tabs_on_fullscreen,
                                           window);
