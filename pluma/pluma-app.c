@@ -535,6 +535,12 @@ pluma_app_create_window_real (PlumaApp    *app,
 
     app->priv->windows = g_list_prepend (app->priv->windows, window);
 
+    GApplication *gtk_app = g_application_get_default ();
+    if (GTK_IS_APPLICATION (gtk_app))
+    {
+        gtk_application_add_window (GTK_APPLICATION (gtk_app), GTK_WINDOW (window));
+    }
+
     pluma_debug_message (DEBUG_APP, "Window created");
 
     if (role != NULL)
