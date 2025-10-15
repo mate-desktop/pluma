@@ -124,6 +124,30 @@ _pluma_cmd_view_show_bottom_pane (GtkAction   *action,
 }
 
 void
+_pluma_cmd_view_show_right_pane (GtkAction   *action,
+				 PlumaWindow *window)
+{
+	gboolean visible;
+	PlumaPanel *panel;
+
+	pluma_debug (DEBUG_COMMANDS);
+
+	visible = gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action));
+
+	panel = pluma_window_get_right_panel (window);
+
+	if (visible)
+	{
+		gtk_widget_show (GTK_WIDGET (panel));
+		gtk_widget_grab_focus (GTK_WIDGET (panel));
+	}
+	else
+	{
+		gtk_widget_hide (GTK_WIDGET (panel));
+	}
+}
+
+void
 _pluma_cmd_view_toggle_fullscreen_mode (GtkAction *action,
 					PlumaWindow *window)
 {
