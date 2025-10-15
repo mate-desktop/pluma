@@ -107,20 +107,20 @@ pluma_taglist_plugin_activate (PlumaWindowActivatable *activatable)
 {
 	PlumaTaglistPluginPrivate *priv;
 	PlumaWindow *window;
-	PlumaPanel *side_panel;
+	PlumaPanel *right_panel;
 	gchar *data_dir;
 
 	pluma_debug (DEBUG_PLUGINS);
 
 	priv = PLUMA_TAGLIST_PLUGIN (activatable)->priv;
 	window = PLUMA_WINDOW (priv->window);
-	side_panel = pluma_window_get_side_panel (window);
+	right_panel = pluma_window_get_right_panel (window);
 
 	data_dir = peas_extension_base_get_data_dir (PEAS_EXTENSION_BASE (activatable));
 	priv->taglist_panel = pluma_taglist_plugin_panel_new (window, data_dir);
 	g_free (data_dir);
 
-	pluma_panel_add_item_with_icon (side_panel,
+	pluma_panel_add_item_with_icon (right_panel,
 					priv->taglist_panel,
 					_("Tags"),
 					"list-add");
@@ -131,15 +131,15 @@ pluma_taglist_plugin_deactivate (PlumaWindowActivatable *activatable)
 {
 	PlumaTaglistPluginPrivate *priv;
 	PlumaWindow *window;
-	PlumaPanel *side_panel;
+	PlumaPanel *right_panel;
 
 	pluma_debug (DEBUG_PLUGINS);
 
 	priv = PLUMA_TAGLIST_PLUGIN (activatable)->priv;
 	window = PLUMA_WINDOW (priv->window);
-	side_panel = pluma_window_get_side_panel (window);
+	right_panel = pluma_window_get_right_panel (window);
 
-	pluma_panel_remove_item (side_panel,
+	pluma_panel_remove_item (right_panel,
 				 priv->taglist_panel);
 }
 
