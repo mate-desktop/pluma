@@ -50,8 +50,10 @@ struct _PlumaWindowPrivate
 
 	GtkWidget      *side_panel;
 	GtkWidget      *bottom_panel;
+	GtkWidget      *right_panel;
 
 	GtkWidget      *hpaned;
+	GtkWidget      *hpaned_inner;
 	GtkWidget      *vpaned;
 
 	GtkWidget      *tab_width_combo;
@@ -105,6 +107,7 @@ struct _PlumaWindowPrivate
 
 	gint            side_panel_size;
 	gint            bottom_panel_size;
+	gint            right_panel_size;
 
 	PlumaWindowState state;
 

@@ -181,7 +181,10 @@ static const GtkToggleActionEntry pluma_panes_toggle_menu_entries[] =
 	  G_CALLBACK (_pluma_cmd_view_show_side_pane), FALSE },
 	{ "ViewBottomPane", NULL, N_("_Bottom Pane"), "<control>F9",
 	  N_("Show or hide the bottom pane in the current window"),
-	  G_CALLBACK (_pluma_cmd_view_show_bottom_pane), FALSE }
+	  G_CALLBACK (_pluma_cmd_view_show_bottom_pane), FALSE },
+	{ "ViewRightPane", NULL, N_("_Right Pane"), "<shift>F9",
+	  N_("Show or hide the right pane in the current window"),
+	  G_CALLBACK (_pluma_cmd_view_show_right_pane), FALSE }
 };
 
 G_END_DECLS
