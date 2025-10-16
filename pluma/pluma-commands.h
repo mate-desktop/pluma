@@ -125,6 +125,8 @@ void		_pluma_cmd_view_show_side_pane		(GtkAction   *action,
 							 PlumaWindow *window);
 void		_pluma_cmd_view_show_bottom_pane	(GtkAction   *action,
 							 PlumaWindow *window);
+void		_pluma_cmd_view_show_right_pane		(GtkAction   *action,
+							 PlumaWindow *window);
 void		_pluma_cmd_view_toggle_fullscreen_mode	(GtkAction   *action,
 							 PlumaWindow *window);
 void		_pluma_cmd_view_leave_fullscreen_mode	(GtkAction   *action,
