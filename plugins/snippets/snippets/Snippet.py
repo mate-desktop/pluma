@@ -17,7 +17,6 @@
 #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
-import six
 from gi.repository import Gio, Gtk
 
 from .Placeholder import *
@@ -152,7 +151,7 @@ class Snippet:
 
     def _insert_text(self, text):
         # Insert text keeping indentation in mind
-        indented = (six.u('\n') + self._indent).join(spaces_instead_of_tabs(self._view, text).split('\n'))
+        indented = ('\n' + self._indent).join(spaces_instead_of_tabs(self._view, text).split('\n'))
         self._view.get_buffer().insert(self._insert_iter(), indented)
 
     def _insert_iter(self):
@@ -171,7 +170,7 @@ class Snippet:
         indent = all_indent[len(self._indent):]
 
         # Keep indentation
-        return (six.u('\n') + indent).join(val.split('\n'))
+        return ('\n' + indent).join(val.split('\n'))
 
     def _create_placeholder(self, data):
         tabstop = data['tabstop']
@@ -249,7 +248,7 @@ class Snippet:
                 sys.stderr.write('Token class not supported: %s\n' % token.klass)
                 continue
 
-            if isinstance(val, six.string_types):
+            if isinstance(val, str):
                 # Insert text
                 self._insert_text(val)
             else:
