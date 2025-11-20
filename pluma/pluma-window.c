@@ -2092,12 +2092,16 @@ clone_window (PlumaWindow *origin)
      * they are mapped */
     window->priv->side_panel_size = origin->priv->side_panel_size;
     window->priv->bottom_panel_size = origin->priv->bottom_panel_size;
+    window->priv->right_panel_size = origin->priv->right_panel_size;
 
     panel_page = _pluma_panel_get_active_item_id (PLUMA_PANEL (origin->priv->side_panel));
     _pluma_panel_set_active_item_by_id (PLUMA_PANEL (window->priv->side_panel), panel_page);
 
     panel_page = _pluma_panel_get_active_item_id (PLUMA_PANEL (origin->priv->bottom_panel));
     _pluma_panel_set_active_item_by_id (PLUMA_PANEL (window->priv->bottom_panel), panel_page);
+
+    panel_page = _pluma_panel_get_active_item_id (PLUMA_PANEL (origin->priv->right_panel));
+    _pluma_panel_set_active_item_by_id (PLUMA_PANEL (window->priv->right_panel), panel_page);
 
     if (gtk_widget_get_visible (origin->priv->side_panel))
         gtk_widget_show (window->priv->side_panel);
@@ -2108,6 +2112,11 @@ clone_window (PlumaWindow *origin)
         gtk_widget_show (window->priv->bottom_panel);
     else
         gtk_widget_hide (window->priv->bottom_panel);
+
+    if (gtk_widget_get_visible (origin->priv->right_panel))
+        gtk_widget_show (window->priv->right_panel);
+    else
+        gtk_widget_hide (window->priv->right_panel);
 
     set_statusbar_style (window, origin);
     set_toolbar_style (window, origin);
@@ -3548,6 +3557,14 @@ bottom_panel_size_allocate (GtkWidget     *widget,
 }
 
 static void
+right_panel_size_allocate (GtkWidget     *widget,
+                           GtkAllocation *allocation,
+                           PlumaWindow   *window)
+{
+    window->priv->right_panel_size = allocation->width;
+}
+
+static void
 hpaned_restore_position (GtkWidget   *widget,
                          PlumaWindow *window)
 {
@@ -3594,6 +3611,32 @@ vpaned_restore_position (GtkWidget   *widget,
 
     /* run this only once */
     g_signal_handlers_disconnect_by_func (widget, vpaned_restore_position, window);
+}
+
+static void
+hpaned_inner_restore_position (GtkWidget   *widget,
+                                PlumaWindow *window)
+{
+    GtkAllocation allocation;
+    gint pos;
+
+    gtk_widget_get_allocation (widget, &allocation);
+
+    pluma_debug_message (DEBUG_WINDOW,
+                         "Restoring hpaned_inner position: right panel size %d",
+                         window->priv->right_panel_size);
+
+    pos = allocation.width - MAX (50, window->priv->right_panel_size);
+    gtk_paned_set_position (GTK_PANED (window->priv->hpaned_inner), pos);
+
+    /* start monitoring the size */
+    g_signal_connect (window->priv->right_panel,
+                      "size-allocate",
+                      G_CALLBACK (right_panel_size_allocate),
+                      window);
+
+    /* run this only once */
+    g_signal_handlers_disconnect_by_func (widget, hpaned_inner_restore_position, window);
 }
 
 static void
@@ -3750,11 +3793,58 @@ create_bottom_panel (PlumaWindow *window)
 }
 
 static void
+right_panel_visibility_changed (PlumaPanel  *right_panel,
+                                 PlumaWindow *window)
+{
+    gboolean visible;
+    GtkAction *action;
+
+    visible = gtk_widget_get_visible (GTK_WIDGET (right_panel));
+
+    g_settings_set_boolean (window->priv->editor_settings,
+                            PLUMA_SETTINGS_RIGHT_PANE_VISIBLE,
+                            visible);
+
+    action = gtk_action_group_get_action (window->priv->panes_action_group,
+                                          "ViewRightPane");
+
+    if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)) != visible)
+        gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), visible);
+
+    /* focus the document */
+    if (!visible && window->priv->active_tab != NULL)
+        gtk_widget_grab_focus (GTK_WIDGET (pluma_tab_get_view (PLUMA_TAB (window->priv->active_tab))));
+}
+
+static void
+create_right_panel (PlumaWindow *window)
+{
+    pluma_debug (DEBUG_WINDOW);
+
+    window->priv->right_panel = pluma_panel_new (GTK_ORIENTATION_VERTICAL);
+
+    gtk_paned_pack2 (GTK_PANED (window->priv->hpaned_inner),
+                     window->priv->right_panel,
+                     FALSE,
+                     FALSE);
+
+    g_signal_connect_after (window->priv->right_panel,
+                            "show",
+                            G_CALLBACK (right_panel_visibility_changed),
+                            window);
+    g_signal_connect_after (window->priv->right_panel,
+                            "hide",
+                            G_CALLBACK (right_panel_visibility_changed),
+                            window);
+}
+
+static void
 init_panels_visibility (PlumaWindow *window)
 {
     gint active_page;
     gboolean side_pane_visible;
     gboolean bottom_pane_visible;
+    gboolean right_pane_visible;
 
     pluma_debug (DEBUG_WINDOW);
 
@@ -3768,6 +3858,8 @@ init_panels_visibility (PlumaWindow *window)
                                                 PLUMA_SETTINGS_SIDE_PANE_VISIBLE);
     bottom_pane_visible = g_settings_get_boolean (window->priv->editor_settings,
                                                   PLUMA_SETTINGS_BOTTOM_PANE_VISIBLE);
+    right_pane_visible = g_settings_get_boolean (window->priv->editor_settings,
+                                                 PLUMA_SETTINGS_RIGHT_PANE_VISIBLE);
 
     if (side_pane_visible)
 
@@ -3794,6 +3886,20 @@ init_panels_visibility (PlumaWindow *window)
         action = gtk_action_group_get_action (window->priv->panes_action_group,
                                               "ViewBottomPane");
         gtk_action_set_sensitive (action, FALSE);
+    }
+
+    /* right pane */
+    if (pluma_panel_get_n_items (PLUMA_PANEL (window->priv->right_panel)) > 0)
+    {
+        active_page = g_settings_get_int (window->priv->editor_settings,
+                                          PLUMA_SETTINGS_RIGHT_PANEL_ACTIVE_PAGE);
+        _pluma_panel_set_active_item_by_id (PLUMA_PANEL (window->priv->right_panel),
+                                            active_page);
+
+        if (right_pane_visible)
+        {
+            gtk_widget_show (window->priv->right_panel);
+        }
     }
 
     /* start track sensitivity after the initial state is set */
@@ -3990,19 +4096,28 @@ pluma_window_init (PlumaWindow *window)
                         TRUE,
                         0);
 
+    /* Create nested horizontal paned for center+right layout */
+    window->priv->hpaned_inner = gtk_paned_new (GTK_ORIENTATION_HORIZONTAL);
+    gtk_paned_pack2 (GTK_PANED (window->priv->hpaned),
+                     window->priv->hpaned_inner,
+                     TRUE,
+                     FALSE);
+
+    /* Create vertical paned for notebook+bottom panel */
     window->priv->vpaned = gtk_paned_new (GTK_ORIENTATION_VERTICAL);
-      gtk_paned_pack2 (GTK_PANED (window->priv->hpaned),
-                       window->priv->vpaned,
-                       TRUE,
-                       FALSE);
+    gtk_paned_pack1 (GTK_PANED (window->priv->hpaned_inner),
+                     window->priv->vpaned,
+                     TRUE,
+                     TRUE);
 
     pluma_debug_message (DEBUG_WINDOW, "Create pluma notebook");
     window->priv->notebook = pluma_notebook_new ();
     add_notebook (window, window->priv->notebook);
 
     /* side and bottom panels */
-      create_side_panel (window);
+    create_side_panel (window);
     create_bottom_panel (window);
+    create_right_panel (window);
 
     /* panes' state must be restored after panels have been mapped,
      * since the bottom pane position depends on the size of the vpaned. */
@@ -4010,6 +4125,8 @@ pluma_window_init (PlumaWindow *window)
                                                         PLUMA_SETTINGS_SIDE_PANEL_SIZE);
     window->priv->bottom_panel_size = g_settings_get_int (window->priv->editor_settings,
                                                           PLUMA_SETTINGS_BOTTOM_PANEL_SIZE);
+    window->priv->right_panel_size = g_settings_get_int (window->priv->editor_settings,
+                                                         PLUMA_SETTINGS_RIGHT_PANEL_SIZE);
 
     g_signal_connect_after (window->priv->hpaned,
                             "map",
@@ -4019,8 +4136,13 @@ pluma_window_init (PlumaWindow *window)
                             "map",
                             G_CALLBACK (vpaned_restore_position),
                             window);
+    g_signal_connect_after (window->priv->hpaned_inner,
+                            "map",
+                            G_CALLBACK (hpaned_inner_restore_position),
+                            window);
 
     gtk_widget_show (window->priv->hpaned);
+    gtk_widget_show (window->priv->hpaned_inner);
     gtk_widget_show (window->priv->vpaned);
 
     /* Drag and drop support, set targets to NULL because we add the
@@ -4511,6 +4633,22 @@ pluma_window_get_bottom_panel (PlumaWindow *window)
     g_return_val_if_fail (PLUMA_IS_WINDOW (window), NULL);
 
     return PLUMA_PANEL (window->priv->bottom_panel);
+}
+
+/**
+ * pluma_window_get_right_panel:
+ * @window: a #PlumaWindow
+ *
+ * Gets the right #PlumaPanel of the @window.
+ *
+ * Returns: (transfer none): the right #PlumaPanel.
+ */
+PlumaPanel *
+pluma_window_get_right_panel (PlumaWindow *window)
+{
+    g_return_val_if_fail (PLUMA_IS_WINDOW (window), NULL);
+
+    return PLUMA_PANEL (window->priv->right_panel);
 }
 
 /**
