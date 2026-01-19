@@ -195,6 +195,11 @@ GOBJECT_INTROSPECTION_CHECK([0.9.3])
 if test "$found_introspection" = "yes"; then
 	have_introspection=yes
 	AC_DEFINE([HAVE_INTROSPECTION], [1], [Define to enable GObject Introspection])
+
+	# Check for girepository-2.0 API (moved to glib in version 1.80+)
+	PKG_CHECK_EXISTS([girepository-2.0],
+		[AC_DEFINE([HAVE_GIREPOSITORY_2], [1], [Using girepository-2.0 API])],
+		[])
 else
 	have_introspection=no
 fi
