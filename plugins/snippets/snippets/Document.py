@@ -827,8 +827,8 @@ class Document:
             return components
 
     def relative_path(self, first, second, mime):
-        prot1 = re.match('(^[a-z]+:\/\/|\/)(.*)', first)
-        prot2 = re.match('(^[a-z]+:\/\/|\/)(.*)', second)
+        prot1 = re.match(r'(^[a-z]+:\/\/|\/)(.*)', first)
+        prot2 = re.match(r'(^[a-z]+:\/\/|\/)(.*)', second)
 
         if not prot1 or not prot2:
             return second
