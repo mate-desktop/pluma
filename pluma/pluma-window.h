@@ -146,6 +146,8 @@ PlumaPanel	*pluma_window_get_side_panel		(PlumaWindow         *window);
 
 PlumaPanel	*pluma_window_get_bottom_panel		(PlumaWindow         *window);
 
+PlumaPanel	*pluma_window_get_right_panel		(PlumaWindow         *window);
+
 GtkWidget	*pluma_window_get_statusbar		(PlumaWindow         *window);
 
 GtkUIManager	*pluma_window_get_ui_manager		(PlumaWindow         *window);

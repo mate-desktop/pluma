@@ -121,6 +121,7 @@ GSList *                pluma_settings_get_writable_vfs_schemes (GSettings *sett
 #define PLUMA_SETTINGS_STATUSBAR_VISIBLE            "statusbar-visible"
 #define PLUMA_SETTINGS_SIDE_PANE_VISIBLE            "side-pane-visible"
 #define PLUMA_SETTINGS_BOTTOM_PANE_VISIBLE          "bottom-panel-visible"
+#define PLUMA_SETTINGS_RIGHT_PANE_VISIBLE           "right-panel-visible"
 #define PLUMA_SETTINGS_MAX_RECENTS                  "max-recents"
 #define PLUMA_SETTINGS_PRINT_SYNTAX_HIGHLIGHTING    "print-syntax-highlighting"
 #define PLUMA_SETTINGS_PRINT_HEADER                 "print-header"
@@ -154,6 +155,8 @@ GSList *                pluma_settings_get_writable_vfs_schemes (GSettings *sett
 #define PLUMA_SETTINGS_SIDE_PANEL_ACTIVE_PAGE       "side-panel-active-page"
 #define PLUMA_SETTINGS_BOTTOM_PANEL_SIZE            "bottom-panel-size"
 #define PLUMA_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE     "bottom-panel-active-page"
+#define PLUMA_SETTINGS_RIGHT_PANEL_SIZE             "right-panel-size"
+#define PLUMA_SETTINGS_RIGHT_PANEL_ACTIVE_PAGE      "right-panel-active-page"
 #define PLUMA_SETTINGS_ACTIVE_FILE_FILTER           "filter-id"
 
 G_END_DECLS
