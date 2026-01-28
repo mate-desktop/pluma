@@ -4,7 +4,7 @@ AC_PREREQ(2.63.2)
 
 m4_define(pluma_major_version, 1)
 m4_define(pluma_minor_version, 28)
-m4_define(pluma_micro_version, 0)
+m4_define(pluma_micro_version, 1)
 m4_define(pluma_version, pluma_major_version.pluma_minor_version.pluma_micro_version)
 
 AC_INIT([pluma], [pluma_version],
@@ -195,6 +195,18 @@ GOBJECT_INTROSPECTION_CHECK([0.9.3])
 if test "$found_introspection" = "yes"; then
 	have_introspection=yes
 	AC_DEFINE([HAVE_INTROSPECTION], [1], [Define to enable GObject Introspection])
+
+	# Check for girepository-2.0 API (moved to glib in version 1.80+)
+	# We can only use girepository-2.0 if libpeas also uses it, otherwise we get conflicts
+	PKG_CHECK_EXISTS([girepository-2.0], [
+		# Check if libpeas requires girepository-2.0
+		if pkg-config --print-requires libpeas-1.0 | grep -q "girepository-2.0"; then
+			AC_DEFINE([HAVE_GIREPOSITORY_2], [1], [Using girepository-2.0 API])
+			have_girepository_2=yes
+		else
+			have_girepository_2=no
+		fi
+	], [have_girepository_2=no])
 else
 	have_introspection=no
 fi
@@ -303,6 +315,7 @@ Configure summary:
 	Spell Plugin enabled:	$enable_enchant
 	Gvfs metadata enabled:	$enable_gvfs_metadata
 	GObject Introspection:	${have_introspection}
+	GIRepository 2.0:	${have_girepository_2:-no}
 	Tests enabled:		$enable_tests
 "
 

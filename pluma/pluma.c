@@ -44,7 +44,11 @@
 #include <gdk/gdkx.h>
 
 #ifdef HAVE_INTROSPECTION
+#ifdef HAVE_GIREPOSITORY_2
+#include <girepository/girepository.h>
+#else
 #include <girepository.h>
+#endif
 #endif
 
 #include "pluma-app.h"
@@ -526,7 +530,11 @@ main (int argc, char *argv[])
 	g_option_context_add_group (context, egg_sm_client_get_option_group ());
 
 #ifdef HAVE_INTROSPECTION
+#ifdef HAVE_GIREPOSITORY_2
+	g_option_context_add_group (context, gi_repository_get_option_group ());
+#else
 	g_option_context_add_group (context, g_irepository_get_option_group ());
+#endif
 #endif
 
 	if (!g_option_context_parse (context, &argc, &argv, &error))

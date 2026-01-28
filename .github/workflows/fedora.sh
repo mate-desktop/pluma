@@ -18,6 +18,7 @@ requires=(
 requires+=(
 	desktop-file-utils
 	enchant-devel
+	gobject-introspection-devel
 	gtk3-devel
 	gtksourceview4-devel
 	iso-codes-devel
