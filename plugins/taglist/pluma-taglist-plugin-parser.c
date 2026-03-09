@@ -140,7 +140,11 @@ parse_tag_group (TagGroup *tg, const gchar* fn, xmlDocPtr doc,
 			tag = g_new0 (Tag, 1);
 
 			/* Get Tag name */
-			tag->name = (xmlChar*)gettext((const char*)xmlGetProp (cur, (const xmlChar *) "name"));
+			{
+				xmlChar *prop = xmlGetProp (cur, (const xmlChar *) "name");
+				tag->name = (xmlChar*)g_strdup (gettext ((const char*)prop));
+				xmlFree (prop);
+			}
 
 			if (tag->name == NULL)
 			{
@@ -196,7 +200,11 @@ get_tag_group (const gchar* filename, xmlDocPtr doc,
 	tag_group = g_new0 (TagGroup, 1);
 
 	/* Get TagGroup name */
-	tag_group->name = (xmlChar*)gettext((const char*)xmlGetProp (cur, (const xmlChar *) "name"));
+	{
+		xmlChar *prop = xmlGetProp (cur, (const xmlChar *) "name");
+		tag_group->name = (xmlChar*)g_strdup (gettext ((const char*)prop));
+		xmlFree (prop);
+	}
 
 	sort_str = xmlGetProp (cur, (const xmlChar *) "sort");
 
@@ -499,13 +507,13 @@ free_tag (Tag *tag)
 	*/
 	g_return_if_fail (tag != NULL);
 
-	free (tag->name);
+	g_free (tag->name);
 
 	if (tag->begin != NULL)
-		free (tag->begin);
+		xmlFree (tag->begin);
 
 	if (tag->end != NULL)
-		free (tag->end);
+		xmlFree (tag->end);
 
 	g_free (tag);
 }
@@ -519,7 +527,7 @@ free_tag_group (TagGroup *tag_group)
 
 	g_return_if_fail (tag_group != NULL);
 
-	free (tag_group->name);
+	g_free (tag_group->name);
 
 	for (l = tag_group->tags; l != NULL; l = g_list_next (l))
 	{
