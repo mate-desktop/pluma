@@ -1156,7 +1156,7 @@ pluma_externally_modified_message_area_new (const gchar *uri,
 	gchar *full_formatted_uri;
 	gchar *uri_for_display;
 	gchar *temp_uri_for_display;
-	const gchar *primary_text;
+	gchar *primary_text;
 	const gchar *secondary_text;
 	GtkWidget *message_area;
 
@@ -1206,6 +1206,8 @@ pluma_externally_modified_message_area_new (const gchar *uri,
 					"gtk-dialog-warning",
 					primary_text,
 					secondary_text);
+
+	g_free (primary_text);
 
 	return message_area;
 }
