@@ -667,6 +667,10 @@ pluma_panel_add_item (PlumaPanel  *panel,
 				       tab_label,
 				       menu_label);
 
+	gtk_notebook_set_tab_reorderable (GTK_NOTEBOOK (panel->priv->notebook),
+						  item,
+						  TRUE);
+
 	g_signal_emit (G_OBJECT (panel), signals[ITEM_ADDED], 0, item);
 }
 
