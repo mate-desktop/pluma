@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pluma 1.26.0\n"
+"Project-Id-Version: pluma 1.28.1\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
-"POT-Creation-Date: 2022-10-29 15:35+0200\n"
+"POT-Creation-Date: 2026-03-22 20:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -324,36 +324,45 @@ msgid ""
 msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:175
-msgid "Maximum Recent Files"
+msgid "Right Panel is Visible"
 msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:176
+msgid ""
+"Whether the right panel at the right of editing windows should be visible."
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:180
+msgid "Maximum Recent Files"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:181
 msgid ""
 "Specifies the maximum number of recently opened files that will be displayed "
 "in the \"Recent Files\" submenu."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:180
+#: data/org.mate.pluma.gschema.xml.in:185
 msgid "Print Syntax Highlighting"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:181
+#: data/org.mate.pluma.gschema.xml.in:186
 msgid "Whether pluma should print syntax highlighting when printing documents."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:185
+#: data/org.mate.pluma.gschema.xml.in:190
 msgid "Print Header"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:186
+#: data/org.mate.pluma.gschema.xml.in:191
 msgid "Whether pluma should include a document header when printing documents."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:190
+#: data/org.mate.pluma.gschema.xml.in:195
 msgid "Printing Line Wrapping Mode"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:191
+#: data/org.mate.pluma.gschema.xml.in:196
 msgid ""
 "Specifies how to wrap long lines for printing. Use \"GTK_WRAP_NONE\" for no "
 "wrapping, \"GTK_WRAP_WORD\" for wrapping at word boundaries, and "
@@ -362,215 +371,231 @@ msgid ""
 "here."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:195
+#: data/org.mate.pluma.gschema.xml.in:200
 msgid "Print Line Numbers"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:196
+#: data/org.mate.pluma.gschema.xml.in:201
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:199
+#: data/org.mate.pluma.gschema.xml.in:204
 msgctxt "print-font-body-pango"
 msgid "'Monospace 9'"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:200
+#: data/org.mate.pluma.gschema.xml.in:205
 msgid "Body Font for Printing"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:201
+#: data/org.mate.pluma.gschema.xml.in:206
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:204
+#: data/org.mate.pluma.gschema.xml.in:209
 msgctxt "print-font-header-pango"
 msgid "'Sans 11'"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:205
+#: data/org.mate.pluma.gschema.xml.in:210
 msgid "Header Font for Printing"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:206
+#: data/org.mate.pluma.gschema.xml.in:211
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:209
+#: data/org.mate.pluma.gschema.xml.in:214
 msgctxt "print-font-numbers-pango"
 msgid "'Sans 8'"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:210
+#: data/org.mate.pluma.gschema.xml.in:215
 msgid "Line Number Font for Printing"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:211
+#: data/org.mate.pluma.gschema.xml.in:216
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:214
+#: data/org.mate.pluma.gschema.xml.in:219
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:215
+#: data/org.mate.pluma.gschema.xml.in:220
 msgid "Automatically Detected Encodings"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:216
+#: data/org.mate.pluma.gschema.xml.in:221
 msgid ""
 "Sorted list of encodings used by pluma for automatically detecting the "
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only "
 "recognized encodings are used."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:219
+#: data/org.mate.pluma.gschema.xml.in:224
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:220
+#: data/org.mate.pluma.gschema.xml.in:225
 msgid "Encodings shown in menu"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:221
+#: data/org.mate.pluma.gschema.xml.in:226
 msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:225
+#: data/org.mate.pluma.gschema.xml.in:230
 msgid "History for \"search for\" entries"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:226
+#: data/org.mate.pluma.gschema.xml.in:231
 msgid "List of entries in \"search for\" textbox."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:230
+#: data/org.mate.pluma.gschema.xml.in:235
 msgid "History for \"replace with\" entries"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:231
+#: data/org.mate.pluma.gschema.xml.in:236
 msgid "List of entries in \"replace with\" textbox."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:235
+#: data/org.mate.pluma.gschema.xml.in:240
 msgid "Active plugins"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:236
+#: data/org.mate.pluma.gschema.xml.in:241
 msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:240
+#: data/org.mate.pluma.gschema.xml.in:245
 msgid "Show newline"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:241
+#: data/org.mate.pluma.gschema.xml.in:246
 msgid "Whether pluma should show newlines in the editor window."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:245
+#: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show nbsp"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:246
+#: data/org.mate.pluma.gschema.xml.in:251
 msgid ""
 "Whether pluma should show not breaking spaces in the editor window: 'show-"
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:250
+#: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show tabs"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:251
+#: data/org.mate.pluma.gschema.xml.in:256
 msgid ""
 "Whether pluma should show tabs in the editor window: 'show-none' no showing; "
 "'show-trailing' showing only trailing spaces; 'show-all' showing all spaces."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:255
+#: data/org.mate.pluma.gschema.xml.in:260
 msgid "Show spaces"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:256
+#: data/org.mate.pluma.gschema.xml.in:261
 msgid ""
 "Whether pluma should show spaces in the editor window: 'show-none' no "
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:260
+#: data/org.mate.pluma.gschema.xml.in:265
 msgid "state"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:261
+#: data/org.mate.pluma.gschema.xml.in:266
 msgid "The pluma window state"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:265
+#: data/org.mate.pluma.gschema.xml.in:270
 msgid "size"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:266
+#: data/org.mate.pluma.gschema.xml.in:271
 msgid "The pluma window size"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:270
+#: data/org.mate.pluma.gschema.xml.in:275
 msgid "side-panel-size"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:271
+#: data/org.mate.pluma.gschema.xml.in:276
 msgid "The pluma side-panel-size"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:275
+#: data/org.mate.pluma.gschema.xml.in:280
 msgid "side-panel-active-page"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:276
+#: data/org.mate.pluma.gschema.xml.in:281
 msgid "The pluma side-panel-active-page"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:280
+#: data/org.mate.pluma.gschema.xml.in:285
 msgid "bottom-panel-size"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:281
+#: data/org.mate.pluma.gschema.xml.in:286
 msgid "The pluma bottom-panel-size"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:285
+#: data/org.mate.pluma.gschema.xml.in:290
 msgid "bottom-panel-active-page"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:286
+#: data/org.mate.pluma.gschema.xml.in:291
 msgid "The pluma bottom-panel-active-page"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:290
+#: data/org.mate.pluma.gschema.xml.in:295
+msgid "right-panel-size"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:296
+msgid "The pluma right-panel-size"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:300
+msgid "right-panel-active-page"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:301
+msgid "The pluma right-panel-active-page"
+msgstr ""
+
+#: data/org.mate.pluma.gschema.xml.in:305
 msgid "filter-id"
 msgstr ""
 
-#: data/org.mate.pluma.gschema.xml.in:291
+#: data/org.mate.pluma.gschema.xml.in:306
 msgid "The pluma filter-id"
 msgstr ""
 
-#: data/pluma.appdata.xml.in.in:7 data/pluma.desktop.in.in:3
+#: data/pluma.appdata.xml.in.in:7 data/pluma.desktop.in.in:2
 msgid "Pluma"
 msgstr ""
 
@@ -594,16 +619,16 @@ msgid ""
 "adjusting indentation levels."
 msgstr ""
 
-#: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:773
+#: data/pluma.desktop.in.in:3 pluma/pluma-print-job.c:773
 msgid "Text Editor"
 msgstr ""
 
-#: data/pluma.desktop.in.in:5
+#: data/pluma.desktop.in.in:4
 msgid "Edit text files"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/pluma.desktop.in.in:15
+#: data/pluma.desktop.in.in:14
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
 msgstr ""
 
@@ -803,7 +828,7 @@ msgid "A_vailable encodings:"
 msgstr ""
 
 #: pluma/dialogs/pluma-encodings-dialog.ui:150
-#: plugins/spell/pluma-automatic-spell-checker.c:515
+#: plugins/spell/pluma-automatic-spell-checker.c:517
 msgid "_Add"
 msgstr ""
 
@@ -1017,11 +1042,11 @@ msgstr ""
 
 #: pluma/dialogs/pluma-search-dialog.c:294
 #: pluma/dialogs/pluma-search-dialog.ui:44
-#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1552
+#: pluma/dialogs/pluma-search-dialog.ui:91 pluma/pluma-window.c:1559
 msgid "Replace"
 msgstr ""
 
-#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1550
+#: pluma/dialogs/pluma-search-dialog.c:303 pluma/pluma-window.c:1557
 msgid "Find"
 msgstr ""
 
@@ -1074,46 +1099,46 @@ msgstr ""
 msgid "_Parse escape sequences (e.g. \\n)"
 msgstr ""
 
-#: pluma/pluma.c:109
+#: pluma/pluma.c:114
 msgid "Show the application's version"
 msgstr ""
 
-#: pluma/pluma.c:112
+#: pluma/pluma.c:117
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
 msgstr ""
 
-#: pluma/pluma.c:112
+#: pluma/pluma.c:117
 msgid "ENCODING"
 msgstr ""
 
-#: pluma/pluma.c:115
+#: pluma/pluma.c:120
 msgid "Display list of possible values for the encoding option"
 msgstr ""
 
-#: pluma/pluma.c:118
+#: pluma/pluma.c:123
 msgid "Create a new top-level window in an existing instance of pluma"
 msgstr ""
 
-#: pluma/pluma.c:121
+#: pluma/pluma.c:126
 msgid "Create a new document in an existing instance of pluma"
 msgstr ""
 
-#: pluma/pluma.c:124
+#: pluma/pluma.c:129
 msgid "[FILE...]"
 msgstr ""
 
-#: pluma/pluma.c:178
+#: pluma/pluma.c:183
 #, c-format
 msgid "%s: invalid encoding.\n"
 msgstr ""
 
-#: pluma/pluma.c:524
+#: pluma/pluma.c:527
 msgid "- Edit text files"
 msgstr ""
 
-#: pluma/pluma.c:535
+#: pluma/pluma.c:542
 #, c-format
 msgid ""
 "%s\n"
@@ -1313,11 +1338,11 @@ msgid "Unsaved Document %d"
 msgstr ""
 
 #: pluma/pluma-documents-panel.c:94 pluma/pluma-documents-panel.c:108
-#: pluma/pluma-window.c:2249 pluma/pluma-window.c:2254
+#: pluma/pluma-window.c:2257 pluma/pluma-window.c:2262
 msgid "Read-Only"
 msgstr ""
 
-#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3674
+#: pluma/pluma-documents-panel.c:704 pluma/pluma-window.c:3716
 msgid "Documents"
 msgstr ""
 
@@ -1437,16 +1462,16 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: pluma/pluma-encodings-combo-box.c:271
+#: pluma/pluma-encodings-combo-box.c:294
 msgid "Automatically Detected"
 msgstr ""
 
-#: pluma/pluma-encodings-combo-box.c:287 pluma/pluma-encodings-combo-box.c:302
+#: pluma/pluma-encodings-combo-box.c:310 pluma/pluma-encodings-combo-box.c:325
 #, c-format
 msgid "Current Locale (%s)"
 msgstr ""
 
-#: pluma/pluma-encodings-combo-box.c:354
+#: pluma/pluma-encodings-combo-box.c:377
 msgid "Add or Remove..."
 msgstr ""
 
@@ -2063,7 +2088,7 @@ msgstr ""
 msgid "_Open..."
 msgstr ""
 
-#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
+#: pluma/pluma-ui.h:60 pluma/pluma-window.c:1484
 msgid "Open a file"
 msgstr ""
 
@@ -2376,6 +2401,14 @@ msgstr ""
 msgid "Show or hide the bottom pane in the current window"
 msgstr ""
 
+#: pluma/pluma-ui.h:185
+msgid "_Right Pane"
+msgstr ""
+
+#: pluma/pluma-ui.h:186
+msgid "Show or hide the right pane in the current window"
+msgstr ""
+
 #: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
 msgstr ""
@@ -2422,14 +2455,14 @@ msgstr ""
 msgid "Line you want to move the cursor to"
 msgstr ""
 
-#: pluma/pluma-window.c:1036
+#: pluma/pluma-window.c:1043
 #, c-format
 msgid "Use %s highlight mode"
 msgstr ""
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
-#: pluma/pluma-window.c:1093 pluma/pluma-window.c:1978
+#: pluma/pluma-window.c:1100 pluma/pluma-window.c:1985
 #: plugins/externaltools/tools/manager.py:109
 #: plugins/externaltools/tools/manager.py:309
 #: plugins/externaltools/tools/manager.py:425
@@ -2437,51 +2470,51 @@ msgstr ""
 msgid "Plain Text"
 msgstr ""
 
-#: pluma/pluma-window.c:1094
+#: pluma/pluma-window.c:1101
 msgid "Disable syntax highlighting"
 msgstr ""
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1374
+#: pluma/pluma-window.c:1381
 #, c-format
 msgid "Open '%s'"
 msgstr ""
 
-#: pluma/pluma-window.c:1483
+#: pluma/pluma-window.c:1490
 msgid "Open a recently used file"
 msgstr ""
 
-#: pluma/pluma-window.c:1489
+#: pluma/pluma-window.c:1496
 msgid "Open"
 msgstr ""
 
-#: pluma/pluma-window.c:1546
+#: pluma/pluma-window.c:1553
 msgid "Save"
 msgstr ""
 
-#: pluma/pluma-window.c:1548
+#: pluma/pluma-window.c:1555
 msgid "Print"
 msgstr ""
 
 #. Translators: %s is a URI
-#: pluma/pluma-window.c:1704
+#: pluma/pluma-window.c:1711
 #, c-format
 msgid "Activate '%s'"
 msgstr ""
 
-#: pluma/pluma-window.c:1956
+#: pluma/pluma-window.c:1963
 msgid "Use Spaces"
 msgstr ""
 
-#: pluma/pluma-window.c:2027
+#: pluma/pluma-window.c:2034
 msgid "Tab Width"
 msgstr ""
 
-#: plugins/docinfo/docinfo.plugin.desktop.in.in:5 plugins/docinfo/docinfo.ui:19
+#: plugins/docinfo/docinfo.plugin.desktop.in.in:4 plugins/docinfo/docinfo.ui:19
 msgid "Document Statistics"
 msgstr ""
 
-#: plugins/docinfo/docinfo.plugin.desktop.in.in:6
+#: plugins/docinfo/docinfo.plugin.desktop.in.in:5
 msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
@@ -2537,11 +2570,11 @@ msgstr ""
 msgid "Get statistical information on the current document"
 msgstr ""
 
-#: plugins/externaltools/externaltools.plugin.desktop.in.in:6
+#: plugins/externaltools/externaltools.plugin.desktop.in.in:5
 msgid "External Tools"
 msgstr ""
 
-#: plugins/externaltools/externaltools.plugin.desktop.in.in:7
+#: plugins/externaltools/externaltools.plugin.desktop.in.in:6
 msgid "Execute external commands and shell scripts."
 msgstr ""
 
@@ -2723,51 +2756,51 @@ msgstr ""
 msgid "_Edit:"
 msgstr ""
 
-#: plugins/externaltools/data/build.desktop.in:3
+#: plugins/externaltools/data/build.desktop.in:2
 msgid "Build"
 msgstr ""
 
-#: plugins/externaltools/data/build.desktop.in:4
+#: plugins/externaltools/data/build.desktop.in:3
 msgid "Run \"make\" in the document directory"
 msgstr ""
 
-#: plugins/externaltools/data/open-terminal-here.desktop.in:3
+#: plugins/externaltools/data/open-terminal-here.desktop.in:2
 msgid "Open terminal here"
 msgstr ""
 
-#: plugins/externaltools/data/open-terminal-here.desktop.in:4
+#: plugins/externaltools/data/open-terminal-here.desktop.in:3
 msgid "Open a terminal in the document location"
 msgstr ""
 
-#: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
+#: plugins/externaltools/data/remove-trailing-spaces.desktop.in:2
 msgid "Remove trailing spaces"
 msgstr ""
 
-#: plugins/externaltools/data/remove-trailing-spaces.desktop.in:4
+#: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
 msgid "Remove useless trailing spaces in your file"
 msgstr ""
 
-#: plugins/externaltools/data/run-command.desktop.in:3
+#: plugins/externaltools/data/run-command.desktop.in:2
 msgid "Run command"
 msgstr ""
 
-#: plugins/externaltools/data/run-command.desktop.in:4
+#: plugins/externaltools/data/run-command.desktop.in:3
 msgid "Execute a custom command and put its output in a new document"
 msgstr ""
 
-#: plugins/externaltools/data/search-recursive.desktop.in:3
+#: plugins/externaltools/data/search-recursive.desktop.in:2
 msgid "Search"
 msgstr ""
 
-#: plugins/externaltools/data/switch-c.desktop.in:3
+#: plugins/externaltools/data/switch-c.desktop.in:2
 msgid "Switch onto a file .c and .h"
 msgstr ""
 
-#: plugins/filebrowser/filebrowser.plugin.desktop.in.in:6
+#: plugins/filebrowser/filebrowser.plugin.desktop.in.in:5
 msgid "File Browser Pane"
 msgstr ""
 
-#: plugins/filebrowser/filebrowser.plugin.desktop.in.in:7
+#: plugins/filebrowser/filebrowser.plugin.desktop.in.in:6
 msgid "Easy file access from the side pane"
 msgstr ""
 
@@ -3108,20 +3141,20 @@ msgstr ""
 msgid "Could not mount volume: %s"
 msgstr ""
 
-#: plugins/modelines/modelines.plugin.desktop.in.in:5
+#: plugins/modelines/modelines.plugin.desktop.in.in:4
 msgid "Modelines"
 msgstr ""
 
-#: plugins/modelines/modelines.plugin.desktop.in.in:6
+#: plugins/modelines/modelines.plugin.desktop.in.in:5
 msgid "Emacs, Kate and Vim-style modelines support for pluma."
 msgstr ""
 
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in.in:6
+#: plugins/pythonconsole/pythonconsole.plugin.desktop.in.in:5
 #: plugins/pythonconsole/pythonconsole/__init__.py:54
 msgid "Python Console"
 msgstr ""
 
-#: plugins/pythonconsole/pythonconsole.plugin.desktop.in.in:7
+#: plugins/pythonconsole/pythonconsole.plugin.desktop.in.in:6
 msgid "Interactive Python console standing in the bottom panel"
 msgstr ""
 
@@ -3142,7 +3175,7 @@ msgid "Font:"
 msgstr ""
 
 #: plugins/quickopen/quickopen/popup.py:33
-#: plugins/quickopen/quickopen.plugin.desktop.in.in:6
+#: plugins/quickopen/quickopen.plugin.desktop.in.in:5
 msgid "Quick Open"
 msgstr ""
 
@@ -3154,18 +3187,18 @@ msgstr ""
 msgid "Quickly open documents"
 msgstr ""
 
-#: plugins/quickopen/quickopen.plugin.desktop.in.in:7
+#: plugins/quickopen/quickopen.plugin.desktop.in.in:6
 msgid "Quickly open files"
 msgstr ""
 
-#: plugins/snippets/snippets.plugin.desktop.in.in:6
+#: plugins/snippets/snippets.plugin.desktop.in.in:5
 #: plugins/snippets/snippets/Document.py:52
 #: plugins/snippets/snippets/Document.py:190
 #: plugins/snippets/snippets/Document.py:619
 msgid "Snippets"
 msgstr ""
 
-#: plugins/snippets/snippets.plugin.desktop.in.in:7
+#: plugins/snippets/snippets.plugin.desktop.in.in:6
 msgid "Insert often-used pieces of text in a fast way"
 msgstr ""
 
@@ -3387,11 +3420,11 @@ msgstr ""
 msgid "Sort the current document or selection"
 msgstr ""
 
-#: plugins/sort/sort.plugin.desktop.in.in:5 plugins/sort/sort.ui:29
+#: plugins/sort/sort.plugin.desktop.in.in:4 plugins/sort/sort.ui:29
 msgid "Sort"
 msgstr ""
 
-#: plugins/sort/sort.plugin.desktop.in.in:6
+#: plugins/sort/sort.plugin.desktop.in.in:5
 msgid "Sorts a document or selected text."
 msgstr ""
 
@@ -3422,20 +3455,20 @@ msgstr ""
 #. Translators: Displayed in the "Check Spelling" dialog if there are no suggestions for the current misspelled word
 #. Translators: Displayed in the "Check Spelling" dialog if there are no suggestions
 #. * for the current misspelled word
-#: plugins/spell/pluma-automatic-spell-checker.c:421
+#: plugins/spell/pluma-automatic-spell-checker.c:423
 #: plugins/spell/pluma-spell-checker-dialog.c:452
 msgid "(no suggested words)"
 msgstr ""
 
-#: plugins/spell/pluma-automatic-spell-checker.c:445
+#: plugins/spell/pluma-automatic-spell-checker.c:447
 msgid "_More..."
 msgstr ""
 
-#: plugins/spell/pluma-automatic-spell-checker.c:500
+#: plugins/spell/pluma-automatic-spell-checker.c:502
 msgid "_Ignore All"
 msgstr ""
 
-#: plugins/spell/pluma-automatic-spell-checker.c:554
+#: plugins/spell/pluma-automatic-spell-checker.c:556
 msgid "_Spelling Suggestions..."
 msgstr ""
 
@@ -3605,11 +3638,11 @@ msgstr ""
 msgid "_Always autocheck"
 msgstr ""
 
-#: plugins/spell/spell.plugin.desktop.in.in:5
+#: plugins/spell/spell.plugin.desktop.in.in:4
 msgid "Spell Checker"
 msgstr ""
 
-#: plugins/spell/spell.plugin.desktop.in.in:6
+#: plugins/spell/spell.plugin.desktop.in.in:5
 msgid "Checks the spelling of the current document."
 msgstr ""
 
@@ -4777,11 +4810,11 @@ msgid "Soft hyphen­"
 msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2275
-msgid "&quot;"
+msgid "\""
 msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2279
-msgid "&amp;"
+msgid "&"
 msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2283
@@ -4809,11 +4842,11 @@ msgid "¸"
 msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2307
-msgid "&lt;"
+msgid "<"
 msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2311
-msgid "&gt;"
+msgid ">"
 msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2315
@@ -5205,7 +5238,7 @@ msgid "Brackets {}"
 msgstr ""
 
 #: plugins/taglist/Latex.tags.xml.in:39
-msgid "Brackets &lt;&gt;"
+msgid "Brackets <>"
 msgstr ""
 
 #: plugins/taglist/Latex.tags.xml.in:44
@@ -5361,19 +5394,19 @@ msgid "Reference ref"
 msgstr ""
 
 #: plugins/taglist/Latex.tags.xml.in:225
-msgid "Symbol &lt;&lt;"
+msgid "Symbol <<"
 msgstr ""
 
 #: plugins/taglist/Latex.tags.xml.in:229
-msgid "Symbol &lt;="
+msgid "Symbol <="
 msgstr ""
 
 #: plugins/taglist/Latex.tags.xml.in:233
-msgid "Symbol &gt;="
+msgid "Symbol >="
 msgstr ""
 
 #: plugins/taglist/Latex.tags.xml.in:237
-msgid "Symbol &gt;&gt;"
+msgid "Symbol >>"
 msgstr ""
 
 #: plugins/taglist/Latex.tags.xml.in:241
@@ -5464,11 +5497,11 @@ msgstr ""
 msgid "Footnote"
 msgstr ""
 
-#: plugins/taglist/taglist.plugin.desktop.in.in:5
+#: plugins/taglist/taglist.plugin.desktop.in.in:4
 msgid "Tag list"
 msgstr ""
 
-#: plugins/taglist/taglist.plugin.desktop.in.in:6
+#: plugins/taglist/taglist.plugin.desktop.in.in:5
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
@@ -6275,19 +6308,19 @@ msgstr ""
 msgid "Available formats"
 msgstr ""
 
-#: plugins/time/time.plugin.desktop.in.in:5
+#: plugins/time/time.plugin.desktop.in.in:4
 msgid "Insert Date/Time"
 msgstr ""
 
-#: plugins/time/time.plugin.desktop.in.in:6
+#: plugins/time/time.plugin.desktop.in.in:5
 msgid "Inserts current date and time at the cursor position."
 msgstr ""
 
-#: plugins/trailsave/trailsave.plugin.desktop.in.in:5
+#: plugins/trailsave/trailsave.plugin.desktop.in.in:4
 msgid "Save Without Trailing Spaces"
 msgstr ""
 
-#: plugins/trailsave/trailsave.plugin.desktop.in.in:6
+#: plugins/trailsave/trailsave.plugin.desktop.in.in:5
 msgid "Removes trailing spaces from lines before saving."
 msgstr ""
 
