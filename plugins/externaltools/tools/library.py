@@ -197,7 +197,7 @@ class ToolDirectory(object):
 
 
 class Tool(object):
-    RE_KEY = re.compile('^([a-zA-Z_][a-zA-Z0-9_.\-]*)(\[([a-zA-Z_@]+)\])?$')
+    RE_KEY = re.compile(r'^([a-zA-Z_][a-zA-Z0-9_.\-]*)(\[([a-zA-Z_@]+)\])?$')
 
     def __init__(self, parent, filename=None):
         super(Tool, self).__init__()
