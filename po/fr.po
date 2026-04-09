@@ -13,14 +13,14 @@
 # yoplait <yoplait@tememe.org>, 2018
 # Guillaume Fayard <guillaume2.fayard@wanadoo.fr>, 2018
 # Étienne Deparis <etienne@depar.is>, 2019
-# Wolfgang Ulbrich <mate@raveit.de>, 2019
+# Wolfgang Ulbrich <raveit65.sun@gmail.com>, 2019
 # Colomban Wendling <cwendling@hypra.fr>, 2020
 # Laurent Napias, 2020
 # Yoan Mollard <yoan@aubrune.eu>, 2020
 # Yoshida Shouyou, 2021
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # clefebvre <clement.lefebvre@linuxmint.com>, 2021
-# David D, 2021
+# David D, 2025
 # 
 msgid ""
 msgstr ""
@@ -28,7 +28,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: David D, 2021\n"
+"Last-Translator: David D, 2025\n"
 "Language-Team: French (https://app.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -268,19 +268,19 @@ msgstr "Indique la position de la marge de droite."
 
 #: data/org.mate.pluma.gschema.xml.in:115
 msgid "Document background pattern type"
-msgstr ""
+msgstr "Type de motif d'arrière-plan du document"
 
 #: data/org.mate.pluma.gschema.xml.in:116
 msgid "Whether the document will get a background pattern painted."
-msgstr ""
+msgstr "Indique si le document recevra un motif d'arrière-plan peint."
 
 #: data/org.mate.pluma.gschema.xml.in:120
 msgid "Display Overview Map"
-msgstr ""
+msgstr "Afficher la carte générale"
 
 #: data/org.mate.pluma.gschema.xml.in:121
 msgid "Whether pluma should display the overview map for the document."
-msgstr ""
+msgstr "Indique si Pluma doit afficher la carte générale du document."
 
 #: data/org.mate.pluma.gschema.xml.in:125
 msgid "Smart Home End"
@@ -529,7 +529,7 @@ msgstr ""
 #: data/org.mate.pluma.gschema.xml.in:214
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:215
 msgid "Automatically Detected Encodings"
@@ -611,6 +611,9 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
+"Indique si Pluma doit afficher des espaces sans rupture dans la fenêtre de "
+"l'éditeur : 'show-none' pas d'affichage ; 'show-trailing' affiche uniquement"
+" les espaces de fin ; 'show-all' affiche tous les espaces."
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
@@ -622,6 +625,9 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
+"Indique si Pluma doit afficher les onglets dans la fenêtre de l'éditeur : "
+"'show-none' non affiché ; 'show-trailing' affiche uniquement les espaces de "
+"fin ; 'show-all' affiche tous les espaces."
 
 #: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show spaces"
@@ -633,6 +639,9 @@ msgid ""
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
+"Indique si Pluma doit afficher les espaces dans la fenêtre de l'éditeur : "
+"'show-none' non affiché ; 'show-trailing' affiche uniquement les espaces de "
+"fin ; 'show-all' affiche tous les espaces."
 
 #: data/org.mate.pluma.gschema.xml.in:260
 msgid "state"
@@ -656,7 +665,7 @@ msgstr "taille du panneau latéral"
 
 #: data/org.mate.pluma.gschema.xml.in:271
 msgid "The pluma side-panel-size"
-msgstr ""
+msgstr "La taille du panneau latéral Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:275
 msgid "side-panel-active-page"
@@ -664,31 +673,31 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:276
 msgid "The pluma side-panel-active-page"
-msgstr ""
+msgstr "La page active du panneau latéral Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:280
 msgid "bottom-panel-size"
-msgstr ""
+msgstr "bottom-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:281
 msgid "The pluma bottom-panel-size"
-msgstr ""
+msgstr "La taille du panneau inférieur de Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:285
 msgid "bottom-panel-active-page"
-msgstr ""
+msgstr "bottom-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:286
 msgid "The pluma bottom-panel-active-page"
-msgstr ""
+msgstr "La page active du panneau inférieur de Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:290
 msgid "filter-id"
-msgstr ""
+msgstr "id-filtre"
 
 #: data/org.mate.pluma.gschema.xml.in:291
 msgid "The pluma filter-id"
-msgstr ""
+msgstr "L'id du filtre Pluma"
 
 #: data/pluma.appdata.xml.in.in:7 data/pluma.desktop.in.in:3
 msgid "Pluma"
@@ -706,6 +715,12 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
+"Pluma est un éditeur de texte petit mais puissant conçu spécifiquement pour "
+"le bureau MATE. Il possède la plupart des fonctions d'éditeur de texte "
+"standard et prend entièrement en charge le texte international en Unicode. "
+"Les fonctionnalités avancées incluent la coloration syntaxique et "
+"l'indentation automatique du code source, l'impression et l'édition de "
+"plusieurs documents dans une seule fenêtre."
 
 #: data/pluma.appdata.xml.in.in:17
 msgid ""
@@ -713,6 +728,10 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
+"Pluma est extensible via un système de plugins, qui inclut actuellement la "
+"prise en charge de la vérification orthographique, la comparaison des "
+"fichiers, l'affichage des journaux de modifications CVS et l'ajustement des "
+"niveaux d'indentation."
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:773
 msgid "Text Editor"
@@ -727,6 +746,7 @@ msgstr "Éditer des fichiers texte"
 #: data/pluma.desktop.in.in:15
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
 msgstr ""
+"texte;éditeur;MATE;onglets;highlighting;code;multiple;fichiers;pluggable;"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:137
 msgid "Log Out _without Saving"
@@ -1065,7 +1085,7 @@ msgstr "Ne pas _couper les mots sur deux lignes"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:193
 msgid "Highlighting"
-msgstr ""
+msgstr "Mise en évidence"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:213
 msgid "Highlight current _line"
@@ -1085,15 +1105,15 @@ msgstr "Afficher les _numéros de ligne"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:306
 msgid "Display right _margin at column"
-msgstr ""
+msgstr "Afficher _marge droite dans colonne"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:349
 msgid "Display _grid pattern"
-msgstr ""
+msgstr "Afficher motif _grid"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:364
 msgid "Display _overview map"
-msgstr ""
+msgstr "Afficher la carte générale"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:397
 msgid "View"
@@ -1142,7 +1162,7 @@ msgstr "_minutes"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:696
 msgid "Show Spaces, Tabs, Newlines"
-msgstr ""
+msgstr "Afficher espaces, tabulations, retours chariot"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:717
 msgid "Show _spaces"
@@ -1528,6 +1548,13 @@ msgid ""
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2021 Développeurs de MATE"
 
 #: pluma/pluma-commands-help.c:127
 msgid "translator-credits"
@@ -5152,27 +5179,27 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2283
 msgid "¡"
-msgstr ""
+msgstr "¡"
 
 #: plugins/taglist/HTML.tags.xml.in:2287
 msgid "¦"
-msgstr ""
+msgstr "¦"
 
 #: plugins/taglist/HTML.tags.xml.in:2291
 msgid "¨"
-msgstr ""
+msgstr "¨"
 
 #: plugins/taglist/HTML.tags.xml.in:2295
 msgid "¯"
-msgstr ""
+msgstr "¯"
 
 #: plugins/taglist/HTML.tags.xml.in:2299
 msgid "´"
-msgstr ""
+msgstr "´"
 
 #: plugins/taglist/HTML.tags.xml.in:2303
 msgid "¸"
-msgstr ""
+msgstr "¸"
 
 #: plugins/taglist/HTML.tags.xml.in:2307
 msgid "&lt;"
@@ -5184,75 +5211,75 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2315
 msgid "±"
-msgstr ""
+msgstr "±"
 
 #: plugins/taglist/HTML.tags.xml.in:2319
 msgid "«"
-msgstr ""
+msgstr "«"
 
 #: plugins/taglist/HTML.tags.xml.in:2323
 msgid "»"
-msgstr ""
+msgstr "»"
 
 #: plugins/taglist/HTML.tags.xml.in:2327
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: plugins/taglist/HTML.tags.xml.in:2331
 msgid "÷"
-msgstr ""
+msgstr "÷"
 
 #: plugins/taglist/HTML.tags.xml.in:2335
 msgid "¢"
-msgstr ""
+msgstr "¢"
 
 #: plugins/taglist/HTML.tags.xml.in:2339
 msgid "£"
-msgstr ""
+msgstr "£"
 
 #: plugins/taglist/HTML.tags.xml.in:2343
 msgid "€"
-msgstr ""
+msgstr "€"
 
 #: plugins/taglist/HTML.tags.xml.in:2347
 msgid "¤"
-msgstr ""
+msgstr "¤"
 
 #: plugins/taglist/HTML.tags.xml.in:2351
 msgid "¥"
-msgstr ""
+msgstr "¥"
 
 #: plugins/taglist/HTML.tags.xml.in:2355
 msgid "§"
-msgstr ""
+msgstr "§"
 
 #: plugins/taglist/HTML.tags.xml.in:2359
 msgid "©"
-msgstr ""
+msgstr "©"
 
 #: plugins/taglist/HTML.tags.xml.in:2363
 msgid "¬"
-msgstr ""
+msgstr "¬"
 
 #: plugins/taglist/HTML.tags.xml.in:2367
 msgid "®"
-msgstr ""
+msgstr "®"
 
 #: plugins/taglist/HTML.tags.xml.in:2371
 msgid "™"
-msgstr ""
+msgstr "™"
 
 #: plugins/taglist/HTML.tags.xml.in:2375
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #: plugins/taglist/HTML.tags.xml.in:2379
 msgid "µ"
-msgstr ""
+msgstr "µ"
 
 #: plugins/taglist/HTML.tags.xml.in:2383
 msgid "¶"
-msgstr ""
+msgstr "¶"
 
 #: plugins/taglist/HTML.tags.xml.in:2387
 msgid "·"
@@ -5260,95 +5287,95 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2391
 msgid "¼"
-msgstr ""
+msgstr "¼"
 
 #: plugins/taglist/HTML.tags.xml.in:2395
 msgid "½"
-msgstr ""
+msgstr "½"
 
 #: plugins/taglist/HTML.tags.xml.in:2399
 msgid "¾"
-msgstr ""
+msgstr "¾"
 
 #: plugins/taglist/HTML.tags.xml.in:2403
 msgid "¹"
-msgstr ""
+msgstr "¹"
 
 #: plugins/taglist/HTML.tags.xml.in:2407
 msgid "²"
-msgstr ""
+msgstr "²"
 
 #: plugins/taglist/HTML.tags.xml.in:2411
 msgid "³"
-msgstr ""
+msgstr "³"
 
 #: plugins/taglist/HTML.tags.xml.in:2415
 msgid "á"
-msgstr ""
+msgstr "á"
 
 #: plugins/taglist/HTML.tags.xml.in:2419
 msgid "Á"
-msgstr ""
+msgstr "Á"
 
 #: plugins/taglist/HTML.tags.xml.in:2423
 msgid "â"
-msgstr ""
+msgstr "â"
 
 #: plugins/taglist/HTML.tags.xml.in:2427
 msgid "Â"
-msgstr ""
+msgstr "Â"
 
 #: plugins/taglist/HTML.tags.xml.in:2431
 msgid "à"
-msgstr ""
+msgstr "à"
 
 #: plugins/taglist/HTML.tags.xml.in:2435
 msgid "À"
-msgstr ""
+msgstr "À"
 
 #: plugins/taglist/HTML.tags.xml.in:2439
 msgid "å"
-msgstr ""
+msgstr "å"
 
 #: plugins/taglist/HTML.tags.xml.in:2443
 msgid "Å"
-msgstr ""
+msgstr "Å"
 
 #: plugins/taglist/HTML.tags.xml.in:2447
 msgid "ã"
-msgstr ""
+msgstr "ã"
 
 #: plugins/taglist/HTML.tags.xml.in:2451
 msgid "Ã"
-msgstr ""
+msgstr "Ã"
 
 #: plugins/taglist/HTML.tags.xml.in:2455
 msgid "ä"
-msgstr ""
+msgstr "ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2459
 msgid "Ä"
-msgstr ""
+msgstr "Ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2463
 msgid "ª"
-msgstr ""
+msgstr "ª"
 
 #: plugins/taglist/HTML.tags.xml.in:2467
 msgid "æ"
-msgstr ""
+msgstr "æ"
 
 #: plugins/taglist/HTML.tags.xml.in:2471
 msgid "Æ"
-msgstr ""
+msgstr "Æ"
 
 #: plugins/taglist/HTML.tags.xml.in:2475
 msgid "ç"
-msgstr ""
+msgstr "ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2479
 msgid "Ç"
-msgstr ""
+msgstr "Ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2483
 msgid "Ð"
@@ -5360,35 +5387,35 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2491
 msgid "é"
-msgstr ""
+msgstr "é"
 
 #: plugins/taglist/HTML.tags.xml.in:2495
 msgid "É"
-msgstr ""
+msgstr "É"
 
 #: plugins/taglist/HTML.tags.xml.in:2499
 msgid "ê"
-msgstr ""
+msgstr "ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2503
 msgid "Ê"
-msgstr ""
+msgstr "Ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2507
 msgid "è"
-msgstr ""
+msgstr "è"
 
 #: plugins/taglist/HTML.tags.xml.in:2511
 msgid "È"
-msgstr ""
+msgstr "È"
 
 #: plugins/taglist/HTML.tags.xml.in:2515
 msgid "ë"
-msgstr ""
+msgstr "ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2519
 msgid "Ë"
-msgstr ""
+msgstr "Ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2523
 msgid "í"
@@ -5424,11 +5451,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2555
 msgid "ñ"
-msgstr ""
+msgstr "ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2559
 msgid "Ñ"
-msgstr ""
+msgstr "Ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2563
 msgid "ó"
@@ -5440,11 +5467,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2571
 msgid "ô"
-msgstr ""
+msgstr "ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2575
 msgid "Ô"
-msgstr ""
+msgstr "Ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2579
 msgid "ò"
@@ -5456,7 +5483,7 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2587
 msgid "º"
-msgstr ""
+msgstr "º"
 
 #: plugins/taglist/HTML.tags.xml.in:2591
 msgid "ø"
@@ -5484,7 +5511,7 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2615
 msgid "ß"
-msgstr ""
+msgstr "ß"
 
 #: plugins/taglist/HTML.tags.xml.in:2619
 msgid "þ"
@@ -5728,11 +5755,11 @@ msgstr "Référence"
 
 #: plugins/taglist/Latex.tags.xml.in:225
 msgid "Symbol &lt;&lt;"
-msgstr ""
+msgstr "Symbole &lt;&lt;"
 
 #: plugins/taglist/Latex.tags.xml.in:229
 msgid "Symbol &lt;="
-msgstr ""
+msgstr "Symbole &lt;="
 
 #: plugins/taglist/Latex.tags.xml.in:233
 msgid "Symbol &gt;="
@@ -5740,7 +5767,7 @@ msgstr ""
 
 #: plugins/taglist/Latex.tags.xml.in:237
 msgid "Symbol &gt;&gt;"
-msgstr ""
+msgstr "Symbole &gt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:241
 msgid "Symbol and"
@@ -5868,27 +5895,27 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"
-msgstr ""
+msgstr "choisir"
 
 #: plugins/taglist/XSLT.tags.xml.in:32 plugins/taglist/XSLT.tags.xml.in:150
 msgid "comment"
-msgstr ""
+msgstr "commentaire"
 
 #: plugins/taglist/XSLT.tags.xml.in:36
 msgid "copy"
-msgstr ""
+msgstr "copier"
 
 #: plugins/taglist/XSLT.tags.xml.in:39
 msgid "copy-of"
-msgstr ""
+msgstr "copie-de"
 
 #: plugins/taglist/XSLT.tags.xml.in:43
 msgid "decimal-format"
-msgstr ""
+msgstr "format-décimal"
 
 #: plugins/taglist/XSLT.tags.xml.in:46
 msgid "element"
-msgstr ""
+msgstr "élément"
 
 #: plugins/taglist/XSLT.tags.xml.in:50
 msgid "fallback"
@@ -5896,19 +5923,19 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:54
 msgid "for-each"
-msgstr ""
+msgstr "pour-chaque"
 
 #: plugins/taglist/XSLT.tags.xml.in:58
 msgid "if"
-msgstr ""
+msgstr "si"
 
 #: plugins/taglist/XSLT.tags.xml.in:62
 msgid "import"
-msgstr ""
+msgstr "importe"
 
 #: plugins/taglist/XSLT.tags.xml.in:66
 msgid "include"
-msgstr ""
+msgstr "inclure"
 
 #: plugins/taglist/XSLT.tags.xml.in:70 plugins/taglist/XSLT.tags.xml.in:199
 #: plugins/taglist/XUL.tags.xml.in:147
@@ -5917,7 +5944,7 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:74
 msgid "message"
-msgstr ""
+msgstr "message"
 
 #: plugins/taglist/XSLT.tags.xml.in:78
 msgid "namespace-alias"
@@ -5925,19 +5952,19 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:82 plugins/taglist/XSLT.tags.xml.in:233
 msgid "number"
-msgstr ""
+msgstr "nombre"
 
 #: plugins/taglist/XSLT.tags.xml.in:85
 msgid "otherwise"
-msgstr ""
+msgstr "sinon"
 
 #: plugins/taglist/XSLT.tags.xml.in:89
 msgid "output"
-msgstr ""
+msgstr "sortie"
 
 #: plugins/taglist/XSLT.tags.xml.in:93
 msgid "param"
-msgstr ""
+msgstr "param"
 
 #: plugins/taglist/XSLT.tags.xml.in:97
 msgid "preserve-space"
@@ -5949,7 +5976,7 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:105
 msgid "sort"
-msgstr ""
+msgstr "trier"
 
 #: plugins/taglist/XSLT.tags.xml.in:108
 msgid "strip-space"
@@ -5957,31 +5984,31 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:112
 msgid "stylesheet"
-msgstr ""
+msgstr "feuille de style"
 
 #: plugins/taglist/XSLT.tags.xml.in:116 plugins/taglist/XUL.tags.xml.in:398
 msgid "template"
-msgstr ""
+msgstr "modèle"
 
 #: plugins/taglist/XSLT.tags.xml.in:120 plugins/taglist/XSLT.tags.xml.in:280
 msgid "text"
-msgstr ""
+msgstr "texte"
 
 #: plugins/taglist/XSLT.tags.xml.in:123
 msgid "value-of"
-msgstr ""
+msgstr "valeur-de"
 
 #: plugins/taglist/XSLT.tags.xml.in:127
 msgid "variable"
-msgstr ""
+msgstr "variable"
 
 #: plugins/taglist/XSLT.tags.xml.in:131
 msgid "when"
-msgstr ""
+msgstr "quand"
 
 #: plugins/taglist/XSLT.tags.xml.in:135
 msgid "with-param"
-msgstr ""
+msgstr "avec-param"
 
 #: plugins/taglist/XSLT.tags.xml.in:141
 msgid "XSLT - Functions"
@@ -5989,7 +6016,7 @@ msgstr "XSLT - Fonctions"
 
 #: plugins/taglist/XSLT.tags.xml.in:142
 msgid "boolean"
-msgstr ""
+msgstr "booléen"
 
 #: plugins/taglist/XSLT.tags.xml.in:146
 msgid "ceiling"
@@ -5997,15 +6024,15 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:153
 msgid "concat"
-msgstr ""
+msgstr "concat"
 
 #: plugins/taglist/XSLT.tags.xml.in:157
 msgid "contains"
-msgstr ""
+msgstr "contient"
 
 #: plugins/taglist/XSLT.tags.xml.in:161
 msgid "count"
-msgstr ""
+msgstr "compte"
 
 #: plugins/taglist/XSLT.tags.xml.in:165
 msgid "current"
@@ -6013,7 +6040,7 @@ msgstr "courant"
 
 #: plugins/taglist/XSLT.tags.xml.in:168
 msgid "document"
-msgstr ""
+msgstr "document"
 
 #: plugins/taglist/XSLT.tags.xml.in:172
 msgid "element-available"
@@ -6029,31 +6056,31 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:183
 msgid "format-number"
-msgstr ""
+msgstr "format-nombre"
 
 #: plugins/taglist/XSLT.tags.xml.in:187
 msgid "function-available"
-msgstr ""
+msgstr "function-disponible"
 
 #: plugins/taglist/XSLT.tags.xml.in:191
 msgid "generate-id"
-msgstr ""
+msgstr "genérer-id"
 
 #: plugins/taglist/XSLT.tags.xml.in:195
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: plugins/taglist/XSLT.tags.xml.in:203
 msgid "lang"
-msgstr ""
+msgstr "lang"
 
 #: plugins/taglist/XSLT.tags.xml.in:207
 msgid "last"
-msgstr ""
+msgstr "dernier"
 
 #: plugins/taglist/XSLT.tags.xml.in:210
 msgid "local-name"
-msgstr ""
+msgstr "nom-local"
 
 #: plugins/taglist/XSLT.tags.xml.in:214
 msgid "name"
@@ -6065,7 +6092,7 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:222
 msgid "node"
-msgstr ""
+msgstr "noeud"
 
 #: plugins/taglist/XSLT.tags.xml.in:225
 msgid "normalize-space"
@@ -6073,11 +6100,11 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:229
 msgid "not"
-msgstr ""
+msgstr "pas"
 
 #: plugins/taglist/XSLT.tags.xml.in:237
 msgid "position"
-msgstr ""
+msgstr "position"
 
 #: plugins/taglist/XSLT.tags.xml.in:244
 msgid "round"
@@ -6085,39 +6112,39 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:248
 msgid "starts-with"
-msgstr ""
+msgstr "démarre-avec"
 
 #: plugins/taglist/XSLT.tags.xml.in:252
 msgid "string"
-msgstr ""
+msgstr "chaîne"
 
 #: plugins/taglist/XSLT.tags.xml.in:256
 msgid "string-length"
-msgstr ""
+msgstr "longueur-chaîne"
 
 #: plugins/taglist/XSLT.tags.xml.in:260
 msgid "substring"
-msgstr ""
+msgstr "sous chaîne"
 
 #: plugins/taglist/XSLT.tags.xml.in:264
 msgid "substring-after"
-msgstr ""
+msgstr "après sous chaîne"
 
 #: plugins/taglist/XSLT.tags.xml.in:268
 msgid "substring-before"
-msgstr ""
+msgstr "avant sous chaîne"
 
 #: plugins/taglist/XSLT.tags.xml.in:272
 msgid "sum"
-msgstr ""
+msgstr "somm"
 
 #: plugins/taglist/XSLT.tags.xml.in:276
 msgid "system-property"
-msgstr ""
+msgstr "propriété-système"
 
 #: plugins/taglist/XSLT.tags.xml.in:283
 msgid "translate"
-msgstr ""
+msgstr "traduire"
 
 #: plugins/taglist/XSLT.tags.xml.in:287
 msgid "true"
@@ -6185,7 +6212,7 @@ msgstr "XUL - Balises"
 
 #: plugins/taglist/XUL.tags.xml.in:5
 msgid "action"
-msgstr ""
+msgstr "action"
 
 #: plugins/taglist/XUL.tags.xml.in:10
 msgid "arrowscrollbox"
@@ -6221,7 +6248,7 @@ msgstr "Bouton"
 
 #: plugins/taglist/XUL.tags.xml.in:48
 msgid "browser"
-msgstr ""
+msgstr "navigateur"
 
 #: plugins/taglist/XUL.tags.xml.in:52
 msgid "checkbox"
@@ -6229,11 +6256,11 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:56
 msgid "caption"
-msgstr ""
+msgstr "légende"
 
 #: plugins/taglist/XUL.tags.xml.in:60
 msgid "colorpicker"
-msgstr ""
+msgstr "sélecteur de couleur"
 
 #: plugins/taglist/XUL.tags.xml.in:65
 msgid "column"
@@ -6249,15 +6276,15 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:79
 msgid "command"
-msgstr ""
+msgstr "commande"
 
 #: plugins/taglist/XUL.tags.xml.in:83
 msgid "conditions"
-msgstr ""
+msgstr "conditions"
 
 #: plugins/taglist/XUL.tags.xml.in:88
 msgid "content"
-msgstr ""
+msgstr "contenu"
 
 #: plugins/taglist/XUL.tags.xml.in:92
 msgid "deck"
@@ -6265,31 +6292,31 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:97
 msgid "description"
-msgstr ""
+msgstr "description"
 
 #: plugins/taglist/XUL.tags.xml.in:102
 msgid "dialog"
-msgstr ""
+msgstr "dialogue"
 
 #: plugins/taglist/XUL.tags.xml.in:111
 msgid "dialogheader"
-msgstr ""
+msgstr "en-tête de dialogue"
 
 #: plugins/taglist/XUL.tags.xml.in:115
 msgid "editor"
-msgstr ""
+msgstr "éditeur"
 
 #: plugins/taglist/XUL.tags.xml.in:119
 msgid "grid"
-msgstr ""
+msgstr "grille"
 
 #: plugins/taglist/XUL.tags.xml.in:124
 msgid "grippy"
-msgstr ""
+msgstr "antidérapant"
 
 #: plugins/taglist/XUL.tags.xml.in:129
 msgid "groupbox"
-msgstr ""
+msgstr "boîte de groupe"
 
 #: plugins/taglist/XUL.tags.xml.in:134
 msgid "hbox"
@@ -6341,11 +6368,11 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:192
 msgid "member"
-msgstr ""
+msgstr "membre"
 
 #: plugins/taglist/XUL.tags.xml.in:196
 msgid "menu"
-msgstr ""
+msgstr "menu"
 
 #: plugins/taglist/XUL.tags.xml.in:201
 msgid "menubar"
@@ -6353,11 +6380,11 @@ msgstr "barre de menus"
 
 #: plugins/taglist/XUL.tags.xml.in:206
 msgid "menuitem"
-msgstr ""
+msgstr "élement de menu"
 
 #: plugins/taglist/XUL.tags.xml.in:210
 msgid "menulist"
-msgstr ""
+msgstr "liste menu"
 
 #: plugins/taglist/XUL.tags.xml.in:215
 msgid "menupopup"
@@ -6365,7 +6392,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:220
 msgid "menuseparator"
-msgstr ""
+msgstr "séparateur menu"
 
 #: plugins/taglist/XUL.tags.xml.in:224
 msgid "observes"
@@ -6389,11 +6416,11 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:249
 msgid "preference"
-msgstr ""
+msgstr "préférence"
 
 #: plugins/taglist/XUL.tags.xml.in:254
 msgid "preferences"
-msgstr ""
+msgstr "préférences"
 
 #: plugins/taglist/XUL.tags.xml.in:259
 msgid "prefpane"
@@ -6409,15 +6436,15 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:273
 msgid "radio"
-msgstr ""
+msgstr "radio"
 
 #: plugins/taglist/XUL.tags.xml.in:277
 msgid "radiogroup"
-msgstr ""
+msgstr "groupe radio"
 
 #: plugins/taglist/XUL.tags.xml.in:282
 msgid "resizer"
-msgstr ""
+msgstr "redimensionneur"
 
 #: plugins/taglist/XUL.tags.xml.in:287
 msgid "richlistbox"
@@ -6429,7 +6456,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:297
 msgid "row"
-msgstr ""
+msgstr "rangée"
 
 #: plugins/taglist/XUL.tags.xml.in:302
 msgid "rows"
@@ -6437,19 +6464,19 @@ msgstr "lignes"
 
 #: plugins/taglist/XUL.tags.xml.in:307
 msgid "rule"
-msgstr ""
+msgstr "règl"
 
 #: plugins/taglist/XUL.tags.xml.in:312
 msgid "script"
-msgstr ""
+msgstr "script"
 
 #: plugins/taglist/XUL.tags.xml.in:317
 msgid "scrollbar"
-msgstr ""
+msgstr "barre de défilement"
 
 #: plugins/taglist/XUL.tags.xml.in:321
 msgid "scrollbox"
-msgstr ""
+msgstr "boîte de défilement"
 
 #: plugins/taglist/XUL.tags.xml.in:326
 msgid "scrollcorner"
@@ -6457,19 +6484,19 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:331
 msgid "separator"
-msgstr ""
+msgstr "séparateur"
 
 #: plugins/taglist/XUL.tags.xml.in:336
 msgid "spacer"
-msgstr ""
+msgstr "espaceur"
 
 #: plugins/taglist/XUL.tags.xml.in:340
 msgid "splitter"
-msgstr ""
+msgstr "séparateur"
 
 #: plugins/taglist/XUL.tags.xml.in:345
 msgid "stack"
-msgstr ""
+msgstr "empilement"
 
 #: plugins/taglist/XUL.tags.xml.in:350
 msgid "statusbar"
@@ -6489,7 +6516,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:369
 msgid "tab"
-msgstr ""
+msgstr "onglet"
 
 #: plugins/taglist/XUL.tags.xml.in:373
 msgid "tabbrowser"
@@ -6509,7 +6536,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:393
 msgid "tabs"
-msgstr ""
+msgstr "onglets"
 
 #: plugins/taglist/XUL.tags.xml.in:403
 msgid "textnode"
@@ -6569,7 +6596,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:471
 msgid "tree"
-msgstr ""
+msgstr "arbre"
 
 #: plugins/taglist/XUL.tags.xml.in:476
 msgid "treecell"
@@ -6601,7 +6628,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:509
 msgid "triple"
-msgstr ""
+msgstr "triple"
 
 #: plugins/taglist/XUL.tags.xml.in:514
 msgid "vbox"
@@ -6609,15 +6636,15 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:519
 msgid "window"
-msgstr ""
+msgstr "fenêtre"
 
 #: plugins/taglist/XUL.tags.xml.in:525
 msgid "wizard"
-msgstr ""
+msgstr "assistant"
 
 #: plugins/taglist/XUL.tags.xml.in:530
 msgid "wizardpage"
-msgstr ""
+msgstr "page assistant"
 
 #: plugins/time/org.mate.pluma.plugins.time.gschema.xml.in:12
 msgid "Prompt type"

@@ -10,11 +10,13 @@
 # Dave Save <davesave@gmail.com>, 2018
 # haxoc c11 <haxoc112@disroot.org>, 2018
 # Bar Boko <bokodev@outlook.com>, 2019
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # shy tzedaka <shaytzedaka123@gmail.com>, 2020
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2021
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2024
+# Wolfgang Ulbrich <raveit65.sun@gmail.com>, 2024
+# Avi Markovitz <avi.markovitz@gmail.com>, 2024
+# Omer I.S., 2026
 # 
 msgid ""
 msgstr ""
@@ -22,13 +24,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021\n"
+"Last-Translator: Omer I.S., 2026\n"
 "Language-Team: Hebrew (https://app.transifex.com/mate/teams/13566/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
@@ -98,12 +100,10 @@ msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
 msgstr ""
-"Whether pluma should create backup copies for the files it saves. You can "
-"set the backup file extension with the \"Backup Copy Extension\" option."
 
 #: data/org.mate.pluma.gschema.xml.in:45
 msgid "Autosave"
-msgstr "Autosave"
+msgstr "שמירה אוטומטית"
 
 #: data/org.mate.pluma.gschema.xml.in:46
 msgid ""
@@ -111,21 +111,16 @@ msgid ""
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
 msgstr ""
-"Whether pluma should automatically save modified files after a time "
-"interval. You can set the time interval with the \"Autosave Interval\" "
-"option."
 
 #: data/org.mate.pluma.gschema.xml.in:50
 msgid "Autosave Interval"
-msgstr "Autosave Interval"
+msgstr "מרווח זמן שמירה אוטומטית"
 
 #: data/org.mate.pluma.gschema.xml.in:51
 msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
 msgstr ""
-"Number of minutes after which pluma will automatically save modified files. "
-"This will only take effect if the \"Autosave\" option is turned on."
 
 #: data/org.mate.pluma.gschema.xml.in:55
 msgid "Show save confirmation"
@@ -526,8 +521,6 @@ msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
 msgstr ""
-"List of encodings shown in the Character Encoding menu in open/save file "
-"selector. Only recognized encodings are used."
 
 #: data/org.mate.pluma.gschema.xml.in:225
 msgid "History for \"search for\" entries"
@@ -732,7 +725,7 @@ msgstr "_ביטול"
 #: plugins/snippets/snippets/Manager.py:883
 #: plugins/snippets/snippets/Manager.py:922
 msgid "_Save"
-msgstr "_שמור"
+msgstr "_שמירה"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:184
 msgid "Save _As"
@@ -753,7 +746,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:424
 msgid ""
@@ -771,7 +763,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:440
 #, c-format
@@ -784,7 +775,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:455
 msgid ""
@@ -802,7 +792,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:476
 #, c-format
@@ -813,7 +802,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
@@ -837,7 +825,6 @@ msgid_plural "Changes to %d documents will be permanently lost."
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
@@ -848,7 +835,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
@@ -961,7 +947,7 @@ msgstr "לא ניתן להסיר את סכימת הצבעים \"%s\"."
 #: pluma/dialogs/pluma-search-dialog.ui:60 pluma/pluma-ui.h:152
 #: plugins/docinfo/docinfo.ui:35 plugins/spell/spell-checker.ui:375
 msgid "_Close"
-msgstr "_סגור"
+msgstr "_סגירה"
 
 #: pluma/dialogs/pluma-preferences-dialog.c:1233
 msgid "Pluma Preferences"
@@ -1053,7 +1039,7 @@ msgstr "שמירת קובץ"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:600
 msgid "Create a _backup copy of files before saving"
-msgstr "יש ליצור עותק _גיבוי של הקבצים לפני השמירה"
+msgstr "ייצירת עותק _גיבוי קבצים לפני השמירה"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:620
 msgid "_Autosave files every"
@@ -1240,7 +1226,6 @@ msgid_plural "Loading %d files…"
 msgstr[0] "קובץ אחד נטען…"
 msgstr[1] "נטענים %d קבצים…"
 msgstr[2] "נטענים %d קבצים…"
-msgstr[3] "נטענים %d קבצים…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:462
@@ -1286,7 +1271,6 @@ msgid_plural ""
 msgstr[0] "שינויים שנערכו במסמך בשנייה האחרונה האחרונות יאבדו לחלוטין."
 msgstr[1] "שינויים שנערכו במסמך ב־%ld השניות האחרונות יאבדו לחלוטין."
 msgstr[2] "שינויים שנערכו במסמך ב־%ld השניות האחרונות יאבדו לחלוטין."
-msgstr[3] "שינויים שנערכו במסמך ב־%ld השניות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1148
 msgid ""
@@ -1304,7 +1288,6 @@ msgid_plural ""
 msgstr[0] "שינויים שנערכו במסמך בדקה והשנייה האחרונות יאבדו לחלוטין."
 msgstr[1] "שינויים שנערכו במסמך בדקה ו־%ld השניות האחרונות יאבדו לחלוטין."
 msgstr[2] "שינויים שנערכו במסמך בדקה ו־%ld השניות האחרונות יאבדו לחלוטין."
-msgstr[3] "שינויים שנערכו במסמך בדקה ו־%ld השניות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1164
 #, c-format
@@ -1317,7 +1300,6 @@ msgid_plural ""
 msgstr[0] "שינויים שנערכו במסמך בדקה האחרונה האחרונות יאבדו לחלוטין."
 msgstr[1] "שינויים שנערכו במסמך ב־%ld הדקות האחרונות יאבדו לחלוטין."
 msgstr[2] "שינויים שנערכו במסמך ב־%ld הדקות האחרונות יאבדו לחלוטין."
-msgstr[3] "שינויים שנערכו במסמך ב־%ld הדקות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1179
 msgid ""
@@ -1335,7 +1317,6 @@ msgid_plural ""
 msgstr[0] "שינויים שנערכו במסמך בשעה %d והדקה האחרונות יאבדו לחלוטין."
 msgstr[1] "שינויים שנערכו במסמך בשעה ו־%d הדקות האחרונות יאבדו לחלוטין."
 msgstr[2] "שינויים שנערכו במסמך בשעה ו־%d הדקות האחרונות יאבדו לחלוטין."
-msgstr[3] "שינויים שנערכו במסמך בשעה ו־%d הדקות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1346,7 +1327,6 @@ msgid_plural ""
 msgstr[0] "שינויים שנערכו במסמך %d בשעה האחרונה יאבדו לחלוטין."
 msgstr[1] "שינויים שנערכו במסמך %d בשעתיים האחרונות יאבדו לחלוטין."
 msgstr[2] "שינויים שנערכו במסמך ב־%d השעות האחרונות יאבדו לחלוטין."
-msgstr[3] "שינויים שנערכו במסמך ב־%d השעות האחרונות יאבדו לחלוטין."
 
 #: pluma/pluma-commands-file.c:1227 pluma/pluma-ui.h:85
 msgid "_Revert"
@@ -1425,7 +1405,6 @@ msgid_plural "Found and replaced %d occurrences"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/pluma-commands-search.c:123
 msgid "Found and replaced one occurrence"
@@ -2110,7 +2089,6 @@ msgid_plural "There are %d tabs with errors"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-msgstr[3] ""
 
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -2182,7 +2160,7 @@ msgstr "שם:"
 
 #: pluma/pluma-tab.c:1812
 msgid "MIME Type:"
-msgstr "סוג MIME:"
+msgstr "סוג קובץ:"
 
 #: pluma/pluma-tab.c:1813
 msgid "Encoding:"
@@ -2322,11 +2300,11 @@ msgstr "גזירת הבחירה"
 
 #: pluma/pluma-ui.h:99
 msgid "_Copy"
-msgstr "ה_עתק"
+msgstr "ה_עתקה"
 
 #: pluma/pluma-ui.h:100
 msgid "Copy the selection"
-msgstr "העתקת בחירה"
+msgstr "העתקת הבחירה"
 
 #: pluma/pluma-ui.h:101
 msgid "_Paste"
@@ -5705,11 +5683,11 @@ msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:36
 msgid "copy"
-msgstr ""
+msgstr "העתקה"
 
 #: plugins/taglist/XSLT.tags.xml.in:39
 msgid "copy-of"
-msgstr ""
+msgstr "עותק של"
 
 #: plugins/taglist/XSLT.tags.xml.in:43
 msgid "decimal-format"
