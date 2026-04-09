@@ -5,10 +5,10 @@
 # 
 # Translators:
 # 48c2de07903ce5a77a8e90265f95c4c2_8909374 <837c8d0ab97b27e737893c19f79bd4de_348476>, 2018
-# Wolfgang Ulbrich <mate@raveit.de>, 2019
+# Wolfgang Ulbrich <raveit65.sun@gmail.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Cédric Valmary <cvalmary@yahoo.fr>, 2021
-# Quentin PAGÈS, 2023
+# Quentin PAGÈS, 2026
 # 
 msgid ""
 msgstr ""
@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
 "PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Quentin PAGÈS, 2023\n"
+"Last-Translator: Quentin PAGÈS, 2026\n"
 "Language-Team: Occitan (post 1500) (https://app.transifex.com/mate/teams/13566/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,6 +35,10 @@ msgid ""
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
 msgstr ""
+"Se cal utilizar la polissa de largor fixa per defaut del sistèma per "
+"modificar lo tèxte al luòc d'una polissa especifica a pluma. Se aquesta "
+"opcion es desactivada, alara la polissa nomenada dins l'opcion « Polissa de "
+"l'editor » serà utilizada al luòc de la polissa del sistèma."
 
 #: data/org.mate.pluma.gschema.xml.in:19
 msgctxt "editor-font"
@@ -72,7 +76,7 @@ msgstr "Afichar lo primièr onglet se n’i a pas qu’un"
 
 #: data/org.mate.pluma.gschema.xml.in:31
 msgid "If false, it hides the first tab if there is only one tab."
-msgstr ""
+msgstr "Se definit a « false », amaga lo primièr onglet se n’i a pas qu’un."
 
 #: data/org.mate.pluma.gschema.xml.in:35
 msgid "Style Scheme"
@@ -93,6 +97,9 @@ msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
 msgstr ""
+"Indica se pluma deu far de còpias de salvagarda pels fichièrs qu'enregistra."
+" Podètz definir l'extension del fichièr de salvagarda amb l'opcion « "
+"Extension de la còpia de salvagarda »."
 
 #: data/org.mate.pluma.gschema.xml.in:45
 msgid "Autosave"
@@ -104,6 +111,9 @@ msgid ""
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
 msgstr ""
+"Indica se pluma deu enregistrar automaticament los fichièrs modificats aprèp"
+" un interval donat de temps. Podètz definir l'interval de temps amb l'opcion"
+" « Interval de l'enregistrament automatic »."
 
 #: data/org.mate.pluma.gschema.xml.in:50
 msgid "Autosave Interval"
@@ -114,6 +124,9 @@ msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
 msgstr ""
+"Quantitat de minutas après las qualas Pluma salvarà automaticament los "
+"fichièrs modificats. Aquò foncionarà sonque se l'opcion « Enregistrament "
+"automatic » es activada."
 
 #: data/org.mate.pluma.gschema.xml.in:55
 msgid "Show save confirmation"
@@ -133,6 +146,8 @@ msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
 msgstr ""
+"Lista dels esquèmas VFS suportats per pluma en mòde escritura. L'esquèma « "
+"file » es accessible en escritura per defaut."
 
 #: data/org.mate.pluma.gschema.xml.in:65
 msgid "Maximum Number of Undo Actions"
@@ -143,6 +158,8 @@ msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
 msgstr ""
+"Nombre maximum d'accions que pluma poirà anullar o restablir. Utilizar « -1 "
+"» per un nombre illimitat d'accions."
 
 #: data/org.mate.pluma.gschema.xml.in:70
 msgid "Line Wrapping Mode"
@@ -156,6 +173,12 @@ msgid ""
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
 msgstr ""
+"Especifica cossí se devon copar las linhas longas dins la zòna d'edicion. "
+"Utilizatz « GTK_WRAP_NONE » per pas cap de retorn a la linha, « "
+"GTK_WRAP_WORD » per un retorn a la linha a la fin dels mots, e « "
+"GTK_WRAP_CHAR » per un retorn a la linha a la fin de cada caractèr. Notatz "
+"que las valors son sensiblas a la cassa, doncas asseguratz-vos que "
+"correspondan exactament a çò qu'es mencionat aicí."
 
 #: data/org.mate.pluma.gschema.xml.in:75
 msgid "Tab Size"
@@ -209,6 +232,8 @@ msgstr "Suslinhar las parentèsis correspondentas"
 #: data/org.mate.pluma.gschema.xml.in:101
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr ""
+"Indica se pluma deu metre en evidéncia la parentèsi correspondenta a la "
+"seleccionada."
 
 #: data/org.mate.pluma.gschema.xml.in:105
 msgid "Display Right Margin"
@@ -241,7 +266,7 @@ msgstr "Afichar la mapa d’apercebut"
 
 #: data/org.mate.pluma.gschema.xml.in:121
 msgid "Whether pluma should display the overview map for the document."
-msgstr ""
+msgstr "Especifica se Pluma deu afichar la vista d'ensemble pel document."
 
 #: data/org.mate.pluma.gschema.xml.in:125
 msgid "Smart Home End"
@@ -318,6 +343,13 @@ msgid ""
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
 msgstr ""
+"Estil pels botons de la barra d'aisinas. Las valors possiblas son "
+"« PLUMA_TOOLBAR_SYSTEM » per utilizar l'estil per defaut del sistèma, "
+"« PLUMA_TOOLBAR_ICONS » per afichar sonque las icònas, "
+"« PLUMA_TOOLBAR_ICONS_AND_TEXT » per afichar a l'encòp las icònas e lo "
+"tèxte, e « PLUMA_TOOLBAR_ICONS_BOTH_HORIZ » per afichar lo tèxte prioritari "
+"a costat de las icònas. Notatz que las valors son sensibles a la cassa, "
+"asseguratz-vos doncas que correspondan exactament a çò qu'es mencionat aicí."
 
 #: data/org.mate.pluma.gschema.xml.in:155
 msgid "Status Bar is Visible"
@@ -349,6 +381,8 @@ msgstr "Afichar los onglets amb panèl lateral"
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
+"Se definit a « false », pluma aficha pas los onglets dins lo quasernet quand"
+" lo panèl lateral es actiu."
 
 #: data/org.mate.pluma.gschema.xml.in:170
 msgid "Bottom Panel is Visible"
@@ -380,6 +414,8 @@ msgstr "Imprimir la coloracion sintaxica"
 msgid ""
 "Whether pluma should print syntax highlighting when printing documents."
 msgstr ""
+"Especifica se Pluma deu afichar la coloracion de la sintaxi a l'impression "
+"dels fichièrs."
 
 #: data/org.mate.pluma.gschema.xml.in:185
 msgid "Print Header"
@@ -404,6 +440,11 @@ msgid ""
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
 msgstr ""
+"Especifica cossí copar las linhas longas per l'impression. Utilizatz « "
+"GTK_WRAP_NONE » per cap de copadura, « GTK_WRAP_WORD » per copar al limit "
+"dels mots, e « GTK_WRAP_CHAR » per copar al limit dels caractèrs "
+"individuals. Notatz que las valors son sensiblas a la cassa, doncas "
+"asseguratz-vos qu’apareisson exactament coma mencionat aicí."
 
 #: data/org.mate.pluma.gschema.xml.in:195
 msgid "Print Line Numbers"
@@ -415,6 +456,9 @@ msgid ""
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
 msgstr ""
+"Se aquesta valor es 0, cap de numèro de linha serà pas inserit a "
+"l'impression d'un document. Autrament, pluma imprimirà los numèros de linha "
+"cada nombre de linhas especificat."
 
 #: data/org.mate.pluma.gschema.xml.in:199
 msgctxt "print-font-body-pango"
@@ -469,7 +513,7 @@ msgstr ""
 #: data/org.mate.pluma.gschema.xml.in:214
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:215
 msgid "Automatically Detected Encodings"
@@ -481,6 +525,9 @@ msgid ""
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
 msgstr ""
+"Lista classificada dels encodatges utilizats per Pluma per detectar "
+"automaticament l'encodatge d'un fichièr. « CURRENT » representa l'encodatge "
+"de la lenga actuala. Sols los encodatges reconeguts son utilizats."
 
 #: data/org.mate.pluma.gschema.xml.in:219
 msgctxt "shown-in-menu"
@@ -496,22 +543,25 @@ msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
 msgstr ""
+"Lista dels encodatges afichats dins lo menú Codatge dels caractèrs del "
+"selector de fichièrs per dobrir/enregistrar. Sols los encodatges reconeguts "
+"son utilizats."
 
 #: data/org.mate.pluma.gschema.xml.in:225
 msgid "History for \"search for\" entries"
-msgstr ""
+msgstr "Istoric de las entradas « Cercar »"
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "List of entries in \"search for\" textbox."
-msgstr ""
+msgstr "Lista de las entradas dins la zòna de tèxt « cercar »."
 
 #: data/org.mate.pluma.gschema.xml.in:230
 msgid "History for \"replace with\" entries"
-msgstr ""
+msgstr "Istoric de las entradas « remplaçar per »"
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "List of entries in \"replace with\" textbox."
-msgstr ""
+msgstr "Lista de las entradas dins la zòna de tèxt « Remplaçar per »."
 
 #: data/org.mate.pluma.gschema.xml.in:235
 msgid "Active plugins"
@@ -522,14 +572,17 @@ msgid ""
 "List of active plugins. It contains the \"Location\" of the active plugins. "
 "See the .pluma-plugin file for obtaining the \"Location\" of a given plugin."
 msgstr ""
+"Lista dels empeutons actius. Conten l' « Emplaçament » dels empeutons "
+"actius. Consultatz lo fichièr .pluma-plugin per obténer l’ « Emplaçament » "
+"d'un empeuton donat."
 
 #: data/org.mate.pluma.gschema.xml.in:240
 msgid "Show newline"
-msgstr ""
+msgstr "Afichar lo saut de linha"
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Whether pluma should show newlines in the editor window."
-msgstr ""
+msgstr "Se pluma deu afichar los sauts de linha dins la fenèstra de l'editor."
 
 #: data/org.mate.pluma.gschema.xml.in:245
 msgid "Show nbsp"
@@ -541,6 +594,9 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
+"Se Pluma deu afichar o pas los espacis insecables dins la fenèstra de "
+"l'editor : « show-none » per cap d’afichatge ; « show-trailing » per afichar"
+" pas que los espacis de fin de linha ; « show-all » per los afichar totes."
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
@@ -552,6 +608,9 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
+"Se pluma deu afichar las tabulacions dins la fenèstra de l'editor : « show-"
+"none » cap d’afichatge ; « show-trailing » aficha sonque los espacis de fin "
+"; « show-all » aficha totes los espacis."
 
 #: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show spaces"
@@ -563,6 +622,9 @@ msgid ""
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
+"Se pluma deu afichar o pas los espacis dins la fenèstra de l'editor : « "
+"show-none » cap d'afichatge ; « show-trailing » afichatge dels espacis de "
+"fin de linha solament ; « show-all » afichatge de totes los espacis."
 
 #: data/org.mate.pluma.gschema.xml.in:260
 msgid "state"
@@ -582,43 +644,43 @@ msgstr "La talha de la fenèstra pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:270
 msgid "side-panel-size"
-msgstr ""
+msgstr "side-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:271
 msgid "The pluma side-panel-size"
-msgstr ""
+msgstr "La talha del panèl lateral"
 
 #: data/org.mate.pluma.gschema.xml.in:275
 msgid "side-panel-active-page"
-msgstr ""
+msgstr "side-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:276
 msgid "The pluma side-panel-active-page"
-msgstr ""
+msgstr "La pagina activa del panèl lateral de pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:280
 msgid "bottom-panel-size"
-msgstr ""
+msgstr "bottom-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:281
 msgid "The pluma bottom-panel-size"
-msgstr ""
+msgstr "La talha del panèl inferior de Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:285
 msgid "bottom-panel-active-page"
-msgstr ""
+msgstr "bottom-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:286
 msgid "The pluma bottom-panel-active-page"
-msgstr ""
+msgstr "La pagina activa del panèl inferior de Pluma"
 
 #: data/org.mate.pluma.gschema.xml.in:290
 msgid "filter-id"
-msgstr ""
+msgstr "filter-id"
 
 #: data/org.mate.pluma.gschema.xml.in:291
 msgid "The pluma filter-id"
-msgstr ""
+msgstr "Lo filtre per ID de Pluma"
 
 #: data/pluma.appdata.xml.in.in:7 data/pluma.desktop.in.in:3
 msgid "Pluma"
@@ -636,6 +698,12 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
+"Pluma es un editor de tèxt pichon, mas potent, concebut especificament pel "
+"burèu MATE. Dispausa de la màger part de las foncions estandard d'un editor "
+"de tèxt e supòrta complètament lo tèxt internacional en Unicode. Las "
+"foncions avançadas incluson la coloracion sintaxica e l'indentacion "
+"automatica del còde font, l'impression e l'edicion de mantun document dins "
+"una sola fenèstra."
 
 #: data/pluma.appdata.xml.in.in:17
 msgid ""
@@ -643,6 +711,9 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
+"Pluma es extensible a travèrs d'un sistèma d'empeutons, que compren "
+"actualament la correccion ortografica, la comparason de fichièrs, la "
+"visualizacion dels CVS ChangeLogs e l'ajustament dels nivèls d'indentacion."
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:773
 msgid "Text Editor"
@@ -717,7 +788,11 @@ msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
+"S’enregistratz pas, las modificacions de la segonda passada seràn "
+"definitivament perdudas."
 msgstr[1] ""
+"S’enregistratz pas, las modificacions de las %ld segondas passadas seràn "
+"definitivament perdudas."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:424
 msgid ""
@@ -977,7 +1052,7 @@ msgstr "Suslinhar la _linha actuala"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:228
 msgid "Highlight matching _bracket"
-msgstr ""
+msgstr "Metre en evidéncia la parentèsi correspondenta"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:266
 msgid "Display"
@@ -989,7 +1064,7 @@ msgstr "_Visualizar los numèros de linha"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:306
 msgid "Display right _margin at column"
-msgstr ""
+msgstr "Afichar lo _marge drech a la colomna"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:349
 msgid "Display _grid pattern"
@@ -1034,7 +1109,7 @@ msgstr "Enregistrament dels fichièrs"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:600
 msgid "Create a _backup copy of files before saving"
-msgstr "Crear una còpia de _salvament dels fichièrs abans l'enregistrament"
+msgstr "Crear una còpia de _salvagarda dels fichièrs abans l'enregistrament"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:620
 msgid "_Autosave files every"
@@ -1046,7 +1121,7 @@ msgstr "_minutas"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:696
 msgid "Show Spaces, Tabs, Newlines"
-msgstr ""
+msgstr "Afichas los espacis, las tabulacions e sauts de linhas"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:717
 msgid "Show _spaces"
@@ -1054,7 +1129,7 @@ msgstr "Afichar los _espacis"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:732
 msgid "Show _trailing spaces only"
-msgstr ""
+msgstr "Afichar sonque los espacis _finals"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:748
 msgid "Show _tabs"
@@ -1062,11 +1137,11 @@ msgstr "Afichar los _onglets"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:763
 msgid "Show _trailing tabs only"
-msgstr ""
+msgstr "Afichas sonque los _onglets finals"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:779
 msgid "Show _newlines"
-msgstr ""
+msgstr "Afichar los _sauts de linha"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:815
 msgid "Editor"
@@ -1157,7 +1232,7 @@ msgstr "Recèrca circ_ulara"
 
 #: pluma/dialogs/pluma-search-dialog.ui:262
 msgid "_Parse escape sequences (e.g. \\n)"
-msgstr ""
+msgstr "_Interpretar las sequéncias d'escapament (ex. \\n)"
 
 #: pluma/pluma.c:109
 msgid "Show the application's version"
@@ -1182,10 +1257,12 @@ msgstr "Aficha la lista de las valors possiblas per l'opcion d'encodatge"
 #: pluma/pluma.c:118
 msgid "Create a new top-level window in an existing instance of pluma"
 msgstr ""
+"Crear una fenèstra novèla de naut nivèl dins una instància existenta de "
+"Pluma"
 
 #: pluma/pluma.c:121
 msgid "Create a new document in an existing instance of pluma"
-msgstr ""
+msgstr "Crear un document novèl dins una instància existenta de Pluma"
 
 #: pluma/pluma.c:124
 msgid "[FILE...]"
@@ -1644,7 +1721,7 @@ msgstr ""
 #: pluma/pluma-io-error-message-area.c:222
 #, c-format
 msgid "pluma cannot handle %s locations."
-msgstr ""
+msgstr "pluma pòt pas gerir los emplaçaments %s"
 
 #: pluma/pluma-io-error-message-area.c:228
 msgid "pluma cannot handle this location."
@@ -1706,6 +1783,7 @@ msgstr "Error inesperada : %s"
 #: pluma/pluma-io-error-message-area.c:407
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
 msgstr ""
+"pluma pòt pas trobar lo fichièr. Benlèu qu'es estat recentament suprimit."
 
 #: pluma/pluma-io-error-message-area.c:417
 #, c-format
@@ -1740,11 +1818,11 @@ msgstr ""
 
 #: pluma/pluma-io-error-message-area.c:602
 msgid "You do not have the permissions necessary to open the file."
-msgstr "Avètz pas los dreits necessaris a la dobertura del fichièr."
+msgstr "Avètz pas los dreches necessaris a la dobertura del fichièr."
 
 #: pluma/pluma-io-error-message-area.c:608
 msgid "pluma has not been able to detect the character encoding."
-msgstr ""
+msgstr "pluma a pas pogut detectar l’encodatge de caractèrs."
 
 #: pluma/pluma-io-error-message-area.c:610
 #: pluma/pluma-io-error-message-area.c:632
@@ -1759,13 +1837,15 @@ msgstr ""
 #: pluma/pluma-io-error-message-area.c:617
 #, c-format
 msgid "There was a problem opening the file %s."
-msgstr "Un problèma s'es produit al moment de la dobertura del fichièr %s."
+msgstr "Un problèma s'es produch al moment de la dobertura del fichièr %s."
 
 #: pluma/pluma-io-error-message-area.c:619
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could make this document useless."
 msgstr ""
+"Lo fichièr qu'avètz dobèrt conten de caractèrs invalids. Se contunhatz de "
+"modificar aqueste fichièr, poiriatz rendre aqueste document inutilisable."
 
 #: pluma/pluma-io-error-message-area.c:622
 msgid "You can also choose another character encoding and try again."
@@ -1806,13 +1886,15 @@ msgstr ""
 #: pluma/pluma-io-error-message-area.c:792
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
-msgstr ""
+msgstr "Aqueste fichièr (%s) es ja dobèrt dins una autra fenèstra de Pluma."
 
 #: pluma/pluma-io-error-message-area.c:806
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr ""
+"pluma a dobèrt aquesta instància del fichièr en mòde non modificable. Lo "
+"volètz modificar malgrat tot ?"
 
 #: pluma/pluma-io-error-message-area.c:865
 #: pluma/pluma-io-error-message-area.c:963
@@ -1840,14 +1922,14 @@ msgstr ""
 #, c-format
 msgid "Could not create a backup file while saving %s"
 msgstr ""
-"Impossible de crear un fichièr de salvament al moment de l'enregistrament de"
-" %s"
+"Impossible de crear un fichièr de salvagarda al moment de l'enregistrament "
+"de %s"
 
 #: pluma/pluma-io-error-message-area.c:993
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
 msgstr ""
-"Impossible de crear un fichièr de salvament temporari al moment de "
+"Impossible de crear un fichièr de salvagarda temporari al moment de "
 "l'enregistrament de %s"
 
 #: pluma/pluma-io-error-message-area.c:1009
@@ -1856,6 +1938,11 @@ msgid ""
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
 msgstr ""
+"pluma a pas pogut far una còpia de seguretat de la version precedenta del "
+"fichièr abans d'enregistrar la novèla. Podètz ignorar aqueste avertiment e "
+"enregistrar lo fichièr malgrat tot, mas se una error se produtz pendent "
+"l'enregistrament, riscatz de pèrdre la version precedenta del fichièr. "
+"Enregistrar ça que la ?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: pluma/pluma-io-error-message-area.c:1069
@@ -1864,12 +1951,16 @@ msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr ""
+"pluma pòt pas prendre en carga d'emplaçaments%s en mòde escritura. "
+"Verificatz que l'emplaçament es estat picat corrèctament e tornatz ensajar."
 
 #: pluma/pluma-io-error-message-area.c:1077
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr ""
+"pluma pòt pas gerir aqueste emplaçament en mòde escritura. Verificatz que "
+"l'emplaçament es estat picat corrèctament e tornatz ensajar."
 
 #: pluma/pluma-io-error-message-area.c:1086
 #, c-format
@@ -1938,7 +2029,7 @@ msgstr "Lo fichièr %s es estat modificat sul disc."
 
 #: pluma/pluma-io-error-message-area.c:1186
 msgid "Do you want to drop your changes and reload the file?"
-msgstr ""
+msgstr "Volètz abandonar vòstras modificacions e tornar cargar lo fichièr ?"
 
 #: pluma/pluma-io-error-message-area.c:1188
 msgid "Do you want to reload the file?"
@@ -2167,7 +2258,7 @@ msgstr "Enregistrament de %s"
 
 #: pluma/pluma-tab.c:1726
 msgid "RO"
-msgstr ""
+msgstr "RO"
 
 #: pluma/pluma-tab.c:1773
 #, c-format
@@ -2262,7 +2353,7 @@ msgstr "Dobrir lo manual de pluma"
 
 #: pluma/pluma-ui.h:69
 msgid "_About"
-msgstr "A _prepaus"
+msgstr "_A prepaus"
 
 #: pluma/pluma-ui.h:70
 msgid "About this application"
@@ -2375,7 +2466,7 @@ msgstr "Tot en _majuscula"
 
 #: pluma/pluma-ui.h:109
 msgid "Change selected text to upper case"
-msgstr ""
+msgstr "Passar lo tèxt seleccionat en majusculas"
 
 #: pluma/pluma-ui.h:110
 msgid "All _Lower Case"
@@ -2383,7 +2474,7 @@ msgstr "Tot en mi_nuscula"
 
 #: pluma/pluma-ui.h:111
 msgid "Change selected text to lower case"
-msgstr ""
+msgstr "Passar lo tèxt seleccionat en minuscula"
 
 #: pluma/pluma-ui.h:112
 msgid "_Invert Case"
@@ -2391,7 +2482,7 @@ msgstr "_Inversar la cassa"
 
 #: pluma/pluma-ui.h:113
 msgid "Invert the case of selected text"
-msgstr ""
+msgstr "Inversar la cassa del tèxt seleccionat"
 
 #: pluma/pluma-ui.h:114
 msgid "_Title Case"
@@ -2399,7 +2490,7 @@ msgstr "Cassa de _títol"
 
 #: pluma/pluma-ui.h:115
 msgid "Capitalize the first letter of each selected word"
-msgstr ""
+msgstr "Passar en majuscula la primièra letra de cada mot seleccionat"
 
 #: pluma/pluma-ui.h:118
 msgid "_Highlight Mode"
@@ -2443,7 +2534,7 @@ msgstr "Es_cafar las susbrilhanças"
 
 #: pluma/pluma-ui.h:130
 msgid "Clear highlighting of search matches"
-msgstr ""
+msgstr "Mesa en evidéncia clara de las correspondéncias de la recèrca"
 
 #: pluma/pluma-ui.h:131
 msgid "Go to _Line..."
@@ -2459,7 +2550,7 @@ msgstr "Recèrca _incrementala..."
 
 #: pluma/pluma-ui.h:134
 msgid "Incrementally search for text"
-msgstr ""
+msgstr "Cercar de tèxt per etapas"
 
 #: pluma/pluma-ui.h:137
 msgid "_Save All"
@@ -2571,7 +2662,7 @@ msgstr "Impossible de trobar l'objècte « %s » dins lo fichièr %s."
 #: pluma/pluma-utils.c:1332
 #, c-format
 msgid "/ on %s"
-msgstr ""
+msgstr "/ sus %s"
 
 #: pluma/pluma-view.c:1525
 msgid "_Wrap Around"
@@ -2590,6 +2681,8 @@ msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
+"_Interpretar las sequéncias d'escapament (ex.\n"
+")"
 
 #: pluma/pluma-view.c:1669
 msgid "String you want to search for"
@@ -2602,7 +2695,7 @@ msgstr "La linha cap a la quala volètz desplaçar lo cursor"
 #: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
-msgstr ""
+msgstr "Utilizar la coloracion sintaxica %s"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
@@ -2616,7 +2709,7 @@ msgstr "Tèxte brut"
 
 #: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
-msgstr ""
+msgstr "Desactivar la coloracion sintaxica"
 
 #. Translators: %s is a URI
 #: pluma/pluma-window.c:1374
@@ -2727,11 +2820,11 @@ msgstr "Executa de comandas extèrnas e d'escripts shell."
 
 #: plugins/externaltools/tools/__init__.py:174
 msgid "Manage _External Tools..."
-msgstr ""
+msgstr "Gestion dels espleches _extèrns..."
 
 #: plugins/externaltools/tools/__init__.py:176
 msgid "Opens the External Tools Manager"
-msgstr ""
+msgstr "Dobrís lo gestionari d’espleches extèrns"
 
 #: plugins/externaltools/tools/__init__.py:180
 msgid "External _Tools"
@@ -2909,7 +3002,7 @@ msgstr "Version"
 
 #: plugins/externaltools/data/build.desktop.in:4
 msgid "Run \"make\" in the document directory"
-msgstr ""
+msgstr "Executar « make » dins lo repertòri del document"
 
 #: plugins/externaltools/data/open-terminal-here.desktop.in:3
 msgid "Open terminal here"
@@ -2963,6 +3056,11 @@ msgid ""
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
 msgstr ""
+"Se definit a « TRUE », l'empeuton del navigador de fichièrs aficharà lo "
+"repertòri del primièr document dobèrt, a condicion que lo navigador de "
+"fichièrs siá pas encara estat utilizat. (Aquò s'aplica doncas generalament a"
+" la dobertura d'un document dempuèi la linha de comanda o en lo dobrissent "
+"amb Caja, etc.)"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:11
 msgid "File Browser Filter Mode"
@@ -3065,38 +3163,38 @@ msgstr "Navigator de fichièrs"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:889
 msgid "An error occurred while creating a new directory"
-msgstr "Una error s'es produita al moment de la creacion d'un repertòri novèl"
+msgstr "Una error s'es producha al moment de la creacion d'un repertòri novèl"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:892
 msgid "An error occurred while creating a new file"
-msgstr "Una error s'es produita al moment de la creacion d'un fichièr novèl"
+msgstr "Una error s'es producha al moment de la creacion d'un fichièr novèl"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:897
 msgid "An error occurred while renaming a file or directory"
 msgstr ""
-"Una error s'es produita al moment del cambiament de nom d'un fichièr o d'un "
+"Una error s'es producha al moment del cambiament de nom d'un fichièr o d'un "
 "repertòri"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:902
 msgid "An error occurred while deleting a file or directory"
 msgstr ""
-"Una error s'es produita al moment de la supression d'un fichièr o d'un "
+"Una error s'es producha al moment de la supression d'un fichièr o d'un "
 "repertòri"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:907
 msgid "An error occurred while opening a directory in the file manager"
 msgstr ""
-"Una error s'es produita al moment de la dobertura d'un repertòri dins lo "
+"Una error s'es producha al moment de la dobertura d'un repertòri dins lo "
 "gestionari de fichièrs"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:911
 msgid "An error occurred while setting a root directory"
 msgstr ""
-"Una error s'es produita al moment del parametratge d'un repertòri raiç"
+"Una error s'es producha al moment del parametratge d'un repertòri raiç"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:915
 msgid "An error occurred while loading a directory"
-msgstr "Una error s'es produita al moment del cargament d'un repertòri"
+msgstr "Una error s'es producha al moment del cargament d'un repertòri"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:918
 msgid "An error occurred"
@@ -3127,7 +3225,7 @@ msgstr "Volètz vertadièrament suprimir per totjorn « %s » ?"
 #: plugins/filebrowser/pluma-file-browser-plugin.c:1183
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr ""
-"Sètz segur que volètz suprimir definitivament los fichièrs seleccionats ?"
+"Volètz vertadièrament suprimir definitivament los fichièrs seleccionats ?"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:1186
 msgid "If you delete an item, it is permanently lost."
@@ -3170,7 +3268,7 @@ msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr ""
-"Lo dorsièr novèl es actualament filtrat. Ajustatz los paramètres de vòstre "
+"Lo dossièr novèl es actualament filtrat. Ajustatz los paramètres de vòstre "
 "filtre per rendre lo fichièr visible"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:704
@@ -3187,11 +3285,11 @@ msgstr "Desplaçar dins l' _escobilhièr"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:791
 msgid "Move selected file or folder to trash"
-msgstr "Met lo fichièr o lo dorsièr seleccionat a l'escobilhièr"
+msgstr "Met lo fichièr o lo dossièr seleccionat a l'escobilhièr"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:794
 msgid "Delete selected file or folder"
-msgstr "Suprimís lo fichièr o lo dorsièr seleccionat"
+msgstr "Suprimís lo fichièr o lo dossièr seleccionat"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "Open selected file"
@@ -3227,7 +3325,7 @@ msgstr "_Renommar"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:823
 msgid "Rename selected file or folder"
-msgstr "Renomena lo fichièr o lo dorsièr seleccionat"
+msgstr "Renomenar lo fichièr o lo dossièr seleccionat"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:829
 msgid "_Previous Location"
@@ -3348,7 +3446,7 @@ msgstr "C_oloracion de la comanda :"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
-msgstr ""
+msgstr "Utilizar la polissa de chassa fixa del sistèma"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
@@ -3365,7 +3463,7 @@ msgstr "Dobertura rapida"
 
 #: plugins/quickopen/quickopen/windowhelper.py:67
 msgid "Quickly open documents"
-msgstr ""
+msgstr "Dorbir rapidament de documents"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in.in:7
 msgid "Quickly open files"
@@ -3376,7 +3474,7 @@ msgstr "Dobrís rapidament de fichièrs"
 #: plugins/snippets/snippets/Document.py:190
 #: plugins/snippets/snippets/Document.py:619
 msgid "Snippets"
-msgstr "Extraits de còdi"
+msgstr "Extraches de còdi"
 
 #: plugins/snippets/snippets.plugin.desktop.in.in:7
 msgid "Insert often-used pieces of text in a fast way"
@@ -3384,15 +3482,15 @@ msgstr "Inserís de fragments de còdi sovent utilizats de faiçon rapida"
 
 #: plugins/snippets/snippets/snippets.ui:40
 msgid "Snippets Manager"
-msgstr ""
+msgstr "Gestionari d’extraches de tèxt"
 
 #: plugins/snippets/snippets/snippets.ui:144
 msgid "_Snippets:"
-msgstr ""
+msgstr "_Extraches :"
 
 #: plugins/snippets/snippets/snippets.ui:165
 msgid "Create new snippet"
-msgstr "Crèa un novèl extrait de còdi"
+msgstr "Crear un novèl extrach de còdi"
 
 #: plugins/snippets/snippets/snippets.ui:186
 #: plugins/snippets/snippets/Manager.py:793
@@ -3438,11 +3536,11 @@ msgstr ""
 
 #: plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage _Snippets..."
-msgstr ""
+msgstr "Gestion dels _extraches..."
 
 #: plugins/snippets/snippets/WindowHelper.py:74
 msgid "Manage snippets"
-msgstr ""
+msgstr "Gestion dels extraches"
 
 #: plugins/snippets/snippets/Manager.py:42
 msgid "Snippets archive"
@@ -3450,7 +3548,7 @@ msgstr "Archiu dels fragments de còdi"
 
 #: plugins/snippets/snippets/Manager.py:67
 msgid "Add a new snippet..."
-msgstr ""
+msgstr "Apondre un extrach novèl..."
 
 #: plugins/snippets/snippets/Manager.py:118
 msgid "Global"
@@ -3469,7 +3567,7 @@ msgstr ""
 #: plugins/snippets/snippets/Manager.py:772
 #, python-format
 msgid "The following error occurred while importing: %s"
-msgstr "L'error seguenta s'es produita al moment de l'importacion : %s"
+msgstr "L'error seguenta s'es producha al moment de l'importacion : %s"
 
 #: plugins/snippets/snippets/Manager.py:779
 msgid "Import successfully completed"
@@ -3495,7 +3593,7 @@ msgstr "Archiu compressat Bzip2"
 
 #: plugins/snippets/snippets/Manager.py:802
 msgid "Single snippets file"
-msgstr "Fichièr d'extrait de còdi unique"
+msgstr "Fichièr d'extrach de còdi unic"
 
 #: plugins/snippets/snippets/Manager.py:803
 #: plugins/snippets/snippets/Manager.py:890
@@ -3506,7 +3604,7 @@ msgstr "Totes los fichièrs"
 #: plugins/snippets/snippets/Manager.py:815
 #, python-format
 msgid "The following error occurred while exporting: %s"
-msgstr "L'error seguenta s'es produita al moment de l'exportacion : %s"
+msgstr "L'error seguenta s'es producha al moment de l'exportacion : %s"
 
 #: plugins/snippets/snippets/Manager.py:819
 msgid "Export successfully completed"
@@ -3522,7 +3620,7 @@ msgstr ""
 #: plugins/snippets/snippets/Manager.py:874
 #: plugins/snippets/snippets/Manager.py:946
 msgid "There are no snippets selected to be exported"
-msgstr "Cap d'extrait de còdi es pas estat seleccionat per l'exportacion"
+msgstr "Cap d'extrach de còdi es pas estat seleccionat per l'exportacion"
 
 #: plugins/snippets/snippets/Manager.py:879
 #: plugins/snippets/snippets/Manager.py:918
@@ -3636,7 +3734,7 @@ msgstr "_Començar a la colomna :"
 
 #: plugins/spell/org.mate.pluma.plugins.spell.gschema.xml.in:11
 msgid "Autocheck Type"
-msgstr ""
+msgstr "Tipe de verificacion auto"
 
 #. Translators: Displayed in the "Check Spelling" dialog if there are no
 #. suggestions for the current misspelled word
@@ -4496,7 +4594,7 @@ msgstr "Tèxte en lectura sola e senhal"
 
 #: plugins/taglist/HTML.tags.xml.in:821
 msgid "Reduced spacing (deprecated)"
-msgstr "Espaçament reduit (desconselhat)"
+msgstr "Espaçament reduch (desconselhat)"
 
 #: plugins/taglist/HTML.tags.xml.in:825 plugins/taglist/HTML.tags.xml.in:1958
 msgid "Reverse link"
@@ -4508,7 +4606,7 @@ msgstr "Linhas"
 
 #: plugins/taglist/HTML.tags.xml.in:835 plugins/taglist/HTML.tags.xml.in:1970
 msgid "Rulings between rows and columns"
-msgstr "Largor de trait entre las linhas e las colomnas"
+msgstr "Largor de trach entre las linhas e las colomnas"
 
 #: plugins/taglist/HTML.tags.xml.in:840 plugins/taglist/HTML.tags.xml.in:1974
 msgid "Sample program output, scripts"
@@ -4544,7 +4642,7 @@ msgstr "Mapa imatge costat servidor"
 
 #: plugins/taglist/HTML.tags.xml.in:880 plugins/taglist/HTML.tags.xml.in:2008
 msgid "Shape"
-msgstr "Forma"
+msgstr "Fòrma"
 
 #: plugins/taglist/HTML.tags.xml.in:885 plugins/taglist/HTML.tags.xml.in:2012
 msgid "Short inline quotation"
@@ -4913,7 +5011,7 @@ msgstr "Airal"
 
 #: plugins/taglist/HTML.tags.xml.in:1954
 msgid "Reduced spacing"
-msgstr "Espaçament reduit"
+msgstr "Espaçament reduch"
 
 #: plugins/taglist/HTML.tags.xml.in:1962
 msgid "Root"
@@ -5029,11 +5127,11 @@ msgstr ""
 
 #: plugins/taglist/HTML.tags.xml.in:2307
 msgid "&lt;"
-msgstr ""
+msgstr "&lt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2311
 msgid "&gt;"
-msgstr ""
+msgstr "&gt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2315
 msgid "±"
@@ -5121,7 +5219,7 @@ msgstr "½"
 
 #: plugins/taglist/HTML.tags.xml.in:2399
 msgid "¾"
-msgstr ""
+msgstr "¾"
 
 #: plugins/taglist/HTML.tags.xml.in:2403
 msgid "¹"
@@ -6242,7 +6340,7 @@ msgstr ""
 
 #: plugins/taglist/XUL.tags.xml.in:249
 msgid "preference"
-msgstr ""
+msgstr "preferéncia"
 
 #: plugins/taglist/XUL.tags.xml.in:254
 msgid "preferences"
@@ -6474,7 +6572,7 @@ msgstr ""
 
 #: plugins/time/org.mate.pluma.plugins.time.gschema.xml.in:12
 msgid "Prompt type"
-msgstr ""
+msgstr "Tipe de convit"
 
 #: plugins/time/org.mate.pluma.plugins.time.gschema.xml.in:16
 msgid "Selected format"
@@ -6490,7 +6588,7 @@ msgstr "In_serir la data e l'ora..."
 
 #: plugins/time/pluma-time-plugin.c:186
 msgid "Insert current date and time at the cursor position"
-msgstr ""
+msgstr "Inserir la data e l’ora correnta a la posicion del cursor"
 
 #: plugins/time/pluma-time-plugin.c:547
 msgid "Available formats"
@@ -6506,11 +6604,11 @@ msgstr "Inserís la data e l'ora actuala a l'emplaçament del cursor."
 
 #: plugins/trailsave/trailsave.plugin.desktop.in.in:5
 msgid "Save Without Trailing Spaces"
-msgstr ""
+msgstr "Enregistrar sens espaci final"
 
 #: plugins/trailsave/trailsave.plugin.desktop.in.in:6
 msgid "Removes trailing spaces from lines before saving."
-msgstr ""
+msgstr "Tira los espacis finals de las linhas abans d'enregistrar."
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"
