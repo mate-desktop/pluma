@@ -121,6 +121,9 @@ struct _PlumaPreferencesDialogPrivate
 	GtkWidget	*auto_save_checkbutton;
 	GtkWidget	*auto_save_spinbutton;
 
+	/* File Format */
+	GtkWidget	*hide_trailing_newline_checkbutton;
+
 	/* Line numbers */
 	GtkWidget	*display_line_numbers_checkbutton;
 
@@ -353,6 +356,11 @@ setup_editor_page (PlumaPreferencesDialog *dlg)
 			 dlg->priv->auto_save_spinbutton,
 			 "value",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET | G_SETTINGS_BIND_NO_SENSITIVITY);
+	g_settings_bind (dlg->priv->editor_settings,
+			 PLUMA_SETTINGS_HIDE_TRAILING_NEWLINE,
+			 dlg->priv->hide_trailing_newline_checkbutton,
+			 "active",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 	g_settings_bind (dlg->priv->editor_settings,
 			 PLUMA_SETTINGS_DRAWER_NEWLINE,
 			 dlg->priv->draw_newlines_checkbutton,
@@ -1275,6 +1283,8 @@ pluma_preferences_dialog_init (PlumaPreferencesDialog *dlg)
 		"backup_copy_checkbutton", &dlg->priv->backup_copy_checkbutton,
 		"auto_save_checkbutton", &dlg->priv->auto_save_checkbutton,
 		"auto_save_spinbutton", &dlg->priv->auto_save_spinbutton,
+
+		"hide_trailing_newline_checkbutton", &dlg->priv->hide_trailing_newline_checkbutton,
 
 		"default_font_checkbutton", &dlg->priv->default_font_checkbutton,
 		"font_button", &dlg->priv->font_button,
