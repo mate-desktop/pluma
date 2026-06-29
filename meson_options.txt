@@ -1,0 +1,20 @@
+option('gvfs-metadata',
+  type: 'boolean',
+  value: true,
+  description: 'Use GVfs to store metadata',
+)
+option('spell',
+  type: 'boolean',
+  value: true,
+  description: 'Enable spell check plugin (requires enchant and iso-codes)',
+)
+option('tests',
+  type: 'boolean',
+  value: true,
+  description: 'Build tests',
+)
+option('introspection',
+  type: 'feature',
+  value: 'auto',
+  description: 'Enable GObject introspection',
+)
