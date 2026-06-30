@@ -1,9 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the pluma package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Andrew Sboev <sboevandrew@gmail.com>, 2018
 # Martin Wimpress <code@flexion.org>, 2018
 # Andreï Victorovitch Kostyrka, 2018
@@ -24,20 +21,27 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Arbo_Leet <koshelkov.peter@gmail.com>, 2022
 # Andrei Stepanov, 2023
-# 
+# "Sergey A." <Ser82-png@yandex.ru>, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
-"PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Andrei Stepanov, 2023\n"
-"Language-Team: Russian (https://app.transifex.com/mate/teams/13566/ru/)\n"
+"PO-Revision-Date: 2026-06-27 11:17+0000\n"
+"Last-Translator: \"Sergey A.\" <Ser82-png@yandex.ru>\n"
+"Language-Team: Russian <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/pluma/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
@@ -1233,7 +1237,7 @@ msgstr "_Искать: "
 
 #: pluma/dialogs/pluma-search-dialog.ui:158
 msgid "Replace _with: "
-msgstr "З_аменить на:"
+msgstr "З_аменить на: "
 
 #: pluma/dialogs/pluma-search-dialog.ui:181
 msgid "_Match case"
@@ -1312,16 +1316,16 @@ msgstr ""
 #: pluma/pluma-commands-file.c:251
 #, c-format
 msgid "Loading file '%s'…"
-msgstr "Загружается файл «%s»..."
+msgstr "Загружается файл «%s»…"
 
 #: pluma/pluma-commands-file.c:260
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "Загружается %d файл..."
-msgstr[1] "Загружается %d файла..."
-msgstr[2] "Загружается %d файлов..."
-msgstr[3] "Загружается %d файл..."
+msgstr[0] "Загружается %d файл…"
+msgstr[1] "Загружается %d файла…"
+msgstr[2] "Загружается %d файлов…"
+msgstr[3] "Загружается %d файл…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:462
@@ -1340,7 +1344,7 @@ msgstr "Попробовать заменить его тем, который в
 #: pluma/pluma-commands-file.c:648 pluma/pluma-commands-file.c:871
 #, c-format
 msgid "Saving file '%s'…"
-msgstr "Сохраняется файл «%s»..."
+msgstr "Сохраняется файл «%s»…"
 
 #: pluma/pluma-commands-file.c:756
 msgid "Save As…"
@@ -1349,7 +1353,7 @@ msgstr "Сохранить как…"
 #: pluma/pluma-commands-file.c:1085
 #, c-format
 msgid "Reverting the document '%s'…"
-msgstr "Восстанавливается документ «%s»..."
+msgstr "Восстанавливается документ «%s»…"
 
 #: pluma/pluma-commands-file.c:1130
 #, c-format
@@ -1573,6 +1577,7 @@ msgstr ""
 "Влад Орлов <monsta@inbox.ru>\n"
 "Глеб Мехренин <mehrenin@gmail.com>\n"
 "Денис Арефьев <arefevdns@mail.ru>\n"
+"Дмитрий Астанков <mornie@basealt.ru>\n"
 "Дмитрий Мандрык <dmandryk@gmail.com>\n"
 "Дмитрий Мастрюков <dmitry@taurussoft.org>\n"
 "Дмитрий Михирев <mikhirev@gmail.com>\n"
@@ -1586,7 +1591,8 @@ msgstr ""
 "Сергей Панов <sipan@mit.edu>\n"
 "Сергей Яковлев\n"
 "Юрий Козлов <yuray@komyakino.ru>\n"
-"Evolve32 <evolve32@ya.ru> Олеся Герасименко <gammaray@basealt.ru>"
+"Evolve32 <evolve32@ya.ru>\n"
+"Артём Котлубай <artemkotlubai@yandex.ru>"
 
 #: pluma/pluma-commands-search.c:113
 #, c-format
@@ -2001,13 +2007,12 @@ msgstr ""
 #: pluma/pluma-io-error-message-area.c:990
 #, c-format
 msgid "Could not create a backup file while saving %s"
-msgstr "Не удалось создать резервную копию файла при сохранении «%s»."
+msgstr "Не удалось создать резервную копию файла при сохранении «%s»"
 
 #: pluma/pluma-io-error-message-area.c:993
 #, c-format
 msgid "Could not create a temporary backup file while saving %s"
-msgstr ""
-"Не удалось создать временную резервную копию файла при сохранении «%s»."
+msgstr "Не удалось создать временную резервную копию файла при сохранении «%s»"
 
 #: pluma/pluma-io-error-message-area.c:1009
 msgid ""
@@ -3278,11 +3283,11 @@ msgstr ""
 #: plugins/filebrowser/pluma-file-browser-plugin.c:1149
 #, c-format
 msgid "The file \"%s\" cannot be moved to the trash."
-msgstr "Не удаётся переместить в корзину файл «%s»"
+msgstr "Не удаётся переместить в корзину файл «%s»."
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:1152
 msgid "The selected files cannot be moved to the trash."
-msgstr "Невозможно переместить в корзину выбранные файлы"
+msgstr "Невозможно переместить в корзину выбранные файлы."
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:1180
 #, c-format
@@ -3598,7 +3603,7 @@ msgstr "_Переключатель:"
 msgid "Single word the snippet is activated with after pressing Tab"
 msgstr ""
 "Слово, которое используется для вставки фрагмента текста. Фрагмент "
-"вставляется, если после слова нажать Tab."
+"вставляется, если после слова нажать Tab"
 
 #: plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage _Snippets..."
@@ -4204,7 +4209,7 @@ msgstr "Направленность (устаревший)"
 
 #: plugins/taglist/HTML.tags.xml.in:239 plugins/taglist/HTML.tags.xml.in:1355
 msgid "Disabled"
-msgstr "Выключен"
+msgstr "Отключён"
 
 #: plugins/taglist/HTML.tags.xml.in:243 plugins/taglist/HTML.tags.xml.in:1359
 msgid "DIV container"
@@ -5872,7 +5877,7 @@ msgstr "apply-imports"
 
 #: plugins/taglist/XSLT.tags.xml.in:12
 msgid "apply-templates"
-msgstr "apply-templates"
+msgstr "применить-шаблоны"
 
 #: plugins/taglist/XSLT.tags.xml.in:16 plugins/taglist/XSLT.tags.xml.in:303
 msgid "attribute"
@@ -5880,7 +5885,7 @@ msgstr "атрибут"
 
 #: plugins/taglist/XSLT.tags.xml.in:20
 msgid "attribute-set"
-msgstr "attribute-set"
+msgstr "набор-атрибутов"
 
 #: plugins/taglist/XSLT.tags.xml.in:24
 msgid "call-template"
@@ -5888,15 +5893,15 @@ msgstr "call-template"
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"
-msgstr "choose"
+msgstr "выбрать"
 
 #: plugins/taglist/XSLT.tags.xml.in:32 plugins/taglist/XSLT.tags.xml.in:150
 msgid "comment"
-msgstr "comment"
+msgstr ""
 
 #: plugins/taglist/XSLT.tags.xml.in:36
 msgid "copy"
-msgstr "copy"
+msgstr "копировать"
 
 #: plugins/taglist/XSLT.tags.xml.in:39
 msgid "copy-of"
@@ -5908,7 +5913,7 @@ msgstr "decimal-format"
 
 #: plugins/taglist/XSLT.tags.xml.in:46
 msgid "element"
-msgstr "element"
+msgstr "элемент"
 
 #: plugins/taglist/XSLT.tags.xml.in:50
 msgid "fallback"
