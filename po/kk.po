@@ -1,26 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the pluma package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Martin Wimpress <code@flexion.org>, 2018
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2021
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2021, 2026.
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# 
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
-"PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
-"Language-Team: Kazakh (https://app.transifex.com/mate/teams/13566/kk/)\n"
+"PO-Revision-Date: 2026-08-24 11:18+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/pluma/kk/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: kk\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
@@ -33,6 +34,10 @@ msgid ""
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
 msgstr ""
+"Мәтінді өңдеу үшін pluma бағдарламасына тән қаріптің орнына жүйенің үнсіз "
+"келісім бойынша ені бекітілген қарпін пайдалану керек пе. Егер бұл опция "
+"сөндірулі болса, жүйелік қаріптің орнына «Түзеткіш қарібі» опциясында "
+"көрсетілген қаріп қолданылады."
 
 #: data/org.mate.pluma.gschema.xml.in:19
 msgctxt "editor-font"
@@ -48,24 +53,28 @@ msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the \"Use Default Font\" option is turned off."
 msgstr ""
+"Өңдеу аймағы үшін қолданылатын пайдаланушылық қаріп. Бұл «Үнсіз келісім "
+"қарпін пайдалану» опциясы сөндірулі болған кезде ғана іске асады."
 
 #: data/org.mate.pluma.gschema.xml.in:25
 msgid "Switch tabs with [ctrl] + [tab]"
-msgstr ""
+msgstr "[ctrl] + [tab] пернелерімен беттер арасында ауысу"
 
 #: data/org.mate.pluma.gschema.xml.in:26
 msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
 msgstr ""
+"Егер ақиқат болса, ол [ctrl + tab] және [ctrl + shift + tab] пернелері "
+"арқылы беттер арасында ауысу мүмкіндігін іске қосады."
 
 #: data/org.mate.pluma.gschema.xml.in:30
 msgid "Show the first tab if there is only one tab"
-msgstr ""
+msgstr "Жалғыз бет болса да бірінші бетті көрсету"
 
 #: data/org.mate.pluma.gschema.xml.in:31
 msgid "If false, it hides the first tab if there is only one tab."
-msgstr ""
+msgstr "Егер жалған болса, жалғыз бет болған кезде бірінші бет жасырылады."
 
 #: data/org.mate.pluma.gschema.xml.in:35
 msgid "Style Scheme"
@@ -73,7 +82,7 @@ msgstr "Стильдер схемасы"
 
 #: data/org.mate.pluma.gschema.xml.in:36
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
-msgstr ""
+msgstr "Мәтінді бояу үшін қолданылатын GtkSourceView стиль сұлбасының ID-і."
 
 #: data/org.mate.pluma.gschema.xml.in:40
 msgid "Create Backup Copies"
@@ -84,6 +93,9 @@ msgid ""
 "Whether pluma should create backup copies for the files it saves. You can "
 "set the backup file extension with the \"Backup Copy Extension\" option."
 msgstr ""
+"Pluma сақтайтын файлдардың сақтық көшірмелерін жасауы керек пе. Сақтық "
+"көшірме файлының кеңейтілуін «Сақтық көшірме кеңейтілуі» опциясы арқылы "
+"орнатуға болады."
 
 #: data/org.mate.pluma.gschema.xml.in:45
 msgid "Autosave"
@@ -95,6 +107,9 @@ msgid ""
 "interval. You can set the time interval with the \"Autosave Interval\" "
 "option."
 msgstr ""
+"Pluma белгілі бір уақыт аралығынан кейін өзгертілген файлдарды автоматты "
+"түрде сақтауы керек пе. Уақыт аралығын «Автосақтау аралығы» опциясы арқылы "
+"орнатуға болады."
 
 #: data/org.mate.pluma.gschema.xml.in:50
 msgid "Autosave Interval"
@@ -105,24 +120,28 @@ msgid ""
 "Number of minutes after which pluma will automatically save modified files. "
 "This will only take effect if the \"Autosave\" option is turned on."
 msgstr ""
+"Pluma өзгертілген файлдарды автоматты түрде сақтайтын уақыт (минутпен). Бұл «"
+"Автосақтау» опциясы қосулы болғанда ғана іске асады."
 
 #: data/org.mate.pluma.gschema.xml.in:55
 msgid "Show save confirmation"
-msgstr ""
+msgstr "Сақтауды растауды көрсету"
 
 #: data/org.mate.pluma.gschema.xml.in:56
 msgid "Show save confirmation if the files have changes."
-msgstr ""
+msgstr "Файлдарда өзгерістер болса, сақтауды растауды көрсету."
 
 #: data/org.mate.pluma.gschema.xml.in:60
 msgid "Writable VFS schemes"
-msgstr ""
+msgstr "Жазуға болатын VFS сұлбалары"
 
 #: data/org.mate.pluma.gschema.xml.in:61
 msgid ""
 "List of VFS schemes pluma supports in write mode. The 'file' scheme is "
 "writable by default."
 msgstr ""
+"Pluma жазу режимінде қолдайтын VFS сұлбаларының тізімі. 'file' сұлбасына "
+"үнсіз келісім бойынша жазуға болады."
 
 #: data/org.mate.pluma.gschema.xml.in:65
 msgid "Maximum Number of Undo Actions"
@@ -133,6 +152,8 @@ msgid ""
 "Maximum number of actions that pluma will be able to undo or redo. Use "
 "\"-1\" for unlimited number of actions."
 msgstr ""
+"Pluma болдырмайтын немесе қайталай алатын әрекеттердің максималды саны. "
+"Әрекеттер саны шексіз болуы үшін «-1» мәнін қолданыңыз."
 
 #: data/org.mate.pluma.gschema.xml.in:70
 msgid "Line Wrapping Mode"
@@ -146,6 +167,11 @@ msgid ""
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
 msgstr ""
+"Өңдеу аймағында ұзын жолдарды қалай тасымалдау керектігін көрсетеді. "
+"Тасымалдауды өшіру үшін «GTK_WRAP_NONE», сөз шекарасында тасымалдау үшін «"
+"GTK_WRAP_WORD» және жеке таңба шекарасында тасымалдау үшін «GTK_WRAP_CHAR» "
+"мәндерін қолданыңыз. Мәндер регистрді ескеретінін ескеріңіз, сондықтан олар "
+"осында көрсетілгендей енгізілуі керек."
 
 #: data/org.mate.pluma.gschema.xml.in:75
 msgid "Tab Size"
@@ -155,7 +181,7 @@ msgstr "Табуляция өлшемі"
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
-msgstr ""
+msgstr "Tab таңбаларының орнына көрсетілетін бос орындар санын көрсетеді."
 
 #: data/org.mate.pluma.gschema.xml.in:80
 msgid "Insert spaces"
@@ -196,6 +222,7 @@ msgstr "Сәйкес жақшаны түспен ерекшелеу"
 #: data/org.mate.pluma.gschema.xml.in:101
 msgid "Whether pluma should highlight the bracket matching the selected one."
 msgstr ""
+"Pluma таңдалған жақшаға сәйкес келетін жақшаны түспен ерекшелеуі керек пе."
 
 #: data/org.mate.pluma.gschema.xml.in:105
 msgid "Display Right Margin"
@@ -215,19 +242,19 @@ msgstr "Оң жақ шет өрісінің орнын көрсетеді."
 
 #: data/org.mate.pluma.gschema.xml.in:115
 msgid "Document background pattern type"
-msgstr ""
+msgstr "Құжат фоны өрнегінің түрі"
 
 #: data/org.mate.pluma.gschema.xml.in:116
 msgid "Whether the document will get a background pattern painted."
-msgstr ""
+msgstr "Құжатқа фондық өрнек салына ма."
 
 #: data/org.mate.pluma.gschema.xml.in:120
 msgid "Display Overview Map"
-msgstr ""
+msgstr "Шолу картасын көрсету"
 
 #: data/org.mate.pluma.gschema.xml.in:121
 msgid "Whether pluma should display the overview map for the document."
-msgstr ""
+msgstr "Pluma құжаттың шолу картасын көрсетуі керек пе."
 
 #: data/org.mate.pluma.gschema.xml.in:125
 msgid "Smart Home End"
@@ -243,6 +270,13 @@ msgid ""
 "the start/end of the line and \"ALWAYS\" to always move to the start/end of "
 "the text instead of the start/end of the line."
 msgstr ""
+"HOME және END пернелері басылған кезде курсордың қалай жылжитынын көрсетеді. "
+"Әрқашан жолдың басына/соңына жылжу үшін «DISABLED», пернелер бірінші рет "
+"басылғанда жолдың басына/соңына және екінші рет басылғанда бос орындарды "
+"елемей мәтіннің басына/соңына жылжу үшін «AFTER», жолдың басына/соңына жылжу "
+"алдында мәтіннің басына/соңына жылжу үшін «BEFORE» және жолдың басына/соңына "
+"жылжу орнына әрқашан мәтіннің басына/соңына жылжу үшін «ALWAYS» мәнін "
+"қолданыңыз."
 
 #: data/org.mate.pluma.gschema.xml.in:130
 msgid "Restore Previous Cursor Position"
@@ -284,7 +318,7 @@ msgstr "Түзету терезесінде саймандар панелі кө
 
 #: data/org.mate.pluma.gschema.xml.in:150
 msgid "Toolbar Buttons Style"
-msgstr ""
+msgstr "Саймандар панелі батырмаларының стилі"
 
 #: data/org.mate.pluma.gschema.xml.in:151
 msgid ""
@@ -295,6 +329,12 @@ msgid ""
 " Note that the values are case-sensitive, so make sure they appear exactly "
 "as mentioned here."
 msgstr ""
+"Саймандар панелінің батырмалары үшін стиль. Мүмкін мәндер: жүйенің бастапқы "
+"стилін қолдану үшін «PLUMA_TOOLBAR_SYSTEM», тек таңбашаларды көрсету үшін «"
+"PLUMA_TOOLBAR_ICONS», таңбашалар мен мәтінді бірге көрсету үшін «"
+"PLUMA_TOOLBAR_ICONS_AND_TEXT» және таңбашалардың қасында басымдықты мәтінді "
+"көрсету үшін «PLUMA_TOOLBAR_ICONS_BOTH_HORIZ». Мәндер регистрді ескеретінін "
+"ескеріңіз, сондықтан олар осында көрсетілгендей енгізілуі керек."
 
 #: data/org.mate.pluma.gschema.xml.in:155
 msgid "Status Bar is Visible"
@@ -307,25 +347,27 @@ msgstr "Түзету терезесінің астында қалып-күй ж�
 
 #: data/org.mate.pluma.gschema.xml.in:160
 msgid "Side Pane is Visible"
-msgstr ""
+msgstr "Бүйір панелі көрінеді"
 
 #: data/org.mate.pluma.gschema.xml.in:161
 msgid ""
 "Whether the side pane at the left of editing windows should be visible."
-msgstr ""
+msgstr "Өңдеу терезелерінің сол жағындағы бүйір панелі көрінуі керек пе."
 
 #: data/org.mate.pluma.gschema.xml.in:165
 msgid "Show tabs with side pane"
-msgstr ""
+msgstr "Беттерді бүйір панелімен бірге көрсету"
 
 #: data/org.mate.pluma.gschema.xml.in:166
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
+"Егер жалған болса, бүйір панелі белсенді болған кезде pluma панельде "
+"беттерді көрсетпейді."
 
 #: data/org.mate.pluma.gschema.xml.in:170
 msgid "Bottom Panel is Visible"
-msgstr ""
+msgstr "Төменгі панель көрінеді"
 
 #: data/org.mate.pluma.gschema.xml.in:171
 msgid ""
@@ -341,6 +383,8 @@ msgid ""
 "Specifies the maximum number of recently opened files that will be displayed"
 " in the \"Recent Files\" submenu."
 msgstr ""
+"«Жуырдағы файлдар» ішкі мәзірінде көрсетілетін жуырда ашылған файлдардың "
+"максималды санын көрсетеді."
 
 #: data/org.mate.pluma.gschema.xml.in:180
 msgid "Print Syntax Highlighting"
@@ -366,7 +410,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:190
 msgid "Printing Line Wrapping Mode"
-msgstr ""
+msgstr "Басып шығарудың жолдарды тасымалдау режимі"
 
 #: data/org.mate.pluma.gschema.xml.in:191
 msgid ""
@@ -376,6 +420,11 @@ msgid ""
 " the values are case-sensitive, so make sure they appear exactly as "
 "mentioned here."
 msgstr ""
+"Басып шығару кезінде ұзын жолдарды қалай тасымалдау керектігін көрсетеді. "
+"Тасымалдауды өшіру үшін «GTK_WRAP_NONE», сөз шекарасында тасымалдау үшін «"
+"GTK_WRAP_WORD» және жеке таңба шекарасында тасымалдау үшін «GTK_WRAP_CHAR» "
+"мәндерін қолданыңыз. Мәндер регистрді ескеретінін ескеріңіз, сондықтан олар "
+"осында көрсетілгендей енгізілуі керек."
 
 #: data/org.mate.pluma.gschema.xml.in:195
 msgid "Print Line Numbers"
@@ -387,6 +436,9 @@ msgid ""
 "document. Otherwise, pluma will print line numbers every such number of "
 "lines."
 msgstr ""
+"Егер бұл мән 0 болса, құжатты басып шығару кезінде жол нөмірлері "
+"кірістірілмейді. Әйтпесе, pluma жол нөмірлерін осы көрсетілген жолдар саны "
+"сайын басып шығарады."
 
 #: data/org.mate.pluma.gschema.xml.in:199
 msgctxt "print-font-body-pango"
@@ -401,6 +453,8 @@ msgstr "Баспаға шығару үшін құжат қарібі"
 msgid ""
 "Specifies the font to use for a document's body when printing documents."
 msgstr ""
+"Құжаттарды басып шығару кезінде құжаттың негізгі мәтіні үшін қолданылатын "
+"қаріпті көрсетеді."
 
 #: data/org.mate.pluma.gschema.xml.in:204
 msgctxt "print-font-header-pango"
@@ -416,6 +470,9 @@ msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the \"Print Header\" option is turned on."
 msgstr ""
+"Құжатты басып шығару кезінде беттің жоғарғы колонтитулдары үшін қолданылатын "
+"қаріпті көрсетеді. Бұл «Жоғарғы колонтитулды басып шығару» опциясы қосулы "
+"болғанда ғана іске асады."
 
 #: data/org.mate.pluma.gschema.xml.in:209
 msgctxt "print-font-numbers-pango"
@@ -431,11 +488,13 @@ msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the \"Print Line Numbers\" option is non-zero."
 msgstr ""
+"Басып шығару кезінде жол нөмірлері үшін қолданылатын қаріпті көрсетеді. Бұл «"
+"Жол нөмірлерін басып шығару» опциясы нөл емес болғанда ғана іске асады."
 
 #: data/org.mate.pluma.gschema.xml.in:214
 msgctxt "auto-detected"
 msgid "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
-msgstr ""
+msgstr "[ 'UTF-8', 'GBK', 'CURRENT', 'ISO-8859-15', 'UTF-16' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:215
 msgid "Automatically Detected Encodings"
@@ -447,11 +506,14 @@ msgid ""
 "encoding of a file. \"CURRENT\" represents the current locale encoding. Only"
 " recognized encodings are used."
 msgstr ""
+"Файл кодтауын автоматты түрде анықтау үшін pluma қолданатын кодтаулардың "
+"сұрыпталған тізімі. «CURRENT» ағымдағы локаль кодтауын білдіреді. Тек "
+"танылған кодтаулар қолданылады."
 
 #: data/org.mate.pluma.gschema.xml.in:219
 msgctxt "shown-in-menu"
 msgid "[ 'ISO-8859-15' ]"
-msgstr ""
+msgstr "[ 'ISO-8859-15' ]"
 
 #: data/org.mate.pluma.gschema.xml.in:220
 msgid "Encodings shown in menu"
@@ -462,22 +524,24 @@ msgid ""
 "List of encodings shown in the Character Encoding menu in open/save file "
 "selector. Only recognized encodings are used."
 msgstr ""
+"Файлды ашу/сақтау сұхбат терезесіндегі Таңбалар кодтауы мәзірінде "
+"көрсетілетін кодтаулар тізімі. Тек танылған кодтаулар қолданылады."
 
 #: data/org.mate.pluma.gschema.xml.in:225
 msgid "History for \"search for\" entries"
-msgstr ""
+msgstr "«Іздеу» жазбаларының тарихы"
 
 #: data/org.mate.pluma.gschema.xml.in:226
 msgid "List of entries in \"search for\" textbox."
-msgstr ""
+msgstr "«Іздеу» мәтіндік өрісіндегі жазбалар тізімі."
 
 #: data/org.mate.pluma.gschema.xml.in:230
 msgid "History for \"replace with\" entries"
-msgstr ""
+msgstr "«Алмастыру» жазбаларының тарихы"
 
 #: data/org.mate.pluma.gschema.xml.in:231
 msgid "List of entries in \"replace with\" textbox."
-msgstr ""
+msgstr "«Алмастыру» мәтіндік өрісіндегі жазбалар тізімі."
 
 #: data/org.mate.pluma.gschema.xml.in:235
 msgid "Active plugins"
@@ -493,15 +557,15 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:240
 msgid "Show newline"
-msgstr ""
+msgstr "Жаңа жолды көрсету"
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Whether pluma should show newlines in the editor window."
-msgstr ""
+msgstr "Pluma өңдегіш терезесінде жаңа жол таңбаларын көрсетуі керек пе."
 
 #: data/org.mate.pluma.gschema.xml.in:245
 msgid "Show nbsp"
-msgstr ""
+msgstr "Үзілмейтін бос орындарды көрсету"
 
 #: data/org.mate.pluma.gschema.xml.in:246
 msgid ""
@@ -509,10 +573,13 @@ msgid ""
 "none' no showing; 'show-trailing' showing only trailing spaces; 'show-all' "
 "showing all spaces."
 msgstr ""
+"Pluma өңдегіш терезесінде үзілмейтін бос орындарды көрсетуі керек пе: 'show-"
+"none' көрсетпеу; 'show-trailing' тек соңындағы бос орындарды көрсету; 'show-"
+"all' барлық бос орындарды көрсету."
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
-msgstr ""
+msgstr "Беттерді көрсету"
 
 #: data/org.mate.pluma.gschema.xml.in:251
 msgid ""
@@ -520,10 +587,13 @@ msgid ""
 " 'show-trailing' showing only trailing spaces; 'show-all' showing all "
 "spaces."
 msgstr ""
+"Pluma өңдегіш терезесінде табуляцияларды көрсетуі керек пе: 'show-none' "
+"көрсетпеу; 'show-trailing' тек соңындағы бос орындарды көрсету; 'show-all' "
+"барлық бос орындарды көрсету."
 
 #: data/org.mate.pluma.gschema.xml.in:255
 msgid "Show spaces"
-msgstr ""
+msgstr "Бос орындарды көрсету"
 
 #: data/org.mate.pluma.gschema.xml.in:256
 msgid ""
@@ -531,62 +601,65 @@ msgid ""
 "showing; 'show-trailing' showing only trailing spaces; 'show-all' showing "
 "all spaces."
 msgstr ""
+"Pluma өңдегіш терезесінде бос орындарды көрсетуі керек пе: 'show-none' "
+"көрсетпеу; 'show-trailing' тек соңындағы бос орындарды көрсету; 'show-all' "
+"барлық бос орындарды көрсету."
 
 #: data/org.mate.pluma.gschema.xml.in:260
 msgid "state"
-msgstr ""
+msgstr "state"
 
 #: data/org.mate.pluma.gschema.xml.in:261
 msgid "The pluma window state"
-msgstr ""
+msgstr "Pluma терезесінің қалып-күйі"
 
 #: data/org.mate.pluma.gschema.xml.in:265
 msgid "size"
-msgstr ""
+msgstr "size"
 
 #: data/org.mate.pluma.gschema.xml.in:266
 msgid "The pluma window size"
-msgstr ""
+msgstr "Pluma терезесінің өлшемі"
 
 #: data/org.mate.pluma.gschema.xml.in:270
 msgid "side-panel-size"
-msgstr ""
+msgstr "side-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:271
 msgid "The pluma side-panel-size"
-msgstr ""
+msgstr "Pluma бүйір панелінің өлшемі"
 
 #: data/org.mate.pluma.gschema.xml.in:275
 msgid "side-panel-active-page"
-msgstr ""
+msgstr "side-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:276
 msgid "The pluma side-panel-active-page"
-msgstr ""
+msgstr "Pluma бүйір панелінің белсенді беті"
 
 #: data/org.mate.pluma.gschema.xml.in:280
 msgid "bottom-panel-size"
-msgstr ""
+msgstr "bottom-panel-size"
 
 #: data/org.mate.pluma.gschema.xml.in:281
 msgid "The pluma bottom-panel-size"
-msgstr ""
+msgstr "Pluma төменгі панелінің өлшемі"
 
 #: data/org.mate.pluma.gschema.xml.in:285
 msgid "bottom-panel-active-page"
-msgstr ""
+msgstr "bottom-panel-active-page"
 
 #: data/org.mate.pluma.gschema.xml.in:286
 msgid "The pluma bottom-panel-active-page"
-msgstr ""
+msgstr "Pluma төменгі панелінің белсенді беті"
 
 #: data/org.mate.pluma.gschema.xml.in:290
 msgid "filter-id"
-msgstr ""
+msgstr "filter-id"
 
 #: data/org.mate.pluma.gschema.xml.in:291
 msgid "The pluma filter-id"
-msgstr ""
+msgstr "Pluma сүзгі идентификаторы"
 
 #: data/pluma.appdata.xml.in.in:7 data/pluma.desktop.in.in:3
 msgid "Pluma"
@@ -604,6 +677,11 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
+"Pluma — MATE жұмыс үстелі үшін арнайы жасалған шағын, бірақ қуатты мәтін "
+"өңдегіші. Онда стандартты мәтін өңдегіш функцияларының басым бөлігі бар және "
+"Unicode халықаралық мәтіндерін толықтай қолдайды. Кеңейтілген "
+"мүмкіндіктеріне бастапқы кодтың синтаксисін ерекшелеу және автоматты шегініс "
+"жасау, бір терезеде бірнеше құжатты басып шығару және өңдеу кіреді."
 
 #: data/pluma.appdata.xml.in.in:17
 msgid ""
@@ -611,6 +689,9 @@ msgid ""
 "support for spell checking, comparing files, viewing CVS ChangeLogs, and "
 "adjusting indentation levels."
 msgstr ""
+"Pluma плагиндер жүйесі арқылы кеңейтіледі, оған қазіргі уақытта емлені "
+"тексеру, файлдарды салыстыру, CVS өзгерістер журналдарын қарау және шегініс "
+"деңгейлерін реттеу қолдауы кіреді."
 
 #: data/pluma.desktop.in.in:4 pluma/pluma-print-job.c:773
 msgid "Text Editor"
@@ -625,14 +706,15 @@ msgstr "Мәтіндік файлдарды түзету"
 #: data/pluma.desktop.in.in:15
 msgid "text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;"
 msgstr ""
+"text;editor;MATE;tabs;highlighting;code;multiple;files;pluggable;мәтін;өңдегіш;беттер;ерекшелеу;код;бірнеше;файлдар;"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:137
 msgid "Log Out _without Saving"
-msgstr ""
+msgstr "Сақтамай _шығу"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:141
 msgid "_Cancel Logout"
-msgstr ""
+msgstr "Шығудан _бас тарту"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:148
 msgid "Close _without Saving"
@@ -670,7 +752,7 @@ msgstr "_Сақтау"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:184
 msgid "Save _As"
-msgstr ""
+msgstr "Қ_алайша сақтау"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:217
 msgid "Question"
@@ -685,7 +767,9 @@ msgid_plural ""
 "If you don't save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
+"Сақтамасаңыз, соңғы %ld секундта жасалған өзгерістер толығымен жоғалады."
 msgstr[1] ""
+"Сақтамасаңыз, соңғы %ld секундта жасалған өзгерістер толығымен жоғалады."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:424
 msgid ""
@@ -701,7 +785,11 @@ msgid_plural ""
 "If you don't save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"Сақтамасаңыз, соңғы минут пен %ld секундта жасалған өзгерістер толығымен "
+"жоғалады."
 msgstr[1] ""
+"Сақтамасаңыз, соңғы минут пен %ld секундта жасалған өзгерістер толығымен "
+"жоғалады."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:440
 #, c-format
@@ -711,8 +799,8 @@ msgid ""
 msgid_plural ""
 "If you don't save, changes from the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Сақтамасаңыз, соңғы %ld минутта жасалған өзгерістер толығымен жоғалады."
+msgstr[1] "Сақтамасаңыз, соңғы %ld минутта жасалған өзгерістер толығымен жоғалады."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:455
 msgid ""
@@ -728,7 +816,11 @@ msgid_plural ""
 "If you don't save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
+"Сақтамасаңыз, соңғы сағат пен %d минутта жасалған өзгерістер толығымен "
+"жоғалады."
 msgstr[1] ""
+"Сақтамасаңыз, соңғы сағат пен %d минутта жасалған өзгерістер толығымен "
+"жоғалады."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:476
 #, c-format
@@ -736,8 +828,8 @@ msgid ""
 "If you don't save, changes from the last %d hour will be permanently lost."
 msgid_plural ""
 "If you don't save, changes from the last %d hours will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Сақтамасаңыз, соңғы %d сағатта жасалған өзгерістер толығымен жоғалады."
+msgstr[1] "Сақтамасаңыз, соңғы %d сағатта жасалған өзгерістер толығымен жоғалады."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:522
 #, c-format
@@ -758,8 +850,8 @@ msgstr "Жүйелік әкімші сақтау мүмкіндігін сөнд
 #, c-format
 msgid "Changes to %d document will be permanently lost."
 msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d құжаттағы өзгерістер толығымен жоғалады."
+msgstr[1] "%d құжаттағы өзгерістер толығымен жоғалады."
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:723
 #, c-format
@@ -768,7 +860,11 @@ msgid ""
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] ""
+"Сақталмаған өзгерістері бар %d құжат бар. Жабу алдында өзгерістерді сақтау "
+"керек пе?"
 msgstr[1] ""
+"Сақталмаған өзгерістері бар %d құжат бар. Жабу алдында өзгерістерді сақтау "
+"керек пе?"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:741
 msgid "Docum_ents with unsaved changes:"
@@ -790,7 +886,7 @@ msgstr "Сақтамасаңыз, барлық өзгерістер қайтар
 #: plugins/time/pluma-time-plugin.c:889
 #: plugins/time/pluma-time-setup-dialog.ui:71
 msgid "_OK"
-msgstr ""
+msgstr "_ОК"
 
 #: pluma/dialogs/pluma-encodings-dialog.c:331
 #: pluma/dialogs/pluma-encodings-dialog.ui:40
@@ -908,7 +1004,7 @@ msgstr "Сөздерді екіге бөл_меу"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:193
 msgid "Highlighting"
-msgstr ""
+msgstr "Ерекшелеу"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:213
 msgid "Highlight current _line"
@@ -916,7 +1012,7 @@ msgstr "Ағымдағы жо_лды түспен ерекшелеу"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:228
 msgid "Highlight matching _bracket"
-msgstr ""
+msgstr "Сәйкес _жақшаны түспен ерекшелеу"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:266
 msgid "Display"
@@ -928,15 +1024,15 @@ msgstr "Жо_лдар нөмірлерін көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:306
 msgid "Display right _margin at column"
-msgstr ""
+msgstr "Оң жақ шет ө_рісін мына бағанда көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:349
 msgid "Display _grid pattern"
-msgstr ""
+msgstr "_Тор өрнегін көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:364
 msgid "Display _overview map"
-msgstr ""
+msgstr "Ш_олу картасын көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:397
 msgid "View"
@@ -985,27 +1081,27 @@ msgstr "_минут"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:696
 msgid "Show Spaces, Tabs, Newlines"
-msgstr ""
+msgstr "Бос орындарды, табуляцияларды, жаңа жолдарды көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:717
 msgid "Show _spaces"
-msgstr ""
+msgstr "_Бос орындарды көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:732
 msgid "Show _trailing spaces only"
-msgstr ""
+msgstr "Тек _соңындағы бос орындарды көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:748
 msgid "Show _tabs"
-msgstr ""
+msgstr "_Табуляцияларды көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:763
 msgid "Show _trailing tabs only"
-msgstr ""
+msgstr "Тек соңындағы _табуляцияларды көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:779
 msgid "Show _newlines"
-msgstr ""
+msgstr "_Жаңа жолдарды көрсету"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:815
 msgid "Editor"
@@ -1052,7 +1148,7 @@ msgstr "Табу"
 #: pluma/dialogs/pluma-search-dialog.c:402
 #: pluma/dialogs/pluma-search-dialog.ui:106
 msgid "_Find"
-msgstr ""
+msgstr "_Табу"
 
 #: pluma/dialogs/pluma-search-dialog.c:405
 msgid "Replace _All"
@@ -1080,7 +1176,7 @@ msgstr "_Регистрді ескеру"
 
 #: pluma/dialogs/pluma-search-dialog.ui:197
 msgid "Match _regular expression"
-msgstr ""
+msgstr "Тұрақты өрн_екпен сәйкестендіру"
 
 #: pluma/dialogs/pluma-search-dialog.ui:213
 msgid "Match _entire word only"
@@ -1096,7 +1192,7 @@ msgstr "_Соңына жеткенде басына өту"
 
 #: pluma/dialogs/pluma-search-dialog.ui:262
 msgid "_Parse escape sequences (e.g. \\n)"
-msgstr ""
+msgstr "Экрандау тізбектерін тал_дау (мыс. \\n)"
 
 #: pluma/pluma.c:109
 msgid "Show the application's version"
@@ -1120,11 +1216,11 @@ msgstr "Кодталу опциясы үшін мүмкін мәндер тіз�
 
 #: pluma/pluma.c:118
 msgid "Create a new top-level window in an existing instance of pluma"
-msgstr ""
+msgstr "Pluma-ның бар данасында жаңа жоғарғы деңгейлі терезе жасау"
 
 #: pluma/pluma.c:121
 msgid "Create a new document in an existing instance of pluma"
-msgstr ""
+msgstr "Pluma-ның бар данасында жаңа құжат жасау"
 
 #: pluma/pluma.c:124
 msgid "[FILE...]"
@@ -1137,7 +1233,7 @@ msgstr "%s: кодталуы қате.\n"
 
 #: pluma/pluma.c:524
 msgid "- Edit text files"
-msgstr ""
+msgstr "- Мәтіндік файлдарды түзету"
 
 #: pluma/pluma.c:535
 #, c-format
@@ -1157,8 +1253,8 @@ msgstr "'%s' файлы жүктелуде…"
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d файл жүктелуде…"
+msgstr[1] "%d файл жүктелуде…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:462
@@ -1201,8 +1297,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Соңғы %ld секундта құжатқа енгізілген өзгерістер толығымен жоғалады."
+msgstr[1] "Соңғы %ld секундта құжатқа енгізілген өзгерістер толығымен жоғалады."
 
 #: pluma/pluma-commands-file.c:1148
 msgid ""
@@ -1218,7 +1314,11 @@ msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
+"Соңғы минут пен %ld секундта құжатқа енгізілген өзгерістер толығымен "
+"жоғалады."
 msgstr[1] ""
+"Соңғы минут пен %ld секундта құжатқа енгізілген өзгерістер толығымен "
+"жоғалады."
 
 #: pluma/pluma-commands-file.c:1164
 #, c-format
@@ -1228,8 +1328,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Соңғы %ld минутта құжатқа енгізілген өзгерістер толығымен жоғалады."
+msgstr[1] "Соңғы %ld минутта құжатқа енгізілген өзгерістер толығымен жоғалады."
 
 #: pluma/pluma-commands-file.c:1179
 msgid ""
@@ -1245,7 +1345,9 @@ msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
+"Соңғы сағат пен %d минутта құжатқа енгізілген өзгерістер толығымен жоғалады."
 msgstr[1] ""
+"Соңғы сағат пен %d минутта құжатқа енгізілген өзгерістер толығымен жоғалады."
 
 #: pluma/pluma-commands-file.c:1200
 #, c-format
@@ -1253,8 +1355,8 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Соңғы %d сағатта құжатқа енгізілген өзгерістер толығымен жоғалады."
+msgstr[1] "Соңғы %d сағатта құжатқа енгізілген өзгерістер толығымен жоғалады."
 
 #: pluma/pluma-commands-file.c:1227 pluma/pluma-ui.h:85
 msgid "_Revert"
@@ -1262,21 +1364,22 @@ msgstr "Қай_тару"
 
 #: pluma/pluma-commands-help.c:61
 msgid "MATE Documentation Team"
-msgstr ""
+msgstr "MATE құжаттама тобы"
 
 #: pluma/pluma-commands-help.c:62
 msgid "GNOME Documentation Team"
-msgstr ""
+msgstr "GNOME құжаттама тобы"
 
 #: pluma/pluma-commands-help.c:63
 msgid "Sun Microsystems"
-msgstr ""
+msgstr "Sun Microsystems"
 
 #: pluma/pluma-commands-help.c:68
 msgid ""
 "Pluma is a small and lightweight text editor for the MATE Desktop "
 "Environment."
 msgstr ""
+"Pluma — MATE жұмыс үстелі ортасына арналған кіші әрі жеңіл мәтін өңдегіші."
 
 #: pluma/pluma-commands-help.c:71
 msgid ""
@@ -1285,6 +1388,10 @@ msgid ""
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version."
 msgstr ""
+"Pluma — еркін бағдарламалық қамтама; сіз оны Free Software Foundation "
+"шығарған GNU General Public License шарттары бойынша қайта тарата аласыз "
+"және/немесе өзгерте аласыз; лицензияның 2-нұсқасы немесе (өз қалауыңыз "
+"бойынша) кез келген кейінгі нұсқасы."
 
 #: pluma/pluma-commands-help.c:75
 msgid ""
@@ -1293,6 +1400,10 @@ msgid ""
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
+"Pluma пайдалы болады деген үмітпен үлестіріледі, бірақ ЕШҚАНДАЙ КЕПІЛДІК "
+"БЕРІЛМЕЙДІ; тіпті САТУҒА ЖАРАМДЫЛЫҚ немесе БЕЛГІЛІ БІР МАҚСАТҚА СӘЙКЕСТІК "
+"кепілдігі де жоқ.  Толық ақпарат алу үшін GNU General Public License "
+"лицензиясын қараңыз."
 
 #: pluma/pluma-commands-help.c:79
 msgid ""
@@ -1300,10 +1411,13 @@ msgid ""
 " Pluma; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA"
 msgstr ""
+"Pluma бағдарламасымен бірге GNU General Public License көшірмесін алуыңыз "
+"керек еді; олай болмаса, мына мекенжайға жазыңыз: Free Software Foundation, "
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA"
 
 #: pluma/pluma-commands-help.c:114
 msgid "About Pluma"
-msgstr ""
+msgstr "Pluma туралы"
 
 #: pluma/pluma-commands-help.c:117
 msgid ""
@@ -1315,6 +1429,13 @@ msgid ""
 "Copyright © 2011 Perberos\n"
 "Copyright © 2012-2021 MATE developers"
 msgstr ""
+"Copyright © 1998-2000 Evan Lawrence, Alex Robert\n"
+"Copyright © 2000-2002 Chema Celorio, Paolo Maggi\n"
+"Copyright © 2003-2006 Paolo Maggi\n"
+"Copyright © 2004-2010 Paolo Borelli, Jesse van den Kieboom\n"
+"Steve Frécinaux, Ignacio Casal Quinteiro\n"
+"Copyright © 2011 Perberos\n"
+"Copyright © 2012-2021 MATE developers"
 
 #: pluma/pluma-commands-help.c:127
 msgid "translator-credits"
@@ -1324,8 +1445,8 @@ msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d кездесу табылды және алмастырылды"
+msgstr[1] "%d кездесу табылды және алмастырылды"
 
 #: pluma/pluma-commands-search.c:123
 msgid "Found and replaced one occurrence"
@@ -1536,19 +1657,19 @@ msgstr "Орналасуды дұрыс енгізгеніңізді тексе�
 #: pluma/pluma-io-error-message-area.c:222
 #, c-format
 msgid "pluma cannot handle %s locations."
-msgstr ""
+msgstr "pluma %s орналасуларын өңдей алмайды."
 
 #: pluma/pluma-io-error-message-area.c:228
 msgid "pluma cannot handle this location."
-msgstr ""
+msgstr "pluma бұл орналасуды өңдей алмайды."
 
 #: pluma/pluma-io-error-message-area.c:236
 msgid "The location of the file cannot be mounted."
-msgstr ""
+msgstr "Файл орналасуын тіркеу мүмкін емес."
 
 #: pluma/pluma-io-error-message-area.c:240
 msgid "The location of the file cannot be accessed because it is not mounted."
-msgstr ""
+msgstr "Файл орналасуына қол жеткізу мүмкін емес, өйткені ол тіркелмеген."
 
 #: pluma/pluma-io-error-message-area.c:244
 #, c-format
@@ -1566,6 +1687,8 @@ msgid ""
 "Host %s could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr ""
+"%s хосты табылмады. Прокси баптауларыңыздың дұрыстығын тексеріп, қайталап "
+"көріңіз."
 
 #: pluma/pluma-io-error-message-area.c:294
 msgid ""
@@ -1595,7 +1718,7 @@ msgstr "Күтпеген қате: %s"
 
 #: pluma/pluma-io-error-message-area.c:407
 msgid "pluma cannot find the file. Perhaps it has recently been deleted."
-msgstr ""
+msgstr "pluma файлды таба алмады. Мүмкін, ол жуырда өшірілген шығар."
 
 #: pluma/pluma-io-error-message-area.c:417
 #, c-format
@@ -1625,6 +1748,8 @@ msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr ""
+"Қадағаланатын сілтемелер саны шектеулі және осы шек ішінде нақты файл "
+"табылмады."
 
 #: pluma/pluma-io-error-message-area.c:602
 msgid "You do not have the permissions necessary to open the file."
@@ -1632,7 +1757,7 @@ msgstr "Файлды ашу үшін керек рұқсаттарыңыз жо�
 
 #: pluma/pluma-io-error-message-area.c:608
 msgid "pluma has not been able to detect the character encoding."
-msgstr ""
+msgstr "pluma таңбалар кодтауын анықтай алмады."
 
 #: pluma/pluma-io-error-message-area.c:610
 #: pluma/pluma-io-error-message-area.c:632
@@ -1691,13 +1816,15 @@ msgstr ""
 #: pluma/pluma-io-error-message-area.c:792
 #, c-format
 msgid "This file (%s) is already open in another pluma window."
-msgstr ""
+msgstr "Бұл файл (%s) басқа pluma терезесінде әлдеқашан ашылған."
 
 #: pluma/pluma-io-error-message-area.c:806
 msgid ""
 "pluma opened this instance of the file in a non-editable way. Do you want to"
 " edit it anyway?"
 msgstr ""
+"pluma файлдың бұл данасын түзетуге болмайтын түрде ашты. Соған қарамастан "
+"оны түзету керек пе?"
 
 #: pluma/pluma-io-error-message-area.c:865
 #: pluma/pluma-io-error-message-area.c:963
@@ -1712,7 +1839,7 @@ msgstr "Сақ_тамау"
 #: pluma/pluma-io-error-message-area.c:887
 #, c-format
 msgid "The file %s has been modified since reading it."
-msgstr ""
+msgstr "%s файлы оқылғаннан кейін өзгертілген."
 
 #: pluma/pluma-io-error-message-area.c:902
 msgid ""
@@ -1737,6 +1864,10 @@ msgid ""
 "You can ignore this warning and save the file anyway, but if an error occurs"
 " while saving, you could lose the old copy of the file. Save anyway?"
 msgstr ""
+"pluma жаңа файлды сақтау алдында оның ескі көшірмесінің сақтық көшірмесін "
+"жасай алмады. Бұл ескертуді елемей, файлды бәрібір сақтауға болады, бірақ "
+"сақтау кезінде қате орын алса, файлдың ескі көшірмесінен айырылып қалуыңыз "
+"мүмкін. Сонда да сақтау керек пе?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: pluma/pluma-io-error-message-area.c:1069
@@ -1745,12 +1876,16 @@ msgid ""
 "pluma cannot handle %s locations in write mode. Please check that you typed "
 "the location correctly and try again."
 msgstr ""
+"pluma жазу режимінде %s орналасуларын өңдей алмайды. Орналасуды дұрыс "
+"енгізгеніңізді тексеріп, қайталап көріңіз."
 
 #: pluma/pluma-io-error-message-area.c:1077
 msgid ""
 "pluma cannot handle this location in write mode. Please check that you typed"
 " the location correctly and try again."
 msgstr ""
+"pluma жазу режимінде бұл орналасуды өңдей алмайды. Орналасуды дұрыс "
+"енгізгеніңізді тексеріп, қайталап көріңіз."
 
 #: pluma/pluma-io-error-message-area.c:1086
 #, c-format
@@ -1794,6 +1929,8 @@ msgid ""
 "The disk where you are trying to save the file has a limitation on length of"
 " the file names. Please use a shorter name."
 msgstr ""
+"Файлды сақтау талап етіліп жатқан дискіде файл атауларының ұзындығына шектеу "
+"бар. Қысқарақ атты қолданыңыз."
 
 #: pluma/pluma-io-error-message-area.c:1121
 msgid ""
@@ -1801,6 +1938,9 @@ msgid ""
 "sizes. Please try saving a smaller file or saving it to a disk that does not"
 " have this limitation."
 msgstr ""
+"Файлды сақтау талап етіліп жатқан дискіде файл өлшемдеріне шектеу бар. "
+"Кішірек файлды сақтауға тырысыңыз немесе оны мұндай шектеуі жоқ дискіге "
+"сақтаңыз."
 
 #: pluma/pluma-io-error-message-area.c:1137
 #, c-format
@@ -1810,15 +1950,15 @@ msgstr "%s файлын сақтау мүмкін емес."
 #: pluma/pluma-io-error-message-area.c:1181
 #, c-format
 msgid "The file %s changed on disk."
-msgstr ""
+msgstr "%s файлы дискіде өзгертілген."
 
 #: pluma/pluma-io-error-message-area.c:1186
 msgid "Do you want to drop your changes and reload the file?"
-msgstr ""
+msgstr "Өзгерістерді тастап, файлды қайта жүктеу керек пе?"
 
 #: pluma/pluma-io-error-message-area.c:1188
 msgid "Do you want to reload the file?"
-msgstr ""
+msgstr "Файлды қайта жүктеу керек пе?"
 
 #: pluma/pluma-io-error-message-area.c:1193
 msgid "_Reload"
@@ -1847,7 +1987,7 @@ msgstr "Дайындау..."
 
 #: pluma/pluma-print-preferences.ui:15
 msgid "window1"
-msgstr ""
+msgstr "window1"
 
 #: pluma/pluma-print-preferences.ui:39
 msgid "Syntax Highlighting"
@@ -1969,11 +2109,11 @@ msgstr "Бетті алдын-ала қарау"
 
 #: pluma/pluma-print-preview.c:965
 msgid "The preview of a page in the document to be printed"
-msgstr ""
+msgstr "Басып шығарылатын құжаттағы бетті алдын ала қарау"
 
 #: pluma/pluma-smart-charset-converter.c:317
 msgid "It is not possible to detect the encoding automatically"
-msgstr ""
+msgstr "Кодтауды автоматты түрде анықтау мүмкін емес"
 
 #: pluma/pluma-statusbar.c:67 pluma/pluma-statusbar.c:73
 msgid "OVR"
@@ -1995,8 +2135,8 @@ msgstr "  Жол %d, Бағ %d"
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Қателері бар бет бар"
+msgstr[1] "Қателері бар %d бет бар"
 
 #: pluma/pluma-style-scheme-manager.c:213
 #, c-format
@@ -2124,7 +2264,7 @@ msgstr "Қа_лаулар"
 
 #: pluma/pluma-ui.h:64
 msgid "Configure the application"
-msgstr ""
+msgstr "Қолданбаны баптау"
 
 #: pluma/pluma-ui.h:67
 msgid "_Contents"
@@ -2132,7 +2272,7 @@ msgstr "Құра_масы"
 
 #: pluma/pluma-ui.h:68
 msgid "Open the pluma manual"
-msgstr ""
+msgstr "Pluma нұсқаулығын ашу"
 
 #: pluma/pluma-ui.h:69
 msgid "_About"
@@ -2144,7 +2284,7 @@ msgstr "Бұл қолданба туралы"
 
 #: pluma/pluma-ui.h:73
 msgid "_Leave Fullscreen"
-msgstr ""
+msgstr "Толық экраннан _шығу"
 
 #: pluma/pluma-ui.h:74
 msgid "Leave fullscreen mode"
@@ -2160,11 +2300,11 @@ msgstr "Қала_йша сақтау..."
 
 #: pluma/pluma-ui.h:84
 msgid "Save the current file with a different name"
-msgstr ""
+msgstr "Ағымдағы файлды басқа атпен сақтау"
 
 #: pluma/pluma-ui.h:86
 msgid "Revert to a saved version of the file"
-msgstr ""
+msgstr "Файлдың сақталған нұсқасына кері қайтару"
 
 #: pluma/pluma-ui.h:87
 msgid "Print Previe_w"
@@ -2229,7 +2369,7 @@ msgstr "Ө_шіру"
 
 #: pluma/pluma-ui.h:104
 msgid "Delete the selected text"
-msgstr ""
+msgstr "Таңдалған мәтінді өшіру"
 
 #: pluma/pluma-ui.h:105
 msgid "Select _All"
@@ -2241,7 +2381,7 @@ msgstr "Бүкіл құжатты таңдау"
 
 #: pluma/pluma-ui.h:107
 msgid "C_hange Case"
-msgstr ""
+msgstr "Регистрді ө_згерту"
 
 #: pluma/pluma-ui.h:108
 msgid "All _Upper Case"
@@ -2249,7 +2389,7 @@ msgstr "Барлығын _бас әріпті қылу"
 
 #: pluma/pluma-ui.h:109
 msgid "Change selected text to upper case"
-msgstr ""
+msgstr "Таңдалған мәтінді бас әріптерге өзгерту"
 
 #: pluma/pluma-ui.h:110
 msgid "All _Lower Case"
@@ -2257,7 +2397,7 @@ msgstr "Барлығын _кіші әріпті қылу"
 
 #: pluma/pluma-ui.h:111
 msgid "Change selected text to lower case"
-msgstr ""
+msgstr "Таңдалған мәтінді кіші әріптерге өзгерту"
 
 #: pluma/pluma-ui.h:112
 msgid "_Invert Case"
@@ -2265,19 +2405,19 @@ msgstr "Регистрді т_ерістеу"
 
 #: pluma/pluma-ui.h:113
 msgid "Invert the case of selected text"
-msgstr ""
+msgstr "Таңдалған мәтіннің регистрін инверсиялау"
 
 #: pluma/pluma-ui.h:114
 msgid "_Title Case"
-msgstr ""
+msgstr "Әр Сөзді Бас Ә_ріппен"
 
 #: pluma/pluma-ui.h:115
 msgid "Capitalize the first letter of each selected word"
-msgstr ""
+msgstr "Таңдалған әрбір сөздің бірінші әрпін бас әріпке өзгерту"
 
 #: pluma/pluma-ui.h:118
 msgid "_Highlight Mode"
-msgstr ""
+msgstr "_Ерекшелеу режимі"
 
 #: pluma/pluma-ui.h:121
 msgid "_Find..."
@@ -2293,7 +2433,7 @@ msgstr "Ке_лесіні табу"
 
 #: pluma/pluma-ui.h:124
 msgid "Search forwards for the same text"
-msgstr ""
+msgstr "Сол мәтінді алға қарай іздеу"
 
 #: pluma/pluma-ui.h:125
 msgid "Find Pre_vious"
@@ -2301,7 +2441,7 @@ msgstr "Ал_дыңғысын табу"
 
 #: pluma/pluma-ui.h:126
 msgid "Search backwards for the same text"
-msgstr ""
+msgstr "Сол мәтінді артқа қарай іздеу"
 
 #: pluma/pluma-ui.h:127
 msgid "_Replace..."
@@ -2309,7 +2449,7 @@ msgstr "А_лмастыру..."
 
 #: pluma/pluma-ui.h:128
 msgid "Search for and replace text"
-msgstr ""
+msgstr "Мәтінді іздеу және алмастыру"
 
 #: pluma/pluma-ui.h:129
 msgid "_Clear Highlight"
@@ -2317,7 +2457,7 @@ msgstr "_Түспен ерекшелеуді тастау"
 
 #: pluma/pluma-ui.h:130
 msgid "Clear highlighting of search matches"
-msgstr ""
+msgstr "Іздеу сәйкестіктерінің ерекшелеуін тазарту"
 
 #: pluma/pluma-ui.h:131
 msgid "Go to _Line..."
@@ -2325,7 +2465,7 @@ msgstr "Жо _лға өту..."
 
 #: pluma/pluma-ui.h:132
 msgid "Go to a specific line"
-msgstr ""
+msgstr "Көрсетілген жолға өту"
 
 #: pluma/pluma-ui.h:133
 msgid "_Incremental Search..."
@@ -2333,7 +2473,7 @@ msgstr "_Инкременталды іздеу..."
 
 #: pluma/pluma-ui.h:134
 msgid "Incrementally search for text"
-msgstr ""
+msgstr "Мәтінді біртіндеп іздеу"
 
 #: pluma/pluma-ui.h:137
 msgid "_Save All"
@@ -2357,23 +2497,23 @@ msgstr "_Алдыңғы құжат"
 
 #: pluma/pluma-ui.h:142
 msgid "Activate previous document"
-msgstr ""
+msgstr "Алдыңғы құжатты белсендіру"
 
 #: pluma/pluma-ui.h:143
 msgid "_Next Document"
-msgstr ""
+msgstr "_Келесі құжат"
 
 #: pluma/pluma-ui.h:144
 msgid "Activate next document"
-msgstr ""
+msgstr "Келесі құжатты белсендіру"
 
 #: pluma/pluma-ui.h:145
 msgid "_Move to New Window"
-msgstr ""
+msgstr "Жаңа терезеге ж_ылжыту"
 
 #: pluma/pluma-ui.h:146
 msgid "Move the current document to a new window"
-msgstr ""
+msgstr "Ағымдағы құжатты жаңа терезеге жылжыту"
 
 #: pluma/pluma-ui.h:153
 msgid "Close the current file"
@@ -2393,7 +2533,7 @@ msgstr "_Панель"
 
 #: pluma/pluma-ui.h:166
 msgid "Show or hide the toolbar in the current window"
-msgstr ""
+msgstr "Ағымдағы терезедегі саймандар панелін көрсету немесе жасыру"
 
 #: pluma/pluma-ui.h:168
 msgid "_Statusbar"
@@ -2401,7 +2541,7 @@ msgstr "Қалы_п-күй жолағы"
 
 #: pluma/pluma-ui.h:169
 msgid "Show or hide the statusbar in the current window"
-msgstr ""
+msgstr "Ағымдағы терезедегі қалып-күй жолағын көрсету немесе жасыру"
 
 #: pluma/pluma-ui.h:171
 msgid "_Fullscreen"
@@ -2409,7 +2549,7 @@ msgstr "Т_олық экранға"
 
 #: pluma/pluma-ui.h:172
 msgid "Edit text in fullscreen"
-msgstr ""
+msgstr "Мәтінді толық экранда түзету"
 
 #: pluma/pluma-ui.h:179
 msgid "Side _Pane"
@@ -2417,15 +2557,15 @@ msgstr "Бү_йір панелі"
 
 #: pluma/pluma-ui.h:180
 msgid "Show or hide the side pane in the current window"
-msgstr ""
+msgstr "Ағымдағы терезедегі бүйір панелін көрсету немесе жасыру"
 
 #: pluma/pluma-ui.h:182
 msgid "_Bottom Pane"
-msgstr ""
+msgstr "_Төменгі панель"
 
 #: pluma/pluma-ui.h:183
 msgid "Show or hide the bottom pane in the current window"
-msgstr ""
+msgstr "Ағымдағы терезедегі төменгі панельді көрсету немесе жасыру"
 
 #: pluma/pluma-utils.c:1079
 msgid "Please check your installation."
@@ -2464,6 +2604,8 @@ msgid ""
 "_Parse escape sequences (e.g. \n"
 ")"
 msgstr ""
+"Экрандау тізбектерін тал_дау (мыс. \n"
+")"
 
 #: pluma/pluma-view.c:1669
 msgid "String you want to search for"
@@ -2476,7 +2618,7 @@ msgstr "Курсорды жылжыту үшін жол нөмірі"
 #: pluma/pluma-window.c:1036
 #, c-format
 msgid "Use %s highlight mode"
-msgstr ""
+msgstr "%s ерекшелеу режимін қолдану"
 
 #. Translators: "Plain Text" means that no highlight mode is selected in the
 #. * "View->Highlight Mode" submenu and so syntax highlighting is disabled
@@ -2490,7 +2632,7 @@ msgstr "Ашық мәтін"
 
 #: pluma/pluma-window.c:1094
 msgid "Disable syntax highlighting"
-msgstr ""
+msgstr "Синтаксисті ерекшелеуді сөндіру"
 
 #. Translators: %s is a URI
 #: pluma/pluma-window.c:1374
@@ -2500,7 +2642,7 @@ msgstr "'%s' ашу"
 
 #: pluma/pluma-window.c:1483
 msgid "Open a recently used file"
-msgstr ""
+msgstr "Жуырда пайдаланылған файлды ашу"
 
 #: pluma/pluma-window.c:1489
 msgid "Open"
@@ -2518,7 +2660,7 @@ msgstr "Баспаға шығару"
 #: pluma/pluma-window.c:1704
 #, c-format
 msgid "Activate '%s'"
-msgstr ""
+msgstr "«%s» белсендіру"
 
 #: pluma/pluma-window.c:1956
 msgid "Use Spaces"
@@ -2526,7 +2668,7 @@ msgstr "Бос аралықтарды қолдану"
 
 #: pluma/pluma-window.c:2027
 msgid "Tab Width"
-msgstr ""
+msgstr "Табуляция ені"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in.in:5
 #: plugins/docinfo/docinfo.ui:19
@@ -2538,6 +2680,8 @@ msgid ""
 "Analyzes the current document and reports the number of words, lines, "
 "characters and non-space characters in it."
 msgstr ""
+"Ағымдағы құжатты талдап, ондағы сөздер, жолдар, таңбалар және бос орын емес "
+"таңбалар санын хабарлайды."
 
 #: plugins/docinfo/docinfo.ui:51
 msgid "_Update"
@@ -2587,7 +2731,7 @@ msgstr "Құ_жат статистикасы"
 
 #: plugins/docinfo/pluma-docinfo-plugin.c:443
 msgid "Get statistical information on the current document"
-msgstr ""
+msgstr "Ағымдағы құжат туралы статистикалық ақпаратты алу"
 
 #: plugins/externaltools/externaltools.plugin.desktop.in.in:6
 msgid "External Tools"
@@ -2603,7 +2747,7 @@ msgstr "С_ыртқы саймандарды басқару"
 
 #: plugins/externaltools/tools/__init__.py:176
 msgid "Opens the External Tools Manager"
-msgstr ""
+msgstr "Сыртқы саймандар басқарушысын ашады"
 
 #: plugins/externaltools/tools/__init__.py:180
 msgid "External _Tools"
@@ -2611,11 +2755,11 @@ msgstr "Сыртқы сай_мандар"
 
 #: plugins/externaltools/tools/__init__.py:182
 msgid "External tools"
-msgstr ""
+msgstr "Сыртқы саймандар"
 
 #: plugins/externaltools/tools/__init__.py:215
 msgid "Shell Output"
-msgstr ""
+msgstr "Қоршам шығысы"
 
 #: plugins/externaltools/tools/capture.py:97
 #, python-format
@@ -2744,7 +2888,7 @@ msgstr "Курсор тұрған жерге кірістіру"
 
 #: plugins/externaltools/tools/tools.ui:134
 msgid "External Tools Manager"
-msgstr ""
+msgstr "Сыртқы саймандар басқарушысы"
 
 #: plugins/externaltools/tools/tools.ui:240
 msgid "_Tools:"
@@ -2813,15 +2957,15 @@ msgstr "Іздеу"
 
 #: plugins/externaltools/data/switch-c.desktop.in:3
 msgid "Switch onto a file .c and .h"
-msgstr ""
+msgstr ".c және .h файлына ауысу"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in.in:6
 msgid "File Browser Pane"
-msgstr ""
+msgstr "Файлдық браузер панелі"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in.in:7
 msgid "Easy file access from the side pane"
-msgstr ""
+msgstr "Бүйір панелінен файлдарға оңай қол жеткізу"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:6
 msgid "Set Location to First Document"
@@ -2834,10 +2978,13 @@ msgid ""
 "generally applies to opening a document from the command line or opening it "
 "with Caja, etc.)"
 msgstr ""
+"Егер АҚИҚАТ болса, файлдық браузер плагині әлі пайдаланылмаған жағдайда, ол "
+"бірінші ашылған құжаттың бумасын көрсетеді. (Осылайша, бұл негізінен құжатты "
+"командалық жолдан ашуға немесе оны Caja арқылы ашуға және т.б. қолданылады)"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:11
 msgid "File Browser Filter Mode"
-msgstr ""
+msgstr "Файлдық браузердің сүзгі режимі"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:12
 msgid ""
@@ -2846,16 +2993,22 @@ msgid ""
 "(filter binary files) and hidden_and_binary (filter both hidden and binary "
 "files)."
 msgstr ""
+"Бұл мән файлдық браузерден қандай файлдар сүзілетінін анықтайды. Жарамды "
+"мәндер: none (ештеңе сүзілмейді), hidden (жасырын файлдар сүзіледі), binary "
+"(екілік файлдар сүзіледі) және hidden_and_binary (жасырын әрі екілік файлдар "
+"сүзіледі)."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:16
 msgid "File Browser Filter Pattern"
-msgstr ""
+msgstr "Файлдық браузер сүзгісінің өрнегі"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:17
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top"
 " of the filter_mode."
 msgstr ""
+"Файлдық браузерді сүзгілеуге арналған сүзгі өрнегі. Бұл сүзгі filter_mode "
+"үстінен жұмыс істейді."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:24
 msgid "Open With Tree View"
@@ -2866,6 +3019,8 @@ msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
 msgstr ""
+"Файлдық браузер плагині жүктелгенде, бетбелгілер көрінісінің орнына ағаш "
+"көрінісін ашу"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:29
 msgid "File Browser Root Directory"
@@ -2876,10 +3031,12 @@ msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
 msgstr ""
+"Файлдық браузер плагині жүктелгенде және onload/tree_view АҚИҚАТ болғанда "
+"қолданылатын файлдық браузердің түбірлік бумасы."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:34
 msgid "File Browser Virtual Root Directory"
-msgstr ""
+msgstr "Файлдық браузердің виртуалды түбірлік бумасы"
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:35
 msgid ""
@@ -2887,6 +3044,9 @@ msgid ""
 " plugin when onload/tree_view is TRUE. The virtual root must always be below"
 " the actual root."
 msgstr ""
+"onload/tree_view АҚИҚАТ болғанда файлдық браузер плагині жүктелген кезде "
+"қолданылатын файлдық браузердің виртуалды түбірлік бумасы. Виртуалды түбір "
+"әрқашан нақты түбірден төмен болуы керек."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:39
 msgid "Enable Restore of Remote Locations"
@@ -2902,11 +3062,11 @@ msgstr "Файлдық жүйе"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:589
 msgid "_Set root to active document"
-msgstr ""
+msgstr "Түбірді белсенді құжатқа _орнату"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:591
 msgid "Set the root to the active document location"
-msgstr ""
+msgstr "Түбірді белсенді құжаттың орналасуына орнату"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
@@ -2914,7 +3074,7 @@ msgstr "Т_ерминалды осында ашу"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
-msgstr ""
+msgstr "Ағымдағы ашылған бумада терминалды ашу"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:741
 msgid "File Browser"
@@ -2991,6 +3151,8 @@ msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
+"Атауы өзгертілген файл қазір сүзгіден өтіп кетті. Файлды көрінетін ету үшін "
+"сүзгі баптауларын реттеуіңіз керек"
 
 #. Translators: This is the default name of new files created by the file
 #. browser pane.
@@ -3003,6 +3165,8 @@ msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
+"Жаңа файл қазір сүзгіден өтіп кетті. Файлды көрінетін ету үшін сүзгі "
+"баптауларын реттеуіңіз керек"
 
 #. Translators: This is the default name of new directories created by the
 #. file browser pane.
@@ -3015,6 +3179,8 @@ msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr ""
+"Жаңа бума қазір сүзгіден өтіп кетті. Буманы көрінетін ету үшін сүзгі "
+"баптауларын реттеуіңіз керек"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:704
 msgid "Bookmarks"
@@ -3030,11 +3196,11 @@ msgstr "Қоқы_с шелегіне тастау"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:791
 msgid "Move selected file or folder to trash"
-msgstr ""
+msgstr "Таңдалған файлды немесе буманы қоқыс шелегіне жылжыту"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:794
 msgid "Delete selected file or folder"
-msgstr ""
+msgstr "Таңдалған файлды немесе буманы өшіру"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:801
 msgid "Open selected file"
@@ -3054,7 +3220,7 @@ msgstr "Жаңа _бума"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:814
 msgid "Add new empty folder"
-msgstr ""
+msgstr "Жаңа бос бума қосу"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:816
 msgid "New F_ile"
@@ -3062,7 +3228,7 @@ msgstr "Жаңа фа_йл"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:817
 msgid "Add new empty file"
-msgstr ""
+msgstr "Жаңа бос файл қосу"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:822
 msgid "_Rename"
@@ -3070,11 +3236,11 @@ msgstr "Атын ауысты_ру"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:823
 msgid "Rename selected file or folder"
-msgstr ""
+msgstr "Таңдалған файлдың немесе буманың атын өзгерту"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:829
 msgid "_Previous Location"
-msgstr ""
+msgstr "_Алдыңғы орналасу"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:831
 msgid "Go to the previous visited location"
@@ -3082,7 +3248,7 @@ msgstr "Алдыңғы жерге өту"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:833
 msgid "_Next Location"
-msgstr ""
+msgstr "_Келесі орналасу"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:834
 msgid "Go to the next visited location"
@@ -3104,7 +3270,7 @@ msgstr "Буманы қ_арау"
 #: plugins/filebrowser/pluma-file-browser-widget.c:838
 #: plugins/filebrowser/pluma-file-browser-widget.c:856
 msgid "View folder in file manager"
-msgstr ""
+msgstr "Буманы файлдар басқарушысында қарау"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:845
 msgid "Show _Hidden"
@@ -3112,21 +3278,21 @@ msgstr "Жас_ырынды көрсету"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:846
 msgid "Show hidden files and folders"
-msgstr ""
+msgstr "Жасырын файлдар мен бумаларды көрсету"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:848
 msgid "Show _Binary"
-msgstr ""
+msgstr "_Екілік файлдарды көрсету"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:849
 msgid "Show binary files"
-msgstr ""
+msgstr "Екілік файлдарды көрсету"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:982
 #: plugins/filebrowser/pluma-file-browser-widget.c:995
 #: plugins/filebrowser/pluma-file-browser-widget.c:1021
 msgid "Previous location"
-msgstr ""
+msgstr "Алдыңғы орналасу"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:988
 msgid "Go to previous location"
@@ -3135,7 +3301,7 @@ msgstr "Алдыңғы орналасуға өту"
 #: plugins/filebrowser/pluma-file-browser-widget.c:990
 #: plugins/filebrowser/pluma-file-browser-widget.c:1016
 msgid "Go to a previously opened location"
-msgstr ""
+msgstr "Бұрын ашылған орналасуға өту"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:1008
 msgid "Next location"
@@ -3152,7 +3318,7 @@ msgstr "Файл атын сә_йкестеу"
 #: plugins/filebrowser/pluma-file-browser-widget.c:2141
 #, c-format
 msgid "No mount object for mounted volume: %s"
-msgstr ""
+msgstr "Тіркелген том үшін тіркеу объектісі жоқ: %s"
 
 #: plugins/filebrowser/pluma-file-browser-widget.c:2220
 #, c-format
@@ -3170,7 +3336,7 @@ msgstr "Режимдер"
 
 #: plugins/modelines/modelines.plugin.desktop.in.in:6
 msgid "Emacs, Kate and Vim-style modelines support for pluma."
-msgstr ""
+msgstr "Pluma үшін Emacs, Kate және Vim стильдеріндегі modelines қолдауы."
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in.in:6
 #: plugins/pythonconsole/pythonconsole/__init__.py:54
@@ -3191,11 +3357,11 @@ msgstr "К_оманда түсі:"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:82
 msgid "Use system fixed width font"
-msgstr ""
+msgstr "Жүйелік ені бекітілген қаріпті пайдалану"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:102
 msgid "Font:"
-msgstr ""
+msgstr "Қаріп:"
 
 #: plugins/quickopen/quickopen/popup.py:33
 #: plugins/quickopen/quickopen.plugin.desktop.in.in:6
@@ -3227,11 +3393,11 @@ msgstr "Жиі қолданылатын мәтін блоктарын жылда
 
 #: plugins/snippets/snippets/snippets.ui:40
 msgid "Snippets Manager"
-msgstr ""
+msgstr "Сниппеттер басқарушысы"
 
 #: plugins/snippets/snippets/snippets.ui:144
 msgid "_Snippets:"
-msgstr ""
+msgstr "_Сниппеттер:"
 
 #: plugins/snippets/snippets/snippets.ui:165
 msgid "Create new snippet"
@@ -3257,25 +3423,25 @@ msgstr "Белсендіру"
 
 #: plugins/snippets/snippets/snippets.ui:379
 msgid "_Drop targets:"
-msgstr ""
+msgstr "Тастау _мақсаттары:"
 
 #: plugins/snippets/snippets/snippets.ui:392
 msgid "Shortcut key with which the snippet is activated"
-msgstr ""
+msgstr "Сниппет белсендірілетін жарлық пернесі"
 
 #: plugins/snippets/snippets/snippets.ui:411
 msgid "S_hortcut key:"
-msgstr ""
+msgstr "Жарлы_қ пернесі:"
 
 #. "tab" here means the tab key, not the notebook tab!
 #: plugins/snippets/snippets/snippets.ui:424
 msgid "_Tab trigger:"
-msgstr ""
+msgstr "_Tab триггері:"
 
 #: plugins/snippets/snippets/snippets.ui:446
 #: plugins/snippets/snippets/Manager.py:682
 msgid "Single word the snippet is activated with after pressing Tab"
-msgstr ""
+msgstr "Tab пернесін басқаннан кейін сниппет белсендірілетін бір сөз"
 
 #: plugins/snippets/snippets/WindowHelper.py:73
 msgid "Manage _Snippets..."
@@ -3283,7 +3449,7 @@ msgstr "_Сниппеттерді басқару..."
 
 #: plugins/snippets/snippets/WindowHelper.py:74
 msgid "Manage snippets"
-msgstr ""
+msgstr "Сниппеттерді басқару"
 
 #: plugins/snippets/snippets/Manager.py:42
 msgid "Snippets archive"
@@ -3306,6 +3472,8 @@ msgid ""
 "This is not a valid Tab trigger. Triggers can either contain letters or a "
 "single (non-alphanumeric) character like: {, [, etc."
 msgstr ""
+"Бұл жарамды Tab триггері емес. Триггерлер әріптерден немесе келесі сияқты "
+"бір (әріптік-сандық емес) таңбадан тұруы мүмкін: {, [, т.б."
 
 #: plugins/snippets/snippets/Manager.py:772
 #, python-format
@@ -3336,7 +3504,7 @@ msgstr "Bzip2 сығылған архиві"
 
 #: plugins/snippets/snippets/Manager.py:802
 msgid "Single snippets file"
-msgstr ""
+msgstr "Бір сниппеттер файлы"
 
 #: plugins/snippets/snippets/Manager.py:803
 #: plugins/snippets/snippets/Manager.py:890
@@ -3356,7 +3524,7 @@ msgstr "Экспорттау сәтті аяқталды"
 #: plugins/snippets/snippets/Manager.py:859
 #: plugins/snippets/snippets/Manager.py:928
 msgid "Do you want to include selected <b>system</b> snippets in your export?"
-msgstr ""
+msgstr "Экспортқа таңдалған <b>жүйелік</b> сниппеттерді қосу керек пе?"
 
 #: plugins/snippets/snippets/Manager.py:874
 #: plugins/snippets/snippets/Manager.py:946
@@ -3443,7 +3611,7 @@ msgstr "Сұр_ыптау..."
 
 #: plugins/sort/pluma-sort-plugin.c:81
 msgid "Sort the current document or selection"
-msgstr ""
+msgstr "Ағымдағы құжатты немесе таңдалғанды сұрыптау"
 
 #: plugins/sort/sort.plugin.desktop.in.in:5 plugins/sort/sort.ui:29
 msgid "Sort"
@@ -3475,7 +3643,7 @@ msgstr "Бағаннан бас_тау:"
 
 #: plugins/spell/org.mate.pluma.plugins.spell.gschema.xml.in:11
 msgid "Autocheck Type"
-msgstr ""
+msgstr "Автотексеру түрі"
 
 #. Translators: Displayed in the "Check Spelling" dialog if there are no
 #. suggestions for the current misspelled word
@@ -3501,7 +3669,7 @@ msgstr "_Емле ұсыныстары..."
 
 #: plugins/spell/pluma-spell-checker-dialog.c:265
 msgid "Check Spelling"
-msgstr ""
+msgstr "Емлені тексеру"
 
 #: plugins/spell/pluma-spell-checker-dialog.c:276
 msgid "Suggestions"
@@ -3557,7 +3725,7 @@ msgstr "Емлені тек_серу..."
 
 #: plugins/spell/pluma-spell-plugin.c:99
 msgid "Check the current document for incorrect spelling"
-msgstr ""
+msgstr "Ағымдағы құжаттағы емленің қателерін тексеру"
 
 #: plugins/spell/pluma-spell-plugin.c:105
 msgid "Set _Language..."
@@ -3565,15 +3733,15 @@ msgstr "Тілді о_рнату..."
 
 #: plugins/spell/pluma-spell-plugin.c:107
 msgid "Set the language of the current document"
-msgstr ""
+msgstr "Ағымдағы құжаттың тілін орнату"
 
 #: plugins/spell/pluma-spell-plugin.c:116
 msgid "_Autocheck Spelling"
-msgstr ""
+msgstr "Емлені _автотексеру"
 
 #: plugins/spell/pluma-spell-plugin.c:118
 msgid "Automatically spell-check the current document"
-msgstr ""
+msgstr "Ағымдағы құжаттың емлесін автоматты түрде тексеру"
 
 #: plugins/spell/pluma-spell-plugin.c:918
 msgid "The document is empty."
@@ -3645,23 +3813,23 @@ msgstr "Тіл"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:23
 msgid "_Configure Spell Checker plugin..."
-msgstr ""
+msgstr "Емлені тексеру плагинін _баптау..."
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:103
 msgid "Autocheck spelling on document load..."
-msgstr ""
+msgstr "Құжат жүктелгенде емлені автотексеру..."
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:116
 msgid "_Never autocheck"
-msgstr ""
+msgstr "Е_шқашан автотексермеу"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:133
 msgid "_Remember autocheck by document"
-msgstr ""
+msgstr "Автотексеруді құжат бойынша е_сте сақтау"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:151
 msgid "_Always autocheck"
-msgstr ""
+msgstr "Әрқ_ашан автотексеру"
 
 #: plugins/spell/spell.plugin.desktop.in.in:5
 msgid "Spell Checker"
@@ -3679,7 +3847,7 @@ msgstr "Белгілер"
 
 #: plugins/taglist/pluma-taglist-plugin-panel.c:612
 msgid "Select the group of tags you want to use"
-msgstr ""
+msgstr "Қолданғыңыз келетін тегтер тобын таңдаңыз"
 
 #: plugins/taglist/pluma-taglist-plugin-panel.c:631
 msgid "_Preview"
@@ -3687,15 +3855,15 @@ msgstr "А_лдын-ала қарау"
 
 #: plugins/taglist/pluma-taglist-plugin-panel.c:705
 msgid "Available Tag Lists"
-msgstr ""
+msgstr "Қолжетімді тегтер тізімдері"
 
 #: plugins/taglist/HTML.tags.xml.in:3
 msgid "XHTML 1.0 - Tags"
-msgstr ""
+msgstr "XHTML 1.0 - Тегтер"
 
 #: plugins/taglist/HTML.tags.xml.in:5 plugins/taglist/HTML.tags.xml.in:1132
 msgid "Abbreviated form"
-msgstr ""
+msgstr "Қысқартылған форма"
 
 #: plugins/taglist/HTML.tags.xml.in:10 plugins/taglist/HTML.tags.xml.in:1137
 msgid "Abbreviation"
@@ -3703,11 +3871,11 @@ msgstr "Қысқартулар"
 
 #: plugins/taglist/HTML.tags.xml.in:15 plugins/taglist/HTML.tags.xml.in:1145
 msgid "Accessibility key character"
-msgstr ""
+msgstr "Арнайы мүмкіндіктер пернесінің таңбасы"
 
 #: plugins/taglist/HTML.tags.xml.in:20 plugins/taglist/HTML.tags.xml.in:1149
 msgid "Acronym"
-msgstr ""
+msgstr "Акроним"
 
 #: plugins/taglist/HTML.tags.xml.in:25 plugins/taglist/HTML.tags.xml.in:1154
 msgid "Align"
@@ -3715,15 +3883,15 @@ msgstr "Туралау"
 
 #: plugins/taglist/HTML.tags.xml.in:30 plugins/taglist/HTML.tags.xml.in:1158
 msgid "Alignment character"
-msgstr ""
+msgstr "Туралау таңбасы"
 
 #: plugins/taglist/HTML.tags.xml.in:35 plugins/taglist/HTML.tags.xml.in:1162
 msgid "Alternative"
-msgstr ""
+msgstr "Балама"
 
 #: plugins/taglist/HTML.tags.xml.in:40 plugins/taglist/HTML.tags.xml.in:1166
 msgid "Anchor URI"
-msgstr ""
+msgstr "Бекіту URI-і"
 
 #: plugins/taglist/HTML.tags.xml.in:45 plugins/taglist/HTML.tags.xml.in:1171
 msgid "Anchor"
@@ -3731,35 +3899,35 @@ msgstr "Байланыс"
 
 #: plugins/taglist/HTML.tags.xml.in:51
 msgid "Applet class file code (deprecated)"
-msgstr ""
+msgstr "Апплет класс файлының коды (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:56 plugins/taglist/HTML.tags.xml.in:1184
 msgid "Associated information"
-msgstr ""
+msgstr "Байланысты ақпарат"
 
 #: plugins/taglist/HTML.tags.xml.in:61 plugins/taglist/HTML.tags.xml.in:1188
 msgid "Author info"
-msgstr ""
+msgstr "Автор туралы ақпарат"
 
 #: plugins/taglist/HTML.tags.xml.in:66 plugins/taglist/HTML.tags.xml.in:1193
 msgid "Axis related headers"
-msgstr ""
+msgstr "Осьтерге қатысты тақырыптамалар"
 
 #: plugins/taglist/HTML.tags.xml.in:72
 msgid "Background color (deprecated)"
-msgstr ""
+msgstr "Фон түсі (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:78
 msgid "Background texture tile (deprecated)"
-msgstr ""
+msgstr "Фонның текстуралық тайлы (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:84
 msgid "Base font (deprecated)"
-msgstr ""
+msgstr "Негізгі қаріп (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:88 plugins/taglist/HTML.tags.xml.in:1209
 msgid "Base URI"
-msgstr ""
+msgstr "Негізгі URI"
 
 #: plugins/taglist/HTML.tags.xml.in:93 plugins/taglist/HTML.tags.xml.in:1213
 msgid "Bold"
@@ -3767,55 +3935,55 @@ msgstr "Жуан"
 
 #: plugins/taglist/HTML.tags.xml.in:99
 msgid "Border (deprecated)"
-msgstr ""
+msgstr "Шекара (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:104 plugins/taglist/HTML.tags.xml.in:1226
 msgid "Cell rowspan"
-msgstr ""
+msgstr "Ұяшықтың жолдар бойынша созылуы"
 
 #: plugins/taglist/HTML.tags.xml.in:110
 msgid "Center (deprecated)"
-msgstr ""
+msgstr "Ортаға туралау (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:115 plugins/taglist/HTML.tags.xml.in:1235
 msgid "Character encoding of linked resource"
-msgstr ""
+msgstr "Байланыстырылған ресурстың таңбалар кодтауы"
 
 #: plugins/taglist/HTML.tags.xml.in:120
 msgid "Checked state"
-msgstr ""
+msgstr "Белгіленген күй"
 
 #: plugins/taglist/HTML.tags.xml.in:124 plugins/taglist/HTML.tags.xml.in:1243
 msgid "Citation"
-msgstr ""
+msgstr "Дәйексөз"
 
 #: plugins/taglist/HTML.tags.xml.in:129 plugins/taglist/HTML.tags.xml.in:1248
 msgid "Cite reason for change"
-msgstr ""
+msgstr "Өзгеріс себебіне сілтеме жасау"
 
 #: plugins/taglist/HTML.tags.xml.in:134 plugins/taglist/HTML.tags.xml.in:1252
 msgid "Class implementation ID"
-msgstr ""
+msgstr "Класс жүзеге асырылуының ID-і"
 
 #: plugins/taglist/HTML.tags.xml.in:139 plugins/taglist/HTML.tags.xml.in:1256
 msgid "Class list"
-msgstr ""
+msgstr "Кластар тізімі"
 
 #: plugins/taglist/HTML.tags.xml.in:144 plugins/taglist/HTML.tags.xml.in:1260
 msgid "Clear text flow control"
-msgstr ""
+msgstr "Мәтін ағынын басқаруды тазарту"
 
 #: plugins/taglist/HTML.tags.xml.in:149 plugins/taglist/HTML.tags.xml.in:1264
 msgid "Code content type"
-msgstr ""
+msgstr "Код мазмұнының түрі"
 
 #: plugins/taglist/HTML.tags.xml.in:155
 msgid "Color of selected links (deprecated)"
-msgstr ""
+msgstr "Таңдалған сілтемелер түсі (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:160 plugins/taglist/HTML.tags.xml.in:1272
 msgid "Column span"
-msgstr ""
+msgstr "Бағандар бойынша созылу"
 
 #: plugins/taglist/HTML.tags.xml.in:165 plugins/taglist/HTML.tags.xml.in:1276
 msgid "Columns"
@@ -3828,51 +3996,51 @@ msgstr "Пікір"
 
 #: plugins/taglist/HTML.tags.xml.in:175 plugins/taglist/HTML.tags.xml.in:1290
 msgid "Computer code fragment"
-msgstr ""
+msgstr "Компьютерлік код фрагменті"
 
 #: plugins/taglist/HTML.tags.xml.in:182
 msgid "Content type (deprecated)"
-msgstr ""
+msgstr "Мазмұн түрі (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:187 plugins/taglist/HTML.tags.xml.in:1303
 msgid "Coordinates"
-msgstr ""
+msgstr "Координаталар"
 
 #: plugins/taglist/HTML.tags.xml.in:192 plugins/taglist/HTML.tags.xml.in:1307
 msgid "Date and time of change"
-msgstr ""
+msgstr "Өзгерістің күні мен уақыты"
 
 #: plugins/taglist/HTML.tags.xml.in:197 plugins/taglist/HTML.tags.xml.in:1311
 msgid "Declare flag"
-msgstr ""
+msgstr "Жариялау жалаушасы"
 
 #: plugins/taglist/HTML.tags.xml.in:204 plugins/taglist/HTML.tags.xml.in:1318
 msgid "Defer attribute"
-msgstr ""
+msgstr "Defer атрибуты"
 
 #: plugins/taglist/HTML.tags.xml.in:208 plugins/taglist/HTML.tags.xml.in:1322
 msgid "Definition description"
-msgstr ""
+msgstr "Анықтама сипаттамасы"
 
 #: plugins/taglist/HTML.tags.xml.in:213 plugins/taglist/HTML.tags.xml.in:1327
 msgid "Definition list"
-msgstr ""
+msgstr "Анықтамалар тізімі"
 
 #: plugins/taglist/HTML.tags.xml.in:218 plugins/taglist/HTML.tags.xml.in:1332
 msgid "Definition term"
-msgstr ""
+msgstr "Анықтама термині"
 
 #: plugins/taglist/HTML.tags.xml.in:223 plugins/taglist/HTML.tags.xml.in:1337
 msgid "Deleted text"
-msgstr ""
+msgstr "Өшірілген мәтін"
 
 #: plugins/taglist/HTML.tags.xml.in:228 plugins/taglist/HTML.tags.xml.in:1346
 msgid "Directionality"
-msgstr ""
+msgstr "Бағыттылық"
 
 #: plugins/taglist/HTML.tags.xml.in:234
 msgid "Directionality (deprecated)"
-msgstr ""
+msgstr "Бағыттылық (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:239 plugins/taglist/HTML.tags.xml.in:1355
 msgid "Disabled"
@@ -3880,35 +4048,35 @@ msgstr "Сөндірулі"
 
 #: plugins/taglist/HTML.tags.xml.in:243 plugins/taglist/HTML.tags.xml.in:1359
 msgid "DIV container"
-msgstr ""
+msgstr "DIV контейнері"
 
 #: plugins/taglist/HTML.tags.xml.in:248 plugins/taglist/HTML.tags.xml.in:1364
 msgid "DIV Style container"
-msgstr ""
+msgstr "DIV стилі контейнері"
 
 #: plugins/taglist/HTML.tags.xml.in:253 plugins/taglist/HTML.tags.xml.in:1369
 msgid "Document base"
-msgstr ""
+msgstr "Құжат негізі"
 
 #: plugins/taglist/HTML.tags.xml.in:258 plugins/taglist/HTML.tags.xml.in:1373
 msgid "Document body"
-msgstr ""
+msgstr "Құжаттың негізгі мәтіні"
 
 #: plugins/taglist/HTML.tags.xml.in:263 plugins/taglist/HTML.tags.xml.in:1378
 msgid "Document head"
-msgstr ""
+msgstr "Құжаттың тақырыптамасы"
 
 #: plugins/taglist/HTML.tags.xml.in:268 plugins/taglist/HTML.tags.xml.in:1383
 msgid "Element ID"
-msgstr ""
+msgstr "Элемент ID-і"
 
 #: plugins/taglist/HTML.tags.xml.in:273 plugins/taglist/HTML.tags.xml.in:1387
 msgid "Document title"
-msgstr ""
+msgstr "Құжат атауы"
 
 #: plugins/taglist/HTML.tags.xml.in:278 plugins/taglist/HTML.tags.xml.in:1392
 msgid "Document type"
-msgstr ""
+msgstr "Құжат түрі"
 
 #: plugins/taglist/HTML.tags.xml.in:282 plugins/taglist/HTML.tags.xml.in:1405
 #: plugins/taglist/Latex.tags.xml.in:328
@@ -3917,44 +4085,44 @@ msgstr "Ерекшелендiру"
 
 #: plugins/taglist/HTML.tags.xml.in:287 plugins/taglist/HTML.tags.xml.in:1410
 msgid "Encode type"
-msgstr ""
+msgstr "Кодтау түрі"
 
 #: plugins/taglist/HTML.tags.xml.in:293
 msgid "Font face (deprecated)"
-msgstr ""
+msgstr "Қаріп кескіні (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:298 plugins/taglist/HTML.tags.xml.in:1423
 msgid "For label"
-msgstr ""
+msgstr "Жапсырма үшін"
 
 #: plugins/taglist/HTML.tags.xml.in:303 plugins/taglist/HTML.tags.xml.in:1427
 msgid "Forced line break"
-msgstr ""
+msgstr "Мәжбүрлі жол үзілісі"
 
 #: plugins/taglist/HTML.tags.xml.in:307 plugins/taglist/HTML.tags.xml.in:1431
 msgid "Form action handler"
-msgstr ""
+msgstr "Форма әрекетін өңдеуіш"
 
 #: plugins/taglist/HTML.tags.xml.in:312 plugins/taglist/HTML.tags.xml.in:1435
 msgid "Form control group"
-msgstr ""
+msgstr "Форманың басқару элементтері тобы"
 
 #: plugins/taglist/HTML.tags.xml.in:317 plugins/taglist/HTML.tags.xml.in:1440
 msgid "Form field label text"
-msgstr ""
+msgstr "Форма өрісі жапсырмасының мәтіні"
 
 #: plugins/taglist/HTML.tags.xml.in:322 plugins/taglist/HTML.tags.xml.in:1445
 msgid "Form input type"
-msgstr ""
+msgstr "Форманың кіріс түрі"
 
 #: plugins/taglist/HTML.tags.xml.in:327 plugins/taglist/HTML.tags.xml.in:1449
 msgid "Form input"
-msgstr ""
+msgstr "Форманың кірісі"
 
 #: plugins/taglist/HTML.tags.xml.in:331 plugins/taglist/HTML.tags.xml.in:336
 #: plugins/taglist/HTML.tags.xml.in:1453 plugins/taglist/HTML.tags.xml.in:1457
 msgid "Form method"
-msgstr ""
+msgstr "Форма әдісі"
 
 #: plugins/taglist/HTML.tags.xml.in:341 plugins/taglist/HTML.tags.xml.in:1461
 msgid "Form"
@@ -3962,19 +4130,19 @@ msgstr "Форма"
 
 #: plugins/taglist/HTML.tags.xml.in:346 plugins/taglist/HTML.tags.xml.in:1466
 msgid "Forward link"
-msgstr ""
+msgstr "Алға сілтеме"
 
 #: plugins/taglist/HTML.tags.xml.in:351 plugins/taglist/HTML.tags.xml.in:1470
 msgid "Frame render parts"
-msgstr ""
+msgstr "Кадрды рендерлеу бөліктері"
 
 #: plugins/taglist/HTML.tags.xml.in:356 plugins/taglist/HTML.tags.xml.in:1474
 msgid "Frame source"
-msgstr ""
+msgstr "Кадр дереккөзі"
 
 #: plugins/taglist/HTML.tags.xml.in:361 plugins/taglist/HTML.tags.xml.in:1478
 msgid "Frame target"
-msgstr ""
+msgstr "Кадр мақсаты"
 
 #: plugins/taglist/HTML.tags.xml.in:366 plugins/taglist/HTML.tags.xml.in:1482
 msgid "Frame"
@@ -3982,39 +4150,39 @@ msgstr "фрейм"
 
 #: plugins/taglist/HTML.tags.xml.in:371
 msgid "Frame border"
-msgstr ""
+msgstr "Кадр шекарасы"
 
 #: plugins/taglist/HTML.tags.xml.in:376 plugins/taglist/HTML.tags.xml.in:1490
 msgid "Frameset columns"
-msgstr ""
+msgstr "Frameset бағандары"
 
 #: plugins/taglist/HTML.tags.xml.in:381 plugins/taglist/HTML.tags.xml.in:1495
 msgid "Frameset rows"
-msgstr ""
+msgstr "Frameset жолдары"
 
 #: plugins/taglist/HTML.tags.xml.in:386 plugins/taglist/HTML.tags.xml.in:1500
 msgid "Frameset"
-msgstr ""
+msgstr "Frameset"
 
 #: plugins/taglist/HTML.tags.xml.in:391
 msgid "Frame spacing"
-msgstr ""
+msgstr "Кадрлар аралығы"
 
 #: plugins/taglist/HTML.tags.xml.in:396 plugins/taglist/HTML.tags.xml.in:1509
 msgid "Generic embedded object"
-msgstr ""
+msgstr "Жалпы ендірілген объект"
 
 #: plugins/taglist/HTML.tags.xml.in:401 plugins/taglist/HTML.tags.xml.in:1513
 msgid "Generic metainformation"
-msgstr ""
+msgstr "Жалпы метаақпарат"
 
 #: plugins/taglist/HTML.tags.xml.in:406 plugins/taglist/HTML.tags.xml.in:1517
 msgid "Generic span"
-msgstr ""
+msgstr "Жалпы span"
 
 #: plugins/taglist/HTML.tags.xml.in:411 plugins/taglist/HTML.tags.xml.in:1522
 msgid "Header cell IDs"
-msgstr ""
+msgstr "Тақырыптама ұяшықтарының ID-лері"
 
 #: plugins/taglist/HTML.tags.xml.in:416 plugins/taglist/HTML.tags.xml.in:1526
 msgid "Heading 1"
@@ -4046,35 +4214,35 @@ msgstr "Биіктігі"
 
 #: plugins/taglist/HTML.tags.xml.in:450 plugins/taglist/HTML.tags.xml.in:1565
 msgid "Horizontal rule"
-msgstr ""
+msgstr "Горизонталды сызғыш"
 
 #: plugins/taglist/HTML.tags.xml.in:455
 msgid "Horizontal space (deprecated)"
-msgstr ""
+msgstr "Горизонталды аралық (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:460 plugins/taglist/HTML.tags.xml.in:1573
 msgid "HREF URI"
-msgstr ""
+msgstr "HREF URI-і"
 
 #: plugins/taglist/HTML.tags.xml.in:465 plugins/taglist/HTML.tags.xml.in:1577
 msgid "HTML root element"
-msgstr ""
+msgstr "HTML түбірлік элементі"
 
 #: plugins/taglist/HTML.tags.xml.in:470 plugins/taglist/HTML.tags.xml.in:1582
 msgid "HTTP header name"
-msgstr ""
+msgstr "HTTP тақырыптама атауы"
 
 #: plugins/taglist/HTML.tags.xml.in:475 plugins/taglist/HTML.tags.xml.in:1586
 msgid "I18N BiDi override"
-msgstr ""
+msgstr "I18N BiDi қайта анықтау"
 
 #: plugins/taglist/HTML.tags.xml.in:480 plugins/taglist/HTML.tags.xml.in:1591
 msgid "Image map area"
-msgstr ""
+msgstr "Сурет картасының аймағы"
 
 #: plugins/taglist/HTML.tags.xml.in:485 plugins/taglist/HTML.tags.xml.in:1595
 msgid "Image map name"
-msgstr ""
+msgstr "Сурет картасының аты"
 
 #: plugins/taglist/HTML.tags.xml.in:490 plugins/taglist/HTML.tags.xml.in:1600
 msgid "Image map"
@@ -4086,23 +4254,23 @@ msgstr "Сурет"
 
 #: plugins/taglist/HTML.tags.xml.in:500 plugins/taglist/HTML.tags.xml.in:1613
 msgid "Inline frame"
-msgstr ""
+msgstr "Жолішілік кадр"
 
 #: plugins/taglist/HTML.tags.xml.in:505 plugins/taglist/HTML.tags.xml.in:1623
 msgid "Inserted text"
-msgstr ""
+msgstr "Кірістірілген мәтін"
 
 #: plugins/taglist/HTML.tags.xml.in:510 plugins/taglist/HTML.tags.xml.in:1628
 msgid "Instance definition"
-msgstr ""
+msgstr "Дана анықтамасы"
 
 #: plugins/taglist/HTML.tags.xml.in:515 plugins/taglist/HTML.tags.xml.in:1633
 msgid "Italic text"
-msgstr ""
+msgstr "Курсив мәтін"
 
 #: plugins/taglist/HTML.tags.xml.in:521
 msgid "Java applet (deprecated)"
-msgstr ""
+msgstr "Java апплеті (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:526 plugins/taglist/HTML.tags.xml.in:1643
 msgid "Label"
@@ -4111,67 +4279,67 @@ msgstr "Белгі"
 #: plugins/taglist/HTML.tags.xml.in:531 plugins/taglist/HTML.tags.xml.in:536
 #: plugins/taglist/HTML.tags.xml.in:1647 plugins/taglist/HTML.tags.xml.in:1651
 msgid "Language code"
-msgstr ""
+msgstr "Тіл коды"
 
 #: plugins/taglist/HTML.tags.xml.in:541 plugins/taglist/HTML.tags.xml.in:1655
 msgid "Large text style"
-msgstr ""
+msgstr "Үлкен мәтін стилі"
 
 #: plugins/taglist/HTML.tags.xml.in:547
 msgid "Link color (deprecated)"
-msgstr ""
+msgstr "Сілтеме түсі (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:552 plugins/taglist/HTML.tags.xml.in:1668
 msgid "List item"
-msgstr ""
+msgstr "Тізім элементі"
 
 #: plugins/taglist/HTML.tags.xml.in:557 plugins/taglist/HTML.tags.xml.in:1673
 msgid "List of MIME types for file upload"
-msgstr ""
+msgstr "Файлды жүктеп салуға арналған MIME түрлерінің тізімі"
 
 #: plugins/taglist/HTML.tags.xml.in:562 plugins/taglist/HTML.tags.xml.in:1677
 msgid "List of supported character sets"
-msgstr ""
+msgstr "Қолдау көрсетілетін таңбалар жиындарының тізімі"
 
 #: plugins/taglist/HTML.tags.xml.in:567 plugins/taglist/HTML.tags.xml.in:1686
 msgid "Local change to font"
-msgstr ""
+msgstr "Қаріпті жергілікті өзгерту"
 
 #: plugins/taglist/HTML.tags.xml.in:572 plugins/taglist/HTML.tags.xml.in:1691
 msgid "Long description link"
-msgstr ""
+msgstr "Толық сипаттама сілтемесі"
 
 #: plugins/taglist/HTML.tags.xml.in:577 plugins/taglist/HTML.tags.xml.in:1695
 msgid "Long quotation"
-msgstr ""
+msgstr "Ұзын дәйексөз"
 
 #: plugins/taglist/HTML.tags.xml.in:583 plugins/taglist/HTML.tags.xml.in:1704
 msgid "Margin pixel height"
-msgstr ""
+msgstr "Шет өрісінің пиксельмен биіктігі"
 
 #: plugins/taglist/HTML.tags.xml.in:589 plugins/taglist/HTML.tags.xml.in:1708
 msgid "Margin pixel width"
-msgstr ""
+msgstr "Шет өрісінің пиксельмен ені"
 
 #: plugins/taglist/HTML.tags.xml.in:594 plugins/taglist/HTML.tags.xml.in:1717
 msgid "Maximum length of text field"
-msgstr ""
+msgstr "Мәтіндік өрістің максималды ұзындығы"
 
 #: plugins/taglist/HTML.tags.xml.in:599 plugins/taglist/HTML.tags.xml.in:1721
 msgid "Output media"
-msgstr ""
+msgstr "Шығыс медиа"
 
 #: plugins/taglist/HTML.tags.xml.in:606 plugins/taglist/HTML.tags.xml.in:1725
 msgid "Media-independent link"
-msgstr ""
+msgstr "Медиаға тәуелсіз сілтеме"
 
 #: plugins/taglist/HTML.tags.xml.in:612
 msgid "Menu list (deprecated)"
-msgstr ""
+msgstr "Мәзірлер тізімі (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:617 plugins/taglist/HTML.tags.xml.in:1739
 msgid "Multi-line text field"
-msgstr ""
+msgstr "Көпжолды мәтіндік өріс"
 
 #: plugins/taglist/HTML.tags.xml.in:622 plugins/taglist/HTML.tags.xml.in:1744
 msgid "Multiple"
@@ -4183,135 +4351,135 @@ msgstr "Атауы"
 
 #: plugins/taglist/HTML.tags.xml.in:631 plugins/taglist/HTML.tags.xml.in:1752
 msgid "Named property value"
-msgstr ""
+msgstr "Аталған қасиет мәні"
 
 #: plugins/taglist/HTML.tags.xml.in:636 plugins/taglist/HTML.tags.xml.in:1764
 msgid "No frames"
-msgstr ""
+msgstr "Кадрлар жоқ"
 
 #: plugins/taglist/HTML.tags.xml.in:641 plugins/taglist/HTML.tags.xml.in:1779
 msgid "No resize"
-msgstr ""
+msgstr "Өлшемін өзгертпеу"
 
 #: plugins/taglist/HTML.tags.xml.in:645 plugins/taglist/HTML.tags.xml.in:1783
 msgid "No script"
-msgstr ""
+msgstr "Скрипт жоқ"
 
 #: plugins/taglist/HTML.tags.xml.in:651
 msgid "No shade (deprecated)"
-msgstr ""
+msgstr "Көлеңкесіз (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:655 plugins/taglist/HTML.tags.xml.in:1792
 msgid "No URI"
-msgstr ""
+msgstr "URI жоқ"
 
 #: plugins/taglist/HTML.tags.xml.in:661
 msgid "No word wrap (deprecated)"
-msgstr ""
+msgstr "Сөздерді тасымалдаусыз (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:666
 msgid "Object applet file (deprecated)"
-msgstr ""
+msgstr "Апплет объектісінің файлы (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:671 plugins/taglist/HTML.tags.xml.in:1809
 msgid "Object data reference"
-msgstr ""
+msgstr "Объект деректерінің сілтемесі"
 
 #: plugins/taglist/HTML.tags.xml.in:676 plugins/taglist/HTML.tags.xml.in:1813
 msgid "Offset for alignment character"
-msgstr ""
+msgstr "Туралау таңбасының ығысуы"
 
 #: plugins/taglist/HTML.tags.xml.in:681 plugins/taglist/HTML.tags.xml.in:1817
 msgid "OnBlur event"
-msgstr ""
+msgstr "OnBlur оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:686 plugins/taglist/HTML.tags.xml.in:1821
 msgid "OnChange event"
-msgstr ""
+msgstr "OnChange оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:691 plugins/taglist/HTML.tags.xml.in:1825
 msgid "OnClick event"
-msgstr ""
+msgstr "OnClick оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:696 plugins/taglist/HTML.tags.xml.in:1829
 msgid "OnDblClick event"
-msgstr ""
+msgstr "OnDblClick оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:701 plugins/taglist/HTML.tags.xml.in:1833
 msgid "OnFocus event"
-msgstr ""
+msgstr "OnFocus оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:706 plugins/taglist/HTML.tags.xml.in:1837
 msgid "OnKeyDown event"
-msgstr ""
+msgstr "OnKeyDown оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:711 plugins/taglist/HTML.tags.xml.in:1841
 msgid "OnKeyPress event"
-msgstr ""
+msgstr "OnKeyPress оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:716 plugins/taglist/HTML.tags.xml.in:1845
 msgid "OnKeyUp event"
-msgstr ""
+msgstr "OnKeyUp оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:721 plugins/taglist/HTML.tags.xml.in:1849
 msgid "OnLoad event"
-msgstr ""
+msgstr "OnLoad оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:726 plugins/taglist/HTML.tags.xml.in:1853
 msgid "OnMouseDown event"
-msgstr ""
+msgstr "OnMouseDown оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:731 plugins/taglist/HTML.tags.xml.in:1857
 msgid "OnMouseMove event"
-msgstr ""
+msgstr "OnMouseMove оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:736 plugins/taglist/HTML.tags.xml.in:1861
 msgid "OnMouseOut event"
-msgstr ""
+msgstr "OnMouseOut оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:741 plugins/taglist/HTML.tags.xml.in:1865
 msgid "OnMouseOver event"
-msgstr ""
+msgstr "OnMouseOver оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:746 plugins/taglist/HTML.tags.xml.in:1869
 msgid "OnMouseUp event"
-msgstr ""
+msgstr "OnMouseUp оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:751 plugins/taglist/HTML.tags.xml.in:1873
 msgid "OnReset event"
-msgstr ""
+msgstr "OnReset оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:756 plugins/taglist/HTML.tags.xml.in:1877
 msgid "OnSelect event"
-msgstr ""
+msgstr "OnSelect оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:761 plugins/taglist/HTML.tags.xml.in:1881
 msgid "OnSubmit event"
-msgstr ""
+msgstr "OnSubmit оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:766 plugins/taglist/HTML.tags.xml.in:1885
 msgid "OnUnload event"
-msgstr ""
+msgstr "OnUnload оқиғасы"
 
 #: plugins/taglist/HTML.tags.xml.in:771 plugins/taglist/HTML.tags.xml.in:1889
 msgid "Option group"
-msgstr ""
+msgstr "Опциялар тобы"
 
 #: plugins/taglist/HTML.tags.xml.in:776 plugins/taglist/HTML.tags.xml.in:1894
 msgid "Option selector"
-msgstr ""
+msgstr "Опция таңдағышы"
 
 #: plugins/taglist/HTML.tags.xml.in:781 plugins/taglist/HTML.tags.xml.in:1899
 msgid "Ordered list"
-msgstr ""
+msgstr "Реттелген тізім"
 
 #: plugins/taglist/HTML.tags.xml.in:786 plugins/taglist/HTML.tags.xml.in:1904
 msgid "Paragraph class"
-msgstr ""
+msgstr "Абзац класы"
 
 #: plugins/taglist/HTML.tags.xml.in:791 plugins/taglist/HTML.tags.xml.in:1909
 msgid "Paragraph style"
-msgstr ""
+msgstr "Абзац стилі"
 
 #: plugins/taglist/HTML.tags.xml.in:796 plugins/taglist/HTML.tags.xml.in:1914
 msgid "Paragraph"
@@ -4319,27 +4487,27 @@ msgstr "Параграф"
 
 #: plugins/taglist/HTML.tags.xml.in:801 plugins/taglist/HTML.tags.xml.in:1924
 msgid "Preformatted text"
-msgstr ""
+msgstr "Алдын ала пішімделген мәтін"
 
 #: plugins/taglist/HTML.tags.xml.in:806 plugins/taglist/HTML.tags.xml.in:1929
 msgid "Profile metainfo dictionary"
-msgstr ""
+msgstr "Профильдің метаақпараттық сөздігі"
 
 #: plugins/taglist/HTML.tags.xml.in:811 plugins/taglist/HTML.tags.xml.in:1937
 msgid "Push button"
-msgstr ""
+msgstr "Батырма"
 
 #: plugins/taglist/HTML.tags.xml.in:816 plugins/taglist/HTML.tags.xml.in:1950
 msgid "ReadOnly text and password"
-msgstr ""
+msgstr "Тек оқуға арналған мәтін мен пароль"
 
 #: plugins/taglist/HTML.tags.xml.in:821
 msgid "Reduced spacing (deprecated)"
-msgstr ""
+msgstr "Азайтылған аралық (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:825 plugins/taglist/HTML.tags.xml.in:1958
 msgid "Reverse link"
-msgstr ""
+msgstr "Кері сілтеме"
 
 #: plugins/taglist/HTML.tags.xml.in:830 plugins/taglist/HTML.tags.xml.in:1966
 msgid "Rows"
@@ -4347,23 +4515,23 @@ msgstr "Жолдар"
 
 #: plugins/taglist/HTML.tags.xml.in:835 plugins/taglist/HTML.tags.xml.in:1970
 msgid "Rulings between rows and columns"
-msgstr ""
+msgstr "Жолдар мен бағандар арасындағы тор сызықтары"
 
 #: plugins/taglist/HTML.tags.xml.in:840 plugins/taglist/HTML.tags.xml.in:1974
 msgid "Sample program output, scripts"
-msgstr ""
+msgstr "Бағдарламаның үлгілік шығысы, скрипттер"
 
 #: plugins/taglist/HTML.tags.xml.in:845 plugins/taglist/HTML.tags.xml.in:1979
 msgid "Scope covered by header cells"
-msgstr ""
+msgstr "Тақырыптама ұяшықтарымен қамтылатын көріну аймағы"
 
 #: plugins/taglist/HTML.tags.xml.in:851 plugins/taglist/HTML.tags.xml.in:1983
 msgid "Script language name"
-msgstr ""
+msgstr "Скрипт тілінің атауы"
 
 #: plugins/taglist/HTML.tags.xml.in:856 plugins/taglist/HTML.tags.xml.in:1987
 msgid "Script statements"
-msgstr ""
+msgstr "Скрипт операторлары"
 
 #: plugins/taglist/HTML.tags.xml.in:861 plugins/taglist/HTML.tags.xml.in:1992
 msgid "Scrollbar"
@@ -4371,7 +4539,7 @@ msgstr "Айналдыру сызығы"
 
 #: plugins/taglist/HTML.tags.xml.in:866 plugins/taglist/HTML.tags.xml.in:1996
 msgid "Selectable option"
-msgstr ""
+msgstr "Таңдалатын опция"
 
 #: plugins/taglist/HTML.tags.xml.in:871 plugins/taglist/HTML.tags.xml.in:2000
 msgid "Selected"
@@ -4379,7 +4547,7 @@ msgstr "Таңдалған"
 
 #: plugins/taglist/HTML.tags.xml.in:875 plugins/taglist/HTML.tags.xml.in:2004
 msgid "Server-side image map"
-msgstr ""
+msgstr "Серверлік сурет картасы"
 
 #: plugins/taglist/HTML.tags.xml.in:880 plugins/taglist/HTML.tags.xml.in:2008
 msgid "Shape"
@@ -4387,15 +4555,15 @@ msgstr "Үлгi"
 
 #: plugins/taglist/HTML.tags.xml.in:885 plugins/taglist/HTML.tags.xml.in:2012
 msgid "Short inline quotation"
-msgstr ""
+msgstr "Қысқа жолішілік дәйексөз"
 
 #: plugins/taglist/HTML.tags.xml.in:891
 msgid "Size (deprecated)"
-msgstr ""
+msgstr "Өлшем (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:896 plugins/taglist/HTML.tags.xml.in:2025
 msgid "Small text style"
-msgstr ""
+msgstr "Кіші мәтін стилі"
 
 #: plugins/taglist/HTML.tags.xml.in:901 plugins/taglist/HTML.tags.xml.in:2038
 msgid "Source"
@@ -4403,15 +4571,15 @@ msgstr "Қайнар көзі"
 
 #: plugins/taglist/HTML.tags.xml.in:906 plugins/taglist/HTML.tags.xml.in:2042
 msgid "Space-separated archive list"
-msgstr ""
+msgstr "Бос орынмен бөлінген архивтер тізімі"
 
 #: plugins/taglist/HTML.tags.xml.in:911 plugins/taglist/HTML.tags.xml.in:2050
 msgid "Spacing between cells"
-msgstr ""
+msgstr "Ұяшықтар арасындағы аралық"
 
 #: plugins/taglist/HTML.tags.xml.in:916 plugins/taglist/HTML.tags.xml.in:2054
 msgid "Spacing within cells"
-msgstr ""
+msgstr "Ұяшықтар ішіндегі аралық"
 
 #: plugins/taglist/HTML.tags.xml.in:921 plugins/taglist/HTML.tags.xml.in:2058
 msgid "Span"
@@ -4419,28 +4587,28 @@ msgstr "Мозаика"
 
 #: plugins/taglist/HTML.tags.xml.in:926 plugins/taglist/HTML.tags.xml.in:2066
 msgid "Standby load message"
-msgstr ""
+msgstr "Күту режиміндегі жүктеу хабарламасы"
 
 #: plugins/taglist/HTML.tags.xml.in:932
 msgid "Starting sequence number (deprecated)"
-msgstr ""
+msgstr "Бастапқы реттік сан (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:938
 msgid "Strike-through text style (deprecated)"
-msgstr ""
+msgstr "Сызылған мәтін стилі (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:944
 msgid "Strike-through text (deprecated)"
-msgstr ""
+msgstr "Сызылған мәтін (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:949 plugins/taglist/HTML.tags.xml.in:2084
 msgid "Strong emphasis"
-msgstr ""
+msgstr "Қалың ерекшелеу"
 
 #: plugins/taglist/HTML.tags.xml.in:954 plugins/taglist/HTML.tags.xml.in:959
 #: plugins/taglist/HTML.tags.xml.in:2089 plugins/taglist/HTML.tags.xml.in:2094
 msgid "Style info"
-msgstr ""
+msgstr "Стиль ақпараты"
 
 #: plugins/taglist/HTML.tags.xml.in:964 plugins/taglist/HTML.tags.xml.in:2098
 msgid "Subscript"
@@ -4452,35 +4620,35 @@ msgstr "Үстіңгі индекс"
 
 #: plugins/taglist/HTML.tags.xml.in:974 plugins/taglist/HTML.tags.xml.in:2112
 msgid "Table body"
-msgstr ""
+msgstr "Кестенің негізгі мәтіні"
 
 #: plugins/taglist/HTML.tags.xml.in:979 plugins/taglist/HTML.tags.xml.in:2117
 msgid "Table caption"
-msgstr ""
+msgstr "Кесте атауы"
 
 #: plugins/taglist/HTML.tags.xml.in:984 plugins/taglist/HTML.tags.xml.in:2122
 msgid "Table column group properties"
-msgstr ""
+msgstr "Кесте бағандары тобының қасиеттері"
 
 #: plugins/taglist/HTML.tags.xml.in:989 plugins/taglist/HTML.tags.xml.in:2127
 msgid "Table column properties"
-msgstr ""
+msgstr "Кесте бағанының қасиеттері"
 
 #: plugins/taglist/HTML.tags.xml.in:994 plugins/taglist/HTML.tags.xml.in:2132
 msgid "Table data cell"
-msgstr ""
+msgstr "Кестенің деректер ұяшығы"
 
 #: plugins/taglist/HTML.tags.xml.in:999 plugins/taglist/HTML.tags.xml.in:2137
 msgid "Table footer"
-msgstr ""
+msgstr "Кестенің төменгі колонтитулы"
 
 #: plugins/taglist/HTML.tags.xml.in:1004 plugins/taglist/HTML.tags.xml.in:2142
 msgid "Table header cell"
-msgstr ""
+msgstr "Кестенің тақырыптама ұяшығы"
 
 #: plugins/taglist/HTML.tags.xml.in:1009 plugins/taglist/HTML.tags.xml.in:2147
 msgid "Table header"
-msgstr ""
+msgstr "Кестенің тақырыптамасы"
 
 #: plugins/taglist/HTML.tags.xml.in:1014 plugins/taglist/HTML.tags.xml.in:2152
 msgid "Table row"
@@ -4488,7 +4656,7 @@ msgstr "Кесте қатары"
 
 #: plugins/taglist/HTML.tags.xml.in:1019 plugins/taglist/HTML.tags.xml.in:2157
 msgid "Table summary"
-msgstr ""
+msgstr "Кесте қорытындысы"
 
 #: plugins/taglist/HTML.tags.xml.in:1024 plugins/taglist/HTML.tags.xml.in:2161
 msgid "Table"
@@ -4496,31 +4664,31 @@ msgstr "Кесте"
 
 #: plugins/taglist/HTML.tags.xml.in:1029 plugins/taglist/HTML.tags.xml.in:2166
 msgid "Target - Blank"
-msgstr ""
+msgstr "Мақсат — Бос"
 
 #: plugins/taglist/HTML.tags.xml.in:1034 plugins/taglist/HTML.tags.xml.in:2171
 msgid "Target - Parent"
-msgstr ""
+msgstr "Мақсат — Ата-ана"
 
 #: plugins/taglist/HTML.tags.xml.in:1039 plugins/taglist/HTML.tags.xml.in:2176
 msgid "Target - Self"
-msgstr ""
+msgstr "Мақсат — Өзі"
 
 #: plugins/taglist/HTML.tags.xml.in:1044 plugins/taglist/HTML.tags.xml.in:2181
 msgid "Target - Top"
-msgstr ""
+msgstr "Мақсат — Жоғары"
 
 #: plugins/taglist/HTML.tags.xml.in:1049 plugins/taglist/HTML.tags.xml.in:2186
 msgid "Teletype or monospace text style"
-msgstr ""
+msgstr "Телетайп немесе ені біркелкі мәтін стилі"
 
 #: plugins/taglist/HTML.tags.xml.in:1055 plugins/taglist/HTML.tags.xml.in:1061
 msgid "Text color (deprecated)"
-msgstr ""
+msgstr "Мәтін түсі (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:1066 plugins/taglist/HTML.tags.xml.in:2199
 msgid "Text entered by user"
-msgstr ""
+msgstr "Пайдаланушы енгізген мәтін"
 
 #: plugins/taglist/HTML.tags.xml.in:1071 plugins/taglist/HTML.tags.xml.in:2208
 msgid "Title"
@@ -4528,19 +4696,19 @@ msgstr "Атауы"
 
 #: plugins/taglist/HTML.tags.xml.in:1076 plugins/taglist/HTML.tags.xml.in:2216
 msgid "Underlined text style"
-msgstr ""
+msgstr "Асты сызылған мәтін стилі"
 
 #: plugins/taglist/HTML.tags.xml.in:1081 plugins/taglist/HTML.tags.xml.in:2221
 msgid "Unordered list"
-msgstr ""
+msgstr "Реттелмеген тізім"
 
 #: plugins/taglist/HTML.tags.xml.in:1086 plugins/taglist/HTML.tags.xml.in:2230
 msgid "Use image map"
-msgstr ""
+msgstr "Сурет картасын қолдану"
 
 #: plugins/taglist/HTML.tags.xml.in:1091 plugins/taglist/HTML.tags.xml.in:2234
 msgid "Value interpretation"
-msgstr ""
+msgstr "Мәнді интерпретациялау"
 
 #: plugins/taglist/HTML.tags.xml.in:1096 plugins/taglist/HTML.tags.xml.in:2238
 msgid "Value"
@@ -4548,19 +4716,19 @@ msgstr "Мәні"
 
 #: plugins/taglist/HTML.tags.xml.in:1101 plugins/taglist/HTML.tags.xml.in:2242
 msgid "Variable or program argument"
-msgstr ""
+msgstr "Айнымалы немесе бағдарлама аргументі"
 
 #: plugins/taglist/HTML.tags.xml.in:1106 plugins/taglist/HTML.tags.xml.in:2247
 msgid "Vertical cell alignment"
-msgstr ""
+msgstr "Ұяшықты вертикалды туралау"
 
 #: plugins/taglist/HTML.tags.xml.in:1112
 msgid "Vertical space (deprecated)"
-msgstr ""
+msgstr "Вертикалды аралық (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:1118
 msgid "Visited link color (deprecated)"
-msgstr ""
+msgstr "Қаралған сілтеме түсі (ескірген)"
 
 #: plugins/taglist/HTML.tags.xml.in:1123 plugins/taglist/HTML.tags.xml.in:2259
 msgid "Width"
@@ -4568,7 +4736,7 @@ msgstr "Ені"
 
 #: plugins/taglist/HTML.tags.xml.in:1130
 msgid "HTML - Tags"
-msgstr ""
+msgstr "HTML - Тегтер"
 
 #: plugins/taglist/HTML.tags.xml.in:1141
 msgid "Above"
@@ -4576,7 +4744,7 @@ msgstr "Үстiнде"
 
 #: plugins/taglist/HTML.tags.xml.in:1176
 msgid "Applet class file code"
-msgstr ""
+msgstr "Апплет класс файлының коды"
 
 #: plugins/taglist/HTML.tags.xml.in:1180
 msgid "Array"
@@ -4588,11 +4756,11 @@ msgstr "Фон түсі"
 
 #: plugins/taglist/HTML.tags.xml.in:1201
 msgid "Background texture tile"
-msgstr ""
+msgstr "Фонның текстуралық тайлы"
 
 #: plugins/taglist/HTML.tags.xml.in:1205
 msgid "Base font"
-msgstr ""
+msgstr "Негізгі қаріп"
 
 #: plugins/taglist/HTML.tags.xml.in:1218
 msgid "Border color"
@@ -4608,15 +4776,15 @@ msgstr "Ортасы"
 
 #: plugins/taglist/HTML.tags.xml.in:1239
 msgid "Checked (state)"
-msgstr ""
+msgstr "Белгіленген (күйі)"
 
 #: plugins/taglist/HTML.tags.xml.in:1268
 msgid "Color of selected links"
-msgstr ""
+msgstr "Таңдалған сілтемелер түсі"
 
 #: plugins/taglist/HTML.tags.xml.in:1295
 msgid "Content scheme"
-msgstr ""
+msgstr "Мазмұн сұлбасы"
 
 #: plugins/taglist/HTML.tags.xml.in:1299
 msgid "Content type"
@@ -4628,31 +4796,31 @@ msgstr "Ақпарат"
 
 #: plugins/taglist/HTML.tags.xml.in:1350
 msgid "Directory list"
-msgstr ""
+msgstr "Бумалар тізімі"
 
 #: plugins/taglist/HTML.tags.xml.in:1396
 msgid "HTML version"
-msgstr ""
+msgstr "HTML нұсқасы"
 
 #: plugins/taglist/HTML.tags.xml.in:1400
 msgid "Embedded object"
-msgstr ""
+msgstr "Ендірілген объект"
 
 #: plugins/taglist/HTML.tags.xml.in:1414
 msgid "Figure"
-msgstr ""
+msgstr "Сурет"
 
 #: plugins/taglist/HTML.tags.xml.in:1419
 msgid "Font face"
-msgstr ""
+msgstr "Қаріп кескіні"
 
 #: plugins/taglist/HTML.tags.xml.in:1486
 msgid "Frameborder"
-msgstr ""
+msgstr "Frameborder"
 
 #: plugins/taglist/HTML.tags.xml.in:1505
 msgid "Framespacing"
-msgstr ""
+msgstr "Framespacing"
 
 #: plugins/taglist/HTML.tags.xml.in:1556
 msgid "Heading"
@@ -4660,19 +4828,19 @@ msgstr "Дайындау..."
 
 #: plugins/taglist/HTML.tags.xml.in:1569
 msgid "Horizontal space"
-msgstr ""
+msgstr "Горизонталды аралық"
 
 #: plugins/taglist/HTML.tags.xml.in:1605
 msgid "Image source"
-msgstr ""
+msgstr "Сурет дереккөзі"
 
 #: plugins/taglist/HTML.tags.xml.in:1618
 msgid "Inline layer"
-msgstr ""
+msgstr "Жолішілік қабат"
 
 #: plugins/taglist/HTML.tags.xml.in:1638
 msgid "Java applet"
-msgstr ""
+msgstr "Java апплеті"
 
 #: plugins/taglist/HTML.tags.xml.in:1660
 msgid "Layer"
@@ -4680,51 +4848,51 @@ msgstr "Қабат"
 
 #: plugins/taglist/HTML.tags.xml.in:1664
 msgid "Link color"
-msgstr ""
+msgstr "Сілтеме түсі"
 
 #: plugins/taglist/HTML.tags.xml.in:1681
 msgid "Listing"
-msgstr ""
+msgstr "Тізімдеу"
 
 #: plugins/taglist/HTML.tags.xml.in:1700
 msgid "Mail link"
-msgstr ""
+msgstr "Пошта сілтемесі"
 
 #: plugins/taglist/HTML.tags.xml.in:1712
 msgid "Marquee"
-msgstr ""
+msgstr "Жүгіртпе жол"
 
 #: plugins/taglist/HTML.tags.xml.in:1729
 msgid "Menu list"
-msgstr ""
+msgstr "Мәзірлер тізімі"
 
 #: plugins/taglist/HTML.tags.xml.in:1734
 msgid "Multicolumn"
-msgstr ""
+msgstr "Көпбағанды"
 
 #: plugins/taglist/HTML.tags.xml.in:1756
 msgid "Next ID"
-msgstr ""
+msgstr "Келесі ID"
 
 #: plugins/taglist/HTML.tags.xml.in:1760
 msgid "No embedded objects"
-msgstr ""
+msgstr "Ендірілген объектілер жоқ"
 
 #: plugins/taglist/HTML.tags.xml.in:1769
 msgid "No layers"
-msgstr ""
+msgstr "Қабаттар жоқ"
 
 #: plugins/taglist/HTML.tags.xml.in:1774
 msgid "No line break"
-msgstr ""
+msgstr "Жол үзілісі жоқ"
 
 #: plugins/taglist/HTML.tags.xml.in:1788
 msgid "No shade"
-msgstr ""
+msgstr "Көлеңкесіз"
 
 #: plugins/taglist/HTML.tags.xml.in:1796
 msgid "No word wrap"
-msgstr ""
+msgstr "Сөздерді тасымалдаусыз"
 
 #: plugins/taglist/HTML.tags.xml.in:1800
 msgid "Note"
@@ -4732,15 +4900,15 @@ msgstr "Естелік"
 
 #: plugins/taglist/HTML.tags.xml.in:1805
 msgid "Object applet file"
-msgstr ""
+msgstr "Апплет объектісінің файлы"
 
 #: plugins/taglist/HTML.tags.xml.in:1919
 msgid "Preformatted listing"
-msgstr ""
+msgstr "Алдын ала пішімделген тізімдеу"
 
 #: plugins/taglist/HTML.tags.xml.in:1933
 msgid "Prompt message"
-msgstr ""
+msgstr "Сұрау хабарламасы"
 
 #: plugins/taglist/HTML.tags.xml.in:1942
 msgid "Quote"
@@ -4752,15 +4920,15 @@ msgstr "Диапазон"
 
 #: plugins/taglist/HTML.tags.xml.in:1954
 msgid "Reduced spacing"
-msgstr ""
+msgstr "Азайтылған аралық"
 
 #: plugins/taglist/HTML.tags.xml.in:1962
 msgid "Root"
-msgstr ""
+msgstr "Түбір"
 
 #: plugins/taglist/HTML.tags.xml.in:2017
 msgid "Single line prompt"
-msgstr ""
+msgstr "Біржолды сұрау"
 
 #: plugins/taglist/HTML.tags.xml.in:2021
 msgid "Size"
@@ -4768,7 +4936,7 @@ msgstr "Өлшемі"
 
 #: plugins/taglist/HTML.tags.xml.in:2030
 msgid "Soft line break"
-msgstr ""
+msgstr "Жұмсақ жол үзілісі"
 
 #: plugins/taglist/HTML.tags.xml.in:2034
 msgid "Sound"
@@ -4784,19 +4952,19 @@ msgstr "Шаршы түбірін алу"
 
 #: plugins/taglist/HTML.tags.xml.in:2070
 msgid "Starting sequence number"
-msgstr ""
+msgstr "Бастапқы реттік сан"
 
 #: plugins/taglist/HTML.tags.xml.in:2074
 msgid "Strike-through text style"
-msgstr ""
+msgstr "Сызылған мәтін стилі"
 
 #: plugins/taglist/HTML.tags.xml.in:2079
 msgid "Strike-through text"
-msgstr ""
+msgstr "Сызылған мәтін"
 
 #: plugins/taglist/HTML.tags.xml.in:2108
 msgid "Tab order position"
-msgstr ""
+msgstr "Табуляция ретінің орны"
 
 #: plugins/taglist/HTML.tags.xml.in:2191 plugins/taglist/HTML.tags.xml.in:2195
 msgid "Text color"
@@ -4808,7 +4976,7 @@ msgstr "Мәтін"
 
 #: plugins/taglist/HTML.tags.xml.in:2212
 msgid "Top margin in pixels"
-msgstr ""
+msgstr "Жоғарғы шет өрісі пиксельмен"
 
 #: plugins/taglist/HTML.tags.xml.in:2226
 msgid "URL"
@@ -4816,567 +4984,567 @@ msgstr "URL"
 
 #: plugins/taglist/HTML.tags.xml.in:2251
 msgid "Vertical space"
-msgstr ""
+msgstr "Вертикалды аралық"
 
 #: plugins/taglist/HTML.tags.xml.in:2255
 msgid "Visited link color"
-msgstr ""
+msgstr "Қаралған сілтеме түсі"
 
 #: plugins/taglist/HTML.tags.xml.in:2265
 msgid "HTML - Special Characters"
-msgstr ""
+msgstr "HTML - Арнайы таңбалар"
 
 #: plugins/taglist/HTML.tags.xml.in:2267
 msgid "Non-breaking space"
-msgstr ""
+msgstr "Үзілмейтін бос орын"
 
 #: plugins/taglist/HTML.tags.xml.in:2271
 msgid "Soft hyphen­"
-msgstr ""
+msgstr "Жұмсақ дефис­"
 
 #: plugins/taglist/HTML.tags.xml.in:2275
 msgid "&quot;"
-msgstr ""
+msgstr "&quot;"
 
 #: plugins/taglist/HTML.tags.xml.in:2279
 msgid "&amp;"
-msgstr ""
+msgstr "&amp;"
 
 #: plugins/taglist/HTML.tags.xml.in:2283
 msgid "¡"
-msgstr ""
+msgstr "¡"
 
 #: plugins/taglist/HTML.tags.xml.in:2287
 msgid "¦"
-msgstr ""
+msgstr "¦"
 
 #: plugins/taglist/HTML.tags.xml.in:2291
 msgid "¨"
-msgstr ""
+msgstr "¨"
 
 #: plugins/taglist/HTML.tags.xml.in:2295
 msgid "¯"
-msgstr ""
+msgstr "¯"
 
 #: plugins/taglist/HTML.tags.xml.in:2299
 msgid "´"
-msgstr ""
+msgstr "´"
 
 #: plugins/taglist/HTML.tags.xml.in:2303
 msgid "¸"
-msgstr ""
+msgstr "¸"
 
 #: plugins/taglist/HTML.tags.xml.in:2307
 msgid "&lt;"
-msgstr ""
+msgstr "&lt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2311
 msgid "&gt;"
-msgstr ""
+msgstr "&gt;"
 
 #: plugins/taglist/HTML.tags.xml.in:2315
 msgid "±"
-msgstr ""
+msgstr "±"
 
 #: plugins/taglist/HTML.tags.xml.in:2319
 msgid "«"
-msgstr ""
+msgstr "«"
 
 #: plugins/taglist/HTML.tags.xml.in:2323
 msgid "»"
-msgstr ""
+msgstr "»"
 
 #: plugins/taglist/HTML.tags.xml.in:2327
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #: plugins/taglist/HTML.tags.xml.in:2331
 msgid "÷"
-msgstr ""
+msgstr "÷"
 
 #: plugins/taglist/HTML.tags.xml.in:2335
 msgid "¢"
-msgstr ""
+msgstr "¢"
 
 #: plugins/taglist/HTML.tags.xml.in:2339
 msgid "£"
-msgstr ""
+msgstr "£"
 
 #: plugins/taglist/HTML.tags.xml.in:2343
 msgid "€"
-msgstr ""
+msgstr "€"
 
 #: plugins/taglist/HTML.tags.xml.in:2347
 msgid "¤"
-msgstr ""
+msgstr "¤"
 
 #: plugins/taglist/HTML.tags.xml.in:2351
 msgid "¥"
-msgstr ""
+msgstr "¥"
 
 #: plugins/taglist/HTML.tags.xml.in:2355
 msgid "§"
-msgstr ""
+msgstr "§"
 
 #: plugins/taglist/HTML.tags.xml.in:2359
 msgid "©"
-msgstr ""
+msgstr "©"
 
 #: plugins/taglist/HTML.tags.xml.in:2363
 msgid "¬"
-msgstr ""
+msgstr "¬"
 
 #: plugins/taglist/HTML.tags.xml.in:2367
 msgid "®"
-msgstr ""
+msgstr "®"
 
 #: plugins/taglist/HTML.tags.xml.in:2371
 msgid "™"
-msgstr ""
+msgstr "™"
 
 #: plugins/taglist/HTML.tags.xml.in:2375
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #: plugins/taglist/HTML.tags.xml.in:2379
 msgid "µ"
-msgstr ""
+msgstr "µ"
 
 #: plugins/taglist/HTML.tags.xml.in:2383
 msgid "¶"
-msgstr ""
+msgstr "¶"
 
 #: plugins/taglist/HTML.tags.xml.in:2387
 msgid "·"
-msgstr ""
+msgstr "·"
 
 #: plugins/taglist/HTML.tags.xml.in:2391
 msgid "¼"
-msgstr ""
+msgstr "¼"
 
 #: plugins/taglist/HTML.tags.xml.in:2395
 msgid "½"
-msgstr ""
+msgstr "½"
 
 #: plugins/taglist/HTML.tags.xml.in:2399
 msgid "¾"
-msgstr ""
+msgstr "¾"
 
 #: plugins/taglist/HTML.tags.xml.in:2403
 msgid "¹"
-msgstr ""
+msgstr "¹"
 
 #: plugins/taglist/HTML.tags.xml.in:2407
 msgid "²"
-msgstr ""
+msgstr "²"
 
 #: plugins/taglist/HTML.tags.xml.in:2411
 msgid "³"
-msgstr ""
+msgstr "³"
 
 #: plugins/taglist/HTML.tags.xml.in:2415
 msgid "á"
-msgstr ""
+msgstr "á"
 
 #: plugins/taglist/HTML.tags.xml.in:2419
 msgid "Á"
-msgstr ""
+msgstr "Á"
 
 #: plugins/taglist/HTML.tags.xml.in:2423
 msgid "â"
-msgstr ""
+msgstr "â"
 
 #: plugins/taglist/HTML.tags.xml.in:2427
 msgid "Â"
-msgstr ""
+msgstr "Â"
 
 #: plugins/taglist/HTML.tags.xml.in:2431
 msgid "à"
-msgstr ""
+msgstr "à"
 
 #: plugins/taglist/HTML.tags.xml.in:2435
 msgid "À"
-msgstr ""
+msgstr "À"
 
 #: plugins/taglist/HTML.tags.xml.in:2439
 msgid "å"
-msgstr ""
+msgstr "å"
 
 #: plugins/taglist/HTML.tags.xml.in:2443
 msgid "Å"
-msgstr ""
+msgstr "Å"
 
 #: plugins/taglist/HTML.tags.xml.in:2447
 msgid "ã"
-msgstr ""
+msgstr "ã"
 
 #: plugins/taglist/HTML.tags.xml.in:2451
 msgid "Ã"
-msgstr ""
+msgstr "Ã"
 
 #: plugins/taglist/HTML.tags.xml.in:2455
 msgid "ä"
-msgstr ""
+msgstr "ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2459
 msgid "Ä"
-msgstr ""
+msgstr "Ä"
 
 #: plugins/taglist/HTML.tags.xml.in:2463
 msgid "ª"
-msgstr ""
+msgstr "ª"
 
 #: plugins/taglist/HTML.tags.xml.in:2467
 msgid "æ"
-msgstr ""
+msgstr "æ"
 
 #: plugins/taglist/HTML.tags.xml.in:2471
 msgid "Æ"
-msgstr ""
+msgstr "Æ"
 
 #: plugins/taglist/HTML.tags.xml.in:2475
 msgid "ç"
-msgstr ""
+msgstr "ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2479
 msgid "Ç"
-msgstr ""
+msgstr "Ç"
 
 #: plugins/taglist/HTML.tags.xml.in:2483
 msgid "Ð"
-msgstr ""
+msgstr "Ð"
 
 #: plugins/taglist/HTML.tags.xml.in:2487
 msgid "ð"
-msgstr ""
+msgstr "ð"
 
 #: plugins/taglist/HTML.tags.xml.in:2491
 msgid "é"
-msgstr ""
+msgstr "é"
 
 #: plugins/taglist/HTML.tags.xml.in:2495
 msgid "É"
-msgstr ""
+msgstr "É"
 
 #: plugins/taglist/HTML.tags.xml.in:2499
 msgid "ê"
-msgstr ""
+msgstr "ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2503
 msgid "Ê"
-msgstr ""
+msgstr "Ê"
 
 #: plugins/taglist/HTML.tags.xml.in:2507
 msgid "è"
-msgstr ""
+msgstr "è"
 
 #: plugins/taglist/HTML.tags.xml.in:2511
 msgid "È"
-msgstr ""
+msgstr "È"
 
 #: plugins/taglist/HTML.tags.xml.in:2515
 msgid "ë"
-msgstr ""
+msgstr "ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2519
 msgid "Ë"
-msgstr ""
+msgstr "Ë"
 
 #: plugins/taglist/HTML.tags.xml.in:2523
 msgid "í"
-msgstr ""
+msgstr "í"
 
 #: plugins/taglist/HTML.tags.xml.in:2527
 msgid "Í"
-msgstr ""
+msgstr "Í"
 
 #: plugins/taglist/HTML.tags.xml.in:2531
 msgid "î"
-msgstr ""
+msgstr "î"
 
 #: plugins/taglist/HTML.tags.xml.in:2535
 msgid "Î"
-msgstr ""
+msgstr "Î"
 
 #: plugins/taglist/HTML.tags.xml.in:2539
 msgid "ì"
-msgstr ""
+msgstr "ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2543
 msgid "Ì"
-msgstr ""
+msgstr "Ì"
 
 #: plugins/taglist/HTML.tags.xml.in:2547
 msgid "ï"
-msgstr ""
+msgstr "ï"
 
 #: plugins/taglist/HTML.tags.xml.in:2551
 msgid "Ï"
-msgstr ""
+msgstr "Ï"
 
 #: plugins/taglist/HTML.tags.xml.in:2555
 msgid "ñ"
-msgstr ""
+msgstr "ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2559
 msgid "Ñ"
-msgstr ""
+msgstr "Ñ"
 
 #: plugins/taglist/HTML.tags.xml.in:2563
 msgid "ó"
-msgstr ""
+msgstr "ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2567
 msgid "Ó"
-msgstr ""
+msgstr "Ó"
 
 #: plugins/taglist/HTML.tags.xml.in:2571
 msgid "ô"
-msgstr ""
+msgstr "ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2575
 msgid "Ô"
-msgstr ""
+msgstr "Ô"
 
 #: plugins/taglist/HTML.tags.xml.in:2579
 msgid "ò"
-msgstr ""
+msgstr "ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2583
 msgid "Ò"
-msgstr ""
+msgstr "Ò"
 
 #: plugins/taglist/HTML.tags.xml.in:2587
 msgid "º"
-msgstr ""
+msgstr "º"
 
 #: plugins/taglist/HTML.tags.xml.in:2591
 msgid "ø"
-msgstr ""
+msgstr "ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2595
 msgid "Ø"
-msgstr ""
+msgstr "Ø"
 
 #: plugins/taglist/HTML.tags.xml.in:2599
 msgid "õ"
-msgstr ""
+msgstr "õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2603
 msgid "Õ"
-msgstr ""
+msgstr "Õ"
 
 #: plugins/taglist/HTML.tags.xml.in:2607
 msgid "ö"
-msgstr ""
+msgstr "ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2611
 msgid "Ö"
-msgstr ""
+msgstr "Ö"
 
 #: plugins/taglist/HTML.tags.xml.in:2615
 msgid "ß"
-msgstr ""
+msgstr "ß"
 
 #: plugins/taglist/HTML.tags.xml.in:2619
 msgid "þ"
-msgstr ""
+msgstr "þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2623
 msgid "Þ"
-msgstr ""
+msgstr "Þ"
 
 #: plugins/taglist/HTML.tags.xml.in:2627
 msgid "ú"
-msgstr ""
+msgstr "ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2631
 msgid "Ú"
-msgstr ""
+msgstr "Ú"
 
 #: plugins/taglist/HTML.tags.xml.in:2635
 msgid "û"
-msgstr ""
+msgstr "û"
 
 #: plugins/taglist/HTML.tags.xml.in:2639
 msgid "Û"
-msgstr ""
+msgstr "Û"
 
 #: plugins/taglist/HTML.tags.xml.in:2643
 msgid "ù"
-msgstr ""
+msgstr "ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2647
 msgid "Ù"
-msgstr ""
+msgstr "Ù"
 
 #: plugins/taglist/HTML.tags.xml.in:2651
 msgid "ü"
-msgstr ""
+msgstr "ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2655
 msgid "Ü"
-msgstr ""
+msgstr "Ü"
 
 #: plugins/taglist/HTML.tags.xml.in:2659
 msgid "ý"
-msgstr ""
+msgstr "ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2663
 msgid "Ý"
-msgstr ""
+msgstr "Ý"
 
 #: plugins/taglist/HTML.tags.xml.in:2667
 msgid "ÿ"
-msgstr ""
+msgstr "ÿ"
 
 #: plugins/taglist/Latex.tags.xml.in:3
 msgid "Latex - Tags"
-msgstr ""
+msgstr "Latex - Тегтер"
 
 #: plugins/taglist/Latex.tags.xml.in:4
 msgid "Bibliography (cite)"
-msgstr ""
+msgstr "Библиография (cite)"
 
 #: plugins/taglist/Latex.tags.xml.in:9
 msgid "Bibliography (item)"
-msgstr ""
+msgstr "Библиография (item)"
 
 #: plugins/taglist/Latex.tags.xml.in:14
 msgid "Bibliography (shortcite)"
-msgstr ""
+msgstr "Библиография (shortcite)"
 
 #: plugins/taglist/Latex.tags.xml.in:19
 msgid "Bibliography (thebibliography)"
-msgstr ""
+msgstr "Библиография (thebibliography)"
 
 #: plugins/taglist/Latex.tags.xml.in:24
 msgid "Brackets ()"
-msgstr ""
+msgstr "Жақшалар ()"
 
 #: plugins/taglist/Latex.tags.xml.in:29
 msgid "Brackets []"
-msgstr ""
+msgstr "Жақшалар []"
 
 #: plugins/taglist/Latex.tags.xml.in:34
 msgid "Brackets {}"
-msgstr ""
+msgstr "Жақшалар {}"
 
 #: plugins/taglist/Latex.tags.xml.in:39
 msgid "Brackets &lt;&gt;"
-msgstr ""
+msgstr "Жақшалар &lt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:44
 msgid "File input"
-msgstr ""
+msgstr "Файл кірісі"
 
 #: plugins/taglist/Latex.tags.xml.in:49
 msgid "Function cosine"
-msgstr ""
+msgstr "Косинус функциясы"
 
 #: plugins/taglist/Latex.tags.xml.in:54
 msgid "Function e^"
-msgstr ""
+msgstr "e^ функциясы"
 
 #: plugins/taglist/Latex.tags.xml.in:59
 msgid "Function exp"
-msgstr ""
+msgstr "exp функциясы"
 
 #: plugins/taglist/Latex.tags.xml.in:64
 msgid "Function log"
-msgstr ""
+msgstr "log функциясы"
 
 #: plugins/taglist/Latex.tags.xml.in:69
 msgid "Function log10"
-msgstr ""
+msgstr "log10 функциясы"
 
 #: plugins/taglist/Latex.tags.xml.in:74
 msgid "Function sine"
-msgstr ""
+msgstr "Синус функциясы"
 
 #: plugins/taglist/Latex.tags.xml.in:79
 msgid "Greek alpha"
-msgstr ""
+msgstr "Грекше альфа"
 
 #: plugins/taglist/Latex.tags.xml.in:83
 msgid "Greek beta"
-msgstr ""
+msgstr "Грекше бета"
 
 #: plugins/taglist/Latex.tags.xml.in:87
 msgid "Greek epsilon"
-msgstr ""
+msgstr "Грекше эпсилон"
 
 #: plugins/taglist/Latex.tags.xml.in:91
 msgid "Greek gamma"
-msgstr ""
+msgstr "Грекше гамма"
 
 #: plugins/taglist/Latex.tags.xml.in:95
 msgid "Greek lambda"
-msgstr ""
+msgstr "Грекше лямбда"
 
 #: plugins/taglist/Latex.tags.xml.in:99
 msgid "Greek rho"
-msgstr ""
+msgstr "Грекше ро"
 
 #: plugins/taglist/Latex.tags.xml.in:103
 msgid "Greek tau"
-msgstr ""
+msgstr "Грекше тау"
 
 #: plugins/taglist/Latex.tags.xml.in:107
 msgid "Header 0 (chapter)"
-msgstr ""
+msgstr "0-тақырыптама (тарау)"
 
 #: plugins/taglist/Latex.tags.xml.in:112
 msgid "Header 0 (chapter*)"
-msgstr ""
+msgstr "0-тақырыптама (тарау*)"
 
 #: plugins/taglist/Latex.tags.xml.in:117
 msgid "Header 1 (section)"
-msgstr ""
+msgstr "1-тақырыптама (бөлім)"
 
 #: plugins/taglist/Latex.tags.xml.in:122
 msgid "Header 1 (section*)"
-msgstr ""
+msgstr "1-тақырыптама (бөлім*)"
 
 #: plugins/taglist/Latex.tags.xml.in:127
 msgid "Header 2 (subsection)"
-msgstr ""
+msgstr "2-тақырыптама (ішкі бөлім)"
 
 #: plugins/taglist/Latex.tags.xml.in:132
 msgid "Header 2 (subsection*)"
-msgstr ""
+msgstr "2-тақырыптама (ішкі бөлім*)"
 
 #: plugins/taglist/Latex.tags.xml.in:137
 msgid "Header 3 (subsubsection)"
-msgstr ""
+msgstr "3-тақырыптама (ішкі бөлімше)"
 
 #: plugins/taglist/Latex.tags.xml.in:142
 msgid "Header 3 (subsubsection*)"
-msgstr ""
+msgstr "3-тақырыптама (ішкі бөлімше*)"
 
 #: plugins/taglist/Latex.tags.xml.in:147
 msgid "Header 4 (paragraph)"
-msgstr ""
+msgstr "4-тақырыптама (абзац)"
 
 #: plugins/taglist/Latex.tags.xml.in:152
 msgid "Header appendix"
-msgstr ""
+msgstr "Қосымша тақырыптамасы"
 
 #: plugins/taglist/Latex.tags.xml.in:156
 msgid "List description"
-msgstr ""
+msgstr "Тізім сипаттамасы"
 
 #: plugins/taglist/Latex.tags.xml.in:161
 msgid "List enumerate"
-msgstr ""
+msgstr "Нөмірленген тізім"
 
 #: plugins/taglist/Latex.tags.xml.in:166
 msgid "List itemize"
-msgstr ""
+msgstr "Маркерленген тізім"
 
 #: plugins/taglist/Latex.tags.xml.in:171
 msgid "Item with label"
-msgstr ""
+msgstr "Жапсырмасы бар элемент"
 
 #: plugins/taglist/Latex.tags.xml.in:176
 msgid "Item"
@@ -5384,139 +5552,139 @@ msgstr "Элемент"
 
 #: plugins/taglist/Latex.tags.xml.in:180
 msgid "Maths (display)"
-msgstr ""
+msgstr "Математика (көрсету)"
 
 #: plugins/taglist/Latex.tags.xml.in:185
 msgid "Maths (inline)"
-msgstr ""
+msgstr "Математика (жолішілік)"
 
 #: plugins/taglist/Latex.tags.xml.in:190
 msgid "Operator fraction"
-msgstr ""
+msgstr "Бөлшек операторы"
 
 #: plugins/taglist/Latex.tags.xml.in:195
 msgid "Operator integral (display)"
-msgstr ""
+msgstr "Интеграл операторы (көрсету)"
 
 #: plugins/taglist/Latex.tags.xml.in:200
 msgid "Operator integral (inline)"
-msgstr ""
+msgstr "Интеграл операторы (жолішілік)"
 
 #: plugins/taglist/Latex.tags.xml.in:205
 msgid "Operator sum (display)"
-msgstr ""
+msgstr "Қосынды операторы (көрсету)"
 
 #: plugins/taglist/Latex.tags.xml.in:210
 msgid "Operator sum (inline)"
-msgstr ""
+msgstr "Қосынды операторы (жолішілік)"
 
 #: plugins/taglist/Latex.tags.xml.in:215
 msgid "Reference label"
-msgstr ""
+msgstr "Сілтеме жапсырмасы"
 
 #: plugins/taglist/Latex.tags.xml.in:220
 msgid "Reference ref"
-msgstr ""
+msgstr "Сілтеме ref"
 
 #: plugins/taglist/Latex.tags.xml.in:225
 msgid "Symbol &lt;&lt;"
-msgstr ""
+msgstr "Таңба &lt;&lt;"
 
 #: plugins/taglist/Latex.tags.xml.in:229
 msgid "Symbol &lt;="
-msgstr ""
+msgstr "Таңба &lt;="
 
 #: plugins/taglist/Latex.tags.xml.in:233
 msgid "Symbol &gt;="
-msgstr ""
+msgstr "Таңба &gt;="
 
 #: plugins/taglist/Latex.tags.xml.in:237
 msgid "Symbol &gt;&gt;"
-msgstr ""
+msgstr "Таңба &gt;&gt;"
 
 #: plugins/taglist/Latex.tags.xml.in:241
 msgid "Symbol and"
-msgstr ""
+msgstr "Таңба and"
 
 #: plugins/taglist/Latex.tags.xml.in:245
 msgid "Symbol const"
-msgstr ""
+msgstr "Таңба const"
 
 #: plugins/taglist/Latex.tags.xml.in:249
 msgid "Symbol d2-by-dt2-partial"
-msgstr ""
+msgstr "Таңба d2-by-dt2-partial"
 
 #: plugins/taglist/Latex.tags.xml.in:254
 msgid "Symbol dagger"
-msgstr ""
+msgstr "Таңба dagger"
 
 #: plugins/taglist/Latex.tags.xml.in:258
 msgid "Symbol d-by-dt"
-msgstr ""
+msgstr "Таңба d-by-dt"
 
 #: plugins/taglist/Latex.tags.xml.in:263
 msgid "Symbol d-by-dt-partial"
-msgstr ""
+msgstr "Таңба d-by-dt-partial"
 
 #: plugins/taglist/Latex.tags.xml.in:268
 msgid "Symbol equiv"
-msgstr ""
+msgstr "Таңба equiv"
 
 #: plugins/taglist/Latex.tags.xml.in:272
 msgid "Symbol en-dash --"
-msgstr ""
+msgstr "Таңба қысқа сызықша --"
 
 #: plugins/taglist/Latex.tags.xml.in:276
 msgid "Symbol em-dash ---"
-msgstr ""
+msgstr "Таңба ұзын сызықша ---"
 
 #: plugins/taglist/Latex.tags.xml.in:280
 msgid "Symbol infinity"
-msgstr ""
+msgstr "Таңба шексіздік"
 
 #: plugins/taglist/Latex.tags.xml.in:284
 msgid "Symbol mathspace ,"
-msgstr ""
+msgstr "Таңба mathspace ,"
 
 #: plugins/taglist/Latex.tags.xml.in:288
 msgid "Symbol mathspace ."
-msgstr ""
+msgstr "Таңба mathspace ."
 
 #: plugins/taglist/Latex.tags.xml.in:292
 msgid "Symbol mathspace _"
-msgstr ""
+msgstr "Таңба mathspace _"
 
 #: plugins/taglist/Latex.tags.xml.in:296
 msgid "Symbol mathspace __"
-msgstr ""
+msgstr "Таңба mathspace __"
 
 #: plugins/taglist/Latex.tags.xml.in:300
 msgid "Symbol simeq"
-msgstr ""
+msgstr "Таңба simeq"
 
 #: plugins/taglist/Latex.tags.xml.in:304
 msgid "Symbol star"
-msgstr ""
+msgstr "Таңба star"
 
 #: plugins/taglist/Latex.tags.xml.in:308
 msgid "Typeface bold"
-msgstr ""
+msgstr "Қаріп кескіні: жуан"
 
 #: plugins/taglist/Latex.tags.xml.in:313
 msgid "Typeface type"
-msgstr ""
+msgstr "Қаріп кескіні: түр"
 
 #: plugins/taglist/Latex.tags.xml.in:318
 msgid "Typeface italic"
-msgstr ""
+msgstr "Қаріп кескіні: курсив"
 
 #: plugins/taglist/Latex.tags.xml.in:323
 msgid "Typeface slanted"
-msgstr ""
+msgstr "Қаріп кескіні: көлбеу"
 
 #: plugins/taglist/Latex.tags.xml.in:333
 msgid "Unbreakable text"
-msgstr ""
+msgstr "Үзілмейтін мәтін"
 
 #: plugins/taglist/Latex.tags.xml.in:338
 msgid "Footnote"
@@ -5524,190 +5692,192 @@ msgstr "Нұсқама"
 
 #: plugins/taglist/taglist.plugin.desktop.in.in:5
 msgid "Tag list"
-msgstr ""
+msgstr "Тегтер тізімі"
 
 #: plugins/taglist/taglist.plugin.desktop.in.in:6
 msgid ""
 "Provides a method to easily insert commonly used tags/strings into a "
 "document without having to type them."
 msgstr ""
+"Жиі қолданылатын тегтерді/жолдарды термей-ақ құжатқа оңай кірістіру әдісін "
+"ұсынады."
 
 #: plugins/taglist/XSLT.tags.xml.in:7
 msgid "XSLT - Elements"
-msgstr ""
+msgstr "XSLT - Элементтер"
 
 #: plugins/taglist/XSLT.tags.xml.in:8
 msgid "apply-imports"
-msgstr ""
+msgstr "apply-imports"
 
 #: plugins/taglist/XSLT.tags.xml.in:12
 msgid "apply-templates"
-msgstr ""
+msgstr "apply-templates"
 
 #: plugins/taglist/XSLT.tags.xml.in:16 plugins/taglist/XSLT.tags.xml.in:303
 msgid "attribute"
-msgstr ""
+msgstr "attribute"
 
 #: plugins/taglist/XSLT.tags.xml.in:20
 msgid "attribute-set"
-msgstr ""
+msgstr "attribute-set"
 
 #: plugins/taglist/XSLT.tags.xml.in:24
 msgid "call-template"
-msgstr ""
+msgstr "call-template"
 
 #: plugins/taglist/XSLT.tags.xml.in:28
 msgid "choose"
-msgstr ""
+msgstr "choose"
 
 #: plugins/taglist/XSLT.tags.xml.in:32 plugins/taglist/XSLT.tags.xml.in:150
 msgid "comment"
-msgstr ""
+msgstr "comment"
 
 #: plugins/taglist/XSLT.tags.xml.in:36
 msgid "copy"
-msgstr ""
+msgstr "copy"
 
 #: plugins/taglist/XSLT.tags.xml.in:39
 msgid "copy-of"
-msgstr ""
+msgstr "copy-of"
 
 #: plugins/taglist/XSLT.tags.xml.in:43
 msgid "decimal-format"
-msgstr ""
+msgstr "decimal-format"
 
 #: plugins/taglist/XSLT.tags.xml.in:46
 msgid "element"
-msgstr ""
+msgstr "element"
 
 #: plugins/taglist/XSLT.tags.xml.in:50
 msgid "fallback"
-msgstr ""
+msgstr "fallback"
 
 #: plugins/taglist/XSLT.tags.xml.in:54
 msgid "for-each"
-msgstr ""
+msgstr "for-each"
 
 #: plugins/taglist/XSLT.tags.xml.in:58
 msgid "if"
-msgstr ""
+msgstr "if"
 
 #: plugins/taglist/XSLT.tags.xml.in:62
 msgid "import"
-msgstr ""
+msgstr "import"
 
 #: plugins/taglist/XSLT.tags.xml.in:66
 msgid "include"
-msgstr ""
+msgstr "include"
 
 #: plugins/taglist/XSLT.tags.xml.in:70 plugins/taglist/XSLT.tags.xml.in:199
 #: plugins/taglist/XUL.tags.xml.in:147
 msgid "key"
-msgstr ""
+msgstr "key"
 
 #: plugins/taglist/XSLT.tags.xml.in:74
 msgid "message"
-msgstr ""
+msgstr "message"
 
 #: plugins/taglist/XSLT.tags.xml.in:78
 msgid "namespace-alias"
-msgstr ""
+msgstr "namespace-alias"
 
 #: plugins/taglist/XSLT.tags.xml.in:82 plugins/taglist/XSLT.tags.xml.in:233
 msgid "number"
-msgstr ""
+msgstr "number"
 
 #: plugins/taglist/XSLT.tags.xml.in:85
 msgid "otherwise"
-msgstr ""
+msgstr "otherwise"
 
 #: plugins/taglist/XSLT.tags.xml.in:89
 msgid "output"
-msgstr ""
+msgstr "output"
 
 #: plugins/taglist/XSLT.tags.xml.in:93
 msgid "param"
-msgstr ""
+msgstr "param"
 
 #: plugins/taglist/XSLT.tags.xml.in:97
 msgid "preserve-space"
-msgstr ""
+msgstr "preserve-space"
 
 #: plugins/taglist/XSLT.tags.xml.in:101 plugins/taglist/XSLT.tags.xml.in:240
 msgid "processing-instruction"
-msgstr ""
+msgstr "processing-instruction"
 
 #: plugins/taglist/XSLT.tags.xml.in:105
 msgid "sort"
-msgstr ""
+msgstr "sort"
 
 #: plugins/taglist/XSLT.tags.xml.in:108
 msgid "strip-space"
-msgstr ""
+msgstr "strip-space"
 
 #: plugins/taglist/XSLT.tags.xml.in:112
 msgid "stylesheet"
-msgstr ""
+msgstr "stylesheet"
 
 #: plugins/taglist/XSLT.tags.xml.in:116 plugins/taglist/XUL.tags.xml.in:398
 msgid "template"
-msgstr ""
+msgstr "template"
 
 #: plugins/taglist/XSLT.tags.xml.in:120 plugins/taglist/XSLT.tags.xml.in:280
 msgid "text"
-msgstr ""
+msgstr "text"
 
 #: plugins/taglist/XSLT.tags.xml.in:123
 msgid "value-of"
-msgstr ""
+msgstr "value-of"
 
 #: plugins/taglist/XSLT.tags.xml.in:127
 msgid "variable"
-msgstr ""
+msgstr "variable"
 
 #: plugins/taglist/XSLT.tags.xml.in:131
 msgid "when"
-msgstr ""
+msgstr "when"
 
 #: plugins/taglist/XSLT.tags.xml.in:135
 msgid "with-param"
-msgstr ""
+msgstr "with-param"
 
 #: plugins/taglist/XSLT.tags.xml.in:141
 msgid "XSLT - Functions"
-msgstr ""
+msgstr "XSLT - Функциялар"
 
 #: plugins/taglist/XSLT.tags.xml.in:142
 msgid "boolean"
-msgstr ""
+msgstr "boolean"
 
 #: plugins/taglist/XSLT.tags.xml.in:146
 msgid "ceiling"
-msgstr ""
+msgstr "ceiling"
 
 #: plugins/taglist/XSLT.tags.xml.in:153
 msgid "concat"
-msgstr ""
+msgstr "concat"
 
 #: plugins/taglist/XSLT.tags.xml.in:157
 msgid "contains"
-msgstr ""
+msgstr "contains"
 
 #: plugins/taglist/XSLT.tags.xml.in:161
 msgid "count"
-msgstr ""
+msgstr "count"
 
 #: plugins/taglist/XSLT.tags.xml.in:165
 msgid "current"
-msgstr ""
+msgstr "current"
 
 #: plugins/taglist/XSLT.tags.xml.in:168
 msgid "document"
-msgstr ""
+msgstr "document"
 
 #: plugins/taglist/XSLT.tags.xml.in:172
 msgid "element-available"
-msgstr ""
+msgstr "element-available"
 
 #: plugins/taglist/XSLT.tags.xml.in:176
 msgid "false"
@@ -5715,99 +5885,99 @@ msgstr "false"
 
 #: plugins/taglist/XSLT.tags.xml.in:179
 msgid "floor"
-msgstr ""
+msgstr "floor"
 
 #: plugins/taglist/XSLT.tags.xml.in:183
 msgid "format-number"
-msgstr ""
+msgstr "format-number"
 
 #: plugins/taglist/XSLT.tags.xml.in:187
 msgid "function-available"
-msgstr ""
+msgstr "function-available"
 
 #: plugins/taglist/XSLT.tags.xml.in:191
 msgid "generate-id"
-msgstr ""
+msgstr "generate-id"
 
 #: plugins/taglist/XSLT.tags.xml.in:195
 msgid "id"
-msgstr ""
+msgstr "id"
 
 #: plugins/taglist/XSLT.tags.xml.in:203
 msgid "lang"
-msgstr ""
+msgstr "lang"
 
 #: plugins/taglist/XSLT.tags.xml.in:207
 msgid "last"
-msgstr ""
+msgstr "last"
 
 #: plugins/taglist/XSLT.tags.xml.in:210
 msgid "local-name"
-msgstr ""
+msgstr "local-name"
 
 #: plugins/taglist/XSLT.tags.xml.in:214
 msgid "name"
-msgstr ""
+msgstr "ат"
 
 #: plugins/taglist/XSLT.tags.xml.in:218
 msgid "namespace-uri"
-msgstr ""
+msgstr "namespace-uri"
 
 #: plugins/taglist/XSLT.tags.xml.in:222
 msgid "node"
-msgstr ""
+msgstr "node"
 
 #: plugins/taglist/XSLT.tags.xml.in:225
 msgid "normalize-space"
-msgstr ""
+msgstr "normalize-space"
 
 #: plugins/taglist/XSLT.tags.xml.in:229
 msgid "not"
-msgstr ""
+msgstr "not"
 
 #: plugins/taglist/XSLT.tags.xml.in:237
 msgid "position"
-msgstr ""
+msgstr "position"
 
 #: plugins/taglist/XSLT.tags.xml.in:244
 msgid "round"
-msgstr ""
+msgstr "round"
 
 #: plugins/taglist/XSLT.tags.xml.in:248
 msgid "starts-with"
-msgstr ""
+msgstr "starts-with"
 
 #: plugins/taglist/XSLT.tags.xml.in:252
 msgid "string"
-msgstr ""
+msgstr "string"
 
 #: plugins/taglist/XSLT.tags.xml.in:256
 msgid "string-length"
-msgstr ""
+msgstr "string-length"
 
 #: plugins/taglist/XSLT.tags.xml.in:260
 msgid "substring"
-msgstr ""
+msgstr "substring"
 
 #: plugins/taglist/XSLT.tags.xml.in:264
 msgid "substring-after"
-msgstr ""
+msgstr "substring-after"
 
 #: plugins/taglist/XSLT.tags.xml.in:268
 msgid "substring-before"
-msgstr ""
+msgstr "substring-before"
 
 #: plugins/taglist/XSLT.tags.xml.in:272
 msgid "sum"
-msgstr ""
+msgstr "sum"
 
 #: plugins/taglist/XSLT.tags.xml.in:276
 msgid "system-property"
-msgstr ""
+msgstr "system-property"
 
 #: plugins/taglist/XSLT.tags.xml.in:283
 msgid "translate"
-msgstr ""
+msgstr "translate"
 
 #: plugins/taglist/XSLT.tags.xml.in:287
 msgid "true"
@@ -5815,115 +5985,115 @@ msgstr "true"
 
 #: plugins/taglist/XSLT.tags.xml.in:290
 msgid "unparsed-entity-uri"
-msgstr ""
+msgstr "unparsed-entity-uri"
 
 #: plugins/taglist/XSLT.tags.xml.in:296
 msgid "XSLT - Axes"
-msgstr ""
+msgstr "XSLT - Осьтер"
 
 #: plugins/taglist/XSLT.tags.xml.in:297
 msgid "ancestor"
-msgstr ""
+msgstr "ancestor"
 
 #: plugins/taglist/XSLT.tags.xml.in:300
 msgid "ancestor-or-self"
-msgstr ""
+msgstr "ancestor-or-self"
 
 #: plugins/taglist/XSLT.tags.xml.in:306
 msgid "child"
-msgstr ""
+msgstr "child"
 
 #: plugins/taglist/XSLT.tags.xml.in:309
 msgid "descendant"
-msgstr ""
+msgstr "descendant"
 
 #: plugins/taglist/XSLT.tags.xml.in:312
 msgid "descendant-or-self"
-msgstr ""
+msgstr "descendant-or-self"
 
 #: plugins/taglist/XSLT.tags.xml.in:315
 msgid "following"
-msgstr ""
+msgstr "following"
 
 #: plugins/taglist/XSLT.tags.xml.in:318
 msgid "following-sibling"
-msgstr ""
+msgstr "following-sibling"
 
 #: plugins/taglist/XSLT.tags.xml.in:321
 msgid "namespace"
-msgstr ""
+msgstr "namespace"
 
 #: plugins/taglist/XSLT.tags.xml.in:324
 msgid "parent"
-msgstr ""
+msgstr "parent"
 
 #: plugins/taglist/XSLT.tags.xml.in:327
 msgid "preceding"
-msgstr ""
+msgstr "preceding"
 
 #: plugins/taglist/XSLT.tags.xml.in:330
 msgid "preceding-sibling"
-msgstr ""
+msgstr "preceding-sibling"
 
 #: plugins/taglist/XSLT.tags.xml.in:333
 msgid "self"
-msgstr ""
+msgstr "self"
 
 #: plugins/taglist/XUL.tags.xml.in:3
 msgid "XUL - Tags"
-msgstr ""
+msgstr "XUL - Тегтер"
 
 #: plugins/taglist/XUL.tags.xml.in:5
 msgid "action"
-msgstr ""
+msgstr "action"
 
 #: plugins/taglist/XUL.tags.xml.in:10
 msgid "arrowscrollbox"
-msgstr ""
+msgstr "arrowscrollbox"
 
 #: plugins/taglist/XUL.tags.xml.in:15
 msgid "bbox"
-msgstr ""
+msgstr "bbox"
 
 #: plugins/taglist/XUL.tags.xml.in:20
 msgid "binding"
-msgstr ""
+msgstr "binding"
 
 #: plugins/taglist/XUL.tags.xml.in:25
 msgid "bindings"
-msgstr ""
+msgstr "bindings"
 
 #: plugins/taglist/XUL.tags.xml.in:30
 msgid "box"
-msgstr ""
+msgstr "box"
 
 #: plugins/taglist/XUL.tags.xml.in:35
 msgid "broadcaster"
-msgstr ""
+msgstr "broadcaster"
 
 #: plugins/taglist/XUL.tags.xml.in:39
 msgid "broadcasterset"
-msgstr ""
+msgstr "broadcasterset"
 
 #: plugins/taglist/XUL.tags.xml.in:44
 msgid "button"
-msgstr ""
+msgstr "button"
 
 #: plugins/taglist/XUL.tags.xml.in:48
 msgid "browser"
-msgstr ""
+msgstr "browser"
 
 #: plugins/taglist/XUL.tags.xml.in:52
 msgid "checkbox"
-msgstr ""
+msgstr "checkbox"
 
 #: plugins/taglist/XUL.tags.xml.in:56
 msgid "caption"
-msgstr ""
+msgstr "caption"
 
 #: plugins/taglist/XUL.tags.xml.in:60
 msgid "colorpicker"
-msgstr ""
+msgstr "colorpicker"
 
 #: plugins/taglist/XUL.tags.xml.in:65
 msgid "column"
@@ -5935,67 +6105,67 @@ msgstr "баған"
 
 #: plugins/taglist/XUL.tags.xml.in:74
 msgid "commandset"
-msgstr ""
+msgstr "commandset"
 
 #: plugins/taglist/XUL.tags.xml.in:79
 msgid "command"
-msgstr ""
+msgstr "command"
 
 #: plugins/taglist/XUL.tags.xml.in:83
 msgid "conditions"
-msgstr ""
+msgstr "conditions"
 
 #: plugins/taglist/XUL.tags.xml.in:88
 msgid "content"
-msgstr ""
+msgstr "content"
 
 #: plugins/taglist/XUL.tags.xml.in:92
 msgid "deck"
-msgstr ""
+msgstr "deck"
 
 #: plugins/taglist/XUL.tags.xml.in:97
 msgid "description"
-msgstr ""
+msgstr "description"
 
 #: plugins/taglist/XUL.tags.xml.in:102
 msgid "dialog"
-msgstr ""
+msgstr "dialog"
 
 #: plugins/taglist/XUL.tags.xml.in:111
 msgid "dialogheader"
-msgstr ""
+msgstr "dialogheader"
 
 #: plugins/taglist/XUL.tags.xml.in:115
 msgid "editor"
-msgstr ""
+msgstr "editor"
 
 #: plugins/taglist/XUL.tags.xml.in:119
 msgid "grid"
-msgstr ""
+msgstr "grid"
 
 #: plugins/taglist/XUL.tags.xml.in:124
 msgid "grippy"
-msgstr ""
+msgstr "grippy"
 
 #: plugins/taglist/XUL.tags.xml.in:129
 msgid "groupbox"
-msgstr ""
+msgstr "groupbox"
 
 #: plugins/taglist/XUL.tags.xml.in:134
 msgid "hbox"
-msgstr ""
+msgstr "hbox"
 
 #: plugins/taglist/XUL.tags.xml.in:139
 msgid "iframe"
-msgstr ""
+msgstr "iframe"
 
 #: plugins/taglist/XUL.tags.xml.in:143
 msgid "image"
-msgstr ""
+msgstr "image"
 
 #: plugins/taglist/XUL.tags.xml.in:151
 msgid "keyset"
-msgstr ""
+msgstr "keyset"
 
 #: plugins/taglist/XUL.tags.xml.in:156
 msgid "label"
@@ -6003,67 +6173,67 @@ msgstr "белгі"
 
 #: plugins/taglist/XUL.tags.xml.in:160
 msgid "listbox"
-msgstr ""
+msgstr "listbox"
 
 #: plugins/taglist/XUL.tags.xml.in:165
 msgid "listcell"
-msgstr ""
+msgstr "listcell"
 
 #: plugins/taglist/XUL.tags.xml.in:169
 msgid "listcol"
-msgstr ""
+msgstr "listcol"
 
 #: plugins/taglist/XUL.tags.xml.in:174
 msgid "listcols"
-msgstr ""
+msgstr "listcols"
 
 #: plugins/taglist/XUL.tags.xml.in:179
 msgid "listhead"
-msgstr ""
+msgstr "listhead"
 
 #: plugins/taglist/XUL.tags.xml.in:184
 msgid "listheader"
-msgstr ""
+msgstr "listheader"
 
 #: plugins/taglist/XUL.tags.xml.in:188
 msgid "listitem"
-msgstr ""
+msgstr "listitem"
 
 #: plugins/taglist/XUL.tags.xml.in:192
 msgid "member"
-msgstr ""
+msgstr "member"
 
 #: plugins/taglist/XUL.tags.xml.in:196
 msgid "menu"
-msgstr ""
+msgstr "menu"
 
 #: plugins/taglist/XUL.tags.xml.in:201
 msgid "menubar"
-msgstr ""
+msgstr "menubar"
 
 #: plugins/taglist/XUL.tags.xml.in:206
 msgid "menuitem"
-msgstr ""
+msgstr "menuitem"
 
 #: plugins/taglist/XUL.tags.xml.in:210
 msgid "menulist"
-msgstr ""
+msgstr "menulist"
 
 #: plugins/taglist/XUL.tags.xml.in:215
 msgid "menupopup"
-msgstr ""
+msgstr "menupopup"
 
 #: plugins/taglist/XUL.tags.xml.in:220
 msgid "menuseparator"
-msgstr ""
+msgstr "menuseparator"
 
 #: plugins/taglist/XUL.tags.xml.in:224
 msgid "observes"
-msgstr ""
+msgstr "observes"
 
 #: plugins/taglist/XUL.tags.xml.in:228
 msgid "overlay"
-msgstr ""
+msgstr "overlay"
 
 #: plugins/taglist/XUL.tags.xml.in:234
 msgid "page"
@@ -6071,55 +6241,55 @@ msgstr "парақ"
 
 #: plugins/taglist/XUL.tags.xml.in:239
 msgid "popup"
-msgstr ""
+msgstr "popup"
 
 #: plugins/taglist/XUL.tags.xml.in:244
 msgid "popupset"
-msgstr ""
+msgstr "popupset"
 
 #: plugins/taglist/XUL.tags.xml.in:249
 msgid "preference"
-msgstr ""
+msgstr "preference"
 
 #: plugins/taglist/XUL.tags.xml.in:254
 msgid "preferences"
-msgstr ""
+msgstr "preferences"
 
 #: plugins/taglist/XUL.tags.xml.in:259
 msgid "prefpane"
-msgstr ""
+msgstr "prefpane"
 
 #: plugins/taglist/XUL.tags.xml.in:264
 msgid "prefwindow"
-msgstr ""
+msgstr "prefwindow"
 
 #: plugins/taglist/XUL.tags.xml.in:269
 msgid "progressmeter"
-msgstr ""
+msgstr "progressmeter"
 
 #: plugins/taglist/XUL.tags.xml.in:273
 msgid "radio"
-msgstr ""
+msgstr "radio"
 
 #: plugins/taglist/XUL.tags.xml.in:277
 msgid "radiogroup"
-msgstr ""
+msgstr "radiogroup"
 
 #: plugins/taglist/XUL.tags.xml.in:282
 msgid "resizer"
-msgstr ""
+msgstr "resizer"
 
 #: plugins/taglist/XUL.tags.xml.in:287
 msgid "richlistbox"
-msgstr ""
+msgstr "richlistbox"
 
 #: plugins/taglist/XUL.tags.xml.in:292
 msgid "richlistitem"
-msgstr ""
+msgstr "richlistitem"
 
 #: plugins/taglist/XUL.tags.xml.in:297
 msgid "row"
-msgstr ""
+msgstr "row"
 
 #: plugins/taglist/XUL.tags.xml.in:302
 msgid "rows"
@@ -6127,187 +6297,187 @@ msgstr "жол"
 
 #: plugins/taglist/XUL.tags.xml.in:307
 msgid "rule"
-msgstr ""
+msgstr "rule"
 
 #: plugins/taglist/XUL.tags.xml.in:312
 msgid "script"
-msgstr ""
+msgstr "script"
 
 #: plugins/taglist/XUL.tags.xml.in:317
 msgid "scrollbar"
-msgstr ""
+msgstr "scrollbar"
 
 #: plugins/taglist/XUL.tags.xml.in:321
 msgid "scrollbox"
-msgstr ""
+msgstr "scrollbox"
 
 #: plugins/taglist/XUL.tags.xml.in:326
 msgid "scrollcorner"
-msgstr ""
+msgstr "scrollcorner"
 
 #: plugins/taglist/XUL.tags.xml.in:331
 msgid "separator"
-msgstr ""
+msgstr "separator"
 
 #: plugins/taglist/XUL.tags.xml.in:336
 msgid "spacer"
-msgstr ""
+msgstr "spacer"
 
 #: plugins/taglist/XUL.tags.xml.in:340
 msgid "splitter"
-msgstr ""
+msgstr "splitter"
 
 #: plugins/taglist/XUL.tags.xml.in:345
 msgid "stack"
-msgstr ""
+msgstr "stack"
 
 #: plugins/taglist/XUL.tags.xml.in:350
 msgid "statusbar"
-msgstr ""
+msgstr "statusbar"
 
 #: plugins/taglist/XUL.tags.xml.in:355
 msgid "statusbarpanel"
-msgstr ""
+msgstr "statusbarpanel"
 
 #: plugins/taglist/XUL.tags.xml.in:360
 msgid "stringbundle"
-msgstr ""
+msgstr "stringbundle"
 
 #: plugins/taglist/XUL.tags.xml.in:364
 msgid "stringbundleset"
-msgstr ""
+msgstr "stringbundleset"
 
 #: plugins/taglist/XUL.tags.xml.in:369
 msgid "tab"
-msgstr ""
+msgstr "tab"
 
 #: plugins/taglist/XUL.tags.xml.in:373
 msgid "tabbrowser"
-msgstr ""
+msgstr "tabbrowser"
 
 #: plugins/taglist/XUL.tags.xml.in:378
 msgid "tabbox"
-msgstr ""
+msgstr "tabbox"
 
 #: plugins/taglist/XUL.tags.xml.in:383
 msgid "tabpanel"
-msgstr ""
+msgstr "tabpanel"
 
 #: plugins/taglist/XUL.tags.xml.in:388
 msgid "tabpanels"
-msgstr ""
+msgstr "tabpanels"
 
 #: plugins/taglist/XUL.tags.xml.in:393
 msgid "tabs"
-msgstr ""
+msgstr "tabs"
 
 #: plugins/taglist/XUL.tags.xml.in:403
 msgid "textnode"
-msgstr ""
+msgstr "textnode"
 
 #: plugins/taglist/XUL.tags.xml.in:408
 msgid "textbox"
-msgstr ""
+msgstr "textbox"
 
 #: plugins/taglist/XUL.tags.xml.in:412
 msgid "titlebar"
-msgstr ""
+msgstr "titlebar"
 
 #: plugins/taglist/XUL.tags.xml.in:417
 msgid "toolbar"
-msgstr ""
+msgstr "toolbar"
 
 #: plugins/taglist/XUL.tags.xml.in:422
 msgid "toolbarbutton"
-msgstr ""
+msgstr "toolbarbutton"
 
 #: plugins/taglist/XUL.tags.xml.in:426
 msgid "toolbargrippy"
-msgstr ""
+msgstr "toolbargrippy"
 
 #: plugins/taglist/XUL.tags.xml.in:431
 msgid "toolbaritem"
-msgstr ""
+msgstr "toolbaritem"
 
 #: plugins/taglist/XUL.tags.xml.in:436
 msgid "toolbarpalette"
-msgstr ""
+msgstr "toolbarpalette"
 
 #: plugins/taglist/XUL.tags.xml.in:441
 msgid "toolbarseparator"
-msgstr ""
+msgstr "toolbarseparator"
 
 #: plugins/taglist/XUL.tags.xml.in:446
 msgid "toolbarset"
-msgstr ""
+msgstr "toolbarset"
 
 #: plugins/taglist/XUL.tags.xml.in:451
 msgid "toolbarspacer"
-msgstr ""
+msgstr "toolbarspacer"
 
 #: plugins/taglist/XUL.tags.xml.in:456
 msgid "toolbarspring"
-msgstr ""
+msgstr "toolbarspring"
 
 #: plugins/taglist/XUL.tags.xml.in:461
 msgid "toolbox"
-msgstr ""
+msgstr "toolbox"
 
 #: plugins/taglist/XUL.tags.xml.in:466
 msgid "tooltip"
-msgstr ""
+msgstr "tooltip"
 
 #: plugins/taglist/XUL.tags.xml.in:471
 msgid "tree"
-msgstr ""
+msgstr "tree"
 
 #: plugins/taglist/XUL.tags.xml.in:476
 msgid "treecell"
-msgstr ""
+msgstr "treecell"
 
 #: plugins/taglist/XUL.tags.xml.in:480
 msgid "treechildren"
-msgstr ""
+msgstr "treechildren"
 
 #: plugins/taglist/XUL.tags.xml.in:485
 msgid "treecol"
-msgstr ""
+msgstr "treecol"
 
 #: plugins/taglist/XUL.tags.xml.in:489
 msgid "treecols"
-msgstr ""
+msgstr "treecols"
 
 #: plugins/taglist/XUL.tags.xml.in:494
 msgid "treeitem"
-msgstr ""
+msgstr "treeitem"
 
 #: plugins/taglist/XUL.tags.xml.in:499
 msgid "treerow"
-msgstr ""
+msgstr "treerow"
 
 #: plugins/taglist/XUL.tags.xml.in:504
 msgid "treeseparator"
-msgstr ""
+msgstr "treeseparator"
 
 #: plugins/taglist/XUL.tags.xml.in:509
 msgid "triple"
-msgstr ""
+msgstr "triple"
 
 #: plugins/taglist/XUL.tags.xml.in:514
 msgid "vbox"
-msgstr ""
+msgstr "vbox"
 
 #: plugins/taglist/XUL.tags.xml.in:519
 msgid "window"
-msgstr ""
+msgstr "window"
 
 #: plugins/taglist/XUL.tags.xml.in:525
 msgid "wizard"
-msgstr ""
+msgstr "wizard"
 
 #: plugins/taglist/XUL.tags.xml.in:530
 msgid "wizardpage"
-msgstr ""
+msgstr "wizardpage"
 
 #: plugins/time/org.mate.pluma.plugins.time.gschema.xml.in:12
 msgid "Prompt type"
@@ -6343,11 +6513,11 @@ msgstr "Курсор тұрған орынға ағымдағы күнді жә�
 
 #: plugins/trailsave/trailsave.plugin.desktop.in.in:5
 msgid "Save Without Trailing Spaces"
-msgstr ""
+msgstr "Соңындағы бос орындарсыз сақтау"
 
 #: plugins/trailsave/trailsave.plugin.desktop.in.in:6
 msgid "Removes trailing spaces from lines before saving."
-msgstr ""
+msgstr "Сақтау алдында жолдардың соңындағы бос орындарды өшіреді."
 
 #: plugins/time/pluma-time-dialog.ui:19
 msgid "Insert Date and Time"
