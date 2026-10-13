@@ -41,7 +41,7 @@ pluma_close_button_init (PlumaCloseButton *button)
 		"	padding: 0;\n"
 		"}";
 
-	image = gtk_image_new_from_icon_name ("gtk-close",
+	image = gtk_image_new_from_icon_name ("window-close",
 	                                      GTK_ICON_SIZE_MENU);
 	gtk_widget_show (image);
 

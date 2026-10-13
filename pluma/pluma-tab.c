@@ -1967,7 +1967,7 @@ _pluma_tab_get_icon (PlumaTab *tab)
 		case PLUMA_TAB_STATE_PRINT_PREVIEWING:
 		case PLUMA_TAB_STATE_SHOWING_PRINT_PREVIEW:
 			pixbuf = get_stock_icon (theme,
-						 "gtk-print-preview",
+						 "document-print-preview",
 						 icon_size);
 			break;
 

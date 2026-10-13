@@ -1203,7 +1203,7 @@ pluma_externally_modified_message_area_new (const gchar *uri,
 				       GTK_MESSAGE_WARNING);
 
 	set_message_area_text_and_icon (message_area,
-					"gtk-dialog-warning",
+					"dialog-warning",
 					primary_text,
 					secondary_text);
 
