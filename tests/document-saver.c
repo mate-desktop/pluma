@@ -154,7 +154,11 @@ mount_ready_callback (GObject      *object,
 	}
 	else
 	{
-		g_assert_no_error (error);
+		mount_success = FALSE;
+		if (error)
+		{
+			g_error_free (error);
+		}
 	}
 
 	mount_completed = TRUE;
@@ -223,7 +227,16 @@ test_saver (const gchar              *filename_or_uri,
 	uri = g_file_get_uri (file);
 	existed = g_file_query_exists (file, NULL);
 
-	ensure_mounted (file);
+	if (!ensure_mounted (file))
+	{
+		g_test_skip ("Remote mount unavailable");
+
+		g_free (uri);
+		g_object_unref (file);
+		saver_test_data_free (data);
+		g_object_unref (document);
+		return;
+	}
 
 	pluma_document_save_as (document, uri, pluma_encoding_get_utf8 (), save_flags);
 
@@ -407,6 +420,13 @@ test_permissions (const gchar *uri,
 	GFileOutputStream *stream;
 	GFileInfo *info;
 	guint mode;
+
+	if (!ensure_mounted (file))
+	{
+		g_test_skip ("Remote mount unavailable");
+		g_object_unref (file);
+		return;
+	}
 
 	g_file_delete (file, NULL, NULL);
 	stream = g_file_create (file, 0, NULL, &error);
