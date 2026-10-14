@@ -3563,7 +3563,13 @@ bottom_panel_size_allocate (GtkWidget     *widget,
                             GtkAllocation *allocation,
                             PlumaWindow   *window)
 {
-    window->priv->bottom_panel_size = allocation->height;
+    /* Store what vpaned_restore_position () expects: the distance from the
+     * divider to the bottom of the paned, which includes the divider's handle.
+     * The panel's own height leaves the handle out, and storing it would make
+     * the panel shrink by the size of the handle every time pluma starts. */
+    window->priv->bottom_panel_size =
+        gtk_widget_get_allocated_height (window->priv->vpaned) -
+        gtk_paned_get_position (GTK_PANED (window->priv->vpaned));
 }
 
 static void
@@ -3571,7 +3577,10 @@ right_panel_size_allocate (GtkWidget     *widget,
                            GtkAllocation *allocation,
                            PlumaWindow   *window)
 {
-    window->priv->right_panel_size = allocation->width;
+    /* As for the bottom panel: what hpaned_inner_restore_position () expects */
+    window->priv->right_panel_size =
+        gtk_widget_get_allocated_width (window->priv->hpaned_inner) -
+        gtk_paned_get_position (GTK_PANED (window->priv->hpaned_inner));
 }
 
 static void
