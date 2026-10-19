@@ -1,9 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the pluma package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Hilding Kåstad <hilding.kastad@gmail.com>, 2018
 # Martin Wimpress <code@flexion.org>, 2018
 # Marcus Larborg, 2018
@@ -21,21 +18,25 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Kristoffer Grundström <lovaren@gmail.com>, 2021
 # Luna Jernberg <droidbittin@gmail.com>, 2024
-# Daniel Nylander <po@danielnylander.se>, 2025
-# 
+# Daniel Nylander <po@danielnylander.se>, 2025, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pluma 1.26.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/pluma/issues\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
-"PO-Revision-Date: 2018-03-12 09:49+0000\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2025\n"
-"Language-Team: Swedish (https://app.transifex.com/mate/teams/13566/sv/)\n"
+"PO-Revision-Date: 2026-10-19 13:25+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/pluma/sv/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.10.1\n"
 
 #: data/org.mate.pluma.gschema.xml.in:15
 msgid "Use Default Font"
@@ -48,11 +49,10 @@ msgid ""
 "font named in the \"Editor Font\" option will be used instead of the system "
 "font."
 msgstr ""
-"Huruvida systemets standardtypsnitt med fast breddsteg ska användas för "
-"redigering av text istället för ett typsnitt som är specifikt för pluma. Om "
-"detta alternativ är inaktiverat, kommer typsnittet som är angivet i "
-"alternativet \"Redigerartypsnitt\" att användas istället för "
-"systemtypsnittet."
+"Huruvida systemets standardtypsnitt med fast teckenbredd ska användas för "
+"textredigering i stället för ett typsnitt som är specifikt för Pluma. Om "
+"detta alternativ är inaktiverat används typsnittet som anges under "
+"\"Redigerartypsnitt\" i stället för systemtypsnittet."
 
 #: data/org.mate.pluma.gschema.xml.in:19
 msgctxt "editor-font"
@@ -80,7 +80,7 @@ msgid ""
 "If true, it enables the ability to switch tabs using [ctrl + tab] and [ctrl "
 "+ shift + tab]."
 msgstr ""
-"Om sant möjliggör det att byta flikar med [Ctrl+Tab] och [Ctrl+Shift+Tab]"
+"Om sant möjliggör det att byta flikar med [Ctrl+Tab] och [Ctrl+Shift+Tab]."
 
 #: data/org.mate.pluma.gschema.xml.in:30
 msgid "Show the first tab if there is only one tab"
@@ -260,7 +260,7 @@ msgstr "Dokumentbakgrundsmönstertyp "
 
 #: data/org.mate.pluma.gschema.xml.in:116
 msgid "Whether the document will get a background pattern painted."
-msgstr "Hurvida dokumentet kommer att få ett bakgrundsmönster målat."
+msgstr "Huruvida dokumentet får ett målat bakgrundsmönster."
 
 #: data/org.mate.pluma.gschema.xml.in:120
 msgid "Display Overview Map"
@@ -268,7 +268,7 @@ msgstr "Visa översiktskarta "
 
 #: data/org.mate.pluma.gschema.xml.in:121
 msgid "Whether pluma should display the overview map for the document."
-msgstr "Hurvida pluma ska visa översiktskartan för dokumentet."
+msgstr "Huruvida Pluma ska visa dokumentets översiktskarta."
 
 #: data/org.mate.pluma.gschema.xml.in:125
 msgid "Smart Home End"
@@ -345,10 +345,9 @@ msgstr ""
 "Stil på verktygsradsknapparna. Möjliga värden är \"PLUMA_TOOLBAR_SYSTEM\" "
 "för att använda systemets standardstil, \"PLUMA_TOOLBAR_ICONS\" för att "
 "endast visa ikoner, \"PLUMA_TOOLBAR_ICONS_AND_TEXT\" för att visa både "
-"ikoner och text, och \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" för att visa "
-"prioriterad text bredvid ikoner. Observera att det görs skillnad på versaler"
-" och gemener i värdena, så försäkra dig om att de visas exakt som de visas "
-"här."
+"ikoner och text samt \"PLUMA_TOOLBAR_ICONS_BOTH_HORIZ\" för att visa "
+"prioriterad text bredvid ikoner. Observera att det görs skillnad på versaler "
+"och gemener i värdena, så försäkra dig om att de visas exakt som här."
 
 #: data/org.mate.pluma.gschema.xml.in:155
 msgid "Status Bar is Visible"
@@ -378,7 +377,7 @@ msgstr "Visa flikar med sidopanel"
 msgid ""
 "If false, pluma doesn't show tabs in the notebook with the side pane active."
 msgstr ""
-"Om falskt kommer pluma inte visa flikar i antecknignsboken med sidopanel "
+"Om falskt visar Pluma inte flikar i anteckningsboken när sidopanelen är "
 "aktiv."
 
 #: data/org.mate.pluma.gschema.xml.in:170
@@ -577,7 +576,7 @@ msgstr "Visa ny rad"
 
 #: data/org.mate.pluma.gschema.xml.in:241
 msgid "Whether pluma should show newlines in the editor window."
-msgstr "Hurvida pluma ska visa nya rader i redigeringsfönstret."
+msgstr "Huruvida Pluma ska visa radbrytningar i redigeringsfönstret."
 
 #: data/org.mate.pluma.gschema.xml.in:245
 msgid "Show nbsp"
@@ -595,7 +594,7 @@ msgstr ""
 
 #: data/org.mate.pluma.gschema.xml.in:250
 msgid "Show tabs"
-msgstr "Visa flikar "
+msgstr "Visa flikar"
 
 #: data/org.mate.pluma.gschema.xml.in:251
 msgid ""
@@ -635,7 +634,7 @@ msgstr "storlek"
 
 #: data/org.mate.pluma.gschema.xml.in:266
 msgid "The pluma window size"
-msgstr "pluma fönster storlek"
+msgstr "Plumas fönsterstorlek"
 
 #: data/org.mate.pluma.gschema.xml.in:270
 msgid "side-panel-size"
@@ -643,7 +642,7 @@ msgstr "sido-panel-storlek "
 
 #: data/org.mate.pluma.gschema.xml.in:271
 msgid "The pluma side-panel-size"
-msgstr "pluma sido-panel-storlek "
+msgstr "Storlek på Plumas sidopanel"
 
 #: data/org.mate.pluma.gschema.xml.in:275
 msgid "side-panel-active-page"
@@ -651,7 +650,7 @@ msgstr "sido-panel-aktiv-sida "
 
 #: data/org.mate.pluma.gschema.xml.in:276
 msgid "The pluma side-panel-active-page"
-msgstr "pluma sido-panel-aktiv-sida "
+msgstr "Aktiv sida i Plumas sidopanel"
 
 #: data/org.mate.pluma.gschema.xml.in:280
 msgid "bottom-panel-size"
@@ -659,7 +658,7 @@ msgstr "nedre-panel-storlek "
 
 #: data/org.mate.pluma.gschema.xml.in:281
 msgid "The pluma bottom-panel-size"
-msgstr "pluma nedre-panel-storlek"
+msgstr "Storlek på Plumas nederpanel"
 
 #: data/org.mate.pluma.gschema.xml.in:285
 msgid "bottom-panel-active-page"
@@ -667,7 +666,7 @@ msgstr "nedre-panel-aktiv-sida"
 
 #: data/org.mate.pluma.gschema.xml.in:286
 msgid "The pluma bottom-panel-active-page"
-msgstr "pluma nedre-panel-aktiv-sida"
+msgstr "Aktiv sida i Plumas nederpanel"
 
 #: data/org.mate.pluma.gschema.xml.in:290
 msgid "filter-id"
@@ -683,7 +682,7 @@ msgstr "Pluma"
 
 #: data/pluma.appdata.xml.in.in:8
 msgid "A Text Editor for the MATE desktop environment"
-msgstr "En textredigerare för MATE skrivbordsmiljön"
+msgstr "En textredigerare för skrivbordsmiljön MATE"
 
 #: data/pluma.appdata.xml.in.in:10
 msgid ""
@@ -693,11 +692,11 @@ msgid ""
 " and automatic indentation of source code, printing and editing of multiple "
 "documents in one window."
 msgstr ""
-"Pluma är en liten, men kraftfull textredigerare designad speciellt för MATE-"
-"skrivbordet. Den har de flesta vanliga textredigeringsfunktioner och har "
-"fullt stöd för internationell text i Unicode. Avancerade funktioner "
-"inkluderar syntaxmarkering och automatisk indragning av källkod, utskrift "
-"och redigering av flera dokument i ett fönster. "
+"Pluma är en liten men kraftfull textredigerare som är särskilt utformad för "
+"MATE-skrivbordet. Den har de flesta vanliga funktionerna för textredigering "
+"och fullt stöd för internationell Unicode-text. Avancerade funktioner är "
+"syntaxmarkering, automatisk indragning av källkod, utskrift och redigering "
+"av flera dokument i ett fönster."
 
 #: data/pluma.appdata.xml.in.in:17
 msgid ""
@@ -767,7 +766,7 @@ msgstr "_Spara"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:184
 msgid "Save _As"
-msgstr "Spara som"
+msgstr "Spara _som"
 
 #: pluma/dialogs/pluma-close-confirmation-dialog.c:217
 msgid "Question"
@@ -916,7 +915,7 @@ msgstr ""
 #: plugins/time/pluma-time-plugin.c:889
 #: plugins/time/pluma-time-setup-dialog.ui:71
 msgid "_OK"
-msgstr "Ok"
+msgstr "_OK"
 
 #: pluma/dialogs/pluma-encodings-dialog.c:331
 #: pluma/dialogs/pluma-encodings-dialog.ui:40
@@ -1064,7 +1063,7 @@ msgstr "Visa _rutnätsmönster"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:364
 msgid "Display _overview map"
-msgstr "Visa _översikts karta"
+msgstr "Visa ö_versiktskarta"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:397
 msgid "View"
@@ -1101,7 +1100,7 @@ msgstr "Filsparning"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:600
 msgid "Create a _backup copy of files before saving"
-msgstr "Skapa en s_äkerhetskopia av filen innan den sparas"
+msgstr "Skapa en _säkerhetskopia av filen innan den sparas"
 
 #: pluma/dialogs/pluma-preferences-dialog.ui:620
 msgid "_Autosave files every"
@@ -1180,7 +1179,7 @@ msgstr "Sök"
 #: pluma/dialogs/pluma-search-dialog.c:402
 #: pluma/dialogs/pluma-search-dialog.ui:106
 msgid "_Find"
-msgstr "Sök"
+msgstr "Sö_k"
 
 #: pluma/dialogs/pluma-search-dialog.c:405
 msgid "Replace _All"
@@ -1279,14 +1278,14 @@ msgstr ""
 #: pluma/pluma-commands-file.c:251
 #, c-format
 msgid "Loading file '%s'…"
-msgstr "Läser in filen \"%s\"..."
+msgstr "Läser in filen \"%s\"…"
 
 #: pluma/pluma-commands-file.c:260
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "Läser in %d fil..."
-msgstr[1] "Läser in %d filer..."
+msgstr[0] "Läser in %d fil…"
+msgstr[1] "Läser in %d filer…"
 
 #. Translators: "Open Files" is the title of the file chooser window
 #: pluma/pluma-commands-file.c:462
@@ -1305,16 +1304,16 @@ msgstr "Vill du försöka ersätta den med den fil som du vill spara?"
 #: pluma/pluma-commands-file.c:648 pluma/pluma-commands-file.c:871
 #, c-format
 msgid "Saving file '%s'…"
-msgstr "Sparar filen \"%s\"..."
+msgstr "Sparar filen \"%s\"…"
 
 #: pluma/pluma-commands-file.c:756
 msgid "Save As…"
-msgstr "Spara som..."
+msgstr "Spara som…"
 
 #: pluma/pluma-commands-file.c:1085
 #, c-format
 msgid "Reverting the document '%s'…"
-msgstr "Återställer dokumentet \"%s\"..."
+msgstr "Återställer dokumentet \"%s\"…"
 
 #: pluma/pluma-commands-file.c:1130
 #, c-format
@@ -1410,11 +1409,11 @@ msgstr[1] ""
 
 #: pluma/pluma-commands-file.c:1227 pluma/pluma-ui.h:85
 msgid "_Revert"
-msgstr "_Återställ"
+msgstr "Å_terställ"
 
 #: pluma/pluma-commands-help.c:61
 msgid "MATE Documentation Team"
-msgstr "MATE Documentation Team"
+msgstr "MATE-dokumentationsgruppen"
 
 #: pluma/pluma-commands-help.c:62
 msgid "GNOME Documentation Team"
@@ -1679,7 +1678,7 @@ msgstr "Fönster"
 #: plugins/quickopen/quickopen/popup.py:38
 #: plugins/snippets/snippets/Manager.py:797
 msgid "_Open"
-msgstr "_Öppna"
+msgstr "Ö_ppna"
 
 #: pluma/pluma-help.c:82
 msgid "There was an error displaying the help."
@@ -2090,7 +2089,7 @@ msgstr "_Radnummer:"
 
 #: pluma/pluma-print-preferences.ui:463
 msgid "_Restore Default Fonts"
-msgstr "_Återställ standardtypsnitt"
+msgstr "Återställ _standardtypsnitt"
 
 #: pluma/pluma-print-preview.c:570
 msgid "Show the previous page"
@@ -2300,7 +2299,7 @@ msgstr "Skapa nytt dokument"
 
 #: pluma/pluma-ui.h:59
 msgid "_Open..."
-msgstr "_Öppna..."
+msgstr "Öpp_na…"
 
 #: pluma/pluma-ui.h:60 pluma/pluma-window.c:1477
 msgid "Open a file"
@@ -2332,7 +2331,7 @@ msgstr "Om detta program"
 
 #: pluma/pluma-ui.h:73
 msgid "_Leave Fullscreen"
-msgstr "Lämna helskärmsläget"
+msgstr "Lämna _helskärmsläge"
 
 #: pluma/pluma-ui.h:74
 msgid "Leave fullscreen mode"
@@ -2372,7 +2371,7 @@ msgstr "Skriv ut aktuell sida"
 
 #: pluma/pluma-ui.h:93
 msgid "_Undo"
-msgstr "_Ångra"
+msgstr "Ång_ra"
 
 #: pluma/pluma-ui.h:94
 msgid "Undo the last action"
@@ -2908,7 +2907,7 @@ msgstr "Aktuell rad"
 
 #: plugins/externaltools/tools/tools.ui:67
 msgid "Current word"
-msgstr "Akutellt ord"
+msgstr "Aktuellt ord"
 
 #: plugins/externaltools/tools/tools.ui:85
 msgid "Display in bottom pane"
@@ -3095,7 +3094,7 @@ msgid ""
 msgstr ""
 "Filbläddrarens virtuella rotkatalog att använda när filbläddrarens "
 "insticksmodul läses in när onload/tree_view är TRUE. Den virtuella roten "
-"måste alltid vara under den aktuella roten."
+"måste alltid vara under den verkliga roten."
 
 #: plugins/filebrowser/org.mate.pluma.plugins.filebrowser.gschema.xml.in:39
 msgid "Enable Restore of Remote Locations"
@@ -3119,7 +3118,7 @@ msgstr "Ställ in roten till platsen för det aktiva dokumentet"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:596
 msgid "_Open terminal here"
-msgstr "_Öppna en terminal här"
+msgstr "Öpp_na en terminal här"
 
 #: plugins/filebrowser/pluma-file-browser-plugin.c:598
 msgid "Open a terminal at the currently opened directory"
@@ -3687,7 +3686,7 @@ msgstr "_Ta bort dubletter"
 
 #: plugins/sort/sort.ui:142
 msgid "_Ignore case"
-msgstr "_Gör ingen skillnad på gemener/VERSALER"
+msgstr "Ignorera _skiftläge"
 
 #: plugins/sort/sort.ui:167
 msgid "S_tart at column:"
@@ -3695,7 +3694,7 @@ msgstr "_Börja vid kolumn:"
 
 #: plugins/spell/org.mate.pluma.plugins.spell.gschema.xml.in:11
 msgid "Autocheck Type"
-msgstr "Kontrolleringstyps"
+msgstr "Typ av automatisk kontroll"
 
 #. Translators: Displayed in the "Check Spelling" dialog if there are no
 #. suggestions for the current misspelled word
@@ -3865,11 +3864,11 @@ msgstr "Språk"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:23
 msgid "_Configure Spell Checker plugin..."
-msgstr "_Konfigurera Stavningskontroll plugin"
+msgstr "Konfigurera _insticksmodulen Stavningskontroll…"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:103
 msgid "Autocheck spelling on document load..."
-msgstr "Kontrollerar stavning vid dokumentbelastning."
+msgstr "Kontrollera stavning när dokument läses in…"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:116
 msgid "_Never autocheck"
@@ -3881,7 +3880,7 @@ msgstr "Ko_m ihåg kontroll av dokument"
 
 #: plugins/spell/pluma-spell-setup-dialog.ui:151
 msgid "_Always autocheck"
-msgstr "_Alltid autocheck"
+msgstr "Kontrollera _alltid automatiskt"
 
 #: plugins/spell/spell.plugin.desktop.in.in:5
 msgid "Spell Checker"
@@ -4137,7 +4136,7 @@ msgstr "Betoning"
 
 #: plugins/taglist/HTML.tags.xml.in:287 plugins/taglist/HTML.tags.xml.in:1410
 msgid "Encode type"
-msgstr "KOdningstyp"
+msgstr "Kodningstyp"
 
 #: plugins/taglist/HTML.tags.xml.in:293
 msgid "Font face (deprecated)"
@@ -4864,7 +4863,7 @@ msgstr "Figur"
 
 #: plugins/taglist/HTML.tags.xml.in:1419
 msgid "Font face"
-msgstr "Typnsnitt"
+msgstr "Typsnitt"
 
 #: plugins/taglist/HTML.tags.xml.in:1486
 msgid "Frameborder"
@@ -5536,7 +5535,7 @@ msgstr "Grekiskt lambda"
 
 #: plugins/taglist/Latex.tags.xml.in:99
 msgid "Greek rho"
-msgstr "Grekiskiskt rho"
+msgstr "Grekiskt rho"
 
 #: plugins/taglist/Latex.tags.xml.in:103
 msgid "Greek tau"

@@ -10,27 +10,26 @@
 # eckeman <eckeman@zoho.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Luna Jernberg <droidbittin@gmail.com>, 2021
-# Daniel Nylander <po@danielnylander.se>, 2025
-# 
+# Daniel Nylander <po@danielnylander.se>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-10-29 15:35+0200\n"
-"PO-Revision-Date: 2018-09-23 11:08+0000\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2025\n"
-"Language-Team: Swedish (https://app.transifex.com/mate/teams/13566/sv/)\n"
+"PO-Revision-Date: 2026-10-11 22:37+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <https://translate.fedoraproject.org/projects/mate-"
+"desktop/help-documentation/pluma-help/sv/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.10.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr ""
-"Daniel Nylander <po@danielnylander.se>\n"
-"Kristoffer Grundström <lovaren@gmail.com>"
+msgstr "Daniel Nylander <po@danielnylander.se>, 2026."
 
 #. (itstool) path: info/title
 #: C/index.docbook:20
@@ -158,7 +157,7 @@ msgstr "GNOME Documentation Team"
 #. (itstool) path: revdescription/para
 #: C/index.docbook:206
 msgid "MATE Documentation Team"
-msgstr "MATE Documentation Team"
+msgstr "MATE-dokumentationsgruppen"
 
 #. (itstool) path: info/releaseinfo
 #: C/index.docbook:212
@@ -451,8 +450,8 @@ msgid ""
 "<command>pluma <replaceable>file1.txt file2.txt "
 "file3.txt</replaceable></command>"
 msgstr ""
-"<command>pluma <replaceable>fil1.txt fil2.txt "
-"fil3.txt</replaceable></command>"
+"<command>pluma <replaceable>file1.txt file2.txt file3.txt</replaceable></"
+"command>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:349
@@ -907,8 +906,8 @@ msgid ""
 "Begin typing, and text that matches will be highlighted in the document. The"
 " first instance after the cursor position is also selected."
 msgstr ""
-"Börja skriva, och text som matchar kommer att markeras i dokumentet. Den "
-"första förekomsten efter markörens position markeras också."
+"Börja skriva så markeras matchande text i dokumentet. Den första förekomsten "
+"efter markörens position markeras också."
 
 #. (itstool) path: section/para
 #: C/index.docbook:526
@@ -1837,9 +1836,9 @@ msgid ""
 "<keycap>Return</keycap>."
 msgstr ""
 "Du kan använda <application>pluma</application> för att skicka utdata från "
-"ett kommando till en textfil. Om du t.ex. vill överföra utdata från "
-"kommandot <command>ls</command> till en textfil skriver du ls <command>| "
-"pluma</command> och trycker sedan på <keycap>Return</keycap>."
+"ett kommando till en textfil. Om du till exempel vill skicka utdata från "
+"kommandot <command>ls</command> till en textfil skriver du <command>ls | "
+"pluma</command> och trycker sedan på <keycap>Retur</keycap>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:1028
@@ -3266,8 +3265,8 @@ msgid ""
 "Determines which sort of documents can be affected by the command, for "
 "example whether saved or not, and local or remote."
 msgstr ""
-"Bestämmer vilken typ av dokument som kan påverkas av kommandot, t.ex. om de "
-"sparas eller inte, och om de är lokala eller fjärrstyrda."
+"Bestämmer vilken typ av dokument som kan påverkas av kommandot, till exempel "
+"om de är sparade eller inte samt om de är lokala eller fjärranslutna."
 
 #. (itstool) path: info/title
 #: C/index.docbook:2035
@@ -3318,8 +3317,8 @@ msgid ""
 "You can use the following variables in the <guilabel>Commands</guilabel> "
 "field of the command definition:"
 msgstr ""
-"Du kan använda följande variabler i fältet <guilabel>Kommandon</guilabel> "
-"(kommandon) i kommandodefinitionen:"
+"Du kan använda följande variabler i fältet <guilabel>Kommandon</guilabel> i "
+"kommandodefinitionen:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2050
@@ -3503,9 +3502,9 @@ msgid ""
 "used, depends on the <guilabel>Tab Stops</guilabel> settings in the Editor "
 "Preferences: see <xref linkend=\"pluma-prefs-editor\"/>."
 msgstr ""
-"Hur mycket utrymme som används, och om tabb- eller mellanslagstecken "
-"används, beror på inställningarna för <guilabel>Tabbstopp</guilabel> i "
-"Editor-inställningarna: se <xref linkend=\"pluma-prefs-editor\"/>."
+"Hur mycket utrymme som används och om tabbtecken eller blanksteg används "
+"beror på inställningarna för <guilabel>Tabbstopp</guilabel> i "
+"redigerarinställningarna: se <xref linkend=\"pluma-prefs-editor\"/>."
 
 #. (itstool) path: info/title
 #: C/index.docbook:2132
@@ -3757,8 +3756,8 @@ msgid ""
 "xlink:href=\"http://www.delorie.com/gnu/docs/emacs/emacs_486.html\">GNU "
 "Emacs Manual</link>."
 msgstr ""
-"<application>Emacs-alternativen</application> för tabbbredd, indrag-offset, "
-"indrag-tabs-mode och autowrap stöds. För mer information, se <link "
+"Alternativen för <application>Emacs</application>: tab-width, indent-offset, "
+"indent-tabs-mode och autowrap, stöds. Mer information finns i <link "
 "xlink:href=\"http://www.delorie.com/gnu/docs/emacs/emacs_486.html\">GNU "
 "Emacs Manual</link>."
 
@@ -3850,7 +3849,7 @@ msgstr ""
 #. (itstool) path: info/title
 #: C/index.docbook:2255
 msgid "Save Without Trailing Spaces Plugin"
-msgstr "Spara utan efterföljande mellanslag Plugin"
+msgstr "Insticksprogrammet Spara utan avslutande blanksteg"
 
 #. (itstool) path: section/para
 #: C/index.docbook:2257
@@ -3861,11 +3860,11 @@ msgid ""
 "from the end of a line. To use the Save Without Trailing Spaces plugin, "
 "perform the following steps:"
 msgstr ""
-"Pluginet <application>Save Without Trailing Spaces</application> tar bort "
-"blankstegstecken som mellanslag<command>(˽)</command>, "
-"tabb<command>(\\t</command>), vagnsretur<command>(\\r</command>) etc. från "
-"slutet av en rad. Gör så här för att använda plugin-programmet Save Without "
-"Trailing Spaces:"
+"Insticksprogrammet <application>Save Without Trailing Spaces</application> "
+"tar bort blankstegstecken som mellanslag (<command>˽</command>), tabbar "
+"(<command>\\t</command>), vagnreturer (<command>\\r</command>) och liknande "
+"från slutet av en rad. Gör så här för att använda insticksprogrammet Save "
+"Without Trailing Spaces:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:2260
@@ -3900,9 +3899,9 @@ msgid ""
 "frequently-used pieces of text, called <firstterm>snippets</firstterm>, and "
 "insert them quickly into a document."
 msgstr ""
-"Plugin-programmet <application>Snippets</application> gör att du kan lagra "
-"ofta använda textstycken, så kallade <firstterm>snippets</firstterm>, och "
-"snabbt infoga dem i ett dokument."
+"Insticksprogrammet <application>Snippets</application> låter dig lagra ofta "
+"använda textstycken som kallas <firstterm>snippets</firstterm> och snabbt "
+"infoga dem i ett dokument."
 
 #. (itstool) path: section/para
 #: C/index.docbook:2276
@@ -4819,15 +4818,15 @@ msgstr ""
 "BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV "
 "DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST "
 "ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, "
-"EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET"
-" LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD "
+"EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET "
+"LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD "
 "VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT "
 "HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER "
 "NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR "
 "SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR "
 "EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV "
 "ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST "
-"UNDER DENNA ANSVARSFRISKRIVNING;"
+"UNDER DENNA ANSVARSFRISKRIVNING"
 
 #. (itstool) path: listitem/para
 #: C/legal.xml:57
@@ -4865,7 +4864,7 @@ msgid ""
 msgstr ""
 "DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS ENLIGT "
 "VILLKOREN I GNU:S LICENS FÖR FRI DOKUMENTATION MED DEN YTTERLIGARE "
-"ÖVERENSKOMMELSEN ATT: <_:beställningslista-1/>"
+"ÖVERENSKOMMELSEN ATT: <_:orderedlist-1/>"
 
 #. (itstool) path: formalpara/title
 #: C/legal.xml:78
