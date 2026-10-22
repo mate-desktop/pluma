@@ -63,7 +63,8 @@ enum {
     PROP_URI,
     PROP_ENCODING,
     PROP_NEWLINE_TYPE,
-    PROP_FLAGS
+    PROP_ADD_TRAILING_NEWLINE,
+    PROP_FLAGS,
 };
 
 typedef struct
@@ -94,6 +95,7 @@ struct _PlumaDocumentSaverPrivate
     gchar                    *uri;
     const PlumaEncoding      *encoding;
     PlumaDocumentNewlineType  newline_type;
+    gboolean                  add_trailing_newline;
 
     PlumaDocumentSaveFlags    flags;
 
@@ -139,6 +141,9 @@ pluma_document_saver_set_property (GObject      *object,
         case PROP_NEWLINE_TYPE:
             saver->priv->newline_type = g_value_get_enum (value);
             break;
+        case PROP_ADD_TRAILING_NEWLINE:
+            saver->priv->add_trailing_newline = g_value_get_boolean (value);
+            break;
         case PROP_FLAGS:
             saver->priv->flags = g_value_get_flags (value);
             break;
@@ -169,6 +174,9 @@ pluma_document_saver_get_property (GObject    *object,
             break;
         case PROP_NEWLINE_TYPE:
             g_value_set_enum (value, saver->priv->newline_type);
+            break;
+        case PROP_ADD_TRAILING_NEWLINE:
+            g_value_set_boolean (value, saver->priv->add_trailing_newline);
             break;
         case PROP_FLAGS:
             g_value_set_flags (value, saver->priv->flags);
@@ -308,6 +316,16 @@ pluma_document_saver_class_init (PlumaDocumentSaverClass *klass)
                                                          G_PARAM_STATIC_NAME |
                                                          G_PARAM_STATIC_BLURB |
                                                          G_PARAM_CONSTRUCT_ONLY));
+
+    g_object_class_install_property (object_class,
+                                     PROP_ADD_TRAILING_NEWLINE,
+                                     g_param_spec_boolean ("add-trailing-newline",
+                                                           "Add Trailing Newline",
+                                                            "Automatically add a trailing newline to the file contents?",
+                                                           TRUE,
+                                                           G_PARAM_READWRITE |
+                                                           G_PARAM_STATIC_STRINGS |
+                                                           G_PARAM_CONSTRUCT));
 
     g_object_class_install_property (object_class,
                                      PROP_FLAGS,
@@ -723,6 +741,10 @@ async_replace_ready_callback (GFile        *source,
 
     saver->priv->input = pluma_document_input_stream_new (GTK_TEXT_BUFFER (saver->priv->document),
                                                           saver->priv->newline_type);
+
+    g_object_set (G_OBJECT (saver->priv->input),
+                  "add-trailing-newline", saver->priv->add_trailing_newline,
+                  NULL);
 
     saver->priv->size = pluma_document_input_stream_get_total_size (PLUMA_DOCUMENT_INPUT_STREAM (saver->priv->input));
 

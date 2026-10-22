@@ -76,7 +76,9 @@ enum
     PROP_DOCUMENT,
     PROP_URI,
     PROP_ENCODING,
-    PROP_NEWLINE_TYPE
+    PROP_NEWLINE_TYPE,
+    PROP_TRIM_TRAILING_NEWLINE,
+    PROP_TRIMMED_TRAILING_NEWLINE,
 };
 
 #define READ_CHUNK_SIZE 8192
@@ -105,6 +107,7 @@ struct _PlumaDocumentLoaderPrivate
     PlumaDocumentNewlineType     auto_detected_newline_type;
     GFile                       *gfile;
     goffset                      bytes_read;
+    gboolean                     trim_trailing_newline;
 
     /* Handle for remote files */
     GCancellable                *cancellable;
@@ -144,6 +147,9 @@ pluma_document_loader_set_property (GObject      *object,
         case PROP_NEWLINE_TYPE:
             loader->priv->auto_detected_newline_type = g_value_get_enum (value);
             break;
+        case PROP_TRIM_TRAILING_NEWLINE:
+            loader->priv->trim_trailing_newline = g_value_get_boolean (value);
+            break;
         default:
             G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
             break;
@@ -171,6 +177,23 @@ pluma_document_loader_get_property (GObject    *object,
             break;
         case PROP_NEWLINE_TYPE:
             g_value_set_enum (value, loader->priv->auto_detected_newline_type);
+            break;
+        case PROP_TRIM_TRAILING_NEWLINE:
+            g_value_set_boolean (value, loader->priv->trim_trailing_newline);
+            break;
+        case PROP_TRIMMED_TRAILING_NEWLINE:
+            if (loader->priv->output != NULL)
+            {
+                gboolean trimmed_trailing_newline;
+                g_object_get (loader->priv->output,
+                              "trimmed-trailing-newline", &trimmed_trailing_newline,
+                              NULL);
+                g_value_set_boolean (value, trimmed_trailing_newline);
+            }
+            else
+            {
+                g_value_set_boolean (value, FALSE);
+            }
             break;
         default:
             G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -277,15 +300,23 @@ pluma_document_loader_class_init (PlumaDocumentLoaderClass *klass)
                                                          G_PARAM_STATIC_STRINGS));
 
     g_object_class_install_property (object_class,
-                                     PROP_NEWLINE_TYPE,
-                                     g_param_spec_enum ("newline-type",
-                                                        "Newline type",
-                                                        "The accepted types of line ending",
-                                                        PLUMA_TYPE_DOCUMENT_NEWLINE_TYPE,
-                                                        PLUMA_DOCUMENT_NEWLINE_TYPE_LF,
-                                                        G_PARAM_READWRITE |
-                                                        G_PARAM_STATIC_NAME |
-                                                        G_PARAM_STATIC_BLURB));
+                                     PROP_TRIM_TRAILING_NEWLINE,
+                                     g_param_spec_boolean ("trim-trailing-newline",
+                                                           "Trim Trailing Newline",
+                                                           "Remove the final received newline from the document buffer?",
+                                                           TRUE,
+                                                           G_PARAM_READWRITE |
+                                                           G_PARAM_STATIC_STRINGS |
+                                                           G_PARAM_CONSTRUCT));
+
+    g_object_class_install_property (object_class,
+                                     PROP_TRIMMED_TRAILING_NEWLINE,
+                                     g_param_spec_boolean ("trimmed-trailing-newline",
+                                                           "Trailing Newline Trimmed",
+                                                           "Was the final received newline removed from the document buffer?",
+                                                           FALSE,
+                                                           G_PARAM_READABLE |
+                                                           G_PARAM_STATIC_STRINGS));
 
     signals[LOADING] =
         g_signal_new ("loading",
@@ -650,6 +681,9 @@ finish_query_info (AsyncData *async)
 
     /* Output stream */
     loader->priv->output = pluma_document_output_stream_new (loader->priv->document);
+    g_object_set (G_OBJECT (loader->priv->output),
+                  "trim-trailing-newline", loader->priv->trim_trailing_newline,
+                  NULL);
 
     /* start reading */
     read_file_chunk (async);

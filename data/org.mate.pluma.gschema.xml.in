@@ -50,6 +50,11 @@
       <summary>Autosave Interval</summary>
       <description>Number of minutes after which pluma will automatically save modified files.  This will only take effect if the "Autosave" option is turned on.</description>
     </key>
+    <key name="hide-trailing-newline" type="b">
+      <default>true</default>
+      <summary>Hide Tailing Newline</summary>
+      <description>Whether pluma should hide the final newline in opened files if one was present when loading the file.  Enabling this will also cause newly created files to be saved with a trailing newline by default.</description>
+    </key>
     <key name="show-save-confirmation" type="b">
       <default>true</default>
       <summary>Show save confirmation</summary>
